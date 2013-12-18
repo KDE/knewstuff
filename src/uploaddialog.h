@@ -26,9 +26,10 @@
 
 #include "knewstuff_export.h"
 
-namespace Attica {
-    class BaseJob;
-    class Provider;
+namespace Attica
+{
+class BaseJob;
+class Provider;
 }
 
 // KDE5: this class should inherit from the wizard class - KAssistantDialog
@@ -61,7 +62,7 @@ public:
 
       @param parent the parent window
     */
-    explicit UploadDialog(const QString& configFile, QWidget *parent = 0);
+    explicit UploadDialog(const QString &configFile, QWidget *parent = 0);
 
     /**
       Destructor.
@@ -74,7 +75,7 @@ public:
 
       @param payloadFile the payload data file
     */
-    void setUploadFile(const QUrl & payloadFile);
+    void setUploadFile(const QUrl &payloadFile);
 
     /**
       Set the suggested title for the upload.
@@ -83,28 +84,28 @@ public:
 
       @param name the suggested name for the upload
     */
-    void setUploadName(const QString& name);
+    void setUploadName(const QString &name);
 
     /**
       Set the suggested version displayed in the upload dialog.
       The user can still change this.
       @param version
       */
-    void setVersion(const QString& version);
+    void setVersion(const QString &version);
 
     /**
       Set the suggested description displayed in the upload dialog.
       The user can still change this.
       @param description
       */
-    void setDescription(const QString& description);
+    void setDescription(const QString &description);
 
     /**
       Set the suggested changelog displayed in the upload dialog.
       The user can still change this.
       @param version version
       */
-    void setChangelog(const QString& changelog);
+    void setChangelog(const QString &changelog);
 
     /* *
       Set the suggested license displayed in the upload dialog.
@@ -121,7 +122,7 @@ public:
       @param file A URL to the file to be used as preview image
       @since 4.6
       */
-    void setPreviewImageFile(uint number, const QUrl & file);
+    void setPreviewImageFile(uint number, const QUrl &file);
 
     /**
      Enable the UI to let the user to set a price for the uploaded item.
@@ -142,7 +143,7 @@ public:
       The user can still change this.
       @param version version
       */
-    void setPriceReason(const QString& reason);
+    void setPriceReason(const QString &reason);
 
     /**
       Set the suggested category for the upload.
@@ -151,7 +152,7 @@ public:
 
       @param category the suggested category for the upload
     */
-    void selectCategory(const QString& category);
+    void selectCategory(const QString &category);
 
 public Q_SLOTS:
     virtual void accept();
@@ -162,38 +163,38 @@ private:
     class Private;
     Private *const d;
 
-    Q_PRIVATE_SLOT( d, void _k_nextPage() )
-    Q_PRIVATE_SLOT( d, void _k_backPage() )
-    Q_PRIVATE_SLOT( d, void _k_updatePage() )
+    Q_PRIVATE_SLOT(d, void _k_nextPage())
+    Q_PRIVATE_SLOT(d, void _k_backPage())
+    Q_PRIVATE_SLOT(d, void _k_updatePage())
 
-    Q_PRIVATE_SLOT( d, void _k_providerChanged(QString) )
-    Q_PRIVATE_SLOT( d, void _k_checkCredentialsFinished(bool) )
-    Q_PRIVATE_SLOT( d, void _k_contentByCurrentUserLoaded(Attica::Content::List) )
-    Q_PRIVATE_SLOT( d, void _k_providersLoaded(QStringList) )
-    Q_PRIVATE_SLOT( d, void _k_categoriesLoaded(Attica::Category::List) )
-    Q_PRIVATE_SLOT( d, void _k_licensesLoaded(Attica::License::List) )
-    Q_PRIVATE_SLOT( d, void _k_currencyLoaded(QString) )
-    Q_PRIVATE_SLOT( d, void _k_previewLoaded(int, QImage) )
+    Q_PRIVATE_SLOT(d, void _k_providerChanged(QString))
+    Q_PRIVATE_SLOT(d, void _k_checkCredentialsFinished(bool))
+    Q_PRIVATE_SLOT(d, void _k_contentByCurrentUserLoaded(Attica::Content::List))
+    Q_PRIVATE_SLOT(d, void _k_providersLoaded(QStringList))
+    Q_PRIVATE_SLOT(d, void _k_categoriesLoaded(Attica::Category::List))
+    Q_PRIVATE_SLOT(d, void _k_licensesLoaded(Attica::License::List))
+    Q_PRIVATE_SLOT(d, void _k_currencyLoaded(QString))
+    Q_PRIVATE_SLOT(d, void _k_previewLoaded(int, QImage))
 
-    Q_PRIVATE_SLOT( d, void _k_changePreview1() )
-    Q_PRIVATE_SLOT( d, void _k_changePreview2() )
-    Q_PRIVATE_SLOT( d, void _k_changePreview3() )
-    Q_PRIVATE_SLOT( d, void _k_priceToggled(bool) )
-    Q_PRIVATE_SLOT( d, void _k_updateContentsToggled(bool update) )
+    Q_PRIVATE_SLOT(d, void _k_changePreview1())
+    Q_PRIVATE_SLOT(d, void _k_changePreview2())
+    Q_PRIVATE_SLOT(d, void _k_changePreview3())
+    Q_PRIVATE_SLOT(d, void _k_priceToggled(bool))
+    Q_PRIVATE_SLOT(d, void _k_updateContentsToggled(bool update))
 
-    Q_PRIVATE_SLOT( d, void _k_startUpload() )
-    Q_PRIVATE_SLOT( d, void _k_contentAdded(Attica::BaseJob*) )
-    Q_PRIVATE_SLOT( d, void _k_fileUploadFinished(Attica::BaseJob*) )
-    Q_PRIVATE_SLOT( d, void _k_preview1UploadFinished(Attica::BaseJob*) )
-    Q_PRIVATE_SLOT( d, void _k_preview2UploadFinished(Attica::BaseJob*) )
-    Q_PRIVATE_SLOT( d, void _k_preview3UploadFinished(Attica::BaseJob*) )
+    Q_PRIVATE_SLOT(d, void _k_startUpload())
+    Q_PRIVATE_SLOT(d, void _k_contentAdded(Attica::BaseJob *))
+    Q_PRIVATE_SLOT(d, void _k_fileUploadFinished(Attica::BaseJob *))
+    Q_PRIVATE_SLOT(d, void _k_preview1UploadFinished(Attica::BaseJob *))
+    Q_PRIVATE_SLOT(d, void _k_preview2UploadFinished(Attica::BaseJob *))
+    Q_PRIVATE_SLOT(d, void _k_preview3UploadFinished(Attica::BaseJob *))
 
-    Q_PRIVATE_SLOT( d, void _k_updatedContentFetched(Attica::Content) )
-    Q_PRIVATE_SLOT( d, void _k_detailsLinkLoaded(QUrl) )
+    Q_PRIVATE_SLOT(d, void _k_updatedContentFetched(Attica::Content))
+    Q_PRIVATE_SLOT(d, void _k_detailsLinkLoaded(QUrl))
 
-    Q_PRIVATE_SLOT( d, void _k_openRegisterAccountWebpage(QString) )
+    Q_PRIVATE_SLOT(d, void _k_openRegisterAccountWebpage(QString))
 
-    Q_DISABLE_COPY( UploadDialog )
+    Q_DISABLE_COPY(UploadDialog)
 };
 
 }

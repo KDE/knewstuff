@@ -80,7 +80,7 @@ public:
      *
      * @param parent the parent of the dialog
      */
-    explicit DownloadDialog(QWidget * parent = 0);
+    explicit DownloadDialog(QWidget *parent = 0);
 
     /**
      * Create a DownloadDialog that lets the user install, update and uninstall
@@ -90,7 +90,7 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
-    explicit DownloadDialog(const QString& configFile, QWidget * parent = 0);
+    explicit DownloadDialog(const QString &configFile, QWidget *parent = 0);
 
     /**
      * destructor
@@ -110,7 +110,7 @@ public:
     KNS3::Entry::List installedEntries();
 
 private:
-    void init(const QString& configFile);
+    void init(const QString &configFile);
 
     DownloadDialogPrivate *const d;
     Q_DISABLE_COPY(DownloadDialog)

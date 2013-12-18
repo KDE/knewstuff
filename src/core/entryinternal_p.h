@@ -32,13 +32,13 @@
 
 namespace KNS3
 {
-    static const int PreviewWidth = 96;
-    static const int PreviewHeight = 72;
+static const int PreviewWidth = 96;
+static const int PreviewHeight = 72;
 
-    /**
-     function to remove bb code formatting that opendesktop sends
-     */
-    QString replaceBBCode(const QString& unformattedText);
+/**
+ function to remove bb code formatting that opendesktop sends
+ */
+QString replaceBBCode(const QString &unformattedText);
 
 /**
  * @short KNewStuff data entry container.
@@ -89,11 +89,11 @@ public:
      */
     EntryInternal();
 
-    EntryInternal(const EntryInternal& other);
-    EntryInternal& operator=(const EntryInternal& other);
+    EntryInternal(const EntryInternal &other);
+    EntryInternal &operator=(const EntryInternal &other);
 
-    bool operator==(const EntryInternal& other) const;
-    bool operator<(const EntryInternal& other) const;
+    bool operator==(const EntryInternal &other) const;
+    bool operator<(const EntryInternal &other) const;
 
     /**
      * Destructor.
@@ -105,7 +105,7 @@ public:
     /**
      * Sets the name for this data object.
      */
-    void setName(const QString& name);
+    void setName(const QString &name);
 
     /**
      * Retrieve the name of the data object.
@@ -114,13 +114,13 @@ public:
      */
     QString name() const;
 
-    void setUniqueId(const QString& id);
+    void setUniqueId(const QString &id);
     QString uniqueId() const;
 
     /**
      * Sets the data category, e.g. 'kdesktop/wallpaper'.
      */
-    void setCategory(const QString& category);
+    void setCategory(const QString &category);
 
     /**
      * Retrieve the category of the data object.
@@ -129,13 +129,13 @@ public:
      */
     QString category() const;
 
-    void setHomepage(const QUrl & page);
+    void setHomepage(const QUrl &page);
     QUrl homepage() const;
 
     /**
      * Sets the author of the object.
      */
-    void setAuthor(const Author& author);
+    void setAuthor(const Author &author);
 
     /**
      * Retrieve the author of the object.
@@ -147,7 +147,7 @@ public:
     /**
      * Sets the license (abbreviation) applicable to the object.
      */
-    void setLicense(const QString& license);
+    void setLicense(const QString &license);
 
     /**
      * Retrieve the license name of the object.
@@ -159,7 +159,7 @@ public:
     /**
      * Sets a short description on what the object is all about.
      */
-    void setSummary(const QString& summary);
+    void setSummary(const QString &summary);
 
     /**
      * Retrieve a short description about the object.
@@ -171,13 +171,13 @@ public:
     /**
      * The user written changelog
      */
-    void setChangelog(const QString& changelog);
+    void setChangelog(const QString &changelog);
     QString changelog() const;
 
     /**
      * Sets the version number.
      */
-    void setVersion(const QString& version);
+    void setVersion(const QString &version);
 
     /**
      * Retrieve the version string of the object.
@@ -189,7 +189,7 @@ public:
     /**
      * Sets the release date.
      */
-    void setReleaseDate(const QDate& releasedate);
+    void setReleaseDate(const QDate &releasedate);
 
     /**
      * Retrieve the date of the object's publication.
@@ -201,7 +201,7 @@ public:
     /**
      * Sets the version number that is available as update.
      */
-    void setUpdateVersion(const QString& version);
+    void setUpdateVersion(const QString &version);
 
     /**
      * Retrieve the version string of the object that is available as update.
@@ -213,7 +213,7 @@ public:
     /**
      * Sets the release date that is available as update.
      */
-    void setUpdateReleaseDate(const QDate& releasedate);
+    void setUpdateReleaseDate(const QDate &releasedate);
 
     /**
      * Retrieve the date of the newer version that is available as update.
@@ -225,7 +225,7 @@ public:
     /**
      * Sets the object's file.
      */
-    void setPayload(const QString& url);
+    void setPayload(const QString &url);
 
     /**
      * Retrieve the file name of the object.
@@ -238,7 +238,7 @@ public:
      * Sets the object's preview file, if available. This should be a
      * picture file.
      */
-    void setPreviewUrl(const QString& url, PreviewType type = PreviewSmall1);
+    void setPreviewUrl(const QString &url, PreviewType type = PreviewSmall1);
 
     /**
      * Retrieve the file name of an image containing a preview of the object.
@@ -251,13 +251,13 @@ public:
      * This will not be loaded automatically, instead use Engine to load the actual images.
      */
     QImage previewImage(PreviewType type = PreviewSmall1) const;
-    void setPreviewImage(const QImage& image, PreviewType type = PreviewSmall1);
+    void setPreviewImage(const QImage &image, PreviewType type = PreviewSmall1);
 
     /**
      * Set the files that have been installed by the install command.
      * @param files local file names
      */
-    void setInstalledFiles(const QStringList& files);
+    void setInstalledFiles(const QStringList &files);
 
     /**
      * Retrieve the locally installed files.
@@ -270,7 +270,7 @@ public:
      * @param files local file names
      * @since 4.1
      */
-    void setUnInstalledFiles(const QStringList& files);
+    void setUnInstalledFiles(const QStringList &files);
 
     /**
      * Retrieve the locally uninstalled files.
@@ -311,25 +311,25 @@ public:
 
     int numberFans() const;
     void setNumberFans(int fans);
-    
+
     int numberKnowledgebaseEntries() const;
     void setNumberKnowledgebaseEntries(int num);
     QString knowledgebaseLink() const;
-    void setKnowledgebaseLink(const QString& link);
+    void setKnowledgebaseLink(const QString &link);
 
     int downloadLinkCount() const;
     QList<DownloadLinkInformation> downloadLinkInformationList() const;
-    void appendDownloadLinkInformation(const DownloadLinkInformation& info);
+    void appendDownloadLinkInformation(const DownloadLinkInformation &info);
     void clearDownloadLinkInformation();
 
     QString donationLink() const;
-    void setDonationLink(const QString& link);
-    
+    void setDonationLink(const QString &link);
+
     /**
       The id of the provider this entry belongs to
       */
     QString providerId() const;
-    void setProviderId(const QString& id);
+    void setProviderId(const QString &id);
 
     /**
       The source of this entry can be Cache, Registry or Online - @see source
@@ -346,7 +346,7 @@ public:
      *
      * @returns whether or not setting the values was successful
      */
-    bool setEntryXML(const QDomElement & xmldata);
+    bool setEntryXML(const QDomElement &xmldata);
 
     /**
     * get the xml string for the entry
@@ -406,14 +406,15 @@ public:
     //int idNumber() const;
 
     Entry toEntry() const;
-    
-    static KNS3::EntryInternal fromEntry(const KNS3::Entry& entry);
+
+    static KNS3::EntryInternal fromEntry(const KNS3::Entry &entry);
 private:
     class Private;
     QExplicitlySharedDataPointer<Private> d;
 };
 
-inline uint qHash(const KNS3::EntryInternal& entry) {
+inline uint qHash(const KNS3::EntryInternal &entry)
+{
     return qHash(entry.uniqueId());
 }
 

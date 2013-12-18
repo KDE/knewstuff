@@ -23,25 +23,26 @@
 
 namespace KNS3
 {
-    class Button::Private {
-    public:
-        QString configFile;
-    };
+class Button::Private
+{
+public:
+    QString configFile;
+};
 
-Button::Button(const QString& text,
-               const QString& configFile,
-               QWidget* parent)
-        : QPushButton(parent),
-        d(new Private)
+Button::Button(const QString &text,
+               const QString &configFile,
+               QWidget *parent)
+    : QPushButton(parent),
+      d(new Private)
 {
     setButtonText(text);
     d->configFile = configFile;
     init();
 }
 
-Button::Button(QWidget* parent)
-        : QPushButton(parent),
-        d(new Private)
+Button::Button(QWidget *parent)
+    : QPushButton(parent),
+      d(new Private)
 {
     setButtonText(i18n("Download New Stuff..."));
     init();
@@ -58,12 +59,12 @@ void Button::init()
     connect(this, SIGNAL(clicked()), SLOT(showDialog()));
 }
 
-void Button::setButtonText(const QString& what)
+void Button::setButtonText(const QString &what)
 {
     setText(what);
 }
 
-void Button::setConfigFile(const QString& configFile)
+void Button::setConfigFile(const QString &configFile)
 {
     d->configFile = configFile;
 }

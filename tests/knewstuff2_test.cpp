@@ -33,7 +33,7 @@
 #include <stdio.h> // for stdout
 
 KNewStuff2Test::KNewStuff2Test()
-        : QObject()
+    : QObject()
 {
     m_engine = NULL;
     m_testall = false;
@@ -179,10 +179,12 @@ void KNewStuff2Test::slotEntryLoaded(KNS::Entry *entry, const KNS::Feed *feed, c
     if (m_testall) {
         // qDebug() << "-- now, download the entry's preview and payload file";
 
-        if (!entry->preview().isEmpty())
+        if (!entry->preview().isEmpty()) {
             m_engine->downloadPreview(entry);
-        if (!entry->payload().isEmpty())
+        }
+        if (!entry->payload().isEmpty()) {
             m_engine->downloadPayload(entry);
+        }
     }
 }
 

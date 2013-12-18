@@ -31,7 +31,7 @@
 namespace KNS3
 {
 
-StaticXmlProvider::StaticXmlProvider(   )
+StaticXmlProvider::StaticXmlProvider()
     : mInitialized(false)
 {
 }
@@ -41,12 +41,13 @@ QString StaticXmlProvider::id() const
     return mId;
 }
 
-bool StaticXmlProvider::setProviderXML(const QDomElement & xmldata)
+bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
     // qDebug() << "setting provider xml";
 
-    if (xmldata.tagName() != "provider")
+    if (xmldata.tagName() != "provider") {
         return false;
+    }
 
     mUploadUrl = QUrl(xmldata.attribute("uploadurl"));
     mNoUploadUrl = QUrl(xmldata.attribute("nouploadurl"));
@@ -75,8 +76,9 @@ bool StaticXmlProvider::setProviderXML(const QDomElement & xmldata)
     // FIXME: make sure new QUrl in KDE 4 handles this right
     // FIXME: this depends on freedesktop.org icon naming... introduce 'desktopicon'?
     QUrl iconurl(xmldata.attribute("icon"));
-    if (!iconurl.isValid())
+    if (!iconurl.isValid()) {
         iconurl.setPath(xmldata.attribute("icon"));
+    }
     mIcon = iconurl;
 
     QDomNode n;
@@ -121,13 +123,13 @@ bool StaticXmlProvider::isInitialized() const
     return mInitialized;
 }
 
-void StaticXmlProvider::setCachedEntries(const KNS3::EntryInternal::List& cachedEntries)
+void StaticXmlProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
 {
     // qDebug() << "Set cached entries " << cachedEntries.size();
     mCachedEntries.append(cachedEntries);
 }
 
-void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest& request)
+void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
 {
     mCurrentRequest = request;
 
@@ -147,7 +149,7 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest& request
     if (!url.isEmpty()) {
         // TODO first get the entries, then filter with searchString, finally emit the finished signal...
         // FIXME: don't creat an endless number of xmlloaders!
-        XmlLoader * loader = new XmlLoader(this);
+        XmlLoader *loader = new XmlLoader(this);
         connect(loader, SIGNAL(signalLoaded(QDomDocument)), SLOT(slotFeedFileLoaded(QDomDocument)));
         connect(loader, SIGNAL(signalFailed()), SLOT(slotFeedFailed()));
 
@@ -163,20 +165,20 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
 {
     QUrl url;
     switch (mode) {
-        case Installed: // should just query the registry and not end up here
-        case Rating:
-            url = mDownloadUrls.value("score");
-            break;
-        case Alphabetical:
-            url = mDownloadUrls.value(QString());
-            break;
-        case Updates:
-        case Newest:
-            url = mDownloadUrls.value("latest");
-            break;
-        case Downloads:
-            url = mDownloadUrls.value("downloads");
-            break;
+    case Installed: // should just query the registry and not end up here
+    case Rating:
+        url = mDownloadUrls.value("score");
+        break;
+    case Alphabetical:
+        url = mDownloadUrls.value(QString());
+        break;
+    case Updates:
+    case Newest:
+        url = mDownloadUrls.value("latest");
+        break;
+    case Downloads:
+        url = mDownloadUrls.value("downloads");
+        break;
     }
     if (url.isEmpty()) {
         url = mDownloadUrls.value(QString());
@@ -184,11 +186,10 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
     return url;
 }
 
-void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument& doc)
+void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
 {
-    XmlLoader * loader = qobject_cast<KNS3::XmlLoader*>(sender());
-    if (!loader)
-    {
+    XmlLoader *loader = qobject_cast<KNS3::XmlLoader *>(sender());
+    if (!loader) {
         qWarning() << "Loader not found!";
         emit loadingFailed(mCurrentRequest);
         return;
@@ -212,7 +213,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument& doc)
             EntryInternal cacheEntry = mCachedEntries.takeAt(index);
             // check if updateable
             if ((cacheEntry.status() == Entry::Installed) &&
-                 ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
+                    ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
                 entry.setStatus(Entry::Updateable);
                 entry.setUpdateVersion(entry.version());
                 entry.setVersion(cacheEntry.version());
@@ -226,7 +227,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument& doc)
         mCachedEntries.append(entry);
 
         if (searchIncludesEntry(entry)) {
-                entries << entry;
+            entries << entry;
         }
     }
     emit loadingFinished(mCurrentRequest, entries);
@@ -237,7 +238,7 @@ void StaticXmlProvider::slotFeedFailed()
     emit loadingFailed(mCurrentRequest);
 }
 
-bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal& entry) const
+bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) const
 {
     if (mCurrentRequest.sortMode == Updates) {
         if (entry.status() != Entry::Updateable) {
@@ -250,32 +251,30 @@ bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal& entry) co
     }
     QString search = mCurrentRequest.searchTerm;
     if (entry.name().contains(search, Qt::CaseInsensitive) ||
-        entry.summary().contains(search, Qt::CaseInsensitive) ||
-        entry.author().name().contains(search, Qt::CaseInsensitive)
-        ) {
+            entry.summary().contains(search, Qt::CaseInsensitive) ||
+            entry.author().name().contains(search, Qt::CaseInsensitive)
+       ) {
         return true;
     }
     return false;
 }
 
-void StaticXmlProvider::loadPayloadLink(const KNS3::EntryInternal& entry, int)
+void StaticXmlProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int)
 {
     // qDebug() << "Payload: " << entry.payload();
     emit payloadLinkLoaded(entry);
 }
 
-
 EntryInternal::List StaticXmlProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    foreach (const EntryInternal& entry, mCachedEntries) {
+    foreach (const EntryInternal &entry, mCachedEntries) {
         if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
             entries.append(entry);
         }
     }
     return entries;
 }
-
 
 }
 

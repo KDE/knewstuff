@@ -43,13 +43,13 @@ void ImagePreviewWidget::setImage(const QImage &preview)
     repaint();
 }
 
-void ImagePreviewWidget::mousePressEvent(QMouseEvent* event)
+void ImagePreviewWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
     emit clicked();
 }
 
-void ImagePreviewWidget::resizeEvent(QResizeEvent* event)
+void ImagePreviewWidget::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     m_scaledImage = QImage();
@@ -70,7 +70,7 @@ void ImagePreviewWidget::paintEvent(QPaintEvent * /*event*/)
     int height = contentsRect().height();
 
     if (m_scaledImage.isNull()) {
-        QSize scaled = QSize(qMin(width - 2*margin, m_image.width()*2), qMin(height - 2*margin, m_image.height()*2));
+        QSize scaled = QSize(qMin(width - 2 * margin, m_image.width() * 2), qMin(height - 2 * margin, m_image.height() * 2));
         m_scaledImage = m_image.scaled(scaled, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     }
 

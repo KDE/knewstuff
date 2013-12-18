@@ -21,12 +21,13 @@
 #include <QtCore/QStringList>
 #include "core/entryinternal_p.h"
 
-namespace KNS3 {
+namespace KNS3
+{
 
 class Entry::Private : public QSharedData
 {
-    public:
-        EntryInternal e;
+public:
+    EntryInternal e;
 };
 }
 

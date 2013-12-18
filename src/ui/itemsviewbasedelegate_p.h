@@ -33,41 +33,41 @@
 
 namespace KNS3
 {
-    class ItemsModel;
-    class Engine;    
-    
+class ItemsModel;
+class Engine;
+
 class ItemsViewBaseDelegate: public KWidgetItemDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsViewBaseDelegate(QAbstractItemView* itemView, Engine* engine, QObject* parent = 0);
+    explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent = 0);
     virtual ~ItemsViewBaseDelegate();
     // paint the item at index with all its attributes shown
-    virtual void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const = 0;
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const = 0;
 
     // get the list of widgets
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex &index) const = 0;
+    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const = 0;
 
     // update the widgets
-    virtual void updateItemWidgets(const QList<QWidget*> widgets,
+    virtual void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const =0;
+                                   const QPersistentModelIndex &index) const = 0;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const = 0;
-    
+    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const = 0;
+
 Q_SIGNALS:
-    void signalShowDetails(const KNS3::EntryInternal& entry);
-    
+    void signalShowDetails(const KNS3::EntryInternal &entry);
+
 protected Q_SLOTS:
     bool eventFilter(QObject *watched, QEvent *event);
     void slotInstallClicked();
-    void slotInstallActionTriggered(QAction* action);
-    void slotLinkClicked(const QString & url);
-    void slotDetailsClicked(const QModelIndex& index);
+    void slotInstallActionTriggered(QAction *action);
+    void slotLinkClicked(const QString &url);
+    void slotDetailsClicked(const QModelIndex &index);
     void slotDetailsClicked();
 
 protected:
-    Engine* m_engine;
+    Engine *m_engine;
     QAbstractItemView *m_itemView;
     QIcon m_iconInvalid;
     QIcon m_iconDownloadable;

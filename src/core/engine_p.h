@@ -31,9 +31,10 @@
 class QTimer;
 class KJob;
 
-namespace Attica {
-    class ProviderManager;
-    class Provider;
+namespace Attica
+{
+class ProviderManager;
+class Provider;
 }
 
 namespace KNS3
@@ -56,7 +57,7 @@ public:
     /**
      * Constructor.
      */
-    Engine(QObject* parent = 0);
+    Engine(QObject *parent = 0);
 
     /**
      * Destructor. Frees up all the memory again which might be taken
@@ -96,16 +97,16 @@ public:
      */
     void uninstall(KNS3::EntryInternal entry);
 
-    void loadPreview(const KNS3::EntryInternal& entry, EntryInternal::PreviewType type);
-    void loadDetails(const KNS3::EntryInternal& entry);
+    void loadPreview(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type);
+    void loadDetails(const KNS3::EntryInternal &entry);
 
     void setSortMode(Provider::SortMode mode);
 
     /**
       Set the categories that will be included in searches
       */
-    void setCategoriesFilter(const QStringList& categories);
-    void setSearchTerm(const QString& searchString);
+    void setCategoriesFilter(const QStringList &categories);
+    void setSearchTerm(const QString &searchString);
     void reloadEntries();
     void requestMoreData();
     void requestData(int page, int pageSize);
@@ -115,12 +116,12 @@ public:
     /**
      * Try to contact the author of the entry by email or showing their homepage.
      */
-    void contactAuthor(const EntryInternal& entry);
+    void contactAuthor(const EntryInternal &entry);
 
-    bool userCanVote(const EntryInternal& entry);
-    void vote(const EntryInternal& entry, uint rating);
-    bool userCanBecomeFan(const EntryInternal& entry);
-    void becomeFan(const EntryInternal& entry);
+    bool userCanVote(const EntryInternal &entry);
+    void vote(const EntryInternal &entry, uint rating);
+    bool userCanBecomeFan(const EntryInternal &entry);
+    void becomeFan(const EntryInternal &entry);
 
     QStringList categories() const;
     QStringList categoriesFilter() const;
@@ -129,54 +130,54 @@ Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
      */
-    void signalMessage(const QString& message);
+    void signalMessage(const QString &message);
 
     void signalProvidersLoaded();
-    void signalEntriesLoaded(const KNS3::EntryInternal::List& entries);
-    void signalUpdateableEntriesLoaded(const KNS3::EntryInternal::List& entries);
-    void signalEntryChanged(const KNS3::EntryInternal& entry);
-    void signalEntryDetailsLoaded(const KNS3::EntryInternal& entry);
+    void signalEntriesLoaded(const KNS3::EntryInternal::List &entries);
+    void signalUpdateableEntriesLoaded(const KNS3::EntryInternal::List &entries);
+    void signalEntryChanged(const KNS3::EntryInternal &entry);
+    void signalEntryDetailsLoaded(const KNS3::EntryInternal &entry);
 
     // a new search result is there, clear the list of items
     void signalResetView();
 
-    void signalEntryPreviewLoaded(const KNS3::EntryInternal&, KNS3::EntryInternal::PreviewType);
+    void signalEntryPreviewLoaded(const KNS3::EntryInternal &, KNS3::EntryInternal::PreviewType);
     void signalPreviewFailed();
 
     void signalEntryUploadFinished();
     void signalEntryUploadFailed();
 
     void signalDownloadDialogDone(KNS3::EntryInternal::List);
-    void jobStarted(KJob*,const QString&);
+    void jobStarted(KJob *, const QString &);
 
-    void signalError(const QString&);
-    void signalBusy(const QString&);
-    void signalIdle(const QString&);
+    void signalError(const QString &);
+    void signalBusy(const QString &);
+    void signalIdle(const QString &);
 
 private Q_SLOTS:
     // the .knsrc file was loaded
-    void slotProviderFileLoaded(const QDomDocument& doc);
+    void slotProviderFileLoaded(const QDomDocument &doc);
     // instead of getting providers from knsrc, use what was configured in ocs systemsettings
-    void atticaProviderLoaded(const Attica::Provider& provider);
+    void atticaProviderLoaded(const Attica::Provider &provider);
 
     // loading the .knsrc file failed
     void slotProvidersFailed();
 
     // called when a provider is ready to work
-    void providerInitialized(KNS3::Provider*);
+    void providerInitialized(KNS3::Provider *);
 
-    void slotEntriesLoaded(const KNS3::Provider::SearchRequest&, KNS3::EntryInternal::List);
-    void slotEntryDetailsLoaded(const KNS3::EntryInternal& entry);
-    void slotPreviewLoaded(const KNS3::EntryInternal& entry, KNS3::EntryInternal::PreviewType type);
+    void slotEntriesLoaded(const KNS3::Provider::SearchRequest &, KNS3::EntryInternal::List);
+    void slotEntryDetailsLoaded(const KNS3::EntryInternal &entry);
+    void slotPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type);
 
     void slotSearchTimerExpired();
 
-    void slotEntryChanged(const KNS3::EntryInternal& entry);
+    void slotEntryChanged(const KNS3::EntryInternal &entry);
     void slotInstallationFinished();
-    void slotInstallationFailed(const QString& message);
-    void downloadLinkLoaded(const KNS3::EntryInternal& entry);
-    
-    void providerJobStarted(KJob*);
+    void slotInstallationFailed(const QString &message);
+    void downloadLinkLoaded(const KNS3::EntryInternal &entry);
+
+    void providerJobStarted(KJob *);
 
 private:
     /**
@@ -191,16 +192,16 @@ private:
     void addProvider(QSharedPointer<KNS3::Provider> provider);
 
     void updateStatus();
-    
+
     void doRequest();
 
     // If the provider is ready to be used
     bool m_initialized;
     // handle installation of entries
-    Installation* m_installation;
+    Installation *m_installation;
     // read/write cache of entries
     QSharedPointer<Cache> m_cache;
-    QTimer* m_searchTimer;
+    QTimer *m_searchTimer;
     // The url of the file containing information about content providers
     QString m_providerFileUrl;
     // Categories from knsrc file
@@ -223,7 +224,7 @@ private:
     int m_numDataJobs;
     int m_numPictureJobs;
     int m_numInstallJobs;
-    Attica::ProviderManager* m_atticaProviderManager;
+    Attica::ProviderManager *m_atticaProviderManager;
 
     Q_DISABLE_COPY(Engine)
 };

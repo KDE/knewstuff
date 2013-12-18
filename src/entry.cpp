@@ -27,12 +27,12 @@ Entry::Entry()
 {
 }
 
-Entry::Entry(const Entry& other)
+Entry::Entry(const Entry &other)
     : d(other.d)
 {
 }
 
-Entry& Entry::operator=(const Entry& other)
+Entry &Entry::operator=(const Entry &other)
 {
     d = other.d;
     return *this;

@@ -25,68 +25,68 @@
 
 namespace KNS3
 {
-    class XmlLoader;
+class XmlLoader;
+
+/**
+ * @short KNewStuff Base Provider class.
+ *
+ * This class provides accessors for the provider object.
+ * It should not be used directly by the application.
+ * This class is the base class and will be instantiated for
+ * static website providers.
+ *
+ * @author Jeremy Whiting <jpwhiting@kde.org>
+ *
+ * @internal
+ */
+class StaticXmlProvider: public Provider
+{
+    Q_OBJECT
+public:
+    typedef QList<Provider *> List;
+    /**
+     * Constructor.
+     */
+    StaticXmlProvider();
+
+    virtual QString id() const;
 
     /**
-     * @short KNewStuff Base Provider class.
-     *
-     * This class provides accessors for the provider object.
-     * It should not be used directly by the application.
-     * This class is the base class and will be instantiated for
-     * static website providers.
-     *
-     * @author Jeremy Whiting <jpwhiting@kde.org>
-     *
-     * @internal
+     * set the provider data xml, to initialize the provider
      */
-    class StaticXmlProvider: public Provider
-    {
-        Q_OBJECT
-    public:
-        typedef QList<Provider*> List;
-        /**
-         * Constructor.
-         */
-        StaticXmlProvider();
+    virtual bool setProviderXML(const QDomElement &xmldata);
 
-        virtual QString id() const;
+    virtual bool isInitialized() const;
 
-        /**
-         * set the provider data xml, to initialize the provider
-         */
-        virtual bool setProviderXML(const QDomElement & xmldata);
+    virtual void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries);
 
-        virtual bool isInitialized() const;
+    virtual void loadEntries(const KNS3::Provider::SearchRequest &request);
+    virtual void loadPayloadLink(const KNS3::EntryInternal &entry, int);
 
-        virtual void setCachedEntries(const KNS3::EntryInternal::List& cachedEntries);
+private Q_SLOTS:
+    void slotEmitProviderInitialized();
+    void slotFeedFileLoaded(const QDomDocument &);
+    void slotFeedFailed();
 
-        virtual void loadEntries(const KNS3::Provider::SearchRequest& request);
-        virtual void loadPayloadLink(const KNS3::EntryInternal& entry, int);
+private:
+    bool searchIncludesEntry(const EntryInternal &entry) const;
+    QUrl downloadUrl(SortMode mode) const;
+    EntryInternal::List installedEntries() const;
 
-    private Q_SLOTS:
-        void slotEmitProviderInitialized();
-        void slotFeedFileLoaded(const QDomDocument&);
-        void slotFeedFailed();
+    // map of download urls to their feed name
+    QMap<QString, QUrl> mDownloadUrls;
+    QUrl mUploadUrl;
+    QUrl mNoUploadUrl;
 
-    private:
-        bool searchIncludesEntry(const EntryInternal& entry) const;
-        QUrl downloadUrl(SortMode mode) const;
-        EntryInternal::List installedEntries() const;
-        
-        // map of download urls to their feed name
-        QMap<QString, QUrl> mDownloadUrls;
-        QUrl mUploadUrl;
-        QUrl mNoUploadUrl;
-        
-        // cache of all entries known from this provider so far, mapped by their id
-        EntryInternal::List mCachedEntries;
-        QMap<Provider::SortMode, XmlLoader*> mFeedLoaders;
-        Provider::SearchRequest mCurrentRequest;
-        QString mId;
-        bool mInitialized;
-        
-        Q_DISABLE_COPY(StaticXmlProvider)
-    };
+    // cache of all entries known from this provider so far, mapped by their id
+    EntryInternal::List mCachedEntries;
+    QMap<Provider::SortMode, XmlLoader *> mFeedLoaders;
+    Provider::SearchRequest mCurrentRequest;
+    QString mId;
+    bool mInitialized;
+
+    Q_DISABLE_COPY(StaticXmlProvider)
+};
 
 }
 

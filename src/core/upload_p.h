@@ -15,7 +15,6 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #ifndef UPLOAD_H
 #define UPLOAD_H
 

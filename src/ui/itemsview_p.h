@@ -25,10 +25,10 @@ namespace KNS3
 class ItemsView: public QListView
 {
 public:
-    ItemsView(QWidget* parent = 0);
-    
+    ItemsView(QWidget *parent = 0);
+
 protected:
-    void wheelEvent(QWheelEvent* event);
+    void wheelEvent(QWheelEvent *event);
 };
 
 } // end KNS namespace

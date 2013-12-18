@@ -31,60 +31,60 @@
 namespace KNS3
 {
 
-    XmlLoader::XmlLoader(QObject* parent)
-            : QObject(parent)
-    {
+XmlLoader::XmlLoader(QObject *parent)
+    : QObject(parent)
+{
+}
+
+void XmlLoader::load(const QUrl &url)
+{
+    m_jobdata.clear();
+
+    // qDebug() << "XmlLoader::load(): url: " << url;
+
+    KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+    connect(job, SIGNAL(result(KJob*)),
+            SLOT(slotJobResult(KJob*)));
+    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
+            SLOT(slotJobData(KIO::Job*,QByteArray)));
+
+    emit jobStarted(job);
+}
+
+void XmlLoader::slotJobData(KIO::Job *, const QByteArray &data)
+{
+    // qDebug() << "XmlLoader::slotJobData()";
+
+    m_jobdata.append(data);
+}
+
+void XmlLoader::slotJobResult(KJob *job)
+{
+    if (job->error()) {
+        emit signalFailed();
+        return;
     }
-
-    void XmlLoader::load(const QUrl &url)
-    {
-        m_jobdata.clear();
-
-        // qDebug() << "XmlLoader::load(): url: " << url;
-
-        KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-        connect(job, SIGNAL(result(KJob*)),
-                SLOT(slotJobResult(KJob*)));
-        connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-                SLOT(slotJobData(KIO::Job*,QByteArray)));
-	
-        emit jobStarted(job);
+    /*
+            // qDebug() << "--Xml Loader-START--";
+            // qDebug() << QString::fromUtf8(m_jobdata);
+            // qDebug() << "--Xml Loader-END--";
+    */
+    QDomDocument doc;
+    if (!doc.setContent(m_jobdata)) {
+        emit signalFailed();
+        return;
     }
+    emit signalLoaded(doc);
+}
 
-    void XmlLoader::slotJobData(KIO::Job *, const QByteArray &data)
-    {
-        // qDebug() << "XmlLoader::slotJobData()";
+QDomElement addElement(QDomDocument &doc, QDomElement &parent,
+                       const QString &tag, const QString &value)
+{
+    QDomElement n = doc.createElement(tag);
+    n.appendChild(doc.createTextNode(value));
+    parent.appendChild(n);
 
-        m_jobdata.append(data);
-    }
-
-    void XmlLoader::slotJobResult(KJob *job)
-    {
-        if (job->error()) {
-            emit signalFailed();
-            return;
-        }
-/*
-        // qDebug() << "--Xml Loader-START--";
-        // qDebug() << QString::fromUtf8(m_jobdata);
-        // qDebug() << "--Xml Loader-END--";
-*/
-        QDomDocument doc;
-        if (!doc.setContent(m_jobdata)) {
-            emit signalFailed();
-            return;
-        }
-        emit signalLoaded(doc);
-    }
-
-    QDomElement addElement(QDomDocument& doc, QDomElement& parent,
-                                         const QString& tag, const QString& value)
-    {
-        QDomElement n = doc.createElement(tag);
-        n.appendChild(doc.createTextNode(value));
-        parent.appendChild(n);
-
-        return n;
-    }
+    return n;
+}
 } // end KNS namespace
 

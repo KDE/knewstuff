@@ -30,7 +30,7 @@
 #include <unistd.h> // for exit()
 
 KNewStuff2Cache::KNewStuff2Cache()
-        : QObject()
+    : QObject()
 {
     m_engine = NULL;
 }

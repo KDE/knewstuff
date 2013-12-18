@@ -35,10 +35,10 @@
 
 namespace KNS3
 {
-    enum { DelegateLabel, DelegateInstallButton, DelegateDetailsButton,  DelegateRatingWidget };
+enum { DelegateLabel, DelegateInstallButton, DelegateDetailsButton,  DelegateRatingWidget };
 
-ItemsViewDelegate::ItemsViewDelegate(QAbstractItemView *itemView, Engine* engine, QObject * parent)
-        : ItemsViewBaseDelegate(itemView, engine, parent)
+ItemsViewDelegate::ItemsViewDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent)
+    : ItemsViewBaseDelegate(itemView, engine, parent)
 {
 }
 
@@ -46,19 +46,19 @@ ItemsViewDelegate::~ItemsViewDelegate()
 {
 }
 
-QList<QWidget*> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) const
+QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) const
 {
     Q_UNUSED(index);
-    QList<QWidget*> list;
+    QList<QWidget *> list;
 
-    QLabel * infoLabel = new QLabel();
+    QLabel *infoLabel = new QLabel();
     infoLabel->setOpenExternalLinks(true);
     // not so nice - work around constness to install the event filter
-    ItemsViewDelegate* delegate = const_cast<ItemsViewDelegate*>(this);
+    ItemsViewDelegate *delegate = const_cast<ItemsViewDelegate *>(this);
     infoLabel->installEventFilter(delegate);
     list << infoLabel;
 
-    QToolButton * installButton = new QToolButton();
+    QToolButton *installButton = new QToolButton();
     installButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     installButton->setPopupMode(QToolButton::InstantPopup);
     list << installButton;
@@ -67,14 +67,14 @@ QList<QWidget*> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) c
     connect(installButton, SIGNAL(clicked()), this, SLOT(slotInstallClicked()));
     connect(installButton, SIGNAL(triggered(QAction*)), this, SLOT(slotInstallActionTriggered(QAction*)));
 
-    QToolButton* detailsButton = new QToolButton();
+    QToolButton *detailsButton = new QToolButton();
     detailsButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     list << detailsButton;
     setBlockedEventTypes(detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
     connect(detailsButton, SIGNAL(clicked()), this, SLOT(slotDetailsClicked()));
 
-    KRatingWidget* rating = new KRatingWidget();
+    KRatingWidget *rating = new KRatingWidget();
     rating->setMaxRating(10);
     rating->setHalfStepsEnabled(true);
     list << rating;
@@ -83,11 +83,11 @@ QList<QWidget*> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) c
     return list;
 }
 
-void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
+void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         const QStyleOptionViewItem &option,
         const QPersistentModelIndex &index) const
 {
-    const ItemsModel * model = qobject_cast<const ItemsModel*>(index.model());
+    const ItemsModel *model = qobject_cast<const ItemsModel *>(index.model());
     if (!model) {
         // qDebug() << "WARNING - INVALID MODEL!";
         return;
@@ -99,11 +99,11 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
     int margin = option.fontMetrics.height() / 2;
     int right = option.rect.width();
 
-    QToolButton * installButton = qobject_cast<QToolButton*>(widgets.at(DelegateInstallButton));
+    QToolButton *installButton = qobject_cast<QToolButton *>(widgets.at(DelegateInstallButton));
     if (installButton != 0) {
 
         if (installButton->menu()) {
-            QMenu* buttonMenu = installButton->menu();
+            QMenu *buttonMenu = installButton->menu();
             buttonMenu->clear();
             installButton->setMenu(0);
             buttonMenu->deleteLater();
@@ -151,20 +151,20 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
         installButton->setEnabled(enabled);
         installButton->setIcon(icon);
         if (installable && entry.downloadLinkCount() > 1) {
-            QMenu * installMenu = new QMenu(installButton);
+            QMenu *installMenu = new QMenu(installButton);
             foreach (EntryInternal::DownloadLinkInformation info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text + " (" + info.distributionType.trimmed() + ")";
                 }
-                QAction* installAction = installMenu->addAction(m_iconInstall, text);
+                QAction *installAction = installMenu->addAction(m_iconInstall, text);
                 installAction->setData(QPoint(index.row(), info.id));
             }
             installButton->setMenu(installMenu);
         }
     }
 
-    QToolButton* detailsButton = qobject_cast<QToolButton*>(widgets.at(DelegateDetailsButton));
+    QToolButton *detailsButton = qobject_cast<QToolButton *>(widgets.at(DelegateDetailsButton));
     if (detailsButton) {
         detailsButton->setText(i18n("Details"));
         detailsButton->setIcon(QIcon::fromTheme("documentinfo"));
@@ -172,18 +172,18 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
 
     if (installButton && detailsButton) {
         if (m_buttonSize.width() < installButton->sizeHint().width()) {
-            const_cast<QSize&>(m_buttonSize) = QSize(
-                    qMax(option.fontMetrics.height() * 7,
-                         qMax(installButton->sizeHint().width(), detailsButton->sizeHint().width())),
-                    installButton->sizeHint().height());
+            const_cast<QSize &>(m_buttonSize) = QSize(
+                                                    qMax(option.fontMetrics.height() * 7,
+                                                            qMax(installButton->sizeHint().width(), detailsButton->sizeHint().width())),
+                                                    installButton->sizeHint().height());
         }
         installButton->resize(m_buttonSize);
-        installButton->move(right - installButton->width() - margin, option.rect.height()/2 - installButton->height()*1.5);
+        installButton->move(right - installButton->width() - margin, option.rect.height() / 2 - installButton->height() * 1.5);
         detailsButton->resize(m_buttonSize);
-        detailsButton->move(right - installButton->width() - margin, option.rect.height()/2 - installButton->height()/2);
+        detailsButton->move(right - installButton->width() - margin, option.rect.height() / 2 - installButton->height() / 2);
     }
 
-    QLabel * infoLabel = qobject_cast<QLabel*>(widgets.at(DelegateLabel));
+    QLabel *infoLabel = qobject_cast<QLabel *>(widgets.at(DelegateLabel));
     infoLabel->setWordWrap(true);
     if (infoLabel != NULL) {
         if (model->hasPreviewImages()) {
@@ -197,8 +197,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
         }
 
         QString text = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; margin:0 0 0 0;}\n"
-            "</style></head><body><p><b>";
+                       "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; margin:0 0 0 0;}\n"
+                       "</style></head><body><p><b>";
 
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
@@ -224,7 +224,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
         }
 
         QString summary = "<p>" + option.fontMetrics.elidedText(entry.summary(),
-            Qt::ElideRight, infoLabel->width() * 3) + "</p>\n";
+                          Qt::ElideRight, infoLabel->width() * 3) + "</p>\n";
         text += summary;
 
         unsigned int fans = entry.numberFans();
@@ -252,14 +252,14 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
         infoLabel->setText(text);
     }
 
-    KRatingWidget * rating = qobject_cast<KRatingWidget*>(widgets.at(DelegateRatingWidget));
+    KRatingWidget *rating = qobject_cast<KRatingWidget *>(widgets.at(DelegateRatingWidget));
     if (rating) {
         if (entry.rating() > 0) {
             rating->setToolTip(i18n("Rating: %1%", entry.rating()));
             // assume all entries come with rating 0..100 but most are in the range 20 - 80, so 20 is 0 stars, 80 is 5 stars
-            rating->setRating((entry.rating()-20)*10/60);
+            rating->setRating((entry.rating() - 20) * 10 / 60);
             // put the rating label below the install button
-            rating->move(right - installButton->width() - margin, option.rect.height()/2 + installButton->height()/2);
+            rating->move(right - installButton->width() - margin, option.rect.height() / 2 + installButton->height() / 2);
             rating->resize(m_buttonSize);
         } else {
             rating->setVisible(false);
@@ -268,7 +268,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget*> widgets,
 }
 
 // draws the preview
-void ItemsViewDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
+void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     int margin = option.fontMetrics.height() / 2;
 
@@ -283,7 +283,7 @@ void ItemsViewDelegate::paint(QPainter * painter, const QStyleOptionViewItem & o
         painter->setPen(QPen(option.palette.text().color()));
     }
 
-    const ItemsModel * realmodel = qobject_cast<const ItemsModel*>(index.model());
+    const ItemsModel *realmodel = qobject_cast<const ItemsModel *>(index.model());
 
     if (realmodel->hasPreviewImages()) {
         int height = option.rect.height();
@@ -298,7 +298,7 @@ void ItemsViewDelegate::paint(QPainter * painter, const QStyleOptionViewItem & o
         } else {
             QImage image = entry.previewImage(EntryInternal::PreviewSmall1);
             if (!image.isNull()) {
-                point.setX((PreviewWidth - image.width())/2 + 5);
+                point.setX((PreviewWidth - image.width()) / 2 + 5);
                 point.setY(option.rect.top() + ((height - image.height()) / 2));
                 painter->drawImage(point, image);
 
@@ -314,7 +314,7 @@ void ItemsViewDelegate::paint(QPainter * painter, const QStyleOptionViewItem & o
     painter->restore();
 }
 
-QSize ItemsViewDelegate::sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const
+QSize ItemsViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     Q_UNUSED(option);
     Q_UNUSED(index);

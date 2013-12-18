@@ -34,7 +34,7 @@
 using namespace KNS;
 
 KDXSView::KDXSView(QWidget *parent)
-        : KDialog(parent)
+    : KDialog(parent)
 {
     setCaption(i18n("GHNS Providers"));
     setButtons(KDialog::Close);

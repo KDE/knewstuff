@@ -22,12 +22,12 @@
 namespace KNS3
 {
 
-ItemsView::ItemsView(QWidget* parent)
+ItemsView::ItemsView(QWidget *parent)
     : QListView(parent)
 {
 }
 
-void ItemsView::wheelEvent(QWheelEvent* event)
+void ItemsView::wheelEvent(QWheelEvent *event)
 {
     // this is a workaround because scrolling by mouse wheel is broken in Qt list views for big items
     verticalScrollBar()->setSingleStep(10);

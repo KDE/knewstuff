@@ -39,7 +39,7 @@
 
 using namespace KNS3;
 
-DownloadWidget::DownloadWidget(QWidget* parent)
+DownloadWidget::DownloadWidget(QWidget *parent)
     : QWidget(parent)
     , d(new DownloadWidgetPrivate(this))
 {
@@ -47,14 +47,14 @@ DownloadWidget::DownloadWidget(QWidget* parent)
     init(name + ".knsrc");
 }
 
-DownloadWidget::DownloadWidget(const QString& configFile, QWidget * parent)
-        : QWidget(parent)
-        , d(new DownloadWidgetPrivate(this))
+DownloadWidget::DownloadWidget(const QString &configFile, QWidget *parent)
+    : QWidget(parent)
+    , d(new DownloadWidgetPrivate(this))
 {
     init(configFile);
 }
 
-void DownloadWidget::init(const QString& configFile)
+void DownloadWidget::init(const QString &configFile)
 {
     d->init(configFile);
 }
@@ -84,13 +84,12 @@ Entry::List DownloadWidget::installedEntries()
     return entries;
 }
 
-
-DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget* q)
-: q(q)
-, engine(new Engine)
-, model(new ItemsModel(engine))
-, messageTimer(0)
-, dialogMode(false)
+DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *q)
+    : q(q)
+    , engine(new Engine)
+    , model(new ItemsModel(engine))
+    , messageTimer(0)
+    , dialogMode(false)
 {
 }
 
@@ -118,7 +117,7 @@ void DownloadWidgetPrivate::sortingChanged()
     if (ui.ratingRadio->isChecked()) {
         sortMode = Provider::Rating;
     } else if (ui.mostDownloadsRadio->isChecked()) {
-         sortMode = Provider::Downloads;
+        sortMode = Provider::Downloads;
     } else if (ui.installedRadio->isChecked()) {
         sortMode = Provider::Installed;
     }
@@ -176,13 +175,13 @@ void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString v
                              i18n("Provider information"));
 }
 
-void DownloadWidgetPrivate::slotEntryChanged(const EntryInternal& entry)
+void DownloadWidgetPrivate::slotEntryChanged(const EntryInternal &entry)
 {
     changedEntries.insert(entry);
     model->slotEntryChanged(entry);
 }
 
-void DownloadWidgetPrivate::slotPayloadFailed(const EntryInternal& entry)
+void DownloadWidgetPrivate::slotPayloadFailed(const EntryInternal &entry)
 {
     KMessageBox::error(0, i18n("Could not install %1", entry.name()),
                        i18n("Get Hot New Stuff!"));
@@ -193,19 +192,19 @@ void DownloadWidgetPrivate::slotPayloadLoaded(QUrl url)
     Q_UNUSED(url)
 }
 
-void DownloadWidgetPrivate::slotError(const QString& message)
+void DownloadWidgetPrivate::slotError(const QString &message)
 {
     KMessageBox::error(0, message, i18n("Get Hot New Stuff"));
 }
 
 void DownloadWidgetPrivate::scrollbarValueChanged(int value)
 {
-    if ((double)value/ui.m_listView->verticalScrollBar()->maximum() > 0.9) {
+    if ((double)value / ui.m_listView->verticalScrollBar()->maximum() > 0.9) {
         engine->requestMoreData();
     }
 }
 
-void DownloadWidgetPrivate::init(const QString& configFile)
+void DownloadWidgetPrivate::init(const QString &configFile)
 {
     m_configFile = configFile;
     ui.setupUi(q);
@@ -262,7 +261,7 @@ void DownloadWidgetPrivate::init(const QString& configFile)
         ui.m_categoryCombo->setVisible(false);
     } else {
         ui.m_categoryCombo->addItem(i18n("All Categories"));
-        foreach(const QString& category, categories) {
+        foreach (const QString &category, categories) {
             ui.m_categoryCombo->addItem(category);
         }
     }
@@ -304,7 +303,7 @@ void DownloadWidgetPrivate::setListViewMode(QListView::ViewMode mode)
         return;
     }
 
-    ItemsViewBaseDelegate* oldDelegate = delegate;
+    ItemsViewBaseDelegate *oldDelegate = delegate;
     if (mode == QListView::ListMode) {
         delegate = new ItemsViewDelegate(ui.m_listView, engine, q);
         ui.m_listView->setViewMode(QListView::ListMode);
@@ -327,9 +326,9 @@ void DownloadWidgetPrivate::slotProvidersLoaded()
     engine->reloadEntries();
 }
 
-void DownloadWidgetPrivate::slotEntriesLoaded(const EntryInternal::List& entries)
+void DownloadWidgetPrivate::slotEntriesLoaded(const EntryInternal::List &entries)
 {
-    foreach(const KNS3::EntryInternal &entry, entries) {
+    foreach (const KNS3::EntryInternal &entry, entries) {
         if (!categories.contains(entry.category())) {
             // qDebug() << "Found category: " << entry.category();
             categories.insert(entry.category());
@@ -338,7 +337,7 @@ void DownloadWidgetPrivate::slotEntriesLoaded(const EntryInternal::List& entries
     model->slotEntriesLoaded(entries);
 }
 
-void DownloadWidgetPrivate::displayMessage(const QString & msg, KTitleWidget::MessageType type, int timeOutMs)
+void DownloadWidgetPrivate::displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs)
 {
     if (!messageTimer) {
         messageTimer = new QTimer;
@@ -358,7 +357,7 @@ void DownloadWidgetPrivate::displayMessage(const QString & msg, KTitleWidget::Me
     }
 }
 
-void DownloadWidgetPrivate::slotShowDetails(const KNS3::EntryInternal& entry)
+void DownloadWidgetPrivate::slotShowDetails(const KNS3::EntryInternal &entry)
 {
     if (!entry.isValid()) {
         // qDebug() << "invalid entry";
@@ -388,6 +387,5 @@ void DownloadWidgetPrivate::slotShowOverview()
     ui.detailsStack->setCurrentIndex(0);
     ui.m_titleWidget->setText(titleText);
 }
-
 
 #include "moc_downloadwidget.cpp"

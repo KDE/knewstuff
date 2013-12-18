@@ -42,14 +42,14 @@ namespace KNS3
  *
  * @internal
  */
-class Installation :public QObject
+class Installation : public QObject
 {
     Q_OBJECT
 public:
     /**
      * Constructor.
      */
-    Installation(QObject* parent = 0);
+    Installation(QObject *parent = 0);
 
     enum Policy {
         CheckNever,
@@ -62,7 +62,7 @@ public:
         ScopeSystem
     };
 
-    bool readConfig(const KConfigGroup& group);
+    bool readConfig(const KConfigGroup &group);
     bool isRemote() const;
 
 public Q_SLOTS:
@@ -77,7 +77,7 @@ public Q_SLOTS:
      * @see signalPayloadLoaded
      * @see signalPayloadFailed
      */
-    void downloadPayload(const KNS3::EntryInternal& entry);
+    void downloadPayload(const KNS3::EntryInternal &entry);
 
     /**
      * Installs an entry's payload file. This includes verification, if
@@ -111,20 +111,20 @@ public Q_SLOTS:
     void slotPayloadResult(KJob *job);
 
 Q_SIGNALS:
-    void signalEntryChanged(const KNS3::EntryInternal& entry);
+    void signalEntryChanged(const KNS3::EntryInternal &entry);
     void signalInstallationFinished();
-    void signalInstallationFailed(const QString& message);
+    void signalInstallationFailed(const QString &message);
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
 private:
-    void install(KNS3::EntryInternal entry, const QString& downloadedFile);
+    void install(KNS3::EntryInternal entry, const QString &downloadedFile);
 
-    QString targetInstallationPath(const QString& payloadfile);
-    QStringList installDownloadedFileAndUncompress(const KNS3::EntryInternal&  entry, const QString& payloadfile, const QString installdir);
-    void runPostInstallationCommand(const QString& installPath);
+    QString targetInstallationPath(const QString &payloadfile);
+    QStringList installDownloadedFileAndUncompress(const KNS3::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
+    void runPostInstallationCommand(const QString &installPath);
 
-    static QStringList archiveEntries(const QString& path, const KArchiveDirectory * dir);
+    static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
 
     // applications can set this if they want the installed files/directories to be piped into a shell command
     QString postInstallationCommand;
@@ -151,7 +151,7 @@ private:
     bool customName;
     bool acceptHtml;
 
-    QMap<KJob*, EntryInternal> entry_jobs;
+    QMap<KJob *, EntryInternal> entry_jobs;
 
     Q_DISABLE_COPY(Installation)
 };

@@ -38,7 +38,8 @@ class FeedWidget : public QTableWidget
 {
 public:
     FeedWidget()
-            : QTableWidget() {
+        : QTableWidget()
+    {
         m_entries = 0;
         m_previewentries = 0;
 
@@ -54,7 +55,8 @@ public:
         setHorizontalHeaderLabels(headers);
     }
 
-    void addEntry(KNS::Entry *entry) {
+    void addEntry(KNS::Entry *entry)
+    {
         QTableWidgetItem *nameitem = new QTableWidgetItem();
         nameitem->setText(entry->name().representation());
 
@@ -75,7 +77,8 @@ public:
         m_entries++;
     }
 
-    void addPreview(QUrl previewfile) {
+    void addPreview(QUrl previewfile)
+    {
         QTableWidgetItem *previewitem = new QTableWidgetItem();
         previewitem->setSizeHint(QSize(64, 64));
         previewitem->setIcon(QIcon(previewfile.path()));
@@ -91,7 +94,7 @@ private:
 };
 
 KNewStuff2Download::KNewStuff2Download()
-        : QWidget()
+    : QWidget()
 {
     m_engine = NULL;
     m_activefeed = NULL;
@@ -281,7 +284,7 @@ void KNewStuff2Download::slotEntryLoaded(KNS::Entry *entry, const KNS::Feed *fee
     // qDebug() << "SLOT: slotEntryLoaded";
     // qDebug() << "-- entry: " << entry->name().representation();
 
-    FeedWidget *fw = static_cast<FeedWidget*>(m_activefeed);
+    FeedWidget *fw = static_cast<FeedWidget *>(m_activefeed);
     fw->addEntry(entry);
 
     QUrl source = QUrl(entry->preview().representation());
@@ -297,7 +300,7 @@ void KNewStuff2Download::slotPreviewLoaded(QUrl preview)
     // qDebug() << "-- preview downloaded successfully";
     // qDebug() << "-- downloaded to " << preview.prettyUrl();
 
-    FeedWidget *fw = static_cast<FeedWidget*>(m_activefeed);
+    FeedWidget *fw = static_cast<FeedWidget *>(m_activefeed);
     fw->addPreview(preview);
 }
 

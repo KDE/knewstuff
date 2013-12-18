@@ -26,7 +26,7 @@
 #include <QDebug>
 
 KNewStuff2Standard::KNewStuff2Standard()
-        : QObject()
+    : QObject()
 {
     m_engine = NULL;
 }
@@ -40,8 +40,9 @@ void KNewStuff2Standard::run(bool upload, bool modal, QString file)
 
     // qDebug() << "-- engine test result: " << success;
 
-    if (!success)
+    if (!success) {
         return;
+    }
 
     if (upload) {
         if (modal) {

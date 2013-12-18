@@ -6,7 +6,7 @@
     Copyright (C) 2007-2009 Jeremy Whiting <jpwhiting@kde.org>
     Copyright (C) 2009-2010 Frederik Gladhorn <gladhorn@kde.org>
     Copyright (C) 2010 Reza Fatahilah Shah <rshah0385@kireihana.com>
-    
+
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
@@ -35,24 +35,25 @@
 
 #include "ui_downloadwidget.h"
 
-namespace KNS3 {
+namespace KNS3
+{
 class DownloadWidget;
 
 class DownloadWidgetPrivate
 {
 public:
-    DownloadWidget* q;
-    EntryDetails* details;
+    DownloadWidget *q;
+    EntryDetails *details;
 
     // The engine that does all the work
     Engine *engine;
     Ui::DownloadWidget ui;
     // Model to show the entries
-    ItemsModel* model;
+    ItemsModel *model;
     // Timeout for messge display
-    QTimer* messageTimer;
+    QTimer *messageTimer;
 
-    ItemsViewBaseDelegate * delegate;
+    ItemsViewBaseDelegate *delegate;
 
     QString searchTerm;
     QSet<EntryInternal> changedEntries;
@@ -64,20 +65,20 @@ public:
     QString m_configFile;
     bool dialogMode;
 
-    DownloadWidgetPrivate(DownloadWidget* q);
+    DownloadWidgetPrivate(DownloadWidget *q);
     ~DownloadWidgetPrivate();
 
-    void init(const QString& configFile);
-    void displayMessage(const QString & msg, KTitleWidget::MessageType type, int timeOutMs = 0);
+    void init(const QString &configFile);
+    void displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs = 0);
 
     void slotProvidersLoaded();
-    void slotEntriesLoaded(const KNS3::EntryInternal::List& entries);
-    void slotEntryChanged(const KNS3::EntryInternal& entry);
-    
-    void slotShowDetails(const KNS3::EntryInternal& entry);
+    void slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
+    void slotEntryChanged(const KNS3::EntryInternal &entry);
+
+    void slotShowDetails(const KNS3::EntryInternal &entry);
     void slotShowOverview();
 
-    void slotPayloadFailed(const EntryInternal& entry);
+    void slotPayloadFailed(const EntryInternal &entry);
     void slotPayloadLoaded(QUrl url);
 
     void slotResetMessage();
@@ -88,7 +89,7 @@ public:
     void slotCategoryChanged(int);
 
     void slotInfo(QString provider, QString server, QString version);
-    void slotError(const QString& message);
+    void slotError(const QString &message);
     void scrollbarValueChanged(int value);
 
     void slotUpload();

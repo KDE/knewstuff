@@ -25,7 +25,8 @@
 #include "engine_p.h"
 #include "entryinternal_p.h"
 
-namespace KNS3 {
+namespace KNS3
+{
 
 class Cache : public QObject
 {
@@ -46,20 +47,20 @@ public:
     /// Read the installed entries (on startup)
     void readRegistry();
     /// All entries that have been installed by a certain provider
-    EntryInternal::List registryForProvider(const QString& providerId);
+    EntryInternal::List registryForProvider(const QString &providerId);
 
     /// Save the list of installed entries
     void writeRegistry();
 
-    void insertRequest(const KNS3::Provider::SearchRequest&, const KNS3::EntryInternal::List& entries);
-    EntryInternal::List requestFromCache(const KNS3::Provider::SearchRequest&);
+    void insertRequest(const KNS3::Provider::SearchRequest &, const KNS3::EntryInternal::List &entries);
+    EntryInternal::List requestFromCache(const KNS3::Provider::SearchRequest &);
 
 public Q_SLOTS:
-    void registerChangedEntry(const KNS3::EntryInternal& entry);
+    void registerChangedEntry(const KNS3::EntryInternal &entry);
 
 private:
     Q_DISABLE_COPY(Cache)
-    Cache(const QString& appName);
+    Cache(const QString &appName);
 
     // compatibility with KNS2
     void readKns2MetaFiles();

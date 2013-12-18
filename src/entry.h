@@ -26,7 +26,6 @@
 
 #include "knewstuff_export.h"
 
-
 namespace KNS3
 {
 
@@ -65,8 +64,8 @@ public:
     };
 
     ~Entry();
-    Entry(const Entry& other);
-    Entry& operator=(const Entry& other);
+    Entry(const Entry &other);
+    Entry &operator=(const Entry &other);
 
     /**
      * Retrieve the name of the data object.

@@ -25,95 +25,102 @@
 
 #include "core/provider_p.h"
 
-namespace Attica {
-    class BaseJob;
+namespace Attica
+{
+class BaseJob;
 }
 
 namespace KNS3
 {
+/**
+ * @short KNewStuff Attica Provider class.
+ *
+ * This class provides accessors for the provider object.
+ * It should not be used directly by the application.
+ * This class is the base class and will be instantiated for
+ * websites that implement the Open Collaboration Services.
+ *
+ * @author Frederik Gladhorn <gladhorn@kde.org>
+ *
+ * @internal
+ */
+class AtticaProvider: public Provider
+{
+    Q_OBJECT
+public:
+    AtticaProvider(const QStringList &categories);
+    AtticaProvider(const Attica::Provider &provider, const QStringList &categories);
+
+    virtual QString id() const;
+
     /**
-     * @short KNewStuff Attica Provider class.
-     *
-     * This class provides accessors for the provider object.
-     * It should not be used directly by the application.
-     * This class is the base class and will be instantiated for
-     * websites that implement the Open Collaboration Services.
-     *
-     * @author Frederik Gladhorn <gladhorn@kde.org>
-     *
-     * @internal
+     * set the provider data xml, to initialize the provider
      */
-    class AtticaProvider: public Provider
+    virtual bool setProviderXML(const QDomElement &xmldata);
+
+    virtual bool isInitialized() const;
+    virtual void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries);
+
+    virtual void loadEntries(const KNS3::Provider::SearchRequest &request);
+    virtual void loadEntryDetails(const KNS3::EntryInternal &entry);
+    virtual void loadPayloadLink(const EntryInternal &entry, int linkId);
+
+    virtual bool userCanVote()
     {
-        Q_OBJECT
-    public:
-        AtticaProvider(const QStringList& categories);
-        AtticaProvider(const Attica::Provider& provider, const QStringList& categories);
+        return true;
+    }
+    virtual void vote(const EntryInternal &entry, uint rating);
 
-        virtual QString id() const;
+    virtual bool userCanBecomeFan()
+    {
+        return true;
+    }
+    virtual void becomeFan(const EntryInternal &entry);
 
-        /**
-         * set the provider data xml, to initialize the provider
-         */
-        virtual bool setProviderXML(const QDomElement & xmldata);
+private Q_SLOTS:
+    void providerLoaded(const Attica::Provider &provider);
+    void listOfCategoriesLoaded(Attica::BaseJob *);
+    void categoryContentsLoaded(Attica::BaseJob *job);
+    void downloadItemLoaded(Attica::BaseJob *job);
+    void accountBalanceLoaded(Attica::BaseJob *job);
+    void authenticationCredentialsMissing(const Provider &);
+    void votingFinished(Attica::BaseJob *);
+    void becomeFanFinished(Attica::BaseJob *job);
+    void detailsLoaded(Attica::BaseJob *job);
 
-        virtual bool isInitialized() const;
-        virtual void setCachedEntries(const KNS3::EntryInternal::List& cachedEntries);
+private:
+    void checkForUpdates();
+    EntryInternal::List installedEntries() const;
+    bool jobSuccess(Attica::BaseJob *job) const;
 
-        virtual void loadEntries(const KNS3::Provider::SearchRequest& request);
-        virtual void loadEntryDetails(const KNS3::EntryInternal& entry);
-        virtual void loadPayloadLink(const EntryInternal& entry, int linkId);
+    Attica::Provider::SortMode atticaSortMode(const SortMode &sortMode);
 
-        virtual bool userCanVote() {return true;}
-        virtual void vote(const EntryInternal& entry, uint rating);
+    EntryInternal entryFromAtticaContent(const Attica::Content &);
 
-        virtual bool userCanBecomeFan() {return true;}
-        virtual void becomeFan(const EntryInternal& entry);
+    // the attica categories we are interested in (e.g. Wallpaper, Application, Vocabulary File...)
+    QHash<QString, Attica::Category> mCategoryMap;
 
-    private Q_SLOTS:
-        void providerLoaded(const Attica::Provider& provider);
-        void listOfCategoriesLoaded(Attica::BaseJob*);
-        void categoryContentsLoaded(Attica::BaseJob* job);
-        void downloadItemLoaded(Attica::BaseJob* job);
-        void accountBalanceLoaded(Attica::BaseJob* job);
-        void authenticationCredentialsMissing(const Provider&);
-        void votingFinished(Attica::BaseJob*);
-        void becomeFanFinished(Attica::BaseJob* job);
-        void detailsLoaded(Attica::BaseJob* job);
+    Attica::ProviderManager m_providerManager;
+    Attica::Provider m_provider;
 
-    private:
-        void checkForUpdates();
-        EntryInternal::List installedEntries() const;
-        bool jobSuccess(Attica::BaseJob* job) const;
+    KNS3::EntryInternal::List mCachedEntries;
+    QHash<QString, Attica::Content> mCachedContent;
 
-        Attica::Provider::SortMode atticaSortMode(const SortMode& sortMode);
+    // Associate job and entry, this is needed when fetching
+    // download links or the account balance in order to continue
+    // when the result is there.
+    QHash<Attica::BaseJob *, QPair<EntryInternal, int> > mDownloadLinkJobs;
 
-        EntryInternal entryFromAtticaContent(const Attica::Content&);
-        
-        // the attica categories we are interested in (e.g. Wallpaper, Application, Vocabulary File...)
-        QHash<QString, Attica::Category> mCategoryMap;
-        
-        Attica::ProviderManager m_providerManager;
-        Attica::Provider m_provider;
-        
-        KNS3::EntryInternal::List mCachedEntries;
-        QHash<QString, Attica::Content> mCachedContent;
-        
-        // Associate job and entry, this is needed when fetching
-        // download links or the account balance in order to continue
-        // when the result is there.
-        QHash<Attica::BaseJob*, QPair<EntryInternal, int> > mDownloadLinkJobs;
-        
-        // keep track of the current request
-        QPointer<Attica::BaseJob> mEntryJob;
-        Provider::SearchRequest mCurrentRequest;
-        
-        QSet<Attica::BaseJob*> m_updateJobs;
-        
-        bool mInitialized;
-        
-        Q_DISABLE_COPY(AtticaProvider)
-    };
+    // keep track of the current request
+    QPointer<Attica::BaseJob> mEntryJob;
+    Provider::SearchRequest mCurrentRequest;
+
+    QSet<Attica::BaseJob *> m_updateJobs;
+
+    bool mInitialized;
+
+    Q_DISABLE_COPY(AtticaProvider)
+};
 
 }
 

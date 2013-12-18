@@ -22,14 +22,15 @@
 
 #include "core/engine_p.h"
 
-namespace KNS3 {
+namespace KNS3
+{
 class DownloadManager::Private
 {
 public:
-    DownloadManager* q;
-    Engine* engine;
+    DownloadManager *q;
+    Engine *engine;
 
-    Private(DownloadManager* q)
+    Private(DownloadManager *q)
         : q(q)
         , engine(new Engine)
         , isInitialized(false)
@@ -38,7 +39,10 @@ public:
         , page(0)
         , pageSize(100)
     {}
-    ~Private() { delete engine; }
+    ~Private()
+    {
+        delete engine;
+    }
 
     bool isInitialized;
     bool checkForUpdates;
@@ -47,17 +51,17 @@ public:
     int page;
     int pageSize;
 
-    void init(const QString& configFile);
+    void init(const QString &configFile);
     void _k_slotProvidersLoaded();
-    void _k_slotUpdatesLoaded(const KNS3::EntryInternal::List& entries);
-    void _k_slotEntryStatusChanged(const KNS3::EntryInternal& entry);
-    void _k_slotEntriesLoaded(const KNS3::EntryInternal::List& entries);
+    void _k_slotUpdatesLoaded(const KNS3::EntryInternal::List &entries);
+    void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry);
+    void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
 };
 }
 
 using namespace KNS3;
 
-DownloadManager::DownloadManager(QObject* parent)
+DownloadManager::DownloadManager(QObject *parent)
     : QObject(parent)
     , d(new Private(this))
 {
@@ -65,14 +69,14 @@ DownloadManager::DownloadManager(QObject* parent)
     d->init(name + ".knsrc");
 }
 
-DownloadManager::DownloadManager(const QString& configFile, QObject * parent)
-        : QObject(parent)
-        , d(new Private(this))
+DownloadManager::DownloadManager(const QString &configFile, QObject *parent)
+    : QObject(parent)
+    , d(new Private(this))
 {
     d->init(configFile);
 }
 
-void DownloadManager::Private::init(const QString& configFile)
+void DownloadManager::Private::init(const QString &configFile)
 {
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(_k_slotProvidersLoaded()));
     q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
@@ -106,21 +110,21 @@ void DownloadManager::checkForUpdates()
     }
 }
 
-void DownloadManager::Private::_k_slotEntriesLoaded(const KNS3::EntryInternal::List& entries)
+void DownloadManager::Private::_k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries)
 {
     KNS3::Entry::List result;
-    foreach (const KNS3::EntryInternal& entry, entries) {
+    foreach (const KNS3::EntryInternal &entry, entries) {
         result.append(entry.toEntry());
     }
     emit q->searchResult(result);
 }
 
-void KNS3::DownloadManager::Private::_k_slotEntryStatusChanged(const KNS3::EntryInternal& entry)
+void KNS3::DownloadManager::Private::_k_slotEntryStatusChanged(const KNS3::EntryInternal &entry)
 {
     emit q->entryStatusChanged(entry.toEntry());
 }
 
-void DownloadManager::installEntry(const KNS3::Entry& entry)
+void DownloadManager::installEntry(const KNS3::Entry &entry)
 {
     KNS3::EntryInternal entryInternal = EntryInternal::fromEntry(entry);
     if (entryInternal.isValid()) {
@@ -128,7 +132,7 @@ void DownloadManager::installEntry(const KNS3::Entry& entry)
     }
 }
 
-void DownloadManager::uninstallEntry(const KNS3::Entry& entry)
+void DownloadManager::uninstallEntry(const KNS3::Entry &entry)
 {
     KNS3::EntryInternal entryInternal = EntryInternal::fromEntry(entry);
     if (entryInternal.isValid()) {
@@ -151,25 +155,24 @@ void DownloadManager::search(int page, int pageSize)
 void DownloadManager::setSearchOrder(DownloadManager::SortOrder order)
 {
     switch (order) {
-        case Newest:
-            d->engine->setSortMode(Provider::Newest);
-            break;
-        case Rating:
-            d->engine->setSortMode(Provider::Rating);
-            break;
-        case Alphabetical:
-            d->engine->setSortMode(Provider::Alphabetical);
-            break;
-        case Downloads:
-            d->engine->setSortMode(Provider::Downloads);
-            break;
+    case Newest:
+        d->engine->setSortMode(Provider::Newest);
+        break;
+    case Rating:
+        d->engine->setSortMode(Provider::Rating);
+        break;
+    case Alphabetical:
+        d->engine->setSortMode(Provider::Alphabetical);
+        break;
+    case Downloads:
+        d->engine->setSortMode(Provider::Downloads);
+        break;
     }
 }
 
-void DownloadManager::setSearchTerm(const QString& searchTerm)
+void DownloadManager::setSearchTerm(const QString &searchTerm)
 {
     d->engine->setSearchTerm(searchTerm);
 }
-
 
 #include "moc_downloadmanager.cpp"

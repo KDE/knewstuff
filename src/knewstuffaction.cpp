@@ -25,9 +25,9 @@
 using namespace KNS3;
 
 QAction *KNS3::standardAction(const QString &what,
-                             const QObject *receiver,
-                             const char *slot, KActionCollection *parent,
-                             const char *name)
+                              const QObject *receiver,
+                              const char *slot, KActionCollection *parent,
+                              const char *name)
 {
     QAction *action = new QAction(what, parent);
     parent->addAction(QString(name), action);
@@ -38,9 +38,9 @@ QAction *KNS3::standardAction(const QString &what,
 }
 
 QAction *KNS3::standardActionUpload(const QString &what,
-                             const QObject *receiver,
-                             const char *slot, KActionCollection *parent,
-                             const char *name)
+                                    const QObject *receiver,
+                                    const char *slot, KActionCollection *parent,
+                                    const char *name)
 {
     QAction *action = new QAction(what, parent);
     parent->addAction(QString(name), action);

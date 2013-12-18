@@ -27,18 +27,18 @@
 
 namespace KNS3
 {
-ItemsViewBaseDelegate::ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine* engine, QObject * parent)
-        : KWidgetItemDelegate(itemView, parent)
-        , m_engine(engine)
-        , m_itemView(itemView)
-        , m_iconInvalid(QIcon::fromTheme("dialog-error"))
-        , m_iconInstall(QIcon::fromTheme("dialog-ok"))
-        , m_iconUpdate(QIcon::fromTheme("system-software-update"))
-        , m_iconDelete(QIcon::fromTheme("edit-delete"))
-        , m_noImage(SmallIcon( "image-missing", KIconLoader::SizeLarge, KIconLoader::DisabledState ))
+ItemsViewBaseDelegate::ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent)
+    : KWidgetItemDelegate(itemView, parent)
+    , m_engine(engine)
+    , m_itemView(itemView)
+    , m_iconInvalid(QIcon::fromTheme("dialog-error"))
+    , m_iconInstall(QIcon::fromTheme("dialog-ok"))
+    , m_iconUpdate(QIcon::fromTheme("system-software-update"))
+    , m_iconDelete(QIcon::fromTheme("edit-delete"))
+    , m_noImage(SmallIcon("image-missing", KIconLoader::SizeLarge, KIconLoader::DisabledState))
 {
     QString framefile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "knewstuff/pics/thumb_frame.png");
-    m_frameImage = QPixmap(framefile);   
+    m_frameImage = QPixmap(framefile);
 }
 
 ItemsViewBaseDelegate::~ItemsViewBaseDelegate()
@@ -47,15 +47,15 @@ ItemsViewBaseDelegate::~ItemsViewBaseDelegate()
 
 bool ItemsViewBaseDelegate::eventFilter(QObject *watched, QEvent *event)
 {
-   if (event->type() == QEvent::MouseButtonDblClick) {
-       slotDetailsClicked();
-       return true;
-   }
+    if (event->type() == QEvent::MouseButtonDblClick) {
+        slotDetailsClicked();
+        return true;
+    }
 
-   return KWidgetItemDelegate::eventFilter(watched, event);
+    return KWidgetItemDelegate::eventFilter(watched, event);
 }
 
-void ItemsViewBaseDelegate::slotLinkClicked(const QString & url)
+void ItemsViewBaseDelegate::slotLinkClicked(const QString &url)
 {
     Q_UNUSED(url)
     QModelIndex index = focusedIndex();
@@ -83,7 +83,7 @@ void ItemsViewBaseDelegate::slotInstallClicked()
     }
 }
 
-void ItemsViewBaseDelegate::slotInstallActionTriggered(QAction* action)
+void ItemsViewBaseDelegate::slotInstallActionTriggered(QAction *action)
 {
     QPoint rowDownload = action->data().toPoint();
     int row = rowDownload.x();
@@ -100,12 +100,13 @@ void ItemsViewBaseDelegate::slotDetailsClicked()
     slotDetailsClicked(index);
 }
 
-void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex& index)
+void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
 {
     if (index.isValid()) {
         KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
-        if ( !entry.isValid() )
+        if (!entry.isValid()) {
             return;
+        }
 // qDebug() << "Details: " << entry.name();
         emit signalShowDetails(entry);
     }

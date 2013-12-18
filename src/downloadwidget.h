@@ -68,7 +68,7 @@ class DownloadWidgetPrivate;
  *
  * @since 4.5
  */
-class KNEWSTUFF_EXPORT DownloadWidget :public QWidget
+class KNEWSTUFF_EXPORT DownloadWidget : public QWidget
 {
     Q_OBJECT
 
@@ -80,7 +80,7 @@ public:
      *
      * @param parent the parent of the dialog
      */
-    explicit DownloadWidget(QWidget * parent = 0);
+    explicit DownloadWidget(QWidget *parent = 0);
 
     /**
      * Create a download widget that lets the user install, update and uninstall
@@ -90,7 +90,7 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
-    explicit DownloadWidget(const QString& configFile, QWidget * parent = 0);
+    explicit DownloadWidget(const QString &configFile, QWidget *parent = 0);
 
     /**
      * destructor
@@ -110,33 +110,33 @@ public:
     KNS3::Entry::List installedEntries();
 
 private:
-    void init(const QString& configFile);
+    void init(const QString &configFile);
 
     DownloadWidgetPrivate *const d;
     Q_DISABLE_COPY(DownloadWidget)
 
-    Q_PRIVATE_SLOT( d, void slotListViewListMode() )
-    Q_PRIVATE_SLOT( d, void slotListViewIconMode() )
+    Q_PRIVATE_SLOT(d, void slotListViewListMode())
+    Q_PRIVATE_SLOT(d, void slotListViewIconMode())
 
-    Q_PRIVATE_SLOT( d, void slotProvidersLoaded() )
-    Q_PRIVATE_SLOT( d, void slotEntriesLoaded(const KNS3::EntryInternal::List& entries) )
-    Q_PRIVATE_SLOT( d, void slotEntryChanged(const KNS3::EntryInternal& entry) )
-    Q_PRIVATE_SLOT( d, void slotShowDetails(const KNS3::EntryInternal& entry) )
-    Q_PRIVATE_SLOT( d, void slotShowOverview() )
+    Q_PRIVATE_SLOT(d, void slotProvidersLoaded())
+    Q_PRIVATE_SLOT(d, void slotEntriesLoaded(const KNS3::EntryInternal::List &entries))
+    Q_PRIVATE_SLOT(d, void slotEntryChanged(const KNS3::EntryInternal &entry))
+    Q_PRIVATE_SLOT(d, void slotShowDetails(const KNS3::EntryInternal &entry))
+    Q_PRIVATE_SLOT(d, void slotShowOverview())
 
-    Q_PRIVATE_SLOT( d, void slotPayloadFailed(const EntryInternal& entry) )
-    Q_PRIVATE_SLOT( d, void slotPayloadLoaded(QUrl url) )
+    Q_PRIVATE_SLOT(d, void slotPayloadFailed(const EntryInternal &entry))
+    Q_PRIVATE_SLOT(d, void slotPayloadLoaded(QUrl url))
 
-    Q_PRIVATE_SLOT( d, void slotResetMessage() )
-    Q_PRIVATE_SLOT( d, void slotNetworkTimeout() )
-    Q_PRIVATE_SLOT( d, void sortingChanged() )
-    Q_PRIVATE_SLOT( d, void slotSearchTextChanged() )
-    Q_PRIVATE_SLOT( d, void slotUpdateSearch() )
-    Q_PRIVATE_SLOT( d, void slotCategoryChanged(int) )
+    Q_PRIVATE_SLOT(d, void slotResetMessage())
+    Q_PRIVATE_SLOT(d, void slotNetworkTimeout())
+    Q_PRIVATE_SLOT(d, void sortingChanged())
+    Q_PRIVATE_SLOT(d, void slotSearchTextChanged())
+    Q_PRIVATE_SLOT(d, void slotUpdateSearch())
+    Q_PRIVATE_SLOT(d, void slotCategoryChanged(int))
 
-    Q_PRIVATE_SLOT( d, void slotInfo(QString provider, QString server, QString version) )
-    Q_PRIVATE_SLOT( d, void slotError(const QString& message) )
-    Q_PRIVATE_SLOT( d, void scrollbarValueChanged(int value) )
+    Q_PRIVATE_SLOT(d, void slotInfo(QString provider, QString server, QString version))
+    Q_PRIVATE_SLOT(d, void slotError(const QString &message))
+    Q_PRIVATE_SLOT(d, void scrollbarValueChanged(int value))
 
     friend class DownloadDialog;
 };

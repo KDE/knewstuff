@@ -35,25 +35,26 @@ using namespace Attica;
 namespace KNS3
 {
 
-AtticaProvider::AtticaProvider(const QStringList& categories)
+AtticaProvider::AtticaProvider(const QStringList &categories)
     : mEntryJob(0)
     , mInitialized(false)
 {
     // init categories map with invalid categories
-    foreach (const QString& category, categories)
+    foreach (const QString &category, categories) {
         mCategoryMap.insert(category, Attica::Category());
+    }
 
     connect(&m_providerManager, SIGNAL(providerAdded(Attica::Provider)), SLOT(providerLoaded(Attica::Provider)));
     connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)),
             SLOT(authenticationCredentialsMissing(Provider)));
 }
 
-AtticaProvider::AtticaProvider(const Attica::Provider& provider, const QStringList& categories)
+AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories)
     : mEntryJob(0)
     , mInitialized(false)
 {
     // init categories map with invalid categories
-    foreach (const QString& category, categories) {
+    foreach (const QString &category, categories) {
         mCategoryMap.insert(category, Attica::Category());
     }
     providerLoaded(provider);
@@ -64,16 +65,17 @@ QString AtticaProvider::id() const
     return m_provider.baseUrl().toString();
 }
 
-void AtticaProvider::authenticationCredentialsMissing(const KNS3::Provider& )
+void AtticaProvider::authenticationCredentialsMissing(const KNS3::Provider &)
 {
     // qDebug() << "Authentication missing!";
     // FIXME Show autentication dialog
 }
 
-bool AtticaProvider::setProviderXML(const QDomElement & xmldata)
+bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
 {
-    if (xmldata.tagName() != "provider")
+    if (xmldata.tagName() != "provider") {
         return false;
+    }
 
     // FIXME this is quite ugly, repackaging the xml into a string
     QDomDocument doc("temp");
@@ -91,33 +93,35 @@ bool AtticaProvider::setProviderXML(const QDomElement & xmldata)
     return true;
 }
 
-void AtticaProvider::setCachedEntries(const KNS3::EntryInternal::List& cachedEntries)
+void AtticaProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
 {
     mCachedEntries = cachedEntries;
 }
 
-void AtticaProvider::providerLoaded(const Attica::Provider& provider)
+void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 {
     mName = provider.name();
     // qDebug() << "Added provider: " << provider.name();
 
     m_provider = provider;
 
-    Attica::ListJob<Attica::Category>* job = m_provider.requestCategories();
+    Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();
     connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(listOfCategoriesLoaded(Attica::BaseJob*)));
     job->start();
 }
 
-void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob* listJob)
+void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
 {
-    if (!jobSuccess(listJob)) return;
-    
+    if (!jobSuccess(listJob)) {
+        return;
+    }
+
     // qDebug() << "loading categories: " << mCategoryMap.keys();
 
-    Attica::ListJob<Attica::Category>* job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
+    Attica::ListJob<Attica::Category> *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
     Category::List categoryList = job->itemList();
 
-    foreach(const Category& category, categoryList) {
+    foreach (const Category &category, categoryList) {
         if (mCategoryMap.contains(category.name())) {
             // qDebug() << "Adding category: " << category.name();
             mCategoryMap[category.name()] = category;
@@ -132,7 +136,7 @@ bool AtticaProvider::isInitialized() const
     return mInitialized;
 }
 
-void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest& request)
+void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
 {
     if (mEntryJob) {
         mEntryJob->abort();
@@ -148,7 +152,7 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest& request)
         }
         return;
     }
-    
+
     if (request.sortMode == Updates) {
         checkForUpdates();
         return;
@@ -161,12 +165,12 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest& request)
         // search in all categories
         categoriesToSearch = mCategoryMap.values();
     } else {
-        foreach (const QString& categoryName, request.categories) {
+        foreach (const QString &categoryName, request.categories) {
             categoriesToSearch.append(mCategoryMap.value(categoryName));
         }
     }
 
-    ListJob<Content>* job = m_provider.searchContents(categoriesToSearch, request.searchTerm, sorting, request.page, request.pageSize);
+    ListJob<Content> *job = m_provider.searchContents(categoriesToSearch, request.searchTerm, sorting, request.page, request.pageSize);
     connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(categoryContentsLoaded(Attica::BaseJob*)));
 
     mEntryJob = job;
@@ -175,8 +179,8 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest& request)
 
 void AtticaProvider::checkForUpdates()
 {
-    foreach (const EntryInternal& e, mCachedEntries) {
-        ItemJob<Content>* job = m_provider.requestContent(e.uniqueId());
+    foreach (const EntryInternal &e, mCachedEntries) {
+        ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
         connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(detailsLoaded(Attica::BaseJob*)));
         m_updateJobs.insert(job);
         job->start();
@@ -184,17 +188,17 @@ void AtticaProvider::checkForUpdates()
     }
 }
 
-void AtticaProvider::loadEntryDetails(const KNS3::EntryInternal& entry)
+void AtticaProvider::loadEntryDetails(const KNS3::EntryInternal &entry)
 {
-    ItemJob<Content>* job = m_provider.requestContent(entry.uniqueId());
+    ItemJob<Content> *job = m_provider.requestContent(entry.uniqueId());
     connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(detailsLoaded(Attica::BaseJob*)));
     job->start();
 }
 
-void AtticaProvider::detailsLoaded(BaseJob* job)
+void AtticaProvider::detailsLoaded(BaseJob *job)
 {
     if (jobSuccess(job)) {
-        ItemJob<Content>* contentJob = static_cast<ItemJob<Content>*>(job);
+        ItemJob<Content> *contentJob = static_cast<ItemJob<Content>*>(job);
         Content content = contentJob->result();
         EntryInternal entry = entryFromAtticaContent(content);
         emit entryDetailsLoaded(entry);
@@ -204,24 +208,26 @@ void AtticaProvider::detailsLoaded(BaseJob* job)
     if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
         // qDebug() << "check update finished.";
         QList<EntryInternal> updatable;
-        foreach(const EntryInternal& entry, mCachedEntries) {
+        foreach (const EntryInternal &entry, mCachedEntries) {
             if (entry.status() == Entry::Updateable) {
                 updatable.append(entry);
             }
         }
         emit loadingFinished(mCurrentRequest, updatable);
-    }    
+    }
 }
 
-void AtticaProvider::categoryContentsLoaded(BaseJob* job)
+void AtticaProvider::categoryContentsLoaded(BaseJob *job)
 {
-    if (!jobSuccess(job)) return;
+    if (!jobSuccess(job)) {
+        return;
+    }
 
-    ListJob<Content>* listJob = static_cast<ListJob<Content>*>(job);
+    ListJob<Content> *listJob = static_cast<ListJob<Content>*>(job);
     Content::List contents = listJob->itemList();
 
     EntryInternal::List entries;
-    Q_FOREACH(const Content &content, contents) {
+    Q_FOREACH (const Content &content, contents) {
         mCachedContent.insert(content.id(), content);
         entries.append(entryFromAtticaContent(content));
     }
@@ -231,7 +237,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob* job)
     mEntryJob = 0;
 }
 
-Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode& sortMode)
+Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMode)
 {
     if (sortMode == Newest) {
         return Attica::Provider::Newest;
@@ -245,21 +251,21 @@ Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode& sortMo
     return Attica::Provider::Rating;
 }
 
-void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal& entry, int linkId)
+void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkId)
 {
     Attica::Content content = mCachedContent.value(entry.uniqueId());
     DownloadDescription desc = content.downloadUrlDescription(linkId);
 
     if (desc.hasPrice()) {
         // Ask for balance, then show information...
-        ItemJob<AccountBalance>* job = m_provider.requestAccountBalance();
+        ItemJob<AccountBalance> *job = m_provider.requestAccountBalance();
         connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(accountBalanceLoaded(Attica::BaseJob*)));
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
 
         // qDebug() << "get account balance";
     } else {
-        ItemJob<DownloadItem>* job = m_provider.downloadLink(entry.uniqueId(), QString::number(linkId));
+        ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(linkId));
         connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(downloadItemLoaded(Attica::BaseJob*)));
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
@@ -268,11 +274,13 @@ void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal& entry, int linkI
     }
 }
 
-void AtticaProvider::accountBalanceLoaded(Attica::BaseJob* baseJob)
+void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
 {
-    if (!jobSuccess(baseJob)) return;
+    if (!jobSuccess(baseJob)) {
+        return;
+    }
 
-    ItemJob<AccountBalance>* job = static_cast<ItemJob<AccountBalance>*>(baseJob);
+    ItemJob<AccountBalance> *job = static_cast<ItemJob<AccountBalance>*>(baseJob);
     AccountBalance item = job->result();
 
     QPair<EntryInternal, int> pair = mDownloadLinkJobs.take(job);
@@ -282,11 +290,11 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob* baseJob)
         // qDebug() << "Your balance is greather than the price."
         //            << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
         if (KMessageBox::questionYesNo(0,
-                i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
-                      "This item costs %1 %2.\nDo you want to buy it?",
-                      item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
-                )) == KMessageBox::Yes) {
-            ItemJob<DownloadItem>* job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
+                                       i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
+                                             "This item costs %1 %2.\nDo you want to buy it?",
+                                             item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
+                                            )) == KMessageBox::Yes) {
+            ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
             connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(downloadItemLoaded(Attica::BaseJob*)));
             connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
             mDownloadLinkJobs[job] = qMakePair(entry, pair.second);
@@ -298,15 +306,17 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob* baseJob)
         // qDebug() << "You don't have enough money on your account!"
         //        << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
         KMessageBox::information(0, i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
-                                         item.balance(),content.downloadUrlDescription(0).priceAmount()));
+                                         item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
 }
 
-void AtticaProvider::downloadItemLoaded(BaseJob* baseJob)
+void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
 {
-    if (!jobSuccess(baseJob)) return;
+    if (!jobSuccess(baseJob)) {
+        return;
+    }
 
-    ItemJob<DownloadItem>* job = static_cast<ItemJob<DownloadItem>*>(baseJob);
+    ItemJob<DownloadItem> *job = static_cast<ItemJob<DownloadItem>*>(baseJob);
     DownloadItem item = job->result();
 
     EntryInternal entry = mDownloadLinkJobs.take(job).first;
@@ -317,7 +327,7 @@ void AtticaProvider::downloadItemLoaded(BaseJob* baseJob)
 EntryInternal::List AtticaProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    foreach (const EntryInternal& entry, mCachedEntries) {
+    foreach (const EntryInternal &entry, mCachedEntries) {
         if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
             entries.append(entry);
         }
@@ -325,35 +335,39 @@ EntryInternal::List AtticaProvider::installedEntries() const
     return entries;
 }
 
-void AtticaProvider::vote(const EntryInternal& entry, uint rating)
+void AtticaProvider::vote(const EntryInternal &entry, uint rating)
 {
-    PostJob * job = m_provider.voteForContent(entry.uniqueId(), rating);
+    PostJob *job = m_provider.voteForContent(entry.uniqueId(), rating);
     connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(votingFinished(Attica::BaseJob*)));
     connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
 
-void AtticaProvider::votingFinished(Attica::BaseJob* job)
+void AtticaProvider::votingFinished(Attica::BaseJob *job)
 {
-    if (!jobSuccess(job)) return;
+    if (!jobSuccess(job)) {
+        return;
+    }
     emit signalInformation(i18nc("voting for an item (good/bad)", "Your vote was recorded."));
 }
 
-void AtticaProvider::becomeFan(const EntryInternal& entry)
+void AtticaProvider::becomeFan(const EntryInternal &entry)
 {
-    PostJob * job = m_provider.becomeFan(entry.uniqueId());
+    PostJob *job = m_provider.becomeFan(entry.uniqueId());
     connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(becomeFanFinished(Attica::BaseJob*)));
     connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
 
-void AtticaProvider::becomeFanFinished(Attica::BaseJob* job)
+void AtticaProvider::becomeFanFinished(Attica::BaseJob *job)
 {
-    if (!jobSuccess(job)) return;
+    if (!jobSuccess(job)) {
+        return;
+    }
     emit signalInformation(i18n("You are now a fan."));
 }
 
-bool AtticaProvider::jobSuccess(Attica::BaseJob* job) const
+bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
 {
     if (job->metadata().error() == Attica::Metadata::NoError) {
         return true;
@@ -373,7 +387,7 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob* job) const
     return false;
 }
 
-EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content& content)
+EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
 {
     EntryInternal entry;
 
@@ -388,7 +402,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content& cont
         EntryInternal &cacheEntry = mCachedEntries[index];
         // check if updateable
         if (((cacheEntry.status() == Entry::Installed) || (cacheEntry.status() == Entry::Updateable)) &&
-            ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
+                ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
             cacheEntry.setStatus(Entry::Updateable);
             cacheEntry.setUpdateVersion(entry.version());
             cacheEntry.setUpdateReleaseDate(entry.releaseDate());
@@ -406,7 +420,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content& cont
     entry.setDonationLink(content.attribute("donationpage"));
     entry.setKnowledgebaseLink(content.attribute("knowledgebasepage"));
     entry.setNumberKnowledgebaseEntries(content.attribute("knowledgebaseentries").toInt());
-    
+
     entry.setPreviewUrl(content.smallPreviewPicture("1"), EntryInternal::PreviewSmall1);
     entry.setPreviewUrl(content.smallPreviewPicture("2"), EntryInternal::PreviewSmall2);
     entry.setPreviewUrl(content.smallPreviewPicture("3"), EntryInternal::PreviewSmall3);
@@ -442,5 +456,4 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content& cont
 }
 
 } // namespace
-
 

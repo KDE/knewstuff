@@ -24,43 +24,42 @@
 class QToolButton;
 namespace KNS3
 {
-    static const int ItemGridHeight = 202;
-    static const int ItemGridWidth = 158;
-    
-    static const int FrameThickness = 5;
-    static const int ItemMargin = 2;
+static const int ItemGridHeight = 202;
+static const int ItemGridWidth = 158;
+
+static const int FrameThickness = 5;
+static const int ItemMargin = 2;
 class ItemsGridViewDelegate: public ItemsViewBaseDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsGridViewDelegate(QAbstractItemView* itemView, Engine* engine, QObject* parent = 0);
+    explicit ItemsGridViewDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent = 0);
     ~ItemsGridViewDelegate();
 
-
     // paint the item at index with all its attributes shown
-    virtual void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const;
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
     // get the list of widgets
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex &index) const;
+    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const;
 
     // update the widgets
-    virtual void updateItemWidgets(const QList<QWidget*> widgets,
+    virtual void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
                                    const QPersistentModelIndex &index) const;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const;
-    
-    private:
-        void createOperationBar();
-        void displayOperationBar(const QRect &rect,const QModelIndex & index);
-        
-    private:
-        QWidget *m_operationBar;
-        QToolButton *m_detailsButton;
-        QToolButton *m_installButton;
-        
-        QModelIndex m_oldIndex;
-        mutable int m_elementYPos;
+    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+
+private:
+    void createOperationBar();
+    void displayOperationBar(const QRect &rect, const QModelIndex &index);
+
+private:
+    QWidget *m_operationBar;
+    QToolButton *m_detailsButton;
+    QToolButton *m_installButton;
+
+    QModelIndex m_oldIndex;
+    mutable int m_elementYPos;
 };
 }
 

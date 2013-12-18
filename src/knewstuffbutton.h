@@ -48,9 +48,9 @@ public:
      * @param configFile the name of the .knsrc file
      * @param parent the parent widget
      */
-    Button(const QString& text,
-           const QString& configFile,
-           QWidget* parent);
+    Button(const QString &text,
+           const QString &configFile,
+           QWidget *parent);
 
     /**
      * Constructor used when the details of the KHotNewStuff
@@ -58,20 +58,20 @@ public:
      *
      * @param parent the parent widget
      */
-    Button(QWidget* parent);
+    Button(QWidget *parent);
 
     ~Button();
 
     /**
      * set the name of the .knsrc file to use
      */
-    void setConfigFile(const QString& configFile);
+    void setConfigFile(const QString &configFile);
 
     /**
      * set the text that should appear on the button. will be prefaced
      * with i18n("Download New")
      */
-    void setButtonText(const QString& text);
+    void setButtonText(const QString &text);
 
 Q_SIGNALS:
     /**
@@ -83,7 +83,7 @@ Q_SIGNALS:
     /**
      * emitted when the Hot New Stuff dialog has been closed
      */
-    void dialogFinished(const KNS3::Entry::List& changedEntries);
+    void dialogFinished(const KNS3::Entry::List &changedEntries);
 
 protected Q_SLOTS:
     void showDialog();
@@ -92,7 +92,7 @@ private:
     void init();
 
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 }

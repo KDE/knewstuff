@@ -28,11 +28,12 @@
 class KJob;
 namespace KIO
 {
-    class Job;
-    class TransferJob;
+class Job;
+class TransferJob;
 }
 
-namespace KNS3 {
+namespace KNS3
+{
 
 /**
  * Convenience class for images with remote sources.
@@ -50,20 +51,20 @@ class ImageLoader : public QObject
 {
     Q_OBJECT
 public:
-    ImageLoader(const EntryInternal& entry, EntryInternal::PreviewType type, QObject* parent);
+    ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent);
     void start();
     /**
      * Get the job doing the image loading in the background (to have progress information available)
      * @return the job
      */
-    KJob* job();
+    KJob *job();
 
 Q_SIGNALS:
-    void signalPreviewLoaded(const KNS3::EntryInternal&, KNS3::EntryInternal::PreviewType);
+    void signalPreviewLoaded(const KNS3::EntryInternal &, KNS3::EntryInternal::PreviewType);
 
 private Q_SLOTS:
     void slotDownload(KJob *job);
-    void slotData(KIO::Job* job, const QByteArray& buf);
+    void slotData(KIO::Job *job, const QByteArray &buf);
 
 private:
     EntryInternal m_entry;

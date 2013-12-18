@@ -30,14 +30,14 @@ class KJob;
 
 namespace KIO
 {
-    class Job;
+class Job;
 }
 
 namespace KNS3
 {
 
-QDomElement addElement(QDomDocument& doc, QDomElement& parent,
-                                 const QString& tag, const QString& value);
+QDomElement addElement(QDomDocument &doc, QDomElement &parent,
+                       const QString &tag, const QString &value);
 
 /**
  * KNewStuff xml loader.
@@ -54,7 +54,7 @@ public:
     /**
      * Constructor.
      */
-    XmlLoader(QObject* parent);
+    XmlLoader(QObject *parent);
 
     /**
      * Starts asynchronously loading the xml document from the
@@ -62,16 +62,16 @@ public:
      *
      * @param url location of the XML file
      */
-    void load(const QUrl & url);
+    void load(const QUrl &url);
 
 Q_SIGNALS:
     /**
      * Indicates that the list of providers has been successfully loaded.
      */
-    void signalLoaded(const QDomDocument&);
+    void signalLoaded(const QDomDocument &);
     void signalFailed();
-    
-    void jobStarted(KJob*);
+
+    void jobStarted(KJob *);
 
 protected Q_SLOTS:
     void slotJobData(KIO::Job *, const QByteArray &);

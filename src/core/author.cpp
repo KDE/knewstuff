@@ -21,8 +21,7 @@
 
 using namespace KNS3;
 
-
-void Author::setName(const QString& _name)
+void Author::setName(const QString &_name)
 {
     mName = _name;
 }
@@ -32,7 +31,7 @@ QString Author::name() const
     return mName;
 }
 
-void Author::setEmail(const QString& _email)
+void Author::setEmail(const QString &_email)
 {
     mEmail = _email;
 }
@@ -42,7 +41,7 @@ QString Author::email() const
     return mEmail;
 }
 
-void Author::setJabber(const QString& _jabber)
+void Author::setJabber(const QString &_jabber)
 {
     mJabber = _jabber;
 }
@@ -52,7 +51,7 @@ QString Author::jabber() const
     return mJabber;
 }
 
-void Author::setHomepage(const QString& _homepage)
+void Author::setHomepage(const QString &_homepage)
 {
     mHomepage = _homepage;
 }

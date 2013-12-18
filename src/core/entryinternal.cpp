@@ -27,13 +27,12 @@
 #include "core/xmlloader_p.h"
 #include "entry_p.h"
 
-
 using namespace KNS3;
 
 class EntryInternal::Private : public QSharedData
 {
-    public:
-        Private()
+public:
+    Private()
         : mReleaseDate(QDate::currentDate())
         , mRating(0)
         , mDownloadCount(0)
@@ -41,48 +40,48 @@ class EntryInternal::Private : public QSharedData
         , mNumberKnowledgebaseEntries(0)
         , mStatus(Entry::Invalid)
         , mSource(EntryInternal::Online)
-        {}
+    {}
 
-        bool operator==(const Private& other) const
-        {
-            return mUniqueId == other.mUniqueId && mProviderId == other.mProviderId;
-        }
+    bool operator==(const Private &other) const
+    {
+        return mUniqueId == other.mUniqueId && mProviderId == other.mProviderId;
+    }
 
-        QString mUniqueId;
-        QString mName;
-        QUrl mHomepage;
-        QString mCategory;
-        QString mLicense;
-        QString mVersion;
-        QDate mReleaseDate;
+    QString mUniqueId;
+    QString mName;
+    QUrl mHomepage;
+    QString mCategory;
+    QString mLicense;
+    QString mVersion;
+    QDate mReleaseDate;
 
-        // Version and date if a newer version is found (updateable)
-        QString mUpdateVersion;
-        QDate mUpdateReleaseDate;
+    // Version and date if a newer version is found (updateable)
+    QString mUpdateVersion;
+    QDate mUpdateReleaseDate;
 
-        Author mAuthor;
-        int mRating;
-        int mDownloadCount;
-        int mNumberFans;
-        int mNumberKnowledgebaseEntries;
-        QString mKnowledgebaseLink;
-        QString mSummary;
-        QString mChangelog;
-        QString mPayload;
-        QStringList mInstalledFiles;
-        QString mProviderId;
-        QStringList mUnInstalledFiles;
-        QString mDonationLink;
+    Author mAuthor;
+    int mRating;
+    int mDownloadCount;
+    int mNumberFans;
+    int mNumberKnowledgebaseEntries;
+    QString mKnowledgebaseLink;
+    QString mSummary;
+    QString mChangelog;
+    QString mPayload;
+    QStringList mInstalledFiles;
+    QString mProviderId;
+    QStringList mUnInstalledFiles;
+    QString mDonationLink;
 
-        QString mChecksum;
-        QString mSignature;
-        Entry::Status mStatus;
-        EntryInternal::Source mSource;
+    QString mChecksum;
+    QString mSignature;
+    Entry::Status mStatus;
+    EntryInternal::Source mSource;
 
-        QString mPreviewUrl[6];
-        QImage mPreviewImage[6];
+    QString mPreviewUrl[6];
+    QImage mPreviewImage[6];
 
-        QList<EntryInternal::DownloadLinkInformation> mDownloadLinkInformationList;
+    QList<EntryInternal::DownloadLinkInformation> mDownloadLinkInformationList;
 };
 
 EntryInternal::EntryInternal()
@@ -90,23 +89,23 @@ EntryInternal::EntryInternal()
 {
 }
 
-EntryInternal::EntryInternal(const EntryInternal& other)
+EntryInternal::EntryInternal(const EntryInternal &other)
     : d(other.d)
 {
 }
 
-EntryInternal& EntryInternal::operator=(const EntryInternal& other)
+EntryInternal &EntryInternal::operator=(const EntryInternal &other)
 {
     d = other.d;
     return *this;
 }
 
-bool EntryInternal::operator<(const KNS3::EntryInternal& other) const
+bool EntryInternal::operator<(const KNS3::EntryInternal &other) const
 {
     return d->mUniqueId < other.d->mUniqueId;
 }
 
-bool EntryInternal::operator==(const KNS3::EntryInternal& other) const
+bool EntryInternal::operator==(const KNS3::EntryInternal &other) const
 {
     return d->mUniqueId == other.d->mUniqueId && d->mProviderId == other.d->mProviderId;
 }
@@ -125,7 +124,7 @@ QString EntryInternal::name() const
     return d->mName;
 }
 
-void EntryInternal::setName(const QString& name)
+void EntryInternal::setName(const QString &name)
 {
     d->mName = name;
 }
@@ -135,7 +134,7 @@ QString EntryInternal::uniqueId() const
     return d->mUniqueId;
 }
 
-void EntryInternal::setUniqueId(const QString& id)
+void EntryInternal::setUniqueId(const QString &id)
 {
     d->mUniqueId = id;
 }
@@ -145,7 +144,7 @@ QString EntryInternal::providerId() const
     return d->mProviderId;
 }
 
-void EntryInternal::setProviderId(const QString& id)
+void EntryInternal::setProviderId(const QString &id)
 {
     d->mProviderId = id;
 }
@@ -155,7 +154,7 @@ QString EntryInternal::category() const
     return d->mCategory;
 }
 
-void EntryInternal::setCategory(const QString& category)
+void EntryInternal::setCategory(const QString &category)
 {
     d->mCategory = category;
 }
@@ -165,7 +164,7 @@ QUrl EntryInternal::homepage() const
     return d->mHomepage;
 }
 
-void EntryInternal::setHomepage(const QUrl & page)
+void EntryInternal::setHomepage(const QUrl &page)
 {
     d->mHomepage = page;
 }
@@ -175,7 +174,7 @@ Author EntryInternal::author() const
     return d->mAuthor;
 }
 
-void EntryInternal::setAuthor(const KNS3::Author& author)
+void EntryInternal::setAuthor(const KNS3::Author &author)
 {
     d->mAuthor = author;
 }
@@ -185,7 +184,7 @@ QString EntryInternal::license() const
     return d->mLicense;
 }
 
-void EntryInternal::setLicense(const QString& license)
+void EntryInternal::setLicense(const QString &license)
 {
     d->mLicense = license;
 }
@@ -195,12 +194,12 @@ QString EntryInternal::summary() const
     return d->mSummary;
 }
 
-void EntryInternal::setSummary(const QString& summary)
+void EntryInternal::setSummary(const QString &summary)
 {
     d->mSummary = summary;
 }
 
-void EntryInternal::setChangelog(const QString& changelog)
+void EntryInternal::setChangelog(const QString &changelog)
 {
     d->mChangelog = changelog;
 }
@@ -215,7 +214,7 @@ QString EntryInternal::version() const
     return d->mVersion;
 }
 
-void EntryInternal::setVersion(const QString& version)
+void EntryInternal::setVersion(const QString &version)
 {
     d->mVersion = version;
 }
@@ -225,7 +224,7 @@ QDate EntryInternal::releaseDate() const
     return d->mReleaseDate;
 }
 
-void EntryInternal::setReleaseDate(const QDate& releasedate)
+void EntryInternal::setReleaseDate(const QDate &releasedate)
 {
     d->mReleaseDate = releasedate;
 }
@@ -235,7 +234,7 @@ QString EntryInternal::payload() const
     return d->mPayload;
 }
 
-void EntryInternal::setPayload(const QString& url)
+void EntryInternal::setPayload(const QString &url)
 {
     d->mPayload = url;
 }
@@ -245,7 +244,7 @@ QDate EntryInternal::updateReleaseDate() const
     return d->mUpdateReleaseDate;
 }
 
-void EntryInternal::setUpdateReleaseDate(const QDate& releasedate)
+void EntryInternal::setUpdateReleaseDate(const QDate &releasedate)
 {
     d->mUpdateReleaseDate = releasedate;
 }
@@ -255,7 +254,7 @@ QString EntryInternal::updateVersion() const
     return d->mUpdateVersion;
 }
 
-void EntryInternal::setUpdateVersion(const QString& version)
+void EntryInternal::setUpdateVersion(const QString &version)
 {
     d->mUpdateVersion = version;
 }
@@ -265,7 +264,7 @@ QString EntryInternal::previewUrl(PreviewType type) const
     return d->mPreviewUrl[type];
 }
 
-void EntryInternal::setPreviewUrl(const QString& url, PreviewType type)
+void EntryInternal::setPreviewUrl(const QString &url, PreviewType type)
 {
     d->mPreviewUrl[type] = url;
 }
@@ -275,7 +274,7 @@ QImage EntryInternal::previewImage(PreviewType type) const
     return d->mPreviewImage[type];
 }
 
-void EntryInternal::setPreviewImage(const QImage& image, PreviewType type)
+void EntryInternal::setPreviewImage(const QImage &image, PreviewType type)
 {
     d->mPreviewImage[type] = image;
 }
@@ -315,7 +314,7 @@ QString EntryInternal::donationLink() const
     return d->mDonationLink;
 }
 
-void EntryInternal::setDonationLink(const QString& link)
+void EntryInternal::setDonationLink(const QString &link)
 {
     d->mDonationLink = link;
 }
@@ -333,11 +332,10 @@ QString EntryInternal::knowledgebaseLink() const
 {
     return d->mKnowledgebaseLink;
 }
-void EntryInternal::setKnowledgebaseLink(const QString& link)
+void EntryInternal::setKnowledgebaseLink(const QString &link)
 {
     d->mKnowledgebaseLink = link;
 }
-
 
 /*
 QString EntryInternal::checksum() const
@@ -373,7 +371,7 @@ void EntryInternal::setStatus(Entry::Status status)
     d->mStatus = status;
 }
 
-void KNS3::EntryInternal::setInstalledFiles(const QStringList & files)
+void KNS3::EntryInternal::setInstalledFiles(const QStringList &files)
 {
     d->mInstalledFiles = files;
 }
@@ -383,7 +381,7 @@ QStringList KNS3::EntryInternal::installedFiles() const
     return d->mInstalledFiles;
 }
 
-void KNS3::EntryInternal::setUnInstalledFiles(const QStringList & files)
+void KNS3::EntryInternal::setUnInstalledFiles(const QStringList &files)
 {
     d->mUnInstalledFiles = files;
 }
@@ -403,7 +401,7 @@ QList<KNS3::EntryInternal::DownloadLinkInformation> KNS3::EntryInternal::downloa
     return d->mDownloadLinkInformationList;
 }
 
-void KNS3::EntryInternal::appendDownloadLinkInformation(const KNS3::EntryInternal::DownloadLinkInformation& info)
+void KNS3::EntryInternal::appendDownloadLinkInformation(const KNS3::EntryInternal::DownloadLinkInformation &info)
 {
     d->mDownloadLinkInformationList.append(info);
 }
@@ -413,7 +411,7 @@ void EntryInternal::clearDownloadLinkInformation()
     d->mDownloadLinkInformationList.clear();
 }
 
-bool KNS3::EntryInternal::setEntryXML(const QDomElement & xmldata)
+bool KNS3::EntryInternal::setEntryXML(const QDomElement &xmldata)
 {
     if (xmldata.tagName() != "stuff") {
         qWarning() << "Parsing Entry from invalid XML";
@@ -524,12 +522,15 @@ QDomElement KNS3::EntryInternal::entryXML() const
     (void)addElement(doc, el, "providerid", d->mProviderId);
 
     QDomElement author = addElement(doc, el, "author", d->mAuthor.name());
-    if (!d->mAuthor.email().isEmpty())
+    if (!d->mAuthor.email().isEmpty()) {
         author.setAttribute("email", d->mAuthor.email());
-    if (!d->mAuthor.homepage().isEmpty())
+    }
+    if (!d->mAuthor.homepage().isEmpty()) {
         author.setAttribute("homepage", d->mAuthor.homepage());
-    if (!d->mAuthor.jabber().isEmpty())
+    }
+    if (!d->mAuthor.jabber().isEmpty()) {
         author.setAttribute("im", d->mAuthor.jabber());
+    }
     // FIXME: 'jabber' or 'im'? consult with kopete guys...
     addElement(doc, el, "homepage", d->mHomepage.url());
     (void)addElement(doc, el, "licence", d->mLicense); // krazy:exclude=spelling
@@ -544,7 +545,7 @@ QDomElement KNS3::EntryInternal::entryXML() const
     if (!d->mChecksum.isEmpty()) {
         (void)addElement(doc, el, "checksum", d->mChecksum);
     }
-    foreach(const QString &file, d->mInstalledFiles) {
+    foreach (const QString &file, d->mInstalledFiles) {
         (void)addElement(doc, el, "installedfile", file);
     }
     if (!d->mUniqueId.isEmpty()) {
@@ -577,12 +578,12 @@ Entry EntryInternal::toEntry() const
     return e;
 }
 
-KNS3::EntryInternal EntryInternal::fromEntry(const KNS3::Entry& entry)
+KNS3::EntryInternal EntryInternal::fromEntry(const KNS3::Entry &entry)
 {
     return entry.d->e;
 }
 
-QString KNS3::replaceBBCode(const QString& unformattedText)
+QString KNS3::replaceBBCode(const QString &unformattedText)
 {
     QString text(unformattedText);
     text.replace("[b]", "<b>");

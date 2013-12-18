@@ -25,7 +25,7 @@
 
 using namespace KNS3;
 
-ImageLoader::ImageLoader(const EntryInternal& entry, EntryInternal::PreviewType type, QObject* parent)
+ImageLoader::ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent)
     : QObject(parent)
     , m_entry(entry)
     , m_previewType(type)
@@ -43,12 +43,12 @@ void ImageLoader::start()
     }
 }
 
-KJob* ImageLoader::job()
+KJob *ImageLoader::job()
 {
     return m_job;
 }
 
-void ImageLoader::slotData(KIO::Job *job, const QByteArray& buf)
+void ImageLoader::slotData(KIO::Job *job, const QByteArray &buf)
 {
     Q_UNUSED(job)
     m_buffer.append(buf);

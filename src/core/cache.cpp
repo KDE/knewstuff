@@ -183,17 +183,16 @@ void Cache::readKns2MetaFiles()
     }
 }
 
-EntryInternal::List Cache::registryForProvider(const QString& providerId)
+EntryInternal::List Cache::registryForProvider(const QString &providerId)
 {
     EntryInternal::List entries;
-    foreach (const EntryInternal& e, cache) {
+    foreach (const EntryInternal &e, cache) {
         if (e.providerId() == providerId) {
             entries.append(e);
         }
     }
     return entries;
 }
-
 
 void Cache::writeRegistry()
 {
@@ -206,11 +205,11 @@ void Cache::writeRegistry()
     }
 
     QDomDocument doc("khotnewstuff3");
-    doc.appendChild(doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ));
+    doc.appendChild(doc.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\""));
     QDomElement root = doc.createElement("hotnewstuffregistry");
     doc.appendChild(root);
 
-    foreach (const EntryInternal& entry, cache) {
+    foreach (const EntryInternal &entry, cache) {
         // Write the entry, unless the policy is CacheNever and the entry is not installed.
         if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
             QDomElement exml = entry.entryXML();
@@ -224,19 +223,19 @@ void Cache::writeRegistry()
     f.close();
 }
 
-void Cache::registerChangedEntry(const KNS3::EntryInternal& entry)
+void Cache::registerChangedEntry(const KNS3::EntryInternal &entry)
 {
     cache.insert(entry);
 }
 
-void Cache::insertRequest(const KNS3::Provider::SearchRequest& request, const KNS3::EntryInternal::List& entries)
+void Cache::insertRequest(const KNS3::Provider::SearchRequest &request, const KNS3::EntryInternal::List &entries)
 {
     // append new entries
     requestCache[request.hashForRequest()].append(entries);
     // qDebug() << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
 }
 
-EntryInternal::List Cache::requestFromCache(const KNS3::Provider::SearchRequest& request)
+EntryInternal::List Cache::requestFromCache(const KNS3::Provider::SearchRequest &request)
 {
     // qDebug() << request.hashForRequest();
     return requestCache.value(request.hashForRequest());

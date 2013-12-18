@@ -47,7 +47,7 @@
 
 using namespace KNS3;
 
-Installation::Installation(QObject* parent)
+Installation::Installation(QObject *parent)
     : QObject(parent)
     , checksumPolicy(Installation::CheckIfPossible)
     , signaturePolicy(Installation::CheckIfPossible)
@@ -57,7 +57,7 @@ Installation::Installation(QObject* parent)
 {
 }
 
-bool Installation::readConfig(const KConfigGroup& group)
+bool Installation::readConfig(const KConfigGroup &group)
 {
     // FIXME: add support for several categories later on
     // FIXME: read out only when actually installing as a performance improvement?
@@ -78,8 +78,9 @@ bool Installation::readConfig(const KConfigGroup& group)
     xdgTargetDirectory = group.readEntry("XdgTargetDir", QString());
 
     // Provide some compatibility
-    if (standardResourceDirectory == "wallpaper")
+    if (standardResourceDirectory == "wallpaper") {
         xdgTargetDirectory = "wallpapers";
+    }
 
     installPath = group.readEntry("InstallPath", QString());
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath", QString());
@@ -97,13 +98,13 @@ bool Installation::readConfig(const KConfigGroup& group)
 
     QString checksumpolicy = group.readEntry("ChecksumPolicy", QString());
     if (!checksumpolicy.isEmpty()) {
-        if (checksumpolicy == "never")
+        if (checksumpolicy == "never") {
             checksumPolicy = Installation::CheckNever;
-        else if (checksumpolicy == "ifpossible")
+        } else if (checksumpolicy == "ifpossible") {
             checksumPolicy = Installation::CheckIfPossible;
-        else if (checksumpolicy == "always")
+        } else if (checksumpolicy == "always") {
             checksumPolicy = Installation::CheckAlways;
-        else {
+        } else {
             qCritical() << "The checksum policy '" + checksumpolicy + "' is unknown." << endl;
             return false;
         }
@@ -111,13 +112,13 @@ bool Installation::readConfig(const KConfigGroup& group)
 
     QString signaturepolicy = group.readEntry("SignaturePolicy", QString());
     if (!signaturepolicy.isEmpty()) {
-        if (signaturepolicy == "never")
+        if (signaturepolicy == "never") {
             signaturePolicy = Installation::CheckNever;
-        else if (signaturepolicy == "ifpossible")
+        } else if (signaturepolicy == "ifpossible") {
             signaturePolicy = Installation::CheckIfPossible;
-        else if (signaturepolicy == "always")
+        } else if (signaturepolicy == "always") {
             signaturePolicy = Installation::CheckAlways;
-        else {
+        } else {
             qCritical() << "The signature policy '" + signaturepolicy + "' is unknown." << endl;
             return false;
         }
@@ -125,11 +126,11 @@ bool Installation::readConfig(const KConfigGroup& group)
 
     QString scopeString = group.readEntry("Scope", QString());
     if (!scopeString.isEmpty()) {
-        if (scopeString == "user")
+        if (scopeString == "user") {
             scope = ScopeUser;
-        else if (scopeString == "system")
+        } else if (scopeString == "system") {
             scope = ScopeSystem;
-        else {
+        } else {
             qCritical() << "The scope '" + scopeString + "' is unknown." << endl;
             return false;
         }
@@ -146,11 +147,21 @@ bool Installation::readConfig(const KConfigGroup& group)
 
 bool Installation::isRemote() const
 {
-    if (!installPath.isEmpty()) return false;
-    if (!targetDirectory.isEmpty()) return false;
-    if (!xdgTargetDirectory.isEmpty()) return false;
-    if (!absoluteInstallPath.isEmpty()) return false;
-    if (!standardResourceDirectory.isEmpty()) return false;
+    if (!installPath.isEmpty()) {
+        return false;
+    }
+    if (!targetDirectory.isEmpty()) {
+        return false;
+    }
+    if (!xdgTargetDirectory.isEmpty()) {
+        return false;
+    }
+    if (!absoluteInstallPath.isEmpty()) {
+        return false;
+    }
+    if (!standardResourceDirectory.isEmpty()) {
+        return false;
+    }
     return true;
 }
 
@@ -159,9 +170,9 @@ void Installation::install(EntryInternal entry)
     downloadPayload(entry);
 }
 
-void Installation::downloadPayload(const KNS3::EntryInternal& entry)
+void Installation::downloadPayload(const KNS3::EntryInternal &entry)
 {
-    if(!entry.isValid()) {
+    if (!entry.isValid()) {
         emit signalInstallationFailed(i18n("Invalid item."));
         return;
     }
@@ -185,8 +196,9 @@ void Installation::downloadPayload(const KNS3::EntryInternal& entry)
 
     QString fileName(source.fileName());
     QTemporaryFile tempFile(QDir::tempPath() + "/XXXXXX-" + fileName);
-    if (!tempFile.open())
-        return; // ERROR
+    if (!tempFile.open()) {
+        return;    // ERROR
+    }
     QUrl destination = QUrl::fromLocalFile(tempFile.fileName());
     // qDebug() << "Downloading payload" << source << "to" << destination;
 
@@ -199,7 +211,6 @@ void Installation::downloadPayload(const KNS3::EntryInternal& entry)
     entry_jobs[job] = entry;
 }
 
-
 void Installation::slotPayloadResult(KJob *job)
 {
     // for some reason this slot is getting called 3 times on one job error
@@ -210,7 +221,7 @@ void Installation::slotPayloadResult(KJob *job)
         if (job->error()) {
             emit signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
         } else {
-            KIO::FileCopyJob *fcjob = static_cast<KIO::FileCopyJob*>(job);
+            KIO::FileCopyJob *fcjob = static_cast<KIO::FileCopyJob *>(job);
 
             // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
             if (!acceptHtml) {
@@ -218,7 +229,7 @@ void Installation::slotPayloadResult(KJob *job)
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits("text/html") || mimeType.inherits("application/x-php")) {
                     if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
-                        == KMessageBox::Yes) {
+                            == KMessageBox::Yes) {
                         QDesktopServices::openUrl(fcjob->srcUrl());
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
                         entry.setStatus(Entry::Invalid);
@@ -234,8 +245,7 @@ void Installation::slotPayloadResult(KJob *job)
     }
 }
 
-
-void Installation::install(KNS3::EntryInternal entry, const QString& downloadedFile)
+void Installation::install(KNS3::EntryInternal entry, const QString &downloadedFile)
 {
     // qDebug() << "Install: " << entry.name() << " from " << downloadedFile;
 
@@ -326,7 +336,7 @@ void Installation::install(KNS3::EntryInternal entry, const QString& downloadedF
     emit signalInstallationFinished();
 }
 
-QString Installation::targetInstallationPath(const QString& payloadfile)
+QString Installation::targetInstallationPath(const QString &payloadfile)
 {
     QString installpath(payloadfile);
     QString installdir;
@@ -361,8 +371,8 @@ QString Installation::targetInstallationPath(const QString& payloadfile)
         if (!installPath.isEmpty()) {
 #if defined(Q_OS_WIN)
 #ifndef _WIN32_WCE
-            WCHAR wPath[MAX_PATH+1];
-            if ( SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
+            WCHAR wPath[MAX_PATH + 1];
+            if (SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
                 installdir = QString::fromUtf16((const ushort *) wPath) + QLatin1Char('/') + installpath + QLatin1Char('/');
             } else {
 #endif
@@ -391,7 +401,7 @@ QString Installation::targetInstallationPath(const QString& payloadfile)
     return installdir;
 }
 
-QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryInternal&  entry, const QString& payloadfile, const QString installdir)
+QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
 {
     QString installpath(payloadfile);
     // Collect all files that were installed
@@ -412,7 +422,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             // FIXME: KArchive should provide "safe mode" for this!
             KArchive *archive = 0;
 
-
             if (mimeType.inherits("application/zip")) {
                 archive = new KZip(payloadfile);
             } else if (mimeType.inherits("application/tar")
@@ -421,7 +430,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                        || mimeType.inherits("application/x-lzma")
                        || mimeType.inherits("application/x-xz")
                        || mimeType.inherits("application/x-bzip-compressed-tar")
-                       || mimeType.inherits("application/x-compressed-tar") ) {
+                       || mimeType.inherits("application/x-compressed-tar")) {
                 archive = new KTar(payloadfile);
             } else {
                 delete archive;
@@ -471,7 +480,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             if (customName) {
                 installfile = entry.name();
                 installfile += '-' + entry.version();
-                if (!ext.isEmpty()) installfile += '.' + ext;
+                if (!ext.isEmpty()) {
+                    installfile += '.' + ext;
+                }
             } else {
                 // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
                 // and using the http headers if they exist to get the file name, but as discussed in
@@ -479,8 +490,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                 if (source.url().startsWith("http://newstuff.kde.org/cgi-bin/hotstuff-access?file=")) {
                     installfile = QUrlQuery(source).queryItemValue("file");
                     int lastSlash = installfile.lastIndexOf('/');
-                    if (lastSlash >= 0)
+                    if (lastSlash >= 0) {
                         installfile = installfile.mid(lastSlash);
+                    }
                 }
                 if (installfile.isEmpty()) {
                     installfile = source.fileName();
@@ -520,7 +532,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
     return installedFiles;
 }
 
-void Installation::runPostInstallationCommand(const QString& installPath)
+void Installation::runPostInstallationCommand(const QString &installPath)
 {
     QString command(postInstallationCommand);
     QString fileArg(KShell::quoteArg(installPath));
@@ -535,13 +547,12 @@ void Installation::runPostInstallationCommand(const QString& installPath)
     }
 }
 
-
 void Installation::uninstall(EntryInternal entry)
 {
     entry.setStatus(Entry::Deleted);
 
     if (!uninstallCommand.isEmpty()) {
-        foreach (const QString& file, entry.installedFiles()) {
+        foreach (const QString &file, entry.installedFiles()) {
             QFileInfo info(file);
             if (info.isFile()) {
                 QString fileArg(KShell::quoteArg(file));
@@ -559,7 +570,7 @@ void Installation::uninstall(EntryInternal entry)
         }
     }
 
-    foreach(const QString &file, entry.installedFiles()) {
+    foreach (const QString &file, entry.installedFiles()) {
         if (file.endsWith('/')) {
             QDir dir;
             bool worked = dir.rmdir(file);
@@ -586,7 +597,6 @@ void Installation::uninstall(EntryInternal entry)
     emit signalEntryChanged(entry);
 }
 
-
 void Installation::slotInstallationVerification(int result)
 {
     //qDebug() << "SECURITY result " << result;
@@ -594,29 +604,28 @@ void Installation::slotInstallationVerification(int result)
     //FIXME do something here ??? and get the right entry again
     EntryInternal entry;
 
-    if (result & Security::SIGNED_OK)
+    if (result & Security::SIGNED_OK) {
         emit signalEntryChanged(entry);
-    else
+    } else {
         emit signalEntryChanged(entry);
+    }
 }
 
-
-QStringList Installation::archiveEntries(const QString& path, const KArchiveDirectory * dir)
+QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)
 {
     QStringList files;
-    foreach(const QString &entry, dir->entries()) {
+    foreach (const QString &entry, dir->entries()) {
         QString childPath = path + '/' + entry;
         if (dir->entry(entry)->isFile()) {
             files << childPath;
         }
 
         if (dir->entry(entry)->isDirectory()) {
-            const KArchiveDirectory* childDir = static_cast<const KArchiveDirectory*>(dir->entry(entry));
+            const KArchiveDirectory *childDir = static_cast<const KArchiveDirectory *>(dir->entry(entry));
             files << archiveEntries(childPath, childDir);
             files << childPath + '/';
         }
     }
     return files;
 }
-
 

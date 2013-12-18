@@ -33,9 +33,9 @@
 using namespace KNS3;
 
 ProgressIndicator::ProgressIndicator(QWidget *parent)
-        : QFrame(parent)
-        , m_busyPixmap(KIconLoader::global()->loadPixmapSequence("process-working", 22))
-        , m_errorPixmap(KIconLoader::global()->loadPixmapSequence("dialog-error", 22))
+    : QFrame(parent)
+    , m_busyPixmap(KIconLoader::global()->loadPixmapSequence("process-working", 22))
+    , m_errorPixmap(KIconLoader::global()->loadPixmapSequence("dialog-error", 22))
 {
     setFrameStyle(QFrame::NoFrame);
     QHBoxLayout *hbox = new QHBoxLayout(this);

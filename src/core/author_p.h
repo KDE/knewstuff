@@ -23,7 +23,7 @@
 
 namespace KNS3
 {
-    struct AuthorPrivate;
+struct AuthorPrivate;
 
 /**
  * @short KNewStuff author information.
@@ -40,7 +40,7 @@ public:
     /**
      * Sets the full name of the author.
      */
-    void setName(const QString& name);
+    void setName(const QString &name);
 
     /**
      * Retrieve the author's name.
@@ -52,7 +52,7 @@ public:
     /**
      * Sets the email address of the author.
      */
-    void setEmail(const QString& email);
+    void setEmail(const QString &email);
 
     /**
      * Retrieve the author's email address.
@@ -64,7 +64,7 @@ public:
     /**
      * Sets the jabber address of the author.
      */
-    void setJabber(const QString& jabber);
+    void setJabber(const QString &jabber);
 
     /**
      * Retrieve the author's jabber address.
@@ -76,7 +76,7 @@ public:
     /**
      * Sets the homepage of the author.
      */
-    void setHomepage(const QString& homepage);
+    void setHomepage(const QString &homepage);
 
     /**
      * Retrieve the author's homepage.

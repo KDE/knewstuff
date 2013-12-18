@@ -27,7 +27,7 @@
 
 using namespace KNS3;
 
-EntryDetails::EntryDetails(Engine* engine, Ui::DownloadWidget* widget)
+EntryDetails::EntryDetails(Engine *engine, Ui::DownloadWidget *widget)
     : QObject(widget->m_listView), m_engine(engine), ui(widget)
 {
     init();
@@ -65,7 +65,7 @@ void EntryDetails::init()
             this, SLOT(slotEntryPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)));
 }
 
-void EntryDetails::setEntry(const KNS3::EntryInternal& entry)
+void EntryDetails::setEntry(const KNS3::EntryInternal &entry)
 {
     m_entry = entry;
     // immediately show something
@@ -74,7 +74,7 @@ void EntryDetails::setEntry(const KNS3::EntryInternal& entry)
     m_engine->loadDetails(m_entry);
 }
 
-void EntryDetails::entryChanged(const KNS3::EntryInternal& entry)
+void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
 {
     if (ui->detailsStack->currentIndex() == 0) {
         return;
@@ -106,25 +106,25 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal& entry)
     }
     description += "</body></html>";
     ui->descriptionLabel->setText(description);
-    
+
     QString homepageText("<a href=\"" + m_entry.homepage().url() + "\">" +
-                              i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + "</a>");
+                         i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + "</a>");
 
     if (!m_entry.donationLink().isEmpty()) {
         homepageText += "<br><a href=\"" + m_entry.donationLink() + "\">" + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + "</a>";
     }
     if (!m_entry.knowledgebaseLink().isEmpty()) {
-        homepageText += "<br><a href=\"" + m_entry.knowledgebaseLink() + "\">" 
-            + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + "</a>";
+        homepageText += "<br><a href=\"" + m_entry.knowledgebaseLink() + "\">"
+                        + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + "</a>";
     }
     ui->homepageLabel->setText(homepageText);
     ui->homepageLabel->setToolTip(i18nc("Tooltip for a link in a dialog", "Opens in a browser window"));
-    
+
     if (m_entry.rating() > 0) {
         ui->ratingWidget->setVisible(true);
         disconnect(ui->ratingWidget, SIGNAL(ratingChanged(uint)), this, SLOT(ratingChanged(uint)));
         // Most of the voting is 20 - 80, so rate 20 as 0 stars and 80 as 5 stars
-        int rating = qMax(0, qMin(10, (m_entry.rating()-20)/6));
+        int rating = qMax(0, qMin(10, (m_entry.rating() - 20) / 6));
         ui->ratingWidget->setRating(rating);
         connect(ui->ratingWidget, SIGNAL(ratingChanged(uint)), this, SLOT(ratingChanged(uint)));
     } else {
@@ -132,14 +132,14 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal& entry)
     }
 
     bool hideSmallPreviews = m_entry.previewUrl(EntryInternal::PreviewSmall2).isEmpty()
-           && m_entry.previewUrl(EntryInternal::PreviewSmall3).isEmpty();
-           
+                             && m_entry.previewUrl(EntryInternal::PreviewSmall3).isEmpty();
+
     ui->preview1->setVisible(!hideSmallPreviews);
     ui->preview2->setVisible(!hideSmallPreviews);
     ui->preview3->setVisible(!hideSmallPreviews);
 
     // in static xml we often only get a small preview, use that in details
-    if(m_entry.previewUrl(EntryInternal::PreviewBig1).isEmpty() && !m_entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
+    if (m_entry.previewUrl(EntryInternal::PreviewBig1).isEmpty() && !m_entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
         m_entry.setPreviewUrl(m_entry.previewUrl(EntryInternal::PreviewSmall1), EntryInternal::PreviewBig1);
         m_entry.setPreviewImage(m_entry.previewImage(EntryInternal::PreviewSmall1), EntryInternal::PreviewBig1);
     }
@@ -149,20 +149,20 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal& entry)
             ui->previewBig->setVisible(false);
         } else
 
-        if (!m_entry.previewUrl((EntryInternal::PreviewType)type).isEmpty()) {
-            // qDebug() << "type: " << type << m_entry.previewUrl((EntryInternal::PreviewType)type);
-            if (m_entry.previewImage((EntryInternal::PreviewType)type).isNull()) {
-                m_engine->loadPreview(m_entry, (EntryInternal::PreviewType)type);
-            } else {
-                slotEntryPreviewLoaded(m_entry, (EntryInternal::PreviewType)type);
+            if (!m_entry.previewUrl((EntryInternal::PreviewType)type).isEmpty()) {
+                // qDebug() << "type: " << type << m_entry.previewUrl((EntryInternal::PreviewType)type);
+                if (m_entry.previewImage((EntryInternal::PreviewType)type).isNull()) {
+                    m_engine->loadPreview(m_entry, (EntryInternal::PreviewType)type);
+                } else {
+                    slotEntryPreviewLoaded(m_entry, (EntryInternal::PreviewType)type);
+                }
             }
-        }
     }
-    
+
     updateButtons();
 }
 
-void EntryDetails::entryStatusChanged(const KNS3::EntryInternal& entry)
+void EntryDetails::entryStatusChanged(const KNS3::EntryInternal &entry)
 {
     Q_UNUSED(entry);
     updateButtons();
@@ -179,53 +179,53 @@ void EntryDetails::updateButtons()
     ui->updateButton->setVisible(false);
 
     switch (m_entry.status()) {
-        case Entry::Installed:
-            ui->uninstallButton->setVisible(true);
-            ui->uninstallButton->setEnabled(true);
-            break;
-        case Entry::Updateable:
-            ui->updateButton->setVisible(true);
-            ui->updateButton->setEnabled(true);
-            ui->uninstallButton->setVisible(true);
-            ui->uninstallButton->setEnabled(true);
-            break;
+    case Entry::Installed:
+        ui->uninstallButton->setVisible(true);
+        ui->uninstallButton->setEnabled(true);
+        break;
+    case Entry::Updateable:
+        ui->updateButton->setVisible(true);
+        ui->updateButton->setEnabled(true);
+        ui->uninstallButton->setVisible(true);
+        ui->uninstallButton->setEnabled(true);
+        break;
 
-        case Entry::Invalid:
-        case Entry::Downloadable:
-            ui->installButton->setVisible(true);
-            ui->installButton->setEnabled(true);
-            break;
+    case Entry::Invalid:
+    case Entry::Downloadable:
+        ui->installButton->setVisible(true);
+        ui->installButton->setEnabled(true);
+        break;
 
-        case Entry::Installing:
-            ui->installButton->setVisible(true);
-            ui->installButton->setEnabled(false);
-            break;
-        case Entry::Updating:
-            ui->updateButton->setVisible(true);
-            ui->updateButton->setEnabled(false);
-            ui->uninstallButton->setVisible(true);
-            ui->uninstallButton->setEnabled(false);
-            break;
-        case Entry::Deleted:
-            ui->installButton->setVisible(true);
-            ui->installButton->setEnabled(true);
-            break;
+    case Entry::Installing:
+        ui->installButton->setVisible(true);
+        ui->installButton->setEnabled(false);
+        break;
+    case Entry::Updating:
+        ui->updateButton->setVisible(true);
+        ui->updateButton->setEnabled(false);
+        ui->uninstallButton->setVisible(true);
+        ui->uninstallButton->setEnabled(false);
+        break;
+    case Entry::Deleted:
+        ui->installButton->setVisible(true);
+        ui->installButton->setEnabled(true);
+        break;
     }
-    
+
     if (ui->installButton->menu()) {
-        QMenu* buttonMenu = ui->installButton->menu();
+        QMenu *buttonMenu = ui->installButton->menu();
         buttonMenu->clear();
         ui->installButton->setMenu(0);
         buttonMenu->deleteLater();
     }
     if (ui->installButton->isVisible() && m_entry.downloadLinkCount() > 1) {
-        QMenu * installMenu = new QMenu(ui->installButton);
+        QMenu *installMenu = new QMenu(ui->installButton);
         foreach (EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
                 text + " (" + info.distributionType.trimmed() + ")";
             }
-            QAction* installAction = installMenu->addAction(QIcon::fromTheme("dialog-ok"), text);
+            QAction *installAction = installMenu->addAction(QIcon::fromTheme("dialog-ok"), text);
             installAction->setData(info.id);
         }
         // qDebug() << "links: " << m_entry.downloadLinkInformationList().size();
@@ -243,7 +243,7 @@ void EntryDetails::uninstall()
     m_engine->uninstall(m_entry);
 }
 
-void EntryDetails::slotEntryPreviewLoaded(const KNS3::EntryInternal& entry, KNS3::EntryInternal::PreviewType type)
+void EntryDetails::slotEntryPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type)
 {
     if (!(entry == m_entry)) {
         return;
@@ -294,12 +294,11 @@ void EntryDetails::ratingChanged(uint rating)
 {
     // engine expects values from 0..100
     // qDebug() << "rating: " << rating << " -> " << rating*10;
-    m_engine->vote(m_entry, rating*10);
+    m_engine->vote(m_entry, rating * 10);
 }
 
 void EntryDetails::becomeFan()
 {
     m_engine->becomeFan(m_entry);
 }
-
 

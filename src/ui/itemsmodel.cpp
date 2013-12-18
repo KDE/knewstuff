@@ -27,10 +27,10 @@
 
 namespace KNS3
 {
-ItemsModel::ItemsModel(Engine* engine, QObject* parent)
-        : QAbstractListModel(parent)
-        , m_engine(engine)
-        , m_hasPreviewImages(false)
+ItemsModel::ItemsModel(Engine *engine, QObject *parent)
+    : QAbstractListModel(parent)
+    , m_engine(engine)
+    , m_hasPreviewImages(false)
 {
 }
 
@@ -43,7 +43,7 @@ int ItemsModel::rowCount(const QModelIndex & /*parent*/) const
     return m_entries.count();
 }
 
-QVariant ItemsModel::data(const QModelIndex & index, int role) const
+QVariant ItemsModel::data(const QModelIndex &index, int role) const
 {
     if (role != Qt::UserRole) {
         return QVariant();
@@ -54,18 +54,18 @@ QVariant ItemsModel::data(const QModelIndex & index, int role) const
 
 void ItemsModel::slotEntriesLoaded(EntryInternal::List entries)
 {
-    foreach(const KNS3::EntryInternal &entry, entries) {
+    foreach (const KNS3::EntryInternal &entry, entries) {
         addEntry(entry);
     }
 }
 
-void ItemsModel::addEntry(const EntryInternal& entry)
+void ItemsModel::addEntry(const EntryInternal &entry)
 {
     QString preview = entry.previewUrl(EntryInternal::PreviewSmall1);
     if (!m_hasPreviewImages && !preview.isEmpty()) {
         m_hasPreviewImages = true;
         if (rowCount() > 0) {
-            emit dataChanged(index(0,0), index(rowCount()-1,0));
+            emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
         }
     }
 
@@ -79,7 +79,7 @@ void ItemsModel::addEntry(const EntryInternal& entry)
     }
 }
 
-void ItemsModel::removeEntry(const EntryInternal& entry)
+void ItemsModel::removeEntry(const EntryInternal &entry)
 {
     // qDebug() << "removing entry " << entry.name() << " from the model";
     int index = m_entries.indexOf(entry);
@@ -90,7 +90,7 @@ void ItemsModel::removeEntry(const EntryInternal& entry)
     }
 }
 
-void ItemsModel::slotEntryChanged(const EntryInternal& entry)
+void ItemsModel::slotEntryChanged(const EntryInternal &entry)
 {
     int i = m_entries.indexOf(entry);
     QModelIndex entryIndex = index(i, 0);
@@ -104,7 +104,7 @@ void ItemsModel::clearEntries()
     endResetModel();
 }
 
-void ItemsModel::slotEntryPreviewLoaded(const EntryInternal& entry, EntryInternal::PreviewType type)
+void ItemsModel::slotEntryPreviewLoaded(const EntryInternal &entry, EntryInternal::PreviewType type)
 {
     // we only care about the first small preview in the list
     if (type != EntryInternal::PreviewSmall1) {

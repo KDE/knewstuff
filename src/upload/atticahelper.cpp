@@ -40,11 +40,11 @@ void AtticaHelper::init()
     providerManager.loadDefaultProviders();
 }
 
-void AtticaHelper::addProviderFile(const QUrl& file)
+void AtticaHelper::addProviderFile(const QUrl &file)
 {
     if (! providerManager.providerFiles().contains(file)) {
         // If a custom provider file is added, remove all the default ones.
-        foreach ( const QUrl& url, providerManager.defaultProviderFiles() ) {
+        foreach (const QUrl &url, providerManager.defaultProviderFiles()) {
             providerManager.removeProviderFileFromDefaultProviders(url);
         }
         providerManager.addProviderFile(file);
@@ -54,8 +54,8 @@ void AtticaHelper::addProviderFile(const QUrl& file)
 void AtticaHelper::defaultProvidersLoaded()
 {
     QStringList providers;
-    foreach(Attica::Provider p, providerManager.providers()) {
-        if(p.isEnabled()) {
+    foreach (Attica::Provider p, providerManager.providers()) {
+        if (p.isEnabled()) {
             providers.append(p.name());
         }
     }
@@ -64,7 +64,7 @@ void AtticaHelper::defaultProvidersLoaded()
 
 void AtticaHelper::setCurrentProvider(const QString &provider)
 {
-    foreach(Attica::Provider p, providerManager.providers()) {
+    foreach (Attica::Provider p, providerManager.providers()) {
         if (p.name() == provider) {
             currentProvider = p;
             break;
@@ -79,12 +79,12 @@ Attica::Provider AtticaHelper::provider()
 
 void AtticaHelper::checkLogin(const QString &name, const QString &password)
 {
-    Attica::PostJob* checkLoginJob = currentProvider.checkLogin(name, password);
+    Attica::PostJob *checkLoginJob = currentProvider.checkLogin(name, password);
     connect(checkLoginJob, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(checkLoginFinished(Attica::BaseJob*)));
     checkLoginJob->start();
 }
 
-void AtticaHelper::checkLoginFinished(Attica::BaseJob* baseJob)
+void AtticaHelper::checkLoginFinished(Attica::BaseJob *baseJob)
 {
     emit loginChecked(baseJob->metadata().error() == Attica::Metadata::NoError);
 }
@@ -100,7 +100,7 @@ bool AtticaHelper::loadCredentials(QString &name, QString &password)
     return false;
 }
 
-bool AtticaHelper::saveCredentials(const QString& name, const QString& password)
+bool AtticaHelper::saveCredentials(const QString &name, const QString &password)
 {
     return currentProvider.saveCredentials(name, password);
 }
@@ -108,23 +108,23 @@ bool AtticaHelper::saveCredentials(const QString& name, const QString& password)
 void AtticaHelper::loadCategories(const QStringList &configuredCategories)
 {
     m_configuredCategories = configuredCategories;
-    Attica::ListJob<Attica::Category>* job = currentProvider.requestCategories();
+    Attica::ListJob<Attica::Category> *job = currentProvider.requestCategories();
     connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(categoriesLoaded(Attica::BaseJob*)));
     job->start();
 }
 
 void AtticaHelper::categoriesLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ListJob<Attica::Category>* listJob = static_cast<Attica::ListJob<Attica::Category>*>(baseJob);
+    Attica::ListJob<Attica::Category> *listJob = static_cast<Attica::ListJob<Attica::Category>*>(baseJob);
     Attica::Category::List newCategories = listJob->itemList();
 
     if (m_configuredCategories.isEmpty()) {
         qWarning() << "No category was set in knsrc file. Adding all categories.";
-        Q_FOREACH(const Attica::Category& category, newCategories) {
+        Q_FOREACH (const Attica::Category &category, newCategories) {
             m_validCategories.append(category);
         }
     } else {
-        Q_FOREACH(const Attica::Category& category, newCategories) {
+        Q_FOREACH (const Attica::Category &category, newCategories) {
             if (m_configuredCategories.contains(category.name())) {
                 m_validCategories.append(category);
             }
@@ -136,14 +136,14 @@ void AtticaHelper::categoriesLoaded(Attica::BaseJob *baseJob)
 void AtticaHelper::loadContentByCurrentUser()
 {
     // in case of updates we need the list of stuff that has been uploaded by the user before
-    Attica::ListJob<Attica::Content>* userContent = currentProvider.searchContentsByPerson(m_validCategories, m_username);
+    Attica::ListJob<Attica::Content> *userContent = currentProvider.searchContentsByPerson(m_validCategories, m_username);
     connect(userContent, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(contentByCurrentUserLoaded(Attica::BaseJob*)));
     userContent->start();
 }
 
 void AtticaHelper::contentByCurrentUserLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ListJob<Attica::Content>* contentList = static_cast<Attica::ListJob<Attica::Content>*>(baseJob);
+    Attica::ListJob<Attica::Content> *contentList = static_cast<Attica::ListJob<Attica::Content>*>(baseJob);
     m_userCreatedContent = contentList->itemList();
     emit contentByCurrentUserLoaded(m_userCreatedContent);
 }
@@ -155,35 +155,33 @@ void AtticaHelper::loadLicenses()
     licenseJob->start();
 }
 
-void AtticaHelper::licensesLoaded(Attica::BaseJob* baseJob)
+void AtticaHelper::licensesLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ListJob<Attica::License>* licenseList = static_cast<Attica::ListJob<Attica::License>*>(baseJob);
+    Attica::ListJob<Attica::License> *licenseList = static_cast<Attica::ListJob<Attica::License>*>(baseJob);
     emit licensesLoaded(licenseList->itemList());
 }
 
-
-void AtticaHelper::loadDetailsLink(const QString& contentId)
+void AtticaHelper::loadDetailsLink(const QString &contentId)
 {
     Attica::ItemJob<Attica::Content> *contentJob = currentProvider.requestContent(contentId);
     connect(contentJob, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(detailsLinkLoaded(Attica::BaseJob*)));
     contentJob->start();
 }
 
-void AtticaHelper::detailsLinkLoaded(Attica::BaseJob* baseJob)
+void AtticaHelper::detailsLinkLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ItemJob<Attica::Content>* contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
+    Attica::ItemJob<Attica::Content> *contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
     Attica::Content content = contentItemJob->result();
 
     emit detailsLinkLoaded(content.detailpage());
 }
 
-void AtticaHelper::loadContent(const QString& contentId)
+void AtticaHelper::loadContent(const QString &contentId)
 {
     Attica::ItemJob<Attica::Content> *contentJob = currentProvider.requestContent(contentId);
     connect(contentJob, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(contentLoaded(Attica::BaseJob*)));
     contentJob->start();
 }
-
 
 void AtticaHelper::loadCurrency()
 {
@@ -194,30 +192,30 @@ void AtticaHelper::loadCurrency()
 
 void AtticaHelper::currencyLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ItemJob<Attica::AccountBalance>* balanceJob = static_cast<Attica::ItemJob<Attica::AccountBalance>* >(baseJob);
+    Attica::ItemJob<Attica::AccountBalance> *balanceJob = static_cast<Attica::ItemJob<Attica::AccountBalance>* >(baseJob);
     Attica::AccountBalance balance = balanceJob->result();
     emit currencyLoaded(balance.currency());
 }
 
-void AtticaHelper::contentLoaded(Attica::BaseJob* baseJob)
+void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
 {
-    Attica::ItemJob<Attica::Content>* contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
+    Attica::ItemJob<Attica::Content> *contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
 
     const Attica::Content content(contentItemJob->result());
     emit contentLoaded(content);
 
-    for (int previewNum = 1; previewNum <=3; ++previewNum) {
+    for (int previewNum = 1; previewNum <= 3; ++previewNum) {
         QUrl url = QUrl::fromUserInput(content.smallPreviewPicture(QString::number(previewNum)));
         if (! url.isEmpty()) {
-            m_previewJob[previewNum-1] = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-            connect(m_previewJob[previewNum-1], SIGNAL(result(KJob*)), SLOT(slotPreviewDownload(KJob*)));
-            connect(m_previewJob[previewNum-1], SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotPreviewData(KIO::Job*,QByteArray)));
-            KIO::Scheduler::setJobPriority(m_previewJob[previewNum-1], 1);
+            m_previewJob[previewNum - 1] = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+            connect(m_previewJob[previewNum - 1], SIGNAL(result(KJob*)), SLOT(slotPreviewDownload(KJob*)));
+            connect(m_previewJob[previewNum - 1], SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotPreviewData(KIO::Job*,QByteArray)));
+            KIO::Scheduler::setJobPriority(m_previewJob[previewNum - 1], 1);
         }
     }
 }
 
-void AtticaHelper::slotPreviewData(KIO::Job *job, const QByteArray& buf)
+void AtticaHelper::slotPreviewData(KIO::Job *job, const QByteArray &buf)
 {
     if (job == m_previewJob[0]) {
         m_previewBuffer[0].append(buf);
@@ -240,12 +238,12 @@ void AtticaHelper::slotPreviewDownload(KJob *job)
     }
     Q_ASSERT(previewNum != -1);
     if (job->error()) {
-        m_previewBuffer[previewNum-1].clear();
+        m_previewBuffer[previewNum - 1].clear();
         return;
     }
     QImage image;
-    image.loadFromData(m_previewBuffer[previewNum-1]);
-    m_previewBuffer[previewNum-1].clear();
+    image.loadFromData(m_previewBuffer[previewNum - 1]);
+    m_previewBuffer[previewNum - 1].clear();
 
     emit previewLoaded(previewNum, image);
 }

@@ -47,13 +47,15 @@ class Security : public QObject
 {
     Q_OBJECT
 public:
-    static Security* ref() {
+    static Security *ref()
+    {
         static Security *m_ref;
-        if (!m_ref) m_ref = new Security();
+        if (!m_ref) {
+            m_ref = new Security();
+        }
         return m_ref;
     }
     ~Security();
-
 
     /** Verifies the integrity and the signature of a tarball file.
     * @param fileName the file to be verified. It should be a tar.gz (.tgz) file. The directory where
@@ -76,7 +78,8 @@ public:
     *
     *  @return the key used for signing the file
     */
-    KeyStruct signatureKey() {
+    KeyStruct signatureKey()
+    {
         return m_signatureKey;
     }
 

@@ -37,7 +37,8 @@
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"
 
-namespace KNS3 {
+namespace KNS3
+{
 class DownloadDialogPrivate
 {
 public:
@@ -46,16 +47,15 @@ public:
         delete downloadWidget;
     }
 
-    DownloadWidget* downloadWidget;
+    DownloadWidget *downloadWidget;
 };
 }
 
 using namespace KNS3;
 
-const char * ConfigGroup = "DownloadDialog Settings";
+const char *ConfigGroup = "DownloadDialog Settings";
 
-
-DownloadDialog::DownloadDialog(QWidget* parent)
+DownloadDialog::DownloadDialog(QWidget *parent)
     : QDialog(parent)
     , d(new DownloadDialogPrivate)
 {
@@ -63,14 +63,14 @@ DownloadDialog::DownloadDialog(QWidget* parent)
     init(name + ".knsrc");
 }
 
-DownloadDialog::DownloadDialog(const QString& configFile, QWidget * parent)
-        : QDialog(parent)
-        , d(new DownloadDialogPrivate)
+DownloadDialog::DownloadDialog(const QString &configFile, QWidget *parent)
+    : QDialog(parent)
+    , d(new DownloadDialogPrivate)
 {
     init(configFile);
 }
 
-void DownloadDialog::init(const QString& configFile)
+void DownloadDialog::init(const QString &configFile)
 {
     // load the last size from config
     KConfigGroup group(KSharedConfig::openConfig(), ConfigGroup);
@@ -80,15 +80,16 @@ void DownloadDialog::init(const QString& configFile)
     setWindowTitle(i18n("Get Hot New Stuff"));
 
     QVBoxLayout *layout = new QVBoxLayout;
-    d->downloadWidget = new DownloadWidget(configFile ,this);
+    d->downloadWidget = new DownloadWidget(configFile, this);
     layout->addWidget(d->downloadWidget);
     setLayout(layout);
 
     QString displayName = QGuiApplication::applicationDisplayName();
-    if (displayName.isEmpty())
+    if (displayName.isEmpty()) {
         displayName = QCoreApplication::applicationName();
+    }
     d->downloadWidget->d->ui.m_titleWidget->setText(i18nc("Program name followed by 'Add On Installer'",
-                                                          "%1 Add-On Installer", displayName));
+            "%1 Add-On Installer", displayName));
     //d->downloadWidget->d->ui.m_titleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
     d->downloadWidget->d->ui.m_titleWidget->setVisible(true);
     d->downloadWidget->d->ui.closeButton->setVisible(true);
@@ -113,5 +114,4 @@ Entry::List DownloadDialog::installedEntries()
 {
     return d->downloadWidget->installedEntries();
 }
-
 

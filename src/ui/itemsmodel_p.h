@@ -28,35 +28,35 @@ class KJob;
 
 namespace KNS3
 {
-    class Engine;
+class Engine;
 
 class ItemsModel: public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit ItemsModel(Engine* engine, QObject * parent = 0);
+    explicit ItemsModel(Engine *engine, QObject *parent = 0);
     ~ItemsModel();
 
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
 
-    void addEntry(const EntryInternal& entry);
-    void removeEntry(const EntryInternal& entry);
+    void addEntry(const EntryInternal &entry);
+    void removeEntry(const EntryInternal &entry);
 
     bool hasPreviewImages() const;
     bool hasWebService() const;
 
 Q_SIGNALS:
-    void jobStarted(KJob*, const QString& label);
+    void jobStarted(KJob *, const QString &label);
 
 public Q_SLOTS:
-    void slotEntryChanged(const KNS3::EntryInternal& entry);
+    void slotEntryChanged(const KNS3::EntryInternal &entry);
     void slotEntriesLoaded(KNS3::EntryInternal::List entries);
     void clearEntries();
-    void slotEntryPreviewLoaded(const KNS3::EntryInternal& entry, KNS3::EntryInternal::PreviewType type);
+    void slotEntryPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type);
 
 private:
-    Engine* m_engine;
+    Engine *m_engine;
     // the list of entries
     QList<EntryInternal> m_entries;
     bool m_hasPreviewImages;

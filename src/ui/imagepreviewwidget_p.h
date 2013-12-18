@@ -21,7 +21,8 @@
 #include <QWidget>
 #include <QImage>
 
-namespace KNS3 {
+namespace KNS3
+{
 
 class ImagePreviewWidget : public QWidget
 {
@@ -29,18 +30,18 @@ class ImagePreviewWidget : public QWidget
 public:
     explicit ImagePreviewWidget(QWidget *parent = 0);
 
-    void setImage(const QImage& preview);
+    void setImage(const QImage &preview);
 
     virtual QSize sizeHint() const;
-    
+
 Q_SIGNALS:
     void clicked();
 
 protected:
-    virtual void paintEvent(QPaintEvent* event);
-    virtual void resizeEvent(QResizeEvent* event);
-    virtual void mousePressEvent(QMouseEvent* event);
-    
+    virtual void paintEvent(QPaintEvent *event);
+    virtual void resizeEvent(QResizeEvent *event);
+    virtual void mousePressEvent(QMouseEvent *event);
+
 private:
     QImage m_image;
     QImage m_scaledImage;

@@ -29,7 +29,8 @@ class QLabel;
 class QString;
 class KPixmapSequenceWidget;
 
-namespace KNS3 {
+namespace KNS3
+{
 
 /**
  * Embedded progress indicator for the download dialog.
@@ -46,13 +47,13 @@ public:
     ProgressIndicator(QWidget *parent);
 
 public Q_SLOTS:
-    void busy(const QString& message);
-    void error(const QString& message);
-    void idle(const QString& message);
+    void busy(const QString &message);
+    void error(const QString &message);
+    void idle(const QString &message);
 
 private:
-    QLabel* m_statusLabel;
-    KPixmapSequenceWidget* busyWidget;
+    QLabel *m_statusLabel;
+    KPixmapSequenceWidget *busyWidget;
 
     KPixmapSequence m_busyPixmap;
     KPixmapSequence m_errorPixmap;
