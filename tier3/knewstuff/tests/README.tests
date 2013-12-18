@@ -1,0 +1,35 @@
+KNewStuff2 test applications
+============================
+
+If you want the test apps, set -DKDE4_BUILD_TESTS=ON for cmake.
+
+In order to understand the test structure, remember the engine class
+hierarchy of the library:
+ KNS::CoreEngine    - GHNS provider loading/upload/download
+ -> KNS::DxsEngine  - DXS interaction (contains KNS::Dxs child)
+   -> KNS::Engine   - dialog integration and convenience wrappers
+
+knewstuff2_test:
+ * test CoreEngine functionality
+ * command line only
+ * syntax 1: knewstuff2_test (downloads feed and caches)
+ * syntax 2: knewstuff2_test --testall (also downloads files)
+
+knewstuff2_download:
+ * test CoreEngine functionality
+ * custom download dialog
+
+knewstuff2_cache:
+ * test CoreEngine functionality
+ * reports contents of cache
+
+knewstuff2_standard:
+ * test Engine functionality
+ * uses standard dialogs
+ * syntax 1: knewstuff2_standard --download
+ * syntax 2: knewstuff2_standard --upload <payloadfile>
+
+kdxspreview:
+ * test Dxs functionality
+ * dialog partially reused from knewstuff2/ui (still unclean)
+

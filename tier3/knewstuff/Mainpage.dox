@@ -1,0 +1,29 @@
+/** \mainpage Collaborative Data Sharing in KDE Applications
+
+The \b KNewStuff3 library adds data sharing capabilities to %KDE
+applications. 
+It uses libattica to access Open Collaboration Services providers.
+In addition the static xml from <a href="http://ghns.freedesktop.org/">GHNS</a> is supported.
+
+Application authors should use KNS3::DownloadDialog for downloading with get hot new stuff.
+For the upload KNS3::UploadDialog is used.
+
+Related information such as creation of <b>*.knsrc</b> files can be found 
+on techbase: <a href="http://techbase.kde.org/Development/Tutorials#Get_Hot_New_Stuff">Get Hot New Stuff tutorials</a>.
+
+@authors
+Josef Spillner \<spillner@kde.org\>
+Jeremy Whiting \<jpwhiting@kde.org\>
+Frederik Gladhorn \<gladhorn@kde.org\>
+
+@maintainers
+Jeremy Whiting \<jpwhiting@kde.org\>
+
+@licenses
+@lgpl
+
+*/
+
+// DOXYGEN_REFERENCES = kdecore kdeui kio
+// DOXYGEN_SET_PROJECT_NAME = KNewStuff
+// vim:ts=4:sw=4:expandtab:filetype=doxygen
