@@ -16,7 +16,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "knewstuffbutton.h"
+#include "button.h"
 
 #include <klocalizedstring.h>
 #include "downloaddialog.h"

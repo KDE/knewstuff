@@ -40,6 +40,7 @@ endif()
 
 include(FeatureSummary)
 include(ECMSetupVersion)
+include(ECMGenerateHeaders)
 
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFF
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h"

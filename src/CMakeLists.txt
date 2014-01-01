@@ -34,7 +34,7 @@ set(KNewStuff_SRCS
     downloadwidget.cpp
     downloadmanager.cpp
     entry.cpp
-    knewstuffbutton.cpp
+    button.cpp
     knewstuffaction.cpp
     core/author.cpp
     core/cache.cpp
@@ -68,7 +68,11 @@ qt5_wrap_ui(KNewStuff_SRCS
 add_library(KF5NewStuff ${KNewStuff_SRCS} )
 add_library(KF5::NewStuff ALIAS KF5NewStuff)
 
+generate_export_header(KF5NewStuff BASE_NAME KNewStuff)
+
 target_include_directories(KF5NewStuff PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR}>")
+target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/knewstuff3>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KNewStuff3>")
+
 target_link_libraries(KF5NewStuff
   PUBLIC
     Qt5::Widgets
@@ -84,24 +88,31 @@ target_link_libraries(KF5NewStuff
     KF5::TextWidgets          # For KTextEdit in upload dialog
 )
 
-generate_export_header(KF5NewStuff BASE_NAME KNewStuff)
-
 set_target_properties(KF5NewStuff PROPERTIES
    VERSION ${KNEWSTUFF_VERSION_STRING}
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuff
 )
 
+ecm_generate_headers(
+  DownloadDialog
+  DownloadWidget
+  DownloadManager
+  UploadDialog
+  Entry
+  Button
+
+  MODULE_NAME KNewStuff3
+  REQUIRED_HEADERS KNewStuff_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KNewStuff3 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
-  downloaddialog.h
-  downloadwidget.h
-  downloadmanager.h
-  uploaddialog.h
-  entry.h
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
   knewstuffaction.h
   knewstuffbutton.h
+  ${KNewStuff_HEADERS}
   DESTINATION ${INCLUDE_INSTALL_DIR}/knewstuff3 COMPONENT Devel
 )
