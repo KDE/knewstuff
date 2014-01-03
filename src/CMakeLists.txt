@@ -3,20 +3,6 @@ project(KNewStuff)
 set(_INCDIR ${CMAKE_CURRENT_BINARY_DIR}/include/knewstuff3)
 file(MAKE_DIRECTORY ${_INCDIR})
 
-file(GLOB _KNEWSTUFF3HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h)
-foreach(_KNEWSTUFF3HEADER ${_KNEWSTUFF3HEADERS})
-    string(REGEX MATCH ".*_p\\.h" _ISPRIVATE ${_KNEWSTUFF3HEADER})
-    #message(STATUS "_ISPRIVATE=${_ISPRIVATE} _KIOCOREHEADER=${_KIOCOREHEADER}")
-    if (NOT _ISPRIVATE)
-        if (NOT EXISTS ${_INCDIR}/${_KNEWSTUFF3HEADER})
-            file(WRITE ${_INCDIR}/${_KNEWSTUFF3HEADER} "#include \"${CMAKE_CURRENT_SOURCE_DIR}/${_KNEWSTUFF3HEADER}\"\n")
-        endif()
-    endif()
-endforeach()
-if (NOT EXISTS ${_INCDIR}/knewstuff_export.h)
-    file(WRITE ${_INCDIR}/knewstuff_export.h "#include \"${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h\"\n")
-endif()
-
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
@@ -68,10 +54,10 @@ qt5_wrap_ui(KNewStuff_SRCS
 add_library(KF5NewStuff ${KNewStuff_SRCS} )
 add_library(KF5::NewStuff ALIAS KF5NewStuff)
 
-generate_export_header(KF5NewStuff BASE_NAME KNewStuff)
+generate_export_header(KF5NewStuff BASE_NAME KNewStuff EXPORT_FILE_NAME knewstuff_export.h)
 
 target_include_directories(KF5NewStuff PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR}>")
-target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/knewstuff3>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KNewStuff3>")
+target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KNewStuff3>")
 
 target_link_libraries(KF5NewStuff
   PUBLIC
@@ -104,6 +90,7 @@ ecm_generate_headers(
 
   MODULE_NAME KNewStuff3
   REQUIRED_HEADERS KNewStuff_HEADERS
+  PREFIX knewstuff3
 )
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KNewStuff3 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
@@ -114,5 +101,5 @@ install(FILES
   knewstuffaction.h
   knewstuffbutton.h
   ${KNewStuff_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/knewstuff3 COMPONENT Devel
+  DESTINATION ${INCLUDE_INSTALL_DIR}/KNewStuff3/knewstuff3 COMPONENT Devel
 )
