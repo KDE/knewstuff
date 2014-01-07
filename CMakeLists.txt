@@ -39,6 +39,7 @@ find_package(KF5KIO ${KF5_VERSION} REQUIRED)
 endif()
 
 include(FeatureSummary)
+include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
