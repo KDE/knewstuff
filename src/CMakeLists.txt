@@ -1,8 +1,5 @@
 project(KNewStuff)
 
-set(_INCDIR ${CMAKE_CURRENT_BINARY_DIR}/include/knewstuff3)
-file(MAKE_DIRECTORY ${_INCDIR})
-
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
@@ -12,8 +9,6 @@ set_package_properties(LibAttica PROPERTIES DESCRIPTION "A Qt library that imple
                        URL "https://projects.kde.org/attica"
                        TYPE REQUIRED
                       )
-
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
 
 set(KNewStuff_SRCS
     downloaddialog.cpp
@@ -90,7 +85,7 @@ ecm_generate_headers(
 
   MODULE_NAME KNewStuff3
   REQUIRED_HEADERS KNewStuff_HEADERS
-  PREFIX knewstuff3
+  PREFIX KNS3
 )
 install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KNewStuff3 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
@@ -99,7 +94,6 @@ install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${INSTALL_TARGETS_DEFAULT_
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
   knewstuffaction.h
-  knewstuffbutton.h
   ${KNewStuff_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/KNewStuff3/knewstuff3 COMPONENT Devel
+  DESTINATION ${INCLUDE_INSTALL_DIR}/KNewStuff3/kns3 COMPONENT Devel
 )
