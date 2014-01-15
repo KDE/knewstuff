@@ -22,7 +22,7 @@
 #include <QPushButton>
 
 #include "knewstuff_export.h"
-#include <knewstuff3/entry.h>
+#include "entry.h"
 
 namespace KNS3
 {
