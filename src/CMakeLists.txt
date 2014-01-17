@@ -3,8 +3,8 @@ project(KNewStuff)
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
-find_package(LibAttica 1.0.0 NO_MODULE)
-set_package_properties(LibAttica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
+find_package(KF5Attica 1.0.0 NO_MODULE)
+set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
                        PURPOSE "Support for Get Hot New Stuff in KNewStuff"
                        URL "https://projects.kde.org/attica"
                        TYPE REQUIRED
@@ -57,7 +57,7 @@ target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_
 target_link_libraries(KF5NewStuff
   PUBLIC
     Qt5::Widgets
-    ${LibAttica_LIBRARIES}     # For interacting with ocs providers, public for uploaddialog slots
+    KF5::KF5Attica             # For interacting with ocs providers, public for uploaddialog slots
     KF5::XmlGui                # For KActionCollection in knewstuffaction.h
   PRIVATE
     KF5::KIOCore               # For network fetching operations
