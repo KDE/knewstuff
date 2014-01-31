@@ -10,33 +10,21 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
 
 set(REQUIRED_QT_VERSION "5.2")
-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS DBus Network Widgets Xml)
+find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 
 # Not part of kdelibs
 set(KF5_VERSION "5.0.0")
-if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-#dependencies, remove once depending on 3.0.0
-find_package(KF5GuiAddons ${KF5_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
-find_package(KF5DBusAddons ${KF5_VERSION} REQUIRED)
-find_package(KF5I18n ${KF5_VERSION} REQUIRED)
-find_package(KF5ConfigWidgets ${KF5_VERSION} REQUIRED)
-find_package(KF5Completion ${KF5_VERSION} REQUIRED)
-find_package(KF5Service ${KF5_VERSION} REQUIRED)
-find_package(KF5WindowSystem ${KF5_VERSION} REQUIRED)
-
-#actual dependencies
-find_package(KF5I18n ${KF5_VERSION} REQUIRED)
-find_package(KF5ItemViews ${KF5_VERSION} REQUIRED)
 find_package(KF5Archive ${KF5_VERSION} REQUIRED)
+find_package(KF5Completion ${KF5_VERSION} REQUIRED)
+find_package(KF5Config ${KF5_VERSION} REQUIRED)
+find_package(KF5CoreAddons ${KF5_VERSION} REQUIRED)
+find_package(KF5I18n ${KF5_VERSION} REQUIRED)
 find_package(KF5IconThemes ${KF5_VERSION} REQUIRED)
-find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
-find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
-find_package(KF5Solid ${KF5_VERSION} REQUIRED)
-find_package(KF5Bookmarks ${KF5_VERSION} REQUIRED)
 find_package(KF5KIO ${KF5_VERSION} REQUIRED)
-
-endif()
+find_package(KF5ItemViews ${KF5_VERSION} REQUIRED)
+find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
+find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
 
 include(FeatureSummary)
 include(GenerateExportHeader)
@@ -75,6 +63,4 @@ install(FILES
   DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
 )
 
-if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
-  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-endif()
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
