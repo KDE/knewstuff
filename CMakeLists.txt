@@ -31,6 +31,14 @@ include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
+find_package(KF5Attica ${KF5_VERSION} CONFIG REQUIRED)
+set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
+                       PURPOSE "Support for Get Hot New Stuff in KNewStuff"
+                       URL "https://projects.kde.org/attica"
+                       TYPE REQUIRED
+                      )
+
+
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFF
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfigVersion.cmake")
