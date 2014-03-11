@@ -46,7 +46,10 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFF
 
 add_subdirectory(data)
 add_subdirectory(src)
-add_subdirectory(tests)
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
+endif()
 
 set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5NewStuff")
 
