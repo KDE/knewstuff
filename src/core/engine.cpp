@@ -99,10 +99,8 @@ bool Engine::init(const QString &configfile)
         qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
         return false;
     }
-    // FIXME: accessMode() doesn't return NoAccess for non-existing files
-    // - bug in kdecore?
-    // - this needs to be looked at again until KConfig backend changes for KDE 4
-    // the check below is a workaround
+    // KConfig does not actually tell us whether the config file exists, so
+    // we check ourselves for better error messages.
     if (QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile).isEmpty()) {
         emit signalError(i18n("Configuration file not found: \"%1\"", configfile));
         qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;

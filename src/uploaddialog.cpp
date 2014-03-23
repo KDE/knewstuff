@@ -82,10 +82,8 @@ bool UploadDialog::Private::init(const QString &configfile)
         qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
         success = false;
     }
-    // FIXME: accessMode() doesn't return NoAccess for non-existing files
-    // - bug in kdecore?
-    // - this needs to be looked at again until KConfig backend changes for KDE 4
-    //   the check below is a workaround
+    // KConfig does not actually tell us whether the config file exists, so
+    // we check ourselves for better error messages.
     if (QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile).isEmpty()) {
         qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
         success = false;
