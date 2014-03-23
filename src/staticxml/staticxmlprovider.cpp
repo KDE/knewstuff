@@ -72,12 +72,10 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         mDownloadUrls.insert("downloads", QUrl(url));
     }
 
-    // FIXME: what exactly is the following condition supposed to do?
-    // FIXME: make sure new QUrl in KDE 4 handles this right
     // FIXME: this depends on freedesktop.org icon naming... introduce 'desktopicon'?
     QUrl iconurl(xmldata.attribute("icon"));
     if (!iconurl.isValid()) {
-        iconurl.setPath(xmldata.attribute("icon"));
+        iconurl = QUrl::fromLocalFile(xmldata.attribute("icon"));
     }
     mIcon = iconurl;
 
