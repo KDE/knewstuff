@@ -24,8 +24,6 @@
 #include <QtDebug>
 #include <QUrl>
 
-#include <klocale.h>
-
 #include <iostream>
 
 #include <kns3/uploaddialog.h>

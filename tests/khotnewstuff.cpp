@@ -22,7 +22,6 @@
 
 #include <QApplication>
 #include <QtDebug>
-#include <klocale.h>
 
 #include <iostream>
 
@@ -33,7 +32,7 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName(QLatin1String("khotnewstuff"));
     QCoreApplication::setApplicationVersion(QLatin1String("0.4"));
     QCoreApplication::setOrganizationDomain(QLatin1String("kde.org"));
-    QApplication::setApplicationDisplayName(i18n("KHotNewStuff"));
+    //QApplication::setApplicationDisplayName(i18n("KHotNewStuff"));
 
     QApplication i(argc, argv);
 
