@@ -1,7 +1,7 @@
 /*
     This file is part of KNewStuff.
     Copyright (c) 2002 Cornelius Schumacher <schumacher@kde.org>
-    Copyright (c) 2007-2009 Jeremy Whiting <jeremy@scitools.com>
+    Copyright (c) 2007-2014 Jeremy Whiting <jpwhiting@kde.org>
     Copyright (c) 2009 Frederik Gladhorn <gladhorn@kde.org>
 
     This library is free software; you can redistribute it and/or
@@ -24,12 +24,19 @@
 #include <QtDebug>
 #include <QUrl>
 
+#include <klocalizedstring.h>
+
 #include <iostream>
 
 #include <kns3/uploaddialog.h>
 
 int main(int argc, char **argv)
 {
+    QCoreApplication::setApplicationName(QLatin1String("khotnewstuff_upload"));
+    QCoreApplication::setApplicationVersion(QLatin1String("0.4"));
+    QCoreApplication::setOrganizationDomain(QLatin1String("kde.org"));
+    QApplication::setApplicationDisplayName(i18n("KHotNewStuff"));
+
     QApplication i(argc, argv);
 
     if (i.arguments().count() > 1) {
