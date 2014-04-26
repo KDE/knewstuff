@@ -1,1 +1,9 @@
+maintainer: whiting
+description: Support for downloading application assets from the network
 tier: 3
+type: functional
+platforms:
+    - name: All
+portingAid: false
+deprecated: false
+release: true
