@@ -1,4 +1,4 @@
 install(FILES
    thumb_frame.png
-   DESTINATION ${DATA_INSTALL_DIR}/knewstuff/pics)
+   DESTINATION ${KF5_DATA_INSTALL_DIR}/knewstuff/pics)
 
