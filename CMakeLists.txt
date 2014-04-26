@@ -13,25 +13,26 @@ set(REQUIRED_QT_VERSION "5.2")
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 
 # Not part of kdelibs
-set(KF5_VERSION "4.98.0")
-find_package(KF5Archive ${KF5_VERSION} REQUIRED)
-find_package(KF5Completion ${KF5_VERSION} REQUIRED)
-find_package(KF5Config ${KF5_VERSION} REQUIRED)
-find_package(KF5CoreAddons ${KF5_VERSION} REQUIRED)
-find_package(KF5I18n ${KF5_VERSION} REQUIRED)
-find_package(KF5IconThemes ${KF5_VERSION} REQUIRED)
-find_package(KF5KIO ${KF5_VERSION} REQUIRED)
-find_package(KF5ItemViews ${KF5_VERSION} REQUIRED)
-find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
-find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
+set(KF5_VERSION "4.98.0") # handled by release scripts # handled by release scripts
+set(KF5_DEP_VERSION "4.98.0") # handled by release scripts
+find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5CoreAddons ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5KIO ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5ItemViews ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5TextWidgets ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 
 include(FeatureSummary)
 include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
-find_package(KF5Attica ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5Attica ${KF5_DEP_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
                        PURPOSE "Support for Get Hot New Stuff in KNewStuff"
                        URL "https://projects.kde.org/attica"
