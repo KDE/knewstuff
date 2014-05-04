@@ -1,9 +1,9 @@
 @PACKAGE_INIT@
 
-find_dependency(KF5Archive "@KF5_VERSION@")
-find_dependency(KF5KIO "@KF5_VERSION@")
-find_dependency(KF5XmlGui "@KF5_VERSION@")
-find_dependency(KF5Attica "@KF5_VERSION@")
+find_dependency(KF5Archive "@KF5_DEP_VERSION@")
+find_dependency(KF5KIO "@KF5_DEP_VERSION@")
+find_dependency(KF5XmlGui "@KF5_DEP_VERSION@")
+find_dependency(KF5Attica "@KF5_DEP_VERSION@")
 
 find_dependency(Qt5Widgets @REQUIRED_QT_VERSION@)
 
