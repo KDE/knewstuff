@@ -356,6 +356,26 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             pathcounter++;
         }
 #endif
+       /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
+        porting, but will make many kde4 ksnsrc files work out of the box*/
+        if (!standardResourceDirectory.isEmpty()) {
+            QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;
+            //crude translation KStandardDirs names -> QStandardPaths enum
+            if (standardResourceDirectory == "tmp") {
+                location = QStandardPaths::TempLocation;
+            } else if (standardResourceDirectory == "data") {
+                location = QStandardPaths::GenericDataLocation;
+            } else if (standardResourceDirectory == "config") {
+                location = QStandardPaths::ConfigLocation;
+            }
+
+            if (scope == ScopeUser) {
+                installdir = QStandardPaths::writableLocation(location);
+            } else { // system scope
+                installdir = QStandardPaths::standardLocations(location).last();
+            }
+            pathcounter++;
+        }
         if (!targetDirectory.isEmpty()) {
             if (scope == ScopeUser) {
                 installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + '/';
@@ -389,6 +409,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             installdir = absoluteInstallPath + '/';
             pathcounter++;
         }
+
         if (pathcounter != 1) {
             qCritical() << "Wrong number of installation directories given." << endl;
             return QString();
