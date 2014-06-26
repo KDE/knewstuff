@@ -109,6 +109,18 @@ public:
      */
     KNS3::Entry::List installedEntries();
 
+    /**
+     * Set the title for display purposes in the widget's title.
+     * @param title the title of the application (or category or whatever)
+     */
+    void setTitle(const QString &title);
+
+    /**
+     * Get the current title
+     * @return the current title
+     */
+    QString title() const;
+
 private:
     void init(const QString &configFile);
 

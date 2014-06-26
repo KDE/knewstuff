@@ -88,7 +88,7 @@ void DownloadDialog::init(const QString &configFile)
     if (displayName.isEmpty()) {
         displayName = QCoreApplication::applicationName();
     }
-    d->downloadWidget->d->ui.m_titleWidget->setText(i18nc("Program name followed by 'Add On Installer'",
+    d->downloadWidget->setTitle(i18nc("Program name followed by 'Add On Installer'",
             "%1 Add-On Installer", displayName));
     //d->downloadWidget->d->ui.m_titleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
     d->downloadWidget->d->ui.m_titleWidget->setVisible(true);
@@ -103,6 +103,16 @@ DownloadDialog::~DownloadDialog()
     KConfigGroup group(KSharedConfig::openConfig(), ConfigGroup);
     KWindowConfig::saveWindowSize(windowHandle(), group, KConfigBase::Persistent);
     delete d;
+}
+
+void DownloadDialog::setTitle(const QString &title)
+{
+    d->downloadWidget->setTitle(title);
+}
+
+QString DownloadDialog::title() const
+{
+    return d->downloadWidget->title();
 }
 
 Entry::List DownloadDialog::changedEntries()

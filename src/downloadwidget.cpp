@@ -64,6 +64,16 @@ DownloadWidget::~DownloadWidget()
     delete d;
 }
 
+void DownloadWidget::setTitle(const QString &title)
+{
+    d->ui.m_titleWidget->setText(title);
+}
+
+QString DownloadWidget::title() const
+{
+    return d->ui.m_titleWidget->text();
+}
+
 Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
