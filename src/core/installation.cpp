@@ -358,7 +358,8 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
 #endif
        /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
         porting, but will make many kde4 ksnsrc files work out of the box*/
-        if (!standardResourceDirectory.isEmpty()) {
+       //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
+        if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != "wallpaper") {
             QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;
             //crude translation KStandardDirs names -> QStandardPaths enum
             if (standardResourceDirectory == "tmp") {
