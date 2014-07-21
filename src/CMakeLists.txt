@@ -34,7 +34,7 @@ set(KNewStuff_SRCS
     uploaddialog.cpp
 )
 
-qt5_wrap_ui(KNewStuff_SRCS
+ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
     uploaddialog.ui
 )
