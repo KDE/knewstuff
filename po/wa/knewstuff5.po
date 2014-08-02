@@ -1,0 +1,713 @@
+# translation of kdelibs4.po to Walloon
+# Ratournaedje e walon des messaedjes di KDE.
+#
+# Lorint Hendschel <lorint.hendschel@skynet.be>, 2002.
+# Pablo Saratxaga <pablo@walon.org>, 2002-2004, 2007.
+# Jean Cayron <jean.cayron@gmail.com>, 2007, 2008, 2009, 2010, 2011.
+# Jean Cayron <jean.cayron@tele2allin.be>, 2007.
+# Jean Cayron <jean.cayron@base.be>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-28 08:05+0000\n"
+"PO-Revision-Date: 2012-07-04 17:33+0200\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Walloon\n"
+
+#: attica/atticaprovider.cpp:294
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "the price of a download item, parameter 1 is the currency, 2 is the price"
+#| msgid ""
+#| "This items costs %1 %2.\n"
+#| "Do you want to buy it?"
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Li cayet costêye %1 %2.\n"
+"Voloz l' atchter?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Li balance di vosse conte est trop basse:\n"
+"Vosse balance: %1\n"
+"Pris: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Vosse vôtaedje a stî eredjistrî."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Vos estoz on rafiyant asteure."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr ""
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:47
+msgid "Download New Stuff..."
+msgstr "Aberweter noveaté..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Inicialijhaedje"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Fitchî d' apontiaedje nén trové : « %1 »"
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Li fitchî d' apontiaedje est mwais : « %1 »"
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "Dji tchedje les infôrmåcions so l' ahesseu"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Dji n' a savou tcherdjî les ahesseus di noveatés a pårti do fitchî: %1"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr "Åk n' a nén stî come dj' inicialijheu l' ahesseu."
+
+#: core/engine.cpp:212 core/engine.cpp:527
+msgid "Loading data"
+msgstr "Dji tchedje des dnêyes "
+
+#: core/engine.cpp:240
+msgid "Loading data from provider"
+msgstr "Dji tchedje des dnêyes di l' ahesseu"
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Dji tchedje des ahesseus a pårti do fitchî : %1 a fwait berwete"
+
+#: core/engine.cpp:487
+#, kde-format
+msgid "Re: %1"
+msgstr "Ri : %1"
+
+#: core/engine.cpp:529
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Dji tchedje on prévoeyaedje"
+msgstr[1] "Dji tchedje %1 prévoeyaedjes"
+
+#: core/engine.cpp:531 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Dj' astale"
+
+#: core/installation.cpp:176
+msgid "Invalid item."
+msgstr "Mwais cayet."
+
+#: core/installation.cpp:183
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"L' aberwetaedje do cayet a fwait berwete : pont d' adresse d' aberwetaedje "
+"po « %1 »."
+
+#: core/installation.cpp:222
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "L' aberwetaedje di « %1 » a fwait berwete, aroke : %2"
+
+#: core/installation.cpp:231
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:231
+msgid "Possibly bad download link"
+msgstr "Kécfeye ene mwaijhe hårdêye d' aberwetaedje"
+
+#: core/installation.cpp:234
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:297
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Dji n' a sepou astaler « %1 » : fitchî nén trové."
+
+#: core/installation.cpp:537
+msgid "Overwrite existing file?"
+msgstr "Sipotchî l' fitchî egzistant ?"
+
+#: core/installation.cpp:537
+#, fuzzy
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "Aberweter fitchî :"
+
+#: core/security.cpp:87
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Dji n' sai enonder <i>gpg</i> eyet prinde les clés k' i gn a. Soeyoz "
+"seur ki <i>gpg</i> est astalé. Ôtrumint, li verifiaedje des rsources "
+"aberwetêyes ni serè nén possibe.</qt>"
+
+#: core/security.cpp:211
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Intrez l' fråze di passe pol clé <b>Ox%1</b> k' est da <br /><i>%2&lt;"
+"%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:291
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Dji n' sai enonder <i>gpg</i> eyet waitî sel fitchî est valide. Soeyoz "
+"seur ki <i>gpg</i> est astalé, ôtrumint l' verifiaedje des rsources "
+"aberwetêyes ni srè nén possibe.</qt>"
+
+#: core/security.cpp:346
+msgid "Select Signing Key"
+msgstr "Tchoezixhoz clé po siner"
+
+#: core/security.cpp:346
+msgid "Key used for signing:"
+msgstr "Clé eployeye pol siner:"
+
+#: core/security.cpp:379
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Dji n' sai enonder <i>gpg</i> eyet siner l' fitchî. Soeyoz seur ki "
+"<i>gpg</i> est astalé, ôtrumint l' sinateure des rsources ni srè nén possibe."
+"</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Cweri après tot çki gn a d' pus novea"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 Astaleu d' rawete"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Li tins est houte. Verifyîz vosse raloyaedje al daegntoele."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Sierveu : %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Ahesseu : %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Modêye : %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Informåcion so l' ahesseu"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Dji n' a sepou astaler %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Cweri après tot çki gn a d' pus novea !"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Môde di håynaedje èn imådjetes"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Môde di håynaedje avou les detays"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Tos les ahesseus"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Totes les categoreyes"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Ahesseu:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Categoreye:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Li pus novea"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Préjhaedje"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Li pus aberweté"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Astalé"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Relére sol:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Cweri:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Dinez chal ene fråze a cweri"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Oteur:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Pådje måjhon</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Mete a djoû"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Disastaler"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Divini on rafiyant"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Astaler"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Detays po %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Djournå des candjmints :"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Pådje måjhon"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Diner des cwårs"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Båze d' aidance (nole intrêye)"
+msgstr[1] "Båze d' aidance (%1 intrêyes)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Drove dins ene finiesse di betchteu"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Préjhaedje: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Pa <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 aberwetaedje"
+msgstr[1] "%1 aberwetaedjes"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Dji tchedje li prévoeyaedje"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Detays"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Dji met a djoû"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Rastaler"
+
+#: uploaddialog.cpp:62
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Shuvant"
+
+#: uploaddialog.cpp:67
+msgid "Finish"
+msgstr "Fini"
+
+#: uploaddialog.cpp:180
+msgid "Fetching license data from server..."
+msgstr "Dji cwîr les dnêyes del licince sol sierveu..."
+
+#: uploaddialog.cpp:187
+msgid "Fetching content data from server..."
+msgstr "Dji cwîr les dnêyes di l' ådvins sol sierveu..."
+
+#: uploaddialog.cpp:286
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:310
+msgid "Checking login..."
+msgstr "Dji verifeye li login..."
+
+#: uploaddialog.cpp:332
+msgid "Fetching your previously updated content..."
+msgstr "Dji cwîr vost ådvins metou a djoû divant asteure..."
+
+#: uploaddialog.cpp:335
+msgid "Could not verify login, please try again."
+msgstr "Dji n' a savou verifyî l' login, sayîz co on côp s' i vs plait."
+
+#: uploaddialog.cpp:354
+msgid "Fetching your previously updated content finished."
+msgstr "Li cweraedje di vost ådvins metou a djoû divant asteure est tot fwait."
+
+#: uploaddialog.cpp:372
+msgid "Fetching content data from server finished."
+msgstr "Li cweraedje des dnêyes di l' ådvins sol sierveu est tot fwait."
+
+#: uploaddialog.cpp:395 uploaddialog.cpp:831
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Viziter l' waibe"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:441 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Pårtaedjî les totes noveatés"
+
+#: uploaddialog.cpp:464
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 eberweteu d' rawete"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:756
+#, kde-format
+msgid "File not found: %1"
+msgstr "Fitchî nén trové: %1"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:610 uploaddialog.cpp:756
+msgid "Upload Failed"
+msgstr "L' eberwetaedje a fwait berwete"
+
+#: uploaddialog.cpp:564
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"Li sierveu n' ricnoxhe nén l' categoreye %2 ki vs sayîz d' eberweter viè."
+msgstr[1] ""
+"Li sierveu n' ricnoxhe noles des categoreyes vs sayîz d' eberweter viè : %2"
+
+#: uploaddialog.cpp:567
+msgid "Error"
+msgstr "Aroke"
+
+#: uploaddialog.cpp:610
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Li categoreye « %1 » di tchoezeye n' est nén valåbe."
+
+#: uploaddialog.cpp:659 uploaddialog.cpp:673 uploaddialog.cpp:686
+msgid "Select preview image"
+msgstr "Tchoezi imådje do prévoeyaedje"
+
+#: uploaddialog.cpp:700
+msgid "There was a network error."
+msgstr "Åk n' a nén stî avou l' rantoele."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+msgid "Uploading Failed"
+msgstr "L' eberwetaedje a fwait berwete"
+
+#: uploaddialog.cpp:705
+msgid "Authentication error."
+msgstr "Aroke d' otintifiaedje."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "L' eberwetaedje a fwait berwete : %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Sicret:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "No d' uzeu:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Fitchî a eberweter :"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Novea eberwetaedje"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Discrijhaedje:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Modêye :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Licince:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr ""
+"Dinez kékès informåcions so voste eberwetaedje en inglès, s' i vs plait bén."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Tite:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "No do fitchî come il aparexhrè sol waibe"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Çouci dvreut discrire clairmint çou k' i gn a e fitchî. Ça pout esse li "
+"minme tecse kel tite do fitchî kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Vey divant les imådjes"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Tchoezi prévoeyaedje..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Definixhoz on pris po ç' cayet ci"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Pris"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Pris:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Råjhon do pris :"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Cweri l' hårdêye di l' ådvins do sierveu"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Ahiver l' ådvins sol sierveu"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Eberweter l' ådvins"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Tcherdjî l' prumî prévoeyaedje"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Note : Vos ploz aspougnî, mete a djoû eyet disfacer vost ådvins sol waibe."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Tcherdjî deujhinme prévoeyaedje"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Tcherdjî troejhinme prévoeyaedje"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Dji djure ki cist ådvins la ni va nén disconte on copyright, ene lwè oudon-"
+"bén ene marke k' i gn a. Dji so d' acoird ki mi adresse IP soeye edjîstreye "
+"e djournå. (I n' est nén permetou pal lwè d' cossemer di l' ådvins sins l' "
+"permission do ci k' a l' copyright.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Enonder l' tcherdjaedje"
