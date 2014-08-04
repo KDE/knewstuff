@@ -418,6 +418,12 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
 
         // qDebug() << "installdir: " << installdir;
 
+        // create the dir if it doesn't exist (QStandardPaths doesn't create it, unlike KStandardDirs!)
+        QDir dir(installdir);
+        if (!dir.exists(installdir)) {
+            dir.mkpath(installdir);
+        }
+
     }
 
     return installdir;
