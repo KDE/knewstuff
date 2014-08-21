@@ -34,7 +34,9 @@ Cache::Cache(const QString &appName): QObject(0)
 {
     m_kns2ComponentName = appName;
 
-    registryFile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + "knewstuff3/" + appName + ".knsregistry";
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("knewstuff3/");
+    QDir().mkpath(path);
+    registryFile = path + appName + ".knsregistry";
     // qDebug() << "Using registry file: " << registryFile;
 }
 
