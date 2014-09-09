@@ -1,0 +1,691 @@
+# Korean messages for kdelibs.
+# Copyright (C) Free Software Foundation, Inc.
+#
+# Cho Sung Jae <cho.sungjae@gmail.com>, 2007.
+# Park Shinjo <peremen@gmail.com>, 2007, 2008, 2009, 2010, 2011.
+# Park Shinjo <peremen@gmail.com>, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-08 08:34+0000\n"
+"PO-Revision-Date: 2014-03-01 01:29+0900\n"
+"Last-Translator: Park Shinjo <peremen@gmail.com>\n"
+"Language-Team: Korean <kde@peremen.name>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"이 항목의 값은 %1 %2입니다.\n"
+"구입하시겠습니까?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"계정 잔액이 부족합니다:\n"
+"계정 잔액: %1\n"
+"가격: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "한 표를 추가했습니다."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "팬으로 등록되었습니다."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "네트워크 오류. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "서버에 너무 많은 요청이 몰렸습니다. 잠시 후 다시 시도하십시오."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "알 수 없는 열린 협업 서비스 API 오류입니다. (%1)"
+
+#: button.cpp:47
+msgid "Download New Stuff..."
+msgstr "새로운 항목 다운로드..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "초기화 중"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "설정 파일을 찾을 수 없음: \"%1\""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "설정 파일이 올바르지 않음: \"%1\""
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "공급자 정보 가져오는 중"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "파일에서 공급자 목록을 불러올 수 없음: %1"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr "공급자를 초기화할 수 없습니다."
+
+#: core/engine.cpp:212 core/engine.cpp:527
+msgid "Loading data"
+msgstr "데이터 불러오는 중"
+
+#: core/engine.cpp:240
+msgid "Loading data from provider"
+msgstr "공급자에서 데이터 불러오는 중"
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "파일 %1에서 공급자 목록을 불러오는 중 실패함"
+
+#: core/engine.cpp:487
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:529
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "미리 보기 %1개 불러오는 중"
+
+#: core/engine.cpp:531 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "설치 중"
+
+#: core/installation.cpp:176
+msgid "Invalid item."
+msgstr "항목이 잘못되었습니다."
+
+#: core/installation.cpp:183
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "항목을 다운로드할 수 없습니다: \"%1\"의 다운로드 URL이 없습니다."
+
+#: core/installation.cpp:222
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "항목 \"%1\" 다운로드 실패. 오류: %2"
+
+#: core/installation.cpp:231
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"다운로드한 파일이 HTML 파일입니다. 웹 사이트로 가는 링크일 것입니다. 웹 브라"
+"우저로 링크를 여시겠습니까?"
+
+#: core/installation.cpp:231
+msgid "Possibly bad download link"
+msgstr "잘못된 다운로드 링크일 수 있음"
+
+#: core/installation.cpp:234
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "다운로드한 파일이 HTML 파일입니다. 브라우저로 엽니다."
+
+#: core/installation.cpp:297
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "\"%1\"(을)를 설치할 수 없습니다: 파일을 찾을 수 없습니다."
+
+#: core/installation.cpp:543
+msgid "Overwrite existing file?"
+msgstr "존재하는 파일을 덮어쓰시겠습니까?"
+
+#: core/installation.cpp:543
+msgid "Download File"
+msgstr "파일 다운로드"
+
+#: core/security.cpp:87
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 사용 가능한 키를 검색할 수 없습니다. "
+"<i>gpg</i>가 설치되어 있는지 확인하시고, 설치되어 있지 않은 경우에는 다운로드"
+"한 자원의 인증을 사용할 수 없습니다.</qt>"
+
+#: core/security.cpp:211
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>다음 항목에 속한, 키 <b>0x%1</b>에 대한 암구호를 입력하여 주십시오.<br /"
+"><i>%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:291
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 파일의 유효기간을 확인할 수 없습니다. "
+"<i>gpg</i>가 설치되어 있는지 확인하여 주시고, 설치되어 있지 않은 경우에는 다"
+"운로드한 자원의 인증을 사용할 수 없습니다.</qt>"
+
+#: core/security.cpp:346
+msgid "Select Signing Key"
+msgstr "서명할 키 선택"
+
+#: core/security.cpp:346
+msgid "Key used for signing:"
+msgstr "서명에 사용할 키:"
+
+#: core/security.cpp:379
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 파일을 서명할 수 없었습니다. <i>gpg</i>가 "
+"설치되어 있는지 확인하시고, 설치되어 있지 않은 경우에는 자원에 서명할 수 없습"
+"니다.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "새로운 내용을 얻기!"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 추가 기능 설치기"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "시간이 초과되었습니다. 인터넷 연결을 확인하십시오."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "서버: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />공급자: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />버전: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "공급자 정보"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "%1(을)를 설치할 수 없습니다"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "새로운 내용을 얻기!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "아이콘 보기 모드"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "자세히 보기 모드"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "모든 공급자"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "모든 분류"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "공급자:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "분류:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "날짜"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "별점"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "최다 다운로드"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "설치됨"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "정렬 순서:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "찾기:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "검색할 항목을 입력하십시오"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "작성자:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">홈 페이지</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "업데이트"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "삭제"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "너무 좋아요"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "설치"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1의 자세한 정보"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "변경 기록:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "홈페이지"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "기부하기"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "지식 센터 (항목 %1개)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "브라우저 창에서 열기"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "별점: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i> 만듦"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "좋아하는 사람 %1명"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "다운로드 %1회"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "미리 보기 불러오는 중"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "자세히"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "업데이트 중"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "다시 설치하기"
+
+#: uploaddialog.cpp:62
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "앞으로"
+
+#: uploaddialog.cpp:67
+msgid "Finish"
+msgstr "마침"
+
+#: uploaddialog.cpp:180
+msgid "Fetching license data from server..."
+msgstr "서버에서 라이선스 데이터 가져오는 중..."
+
+#: uploaddialog.cpp:187
+msgid "Fetching content data from server..."
+msgstr "서버에서 내용 데이터 가져오는 중..."
+
+#: uploaddialog.cpp:286
+msgid "Register a new account"
+msgstr "새 계정 등록하기"
+
+#: uploaddialog.cpp:310
+msgid "Checking login..."
+msgstr "로그인 확인 중..."
+
+#: uploaddialog.cpp:332
+msgid "Fetching your previously updated content..."
+msgstr "기존에 업로드한 내용 가져오는 중..."
+
+#: uploaddialog.cpp:335
+msgid "Could not verify login, please try again."
+msgstr "로그인 정보를 확인할 수 없습니다. 다시 시도하십시오."
+
+#: uploaddialog.cpp:354
+msgid "Fetching your previously updated content finished."
+msgstr "이전에 업로드한 내용을 가져왔습니다."
+
+#: uploaddialog.cpp:372
+msgid "Fetching content data from server finished."
+msgstr "서버에서 내용 데이터를 가져올 수 없습니다."
+
+#: uploaddialog.cpp:395 uploaddialog.cpp:831
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "웹 사이트 방문하기"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:441 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "새로운 것 공유하기"
+
+#: uploaddialog.cpp:464
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 추가 기능 업로더"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:756
+#, kde-format
+msgid "File not found: %1"
+msgstr "파일을 찾을 수 없음: %1"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:610 uploaddialog.cpp:756
+msgid "Upload Failed"
+msgstr "업로드 실패"
+
+#: uploaddialog.cpp:564
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "서버에서 업로드하려는 분류를 인식하지 못했습니다: %2"
+
+#: uploaddialog.cpp:567
+msgid "Error"
+msgstr "오류"
+
+#: uploaddialog.cpp:610
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "선택한 분류 \"%1\"이(가) 올바르지 않습니다."
+
+#: uploaddialog.cpp:659 uploaddialog.cpp:673 uploaddialog.cpp:686
+msgid "Select preview image"
+msgstr "미리 보기 그림 선택"
+
+#: uploaddialog.cpp:700
+msgid "There was a network error."
+msgstr "네트워크 오류가 발생하였습니다."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+msgid "Uploading Failed"
+msgstr "업로드에 실패했습니다."
+
+#: uploaddialog.cpp:705
+msgid "Authentication error."
+msgstr "인증 오류."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "업로드 실패: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "암호:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "업로드할 파일:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "새 업로드"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "설명:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "버전:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "라이선스:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "업로드한 항목의 정보를 영어로 입력하십시오."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "제목:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "웹 사이트에 표시할 파일 이름"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr "파일 내용을 잘 설명해야 합니다. kvtml 파일의 제목과 같아도 됩니다."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "미리 보기 그림"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "미리 보기 선택..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "이 항목의 가격을 정하십시오"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "가격"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "가격:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "가격을 매긴 이유:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "서버에서 내용 링크 가져오기"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "서버에 내용 만들기"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "내용 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "첫 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "메모: 웹 사이트에서 내용을 편집, 갱신, 삭제할 수 있습니다."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "두 번째 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "세 번째 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"이 항목이 다른 사람의 저작권이나 상표 및 현행법을 위반하지 않음을 동의합니"
+"다. IP 주소가 기록으로 남을 것입니다. (저작권자의 허락 없이 타인의 저작물을 "
+"재배포하는 행위는 불법입니다.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "업로드 시작"
