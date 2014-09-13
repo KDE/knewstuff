@@ -53,7 +53,7 @@ public:
 
 using namespace KNS3;
 
-const char *ConfigGroup = "DownloadDialog Settings";
+const char ConfigGroup[] = "DownloadDialog Settings";
 
 DownloadDialog::DownloadDialog(QWidget *parent)
     : QDialog(parent)
