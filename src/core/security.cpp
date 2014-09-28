@@ -27,7 +27,6 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextStream>
 #include <QtCore/QTimer>
-#include <QtCore/QStringList>
 #include <QInputDialog>
 #include <qstandardpaths.h>
 

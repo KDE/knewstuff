@@ -42,7 +42,6 @@
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <shlobj.h>
-#include <qstandardpaths.h>
 #endif
 
 using namespace KNS3;
@@ -515,7 +514,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                 // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
                 // and using the http headers if they exist to get the file name, but as discussed in
                 // Randa this is not going to happen anytime soon (if ever) so go with the hack
-                if (source.url().startsWith("http://newstuff.kde.org/cgi-bin/hotstuff-access?file=")) {
+                if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
                     installfile = QUrlQuery(source).queryItemValue("file");
                     int lastSlash = installfile.lastIndexOf('/');
                     if (lastSlash >= 0) {
