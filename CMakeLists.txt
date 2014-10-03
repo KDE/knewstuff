@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.11)
 
 project(KNewStuff)
 
-find_package(ECM 1.2.0 REQUIRED NO_MODULE)
+find_package(ECM 1.3.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 include(KDEInstallDirs)
@@ -14,7 +14,7 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xm
 
 # Not part of kdelibs
 set(KF5_VERSION "5.3.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.2.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.3.0") # handled by release scripts
 find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
