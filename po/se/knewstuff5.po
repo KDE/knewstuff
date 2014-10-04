@@ -1,0 +1,697 @@
+# Translation of kdelibs4 to Northern Sami
+#
+# Børre Gaup <boerre@skolelinux.no>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-08 08:34+0000\n"
+"PO-Revision-Date: 2012-05-30 23:19+0200\n"
+"Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
+"Language-Team: Northern Sami <i18n-sme@lister.ping.uio.no>\n"
+"Language: se\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Gálvu máksá %1 %2\n"
+"Háliidatgo oastit dan?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Dus lea menddo unnán du konttus:\n"
+"Saldo lea: %1\n"
+"Haddi lea: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Du jienasteapmi registrerejuvvui."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Dál don liikot dása."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Fierpmádatmeattáhus. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "Menddo máŋga jearaldaga bálvái. Geahččal fas moadde minuhta geahčen."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Amas API-meattáhus rabas ovttasbargobálvalusain (%1)"
+
+#: button.cpp:47
+msgid "Download New Stuff..."
+msgstr "Viečča ođđa, somás tiŋggaid …"
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Vuolgimin johtui"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Heivehusfiila ii gávdnon: «%1»"
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Heivehusfiila ii gusto: «%1»"
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "Viežžamin skáhppojeaddjidieđuid"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Ii gávdnan hot-new-stuff-skáhppojeddjiid «%1»-fiillas"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:212 core/engine.cpp:527
+msgid "Loading data"
+msgstr "Viežžamin dataid"
+
+#: core/engine.cpp:240
+msgid "Loading data from provider"
+msgstr "Viežžamin dataid skáhppojeaddjis"
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Ii gávdnan skáhppojeddjiid «%1»-fiillas"
+
+#: core/engine.cpp:487
+#, kde-format
+msgid "Re: %1"
+msgstr "Daga ođđasit: %1"
+
+#: core/engine.cpp:529
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Viežžamin ovdačájeheami"
+msgstr[1] "Viežžamin %1 ovdačájeheami"
+
+#: core/engine.cpp:531 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Sajáiduhttimin"
+
+#: core/installation.cpp:176
+msgid "Invalid item."
+msgstr "Gustohis mearkkuš."
+
+#: core/installation.cpp:183
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Ii sáhttán viežžat merkoša: «%1» ii leat liŋkka vieččahahtti fiilii."
+
+#: core/installation.cpp:222
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Ii sáhttán viežžat «%1», meattáhus: %2"
+
+#: core/installation.cpp:231
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Vižžon fiila lea html-fiila. Dáidá leat liŋka ruovttosiidui iige liŋka "
+"vieččahahtti fiilii. Háliidatgo rahpat  ruovttosiidu web-loganis?"
+
+#: core/installation.cpp:231
+msgid "Possibly bad download link"
+msgstr "Dáidá leat boasttu liŋka"
+
+#: core/installation.cpp:234
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Vižžon fiila lei html-fiila. Rabai dan web-loganis."
+
+#: core/installation.cpp:297
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Ii sáhttán sajáiduhttit «%1». Fiila ii gávdnon."
+
+#: core/installation.cpp:543
+msgid "Overwrite existing file?"
+msgstr "Buhtte fiilla?"
+
+#: core/installation.cpp:543
+msgid "Download File"
+msgstr ""
+
+#: core/security.cpp:87
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Ii sáhte álggahit <i>gpg</i> ja viežžat olámuttus čoavdagiid. Dárkkis "
+"ahte <i>gpg</i> lea sajáiduhtton, muđui ii leat vejolaš verifiseret vižžon "
+"resurssaid.</qt>"
+
+#: core/security.cpp:211
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Čális beassansáni <b>0x%1</b> ovddas, mii gullá <br /><i>%2&lt;%3&gt;:"
+"ii</i><br />:</qt>"
+
+#: core/security.cpp:291
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Ii sáhte álggahit <i>gpg</i> ja iskat jus fiila gusto. Dárkkis ahte "
+"<i>gpg</i> lea sajáiduhtton, muđuid ii leat vejolaš iskat jus vižžon "
+"resurssat gustot.</qt>"
+
+#: core/security.cpp:346
+msgid "Select Signing Key"
+msgstr "Vállje čoavdaga mainna vuolláičállit"
+
+#: core/security.cpp:346
+msgid "Key used for signing:"
+msgstr "Čoavdda mainna vuolláičállit:"
+
+#: core/security.cpp:379
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Ii sáhte álggahit <i>gpg</i> ja vuolláičállit fiilla. Dárkkis ahte "
+"<i>gpg</i> lea sajáiduhtton, muđuid ii leat vejolaš vuolláičállit resurssa.</"
+"qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Viečča ođđa, somás tiŋggaid"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1-lasáhussajáiduhtti"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Áigemearremeattáhus. Dárkkis interneahtaoktavuođa."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Bálvá: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br /> Fálli: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br /> Veršuvdna: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Dieđuid lágideaddjis"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Ii sáhttán sajáiduhttit «%1»"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Viečča ođđa, somás tiŋggaid!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Govaščájehanmodus"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Bienalaš čájehanmodus"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Buot skáhppojeaddjit"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Buot kategoriijat"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Fálli:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Kategoriija:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Ođđamus"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Árvoortnet"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Eanemus vižžon"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Sajáiduhtton"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Sortere dán bokte:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Oza:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Čális ohcanteavstta dása"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Čálli:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Ruovttosiidu</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Ođasmahte"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Váldde eret"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Liiko dása"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Sajáiduhte"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1-bienat"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Rievdadusčielggadus:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Ruovttosiidu"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Skeŋke ruđaid"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Máhttodiehtovuođđo (eai leat merkošat)"
+msgstr[1] "Máhttodiehtovuođđu (%1 merkoša)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Rahpá web-logana"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Árvoortnet: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i> lea ráhkadan dan"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 čuvvojeaddji"
+msgstr[1] "%1 čuvvojeaddji"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Okta viežžan"
+msgstr[1] "%1 viežžama"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Viežžamin ovdačájeheami"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Bienat"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Ođasmahttimin"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Sajáiduhte fas"
+
+#: uploaddialog.cpp:62
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Boahtte"
+
+#: uploaddialog.cpp:67
+msgid "Finish"
+msgstr "Gearggat"
+
+#: uploaddialog.cpp:180
+msgid "Fetching license data from server..."
+msgstr "Viežžamin liseansadataid bálvvás …"
+
+#: uploaddialog.cpp:187
+msgid "Fetching content data from server..."
+msgstr "Viežžamin sisdoalu bálvvás …"
+
+#: uploaddialog.cpp:286
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:310
+msgid "Checking login..."
+msgstr "Dárkkisteamen sisačáliheami …"
+
+#: uploaddialog.cpp:332
+msgid "Fetching your previously updated content..."
+msgstr "Viežžamin ovddeš ođasmahtton sisdoalu …"
+
+#: uploaddialog.cpp:335
+msgid "Could not verify login, please try again."
+msgstr "Ii sáhttán nannet sisačáliheami, geahččal ođđasit."
+
+#: uploaddialog.cpp:354
+msgid "Fetching your previously updated content finished."
+msgstr "Gearggai viežžamis ovddeš ođasmahtton sisdoalu."
+
+#: uploaddialog.cpp:372
+msgid "Fetching content data from server finished."
+msgstr "Gearggai viežžamis sisdoaludataid bálvvás."
+
+#: uploaddialog.cpp:395 uploaddialog.cpp:831
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Gallet ruovttosiiddu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:441 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Juoge ođđa, somás tiŋggaid"
+
+#: uploaddialog.cpp:464
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr ""
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:756
+#, kde-format
+msgid "File not found: %1"
+msgstr "Fiila ii gávdnon: %1"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:610 uploaddialog.cpp:756
+msgid "Upload Failed"
+msgstr "Sádden filtii"
+
+#: uploaddialog.cpp:564
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "Bálvá ii dovdan %2-kategoriija maid geahččalit sáddet"
+msgstr[1] "Bálvá ii dovdan ovttage kategoriijain maid geahččalit sáddet: %2"
+
+#: uploaddialog.cpp:567
+msgid "Error"
+msgstr "Meattáhus"
+
+#: uploaddialog.cpp:610
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Válljejuvvon kategoriija «%1» ii gusto."
+
+#: uploaddialog.cpp:659 uploaddialog.cpp:673 uploaddialog.cpp:686
+msgid "Select preview image"
+msgstr "Vállje ovdačájehangova"
+
+#: uploaddialog.cpp:700
+msgid "There was a network error."
+msgstr "Lei fierpmádatmeattáhus."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+msgid "Uploading Failed"
+msgstr "Sádden filtii"
+
+#: uploaddialog.cpp:705
+msgid "Authentication error."
+msgstr "Luohttevašvuohtameattáhus."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Sádden filtii: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Beassansátni:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Geavaheaddjinamma:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Fiila maid áiggut sáddet:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Ođđa sádden"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Válddahus:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Veršuvdna:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Liseansa:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Čális dieđuid fiilla birra maid áiggut sáddet eŋgelasgillii"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Namahus:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Fiilla namma nugo dat ihtá fierpmádatbáikkis"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Dás gálggašit čilget makkár sisdoallu lea dán fiillas. Sáhttá leat seamma "
+"teaksta go kvtml-fiilla namahus."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Ovdačájehangovat"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Vállje ovdačájeheami …"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Mearrit dán gálvvu hatti"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Haddi"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Haddi:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Sivva go dát haddi lea bidjon:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Viečča sisdoaluliŋkka bálvvás"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Ráhkat sisdoalu bálvvás"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Sádde sisdoalu"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Sádde vuosttaš ovdačájeheami"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Fuomáš: Sáhtát doaimmahit, ođasmahttit ja sihkkut iežat sisdoalu "
+"fierpmádatbáikkis."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Sádde nuppi ovdačájeheami"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Sádde goalmmát ovdačájeheami"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Álggat sáddema"

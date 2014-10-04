@@ -1,0 +1,697 @@
+# Indonesian translations for kdelibs4 package.
+# Copyright (C) 2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs4 package.
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2010-2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-09-29 07:45+0000\n"
+"PO-Revision-Date: 2014-02-04 20:08+0700\n"
+"Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
+"Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Item ini seharga %1 %2.\n"
+"Anda ingin membelinya?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Saldo rekening anda terlalu rendah:\n"
+"Rekening anda: %1\n"
+"Harga: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Pilihan anda telah dicatat."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Anda sekarang seorang fan."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Galat jaringan. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Terlalu banyak permintaan ke server. Silakan coba lagi dalam beberapa menit."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Galat API Layanan Kolaborasi Terbuka tak diketahui. (%1)"
+
+#: button.cpp:47
+msgid "Download New Stuff..."
+msgstr "Unduh Barang Baru..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Menginisialisasi"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Berkas konfigurasi tak ditemukan: \"%1\""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Berkas konfigurasi tidak valid: \"%1\""
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "Memuat informasi penyedia"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"Tak dapat memuat penyedia dapatkan barang baru yang keren dari berkas: %1"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr "Galat menginisialisasi penyedia."
+
+#: core/engine.cpp:212 core/engine.cpp:527
+msgid "Loading data"
+msgstr "Memuat data"
+
+#: core/engine.cpp:240
+msgid "Loading data from provider"
+msgstr "Memuat data dari penyedia"
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Memuat penyedia dari berkas: %1 gagal"
+
+#: core/engine.cpp:487
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:529
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Memuat %1 pratilik"
+
+#: core/engine.cpp:531 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Menginstal"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Item tidak sah."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Pengunduhan item gagal: tak ada URL unduhan untuk \"%1\"."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Pengunduhan \"%1\" gagal, galat: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Berkas yang diunduh adalah berkas html. Hal ini menunjukkan tautan ke situs "
+"web ketimbang unduhan sebenarnya. Apakah anda ingin membuka situs dengan "
+"peramban?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Kemungkinan tautan unduhan rusak"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Berkas unduhan adalah berkas HTML. Dibuka di peramban."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Tak dapat menginstal \"%1\": berkas tak ditemukan."
+
+#: core/installation.cpp:542
+msgid "Overwrite existing file?"
+msgstr "Timpa berkas yang telah ada?"
+
+#: core/installation.cpp:542
+msgid "Download File"
+msgstr "Unduh Berkas"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Tak dapat menjalankan <i>gpg</i> dan menerima kunci yang tersedia. "
+"Pastikan <i>gpg</i> terinstal, atau verifikasi sumber daya yang diunduh "
+"tidak akan akan memungkinkan.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Masukkan lema sandi untuk kunci <b>0x%1</b>, milik<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Tak dapat menjalankan <i>gpg</i> dan memeriksa validitas berkas. "
+"Pastikan <i>gpg</i> terinstal, atau verifikasi sumber daya yang diunduh "
+"tidak akan memungkinkan.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Pilih Kunci Penandatanganan"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Kunci yang digunakan untuk penandatanganan:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Tak dapat menjalankan <i>gpg</i> dan menandatangani berkas. Pastikan "
+"<i>gpg</i> terinstal, atau penandatanganan sumber daya tidak akan "
+"memungkinkan.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Dapatkan Barang Baru Yang Keren"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 Instaler Tambahan"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Waktu habis. Cek koneksi Internet."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Server: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Penyedia: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Versi: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Informasi penyedia"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Tak dapat menginstal %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Dapatkan Barang Baru Yang Keren!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Mode tampilan ikon"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Mode tampilan detail"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Semua Penyedia"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Semua Kategori"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Penyedia:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Kategori:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Terbaru"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Rating"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Paling banyak diunduh"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Terinstal"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Urut berdasarkan:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Cari:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Masukkan lema penelusuran di sini"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Penulis:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Laman</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Mutakhirkan"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Hapus"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Menjadi Fan"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Instal"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Detail untuk %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Log Perubahan:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Laman"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Berikan donasi"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Knowledgebase (%1 entri)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Buka di jendela peramban"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Rating: %1"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Oleh <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 fan"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "%1 unduhan"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Memuat Pratilik"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Detail"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Memutakhirkan"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Instal Lagi"
+
+#: uploaddialog.cpp:62
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Berikutnya"
+
+#: uploaddialog.cpp:67
+msgid "Finish"
+msgstr "Selesai"
+
+#: uploaddialog.cpp:180
+msgid "Fetching license data from server..."
+msgstr "Mengambil data lisensi dari server..."
+
+#: uploaddialog.cpp:187
+msgid "Fetching content data from server..."
+msgstr "Mengambil data konten dari server..."
+
+#: uploaddialog.cpp:286
+msgid "Register a new account"
+msgstr "Daftar akun baru"
+
+#: uploaddialog.cpp:310
+msgid "Checking login..."
+msgstr "Memeriksa log masuk..."
+
+#: uploaddialog.cpp:332
+msgid "Fetching your previously updated content..."
+msgstr "Mengunggah konten anda yang sebelumnya dimutakhirkan..."
+
+#: uploaddialog.cpp:335
+msgid "Could not verify login, please try again."
+msgstr "Tak dapat memverifikisai log masuk, silakan coba lagi."
+
+#: uploaddialog.cpp:354
+msgid "Fetching your previously updated content finished."
+msgstr "Pengambilan konten anda sebelumnya yang dimutakhirkan telah selesai."
+
+#: uploaddialog.cpp:372
+msgid "Fetching content data from server finished."
+msgstr "Pengambilan data konten dari server selesai."
+
+#: uploaddialog.cpp:395 uploaddialog.cpp:831
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Kunjungi situs web"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:441 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Bagikan Barang Baru Yang Keren"
+
+#: uploaddialog.cpp:464
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 Pengunggah Tambahan"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:756
+#, kde-format
+msgid "File not found: %1"
+msgstr "Berkas tak ditemukan: %1"
+
+#: uploaddialog.cpp:484 uploaddialog.cpp:610 uploaddialog.cpp:756
+msgid "Upload Failed"
+msgstr "Gagal Mengunggah"
+
+#: uploaddialog.cpp:564
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"Server tidak mengenali kategori apapun yang sedang anda coba unggah: %2"
+
+#: uploaddialog.cpp:567
+msgid "Error"
+msgstr "Galat"
+
+#: uploaddialog.cpp:610
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Kategori terpilih \"%1\" tidak valid."
+
+#: uploaddialog.cpp:659 uploaddialog.cpp:673 uploaddialog.cpp:686
+msgid "Select preview image"
+msgstr "Pilih gambar pratilik"
+
+#: uploaddialog.cpp:700
+msgid "There was a network error."
+msgstr "Terjadi galat jaringan."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+msgid "Uploading Failed"
+msgstr "Gagal Mengunggah"
+
+#: uploaddialog.cpp:705
+msgid "Authentication error."
+msgstr "Galat otentikasi."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Gagal mengunggah: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Sandi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Nama pengguna:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Berkas untuk diunggah:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Unggahan Baru"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Keterangan:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Versi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Lisensi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Tolong isi informasi tentang unggahan anda dalam bahasa Inggris."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Judul:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Nama berkas yang akan tampak di situs web"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Ini harus menjelaskan dengan baik isi berkas. Hal ini dapat sama dengan "
+"judul dari berkas kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Gambar Pratilik"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Pilih Pratilik..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Tentukan harga untuk item ini"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Harga"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Harga:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Alasan untuk harga:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Ambil tautan konten dari server"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Membuat konten di server"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Mengunggah konten"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Menunggah pratilik pertama"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Catatan: Anda dapat menyunting, memutakhirkan dan menghapus konten anda dari "
+"situs web."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Memuat pratilik kedua"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Mengunggah pratilik ketiga"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Saya memastikan bahwa konten ini tidak melanggar hak cipta, hukum atau merek "
+"apapun yang masih berlaku. Saya setuju agar alamat IP saya dicatat. "
+"(Mendistribusikan konten tanpa izin dari pemegang hak cipta adalah ilegal.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Mulai Unggah"
