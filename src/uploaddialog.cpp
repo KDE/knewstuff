@@ -170,7 +170,7 @@ void UploadDialog::Private::_k_showPage(int page)
     switch (ui.stackedWidget->currentIndex()) {
     case UserPasswordPage:
         ui.username->setFocus();
-        // TODO 4.6 enable new string: setBusy(i18n("Fetching provider information..."));
+        setBusy(i18n("Fetching provider information..."));
         break;
 
     case FileNewUpdatePage:
@@ -259,7 +259,7 @@ void UploadDialog::Private::_k_updatePage()
 void UploadDialog::Private::_k_providersLoaded(const QStringList &providers)
 {
     if (providers.size() == 0) {
-        // TODO 4.6 enable new string: setIdle(i18n("Could not fetch provider information."));
+        setIdle(i18n("Could not fetch provider information."));
         ui.stackedWidget->setEnabled(false);
         qWarning() << "Could not load providers.";
         return;
