@@ -16,8 +16,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KNEWSTUFF2_SECURITY_H
-#define KNEWSTUFF2_SECURITY_H
+#ifndef KNEWSTUFF2_SECURITY_P_H
+#define KNEWSTUFF2_SECURITY_P_H
 
 //qt includes
 #include <QtCore/QMap>

@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_ENGINE_H
-#define KNEWSTUFF3_ENGINE_H
+#ifndef KNEWSTUFF3_ENGINE_P_H
+#define KNEWSTUFF3_ENGINE_P_H
 
 #include <QtCore/QObject>
 #include <QtCore/QString>

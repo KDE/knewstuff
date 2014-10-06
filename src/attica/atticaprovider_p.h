@@ -14,8 +14,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KNEWSTUFF3_ATTICA_PROVIDER_H
-#define KNEWSTUFF3_ATTICA_PROVIDER_H
+#ifndef KNEWSTUFF3_ATTICAPROVIDER_P_H
+#define KNEWSTUFF3_ATTICAPROVIDER_P_H
 
 #include <QtCore/QSet>
 #include <QtCore/QPointer>

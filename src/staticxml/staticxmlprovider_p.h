@@ -17,8 +17,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KNEWSTUFF3_STATICXML_PROVIDER_H
-#define KNEWSTUFF3_STATICXML_PROVIDER_H
+#ifndef KNEWSTUFF3_STATICXMLPROVIDER_P_H
+#define KNEWSTUFF3_STATICXMLPROVIDER_P_H
 
 #include "core/provider_p.h"
 #include <QMap>

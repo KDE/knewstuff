@@ -15,8 +15,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_UI_ENTRYDETAILS_H
-#define KNEWSTUFF3_UI_ENTRYDETAILS_H
+#ifndef KNEWSTUFF3_ENTRYDETAILSDIALOG_P_H
+#define KNEWSTUFF3_ENTRYDETAILSDIALOG_P_H
 
 #include <QtCore/QObject>
 #include "core/entryinternal_p.h"

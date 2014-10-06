@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_UI_PROGRESSINDICATOR_H
-#define KNEWSTUFF3_UI_PROGRESSINDICATOR_H
+#ifndef KNEWSTUFF3_PROGRESSINDICATOR_P_H
+#define KNEWSTUFF3_PROGRESSINDICATOR_P_H
 
 #include <QFrame>
 #include <kpixmapsequence.h>

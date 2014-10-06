@@ -15,8 +15,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_UI_IMAGEPREVIEWWIDGET_H
-#define KNEWSTUFF3_UI_IMAGEPREVIEWWIDGET_H
+#ifndef KNEWSTUFF3_IMAGEPREVIEWWIDGET_P_H
+#define KNEWSTUFF3_IMAGEPREVIEWWIDGET_P_H
 
 #include <QWidget>
 #include <QImage>

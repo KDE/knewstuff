@@ -16,8 +16,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KNEWSTUFF3_INSTALLATION_H
-#define KNEWSTUFF3_INSTALLATION_H
+#ifndef KNEWSTUFF3_INSTALLATION_P_H
+#define KNEWSTUFF3_INSTALLATION_P_H
 
 #include <QtCore/QObject>
 #include <QtCore/QString>

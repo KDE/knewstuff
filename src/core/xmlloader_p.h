@@ -18,8 +18,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef KNEWSTUFF3_XML_LOADER_H
-#define KNEWSTUFF3_XML_LOADER_H
+#ifndef KNEWSTUFF3_XMLLOADER_P_H
+#define KNEWSTUFF3_XMLLOADER_P_H
 
 #include <QtXml/qdom.h>
 #include <QtCore/QObject>

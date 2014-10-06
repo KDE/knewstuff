@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_UI_ITEMSVIEWDELEGATE_H
-#define KNEWSTUFF3_UI_ITEMSVIEWDELEGATE_H
+#ifndef KNEWSTUFF3_ITEMSVIEWDELEGATE_P_H
+#define KNEWSTUFF3_ITEMSVIEWDELEGATE_P_H
 
 #include "itemsviewbasedelegate_p.h"
 

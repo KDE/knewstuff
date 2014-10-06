@@ -17,8 +17,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_UI_ITEMSVIEWBASEDELEGATE_H
-#define KNEWSTUFF3_UI_ITEMSVIEWBASEDELEGATE_H
+#ifndef KNEWSTUFF3_ITEMSVIEWBASEDELEGATE_P_H
+#define KNEWSTUFF3_ITEMSVIEWBASEDELEGATE_P_H
 
 #include <QList>
 #include <QtCore/QMap>

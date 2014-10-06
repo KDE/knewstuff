@@ -19,8 +19,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF3_ENTRY_H
-#define KNEWSTUFF3_ENTRY_H
+#ifndef KNEWSTUFF3_ENTRYINTERNAL_P_H
+#define KNEWSTUFF3_ENTRYINTERNAL_P_H
 
 #include <QtCore/QDate>
 #include <QtXml/QDomElement>

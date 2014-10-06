@@ -16,8 +16,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF2_TEST_STANDARD_H
-#define KNEWSTUFF2_TEST_STANDARD_H
+#ifndef KNEWSTUFF2_STANDARD_H
+#define KNEWSTUFF2_STANDARD_H
 
 #include <knewstuff2/core/entry.h>
 
