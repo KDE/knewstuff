@@ -21,6 +21,7 @@
 */
 
 #include <QApplication>
+#include <QPointer>
 #include <QtDebug>
 #include <QUrl>
 
@@ -41,11 +42,12 @@ int main(int argc, char **argv)
 
     if (i.arguments().count() > 1) {
         QString configfile = QLatin1String(argv[1]);
-        KNS3::UploadDialog dialog(configfile);
+        QPointer<KNS3::UploadDialog> dialog = new KNS3::UploadDialog(configfile);
         if (i.arguments().count() > 2) {
-            dialog.setUploadFile(QUrl(QLatin1String(argv[2])));
+            dialog->setUploadFile(QUrl(QLatin1String(argv[2])));
         }
-        dialog.exec();
+        dialog->exec();
+        delete dialog;
     }
     else
     {

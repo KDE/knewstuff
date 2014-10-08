@@ -21,6 +21,7 @@
 */
 
 #include <QApplication>
+#include <QPointer>
 #include <QtDebug>
 #include <klocalizedstring.h>
 
@@ -39,11 +40,12 @@ int main(int argc, char **argv)
 
     if (i.arguments().count() > 1) {
         QString configfile = QLatin1String(argv[1]);
-        KNS3::DownloadDialog dialog(configfile);
-        dialog.exec();
-        foreach (const KNS3::Entry& e, dialog.changedEntries()) {
+        QPointer<KNS3::DownloadDialog> dialog = new KNS3::DownloadDialog(configfile);
+        dialog->exec();
+        foreach (const KNS3::Entry& e, dialog->changedEntries()) {
             qDebug() << "Changed Entry: " << e.name();
         }
+        delete dialog;
     }
     else
     {

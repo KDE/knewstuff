@@ -21,6 +21,8 @@
 #include <klocalizedstring.h>
 #include "downloaddialog.h"
 
+#include <QPointer>
+
 namespace KNS3
 {
 class Button::Private
@@ -73,10 +75,13 @@ void Button::showDialog()
 {
     emit aboutToShowDialog();
 
-    DownloadDialog dialog(d->configFile, this);
-    dialog.exec();
+    QPointer<DownloadDialog> dialog = new DownloadDialog(d->configFile, this);
+    dialog->exec();
 
-    emit dialogFinished(dialog.changedEntries());
+    if (dialog)
+        emit dialogFinished(dialog->changedEntries());
+
+    delete dialog;
 }
 
 }

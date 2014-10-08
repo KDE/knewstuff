@@ -27,6 +27,7 @@
 #include <QLabel>
 #include <QLayout>
 #include <QDoubleSpinBox>
+#include <QPointer>
 #include <QtCore/QString>
 #include <QtCore/QSignalMapper>
 #include <QCoreApplication>
@@ -656,41 +657,44 @@ void UploadDialog::Private::_k_startUpload()
 void UploadDialog::Private::_k_changePreview1()
 {
     const QStringList filters = _supportedMimeTypes();
-    QFileDialog dialog(q, i18n("Select preview image"));
-    dialog.setMimeTypeFilters(filters);
-    if (dialog.exec() == QDialog::Accepted) {
-        QUrl url = dialog.selectedUrls().first();
+    QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
+    dialog->setMimeTypeFilters(filters);
+    if (dialog->exec() == QDialog::Accepted) {
+        QUrl url = dialog->selectedUrls().first();
         previewFile1 = url;
         // qDebug() << "preview is: " << url.url();
         QPixmap preview(url.toLocalFile());
         ui.previewImage1->setPixmap(preview.scaled(ui.previewImage1->size()));
     }
+    delete dialog;
 }
 
 void UploadDialog::Private::_k_changePreview2()
 {
     const QStringList filters = _supportedMimeTypes();
-    QFileDialog dialog(q, i18n("Select preview image"));
-    dialog.setMimeTypeFilters(filters);
-    if (dialog.exec() == QDialog::Accepted) {
-        QUrl url = dialog.selectedUrls().first();
+    QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
+    dialog->setMimeTypeFilters(filters);
+    if (dialog->exec() == QDialog::Accepted) {
+        QUrl url = dialog->selectedUrls().first();
         previewFile2 = url;
         QPixmap preview(url.toLocalFile());
         ui.previewImage2->setPixmap(preview.scaled(ui.previewImage1->size()));
     }
+    delete dialog;
 }
 
 void UploadDialog::Private::_k_changePreview3()
 {
     const QStringList filters = _supportedMimeTypes();
-    QFileDialog dialog(q, i18n("Select preview image"));
-    dialog.setMimeTypeFilters(filters);
-    if (dialog.exec() == QDialog::Accepted) {
-        QUrl url = dialog.selectedUrls().first();
+    QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
+    dialog->setMimeTypeFilters(filters);
+    if (dialog->exec() == QDialog::Accepted) {
+        QUrl url = dialog->selectedUrls().first();
         previewFile3 = url;
         QPixmap preview(url.toLocalFile());
         ui.previewImage3->setPixmap(preview.scaled(ui.previewImage1->size()));
     }
+    delete dialog;
 }
 
 void UploadDialog::Private::_k_contentAdded(Attica::BaseJob *baseJob)
