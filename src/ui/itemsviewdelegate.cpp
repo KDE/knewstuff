@@ -155,7 +155,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             foreach (EntryInternal::DownloadLinkInformation info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
-                    text + " (" + info.distributionType.trimmed() + ")";
+                    text + " (" + info.distributionType.trimmed() + ')';
                 }
                 QAction *installAction = installMenu->addAction(m_iconInstall, text);
                 installAction->setData(QPoint(index.row(), info.id));

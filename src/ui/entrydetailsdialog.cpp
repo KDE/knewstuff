@@ -97,8 +97,8 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
         ui->authorLabel->setText(m_entry.author().name());
     }
 
-    QString summary = replaceBBCode(m_entry.summary()).replace("\n", "<br/>");
-    QString changelog = replaceBBCode(m_entry.changelog()).replace("\n", "<br/>");
+    QString summary = replaceBBCode(m_entry.summary()).replace('\n', "<br/>");
+    QString changelog = replaceBBCode(m_entry.changelog()).replace('\n', "<br/>");
 
     QString description = "<html><body>" + summary;
     if (!changelog.isEmpty()) {
@@ -223,7 +223,7 @@ void EntryDetails::updateButtons()
         foreach (EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
-                text + " (" + info.distributionType.trimmed() + ")";
+                text + " (" + info.distributionType.trimmed() + ')';
             }
             QAction *installAction = installMenu->addAction(QIcon::fromTheme("dialog-ok"), text);
             installAction->setData(info.id);
