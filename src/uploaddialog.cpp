@@ -340,7 +340,7 @@ void UploadDialog::Private::_k_checkCredentialsFinished(bool success)
 void UploadDialog::Private::_k_licensesLoaded(const Attica::License::List &licenses)
 {
     ui.mLicenseCombo->clear();
-    foreach (Attica::License license, licenses) {
+    foreach (const Attica::License &license, licenses) {
         ui.mLicenseCombo->addItem(license.name(), license.id());
     }
 }
@@ -354,7 +354,7 @@ void UploadDialog::Private::_k_contentByCurrentUserLoaded(const Attica::Content:
 {
     setIdle(i18n("Fetching your previously updated content finished."));
 
-    foreach (Attica::Content content, contentList) {
+    foreach (const Attica::Content &content, contentList) {
         QListWidgetItem *contentItem = new QListWidgetItem(content.name());
         contentItem->setData(Qt::UserRole, content.id());
         ui.userContentList->addItem(contentItem);
@@ -570,7 +570,7 @@ void UploadDialog::Private::_k_categoriesLoaded(const Attica::Category::List &lo
         q->reject();
         return;
     }
-    foreach (Attica::Category c, categories) {
+    foreach (const Attica::Category &c, categories) {
         ui.mCategoryCombo->addItem(c.name(), c.id());
     }
     atticaHelper->loadContentByCurrentUser();
@@ -840,7 +840,7 @@ QStringList UploadDialog::Private::_supportedMimeTypes() const
 {
     QStringList mimeTypes;
     QList<QByteArray> supported = QImageReader::supportedMimeTypes();
-    Q_FOREACH (QByteArray mimeType, supported) {
+    foreach (const QByteArray &mimeType, supported) {
         mimeTypes.append(QString(mimeType));
     }
     return mimeTypes;

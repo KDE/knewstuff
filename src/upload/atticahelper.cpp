@@ -54,7 +54,7 @@ void AtticaHelper::addProviderFile(const QUrl &file)
 void AtticaHelper::defaultProvidersLoaded()
 {
     QStringList providers;
-    foreach (Attica::Provider p, providerManager.providers()) {
+    foreach (const Attica::Provider &p, providerManager.providers()) {
         if (p.isEnabled()) {
             providers.append(p.name());
         }
@@ -64,7 +64,7 @@ void AtticaHelper::defaultProvidersLoaded()
 
 void AtticaHelper::setCurrentProvider(const QString &provider)
 {
-    foreach (Attica::Provider p, providerManager.providers()) {
+    foreach (const Attica::Provider &p, providerManager.providers()) {
         if (p.name() == provider) {
             currentProvider = p;
             break;

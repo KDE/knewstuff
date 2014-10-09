@@ -441,14 +441,14 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
 
     entry.clearDownloadLinkInformation();
     QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
-    foreach (Attica::DownloadDescription desc, descs) {
+    foreach (const Attica::DownloadDescription &desc, descs) {
         EntryInternal::DownloadLinkInformation info;
         info.name = desc.name();
         info.priceAmount = desc.priceAmount();
         info.distributionType = desc.distributionType();
         info.descriptionLink = desc.link();
         info.id = desc.id();
-        info.isDownloadtypeLink = desc.isDownloadtypLink();
+        info.isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload;
         entry.appendDownloadLinkInformation(info);
     }
 
