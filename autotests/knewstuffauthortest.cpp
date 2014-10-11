@@ -18,17 +18,15 @@
 
 // unit test for author
 
-#include <QtTest>
-#include <QtCore>
+#include <QtTest/QtTest>
+#include <QString>
 
-#include <qtest_kde.h>
+#include "../src/core/author_p.h"
 
-#include "../knewstuff2/core/author.h"
-
-const QString name = "Name";
-const QString email = "Email@nowhere.com";
-const QString jabber = "something@kdetalk.net";
-const QString homepage = "http://www.myhomepage.com";
+const QString name = QLatin1String("Name");
+const QString email = QLatin1String("Email@nowhere.com");
+const QString jabber = QLatin1String("something@kdetalk.net");
+const QString homepage = QLatin1String("http://www.myhomepage.com");
 
 class testAuthor: public QObject
 {
@@ -41,7 +39,7 @@ private Q_SLOTS:
 
 void testAuthor::testProperties()
 {
-    KNS::Author author;
+    KNS3::Author author;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);
@@ -54,12 +52,12 @@ void testAuthor::testProperties()
 
 void testAuthor::testCopy()
 {
-    KNS::Author author;
+    KNS3::Author author;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);
     author.setHomepage(homepage);
-    KNS::Author author2(author);
+    KNS3::Author author2(author);
     QCOMPARE(author.name(), author2.name());
     QCOMPARE(author.email(), author2.email());
     QCOMPARE(author.jabber(), author2.jabber());
@@ -68,8 +66,8 @@ void testAuthor::testCopy()
 
 void testAuthor::testAssignment()
 {
-    KNS::Author author;
-    KNS::Author author2;
+    KNS3::Author author;
+    KNS3::Author author2;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);
@@ -81,5 +79,5 @@ void testAuthor::testAssignment()
     QCOMPARE(author.homepage(), author2.homepage());
 }
 
-QTEST_KDEMAIN_CORE(testAuthor)
+QTEST_MAIN(testAuthor)
 #include "knewstuffauthortest.moc"

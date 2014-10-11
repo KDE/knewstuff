@@ -18,132 +18,93 @@
 
 // unit test for entry
 
-#include <QtTest>
-#include <QtCore>
+#include <QtTest/QtTest>
+#include <QString>
 
-#include <qtest_kde.h>
+#include "../src/entry.h"
+#include "../src/entry_p.h"
 
-#include "../knewstuff2/core/entry.h"
-#include "../knewstuff2/core/ktranslatable.h"
+const QString entryXML = QLatin1String("<stuff category=\"Category\"> " \
+"<name>Name</name>" \
+"<providerid>https://api.opendesktop.org/v1/</providerid>" \
+"<author homepage=\"http://testhomepage\">testauthor</author>" \
+"<homepage>https://testhomepage</homepage>" \
+"<licence>3</licence>" \
+"<version>4.0</version>" \
+"<rating>82</rating>" \
+"<downloads>128891</downloads>" \
+"<installedfile>/some/test/path.jpg</installedfile>" \
+"<id>12345</id>" \
+"<releasedate>2008-08-12</releasedate>" \
+"<summary>new version 3.0</summary>" \
+"<changelog>Updated</changelog>" \
+"<preview>https://testpreview</preview>" \
+"<previewBig>https://testpreview</previewBig>" \
+"<payload>http://testpayload</payload>" \
+"<status>installed</status>" \
+"</stuff>");
 
-const QString name = "Name";
-const QString category = "Category";
-const QString license = "GPLv2+";
-const QString summary1 = "Summary of contents";
-const QString summary2lang = "de";
-const QString summary2 = "Translated summary of contents";
-const QString version = "v0.1";
-const int release = 1;
-const QDate releasedate = QDate::currentDate();
-const int rating = 80;
-const int downloads = 5000;
-const QString checksum = "BAADF00D";
-const QString signature = "DEADBEEF";
+const QString name = QLatin1String("Name");
+const QString category = QLatin1String("Category");
+const QString summary = QLatin1String("new version 3.0");
+const QString version = QLatin1String("4.0");
+const QString license = QLatin1String("3");
 
 class testEntry: public QObject
 {
     Q_OBJECT
+private:
+    KNS3::Entry createEntry();
 private Q_SLOTS:
     void testProperties();
     void testCopy();
     void testAssignment();
 };
 
+KNS3::Entry testEntry::createEntry()
+{
+    QDomDocument document;
+    document.setContent(entryXML);
+    QDomElement node = document.documentElement();
+    KNS3::EntryInternal entryInternal;
+    qDebug() << "Created entry from XML " << entryInternal.setEntryXML(node);
+    return entryInternal.toEntry();
+}
+
 void testEntry::testProperties()
 {
-    KNS::Entry entry;
-    entry.setName(KNS::KTranslatable(name));
-    entry.setCategory(category);
-    entry.setLicense(license);
-    KNS::KTranslatable summary(summary1);
-    summary.addString(summary2lang, summary2);
-    entry.setSummary(summary);
-    entry.setVersion(version);
-    entry.setRelease(release);
-    entry.setReleaseDate(releasedate);
-    entry.setRating(rating);
-    entry.setDownloads(downloads);
-    entry.setChecksum(checksum);
-    entry.setSignature(signature);
+    KNS3::Entry entry = createEntry();
 
-    QCOMPARE(entry.name().representation(), name);
+    QCOMPARE(entry.name(), name);
     QCOMPARE(entry.category(), category);
     QCOMPARE(entry.license(), license);
-    QCOMPARE(entry.summary().representation(), summary1);
-    QCOMPARE(entry.summary().translated(summary2lang), summary2);
+    QCOMPARE(entry.summary(), summary);
     QCOMPARE(entry.version(), version);
-    QCOMPARE(entry.release(), release);
-    QCOMPARE(entry.releaseDate(), releasedate);
-    QCOMPARE(entry.rating(), rating);
-    QCOMPARE(entry.downloads(), downloads);
-    QCOMPARE(entry.checksum(), checksum);
-    QCOMPARE(entry.signature(), signature);
 }
 
 void testEntry::testCopy()
 {
-    KNS::Entry entry;
-    entry.setName(KNS::KTranslatable(name));
-    entry.setCategory(category);
-    entry.setLicense(license);
-    KNS::KTranslatable summary(summary1);
-    summary.addString(summary2lang, summary2);
-    entry.setSummary(summary);
-    entry.setVersion(version);
-    entry.setRelease(release);
-    entry.setReleaseDate(releasedate);
-    entry.setRating(rating);
-    entry.setDownloads(downloads);
-    entry.setChecksum(checksum);
-    entry.setSignature(signature);
-    KNS::Entry entry2(entry);
+    KNS3::Entry entry = createEntry();
+    KNS3::Entry entry2(entry);
 
-    QCOMPARE(entry.name().representation(), entry2.name().representation());
+    QCOMPARE(entry.name(), entry2.name());
     QCOMPARE(entry.category(), entry2.category());
     QCOMPARE(entry.license(), entry2.license());
-    QCOMPARE(entry.summary().representation(), entry2.summary().representation());
-    QCOMPARE(entry.summary().translated(summary2lang), entry2.summary().translated(summary2lang));
+    QCOMPARE(entry.summary(), entry2.summary());
     QCOMPARE(entry.version(), entry2.version());
-    QCOMPARE(entry.release(), entry2.release());
-    QCOMPARE(entry.releaseDate(), entry2.releaseDate());
-    QCOMPARE(entry.rating(), entry2.rating());
-    QCOMPARE(entry.downloads(), entry2.downloads());
-    QCOMPARE(entry.checksum(), entry2.checksum());
-    QCOMPARE(entry.signature(), entry2.signature());
 }
 
 void testEntry::testAssignment()
 {
-    KNS::Entry entry;
-    KNS::Entry entry2;;
-    entry.setName(KNS::KTranslatable(name));
-    entry.setCategory(category);
-    entry.setLicense(license);
-    KNS::KTranslatable summary(summary1);
-    summary.addString(summary2lang, summary2);
-    entry.setSummary(summary);
-    entry.setVersion(version);
-    entry.setRelease(release);
-    entry.setReleaseDate(releasedate);
-    entry.setRating(rating);
-    entry.setDownloads(downloads);
-    entry.setChecksum(checksum);
-    entry.setSignature(signature);
-    entry2 = entry;
+    KNS3::Entry entry = createEntry();
+    KNS3::Entry entry2 = entry;
 
-    QCOMPARE(entry.name().representation(), entry2.name().representation());
+    QCOMPARE(entry.name(), entry2.name());
     QCOMPARE(entry.category(), entry2.category());
     QCOMPARE(entry.license(), entry2.license());
-    QCOMPARE(entry.summary().representation(), entry2.summary().representation());
-    QCOMPARE(entry.summary().translated(summary2lang), entry2.summary().translated(summary2lang));
+    QCOMPARE(entry.summary(), entry2.summary());
     QCOMPARE(entry.version(), entry2.version());
-    QCOMPARE(entry.release(), entry2.release());
-    QCOMPARE(entry.releaseDate(), entry2.releaseDate());
-    QCOMPARE(entry.rating(), entry2.rating());
-    QCOMPARE(entry.downloads(), entry2.downloads());
-    QCOMPARE(entry.checksum(), entry2.checksum());
-    QCOMPARE(entry.signature(), entry2.signature());
 }
 
-QTEST_KDEMAIN_CORE(testEntry)
+QTEST_MAIN(testEntry)
 #include "knewstuffentrytest.moc"
