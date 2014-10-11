@@ -27,7 +27,3 @@ knewstuff2_standard:
  * syntax 1: knewstuff2_standard --download
  * syntax 2: knewstuff2_standard --upload <payloadfile>
 
-kdxspreview:
- * test Dxs functionality
- * dialog partially reused from knewstuff2/ui (still unclean)
-
