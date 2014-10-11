@@ -18,6 +18,5 @@ endmacro()
 #knewstuff_unit_tests(
 #    knewstuffauthortest
 #    knewstuffentrytest
-#    testTranslatable
 #)
 
