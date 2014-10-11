@@ -29,7 +29,7 @@ const QString entryXML = QLatin1String("<stuff category=\"Category\"> " \
 "<providerid>https://api.opendesktop.org/v1/</providerid>" \
 "<author homepage=\"http://testhomepage\">testauthor</author>" \
 "<homepage>https://testhomepage</homepage>" \
-"<licence>3</licence>" \
+"<licence>3</licence>" \  // krazy:exclude=spelling
 "<version>4.0</version>" \
 "<rating>82</rating>" \
 "<downloads>128891</downloads>" \
