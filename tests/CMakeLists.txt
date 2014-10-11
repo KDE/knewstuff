@@ -25,12 +25,3 @@ knewstuff_executable_tests(
 #    knewstuff2_cache
 #)
 
-#set(kdxspreview_SRCS
-#   kdxspreview.cpp
-#   kdxsview.cpp
-#)
-#add_executable(kdxspreview ${kdxspreview_SRCS})
-#target_link_libraries(kdxspreview KF5::NewStuff)
-# FIXME: test data should not be installed
-#install(FILES kdxspreviewrc DESTINATION ${CONFIG_INSTALL_DIR})
-
