@@ -54,7 +54,7 @@ public:
     /**
      * Constructor.
      */
-    XmlLoader(QObject *parent);
+    explicit XmlLoader(QObject *parent);
 
     /**
      * Starts asynchronously loading the xml document from the

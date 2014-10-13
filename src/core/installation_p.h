@@ -49,7 +49,7 @@ public:
     /**
      * Constructor.
      */
-    Installation(QObject *parent = 0);
+    explicit Installation(QObject *parent = 0);
 
     enum Policy {
         CheckNever,

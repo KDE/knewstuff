@@ -25,7 +25,7 @@ namespace KNS3
 class ItemsView: public QListView
 {
 public:
-    ItemsView(QWidget *parent = 0);
+    explicit ItemsView(QWidget *parent = 0);
 
 protected:
     void wheelEvent(QWheelEvent *event);

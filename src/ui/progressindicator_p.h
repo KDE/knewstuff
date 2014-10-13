@@ -44,7 +44,7 @@ class ProgressIndicator : public QFrame
 {
     Q_OBJECT
 public:
-    ProgressIndicator(QWidget *parent);
+    explicit ProgressIndicator(QWidget *parent);
 
 public Q_SLOTS:
     void busy(const QString &message);

@@ -58,7 +58,7 @@ public:
      *
      * @param parent the parent widget
      */
-    Button(QWidget *parent);
+    explicit Button(QWidget *parent);
 
     ~Button();
 

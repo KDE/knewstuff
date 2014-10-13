@@ -57,7 +57,7 @@ public:
     /**
      * Constructor.
      */
-    Engine(QObject *parent = 0);
+    explicit Engine(QObject *parent = 0);
 
     /**
      * Destructor. Frees up all the memory again which might be taken

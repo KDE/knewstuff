@@ -48,7 +48,7 @@ class AtticaProvider: public Provider
 {
     Q_OBJECT
 public:
-    AtticaProvider(const QStringList &categories);
+    explicit AtticaProvider(const QStringList &categories);
     AtticaProvider(const Attica::Provider &provider, const QStringList &categories);
 
     virtual QString id() const;
