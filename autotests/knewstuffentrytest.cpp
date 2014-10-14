@@ -24,25 +24,25 @@
 #include "../src/entry.h"
 #include "../src/entry_p.h"
 
-const QString entryXML = QLatin1String("<stuff category=\"Category\"> " \
-"<name>Name</name>" \
-"<providerid>https://api.opendesktop.org/v1/</providerid>" \
-"<author homepage=\"http://testhomepage\">testauthor</author>" \
-"<homepage>https://testhomepage</homepage>" \
-"<licence>3</licence>" \  // krazy:exclude=spelling
-"<version>4.0</version>" \
-"<rating>82</rating>" \
-"<downloads>128891</downloads>" \
-"<installedfile>/some/test/path.jpg</installedfile>" \
-"<id>12345</id>" \
-"<releasedate>2008-08-12</releasedate>" \
-"<summary>new version 3.0</summary>" \
-"<changelog>Updated</changelog>" \
-"<preview>https://testpreview</preview>" \
-"<previewBig>https://testpreview</previewBig>" \
-"<payload>http://testpayload</payload>" \
-"<status>installed</status>" \
-"</stuff>");
+const char *entryXML = "<stuff category=\"Category\"> "
+"<name>Name</name>"
+"<providerid>https://api.opendesktop.org/v1/</providerid>"
+"<author homepage=\"http://testhomepage\">testauthor</author>"
+"<homepage>https://testhomepage</homepage>"
+"<licence>3</licence>"   // krazy:exclude=spelling
+"<version>4.0</version>"
+"<rating>82</rating>"
+"<downloads>128891</downloads>"
+"<installedfile>/some/test/path.jpg</installedfile>"
+"<id>12345</id>"
+"<releasedate>2008-08-12</releasedate>"
+"<summary>new version 3.0</summary>"
+"<changelog>Updated</changelog>"
+"<preview>https://testpreview</preview>"
+"<previewBig>https://testpreview</previewBig>"
+"<payload>http://testpayload</payload>"
+"<status>installed</status>"
+"</stuff>";
 
 const QString name = QLatin1String("Name");
 const QString category = QLatin1String("Category");
@@ -64,7 +64,7 @@ private Q_SLOTS:
 KNS3::Entry testEntry::createEntry()
 {
     QDomDocument document;
-    document.setContent(entryXML);
+    document.setContent(QString::fromLatin1(entryXML));
     QDomElement node = document.documentElement();
     KNS3::EntryInternal entryInternal;
     qDebug() << "Created entry from XML " << entryInternal.setEntryXML(node);
