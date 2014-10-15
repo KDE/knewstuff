@@ -254,7 +254,7 @@ Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMo
 void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkId)
 {
     Attica::Content content = mCachedContent.value(entry.uniqueId());
-    DownloadDescription desc = content.downloadUrlDescription(linkId);
+    const DownloadDescription desc = content.downloadUrlDescription(linkId);
 
     if (desc.hasPrice()) {
         // Ask for balance, then show information...
