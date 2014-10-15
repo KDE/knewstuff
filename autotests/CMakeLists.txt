@@ -14,7 +14,7 @@ macro(knewstuff_unit_tests)
        add_executable(${_testname} ${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp)
        add_test("knewstuff-${_testname}" ${_testname})
        ecm_mark_as_test(${_testname})
-       target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::I18n)
+       target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore)
     endforeach()
 endmacro()
 

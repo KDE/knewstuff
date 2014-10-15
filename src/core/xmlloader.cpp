@@ -26,7 +26,6 @@
 #include <kconfig.h>
 #include <QDebug>
 #include <kio/job.h>
-#include <klocalizedstring.h>
 
 namespace KNS3
 {
