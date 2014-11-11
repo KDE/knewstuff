@@ -71,7 +71,7 @@ void ItemsViewBaseDelegate::slotInstallClicked()
     if (index.isValid()) {
         KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
         if (!entry.isValid()) {
-            // qDebug() << "Invalid entry: " << entry.name();
+            // qCDebug(KNEWSTUFF) << "Invalid entry: " << entry.name();
             return;
         }
 
@@ -107,7 +107,7 @@ void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
         if (!entry.isValid()) {
             return;
         }
-// qDebug() << "Details: " << entry.name();
+// qCDebug(KNEWSTUFF) << "Details: " << entry.name();
         emit signalShowDetails(entry);
     }
 }

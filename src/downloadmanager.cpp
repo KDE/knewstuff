@@ -92,7 +92,7 @@ DownloadManager::~DownloadManager()
 
 void DownloadManager::Private::_k_slotProvidersLoaded()
 {
-    // qDebug() << "providers loaded";
+    qCDebug(KNEWSTUFF) << "providers loaded";
     isInitialized = true;
     if (checkForUpdates) {
         engine->checkForUpdates();

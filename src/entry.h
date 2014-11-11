@@ -23,8 +23,11 @@
 
 #include <QtCore/QStringList>
 #include <QtCore/QSharedDataPointer>
+#include <QLoggingCategory>
 
 #include "knewstuff_export.h"
+
+Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 namespace KNS3
 {

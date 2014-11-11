@@ -46,16 +46,16 @@ void KNewStuff2Test::setTestAll(bool testall)
 
 void KNewStuff2Test::entryTest()
 {
-    // qDebug() << "-- test kns2 entry class";
+    // qCDebug(KNEWSTUFF) << "-- test kns2 entry class";
 
     QDomDocument doc;
     QFile f(QString("%1/testdata/entry.xml").arg(KNSSRCDIR));
     if (!f.open(QIODevice::ReadOnly)) {
-        // qDebug() << "Error loading entry file.";
+        // qCDebug(KNEWSTUFF) << "Error loading entry file.";
         quitTest();
     }
     if (!doc.setContent(&f)) {
-        // qDebug() << "Error parsing entry file.";
+        // qCDebug(KNEWSTUFF) << "Error parsing entry file.";
         f.close();
         quitTest();
     }
@@ -64,12 +64,12 @@ void KNewStuff2Test::entryTest()
     KNS::EntryHandler eh(doc.documentElement());
     KNS::Entry e = eh.entry();
 
-    // qDebug() << "-- xml->entry test result: " << eh.isValid();
+    // qCDebug(KNEWSTUFF) << "-- xml->entry test result: " << eh.isValid();
 
     KNS::EntryHandler eh2(e);
     QDomElement exml = eh2.entryXML();
 
-    // qDebug() << "-- entry->xml test result: " << eh.isValid();
+    // qCDebug(KNEWSTUFF) << "-- entry->xml test result: " << eh.isValid();
 
     if (!eh.isValid()) {
         quitTest();
@@ -81,16 +81,16 @@ void KNewStuff2Test::entryTest()
 
 void KNewStuff2Test::providerTest()
 {
-    // qDebug() << "-- test kns2 provider class";
+    // qCDebug(KNEWSTUFF) << "-- test kns2 provider class";
 
     QDomDocument doc;
     QFile f(QString("%1/testdata/provider.xml").arg(KNSSRCDIR));
     if (!f.open(QIODevice::ReadOnly)) {
-        // qDebug() << "Error loading provider file.";
+        // qCDebug(KNEWSTUFF) << "Error loading provider file.";
         quitTest();
     }
     if (!doc.setContent(&f)) {
-        // qDebug() << "Error parsing provider file.";
+        // qCDebug(KNEWSTUFF) << "Error parsing provider file.";
         f.close();
         quitTest();
     }
@@ -99,12 +99,12 @@ void KNewStuff2Test::providerTest()
     KNS::ProviderHandler ph(doc.documentElement());
     KNS::Provider p = ph.provider();
 
-    // qDebug() << "-- xml->provider test result: " << ph.isValid();
+    // qCDebug(KNEWSTUFF) << "-- xml->provider test result: " << ph.isValid();
 
     KNS::ProviderHandler ph2(p);
     QDomElement pxml = ph2.providerXML();
 
-    // qDebug() << "-- provider->xml test result: " << ph.isValid();
+    // qCDebug(KNEWSTUFF) << "-- provider->xml test result: " << ph.isValid();
 
     if (!ph.isValid()) {
         quitTest();
@@ -116,12 +116,12 @@ void KNewStuff2Test::providerTest()
 
 void KNewStuff2Test::engineTest()
 {
-    // qDebug() << "-- test kns2 engine";
+    // qCDebug(KNEWSTUFF) << "-- test kns2 engine";
 
     m_engine = new KNS::CoreEngine(NULL);
     bool ret = m_engine->init("knewstuff2_test.knsrc");
 
-    // qDebug() << "-- engine test result: " << ret;
+    // qCDebug(KNEWSTUFF) << "-- engine test result: " << ret;
 
     if (ret) {
         connect(m_engine,
@@ -162,8 +162,8 @@ void KNewStuff2Test::engineTest()
 
 void KNewStuff2Test::slotProviderLoaded(KNS::Provider *provider)
 {
-    // qDebug() << "SLOT: slotProviderLoaded";
-    // qDebug() << "-- provider: " << provider->name().representation();
+    // qCDebug(KNEWSTUFF) << "SLOT: slotProviderLoaded";
+    // qCDebug(KNEWSTUFF) << "-- provider: " << provider->name().representation();
 
     m_engine->loadEntries(provider);
 }
@@ -173,11 +173,11 @@ void KNewStuff2Test::slotEntryLoaded(KNS::Entry *entry, const KNS::Feed *feed, c
     Q_UNUSED(feed);
     Q_UNUSED(provider);
 
-    // qDebug() << "SLOT: slotEntryLoaded";
-    // qDebug() << "-- entry: " << entry->name().representation();
+    // qCDebug(KNEWSTUFF) << "SLOT: slotEntryLoaded";
+    // qCDebug(KNEWSTUFF) << "-- entry: " << entry->name().representation();
 
     if (m_testall) {
-        // qDebug() << "-- now, download the entry's preview and payload file";
+        // qCDebug(KNEWSTUFF) << "-- now, download the entry's preview and payload file";
 
         if (!entry->preview().isEmpty()) {
             m_engine->downloadPreview(entry);
@@ -198,51 +198,51 @@ void KNewStuff2Test::slotEntriesFinished()
 
 void KNewStuff2Test::slotPayloadLoaded(QUrl payload)
 {
-    // qDebug() << "-- entry downloaded successfully";
-    // qDebug() << "-- downloaded to " << payload.prettyUrl();
+    // qCDebug(KNEWSTUFF) << "-- entry downloaded successfully";
+    // qCDebug(KNEWSTUFF) << "-- downloaded to " << payload.prettyUrl();
 
-    // qDebug() << "-- run installation";
+    // qCDebug(KNEWSTUFF) << "-- run installation";
 
     bool ret = m_engine->install(payload.path());
 
-    // qDebug() << "-- installation result: " << ret;
-    // qDebug() << "-- now, wait for installation to finish...";
+    // qCDebug(KNEWSTUFF) << "-- installation result: " << ret;
+    // qCDebug(KNEWSTUFF) << "-- now, wait for installation to finish...";
 }
 
 void KNewStuff2Test::slotPayloadFailed()
 {
-    // qDebug() << "SLOT: slotPayloadFailed";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotPayloadFailed";
     quitTest();
 }
 
 void KNewStuff2Test::slotProvidersFailed()
 {
-    // qDebug() << "SLOT: slotProvidersFailed";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotProvidersFailed";
     quitTest();
 }
 
 void KNewStuff2Test::slotEntriesFailed()
 {
-    // qDebug() << "SLOT: slotEntriesFailed";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotEntriesFailed";
     quitTest();
 }
 
 void KNewStuff2Test::slotInstallationFinished()
 {
-    // qDebug() << "SLOT: slotInstallationFinished";
-    // qDebug() << "-- OK, finish test";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotInstallationFinished";
+    // qCDebug(KNEWSTUFF) << "-- OK, finish test";
     quitTest();
 }
 
 void KNewStuff2Test::slotInstallationFailed()
 {
-    // qDebug() << "SLOT: slotInstallationFailed";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotInstallationFailed";
     quitTest();
 }
 
 void KNewStuff2Test::quitTest()
 {
-    // qDebug() << "-- quitting now...";
+    // qCDebug(KNEWSTUFF) << "-- quitting now...";
     if (1 == 0) {
         // this would be the soft way out...
         delete m_engine;
@@ -260,8 +260,8 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
 
     // Take source directory into account
-    // qDebug() << "-- adding source directory " << KNSSRCDIR;
-    // qDebug() << "-- adding build directory " << KNSBUILDDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding source directory " << KNSSRCDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding build directory " << KNSBUILDDIR;
     KGlobal::dirs()->addResourceDir("config", KNSSRCDIR);
     KGlobal::dirs()->addResourceDir("config", KNSBUILDDIR);
 

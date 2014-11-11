@@ -89,7 +89,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 {
     const ItemsModel *model = qobject_cast<const ItemsModel *>(index.model());
     if (!model) {
-        // qDebug() << "WARNING - INVALID MODEL!";
+        qCDebug(KNEWSTUFF) << "WARNING - INVALID MODEL!";
         return;
     }
 

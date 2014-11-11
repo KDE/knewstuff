@@ -87,7 +87,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 {
     const ItemsModel *model = qobject_cast<const ItemsModel *>(index.model());
     if (!model) {
-        // qDebug() << "WARNING - INVALID MODEL!";
+        // qCDebug(KNEWSTUFF) << "WARNING - INVALID MODEL!";
         return;
     }
 
@@ -208,7 +208,7 @@ void ItemsGridViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
     } else {
         QModelIndex focindex = focusedIndex();
         if (!focindex.isValid()) {
-            //qDebug() << "INVALID hide selection";
+            //qCDebug(KNEWSTUFF) << "INVALID hide selection";
             m_operationBar->hide();
         }
     }

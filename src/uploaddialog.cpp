@@ -40,9 +40,12 @@
 #include <krun.h>
 
 #include <QDebug>
+#include <QLoggingCategory>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <qstandardpaths.h>
+
+Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 using namespace KNS3;
 
@@ -92,7 +95,7 @@ bool UploadDialog::Private::init(const QString &configfile)
 
     KConfigGroup group;
     if (conf.hasGroup("KNewStuff3")) {
-        // qDebug() << "Loading KNewStuff3 config: " << configfile;
+        qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << configfile;
         group = conf.group("KNewStuff3");
     } else {
         qCritical() << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
@@ -118,7 +121,7 @@ bool UploadDialog::Private::init(const QString &configfile)
         ui.mCategoryCombo->setVisible(false);
     }
 
-    // qDebug() << "Categories: " << categoryNames;
+    qCDebug(KNEWSTUFF) << "Categories: " << categoryNames;
 
     q->connect(atticaHelper, SIGNAL(providersLoaded(QStringList)), q, SLOT(_k_providersLoaded(QStringList)));
     q->connect(atticaHelper, SIGNAL(loginChecked(bool)), q, SLOT(_k_checkCredentialsFinished(bool)));
@@ -662,7 +665,7 @@ void UploadDialog::Private::_k_changePreview1()
     if (dialog->exec() == QDialog::Accepted) {
         QUrl url = dialog->selectedUrls().first();
         previewFile1 = url;
-        // qDebug() << "preview is: " << url.url();
+        qCDebug(KNEWSTUFF) << "preview is: " << url.url();
         QPixmap preview(url.toLocalFile());
         ui.previewImage1->setPixmap(preview.scaled(ui.previewImage1->size()));
     }

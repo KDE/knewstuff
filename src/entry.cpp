@@ -22,6 +22,8 @@
 
 using namespace KNS3;
 
+Q_LOGGING_CATEGORY(KNEWSTUFF, "knewstuff")
+
 Entry::Entry()
     : d(new Private)
 {

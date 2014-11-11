@@ -69,7 +69,7 @@ void ItemsModel::addEntry(const EntryInternal &entry)
         }
     }
 
-    //qDebug() << "adding entry " << entry.name() << " to the model";
+    qCDebug(KNEWSTUFF) << "adding entry " << entry.name() << " to the model";
     beginInsertRows(QModelIndex(), m_entries.count(), m_entries.count());
     m_entries.append(entry);
     endInsertRows();
@@ -81,7 +81,7 @@ void ItemsModel::addEntry(const EntryInternal &entry)
 
 void ItemsModel::removeEntry(const EntryInternal &entry)
 {
-    // qDebug() << "removing entry " << entry.name() << " from the model";
+    qCDebug(KNEWSTUFF) << "removing entry " << entry.name() << " from the model";
     int index = m_entries.indexOf(entry);
     if (index > -1) {
         beginRemoveRows(QModelIndex(), index, index);

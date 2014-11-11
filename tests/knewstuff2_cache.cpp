@@ -37,13 +37,13 @@ KNewStuff2Cache::KNewStuff2Cache()
 
 void KNewStuff2Cache::run()
 {
-    // qDebug() << "-- start the engine";
+    // qCDebug(KNEWSTUFF) << "-- start the engine";
 
     m_engine = new KNS::CoreEngine(0);
     m_engine->setCachePolicy(KNS::CoreEngine::CacheOnly);
     bool ret = m_engine->init("knewstuff2_test.knsrc");
 
-    // qDebug() << "-- engine initialisation result: " << ret;
+    // qCDebug(KNEWSTUFF) << "-- engine initialisation result: " << ret;
 
     if (ret) {
         connect(m_engine,
@@ -69,25 +69,25 @@ void KNewStuff2Cache::slotEntryLoaded(KNS::Entry *entry, const KNS::Feed *feed, 
     Q_UNUSED(feed);
     Q_UNUSED(provider);
 
-    // qDebug() << "SLOT: slotEntryLoaded";
-    // qDebug() << "-- entry: " << entry->name().representation();
+    // qCDebug(KNEWSTUFF) << "SLOT: slotEntryLoaded";
+    // qCDebug(KNEWSTUFF) << "-- entry: " << entry->name().representation();
 }
 
 void KNewStuff2Cache::slotEntriesFailed()
 {
-    // qDebug() << "SLOT: slotEntriesFailed";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotEntriesFailed";
     quitTest();
 }
 
 void KNewStuff2Cache::slotEntriesFinished()
 {
-    // qDebug() << "SLOT: slotEntriesFinished";
+    // qCDebug(KNEWSTUFF) << "SLOT: slotEntriesFinished";
     quitTest();
 }
 
 void KNewStuff2Cache::quitTest()
 {
-    // qDebug() << "-- quitting now...";
+    // qCDebug(KNEWSTUFF) << "-- quitting now...";
     if (1 == 0) {
         // this would be the soft way out...
         delete m_engine;
@@ -104,8 +104,8 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
 
     // Take source directory into account
-    // qDebug() << "-- adding source directory " << KNSSRCDIR;
-    // qDebug() << "-- adding build directory " << KNSBUILDDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding source directory " << KNSSRCDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding build directory " << KNSBUILDDIR;
     KGlobal::dirs()->addResourceDir("config", KNSSRCDIR);
     KGlobal::dirs()->addResourceDir("config", KNSBUILDDIR);
 

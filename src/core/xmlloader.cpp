@@ -22,10 +22,13 @@
 #include "xmlloader_p.h"
 
 #include <QtCore/QByteArray>
+#include <QLoggingCategory>
 
 #include <kconfig.h>
 #include <QDebug>
 #include <kio/job.h>
+
+Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 namespace KNS3
 {
@@ -39,7 +42,7 @@ void XmlLoader::load(const QUrl &url)
 {
     m_jobdata.clear();
 
-    // qDebug() << "XmlLoader::load(): url: " << url;
+    qCDebug(KNEWSTUFF) << "XmlLoader::load(): url: " << url;
 
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
     connect(job, SIGNAL(result(KJob*)),
@@ -52,7 +55,7 @@ void XmlLoader::load(const QUrl &url)
 
 void XmlLoader::slotJobData(KIO::Job *, const QByteArray &data)
 {
-    // qDebug() << "XmlLoader::slotJobData()";
+    qCDebug(KNEWSTUFF) << "XmlLoader::slotJobData()";
 
     m_jobdata.append(data);
 }
@@ -64,9 +67,9 @@ void XmlLoader::slotJobResult(KJob *job)
         return;
     }
     /*
-            // qDebug() << "--Xml Loader-START--";
-            // qDebug() << QString::fromUtf8(m_jobdata);
-            // qDebug() << "--Xml Loader-END--";
+            qCDebug(KNEWSTUFF) << "--Xml Loader-START--";
+            qCDebug(KNEWSTUFF) << QString::fromUtf8(m_jobdata);
+            qCDebug(KNEWSTUFF) << "--Xml Loader-END--";
     */
     QDomDocument doc;
     if (!doc.setContent(m_jobdata)) {

@@ -24,9 +24,12 @@
 #include "core/xmlloader_p.h"
 
 #include <QDebug>
+#include <QLoggingCategory>
 #include <klocalizedstring.h>
 
 #include <QtCore/QTimer>
+
+Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 namespace KNS3
 {
@@ -43,7 +46,7 @@ QString StaticXmlProvider::id() const
 
 bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
-    // qDebug() << "setting provider xml";
+    qCDebug(KNEWSTUFF) << "setting provider xml";
 
     if (xmldata.tagName() != "provider") {
         return false;
@@ -85,7 +88,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         if (e.tagName() == "title") {
             //QString lang = e.attribute("lang");
             mName = e.text().trimmed();
-            // qDebug() << "add name for provider ("<< this << "): " << e.text();
+            qCDebug(KNEWSTUFF) << "add name for provider ("<< this << "): " << e.text();
         }
     }
 
@@ -123,7 +126,7 @@ bool StaticXmlProvider::isInitialized() const
 
 void StaticXmlProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
 {
-    // qDebug() << "Set cached entries " << cachedEntries.size();
+    qCDebug(KNEWSTUFF) << "Set cached entries " << cachedEntries.size();
     mCachedEntries.append(cachedEntries);
 }
 
@@ -138,7 +141,7 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
     }
 
     if (request.sortMode == Installed) {
-        // qDebug() << "Installed entries: " << mId << installedEntries().size();
+        qCDebug(KNEWSTUFF) << "Installed entries: " << mId << installedEntries().size();
         emit loadingFinished(request, installedEntries());
         return;
     }
@@ -259,7 +262,7 @@ bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) co
 
 void StaticXmlProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int)
 {
-    // qDebug() << "Payload: " << entry.payload();
+    qCDebug(KNEWSTUFF) << "Payload: " << entry.payload();
     emit payloadLinkLoaded(entry);
 }
 

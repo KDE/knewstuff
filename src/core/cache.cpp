@@ -37,7 +37,7 @@ Cache::Cache(const QString &appName): QObject(0)
     const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("knewstuff3/");
     QDir().mkpath(path);
     registryFile = path + appName + ".knsregistry";
-    // qDebug() << "Using registry file: " << registryFile;
+    qCDebug(KNEWSTUFF) << "Using registry file: " << registryFile;
 }
 
 QSharedPointer<Cache> Cache::getCache(const QString &appName)
@@ -89,24 +89,24 @@ void Cache::readRegistry()
         stuff = stuff.nextSiblingElement("stuff");
     }
 
-    // qDebug() << "Cache read... entries: " << cache.size();
+    qCDebug(KNEWSTUFF) << "Cache read... entries: " << cache.size();
 }
 
 void Cache::readKns2MetaFiles()
 {
-    // qDebug() << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
+    qCDebug(KNEWSTUFF) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
 
     QString realAppName = m_kns2ComponentName.split(':')[0];
 
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "knewstuff2-entries.registry", QStandardPaths::LocateDirectory);
     for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {
-        //qDebug() << " + Load from directory '" + (*it) + "'.";
+        qCDebug(KNEWSTUFF) << " + Load from directory '" + (*it) + "'.";
         QDir dir((*it));
         const QStringList files = dir.entryList(QDir::Files | QDir::Readable);
         for (QStringList::const_iterator fit = files.begin(); fit != files.end(); ++fit) {
             QString filepath = (*it) + '/' + (*fit);
 
-            // qDebug() << " Load from file '" + filepath + "'.";
+            qCDebug(KNEWSTUFF) << " Load from file '" + filepath + "'.";
 
             QFileInfo info(filepath);
             QFile f(filepath);
@@ -134,7 +134,7 @@ void Cache::readKns2MetaFiles()
                 qWarning() << "The file could not be parsed.";
                 return;
             }
-            // qDebug() << "found entry: " << doc.toString();
+            qCDebug(KNEWSTUFF) << "found entry: " << doc.toString();
 
             QDomElement root = doc.documentElement();
             if (root.tagName() != "ghnsinstall") {
@@ -170,7 +170,7 @@ void Cache::readKns2MetaFiles()
             cache.insert(e);
             QDomDocument tmp("yay");
             tmp.appendChild(e.entryXML());
-            // qDebug() << "new entry: " << tmp.toString();
+            qCDebug(KNEWSTUFF) << "new entry: " << tmp.toString();
 
             f.close();
 
@@ -178,7 +178,7 @@ void Cache::readKns2MetaFiles()
             if (!dir.remove(filepath)) {
                 qWarning() << "could not delete old kns2 .meta file: " << filepath;
             } else {
-                // qDebug() << "Migrated KNS2 entry to KNS3.";
+                qCDebug(KNEWSTUFF) << "Migrated KNS2 entry to KNS3.";
             }
 
         }
@@ -198,7 +198,7 @@ EntryInternal::List Cache::registryForProvider(const QString &providerId)
 
 void Cache::writeRegistry()
 {
-    // qDebug() << "Write registry";
+    qCDebug(KNEWSTUFF) << "Write registry";
 
     QFile f(registryFile);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -234,12 +234,12 @@ void Cache::insertRequest(const KNS3::Provider::SearchRequest &request, const KN
 {
     // append new entries
     requestCache[request.hashForRequest()].append(entries);
-    // qDebug() << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
+    qCDebug(KNEWSTUFF) << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
 }
 
 EntryInternal::List Cache::requestFromCache(const KNS3::Provider::SearchRequest &request)
 {
-    // qDebug() << request.hashForRequest();
+    qCDebug(KNEWSTUFF) << request.hashForRequest();
     return requestCache.value(request.hashForRequest());
 }
 

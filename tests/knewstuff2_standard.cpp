@@ -33,12 +33,12 @@ KNewStuff2Standard::KNewStuff2Standard()
 
 void KNewStuff2Standard::run(bool upload, bool modal, QString file)
 {
-    // qDebug() << "-- test kns2 engine";
+    // qCDebug(KNEWSTUFF) << "-- test kns2 engine";
 
     m_engine = new KNS::Engine();
     bool success = m_engine->init("knewstuff2_test.knsrc");
 
-    // qDebug() << "-- engine test result: " << success;
+    // qCDebug(KNEWSTUFF) << "-- engine test result: " << success;
 
     if (!success) {
         return;
@@ -46,20 +46,20 @@ void KNewStuff2Standard::run(bool upload, bool modal, QString file)
 
     if (upload) {
         if (modal) {
-            // qDebug() << "-- start upload (modal)";
+            // qCDebug(KNEWSTUFF) << "-- start upload (modal)";
             m_engine->uploadDialogModal(file);
-            // qDebug() << "-- upload (modal) finished";
+            // qCDebug(KNEWSTUFF) << "-- upload (modal) finished";
         } else {
-            // qDebug() << "-- start upload (non-modal); will not block";
+            // qCDebug(KNEWSTUFF) << "-- start upload (non-modal); will not block";
             m_engine->uploadDialog(file);
         }
     } else {
         if (modal) {
-            // qDebug() << "-- start download (modal)";
+            // qCDebug(KNEWSTUFF) << "-- start download (modal)";
             m_engine->downloadDialogModal();
-            // qDebug() << "-- download (modal) finished";
+            // qCDebug(KNEWSTUFF) << "-- download (modal) finished";
         } else {
-            // qDebug() << "-- start download (non-modal); will not block";
+            // qCDebug(KNEWSTUFF) << "-- start download (non-modal); will not block";
             m_engine->downloadDialog();
         }
     }
@@ -77,8 +77,8 @@ int main(int argc, char **argv)
     QApplication app(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
 
     // Take source directory into account
-    // qDebug() << "-- adding source directory " << KNSSRCDIR;
-    // qDebug() << "-- adding build directory " << KNSBUILDDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding source directory " << KNSSRCDIR;
+    // qCDebug(KNEWSTUFF) << "-- adding build directory " << KNSBUILDDIR;
     KGlobal::dirs()->addResourceDir("config", KNSSRCDIR);
     KGlobal::dirs()->addResourceDir("config", KNSBUILDDIR);
 

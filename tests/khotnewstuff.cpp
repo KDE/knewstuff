@@ -22,12 +22,18 @@
 
 #include <QApplication>
 #include <QPointer>
-#include <QtDebug>
+#include <QDebug>
+#include <QLoggingCategory>
+
 #include <klocalizedstring.h>
 
 #include <iostream>
 
 #include <kns3/downloaddialog.h>
+
+Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
+
+Q_LOGGING_CATEGORY(KNEWSTUFF, "knewstuff")
 
 int main(int argc, char **argv)
 {
@@ -43,7 +49,7 @@ int main(int argc, char **argv)
         QPointer<KNS3::DownloadDialog> dialog = new KNS3::DownloadDialog(configfile);
         dialog->exec();
         foreach (const KNS3::Entry& e, dialog->changedEntries()) {
-            qDebug() << "Changed Entry: " << e.name();
+            qCDebug(KNEWSTUFF) << "Changed Entry: " << e.name();
         }
         delete dialog;
     }

@@ -472,7 +472,7 @@ bool KNS3::EntryInternal::setEntryXML(const QDomElement &xmldata)
         } else if (e.tagName() == "status") {
             QString statusText = e.text();
             if (statusText == "installed") {
-                // qDebug() << "Found an installed entry in registry";
+                qCDebug(KNEWSTUFF) << "Found an installed entry in registry";
                 d->mStatus = Entry::Installed;
             } else if (statusText == "updateable") {
                 d->mStatus = Entry::Updateable;

@@ -150,7 +150,7 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
         } else
 
             if (!m_entry.previewUrl((EntryInternal::PreviewType)type).isEmpty()) {
-                // qDebug() << "type: " << type << m_entry.previewUrl((EntryInternal::PreviewType)type);
+                qCDebug(KNEWSTUFF) << "type: " << type << m_entry.previewUrl((EntryInternal::PreviewType)type);
                 if (m_entry.previewImage((EntryInternal::PreviewType)type).isNull()) {
                     m_engine->loadPreview(m_entry, (EntryInternal::PreviewType)type);
                 } else {
@@ -173,7 +173,7 @@ void EntryDetails::updateButtons()
     if (ui->detailsStack->currentIndex() == 0) {
         return;
     }
-    // qDebug() << "update buttons: " << m_entry.status();
+    qCDebug(KNEWSTUFF) << "update buttons: " << m_entry.status();
     ui->installButton->setVisible(false);
     ui->uninstallButton->setVisible(false);
     ui->updateButton->setVisible(false);
@@ -228,7 +228,7 @@ void EntryDetails::updateButtons()
             QAction *installAction = installMenu->addAction(QIcon::fromTheme("dialog-ok"), text);
             installAction->setData(info.id);
         }
-        // qDebug() << "links: " << m_entry.downloadLinkInformationList().size();
+        qCDebug(KNEWSTUFF) << "links: " << m_entry.downloadLinkInformationList().size();
         ui->installButton->setMenu(installMenu);
     }
 }
@@ -293,7 +293,7 @@ void EntryDetails::previewSelected(int current)
 void EntryDetails::ratingChanged(uint rating)
 {
     // engine expects values from 0..100
-    // qDebug() << "rating: " << rating << " -> " << rating*10;
+    qCDebug(KNEWSTUFF) << "rating: " << rating << " -> " << rating*10;
     m_engine->vote(m_entry, rating * 10);
 }
 

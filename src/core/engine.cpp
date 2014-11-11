@@ -88,7 +88,7 @@ Engine::~Engine()
 
 bool Engine::init(const QString &configfile)
 {
-    // qDebug() << "Initializing KNS3::Engine from '" << configfile << "'";
+    qCDebug(KNEWSTUFF) << "Initializing KNS3::Engine from '" << configfile << "'";
 
     emit signalBusy(i18n("Initializing"));
 
@@ -108,10 +108,10 @@ bool Engine::init(const QString &configfile)
 
     KConfigGroup group;
     if (conf.hasGroup("KNewStuff3")) {
-        // qDebug() << "Loading KNewStuff3 config: " << configfile;
+        qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << configfile;
         group = conf.group("KNewStuff3");
     } else if (conf.hasGroup("KNewStuff2")) {
-        // qDebug() << "Loading KNewStuff2 config: " << configfile;
+        qCDebug(KNEWSTUFF) << "Loading KNewStuff2 config: " << configfile;
         group = conf.group("KNewStuff2");
     } else {
         emit signalError(i18n("Configuration file is invalid: \"%1\"", configfile));
@@ -121,7 +121,7 @@ bool Engine::init(const QString &configfile)
 
     m_categories = group.readEntry("Categories", QStringList());
 
-    // qDebug() << "Categories: " << m_categories;
+    qCDebug(KNEWSTUFF) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
     m_applicationName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName() + ':';
 
@@ -158,12 +158,12 @@ void Engine::loadProviders()
 {
     if (m_providerFileUrl.isEmpty()) {
         // it would be nicer to move the attica stuff into its own class
-        // qDebug() << "Using OCS default providers";
+        qCDebug(KNEWSTUFF) << "Using OCS default providers";
         Attica::ProviderManager *m_atticaProviderManager = new Attica::ProviderManager;
         connect(m_atticaProviderManager, SIGNAL(providerAdded(Attica::Provider)), this, SLOT(atticaProviderLoaded(Attica::Provider)));
         m_atticaProviderManager->loadDefaultProviders();
     } else {
-        // qDebug() << "loading providers from " << m_providerFileUrl;
+        qCDebug(KNEWSTUFF) << "loading providers from " << m_providerFileUrl;
         emit signalBusy(i18n("Loading provider information"));
 
         XmlLoader *loader = new XmlLoader(this);
@@ -176,7 +176,7 @@ void Engine::loadProviders()
 
 void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 {
-    // qDebug() << "slotProvidersLoaded";
+    qCDebug(KNEWSTUFF) << "slotProvidersLoaded";
 
     bool isAtticaProviderFile = false;
 
@@ -193,7 +193,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 
     QDomElement n = providers.firstChildElement("provider");
     while (!n.isNull()) {
-        // qDebug() << "Provider attributes: " << n.attribute("type");
+        qCDebug(KNEWSTUFF) << "Provider attributes: " << n.attribute("type");
 
         QSharedPointer<KNS3::Provider> provider;
         if (isAtticaProviderFile || n.attribute("type").toLower() == "rest") {
@@ -214,8 +214,9 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 
 void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
 {
+    qCDebug(KNEWSTUFF) << "atticaProviderLoaded called";
     if (!atticaProvider.hasContentService()) {
-        // qDebug() << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
+        qCDebug(KNEWSTUFF) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
     QSharedPointer<KNS3::Provider> provider =
@@ -225,6 +226,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
 
 void Engine::addProvider(QSharedPointer<KNS3::Provider> provider)
 {
+    qCDebug(KNEWSTUFF) << "Engine addProvider called with provider with id " << provider->id();
     m_providers.insert(provider->id(), provider);
     connect(provider.data(), SIGNAL(providerInitialized(KNS3::Provider*)), SLOT(providerInitialized(KNS3::Provider*)));
     connect(provider.data(), SIGNAL(loadingFinished(KNS3::Provider::SearchRequest,KNS3::EntryInternal::List)),
@@ -247,7 +249,7 @@ void Engine::slotProvidersFailed()
 
 void Engine::providerInitialized(Provider *p)
 {
-    // qDebug() << "providerInitialized" << p->name();
+    qCDebug(KNEWSTUFF) << "providerInitialized" << p->name();
     p->setCachedEntries(m_cache->registryForProvider(p->id()));
     updateStatus();
 
@@ -262,7 +264,7 @@ void Engine::providerInitialized(Provider *p)
 void Engine::slotEntriesLoaded(const KNS3::Provider::SearchRequest &request, KNS3::EntryInternal::List entries)
 {
     m_currentPage = qMax<int>(request.page, m_currentPage);
-    // qDebug() << "loaded page " << request.page << "current page" << m_currentPage;
+    qCDebug(KNEWSTUFF) << "loaded page " << request.page << "current page" << m_currentPage;
 
     if (request.sortMode == Provider::Updates) {
         emit signalUpdateableEntriesLoaded(entries);
@@ -291,7 +293,7 @@ void Engine::reloadEntries()
                 // take entries from cache until there are no more
                 EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
                 while (!cache.isEmpty()) {
-                    // qDebug() << "From cache";
+                    qCDebug(KNEWSTUFF) << "From cache";
                     emit signalEntriesLoaded(cache);
 
                     m_currentPage = m_currentRequest.page;
@@ -306,7 +308,7 @@ void Engine::reloadEntries()
 
                 // if the cache was empty, request data from provider
                 if (m_currentPage == -1) {
-                    // qDebug() << "From provider";
+                    qCDebug(KNEWSTUFF) << "From provider";
                     p->loadEntries(m_currentRequest);
 
                     ++m_numDataJobs;
@@ -351,7 +353,7 @@ void Engine::slotSearchTimerExpired()
 
 void Engine::requestMoreData()
 {
-    // qDebug() << "Get more data! current page: " << m_currentPage  << " requested: " << m_currentRequest.page;
+    qCDebug(KNEWSTUFF) << "Get more data! current page: " << m_currentPage  << " requested: " << m_currentRequest.page;
 
     if (m_currentPage < m_currentRequest.page) {
         return;
@@ -388,8 +390,8 @@ void Engine::install(KNS3::EntryInternal entry, int linkId)
     }
     emit signalEntryChanged(entry);
 
-    // qDebug() << "Install " << entry.name()
-    //    << " from: " << entry.providerId();
+    qCDebug(KNEWSTUFF) << "Install " << entry.name()
+       << " from: " << entry.providerId();
     QSharedPointer<Provider> p = m_providers.value(entry.providerId());
     if (p) {
         p->loadPayloadLink(entry, linkId);
@@ -434,7 +436,7 @@ void Engine::uninstall(KNS3::EntryInternal entry)
         }
     }
     if (!actualEntryForUninstall.isValid()) {
-        qDebug() << "could not find a cached entry with following id:" << entry.uniqueId() <<
+        qCDebug(KNEWSTUFF) << "could not find a cached entry with following id:" << entry.uniqueId() <<
                  " ->  using the non-cached version";
         return;
     }
@@ -443,7 +445,7 @@ void Engine::uninstall(KNS3::EntryInternal entry)
     actualEntryForUninstall.setStatus(Entry::Installing);
     emit signalEntryChanged(entry);
 
-    //qDebug() << "about to uninstall entry " << entry.uniqueId();
+    qCDebug(KNEWSTUFF) << "about to uninstall entry " << entry.uniqueId();
     // FIXME: change the status?
     m_installation->uninstall(actualEntryForUninstall);
 
@@ -460,7 +462,7 @@ void Engine::loadDetails(const KNS3::EntryInternal &entry)
 
 void Engine::loadPreview(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type)
 {
-    // qDebug() << "START  preview: " << entry.name() << type;
+    qCDebug(KNEWSTUFF) << "START  preview: " << entry.name() << type;
     ImageLoader *l = new ImageLoader(entry, type, this);
     connect(l, SIGNAL(signalPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)), this, SLOT(slotPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)));
     l->start();
@@ -470,7 +472,7 @@ void Engine::loadPreview(const KNS3::EntryInternal &entry, EntryInternal::Previe
 
 void Engine::slotPreviewLoaded(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type)
 {
-    // qDebug() << "FINISH preview: " << entry.name() << type;
+    qCDebug(KNEWSTUFF) << "FINISH preview: " << entry.name() << type;
     emit signalEntryPreviewLoaded(entry, type);
     --m_numPictureJobs;
     updateStatus();
