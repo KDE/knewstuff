@@ -1,0 +1,695 @@
+# translation of kdelibs4.po to
+# Malayalam translation of kdelibs4.
+# Copyright (C) 2007-2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+# Anoop | അനൂപ് Panavalappil | പനവളപ്പില്‍ <gnuanu@gmail.com>, 2008.
+# ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>, 2008.
+# Maxin B. John <maxinbjohn@gmail.com>, 2007.
+# Manu S Madhav | മനു എസ് മാധവ് <manusmad@gmail.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-12 07:56+0000\n"
+"PO-Revision-Date: 2010-12-29 15:32+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-Country: INDIA\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "നിങ്ങളുടെ വോട്ട് റിക്കോര്‍ഡ് ചെയ്തിരിയ്ക്കുന്നു."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "നിങ്ങളിപ്പോള്‍ ഒരു ആരാധകനാണു്."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "നെറ്റ്‌വര്‍ക്ക് പിശക്. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "പുതിയവ ഇറക്കുക..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "ആരംഭിയ്ക്കുന്നു"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "ക്രമീകരണ ഫയല്‍ ലഭ്യമല്ല: \"%1\""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "ക്രമീകരണ ഫയല്‍ അസാധുവാണു്: \"%1\""
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "പ്രൊവൈഡര്‍ സംബന്ധിച്ചുള്ള വിവരം ലഭ്യമാക്കുന്നു"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:212 core/engine.cpp:529
+msgid "Loading data"
+msgstr "ഡേറ്റാ ലഭ്യമാക്കുന്നു"
+
+#: core/engine.cpp:242
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:247
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr ""
+
+#: core/engine.cpp:489
+#, kde-format
+msgid "Re: %1"
+msgstr "വീണ്ടും: %1"
+
+#: core/engine.cpp:531
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "ഒരു പ്രിവ്യൂ ലഭ്യമാക്കുന്നു"
+msgstr[1] "%1 പ്രിവ്യൂ ലഭ്യമാക്കുന്നു"
+
+#: core/engine.cpp:533 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തുകൊണ്ടിരിയ്ക്കുന്നു"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "തെറ്റായ വസ്തു."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "ഒരു പക്ഷേ തെറ്റായ ഡൌണ്‍ലോഡ് ചെയ്യാനുള്ള കണ്ണി"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "%1 ഇന്‍സ്റ്റോള്‍ ചെയ്യുവാന്‍ സാധ്യമായില്ല: ഫയല്‍ ലഭ്യമല്ല."
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "നിലവിലുള്ള ഫയല്‍ മാറ്റിയെഴുതണമോ?"
+
+#: core/installation.cpp:538
+#, fuzzy
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "ഫയല്‍ ഡൌണ്‍ലോട് ചെയ്യുക:"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "ഒപ്പുവയ്ക്കാനുള്ള കീ തെരഞ്ഞെടുക്കുക"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "ഒപ്പുവയ്ക്കാനുപയോഗിയ്ക്കുന്ന കീ:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "കിടിലന്‍ സാധനങ്ങളെടുത്തോളൂ"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 കൂട്ടിച്ചേര്‍ക്കല്‍ ഇന്‍സ്റ്റോളര്‍"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "സമയം തീര്‍ന്നു. ഇന്റര്‍നെറ്റ് ബന്ധം പരിശോധിയ്ക്കുക."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "സേവകന്‍: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />ദാതാവ്: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />ലക്കം: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "ദാതാവിനെക്കുറിച്ചുള്ള വിവരം"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "%1 ഇന്‍സ്റ്റോള്‍ ചെയ്യുവാന്‍ സാധ്യമായില്ല"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "കിടിലന്‍ സാധനങ്ങളെടുത്തോളൂ!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr ""
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr ""
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "എല്ലാ ദാതാക്കളും"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "എല്ലാ വിഭാഗങ്ങളും"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "ദാതാവ്:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "വിഭാഗം:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "ഏറ്റവും പുതിയതു്"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "വിലയിരുത്തല്‍"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "ഏറ്റവുമധികം ഇറക്കിയത്"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തതു്"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "ക്രമത്തിലാക്കേണ്ടതു്:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "തെരയുക:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "തെരയുവാനുള്ള വാചകം ഇവിടെ നല്‍കുക"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "രചയിതാവ്:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">പൂമുഖം</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "പുതുക്കല്‍"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "അണ്‍ഇന്‍സ്റ്റോള്‍ ചെയ്യുക"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "ആരാധകനാവുക"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1 നു് വേണ്ട വിശദവിവരങ്ങള്‍"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "മാറ്റസൂചിക:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "ആസ്ഥാനം"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "ഒരു സഹായം നല്‍കുക"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "ഒരു ബ്രൌസറില്‍ തുറക്കുന്നു"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "നിലവാരം: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i> അണിയിച്ചൊരുക്കിയതു്"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 ഡൌണ്‍ലോഡ്"
+msgstr[1] "%1 ഡൌണ്‍ലോഡുകള്‍"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "അച്ചടിയ്ക്കുന്നതിന് മുമ്പ് കണ്ടുനോക്കുന്നു"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "വിശദാംശങ്ങള്‍"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "പുതുക്കിക്കൊണ്ടിരിയ്ക്കുന്നു"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "വീണ്ടും ഇന്‍സ്റ്റോള്‍ ചെയ്യുക"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "അടുത്തതു്"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "പൂര്‍ത്തിയാക്കുക"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "Loading provider information"
+msgid "Fetching provider information..."
+msgstr "പ്രൊവൈഡര്‍ സംബന്ധിച്ചുള്ള വിവരം ലഭ്യമാക്കുന്നു"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "സെര്‍വറില്‍ നിന്നം കലാസൃഷ്ടിയുടെ അനുമതിപത്ര വിവരങ്ങള്‍ എടുത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "സെര്‍വറില്‍ നിന്നം കലാസൃഷ്ടി എടുത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Loading provider information"
+msgid "Could not fetch provider information."
+msgstr "പ്രൊവൈഡര്‍ സംബന്ധിച്ചുള്ള വിവരം ലഭ്യമാക്കുന്നു"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "ലോഗിന്‍ പരിശോധിയ്ക്കുന്നു..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "നിങ്ങള്‍ മുമ്പു് പുതുക്കിയ കലാസൃഷ്ടി എടുത്തുകൊണ്ടിരിയ്ക്കുന്നു..."
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "ലോഗിന്‍ ശരിയോണെയെന്നു് നോക്കാന്‍ സാധ്യമായില്ല, ദയവായി വീണ്ടും ശ്രമിയ്ക്കുക."
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "നിങ്ങള്‍ മുമ്പു് പുതുക്കിയ കലാസൃഷ്ടി എടുക്കുന്നതു് പൂര്‍ത്തിയായി."
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "നിങ്ങള്‍ മുമ്പു് പുതുക്കിയ കലാസൃഷ്ടി എടുക്കുന്നതു് പൂര്‍ത്തിയായി..."
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "വെബ്സൈറ്റ് സന്ദര്‍ശിയ്ക്കുക"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "കിടിലന്‍ സാധനങ്ങള്‍ പങ്കു് വയ്ക്കുക"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 കൂട്ടിച്ചേര്‍ക്കല്‍ അപ്‌ലോഡര്‍"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "ഫയല്‍ ലഭ്യമായില്ല: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "കയറ്റാന്‍ സാധിച്ചില്ല"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "തെറ്റ്"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "തെരഞ്ഞെടുത്ത \"%1\" വിഭാഗം അസാധുവാണു്."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "ചിത്രത്തിന്റെ തിരനോട്ടം തെരഞ്ഞെടുക്കുക"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "ശൃംഖലയിലൊരു തകരാറുണ്ടായി."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "അപ്‌ലോഡ് ചെയ്യുന്നതു്പരാജയപ്പെട്ടു"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "തിരിച്ചറിയുന്നതില്‍ തെറ്റു്."
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "കയറ്റുന്നതു്പരാജയപ്പെട്ടു: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "അടയാളവാക്ക്:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "ഉപയോക്താവിന്റെ പേര്:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "കയറ്റേണ്ട ഫയല്‍:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "പുതുതായി കയറ്റുക"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "ജിപിഎല്‍"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "എല്‍ജിപിഎല്‍"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "ബിഎസ്ഡി"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "വിവരണം: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "ലക്കം:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "അനുമതിപത്രം:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "ദയവായി നിങ്ങളുടെ അപ്‌ലോഡിനെക്കുറിച്ചുള്ള വിവരം ഇംഗ്ലീഷില്‍ പൂരിപ്പിയ്ക്കുക."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "തലക്കെട്ട്:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "വെബ്സൈറ്റിലുള്ളതു് പോലെ ഫയലിന്റെ പേരു്"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "ചിത്രങ്ങളുടെ തിരനോട്ടം കാണിയ്ക്കുക"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "തിരനോട്ടം തെരഞ്ഞെടുക്കുക..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "ഈ ഇനത്തിനു് ഒരു വില നിശ്ചയിയ്ക്കുക"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "വില"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "വില:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "വിലയുടെ കാരണം:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "സര്‍വറില്‍ നിന്നും ഉള്ളടക്കത്തിന്റെ കണ്ണി ലഭ്യമാക്കുക"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "സെര്‍വറില്‍ ഉള്ളടക്കം സൃഷ്ടിയ്ക്കുക"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "കലാസൃഷ്ടി കയറ്റുക"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "തിരനോട്ടം കയറ്റുക"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"കുറിപ്പു്: വെബ്സൈറ്റിലെ നിങ്ങളുടെ കലാസൃഷ്ടി മാറ്റാനും പുതുക്കാനും നീക്കം ചെയ്യാനും നിങ്ങള്‍ക്കു് "
+"കഴിയും."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "രണ്ടാമതൊരു തിരനോട്ടം കയറ്റുക"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "മൂന്നാമതൊരു തിരനോട്ടം കയറ്റുക"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "കയറ്റല്‍ തുടങ്ങുക"
