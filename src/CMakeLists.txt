@@ -45,7 +45,7 @@ add_library(KF5::NewStuff ALIAS KF5NewStuff)
 generate_export_header(KF5NewStuff BASE_NAME KNewStuff EXPORT_FILE_NAME knewstuff_export.h)
 
 target_include_directories(KF5NewStuff PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>")
-target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KNewStuff3>")
+target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
 
 target_link_libraries(KF5NewStuff
   PUBLIC
@@ -81,7 +81,7 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   REQUIRED_HEADERS KNewStuff_HEADERS
   PREFIX KNS3
 )
-install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KNewStuff3/KNS3 COMPONENT Devel)
+install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
 
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -89,9 +89,9 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
   knewstuffaction.h
   ${KNewStuff_HEADERS}
-  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KNewStuff3/kns3 COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
 )
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets Attica KXmlGui" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KNewStuff)
+ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets Attica KXmlGui" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
