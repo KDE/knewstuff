@@ -44,7 +44,7 @@ void XmlLoader::load(const QUrl &url)
 
     qCDebug(KNEWSTUFF) << "XmlLoader::load(): url: " << url;
 
-    KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+    KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
     connect(job, SIGNAL(result(KJob*)),
             SLOT(slotJobResult(KJob*)));
     connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
@@ -66,11 +66,9 @@ void XmlLoader::slotJobResult(KJob *job)
         emit signalFailed();
         return;
     }
-    /*
-            qCDebug(KNEWSTUFF) << "--Xml Loader-START--";
-            qCDebug(KNEWSTUFF) << QString::fromUtf8(m_jobdata);
-            qCDebug(KNEWSTUFF) << "--Xml Loader-END--";
-    */
+    qCDebug(KNEWSTUFF) << "--Xml Loader-START--";
+    qCDebug(KNEWSTUFF) << QString::fromUtf8(m_jobdata);
+    qCDebug(KNEWSTUFF) << "--Xml Loader-END--";
     QDomDocument doc;
     if (!doc.setContent(m_jobdata)) {
         emit signalFailed();
