@@ -1,7 +1,7 @@
 maintainer: whiting
 description: Support for downloading application assets from the network
 tier: 3
-type: functional
+type: solution
 platforms:
     - name: All
 portingAid: false
