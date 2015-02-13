@@ -155,7 +155,7 @@ public:
     void selectCategory(const QString &category);
 
 public Q_SLOTS:
-    virtual void accept();
+    void accept() Q_DECL_OVERRIDE;
 
 private:
     bool init(const QString &configfile);

@@ -32,15 +32,15 @@ public:
 
     void setImage(const QImage &preview);
 
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
     void clicked();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event);
-    virtual void resizeEvent(QResizeEvent *event);
-    virtual void mousePressEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QImage m_image;

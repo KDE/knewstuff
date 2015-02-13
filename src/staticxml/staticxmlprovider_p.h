@@ -49,19 +49,19 @@ public:
      */
     StaticXmlProvider();
 
-    virtual QString id() const;
+    QString id() const Q_DECL_OVERRIDE;
 
     /**
      * set the provider data xml, to initialize the provider
      */
-    virtual bool setProviderXML(const QDomElement &xmldata);
+    bool setProviderXML(const QDomElement &xmldata) Q_DECL_OVERRIDE;
 
-    virtual bool isInitialized() const;
+    bool isInitialized() const Q_DECL_OVERRIDE;
 
-    virtual void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries);
+    void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
 
-    virtual void loadEntries(const KNS3::Provider::SearchRequest &request);
-    virtual void loadPayloadLink(const KNS3::EntryInternal &entry, int);
+    void loadEntries(const KNS3::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
+    void loadPayloadLink(const KNS3::EntryInternal &entry, int) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotEmitProviderInitialized();

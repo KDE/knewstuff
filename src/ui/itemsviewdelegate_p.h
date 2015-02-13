@@ -34,17 +34,17 @@ public:
     ~ItemsViewDelegate();
 
     // paint the item at index with all its attributes shown
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 
     // get the list of widgets
-    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const;
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE;
 
     // update the widgets
     virtual void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const;
+                                   const QPersistentModelIndex &index) const Q_DECL_OVERRIDE;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 };
 }
 

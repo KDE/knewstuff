@@ -37,8 +37,8 @@ public:
     explicit ItemsModel(Engine *engine, QObject *parent = 0);
     ~ItemsModel();
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
     void addEntry(const EntryInternal &entry);
     void removeEntry(const EntryInternal &entry);

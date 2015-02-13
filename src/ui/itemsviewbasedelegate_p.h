@@ -59,7 +59,7 @@ Q_SIGNALS:
     void signalShowDetails(const KNS3::EntryInternal &entry);
 
 protected Q_SLOTS:
-    bool eventFilter(QObject *watched, QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
     void slotInstallClicked();
     void slotInstallActionTriggered(QAction *action);
     void slotLinkClicked(const QString &url);
