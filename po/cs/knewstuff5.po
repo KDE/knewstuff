@@ -1,0 +1,714 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Lukáš Tinkl <lukas@kde.org>, 2010, 2011, 2012.
+# Vít Pelčák <vit@pelcak.org>, 2011, 2012, 2013, 2014, 2015.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-12 07:56+0000\n"
+"PO-Revision-Date: 2014-10-13 09:25+0200\n"
+"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Language: cs_CZ\n"
+"X-Source-Language: en_US\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Tato položka stojí %1 %2.\n"
+"Přejete si ji zakoupit?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Stav vašeho konta je příliš nízký:\n"
+"Stav: %1\n"
+"Cena: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Váš hlas byl zaznamenán."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Nyní jste fanoušek."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Chyba sítě. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Příliš mnoho požadavků na server. Prosím zkuste znovu za několik minut."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Neznámá chyba OCS API. (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "Stáhnout nový obsah..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Probíhá inicializace"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Konfigurační soubor nenalezen: \"%1\""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Konfigurační soubor je neplatný: \"%1\""
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "Načítají se informace o poskytovateli"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Nelze získat poskytovatele obsahu ze souboru: %1"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr "Chyba během inicializace poskytovatele."
+
+#: core/engine.cpp:212 core/engine.cpp:529
+msgid "Loading data"
+msgstr "Načítají se data"
+
+#: core/engine.cpp:242
+msgid "Loading data from provider"
+msgstr "Načítají se data od poskytovatele"
+
+#: core/engine.cpp:247
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Načítání poskytovatelů ze souboru %1 selhalo"
+
+#: core/engine.cpp:489
+#, kde-format
+msgid "Re: %1"
+msgstr "Znovu: %1"
+
+#: core/engine.cpp:531
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Načítá se náhled"
+msgstr[1] "Načítají se %1 náhledy"
+msgstr[2] "Načítá se %1 náhledů"
+
+#: core/engine.cpp:533 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Instaluje se"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Neplatná položka."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Stažení položky selhalo: neexistuje URL pro stažení \"%1\"."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Stažení \"%1\" selhalo, chyba: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Stáhnutý soubor je ve formátu html. To znamená, že odkaz vedl na webové "
+"stránky namísto na stáhnutí souboru. Přejete si stránku otevřít v prohlížeči?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Pravděpodobně chybný odkaz ke stažení"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Stažený soubor je HTML soubor. Otevřeno v prohlížeči."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Nelze nainstalovat \"%1\": soubor nenalezen."
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "Přepsat existující soubor?"
+
+#: core/installation.cpp:538
+msgid "Download File"
+msgstr "Stáhnout soubor"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a získat dostupné klíče. Ujistěte se, že je "
+"<i>gpg</i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Zadejte heslo ke klíči <b>0x%1</b>, patřící osobě<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a ověřit soubor. Ujistěte se, že je <i>gpg</i> "
+"nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Vybrat klíč k podepsání"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Klíč pro podepsání:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a podepsat soubor. Ujistěte se, že je <i>gpg</"
+"i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Získat novinky"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Instalátor doplňků '%1'"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Čas vypršel, zkontrolujte připojení k internetu."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Server: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Poskytovatel: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Verze: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Informace o poskytovateli"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nelze nainstalovat %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Získat novinky!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Režim zobrazení ikon"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Režim zobrazení podrobností"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Všichni poskytovatelé"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Všechny kategorie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Poskytovatel:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Kategorie:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Nejnovější"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Hodnocení"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Nejvíce stáhnutí"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Nainstalováno"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Setřídit podle:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Hledat:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Zde zadejte hledaný výraz"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Autor:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Domovská stránka</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Aktualizovat"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Staňte se fanouškem"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Instalovat"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Podrobnosti pro %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Seznam změn:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Sponzorovat"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Báze znalostí (žádná položka)"
+msgstr[1] "Báze znalostí (%1 položky)"
+msgstr[2] "Báze znalostí (%1 položek)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Otevřít v okně prohlížeče"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Hodnocení: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Od <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 fanoušek"
+msgstr[1] "%1 fanoušci"
+msgstr[2] "%1 fanoušků"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 stažení"
+msgstr[1] "%1 stažení"
+msgstr[2] "%1 stažení"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Načítá se náhled"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Aktualizuji"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Znovu nainstalovat"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Následující"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "Dokončit"
+
+#: uploaddialog.cpp:177
+msgid "Fetching provider information..."
+msgstr "Stahuji informace o poskytovateli..."
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "Načítají se licenční údaje ze serveru..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "Načítá se obsah ze serveru..."
+
+#: uploaddialog.cpp:266
+msgid "Could not fetch provider information."
+msgstr "Nelze stáhnout informace o poskytovateli."
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr "Registrovat nový účet"
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "Probíhá kontrola přihlášení..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "Načítá se vámi nedávno aktualizovaný obsah..."
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "Nelze ověřit přihlášení, prosím zkuste znovu."
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "Načítání vámi nedávno aktualizovaného obsahu dokončeno."
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "Načítání obsahu ze serveru dokončeno."
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Navštívit webovou stránku"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Sdílet nový obsah"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Odesílač doplňků '%1'"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "Soubor nenalezen: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "Odeslání selhalo"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "Server nerozpoznal kategorii %2 do které se pokoušíte odesílat."
+msgstr[1] ""
+"Server nerozpoznal žádnou z kategorií do kterých se pokoušíte odesílat: %2"
+msgstr[2] ""
+"Server nerozpoznal žádnou z kategorií do kterých se pokoušíte odesílat: %2"
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "Chyba"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Zvolená kategorie \"%1\" je neplatná."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "Zvolit obrázek s náhledem"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "Nastala síťová chyba."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "Odeslání se nezdařilo"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "Chyba při ověřování."
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Odeslání selhalo: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Heslo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Soubor k odeslání:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Nové odeslání"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Popis:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Verze:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Licence:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Prosím poskytněte informace o obsahu (anglicky)."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Název:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Název souboru, jak bude vypadat na serveru"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Toto by mělo jasně popsat obsah souboru. Může to být stejný text jako název "
+"souboru kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Náhled obrázků"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Vybrat náhled..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Nastavit cenu položky"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Cena"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Cena:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Důvod ceny:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Načíst odkaz na obsah ze serveru"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Vytvořit obsah na serveru"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Odeslat obsah"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Odeslat první náhled"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Poznámka: Můžete měnit, aktualizovat a mazat váš obsah na webové stránce."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Odeslat druhý náhled"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Odeslat třetí náhled"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Potvrzuji, že tento obsah neporušuje existující autorská práva, zákony nebo "
+"ochranné známky. Souhlasím, že bude moje IP adresa zaznamenána. (Distribuce "
+"obsahu bez svolení vlastníků autorských práv je nelegální.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Spustit odeslání"
