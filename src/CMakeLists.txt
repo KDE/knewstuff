@@ -18,6 +18,8 @@ set(KNewStuff_SRCS
     core/provider.cpp
     core/security.cpp
     core/xmlloader.cpp
+    kmoretools/kmoretools.cpp
+    kmoretools/kmoretoolsconfigdialog_p.cpp
     staticxml/staticxmlprovider.cpp
     ui/entrydetailsdialog.cpp
     ui/imageloader.cpp
@@ -37,6 +39,7 @@ set(KNewStuff_SRCS
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
     uploaddialog.ui
+    kmoretools/ui/kmoretoolsconfigwidget.ui
 )
 
 add_library(KF5NewStuff ${KNewStuff_SRCS} )
@@ -52,6 +55,7 @@ target_link_libraries(KF5NewStuff
     Qt5::Widgets
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF5::XmlGui                # For KActionCollection in knewstuffaction.h
+    KF5::Service               # For KMoreTools
   PRIVATE
     KF5::KIOCore               # For network fetching operations
     KF5::KIOWidgets            # For KUrlRequester
@@ -81,6 +85,20 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   REQUIRED_HEADERS KNewStuff_HEADERS
   PREFIX KNS3
 )
+
+# For KMoreTools:
+ecm_generate_headers(KNewStuff_CamelCase_HEADERS_KMoreTools
+  HEADER_NAMES
+  KMoreTools
+
+  RELATIVE kmoretools
+  REQUIRED_HEADERS KNewStuff_HEADERS_KMoreTools
+  PREFIX KNS3
+)
+install(FILES ${KNewStuff_CamelCase_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
+install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
+)
+
 install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
 
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

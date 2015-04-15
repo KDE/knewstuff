@@ -1,7 +1,7 @@
 
 include(ECMMarkAsTest)
 
-find_package(Qt5 5.2.0 CONFIG REQUIRED Test)
+find_package(Qt5 5.2.0 CONFIG REQUIRED Test Widgets) # Widgets for KMoreTools
 
 macro(knewstuff_executable_tests)
    foreach(_testname ${ARGN})
@@ -25,3 +25,10 @@ knewstuff_executable_tests(
 #    knewstuff2_cache
 #)
 
+# KMoreTools:
+add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp)
+add_test(kmoretoolstest kmoretoolstest)
+ecm_mark_as_test(kmoretoolstest)
+target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff)
+install(DIRECTORY kmoretools/1/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/unittest-kmoretools/1)
+install(DIRECTORY kmoretools/2/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/unittest-kmoretools/2)

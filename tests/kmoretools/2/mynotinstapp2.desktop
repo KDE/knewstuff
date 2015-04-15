@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=My Not Inst App 2
+Exec=mynotinstdapp2 %c
+Icon=mynotinstdapp2
+Type=Application
+GenericName=The second never installed app
+Terminal=false
+Categories=Qt;KDE;System;

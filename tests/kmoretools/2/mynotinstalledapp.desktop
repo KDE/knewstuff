@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=My Not Installed App
+Exec=mynotinstalledapp %c
+Icon=mynotinstalledapp
+Type=Application
+GenericName=The never installed app
+Terminal=false
+Categories=Qt;KDE;System;
