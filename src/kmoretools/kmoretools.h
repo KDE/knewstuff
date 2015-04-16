@@ -33,25 +33,25 @@ class KMoreToolsMenuBuilder;
 class KMoreToolsPrivate;
 
 /**
- * Helps to create menus with external tools which are potentially not yet installed.
- *
- * Also, give quick access to related tools in a given context.
+ * Helps to create user-configurable menus with tools which are potentially not yet installed.
  *
  * @note This is a new API (published within KNewStuff since April 2015). Its current
  * target are KDE applications which are part of the kdesrcbuild infrastructure.
- * There, it is possible to find all usages and adapt to API changes. So, if you use
- * this in your own application, beware that there might be API changes when more use
- * cases are developed.
+ * Here, it is possible to find all usages and to adapt to API changes when needed.
+ * So, if you use this in your own application, beware that there might be API
+ * changes when more use cases are developed.
  *
  * This class is the entry point of the KMoreTools API.
  *
  *
  * Introduction
  * ------------
- * KMoreTools helps to add hints about external tools in a given context.
- * The user will see the tool even if a specific tool are not installed.
- * Furthermore, it makes long menus with external tools shorter by providing
- * a main and more section.
+ * KMoreTools helps to to build user-configurable menus with tools which
+ * might not installed yet.
+ * The user will see a menu item (in the 'More' section) for a tool even if
+ * it is not installed. Furthermore, it makes long menus with external tools
+ * shorter by providing a main and more section.
+ * It provides a 'Configure menu' dialog to make the menu user-configurable.
  *
  * It does this in the following ways:
  * - Provide an API to define external applications for a given context.
@@ -96,10 +96,9 @@ class KMoreToolsPrivate;
  * - Increase discoverability and visibility of useful free software that have
  *   inherently low budget for marketing.
  * - Make interconnection of different free software packages as effortless as
- *   possible (with respect to establishing and maintaining).
+ *   possible (in terms of creating and maintaining the menu).
  * - Provide expert (i.e. your) knowledge to useful free software alternatives
- *   to solve a certain task. This knowledge will probably also include your
- *   users' feedback.
+ *   to solve a certain task.
  * - Give novice users hints about tools that are useful in a particular
  *   context even if they are not installed.
  * - Improve self-documentation of applications.
@@ -107,11 +106,40 @@ class KMoreToolsPrivate;
  *
  * Screenshots
  * -----------
- * \image html kmoretools-kate-project-1-all-installed.png "Kate Project plugin with all git tools installed" width=100px
+ * This section shows screenshots of usage examples.
+ *
+ * ### KSnapshot's Send To... menu
+ *
+ * Last updated: 2015-04-17, uncommited demo, source code:
+ * src/kde/kdegraphics/ksnapshot/ksnapshotsendtoactions.cpp
+ *
+ * Note, that the last item in the 'More' menu in the following screenshot was
+ * added by KSnapshot's code.
+ *
+ * \image html kmoretools-ksnapshot-sendto-1.png "Send To menu" width=100px
+ *
+ * ### Dolphins's Space info menu
+ *
+ * Last updated: 2015-04-17, uncommited demo, source code: src/kde/applications/dolphin/src/statusbar/spaceinfotoolsmenu.cpp
+ *
+ * \image html kmoretools-dolphin-spaceinfo-1.png "Space info menu" width=100px
+ *
+ * ### Kate's Project plugin git menu
+ *
+ * Last updated: 2015-03-25, uncommited demo, source code:
+ * src/kde/applications/kate/addons/project/kateprojecttreeviewcontextmenu.cpp
+ *
+ * \image html kmoretools-kate-project-1-all-installed.png "All git tools installed" width=100px
  * \n
- * \image html kmoretools-kate-project-2-two-not-installed.png "Kate Project plugin with not all git tools installed" width=100px
+ * \image html kmoretools-kate-project-2-two-not-installed.png "Not all git tools installed" width=100px
  * \n
- * \image html kmoretools-kate-project-3-config-dialog-all-installed.png "Configure menu dialog" width=100px
+ * \image html kmoretools-kate-project-3-config-dialog-all-installed.png "'Configure menu' dialog" width=100px
+ *
+ * ### Kate's Project plugin git menu
+ *
+ * Last updated: 2015-04-17, source code: src/frameworks/knewstuff/tests/kmoretools/kmoretoolstest.cpp
+ *
+ * \image html kmoretools-tests-configure-dialog-notinstalledapps.png "Configure dialog when there are non-installed apps" width=100px
  *
  *
  * TODOs
@@ -119,15 +147,9 @@ class KMoreToolsPrivate;
  * - question: KMoreTools::registerServiceByDesktopEntryName():
  *      - is the term "desktopEntryName" correct here?
  *      - warn if service is not of Type=Application (KService::isApplication()) or just leave it?
- * - For the Ksnapshot use case: Add some tagging support to tell the system that
- *      specific services can edit images (vs. only view)
- *      (how to integrate with the automatic KService retrieval?)
- * - Add support for custom QActions to benefit from the Configure... GUI
- * - later: Add support for package managers to install software (e.g. muon discover)
+  * Add support for package managers to install software (e.g. muon discover)
  * - maybe: kmt-desktopfiles: add a config file that can configure the homepage URLs
  *   and e.g. the package name if needed for package manager support
- * - impl.: KMoreToolsMenuItem::action(): is this the best place for this method because
- *      implementation is not quite straightforward?
  */
 class KNEWSTUFF_EXPORT KMoreTools
 {
