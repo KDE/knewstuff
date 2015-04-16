@@ -29,6 +29,6 @@ knewstuff_executable_tests(
 add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp)
 add_test(kmoretoolstest kmoretoolstest)
 ecm_mark_as_test(kmoretoolstest)
-target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff)
+target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)
 install(DIRECTORY kmoretools/1/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/unittest-kmoretools/1)
 install(DIRECTORY kmoretools/2/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/unittest-kmoretools/2)
