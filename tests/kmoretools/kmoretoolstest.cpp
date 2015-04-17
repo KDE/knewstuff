@@ -136,7 +136,7 @@ void KMoreToolsTest::testDetectByExecLineButNoFileProvided()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
     QTest::ignoreMessage(QtCriticalMsg, "KMoreTools::registerServiceByDesktopEntryName: If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.");
-    auto eeeApp = kmt.registerServiceByDesktopEntryName(_("eee"), KMoreTools::ServiceLocatingMode_ByProvidedExecLine);
+    auto eeeApp = kmt.registerServiceByDesktopEntryName(_("eee"), QString(), KMoreTools::ServiceLocatingMode_ByProvidedExecLine);
     QVERIFY(!eeeApp);
 }
 

@@ -58,6 +58,18 @@ public:
     }
 
     /**
+     * @return uniqueId if kmtDesktopfileSubdir is empty
+     * else kmtDesktopfileSubdir
+     */
+    QString kmtDesktopfileSubdirOrUniqueId(const QString& kmtDesktopfileSubdir) {
+        if (kmtDesktopfileSubdir.isEmpty()) {
+            return uniqueId;
+        }
+
+        return kmtDesktopfileSubdir;
+    }
+
+    /**
      * Finds a file in the '/usr/share'/kmoretools/'uniqueId'/ directory.
      * '/usr/share' = "~/.local/share", "/usr/local/share", "/usr/share" (see QStandardPaths::GenericDataLocation)
      * 'uniqueId' = @see uniqueId()
@@ -65,15 +77,22 @@ public:
      * @param can be a filename with or without relative path. But no absolute path.
      * @returns the first occurence if there are more than one found
      */
-    QString findFileInKmtDesktopfilesDir(QString filename) {
+    QString findFileInKmtDesktopfilesDir(const QString& filename)
+    {
+        return findFileInKmtDesktopfilesDir(uniqueId, filename);
+    }
+
+    static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
+    {
         //qDebug() << "search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
-        const QString kmtDesktopfilesFilename = QLatin1String("kmoretools/") + uniqueId + "/" + filename;
+        const QString kmtDesktopfilesFilename = QLatin1String("kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
         //qDebug() << "  search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
         //qDebug() << "QStandardPaths::DataLocation findWhat -> foundPath" << foundPath;
 
         return foundKmtFile;
     }
+
 };
 
 KMoreTools::KMoreTools(const QString& uniqueId)
@@ -87,11 +106,15 @@ KMoreTools::~KMoreTools()
     delete d;
 }
 
-KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(const QString& desktopEntryName, KMoreTools::ServiceLocatingMode serviceLocatingMode)
+KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
+    const QString& desktopEntryName,
+    const QString& kmtDesktopfileSubdir,
+    KMoreTools::ServiceLocatingMode serviceLocatingMode)
 {
     // qDebug() << "* registerServiceByDesktopEntryName(desktopEntryName=" << desktopEntryName;
 
-    const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(desktopEntryName + QLatin1String(".desktop"));
+    const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(
+            desktopEntryName + QLatin1String(".desktop"));
     const bool isKmtDesktopfileProvided = !foundKmtDesktopfilePath.isEmpty();
 
     KService::Ptr kmtDesktopfile;
@@ -132,7 +155,12 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(const QString& 
 //         qDebug() << "registerServiceByDesktopEntryName:" << desktopEntryName << ": NOT installed.";
 //     }
 
-    auto registeredService = new KMoreToolsService(this, desktopEntryName, isInstalled, installedService, kmtDesktopfile);
+    auto registeredService = new KMoreToolsService(
+        d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
+        desktopEntryName,
+        isInstalled,
+        installedService,
+        kmtDesktopfile);
 
     // add or replace item in serviceList
     auto foundService = std::find_if(d->serviceList.begin(), d->serviceList.end(),
@@ -158,7 +186,8 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(const QString& 
 KMoreToolsMenuBuilder* KMoreTools::menuBuilder(const QString& userConfigPostfix) const
 {
     if (d->menuBuilderMap.find(userConfigPostfix) == d->menuBuilderMap.end()) {
-        d->menuBuilderMap.insert(userConfigPostfix, new KMoreToolsMenuBuilder(d->uniqueId, userConfigPostfix));
+        d->menuBuilderMap.insert(userConfigPostfix,
+                                 new KMoreToolsMenuBuilder(d->uniqueId, userConfigPostfix));
     }
     return d->menuBuilderMap[userConfigPostfix];
 }
@@ -169,7 +198,7 @@ KMoreToolsMenuBuilder* KMoreTools::menuBuilder(const QString& userConfigPostfix)
 class KMoreToolsServicePrivate
 {
 public:
-    KMoreTools* kmt;
+    QString kmtDesktopfileSubdir;
     QString desktopEntryName;
     bool isInstalled = false;
     KService::Ptr installedService;
@@ -212,14 +241,14 @@ public:
             return QIcon();
         }
 
-        QString iconPath = kmt->d->findFileInKmtDesktopfilesDir(kmtDesktopfile->icon() + QLatin1String(".svg"));
+        QString iconPath = KMoreToolsPrivate::findFileInKmtDesktopfilesDir(kmtDesktopfileSubdir, kmtDesktopfile->icon() + QLatin1String(".svg"));
         //qDebug() << "kmt iconPath" << iconPath;
         QIcon svgIcon(iconPath);
         if (!svgIcon.isNull()) {
             return svgIcon;
         }
 
-        iconPath = kmt->d->findFileInKmtDesktopfilesDir(kmtDesktopfile->icon() + QLatin1String(".png"));
+        iconPath = KMoreToolsPrivate::findFileInKmtDesktopfilesDir(kmtDesktopfileSubdir, kmtDesktopfile->icon() + QLatin1String(".png"));
         //qDebug() << "kmt iconPath" << iconPath;
         QIcon pngIcon(iconPath);
         if (!pngIcon.isNull()) {
@@ -230,10 +259,14 @@ public:
     }
 };
 
-KMoreToolsService::KMoreToolsService(KMoreTools* kmt, const QString& desktopEntryName, bool isInstalled, KService::Ptr installedService, KService::Ptr kmtDesktopfile)
+KMoreToolsService::KMoreToolsService(const QString& kmtDesktopfileSubdir,
+                                     const QString& desktopEntryName,
+                                     bool isInstalled,
+                                     KService::Ptr installedService,
+                                     KService::Ptr kmtDesktopfile)
     : d(new KMoreToolsServicePrivate())
 {
-    d->kmt = kmt;
+    d->kmtDesktopfileSubdir = kmtDesktopfileSubdir;
     d->desktopEntryName = desktopEntryName;
     d->isInstalled = isInstalled;
     d->installedService = installedService;

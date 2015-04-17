@@ -234,9 +234,15 @@ public:
 
 public:
     /**
-     * @param uniqueId defines where the kmt-desktopfiles should be installed
-     * (may contain slashes which result in subdirectories)
+     * @param uniqueId defines two things
+     * 1) where the kmt-desktopfiles should be installed because there
+     *    they will be searched by default (see also ... TODO ... overwrite)
+     *    if @p uniqueId contains slashes they will result in subdirectories.
+     * 2) The config section where the user configuration set by the dialog
+     *    will be stored
      *
+     * Install Desktopfiles
+     * --------------------
      * Example 1 (CMakeFileLists.txt if uniqueId = "dolphin/statusbar-diskspace-menu"):
      * \verbatim
         # note the trailing slash       ------------. (it makes sure only the contents of the directory is copied)
@@ -251,8 +257,8 @@ public:
         install(DIRECTORY kmt-desktopfiles/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/kate/addons/project/git-tools)
         \endverbatim
      *
-     * About ${DATA_INSTALL_DIR}
-     * -------------------------
+     * ### About ${DATA_INSTALL_DIR}
+     *
      * In general, ${DATA_INSTALL_DIR}/kmoretools/hallo ends up in /usr/share/kmoretools/hallo.
      *
      * To use it, you need to add \verbatim include(KDEInstallDirs) \endverbatim to your CMakeLists.txt.
@@ -265,17 +271,24 @@ public:
      * Registers a service with KMoreTools.
      *
      * If the method is called more than once for the same desktopEntryName
-     * the service is located again and the old service is replaced with the new one.
+     * the service is located again and the old service is replaced with the
+     * new one.
      *
      * @param desktopEntryName is the name of the desktopfile (without the
      * .desktop extension)
      * The desktop file is
-     * 1. either already installed. Then the information of the installed file is used.
-     * 2. or not installed and kmt-desktopfile is present. Then the information of the
-     *    app-local copy of desktopfile located in the kmt-desktopfiles directory is used
+     * 1. either already installed. Then the information of the installed file
+     *    is used.
+     * 2. or not installed and kmt-desktopfile is present. Then the information
+     *     of the app-local copy of desktopfile located in the kmt-desktopfiles
+     *     directory is used
      * 3. or not installed and no kmt-desktopfile provided. In this case
      *    KMoreToolsService::setHomepageUrl should be used so that at least a
      *    website link can be displayed.
+     *
+     * @param kmtDesktopfileSubdir when not empty overrides the @p uniqueId
+     * parameter from the ctor when it comes to searching a kmt-desktopfile.
+     * Default value is the empty string.
      *
      * @param serviceLocatingMode == ServiceLocatingMode_ByProvidedExecLine:
      *   Some programs don't install a desktop file of their own (e.g. gitk).
@@ -291,6 +304,7 @@ public:
      */
     KMoreToolsService* registerServiceByDesktopEntryName(
         const QString& desktopEntryName,
+        const QString& kmtDesktopfileSubdir = QString(),
         ServiceLocatingMode serviceLocatingMode = ServiceLocatingMode_Default);
 
     /**
@@ -332,8 +346,6 @@ class KMoreToolsServicePrivate;
  */
 class KNEWSTUFF_EXPORT KMoreToolsService
 {
-    friend class KMoreTools;
-
 public:
     /**
      * @return the desktop entry name which the service is identified by and with which
@@ -426,8 +438,9 @@ public: // should be protected but impl does not allow it
      * @param isInstalled true if desktop file is installed
      * @param installedService not nullptr if @p isInstalled is true
      * @param kmtDesktopfile not null if app-local kmt-desktopfile is found and valid
+     * @param kmtDesktopfileSubdir
      */
-    KMoreToolsService(KMoreTools* kmt,
+    KMoreToolsService(const QString& kmtDesktopfileSubdir,
                       const QString& desktopEntryName,
                       bool isInstalled, KService::Ptr installedService,
                       KService::Ptr kmtDesktopfile);
