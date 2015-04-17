@@ -654,10 +654,10 @@ class KMoreToolsMenuItemPrivate
 {
 public:
     QString id;
-    KMoreToolsService* registeredService;
+    KMoreToolsService* registeredService = nullptr;
     KMoreTools::MenuSection defaultLocation;
     QString initialItemText;
-    QAction* action;
+    QAction* action = nullptr;
     bool actionAutoCreated = false; // action might stay nullptr even if actionCreated is true
 };
 

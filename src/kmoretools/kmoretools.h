@@ -240,7 +240,7 @@ public:
      * Example 1 (CMakeFileLists.txt if uniqueId = "dolphin/statusbar-diskspace-menu"):
      * \verbatim
         # note the trailing slash       ------------. (it makes sure only the contents of the directory is copied)
-        #                                           |                                 --fixed---
+        #                                           |                                 ----fix---
         #                                           v                                            ------ uniqueId-----------------
         install(DIRECTORY statusbar/kmt-desktopfiles/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/dolphin/statusbar-diskspace-menu)
         \endverbatim
@@ -484,6 +484,8 @@ public:
      * location of the menu even if @p defaultLocation was main location.
      *
      * See also KMoreToolsMenuItem ctor
+     *
+     * @sa KMoreToolsMenuItem::action()
      */
     KMoreToolsMenuItem* addMenuItem(KMoreToolsService* registeredService,
                                     KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
@@ -501,6 +503,8 @@ public:
      * of default menu items changes. NOTE, that the QAction::text is NOT
      * used to generate the unique id because the text is translated and
      * therefore not stable.
+     *
+     * @sa KMoreToolsMenuItem::action()
      */
     KMoreToolsMenuItem* addMenuItem(QAction* action, const QString& itemId,
                                     KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
@@ -610,10 +614,9 @@ public:
 
     /**
      * @return the underlying KMoreToolsService instance,
-     * see KMoreToolsMenuBuilder::addMenuItem
-     *
-     * (todo/later: if MenuItems also can be created without a KMoreToolsService then
-     * this could also be nullptr)
+     * see KMoreToolsMenuBuilder::addMenuItem (with KKmoreToolsService* argument).
+     * Or nullptr when KMoreToolsMenuBuilder::addMenuItem (with QAction* argument
+     * was used).
      */
     KMoreToolsService* registeredService() const;
 
@@ -643,7 +646,11 @@ public:
     void setInitialItemText(const QString& itemText);
 
     /**
-     * @return the corresponding QAction which will be added to the actual menu when
+     * Case 1
+     * ------
+     * KMoreToolsMenuBuilder::addMenuItem was called with KKmoreToolsService* argument.
+     *
+     * the corresponding QAction which will be added to the actual menu when
      * underlying service is installed or else - if not installed - nullptr.
      *
      * So you can change the created action as you desire.
@@ -655,6 +662,11 @@ public:
      *
      * Note, that once the method was invoked the first time the action is created
      * an then reused.
+     *
+     * Case 2
+     * ------
+     * KMoreToolsMenuBuilder::addMenuItem was called with QAction* argument.
+     * The added action will be returned.
      *
      * @see KMoreToolsService::isInstalled
      */
