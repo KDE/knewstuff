@@ -1,0 +1,23 @@
+[Desktop Entry]
+X-SuSE-DocTeamID=ycc_disk
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-System;
+
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=disk
+
+X-SuSE-YaST-Group=System
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=
+
+Icon=yast-disk
+Exec=xdg-su -c "/sbin/yast2 disk"
+
+Name=Partitioner
+GenericName=Partition hard disks (including RAID, LVM, and encrypted file systems)
+StartupNotify=true
+

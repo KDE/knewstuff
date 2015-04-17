@@ -31,6 +31,10 @@ KMoreToolsService* registerImpl(KMoreTools* kmt, const QString& desktopEntryName
     return service;
 }
 
+//
+// todo later: this code is quite repetetive and could be made easier to read
+//             (or add an X-Property to desktop files because Homepage is not standard)
+//
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
     KMoreToolsService* service = nullptr;
@@ -46,7 +50,11 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     }  else if (desktopEntryName == QString("gitg")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg"));
     } else if (desktopEntryName == QString("gparted")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://gparted.org/"));
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://gparted.org"));
+    } else if (desktopEntryName == QString("partitionmanager")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("www.partitionmanager.org"));
+    } else if (desktopEntryName == QString("disk")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://en.opensuse.org/YaST_Disk_Controller"));
     } else if (desktopEntryName == QString("kdf")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/system/kdiskfree"));
     } else if (desktopEntryName == QString("org.kde.filelight")) {
@@ -77,6 +85,8 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreToo
 
     if (categories.contains("disk-partitions")) {
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gparted"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("partitionmanager"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("disk"));
     }
 
     if (resultList.isEmpty()) {
