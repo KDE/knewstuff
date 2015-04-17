@@ -1,5 +1,12 @@
 [Desktop Entry MUH]
 Name=hury
+Name[nl]=haasten
+Name[pt]=hury
+Name[pt_BR]=hury
+Name[sl]=hury
+Name[sv]=hury
+Name[uk]=hury
+Name[x-test]=xxhuryxx
 Icon=hurz
 Type=Application
 Exec=hallo

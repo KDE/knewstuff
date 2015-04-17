@@ -1,8 +1,22 @@
 [Desktop Entry]
 Name=My Not Installed App
+Name[nl]=Mijn niet geïnstalleerde app
+Name[pt]=A Minha Aplicação Não Instalada
+Name[pt_BR]=Meu aplicativo não instalado
+Name[sl]=Moj program, ki ni nameščen
+Name[sv]=Min inte installerade applikation
+Name[uk]=Невстановлена програма
+Name[x-test]=xxMy Not Installed Appxx
 Exec=mynotinstalledapp %c
 Icon=mynotinstalledapp
 Type=Application
 GenericName=The never installed app
+GenericName[nl]=De nooit geïnstalleerde app
+GenericName[pt]=A aplicação nunca instalada
+GenericName[pt_BR]=Aplicativo nunca instalado
+GenericName[sl]=Nikoli nameščen program
+GenericName[sv]=Min aldrig installerade applikation
+GenericName[uk]=Ніколи не встановлювана програма
+GenericName[x-test]=xxThe never installed appxx
 Terminal=false
 Categories=Qt;KDE;System;

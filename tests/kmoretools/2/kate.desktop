@@ -1,6 +1,20 @@
 [Desktop Entry]
 GenericName=Advanced Text Editor
+GenericName[nl]=Geavanceerde teksteditor
+GenericName[pt]=Editor de Texto Avançado
+GenericName[pt_BR]=Editor de texto avançado
+GenericName[sl]=Napreden urejevalnik besedil
+GenericName[sv]=Avancerad texteditor
+GenericName[uk]=Потужний текстовий редактор
+GenericName[x-test]=xxAdvanced Text Editorxx
 Name=Kate
+Name[nl]=Kate
+Name[pt]=Kate
+Name[pt_BR]=Kate
+Name[sl]=Kate
+Name[sv]=Kate
+Name[uk]=Kate
+Name[x-test]=xxKatexx
 MimeType=text/plain;
 Exec=kate -b %U
 X-KDE-StartupNotify=true
