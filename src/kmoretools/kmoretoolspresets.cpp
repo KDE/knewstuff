@@ -21,40 +21,49 @@
 
 #include <KNS3/KMoreTools>
 
+KMoreToolsService* registerImpl(KMoreTools* kmt, const QString& desktopEntryName, const QString& homepageUrl)
+{
+    const QString subdir = "presets-kmoretools";
+    auto serviceLocatingMode = desktopEntryName.endsWith(".kmt-edition") ?
+                               KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
+    auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
+    service->setHomepageUrl(QUrl(homepageUrl));
+    return service;
+}
+
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
     KMoreToolsService* service = nullptr;
-    const QString subdir = "presets-kmoretools";
 
     if (desktopEntryName == QString("git-cola-folder-handler")) {
-        service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir);
-        service->setHomepageUrl(QUrl(QLatin1String("https://git-cola.github.io")));
-    } else if (desktopEntryName == QString("git-cola-view-history")) {
-        service = kmt->registerServiceByDesktopEntryName(
-                      desktopEntryName + ".kmt-edition",
-                      subdir,
-                      KMoreTools::ServiceLocatingMode_ByProvidedExecLine); // because kmt-edition
-        service->setHomepageUrl(QUrl(QLatin1String("https://git-cola.github.io")));
-    } else if (desktopEntryName == QString("gitk")) {
-        service = kmt->registerServiceByDesktopEntryName(
-                      desktopEntryName + ".kmt-edition", subdir,
-                      // use exec line because gitk does not install desktop file of it's own and because kmt-edition
-                      KMoreTools::ServiceLocatingMode_ByProvidedExecLine);
-        service->setHomepageUrl(QUrl(QLatin1String("http://git-scm.com/docs/gitk")));
-    } else if (desktopEntryName == QString("qgit")) {
-        service  = kmt->registerServiceByDesktopEntryName(
-                       desktopEntryName + ".kmt-edition",
-                       subdir,
-                       KMoreTools::ServiceLocatingMode_ByProvidedExecLine); // because kmt-edition
-        service->setHomepageUrl(QUrl(QLatin1String("http://libre.tibirna.org/projects/qgit")));
-        // note that icon is missing (upstream problem)
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://git-cola.github.io"));
+    } else if (desktopEntryName == QString("git-cola-view-history.kmt-edition")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://git-cola.github.io"));
+    } else if (desktopEntryName == QString("gitk.kmt-edition")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://git-scm.com/docs/gitk"));
+    } else if (desktopEntryName == QString("qgit.kmt-edition")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://libre.tibirna.org/projects/qgit"));
     }  else if (desktopEntryName == QString("gitg")) {
-        service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir);
-        service->setHomepageUrl(QUrl(QLatin1String("https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg")));
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg"));
     } else {
-        qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found";
+        qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return null.";
     }
 
     return service;
+}
+
+QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreTools* kmt, const QStringList& categories)
+{
+    QList<KMoreToolsService*> resultList;
+
+    if (categories.contains("git-clients")) {
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-folder-handler"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-view-history.kmt-edition"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitk.kmt-edition"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("qgit.kmt-edition"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitg"));
+    }
+
+    return resultList;
 }
 

@@ -1,3 +1,6 @@
+# KMoreTools
+# gitk does not install desktop file of it's own
+
 [Desktop Entry]
 Name=gitk
 GenericName=gitk

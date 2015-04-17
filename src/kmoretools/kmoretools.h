@@ -367,6 +367,8 @@ public:
     bool isInstalled() const;
 
     /**
+     * @returns the KService represented by an installed desktop file.
+     *
      * @note that this might be nullptr even if isInstalled() is true.
      * This can only happen when ServiceLocatingMode::ServiceLocatingMode_ByProvidedExecLine
      * is used in registerServiceByDesktopEntryName. (Then the kmt-desktopfile's

@@ -143,8 +143,8 @@ void KMoreToolsTest::testDetectByExecLineButNoFileProvided()
 void KMoreToolsTest::testRegisterServiceTwice()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    auto eeeApp1 = kmt.registerServiceByDesktopEntryName(_("eee"));
-    auto eeeApp2 = kmt.registerServiceByDesktopEntryName(_("eee"));
+    /*auto eeeApp1 = */kmt.registerServiceByDesktopEntryName(_("eee"));
+    /*auto eeeApp2 = */kmt.registerServiceByDesktopEntryName(_("eee"));
     // todo: verify that there is only the last item in the internal service list
 }
 

@@ -1,8 +1,9 @@
+# added for KMoreTools
+
 [Desktop Entry]
 Name=Git Cola (View History)
 TryExec=git-cola
 
-# modified for kmoretools
 Exec=git-cola dag %f
 
 Icon=git-cola

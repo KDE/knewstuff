@@ -41,10 +41,23 @@ public:
      *
      * Sets the homepage URL for your convenience. And add some corrections.
      *
+     * TODO: how to avoid the "Do you trust this program?" question when a
+     * non-installed desktop file is used? Possible solution: install all
+     * .kmt-edition files to proper desktop file location.
+     *
+     *
      * @returns the added KMoreToolsService
      */
     static KMoreToolsService* registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName);
 
+    /**
+     * Makes use of registerServiceByDesktopEntryName.
+     *
+     * Available categories:
+     * "git-clients"
+     *
+     */
+    static QList<KMoreToolsService*> registerServicesByCategory(KMoreTools* kmt, const QStringList& categories);
 };
 
 #endif
