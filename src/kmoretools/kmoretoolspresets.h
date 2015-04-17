@@ -41,7 +41,7 @@ public:
      *
      * Sets the homepage URL for your convenience. And add some corrections.
      *
-     * TODO: how to avoid the "Do you trust this program?" question when a
+     * todo: how to avoid the "Do you trust this program?" question when a
      * non-installed desktop file is used? Possible solution: install all
      * .kmt-edition files to proper desktop file location.
      *
@@ -55,7 +55,11 @@ public:
      *
      * Available categories:
      * "git-clients"
+     * "disk-usage"
+     * "disk-partitions"
+     * todo later: "screenshot-aquire", "screenshot-edit"
      *
+     * todo: handle overlapping categories
      */
     static QList<KMoreToolsService*> registerServicesByCategory(KMoreTools* kmt, const QStringList& categories);
 };

@@ -45,8 +45,14 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
         return registerImpl(kmt, desktopEntryName, QLatin1String("http://libre.tibirna.org/projects/qgit"));
     }  else if (desktopEntryName == QString("gitg")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg"));
+    } else if (desktopEntryName == QString("gparted")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://gparted.org/"));
+    } else if (desktopEntryName == QString("kdf")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/system/kdiskfree"));
+    } else if (desktopEntryName == QString("org.kde.filelight")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://utils.kde.org/projects/filelight"));
     } else {
-        qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return null.";
+        qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
     }
 
     return service;
@@ -62,6 +68,19 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreToo
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitk.kmt-edition"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("qgit.kmt-edition"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitg"));
+    }
+
+    if (categories.contains("disk-usage")) {
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("kdf"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.filelight"));
+    }
+
+    if (categories.contains("disk-partitions")) {
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gparted"));
+    }
+
+    if (resultList.isEmpty()) {
+        qDebug() << "KMoreToolsPresets::registerServicesByCategory: " << categories << ". Nothing found in this categories. TODO: check for invalid category strings.";
     }
 
     return resultList;
