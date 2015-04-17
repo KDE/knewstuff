@@ -1,0 +1,18 @@
+[Desktop Entry]
+X-SuSE-translate=true
+GenericName=Git repository viewer
+Name=gitg
+Comment=Git repository browser
+Exec=gitg --no-wd %U
+TryExec=gitg
+Terminal=false
+Type=Application
+Icon=gitg
+Categories=GNOME;GTK;Development;RevisionControl;
+MimeType=x-scheme-handler/gitg;
+#X-GNOME-DocPath=gitg/gitg.xml
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gitg
+X-GNOME-Bugzilla-Component=core
+X-GNOME-Bugzilla-Version=3.14.0
+

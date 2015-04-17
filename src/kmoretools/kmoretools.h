@@ -102,6 +102,12 @@ class KMoreToolsPrivate;
  * - Improve self-documentation of applications.
  *
  *
+ * Presets
+ * -------
+ * Before installing desktop files in your application you might take a look
+ * at KMoreToolsPresets which might already contain the needed tools.
+ *
+ *
  * Screenshots
  * -----------
  * This section shows screenshots of usage examples.

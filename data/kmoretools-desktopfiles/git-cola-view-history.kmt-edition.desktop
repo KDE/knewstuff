@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Git Cola (View History)
+TryExec=git-cola
+
+# modified for kmoretools
+Exec=git-cola dag %f
+
+Icon=git-cola
+NoDisplay=true
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Development;RevisionControl;
+MimeType=inode/directory;

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Git Cola
+TryExec=git-cola
+Exec=git-cola --repo %f
+Icon=git-cola
+NoDisplay=true
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Development;RevisionControl;
+MimeType=inode/directory;
+

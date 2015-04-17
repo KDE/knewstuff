@@ -1,0 +1,11 @@
+[Desktop Entry]
+X-SuSE-translate=true
+Name=QGit
+GenericName=QGit
+Comment=git repository browser
+TryExec=qgit
+Exec=cd %f && qgit
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Qt;Development;RevisionControl;

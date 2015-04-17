@@ -1,0 +1,2 @@
+The icon qgit.png is installed somewhere with qgit but not specified (and not reachable) in .desktop file
+This should be fixed upstream.
