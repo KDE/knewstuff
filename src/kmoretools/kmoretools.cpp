@@ -114,6 +114,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     // qDebug() << "* registerServiceByDesktopEntryName(desktopEntryName=" << desktopEntryName;
 
     const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(
+            d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
             desktopEntryName + QLatin1String(".desktop"));
     const bool isKmtDesktopfileProvided = !foundKmtDesktopfilePath.isEmpty();
 
@@ -126,11 +127,13 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         //Q_ASSERT_X(kmtDesktopfile->isValid(), "addServiceByDesktopFile", "the kmt-desktopfile is provided but not valid. This must be fixed.");
         //qDebug() << "  INFO: kmt-desktopfile provided and valid.";
         if (kmtDesktopfile->exec().isEmpty()) {
+            qDebug() << "desktopEntryName" << desktopEntryName;
             qCritical("KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.");
             return nullptr;
         }
         // qDebug() << "  INFO: kmt-desktopfile provided.";
     } else {
+        qDebug() << "desktopEntryName" << desktopEntryName;
         qWarning("desktopEntryName (apparently) not provided in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.");
     }
 
@@ -141,10 +144,14 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         isInstalled = installedService != nullptr;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
+            qDebug() << "desktopEntryName" << desktopEntryName;
             qCritical("KMoreTools::registerServiceByDesktopEntryName: If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.");
             return nullptr;
         }
-        isInstalled = !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
+
+        auto tryExecProp = kmtDesktopfile->property("TryExec", QVariant::String);
+        isInstalled = (tryExecProp.isValid() && !QStandardPaths::findExecutable(tryExecProp.toString()).isEmpty())
+                      || !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
     } else {
         Q_ASSERT(false); // case not handled
     }

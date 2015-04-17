@@ -166,7 +166,7 @@ public:
         ServiceLocatingMode_Default,
 
         /**
-         * by existence of executable defined in the Exec line of
+         * by existence of executable defined in the TryExec or Exec line of
          * the provided kmt-desktopfile
          */
         ServiceLocatingMode_ByProvidedExecLine
