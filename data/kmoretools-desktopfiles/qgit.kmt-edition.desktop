@@ -1,7 +1,8 @@
 # For KMoreTools: Fixes Exec line
 #
-# TODO: The icon qgit.png is installed somewhere with qgit but not specified (and not reachable
-# in .desktop file This should be fixed upstream.
+# TODO upstream: The icon qgit.png is installed somewhere with qgit
+#  but not specified (and not reachable
+#  in .desktop file. This should be fixed upstream.
 
 [Desktop Entry]
 X-SuSE-translate=true

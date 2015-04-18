@@ -4,3 +4,4 @@ KMoreTools authors because nothing suitable was provided upstream.
 The goal should be bring the stuff upstream.
 
 All other files are copies of the upstream desktop file and 32x32 icon.
+The filename of the icon is specified in the .desktop file.
