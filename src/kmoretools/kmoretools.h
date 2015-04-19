@@ -356,6 +356,10 @@ public:
     /**
      * @return the desktop entry name which the service is identified by and with which
      * it was registered (see registerServiceByDesktopEntryName).
+     *
+     * Filename without .desktop: e.g. if the desktop file is named
+     * "org.kde.ksnapshot.desktop" then the desktop entry name is
+     * "org.kde.ksnapshot".
      */
     QString desktopEntryName() const;
 

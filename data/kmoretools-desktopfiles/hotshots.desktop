@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=HotShots
+Comment=Screenshot manager
+Type=Application
+GenericName=Screenshot manager
+TryExec=hotshots
+Exec=hotshots
+Categories=Utility;X-SuSE-DesktopUtility;Qt;
+Icon=hotshots
+MimeType=application/x-hot;
+

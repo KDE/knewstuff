@@ -21,6 +21,7 @@
 
 #include <../src/kmoretools/kmoretools.h>
 #include <../src/kmoretools/kmoretools_p.h>
+#include <../src/kmoretools/kmoretoolspresets.h>
 
 #include <QTest>
 #include <QRegularExpression>
@@ -57,6 +58,8 @@ private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-pr
 
     void test_buildMenu_ShowConfigureMenuItem();
     void test_buildMenu_PruneDuplicateNotInstalledService();
+
+    void test_KMoreToolsPresets_registerServicesByCategory();
 
 
     // kmoretools_p.h tests:
@@ -315,6 +318,20 @@ void KMoreToolsTest::test_buildMenu_PruneDuplicateNotInstalledService()
     QCOMPARE(moreMenu->actions().count(), 4); // "Not installed section", "Not installed app" (only once), "Separator", "Configure menu..."
 }
 
+void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByCategory()
+{
+    KMoreTools kmt(_("unittest-kmoretools/3"));
+    auto list = KMoreToolsPresets::registerServicesByCategory(&kmt, { _("screenshot-take") });
+    if (std::find_if(list.begin(), list.end(), [](KMoreToolsService* s) {
+    return s->desktopEntryName() == _("org.kde.ksnapshot");
+    }) != list.end()) {
+        QVERIFY(true); // at least ksnapshot should currently be present
+    }
+    else {
+        QVERIFY(false);
+    }
+}
+
 void KMoreToolsTest::test_buildMenu_WithQActions_interative1()
 {
     if (!enableInteractiveTests) {
@@ -335,8 +352,8 @@ void KMoreToolsTest::test_buildMenu_WithQActions_interative1()
         menuBuilder->showConfigDialog(title);
     };
 
-     f(_("test_buildMenu_WithQActions 1"));
-     //f(_("test_buildMenu_WithQActions 2"));
+    f(_("test_buildMenu_WithQActions 1"));
+    //f(_("test_buildMenu_WithQActions 2"));
 }
 
 void KMoreToolsTest::testMenuItemIdGen()

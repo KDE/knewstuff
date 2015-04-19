@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+X-SuSE-translate=true
+Version=1.0
+Name=Shutter
+GenericName=Screenshot Tool
+Comment=Capture, edit and share screenshots
+Exec=shutter %F
+Icon=shutter
+Terminal=false
+Type=Application
+Categories=Utility;X-SuSE-DesktopUtility;
+MimeType=image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;
+Actions=Redo;Select;Screen;Window;Active;
+
+

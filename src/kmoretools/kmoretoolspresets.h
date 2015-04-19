@@ -57,9 +57,11 @@ public:
      * "git-clients"
      * "disk-usage"
      * "disk-partitions"
-     * todo later: "screenshot-aquire", "screenshot-edit"
+     * "screenshot-take"
      *
      * todo: handle overlapping categories
+     * todo later: additional categories: "screenshot-edit, textfile-edit"
+     * (todo?: rename "category" to something more suitable like "task", "intent", "purpose" or similar?)
      */
     static QList<KMoreToolsService*> registerServicesByCategory(KMoreTools* kmt, const QStringList& categories);
 };

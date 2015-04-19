@@ -34,6 +34,12 @@ KMoreToolsService* registerImpl(KMoreTools* kmt, const QString& desktopEntryName
 //
 // todo later: this code is quite repetetive and could be made easier to read
 //             (or add an X-Property to desktop files because Homepage is not standard)
+//             Or replace this code by a
+//                 _tools-and-categories.json
+//             file which is located in parallel to the desktop and icon files
+//             (but then the information is loaded at runtime instead of compile time)
+//
+// todo later: add a property "maturity" with values "stable" > "new" > "incubating" or similar
 //
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
@@ -52,13 +58,23 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     } else if (desktopEntryName == QString("gparted")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("http://gparted.org"));
     } else if (desktopEntryName == QString("partitionmanager")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("www.partitionmanager.org"));
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://www.partitionmanager.org"));
     } else if (desktopEntryName == QString("disk")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://en.opensuse.org/YaST_Disk_Controller"));
     } else if (desktopEntryName == QString("kdf")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/system/kdiskfree"));
     } else if (desktopEntryName == QString("org.kde.filelight")) {
         return registerImpl(kmt, desktopEntryName, QLatin1String("https://utils.kde.org/projects/filelight"));
+    } else if (desktopEntryName == QString("hotshots")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://sourceforge.net/projects/hotshots/"));
+    } else if (desktopEntryName == QString("kaption")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://kde-apps.org/content/show.php/?content=139302"));
+    } else if (desktopEntryName == QString("org.kde.kscreengenie")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://quickgit.kde.org/?p=kscreengenie.git"));
+    } else if (desktopEntryName == QString("org.kde.ksnapshot")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/graphics/ksnapshot/"));
+    } else if (desktopEntryName == QString("shutter")) {
+        return registerImpl(kmt, desktopEntryName, QLatin1String("http://shutter-project.org"));
     } else {
         qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
     }
@@ -87,6 +103,14 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreToo
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gparted"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("partitionmanager"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("disk"));
+    }
+
+    if (categories.contains("screenshot-take")) {
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.ksnapshot"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.kscreengenie"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("shutter"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("kaption"));
+        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("hotshots"));
     }
 
     if (resultList.isEmpty()) {
