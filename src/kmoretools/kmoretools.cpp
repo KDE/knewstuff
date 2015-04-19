@@ -70,7 +70,7 @@ public:
     }
 
     /**
-     * Finds a file in the '/usr/share'/kmoretools/'uniqueId'/ directory.
+     * Finds a file in the '/usr/share'/kf5/kmoretools/'uniqueId'/ directory.
      * '/usr/share' = "~/.local/share", "/usr/local/share", "/usr/share" (see QStandardPaths::GenericDataLocation)
      * 'uniqueId' = @see uniqueId()
      *
@@ -85,7 +85,7 @@ public:
     static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
     {
         //qDebug() << "search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
-        const QString kmtDesktopfilesFilename = QLatin1String("kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
+        const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
         //qDebug() << "  search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
         //qDebug() << "QStandardPaths::DataLocation findWhat -> foundPath" << foundPath;

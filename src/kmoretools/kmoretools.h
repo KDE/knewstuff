@@ -71,10 +71,10 @@ class KMoreToolsPrivate;
  * -------
  * The term "kmt-desktopfile" refers to a 1:1 copy of a .desktop file. The
  * kmt-desktopfile is provided by the application that uses KMoreTools
- * and must be installed to subdirectories of /usr/share/kmoretools/
- * - e.g. /usr/share/kmoretools/dolphin/statusbar-diskspace-menu/
- * - e.g. /usr/share/kmoretools/kate/addons/project/git-tools/
- * - generally, 'QStandardPaths::GenericDataLocation'/kmoretools/'uniqueId'
+ * and must be installed to subdirectories of /usr/share/kf5/kmoretools/
+ * - e.g. /usr/share/kf5/kmoretools/dolphin/statusbar-diskspace-menu/
+ * - e.g. /usr/share/kf5/kmoretools/kate/addons/project/git-tools/
+ * - generally, 'QStandardPaths::GenericDataLocation'/kf5/kmoretools/'uniqueId'
  *
  * See KMoreTools::KMoreTools for hints of how to install this correctly
  * using cmake.
@@ -254,18 +254,18 @@ public:
         # note the trailing slash       ------------. (it makes sure only the contents of the directory is copied)
         #                                           |                                 ----fix---
         #                                           v                                            ------ uniqueId-----------------
-        install(DIRECTORY statusbar/kmt-desktopfiles/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/dolphin/statusbar-diskspace-menu)
+        install(DIRECTORY statusbar/kmt-desktopfiles/ DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/dolphin/statusbar-diskspace-menu)
         \endverbatim
 
         Example 2:
         \verbatim
                                                                                        ------ uniqueId--------------
-        install(DIRECTORY kmt-desktopfiles/ DESTINATION ${DATA_INSTALL_DIR}/kmoretools/kate/addons/project/git-tools)
+        install(DIRECTORY kmt-desktopfiles/ DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/kate/addons/project/git-tools)
         \endverbatim
      *
-     * ### About ${DATA_INSTALL_DIR}
+     * ### About ${KDE_INSTALL_DATADIR_KF5}
      *
-     * In general, ${DATA_INSTALL_DIR}/kmoretools/hallo ends up in /usr/share/kmoretools/hallo.
+     * In general, ${KDE_INSTALL_DATADIR_KF5}/kmoretools/hallo ends up in /usr/share/kf5/kmoretools/hallo.
      *
      * To use it, you need to add \verbatim include(KDEInstallDirs) \endverbatim to your CMakeLists.txt.
      */

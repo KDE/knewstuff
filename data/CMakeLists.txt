@@ -4,4 +4,4 @@ install(FILES
 
 install(DIRECTORY
     kmoretools-desktopfiles/
-    DESTINATION ${DATA_INSTALL_DIR}/kmoretools/presets-kmoretools)
+    DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/presets-kmoretools)
