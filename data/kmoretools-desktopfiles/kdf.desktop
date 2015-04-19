@@ -1,9 +1,27 @@
 [Desktop Entry]
 Name=KDiskFree
+Name[es]=KDiskFree
+Name[nl]=KDiskFree
+Name[pt]=KDiskFree
+Name[pt_BR]=KDiskFree
+Name[sk]=KDiskFree
+Name[sv]=Kdiskfree
+Name[uk]=KDiskFree
+Name[x-test]=xxKDiskFreexx
+Name[zh_CN]=KDiskFree
 Exec=kdf -caption %c
 Icon=kdf
 Type=Application
 GenericName=View Disk Usage
+GenericName[es]=Ver el uso del disco
+GenericName[nl]=Schijfgebruik bekijken
+GenericName[pt]=Ver a Utilização do Disco
+GenericName[pt_BR]=Mostra a utilização do disco
+GenericName[sk]=Zobrazenie využitia disku
+GenericName[sv]=Visa hårddiskanvändning
+GenericName[uk]=Перегляд використання диска
+GenericName[x-test]=xxView Disk Usagexx
+GenericName[zh_CN]=查看磁盘使用状况
 Terminal=false
 X-DocPath=kdf/index.html
 X-KDE-StartupNotify=true

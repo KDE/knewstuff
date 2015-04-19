@@ -1,5 +1,14 @@
 [Desktop Entry]
 Name=Git Cola
+Name[es]=Git Cola
+Name[nl]=Git Cola
+Name[pt]=Git Cola
+Name[pt_BR]=Git Cola
+Name[sk]=Git Cola
+Name[sv]=Git Cola
+Name[uk]=Git Cola
+Name[x-test]=xxGit Colaxx
+Name[zh_CN]=Git Cola
 TryExec=git-cola
 Exec=git-cola --repo %f
 Icon=git-cola

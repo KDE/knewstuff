@@ -2,6 +2,14 @@
 
 [Desktop Entry]
 Name=Git Cola (View History)
+Name[es]=Git Cola (ver historial)
+Name[nl]=Git Cola (geschiedenis weergeven)
+Name[pt]=Git Cola (Ver o Histórico)
+Name[pt_BR]=Git Cola (Exibir histórico)
+Name[sv]=Git Cola (visa historik)
+Name[uk]=Git Cola (Перегляд журналу)
+Name[x-test]=xxGit Cola (View History)xx
+Name[zh_CN]=Git Cola (查看历史)
 TryExec=git-cola
 
 Exec=git-cola dag %f
