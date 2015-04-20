@@ -3,7 +3,9 @@
 
 [Desktop Entry]
 Name=gitk
+Name[ca]=gitk
 Name[es]=gitk
+Name[fi]=gitk
 Name[nl]=gitk
 Name[pt]=gitk
 Name[pt_BR]=gitk
@@ -13,7 +15,9 @@ Name[uk]=gitk
 Name[x-test]=xxgitkxx
 Name[zh_CN]= 
 GenericName=gitk
+GenericName[ca]=gitk
 GenericName[es]=gitk
+GenericName[fi]=gitk
 GenericName[nl]=gitk
 GenericName[pt]=gitk
 GenericName[pt_BR]=gitk
