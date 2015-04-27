@@ -1,9 +1,12 @@
 [Desktop Entry]
 Name=Git Cola
 Name[ca]=Git Cola
+Name[en_GB]=Git Cola
 Name[es]=Git Cola
 Name[fi]=Git Cola
+Name[gl]=Git Cola
 Name[it]=Git Cola
+Name[ko]=Git Cola
 Name[nl]=Git Cola
 Name[pl]=Git Cola
 Name[pt]=Git Cola
@@ -20,9 +23,12 @@ Name[x-test]=xxGit Colaxx
 Name[zh_CN]=Git Cola
 Comment=The highly caffeinated Git GUI
 Comment[ca]=La IGU amb alta dosi de cafeïna del Git
+Comment[en_GB]=The highly caffeinated Git GUI
 Comment[es]=La interfaz de Git altamente cafeinada
 Comment[fi]=Erittäin kofeiinipitoinen graafinen Git-käyttöliittymä
+Comment[gl]=Unha interface gráfica de Git cun alto contido en cafeína.
 Comment[it]=L'interfaccia Git con tanta caffeina
+Comment[ko]=카페인 농도가 높은 Git GUI
 Comment[nl]=De hoog verrijkte Git-GUI
 Comment[pl]=Wysoko kofeinowy interfejs Git
 Comment[pt]=A interface gráfica do Git com muita cafeína
