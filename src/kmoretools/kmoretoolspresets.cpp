@@ -18,68 +18,59 @@
 #include "kmoretoolspresets.h"
 
 #include <QDebug>
+#include <QHash>
 
 #include <KNS3/KMoreTools>
 
-KMoreToolsService* registerImpl(KMoreTools* kmt, const QString& desktopEntryName, const QString& homepageUrl)
+class KmtServiceInfo
 {
-    const QString subdir = "presets-kmoretools";
-    auto serviceLocatingMode = desktopEntryName.endsWith(".kmt-edition") ?
-                               KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
-    auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
-    service->setHomepageUrl(QUrl(homepageUrl));
-    return service;
-}
+public:
+    KmtServiceInfo(QString desktopEntryName, QString homepageUrl)
+        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl)
+    {
+    }
+public:
+    QString desktopEntryName;
+    QString homepageUrl;
+};
 
-//
-// todo later: this code is quite repetetive and could be made easier to read
-//             (or add an X-Property to desktop files because Homepage is not standard)
-//             Or replace this code by a
-//                 _tools-and-categories.json
-//             file which is located in parallel to the desktop and icon files
-//             (but then the information is loaded at runtime instead of compile time)
 //
 // todo later: add a property "maturity" with values "stable" > "new" > "incubating" or similar
 //
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
-    KMoreToolsService* service = nullptr;
+#define ADD_ENTRY(desktopEntryName, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl)));
 
-    if (desktopEntryName == QString("git-cola-folder-handler")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://git-cola.github.io"));
-    } else if (desktopEntryName == QString("git-cola-view-history.kmt-edition")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://git-cola.github.io"));
-    } else if (desktopEntryName == QString("gitk.kmt-edition")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://git-scm.com/docs/gitk"));
-    } else if (desktopEntryName == QString("qgit.kmt-edition")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://libre.tibirna.org/projects/qgit"));
-    }  else if (desktopEntryName == QString("gitg")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg"));
-    } else if (desktopEntryName == QString("gparted")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://gparted.org"));
-    } else if (desktopEntryName == QString("partitionmanager")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://www.partitionmanager.org"));
-    } else if (desktopEntryName == QString("disk")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://en.opensuse.org/YaST_Disk_Controller"));
-    } else if (desktopEntryName == QString("kdf")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/system/kdiskfree"));
-    } else if (desktopEntryName == QString("org.kde.filelight")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://utils.kde.org/projects/filelight"));
-    } else if (desktopEntryName == QString("hotshots")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://sourceforge.net/projects/hotshots/"));
-    } else if (desktopEntryName == QString("kaption")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://kde-apps.org/content/show.php/?content=139302"));
-    } else if (desktopEntryName == QString("org.kde.kscreengenie")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://quickgit.kde.org/?p=kscreengenie.git"));
-    } else if (desktopEntryName == QString("org.kde.ksnapshot")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("https://www.kde.org/applications/graphics/ksnapshot/"));
-    } else if (desktopEntryName == QString("shutter")) {
-        return registerImpl(kmt, desktopEntryName, QLatin1String("http://shutter-project.org"));
+    static QHash<QString, KmtServiceInfo> dict;
+    ADD_ENTRY("git-cola-folder-handler", "https://git-cola.github.io");
+    ADD_ENTRY("git-cola-view-history.kmt-edition", "https://git-cola.github.io");
+    ADD_ENTRY("gitk.kmt-edition", "http://git-scm.com/docs/gitk");
+    ADD_ENTRY("qgit.kmt-edition", "http://libre.tibirna.org/projects/qgit");
+    ADD_ENTRY("gitg", "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
+    ADD_ENTRY("gparted", "http://gparted.org");
+    ADD_ENTRY("partitionmanager", "http://www.partitionmanager.org");
+    ADD_ENTRY("disk", "https://en.opensuse.org/YaST_Disk_Controller");
+    ADD_ENTRY("kdf", "https://www.kde.org/applications/system/kdiskfree");
+    ADD_ENTRY("org.kde.filelight", "https://utils.kde.org/projects/filelight");
+    ADD_ENTRY("hotshots", "http://sourceforge.net/projects/hotshots/");
+    ADD_ENTRY("kaption", "http://kde-apps.org/content/show.php/?content=139302");
+    ADD_ENTRY("org.kde.kscreengenie", "http://quickgit.kde.org/?p=kscreengenie.git");
+    ADD_ENTRY("org.kde.ksnapshot", "https://www.kde.org/applications/graphics/ksnapshot/");
+    ADD_ENTRY("shutter", "http://shutter-project.org");
+
+    auto iter = dict.find(desktopEntryName);
+    if (iter != dict.end()) {
+        auto kmtServiceInfo = *iter;
+        const QString subdir = "presets-kmoretools";
+        auto serviceLocatingMode = desktopEntryName.endsWith(".kmt-edition") ?
+                                   KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
+        auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
+        service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
+        return service;
     } else {
         qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
+        return nullptr;
     }
-
-    return service;
 }
 
 QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames)
