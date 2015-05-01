@@ -59,13 +59,13 @@ private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-pr
     void test_buildMenu_ShowConfigureMenuItem();
     void test_buildMenu_PruneDuplicateNotInstalledService();
 
-    void test_KMoreToolsPresets_registerServicesByCategory();
+    void test_KMoreToolsPresets_registerServicesByGrouping();
 
 
     // kmoretools_p.h tests:
     void testMenuItemIdGen();
     void test_MenuItemDto_removeMenuAmpersand();
-    void test_MenuStructureDto_sortListByCategory();
+    void test_MenuStructureDto_sortListBySection();
     void test_MenuStructureDto_serialize();
     void test_MenuStructureDto_deserialize();
 
@@ -318,10 +318,10 @@ void KMoreToolsTest::test_buildMenu_PruneDuplicateNotInstalledService()
     QCOMPARE(moreMenu->actions().count(), 4); // "Not installed section", "Not installed app" (only once), "Separator", "Configure menu..."
 }
 
-void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByCategory()
+void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
 {
     KMoreTools kmt(_("unittest-kmoretools/3"));
-    auto list = KMoreToolsPresets::registerServicesByCategory(&kmt, { _("screenshot-take") });
+    auto list = KMoreToolsPresets::registerServicesByGroupingName(&kmt, { _("screenshot-take") });
     if (std::find_if(list.begin(), list.end(), [](KMoreToolsService* s) {
     return s->desktopEntryName() == _("org.kde.ksnapshot");
     }) != list.end()) {
@@ -379,7 +379,7 @@ void KMoreToolsTest::test_MenuItemDto_removeMenuAmpersand()
     QCOMPARE(MenuItemDto::removeMenuAmpersand(_("&Hall&&o")), QString(_("Hall&o")));
 }
 
-void KMoreToolsTest::test_MenuStructureDto_sortListByCategory()
+void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
 {
     MenuStructureDto mstruct;
 

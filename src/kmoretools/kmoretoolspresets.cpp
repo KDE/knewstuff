@@ -82,11 +82,11 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     return service;
 }
 
-QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreTools* kmt, const QStringList& categories)
+QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames)
 {
     QList<KMoreToolsService*> resultList;
 
-    if (categories.contains("git-clients")) {
+    if (groupingNames.contains("git-clients")) {
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-folder-handler"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-view-history.kmt-edition"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitk.kmt-edition"));
@@ -94,18 +94,18 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreToo
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitg"));
     }
 
-    if (categories.contains("disk-usage")) {
+    if (groupingNames.contains("disk-usage")) {
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("kdf"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.filelight"));
     }
 
-    if (categories.contains("disk-partitions")) {
+    if (groupingNames.contains("disk-partitions")) {
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gparted"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("partitionmanager"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("disk"));
     }
 
-    if (categories.contains("screenshot-take")) {
+    if (groupingNames.contains("screenshot-take")) {
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.ksnapshot"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.kscreengenie"));
         resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("shutter"));
@@ -114,7 +114,7 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByCategory(KMoreToo
     }
 
     if (resultList.isEmpty()) {
-        qDebug() << "KMoreToolsPresets::registerServicesByCategory: " << categories << ". Nothing found in this categories. TODO: check for invalid category strings.";
+        qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. TODO: check for invalid grouping names.";
     }
 
     return resultList;

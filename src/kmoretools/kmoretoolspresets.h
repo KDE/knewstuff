@@ -53,17 +53,17 @@ public:
     /**
      * Makes use of registerServiceByDesktopEntryName.
      *
-     * Available categories:
+     * Available groupings:
      * "git-clients"
      * "disk-usage"
      * "disk-partitions"
      * "screenshot-take"
      *
-     * todo: handle overlapping categories
-     * todo later: additional categories: "screenshot-edit, textfile-edit"
+     * todo: handle overlapping groupings
+     * todo later: additional groupings: "screenshot-edit, textfile-edit"
      * (todo?: rename "category" to something more suitable like "task", "intent", "purpose" or similar?)
      */
-    static QList<KMoreToolsService*> registerServicesByCategory(KMoreTools* kmt, const QStringList& categories);
+    static QList<KMoreToolsService*> registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames);
 };
 
 #endif
