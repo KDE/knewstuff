@@ -42,6 +42,10 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 #define ADD_ENTRY(desktopEntryName, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl)));
 
     static QHash<QString, KmtServiceInfo> dict;
+
+    //
+    // definitions begin:
+    //
     ADD_ENTRY("git-cola-folder-handler", "https://git-cola.github.io");
     ADD_ENTRY("git-cola-view-history.kmt-edition", "https://git-cola.github.io");
     ADD_ENTRY("gitk.kmt-edition", "http://git-scm.com/docs/gitk");
@@ -57,6 +61,9 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("org.kde.kscreengenie", "http://quickgit.kde.org/?p=kscreengenie.git");
     ADD_ENTRY("org.kde.ksnapshot", "https://www.kde.org/applications/graphics/ksnapshot/");
     ADD_ENTRY("shutter", "http://shutter-project.org");
+    //
+    // ...definitions end
+    //
 
     auto iter = dict.find(desktopEntryName);
     if (iter != dict.end()) {
@@ -75,37 +82,36 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 
 QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames)
 {
+    static QHash<QString, QList<QString>> dict;
+
+    //
+    // definitions begin:
+    //
+    dict.insert("git-clients", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
+    dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
+    dict.insert("disk-usage", { "kdf", "org.kde.filelight" });
+    dict.insert("disk-partitions", { "gparted", "partitionmanager", "disk" });
+    dict.insert("screenshot-take", { "org.kde.ksnapshot", "org.kde.kscreengenie", "shutter", "kaption", "hotshots" });
+    //
+    // ...definitions end
+    //
+
     QList<KMoreToolsService*> resultList;
 
-    if (groupingNames.contains("git-clients")) {
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-folder-handler"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("git-cola-view-history.kmt-edition"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitk.kmt-edition"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("qgit.kmt-edition"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gitg"));
-    }
-
-    if (groupingNames.contains("disk-usage")) {
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("kdf"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.filelight"));
-    }
-
-    if (groupingNames.contains("disk-partitions")) {
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("gparted"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("partitionmanager"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("disk"));
-    }
-
-    if (groupingNames.contains("screenshot-take")) {
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.ksnapshot"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("org.kde.kscreengenie"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("shutter"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("kaption"));
-        resultList << registerServiceByDesktopEntryName(kmt, QLatin1String("hotshots"));
+    Q_FOREACH (QString groupingName, groupingNames) {
+        auto iter = dict.find(groupingName);
+        if (iter != dict.end()) {
+            Q_FOREACH(QString desktopEntryName, *iter) {
+                resultList << registerServiceByDesktopEntryName(kmt, desktopEntryName);
+            }
+        }
+        else {
+            qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: groupingName not found: " << groupingName;
+        }
     }
 
     if (resultList.isEmpty()) {
-        qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. TODO: check for invalid grouping names.";
+        qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. HINT: check for invalid grouping names.";
     }
 
     return resultList;

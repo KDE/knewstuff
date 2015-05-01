@@ -55,6 +55,7 @@ public:
      *
      * Available groupings:
      * "git-clients"
+     * "git-clients-and-actions"
      * "disk-usage"
      * "disk-partitions"
      * "screenshot-take"
