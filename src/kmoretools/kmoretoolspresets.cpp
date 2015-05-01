@@ -39,9 +39,9 @@ public:
 //
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
-#define ADD_ENTRY(desktopEntryName, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl)));
-
     static QHash<QString, KmtServiceInfo> dict;
+
+#define ADD_ENTRY(desktopEntryName, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl)));
 
     //
     // definitions begin:
@@ -65,6 +65,8 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     // ...definitions end
     //
 
+#undef ADD_ENTRY
+
     auto iter = dict.find(desktopEntryName);
     if (iter != dict.end()) {
         auto kmtServiceInfo = *iter;
@@ -80,7 +82,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     }
 }
 
-QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames)
+QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMoreTools* kmt, const QStringList& groupingNames)
 {
     static QHash<QString, QList<QString>> dict;
 

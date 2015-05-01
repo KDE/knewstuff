@@ -28,32 +28,26 @@ class KMoreTools;
 class KMoreToolsService;
 
 /**
- * TODO: doc
+ * Provides static methods to make use of all desktop files provided by
+ * KMoreTools.
+ *
+ * registerServiceByDesktopEntryName creates a KMoreToolsService instance
+ * from a given desktopEntryName.
+ *
+ * registerServicesByGroupingNames takes a list of a set of predefined
+ * grouping names and returns a list KMoreToolsService instances. Remember,
+ * a KMoreToolsService represents a service which might or might not be
+ * installed on the current maschine.
+ *
+ * The groupings defined here are used for the KMoreToolsMenuFactory.
  */
 class KNEWSTUFF_EXPORT KMoreToolsPresets
 {
 public:
     /**
-     * Registers a service who's kmt-desktopfile is provided by the
-     * KMoreTools library itself. If the kmt-desktopfile is missing the
-     * service is still created but with no translations and icon if the service
-     * is not installed.
+     * @Returns an _ordered_ list of KMoreToolsService instances
      *
-     * Sets the homepage URL for your convenience. And add some corrections.
-     *
-     * todo: how to avoid the "Do you trust this program?" question when a
-     * non-installed desktop file is used? Possible solution: install all
-     * .kmt-edition files to proper desktop file location.
-     *
-     *
-     * @returns the added KMoreToolsService
-     */
-    static KMoreToolsService* registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName);
-
-    /**
-     * Makes use of registerServiceByDesktopEntryName.
-     *
-     * Available groupings:
+     * Available grouping names:
      * "git-clients"
      * "git-clients-and-actions"
      * "disk-usage"
@@ -61,10 +55,32 @@ public:
      * "screenshot-take"
      *
      * todo: handle overlapping groupings
-     * todo later: additional groupings: "screenshot-edit, textfile-edit"
-     * (todo?: rename "category" to something more suitable like "task", "intent", "purpose" or similar?)
+     * todo later: additional groupings: "screenshot-edit", "textfile-edit" etc.
      */
-    static QList<KMoreToolsService*> registerServicesByGroupingName(KMoreTools* kmt, const QStringList& groupingNames);
+    static QList<KMoreToolsService*> registerServicesByGroupingNames(KMoreTools* kmt, const QStringList& groupingNames);
+
+    /**
+     * Registers a service who's kmt-desktopfile is provided by the
+     * KMoreTools library itself. If the kmt-desktopfile is missing the
+     * service is still created but with no translations and icon if the service
+     * is not installed.
+     *
+     * Associates a homepage URL because a regular .desktop file has got
+     * no field for this information.
+     *
+     * Adds some corrections to faulty upstream .desktop files. Corrected
+     * desktop filenames end with .kmt-edition.desktop.
+     *
+     * todo: how to avoid the "Do you trust this program?" question when a
+     * non-installed kmt-edition desktop file is used but the program is installed?
+     * Possible solution: install all .kmt-edition files to proper desktop
+     * file location.
+     *
+     * todo: make this a list instead of a single pointer
+     *
+     * @returns the added KMoreToolsService
+     */
+    static KMoreToolsService* registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName);
 };
 
 #endif
