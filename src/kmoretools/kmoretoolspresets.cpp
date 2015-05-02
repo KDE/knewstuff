@@ -25,13 +25,14 @@
 class KmtServiceInfo
 {
 public:
-    KmtServiceInfo(QString desktopEntryName, QString homepageUrl)
-        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl)
+    KmtServiceInfo(QString desktopEntryName, QString homepageUrl, int maxUrlArgCount)
+        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl), maxUrlArgCount(maxUrlArgCount)
     {
     }
 public:
     QString desktopEntryName;
     QString homepageUrl;
+    int maxUrlArgCount;
 };
 
 //
@@ -41,26 +42,26 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 {
     static QHash<QString, KmtServiceInfo> dict;
 
-#define ADD_ENTRY(desktopEntryName, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl)));
+#define ADD_ENTRY(desktopEntryName, maxUrlArgCount, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl), maxUrlArgCount));
 
     //
     // definitions begin:
     //
-    ADD_ENTRY("git-cola-folder-handler", "https://git-cola.github.io");
-    ADD_ENTRY("git-cola-view-history.kmt-edition", "https://git-cola.github.io");
-    ADD_ENTRY("gitk.kmt-edition", "http://git-scm.com/docs/gitk");
-    ADD_ENTRY("qgit.kmt-edition", "http://libre.tibirna.org/projects/qgit");
-    ADD_ENTRY("gitg", "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
-    ADD_ENTRY("gparted", "http://gparted.org");
-    ADD_ENTRY("partitionmanager", "http://www.partitionmanager.org");
-    ADD_ENTRY("disk", "https://en.opensuse.org/YaST_Disk_Controller");
-    ADD_ENTRY("kdf", "https://www.kde.org/applications/system/kdiskfree");
-    ADD_ENTRY("org.kde.filelight", "https://utils.kde.org/projects/filelight");
-    ADD_ENTRY("hotshots", "http://sourceforge.net/projects/hotshots/");
-    ADD_ENTRY("kaption", "http://kde-apps.org/content/show.php/?content=139302");
-    ADD_ENTRY("org.kde.kscreengenie", "http://quickgit.kde.org/?p=kscreengenie.git");
-    ADD_ENTRY("org.kde.ksnapshot", "https://www.kde.org/applications/graphics/ksnapshot/");
-    ADD_ENTRY("shutter", "http://shutter-project.org");
+    ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io");
+    ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io");
+    ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk");
+    ADD_ENTRY("qgit.kmt-edition",                   1, "http://libre.tibirna.org/projects/qgit");
+    ADD_ENTRY("gitg",                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
+    ADD_ENTRY("gparted",                            0, "http://gparted.org");
+    ADD_ENTRY("partitionmanager",                   0, "http://www.partitionmanager.org");
+    ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller");
+    ADD_ENTRY("kdf",                                0, "https://www.kde.org/applications/system/kdiskfree");
+    ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
+    ADD_ENTRY("hotshots",                           1, "http://sourceforge.net/projects/hotshots/");
+    ADD_ENTRY("kaption",                            0, "http://kde-apps.org/content/show.php/?content=139302");
+    ADD_ENTRY("org.kde.kscreengenie",               0, "http://quickgit.kde.org/?p=kscreengenie.git");
+    ADD_ENTRY("org.kde.ksnapshot",                  0, "https://www.kde.org/applications/graphics/ksnapshot/");
+    ADD_ENTRY("shutter",                            0, "http://shutter-project.org");
     //
     // ...definitions end
     //
@@ -75,6 +76,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
                                    KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
         auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
         service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
+        service->setMaxUrlArgCount(kmtServiceInfo.maxUrlArgCount);
         return service;
     } else {
         qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
