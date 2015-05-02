@@ -84,11 +84,11 @@ public:
 
     static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
     {
-        //qDebug() << "search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
+        //qDebug() << "--search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
         const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
-        //qDebug() << "  search for:" << kmtDesktopfilesFilename;
+        //qDebug() << "---search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
-        //qDebug() << "QStandardPaths::DataLocation findWhat -> foundPath" << foundPath;
+        //qDebug() << "----QStandardPaths::DataLocation findWhat -> foundPath" << foundPath;
 
         return foundKmtFile;
     }
@@ -127,14 +127,13 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         //Q_ASSERT_X(kmtDesktopfile->isValid(), "addServiceByDesktopFile", "the kmt-desktopfile is provided but not valid. This must be fixed.");
         //qDebug() << "  INFO: kmt-desktopfile provided and valid.";
         if (kmtDesktopfile->exec().isEmpty()) {
-            qDebug() << "desktopEntryName" << desktopEntryName;
-            qCritical("KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.");
+            qCritical() << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
             return nullptr;
         }
         // qDebug() << "  INFO: kmt-desktopfile provided.";
     } else {
-        qDebug() << "desktopEntryName" << desktopEntryName;
-        qWarning("desktopEntryName (apparently) not provided in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.");
+        qWarning() << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.";
+        qDebug() << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = " << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
     }
 
     bool isInstalled = false;
@@ -144,8 +143,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         isInstalled = installedService != nullptr;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
-            qDebug() << "desktopEntryName" << desktopEntryName;
-            qCritical("KMoreTools::registerServiceByDesktopEntryName: If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.");
+            qCritical() << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
             return nullptr;
         }
 
@@ -211,6 +209,7 @@ public:
     KService::Ptr installedService;
     KService::Ptr kmtDesktopfile;
     QUrl homepageUrl;
+    int maxUrlArgCount = 0;
 
 public:
     QString getServiceName()
@@ -318,6 +317,16 @@ QUrl KMoreToolsService::homepageUrl() const
 void KMoreToolsService::setHomepageUrl(const QUrl& url)
 {
     d->homepageUrl = url;
+}
+
+int KMoreToolsService::maxUrlArgCount() const
+{
+    return d->maxUrlArgCount;
+}
+
+void KMoreToolsService::setMaxUrlArgCount(int maxUrlArgCount)
+{
+    d->maxUrlArgCount = maxUrlArgCount;
 }
 
 QString KMoreToolsService::formatString(const QString& formatString) const

@@ -398,9 +398,26 @@ public:
     QUrl homepageUrl() const;
 
     /**
-     * Sets the website url the user is shown when a service is not installed.
+     * Sets the homepage url the user is shown when a service is not installed.
+     * This way the user gets some information of how to install the
+     * application.
      */
     void setHomepageUrl(const QUrl& url);
+
+    /**
+     * @see setMaxUrlArgCount()
+     */
+    int maxUrlArgCount() const;
+
+    /**
+     * In KMoreToolsMenuFactory some minor magic is done. In the context of
+     * connecting the action trigger signal we need to know the maximum number
+     * of URL arguments a given service can accept. Usaually a number between
+     * 0 and 1. Sometimes 2.
+     * E.g. kdf must not be called with any positional argument.
+     * E.g. gitg can be called with zero or one arguments.
+     */
+    void setMaxUrlArgCount(int maxUrlArgCount);
 
     /**
      * @param formatString supports the following placeholders:
