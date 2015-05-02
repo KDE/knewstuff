@@ -20,6 +20,7 @@ set(KNewStuff_SRCS
     core/xmlloader.cpp
     kmoretools/kmoretools.cpp
     kmoretools/kmoretoolsconfigdialog_p.cpp
+    kmoretools/kmoretoolsmenufactory.cpp
     kmoretools/kmoretoolspresets.cpp
     staticxml/staticxmlprovider.cpp
     ui/entrydetailsdialog.cpp
@@ -91,6 +92,7 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS_KMoreTools
   HEADER_NAMES
   KMoreTools
+  KMoreToolsMenuFactory
   KMoreToolsPresets
 
   RELATIVE kmoretools
