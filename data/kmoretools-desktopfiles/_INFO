@@ -1,7 +1,17 @@
-Files with "kmt-edition" in their names are created by the
-KMoreTools authors because nothing suitable was provided upstream.
+Info about this directory
+=========================
 
-The goal should be bring the stuff upstream.
+All of the .desktop, .png and .svg files are copies from upstream
+(in practice: copies from KMoreTools contributor's system's installation).
 
-All other files are copies of the upstream desktop file and 32x32 icon.
-The filename of the icon is specified in the .desktop file.
+.png icons are taken in 32x32 pixels size.
+(The filename of the icon is specified in the .desktop file.)
+
+.kmt-edition
+------------
+Files with ".kmt-edition" in their names are created by the
+KMoreTools authors because nothing suitable was provided upstream or
+because something had to be fixed.
+
+The goal should be to bring the stuff upstream and thus have as few kmt-edition
+files as possible.

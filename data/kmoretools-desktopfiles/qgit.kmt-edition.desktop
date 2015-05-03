@@ -1,4 +1,5 @@
-# For KMoreTools: Fixes Exec line
+# added for KMoreTools
+# Fixes Exec line
 #
 # TODO upstream: The icon qgit.png is installed somewhere with qgit
 #  but not specified (and not reachable
