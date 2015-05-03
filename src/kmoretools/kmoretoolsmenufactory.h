@@ -32,6 +32,8 @@ class KMoreToolsService;
  *
  * Creates a QMenu from a list of grouping names,
  * see KMoreToolsPresets::registerServicesByGroupingNames
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsMenuFactory
 {

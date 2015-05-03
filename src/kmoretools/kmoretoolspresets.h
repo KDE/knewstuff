@@ -40,6 +40,8 @@ class KMoreToolsService;
  * installed on the current maschine.
  *
  * The groupings defined here are used for the KMoreToolsMenuFactory.
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsPresets
 {

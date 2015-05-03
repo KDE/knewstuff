@@ -154,6 +154,8 @@ class KMoreToolsPrivate;
   * Add support for package managers to install software (e.g. muon discover)
  * - maybe: kmt-desktopfiles: add a config file that can configure the homepage URLs
  *   and e.g. the package name if needed for package manager support
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreTools
 {
@@ -349,6 +351,8 @@ class KMoreToolsServicePrivate;
  *
  * A registered service can either be installed (isInstalled() == true)
  * or - if not found on the system - not installed (isInstalled() == false).
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsService
 {
@@ -497,6 +501,8 @@ class KMoreToolsMenuBuilderPrivate;
  *
  * Depending on if the added service is installed or not a "Not installed" section
  * will be automatically added to the generated menu.
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsMenuBuilder
 {
@@ -628,6 +634,8 @@ class KMoreToolsMenuItemPrivate;
  * The corresponding QAction will be created for installed services.
  *
  * @note that for not-installed services action() returns nullptr.
+ *
+ * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsMenuItem
 {
