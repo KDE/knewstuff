@@ -52,9 +52,12 @@ public:
      *
      * Furthermore, some selected menu items will be put into the "More"
      * menu section by default.
+     *
+     * "more:"
+     * -------
      * There is a special grouping name "more:" (note the colon). If this name
      * is given in the list, all further groupings are put into the More
-     * section.
+     * section by default.
      * (todo later: if needed this could be made configurable more fine-grained)
      *
      * NOTE that this method overrides a previously created QMenu* instance
