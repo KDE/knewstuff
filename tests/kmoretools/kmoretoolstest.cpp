@@ -358,53 +358,53 @@ void KMoreToolsTest::test_buildMenu_WithQActions_interative1()
 
 void KMoreToolsTest::testMenuItemIdGen()
 {
-    MenuItemIdGen idGen;
+    KmtMenuItemIdGen idGen;
     QCOMPARE(idGen.getId(_("a")), QString(_("a0")));
     QCOMPARE(idGen.getId(_("a")), QString(_("a1")));
     QCOMPARE(idGen.getId(_("b")), QString(_("b0")));
     QCOMPARE(idGen.getId(_("a")), QString(_("a2")));
 }
 
-QDebug operator<< (QDebug d, const MenuItemDto &m) {
+QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
     d << "id:" << m.id << ", section:" << m.menuSection << ", isInstalled:" << m.isInstalled;
     return d;
 }
 
 void KMoreToolsTest::test_MenuItemDto_removeMenuAmpersand()
 {
-    QCOMPARE(MenuItemDto::removeMenuAmpersand(_("&Hallo")), QString(_("Hallo")));
-    QCOMPARE(MenuItemDto::removeMenuAmpersand(_("Hall&o")), QString(_("Hallo")));
-    QCOMPARE(MenuItemDto::removeMenuAmpersand(_("H&all&o")), QString(_("Hallo"))); // is this ok for menus items?
-    QCOMPARE(MenuItemDto::removeMenuAmpersand(_("&&Hallo")), QString(_("&Hallo")));
-    QCOMPARE(MenuItemDto::removeMenuAmpersand(_("&Hall&&o")), QString(_("Hall&o")));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hallo")), QString(_("Hallo")));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("Hall&o")), QString(_("Hallo")));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("H&all&o")), QString(_("Hallo"))); // is this ok for menus items?
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&&Hallo")), QString(_("&Hallo")));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hall&&o")), QString(_("Hall&o")));
 }
 
 void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
 {
-    MenuStructureDto mstruct;
+    KmtMenuStructureDto mstruct;
 
-    MenuItemDto ma1;
+    KmtMenuItemDto ma1;
     ma1.id = _("main1");
     ma1.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma1);
 
-    MenuItemDto mo1;
+    KmtMenuItemDto mo1;
     mo1.id = _("more1");
     mo1.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo1);
 
-    MenuItemDto ma3;
+    KmtMenuItemDto ma3;
     ma3.id = _("main3_ni");
     ma3.menuSection = KMoreTools::MenuSection_Main;
     ma3.isInstalled = false; // !!!
     mstruct.list.append(ma3);
 
-    MenuItemDto mo2;
+    KmtMenuItemDto mo2;
     mo2.id = _("more2");
     mo2.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo2);
 
-    MenuItemDto ma2;
+    KmtMenuItemDto ma2;
     ma2.id = _("main2");
     ma2.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma2);
@@ -422,14 +422,14 @@ void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
 
 void KMoreToolsTest::test_MenuStructureDto_serialize()
 {
-    MenuStructureDto mstruct;
+    KmtMenuStructureDto mstruct;
 
-    MenuItemDto ma1;
+    KmtMenuItemDto ma1;
     ma1.id = _("main1");
     ma1.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma1);
 
-    MenuItemDto mo1;
+    KmtMenuItemDto mo1;
     mo1.id = _("more1");
     mo1.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo1);
@@ -441,10 +441,10 @@ void KMoreToolsTest::test_MenuStructureDto_serialize()
 void KMoreToolsTest::test_MenuStructureDto_deserialize()
 {
     QString jsonStr(_("{\"menuitemlist\":[{\"id\":\"main1\",\"isInstalled\":true,\"menuSection\":\"main\"},{\"id\":\"more1\",\"isInstalled\":true,\"menuSection\":\"more\"}]}"));
-    MenuStructureDto mstruct;
+    KmtMenuStructureDto mstruct;
     mstruct.deserialize(jsonStr);
     QCOMPARE(mstruct.list.count(), 2);
-    MenuItemDto ma1 = mstruct.list[0];
+    KmtMenuItemDto ma1 = mstruct.list[0];
     QCOMPARE(ma1.id, _("main1"));
     QCOMPARE(ma1.menuSection, KMoreTools::MenuSection_Main);
     QCOMPARE(ma1.isInstalled, true);

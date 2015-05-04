@@ -387,7 +387,7 @@ public:
      */
     QString userConfigPostfix;
     QList<KMoreToolsMenuItem*> menuItems;
-    MenuItemIdGen menuItemIdGen;
+    KmtMenuItemIdGen menuItemIdGen;
     QString initialItemTextTemplate = QLatin1String("$GenericName");
 
 public:
@@ -410,18 +410,18 @@ public:
         menuItems.clear();
     }
 
-    MenuStructureDto readUserConfig() const
+    KmtMenuStructureDto readUserConfig() const
     {
         KConfig config(configFile, KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         auto configGroup = config.group(uniqueId + userConfigPostfix);
         QString json = configGroup.readEntry(configKey, "");
-        MenuStructureDto configuredStructure;
+        KmtMenuStructureDto configuredStructure;
         //qDebug() << "read from config: " << json;
         configuredStructure.deserialize(json);
         return configuredStructure;
     }
 
-    void writeUserConfig(const MenuStructureDto& mstruct) const
+    void writeUserConfig(const KmtMenuStructureDto& mstruct) const
     {
         KConfig config(configFile, KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         auto configGroup = config.group(uniqueId + userConfigPostfix);
@@ -467,15 +467,15 @@ public:
      *
      * If createMenuStructureOption == CreateMenuStructure_Default then the default menu structure is returned.
      */
-    MenuStructure createMenuStructure(CreateMenuStructureOption createMenuStructureOption) const
+    KmtMenuStructure createMenuStructure(CreateMenuStructureOption createMenuStructureOption) const
     {
-        MenuStructureDto configuredStructure; // if this stays empty then the default structure will not be changed
+        KmtMenuStructureDto configuredStructure; // if this stays empty then the default structure will not be changed
         if (createMenuStructureOption == CreateMenuStructure_MergeWithUserConfig) {
             // fill if should be merged
             configuredStructure = readUserConfig();
         }
 
-        MenuStructure mstruct;
+        KmtMenuStructure mstruct;
 
         QList<KMoreToolsMenuItem*> menuItemsSource = menuItems;
         QList<KMoreToolsMenuItem*> menuItemsSortedAsConfigured;
@@ -529,7 +529,7 @@ public:
     /**
      * @param defaultStructure also contains the currently not-installed items
      */
-    void showConfigDialog(MenuStructureDto defaultStructureDto, const QString& title = QString()) const
+    void showConfigDialog(KmtMenuStructureDto defaultStructureDto, const QString& title = QString()) const
     {
         // read from config
         //
@@ -596,7 +596,7 @@ void KMoreToolsMenuBuilder::clear()
 
 QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) const
 {
-    MenuStructure mstruct = d->createMenuStructure(mergeWithUserConfig ?
+    KmtMenuStructure mstruct = d->createMenuStructure(mergeWithUserConfig ?
                             KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig
                             : KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
     QString s;
@@ -624,7 +624,7 @@ void KMoreToolsMenuBuilder::showConfigDialog(const QString& title)
 void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
         KMoreTools::ConfigureDialogAccessibleSetting configureDialogAccessibleSetting, QMenu** outMoreMenu)
 {
-    MenuStructure mstruct = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig);
+    KmtMenuStructure mstruct = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig);
 
     Q_FOREACH (auto item, mstruct.mainItems) {
         const auto action = item->action();
@@ -653,7 +653,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
 
             Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
 
-                QMenu* submenuForNotInstalled = NotInstalledUtil::createSubmenuForNotInstalledApp(
+                QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
                                                     registeredService->formatString("$Name"), menu, registeredService->icon(), registeredService->homepageUrl());
                 moreMenu->addMenu(submenuForNotInstalled);
             }
@@ -687,8 +687,8 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
             baseMenu->addSeparator();
             auto configureAction = baseMenu->addAction(i18nc("@action:inmenu", "Configure..."));
             configureAction->setData("configureItem"); // tag the action (currently only used in unit-test)
-            MenuStructure mstructDefault = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
-            MenuStructureDto mstructDefaultDto = mstructDefault.toDto(); // makes sure the "Reset" button works as expected
+            KmtMenuStructure mstructDefault = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
+            KmtMenuStructureDto mstructDefaultDto = mstructDefault.toDto(); // makes sure the "Reset" button works as expected
             QObject::connect(configureAction, &QAction::triggered, configureAction, [this, mstructDefaultDto](bool) {
                 this->d->showConfigDialog(mstructDefaultDto);
             });

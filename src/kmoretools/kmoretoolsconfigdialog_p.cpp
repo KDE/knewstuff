@@ -31,12 +31,12 @@ public:
     /**
      * menu defined by code
      */
-    MenuStructureDto defaultStructure;
+    KmtMenuStructureDto defaultStructure;
 
     /**
      * resulting menu (default merged with configured) and then maybe edited via GUI
      */
-    MenuStructureDto currentStructure;
+    KmtMenuStructureDto currentStructure;
 
     Ui::KMoreToolsConfigWidget* configUi;
 
@@ -130,7 +130,7 @@ public:
             }
 
             if (item.isInstalled) {
-                auto listItem = new QListWidgetItem(icon, MenuItemDto::removeMenuAmpersand(item.text) /*+ " - " + item.id*/);
+                auto listItem = new QListWidgetItem(icon, KmtMenuItemDto::removeMenuAmpersand(item.text) /*+ " - " + item.id*/);
                 listItem->setData(Qt::UserRole, item.id);
                 if (item.menuSection == KMoreTools::MenuSection_Main) {
                     //qDebug() << item.text << item.icon << item.icon.isNull() << item.icon.availableSizes();
@@ -174,8 +174,8 @@ public:
 /**
  * for merging strategy see KMoreToolsMenuBuilderPrivate::createMenuStructure(mergeWithUserConfig=true)
  */
-KMoreToolsConfigDialog::KMoreToolsConfigDialog(const MenuStructureDto& defaultStructure,
-        const MenuStructureDto& currentStructure,
+KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaultStructure,
+        const KmtMenuStructureDto& currentStructure,
         const QString& title)
     : d(new KMoreToolsConfigDialogPrivate())
 {
@@ -198,9 +198,9 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const MenuStructureDto& defaultSt
     d->configUi->frameNotInstalledTools->setVisible(!notInstalledServices.empty());
     if (!notInstalledServices.empty()) {
         auto menu = new QMenu(this);
-        Q_FOREACH (const MenuItemDto& registeredService, notInstalledServices) {
+        Q_FOREACH (const KmtMenuItemDto& registeredService, notInstalledServices) {
 
-            QMenu* submenuForNotInstalled = NotInstalledUtil::createSubmenuForNotInstalledApp(
+            QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
                 registeredService.text, menu, registeredService.icon, registeredService.homepageUrl);
             menu->addMenu(submenuForNotInstalled);
         }
@@ -332,7 +332,7 @@ KMoreToolsConfigDialog::~KMoreToolsConfigDialog()
     delete d;
 }
 
-MenuStructureDto KMoreToolsConfigDialog::currentStructure()
+KmtMenuStructureDto KMoreToolsConfigDialog::currentStructure()
 {
     return d->currentStructure;
 }

@@ -32,8 +32,8 @@ public:
      * @param configuredStructure: as loaded from config file
      * @param title: optional title
      */
-    KMoreToolsConfigDialog(const MenuStructureDto& defaultStructure,
-                           const MenuStructureDto& currentStructure,
+    KMoreToolsConfigDialog(const KmtMenuStructureDto& defaultStructure,
+                           const KmtMenuStructureDto& currentStructure,
                            const QString& title = QString());
 
     ~KMoreToolsConfigDialog();
@@ -41,7 +41,7 @@ public:
     /**
      * result after ctor or after user used the dialog
      */
-    MenuStructureDto currentStructure();
+    KmtMenuStructureDto currentStructure();
 
 private:
     KMoreToolsConfigDialogPrivate* d;

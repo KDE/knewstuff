@@ -33,7 +33,7 @@
 /**
  *
  */
-class MenuItemIdGen
+class KmtMenuItemIdGen
 {
 public:
     QString getId(const QString& inputId)
@@ -55,7 +55,7 @@ private:
 /**
  *
  */
-class MenuItemDto
+class KmtMenuItemDto
 {
 public:
     QString id;
@@ -92,7 +92,7 @@ public:
         json[_("isInstalled")] = isInstalled;
     }
 
-    bool operator==(const MenuItemDto rhs) const
+    bool operator==(const KmtMenuItemDto rhs) const
     {
         return this->id == rhs.id;
     }
@@ -112,19 +112,19 @@ public:
 /**
  *
  */
-class MenuStructureDto
+class KmtMenuStructureDto
 {
 public:
-    QList<MenuItemDto> list;
+    QList<KmtMenuItemDto> list;
 
 public: // should be private but we would like to unit test
 
     /**
      * NOT USED
      */
-    QList<const MenuItemDto*> itemsBySection(KMoreTools::MenuSection menuSection) const
+    QList<const KmtMenuItemDto*> itemsBySection(KMoreTools::MenuSection menuSection) const
     {
-        QList<const MenuItemDto*> r;
+        QList<const KmtMenuItemDto*> r;
 
         Q_FOREACH (const auto& item, list) {
             if (item.menuSection == menuSection) {
@@ -138,9 +138,9 @@ public: // should be private but we would like to unit test
     /**
      * don't store the returned pointer, but you can deref it which calls copy ctor
      */
-    const MenuItemDto* findInstalled(const QString& id) const {
+    const KmtMenuItemDto* findInstalled(const QString& id) const {
         auto foundItem = std::find_if(list.begin(), list.end(),
-        [id](const MenuItemDto& item) {
+        [id](const KmtMenuItemDto& item) {
             return item.id == id && item.isInstalled;
         });
         if (foundItem != list.end()) {
@@ -178,7 +178,7 @@ public:
         auto jArr = json[_("menuitemlist")].toArray();
         for (int i = 0; i < jArr.size(); ++i) {
             auto jObj = jArr[i].toObject();
-            MenuItemDto item;
+            KmtMenuItemDto item;
             item.jsonRead(jObj);
             list.append(item);
         }
@@ -198,10 +198,10 @@ public:
     /**
      * @returns true if there are any not-installed items
      */
-    std::vector<MenuItemDto> notInstalledServices() const {
-        std::vector<MenuItemDto> target;
+    std::vector<KmtMenuItemDto> notInstalledServices() const {
+        std::vector<KmtMenuItemDto> target;
         std::copy_if(list.begin(), list.end(), std::back_inserter(target),
-        [](const MenuItemDto& item) {
+        [](const KmtMenuItemDto& item) {
             return !item.isInstalled;
         });
         return target;
@@ -216,7 +216,7 @@ public: // should be private but we would like to unit test
      */
     void stableSortListBySection()
     {
-        std::stable_sort(list.begin(), list.end(), [](const MenuItemDto& i1, const MenuItemDto& i2) {
+        std::stable_sort(list.begin(), list.end(), [](const KmtMenuItemDto& i1, const KmtMenuItemDto& i2) {
             return (i1.isInstalled && i1.menuSection == KMoreTools::MenuSection_Main && i2.isInstalled && i2.menuSection == KMoreTools::MenuSection_More)
                    || (i1.isInstalled && i1.menuSection == KMoreTools::MenuSection_More && !i2.isInstalled);
         });
@@ -230,14 +230,14 @@ public:
     void moveWithinSection(const QString& id, int direction)
     {
         auto selItem = std::find_if(list.begin(), list.end(),
-        [id](const MenuItemDto& item) {
+        [id](const KmtMenuItemDto& item) {
             return item.id == id;
         });
 
         if (selItem != list.end()) { // if found
             if (direction == 1) { // "down"
                 auto itemAfter = std::find_if(selItem + 1, list.end(), // find item where to insert after in the same category
-                [selItem](const MenuItemDto& item) {
+                [selItem](const KmtMenuItemDto& item) {
                     return item.menuSection == selItem->menuSection;
                 });
 
@@ -253,7 +253,7 @@ public:
                 //                               [selItem](const MenuItemDto& item) { return item.menuSection == selItem->menuSection; });
 
                 // todo: can't std::find_if be used instead of this loop?
-                QList<MenuItemDto>::iterator itemBefore = list.end();
+                QList<KmtMenuItemDto>::iterator itemBefore = list.end();
                 auto it = selItem;
                 while(it != list.begin()) {
                     --it;
@@ -281,7 +281,7 @@ public:
     void moveToOtherSection(const QString& id)
     {
         auto selItem = std::find_if(list.begin(), list.end(),
-                                    [id](const MenuItemDto& item) -> bool { return item.id == id; });
+                                    [id](const KmtMenuItemDto& item) -> bool { return item.id == id; });
 
         if (selItem != list.end()) { // if found
             if (selItem->menuSection == KMoreTools::MenuSection_Main) {
@@ -301,7 +301,7 @@ public:
  * In menu structure consisting of main section items, more section items
  * and registered services which are not installed
  */
-class MenuStructure
+class KmtMenuStructure
 {
 public:
     QList<KMoreToolsMenuItem*> mainItems;
@@ -313,13 +313,13 @@ public:
     QList<KMoreToolsService*> notInstalledServices;
 
 public:
-    MenuStructureDto toDto()
+    KmtMenuStructureDto toDto()
     {
-        MenuStructureDto result;
+        KmtMenuStructureDto result;
 
         Q_FOREACH (auto item, mainItems) {
             const auto a = item->action();
-            MenuItemDto dto;
+            KmtMenuItemDto dto;
             dto.id = item->id();
             dto.text = a->text(); // might be overriden, so we use directly from QAction
             dto.icon = a->icon();
@@ -330,7 +330,7 @@ public:
 
         Q_FOREACH (auto item, moreItems) {
             const auto a = item->action();
-            MenuItemDto dto;
+            KmtMenuItemDto dto;
             dto.id = item->id();
             dto.text = a->text(); // might be overriden, so we use directly from QAction
             dto.icon = a->icon();
@@ -340,7 +340,7 @@ public:
         }
 
         Q_FOREACH (auto registeredService, notInstalledServices) {
-            MenuItemDto dto;
+            KmtMenuItemDto dto;
             //dto.id = item->id(); // not used in this case
             dto.text = registeredService->formatString(_("$Name"));
             dto.icon = registeredService->icon();
@@ -354,7 +354,7 @@ public:
     }
 };
 
-class NotInstalledUtil
+class KmtNotInstalledUtil
 {
 public:
     static QMenu* createSubmenuForNotInstalledApp(const QString& title, QWidget* parent, const QIcon& icon, const QUrl& homepageUrl)
