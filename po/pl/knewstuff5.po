@@ -1,0 +1,903 @@
+# translation of kdelibs4.po to Polish
+# translation of kdelibs4.po to
+# Version: $Revision: 685926 $
+# Ostatnie poprawki przed 2.0 Jacek Stolarczyk <jstolarz@kde.org>
+# Jacek Stolarczyk <jstolarz@kde.org>, 2001.
+# Piotr Roszatycki <dexter@debian.org>, 1997-2000.
+# Artur Górniak <artur_gorniak@software.pl>, 2000.
+# Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2002,2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Michal Rudolf <michal@rudolf.waw.pl>, 2010.
+# Artur Chłond <eugenewolfe@o2.pl>, 2010.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-05-03 08:53+0000\n"
+"PO-Revision-Date: 2015-04-25 07:41+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+">\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Koszt tej pozycji wynosi %1 %2.\n"
+"Czy chcesz ją kupić?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Bilans Twojego konta jest zbyt niski:\n"
+"Twój bilans to: %1\n"
+"Cena: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Twój głos został zapisany."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Teraz jesteś wielbicielem."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Błąd sieci. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "Zbyt wiele żądań do serwera. Proszę spróbować za kilka minut."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Nieznany błąd Open Collaboration Service API (%1)."
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "Pobierz nowe elementy..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Inicjowanie"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Nie znaleziono pliku ustawień: \"%1\""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Nieprawidłowy plik ustawień: \"%1\""
+
+#: core/engine.cpp:167
+msgid "Loading provider information"
+msgstr "Wczytywanie informacji o dostawcy"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Nie można pobrać dostawców nowej zawartości z pliku: %1"
+
+#: core/engine.cpp:208
+msgid "Error initializing provider."
+msgstr "Błąd podczas inicjowania dostawcy."
+
+#: core/engine.cpp:212 core/engine.cpp:529
+msgid "Loading data"
+msgstr "Wczytywanie danych"
+
+#: core/engine.cpp:242
+msgid "Loading data from provider"
+msgstr "Pobieranie danych od dostawcy"
+
+#: core/engine.cpp:247
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Wczytywanie dostawców z pliku: %1 nie powiodło się"
+
+#: core/engine.cpp:489
+#, kde-format
+msgid "Re: %1"
+msgstr "Ponów: %1"
+
+#: core/engine.cpp:531
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Wczytywanie podglądu"
+msgstr[1] "Wczytywanie %1 podglądów"
+msgstr[2] "Wczytywanie %1 podglądów"
+
+#: core/engine.cpp:533 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Instalowanie"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Niepoprawny element."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Pobieranie elementu nie powiodło się: brak adresu dla \"%1\"."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Pobieranie \"%1\" nie powiodło się, błąd: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Pobrany plik jest plikiem HTML. Oznacza to odnośnik do strony WWW, a nie "
+"bezpośrednie pobieranie. Czy otworzyć stronę w przeglądarce?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Prawdopodobnie zły odnośnik"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Pobrany plik to plik HTML. Otwarto w przeglądarce"
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Nie można zainstalować \"%1\": nie znaleziono pliku."
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "Zastąpić istniejący plik?"
+
+#: core/installation.cpp:538
+msgid "Download File"
+msgstr "Pobierz plik"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nie można uruchomić <i>gpg</i> i pobrać dostępnych kluczy. Proszę się "
+"upewnić, że <i>gpg</i> jest zainstalowane, inaczej sprawdzenie pobranych "
+"źródeł danych będzie niemożliwe.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Proszę podać hasło do klucza <b>0x%1</b>, należącego do <br /><i>%2&lt;"
+"%3&gt;</i>:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nie można uruchomić <i>gpg</i> i sprawdzić poprawności pliku. Proszę się "
+"upewnić, że <i>gpg</i> jest zainstalowane, inaczej sprawdzenie pobranych "
+"źródeł danych będzie niemożliwe.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Wybierz klucz do podpisywania"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Klucz użyty do podpisywania:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nie można uruchomić <i>gpg</i> i podpisać pliku. Proszę się upewnić, że "
+"<i>gpg</i> jest zainstalowane, inaczej podpisywanie źródeł danych będzie "
+"niemożliwe.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Pobieranie nowych pakietów"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 - wgrywanie dodatków"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Upłynął czas połączenia. Proszę sprawdzić stan sieci."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Serwer: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br/>Dostawca: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br/>Wersja: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Informacje o dostawcy"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nie można zainstalować %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Pobierz nowe pakiety!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Tryb widoku okien"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Tryb widoku szczegółów"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Wszyscy dostawcy"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Wszystkie kategorie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Dostawca:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Kategoria:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Najnowszych"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Ocen"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Najczęściej pobieranych"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Zainstalowanych"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Uszereguj według:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Znajdź:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Podaj wyrażenie do znalezienia"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Autor:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Strona domowa</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Uaktualnij"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Zostań wielbicielem"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Zainstaluj"
+
+#: kmoretools/kmoretools.cpp:637
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Więcej"
+
+#: kmoretools/kmoretools.cpp:652
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Niewgrane:"
+
+#: kmoretools/kmoretools.cpp:688
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Ustawienia..."
+
+#: kmoretools/kmoretools_p.h:366
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Odwiedź stronę domową"
+
+#: kmoretools/kmoretools_p.h:373
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Brak dodatkowych informacji."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+msgid "Configure menu"
+msgstr "Menu ustawień"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Menu ustawień - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:110
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:118
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:133
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+msgid "Main section"
+msgstr "Główny dział"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+msgid "Move down"
+msgstr "Przesuń w dół"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+msgid "Move up"
+msgstr "Przesuń w górę"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr "Przenieś do głównego działu"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+msgid "Move to More section"
+msgstr "Przenieś do działu Więcej"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Wyzeruj"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+msgid "More section"
+msgstr "Dział Więcej"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Dla tego menu zalecanych jest więcej narzędzi, które obecnie nie są wgrane:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+msgid "More tools..."
+msgstr "Więcej narzędzi..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Szczegóły dla %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Dziennik zmian:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Strona domowa"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Wyślij datek"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Baza wiedzy (brak pozycji)"
+msgstr[1] "Baza wiedzy (%1 pozycji)"
+msgstr[2] "Baza wiedzy (%1 pozycji)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Otwórz w oknie przeglądarki"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Ocena: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Dzięki <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 wielbiciel"
+msgstr[1] "%1 wielbicieli"
+msgstr[2] "%1 wielbicieli"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 pobranie"
+msgstr[1] "%1 pobrania"
+msgstr[2] "%1 pobrań"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Wczytywanie podglądu"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Szczegóły"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Uaktualnianie"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Wgraj ponownie"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Dalej"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "Zakończ"
+
+#: uploaddialog.cpp:177
+msgid "Fetching provider information..."
+msgstr "Pobieranie informacji o dostawcy..."
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "Pobieranie danych o licencjach z serwera..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "Pobieranie zawartości z serwera..."
+
+#: uploaddialog.cpp:266
+msgid "Could not fetch provider information."
+msgstr "Nie można pobrać informacji od dostawcy."
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr "Zarejestruj nowe konto"
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "Sprawdzanie nazwy użytkownika..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "Pobieranie poprzednio wysłanych treści..."
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "Błąd weryfikacji nazwy użytkownika. Proszę spróbować ponownie."
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "Zakończono pobieranie poprzednio wysłanych treści."
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "Zakończone pobieranie treści z serwera."
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Odwiedź stronę"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Udostępnij nowe pakiety"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Dodatkowy moduł do wysyłania %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "Nie znaleziono pliku: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "Wysyłanie nie powiodło się"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "Ten serwer nie rozpoznał kategorii %2, do której chcesz wysłać."
+msgstr[1] ""
+"Ten serwer nie rozpoznał żadnej z kategorii, do których chcesz wysłać: %2"
+msgstr[2] ""
+"Ten serwer nie rozpoznał żadnej z kategorii, do których chcesz wysłać: %2"
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "Błąd"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Wybrana kategoria \"%1\" jest niepoprawna."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "Proszę wybrać podgląd obrazu"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "Wystąpił błąd sieci."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "Wysyłanie nie powiodło się"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "Błąd autoryzacji."
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Wysyłanie nieudane: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Hasło:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Nazwa użytkownika:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Plik do wysłania:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Nowe wysyłanie"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Opis:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Wersja:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Licencja:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Proszę wprowadzić informację w języku angielskim o wysyłanym pliku."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Tytuł:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Nazwa pliku, jaka pojawi się na stronie"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"To powinno jasno opisywać treść pliku. Może to być ten sam tekst, co w "
+"tytule pliku kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Podgląd obrazów"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Wybierz podgląd..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Ustaw cenę tego elementu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Cena"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Cena:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Przyczyna takiej ceny:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Pobierz odnośnik z zawartością z serwera"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Utwórz zawartość na serwerze"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Wyślij zawartość"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Wyślij pierwszy podgląd"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "Uwaga: treść na stronie można modyfikować, uaktualniać i usuwać."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Wyślij drugi podgląd"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Wyślij trzeci podgląd"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Oświadczam, że ta zawartość nie narusza prawa, praw autorskich  ani znaków "
+"towarowych. Zgadzam się na zapisanie mojego adresu IP (rozpowszechnianie "
+"zawartości bez zgody właściciela praw autorskich jest nielegalne)."
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Rozpocznij wysyłanie"

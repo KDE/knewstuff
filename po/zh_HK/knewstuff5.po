@@ -1,0 +1,947 @@
+# translation of kdelibs4.po to Chinese (Hong Kong)
+# Chinese (traditional) translation for kdeutils
+# Copyright (C) 2001, 02, 04, 05 Free Software Foundation, Inc.
+#
+# Eric Cheng <ericc@shinewave.com.tw>, unknown.
+#
+# with reference from zh_CN translation (as of 2002-11-08):
+# Chih-Wei Huang <cwhuang@linux.org.tw>, 2001.
+# Kenduest Lee <kenduest@i18n.linux.org.tw>, 2001.
+# Jouston Huang (Huang, Jiun-Jeng) <jouston@housediy.com>, 2002.
+# Kenduest Lee <kenduest@i18n.linux.org.tw>, 2002.
+# Wang Jian <lark@linux.net.cn>, 2002.
+# Anthony Fok <anthony@thizlinux.com>, 2002.
+# Yuan-Chen Cheng <ycheng@slat.org>, 2002.
+#   Wang Jian <lark@linux.ustc.edu.cn>, 1998.
+#   Funda Wang <fundawang@en2china.com>, 2002.
+#   Sarah Smith <sarahs@redhat.com>, 2002.
+#   Xiong Jiang <jxiong@offtopic.org>, 2002.
+# Chia-Lin, Kao <acelan@linux.org.tw>, 2004.
+# Stanley Wong <stanley18fan0k@yahoo.com.hk>, 2005.
+# Abel Cheung <abel@oaka.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-05-03 08:53+0000\n"
+"PO-Revision-Date: 2006-01-04 13:32+0800\n"
+"Last-Translator: Abel Cheung <abel@oaka.org>\n"
+"Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:351
+#, fuzzy
+#| msgid "No text was replaced."
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "沒有替換任何文字。"
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr ""
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr ""
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:49
+#, fuzzy
+#| msgid "Download New Stuff"
+msgid "Download New Stuff..."
+msgstr "下載熱門禮品"
+
+#: core/engine.cpp:93
+#, fuzzy
+#| msgid "Install"
+msgid "Initializing"
+msgstr "安裝"
+
+#: core/engine.cpp:97 core/engine.cpp:104
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file not found: \"%1\""
+msgstr "組態設定檔案"
+
+#: core/engine.cpp:117
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "組態設定檔案"
+
+#: core/engine.cpp:167
+#, fuzzy
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "檢視框架資訊"
+
+#: core/engine.cpp:190
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:208
+#, fuzzy
+#| msgid "Error parsing providers list."
+msgid "Error initializing provider."
+msgstr "供應者列表有語法錯誤。"
+
+#: core/engine.cpp:212 core/engine.cpp:529
+#, fuzzy
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "載入 Applet"
+
+#: core/engine.cpp:242
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:247
+#, fuzzy, kde-format
+#| msgid "Loading resource '%1' failed!"
+msgid "Loading of providers from file: %1 failed"
+msgstr "載入資源 '%1' 時發生錯誤！"
+
+#: core/engine.cpp:489
+#, fuzzy, kde-format
+#| msgid "Redo: %1"
+msgid "Re: %1"
+msgstr "重做：%1"
+
+#: core/engine.cpp:531
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "預覽列印(&W)..."
+
+#: core/engine.cpp:533 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+#, fuzzy
+#| msgid "Install"
+msgid "Installing"
+msgstr "安裝"
+
+#: core/installation.cpp:175
+#, fuzzy
+#| msgid "invalid flags"
+msgid "Invalid item."
+msgstr "錯誤的旗號"
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:230
+#, fuzzy
+msgid "Possibly bad download link"
+msgstr "無法建立新的檔案。"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:296
+#, fuzzy, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "找不到服務程式‘%1’。"
+
+#: core/installation.cpp:538
+#, fuzzy
+#| msgid "Override existing entries"
+msgid "Overwrite existing file?"
+msgstr "取代已有項目"
+
+#: core/installation.cpp:538
+#, fuzzy
+#| msgid "Download"
+msgid "Download File"
+msgstr "下載"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來取得可用的密鑰。請確定<i>gpg</i>已安裝，否則將無法對"
+"下載的資源進行檢驗。</qt>"
+
+#: core/security.cpp:210
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br><i>%2&lt;%3&gt;"
+#| "</i>:</qt>"
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>請輸入密鑰<b>0x%1</b>的密碼短語。這個密鑰是屬於<br><i>%2&lt;%3&gt;</i>"
+"的：</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來檢驗檔案。請確定<i>gpg</i>已安裝，否則將無法對下載的"
+"資源進行檢驗。</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "選擇用作簽署的密鑰"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "用作簽署的密鑰："
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來簽署檔案。請確定<i>gpg</i>已安裝，否則將無法對資源進"
+"行簽署。</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+#, fuzzy
+#| msgid "Get Hot New Stuff"
+msgid "Get Hot New Stuff"
+msgstr "取得熱門禮物"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr ""
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr ""
+
+#: downloadwidget.cpp:179
+#, fuzzy, kde-format
+#| msgid "<Merge %1>"
+msgid "Server: %1"
+msgstr "<合併 %1>"
+
+#: downloadwidget.cpp:180
+#, fuzzy, kde-format
+#| msgid "Hide %1"
+msgid "<br />Provider: %1"
+msgstr "隱藏 %1"
+
+#: downloadwidget.cpp:181
+#, fuzzy, kde-format
+#| msgid "Version:"
+msgid "<br />Version: %1"
+msgstr "版本："
+
+#: downloadwidget.cpp:185
+#, fuzzy
+#| msgid "Show version information"
+msgid "Provider information"
+msgstr "顯示版本資訊"
+
+#: downloadwidget.cpp:196
+#, fuzzy, kde-format
+msgid "Could not install %1"
+msgstr "找不到服務程式‘%1’。"
+
+#: downloadwidget.cpp:197
+#, fuzzy
+#| msgid "Get Hot New Stuff"
+msgid "Get Hot New Stuff!"
+msgstr "取得熱門禮物"
+
+#: downloadwidget.cpp:249
+#, fuzzy
+#| msgid "Icon Size"
+msgid "Icons view mode"
+msgstr "圖示大小"
+
+#: downloadwidget.cpp:251
+#, fuzzy
+#| msgid "Details"
+msgid "Details view mode"
+msgstr "詳細資料"
+
+#: downloadwidget.cpp:266
+#, fuzzy
+#| msgid "Hot New Stuff Providers"
+msgid "All Providers"
+msgstr "熱門禮物的供應者"
+
+#: downloadwidget.cpp:273
+#, fuzzy
+#| msgid "Categories"
+msgid "All Categories"
+msgstr "分類"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, fuzzy
+#| msgid "Hide %1"
+msgid "Provider:"
+msgstr "隱藏 %1"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, fuzzy
+#| msgid "Categories"
+msgid "Category:"
+msgstr "分類"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, fuzzy
+#| msgid "New List"
+msgid "Newest"
+msgstr "新清單"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, fuzzy
+#| msgid "Rating"
+msgid "Rating"
+msgstr "評分"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, fuzzy
+#| msgid "Most Downloads"
+msgid "Most downloads"
+msgstr "最多下載次數"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, fuzzy
+#| msgid "Install"
+msgid "Installed"
+msgstr "安裝"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, fuzzy
+#| msgid "S&earch:"
+msgid "Search:"
+msgstr "搜尋(&S)："
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, fuzzy
+#| msgid "Internet Search"
+msgid "Enter search phrase here"
+msgstr "網絡搜尋"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "作者："
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "更新"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+#, fuzzy
+#| msgid "Install"
+msgid "Uninstall"
+msgstr "安裝"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+#, fuzzy
+#| msgid "Home Fax"
+msgid "Become a Fan"
+msgstr "家用傳真"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "安裝"
+
+#: kmoretools/kmoretools.cpp:637
+#, fuzzy
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "更多..."
+
+#: kmoretools/kmoretools.cpp:652
+#, fuzzy
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "安裝"
+
+#: kmoretools/kmoretools.cpp:688
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "設定(&G)..."
+
+#: kmoretools/kmoretools_p.h:366
+#, fuzzy
+#| msgid "Homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "首頁"
+
+#: kmoretools/kmoretools_p.h:373
+#, fuzzy
+#| msgid "No description available."
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "沒有描述"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "設定"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "設定 %1(&C)..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:110
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:118
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:133
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+msgid "Main section"
+msgstr "視窗"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+msgid "Move down"
+msgstr "向下移動(&D)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+msgid "Move up"
+msgstr "向上移動(&U)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "動作"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "重設"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "Action"
+msgid "More section"
+msgstr "動作"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgid "More..."
+msgid "More tools..."
+msgstr "更多..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, fuzzy, kde-format
+#| msgid "Suggestion List"
+msgid "Details for %1"
+msgstr "建議清單"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, fuzzy
+#| msgid "Change"
+msgid "Changelog:"
+msgstr "變更"
+
+#: ui/entrydetailsdialog.cpp:111
+#, fuzzy
+#| msgid "Homepage"
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "首頁"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy
+#| msgid "HTML documentation"
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "HTML 文件"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, fuzzy
+#| msgid "Open in New &Window"
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "在新視窗開啟(&W)"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Rating: %1%"
+msgstr "評分"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, fuzzy, kde-format
+#| msgid "<b>Error</b>: %1: %2"
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<b>錯誤</b>：%1：%2<br>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "下載"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Loading Preview"
+msgstr "預覽列印(&W)..."
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "詳細資料"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "更新"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+#, fuzzy
+#| msgid "Installation"
+msgid "Install Again"
+msgstr "安裝"
+
+#: uploaddialog.cpp:66
+#, fuzzy
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Next"
+
+#: uploaddialog.cpp:71
+#, fuzzy
+msgid "Finish"
+msgstr "完成(&F)"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "Show version information"
+msgid "Fetching provider information..."
+msgstr "顯示版本資訊"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Show version information"
+msgid "Could not fetch provider information."
+msgstr "顯示版本資訊"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+#, fuzzy
+#| msgid "Check Spelling..."
+msgid "Checking login..."
+msgstr "拼字檢查..."
+
+#: uploaddialog.cpp:336
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Fetching your previously updated content..."
+msgstr "預覽列印(&W)..."
+
+#: uploaddialog.cpp:339
+#, fuzzy
+#| msgid "Save Login Information"
+msgid "Could not verify login, please try again."
+msgstr "儲存登入資訊"
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "分享熱門禮物"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr ""
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, fuzzy, kde-format
+msgid "File not found: %1"
+msgstr "沒有找到 %1 風格\n"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+#, fuzzy
+#| msgid "Upload Files"
+msgid "Upload Failed"
+msgstr "上傳檔案"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "錯誤"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr ""
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+#, fuzzy
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "選擇圖片的一份區域"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr ""
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+#, fuzzy
+#| msgid "Upload Files"
+msgid "Uploading Failed"
+msgstr "上傳檔案"
+
+#: uploaddialog.cpp:712
+#, fuzzy
+#| msgid "Authentication"
+msgid "Authentication error."
+msgstr "驗證"
+
+#: uploaddialog.cpp:722
+#, fuzzy, kde-format
+#| msgid "Upload Files"
+msgid "Upload failed: %1"
+msgstr "上傳檔案"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "密碼："
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, fuzzy
+msgid "Username:"
+msgstr "使用者："
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, fuzzy
+#| msgid "File reloaded."
+msgid "File to upload:"
+msgstr "檔案已重新載入。"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, fuzzy
+#| msgid "&Upload"
+msgid "New Upload"
+msgstr "上傳(&U)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "描述："
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "版本："
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "許可證："
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "標題："
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy
+#| msgid "Preview image: %1\n"
+msgid "Preview Images"
+msgstr "預覽影像：%1\n"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy
+msgid "Select Preview..."
+msgstr "選擇元件..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, fuzzy
+#| msgid "Ne&ver for This Site"
+msgid "Set a price for this item"
+msgstr "永不對這個網站(&V)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy
+msgid "Price"
+msgstr "資源"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, fuzzy
+msgid "Price:"
+msgstr "資源"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy
+#| msgid "Upload Info"
+msgid "Upload content"
+msgstr "上傳資訊"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload first preview"
+msgstr "預覽列印(&W)..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload second preview"
+msgstr "預覽列印(&W)..."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload third preview"
+msgstr "預覽列印(&W)..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy
+#| msgid "Start replace"
+msgid "Start Upload"
+msgstr "開始取代"
