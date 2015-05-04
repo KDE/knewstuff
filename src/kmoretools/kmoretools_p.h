@@ -31,7 +31,10 @@
 #define _ QLatin1String
 
 /**
+ * Makes sure that if the same inputId is given more than once
+ * we will get unique IDs.
  *
+ * See KMoreToolsTest::testMenuItemIdGen().
  */
 class KmtMenuItemIdGen
 {
@@ -53,7 +56,7 @@ private:
 };
 
 /**
- *
+ * A serializeable menu item
  */
 class KmtMenuItemDto
 {
@@ -110,7 +113,8 @@ public:
 };
 
 /**
- *
+ * The serializeable menu structure.
+ * Used for working with user interaction for persisted configuration.
  */
 class KmtMenuStructureDto
 {
@@ -299,7 +303,9 @@ public:
 
 /**
  * In menu structure consisting of main section items, more section items
- * and registered services which are not installed
+ * and registered services which are not installed.
+ * In contrast to KmtMenuStructureDto we are dealing here with
+ * KMoreToolsMenuItem pointers instead of DTOs.
  */
 class KmtMenuStructure
 {
@@ -354,9 +360,19 @@ public:
     }
 };
 
+/**
+ * Helper class that deals with creating the menu where all the not-installed
+ * services are listed.
+ */
 class KmtNotInstalledUtil
 {
 public:
+    /**
+     * For one given application/service which is named @p title a QMenu is
+     * created with the given @p icon and @p homepageUrl.
+     * It will be used as submenu for the menu that displays the not-installed
+     * services.
+     */
     static QMenu* createSubmenuForNotInstalledApp(const QString& title, QWidget* parent, const QIcon& icon, const QUrl& homepageUrl)
     {
         QMenu* submenuForNotInstalled = new QMenu(title, parent);
