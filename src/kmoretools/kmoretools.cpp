@@ -46,7 +46,7 @@ public:
     {
     }
 
-    virtual ~KMoreToolsPrivate()
+    ~KMoreToolsPrivate()
     {
         Q_FOREACH(auto b, menuBuilderMap.values()) {
             delete b;
@@ -395,7 +395,7 @@ public:
     {
     }
 
-    virtual ~KMoreToolsMenuBuilderPrivate()
+    ~KMoreToolsMenuBuilderPrivate()
     {
     }
 

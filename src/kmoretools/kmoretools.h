@@ -273,7 +273,7 @@ public:
      */
     explicit KMoreTools(const QString& uniqueId);
 
-    virtual ~KMoreTools();
+    ~KMoreTools();
 
     /**
      * Registers a service with KMoreTools.
@@ -478,7 +478,7 @@ public: // should be protected but impl does not allow it
                       bool isInstalled, KService::Ptr installedService,
                       KService::Ptr kmtDesktopfile);
 
-    virtual ~KMoreToolsService();
+    ~KMoreToolsService();
 
 private:
     /**
@@ -609,7 +609,7 @@ public: // should be private but impl does not allow it
      */
     KMoreToolsMenuBuilder(const QString& uniqueId, const QString& userConfigPostfix);
 
-    virtual ~KMoreToolsMenuBuilder();
+    ~KMoreToolsMenuBuilder();
 
 private:
     /**
@@ -735,7 +735,7 @@ public: // should be protected but impl does not allow it
      */
     KMoreToolsMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation);
 
-    virtual ~KMoreToolsMenuItem();
+    ~KMoreToolsMenuItem();
 
 private:
     /**

@@ -43,7 +43,7 @@ public:
      */
     KMoreToolsMenuFactory(const QString& uniqueId);
 
-    virtual ~KMoreToolsMenuFactory();
+    ~KMoreToolsMenuFactory();
 
     /**
      * First, an empty QMenu is created. Then, for each grouping name
