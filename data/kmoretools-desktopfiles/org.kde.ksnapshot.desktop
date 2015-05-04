@@ -1,6 +1,20 @@
 [Desktop Entry]
 GenericName=Screen Capture Program
+GenericName[ca]=Programa de captura de pantalla
+GenericName[nl]=Schermafdrukprogramma
+GenericName[pt]=Programa de Captura do Ecrã
+GenericName[pt_BR]=Programa de captura de tela
+GenericName[ru]=Создание снимков экрана
+GenericName[uk]=Програма для створення знімків вікон
+GenericName[x-test]=xxScreen Capture Programxx
 Name=KSnapshot
+Name[ca]=KSnapshot
+Name[nl]=KSnapshot
+Name[pt]=KSnapshot
+Name[pt_BR]=KSnapshot
+Name[ru]=KSnapshot
+Name[uk]=KSnapshot
+Name[x-test]=xxKSnapshotxx
 MimeType=
 Exec=ksnapshot -qwindowtitle %c
 Icon=ksnapshot

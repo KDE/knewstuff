@@ -2,7 +2,21 @@
 [Desktop Entry]
 Terminal=false
 Name=Kaption
+Name[ca]=Kaption
+Name[nl]=Opschrift
+Name[pt]=Kaption
+Name[pt_BR]=Kaption
+Name[ru]=Kaption
+Name[uk]=Kaption
+Name[x-test]=xxKaptionxx
 Comment=Screen capture and editor
+Comment[ca]=Captura de pantalla i editor
+Comment[nl]=Schermafdruk maken en bewerker
+Comment[pt]=Captura e edição do ecrã
+Comment[pt_BR]=Captura de tela e editor
+Comment[ru]=Создание и редактирование снимков экрана
+Comment[uk]=Програма для створення і редагування знімків вікон
+Comment[x-test]=xxScreen capture and editorxx
 Type=Application
 
 Exec=kaption
