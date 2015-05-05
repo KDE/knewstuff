@@ -1,18 +1,22 @@
 [Desktop Entry]
 GenericName=Screenshot Capture Utility
 GenericName[ca]=Utilitat de captura de pantalla
+GenericName[gl]=Utilidade para facer capturas de pantalla
 GenericName[nl]=Hulpmiddel voor het vangen van een schermafdruk
 GenericName[pt]=Utilitário de Captura de Imagens
 GenericName[pt_BR]=Utilitário de captura de tela
 GenericName[ru]=Создание снимков экрана
+GenericName[sv]=Verktyg för att ta skärmbilder
 GenericName[uk]=Програма для створення знімків вікон
 GenericName[x-test]=xxScreenshot Capture Utilityxx
 Name=KScreenGenie
 Name[ca]=KScreenGenie
+Name[gl]=KScreenGenie
 Name[nl]=KScreenGenie
 Name[pt]=KScreenGenie
 Name[pt_BR]=KScreenGenie
 Name[ru]=KScreenGenie
+Name[sv]=KScreenGenie
 Name[uk]=KScreenGenie
 Name[x-test]=xxKScreenGeniexx
 Categories=Qt;KDE;Utility;
