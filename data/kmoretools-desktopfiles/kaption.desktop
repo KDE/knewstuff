@@ -3,6 +3,7 @@
 Terminal=false
 Name=Kaption
 Name[ca]=Kaption
+Name[es]=Kaption
 Name[gl]=Kaption
 Name[nl]=Opschrift
 Name[pt]=Kaption
@@ -14,6 +15,7 @@ Name[uk]=Kaption
 Name[x-test]=xxKaptionxx
 Comment=Screen capture and editor
 Comment[ca]=Captura de pantalla i editor
+Comment[es]=Captura de pantalla y editor
 Comment[gl]=Editor de xerador de capturas de pantalla.
 Comment[nl]=Schermafdruk maken en bewerker
 Comment[pt]=Captura e edição do ecrã

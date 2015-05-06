@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Screen Capture Program
 GenericName[ca]=Programa de captura de pantalla
+GenericName[es]=Programa de captura de pantalla
 GenericName[gl]=Programa para facer capturas de pantalla
 GenericName[nl]=Schermafdrukprogramma
 GenericName[pt]=Programa de Captura do Ecrã
@@ -12,6 +13,7 @@ GenericName[uk]=Програма для створення знімків вік
 GenericName[x-test]=xxScreen Capture Programxx
 Name=KSnapshot
 Name[ca]=KSnapshot
+Name[es]=KSnapshot
 Name[gl]=KSnapshot
 Name[nl]=KSnapshot
 Name[pt]=KSnapshot

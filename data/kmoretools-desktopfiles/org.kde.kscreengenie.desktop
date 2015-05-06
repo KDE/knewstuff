@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Screenshot Capture Utility
 GenericName[ca]=Utilitat de captura de pantalla
+GenericName[es]=Utilidad de capturas de pantalla
 GenericName[gl]=Utilidade para facer capturas de pantalla
 GenericName[nl]=Hulpmiddel voor het vangen van een schermafdruk
 GenericName[pt]=Utilitário de Captura de Imagens
@@ -11,6 +12,7 @@ GenericName[uk]=Програма для створення знімків вік
 GenericName[x-test]=xxScreenshot Capture Utilityxx
 Name=KScreenGenie
 Name[ca]=KScreenGenie
+Name[es]=KScreenGenie
 Name[gl]=KScreenGenie
 Name[nl]=KScreenGenie
 Name[pt]=KScreenGenie

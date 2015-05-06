@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=HotShots
 Name[ca]=HotShots
+Name[es]=HotShots
 Name[gl]=HotShots
 Name[nl]=HotShots
 Name[pt]=HotShots
@@ -12,6 +13,7 @@ Name[uk]=HotShots
 Name[x-test]=xxHotShotsxx
 Comment=Screenshot manager
 Comment[ca]=Gestor de captures de pantalla
+Comment[es]=Gestor de capturas de pantalla
 Comment[gl]=Xestor de capturas de pantalla.
 Comment[nl]=Beheerder van schermafdrukken
 Comment[pt]=Gestor de capturas de imagens
@@ -23,6 +25,7 @@ Comment[x-test]=xxScreenshot managerxx
 Type=Application
 GenericName=Screenshot manager
 GenericName[ca]=Gestor de captures de pantalla
+GenericName[es]=Gestor de capturas de pantalla
 GenericName[gl]=Xestor de capturas de pantalla
 GenericName[nl]=Beheerder van schermafdrukken
 GenericName[pt]=Gestor de capturas de imagens
