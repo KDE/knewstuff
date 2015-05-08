@@ -79,5 +79,5 @@ void testAuthor::testAssignment()
     QCOMPARE(author.homepage(), author2.homepage());
 }
 
-QTEST_MAIN(testAuthor)
+QTEST_GUILESS_MAIN(testAuthor)
 #include "knewstuffauthortest.moc"

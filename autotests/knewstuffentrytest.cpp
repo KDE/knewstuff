@@ -106,5 +106,5 @@ void testEntry::testAssignment()
     QCOMPARE(entry.version(), entry2.version());
 }
 
-QTEST_MAIN(testEntry)
+QTEST_GUILESS_MAIN(testEntry)
 #include "knewstuffentrytest.moc"
