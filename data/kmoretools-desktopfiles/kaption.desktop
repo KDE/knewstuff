@@ -17,6 +17,7 @@ Name[sr@latin]=Kapcija
 Name[sv]=Kaption
 Name[uk]=Kaption
 Name[x-test]=xxKaptionxx
+Name[zh_TW]=螢幕擷取_Kaption
 Comment=Screen capture and editor
 Comment[ca]=Captura de pantalla i editor
 Comment[es]=Captura de pantalla y editor
@@ -34,6 +35,7 @@ Comment[sr@latin]=Hvatanje i uređivanje ekrana
 Comment[sv]=Ta och redigera skärmbilder
 Comment[uk]=Програма для створення і редагування знімків вікон
 Comment[x-test]=xxScreen capture and editorxx
+Comment[zh_TW]=螢幕擷取與編輯器
 Type=Application
 
 Exec=kaption

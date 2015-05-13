@@ -41,6 +41,7 @@ Name[sv]=Partitioner
 Name[uk]=Partitioner
 Name[x-test]=xxPartitionerxx
 Name[zh_CN]=分区管理
+Name[zh_TW]=Partitioner
 GenericName=Partition hard disks (including RAID, LVM, and encrypted file systems)
 GenericName[ca]=Fa particions de discs durs (incloent RAID, LVM, i sistemes de fitxers encriptats)
 GenericName[en_GB]=Partition hard disks (including RAID, LVM, and encrypted file systems)
@@ -65,5 +66,6 @@ GenericName[sv]=Partitionera hårddiskar (inklusive RAID, LVM och krypterade fil
 GenericName[uk]=Програма для поділу дисків на розділи (зокрема створення RAID, LVM та шифрованих файлових систем)
 GenericName[x-test]=xxPartition hard disks (including RAID, LVM, and encrypted file systems)xx
 GenericName[zh_CN]=对硬盘进行分区 (包括 RAID，LVM 和加密文件系统)
+GenericName[zh_TW]=硬碟分割工具(包括 RAID, LVM 與加密檔案系統)
 StartupNotify=true
 
