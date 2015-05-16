@@ -9,6 +9,7 @@
 X-SuSE-translate=true
 Name=QGit
 Name[ca]=QGit
+Name[de]=QGit
 Name[en_GB]=QGit
 Name[es]=QGit
 Name[fi]=QGit
@@ -34,6 +35,7 @@ Name[zh_CN]= 
 Name[zh_TW]=QGit
 GenericName=QGit
 GenericName[ca]=QGit
+GenericName[de]=QGit
 GenericName[en_GB]=QGit
 GenericName[es]=QGit
 GenericName[fi]=QGit

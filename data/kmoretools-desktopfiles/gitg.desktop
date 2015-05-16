@@ -27,6 +27,7 @@ GenericName[zh_CN]=Git 仓库查看器
 GenericName[zh_TW]=Git 主目錄瀏覽器
 Name=gitg
 Name[ca]=gitg
+Name[de]=gitg
 Name[en_GB]=gitg
 Name[es]=gitg
 Name[fi]=gitg
