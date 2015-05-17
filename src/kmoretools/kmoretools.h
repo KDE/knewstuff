@@ -33,22 +33,25 @@ class KMoreToolsPrivate;
 /**
  * Helps to create user-configurable menus with tools which are potentially not yet installed.
  *
+ * This class is one entry point of the KMoreTools API.
+ * See also KMoreToolsMenuFactory.
+ *
  * @note This is a new API (published within KNewStuff since April 2015). Its current
  * target are KDE applications which are part of the kdesrcbuild infrastructure.
  * Here, it is possible to find all usages and to adapt to API changes when needed.
  * So, if you use this in your own application, beware that there might be API
  * changes when more use cases are developed.
  *
- * This class is the entry point of the KMoreTools API.
- *
  *
  * Introduction
  * ------------
  * KMoreTools helps to to build user-configurable menus with tools which
- * might not installed yet.
- * The user will see a menu item (in the 'More' section) for a tool even if
- * it is not installed. Furthermore, it makes long menus with external tools
- * shorter by providing a main and more section.
+ * might not installed yet. These tools may also take URL arguments supplied
+ * by the application.
+ *
+ * The user will see a menu item for a tool even if it is not installed (in the
+ * 'More' section). Furthermore, it makes long menus shorter by providing a
+ * main and more section.
  * It provides a 'Configure menu' dialog to make the menu user-configurable.
  *
  * It does this in the following ways:
@@ -86,7 +89,7 @@ class KMoreToolsPrivate;
  *
  * For details about the resulting menu structure, see KMoreToolsMenuBuilder.
  *
- * See also, https://community.kde.org/Scratchpad/KMoreToolsFramework
+ * See also https://community.kde.org/Scratchpad/KMoreToolsFramework (outdated)
  *
  *
  * Rationale for the "Not installed" section
@@ -105,7 +108,8 @@ class KMoreToolsPrivate;
  * Presets
  * -------
  * Before installing desktop files in your application you might take a look
- * at KMoreToolsPresets which might already contain the needed tools.
+ * at KMoreToolsPresets or KMoreToolsMenuFactory which might already contain
+ * the needed tools.
  *
  *
  * Screenshots
@@ -145,6 +149,13 @@ class KMoreToolsPrivate;
  *
  * \image html kmoretools-tests-configure-dialog-notinstalledapps.png "Configure dialog when there are non-installed apps" width=100px
  *
+ *
+ * FAQ
+ * ---
+ * ### Why is everything based on desktopfiles?
+ *
+ * - With desktopfiles translation can be reused.
+ * - They provide a unified interface for dealing with program arguments.
  *
  * TODOs
  * -----
