@@ -26,13 +26,10 @@ knewstuff_executable_tests(
 #)
 
 # KMoreTools:
-add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp)
-add_test(kmoretoolstest kmoretoolstest)
-ecm_mark_as_test(kmoretoolstest)
-target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)
-install(FILES kmoretools/1/a.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1 RENAME a.desktop)
-install(FILES kmoretools/1/b.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1 RENAME b.desktop)
-install(FILES kmoretools/1/c.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1 RENAME c.desktop)
+add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp)
+add_test(kmoretoolstest2 kmoretoolstest2)
+ecm_mark_as_test(kmoretoolstest2)
+target_link_libraries(kmoretoolstest2 Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)
 install(FILES kmoretools/2/kate.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2 RENAME kate.desktop)
 install(FILES kmoretools/2/kate.png DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2)
 install(FILES kmoretools/2/mynotinstalledapp.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2 RENAME mynotinstalledapp.desktop)
