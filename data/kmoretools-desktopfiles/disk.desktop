@@ -44,6 +44,7 @@ Name[zh_CN]=分区管理
 Name[zh_TW]=Partitioner
 GenericName=Partition hard disks (including RAID, LVM, and encrypted file systems)
 GenericName[ca]=Fa particions de discs durs (incloent RAID, LVM, i sistemes de fitxers encriptats)
+GenericName[de]=Partitionierung von Dateisystemen einschließlich RAID, LVM und verschlüsselten Dateisystemen
 GenericName[en_GB]=Partition hard disks (including RAID, LVM, and encrypted file systems)
 GenericName[es]=Hacer particiones en discos duros (incluidos RAID, LVM y sistemas de archivos cifrados)
 GenericName[fi]=Osioi kiintolevyjä (mukaan lukien RAID, LVM ja salatut tiedostojärjestelmät)
