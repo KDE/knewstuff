@@ -372,6 +372,9 @@ class KMoreToolsServicePrivate;
  */
 class KNEWSTUFF_EXPORT KMoreToolsService
 {
+    friend class KMoreTools;
+    friend class KMoreToolsPrivate;
+
 public:
     /**
      * @return the desktop entry name which the service is identified by and with which
@@ -478,16 +481,13 @@ public:
      */
     void setExec(const QString& exec);
 
-public: // should be protected but impl does not allow it
+private:
     /**
-     * @internal INTERNAL USAGE ONLY
-     *
-     * @param kmt internal usage
+     * @param kmtDesktopfileSubdir where to find kmt-desktopfiles
      * @param desktopEntryName name of the desktopfile without the .desktop extension
      * @param isInstalled true if desktop file is installed
      * @param installedService not nullptr if @p isInstalled is true
      * @param kmtDesktopfile not null if app-local kmt-desktopfile is found and valid
-     * @param kmtDesktopfileSubdir
      */
     KMoreToolsService(const QString& kmtDesktopfileSubdir,
                       const QString& desktopEntryName,
