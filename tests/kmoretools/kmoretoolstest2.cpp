@@ -54,8 +54,12 @@ private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-pr
     void test_buildMenu_WithQActions_interative1();
     void testDialogForGroupingNames();
 
+private:
+    // helper methods
+    void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description);
+
 public:
-    static const bool enableInteractiveTests = true;
+    static const bool enableInteractiveTests = false;
 };
 
 void KMoreToolsTest2::init()
@@ -203,7 +207,7 @@ QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
     return d;
 }
 
-void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description)
+void KMoreToolsTest2::testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description)
 {
     if (KMoreToolsTest2::enableInteractiveTests) {
         KMoreTools kmt(_("unittest-kmoretools/2"));

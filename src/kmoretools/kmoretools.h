@@ -361,6 +361,7 @@ private:
 // --------------------------------------------------------------------------------------
 
 class KMoreToolsServicePrivate;
+
 /**
  * A service described in a .desktop file (kmt-desktopfile) which will be
  * called "registered service".
@@ -510,8 +511,8 @@ private:
 // --------------------------------------------------------------------------------------
 
 class KMoreToolsMenuItem;
-
 class KMoreToolsMenuBuilderPrivate;
+
 /**
  * Define how the default structure of the menu should look like.
  *
@@ -522,6 +523,11 @@ class KMoreToolsMenuBuilderPrivate;
  */
 class KNEWSTUFF_EXPORT KMoreToolsMenuBuilder
 {
+    friend class KMoreToolsPrivate;
+    friend class KMoreTools;
+    friend class KMoreToolsTest;
+    friend class KMoreToolsTest2;
+
 public:
     /**
      * Affects addMenuItem() if called before it.
@@ -600,28 +606,24 @@ public:
         = KMoreTools::ConfigureDialogAccessible_Always,
         QMenu** outMoreMenu = nullptr);
 
+private:
     /**
-     * @internal INTERNAL USAGE ONLY
-     *
      * for unit testing / get as debug string
      */
     QString menuStructureAsString(bool mergeWithUserConfig) const;
 
     /**
-     * @internal INTERNAL USAGE ONLY
-     *
      * for unit testing
      */
     void showConfigDialog(const QString& title);
 
-public: // should be private but impl does not allow it
     /**
-     * @internal INTERNAL USAGE ONLY (needed because QMap needs a default ctor)
+     * (needed because QMap needs a default ctor)
      */
     KMoreToolsMenuBuilder();
 
     /**
-     * @internal INTERNAL USAGE ONLY
+     * internal usage
      */
     KMoreToolsMenuBuilder(const QString& uniqueId, const QString& userConfigPostfix);
 
@@ -641,6 +643,7 @@ private:
 // --------------------------------------------------------------------------------------
 
 class KMoreToolsMenuItemPrivate;
+
 /**
  * Represents a menu item of a service (application, tool or variant of the same
  * service with different parameters).
