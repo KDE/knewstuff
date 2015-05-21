@@ -25,6 +25,8 @@
 #include <QTextCodec>
 #include <QDebug>
 #include <QDesktopServices>
+#include <QUrl>
+#include <QDir>
 
 #include <klocalizedstring.h>
 
@@ -391,6 +393,26 @@ public:
         }
 
         return submenuForNotInstalled;
+    }
+};
+
+/**
+ * Url handling utils
+ */
+class KmtUrlUtil
+{
+public:
+    /**
+     * "file:///home/abc/hallo.txt" becomes "file:///home/abc"
+     */
+    static QUrl localFileAbsoluteDir(const QUrl& url)
+    {
+        if (!url.isLocalFile()) {
+            qWarning() << "localFileAbsoluteDir: url must be local file";
+        }
+        QFileInfo fileInfo(url.toLocalFile());
+        auto dir = QDir(fileInfo.absoluteDir()).absolutePath();
+        return QUrl::fromLocalFile(dir);
     }
 };
 

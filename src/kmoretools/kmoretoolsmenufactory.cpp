@@ -17,6 +17,8 @@
 
 #include "kmoretoolsmenufactory.h"
 
+#include "kmoretools_p.h"
+
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -53,53 +55,63 @@ KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
 }
 
 // "file static" => no symbol will be exported
-static void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
-                      QMenu* menu,
-                      QList<KMoreToolsService*> kmtServiceList,
-                      const QUrl& url,
-                      bool isMoreSection
-                     )
+static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
+                                  QMenu* menu,
+                                  KMoreToolsService* kmtService,
+                                  const QUrl& url,
+                                  bool isMoreSection
+                                 )
 {
-    Q_FOREACH(auto kmtService, kmtServiceList) {
+    auto menuItem = menuBuilder->addMenuItem(kmtService, isMoreSection ?
+                    KMoreTools::MenuSection_More : KMoreTools::MenuSection_Main);
 
-        auto menuItem = menuBuilder->addMenuItem(kmtService, isMoreSection ?
-                        KMoreTools::MenuSection_More : KMoreTools::MenuSection_Main);
+    if (kmtService->isInstalled()) {
+        auto kService = kmtService->installedService();
 
-        if (kmtService->isInstalled()) {
-            auto kService = kmtService->installedService();
+        if (!kService) {
+            // if the corresponding desktop file is not installed
+            // then the isInstalled was true because of the Exec line check
+            // and we use the desktopfile provided by KMoreTools.
+            // Otherwise *kService would crash.
+            qDebug() << "Desktop file not installed:" << kmtService->desktopEntryName() << "=> Use desktop file provided by KMoreTools";
+            kService = kmtService->kmtProvidedService();
+        }
 
-            if (!kService) {
-                // if the corresponding desktop file is not installed
-                // then the isInstalled was true because of the Exec line check
-                // and we use the desktopfile provided by KMoreTools.
-                // Otherwise *kService would crash.
-                qDebug() << "Desktop file not installed:" << kmtService->desktopEntryName() << "=> Use desktop file provided by KMoreTools";
-                kService = kmtService->kmtProvidedService();
-            }
-
-            if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
-                menu->connect(menuItem->action(), &QAction::triggered, menu,
-                [kService, url](bool) {
-                    KRun::runService(*kService, { url }, nullptr);
-                });
-            } else {
-                menu->connect(menuItem->action(), &QAction::triggered, menu,
-                [kService](bool) {
-                    KRun::runService(*kService, { }, nullptr);
-                });
-            }
+        if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
+            menu->connect(menuItem->action(), &QAction::triggered, menu,
+            [kService, url](bool) {
+                KRun::runService(*kService, { url }, nullptr);
+            });
+        } else {
+            menu->connect(menuItem->action(), &QAction::triggered, menu,
+            [kService](bool) {
+                KRun::runService(*kService, { }, nullptr);
+            });
         }
     }
 }
 
 // "file static" => no symbol will be exported
+static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
+                                       QMenu* menu,
+                                       QList<KMoreToolsService*> kmtServiceList,
+                                       const QUrl& url,
+                                       bool isMoreSection
+                                      )
+{
+    Q_FOREACH(auto kmtService, kmtServiceList) {
+        addItemFromKmtService(menuBuilder, menu, kmtService, url, isMoreSection);
+    }
+}
+
+// "file static" => no symbol will be exported
 static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
-                             QMenu* menu,
-                             QList<KMoreToolsService*> kmtServiceList,
-                             const QString& groupingName,
-                             const QUrl& url,
-                             bool isMoreSection
-                            )
+                                    QMenu* menu,
+                                    QList<KMoreToolsService*> kmtServiceList,
+                                    const QString& groupingName,
+                                    const QUrl& url,
+                                    bool isMoreSection
+                                   )
 {
     //
     // special handlings
@@ -165,11 +177,40 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
         } else {
             qWarning() << "org.kde.filelight should be present in KMoreTools but it is not!";
         }
+
     } else if (groupingName == "disk-partitions") {
         // better because the Partition editors all have the same GenericName
         menuBuilder->setInitialItemTextTemplate("$GenericName ($Name)");
 
-        addItemsFromList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+        addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+
+        menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
+
+        return; // skip processing remaining list (would result in duplicates)
+
+    } else if (groupingName == "git-clients-and-actions") {
+        // Here we change the default item text and make sure that the url
+        // argument is properly handled.
+        //
+
+        menuBuilder->setInitialItemTextTemplate("$Name"); // just use the application name
+
+        Q_FOREACH(auto kmtService, kmtServiceList) {
+            QUrl argUrl = url;
+
+            if (url.isLocalFile()) { // this can only be done for local files, remote urls probably won't work for git clients anyway
+                // by default we need an URL pointing to a directory
+                // (this impl currently leads to wrong behaviour if the root dir of a git repo is chosen because it always goes one level up)
+                argUrl = KmtUrlUtil::localFileAbsoluteDir(url); // needs local file
+
+                if (kmtService->desktopEntryName() == _("git-cola-view-history.kmt-edition")) {
+                    // in this case we need the file because we would like to see its history
+                    argUrl = url;
+                }
+            }
+
+            addItemFromKmtService(menuBuilder, menu, kmtService, argUrl, isMoreSection);
+        }
 
         menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
 
@@ -180,7 +221,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
     // default handling (or process remaining list)
     //
     menuBuilder->setInitialItemTextTemplate("$Name"); // just use the application name
-    addItemsFromList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+    addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
     menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
 }
 

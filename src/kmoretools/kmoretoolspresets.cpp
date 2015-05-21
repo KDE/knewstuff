@@ -48,7 +48,10 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     // definitions begin:
     //                                              .------ If one gives more URL arguments as
     //                                              |       specified here the program will not work.
-    //                                              v
+    //                                              |       Note, that there are some desktop files where _too few_
+    //                                              |       arguments also lead to errors. Watch the console
+    //                                              v       output for messages from the program.
+    //
     ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io");
     ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io");
     ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk");

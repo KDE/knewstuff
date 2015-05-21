@@ -289,10 +289,10 @@ void KMoreToolsTest2::testDialogForGroupingNames()
 {
     // show resulting menu
     auto dlg = new QDialog();
-    auto labelInfo = new QLabel(_("First, select a grouping name. Then a menu will be created that you can try out. Leave the URL box empty to give no URL. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
+    auto labelInfo = new QLabel(_("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or http://). Then, select a grouping name. => A menu will be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
     labelInfo->setWordWrap(true);
     auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
-    auto labelLineEdit = new QLabel(_("URL 1:"), dlg);
+    auto labelLineEdit = new QLabel(_("URL 1 (file://..., http://...)"), dlg);
     auto urlLineEdit = new QLineEdit(dlg);
     urlLineEdit->setText(_("file:///etc/bash.bashrc"));
     auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
@@ -336,6 +336,7 @@ void KMoreToolsTest2::testDialogForGroupingNames()
     vLayout->addWidget(selectButton);
     vLayout->addWidget(menuButton);
     dlg->setLayout(hLayout);
+    dlg->setBaseSize(300, 150);
     QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
         qDebug () << "delete dlg;";
         delete dlg;

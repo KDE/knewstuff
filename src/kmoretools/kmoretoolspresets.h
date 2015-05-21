@@ -82,6 +82,8 @@ public:
      * - "screenshot-take"
      *      collection of screenshot-taking tools
      *
+     * For URL arguments see also QUrl::fromLocalFile.
+     *
      * todo: handle overlapping groupings
      * todo later: additional groupings: "screenshot-edit", "textfile-edit" etc.
      */
