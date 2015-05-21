@@ -474,7 +474,7 @@ public:
      * Will override the "Exec=" line of the service. Will only apply if the
      * service is installed.
      *
-     * @see KServcie::setExec(...)
+     * @see KService::setExec(...)
      */
     void setExec(const QString& exec);
 

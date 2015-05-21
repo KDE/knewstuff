@@ -56,7 +56,8 @@ public:
      * KMoreToolsPresets::registerServicesByGroupingNames.
      *
      * For each grouping name there might be special handlings that take the
-     * given @p url (may be empty) into account if needed.
+     * optional given @p url into account if needed. By default the url is
+     * empty.
      *
      * Furthermore, some selected menu items will be put into the "More"
      * menu section by default.
@@ -77,7 +78,7 @@ public:
      * configure the menu (see KMoreTools).
      */
     QMenu* createMenuFromGroupingNames(const QStringList& groupingNames,
-                                       const QUrl& url);
+                                       const QUrl& url = QUrl());
 
 private:
     // Note that this object must live long enough in case the user opens
