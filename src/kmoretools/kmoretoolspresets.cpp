@@ -46,7 +46,9 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 
     //
     // definitions begin:
-    //
+    //                                              .------ If one gives more URL arguments as
+    //                                              |       specified here the program will not work.
+    //                                              v
     ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io");
     ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io");
     ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk");
@@ -88,12 +90,21 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
 {
     static QHash<QString, QList<QString>> dict;
 
+    // The corresponding desktop files are located here:
+    // 'knewstuff/data/kmoretools-desktopfiles/'
+
+    // Use KMoreToolsTest2::testDialogForGroupingNames to see if the settings
+    // here are correct.
+
+    // NOTE that the desktopentry names must be registered in
+    // registerServiceByDesktopEntryName above.
+
     //
     // definitions begin:
     //
     dict.insert("disk-usage", { "kdf", "org.kde.filelight" });
     dict.insert("disk-partitions", { "gparted", "partitionmanager", "disk" });
-    dict.insert("git-clients", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
+    dict.insert("git-clients-for-folder", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("screenshot-take", { "org.kde.ksnapshot", "org.kde.kscreengenie", "shutter", "kaption", "hotshots" });
     //

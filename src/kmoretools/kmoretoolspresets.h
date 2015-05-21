@@ -28,7 +28,7 @@ class KMoreTools;
 class KMoreToolsService;
 
 /**
- * Provides static methods to make use of all desktop files provided by
+ * Provides static methods to make use of desktop files provided by
  * KMoreTools.
  *
  * registerServiceByDesktopEntryName creates a KMoreToolsService instance
@@ -41,6 +41,10 @@ class KMoreToolsService;
  *
  * The groupings defined here are used for the KMoreToolsMenuFactory.
  *
+ * (todo later: Probably it would make sense to move the methods of
+ * this class to KMoreToolsMenuFactory because grouping names and special
+ * handling are too much coupled anyway.)
+ *
  * @since 5.10
  */
 class KNEWSTUFF_EXPORT KMoreToolsPresets
@@ -52,17 +56,25 @@ public:
      * Available grouping names (in alphabetical order):
      *
      * - "disk-usage"
-     *      disk usage tools as currently used in dolphin
+     *      Disk usage tools as currently used in dolphin.
+     *      Some take 1 URL argument pointing to a directory.
      *
      * - "disk-partitions"
-     *      disk partition tools as currently used in dolphin
+     *      Disk partition tools as currently used in dolphin.
      *
-     * - "git-clients"
-     *      collection of git clients
+     * - "git-clients-for-folder"
+     *      Collection of git clients which all take 1 URL argument pointing
+     *      to a directory within a git repository. It may not be the
+     *      git repo's root dir.
+     *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/"
      *
      * - "git-clients-and-actions"
-     *      git clients and actions to be used in a file tree context menu
-     *      (e.g. in kate's project plugin)
+     *      Git clients and actions to be used in a file tree context menu
+     *      (e.g. in kate's project plugin).
+     *      1 URL argument can be provided that points to a directory or a
+     *      file within a git repository.
+     *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/"
+     *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/CMakeLists.txt"
      *
      * - "screenshot-take"
      *      collection of screenshot-taking tools
