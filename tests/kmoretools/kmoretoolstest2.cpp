@@ -22,6 +22,7 @@
 #include <../src/kmoretools/kmoretools.h>
 #include <../src/kmoretools/kmoretools_p.h>
 #include <../src/kmoretools/kmoretoolspresets.h>
+#include <../src/kmoretools/kmoretoolsmenufactory.h>
 
 #include <QTest>
 #include <QRegularExpression>
@@ -29,6 +30,7 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QLineEdit>
 
 #define _ QLatin1String
 
@@ -50,6 +52,7 @@ private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-pr
     void testConfigDialogSomeNotInstalled();
     void testConfigDialogNotInstalled1Service2Items();
     void test_buildMenu_WithQActions_interative1();
+    void testDialogForGroupingNames();
 
 public:
     static const bool enableInteractiveTests = true;
@@ -276,6 +279,64 @@ void KMoreToolsTest2::testConfigDialogNotInstalled1Service2Items()
     }
 
     testConfigDialogImpl(true, true, _("TEST more than one item for one not installed service"));
+}
+
+void KMoreToolsTest2::testDialogForGroupingNames()
+{
+    // show resulting menu
+    auto dlg = new QDialog();
+    auto labelInfo = new QLabel(_("First, select a grouping name. Then a menu will be created that you can try out. Leave the URL box empty to give no URL. If applications don't start try: eval `dbus-launch`"), dlg);
+    labelInfo->setWordWrap(true);
+    auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
+    auto labelLineEdit = new QLabel(_("URL 1:"), dlg);
+    auto urlLineEdit = new QLineEdit(dlg);
+    urlLineEdit->setText(_("file:///etc/bash.bashrc"));
+    auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
+
+    auto groupingNamesList = {
+        _("disk-usage"), _("disk-partitions"),
+        _("git-clients-for-folder"), _("git-clients-and-actions"),
+        _("screenshot-take")
+    };
+
+    KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));
+
+    auto groupingNamesMenu = new QMenu(dlg);
+    QMenu* moreToolsMenu = nullptr;
+    Q_FOREACH(auto groupingName, groupingNamesList) {
+        auto action = new QAction(groupingName, groupingNamesMenu);
+        action->setData(groupingName);
+        groupingNamesMenu->addAction(action);
+
+        QObject::connect(action, &QAction::triggered, action,
+                         [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() {
+            auto groupingName = action->data().toString();
+            QUrl url;
+            if (!urlLineEdit->text().isEmpty()) {
+                url.setUrl(urlLineEdit->text());
+            }
+            moreToolsMenu = menuFactory.createMenuFromGroupingNames({ groupingName }, url);
+            menuButton->setText(QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName).arg(url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
+            menuButton->setMenu(moreToolsMenu);
+        });
+    }
+
+    selectButton->setMenu(groupingNamesMenu);
+
+    auto hLayout = new QHBoxLayout();
+    auto vLayout = new QVBoxLayout();
+    hLayout->addWidget(labelInfo);
+    hLayout->addLayout(vLayout);
+    vLayout->addWidget(labelLineEdit);
+    vLayout->addWidget(urlLineEdit);
+    vLayout->addWidget(selectButton);
+    vLayout->addWidget(menuButton);
+    dlg->setLayout(hLayout);
+    QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
+        qDebug () << "delete dlg;";
+        delete dlg;
+    });
+    dlg->exec();
 }
 
 QTEST_MAIN(KMoreToolsTest2)
