@@ -285,7 +285,7 @@ void KMoreToolsTest2::testDialogForGroupingNames()
 {
     // show resulting menu
     auto dlg = new QDialog();
-    auto labelInfo = new QLabel(_("First, select a grouping name. Then a menu will be created that you can try out. Leave the URL box empty to give no URL. If applications don't start try: eval `dbus-launch`"), dlg);
+    auto labelInfo = new QLabel(_("First, select a grouping name. Then a menu will be created that you can try out. Leave the URL box empty to give no URL. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
     labelInfo->setWordWrap(true);
     auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
     auto labelLineEdit = new QLabel(_("URL 1:"), dlg);
@@ -296,7 +296,7 @@ void KMoreToolsTest2::testDialogForGroupingNames()
     auto groupingNamesList = {
         _("disk-usage"), _("disk-partitions"),
         _("git-clients-for-folder"), _("git-clients-and-actions"),
-        _("screenshot-take")
+        _("icon-browser"), _("screenshot-take")
     };
 
     KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));

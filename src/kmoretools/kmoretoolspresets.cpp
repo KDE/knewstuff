@@ -59,6 +59,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller");
     ADD_ENTRY("kdf",                                0, "https://www.kde.org/applications/system/kdiskfree");
     ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
+    ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/");
     ADD_ENTRY("hotshots",                           1, "http://sourceforge.net/projects/hotshots/");
     ADD_ENTRY("kaption",                            0, "http://kde-apps.org/content/show.php/?content=139302");
     ADD_ENTRY("org.kde.kscreengenie",               0, "http://quickgit.kde.org/?p=kscreengenie.git");
@@ -106,6 +107,7 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     dict.insert("disk-partitions", { "gparted", "partitionmanager", "disk" });
     dict.insert("git-clients-for-folder", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
+    dict.insert("icon-browser", { "org.kde.plasma.cuttlefish.kmt-edition" });
     dict.insert("screenshot-take", { "org.kde.ksnapshot", "org.kde.kscreengenie", "shutter", "kaption", "hotshots" });
     //
     // ...definitions end

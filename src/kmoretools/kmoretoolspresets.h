@@ -76,6 +76,9 @@ public:
      *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/"
      *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/CMakeLists.txt"
      *
+     * - "icon-browser"
+     *      browse for icons on your system (e.g. those under /usr/share/icons)
+     *
      * - "screenshot-take"
      *      collection of screenshot-taking tools
      *
