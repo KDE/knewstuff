@@ -28,10 +28,20 @@ knewstuff_executable_tests(
 # KMoreTools:
 add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp)
 add_test(kmoretoolstest2 kmoretoolstest2)
-ecm_mark_as_test(kmoretoolstest2)
+# The next line is ommented out to prevent from CI server to pick up those tests.
+# Uncomment to run it locally:
+# ecm_mark_as_test(kmoretoolstest2)
 target_link_libraries(kmoretoolstest2 Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)
-install(FILES kmoretools/2/kate.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2 RENAME kate.desktop)
-install(FILES kmoretools/2/kate.png DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2)
-install(FILES kmoretools/2/mynotinstalledapp.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2 RENAME mynotinstalledapp.desktop)
-install(FILES kmoretools/2/mynotinstalledapp.png DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2)
-install(FILES kmoretools/2/mynotinstapp2.desktop.notranslate DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2 RENAME mynotinstapp2.desktop)
+install(FILES kmoretools/2/kate.desktop.notranslate
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2
+        RENAME kate.desktop)
+install(FILES kmoretools/2/kate.png
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2)
+install(FILES kmoretools/2/mynotinstalledapp.desktop.notranslate
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2
+        RENAME mynotinstalledapp.desktop)
+install(FILES kmoretools/2/mynotinstalledapp.png
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2)
+install(FILES kmoretools/2/mynotinstapp2.desktop.notranslate
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/2
+        RENAME mynotinstapp2.desktop)
