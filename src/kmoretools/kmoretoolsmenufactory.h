@@ -26,6 +26,7 @@
 
 class KMoreTools;
 class KMoreToolsService;
+class KMoreToolsMenuFactoryPrivate;
 
 /**
  * This is the class with the highest abstraction in KMoreTools.
@@ -81,11 +82,7 @@ public:
                                        const QUrl& url = QUrl());
 
 private:
-    // Note that this object must live long enough in case the user opens
-    // the "Configure..." dialog
-    KMoreTools* m_kmt = nullptr;
-
-    QMenu* m_menu = nullptr;
+    KMoreToolsMenuFactoryPrivate* d;
 };
 
 #endif

@@ -26,17 +26,30 @@
 #include <KNS3/KMoreTools>
 #include <KNS3/KMoreToolsPresets>
 
-KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
-    : m_kmt (new KMoreTools(uniqueId))
+class KMoreToolsMenuFactoryPrivate
 {
+public:
+    // Note that this object must live long enough in case the user opens
+    // the "Configure..." dialog
+    KMoreTools* kmt = nullptr;
+
+    QMenu* menu = nullptr;
+};
+
+KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
+    : d(new KMoreToolsMenuFactoryPrivate())
+{
+    d->kmt = new KMoreTools(uniqueId);
 }
 
 KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
 {
-    if (m_menu) {
-        delete m_menu;
+    if (d->menu) {
+        delete d->menu;
     }
-    delete m_kmt;
+    delete d->kmt;
+
+    delete d;
 }
 
 void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
@@ -173,13 +186,13 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
     const QStringList& groupingNames,
     const QUrl& url)
 {
-    if (m_menu) {
-        delete m_menu;
+    if (d->menu) {
+        delete d->menu;
     }
 
-    m_menu = new QMenu();
+    d->menu = new QMenu();
 
-    const auto menuBuilder = m_kmt->menuBuilder();
+    const auto menuBuilder = d->kmt->menuBuilder();
     menuBuilder->clear();
 
     bool isMoreSection = false;
@@ -192,18 +205,18 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
         }
 
         auto kmtServiceList = KMoreToolsPresets::registerServicesByGroupingNames(
-                                  m_kmt, { groupingName });
+                                  d->kmt, { groupingName });
 
         addItemsForGroupingName(menuBuilder,
-                                m_menu,
+                                d->menu,
                                 kmtServiceList,
                                 groupingName,
                                 url,
                                 isMoreSection);
     }
 
-    menuBuilder->buildByAppendingToMenu(m_menu);
+    menuBuilder->buildByAppendingToMenu(d->menu);
 
-    return m_menu;
+    return d->menu;
 }
 
