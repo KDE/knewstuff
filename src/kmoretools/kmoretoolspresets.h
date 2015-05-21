@@ -49,23 +49,35 @@ public:
     /**
      * @Returns an _ordered_ list of KMoreToolsService instances
      *
-     * Available grouping names:
-     * "git-clients"
-     * "git-clients-and-actions"
-     * "disk-usage"
-     * "disk-partitions"
-     * "screenshot-take"
+     * Available grouping names (in alphabetical order):
+     *
+     * - "disk-usage"
+     *      disk usage tools as currently used in dolphin
+     *
+     * - "disk-partitions"
+     *      disk partition tools as currently used in dolphin
+     *
+     * - "git-clients"
+     *      collection of git clients
+     *
+     * - "git-clients-and-actions"
+     *      git clients and actions to be used in a file tree context menu
+     *      (e.g. in kate's project plugin)
+     *
+     * - "screenshot-take"
+     *      collection of screenshot-taking tools
      *
      * todo: handle overlapping groupings
      * todo later: additional groupings: "screenshot-edit", "textfile-edit" etc.
      */
-    static QList<KMoreToolsService*> registerServicesByGroupingNames(KMoreTools* kmt, const QStringList& groupingNames);
+    static QList<KMoreToolsService*> registerServicesByGroupingNames(
+        KMoreTools* kmt, const QStringList& groupingNames);
 
     /**
      * Registers a service who's kmt-desktopfile is provided by the
-     * KMoreTools library itself. If the kmt-desktopfile is missing the
-     * service is still created but with no translations and icon if the service
-     * is not installed.
+     * KMoreTools library itself (see directory kmoretools-desktopfiles).
+     * If the kmt-desktopfile is missing the service is still created
+     * but with no translations and icon if the service is not installed.
      *
      * Associates a homepage URL because a regular .desktop file has got
      * no field for this information.
@@ -74,15 +86,17 @@ public:
      * desktop filenames end with .kmt-edition.desktop.
      *
      * todo: how to avoid the "Do you trust this program?" question when a
-     * non-installed kmt-edition desktop file is used but the program is installed?
+     * non-installed kmt-edition desktopfile is used but the program is installed?
      * Possible solution: install all .kmt-edition files to proper desktop
      * file location.
      *
-     * todo: make this a list instead of a single pointer
-     *
      * @returns the added KMoreToolsService
      */
-    static KMoreToolsService* registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName);
+    static KMoreToolsService* registerServiceByDesktopEntryName(
+        KMoreTools* kmt, const QString& desktopEntryName);
+
+    // todo later: add another method registerServiceByDesktopEntryNames (plural) that handles
+    // a list of desktopEntryNames.
 };
 
 #endif

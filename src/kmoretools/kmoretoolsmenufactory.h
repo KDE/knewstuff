@@ -30,8 +30,8 @@ class KMoreToolsService;
 /**
  * This is the class with the highest abstraction in KMoreTools.
  *
- * Creates a QMenu from a list of grouping names,
- * see KMoreToolsPresets::registerServicesByGroupingNames
+ * Creates a QMenu from a list of grouping names. For details on available
+ * grouping names see KMoreToolsPresets::registerServicesByGroupingNames.
  *
  * @since 5.10
  */
@@ -39,7 +39,10 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuFactory
 {
 public:
     /**
-     * see KMoreTools::KMoreTools
+     * @param uniqueId defines the config section name where the user
+     * settings done by the Configure dialog will be stored.
+     *
+     * For more information about the parameter see KMoreTools::KMoreTools.
      */
     KMoreToolsMenuFactory(const QString& uniqueId);
 
@@ -49,22 +52,25 @@ public:
      * First, an empty QMenu is created. Then, for each grouping name
      * menu items will be created an appended to the menu.
      *
+     * For details on available grouping names see
+     * KMoreToolsPresets::registerServicesByGroupingNames.
+     *
      * For each grouping name there might be special handlings that take the
      * given @p url (may be empty) into account if needed.
      *
      * Furthermore, some selected menu items will be put into the "More"
      * menu section by default.
      *
-     * "more:"
-     * -------
+     * The "more:" grouping name
+     * -------------------------
      * There is a special grouping name "more:" (note the colon). If this name
      * is given in the list, all further groupings are put into the More
      * section by default.
-     * (todo later: if needed this could be made configurable more fine-grained)
      *
      * NOTE that this method overrides a previously created QMenu* instance
-     * of the same KMoreToolsMenuFactory instance. (todo: solve this or
-     * rename the class?)
+     * of the same KMoreToolsMenuFactory instance. The reason is that the
+     * internal KMoreTools pointer is reused.
+     * (todo: solve this or rename the class?)
      *
      * @returns the created QMenu which includes a Main and (maybe) a More
      * section and an item that starts configure dialog where the user can

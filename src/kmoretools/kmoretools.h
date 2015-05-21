@@ -157,10 +157,10 @@ class KMoreToolsPrivate;
  * - With desktopfiles translation can be reused.
  * - They provide a unified interface for dealing with program arguments.
  *
- * TODOs
- * -----
+ *
+ * todo later
+ * ----------
  * - question: KMoreTools::registerServiceByDesktopEntryName():
- *      - is the term "desktopEntryName" correct here?
  *      - warn if service is not of Type=Application (KService::isApplication()) or just leave it?
   * Add support for package managers to install software (e.g. muon discover)
  * - maybe: kmt-desktopfiles: add a config file that can configure the homepage URLs
@@ -254,11 +254,16 @@ public:
 public:
     /**
      * @param uniqueId defines two things
-     * 1) where the kmt-desktopfiles should be installed because there
-     *    they will be searched by default (see also ... TODO ... overwrite)
-     *    if @p uniqueId contains slashes they will result in subdirectories.
-     * 2) The config section where the user configuration set by the dialog
-     *    will be stored
+     * 1) the config section name where the user settings done by the Configure
+     *    dialog will be stored.
+     * 2) the location where the kmt-desktopfiles should be installed because
+     *    there they will be searched by default.
+     *    If @p uniqueId contains slashes they will result in subdirectories.
+     *    The default location can be overriden by
+     *    registerServiceByDesktopEntryName's kmtDesktopfileSubdir parameter.
+     *    This is currently used in KMoreToolsPresets implementation to
+     *    separate the kmt-desktopfiles location from the user's config section
+     *    name.
      *
      * Install Desktopfiles
      * --------------------
