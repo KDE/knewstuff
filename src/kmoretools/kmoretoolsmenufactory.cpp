@@ -52,7 +52,8 @@ KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
     delete d;
 }
 
-void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
+// "file static" => no symbol will be exported
+static void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
                       QMenu* menu,
                       QList<KMoreToolsService*> kmtServiceList,
                       const QUrl& url,
@@ -91,7 +92,8 @@ void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
     }
 }
 
-void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
+// "file static" => no symbol will be exported
+static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
                              QMenu* menu,
                              QList<KMoreToolsService*> kmtServiceList,
                              const QString& groupingName,
