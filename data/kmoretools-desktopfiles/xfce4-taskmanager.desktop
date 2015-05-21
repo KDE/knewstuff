@@ -1,0 +1,12 @@
+[Desktop Entry]
+X-SuSE-translate=true
+Name=Task Manager
+Comment=Easy to use task manager
+GenericName=Task Manager
+Exec=xfce4-taskmanager
+Icon=utilities-system-monitor
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=GTK;System;Monitor;
+

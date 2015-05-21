@@ -88,7 +88,13 @@ public:
      *      (e.g. those under /usr/share/icons).
      *
      * - "screenshot-take"
-     *      Collection of screenshot-taking tools
+     *      Collection of screenshot-taking tools.
+     *
+     * - "system-monitor-processes"
+     *      Tools to monitor the running processes on the system.
+
+     * - "system-monitor-logs"
+     *      Tools to view system logs.
      *
      * For URL arguments see also QUrl::fromLocalFile.
      *

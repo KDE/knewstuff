@@ -301,7 +301,8 @@ void KMoreToolsTest2::testDialogForGroupingNames()
         _("disk-usage"), _("disk-partitions"),
         _("files-find"),
         _("git-clients-for-folder"), _("git-clients-and-actions"),
-        _("icon-browser"), _("screenshot-take")
+        _("icon-browser"), _("screenshot-take"),
+        _("system-monitor-processes"), _("system-monitor-logs")
     };
 
     KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));

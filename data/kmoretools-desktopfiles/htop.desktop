@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+X-SuSE-translate=true
+Version=1.0
+Name=Htop
+Type=Application
+Comment=Show System Processes
+Terminal=true
+Exec=htop
+Icon=htop
+Categories=System;Monitor;System;
+GenericName=Process Viewer
+
