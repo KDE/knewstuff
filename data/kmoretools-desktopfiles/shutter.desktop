@@ -1,3 +1,6 @@
+# Modified for KMoreTools:
+# remove the Actions line as it results in warnings
+
 [Desktop Entry]
 X-SuSE-translate=true
 Version=1.0
@@ -69,6 +72,3 @@ Terminal=false
 Type=Application
 Categories=Utility;X-SuSE-DesktopUtility;
 MimeType=image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;
-Actions=Redo;Select;Screen;Window;Active;
-
-
