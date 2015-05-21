@@ -65,9 +65,11 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("kdf",                                0, "https://www.kde.org/applications/system/kdiskfree");
     ADD_ENTRY("kfind",                              1, "https://www.kde.org/applications/utilities/kfind/");
     ADD_ENTRY("ksystemlog",                         0, "https://www.kde.org/applications/system/ksystemlog/");
+    ADD_ENTRY("org.gnome.clocks",                   0, "https://wiki.gnome.org/Apps/Clocks");
     ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
     ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/");
     ADD_ENTRY("org.kde.ksysguard",                  0, "https://userbase.kde.org/KSysGuard");
+    ADD_ENTRY("org.kde.ktimer",                     0, "https://www.kde.org/applications/utilities/ktimer/");
     ADD_ENTRY("hotshots",                           1, "http://sourceforge.net/projects/hotshots/");
     ADD_ENTRY("kaption",                            0, "http://kde-apps.org/content/show.php/?content=139302");
     ADD_ENTRY("org.kde.kscreengenie",               0, "http://quickgit.kde.org/?p=kscreengenie.git");
@@ -121,6 +123,7 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     dict.insert("screenshot-take", { "org.kde.ksnapshot", "org.kde.kscreengenie", "shutter", "kaption", "hotshots" });
     dict.insert("system-monitor-processes", { "org.kde.ksysguard", "htop", "xfce4-taskmanager" });
     dict.insert("system-monitor-logs", { "ksystemlog" });
+    dict.insert("time-countdown", { "org.gnome.clocks", "org.kde.ktimer" });
     //
     // ...definitions end
     //

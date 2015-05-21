@@ -96,6 +96,9 @@ public:
      * - "system-monitor-logs"
      *      Tools to view system logs.
      *
+     * - "time-countdown"
+     *      Tools for counting down the time and maybe trigger custom a action.
+     *
      * For URL arguments see also QUrl::fromLocalFile.
      *
      * todo: handle overlapping groupings

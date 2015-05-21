@@ -302,7 +302,8 @@ void KMoreToolsTest2::testDialogForGroupingNames()
         _("files-find"),
         _("git-clients-for-folder"), _("git-clients-and-actions"),
         _("icon-browser"), _("screenshot-take"),
-        _("system-monitor-processes"), _("system-monitor-logs")
+        _("system-monitor-processes"), _("system-monitor-logs"),
+        _("time-countdown")
     };
 
     KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));
