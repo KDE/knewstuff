@@ -52,7 +52,17 @@ void addItemsFromList(KMoreToolsMenuBuilder* menuBuilder,
                         KMoreTools::MenuSection_More : KMoreTools::MenuSection_Main);
 
         if (kmtService->isInstalled()) {
-            const auto kService = kmtService->installedService();
+            auto kService = kmtService->installedService();
+
+            if (!kService) {
+                // if the corresponding desktop file is not installed
+                // then the isInstalled was true because of the Exec line check
+                // and we use the desktopfile provided by KMoreTools.
+                // Otherwise *kService would crash.
+                qDebug() << "Desktop file not installed:" << kmtService->desktopEntryName() << "=> Use desktop file provided by KMoreTools";
+                kService = kmtService->kmtProvidedService();
+            }
+
             if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
                 menu->connect(menuItem->action(), &QAction::triggered, menu,
                 [kService, url](bool) {
@@ -146,8 +156,7 @@ void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
 
         addItemsFromList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
 
-        // set back to default
-        menuBuilder->setInitialItemTextTemplate("$GenericName");
+        menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
 
         return; // skip processing remaining list (would result in duplicates)
     }
@@ -155,7 +164,9 @@ void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
     //
     // default handling (or process remaining list)
     //
+    menuBuilder->setInitialItemTextTemplate("$Name"); // just use the application name
     addItemsFromList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+    menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
 }
 
 QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
