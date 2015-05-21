@@ -299,6 +299,7 @@ void KMoreToolsTest2::testDialogForGroupingNames()
 
     auto groupingNamesList = {
         _("disk-usage"), _("disk-partitions"),
+        _("files-find"),
         _("git-clients-for-folder"), _("git-clients-and-actions"),
         _("icon-browser"), _("screenshot-take")
     };

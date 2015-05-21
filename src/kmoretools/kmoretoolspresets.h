@@ -51,9 +51,10 @@ class KNEWSTUFF_EXPORT KMoreToolsPresets
 {
 public:
     /**
-     * @Returns an _ordered_ list of KMoreToolsService instances
+     * @Returns an _ordered_ list of KMoreToolsService instances.
+     * The most popular or recommended tools will be listed first.
      *
-     * Available grouping names (in alphabetical order):
+     * Available grouping names (listed in alphabetical order):
      *
      * - "disk-usage"
      *      Disk usage tools as currently used in dolphin.
@@ -62,6 +63,11 @@ public:
      * - "disk-partitions"
      *      Disk partition tools as currently used in dolphin.
      *
+     * - "files-find"
+     *      Tools to find files on disk.
+     *      You can specify 1 URL argument that points to the directory
+     *      where the search should be started.
+     *
      * - "git-clients-for-folder"
      *      Collection of git clients which all take 1 URL argument pointing
      *      to a directory within a git repository. It may not be the
@@ -69,18 +75,20 @@ public:
      *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/"
      *
      * - "git-clients-and-actions"
-     *      Git clients and actions to be used in a file tree context menu
-     *      (e.g. in kate's project plugin).
+     *      Git clients and actions (e.g. View History for a specific file)
+     *      to be used in a file tree context menu (e.g. in kate's project
+     *      plugin).
      *      1 URL argument can be provided that points to a directory or a
      *      file within a git repository.
-     *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/"
-     *      e.g. "file:///home/user1/dev/kf5/src/frameworks/knewstuff/data/CMakeLists.txt"
+     *      e.g. "file:///home/user1/dev/knewstuff/data/"
+     *      e.g. "file:///home/user1/dev/knewstuff/data/CMakeLists.txt"
      *
      * - "icon-browser"
-     *      browse for icons on your system (e.g. those under /usr/share/icons)
+     *      Browse for icons on your system
+     *      (e.g. those under /usr/share/icons).
      *
      * - "screenshot-take"
-     *      collection of screenshot-taking tools
+     *      Collection of screenshot-taking tools
      *
      * For URL arguments see also QUrl::fromLocalFile.
      *
