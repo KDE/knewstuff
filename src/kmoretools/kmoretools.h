@@ -349,7 +349,7 @@ public:
 
 private:
     /**
-     * No copy semantic. Thus, make copy ctor private.
+     * No copy semantic => private and no implementation
      */
     KMoreTools(const KMoreTools&);
 
@@ -499,7 +499,7 @@ private:
 
 private:
     /**
-     * No copy semantic. Thus, make copy ctor private.
+     * No copy semantic => private and no implementation
      */
     KMoreToolsService(const KMoreTools&);
 
@@ -631,7 +631,7 @@ private:
 
 private:
     /**
-     * No copy semantic. Thus, make copy ctor private.
+     * No copy semantic => private and no implementation
      */
     KMoreToolsMenuBuilder(const KMoreTools&);
 
@@ -658,6 +658,9 @@ class KMoreToolsMenuItemPrivate;
  */
 class KNEWSTUFF_EXPORT KMoreToolsMenuItem
 {
+    friend class KMoreToolsMenuBuilderPrivate;
+    friend class KMoreToolsMenuBuilder;
+
 public:
     /**
      * Auto-generated unique id that tries to be as stable as possible even if the
@@ -741,24 +744,19 @@ public:
      */
     QAction* action() const;
 
-public: // should be protected but impl does not allow it
+private: // internal usage
     /**
-     * @internal INTERNAL USAGE ONLY
-     *
      * Sets the initial item text.
      */
     KMoreToolsMenuItem(KMoreToolsService* registeredService, KMoreTools::MenuSection defaultLocation, const QString& initialItemTextTemplate);
 
-    /**
-     * @internal INTERNAL USAGE ONLY
-     */
     KMoreToolsMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation);
 
     ~KMoreToolsMenuItem();
 
 private:
     /**
-     * No copy semantic. Thus, make copy ctor private.
+     * No copy semantic => private and no implementation
      */
     KMoreToolsMenuItem(const KMoreTools&);
 
