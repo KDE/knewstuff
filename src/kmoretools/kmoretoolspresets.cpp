@@ -63,10 +63,10 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("partitionmanager",                   0, "http://www.partitionmanager.org");
     ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller");
     ADD_ENTRY("kdf",                                0, "https://www.kde.org/applications/system/kdiskfree");
-    ADD_ENTRY("kfind",                              1, "https://www.kde.org/applications/utilities/kfind/");
     ADD_ENTRY("ksystemlog",                         0, "https://www.kde.org/applications/system/ksystemlog/");
     ADD_ENTRY("org.gnome.clocks",                   0, "https://wiki.gnome.org/Apps/Clocks");
     ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
+    ADD_ENTRY("org.kde.kfind",                      1, "https://www.kde.org/applications/utilities/kfind/");
     ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/");
     ADD_ENTRY("org.kde.ksysguard",                  0, "https://userbase.kde.org/KSysGuard");
     ADD_ENTRY("org.kde.ktimer",                     0, "https://www.kde.org/applications/utilities/ktimer/");
@@ -116,7 +116,7 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     //
     dict.insert("disk-usage", { "kdf", "org.kde.filelight" });
     dict.insert("disk-partitions", { "gparted", "partitionmanager", "disk" });
-    dict.insert("files-find", { "kfind", "catfish" });
+    dict.insert("files-find", { "org.kde.kfind", "catfish" });
     dict.insert("git-clients-for-folder", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("icon-browser", { "org.kde.plasma.cuttlefish.kmt-edition" });
