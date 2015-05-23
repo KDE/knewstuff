@@ -1,6 +1,26 @@
 [Desktop Entry]
 Name=KSysGuard
+Name[ca]=KSysGuard
+Name[es]=KSysGuard
+Name[gl]=KSysGuard
+Name[nl]=KSysGuard
+Name[pl]=Monitor systemu KDE
+Name[pt]=KSysGuard
+Name[pt_BR]=KSysGuard
+Name[sv]=KDE:s systemövervakare
+Name[uk]=KSysGuard
+Name[x-test]=xxKSysGuardxx
 GenericName=System Monitor
+GenericName[ca]=Controlador del sistema
+GenericName[es]=Monitor del sistema
+GenericName[gl]=Vixilante do sistema
+GenericName[nl]=Systeemmonitor
+GenericName[pl]=Monitor systemu
+GenericName[pt]=Monitor do Sistema
+GenericName[pt_BR]=Monitor do sistema
+GenericName[sv]=Systemövervakare
+GenericName[uk]=Нагляд за системою
+GenericName[x-test]=xxSystem Monitorxx
 Exec=ksysguard %U
 Icon=utilities-system-monitor
 Type=Application
