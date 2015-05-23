@@ -81,6 +81,22 @@ public:
     QMenu* createMenuFromGroupingNames(const QStringList& groupingNames,
                                        const QUrl& url = QUrl());
 
+    /**
+     * See createMenuFromGroupingNames except that the menu is not created
+     * but you have to provide one yourself. This is useful to create
+     * lazy menus by connecting QMenu::aboutToShow.
+     *
+     * WARN 1: KMoreToolsMenuFactory must live as long as you would like to use
+     * the menu.
+     *
+     * WARN 2: You must NOT reuse an existing KMoreToolsMenuFactory instance
+     * to create a different menu.
+     *
+     * @since 5.11
+     */
+    void fillMenuFromGroupingNames(QMenu* menu, const QStringList& groupingNames,
+                                   const QUrl& url = QUrl());
+
 private:
     KMoreToolsMenuFactoryPrivate* d;
 };

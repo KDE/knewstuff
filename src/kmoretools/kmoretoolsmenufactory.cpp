@@ -49,6 +49,7 @@ KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
     if (d->menu) {
         delete d->menu;
     }
+
     delete d->kmt;
 
     delete d;
@@ -235,6 +236,13 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
 
     d->menu = new QMenu();
 
+    fillMenuFromGroupingNames(d->menu, groupingNames, url);
+
+    return d->menu;
+}
+
+void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QStringList& groupingNames, const QUrl& url)
+{
     const auto menuBuilder = d->kmt->menuBuilder();
     menuBuilder->clear();
 
@@ -251,15 +259,12 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
                                   d->kmt, { groupingName });
 
         addItemsForGroupingName(menuBuilder,
-                                d->menu,
+                                menu,
                                 kmtServiceList,
                                 groupingName,
                                 url,
                                 isMoreSection);
     }
 
-    menuBuilder->buildByAppendingToMenu(d->menu);
-
-    return d->menu;
+    menuBuilder->buildByAppendingToMenu(menu);
 }
-
