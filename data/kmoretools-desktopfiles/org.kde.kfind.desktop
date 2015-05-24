@@ -6,6 +6,7 @@ Type=Application
 Terminal=false
 Name=Find Files/Folders
 Name[ca]=Cerca de fitxers/carpetes
+Name[en_GB]=Find Files/Folders
 Name[es]=Buscar archivos o carpetas
 Name[gl]=Buscar ficheiros/cartafoles
 Name[nl]=Bestanden/mappen zoeken

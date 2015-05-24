@@ -2,6 +2,7 @@
 GenericName=Screen Capture Program
 GenericName[ca]=Programa de captura de pantalla
 GenericName[de]=Bildschirmfoto-Programm
+GenericName[en_GB]=Screen Capture Program
 GenericName[es]=Programa de captura de pantalla
 GenericName[fi]=Kuvankaappausohjelma
 GenericName[gl]=Programa para facer capturas de pantalla
@@ -24,6 +25,7 @@ GenericName[zh_TW]=畫面擷取程式
 Name=KSnapshot
 Name[ca]=KSnapshot
 Name[de]=KSnapshot
+Name[en_GB]=KSnapshot
 Name[es]=KSnapshot
 Name[fi]=KSnapshot
 Name[gl]=KSnapshot

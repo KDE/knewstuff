@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Countdown Launcher
 GenericName[ca]=Llançador amb compte enrere
+GenericName[en_GB]=Countdown Launcher
 GenericName[es]=Lanzador de cuenta atrás
 GenericName[gl]=Iniciador en conta-atrás
 GenericName[nl]=Starter van aftellen
@@ -16,6 +17,7 @@ Type=Application
 Terminal=false
 Name=KTimer
 Name[ca]=KTimer
+Name[en_GB]=KTimer
 Name[es]=KTimer
 Name[gl]=KTimer
 Name[nl]=KTimer
