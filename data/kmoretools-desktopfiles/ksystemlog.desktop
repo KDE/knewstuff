@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KSystemLog
 Name[ca]=KSystemLog
+Name[de]=KSystemLog
 Name[en_GB]=KSystemLog
 Name[es]=KSystemLog
 Name[gl]=KSystemLog
@@ -19,6 +20,7 @@ Type=Application
 X-DocPath=ksystemlog/index.html
 Comment=System log viewer tool
 Comment[ca]=Eina de visualització dels registres del sistema
+Comment[de]=Betrachter für Systemprotokolle
 Comment[en_GB]=System log viewer tool
 Comment[es]=Herramienta del visor de registros del sistema
 Comment[gl]=Visor dos rexistros do sistema.
@@ -32,6 +34,7 @@ Comment[x-test]=xxSystem log viewer toolxx
 Terminal=false
 GenericName=System Log Viewer
 GenericName[ca]=Visor dels registres del sistema
+GenericName[de]=Systemprotokoll-Betrachter
 GenericName[en_GB]=System Log Viewer
 GenericName[es]=Visor de registros del sistema
 GenericName[gl]=Visor dos rexistros do sistema

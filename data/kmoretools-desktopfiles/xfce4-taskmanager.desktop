@@ -2,6 +2,7 @@
 X-SuSE-translate=true
 Name=Task Manager
 Name[ca]=Gestor de tasques
+Name[de]=Fensterleiste
 Name[en_GB]=Task Manager
 Name[es]=Gestor de tareas
 Name[gl]=Xestor de tarefas
@@ -26,6 +27,7 @@ Comment[uk]=Проста у користуванні програма для к�
 Comment[x-test]=xxEasy to use task managerxx
 GenericName=Task Manager
 GenericName[ca]=Gestor de tasques
+GenericName[de]=Fensterleiste
 GenericName[en_GB]=Task Manager
 GenericName[es]=Gestor de tareas
 GenericName[gl]=Xestor de tarefas

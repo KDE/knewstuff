@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KSysGuard
 Name[ca]=KSysGuard
+Name[de]=KSysGuard
 Name[en_GB]=KSysGuard
 Name[es]=KSysGuard
 Name[gl]=KSysGuard
@@ -13,6 +14,7 @@ Name[uk]=KSysGuard
 Name[x-test]=xxKSysGuardxx
 GenericName=System Monitor
 GenericName[ca]=Controlador del sistema
+GenericName[de]=Systemüberwachung
 GenericName[en_GB]=System Monitor
 GenericName[es]=Monitor del sistema
 GenericName[gl]=Vixilante do sistema
