@@ -27,6 +27,7 @@ Name[sr@latin]=K‑nalazač
 Name[sv]=Hitta filer och kataloger
 Name[uk]=Пошук файлів та тек
 Name[x-test]=xxFind Files/Foldersxx
+Name[zh_TW]=尋找檔案/資料夾
 X-KDE-StartupNotify=true
 OnlyShowIn=KDE;
 Categories=Qt;KDE;Core;
