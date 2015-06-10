@@ -3,6 +3,7 @@
 X-SuSE-translate=true
 Name=Clocks
 Name[ca]=Rellotges
+Name[de]=Uhren
 Name[en_GB]=Clocks
 Name[es]=Relojes
 Name[fi]=Kellot
@@ -26,6 +27,7 @@ Name[x-test]=xxClocksxx
 Name[zh_TW]=時鐘
 GenericName=Clocks
 GenericName[ca]=Rellotges
+GenericName[de]=Uhren
 GenericName[en_GB]=Clocks
 GenericName[es]=Relojes
 GenericName[fi]=Kellot
