@@ -19,6 +19,7 @@ Exec=xdg-su -c "/sbin/yast2 disk"
 
 Name=Partitioner
 Name[ca]=Partitioner
+Name[de]=Partitioner
 Name[en_GB]=Partitioner
 Name[es]=Particionador
 Name[fi]=Osiointityökalu
