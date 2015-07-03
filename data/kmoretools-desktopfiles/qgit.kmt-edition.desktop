@@ -65,6 +65,7 @@ GenericName[zh_CN]= 
 GenericName[zh_TW]=QGit
 Comment=git repository browser
 Comment[ca]=Navegador pel repositori Git
+Comment[de]=Browser für Git-Quelltextarchive
 Comment[en_GB]=git repository browser
 Comment[es]=Explorador del repositorio Git
 Comment[fi]=git-varastokatselin
