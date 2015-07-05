@@ -57,16 +57,16 @@ using namespace KNS3;
 
 Engine::Engine(QObject *parent)
     : QObject(parent)
-    , m_initialized(false)
     , m_installation(new Installation)
     , m_cache(0)
     , m_searchTimer(new QTimer)
+    , m_atticaProviderManager(0)
     , m_currentPage(-1)
     , m_pageSize(20)
     , m_numDataJobs(0)
     , m_numPictureJobs(0)
     , m_numInstallJobs(0)
-    , m_atticaProviderManager(0)
+    , m_initialized(false)
 {
     m_searchTimer->setSingleShot(true);
     m_searchTimer->setInterval(1000);

@@ -205,11 +205,12 @@ class KMoreToolsServicePrivate
 public:
     QString kmtDesktopfileSubdir;
     QString desktopEntryName;
-    bool isInstalled = false;
     KService::Ptr installedService;
     KService::Ptr kmtDesktopfile;
     QUrl homepageUrl;
     int maxUrlArgCount = 0;
+    bool isInstalled = false;
+
 
 public:
     QString getServiceName()
@@ -704,9 +705,9 @@ class KMoreToolsMenuItemPrivate
 public:
     QString id;
     KMoreToolsService* registeredService = nullptr;
-    KMoreTools::MenuSection defaultLocation;
     QString initialItemText;
     QAction* action = nullptr;
+    KMoreTools::MenuSection defaultLocation;
     bool actionAutoCreated = false; // action might stay nullptr even if actionCreated is true
 };
 

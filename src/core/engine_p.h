@@ -196,8 +196,6 @@ private:
 
     void doRequest();
 
-    // If the provider is ready to be used
-    bool m_initialized;
     // handle installation of entries
     Installation *m_installation;
     // read/write cache of entries
@@ -215,6 +213,7 @@ private:
 
     // the current request from providers
     Provider::SearchRequest m_currentRequest;
+    Attica::ProviderManager *m_atticaProviderManager;
 
     // the page that is currently displayed, so it is not requested repeatedly
     int m_currentPage;
@@ -225,7 +224,9 @@ private:
     int m_numDataJobs;
     int m_numPictureJobs;
     int m_numInstallJobs;
-    Attica::ProviderManager *m_atticaProviderManager;
+    // If the provider is ready to be used
+    bool m_initialized;
+
 
     Q_DISABLE_COPY(Engine)
 };
