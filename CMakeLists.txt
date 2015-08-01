@@ -12,7 +12,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
 
-set(REQUIRED_QT_VERSION "5.2")
+set(REQUIRED_QT_VERSION "5.3")
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 
 # Not part of kdelibs
