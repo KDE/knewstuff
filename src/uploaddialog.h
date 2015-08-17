@@ -36,6 +36,7 @@ class Provider;
 
 namespace KNS3
 {
+class UploadDialogPrivate;
 /**
  * @short KNewStuff file upload dialog.
  *
@@ -160,8 +161,7 @@ public Q_SLOTS:
 private:
     bool init(const QString &configfile);
 
-    class Private;
-    Private *const d;
+    UploadDialogPrivate *const d;
 
     Q_PRIVATE_SLOT(d, void _k_nextPage())
     Q_PRIVATE_SLOT(d, void _k_backPage())

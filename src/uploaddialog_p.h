@@ -37,10 +37,10 @@ class KPixmapSequenceWidget;
 
 namespace KNS3
 {
-class UploadDialog::Private
+class UploadDialogPrivate
 {
 public:
-    Private(UploadDialog *q)
+    UploadDialogPrivate(UploadDialog *q)
         : q(q)
         , currentPage(UserPasswordPage)
         , finished(false)

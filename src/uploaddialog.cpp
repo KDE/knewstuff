@@ -49,7 +49,7 @@ Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 using namespace KNS3;
 
-bool UploadDialog::Private::init(const QString &configfile)
+bool UploadDialogPrivate::init(const QString &configfile)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     q->setLayout(layout);
@@ -154,19 +154,19 @@ bool UploadDialog::Private::init(const QString &configfile)
     return success;
 }
 
-void UploadDialog::Private::setBusy(const QString &message)
+void UploadDialogPrivate::setBusy(const QString &message)
 {
     ui.busyLabel->setText(message);
     busyWidget->setVisible(true);
 }
 
-void UploadDialog::Private::setIdle(const QString &message)
+void UploadDialogPrivate::setIdle(const QString &message)
 {
     ui.busyLabel->setText(message);
     busyWidget->setVisible(false);
 }
 
-void UploadDialog::Private::_k_showPage(int page)
+void UploadDialogPrivate::_k_showPage(int page)
 {
     ui.stackedWidget->setCurrentIndex(page);
     setIdle(QString());
@@ -213,7 +213,7 @@ void UploadDialog::Private::_k_showPage(int page)
     _k_updatePage();
 }
 
-void UploadDialog::Private::_k_updatePage()
+void UploadDialogPrivate::_k_updatePage()
 {
     bool firstPage = ui.stackedWidget->currentIndex() == 0;
     backButton->setEnabled(!firstPage && !finished);
@@ -260,7 +260,7 @@ void UploadDialog::Private::_k_updatePage()
     }
 }
 
-void UploadDialog::Private::_k_providersLoaded(const QStringList &providers)
+void UploadDialogPrivate::_k_providersLoaded(const QStringList &providers)
 {
     if (providers.size() == 0) {
         setIdle(i18n("Could not fetch provider information."));
@@ -282,7 +282,7 @@ void UploadDialog::Private::_k_providersLoaded(const QStringList &providers)
     _k_updatePage();
 }
 
-void UploadDialog::Private::_k_providerChanged(const QString &providerName)
+void UploadDialogPrivate::_k_providerChanged(const QString &providerName)
 {
     atticaHelper->setCurrentProvider(providerName);
     QString registerUrl = atticaHelper->provider().getRegisterAccountUrl();
@@ -302,12 +302,12 @@ void UploadDialog::Private::_k_providerChanged(const QString &providerName)
     _k_updatePage();
 }
 
-void UploadDialog::Private::_k_backPage()
+void UploadDialogPrivate::_k_backPage()
 {
     _k_showPage(ui.stackedWidget->currentIndex() - 1);
 }
 
-void UploadDialog::Private::_k_nextPage()
+void UploadDialogPrivate::_k_nextPage()
 {
     // TODO: validate credentials after user name/password have been entered
     if (ui.stackedWidget->currentIndex() == UserPasswordPage) {
@@ -322,7 +322,7 @@ void UploadDialog::Private::_k_nextPage()
     }
 }
 
-void UploadDialog::Private::_k_checkCredentialsFinished(bool success)
+void UploadDialogPrivate::_k_checkCredentialsFinished(bool success)
 {
     ui.providerComboBox->setEnabled(true);
     ui.username->setEnabled(true);
@@ -340,7 +340,7 @@ void UploadDialog::Private::_k_checkCredentialsFinished(bool success)
     }
 }
 
-void UploadDialog::Private::_k_licensesLoaded(const Attica::License::List &licenses)
+void UploadDialogPrivate::_k_licensesLoaded(const Attica::License::List &licenses)
 {
     ui.mLicenseCombo->clear();
     foreach (const Attica::License &license, licenses) {
@@ -348,12 +348,12 @@ void UploadDialog::Private::_k_licensesLoaded(const Attica::License::List &licen
     }
 }
 
-void UploadDialog::Private::_k_currencyLoaded(const QString &currency)
+void UploadDialogPrivate::_k_currencyLoaded(const QString &currency)
 {
     ui.priceCurrency->setText(currency);
 }
 
-void UploadDialog::Private::_k_contentByCurrentUserLoaded(const Attica::Content::List &contentList)
+void UploadDialogPrivate::_k_contentByCurrentUserLoaded(const Attica::Content::List &contentList)
 {
     setIdle(i18n("Fetching your previously updated content finished."));
 
@@ -371,7 +371,7 @@ void UploadDialog::Private::_k_contentByCurrentUserLoaded(const Attica::Content:
 
 }
 
-void UploadDialog::Private::_k_updatedContentFetched(const Attica::Content &content)
+void UploadDialogPrivate::_k_updatedContentFetched(const Attica::Content &content)
 {
     setIdle(i18n("Fetching content data from server finished."));
 
@@ -400,7 +400,7 @@ void UploadDialog::Private::_k_updatedContentFetched(const Attica::Content &cont
     ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
 }
 
-void UploadDialog::Private::_k_previewLoaded(int index, const QImage &image)
+void UploadDialogPrivate::_k_previewLoaded(int index, const QImage &image)
 {
     switch (index) {
     case 1:
@@ -415,20 +415,20 @@ void UploadDialog::Private::_k_previewLoaded(int index, const QImage &image)
     }
 }
 
-void UploadDialog::Private::_k_updateContentsToggled(bool update)
+void UploadDialogPrivate::_k_updateContentsToggled(bool update)
 {
     ui.userContentList->setEnabled(update);
 }
 
 UploadDialog::UploadDialog(QWidget *parent)
-    : QDialog(parent), d(new Private(this))
+    : QDialog(parent), d(new UploadDialogPrivate(this))
 {
     const QString name = QCoreApplication::applicationName();
     init(name + ".knsrc");
 }
 
 UploadDialog::UploadDialog(const QString &configFile, QWidget *parent)
-    : QDialog(parent), d(new Private(this))
+    : QDialog(parent), d(new UploadDialogPrivate(this))
 {
     init(configFile);
 }
@@ -553,12 +553,12 @@ void UploadDialog::setPreviewImageFile(uint number, const QUrl &file)
     }
 }
 
-void UploadDialog::Private::_k_priceToggled(bool priceEnabled)
+void UploadDialogPrivate::_k_priceToggled(bool priceEnabled)
 {
     ui.priceGroupBox->setEnabled(priceEnabled);
 }
 
-void UploadDialog::Private::_k_categoriesLoaded(const Attica::Category::List &loadedCategories)
+void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &loadedCategories)
 {
     categories = loadedCategories;
 
@@ -584,7 +584,7 @@ void UploadDialog::accept()
     QDialog::accept();
 }
 
-void UploadDialog::Private::_k_startUpload()
+void UploadDialogPrivate::_k_startUpload()
 {
     // FIXME: this only works if categories are set in the .knsrc file
     // TODO: ask for confirmation when closing the dialog
@@ -657,7 +657,7 @@ void UploadDialog::Private::_k_startUpload()
     }
 }
 
-void UploadDialog::Private::_k_changePreview1()
+void UploadDialogPrivate::_k_changePreview1()
 {
     const QStringList filters = _supportedMimeTypes();
     QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
@@ -672,7 +672,7 @@ void UploadDialog::Private::_k_changePreview1()
     delete dialog;
 }
 
-void UploadDialog::Private::_k_changePreview2()
+void UploadDialogPrivate::_k_changePreview2()
 {
     const QStringList filters = _supportedMimeTypes();
     QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
@@ -686,7 +686,7 @@ void UploadDialog::Private::_k_changePreview2()
     delete dialog;
 }
 
-void UploadDialog::Private::_k_changePreview3()
+void UploadDialogPrivate::_k_changePreview3()
 {
     const QStringList filters = _supportedMimeTypes();
     QPointer<QFileDialog> dialog = new QFileDialog(q, i18n("Select preview image"));
@@ -700,7 +700,7 @@ void UploadDialog::Private::_k_changePreview3()
     delete dialog;
 }
 
-void UploadDialog::Private::_k_contentAdded(Attica::BaseJob *baseJob)
+void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
 {
     if (baseJob->metadata().error()) {
         if (baseJob->metadata().error() == Attica::Metadata::NetworkError) {
@@ -751,12 +751,12 @@ void UploadDialog::Private::_k_contentAdded(Attica::BaseJob *baseJob)
     }
 }
 
-void UploadDialog::Private::_k_openRegisterAccountWebpage(QString)
+void UploadDialogPrivate::_k_openRegisterAccountWebpage(QString)
 {
     KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), "text/html", q);
 }
 
-void UploadDialog::Private::doUpload(const QString &index, const QUrl &path)
+void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
 {
     QFile file(path.toLocalFile());
     if (!file.open(QIODevice::ReadOnly)) {
@@ -790,35 +790,35 @@ void UploadDialog::Private::doUpload(const QString &index, const QUrl &path)
     }
 }
 
-void UploadDialog::Private::_k_fileUploadFinished(Attica::BaseJob *)
+void UploadDialogPrivate::_k_fileUploadFinished(Attica::BaseJob *)
 {
     ui.uploadContentImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
     finishedContents = true;
     uploadFileFinished();
 }
 
-void UploadDialog::Private::_k_preview1UploadFinished(Attica::BaseJob *)
+void UploadDialogPrivate::_k_preview1UploadFinished(Attica::BaseJob *)
 {
     ui.uploadPreview1ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
     finishedPreview1 = true;
     uploadFileFinished();
 }
 
-void UploadDialog::Private::_k_preview2UploadFinished(Attica::BaseJob *)
+void UploadDialogPrivate::_k_preview2UploadFinished(Attica::BaseJob *)
 {
     ui.uploadPreview2ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
     finishedPreview2 = true;
     uploadFileFinished();
 }
 
-void UploadDialog::Private::_k_preview3UploadFinished(Attica::BaseJob *)
+void UploadDialogPrivate::_k_preview3UploadFinished(Attica::BaseJob *)
 {
     ui.uploadPreview3ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
     finishedPreview3 = true;
     uploadFileFinished();
 }
 
-void UploadDialog::Private::uploadFileFinished()
+void UploadDialogPrivate::uploadFileFinished()
 {
     // FIXME multiple previews
     if (finishedContents && (previewFile1.isEmpty() || finishedPreview1)
@@ -832,14 +832,14 @@ void UploadDialog::Private::uploadFileFinished()
     }
 }
 
-void UploadDialog::Private::_k_detailsLinkLoaded(const QUrl &url)
+void UploadDialogPrivate::_k_detailsLinkLoaded(const QUrl &url)
 {
     ui.contentWebsiteLink->setText(QLatin1String("<a href=\"") + url.toString() + QLatin1String("\">")
                                    + i18nc("A link to the website where the get hot new stuff upload can be seen", "Visit website") + QLatin1String("</a>"));
     ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
 }
 
-QStringList UploadDialog::Private::_supportedMimeTypes() const
+QStringList UploadDialogPrivate::_supportedMimeTypes() const
 {
     QStringList mimeTypes;
     QList<QByteArray> supported = QImageReader::supportedMimeTypes();

@@ -31,7 +31,7 @@ Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 namespace KNS3
 {
-
+class EntryPrivate;
 /**
  * @short KNewStuff information about changed entries
  *
@@ -142,8 +142,7 @@ public:
 private:
     Entry();
 
-    class Private;
-    QExplicitlySharedDataPointer<Private> d;
+    QExplicitlySharedDataPointer<EntryPrivate> d;
 
     friend class EntryInternal;
 };

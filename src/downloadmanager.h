@@ -23,7 +23,7 @@
 
 namespace KNS3
 {
-
+class DownloadManagerPrivate;
 /**
  * KNewStuff update checker.
  * This class can be used to search for KNewStuff items
@@ -123,8 +123,7 @@ private:
     Q_PRIVATE_SLOT(d, void _k_slotProvidersLoaded())
     Q_PRIVATE_SLOT(d, void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry))
     Q_PRIVATE_SLOT(d, void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries))
-    class Private;
-    Private *const d;
+    DownloadManagerPrivate *const d;
     Q_DISABLE_COPY(DownloadManager)
 };
 

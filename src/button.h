@@ -26,7 +26,7 @@
 
 namespace KNS3
 {
-
+class ButtonPrivate;
 /**
  * KHotNewStuff push button that makes using KHNS in an application
  * more convenient by encapsulating most of the details involved in
@@ -91,8 +91,7 @@ protected Q_SLOTS:
 private:
     void init();
 
-    class Private;
-    Private *const d;
+    ButtonPrivate *const d;
 };
 
 }

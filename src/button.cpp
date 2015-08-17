@@ -25,7 +25,7 @@
 
 namespace KNS3
 {
-class Button::Private
+class ButtonPrivate
 {
 public:
     QString configFile;
@@ -35,7 +35,7 @@ Button::Button(const QString &text,
                const QString &configFile,
                QWidget *parent)
     : QPushButton(parent),
-      d(new Private)
+      d(new ButtonPrivate)
 {
     setButtonText(text);
     d->configFile = configFile;
@@ -44,7 +44,7 @@ Button::Button(const QString &text,
 
 Button::Button(QWidget *parent)
     : QPushButton(parent),
-      d(new Private)
+      d(new ButtonPrivate)
 {
     setButtonText(i18n("Download New Stuff..."));
     init();

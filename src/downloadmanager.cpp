@@ -24,13 +24,13 @@
 
 namespace KNS3
 {
-class DownloadManager::Private
+class DownloadManagerPrivate
 {
 public:
     DownloadManager *q;
     Engine *engine;
 
-    Private(DownloadManager *q)
+    DownloadManagerPrivate(DownloadManager *q)
         : q(q)
         , engine(new Engine)
         , isInitialized(false)
@@ -39,7 +39,7 @@ public:
         , page(0)
         , pageSize(100)
     {}
-    ~Private()
+    ~DownloadManagerPrivate()
     {
         delete engine;
     }
@@ -63,7 +63,7 @@ using namespace KNS3;
 
 DownloadManager::DownloadManager(QObject *parent)
     : QObject(parent)
-    , d(new Private(this))
+    , d(new DownloadManagerPrivate(this))
 {
     QString name = QCoreApplication::applicationName();
     d->init(name + ".knsrc");
@@ -71,12 +71,12 @@ DownloadManager::DownloadManager(QObject *parent)
 
 DownloadManager::DownloadManager(const QString &configFile, QObject *parent)
     : QObject(parent)
-    , d(new Private(this))
+    , d(new DownloadManagerPrivate(this))
 {
     d->init(configFile);
 }
 
-void DownloadManager::Private::init(const QString &configFile)
+void DownloadManagerPrivate::init(const QString &configFile)
 {
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(_k_slotProvidersLoaded()));
     q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
@@ -90,7 +90,7 @@ DownloadManager::~DownloadManager()
     delete d;
 }
 
-void DownloadManager::Private::_k_slotProvidersLoaded()
+void DownloadManagerPrivate::_k_slotProvidersLoaded()
 {
     qCDebug(KNEWSTUFF) << "providers loaded";
     isInitialized = true;
@@ -110,7 +110,7 @@ void DownloadManager::checkForUpdates()
     }
 }
 
-void DownloadManager::Private::_k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries)
+void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries)
 {
     KNS3::Entry::List result;
     foreach (const KNS3::EntryInternal &entry, entries) {
@@ -119,7 +119,7 @@ void DownloadManager::Private::_k_slotEntriesLoaded(const KNS3::EntryInternal::L
     emit q->searchResult(result);
 }
 
-void KNS3::DownloadManager::Private::_k_slotEntryStatusChanged(const KNS3::EntryInternal &entry)
+void KNS3::DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNS3::EntryInternal &entry)
 {
     emit q->entryStatusChanged(entry.toEntry());
 }

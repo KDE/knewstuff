@@ -24,7 +24,7 @@
 namespace KNS3
 {
 
-class Entry::Private : public QSharedData
+class EntryPrivate : public QSharedData
 {
 public:
     EntryInternal e;
