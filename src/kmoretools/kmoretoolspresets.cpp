@@ -60,7 +60,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("gitg",                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
     ADD_ENTRY("gparted",                            0, "http://gparted.org");
     ADD_ENTRY("htop",                               0, "http://hisham.hm/htop/");
-    ADD_ENTRY("partitionmanager",                   0, "http://www.partitionmanager.org");
+    ADD_ENTRY("org.kde.PartitionManager",           0, "https://www.kde.org/applications/system/kdepartitionmanager/");
     ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller");
     ADD_ENTRY("kdf",                                0, "https://www.kde.org/applications/system/kdiskfree");
     ADD_ENTRY("ksystemlog",                         0, "https://www.kde.org/applications/system/ksystemlog/");
@@ -115,7 +115,7 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     // definitions begin:
     //
     dict.insert("disk-usage", { "kdf", "org.kde.filelight" });
-    dict.insert("disk-partitions", { "gparted", "partitionmanager", "disk" });
+    dict.insert("disk-partitions", { "gparted", "org.kde.PartitionManager", "disk" });
     dict.insert("files-find", { "org.kde.kfind", "catfish" });
     dict.insert("git-clients-for-folder", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
     dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
