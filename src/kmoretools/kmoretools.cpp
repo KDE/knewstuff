@@ -88,11 +88,10 @@ public:
         const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
         //qDebug() << "---search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
-        //qDebug() << "----QStandardPaths::DataLocation findWhat -> foundPath" << foundPath;
+        //qDebug() << "----QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename) -> foundKmtFile" << foundKmtFile;
 
         return foundKmtFile;
     }
-
 };
 
 KMoreTools::KMoreTools(const QString& uniqueId)
@@ -111,7 +110,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     const QString& kmtDesktopfileSubdir,
     KMoreTools::ServiceLocatingMode serviceLocatingMode)
 {
-    // qDebug() << "* registerServiceByDesktopEntryName(desktopEntryName=" << desktopEntryName;
+    //qDebug() << "* registerServiceByDesktopEntryName(desktopEntryName=" << desktopEntryName;
 
     const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(
             d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
@@ -130,7 +129,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
             qCritical() << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
             return nullptr;
         }
-        // qDebug() << "  INFO: kmt-desktopfile provided.";
+        //qDebug() << "  INFO: kmt-desktopfile provided.";
     } else {
         qWarning() << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.";
         qDebug() << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = " << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
@@ -141,6 +140,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_Default) { // == default behaviour: search for installed services
         installedService = KService::serviceByDesktopName(desktopEntryName);
         isInstalled = installedService != nullptr;
+        //qDebug() << "----- isInstalled: " << isInstalled;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
             qCritical() << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
