@@ -44,7 +44,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories)
         mCategoryMap.insert(category, Attica::Category());
     }
 
-    connect(&m_providerManager, SIGNAL(providerAdded(Attica::Provider)), SLOT(providerLoaded(Attica::Provider)));
+    connect(&m_providerManager, &ProviderManager::providerAdded, this, &AtticaProvider::providerLoaded);
     connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)),
             SLOT(authenticationCredentialsMissing(Provider)));
 }
@@ -73,12 +73,12 @@ void AtticaProvider::authenticationCredentialsMissing(const KNS3::Provider &)
 
 bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
 {
-    if (xmldata.tagName() != "provider") {
+    if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
     }
 
     // FIXME this is quite ugly, repackaging the xml into a string
-    QDomDocument doc("temp");
+    QDomDocument doc(QStringLiteral("temp"));
     // qCDebug(KNEWSTUFF) << "setting provider xml" << doc.toString();
 
     doc.appendChild(xmldata.cloneNode(true));
@@ -106,7 +106,7 @@ void AtticaProvider::providerLoaded(const Attica::Provider &provider)
     m_provider = provider;
 
     Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();
-    connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(listOfCategoriesLoaded(Attica::BaseJob*)));
+    connect(job, &BaseJob::finished, this, &AtticaProvider::listOfCategoriesLoaded);
     job->start();
 }
 
@@ -171,7 +171,7 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
     }
 
     ListJob<Content> *job = m_provider.searchContents(categoriesToSearch, request.searchTerm, sorting, request.page, request.pageSize);
-    connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(categoryContentsLoaded(Attica::BaseJob*)));
+    connect(job, &BaseJob::finished, this, &AtticaProvider::categoryContentsLoaded);
 
     mEntryJob = job;
     job->start();
@@ -181,7 +181,7 @@ void AtticaProvider::checkForUpdates()
 {
     foreach (const EntryInternal &e, mCachedEntries) {
         ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
-        connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(detailsLoaded(Attica::BaseJob*)));
+        connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         m_updateJobs.insert(job);
         job->start();
         // qCDebug(KNEWSTUFF) << "Checking for update: " << e.name();
@@ -191,7 +191,7 @@ void AtticaProvider::checkForUpdates()
 void AtticaProvider::loadEntryDetails(const KNS3::EntryInternal &entry)
 {
     ItemJob<Content> *job = m_provider.requestContent(entry.uniqueId());
-    connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(detailsLoaded(Attica::BaseJob*)));
+    connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
     job->start();
 }
 
@@ -259,14 +259,14 @@ void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkI
     if (desc.hasPrice()) {
         // Ask for balance, then show information...
         ItemJob<AccountBalance> *job = m_provider.requestAccountBalance();
-        connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(accountBalanceLoaded(Attica::BaseJob*)));
+        connect(job, &BaseJob::finished, this, &AtticaProvider::accountBalanceLoaded);
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
 
         // qCDebug(KNEWSTUFF) << "get account balance";
     } else {
         ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(linkId));
-        connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(downloadItemLoaded(Attica::BaseJob*)));
+        connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
 
@@ -295,7 +295,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
                                              item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
                                             )) == KMessageBox::Yes) {
             ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
-            connect(job, SIGNAL(finished(Attica::BaseJob*)), SLOT(downloadItemLoaded(Attica::BaseJob*)));
+            connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
             connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
             mDownloadLinkJobs[job] = qMakePair(entry, pair.second);
             job->start();
@@ -338,7 +338,7 @@ EntryInternal::List AtticaProvider::installedEntries() const
 void AtticaProvider::vote(const EntryInternal &entry, uint rating)
 {
     PostJob *job = m_provider.voteForContent(entry.uniqueId(), rating);
-    connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(votingFinished(Attica::BaseJob*)));
+    connect(job, &BaseJob::finished, this, &AtticaProvider::votingFinished);
     connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
@@ -354,7 +354,7 @@ void AtticaProvider::votingFinished(Attica::BaseJob *job)
 void AtticaProvider::becomeFan(const EntryInternal &entry)
 {
     PostJob *job = m_provider.becomeFan(entry.uniqueId());
-    connect(job, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(becomeFanFinished(Attica::BaseJob*)));
+    connect(job, &BaseJob::finished, this, &AtticaProvider::becomeFanFinished);
     connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
@@ -416,23 +416,23 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setHomepage(content.detailpage());
     entry.setRating(content.rating());
     entry.setDownloadCount(content.downloads());
-    entry.setNumberFans(content.attribute("fans").toInt());
-    entry.setDonationLink(content.attribute("donationpage"));
-    entry.setKnowledgebaseLink(content.attribute("knowledgebasepage"));
-    entry.setNumberKnowledgebaseEntries(content.attribute("knowledgebaseentries").toInt());
+    entry.setNumberFans(content.attribute(QStringLiteral("fans")).toInt());
+    entry.setDonationLink(content.attribute(QStringLiteral("donationpage")));
+    entry.setKnowledgebaseLink(content.attribute(QStringLiteral("knowledgebasepage")));
+    entry.setNumberKnowledgebaseEntries(content.attribute(QStringLiteral("knowledgebaseentries")).toInt());
 
-    entry.setPreviewUrl(content.smallPreviewPicture("1"), EntryInternal::PreviewSmall1);
-    entry.setPreviewUrl(content.smallPreviewPicture("2"), EntryInternal::PreviewSmall2);
-    entry.setPreviewUrl(content.smallPreviewPicture("3"), EntryInternal::PreviewSmall3);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("1")), EntryInternal::PreviewSmall1);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("2")), EntryInternal::PreviewSmall2);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("3")), EntryInternal::PreviewSmall3);
 
-    entry.setPreviewUrl(content.previewPicture("1"), EntryInternal::PreviewBig1);
-    entry.setPreviewUrl(content.previewPicture("2"), EntryInternal::PreviewBig2);
-    entry.setPreviewUrl(content.previewPicture("3"), EntryInternal::PreviewBig3);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("1")), EntryInternal::PreviewBig1);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("2")), EntryInternal::PreviewBig2);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("3")), EntryInternal::PreviewBig3);
 
     entry.setLicense(content.license());
     Author author;
     author.setName(content.author());
-    author.setHomepage(content.attribute("profilepage"));
+    author.setHomepage(content.attribute(QStringLiteral("profilepage")));
     entry.setAuthor(author);
 
     entry.setSource(KNS3::EntryInternal::Online);

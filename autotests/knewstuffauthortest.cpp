@@ -23,10 +23,10 @@
 
 #include "../src/core/author_p.h"
 
-const QString name = QLatin1String("Name");
-const QString email = QLatin1String("Email@nowhere.com");
-const QString jabber = QLatin1String("something@kdetalk.net");
-const QString homepage = QLatin1String("http://www.myhomepage.com");
+const QString name = QStringLiteral("Name");
+const QString email = QStringLiteral("Email@nowhere.com");
+const QString jabber = QStringLiteral("something@kdetalk.net");
+const QString homepage = QStringLiteral("http://www.myhomepage.com");
 
 class testAuthor: public QObject
 {

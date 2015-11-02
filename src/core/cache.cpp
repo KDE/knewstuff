@@ -75,18 +75,18 @@ void Cache::readRegistry()
     }
 
     QDomElement root = doc.documentElement();
-    if (root.tagName() != "hotnewstuffregistry") {
+    if (root.tagName() != QLatin1String("hotnewstuffregistry")) {
         qWarning() << "The file doesn't seem to be of interest.";
         return;
     }
 
-    QDomElement stuff = root.firstChildElement("stuff");
+    QDomElement stuff = root.firstChildElement(QStringLiteral("stuff"));
     while (!stuff.isNull()) {
         EntryInternal e;
         e.setEntryXML(stuff);
         e.setSource(EntryInternal::Cache);
         cache.insert(e);
-        stuff = stuff.nextSiblingElement("stuff");
+        stuff = stuff.nextSiblingElement(QStringLiteral("stuff"));
     }
 
     qCDebug(KNEWSTUFF) << "Cache read... entries: " << cache.size();
@@ -98,7 +98,7 @@ void Cache::readKns2MetaFiles()
 
     QString realAppName = m_kns2ComponentName.split(':')[0];
 
-    const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "knewstuff2-entries.registry", QStandardPaths::LocateDirectory);
+    const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
     for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {
         qCDebug(KNEWSTUFF) << " + Load from directory '" + (*it) + "'.";
         QDir dir((*it));
@@ -137,28 +137,28 @@ void Cache::readKns2MetaFiles()
             qCDebug(KNEWSTUFF) << "found entry: " << doc.toString();
 
             QDomElement root = doc.documentElement();
-            if (root.tagName() != "ghnsinstall") {
+            if (root.tagName() != QLatin1String("ghnsinstall")) {
                 qWarning() << "The file doesn't seem to be of interest.";
                 return;
             }
 
             // The .meta files only contain one entry
-            QDomElement stuff = root.firstChildElement("stuff");
+            QDomElement stuff = root.firstChildElement(QStringLiteral("stuff"));
             EntryInternal e;
             e.setEntryXML(stuff);
             e.setSource(EntryInternal::Cache);
 
             if (e.payload().startsWith(QLatin1String("http://download.kde.org/khotnewstuff"))) {
                 // This is 99% sure a opendesktop file, make it a real one.
-                e.setProviderId(QLatin1String("https://api.opendesktop.org/v1/"));
+                e.setProviderId(QStringLiteral("https://api.opendesktop.org/v1/"));
                 e.setHomepage(QUrl(QString(QLatin1String("http://opendesktop.org/content/show.php?content=") + e.uniqueId())));
 
             } else if (e.payload().startsWith(QLatin1String("http://edu.kde.org/contrib/kvtml/"))) {
                 // kvmtl-1
-                e.setProviderId("http://edu.kde.org/contrib/kvtml/kvtml.xml");
+                e.setProviderId(QStringLiteral("http://edu.kde.org/contrib/kvtml/kvtml.xml"));
             } else if (e.payload().startsWith(QLatin1String("http://edu.kde.org/contrib/kvtml2/"))) {
                 // kvmtl-2
-                e.setProviderId("http://edu.kde.org/contrib/kvtml2/provider41.xml");
+                e.setProviderId(QStringLiteral("http://edu.kde.org/contrib/kvtml2/provider41.xml"));
             } else {
                 // we failed, skip
                 qWarning() << "Could not load entry: " << filepath;
@@ -168,7 +168,7 @@ void Cache::readKns2MetaFiles()
             e.setStatus(Entry::Installed);
 
             cache.insert(e);
-            QDomDocument tmp("yay");
+            QDomDocument tmp(QStringLiteral("yay"));
             tmp.appendChild(e.entryXML());
             qCDebug(KNEWSTUFF) << "new entry: " << tmp.toString();
 
@@ -206,9 +206,9 @@ void Cache::writeRegistry()
         return;
     }
 
-    QDomDocument doc("khotnewstuff3");
-    doc.appendChild(doc.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\""));
-    QDomElement root = doc.createElement("hotnewstuffregistry");
+    QDomDocument doc(QStringLiteral("khotnewstuff3"));
+    doc.appendChild(doc.createProcessingInstruction(QStringLiteral("xml"), QStringLiteral("version=\"1.0\" encoding=\"UTF-8\"")));
+    QDomElement root = doc.createElement(QStringLiteral("hotnewstuffregistry"));
     doc.appendChild(root);
 
     foreach (const EntryInternal &entry, cache) {

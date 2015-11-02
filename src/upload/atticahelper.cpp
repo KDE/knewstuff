@@ -36,7 +36,7 @@ AtticaHelper::AtticaHelper(QObject *parent) :
 
 void AtticaHelper::init()
 {
-    connect(&providerManager, SIGNAL(defaultProvidersLoaded()), this, SLOT(defaultProvidersLoaded()));
+    connect(&providerManager, &Attica::ProviderManager::defaultProvidersLoaded, this, &AtticaHelper::defaultProvidersLoaded);
     providerManager.loadDefaultProviders();
 }
 
@@ -80,7 +80,7 @@ Attica::Provider AtticaHelper::provider()
 void AtticaHelper::checkLogin(const QString &name, const QString &password)
 {
     Attica::PostJob *checkLoginJob = currentProvider.checkLogin(name, password);
-    connect(checkLoginJob, SIGNAL(finished(Attica::BaseJob*)), this, SLOT(checkLoginFinished(Attica::BaseJob*)));
+    connect(checkLoginJob, &Attica::BaseJob::finished, this, &AtticaHelper::checkLoginFinished);
     checkLoginJob->start();
 }
 
@@ -208,8 +208,8 @@ void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
         QUrl url = QUrl::fromUserInput(content.smallPreviewPicture(QString::number(previewNum)));
         if (! url.isEmpty()) {
             m_previewJob[previewNum - 1] = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-            connect(m_previewJob[previewNum - 1], SIGNAL(result(KJob*)), SLOT(slotPreviewDownload(KJob*)));
-            connect(m_previewJob[previewNum - 1], SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotPreviewData(KIO::Job*,QByteArray)));
+            connect(m_previewJob[previewNum - 1], &KJob::result, this, &AtticaHelper::slotPreviewDownload);
+            connect(m_previewJob[previewNum - 1], &KIO::TransferJob::data, this, &AtticaHelper::slotPreviewData);
             KIO::Scheduler::setJobPriority(m_previewJob[previewNum - 1], 1);
         }
     }

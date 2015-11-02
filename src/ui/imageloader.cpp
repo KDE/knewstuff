@@ -37,8 +37,8 @@ void ImageLoader::start()
     QUrl url(m_entry.previewUrl(m_previewType));
     if (!url.isEmpty()) {
         m_job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-        connect(m_job, SIGNAL(result(KJob*)), SLOT(slotDownload(KJob*)));
-        connect(m_job, SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotData(KIO::Job*,QByteArray)));
+        connect(m_job, &KJob::result, this, &ImageLoader::slotDownload);
+        connect(m_job, &KIO::TransferJob::data, this, &ImageLoader::slotData);
         KIO::Scheduler::setJobPriority(m_job, 1);
     }
 }

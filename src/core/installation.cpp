@@ -60,12 +60,12 @@ bool Installation::readConfig(const KConfigGroup &group)
 {
     // FIXME: add support for several categories later on
     // FIXME: read out only when actually installing as a performance improvement?
-    QString uncompresssetting = group.readEntry("Uncompress", QString("never"));
+    QString uncompresssetting = group.readEntry("Uncompress", QStringLiteral("never"));
     // support old value of true as equivalent of always
-    if (uncompresssetting == "true") {
-        uncompresssetting = "always";
+    if (uncompresssetting == QLatin1String("true")) {
+        uncompresssetting = QStringLiteral("always");
     }
-    if (uncompresssetting != "always" && uncompresssetting != "archive" && uncompresssetting != "never") {
+    if (uncompresssetting != QLatin1String("always") && uncompresssetting != QLatin1String("archive") && uncompresssetting != QLatin1String("never")) {
         qCritical() << "invalid Uncompress setting chosen, must be one of: always, archive, or never" << endl;
         return false;
     }
@@ -77,8 +77,8 @@ bool Installation::readConfig(const KConfigGroup &group)
     xdgTargetDirectory = group.readEntry("XdgTargetDir", QString());
 
     // Provide some compatibility
-    if (standardResourceDirectory == "wallpaper") {
-        xdgTargetDirectory = "wallpapers";
+    if (standardResourceDirectory == QLatin1String("wallpaper")) {
+        xdgTargetDirectory = QStringLiteral("wallpapers");
     }
 
     installPath = group.readEntry("InstallPath", QString());
@@ -97,11 +97,11 @@ bool Installation::readConfig(const KConfigGroup &group)
 
     QString checksumpolicy = group.readEntry("ChecksumPolicy", QString());
     if (!checksumpolicy.isEmpty()) {
-        if (checksumpolicy == "never") {
+        if (checksumpolicy == QLatin1String("never")) {
             checksumPolicy = Installation::CheckNever;
-        } else if (checksumpolicy == "ifpossible") {
+        } else if (checksumpolicy == QLatin1String("ifpossible")) {
             checksumPolicy = Installation::CheckIfPossible;
-        } else if (checksumpolicy == "always") {
+        } else if (checksumpolicy == QLatin1String("always")) {
             checksumPolicy = Installation::CheckAlways;
         } else {
             qCritical() << "The checksum policy '" + checksumpolicy + "' is unknown." << endl;
@@ -111,11 +111,11 @@ bool Installation::readConfig(const KConfigGroup &group)
 
     QString signaturepolicy = group.readEntry("SignaturePolicy", QString());
     if (!signaturepolicy.isEmpty()) {
-        if (signaturepolicy == "never") {
+        if (signaturepolicy == QLatin1String("never")) {
             signaturePolicy = Installation::CheckNever;
-        } else if (signaturepolicy == "ifpossible") {
+        } else if (signaturepolicy == QLatin1String("ifpossible")) {
             signaturePolicy = Installation::CheckIfPossible;
-        } else if (signaturepolicy == "always") {
+        } else if (signaturepolicy == QLatin1String("always")) {
             signaturePolicy = Installation::CheckAlways;
         } else {
             qCritical() << "The signature policy '" + signaturepolicy + "' is unknown." << endl;
@@ -125,9 +125,9 @@ bool Installation::readConfig(const KConfigGroup &group)
 
     QString scopeString = group.readEntry("Scope", QString());
     if (!scopeString.isEmpty()) {
-        if (scopeString == "user") {
+        if (scopeString == QLatin1String("user")) {
             scope = ScopeUser;
-        } else if (scopeString == "system") {
+        } else if (scopeString == QLatin1String("system")) {
             scope = ScopeSystem;
         } else {
             qCritical() << "The scope '" + scopeString + "' is unknown." << endl;
@@ -204,8 +204,8 @@ void Installation::downloadPayload(const KNS3::EntryInternal &entry)
     // FIXME: check for validity
     KIO::FileCopyJob *job = KIO::file_copy(source, destination, -1, KIO::Overwrite | KIO::HideProgressInfo);
     connect(job,
-            SIGNAL(result(KJob*)),
-            SLOT(slotPayloadResult(KJob*)));
+            &KJob::result,
+            this, &Installation::slotPayloadResult);
 
     entry_jobs[job] = entry;
 }
@@ -226,7 +226,7 @@ void Installation::slotPayloadResult(KJob *job)
             if (!acceptHtml) {
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
-                if (mimeType.inherits("text/html") || mimeType.inherits("application/x-php")) {
+                if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
                     if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
                             == KMessageBox::Yes) {
                         QDesktopServices::openUrl(fcjob->srcUrl());
@@ -314,8 +314,8 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     Security *sec = Security::ref();
 
     connect(sec,
-            SIGNAL(validityResult(int)),
-            SLOT(slotInstallationVerification(int)));
+            &Security::validityResult,
+            this, &Installation::slotInstallationVerification);
 
     // FIXME: change to accept filename + signature
     sec->checkValidity(QString());
@@ -358,14 +358,14 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
        /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
         porting, but will make many kde4 ksnsrc files work out of the box*/
        //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
-        if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != "wallpaper") {
+        if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != QLatin1String("wallpaper")) {
             QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;
             //crude translation KStandardDirs names -> QStandardPaths enum
-            if (standardResourceDirectory == "tmp") {
+            if (standardResourceDirectory == QLatin1String("tmp")) {
                 location = QStandardPaths::TempLocation;
-            } else if (standardResourceDirectory == "data") {
+            } else if (standardResourceDirectory == QLatin1String("data")) {
                 location = QStandardPaths::GenericDataLocation;
-            } else if (standardResourceDirectory == "config") {
+            } else if (standardResourceDirectory == QLatin1String("config")) {
                 location = QStandardPaths::ConfigLocation;
             }
 
@@ -434,7 +434,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
         bool isarchive = true;
 
         // respect the uncompress flag in the knsrc
-        if (uncompression == "always" || uncompression == "archive") {
+        if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive")) {
             // this is weird but a decompression is not a single name, so take the path instead
             installpath = installdir;
             QMimeDatabase db;
@@ -445,20 +445,20 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             // FIXME: KArchive should provide "safe mode" for this!
             KArchive *archive = 0;
 
-            if (mimeType.inherits("application/zip")) {
+            if (mimeType.inherits(QStringLiteral("application/zip"))) {
                 archive = new KZip(payloadfile);
-            } else if (mimeType.inherits("application/tar")
-                       || mimeType.inherits("application/x-gzip")
-                       || mimeType.inherits("application/x-bzip")
-                       || mimeType.inherits("application/x-lzma")
-                       || mimeType.inherits("application/x-xz")
-                       || mimeType.inherits("application/x-bzip-compressed-tar")
-                       || mimeType.inherits("application/x-compressed-tar")) {
+            } else if (mimeType.inherits(QStringLiteral("application/tar"))
+                       || mimeType.inherits(QStringLiteral("application/x-gzip"))
+                       || mimeType.inherits(QStringLiteral("application/x-bzip"))
+                       || mimeType.inherits(QStringLiteral("application/x-lzma"))
+                       || mimeType.inherits(QStringLiteral("application/x-xz"))
+                       || mimeType.inherits(QStringLiteral("application/x-bzip-compressed-tar"))
+                       || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
                 archive = new KTar(payloadfile);
             } else {
                 delete archive;
                 qCritical() << "Could not determine type of archive file '" << payloadfile << "'";
-                if (uncompression == "always") {
+                if (uncompression == QLatin1String("always")) {
                     return QStringList();
                 }
                 isarchive = false;
@@ -468,7 +468,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                 bool success = archive->open(QIODevice::ReadOnly);
                 if (!success) {
                     qCritical() << "Cannot open archive file '" << payloadfile << "'";
-                    if (uncompression == "always") {
+                    if (uncompression == QLatin1String("always")) {
                         return QStringList();
                     }
                     // otherwise, just copy the file
@@ -491,7 +491,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
 
         qCDebug(KNEWSTUFF) << "isarchive: " << isarchive;
 
-        if (uncompression == "never" || (uncompression == "archive" && !isarchive)) {
+        if (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive)) {
             // no decompress but move to target
 
             /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
@@ -511,7 +511,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                 // and using the http headers if they exist to get the file name, but as discussed in
                 // Randa this is not going to happen anytime soon (if ever) so go with the hack
                 if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
-                    installfile = QUrlQuery(source).queryItemValue("file");
+                    installfile = QUrlQuery(source).queryItemValue(QStringLiteral("file"));
                     int lastSlash = installfile.lastIndexOf('/');
                     if (lastSlash >= 0) {
                         installfile = installfile.mid(lastSlash);
@@ -559,7 +559,7 @@ void Installation::runPostInstallationCommand(const QString &installPath)
 {
     QString command(postInstallationCommand);
     QString fileArg(KShell::quoteArg(installPath));
-    command.replace("%f", fileArg);
+    command.replace(QLatin1String("%f"), fileArg);
 
     qCDebug(KNEWSTUFF) << "Run command: " << command;
 
@@ -580,7 +580,7 @@ void Installation::uninstall(EntryInternal entry)
             if (info.isFile()) {
                 QString fileArg(KShell::quoteArg(file));
                 QString command(uninstallCommand);
-                command.replace("%f", fileArg);
+                command.replace(QLatin1String("%f"), fileArg);
 
                 int exitcode = QProcess::execute(command);
 

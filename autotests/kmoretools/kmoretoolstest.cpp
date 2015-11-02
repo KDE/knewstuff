@@ -264,28 +264,28 @@ void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
     KmtMenuStructureDto mstruct;
 
     KmtMenuItemDto ma1;
-    ma1.id = _("main1");
+    ma1.id = QStringLiteral("main1");
     ma1.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma1);
 
     KmtMenuItemDto mo1;
-    mo1.id = _("more1");
+    mo1.id = QStringLiteral("more1");
     mo1.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo1);
 
     KmtMenuItemDto ma3;
-    ma3.id = _("main3_ni");
+    ma3.id = QStringLiteral("main3_ni");
     ma3.menuSection = KMoreTools::MenuSection_Main;
     ma3.isInstalled = false; // !!!
     mstruct.list.append(ma3);
 
     KmtMenuItemDto mo2;
-    mo2.id = _("more2");
+    mo2.id = QStringLiteral("more2");
     mo2.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo2);
 
     KmtMenuItemDto ma2;
-    ma2.id = _("main2");
+    ma2.id = QStringLiteral("main2");
     ma2.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma2);
 
@@ -305,12 +305,12 @@ void KMoreToolsTest::test_MenuStructureDto_serialize()
     KmtMenuStructureDto mstruct;
 
     KmtMenuItemDto ma1;
-    ma1.id = _("main1");
+    ma1.id = QStringLiteral("main1");
     ma1.menuSection = KMoreTools::MenuSection_Main;
     mstruct.list.append(ma1);
 
     KmtMenuItemDto mo1;
-    mo1.id = _("more1");
+    mo1.id = QStringLiteral("more1");
     mo1.menuSection = KMoreTools::MenuSection_More;
     mstruct.list.append(mo1);
 
@@ -333,7 +333,7 @@ void KMoreToolsTest::test_MenuStructureDto_deserialize()
 void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
 {
     {
-        auto urlIn = QUrl::fromLocalFile("/etc/bash.bashrc");
+        auto urlIn = QUrl::fromLocalFile(QStringLiteral("/etc/bash.bashrc"));
         //qDebug() << urlIn;
         QCOMPARE(urlIn.toString(), QString(_("file:///etc/bash.bashrc")));
 
@@ -343,7 +343,7 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
     }
 
     {
-        auto urlIn = QUrl::fromLocalFile("/home/u1/dev/kf5/src/kde/applications/dolphin/.reviewboardrc");
+        auto urlIn = QUrl::fromLocalFile(QStringLiteral("/home/u1/dev/kf5/src/kde/applications/dolphin/.reviewboardrc"));
         QCOMPARE(urlIn.toString(), QString(_("file:///home/u1/dev/kf5/src/kde/applications/dolphin/.reviewboardrc")));
 
         auto urlOut = KmtUrlUtil::localFileAbsoluteDir(urlIn);
@@ -351,7 +351,7 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
     }
 
     {
-        auto urlIn2 = QUrl::fromLocalFile("aaa/bbb");
+        auto urlIn2 = QUrl::fromLocalFile(QStringLiteral("aaa/bbb"));
         // qDebug() << urlIn2;
         QCOMPARE(urlIn2.toString(), QString(_("file:aaa/bbb")));
     }

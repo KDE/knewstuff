@@ -147,7 +147,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
             return nullptr;
         }
 
-        auto tryExecProp = kmtDesktopfile->property("TryExec", QVariant::String);
+        auto tryExecProp = kmtDesktopfile->property(QStringLiteral("TryExec"), QVariant::String);
         isInstalled = (tryExecProp.isValid() && !QStandardPaths::findExecutable(tryExecProp.toString()).isEmpty())
                       || !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
     } else {
@@ -376,8 +376,8 @@ void KMoreToolsService::setExec(const QString& exec)
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 
-const QString configFile = QLatin1String("kmoretoolsrc");
-const QString configKey = QLatin1String("menu_structure");
+const QString configFile = QStringLiteral("kmoretoolsrc");
+const QString configKey = QStringLiteral("menu_structure");
 
 class KMoreToolsMenuBuilderPrivate
 {
@@ -389,7 +389,7 @@ public:
     QString userConfigPostfix;
     QList<KMoreToolsMenuItem*> menuItems;
     KmtMenuItemIdGen menuItemIdGen;
-    QString initialItemTextTemplate = QLatin1String("$GenericName");
+    QString initialItemTextTemplate = QStringLiteral("$GenericName");
 
 public:
     KMoreToolsMenuBuilderPrivate()
@@ -601,15 +601,15 @@ QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) c
                             KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig
                             : KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
     QString s;
-    s += "|main|:";
+    s += QLatin1String("|main|:");
     Q_FOREACH (auto item, mstruct.mainItems) {
         s += item->registeredService()->desktopEntryName() + ".";
     }
-    s += "|more|:";
+    s += QLatin1String("|more|:");
     Q_FOREACH (auto item, mstruct.moreItems) {
         s += item->registeredService()->desktopEntryName() + ".";
     }
-    s += "|notinstalled|:";
+    s += QLatin1String("|notinstalled|:");
     Q_FOREACH (auto regService, mstruct.notInstalledServices) {
         s += regService->desktopEntryName() + ".";
     }
@@ -655,7 +655,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
             Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
 
                 QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                                                    registeredService->formatString("$Name"), menu, registeredService->icon(), registeredService->homepageUrl());
+                                                    registeredService->formatString(QStringLiteral("$Name")), menu, registeredService->icon(), registeredService->homepageUrl());
                 moreMenu->addMenu(submenuForNotInstalled);
             }
         }

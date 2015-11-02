@@ -64,8 +64,8 @@ QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) 
     list << installButton;
     setBlockedEventTypes(installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(installButton, SIGNAL(clicked()), this, SLOT(slotInstallClicked()));
-    connect(installButton, SIGNAL(triggered(QAction*)), this, SLOT(slotInstallActionTriggered(QAction*)));
+    connect(installButton, &QAbstractButton::clicked, this, &ItemsViewDelegate::slotInstallClicked);
+    connect(installButton, &QToolButton::triggered, this, &ItemsViewDelegate::slotInstallActionTriggered);
 
     QToolButton *detailsButton = new QToolButton();
     detailsButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -167,7 +167,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     QToolButton *detailsButton = qobject_cast<QToolButton *>(widgets.at(DelegateDetailsButton));
     if (detailsButton) {
         detailsButton->setText(i18n("Details"));
-        detailsButton->setIcon(QIcon::fromTheme("documentinfo"));
+        detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("documentinfo")));
     }
 
     if (installButton && detailsButton) {
@@ -196,9 +196,9 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             infoLabel->resize(QSize(option.rect.width() - (margin * 4) - m_buttonSize.width(), option.fontMetrics.height() * 7));
         }
 
-        QString text = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        QString text = QStringLiteral("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                        "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; margin:0 0 0 0;}\n"
-                       "</style></head><body><p><b>";
+                       "</style></head><body><p><b>");
 
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
@@ -207,7 +207,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             text += entry.name();
         }
 
-        text += "</b></p>\n";
+        text += QLatin1String("</b></p>\n");
 
         QString authorName = entry.author().name();
         QString email = entry.author().email();
@@ -241,12 +241,12 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         if (downloads > 0 || fans > 0) {
             text += "<p>" + downloadString;
             if (downloads > 0 && fans > 0) {
-                text += ", ";
+                text += QLatin1String(", ");
             }
             text += fanString + QLatin1String("</p>\n");
         }
 
-        text += "</body></html>";
+        text += QLatin1String("</body></html>");
         // use simplified to get rid of newlines etc
         text = replaceBBCode(text).simplified();
         infoLabel->setText(text);

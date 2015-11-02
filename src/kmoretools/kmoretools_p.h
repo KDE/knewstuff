@@ -45,7 +45,7 @@ public:
     {
         int postFix = desktopEntryNameUsageMap[inputId];
         desktopEntryNameUsageMap[inputId] = postFix + 1;
-        return QString(QLatin1String("%1%2")).arg(inputId).arg(postFix);
+        return QStringLiteral("%1%2").arg(inputId).arg(postFix);
     }
 
     void reset()

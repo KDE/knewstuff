@@ -117,7 +117,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
     //
     // special handlings
     //
-    if (groupingName == "disk-usage" && !url.isEmpty()) {
+    if (groupingName == QLatin1String("disk-usage") && !url.isEmpty()) {
         //
         // "disk-usage" plus a given URL. If no url is given there is no need
         // for special handling
@@ -126,7 +126,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
         auto filelightAppIter = std::find_if(kmtServiceList.begin(),
                                              kmtServiceList.end(),
         [](KMoreToolsService* s) {
-            return s->desktopEntryName() == "org.kde.filelight";
+            return s->desktopEntryName() == QLatin1String("org.kde.filelight");
         });
 
         if (filelightAppIter != kmtServiceList.end()) {
@@ -179,22 +179,22 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
             qWarning() << "org.kde.filelight should be present in KMoreTools but it is not!";
         }
 
-    } else if (groupingName == "disk-partitions") {
+    } else if (groupingName == QLatin1String("disk-partitions")) {
         // better because the Partition editors all have the same GenericName
-        menuBuilder->setInitialItemTextTemplate("$GenericName ($Name)");
+        menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName ($Name)"));
 
         addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
 
-        menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
+        menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 
         return; // skip processing remaining list (would result in duplicates)
 
-    } else if (groupingName == "git-clients-and-actions") {
+    } else if (groupingName == QLatin1String("git-clients-and-actions")) {
         // Here we change the default item text and make sure that the url
         // argument is properly handled.
         //
 
-        menuBuilder->setInitialItemTextTemplate("$Name"); // just use the application name
+        menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
 
         Q_FOREACH(auto kmtService, kmtServiceList) {
             QUrl argUrl = url;
@@ -213,7 +213,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
             addItemFromKmtService(menuBuilder, menu, kmtService, argUrl, isMoreSection);
         }
 
-        menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
+        menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 
         return; // skip processing remaining list (would result in duplicates)
     }
@@ -221,9 +221,9 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
     //
     // default handling (or process remaining list)
     //
-    menuBuilder->setInitialItemTextTemplate("$Name"); // just use the application name
+    menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
     addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
-    menuBuilder->setInitialItemTextTemplate("$GenericName"); // set back to default
+    menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 }
 
 QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
@@ -250,7 +250,7 @@ void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QString
 
     Q_FOREACH(auto groupingName, groupingNames) {
 
-        if (groupingName == "more:") {
+        if (groupingName == QLatin1String("more:")) {
             isMoreSection = true;
             continue;
         }

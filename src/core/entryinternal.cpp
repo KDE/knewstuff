@@ -413,68 +413,68 @@ void EntryInternal::clearDownloadLinkInformation()
 
 bool KNS3::EntryInternal::setEntryXML(const QDomElement &xmldata)
 {
-    if (xmldata.tagName() != "stuff") {
+    if (xmldata.tagName() != QLatin1String("stuff")) {
         qWarning() << "Parsing Entry from invalid XML";
         return false;
     }
 
-    d->mCategory = xmldata.attribute("category");
+    d->mCategory = xmldata.attribute(QStringLiteral("category"));
 
     QDomNode n;
     for (n = xmldata.firstChild(); !n.isNull(); n = n.nextSibling()) {
         QDomElement e = n.toElement();
-        if (e.tagName() == "name") {
+        if (e.tagName() == QLatin1String("name")) {
             // TODO maybe do something with the language attribute? QString lang = e.attribute("lang");
             d->mName = e.text().trimmed();
-        } else if (e.tagName() == "author") {
-            QString email = e.attribute("email");
-            QString jabber = e.attribute("im");
-            QString homepage = e.attribute("homepage");
+        } else if (e.tagName() == QLatin1String("author")) {
+            QString email = e.attribute(QStringLiteral("email"));
+            QString jabber = e.attribute(QStringLiteral("im"));
+            QString homepage = e.attribute(QStringLiteral("homepage"));
             d->mAuthor.setName(e.text().trimmed());
             d->mAuthor.setEmail(email);
             d->mAuthor.setJabber(jabber);
             d->mAuthor.setHomepage(homepage);
-        } else if (e.tagName() == "providerid") {
+        } else if (e.tagName() == QLatin1String("providerid")) {
             d->mProviderId = e.text();
-        } else if (e.tagName() == "homepage") {
+        } else if (e.tagName() == QLatin1String("homepage")) {
             d->mHomepage = QUrl(e.text());
-        } else if (e.tagName() == "licence") { // krazy:exclude=spelling
+        } else if (e.tagName() == QLatin1String("licence")) { // krazy:exclude=spelling
             d->mLicense = e.text().trimmed();
-        } else if (e.tagName() == "summary") {
+        } else if (e.tagName() == QLatin1String("summary")) {
             d->mSummary = e.text();
-        } else if (e.tagName() == "changelog") {
+        } else if (e.tagName() == QLatin1String("changelog")) {
             d->mChangelog = e.text();
-        } else if (e.tagName() == "version") {
+        } else if (e.tagName() == QLatin1String("version")) {
             d->mVersion = e.text().trimmed();
-        } else if (e.tagName() == "releasedate") {
+        } else if (e.tagName() == QLatin1String("releasedate")) {
             d->mReleaseDate = QDate::fromString(e.text().trimmed(), Qt::ISODate);
-        } else if (e.tagName() == "preview") {
+        } else if (e.tagName() == QLatin1String("preview")) {
             // TODO support for all 6 image links
             d->mPreviewUrl[PreviewSmall1] = e.text().trimmed();
-        } else if (e.tagName() == "previewBig") {
+        } else if (e.tagName() == QLatin1String("previewBig")) {
             d->mPreviewUrl[PreviewBig1] = e.text().trimmed();
-        } else if (e.tagName() == "payload") {
+        } else if (e.tagName() == QLatin1String("payload")) {
             d->mPayload = e.text().trimmed();
-        } else if (e.tagName() == "rating") {
+        } else if (e.tagName() == QLatin1String("rating")) {
             d->mRating = e.text().toInt();
-        } else if (e.tagName() == "downloads") {
+        } else if (e.tagName() == QLatin1String("downloads")) {
             d->mDownloadCount = e.text().toInt();
-        } else if (e.tagName() == "category") {
+        } else if (e.tagName() == QLatin1String("category")) {
             d->mCategory = e.text();
-        } else if (e.tagName() == "signature") {
+        } else if (e.tagName() == QLatin1String("signature")) {
             d->mSignature = e.text();
-        } else if (e.tagName() == "checksum") {
+        } else if (e.tagName() == QLatin1String("checksum")) {
             d->mChecksum = e.text();
-        } else if (e.tagName() == "installedfile") {
+        } else if (e.tagName() == QLatin1String("installedfile")) {
             d->mInstalledFiles.append(e.text());
-        } else if (e.tagName() == "id") {
+        } else if (e.tagName() == QLatin1String("id")) {
             d->mUniqueId = e.text();
-        } else if (e.tagName() == "status") {
+        } else if (e.tagName() == QLatin1String("status")) {
             QString statusText = e.text();
-            if (statusText == "installed") {
+            if (statusText == QLatin1String("installed")) {
                 qCDebug(KNEWSTUFF) << "Found an installed entry in registry";
                 d->mStatus = Entry::Installed;
-            } else if (statusText == "updateable") {
+            } else if (statusText == QLatin1String("updateable")) {
                 d->mStatus = Entry::Updateable;
             }
         }
@@ -511,61 +511,61 @@ QDomElement KNS3::EntryInternal::entryXML() const
 
     QDomDocument doc;
 
-    QDomElement el = doc.createElement("stuff");
-    el.setAttribute("category", d->mCategory);
+    QDomElement el = doc.createElement(QStringLiteral("stuff"));
+    el.setAttribute(QStringLiteral("category"), d->mCategory);
 
     QString name = d->mName;
 
     QDomElement e;
-    e = addElement(doc, el, "name", name);
+    e = addElement(doc, el, QStringLiteral("name"), name);
     // todo: add language attribute
-    (void)addElement(doc, el, "providerid", d->mProviderId);
+    (void)addElement(doc, el, QStringLiteral("providerid"), d->mProviderId);
 
-    QDomElement author = addElement(doc, el, "author", d->mAuthor.name());
+    QDomElement author = addElement(doc, el, QStringLiteral("author"), d->mAuthor.name());
     if (!d->mAuthor.email().isEmpty()) {
-        author.setAttribute("email", d->mAuthor.email());
+        author.setAttribute(QStringLiteral("email"), d->mAuthor.email());
     }
     if (!d->mAuthor.homepage().isEmpty()) {
-        author.setAttribute("homepage", d->mAuthor.homepage());
+        author.setAttribute(QStringLiteral("homepage"), d->mAuthor.homepage());
     }
     if (!d->mAuthor.jabber().isEmpty()) {
-        author.setAttribute("im", d->mAuthor.jabber());
+        author.setAttribute(QStringLiteral("im"), d->mAuthor.jabber());
     }
     // FIXME: 'jabber' or 'im'? consult with kopete guys...
-    addElement(doc, el, "homepage", d->mHomepage.url());
-    (void)addElement(doc, el, "licence", d->mLicense); // krazy:exclude=spelling
-    (void)addElement(doc, el, "version", d->mVersion);
+    addElement(doc, el, QStringLiteral("homepage"), d->mHomepage.url());
+    (void)addElement(doc, el, QStringLiteral("licence"), d->mLicense); // krazy:exclude=spelling
+    (void)addElement(doc, el, QStringLiteral("version"), d->mVersion);
     if ((d->mRating > 0) || (d->mDownloadCount > 0)) {
-        (void)addElement(doc, el, "rating", QString::number(d->mRating));
-        (void)addElement(doc, el, "downloads", QString::number(d->mDownloadCount));
+        (void)addElement(doc, el, QStringLiteral("rating"), QString::number(d->mRating));
+        (void)addElement(doc, el, QStringLiteral("downloads"), QString::number(d->mDownloadCount));
     }
     if (!d->mSignature.isEmpty()) {
-        (void)addElement(doc, el, "signature", d->mSignature);
+        (void)addElement(doc, el, QStringLiteral("signature"), d->mSignature);
     }
     if (!d->mChecksum.isEmpty()) {
-        (void)addElement(doc, el, "checksum", d->mChecksum);
+        (void)addElement(doc, el, QStringLiteral("checksum"), d->mChecksum);
     }
     foreach (const QString &file, d->mInstalledFiles) {
-        (void)addElement(doc, el, "installedfile", file);
+        (void)addElement(doc, el, QStringLiteral("installedfile"), file);
     }
     if (!d->mUniqueId.isEmpty()) {
-        addElement(doc, el, "id", d->mUniqueId);
+        addElement(doc, el, QStringLiteral("id"), d->mUniqueId);
     }
 
-    (void)addElement(doc, el, "releasedate",
+    (void)addElement(doc, el, QStringLiteral("releasedate"),
                      d->mReleaseDate.toString(Qt::ISODate));
 
-    e = addElement(doc, el, "summary", d->mSummary);
-    e = addElement(doc, el, "changelog", d->mChangelog);
-    e = addElement(doc, el, "preview", d->mPreviewUrl[PreviewSmall1]);
-    e = addElement(doc, el, "previewBig", d->mPreviewUrl[PreviewBig1]);
-    e = addElement(doc, el, "payload", d->mPayload);
+    e = addElement(doc, el, QStringLiteral("summary"), d->mSummary);
+    e = addElement(doc, el, QStringLiteral("changelog"), d->mChangelog);
+    e = addElement(doc, el, QStringLiteral("preview"), d->mPreviewUrl[PreviewSmall1]);
+    e = addElement(doc, el, QStringLiteral("previewBig"), d->mPreviewUrl[PreviewBig1]);
+    e = addElement(doc, el, QStringLiteral("payload"), d->mPayload);
 
     if (d->mStatus == Entry::Installed) {
-        (void)addElement(doc, el, "status", "installed");
+        (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("installed"));
     }
     if (d->mStatus == Entry::Updateable) {
-        (void)addElement(doc, el, "status", "updateable");
+        (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("updateable"));
     }
 
     return el;
@@ -586,17 +586,17 @@ KNS3::EntryInternal EntryInternal::fromEntry(const KNS3::Entry &entry)
 QString KNS3::replaceBBCode(const QString &unformattedText)
 {
     QString text(unformattedText);
-    text.replace("[b]", "<b>");
-    text.replace("[/b]", "</b>");
-    text.replace("[i]", "<i>");
-    text.replace("[/i]", "</i>");
-    text.replace("[u]", "<i>");
-    text.replace("[/u]", "</i>");
-    text.replace("\\\"", "\"");
-    text.replace("\\\'", "\'");
-    text.replace("[li]", "* "); // TODO: better replacement for list elements?
-    text.remove("[/li]");
-    text.remove("[url]");
-    text.remove("[/url]");
+    text.replace(QLatin1String("[b]"), QLatin1String("<b>"));
+    text.replace(QLatin1String("[/b]"), QLatin1String("</b>"));
+    text.replace(QLatin1String("[i]"), QLatin1String("<i>"));
+    text.replace(QLatin1String("[/i]"), QLatin1String("</i>"));
+    text.replace(QLatin1String("[u]"), QLatin1String("<i>"));
+    text.replace(QLatin1String("[/u]"), QLatin1String("</i>"));
+    text.replace(QLatin1String("\\\""), QLatin1String("\""));
+    text.replace(QLatin1String("\\\'"), QLatin1String("\'"));
+    text.replace(QLatin1String("[li]"), QLatin1String("* ")); // TODO: better replacement for list elements?
+    text.remove(QStringLiteral("[/li]"));
+    text.remove(QStringLiteral("[url]"));
+    text.remove(QStringLiteral("[/url]"));
     return text;
 }

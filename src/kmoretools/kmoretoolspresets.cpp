@@ -85,8 +85,8 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     auto iter = dict.find(desktopEntryName);
     if (iter != dict.end()) {
         auto kmtServiceInfo = *iter;
-        const QString subdir = "presets-kmoretools";
-        auto serviceLocatingMode = desktopEntryName.endsWith(".kmt-edition") ?
+        const QString subdir = QStringLiteral("presets-kmoretools");
+        auto serviceLocatingMode = desktopEntryName.endsWith(QLatin1String(".kmt-edition")) ?
                                    KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
         auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
         service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
@@ -114,16 +114,16 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     //
     // definitions begin:
     //
-    dict.insert("disk-usage", { "kdf", "org.kde.filelight" });
-    dict.insert("disk-partitions", { "gparted", "org.kde.PartitionManager", "disk" });
-    dict.insert("files-find", { "org.kde.kfind", "catfish" });
-    dict.insert("git-clients-for-folder", { "git-cola-folder-handler", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
-    dict.insert("git-clients-and-actions", { "git-cola-folder-handler", "git-cola-view-history.kmt-edition", "gitk.kmt-edition", "qgit.kmt-edition", "gitg" });
-    dict.insert("icon-browser", { "org.kde.plasma.cuttlefish.kmt-edition" });
-    dict.insert("screenshot-take", { "org.kde.ksnapshot", "org.kde.kscreengenie", "shutter", "kaption", "hotshots" });
-    dict.insert("system-monitor-processes", { "org.kde.ksysguard", "htop", "xfce4-taskmanager" });
-    dict.insert("system-monitor-logs", { "ksystemlog" });
-    dict.insert("time-countdown", { "org.gnome.clocks", "org.kde.ktimer" });
+    dict.insert(QStringLiteral("disk-usage"), { QStringLiteral("kdf"), QStringLiteral("org.kde.filelight") });
+    dict.insert(QStringLiteral("disk-partitions"), { QStringLiteral("gparted"), QStringLiteral("org.kde.PartitionManager"), QStringLiteral("disk") });
+    dict.insert(QStringLiteral("files-find"), { QStringLiteral("org.kde.kfind"), QStringLiteral("catfish") });
+    dict.insert(QStringLiteral("git-clients-for-folder"), { QStringLiteral("git-cola-folder-handler"), QStringLiteral("gitk.kmt-edition"), QStringLiteral("qgit.kmt-edition"), QStringLiteral("gitg") });
+    dict.insert(QStringLiteral("git-clients-and-actions"), { QStringLiteral("git-cola-folder-handler"), QStringLiteral("git-cola-view-history.kmt-edition"), QStringLiteral("gitk.kmt-edition"), QStringLiteral("qgit.kmt-edition"), QStringLiteral("gitg") });
+    dict.insert(QStringLiteral("icon-browser"), { QStringLiteral("org.kde.plasma.cuttlefish.kmt-edition") });
+    dict.insert(QStringLiteral("screenshot-take"), { QStringLiteral("org.kde.ksnapshot"), QStringLiteral("org.kde.kscreengenie"), QStringLiteral("shutter"), QStringLiteral("kaption"), QStringLiteral("hotshots") });
+    dict.insert(QStringLiteral("system-monitor-processes"), { QStringLiteral("org.kde.ksysguard"), QStringLiteral("htop"), QStringLiteral("xfce4-taskmanager") });
+    dict.insert(QStringLiteral("system-monitor-logs"), { QStringLiteral("ksystemlog") });
+    dict.insert(QStringLiteral("time-countdown"), { QStringLiteral("org.gnome.clocks"), QStringLiteral("org.kde.ktimer") });
     //
     // ...definitions end
     //

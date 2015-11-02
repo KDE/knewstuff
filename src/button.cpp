@@ -57,8 +57,8 @@ Button::~Button()
 
 void Button::init()
 {
-    setIcon(QIcon::fromTheme("get-hot-new-stuff"));
-    connect(this, SIGNAL(clicked()), SLOT(showDialog()));
+    setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
+    connect(this, &QAbstractButton::clicked, this, &Button::showDialog);
 }
 
 void Button::setButtonText(const QString &what)

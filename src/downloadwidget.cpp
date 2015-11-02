@@ -175,7 +175,7 @@ void DownloadWidgetPrivate::slotCategoryChanged(int idx)
 
 void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString version)
 {
-    QString link = QString("<a href=\"%1\">%1</a>").arg(server);
+    QString link = QStringLiteral("<a href=\"%1\">%1</a>").arg(server);
     QString infostring = i18n("Server: %1", link);
     infostring += i18n("<br />Provider: %1", provider);
     infostring += i18n("<br />Version: %1", version);
@@ -224,9 +224,9 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     KStandardGuiItem::assign(ui.backButton, KStandardGuiItem::Back);
     q->connect(ui.backButton, SIGNAL(clicked()), q, SLOT(slotShowOverview()));
 
-    q->connect(engine, SIGNAL(signalBusy(QString)), ui.progressIndicator, SLOT(busy(QString)));
-    q->connect(engine, SIGNAL(signalError(QString)), ui.progressIndicator, SLOT(error(QString)));
-    q->connect(engine, SIGNAL(signalIdle(QString)), ui.progressIndicator, SLOT(idle(QString)));
+    q->connect(engine, &Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
+    q->connect(engine, &Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
+    q->connect(engine, &Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
 
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
     // Entries have been fetched and should be shown:
@@ -235,9 +235,9 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     // An entry has changes - eg because it was installed
     q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(slotEntryChanged(KNS3::EntryInternal)));
 
-    q->connect(engine, SIGNAL(signalResetView()), model, SLOT(clearEntries()));
-    q->connect(engine, SIGNAL(signalEntryPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)),
-               model, SLOT(slotEntryPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)));
+    q->connect(engine, &Engine::signalResetView, model, &ItemsModel::clearEntries);
+    q->connect(engine, &Engine::signalEntryPreviewLoaded,
+               model, &ItemsModel::slotEntryPreviewLoaded);
 
     engine->init(configFile);
 
@@ -245,9 +245,9 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     ui.m_listView->setItemDelegate(delegate);
     ui.m_listView->setModel(model);
 
-    ui.iconViewButton->setIcon(QIcon::fromTheme("view-list-icons"));
+    ui.iconViewButton->setIcon(QIcon::fromTheme(QStringLiteral("view-list-icons")));
     ui.iconViewButton->setToolTip(i18n("Icons view mode"));
-    ui.listViewButton->setIcon(QIcon::fromTheme("view-list-details"));
+    ui.listViewButton->setIcon(QIcon::fromTheme(QStringLiteral("view-list-details")));
     ui.listViewButton->setToolTip(i18n("Details view mode"));
 
     q->connect(ui.listViewButton, SIGNAL(clicked()), q, SLOT(slotListViewListMode()));

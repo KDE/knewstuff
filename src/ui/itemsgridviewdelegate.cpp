@@ -184,7 +184,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         if (downloads > 0 || fans > 0) {
             text += "<p>" + downloadString;
             if (downloads > 0 && fans > 0) {
-                text += ", ";
+                text += QLatin1String(", ");
             }
             text += fanString + QLatin1String("</p>");
         }
@@ -273,7 +273,7 @@ void ItemsGridViewDelegate::createOperationBar()
     m_detailsButton->setToolButtonStyle(Qt::ToolButtonFollowStyle);
     m_detailsButton->setPopupMode(QToolButton::InstantPopup);
     m_detailsButton->setToolTip(i18n("Details"));
-    m_detailsButton->setIcon(QIcon::fromTheme("documentinfo"));
+    m_detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("documentinfo")));
     setBlockedEventTypes(m_detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
     connect(m_detailsButton, SIGNAL(clicked()), this, SLOT(slotDetailsClicked()));
@@ -284,8 +284,8 @@ void ItemsGridViewDelegate::createOperationBar()
 
     setBlockedEventTypes(m_installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(m_installButton, SIGNAL(clicked()), this, SLOT(slotInstallClicked()));
-    connect(m_installButton, SIGNAL(triggered(QAction*)), this, SLOT(slotInstallActionTriggered(QAction*)));
+    connect(m_installButton, &QAbstractButton::clicked, this, &ItemsGridViewDelegate::slotInstallClicked);
+    connect(m_installButton, &QToolButton::triggered, this, &ItemsGridViewDelegate::slotInstallActionTriggered);
 
     if (m_installButton->menu()) {
         QMenu *buttonMenu = m_installButton->menu();

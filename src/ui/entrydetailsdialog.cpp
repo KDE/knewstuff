@@ -39,30 +39,30 @@ EntryDetails::~EntryDetails()
 
 void EntryDetails::init()
 {
-    connect(ui->preview1, SIGNAL(clicked()), this, SLOT(preview1Selected()));
-    connect(ui->preview2, SIGNAL(clicked()), this, SLOT(preview2Selected()));
-    connect(ui->preview3, SIGNAL(clicked()), this, SLOT(preview3Selected()));
+    connect(ui->preview1, &ImagePreviewWidget::clicked, this, &EntryDetails::preview1Selected);
+    connect(ui->preview2, &ImagePreviewWidget::clicked, this, &EntryDetails::preview2Selected);
+    connect(ui->preview3, &ImagePreviewWidget::clicked, this, &EntryDetails::preview3Selected);
 
     ui->ratingWidget->setMaxRating(10);
     ui->ratingWidget->setHalfStepsEnabled(true);
 
     updateButtons();
-    connect(ui->installButton, SIGNAL(clicked()), this, SLOT(install()));
-    connect(ui->uninstallButton, SIGNAL(clicked()), this, SLOT(uninstall()));
+    connect(ui->installButton, &QAbstractButton::clicked, this, &EntryDetails::install);
+    connect(ui->uninstallButton, &QAbstractButton::clicked, this, &EntryDetails::uninstall);
     // updating is the same as installing
-    connect(ui->updateButton, SIGNAL(clicked()), this, SLOT(install()));
-    connect(ui->becomeFanButton, SIGNAL(clicked()), this, SLOT(becomeFan()));
+    connect(ui->updateButton, &QAbstractButton::clicked, this, &EntryDetails::install);
+    connect(ui->becomeFanButton, &QAbstractButton::clicked, this, &EntryDetails::becomeFan);
 
-    ui->installButton->setIcon(QIcon::fromTheme("dialog-ok"));
-    ui->updateButton->setIcon(QIcon::fromTheme("system-software-update"));
-    ui->uninstallButton->setIcon(QIcon::fromTheme("edit-delete"));
+    ui->installButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-ok")));
+    ui->updateButton->setIcon(QIcon::fromTheme(QStringLiteral("system-software-update")));
+    ui->uninstallButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
 
-    connect(m_engine, SIGNAL(signalEntryDetailsLoaded(KNS3::EntryInternal)),
-            this, SLOT(entryChanged(KNS3::EntryInternal)));
-    connect(m_engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)),
-            this, SLOT(entryStatusChanged(KNS3::EntryInternal)));
-    connect(m_engine, SIGNAL(signalEntryPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)),
-            this, SLOT(slotEntryPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)));
+    connect(m_engine, &Engine::signalEntryDetailsLoaded,
+            this, &EntryDetails::entryChanged);
+    connect(m_engine, &Engine::signalEntryChanged,
+            this, &EntryDetails::entryStatusChanged);
+    connect(m_engine, &Engine::signalEntryPreviewLoaded,
+            this, &EntryDetails::slotEntryPreviewLoaded);
 }
 
 void EntryDetails::setEntry(const KNS3::EntryInternal &entry)
@@ -97,14 +97,14 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
         ui->authorLabel->setText(m_entry.author().name());
     }
 
-    QString summary = replaceBBCode(m_entry.summary()).replace('\n', "<br/>");
-    QString changelog = replaceBBCode(m_entry.changelog()).replace('\n', "<br/>");
+    QString summary = replaceBBCode(m_entry.summary()).replace('\n', QLatin1String("<br/>"));
+    QString changelog = replaceBBCode(m_entry.changelog()).replace('\n', QLatin1String("<br/>"));
 
     QString description = "<html><body>" + summary;
     if (!changelog.isEmpty()) {
         description += "<br/><p><b>" + i18n("Changelog:") + "</b><br/>" + changelog + "</p>";
     }
-    description += "</body></html>";
+    description += QLatin1String("</body></html>");
     ui->descriptionLabel->setText(description);
 
     QString homepageText("<a href=\"" + m_entry.homepage().url() + "\">" +
@@ -225,7 +225,7 @@ void EntryDetails::updateButtons()
             if (!info.distributionType.trimmed().isEmpty()) {
                 text + " (" + info.distributionType.trimmed() + ')';
             }
-            QAction *installAction = installMenu->addAction(QIcon::fromTheme("dialog-ok"), text);
+            QAction *installAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
             installAction->setData(info.id);
         }
         qCDebug(KNEWSTUFF) << "links: " << m_entry.downloadLinkInformationList().size();

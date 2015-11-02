@@ -45,10 +45,10 @@ void XmlLoader::load(const QUrl &url)
     qCDebug(KNEWSTUFF) << "XmlLoader::load(): url: " << url;
 
     KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
-    connect(job, SIGNAL(result(KJob*)),
-            SLOT(slotJobResult(KJob*)));
-    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-            SLOT(slotJobData(KIO::Job*,QByteArray)));
+    connect(job, &KJob::result,
+            this, &XmlLoader::slotJobResult);
+    connect(job, &KIO::TransferJob::data,
+            this, &XmlLoader::slotJobData);
 
     emit jobStarted(job);
 }

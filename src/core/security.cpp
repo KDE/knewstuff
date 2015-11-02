@@ -41,12 +41,12 @@ using namespace KNS3;
 
 static QString gpgExecutable()
 {
-    QString gpgExe = QStandardPaths::findExecutable("gpg");
+    QString gpgExe = QStandardPaths::findExecutable(QStringLiteral("gpg"));
     if (gpgExe.isEmpty()) {
-        gpgExe = QStandardPaths::findExecutable("gpg2");
+        gpgExe = QStandardPaths::findExecutable(QStringLiteral("gpg2"));
     }
     if (gpgExe.isEmpty()) {
-        return QLatin1String("gpg");
+        return QStringLiteral("gpg");
     }
     return gpgExe;
 }
@@ -66,21 +66,21 @@ Security::~Security()
 void Security::readKeys()
 {
     if (m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(readKeys()));
+        QTimer::singleShot(5, this, &Security::readKeys);
         return;
     }
     m_runMode = List;
     m_keys.clear();
     m_process = new QProcess();
     QStringList arguments;
-    arguments << "--no-secmem-warning"
-              << "--no-tty"
-              << "--with-colon"
-              << "--list-keys";
+    arguments << QStringLiteral("--no-secmem-warning")
+              << QStringLiteral("--no-tty")
+              << QStringLiteral("--with-colon")
+              << QStringLiteral("--list-keys");
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotFinished(int,QProcess::ExitStatus)));
-    connect(m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(slotReadyReadStandardOutput()));
+    connect(m_process, &QProcess::readyReadStandardOutput,
+            this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
         KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
@@ -94,20 +94,20 @@ void Security::readKeys()
 void Security::readSecretKeys()
 {
     if (m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(readSecretKeys()));
+        QTimer::singleShot(5, this, &Security::readSecretKeys);
         return;
     }
     m_runMode = ListSecret;
     m_process = new QProcess();
     QStringList arguments;
-    arguments << "--no-secmem-warning"
-              << "--no-tty"
-              << "--with-colon"
-              << "--list-secret-keys";
+    arguments << QStringLiteral("--no-secmem-warning")
+              << QStringLiteral("--no-tty")
+              << QStringLiteral("--with-colon")
+              << QStringLiteral("--list-secret-keys");
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotFinished(int,QProcess::ExitStatus)));
-    connect(m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(slotReadyReadStandardOutput()));
+    connect(m_process, &QProcess::readyReadStandardOutput,
+            this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
         delete m_process;
@@ -162,14 +162,14 @@ void Security::slotReadyReadStandardOutput()
                 QString shortId = key.id.right(8);
                 QString trustStr = line[1];
                 key.trusted = false;
-                if (trustStr == "u" || trustStr == "f") {
+                if (trustStr == QLatin1String("u") || trustStr == QLatin1String("f")) {
                     key.trusted = true;
                 }
                 data = line[9];
                 key.mail = data.section('<', -1, -1);
                 key.mail.truncate(key.mail.length() - 1);
                 key.name = data.section('<', 0, 0);
-                if (key.name.contains("(")) {
+                if (key.name.contains(QStringLiteral("("))) {
                     key.name = key.name.section('(', 0, 0);
                 }
                 m_keys[shortId] = key;
@@ -204,7 +204,7 @@ void Security::slotReadyReadStandardOutput()
             break;
 
         case Sign:
-            if (data.contains("passphrase.enter")) {
+            if (data.contains(QStringLiteral("passphrase.enter"))) {
                 KeyStruct key = m_keys[m_secretKey];
                 QPointer<KPasswordDialog> dlg = new KPasswordDialog(NULL);
                 dlg->setPrompt(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
@@ -217,7 +217,7 @@ void Security::slotReadyReadStandardOutput()
                     delete dlg;
                     return;
                 }
-            } else if (data.contains("BAD_PASSPHRASE")) {
+            } else if (data.contains(QStringLiteral("BAD_PASSPHRASE"))) {
                 m_result |= BAD_PASSPHRASE;
             }
             break;
@@ -234,7 +234,7 @@ void Security::checkValidity(const QString &filename)
 void Security::slotCheckValidity()
 {
     if (!m_keysRead || m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(slotCheckValidity()));
+        QTimer::singleShot(5, this, &Security::slotCheckValidity);
         return;
     }
     if (m_keys.count() == 0) {
@@ -265,24 +265,24 @@ void Security::slotCheckValidity()
         file.close();
     }
     m_result |= SIGNED_BAD;
-    m_signatureKey.id = "";
-    m_signatureKey.name = "";
-    m_signatureKey.mail = "";
+    m_signatureKey.id = QLatin1String("");
+    m_signatureKey.name = QLatin1String("");
+    m_signatureKey.mail = QLatin1String("");
     m_signatureKey.trusted = false;
 
     //verify the signature
     m_process = new QProcess();
     QStringList arguments;
-    arguments << "--no-secmem-warning"
-              << "--status-fd=2"
-              << "--command-fd=0"
-              << "--verify"
+    arguments << QStringLiteral("--no-secmem-warning")
+              << QStringLiteral("--status-fd=2")
+              << QStringLiteral("--command-fd=0")
+              << QStringLiteral("--verify")
               << f.path() + "/signature"
               << m_fileName;
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotFinished(int,QProcess::ExitStatus)));
-    connect(m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(slotReadyReadStandardOutput()));
+    connect(m_process, &QProcess::readyReadStandardOutput,
+            this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
@@ -303,7 +303,7 @@ void Security::signFile(const QString &fileName)
 void Security::slotSignFile()
 {
     if (!m_keysRead || m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(slotSignFile()));
+        QTimer::singleShot(5, this, &Security::slotSignFile);
         return;
     }
 
@@ -356,20 +356,20 @@ void Security::slotSignFile()
     //verify the signature
     m_process = new QProcess();
     QStringList arguments;
-    arguments << "--no-secmem-warning"
-              << "--status-fd=2"
-              << "--command-fd=0"
-              << "--no-tty"
-              << "--detach-sign"
-              << "-u"
+    arguments << QStringLiteral("--no-secmem-warning")
+              << QStringLiteral("--status-fd=2")
+              << QStringLiteral("--command-fd=0")
+              << QStringLiteral("--no-tty")
+              << QStringLiteral("--detach-sign")
+              << QStringLiteral("-u")
               << m_secretKey
-              << "-o"
+              << QStringLiteral("-o")
               << f.path() + "/signature"
               << m_fileName;
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotFinished(int,QProcess::ExitStatus)));
-    connect(m_process, SIGNAL(readyReadStandardOutput()),
-            this, SLOT(slotReadyReadStandardOutput()));
+    connect(m_process, &QProcess::readyReadStandardOutput,
+            this, &Security::slotReadyReadStandardOutput);
     m_runMode = Sign;
     m_process->start(gpgExecutable(), arguments);
     if (m_process->waitForStarted()) {

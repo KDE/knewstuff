@@ -48,44 +48,44 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
     qCDebug(KNEWSTUFF) << "setting provider xml";
 
-    if (xmldata.tagName() != "provider") {
+    if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
     }
 
-    mUploadUrl = QUrl(xmldata.attribute("uploadurl"));
-    mNoUploadUrl = QUrl(xmldata.attribute("nouploadurl"));
+    mUploadUrl = QUrl(xmldata.attribute(QStringLiteral("uploadurl")));
+    mNoUploadUrl = QUrl(xmldata.attribute(QStringLiteral("nouploadurl")));
 
-    QString url = xmldata.attribute("downloadurl");
+    QString url = xmldata.attribute(QStringLiteral("downloadurl"));
     if (!url.isEmpty()) {
         mDownloadUrls.insert(QString(), QUrl(url));
     }
 
-    url = xmldata.attribute("downloadurl-latest");
+    url = xmldata.attribute(QStringLiteral("downloadurl-latest"));
     if (!url.isEmpty()) {
-        mDownloadUrls.insert("latest", QUrl(url));
+        mDownloadUrls.insert(QStringLiteral("latest"), QUrl(url));
     }
 
-    url = xmldata.attribute("downloadurl-score");
+    url = xmldata.attribute(QStringLiteral("downloadurl-score"));
     if (!url.isEmpty()) {
-        mDownloadUrls.insert("score", QUrl(url));
+        mDownloadUrls.insert(QStringLiteral("score"), QUrl(url));
     }
 
-    url = xmldata.attribute("downloadurl-downloads");
+    url = xmldata.attribute(QStringLiteral("downloadurl-downloads"));
     if (!url.isEmpty()) {
-        mDownloadUrls.insert("downloads", QUrl(url));
+        mDownloadUrls.insert(QStringLiteral("downloads"), QUrl(url));
     }
 
     // FIXME: this depends on freedesktop.org icon naming... introduce 'desktopicon'?
-    QUrl iconurl(xmldata.attribute("icon"));
+    QUrl iconurl(xmldata.attribute(QStringLiteral("icon")));
     if (!iconurl.isValid()) {
-        iconurl = QUrl::fromLocalFile(xmldata.attribute("icon"));
+        iconurl = QUrl::fromLocalFile(xmldata.attribute(QStringLiteral("icon")));
     }
     mIcon = iconurl;
 
     QDomNode n;
     for (n = xmldata.firstChild(); !n.isNull(); n = n.nextSibling()) {
         QDomElement e = n.toElement();
-        if (e.tagName() == "title") {
+        if (e.tagName() == QLatin1String("title")) {
             //QString lang = e.attribute("lang");
             mName = e.text().trimmed();
             qCDebug(KNEWSTUFF) << "add name for provider ("<< this << "): " << e.text();
@@ -108,7 +108,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         mId = mDownloadUrls[mDownloadUrls.keys().first()].url();
     }
 
-    QTimer::singleShot(0, this, SLOT(slotEmitProviderInitialized()));
+    QTimer::singleShot(0, this, &StaticXmlProvider::slotEmitProviderInitialized);
 
     return true;
 }
@@ -151,8 +151,8 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
         // TODO first get the entries, then filter with searchString, finally emit the finished signal...
         // FIXME: don't creat an endless number of xmlloaders!
         XmlLoader *loader = new XmlLoader(this);
-        connect(loader, SIGNAL(signalLoaded(QDomDocument)), SLOT(slotFeedFileLoaded(QDomDocument)));
-        connect(loader, SIGNAL(signalFailed()), SLOT(slotFeedFailed()));
+        connect(loader, &XmlLoader::signalLoaded, this, &StaticXmlProvider::slotFeedFileLoaded);
+        connect(loader, &XmlLoader::signalFailed, this, &StaticXmlProvider::slotFeedFailed);
 
         mFeedLoaders.insert(request.sortMode, loader);
 
@@ -168,17 +168,17 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
     switch (mode) {
     case Installed: // should just query the registry and not end up here
     case Rating:
-        url = mDownloadUrls.value("score");
+        url = mDownloadUrls.value(QStringLiteral("score"));
         break;
     case Alphabetical:
         url = mDownloadUrls.value(QString());
         break;
     case Updates:
     case Newest:
-        url = mDownloadUrls.value("latest");
+        url = mDownloadUrls.value(QStringLiteral("latest"));
         break;
     case Downloads:
-        url = mDownloadUrls.value("downloads");
+        url = mDownloadUrls.value(QStringLiteral("downloads"));
         break;
     }
     if (url.isEmpty()) {

@@ -70,9 +70,9 @@ Engine::Engine(QObject *parent)
 {
     m_searchTimer->setSingleShot(true);
     m_searchTimer->setInterval(1000);
-    connect(m_searchTimer, SIGNAL(timeout()), SLOT(slotSearchTimerExpired()));
-    connect(m_installation, SIGNAL(signalInstallationFinished()), this, SLOT(slotInstallationFinished()));
-    connect(m_installation, SIGNAL(signalInstallationFailed(QString)), this, SLOT(slotInstallationFailed(QString)));
+    connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
+    connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
+    connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
 
 }
 
@@ -130,10 +130,10 @@ bool Engine::init(const QString &configfile)
         return false;
     }
 
-    connect(m_installation, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), SLOT(slotEntryChanged(KNS3::EntryInternal)));
+    connect(m_installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
 
     m_cache = Cache::getCache(m_applicationName.split(':')[0]);
-    connect(this, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), m_cache.data(), SLOT(registerChangedEntry(KNS3::EntryInternal)));
+    connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
     m_cache->readRegistry();
 
     m_initialized = true;
@@ -160,15 +160,15 @@ void Engine::loadProviders()
         // it would be nicer to move the attica stuff into its own class
         qCDebug(KNEWSTUFF) << "Using OCS default providers";
         Attica::ProviderManager *m_atticaProviderManager = new Attica::ProviderManager;
-        connect(m_atticaProviderManager, SIGNAL(providerAdded(Attica::Provider)), this, SLOT(atticaProviderLoaded(Attica::Provider)));
+        connect(m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
         m_atticaProviderManager->loadDefaultProviders();
     } else {
         qCDebug(KNEWSTUFF) << "loading providers from " << m_providerFileUrl;
         emit signalBusy(i18n("Loading provider information"));
 
         XmlLoader *loader = new XmlLoader(this);
-        connect(loader, SIGNAL(signalLoaded(QDomDocument)), SLOT(slotProviderFileLoaded(QDomDocument)));
-        connect(loader, SIGNAL(signalFailed()), SLOT(slotProvidersFailed()));
+        connect(loader, &XmlLoader::signalLoaded, this, &Engine::slotProviderFileLoaded);
+        connect(loader, &XmlLoader::signalFailed, this, &Engine::slotProvidersFailed);
 
         loader->load(QUrl(m_providerFileUrl));
     }
@@ -183,20 +183,20 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
     // get each provider element, and create a provider object from it
     QDomElement providers = doc.documentElement();
 
-    if (providers.tagName() == "providers") {
+    if (providers.tagName() == QLatin1String("providers")) {
         isAtticaProviderFile = true;
-    } else if (providers.tagName() != "ghnsproviders" && providers.tagName() != "knewstuffproviders") {
+    } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
         emit signalError(i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl));
         return;
     }
 
-    QDomElement n = providers.firstChildElement("provider");
+    QDomElement n = providers.firstChildElement(QStringLiteral("provider"));
     while (!n.isNull()) {
-        qCDebug(KNEWSTUFF) << "Provider attributes: " << n.attribute("type");
+        qCDebug(KNEWSTUFF) << "Provider attributes: " << n.attribute(QStringLiteral("type"));
 
         QSharedPointer<KNS3::Provider> provider;
-        if (isAtticaProviderFile || n.attribute("type").toLower() == "rest") {
+        if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
             provider = QSharedPointer<KNS3::Provider> (new AtticaProvider(m_categories));
         } else {
             provider = QSharedPointer<KNS3::Provider> (new StaticXmlProvider);
@@ -228,13 +228,13 @@ void Engine::addProvider(QSharedPointer<KNS3::Provider> provider)
 {
     qCDebug(KNEWSTUFF) << "Engine addProvider called with provider with id " << provider->id();
     m_providers.insert(provider->id(), provider);
-    connect(provider.data(), SIGNAL(providerInitialized(KNS3::Provider*)), SLOT(providerInitialized(KNS3::Provider*)));
+    connect(provider.data(), &Provider::providerInitialized, this, &Engine::providerInitialized);
     connect(provider.data(), SIGNAL(loadingFinished(KNS3::Provider::SearchRequest,KNS3::EntryInternal::List)),
             SLOT(slotEntriesLoaded(KNS3::Provider::SearchRequest,KNS3::EntryInternal::List)));
-    connect(provider.data(), SIGNAL(entryDetailsLoaded(KNS3::EntryInternal)), SLOT(slotEntryDetailsLoaded(KNS3::EntryInternal)));
-    connect(provider.data(), SIGNAL(payloadLinkLoaded(KNS3::EntryInternal)), SLOT(downloadLinkLoaded(KNS3::EntryInternal)));
-    connect(provider.data(), SIGNAL(signalError(QString)), this, SIGNAL(signalError(QString)));
-    connect(provider.data(), SIGNAL(signalInformation(QString)), this, SIGNAL(signalIdle(QString)));
+    connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
+    connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
+    connect(provider.data(), &Provider::signalError, this, &Engine::signalError);
+    connect(provider.data(), &Provider::signalInformation, this, &Engine::signalIdle);
 }
 
 void Engine::providerJobStarted(KJob *job)
@@ -464,7 +464,7 @@ void Engine::loadPreview(const KNS3::EntryInternal &entry, EntryInternal::Previe
 {
     qCDebug(KNEWSTUFF) << "START  preview: " << entry.name() << type;
     ImageLoader *l = new ImageLoader(entry, type, this);
-    connect(l, SIGNAL(signalPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)), this, SLOT(slotPreviewLoaded(KNS3::EntryInternal,KNS3::EntryInternal::PreviewType)));
+    connect(l, &ImageLoader::signalPreviewLoaded, this, &Engine::slotPreviewLoaded);
     l->start();
     ++m_numPictureJobs;
     updateStatus();
@@ -483,10 +483,10 @@ void Engine::contactAuthor(const EntryInternal &entry)
     if (!entry.author().email().isEmpty()) {
         // invoke mail with the address of the author
         QUrl mailUrl;
-        mailUrl.setScheme("mailto");
+        mailUrl.setScheme(QStringLiteral("mailto"));
         mailUrl.setPath(entry.author().email());
         QUrlQuery query;
-        query.addQueryItem("subject", i18n("Re: %1", entry.name()));
+        query.addQueryItem(QStringLiteral("subject"), i18n("Re: %1", entry.name()));
         mailUrl.setQuery(query);
         QDesktopServices::openUrl(mailUrl);
     } else if (!entry.author().homepage().isEmpty()) {

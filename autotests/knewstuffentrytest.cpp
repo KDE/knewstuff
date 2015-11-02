@@ -44,11 +44,11 @@ const char *entryXML = "<stuff category=\"Category\"> "
 "<status>installed</status>"
 "</stuff>";
 
-const QString name = QLatin1String("Name");
-const QString category = QLatin1String("Category");
-const QString summary = QLatin1String("new version 3.0");
-const QString version = QLatin1String("4.0");
-const QString license = QLatin1String("3");
+const QString name = QStringLiteral("Name");
+const QString category = QStringLiteral("Category");
+const QString summary = QStringLiteral("new version 3.0");
+const QString version = QStringLiteral("4.0");
+const QString license = QStringLiteral("3");
 
 class testEntry: public QObject
 {

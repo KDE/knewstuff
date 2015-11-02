@@ -69,7 +69,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
 
     finishButton = new QPushButton;
     finishButton->setText(i18n("Finish"));
-    finishButton->setIcon(QIcon::fromTheme("dialog-ok-apply"));
+    finishButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-ok-apply")));
 
     buttonBox = new QDialogButtonBox(q);
     buttonBox->addButton(backButton, QDialogButtonBox::ActionRole);
@@ -145,7 +145,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
 
     //Busy widget
     busyWidget = new KPixmapSequenceWidget();
-    busyWidget->setSequence(KPixmapSequence("process-working", 22));
+    busyWidget->setSequence(KPixmapSequence(QStringLiteral("process-working"), 22));
     busyWidget->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     ui.busyWidget->setLayout(new QHBoxLayout());
     ui.busyWidget->layout()->addWidget(busyWidget);
@@ -381,9 +381,9 @@ void UploadDialogPrivate::_k_updatedContentFetched(const Attica::Content &conten
     ui.mSummaryEdit->setText(content.description());
     ui.mVersionEdit->setText(content.version());
     ui.changelog->setText(content.changelog());
-    ui.priceCheckBox->setChecked(content.attribute("downloadbuy1") == "1");
-    ui.priceSpinBox->setValue(content.attribute("downloadbuyprice1").toDouble());
-    ui.priceReasonLineEdit->setText(content.attribute("downloadbuyreason1"));
+    ui.priceCheckBox->setChecked(content.attribute(QStringLiteral("downloadbuy1")) == QLatin1String("1"));
+    ui.priceSpinBox->setValue(content.attribute(QStringLiteral("downloadbuyprice1")).toDouble());
+    ui.priceReasonLineEdit->setText(content.attribute(QStringLiteral("downloadbuyreason1")));
 
     bool conversionOk = false;
     int licenseNumber = content.license().toInt(&conversionOk);
@@ -397,7 +397,7 @@ void UploadDialogPrivate::_k_updatedContentFetched(const Attica::Content &conten
 
     ui.contentWebsiteLink->setText(QLatin1String("<a href=\"") + content.detailpage().toString() + QLatin1String("\">")
                                    + i18nc("A link to the website where the get hot new stuff upload can be seen", "Visit website") + QLatin1String("</a>"));
-    ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
 }
 
 void UploadDialogPrivate::_k_previewLoaded(int index, const QImage &image)
@@ -458,7 +458,7 @@ bool UploadDialog::init(const QString &configfile)
     connect(d->backButton, SIGNAL(clicked()), this, SLOT(_k_backPage()));
     connect(d->nextButton, SIGNAL(clicked()), this, SLOT(_k_nextPage()));
     connect(d->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(d->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(d->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
     QString displayName = QGuiApplication::applicationDisplayName();
     if (displayName.isEmpty()) {
@@ -619,20 +619,20 @@ void UploadDialogPrivate::_k_startUpload()
     Attica::Content content;
     content.setName(ui.mNameEdit->text());
     QString summary = ui.mSummaryEdit->toPlainText();
-    content.addAttribute("description", summary);
-    content.addAttribute("version", ui.mVersionEdit->text());
+    content.addAttribute(QStringLiteral("description"), summary);
+    content.addAttribute(QStringLiteral("version"), ui.mVersionEdit->text());
 
     // for the license, if one of the licenses coming from the server was used, pass its id, otherwise the string
     QString licenseId = ui.mLicenseCombo->itemData(ui.mLicenseCombo->currentIndex()).toString();
     if (licenseId.isEmpty()) {
         // use other as type and add the string as text
-        content.addAttribute("licensetype", "0");
-        content.addAttribute("license", ui.mLicenseCombo->currentText());
+        content.addAttribute(QStringLiteral("licensetype"), QStringLiteral("0"));
+        content.addAttribute(QStringLiteral("license"), ui.mLicenseCombo->currentText());
     } else {
-        content.addAttribute("licensetype", licenseId);
+        content.addAttribute(QStringLiteral("licensetype"), licenseId);
     }
 
-    content.addAttribute("changelog", ui.changelog->toPlainText());
+    content.addAttribute(QStringLiteral("changelog"), ui.changelog->toPlainText());
 
     // TODO: add additional attributes
     //content.addAttribute("downloadlink1", ui.link1->text());
@@ -640,9 +640,9 @@ void UploadDialogPrivate::_k_startUpload()
     //content.addAttribute("homepage1", ui.homepage->text());
     //content.addAttribute("blog1", ui.blog->text());
 
-    content.addAttribute("downloadbuy1", ui.priceCheckBox->isChecked() ? "1" : "0");
-    content.addAttribute("downloadbuyprice1", QString::number(ui.priceSpinBox->value()));
-    content.addAttribute("downloadbuyreason1", ui.priceReasonLineEdit->text());
+    content.addAttribute(QStringLiteral("downloadbuy1"), ui.priceCheckBox->isChecked() ? "1" : "0");
+    content.addAttribute(QStringLiteral("downloadbuyprice1"), QString::number(ui.priceSpinBox->value()));
+    content.addAttribute(QStringLiteral("downloadbuyreason1"), ui.priceReasonLineEdit->text());
 
     if (ui.radioNewUpload->isChecked()) {
         // upload a new content
@@ -715,7 +715,7 @@ void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
         return;
     }
 
-    ui.createContentImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.createContentImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
 
     Attica::ItemPostJob<Attica::Content> *job = static_cast<Attica::ItemPostJob<Attica::Content> *>(baseJob);
     if (job->metadata().error() != Attica::Metadata::NoError) {
@@ -737,13 +737,13 @@ void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
 
     // FIXME: status labels need to accommodate 3 previews
     if (!previewFile1.isEmpty()) {
-        doUpload("1", previewFile1);
+        doUpload(QStringLiteral("1"), previewFile1);
     }
     if (!previewFile2.isEmpty()) {
-        doUpload("2", previewFile2);
+        doUpload(QStringLiteral("2"), previewFile2);
     }
     if (!previewFile3.isEmpty()) {
-        doUpload("3", previewFile3);
+        doUpload(QStringLiteral("3"), previewFile3);
     }
 
     if (ui.radioNewUpload->isChecked()) {
@@ -753,7 +753,7 @@ void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
 
 void UploadDialogPrivate::_k_openRegisterAccountWebpage(QString)
 {
-    KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), "text/html", q);
+    KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), QStringLiteral("text/html"), q);
 }
 
 void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
@@ -792,28 +792,28 @@ void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
 
 void UploadDialogPrivate::_k_fileUploadFinished(Attica::BaseJob *)
 {
-    ui.uploadContentImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.uploadContentImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
     finishedContents = true;
     uploadFileFinished();
 }
 
 void UploadDialogPrivate::_k_preview1UploadFinished(Attica::BaseJob *)
 {
-    ui.uploadPreview1ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.uploadPreview1ImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
     finishedPreview1 = true;
     uploadFileFinished();
 }
 
 void UploadDialogPrivate::_k_preview2UploadFinished(Attica::BaseJob *)
 {
-    ui.uploadPreview2ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.uploadPreview2ImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
     finishedPreview2 = true;
     uploadFileFinished();
 }
 
 void UploadDialogPrivate::_k_preview3UploadFinished(Attica::BaseJob *)
 {
-    ui.uploadPreview3ImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.uploadPreview3ImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
     finishedPreview3 = true;
     uploadFileFinished();
 }
@@ -836,7 +836,7 @@ void UploadDialogPrivate::_k_detailsLinkLoaded(const QUrl &url)
 {
     ui.contentWebsiteLink->setText(QLatin1String("<a href=\"") + url.toString() + QLatin1String("\">")
                                    + i18nc("A link to the website where the get hot new stuff upload can be seen", "Visit website") + QLatin1String("</a>"));
-    ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(16));
+    ui.fetchContentLinkImageLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16));
 }
 
 QStringList UploadDialogPrivate::_supportedMimeTypes() const
