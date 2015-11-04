@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KDiskFree
 Name[ca]=KDiskFree
+Name[ca@valencia]=KDiskFree
 Name[de]=KDiskFree
 Name[en_GB]=KDiskFree
 Name[es]=KDiskFree
@@ -32,6 +33,7 @@ Icon=kdf
 Type=Application
 GenericName=View Disk Usage
 GenericName[ca]=Veure l'ús de disc
+GenericName[ca@valencia]=Veure l'ús de disc
 GenericName[de]=Festplattenbelegung anzeigen
 GenericName[en_GB]=View Disk Usage
 GenericName[es]=Ver el uso del disco

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Comment=List and preview available icons
 Comment[ca]=Llista i fa una vista prèvia de les icones disponibles
+Comment[ca@valencia]=Llista i fa una vista prèvia de les icones disponibles
 Comment[de]=Auflistung und Vorschau verfügbarer Symbole
 Comment[en_GB]=List and preview available icons
 Comment[es]=Lista y vista previa de los iconos disponibles
@@ -30,6 +31,7 @@ Encoding=UTF-8
 Exec=cuttlefish
 GenericName=Icon Browser
 GenericName[ca]=Navegador d'icones
+GenericName[ca@valencia]=Navegador d'icones
 GenericName[de]=Symbol-Browser
 GenericName[en_GB]=Icon Browser
 GenericName[es]=Explorador de iconos
@@ -60,6 +62,7 @@ Icon=internet-web-browser
 MimeType=
 Name=Cuttlefish
 Name[ca]=Cuttlefish
+Name[ca@valencia]=Cuttlefish
 Name[de]=Cuttlefish
 Name[en_GB]=Cuttlefish
 Name[es]=Cuttlefish

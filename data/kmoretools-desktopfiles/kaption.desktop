@@ -2,6 +2,7 @@
 Terminal=false
 Name=Kaption
 Name[ca]=Kaption
+Name[ca@valencia]=Kaption
 Name[de]=Kaption
 Name[en_GB]=Kaption
 Name[es]=Kaption
@@ -29,6 +30,7 @@ Name[x-test]=xxKaptionxx
 Name[zh_TW]=螢幕擷取_Kaption
 Comment=Screen capture and editor
 Comment[ca]=Captura de pantalla i editor
+Comment[ca@valencia]=Captura de pantalla i editor
 Comment[de]=Bildschirm-Aufnahme und Bearbeitung
 Comment[en_GB]=Screen capture and editor
 Comment[es]=Captura de pantalla y editor
