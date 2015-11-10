@@ -21,7 +21,7 @@
 #include "itemsmodel_p.h"
 #include "entrydetailsdialog_p.h"
 
-#include <QDebug>
+#include <knewstuff_debug.h>
 #include <qstandardpaths.h>
 #include <kiconloader.h>
 
@@ -71,7 +71,7 @@ void ItemsViewBaseDelegate::slotInstallClicked()
     if (index.isValid()) {
         KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
         if (!entry.isValid()) {
-            // qCDebug(KNEWSTUFF) << "Invalid entry: " << entry.name();
+            qCDebug(KNEWSTUFF) << "Invalid entry: " << entry.name();
             return;
         }
 
@@ -107,7 +107,7 @@ void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
         if (!entry.isValid()) {
             return;
         }
-// qCDebug(KNEWSTUFF) << "Details: " << entry.name();
+        qCDebug(KNEWSTUFF) << "Details: " << entry.name();
         emit signalShowDetails(entry);
     }
 }

@@ -23,13 +23,11 @@
 
 #include "core/xmlloader_p.h"
 
-#include <QDebug>
-#include <QLoggingCategory>
+#include <knewstuff_debug.h>
 #include <klocalizedstring.h>
 
 #include <QtCore/QTimer>
 
-Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 namespace KNS3
 {

@@ -28,9 +28,8 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <QDebug>
+#include <knewstuff_debug.h>
 #include <klocalizedstring.h>
-
 #include <kio/job.h>
 #include <QDesktopServices>
 

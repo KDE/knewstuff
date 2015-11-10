@@ -17,12 +17,11 @@
 
 #include "entry.h"
 #include "entry_p.h"
+#include <knewstuff_debug.h>
 
 #include <QtCore/QStringList>
 
 using namespace KNS3;
-
-Q_LOGGING_CATEGORY(KNEWSTUFF, "knewstuff")
 
 Entry::Entry()
     : d(new EntryPrivate)

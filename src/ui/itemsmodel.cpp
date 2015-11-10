@@ -18,7 +18,7 @@
 
 #include "itemsmodel_p.h"
 
-#include "QDebug"
+#include <knewstuff_debug.h>
 #include "klocalizedstring.h"
 
 #include "core/entryinternal_p.h"

@@ -22,10 +22,11 @@
 
 #include <QtCore/QStringList>
 #include <QImage>
-#include <QDebug>
+#include <knewstuff_debug.h>
 
 #include "core/xmlloader_p.h"
 #include "entry_p.h"
+
 
 using namespace KNS3;
 

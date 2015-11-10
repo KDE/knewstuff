@@ -18,7 +18,7 @@
 #include "entrydetailsdialog_p.h"
 
 #include <QMenu>
-#include <QDebug>
+#include <knewstuff_debug.h>
 #include <klocalizedstring.h>
 
 #include "core/engine_p.h"

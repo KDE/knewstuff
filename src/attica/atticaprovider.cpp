@@ -17,7 +17,7 @@
 
 #include "atticaprovider_p.h"
 
-#include <QDebug>
+#include <knewstuff_debug.h>
 #include <klocalizedstring.h>
 #include <kio/job.h>
 #include <kmessagebox.h>
@@ -67,7 +67,7 @@ QString AtticaProvider::id() const
 
 void AtticaProvider::authenticationCredentialsMissing(const KNS3::Provider &)
 {
-    // qCDebug(KNEWSTUFF) << "Authentication missing!";
+    qCDebug(KNEWSTUFF) << "Authentication missing!";
     // FIXME Show autentication dialog
 }
 
@@ -79,13 +79,13 @@ bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
 
     // FIXME this is quite ugly, repackaging the xml into a string
     QDomDocument doc(QStringLiteral("temp"));
-    // qCDebug(KNEWSTUFF) << "setting provider xml" << doc.toString();
+    qCDebug(KNEWSTUFF) << "setting provider xml" << doc.toString();
 
     doc.appendChild(xmldata.cloneNode(true));
     m_providerManager.addProviderFromXml(doc.toString());
 
     if (!m_providerManager.providers().isEmpty()) {
-        // qCDebug(KNEWSTUFF) << "base url of attica provider:" << m_providerManager.providers().last().baseUrl().toString();
+        qCDebug(KNEWSTUFF) << "base url of attica provider:" << m_providerManager.providers().last().baseUrl().toString();
     } else {
         qCritical() << "Could not load provider.";
         return false;
@@ -101,7 +101,7 @@ void AtticaProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEnt
 void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 {
     mName = provider.name();
-    // qCDebug(KNEWSTUFF) << "Added provider: " << provider.name();
+    qCDebug(KNEWSTUFF) << "Added provider: " << provider.name();
 
     m_provider = provider;
 
@@ -116,14 +116,14 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
         return;
     }
 
-    // qCDebug(KNEWSTUFF) << "loading categories: " << mCategoryMap.keys();
+    qCDebug(KNEWSTUFF) << "loading categories: " << mCategoryMap.keys();
 
     Attica::ListJob<Attica::Category> *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
     Category::List categoryList = job->itemList();
 
     foreach (const Category &category, categoryList) {
         if (mCategoryMap.contains(category.name())) {
-            // qCDebug(KNEWSTUFF) << "Adding category: " << category.name();
+            qCDebug(KNEWSTUFF) << "Adding category: " << category.name();
             mCategoryMap[category.name()] = category;
         }
     }
@@ -197,7 +197,7 @@ void AtticaProvider::checkForUpdates()
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         m_updateJobs.insert(job);
         job->start();
-        // qCDebug(KNEWSTUFF) << "Checking for update: " << e.name();
+        qCDebug(KNEWSTUFF) << "Checking for update: " << e.name();
     }
 }
 
@@ -215,11 +215,11 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
         Content content = contentJob->result();
         EntryInternal entry = entryFromAtticaContent(content);
         emit entryDetailsLoaded(entry);
-        // qCDebug(KNEWSTUFF) << "check update finished: " << entry.name();
+        qCDebug(KNEWSTUFF) << "check update finished: " << entry.name();
     }
 
     if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
-        // qCDebug(KNEWSTUFF) << "check update finished.";
+        qCDebug(KNEWSTUFF) << "check update finished.";
         QList<EntryInternal> updatable;
         foreach (const EntryInternal &entry, mCachedEntries) {
             if (entry.status() == Entry::Updateable) {
@@ -245,7 +245,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
         entries.append(entryFromAtticaContent(content));
     }
 
-    // qCDebug(KNEWSTUFF) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
+    qCDebug(KNEWSTUFF) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
     emit loadingFinished(mCurrentRequest, entries);
     mEntryJob = 0;
 }
@@ -276,14 +276,14 @@ void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkI
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
 
-        // qCDebug(KNEWSTUFF) << "get account balance";
+        qCDebug(KNEWSTUFF) << "get account balance";
     } else {
         ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(linkId));
         connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
         mDownloadLinkJobs[job] = qMakePair(entry, linkId);
         job->start();
 
-        // qCDebug(KNEWSTUFF) << " link for " << entry.uniqueId();
+        qCDebug(KNEWSTUFF) << " link for " << entry.uniqueId();
     }
 }
 
@@ -300,8 +300,8 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     EntryInternal entry(pair.first);
     Content content = mCachedContent.value(entry.uniqueId());
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
-        // qCDebug(KNEWSTUFF) << "Your balance is greather than the price."
-        //            << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
+        qCDebug(KNEWSTUFF) << "Your balance is greather than the price."
+                   << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
         if (KMessageBox::questionYesNo(0,
                                        i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
                                              "This item costs %1 %2.\nDo you want to buy it?",
@@ -316,8 +316,8 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
             return;
         }
     } else {
-        // qCDebug(KNEWSTUFF) << "You don't have enough money on your account!"
-        //        << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
+        qCDebug(KNEWSTUFF) << "You don't have enough money on your account!"
+               << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
         KMessageBox::information(0, i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
                                          item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
@@ -385,7 +385,7 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     if (job->metadata().error() == Attica::Metadata::NoError) {
         return true;
     }
-    // qCDebug(KNEWSTUFF) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
+    qCDebug(KNEWSTUFF) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
 
     if (job->metadata().error() == Attica::Metadata::NetworkError) {
         emit signalError(i18n("Network error. (%1)", job->metadata().statusCode()));

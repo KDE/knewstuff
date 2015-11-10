@@ -25,7 +25,7 @@
 #include <QApplication>
 #include <QToolButton>
 #include <QMenu>
-#include <QDebug>
+#include <knewstuff_debug.h>
 
 #include <klocalizedstring.h>
 #include <kratingwidget.h>

@@ -18,7 +18,7 @@
 #include "downloadmanager.h"
 
 #include <QCoreApplication>
-#include <QDebug>
+#include <knewstuff_debug.h>
 
 #include "core/engine_p.h"
 

@@ -39,13 +39,11 @@
 #include <kpixmapsequencewidget.h>
 #include <krun.h>
 
-#include <QDebug>
+#include <knewstuff_debug.h>
 #include <QLoggingCategory>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <qstandardpaths.h>
-
-Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
 
 using namespace KNS3;
 

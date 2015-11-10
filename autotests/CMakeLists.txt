@@ -11,7 +11,7 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 
 macro(knewstuff_unit_tests)
     foreach(_testname ${ARGN})
-       add_executable(${_testname} ${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp)
+       add_executable(${_testname} ${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp  ../src/knewstuff_debug.cpp)
        # fake static linking to prevent the export macros on windows to kick in.
        set_target_properties(${_testname} PROPERTIES COMPILE_FLAGS -DKNEWSTUFF_STATIC_DEFINE)
        add_test("knewstuff-${_testname}" ${_testname})
@@ -26,7 +26,7 @@ knewstuff_unit_tests(
 )
 
 # KMoreTools:
-add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp)
+add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp)
 add_test(kmoretoolstest kmoretoolstest)
 ecm_mark_as_test(kmoretoolstest)
 target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)

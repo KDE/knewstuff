@@ -38,6 +38,8 @@ set(KNewStuff_SRCS
     uploaddialog.cpp
 )
 
+ecm_qt_declare_logging_category(KNewStuff_SRCS HEADER knewstuff_debug.h IDENTIFIER KNEWSTUFF CATEGORY_NAME org.kde.knewstuff)
+
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
     uploaddialog.ui

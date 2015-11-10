@@ -31,7 +31,7 @@
 
 #include <kmessagebox.h>
 #include <klocalizedstring.h>
-#include <QDebug>
+#include <knewstuff_debug.h>
 
 #include "ui/itemsmodel_p.h"
 #include "ui/itemsviewdelegate_p.h"

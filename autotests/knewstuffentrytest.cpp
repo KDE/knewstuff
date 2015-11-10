@@ -24,6 +24,8 @@
 #include "../src/entry.h"
 #include "../src/entry_p.h"
 
+#include <knewstuff_debug.h>
+
 const char *entryXML = "<stuff category=\"Category\"> "
 "<name>Name</name>"
 "<providerid>https://api.opendesktop.org/v1/</providerid>"

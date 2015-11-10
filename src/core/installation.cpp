@@ -36,7 +36,7 @@
 #include <qdesktopservices.h> // TODO remove, this was only for my playing round
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
-#include "QDebug"
+#include <knewstuff_debug.h>
 
 #include "core/security_p.h"
 #ifdef Q_OS_WIN

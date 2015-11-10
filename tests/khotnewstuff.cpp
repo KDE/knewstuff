@@ -22,18 +22,13 @@
 
 #include <QApplication>
 #include <QPointer>
-#include <QDebug>
-#include <QLoggingCategory>
+#include <knewstuff_debug.h>
 
 #include <klocalizedstring.h>
 
 #include <iostream>
 
 #include <kns3/downloaddialog.h>
-
-Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
-
-Q_LOGGING_CATEGORY(KNEWSTUFF, "knewstuff")
 
 int main(int argc, char **argv)
 {

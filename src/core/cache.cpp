@@ -23,7 +23,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QXmlStreamReader>
 #include <qstandardpaths.h>
-#include <QDebug>
+#include <knewstuff_debug.h>
 
 using namespace KNS3;
 

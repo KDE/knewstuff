@@ -27,8 +27,6 @@
 
 #include "knewstuff_export.h"
 
-Q_DECLARE_LOGGING_CATEGORY(KNEWSTUFF)
-
 namespace KNS3
 {
 class EntryPrivate;
