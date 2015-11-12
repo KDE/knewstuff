@@ -98,13 +98,6 @@ bool Engine::init(const QString &configfile)
         qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
         return false;
     }
-    // KConfig does not actually tell us whether the config file exists, so
-    // we check ourselves for better error messages.
-    if (!QFile::exists(configfile) && QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile).isEmpty()) {
-        emit signalError(i18n("Configuration file not found: \"%1\"", configfile));
-        qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
-        return false;
-    }
 
     KConfigGroup group;
     if (conf.hasGroup("KNewStuff3")) {
