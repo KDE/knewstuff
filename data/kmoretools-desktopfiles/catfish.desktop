@@ -3,6 +3,7 @@ Version=1.0
 Encoding=UTF-8
 Type=Application
 Name=Catfish
+Name[ast]=Catfish
 Name[ca]=Catfish
 Name[ca@valencia]=Catfish
 Name[de]=Catfish
