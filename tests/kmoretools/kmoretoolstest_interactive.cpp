@@ -45,11 +45,14 @@ private Q_SLOTS:
     void testConfigDialogAllInstalled();
     void testConfigDialogSomeNotInstalled();
     void testConfigDialogNotInstalled1Service2Items();
+
     void test_buildMenu_WithQActions_interative1();
+
     void testDialogForGroupingNames();
 
+    void testLazyMenu();
+
 private:
-    // helper methods
     void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description);
 };
 
@@ -102,7 +105,7 @@ void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool
 {
 
     KMoreTools kmt(_("unittest-kmoretools/2"));
-    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
+    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
     const auto gitgApp = kmt.registerServiceByDesktopEntryName(_("gitg"));
     const auto notinstApp = kmt.registerServiceByDesktopEntryName(_("mynotinstalledapp"));
     const auto notinstApp2 = kmt.registerServiceByDesktopEntryName(_("mynotinstapp2"));
@@ -225,7 +228,28 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
     dlg->exec();
 }
 
+void KMoreToolsTestInteractive::testLazyMenu()
+{
+    KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/4"));
+
+    auto moreToolsMenu = menuFactory.createMenuFromGroupingNames( { _("git-clients-for-folder") } );
+
+    auto dlg = new QDialog();
+    auto button = new QPushButton(_("Test the lazy menu"), dlg);
+    button->setMenu(moreToolsMenu);
+    auto label = new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
+    label->setWordWrap(true);
+    auto layout = new QHBoxLayout();
+    layout->addWidget(button);
+    layout->addWidget(label);
+    dlg->setLayout(layout);
+    QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
+        qDebug () << "delete dlg;";
+        delete dlg;
+    });
+    dlg->exec();
+}
+
 QTEST_MAIN(KMoreToolsTestInteractive)
 
 #include "kmoretoolstest_interactive.moc"
-

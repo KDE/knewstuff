@@ -38,6 +38,28 @@ public:
     QMenu* menu = nullptr;
 };
 
+class KMoreToolsLazyMenu : public QMenu
+{
+private Q_SLOTS:
+    void onAboutToShow() {
+        //qDebug() << "onAboutToShow";
+        clear();
+        m_aboutToShowFunc(this);
+    }
+
+public:
+    KMoreToolsLazyMenu(QWidget* parent = 0) : QMenu(parent) {
+        connect(this, &QMenu::aboutToShow, this, &KMoreToolsLazyMenu::onAboutToShow);
+    }
+
+    void setAboutToShowAction(std::function<void(QMenu*)> aboutToShowFunc) {
+        m_aboutToShowFunc = aboutToShowFunc;
+    }
+
+private:
+    std::function<void(QMenu*)> m_aboutToShowFunc;
+};
+
 KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
     : d(new KMoreToolsMenuFactoryPrivate())
 {
@@ -234,9 +256,9 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
         delete d->menu;
     }
 
-    d->menu = new QMenu();
-
-    fillMenuFromGroupingNames(d->menu, groupingNames, url);
+    auto menu = new KMoreToolsLazyMenu();
+    menu->setAboutToShowAction([this, groupingNames, url](QMenu* m) { fillMenuFromGroupingNames(m, groupingNames, url); });
+    d->menu = menu;
 
     return d->menu;
 }

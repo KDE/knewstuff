@@ -50,8 +50,9 @@ public:
     ~KMoreToolsMenuFactory();
 
     /**
-     * First, an empty QMenu is created. Then, for each grouping name
-     * menu items will be created an appended to the menu.
+     * For each grouping name menu items will be created an appended to a
+     * lazy menu which is returned. The menu is lazy in a sense that the
+     * items are not added until the menu is about to be shown.
      *
      * For details on available grouping names see
      * KMoreToolsPresets::registerServicesByGroupingNames.
