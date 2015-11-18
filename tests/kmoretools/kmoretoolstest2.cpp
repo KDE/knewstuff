@@ -26,11 +26,6 @@
 
 #include <QTest>
 #include <QRegularExpression>
-#include <QDialog>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QPushButton>
-#include <QLineEdit>
 
 #define _ QLatin1String
 
@@ -38,7 +33,7 @@ class KMoreToolsTest2 : public QObject
 {
     Q_OBJECT
 
-private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-project.org/forums/viewthread/18432)
+private Q_SLOTS:
     void init();
     void cleanup();
 
@@ -46,20 +41,6 @@ private Q_SLOTS: // todo: why does just "slots" not work here? (see http://qt-pr
     void testInstalledAppStructure();
     void testInstalledAppSetInitialItemText();
     void test_buildMenu_ShowConfigureMenuItem();
-
-    // GUI (manual / interactive):
-    void testConfigDialogAllInstalled();
-    void testConfigDialogSomeNotInstalled();
-    void testConfigDialogNotInstalled1Service2Items();
-    void test_buildMenu_WithQActions_interative1();
-    void testDialogForGroupingNames();
-
-private:
-    // helper methods
-    void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description);
-
-public:
-    static const bool enableInteractiveTests = false;
 };
 
 void KMoreToolsTest2::init()
@@ -176,175 +157,6 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
             doAssert(&menu); // = same as _Always because there is one not-installed item
         }
     }
-}
-
-void KMoreToolsTest2::test_buildMenu_WithQActions_interative1()
-{
-    if (!enableInteractiveTests) {
-        QSKIP("enableInteractiveTests is false");
-    }
-
-    KMoreTools kmt(_("unittest-kmoretools/qactions")); // todo: disable copy-ctor!?
-
-    auto f = [&kmt](QString title) { // NOTE: capture by reference! see https://en.wikipedia.org/wiki/Anonymous_function
-        const auto menuBuilder = kmt.menuBuilder();
-        menuBuilder->clear();
-        QMenu menu;
-        menuBuilder->addMenuItem(new QAction(_("Hallo 1"), &menu), _("id1"));
-        menuBuilder->addMenuItem(new QAction(_("Hallo 2"), &menu), _("id2"));
-        menuBuilder->addMenuItem(new QAction(_("Hallo 3"), &menu), _("id3"));
-
-        menuBuilder->buildByAppendingToMenu(&menu);
-        menuBuilder->showConfigDialog(title);
-    };
-
-    f(_("test_buildMenu_WithQActions 1"));
-    //f(_("test_buildMenu_WithQActions 2"));
-}
-
-QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
-    d << "id:" << m.id << ", section:" << m.menuSection << ", isInstalled:" << m.isInstalled;
-    return d;
-}
-
-void KMoreToolsTest2::testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description)
-{
-    if (KMoreToolsTest2::enableInteractiveTests) {
-        KMoreTools kmt(_("unittest-kmoretools/2"));
-        const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
-        const auto gitgApp = kmt.registerServiceByDesktopEntryName(_("gitg"));
-        const auto notinstApp = kmt.registerServiceByDesktopEntryName(_("mynotinstalledapp"));
-        const auto notinstApp2 = kmt.registerServiceByDesktopEntryName(_("mynotinstapp2"));
-        notinstApp2->setHomepageUrl(QUrl(_("http://www.kde.org")));
-        const auto menuBuilder = kmt.menuBuilder();
-        menuBuilder->addMenuItem(kateApp);
-        menuBuilder->addMenuItem(gitgApp);
-        if (withNotInstalled) {
-            auto item1 = menuBuilder->addMenuItem(notinstApp);
-            item1->setInitialItemText(notinstApp->formatString(_("$Name - item 1")));
-
-            menuBuilder->addMenuItem(notinstApp2);
-
-            if (withMultipleItemsPerNotInstalledService) {
-                auto item3 = menuBuilder->addMenuItem(notinstApp);
-                item3->setInitialItemText(notinstApp->formatString(_("$Name - second item")));
-            }
-        }
-        auto i1 = menuBuilder->addMenuItem(kateApp, KMoreTools::MenuSection_More);
-        i1->setId(_("kate1"));
-        i1->setInitialItemText(_("Kate more"));
-        auto i2 = menuBuilder->addMenuItem(gitgApp, KMoreTools::MenuSection_More);
-        i2->setId(_("gitg1"));
-        i2->setInitialItemText(_("gitg more"));
-        menuBuilder->showConfigDialog(description);
-
-        // show resulting menu
-        auto dlg = new QDialog();
-        auto button = new QPushButton(_("Test the menu"), dlg);
-        auto menu = new QMenu(dlg);
-        menuBuilder->buildByAppendingToMenu(menu);
-        button->setMenu(menu); // TODO: connect to the button click signal to always rebuild the menu
-        auto label = new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
-        label->setWordWrap(true);
-        auto layout = new QHBoxLayout();
-        layout->addWidget(button);
-        layout->addWidget(label);
-        dlg->setLayout(layout);
-        QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
-            qDebug () << "delete dlg;";
-            delete dlg;
-        });
-        dlg->exec();
-    }
-}
-
-void KMoreToolsTest2::testConfigDialogAllInstalled()
-{
-    if (!enableInteractiveTests) {
-        QSKIP("enableInteractiveTests is false");
-    }
-
-    testConfigDialogImpl(false, false, _("TEST all installed"));
-}
-
-void KMoreToolsTest2::testConfigDialogSomeNotInstalled()
-{
-    if (!enableInteractiveTests) {
-        QSKIP("enableInteractiveTests is false");
-    }
-
-    testConfigDialogImpl(true, false, _("TEST some not installed"));
-}
-
-void KMoreToolsTest2::testConfigDialogNotInstalled1Service2Items()
-{
-    if (!enableInteractiveTests) {
-        QSKIP("enableInteractiveTests is false");
-    }
-
-    testConfigDialogImpl(true, true, _("TEST more than one item for one not installed service"));
-}
-
-void KMoreToolsTest2::testDialogForGroupingNames()
-{
-    // show resulting menu
-    auto dlg = new QDialog();
-    auto labelInfo = new QLabel(_("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or http://). Then, select a grouping name. => A menu will be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
-    labelInfo->setWordWrap(true);
-    auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
-    auto labelLineEdit = new QLabel(_("URL 1 (file://..., http://...)"), dlg);
-    auto urlLineEdit = new QLineEdit(dlg);
-    urlLineEdit->setText(_("file:///etc/bash.bashrc"));
-    auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
-
-    auto groupingNamesList = {
-        _("disk-usage"), _("disk-partitions"),
-        _("files-find"),
-        _("git-clients-for-folder"), _("git-clients-and-actions"),
-        _("icon-browser"), _("screenshot-take"),
-        _("system-monitor-processes"), _("system-monitor-logs"),
-        _("time-countdown")
-    };
-
-    KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));
-
-    auto groupingNamesMenu = new QMenu(dlg);
-    QMenu* moreToolsMenu = nullptr;
-    Q_FOREACH(auto groupingName, groupingNamesList) {
-        auto action = new QAction(groupingName, groupingNamesMenu);
-        action->setData(groupingName);
-        groupingNamesMenu->addAction(action);
-
-        QObject::connect(action, &QAction::triggered, action,
-                         [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() {
-            auto groupingName = action->data().toString();
-            QUrl url;
-            if (!urlLineEdit->text().isEmpty()) {
-                url.setUrl(urlLineEdit->text());
-            }
-            moreToolsMenu = menuFactory.createMenuFromGroupingNames({ groupingName }, url);
-            menuButton->setText(QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName).arg(url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
-            menuButton->setMenu(moreToolsMenu);
-        });
-    }
-
-    selectButton->setMenu(groupingNamesMenu);
-
-    auto hLayout = new QHBoxLayout();
-    auto vLayout = new QVBoxLayout();
-    hLayout->addWidget(labelInfo);
-    hLayout->addLayout(vLayout);
-    vLayout->addWidget(labelLineEdit);
-    vLayout->addWidget(urlLineEdit);
-    vLayout->addWidget(selectButton);
-    vLayout->addWidget(menuButton);
-    dlg->setLayout(hLayout);
-    dlg->setBaseSize(300, 150);
-    QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
-        qDebug () << "delete dlg;";
-        delete dlg;
-    });
-    dlg->exec();
 }
 
 QTEST_MAIN(KMoreToolsTest2)

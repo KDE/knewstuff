@@ -527,6 +527,7 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuBuilder
     friend class KMoreTools;
     friend class KMoreToolsTest;
     friend class KMoreToolsTest2;
+    friend class KMoreToolsTestInteractive;
 
 public:
     /**
