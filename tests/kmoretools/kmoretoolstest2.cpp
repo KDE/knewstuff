@@ -76,12 +76,12 @@ void KMoreToolsTest2::cleanup()
 void KMoreToolsTest2::testInstalledAppStructure()
 {
     KMoreTools kmt(_("unittest-kmoretools/2"));
-    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
+    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
     const auto menuBuilder = kmt.menuBuilder();
     menuBuilder->addMenuItem(kateApp);
     QString s = menuBuilder->menuStructureAsString(false);
     qDebug() << s;
-    QCOMPARE(s, QString(_("|main|:kate.|more|:|notinstalled|:")));
+    QCOMPARE(s, QString(_("|main|:org.kde.kate.|more|:|notinstalled|:")));
 }
 
 /**
@@ -91,7 +91,7 @@ void KMoreToolsTest2::testInstalledAppStructure()
 void KMoreToolsTest2::testInstalledAppSetInitialItemText()
 {
     KMoreTools kmt(_("unittest-kmoretools/2"));
-    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
+    const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
     const auto menuBuilder = kmt.menuBuilder();
     auto kateAppItem = menuBuilder->addMenuItem(kateApp);
     kateAppItem->setInitialItemText(kateApp->formatString(_("$Name in super-user mode")));
@@ -133,7 +133,7 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
 {
     {
         KMoreTools kmt(_("unittest-kmoretools/2"));
-        const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
+        const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
         // porcelain: other (interactive) tests will reuse the kmt id so we make sure that
         // no user configurment disburbs this test:
         const auto menuBuilder = kmt.menuBuilder(_("porcelain"));
@@ -152,7 +152,7 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
 
     {
         KMoreTools kmt(_("unittest-kmoretools/2"));
-        const auto kateApp = kmt.registerServiceByDesktopEntryName(_("kate"));
+        const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
         const auto mynotInstalledApp = kmt.registerServiceByDesktopEntryName(_("mynotinstalledapp"));
         const auto menuBuilder = kmt.menuBuilder(_("porcelain"));
         menuBuilder->addMenuItem(kateApp);
