@@ -56,11 +56,13 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     //                                              v       output for messages from the program.
     //
     ADD_ENTRY("catfish",                            1, "http://www.twotoasts.de/index.php/catfish/");
+    ADD_ENTRY("giggle",                             1, "https://wiki.gnome.org/Apps/giggle/"); // good for searching in history
     ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io");
     ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io");
     ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk");
     ADD_ENTRY("qgit.kmt-edition",                   1, "http://libre.tibirna.org/projects/qgit");
     ADD_ENTRY("gitg",                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
+    ADD_ENTRY("gnome-search-tool",                  0, "https://help.gnome.org/users/gnome-search-tool/"); // has good filtering options
     ADD_ENTRY("gparted",                            0, "http://gparted.org");
     ADD_ENTRY("htop",                               0, "http://hisham.hm/htop/");
     ADD_ENTRY("org.kde.PartitionManager",           0, "https://www.kde.org/applications/system/kdepartitionmanager/");
@@ -69,7 +71,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("ksystemlog",                         0, "https://www.kde.org/applications/system/ksystemlog/");
     ADD_ENTRY("org.gnome.clocks",                   0, "https://wiki.gnome.org/Apps/Clocks");
     ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
-    ADD_ENTRY("org.kde.kfind",                      1, "https://www.kde.org/applications/utilities/kfind/");
+    ADD_ENTRY("org.kde.kfind",                      1, "https://www.kde.org/applications/utilities/kfind/"); // has good filtering options
     ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/");
     ADD_ENTRY("org.kde.ksysguard",                  0, "https://userbase.kde.org/KSysGuard");
     ADD_ENTRY("org.kde.ktimer",                     0, "https://www.kde.org/applications/utilities/ktimer/");
@@ -127,10 +129,11 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     //
     dict.insert(_("disk-usage"), { _("kdf"), _("org.kde.filelight") });
     dict.insert(_("disk-partitions"), { _("gparted"), _("org.kde.PartitionManager"), _("disk") });
-    dict.insert(_("files-find"), { _("org.kde.kfind"), _("more:"), _("catfish") });
-    dict.insert(_("git-clients-for-folder"), { _("git-cola-folder-handler"), _("gitk.kmt-edition"), _("qgit.kmt-edition"), _("gitg") });
+    dict.insert(_("files-find"), { _("org.kde.kfind"), _("more:"), _("gnome-search-tool"), _("catfish") });
+    dict.insert(_("git-clients-for-folder"), { _("git-cola-folder-handler"), _("gitk.kmt-edition"),
+                _("giggle"), _("qgit.kmt-edition"), _("gitg") });
     dict.insert(_("git-clients-and-actions"), { _("git-cola-folder-handler"), _("git-cola-view-history.kmt-edition"),
-                _("gitk.kmt-edition"), _("qgit.kmt-edition"), _("gitg") });
+                _("giggle"), _("gitk.kmt-edition"), _("qgit.kmt-edition"), _("gitg") });
     dict.insert(_("icon-browser"), { _("org.kde.plasma.cuttlefish.kmt-edition") });
     dict.insert(_("screenshot-take"), { _("org.kde.ksnapshot"), _("org.kde.kscreengenie"), _("shutter"), _("kaption"), _("hotshots") });
     dict.insert(_("system-monitor-processes"), { _("org.kde.ksysguard"), _("more:"), _("htop"), _("xfce4-taskmanager") });

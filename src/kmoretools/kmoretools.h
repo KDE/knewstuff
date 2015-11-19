@@ -155,6 +155,7 @@ class KMoreToolsPrivate;
  * ### Why is everything based on desktopfiles?
  *
  * - With desktopfiles translation can be reused.
+ * - Definition of application icon can be reused.
  * - They provide a unified interface for dealing with program arguments.
  *
  *

@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-SuSE-translate=true
+GenericName=Git repository viewer
+Version=1.0
+Type=Application
+Name=Giggle
+Comment=Git repository viewer
+Exec=giggle %F
+Icon=giggle
+StartupNotify=true
+Categories=Development;RevisionControl;
+MimeType=x-scheme-handler/git;
+
