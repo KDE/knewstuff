@@ -16,6 +16,7 @@
 */
 
 #include "kmoretoolspresets.h"
+#include "kmoretoolspresets_p.h"
 
 #include <QDebug>
 #include <QHash>
@@ -102,6 +103,12 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 
 QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMoreTools* kmt, const QStringList& groupingNames)
 {
+    QString firstMoreSectionDesktopEntryName;
+    return KMoreToolsPresetsPrivate::registerServicesByGroupingNames(&firstMoreSectionDesktopEntryName, kmt, groupingNames);
+}
+
+QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNames(QString* firstMoreSectionDesktopEntryName, KMoreTools* kmt, const QStringList& groupingNames)
+{
     static QHash<QString, QList<QString>> dict;
 
     // The corresponding desktop files are located here:
@@ -120,13 +127,13 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     //
     dict.insert(_("disk-usage"), { _("kdf"), _("org.kde.filelight") });
     dict.insert(_("disk-partitions"), { _("gparted"), _("org.kde.PartitionManager"), _("disk") });
-    dict.insert(_("files-find"), { _("org.kde.kfind"), _("catfish") });
+    dict.insert(_("files-find"), { _("org.kde.kfind"), _("more:"), _("catfish") });
     dict.insert(_("git-clients-for-folder"), { _("git-cola-folder-handler"), _("gitk.kmt-edition"), _("qgit.kmt-edition"), _("gitg") });
     dict.insert(_("git-clients-and-actions"), { _("git-cola-folder-handler"), _("git-cola-view-history.kmt-edition"),
                 _("gitk.kmt-edition"), _("qgit.kmt-edition"), _("gitg") });
     dict.insert(_("icon-browser"), { _("org.kde.plasma.cuttlefish.kmt-edition") });
     dict.insert(_("screenshot-take"), { _("org.kde.ksnapshot"), _("org.kde.kscreengenie"), _("shutter"), _("kaption"), _("hotshots") });
-    dict.insert(_("system-monitor-processes"), { _("org.kde.ksysguard"), _("htop"), _("xfce4-taskmanager") });
+    dict.insert(_("system-monitor-processes"), { _("org.kde.ksysguard"), _("more:"), _("htop"), _("xfce4-taskmanager") });
     dict.insert(_("system-monitor-logs"), { _("ksystemlog") });
     dict.insert(_("time-countdown"), { _("org.gnome.clocks"), _("org.kde.ktimer") });
     //
@@ -134,23 +141,37 @@ QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMo
     //
 
     QList<KMoreToolsService*> resultList;
+    QSet<QString> alreadyUsedDesktopEntryNames; // including the "more:" keyword
+    bool nextIsMore = false;
 
     Q_FOREACH (QString groupingName, groupingNames) {
         auto iter = dict.find(groupingName);
         if (iter != dict.end()) {
             Q_FOREACH(QString desktopEntryName, *iter) {
-                resultList << registerServiceByDesktopEntryName(kmt, desktopEntryName);
+                if (!alreadyUsedDesktopEntryNames.contains(desktopEntryName)) {
+                    if (desktopEntryName == _("more:")) {
+                        nextIsMore = true;
+                    } else {
+                        if (nextIsMore) { // this will be only set once
+                            *firstMoreSectionDesktopEntryName = desktopEntryName;
+                            nextIsMore = false;
+                        }
+                        resultList << KMoreToolsPresets::registerServiceByDesktopEntryName(kmt, desktopEntryName);
+                    }
+                } else {
+                    alreadyUsedDesktopEntryNames.insert(desktopEntryName);
+                }
             }
-        }
-        else {
-            qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: groupingName not found: " << groupingName;
+        } else {
+            qWarning() << "KMoreToolsPresets::registerServicesByGroupingName: groupingName not found: " << groupingName;
         }
     }
 
     if (resultList.isEmpty()) {
-        qDebug() << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. HINT: check for invalid grouping names.";
+        qWarning() << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. HINT: check for invalid grouping names.";
     }
 
     return resultList;
 }
+
 

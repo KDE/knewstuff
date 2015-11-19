@@ -101,8 +101,8 @@ public:
      *
      * For URL arguments see also QUrl::fromLocalFile.
      *
-     * todo: handle overlapping groupings
-     * todo later: additional groupings: "screenshot-edit", "textfile-edit" etc.
+     * Services which are present in more than one grouping are only added once
+     * to the resulting list.
      */
     static QList<KMoreToolsService*> registerServicesByGroupingNames(
         KMoreTools* kmt, const QStringList& groupingNames);

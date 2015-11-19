@@ -226,6 +226,7 @@ void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
 {
     KMoreTools kmt(_("unittest-kmoretools/3"));
     auto list = KMoreToolsPresets::registerServicesByGroupingNames(&kmt, { _("screenshot-take") });
+
     if (std::find_if(list.begin(), list.end(), [](KMoreToolsService* s) {
     return s->desktopEntryName() == _("org.kde.ksnapshot");
     }) != list.end()) {

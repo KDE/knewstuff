@@ -18,6 +18,7 @@
 #include "kmoretoolsmenufactory.h"
 
 #include "kmoretools_p.h"
+#include "kmoretoolspresets_p.h"
 
 #include <QDebug>
 
@@ -119,21 +120,33 @@ static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
                                        QMenu* menu,
                                        QList<KMoreToolsService*> kmtServiceList,
                                        const QUrl& url,
-                                       bool isMoreSection
+                                       bool isMoreSection,
+                                       QString firstMoreSectionDesktopEntryName
                                       )
 {
     Q_FOREACH(auto kmtService, kmtServiceList) {
+        if (kmtService->desktopEntryName() == firstMoreSectionDesktopEntryName) {
+            // once we reach the potential first "more section desktop entry name"
+            // all remaining services are added to the more section by default
+            isMoreSection = true;
+        }
         addItemFromKmtService(menuBuilder, menu, kmtService, url, isMoreSection);
     }
 }
 
-// "file static" => no symbol will be exported
-static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
+/**
+* "file static" => no symbol will be exported
+* @param isMoreSection: true => all items will be added into the more section
+* @param firstMoreSectionDesktopEntryName: only valid when @p isMoreSection is false:
+*                                           see KMoreToolsPresets::registerServicesByGroupingNames
+*/
+static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* menuBuilder,
                                     QMenu* menu,
                                     QList<KMoreToolsService*> kmtServiceList,
                                     const QString& groupingName,
                                     const QUrl& url,
-                                    bool isMoreSection
+                                    bool isMoreSection,
+                                    QString firstMoreSectionDesktopEntryName
                                    )
 {
     //
@@ -205,7 +218,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
         // better because the Partition editors all have the same GenericName
         menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName ($Name)"));
 
-        addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+        addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection, firstMoreSectionDesktopEntryName);
 
         menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 
@@ -244,7 +257,7 @@ static void addItemsForGroupingName(KMoreToolsMenuBuilder* menuBuilder,
     // default handling (or process remaining list)
     //
     menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
-    addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection);
+    addItemsFromKmtServiceList(menuBuilder, menu, kmtServiceList, url, isMoreSection, firstMoreSectionDesktopEntryName);
     menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 }
 
@@ -277,15 +290,17 @@ void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QString
             continue;
         }
 
-        auto kmtServiceList = KMoreToolsPresets::registerServicesByGroupingNames(
-                                  d->kmt, { groupingName });
+        QString firstMoreSectionDesktopEntryName;
+        auto kmtServiceList = KMoreToolsPresetsPrivate::registerServicesByGroupingNames(
+                                  &firstMoreSectionDesktopEntryName, d->kmt, { groupingName });
 
-        addItemsForGroupingName(menuBuilder,
+        addItemsForGroupingNameWithSpecialHandling(menuBuilder,
                                 menu,
                                 kmtServiceList,
                                 groupingName,
                                 url,
-                                isMoreSection);
+                                isMoreSection,
+                                firstMoreSectionDesktopEntryName);
     }
 
     menuBuilder->buildByAppendingToMenu(menu);
