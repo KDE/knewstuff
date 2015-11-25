@@ -2,6 +2,7 @@
 GenericName=Countdown Launcher
 GenericName[ca]=Llançador amb compte enrere
 GenericName[ca@valencia]=Llançador amb compte arrere
+GenericName[da]=Nedtællingsstarter
 GenericName[de]=Startet den Zähler
 GenericName[en_GB]=Countdown Launcher
 GenericName[es]=Lanzador de cuenta atrás
@@ -36,6 +37,7 @@ Terminal=false
 Name=KTimer
 Name[ca]=KTimer
 Name[ca@valencia]=KTimer
+Name[da]=KTimer
 Name[de]=KTimer
 Name[el]=KTimer
 Name[en_GB]=KTimer

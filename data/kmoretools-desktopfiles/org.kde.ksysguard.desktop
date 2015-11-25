@@ -2,6 +2,7 @@
 Name=KSysGuard
 Name[ca]=KSysGuard
 Name[ca@valencia]=KSysGuard
+Name[da]=KSysGuard
 Name[de]=KSysGuard
 Name[el]=KSysGuard
 Name[en_GB]=KSysGuard
@@ -33,6 +34,7 @@ Name[zh_TW]=KSysGuard
 GenericName=System Monitor
 GenericName[ca]=Controlador del sistema
 GenericName[ca@valencia]=Controlador del sistema
+GenericName[da]=Systemovervågning
 GenericName[de]=Systemüberwachung
 GenericName[el]=Επόπτης συστήματος
 GenericName[en_GB]=System Monitor

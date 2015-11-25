@@ -2,6 +2,7 @@
 Name=Git Cola
 Name[ca]=Git Cola
 Name[ca@valencia]=Git Cola
+Name[da]=Git Cola
 Name[de]=Git Cola
 Name[el]=Git Cola
 Name[en_GB]=Git Cola
@@ -33,6 +34,7 @@ Name[zh_TW]=Git Cola
 Comment=The highly caffeinated Git GUI
 Comment[ca]=La IGU amb alta dosi de cafeïna del Git
 Comment[ca@valencia]=La IGU amb alta dosi de cafeïna del Git
+Comment[da]=Git GUI med højt koffeinindhold
 Comment[de]=Git-Bedienungsoberfläche
 Comment[en_GB]=The highly caffeinated Git GUI
 Comment[es]=La interfaz de Git altamente cafeinada

@@ -2,6 +2,7 @@
 Name=KDiskFree
 Name[ca]=KDiskFree
 Name[ca@valencia]=KDiskFree
+Name[da]=KDiskFree
 Name[de]=KDiskFree
 Name[el]=KDiskFree
 Name[en_GB]=KDiskFree
@@ -36,6 +37,7 @@ Type=Application
 GenericName=View Disk Usage
 GenericName[ca]=Veure l'ús de disc
 GenericName[ca@valencia]=Veure l'ús de disc
+GenericName[da]=Vis diskforbrug
 GenericName[de]=Festplattenbelegung anzeigen
 GenericName[el]=Προβολή χρήσης του δίσκου
 GenericName[en_GB]=View Disk Usage
