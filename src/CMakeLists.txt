@@ -54,10 +54,10 @@ target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 
 target_link_libraries(KF5NewStuff
   PUBLIC
-    Qt5::Widgets
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF5::XmlGui                # For KActionCollection in knewstuffaction.h
     KF5::Service               # For KMoreTools
+    Qt5::Widgets
   PRIVATE
     KF5::KIOCore               # For network fetching operations
     KF5::KIOWidgets            # For KUrlRequester
