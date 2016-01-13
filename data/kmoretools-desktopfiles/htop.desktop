@@ -2,6 +2,7 @@
 X-SuSE-translate=true
 Version=1.0
 Name=Htop
+Name[ast]=Htop
 Name[ca]=Htop
 Name[ca@valencia]=Htop
 Name[da]=Htop
@@ -69,6 +70,7 @@ Exec=htop
 Icon=htop
 Categories=System;Monitor;System;
 GenericName=Process Viewer
+GenericName[ast]=Visor de procesos
 GenericName[ca]=Visor de processos
 GenericName[ca@valencia]=Visor de processos
 GenericName[da]=Procesfremviser

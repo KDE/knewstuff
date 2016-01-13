@@ -33,6 +33,7 @@ GenericName[x-test]=xxGit repository viewerxx
 GenericName[zh_CN]=Git 仓库查看器
 GenericName[zh_TW]=Git 主目錄瀏覽器
 Name=gitg
+Name[ast]=gitg
 Name[ca]=gitg
 Name[ca@valencia]=gitg
 Name[da]=gitg

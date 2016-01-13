@@ -1,6 +1,7 @@
 [Desktop Entry]
 X-SuSE-translate=true
 Name=Task Manager
+Name[ast]=Xestor de xeres
 Name[ca]=Gestor de tasques
 Name[ca@valencia]=Gestor de tasques
 Name[da]=Opgavelinje
@@ -32,6 +33,7 @@ Name[uk]=Засіб керування завданнями
 Name[x-test]=xxTask Managerxx
 Name[zh_TW]=工作管理員
 Comment=Easy to use task manager
+Comment[ast]=Xestor de xeres cenciellu d'usar
 Comment[ca]=Gestor de tasques d'ús fàcil
 Comment[ca@valencia]=Gestor de tasques d'ús fàcil
 Comment[da]=Brugervenlig opgavelinje
@@ -63,6 +65,7 @@ Comment[uk]=Проста у користуванні програма для к�
 Comment[x-test]=xxEasy to use task managerxx
 Comment[zh_TW]=簡易的工作管理員
 GenericName=Task Manager
+GenericName[ast]=Xestor de xeres
 GenericName[ca]=Gestor de tasques
 GenericName[ca@valencia]=Gestor de tasques
 GenericName[da]=Opgavelinje

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=KDE Partition Manager
+Name[ast]=Xestor de particiones KDE
 Name[ca]=Gestor de particions del KDE
 Name[ca@valencia]=Gestor de particions del KDE
 Name[da]=KDE Partition Manager
@@ -33,6 +34,7 @@ Name[x-test]=xxKDE Partition Managerxx
 Name[zh_CN]=KDE 分区管理器
 Name[zh_TW]=KDE 磁碟分割區管理員
 GenericName=Partition Editor
+GenericName[ast]=Editor de particiones
 GenericName[ca]=Editor de particions
 GenericName[ca@valencia]=Editor de particions
 GenericName[da]=Partitionerings-editor

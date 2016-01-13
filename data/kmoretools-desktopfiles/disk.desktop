@@ -18,6 +18,7 @@ Icon=yast-disk
 Exec=xdg-su -c "/sbin/yast2 disk"
 
 Name=Partitioner
+Name[ast]=Particionador
 Name[ca]=Partitioner
 Name[ca@valencia]=Partitioner
 Name[da]=Partitionering

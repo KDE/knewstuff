@@ -2,6 +2,7 @@
 X-SuSE-translate=true
 DocPath=gparted
 Name=GParted
+Name[ast]=GParted
 Name[ca]=GParted
 Name[ca@valencia]=GParted
 Name[da]=GParted
@@ -34,6 +35,7 @@ Name[x-test]=xxGPartedxx
 Name[zh_CN]=GParted
 Name[zh_TW]=磁碟分割_GParted
 GenericName=Partition Editor
+GenericName[ast]=Editor de particiones
 GenericName[ca]=Editor de particions
 GenericName[ca@valencia]=Editor de particions
 GenericName[da]=Partitionerings-editor
