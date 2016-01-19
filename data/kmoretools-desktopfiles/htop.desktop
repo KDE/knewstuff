@@ -64,6 +64,7 @@ Comment[sv]=Visa systemprocesser
 Comment[tr]=Sistem Süreçlerini Göster
 Comment[uk]=Перегляд системних процесів
 Comment[x-test]=xxShow System Processesxx
+Comment[zh_CN]=显示系统进程
 Comment[zh_TW]=顯示系統行程
 Terminal=true
 Exec=htop
@@ -100,5 +101,6 @@ GenericName[sv]=Processvisning
 GenericName[tr]=Süreç Görüntüleyici
 GenericName[uk]=Перегляд процесів
 GenericName[x-test]=xxProcess Viewerxx
+GenericName[zh_CN]=进程查看器
 GenericName[zh_TW]=行程檢視器
 
