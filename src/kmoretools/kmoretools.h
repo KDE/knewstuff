@@ -542,7 +542,7 @@ public:
 
     /**
      * Adds a registered service (which can installed or not) to the menu.
-     * If the service is not installed it will be be shown in the "Not installed"
+     * If the service is not installed it will be shown in the "Not installed"
      * section.
      *
      * @param registeredService will be added to a the menu. A unique menu

@@ -53,7 +53,7 @@ public:
      * For each grouping name menu items will be created an appended to a
      * lazy menu which is returned. The menu is lazy in a sense that the
      * items are not added until the menu is about to be shown.
-     * NOTE: This means if the menu is not shown (as would be be by e.g.
+     * NOTE: This means if the menu is not shown (as would be by e.g.
      * calling exec()) then the menu stays empty.
      *
      * For details on available grouping names see
