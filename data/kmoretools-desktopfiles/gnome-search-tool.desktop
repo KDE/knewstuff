@@ -47,6 +47,7 @@ Comment[sr@latin]=Tražite dokumente i fascikle na ovom računaru, po imenu i po
 Comment[sv]=Hitta dokument och kataloger på datorn enligt namn eller innehåll
 Comment[uk]=Пошук документів або тек на цьому комп’ютері за назвою або вмістом
 Comment[x-test]=xxLocate documents and folders on this computer by name or contentxx
+Comment[zh_CN]=用名称或内容定位计算机上的文档和文件夹
 Exec=gnome-search-tool
 Icon=gnome-search-tool
 Terminal=false

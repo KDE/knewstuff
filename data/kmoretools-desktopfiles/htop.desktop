@@ -32,6 +32,7 @@ Name[sv]=Htop
 Name[tr]=Htop
 Name[uk]=Htop
 Name[x-test]=xxHtopxx
+Name[zh_CN]=Htop
 Name[zh_TW]=Htop
 Type=Application
 Comment=Show System Processes

@@ -34,6 +34,7 @@ Name[sv]=Hitta filer och kataloger
 Name[tr]=Dosya/Dizin Bul
 Name[uk]=Пошук файлів та тек
 Name[x-test]=xxFind Files/Foldersxx
+Name[zh_CN]=搜索文件/文件夹
 Name[zh_TW]=尋找檔案/資料夾
 X-KDE-StartupNotify=true
 OnlyShowIn=KDE;
