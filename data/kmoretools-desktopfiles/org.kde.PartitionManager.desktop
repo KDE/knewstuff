@@ -67,6 +67,7 @@ GenericName[x-test]=xxPartition Editorxx
 GenericName[zh_CN]=分区编辑器
 GenericName[zh_TW]=磁碟分割區編輯器
 Comment=Manage disks, partitions and file systems
+Comment[ast]=Xestiona los discos, particiones y sistemes de ficheros
 Comment[ca]=Gestiona discos, particions i sistemes de fitxers
 Comment[ca@valencia]=Gestiona discos, particions i sistemes de fitxers
 Comment[da]=Håndtér diske, partitioner og filsystemer

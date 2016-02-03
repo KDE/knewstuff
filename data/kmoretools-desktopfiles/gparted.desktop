@@ -120,6 +120,7 @@ X-GNOME-FullName[zh_CN]=GParted 分区编辑器
 X-GNOME-FullName[zh_HK]=GParted 分割區編輯器
 X-GNOME-FullName[zh_TW]=GParted 分割區編輯器
 Comment=Create, reorganize, and delete partitions
+Comment[ast]=Crea, reorganiza y desanicia particiones
 Comment[ca]=Crea, reorganitza i suprimeix particions
 Comment[ca@valencia]=Crea, reorganitza i suprimeix particions
 Comment[da]=Opret, omorganiser og slet partitioner

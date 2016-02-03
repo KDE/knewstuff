@@ -36,6 +36,7 @@ Name[zh_CN]=Htop
 Name[zh_TW]=Htop
 Type=Application
 Comment=Show System Processes
+Comment[ast]=Amuesa los procesos del sistema
 Comment[ca]=Mostra els processos del sistema
 Comment[ca@valencia]=Mostra els processos del sistema
 Comment[da]=Vis systemprocesser
