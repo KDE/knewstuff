@@ -53,6 +53,7 @@ public:
 
     void init(const QString &configFile);
     void _k_slotProvidersLoaded();
+    void _k_slotEngineError(const QString &error);
     void _k_slotUpdatesLoaded(const KNS3::EntryInternal::List &entries);
     void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry);
     void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
@@ -82,12 +83,18 @@ void DownloadManagerPrivate::init(const QString &configFile)
     q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
     q->connect(engine, SIGNAL(signalEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
     q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(_k_slotEntryStatusChanged(KNS3::EntryInternal)));
+    q->connect(engine, SIGNAL(signalError(QString)), q, SLOT(_k_slotEngineError(QString)));
     engine->init(configFile);
 }
 
 DownloadManager::~DownloadManager()
 {
     delete d;
+}
+
+void DownloadManagerPrivate::_k_slotEngineError(const QString &error)
+{
+    qCWarning(KNEWSTUFF) << "engine error" << error;
 }
 
 void DownloadManagerPrivate::_k_slotProvidersLoaded()

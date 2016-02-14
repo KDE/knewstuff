@@ -121,6 +121,7 @@ Q_SIGNALS:
 
 private:
     Q_PRIVATE_SLOT(d, void _k_slotProvidersLoaded())
+    Q_PRIVATE_SLOT(d, void _k_slotEngineError(const QString &error))
     Q_PRIVATE_SLOT(d, void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry))
     Q_PRIVATE_SLOT(d, void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries))
     DownloadManagerPrivate *const d;
