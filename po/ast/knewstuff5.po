@@ -1,0 +1,856 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# enolp <enolp@softastur.org>, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4-1\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-12-11 07:01+0000\n"
+"PO-Revision-Date: 2016-02-10 02:41+0100\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
+"Language-Team: Asturian <>\n"
+"Language: ast_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: asturian\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Esti elementu cuesta %1 %2.\n"
+"¿Quies mercalu?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Nun se grabó'l to votu."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Agora yes un siguidor."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Fallu de rede. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Milenta solicitúes al sirvidor. Inténtalo de nueves nunos minutos, por favor."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:49
+#, fuzzy
+#| msgid "Download New Stuff"
+msgid "Download New Stuff..."
+msgstr "Descargar conteníu nuevu:"
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Aniciando"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Nun s'alcontró'l ficheru de configuración: «%1»"
+
+#: core/engine.cpp:110
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Nun ye válidu'l ficheru de configuración: «%1»"
+
+#: core/engine.cpp:160
+msgid "Loading provider information"
+msgstr "Cargando la información del fornidor"
+
+#: core/engine.cpp:183
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:201
+msgid "Error initializing provider."
+msgstr "Fallu aniciando'l fornidor"
+
+#: core/engine.cpp:205 core/engine.cpp:522
+msgid "Loading data"
+msgstr "Cargando datos"
+
+#: core/engine.cpp:235
+msgid "Loading data from provider"
+msgstr "Cargando datos del fornidor"
+
+#: core/engine.cpp:240
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Carga de fornidores dende ficheru: %1 falló"
+
+#: core/engine.cpp:482
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:524
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Cargando una previsualización"
+msgstr[1] "Cargando %1 previsualizaciones"
+
+#: core/engine.cpp:526 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Instalando"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Elementu non válidu."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Falló la descarga del elementu: nun hai URL de descarga pa «%1»."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Falló la descarga de «%1», fallu: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"El ficheru baxáu ye ún HTML. Esto indica un enllaz a un sitiu web en cuantes "
+"de la descarga actual. ¿Prestaríate abrir el sitiu con un restolador nel so "
+"llugar?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Quiciabes l'enllaz tea mal"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "El ficheru baxáu foi ún HTML. Abrióse nel restolador."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Nun pudo instalase «%1»: nun s'alcontró'l ficheru."
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "¿Sobrescribir el ficheru esistente?"
+
+#: core/installation.cpp:538
+msgid "Download File"
+msgstr ""
+
+#: core/security.cpp:86
+#, fuzzy
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>nun puede aniciase <i>gpg</i> y trayer les claves disponibles. Asegúrate "
+"de que tienes instaláu <i>gpg</i>, sinón ye imposible verificar los recursos "
+"descargaos.</qt>"
+
+#: core/security.cpp:210
+#, fuzzy, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Enxerta la contraseña pa la clave <b>0x%1</b>, que pertenez a <br /><i>"
+"%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:290
+#, fuzzy
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nun puede aniciase <i>gpg</i> pa comprobar la validez del ficheru.  "
+"Asegúrate de tener <i>gpg</i> instaláu, sinón ye imposible verificar los "
+"recursos descargaos.</qt>"
+
+#: core/security.cpp:345
+#, fuzzy
+msgid "Select Signing Key"
+msgstr "Escoyer la clave de robla"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Clave usada pa roblar:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nun pue aniciase <i>gpg</i> pa roblar el ficheru.  Asegúrate que <i>gpg</"
+"i> ta instaláu, d'otramiente sedrá imposible roblar los recursos.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+#, fuzzy
+msgid "Get Hot New Stuff"
+msgstr "Obtener lo más novedoso"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 instalador d'amiestos"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Tiempu escosao. Comprueba la conexón d'internet"
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Sirvidor: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Fornidor: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Versión: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Información d'apurridor"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nun pudo instalase %1"
+
+#: downloadwidget.cpp:197
+#, fuzzy
+msgid "Get Hot New Stuff!"
+msgstr "Obtener novedaes"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Mou de vista d'iconos"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Mou de vista de detalles"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Tolos fornidores"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Toles estayes"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Fornidor:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Estaya:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Lo más nuevo"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Valoración"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Lo más baxao"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Instalaos"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Ordenar per:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Guetar:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Introduz equí la fras de gueta"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Autor:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Paxina d'aniciu</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Anovar"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Facese siguidor"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Instalar"
+
+#: kmoretools/kmoretools.cpp:638
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Más..."
+
+#: kmoretools/kmoretools.cpp:653
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Nun ta instaláu:"
+
+#: kmoretools/kmoretools.cpp:689
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Configurar..."
+
+#: kmoretools/kmoretools_p.h:384
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Visitar páxina d'aniciu"
+
+#: kmoretools/kmoretools_p.h:391
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Nun hai más información disponible."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Configurar"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "&Configurar %1..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:183
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr "$GenericName - carpeta actual"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:191
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr "$GenericName - preséu actual"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:206
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr "$GenericName - tolos preseos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "Caltenimientu"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "Mover a&baxo"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "Mover &arriba"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "Más Aiciones"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Reafitar"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "More Actions"
+msgid "More section"
+msgstr "Más Aiciones"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+msgid "More tools..."
+msgstr "Más ferramientes..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Detalles pa %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Rexistru de cambeos:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Páxina d'aniciu"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Fai una donación"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Base de conocencia (ensin entraes)"
+msgstr[1] "Base de conocencia (%1 entraes)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Abre nuna ventana del restolador"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, fuzzy, kde-format
+msgid "Rating: %1%"
+msgstr "Valoración: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Por <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "Un/a siguidor/a"
+msgstr[1] "%1 siguidores"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, fuzzy, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Una descarga"
+msgstr[1] "%1 descargues"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+#, fuzzy
+msgid "Loading Preview"
+msgstr "Cargando vista preliminar"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Detalles"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+#, fuzzy
+msgid "Updating"
+msgstr "Anovando"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Instalar de nueves"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Siguiente"
+
+#: uploaddialog.cpp:71
+#, fuzzy
+msgid "Finish"
+msgstr "Finar"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "View Frame Information"
+msgid "Fetching provider information..."
+msgstr "Ver información del marcu"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "Diendo en cata de los datos de llicencia dende'l sirvidor..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "Diendo en cata de los datos del conteníu dende'l sirvidor..."
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "View Frame Information"
+msgid "Could not fetch provider information."
+msgstr "Ver información del marcu"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+#, fuzzy
+msgid "Checking login..."
+msgstr "Comprobando accesu..."
+
+#: uploaddialog.cpp:336
+#, fuzzy
+#| msgid "Loading Preview"
+msgid "Fetching your previously updated content..."
+msgstr "Cargando vista preliminar"
+
+#: uploaddialog.cpp:339
+#, fuzzy
+#| msgid "Could not create temporary file."
+msgid "Could not verify login, please try again."
+msgstr "Nun foi dable crear el ficheru temporal."
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+#, fuzzy
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Visitar sitiu web"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+#, fuzzy
+msgid "Share Hot New Stuff"
+msgstr "Compartir lo más novedoso"
+
+#: uploaddialog.cpp:468
+#, fuzzy, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 Add-On Uploader"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "Nun s'alcontró'l ficheru: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "Falló la xuba"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "El sirvidor nun reconoz la estaya %2 a la que tas intentando xubir."
+msgstr[1] ""
+"El sirvidor nun reconoz estaya dala a les que tas intentando xubir: %2."
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "Fallu"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "La estaya esbillada «%1» nun ye válida."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+#, fuzzy
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "Esbillar una rexón de la imaxe"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "Hebo un fallu de rede."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "Falló la xuba"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "Fallu d'autenticación."
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Falló la xuba: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Contraseña:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Nome d'usuariu:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Ficheru pa xubir:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Xuba nueva"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Descripción:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Versión:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Llicencia:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, fuzzy
+#| msgid "Please give some information about yourself."
+msgid "Please fill out the information about your upload in English."
+msgstr "Apurri daqué d'información sobre ti."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Títulu:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "El nome del ficheru tal y como apaecerá nel sitiu web"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy
+msgid "Preview Images"
+msgstr "Previsualizar imaxes"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy
+msgid "Select Preview..."
+msgstr "Seleicionar previsualizar..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, fuzzy
+#| msgid "Ne&ver store for this site"
+msgid "Set a price for this item"
+msgstr "&Enxamás guardar pa esti sitiu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy
+#| msgctxt "The source url of a job"
+#| msgid "Source:"
+msgid "Price"
+msgstr "Orixe:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, fuzzy
+#| msgctxt "The source url of a job"
+#| msgid "Source:"
+msgid "Price:"
+msgstr "Orixe:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy
+msgid "Upload content"
+msgstr "Xubir conteníu"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy
+#| msgid "Loading Preview"
+msgid "Upload first preview"
+msgstr "Cargando vista preliminar"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "Nota: Pues editar, anovar y desaniciar el to conteníu nel sitiu web."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy
+#| msgid "Loading Preview"
+msgid "Upload second preview"
+msgstr "Cargando vista preliminar"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy
+#| msgid "Loading Preview"
+msgid "Upload third preview"
+msgstr "Cargando vista preliminar"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Asegúrome qu'esti conteníu nun viola denguna llei, marca o copyright. Toi "
+"acordies pa que la mio IP se rexistre. (Distribuyir conteníu ensin el "
+"permisu del titular los drechos ye illegal.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy
+#| msgid "Start replace"
+msgid "Start Upload"
+msgstr "Entamar a trocar"
