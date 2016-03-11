@@ -94,8 +94,10 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
         auto serviceLocatingMode = desktopEntryName.endsWith(QLatin1String(".kmt-edition")) ?
                                    KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
         auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
-        service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
-        service->setMaxUrlArgCount(kmtServiceInfo.maxUrlArgCount);
+        if (service) { // We might get nullptr in case of missing or broken .desktop files
+            service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
+            service->setMaxUrlArgCount(kmtServiceInfo.maxUrlArgCount);
+        }
         return service;
     } else {
         qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
@@ -159,7 +161,10 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
                             *firstMoreSectionDesktopEntryName = desktopEntryName;
                             nextIsMore = false;
                         }
-                        resultList << KMoreToolsPresets::registerServiceByDesktopEntryName(kmt, desktopEntryName);
+                        KMoreToolsService *kmtService = KMoreToolsPresets::registerServiceByDesktopEntryName(kmt, desktopEntryName);
+                        if (kmtService) { // Do not add null pointers caused by missing or broken .desktop files
+                            resultList << kmtService;
+                        }
                     }
                 } else {
                     alreadyUsedDesktopEntryNames.insert(desktopEntryName);

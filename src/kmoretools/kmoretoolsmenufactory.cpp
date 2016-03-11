@@ -125,6 +125,8 @@ static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
                                       )
 {
     Q_FOREACH(auto kmtService, kmtServiceList) {
+        // Check the pointer just in case a null pointer got in somewhere
+        if (!kmtService) continue;
         if (kmtService->desktopEntryName() == firstMoreSectionDesktopEntryName) {
             // once we reach the potential first "more section desktop entry name"
             // all remaining services are added to the more section by default
@@ -232,6 +234,8 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
         menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
 
         Q_FOREACH(auto kmtService, kmtServiceList) {
+            // Check the pointer just in case a null pointer got in somewhere
+            if (!kmtService) continue;
             QUrl argUrl = url;
 
             if (url.isLocalFile()) { // this can only be done for local files, remote urls probably won't work for git clients anyway
