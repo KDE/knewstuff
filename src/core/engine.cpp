@@ -152,7 +152,8 @@ void Engine::loadProviders()
     if (m_providerFileUrl.isEmpty()) {
         // it would be nicer to move the attica stuff into its own class
         qCDebug(KNEWSTUFF) << "Using OCS default providers";
-        Attica::ProviderManager *m_atticaProviderManager = new Attica::ProviderManager;
+        delete m_atticaProviderManager;
+        m_atticaProviderManager = new Attica::ProviderManager;
         connect(m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
         m_atticaProviderManager->loadDefaultProviders();
     } else {
