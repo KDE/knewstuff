@@ -1,0 +1,835 @@
+# Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-04-30 07:54+0000\n"
+"PO-Revision-Date: 2014-10-09 09:45+0200\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Az elem ára: %2 %1.\n"
+"Szeretné megvenni?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Az egyenlege túl alacsony:\n"
+"Egyenleg: %1\n"
+"Ár: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Rögzítettük a szavazatát."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "Sikerült beállítani rajongónak."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Hálózati hiba. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "Túl sok kérés a szerverhez. Próbálkozzon újra néhány perc múlva."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Ismeretlen Open Collaboration Service API hiba. (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "Új kiegészítők letöltése…"
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "Inicializálás"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Nem található beállítófájl: „%1”"
+
+#: core/engine.cpp:110
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Érvénytelen beállítófájl: „%1”"
+
+#: core/engine.cpp:161
+msgid "Loading provider information"
+msgstr "Kiszolgálójellemzők betöltése"
+
+#: core/engine.cpp:184
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"Nem sikerült betölteni az új kiegészítők szolgáltatólistáját ebből a "
+"fájlból: %1"
+
+#: core/engine.cpp:202
+msgid "Error initializing provider."
+msgstr "Hiba a szolgáltató inicializálásakor."
+
+#: core/engine.cpp:206 core/engine.cpp:523
+msgid "Loading data"
+msgstr "Adatok betöltése"
+
+#: core/engine.cpp:236
+msgid "Loading data from provider"
+msgstr "Adatok betöltése a szolgáltatótól"
+
+#: core/engine.cpp:241
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Nem sikerült betölteni a szolgáltatólistát. Fájl: %1."
+
+#: core/engine.cpp:483
+#, kde-format
+msgid "Re: %1"
+msgstr "Válasz: %1"
+
+#: core/engine.cpp:525
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Egy előnézet betöltése"
+msgstr[1] "%1 előnézet betöltése"
+
+#: core/engine.cpp:527 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Telepítés"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Érvénytelen elem."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"Az elem letöltése meghiúsult: nincs letöltési URL a következőhöz: „%1”."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "„%1” letöltése meghiúsult, a hiba oka: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr "A letöltött fájl egy HTML-fájl. "
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Valószínűleg hibás letöltési hivatkozás"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "A letöltött fájl egy HTML-fájl. Megnyitva webböngészőben."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "„%1” nem telepíthető: a fájl nem található."
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "Felülírja a létező fájlt?"
+
+#: core/installation.cpp:538
+msgid "Download File"
+msgstr "Fájl letöltése"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a kulcslista "
+"lekérdezéséhez. A <i>gpg</i> programnak telepítve kell lennie, mert ezt "
+"használja a rendszer a letöltött erőforrások ellenőrzéséhez.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Adja meg a(z) <b>0x%1</b> kulcshoz tartozó jelszót. A kulcs tulajdonosa: "
+"<br /><i>%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a fájl integritásának "
+"ellenőrzéséhez. A <i>gpg</i> programnak telepítve kell lennie, enélkül nem "
+"lehet a letöltött erőforrásokat ellenőrizni.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Válassza ki az aláírási kulcsot"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Aláírási kulcs:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a fájl aláírásához. A "
+"<i>gpg</i> programnak telepítve kell lennie, enélkül nem lehet erőforrásokat "
+"aláírni.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Új dolgok letöltése"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 modultelepítő"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Időtúllépési hiba történt, ellenőrizze az internetkapcsolatot."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Kiszolgáló: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Szolgáltató: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Verzió: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "A szolgáltató adatai"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nem sikerült telepíteni: %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Új dolgok letöltése"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Ikonnézetmód"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Részletes nézetmód"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Minden szolgáltató"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Minden kategória"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Szolgáltató:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Kategória:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Legújabb"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Pontszám"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Legtöbbször letöltöttek"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Telepítve"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Rendezés:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Keresés:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Itt lehet megadni a keresendő szöveget"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Szerző:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Honlap</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Frissítés"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Eltávolítás"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Rajongó vagyok"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Telepítés"
+
+#: kmoretools/kmoretools.cpp:638
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Több…"
+
+#: kmoretools/kmoretools.cpp:653
+#, fuzzy
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Telepítve"
+
+#: kmoretools/kmoretools.cpp:689
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "B&eállítás…"
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy
+#| msgid "Visit contributor's homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "A közreműködő honlapjának megtekintése"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Nincsen egyező elem.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Beállítás"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "B&eállítóablak: %1…"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "Karbantartó"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "Mozgatás &lefelé"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "&Mozgatás felfelé"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "További műveletek"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Alapállapot"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "More Actions"
+msgid "More section"
+msgstr "További műveletek"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Több…"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Részletek: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Változások listája:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Honlap"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Pénzadomány küldése"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Tudásbázis (nincs bejegyzés)"
+msgstr[1] "Tudásbázis (%1 bejegyzés)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Megnyitás böngészőablakban"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Pontszám: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 rajongó"
+msgstr[1] "%1 rajongó"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 letöltés"
+msgstr[1] "%1 letöltés"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Előnézet betöltése"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Részletek"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Frissítés"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Új telepítési kísérlet"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Tovább"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "Befejezés"
+
+#: uploaddialog.cpp:177
+msgid "Fetching provider information..."
+msgstr "Szolgáltatóadatok letöltése…"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "Licencadatok letöltése a kiszolgálóról…"
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "Tartalomadatok letöltése a kiszolgálóról…"
+
+#: uploaddialog.cpp:266
+msgid "Could not fetch provider information."
+msgstr "Nem sikerült letölteni a szolgáltató adatait."
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr "Új fiók regisztrálása"
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "Bejelentkezés ellenőrzése…"
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "Előzőleg feltöltött tartalom letöltése…"
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "A bejelentkezés nem hitelesíthető, próbálja újra."
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "Az előzőleg feltöltött tartalom letöltése befejeződött."
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "A tartalomadatok letöltése a szerverről befejeződött."
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Weboldal meglátogatása"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Új kiegészítők közzététele"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 bővítményfeltöltő"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "Nem található ez a fájl: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "A feltöltés nem sikerült"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"A szerver nem ismeri fel a kategóriát, amelybe megpróbál feltölteni: %2"
+msgstr[1] ""
+"A szerver nem ismeri fel egyik kategóriát sem azok közül, amelyekbe "
+"megpróbál feltölteni: %2"
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "Hiba"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "A kiválasztott „%1” kategória érvénytelen."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "Előnézeti kép kiválasztása"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "Hálózati hiba történt."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "A feltöltés nem sikerült"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "Felhasználóazonosítási hiba."
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "A feltöltés nem sikerült: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Jelszó:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Felhasználónév:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Feltöltendő fájl:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Új feltöltés"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Leírás:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Verzió:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Licenc:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Töltse ki a feltöltött fájl jellemzőit (angolul)."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Cím:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "A fájl webhelyen megjelenítendő neve"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Egyértelműen leírja a fájltartalmat. Lehet ugyanaz a szöveg, mint a kvtml "
+"fájl címe."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Képek előnézete"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Előnézet kiválasztása…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Ár beállítása"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Ár"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Ár:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Az ár oka:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Tartalomhivatkozás letöltése a kiszolgálóról"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Tartalom létrehozása a kiszolgálón"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Tartalom feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Első előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Megjegyzés: szerkesztheti, frissítheti és törölheti a webhely tartalmát."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Második előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Harmadik előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Ellenőriztem, hogy a tartalom nem sért semmilyen létező szerzői jogot, "
+"törvényt vagy védjegyet. Beleegyezem az IP-címem naplózásába. (Tartalom "
+"terjesztése szerzői jog tulajdonosának beleegyezése nélkül illegális.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Feltöltés indítása"

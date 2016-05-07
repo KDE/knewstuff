@@ -1,0 +1,849 @@
+# translation of kdelibs4.po to Telugu
+#
+#
+# Purushottam Boyanapalli <boyanapalli@gmail.com>, 2005.
+# విజయ్ కిరణ్ కముజు <infyquest@gmail.com>, 2007.
+# pavithran <pavithran.s@gmail.com>, 2007.
+# Krishna Babu K <kkrothap@redhat.com>, 2008, 2009.
+# sreekalyanbapatla <sreekalyan3@gmail.com>, 2013.
+# GVS.Giri <gvs.giri@swecha.net>, 2013.
+# Bhuvan Krishna <bhuvan@swecha.org>,2013.
+# Naveen Kandimalla <naveen@swecha.net>,2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-04-30 07:54+0000\n"
+"PO-Revision-Date: 2013-11-04 23:55+0630\n"
+"Last-Translator: Bhuvan Krishna <bhuvan@swecha.org>\n"
+"Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
+
+#: attica/atticaprovider.cpp:294
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"ఈ వస్తువు ఖర్చులు %1 %2.\n"
+"మీరు కొందం అనుకుంటున్నారా?"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"సమతుల్యం చాలా తక్కువగ ఉంది మీ ఖాతాలొ: \n"
+"మీ సమతుల్యం: %1\n"
+"ధర: %2"
+
+#: attica/atticaprovider.cpp:351
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "మీ వోటు నమోదు కాలే."
+
+#: attica/atticaprovider.cpp:367
+msgid "You are now a fan."
+msgstr "మీరు ఇప్పుడు ఒక ఫ్యాన్."
+
+#: attica/atticaprovider.cpp:378
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "నేట్ వర్క్ లొపం. (%1)"
+
+#: attica/atticaprovider.cpp:382
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "సర్వర్ కి ఎక్కువ అభ్యర్థనలు వస్తునయి. కొన్ని నిమిషాల్లో మళ్ళీ ప్రయత్నించండి."
+
+#: attica/atticaprovider.cpp:384
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "తెలియని కలయికలొ తెరువు సేవా API లోపం. (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "కొత్త వాటిని సమాచారదిగుమ"
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "స్థాపించు "
+
+#: core/engine.cpp:97
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "ఆకృతీకరణ  దస్త్రాలు కనుపడటలేదు :\"%1\""
+
+#: core/engine.cpp:110
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "ఆకృతీకరణ దస్త్రాలు నిస్సారమైనది:\"%1\""
+
+#: core/engine.cpp:161
+msgid "Loading provider information"
+msgstr "ప్రొవైడ సమాచారం  చూపుము"
+
+#: core/engine.cpp:184
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "దస్త్రం నుండి వేడిగా కొత్త అంశాలు సరఫరానుంచి పొందుటకు లోడ్ చేయబడలేదు: %1"
+
+#: core/engine.cpp:202
+msgid "Error initializing provider."
+msgstr "సరఫరా సంసిద్ధసు లోపం."
+
+#: core/engine.cpp:206 core/engine.cpp:523
+msgid "Loading data"
+msgstr "సమాచారం  ఎక్కుతోం"
+
+#: core/engine.cpp:236
+msgid "Loading data from provider"
+msgstr "దత్తాంశం నుండి సరఫరా లొడింగ్"
+
+#: core/engine.cpp:241
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "దస్త్రం యోక్క సరఫరాదారులు నుండి  లోడింగ్ : %1 విఫలమైంది"
+
+#: core/engine.cpp:483
+#, kde-format
+msgid "Re: %1"
+msgstr "పునరాచరణ: %1"
+
+#: core/engine.cpp:525
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "%1 వీక్షణం  లోడుచేస్తోంది"
+msgstr[1] "%1 వీక్షణలు లోడుచేస్తోంది"
+msgstr[2] "%1 వీక్షణలు లోడుచేస్తోంది"
+msgstr[3] "%1 వీక్షణలు లోడుచేస్తోంది"
+msgstr[4] "%1 వీక్షణలు లోడుచేస్తోంది"
+
+#: core/engine.cpp:527 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "నెలకొల్పుతుం"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "వస్తువు నిస్సారం"
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "వస్తువు యొక్క దిగుమతి  విఫలమైంది: దిగుమతిలొ URL కోసం \"%1\"."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "\"%1\" యొక్క దిగుమతి విఫలమైంది, లోపం: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "సమాచారదిగుమతి లింకు బాగాలే"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "దిగుమతి దస్త్రం అది ఒక HTML దస్త్రం. అన్వేషిలొ తెరిచింది. "
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "%1ను సంస్థాపించలేక పోయింది:దస్త్రం కనిపించలే"
+
+#: core/installation.cpp:538
+msgid "Overwrite existing file?"
+msgstr "దస్త్రాలను తిరి వ్రాయి?"
+
+#: core/installation.cpp:538
+msgid "Download File"
+msgstr "దిగుమతి సమాచారపు దస్త్ర"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt><i>జిపిజి</i> మొదలుపెట్టలేను మరయూ అందుబాటులొ వున్న కీలను తెలెకపొయాను.<i>జిపిజి</i> స్థాపించబడి "
+"వునట్టు చూసుకోండి, లెకపొయిన డౌన్ లోడ్ చెయబడిన వనరుల సరిచూడలేము.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt><br /><i>%2&lt;%3&gt;</i><br />కు చెందిన, <b>0x%1</b>కీ కొరకు సంకేతపదమును "
+"ప్రవేశపెట్టుము:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt><i>జిపిజి</i> మొదలుపెట్టలేను మరయూ దస్త్రాన్ని సరిచూడండి.<i>జిపిజి</i> స్థాపించబడి వునట్టు "
+"చూసుకోండి, లెకపొయిన డౌన్ లోడ్ చెయబడిన వనరుల సరిచూడలేము.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "సంతకం చెయుటకు వాడె కీ ని ఎంచుకో"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "సంతకం చెయుటకు వాడిన కీ:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt><i>జిపిజి</i> మొదలుపెట్టలేను మరయూ దస్త్రాన్ని సంతకం చేయ లెకపొయాను.<i>జిపిజి</i> స్థాపించబడి "
+"వునట్టు చూసుకోండి, లెకపొయిన డౌన్ లోడ్ చెయబడిన వనరుల సరిచూడలేము.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "కొత్తవాటిని తెచ్చుకో!"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 యాడ్-ఆన్ సంస్థాపకి"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "సమయం అయిపోయింది. అంతర్జాల అనుసంధానము పరిశీలించుము!"
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "సెర్వర్: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />సిద్దంచేసేవారు: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />వివరణం: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "సిద్దంచేసేవారి సమాచారం"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "%1ను సంస్థాపించలేక పోయింది"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "కొత్తవాటిని తెచ్చుకో!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "ప్రతిమ వీక్షణ విధం"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "వివరాలు వీక్షణ విధం"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "సింద్దంచేయునది: %1  "
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "అన్నీ రకా"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "ప్రొవైడ"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "రక"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "కొత్తదై"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "రేటిం"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "చాలా సార్లు చెసిన దిగుమతి సమాచారం "
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "స్థాపించబడిన"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "ఈ క్రమములో :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "అన్వేషణ:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "శోధన పదాన్ని యిక్కడ ప్రవేశపెట్టుము"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "మూలకర్త:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">నివాస పుట</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "కొత్త మార్పులు"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "తొలగించు"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "కబొయో ఫ్యాన్ "
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "స్థాపించు"
+
+#: kmoretools/kmoretools.cpp:638
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "చాలా....."
+
+#: kmoretools/kmoretools.cpp:653
+#, fuzzy
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "స్థాపించబడిన"
+
+#: kmoretools/kmoretools.cpp:689
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "(&g) అమర్చు..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy
+#| msgid "Visit contributor's homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "కంట్రిభ్యూటర్స్ హొమ్ పుటను వీక్షించుట"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "జతైన అంశము దొరకలేదు.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "అమర్చు"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "(&C) %1 ను అమర్చు..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "గురు"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "(&D) క్రిందకి జరపండి"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "(&U) పైకి జరపండి"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "మరిన్ని చర్యలు"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "పునః అమర్పు"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "More Actions"
+msgid "More section"
+msgstr "మరిన్ని చర్యలు"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "చాలా....."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1సమాచారము కొర"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr " నమొదుల మా"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "నివాసపు"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "విరాళం ఇవ్వు"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "విజ్ఞాన మూలం (ప్రవేశాలు లేదు)"
+msgstr[1] "విజ్ఞాన మూలం (ప్రవేశాలు %1)"
+msgstr[2] "విజ్ఞాన మూలం (ప్రవేశాలు %1)"
+msgstr[3] "విజ్ఞాన మూలం (ప్రవేశాలు %1)"
+msgstr[4] "విజ్ఞాన మూలం (ప్రవేశాలు %1)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "కొత్త గవాకములో  తెరువు"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "రేటింగు: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 ఫ్యాన్ "
+msgstr[1] "%1 ఫ్యాస్న్ "
+msgstr[2] "%1 ఫ్యాస్న్ "
+msgstr[3] "%1 ఫ్యాస్న్ "
+msgstr[4] "%1 ఫ్యాస్న్ "
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 దిగుమతి"
+msgstr[1] "%1 దిగుమతులు"
+msgstr[2] "%1 దిగుమతులు"
+msgstr[3] "%1 దిగుమతులు"
+msgstr[4] "%1 దిగుమతులు"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "ముందస్తు వీక్షణం లోడుచేస్తోంది"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "వివరములు"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "తాజాపరు"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "మళ్ళీ స్థాపించు"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "తరువాత"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "ముగింపు"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "Provider information"
+msgid "Fetching provider information..."
+msgstr "సిద్దంచేసేవారి సమాచారం"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "సర్వర్ నుండి అనుజ్ఞాపత్రము దత్తాంశం తేలుసుకొండి  "
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "సర్వర్ నుండి విశయ్య దత్తాంశం తేలుసుకొండి..."
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Provider information"
+msgid "Could not fetch provider information."
+msgstr "సిద్దంచేసేవారి సమాచారం"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr "ఒక కొత్త ఖాతా నమోదు చేసుకొం"
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "లాగిన్ సరిచూచు ..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "ముందస్తు  తాజాపరిచిన   సమాచారాన్ని   బయటకుతీస్తుం"
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "లాగిన్  పరిక్షించడం కుదరదు ,మళ్ళి ప్రయత్నించం"
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "మీరు మునుపటిలో నవీకరించబడింది విషయాన్ని తెలుసుకొడం ముగిసింసది."
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "సర్వర్ నుండి విషయ దత్తాంశం తెలుసుకోడం ముగిసింది. "
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "వెబ్ సైట్ సందర్శించండి"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "కొత్తవాటిని పంచుకో"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 యాడ్-ఆన్  సంస్థాపకి"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "దస్త్రం కనపడలేదు : %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "ఎక్కించుట విఫలం అయిం"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "%2 ఏ అప్లోడ్ ఐతే మీరు ప్రయత్నిస్తున్నారో అ సర్వర్ వర్గం గుర్తించడం లేదు. "
+msgstr[1] "%2 ఏ అప్లోడ్ ఐతే మీరు ప్రయత్నిస్తున్నారో అ సర్వర్ ఏ యొక్క వర్గం గుర్తించడం లేదు. "
+msgstr[2] "%2 ఏ అప్లోడ్ ఐతే మీరు ప్రయత్నిస్తున్నారో అ సర్వర్ ఏ యొక్క వర్గం గుర్తించడం లేదు. "
+msgstr[3] "%2 ఏ అప్లోడ్ ఐతే మీరు ప్రయత్నిస్తున్నారో అ సర్వర్ ఏ యొక్క వర్గం గుర్తించడం లేదు. "
+msgstr[4] "%2 ఏ అప్లోడ్ ఐతే మీరు ప్రయత్నిస్తున్నారో అ సర్వర్ ఏ యొక్క వర్గం గుర్తించడం లేదు. "
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "దోషం"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "ఎంచుకున్న వర్గం \"%1\" చెల్లదు."
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "ఉపదర్సన చిత్రాన్ని ఎంచుకొం"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "ఒక నెట్వర్క్  లోపం ఏర్పడింది."
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "ఎక్కించుట విఫలం అయింది "
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "ప్రామాణీకరణ  దోషము"
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "ఎక్కించుట విఫలం :%1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "సంకేతపదము:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "యూజర్ పేరు:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "దస్రం  ఎక్కించబడినది."
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "కొత్త  ఎక్కించు"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "జిపిఎల్"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "ఎల్జిపిఎల్"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "బిఎస్డి"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "వర్ణన:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "వివరణం:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "లైసెన్స్:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "దయచేసి మీరు ఎక్కించేదాని  గురించి కొంత సమాచారము ఆంగ్లము ల లొ యివ్వండి."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "శీర్షిక:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "ఇది వెబ్ సైట్ లో కనిపించే దస్త్రం యొక్క పేరు"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"ఇది దస్త్ర విషయన్ని తప్పకుండ స్పష్టంగా వివరింస్తుంది. ఇది kvtml దస్త్రం యొక్క శీర్షిక ఐతే అదే పాఠం. "
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "ఉపదర్శనం చిత్రా"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "ఉపదర్శనాల  ఎంచుకొనుము..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr " ఈ  వస్తువుకి ఒక ధర ను నిర్దారించండి"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "ధ"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "ధర:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "ధర పెట్టినందుకు కారణం:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "సర్వర్ నుండి విషయాం జోడి పొందు"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "సర్వర్ విషయాన్ని సృష్టించు "
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "ఎక్కీంచే సమాచారము "
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "ముందస్తు  ఉపదర్శనాన్ని ఎక్కిం"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "గమనిక: మీరు వెబ్ సైట్ లో మీ సమచర, సవరించడానికి నవీకరించడానికి మరియు తొలగించవచ్చు."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "రెండొవ ఉపదర్శనాన్ని ఎక్కించడం "
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "మూడవ ఉపదర్శనాన్ని  ఎక్కించు "
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "ఎక్కించుట మొదలపె"
