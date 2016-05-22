@@ -11,3 +11,7 @@ libraries:
  - qmake: KNewStuff
    cmake: "KF5::NewStuff"
 cmakename: KF5NewStuff
+
+public_lib: true
+group: Frameworks
+subgroup: Tier 3
