@@ -152,7 +152,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         installButton->setIcon(icon);
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(installButton);
-            foreach (EntryInternal::DownloadLinkInformation info, entry.downloadLinkInformationList()) {
+            foreach (const EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text + " (" + info.distributionType.trimmed() + ')';

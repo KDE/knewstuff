@@ -287,7 +287,7 @@ void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QString
 
     bool isMoreSection = false;
 
-    Q_FOREACH(auto groupingName, groupingNames) {
+    Q_FOREACH(const auto &groupingName, groupingNames) {
 
         if (groupingName == QLatin1String("more:")) {
             isMoreSection = true;

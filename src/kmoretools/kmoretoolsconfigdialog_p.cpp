@@ -198,7 +198,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
     d->configUi->frameNotInstalledTools->setVisible(!notInstalledServices.empty());
     if (!notInstalledServices.empty()) {
         auto menu = new QMenu(this);
-        Q_FOREACH (const KmtMenuItemDto& registeredService, notInstalledServices) {
+        for (const KmtMenuItemDto& registeredService : notInstalledServices) {
 
             QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
                 registeredService.text, menu, registeredService.icon, registeredService.homepageUrl);

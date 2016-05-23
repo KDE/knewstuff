@@ -378,6 +378,8 @@ class KNEWSTUFF_EXPORT KMoreToolsService
     friend class KMoreToolsPrivate;
 
 public:
+    ~KMoreToolsService();
+
     /**
      * @return the desktop entry name which the service is identified by and with which
      * it was registered (see registerServiceByDesktopEntryName).
@@ -496,15 +498,11 @@ private:
                       bool isInstalled, KService::Ptr installedService,
                       KService::Ptr kmtDesktopfile);
 
-    ~KMoreToolsService();
-
-private:
     /**
      * No copy semantic => private and no implementation
      */
     KMoreToolsService(const KMoreTools&);
 
-private:
     KMoreToolsServicePrivate* d;
 };
 
@@ -531,6 +529,8 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuBuilder
     friend class KMoreToolsTestInteractive;
 
 public:
+    ~KMoreToolsMenuBuilder();
+
     /**
      * Affects addMenuItem() if called before it.
      *
@@ -629,15 +629,11 @@ private:
      */
     KMoreToolsMenuBuilder(const QString& uniqueId, const QString& userConfigPostfix);
 
-    ~KMoreToolsMenuBuilder();
-
-private:
     /**
      * No copy semantic => private and no implementation
      */
     KMoreToolsMenuBuilder(const KMoreTools&);
 
-private:
     KMoreToolsMenuBuilderPrivate* d;
 };
 

@@ -105,7 +105,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 
     mId = mDownloadUrls[QString()].url();
     if (mId.isEmpty()) {
-        mId = mDownloadUrls[mDownloadUrls.keys().first()].url();
+        mId = mDownloadUrls[mDownloadUrls.begin().key()].url();
     }
 
     QTimer::singleShot(0, this, SLOT(slotEmitProviderInitialized()));

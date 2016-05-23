@@ -204,7 +204,7 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
                 url.setUrl(urlLineEdit->text());
             }
             moreToolsMenu = menuFactory.createMenuFromGroupingNames( { groupingName }, url);
-            menuButton->setText(QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName).arg(url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
+            menuButton->setText(QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName, url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
             menuButton->setMenu(moreToolsMenu);
         });
     }

@@ -300,7 +300,6 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     entry.setInstalledFiles(installedFiles);
 
     if (!postInstallationCommand.isEmpty()) {
-        QString target;
         if (installedFiles.size() == 1) {
             runPostInstallationCommand(installedFiles.first());
         } else {
@@ -378,14 +377,14 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
         }
         if (!targetDirectory.isEmpty()) {
             if (scope == ScopeUser) {
-                installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + '/';
+                installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
             } else { // system scope
-                installdir = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).last() + '/' + targetDirectory + '/';
+                installdir = QStandardPaths::locate(QStandardPaths::GenericDataLocation, targetDirectory, QStandardPaths::LocateDirectory) + QLatin1Char('/');
             }
             pathcounter++;
         }
         if (!xdgTargetDirectory.isEmpty()) {
-            installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + '/';
+            installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + QLatin1Char('/');
             pathcounter++;
         }
         if (!installPath.isEmpty()) {
@@ -397,12 +396,12 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
                 installdir =  QDir::home().path() + QLatin1Char('/') + installPath + QLatin1Char('/');
             }
 #else
-            installdir = QDir::home().path() + '/' + installPath + '/';
+            installdir = QDir::home().path() + QLatin1Char('/') + installPath + QLatin1Char('/');
 #endif
             pathcounter++;
         }
         if (!absoluteInstallPath.isEmpty()) {
-            installdir = absoluteInstallPath + '/';
+            installdir = absoluteInstallPath + QLatin1Char('/');
             pathcounter++;
         }
 
@@ -414,11 +413,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
         qCDebug(KNEWSTUFF) << "installdir: " << installdir;
 
         // create the dir if it doesn't exist (QStandardPaths doesn't create it, unlike KStandardDirs!)
-        QDir dir(installdir);
-        if (!dir.exists(installdir)) {
-            dir.mkpath(installdir);
-        }
-
+        QDir().mkpath(installdir);
     }
 
     return installdir;
@@ -480,7 +475,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                     dir->copyTo(installdir);
 
                     installedFiles << archiveEntries(installdir, dir);
-                    installedFiles << installdir + '/';
+                    installedFiles << installdir + QLatin1Char('/');
 
                     archive->close();
                     QFile::remove(payloadfile);
@@ -521,7 +516,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                     installfile = source.fileName();
                 }
             }
-            installpath = installdir + '/' + installfile;
+            installpath = installdir + QLatin1Char('/') + installfile;
 
             qCDebug(KNEWSTUFF) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
@@ -638,7 +633,7 @@ QStringList Installation::archiveEntries(const QString &path, const KArchiveDire
 {
     QStringList files;
     foreach (const QString &entry, dir->entries()) {
-        QString childPath = path + '/' + entry;
+        QString childPath = path + QLatin1Char('/') + entry;
         if (dir->entry(entry)->isFile()) {
             files << childPath;
         }
@@ -646,7 +641,7 @@ QStringList Installation::archiveEntries(const QString &path, const KArchiveDire
         if (dir->entry(entry)->isDirectory()) {
             const KArchiveDirectory *childDir = static_cast<const KArchiveDirectory *>(dir->entry(entry));
             files << archiveEntries(childPath, childDir);
-            files << childPath + '/';
+            files << childPath + QLatin1Char('/');
         }
     }
     return files;

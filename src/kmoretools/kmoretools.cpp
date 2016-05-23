@@ -48,13 +48,8 @@ public:
 
     ~KMoreToolsPrivate()
     {
-        Q_FOREACH(auto b, menuBuilderMap.values()) {
-            delete b;
-        }
-
-        Q_FOREACH(auto s, serviceList) {
-            delete s;
-        }
+        qDeleteAll(menuBuilderMap);
+        qDeleteAll(serviceList);
     }
 
     /**

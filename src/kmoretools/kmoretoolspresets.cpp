@@ -87,8 +87,8 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 
 #undef ADD_ENTRY
 
-    auto iter = dict.find(desktopEntryName);
-    if (iter != dict.end()) {
+    auto iter = dict.constFind(desktopEntryName);
+    if (iter != dict.constEnd()) {
         auto kmtServiceInfo = *iter;
         const QString subdir = QStringLiteral("presets-kmoretools");
         auto serviceLocatingMode = desktopEntryName.endsWith(QLatin1String(".kmt-edition")) ?
@@ -149,10 +149,10 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     QSet<QString> alreadyUsedDesktopEntryNames; // including the "more:" keyword
     bool nextIsMore = false;
 
-    Q_FOREACH (QString groupingName, groupingNames) {
-        auto iter = dict.find(groupingName);
-        if (iter != dict.end()) {
-            Q_FOREACH(QString desktopEntryName, *iter) {
+    Q_FOREACH (const QString &groupingName, groupingNames) {
+        auto iter = dict.constFind(groupingName);
+        if (iter != dict.constEnd()) {
+            Q_FOREACH(const QString &desktopEntryName, *iter) {
                 if (!alreadyUsedDesktopEntryNames.contains(desktopEntryName)) {
                     if (desktopEntryName == _("more:")) {
                         nextIsMore = true;
