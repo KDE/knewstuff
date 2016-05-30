@@ -93,3 +93,63 @@ QStringList KNS3::Entry::uninstalledFiles() const
 {
     return d->e.uninstalledFiles();
 }
+
+QUrl KNS3::Entry::url() const
+{
+    return d->e.homepage();
+}
+
+static void appendIfValid(QList<QUrl>& list, const QUrl &value)
+{
+    if (value.isValid() && !value.isEmpty())
+        list << value;
+}
+
+QList<QUrl> KNS3::Entry::previewImages() const
+{
+    QList<QUrl> ret;
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig1)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig2)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig3)));
+    return ret;
+}
+
+QList<QUrl> KNS3::Entry::previewThumbnails() const
+{
+    QList<QUrl> ret;
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall1)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall2)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall3)));
+    return ret;
+}
+
+quint64 KNS3::Entry::size() const
+{
+    const auto downloadInfo = d->e.downloadLinkInformationList();
+    return downloadInfo.at(0).size;
+}
+
+uint KNS3::Entry::numberOfComments() const
+{
+    return d->e.numberOfComments();
+}
+
+uint KNS3::Entry::rating() const
+{
+    return d->e.rating();
+}
+
+QString KNS3::Entry::updateVersion() const
+{
+    return d->e.updateVersion();
+}
+
+QString KNS3::Entry::changelog() const
+{
+    return d->e.changelog();
+}
+
+QString KNS3::Entry::shortSummary() const
+{
+    return d->e.shortSummary();
+}

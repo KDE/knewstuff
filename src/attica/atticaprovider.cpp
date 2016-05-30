@@ -415,11 +415,13 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setName(content.name());
     entry.setHomepage(content.detailpage());
     entry.setRating(content.rating());
+    entry.setNumberOfComments(content.numberOfComments());
     entry.setDownloadCount(content.downloads());
     entry.setNumberFans(content.attribute(QStringLiteral("fans")).toInt());
     entry.setDonationLink(content.attribute(QStringLiteral("donationpage")));
     entry.setKnowledgebaseLink(content.attribute(QStringLiteral("knowledgebasepage")));
     entry.setNumberKnowledgebaseEntries(content.attribute(QStringLiteral("knowledgebaseentries")).toInt());
+    entry.setHomepage(content.detailpage());
 
     entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("1")), EntryInternal::PreviewSmall1);
     entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("2")), EntryInternal::PreviewSmall2);
@@ -437,6 +439,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
 
     entry.setSource(KNS3::EntryInternal::Online);
     entry.setSummary(content.description());
+    entry.setShortSummary(content.summary());
     entry.setChangelog(content.changelog());
 
     entry.clearDownloadLinkInformation();
@@ -448,6 +451,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
         info.distributionType = desc.distributionType();
         info.descriptionLink = desc.link();
         info.id = desc.id();
+        info.size = desc.size();
         info.isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload;
         entry.appendDownloadLinkInformation(info);
     }

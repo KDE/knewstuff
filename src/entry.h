@@ -121,6 +121,8 @@ public:
     * Retrieve the version string of the object.
     *
     * @return object version
+    *
+    * @sa installedVersion()
     */
     QString version() const;
 
@@ -138,6 +140,65 @@ public:
      * @since 4.5
      */
     QString providerId() const;
+
+    /**
+     * @returns if available an url identifying the asset
+     * @since 5.23
+     */
+    QUrl url() const;
+
+    /**
+     * @returns a list of urls to small previews to be displayed as thumbnails
+     * @since 5.23
+     */
+    QList<QUrl> previewThumbnails() const;
+
+    /**
+     * @returns a list of full previews of the asset
+     * @since 5.23
+     */
+    QList<QUrl> previewImages() const;
+
+    /**
+     * @returns the advertised disk size of the asset
+     * @since 5.23
+     */
+    quint64 size() const;
+
+    /**
+     * @returns the number of comments in the asset
+     * @since 5.23
+     */
+    uint numberOfComments() const;
+
+    /**
+     * @returns the rating of the asset, between 0 and 100
+     * @since 5.23
+     */
+    uint rating() const;
+
+    /**
+     * @returns the asset's change log
+     * @since 5.23
+     */
+    QString changelog() const;
+
+    /**
+     * @returns a short one-line summary of the asset
+     * @since 5.23
+     */
+    QString shortSummary() const;
+
+    /**
+     * @returns the available version
+     *
+     * If the entry is not updateable, it will be the same as version.
+     *
+     * @sa version()
+     *
+     * @since 5.23
+     */
+    QString updateVersion() const;
 
 private:
     Entry();

@@ -82,6 +82,7 @@ public:
         QString descriptionLink;
         int id;
         bool isDownloadtypeLink;
+        quint64 size = 0;
     };
 
     /**
@@ -160,6 +161,18 @@ public:
      * Sets a short description on what the object is all about.
      */
     void setSummary(const QString &summary);
+
+    /**
+     * Retrieve the license name of the object.
+     *
+     * @return object license
+     */
+    QString shortSummary() const;
+
+    /**
+     * Sets a short description on what the object is all about.
+     */
+    void setShortSummary(const QString &summary);
 
     /**
      * Retrieve a short description about the object.
@@ -293,6 +306,18 @@ public:
      * @return object rating
      */
     int rating() const;
+
+    /**
+     * Sets the number of comments in the asset
+     *
+     * @internal
+     */
+    void setNumberOfComments(int comments);
+
+    /**
+     * @returns the number of comments against the asset
+     */
+    int numberOfComments() const;
 
     /**
      * Sets the number of downloads.

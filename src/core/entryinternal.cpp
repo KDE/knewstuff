@@ -35,6 +35,7 @@ public:
     Private()
         : mReleaseDate(QDate::currentDate())
         , mRating(0)
+        , mNumberOfComments(0)
         , mDownloadCount(0)
         , mNumberFans(0)
         , mNumberKnowledgebaseEntries(0)
@@ -61,11 +62,13 @@ public:
 
     Author mAuthor;
     int mRating;
+    int mNumberOfComments;
     int mDownloadCount;
     int mNumberFans;
     int mNumberKnowledgebaseEntries;
     QString mKnowledgebaseLink;
     QString mSummary;
+    QString mShortSummary;
     QString mChangelog;
     QString mPayload;
     QStringList mInstalledFiles;
@@ -199,6 +202,16 @@ void EntryInternal::setSummary(const QString &summary)
     d->mSummary = summary;
 }
 
+QString EntryInternal::shortSummary() const
+{
+    return d->mShortSummary;
+}
+
+void EntryInternal::setShortSummary(const QString &summary)
+{
+    d->mShortSummary = summary;
+}
+
 void EntryInternal::setChangelog(const QString &changelog)
 {
     d->mChangelog = changelog;
@@ -287,6 +300,16 @@ int EntryInternal::rating() const
 void EntryInternal::setRating(int rating)
 {
     d->mRating = rating;
+}
+
+int EntryInternal::numberOfComments() const
+{
+    return d->mRating;
+}
+
+void EntryInternal::setNumberOfComments (int comments)
+{
+    d->mNumberOfComments = comments;
 }
 
 int EntryInternal::downloadCount() const
