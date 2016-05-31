@@ -95,6 +95,8 @@ DownloadManager::~DownloadManager()
 void DownloadManagerPrivate::_k_slotEngineError(const QString &error)
 {
     qCWarning(KNEWSTUFF) << "engine error" << error;
+
+    Q_EMIT q->errorFound(error);
 }
 
 void DownloadManagerPrivate::_k_slotProvidersLoaded()

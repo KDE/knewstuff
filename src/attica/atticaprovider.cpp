@@ -127,8 +127,21 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
             mCategoryMap[category.name()] = category;
         }
     }
-    mInitialized = true;
-    emit providerInitialized(this);
+
+    bool correct = true;
+    for(auto it = mCategoryMap.cbegin(), itEnd = mCategoryMap.cend(); it!=itEnd; ++it) {
+        if (!it.value().isValid()) {
+            qCWarning(KNEWSTUFF) << "Could not find category" << it.key();
+            correct = false;
+        }
+    }
+
+    if (correct) {
+        mInitialized = true;
+        emit providerInitialized(this);
+    } else {
+        emit signalError(i18n("Some categories are missing"));
+    }
 }
 
 bool AtticaProvider::isInitialized() const

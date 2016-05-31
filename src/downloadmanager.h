@@ -119,6 +119,11 @@ Q_SIGNALS:
      */
     void entryStatusChanged(const KNS3::Entry &entry);
 
+    /**
+     * Notifies that the engine couldn't be loaded properly and won't be suitable
+     */
+    void errorFound(const QString &errorMessage);
+
 private:
     Q_PRIVATE_SLOT(d, void _k_slotProvidersLoaded())
     Q_PRIVATE_SLOT(d, void _k_slotEngineError(const QString &error))
