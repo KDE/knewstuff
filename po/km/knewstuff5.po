@@ -1,0 +1,831 @@
+# translation of kdelibs4.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-06-01 07:21+0000\n"
+"PO-Revision-Date: 2012-06-27 10:04+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#: attica/atticaprovider.cpp:143
+msgid "Some categories are missing"
+msgstr ""
+
+#: attica/atticaprovider.cpp:307
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"ធាតុ​នេះ​មាន​តម្លៃ %1 %2 ​។\n"
+"តើ​អ្នក​ចង់​ទិញ​វា​ដែរឬទេ ?"
+
+#: attica/atticaprovider.cpp:321
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"សមតុល្យ​គណនី​របស់​អ្នក​យឺត​ពេក ៖\n"
+"សមតុល្យ​របស់​អ្នក ៖ %1\n"
+"តម្លៃ ៖ %2"
+
+#: attica/atticaprovider.cpp:364
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "ការ​បោះឆ្នោត​របស់​អ្នកត្រូវ​បានថត​ទុក ។"
+
+#: attica/atticaprovider.cpp:380
+msgid "You are now a fan."
+msgstr "ឥឡូវ​អ្នក​រីករាយ​ហើយ ។"
+
+#: attica/atticaprovider.cpp:391
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "កំហុស​បណ្ដាញ ៖ (%1)"
+
+#: attica/atticaprovider.cpp:395
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "មាន​សំណើ​ច្រើន​ពេក​ទៅកាន់​ម៉ាស៊ីន​បម្រើ ។ សូម​ព្យាយាម​ម្ដង​ទៀត​នៅ​ពេលបន្តិច​​ទៀត​នេះ ។"
+
+#: attica/atticaprovider.cpp:397
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "កំហុស​ក្នងុការ​​បើក​សេវា​សហការណ៍​ដែលមិន​ស្គាល់ API ។ (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "ទាញយក​ធាតុ​ថ្មី..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "ចាប់ផ្ដើម"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "រក​មិនឃើញ​ឯកសារ​កំណត់​រចនាសម្ព័ន្ធ ៖ \"%1\""
+
+#: core/engine.cpp:110
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "ឯកសារ​កំណត់​រចនាសម្ព័ន្ធ​មិន​ត្រឹមត្រូវ ៖ \"%1\""
+
+#: core/engine.cpp:161
+msgid "Loading provider information"
+msgstr "ផ្ទុក​ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: core/engine.cpp:184
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "មិន​អាច​ផ្ទុក​​កម្មវិធី​ផ្ដល់​ធាតុ​ថ្មីបំផុត​ពី​ឯកសារ​បានទេ ៖ %1"
+
+#: core/engine.cpp:202
+msgid "Error initializing provider."
+msgstr "កំហុស​ក្នុងការ​ចាប់ផ្ដើម​ក្រុមហ៊ុន​ផ្ដល់ ។"
+
+#: core/engine.cpp:206 core/engine.cpp:523
+msgid "Loading data"
+msgstr "ផ្ទុក​ទិន្នន័យ"
+
+#: core/engine.cpp:236
+msgid "Loading data from provider"
+msgstr "ផ្ទុក​ទិន្នន័យ​ពី​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: core/engine.cpp:241
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "បាន​បរាជ័យ​ក្នុងការ​ផ្ទុក​ក្រុមហ៊ុន​ផ្ដល់​ពី​ឯកសារ ៖ %1"
+
+#: core/engine.cpp:483
+#, kde-format
+msgid "Re: %1"
+msgstr "Re ៖ %1"
+
+#: core/engine.cpp:525
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "ផ្ទុក​ការ​មើលជា​មុន %1"
+
+#: core/engine.cpp:527 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "ដំឡើង"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "ធាតុ​មិន​ត្រឹមត្រូវ ។"
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "បានបរាជ័យ​ក្នុងការ​ទាញយក​​ធាតុ ៖ គ្មាន URL ទាញយក​សម្រាប់ \"%1\" ទេ ។"
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "ការ​ទាញយក \"%1\" បាន​បរាជ័យ កំហុស ៖ %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"ឯកសារ​ដែលបានទាញយក​គឺ​ជា​ឯកសារ html ។ វា​បង្ហាញ​តំណ​ទៅកាន់​តំបន់បណ្ដាញ​ជំនួស​ឲ្យ​កា​រទាញយក​ពិតប្រាកដ ។ "
+"តើ​អ្នក​ចង់​បើក​តំបន់បណ្ដាញ​ជា​មួយ​កម្មវិធីរុករក​ជំនួស​វិញ​ដែរឬទេ ?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "​​​ប្រហែលជា​តំណ​ទាញយក​ខូច"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "ឯកសារ​ដែលបាន​ទាញយក​គឺជា​ឯកសារ HTML ។ បាន​បើក​នៅ​ក្នុង​កម្មវិធី​រុករក ។"
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "មិនអាច​ដំឡើង \"%1\" បាន​ទេ ៖ រក​មិនឃើញ​ឯកសារ ។"
+
+#: core/installation.cpp:533
+msgid "Overwrite existing file?"
+msgstr "សរសេរ​ជាន់​លើ​ឯកសារ​ដែល​មាន​ស្រាប់ ?"
+
+#: core/installation.cpp:533
+#, fuzzy
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "ទាញយក​ឯកសារ ៖"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>មិន​អាច​ចាប់ផ្ដើម <i>gpg</i> ហើយ​ទៅ​យក​កូនសោ​ដែល​មាន​បានទេ ។ ត្រូវ​ប្រាកដ​ថា​បានដំឡើង "
+"<i>gpg</i> រួច បើ​ពុំ​នោះ​សោត ការ​ផ្ទៀងផ្ទាត់​ធនធាន​ដែល​បាន​ទាញយក នឹង​មិន​អាច​ធ្វើ​ទៅ​បាន​ទេ ។</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>បញ្ចូល​ឃ្លា​សម្ងាត់​សម្រាប់​កូនសោ <b>0x%1</b> ដែល​ជា​កម្មសិទ្ធិ​របស់<br /><i>%2&lt;%3&gt;</"
+"i><br /> ៖</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>មិន​អាច​ចាប់ផ្ដើម <i>gpg</i> និង​ពិនិត្យ​មើល​សុពលភាព​របស់​ឯកសារ ។ សូម​ប្រាកដ​ថា <i>gpg</i> "
+"ត្រូវ​បាន​ដំឡើង បើ​ពុំ​នោះ​សោត​ទេ ការ​ផ្ទៀងផ្ទាត់​ធនធាន​ដែល​បាន​ទាញយក​នឹង​មិន​អាច​ធ្វើ​ទៅ​បាន​ទេ ។</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "ជ្រើស​កូនសោ​ចុះ​ហត្ថលេខា"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "កូនសោ​ប្រើ​សម្រាប់​ចុះ​ហត្ថលេខា ៖"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>មិន​អាច​ចាប់ផ្ដើម <i>gpg</i> និង​ចុះ​ហត្ថលេខា​​លើឯកសារ​បានទេ ។ ត្រូវ​​ប្រាកដ​ថាបាន​ដំឡើង "
+"<i>gpg</i> រួចហើយ បើ​ពុំ​នោះ​សោត​ទេ ការ​ចុះ​ហត្ថលេខា​ធនធាន​នឹង​មិន​អាច​ធ្វើ​ទៅ​បាន​ទេ ។</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "យក​របស់​ថ្មី​ៗ​"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "បន្ថែម​លើ​កម្មវិធី​ដំឡើង %1"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "អស់ពេល ! ពិនិត្យ​មើល​ការ​តភ្ជាប់​អ៊ីធឺណិត !"
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "ម៉ាស៊ីន​បម្រើ ៖ %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />ក្រុមហ៊ុន​ផ្ដល់ ៖ %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />កំណែ ៖ %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "មិន​អាច​ដំឡើង %1"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "ទទួល​វត្ថុ​ថ្មី​បំផុត !"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "របៀប​ទិដ្ឋភាព​រូបតំណាង"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "របៀប​​ទិដ្ឋភាព​លម្អិត"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "ក្រុមហ៊ុនផ្ដល់​ទាំងអស់"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "គ្រប់​ប្រភេទ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "ក្រុមហ៊ុនផ្ដល់ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "ប្រភេទ ​៖"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "ថ្មី​បំផុត"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "ការវាយ​តម្លៃ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "ទាញយក​ច្រើន​បំផុត"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "បាន​ដំឡើង"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "តម្រៀប​តាម ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "ស្វែងរក ៖"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "បញ្ចូល​ឃ្លា​ស្វែងរក​នៅ​ទីនេះ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "អ្នក​និពន្ធ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">គេហទំព័រ</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "ធ្វើ​បច្ចុប្បន្នភាព"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "លុប"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "សប្បាយ"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "ដំឡើង"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "ច្រើន​ទៀត..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "បាន​ដំឡើង"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "កំណត់​រចនាសម្ព័ន្ធ..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy
+#| msgid "Visit contributor's homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "មើល​គេហទំព័រ​របស់​អ្នក​ចូលរួម"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "មិន​មាន​ធាតុ​ដំណូច​ឡើយ​ឡើយ ។\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "កំណត់​រចនាសម្ព័ន្ធ"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "កំណត់​រចនា​សម្ព័ន្ធ %1..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "អ្នក​ថែទាំ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "ផ្លាស់ទី​​ចុះ​ក្រោម"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "ផ្លាស់ទី​ឡើងលើ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "សកម្មភាព​ផ្សេងៗ"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "កំណត់​ឡើង​វិញ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "More Actions"
+msgid "More section"
+msgstr "សកម្មភាព​ផ្សេងៗ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "ច្រើន​ទៀត..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "សេចក្ដី​លម្អិត​សម្រាប់ %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "កំណត់ហេតុ​ផ្លាស់ប្ដូរ ៖"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "គេហ​ទំព័រ"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "ឧបត្ថម្ភ"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Knowledgebase (ធាតុ %1)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "បើក​ក្នុង​បង្អួច​កម្មវិធី​រុករក"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "ការវាយ​តម្លៃ ៖ %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "ដោយ <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "អ្នកគាំទ្រ %1 នាក់"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "ការ​ទាញយក %1"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "ផ្ទុក​ការ​មើល​ជា​មុន"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "សេចក្ដី​លម្អិត"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "ធ្វើបច្ចុប្បន្នភាព"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "ដំឡើង​ម្ដង​ទៀត"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "បន្ទាប់"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "បញ្ចប់"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "Loading provider information"
+msgid "Fetching provider information..."
+msgstr "ផ្ទុក​ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "កំពុង​បង្កើត​មាតិកា​នៅ​លើ​ម៉ាស៊ីនបម្រើ..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "កំពុង​ទៅ​យក​ទិន្នន័យ​មាតិកា​ពី​ម៉ាស៊ីន​បម្រើ..."
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Loading provider information"
+msgid "Could not fetch provider information."
+msgstr "ផ្ទុក​ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "កំពុង​ពិនិត្យ​មើលការ​ចូល..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "កំពុង​ទៅ​យក​មាតិកា​ដែលបាន​ធ្វើ​បច្ចុប្បន្នភាព​ពី​មុន​របស់​អ្នក..."
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "មិន​អាច​ផ្ទៀងផ្ទាត់​ការ​ចូលបាន​ទេ សូម​ព្យាយាម​ម្ដងទៀត ។"
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "បាន​បញ្ចប់​ការ​ទៅ​យក​មាតិកា​ដែល​បាន​ធ្វើ​បច្ចុប្បន្នភាព​​ពី​មុន​របស់​អ្នក ។"
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "បាន​បញ្ចប់​ការ​ទៅ​យក​​ទិន្នន័យ​មាតិកា​ពី​ម៉ាស៊ីន​បម្រើ ។"
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "មើល​តំបន់បណ្ដាញ"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "ចែក​រំលែក​របស់​ថ្មី​បំផុត"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "កម្មវិធី​ផ្ទុក​ឡើង %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "រក​មិនឃើញ​ឯកសារ ៖ %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ឡើង"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "ម៉ាស៊ីន​បម្រើ​មិន​ស្គាល់​ប្រភេទ​ណាមួយ ដែល​អ្នក​កំពុង​ព្យាយាម​ផ្ទុកឡើង ៖ %2 នោះ​ទេ"
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "កំហុស"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "ប្រភេទ​ដែល​បាន​ជ្រើស \"%1\" មិន​ត្រឹមត្រូវ​ទេ ។"
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "ជ្រើស​រូបភាព​មើល​ជា​មុន"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "មាន​កំហុស​បណ្ដាញ ។"
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "បាន​បរាជ័យ​ក្នុង​កា​រផ្ទុក​ឡើង"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "កំហុស​ក្នុង​កា​រផ្ទៀងផ្ទាត់​ភាព​ត្រឹមត្រូវ ។"
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "បាន​បរាជ័យ​ក្នុងកា​រផ្ទុក​ឡើង ៖ %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "ពាក្យ​សម្ងាត់ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "ឈ្មោះ​អ្នកប្រើ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "ឯកសារ​ត្រូវ​ផ្ទុក​ឡើង ៖"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "ផ្ទុក​ឡើង​ថ្មី"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "សេចក្តី​ពិពណ៌នា ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "កំណែ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "អាជ្ញាបណ្ណ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "សូម​បំពេញ​ព័ត៌មាន​អំពី​កា​រផ្ទុក​ឡើង​របស់​អ្នក​ជា​ភាសា​អង់គ្លេស ។"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "ចំណងជើង ៖"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "ឈ្មោះ​ឯកសារ​ដូច​ដែលវា​បង្ហាញ​នៅ​​លើ​តំបន់បណ្ដាញ"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"វា​គួរ​តែ​ពិពណ៌នា​ឲ្យ​ច្បាស់​អំពីមាតិកា​ឯកសារ ។ វា​អាច​អត្ថបទដដែល​ដូច​នឹង​ចំណង​ជើង​របស់​ឯកសារ kvtml ។"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "មើល​រូបភាព​​ជា​មុន"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "ជ្រើស​ការ​មើល​ជា​មុន..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "កំណត់​តម្លៃ​សម្រាប់​ធាតុ​នេះ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "តម្លៃ"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "តម្លៃ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "ហេតុផល​សម្រាប់​តម្លៃ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "ទៅ​យក​តំណ​មាតិកា​ពី​ម៉ាស៊ីន​បម្រើ"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "បង្កើត​មាតិកា​នៅ​លើ​ម៉ាស៊ីន​បម្រើ"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "ផ្ទុក​មាតិកា​ឡើង"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "ផ្ទុក​ការ​មើល​ជាមុន​លើក​ទីមួយ​ឡើង"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "ចំណាំ ៖ អ្នក​អាច​កែសម្រួល ធ្វើ​បច្ចុប្បន្នភាព និង​លុប​​មាតិកា​របស់​អ្នក​នៅ​លើ​តំបន់​បណ្ដាញ ។"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "ផ្ទុក​កា​រមើល​ជា​មុន​លើក​ទីពីរ​​ឡើង"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "ផ្ទុក​កា​រមើល​ជា​មុន​លើក​ទីបី​ឡើង"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"ខ្ញុំ​ប្រាកដ​ថា​មាតិកា​នេះ​មិន​បំពាន​ច្បាប់​រក្សាសិទ្ធិ ច្បាប់ ឬ​និក្ខិត្តសញ្ញា​ណាមួយ​ទេ ។ ខ្ញុំ​យល់ព្រម​ ថា​"
+"អាសយដ្ឋាន IP របស់​​ខ្ញុំ​ត្រូវ​បាន​ចុះ​កំណត់ហេតុ ។ (ការ​ចែកចែកមាតិកា​ដែល​អ្នក​មិន​មាន​សិទ្ធិ​ពី​ម្ចាស់​កម្មសិទ្ធិ​គឺ​មិន​"
+"ស្រប​ច្បាប់​ទេ ។)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "ចាប់ផ្ដើម​ផ្ទុក​ឡើង"

@@ -1,0 +1,841 @@
+# translation of kdelibs4.po to Thai
+# Copyright (C) 2003,2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Thanomsub Noppaburana <donga_n@yahoo.com>, 2003,2004, 2005.
+# Thanomsub Noppaburana <donga.nb@gmail.com>, 2005, 2008, 2010.
+# Sahachart Anukulkitch <drrider@gmail.com>, 2006, 2007.
+# Narachai Sakorn <narachai@gmail.com>, 2008.
+# Phuwanat Sakornsakolpat <narachai@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-06-01 07:21+0000\n"
+"PO-Revision-Date: 2010-12-31 22:47+0700\n"
+"Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: attica/atticaprovider.cpp:143
+msgid "Some categories are missing"
+msgstr ""
+
+#: attica/atticaprovider.cpp:307
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "the price of a download item, parameter 1 is the currency, 2 is the price"
+#| msgid ""
+#| "This items costs %1 %2.\n"
+#| "Do you want to buy it?"
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"รายการนี้มีราคา %1 %2\n"
+"คุณต้องการจะซื้อมันหรือไม่ ?"
+
+#: attica/atticaprovider.cpp:321
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"เงินคงเหลือในบัญชีของคุณมีน้อยแล้ว:\n"
+"เงินคงเหลือ: %1\n"
+"ราคา: %2"
+
+#: attica/atticaprovider.cpp:364
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "การโหวตของคุณถูกบันทึกเรียบร้อยแล้ว"
+
+#: attica/atticaprovider.cpp:380
+msgid "You are now a fan."
+msgstr "คุณเป็นแฟนคลับแล้วในตอนนี้"
+
+#: attica/atticaprovider.cpp:391
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "เครือข่ายผิดพลาด (%1)"
+
+#: attica/atticaprovider.cpp:395
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "มีการร้องขอเข้ามายังเซิร์ฟเวอร์เป็นจำนวนมาก โปรดลองใหม่อีกครั้งในภายหลัง"
+
+#: attica/atticaprovider.cpp:397
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "มีข้อผิดพลาด API ของบริการร่วมมือแบบเปิดที่ไม่รู้จัก (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "ดาวน์โหลดสิ่งใหม่ ๆ ..."
+
+#: core/engine.cpp:93
+msgid "Initializing"
+msgstr "เตรียมการทำงาน"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "ไม่พบแฟ้มค่าปรับแต่ง: \"%1\""
+
+#: core/engine.cpp:110
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "แฟ้มค่าปรับแต่งใช้งานไม่ได้: \"%1\""
+
+#: core/engine.cpp:161
+msgid "Loading provider information"
+msgstr "ทำการโหลดข้อมูลของผู้จัดทำ"
+
+#: core/engine.cpp:184
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "ไม่สามารถโหลดส่วนผู้จัดทำสิ่งใหม่ ๆ ที่เป็นที่นิยมจากแฟ้มต่อไปนี้ได้: %1"
+
+#: core/engine.cpp:202
+msgid "Error initializing provider."
+msgstr "เกิดข้อผิดพลาดในการเริ่มใช้งานส่วนของผู้จัดทำ"
+
+#: core/engine.cpp:206 core/engine.cpp:523
+msgid "Loading data"
+msgstr "ทำการโหลดข้อมูล"
+
+#: core/engine.cpp:236
+msgid "Loading data from provider"
+msgstr "ทำการโหลดข้อมูลจากผู้จัดทำ"
+
+#: core/engine.cpp:241
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "การโหลดส่วนผู้จัดทำขึ้นมาจากแฟ้ม: %1 ล้มเหลว"
+
+#: core/engine.cpp:483
+#, kde-format
+msgid "Re: %1"
+msgstr "ทำซ้ำ: %1"
+
+#: core/engine.cpp:525
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "ทำการโหลดภาพตัวอย่าง %1 ภาพ"
+
+#: core/engine.cpp:527 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "ทำการติดตั้ง"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "รายการใช้งานไม่ได้"
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "การดาวน์โหลดรายการล้มเหลว: ไม่มีที่อยู่ URL ของ \"%1\" สำหรับใช้ในการดาวน์โหลด"
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "การดาวน์โหลด \"%1\" ล้มเหลว ข้อผิดพลาดคือ: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"แฟ้มที่ได้ดาวน์โหลดมาเป็นแฟ้มประเภท HTML ซึ่งได้เชื่อมโยงไปยังเว็บไซต์แทนการดาวน์โหลดแฟ้ม "
+"คุณต้องการจะทำการเปิดเว็บไซต์ดังกล่าวในหน้าต่างเบราว์เซอร์แทนหรือไม่ ?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "เป็นไปได้ว่าส่วนเชื่อมโยงเพื่อใช้ดาวน์โหลดนั้นใช้ไม่ได้"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "แฟ้มที่ได้ดาวน์โหลดมาเป็นแฟ้มประเภท HTML ทำการเปิดแฟ้มดังกล่าวในเบราว์เซอร์"
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "ไม่สามารถติดตั้ง %1 ได้: เนื่องจากไม่พบแฟ้ม"
+
+#: core/installation.cpp:533
+msgid "Overwrite existing file?"
+msgstr "เขียนทับแฟ้มที่มีอยู่ก่อนแล้วหรือไม่ ?"
+
+#: core/installation.cpp:533
+#, fuzzy
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "ดาวน์โหลดแฟ้ม:"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>ไม่สามารถเริ่มงาน <i>gpg</i> และดึงข้อมูลของกุญแจที่มีอยู่ได้ โปรดแน่ใจว่า <i> gpg</i> "
+"ได้ถูกติดตั้งเอาไว้แล้ว มิฉะนั้นจะไม่สามารถตรวจสอบความถูกต้องของแฟ้มที่ดาวน์โหลดมาได้</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>ป้อนวลีรหัสผ่านสำหรับกุญแจ <b>0x%1</b>,ที่เป็นของ <br /><i>%2&lt;%3&gt;</i><br />:"
+"</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>ไม่สามารถเริ่มการทำงาน <i>gpg</i> และตรวจสอบความถูกต้องของแฟ้มได้ โปรดแน่ใจว่า "
+"<i>gpg</i> ได้ถูกติดตั้งไว้แล้ว มิฉะนั้น "
+"จะไม่สามารถตรวจสอบความถูกต้องของแฟ้มที่ดาวน์โหลดมาได้</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "เลือกกุญแจสำหรับใช้เซ็น"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "กุญแจสำหรับใช้เซ็น:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>ไม่สามารถเริ่มงาน <i>gpg</i> และทำการเซ็นแฟ้มได้ โปรดแน่ใจว่า <i>gpg</i> "
+"ถูกติดตั้งไว้แล้ว, มิฉะนั้น จะไม่สามารถทำการเซ็นกำกับได้</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "หาสิ่งใหม่ที่ได้รับความนิยม"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "ตัวติดตั้งส่วนเสริม %1"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "หมดเวลา โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ต"
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "เครื่องแม่ข่าย: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />ผู้จัดทำ: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />รุ่น: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "ข้อมูลของผู้จัดทำ"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "ไม่สามารถติดตั้ง %1 ได้"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "หารายการใหม่ ๆ ที่เป็นที่นิยม"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "โหมดมุมมองไอคอน"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "โหมดมุมมองรายละเอียด"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "ผู้จัดทำทั้งหมด"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "หมวดหมู่ทั้งหมด"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "ผู้จัดทำ:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "หมวดหมู่:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "ใหม่ล่าสุด"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "การจัดอันดับ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "ถูกดาวน์โหลดมากที่สุด"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "ติดตั้งแล้ว"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "เรียงลำดับตาม:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "ค้นหา:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "ป้อนคำค้นที่นี่"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "ผู้เขียน:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">หน้าเว็บหลัก</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "ปรับรุ่น"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "ถอนการติดตั้ง"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "ขอเป็นแฟนคลับ"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "ติดตั้ง"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "เพิ่มเติม..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "ติดตั้งแล้ว"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "ป&รับแต่ง..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy
+#| msgid "Visit contributor's homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "เยี่ยมชมหน้าเว็บของผู้มีส่วนร่วม"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "ไม่พบรายการที่เข้าเงื่อนไข\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "ปรับแต่งค่า"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "&ปรับแต่ง %1..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "ผู้ดูแล"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "ย้าย&ลง"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "ย้าย&ขึ้น"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "การกระทำเพิ่มเติม"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "ปรับกลับค่าเดิม"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "More Actions"
+msgid "More section"
+msgstr "การกระทำเพิ่มเติม"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "เพิ่มเติม..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "รายละเอียดของ %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "ปูมความเปลี่ยนแปลง:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "หน้าเว็บหลัก"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "ต้องการบริจาค"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "ฐานความรู้ (%1 รายการ)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "เปิดในหน้าต่างเบราว์เซอร์"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "อยู่ที่อันดับ: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "โดย <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "แฟนคลับ %1 ราย"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "ดาวน์โหลด %1 รายการ"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "ทำการโหลดภาพตัวอย่าง"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "รายละเอียด"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "ทำการปรับรุ่น"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "ทำการติดตั้งอีกครั้ง"
+
+#: uploaddialog.cpp:66
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "ถัดไป"
+
+#: uploaddialog.cpp:71
+msgid "Finish"
+msgstr "เสร็จสิ้น"
+
+#: uploaddialog.cpp:177
+msgid "Fetching provider information..."
+msgstr "ทำการรับข้อมูลของผู้จัดทำ..."
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr "ทำการดึงข้อมูลสัญญาอนุญาตจากเซิร์ฟเวอร์..."
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr "ทำการดึงข้อมูลเนื้อหาจากเซิร์ฟเวอร์..."
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Fetching provider information..."
+msgid "Could not fetch provider information."
+msgstr "ทำการรับข้อมูลของผู้จัดทำ..."
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+msgid "Checking login..."
+msgstr "ทำการตรวจสอบสิทธิ์การล็อกอิน..."
+
+#: uploaddialog.cpp:336
+msgid "Fetching your previously updated content..."
+msgstr "ทำการดึงข้อมูลเนื้อหาที่ปรับปรุงล่าสุดของคุณ..."
+
+#: uploaddialog.cpp:339
+msgid "Could not verify login, please try again."
+msgstr "ไม่สามารถตรวจความถูกต้องของล็อกอินได้ โปรดลองใหม่อีกครั้ง"
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr "ทำการดึงข้อมูลเนื้อหาที่ปรับปรุงล่าสุดของคุณเสร็จสิ้นแล้ว"
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr "ทำการดึงข้อมูลเนื้อหาจากเซิร์ฟเวอร์เสร็จสิ้นแล้ว"
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "เยี่ยมเว็บไซต์"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "แบ่งปันของใหม่ให้ใช้ร่วมกัน"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "ตัวติดตั้งส่วนเสริม %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, kde-format
+msgid "File not found: %1"
+msgstr "ไม่พบแฟ้ม: %1"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+msgid "Upload Failed"
+msgstr "การอัปโหลดล้มเหลว"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "เซิร์ฟเวอร์ไม่สามารถจัดการหมวดหมู่ที่คุณพยายามทำการอัปโหลดได้: %2"
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "ผิดพลาด"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "หมวดหมู่ \"%1\" ที่เลือกไว้ ไม่สามารถใช้ได้"
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+msgid "Select preview image"
+msgstr "เลือกภาพตัวอย่าง"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr "เกิดข้อผิดพลาดของเครือข่าย"
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+msgid "Uploading Failed"
+msgstr "การอัปโหลดล้มเหลว"
+
+#: uploaddialog.cpp:712
+msgid "Authentication error."
+msgstr "การตรวจสอบสิทธิ์ผิดพลาด"
+
+#: uploaddialog.cpp:722
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "การอัปโหลดล้มเหลว: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "ชื่อผู้ใช้:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "แฟ้มที่จะอัปโหลด:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "อัปโหลดใหม่"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "แบบ GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "แบบ LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "แบบ BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "คำอธิบาย:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "รุ่น:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "สัญญาอนุญาต:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "โปรดป้อนข้อมูลบางประการเกี่ยวกับการอัปโหลดของคุณ (เป็นภาษาอังกฤษ)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "หัวเรื่อง:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "ชื่อของแฟ้มที่จะปรากฎบนเว็บไซต์"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"ในส่วนนี้ควรจะอธิบายถึงเนื้อหาของแฟ้มให้ชัดเจนที่สุด "
+"โดยมันสามารถจะเป็นข้อความเดียวกันกับหัวเรื่องของแฟ้ม kvtml ก็ได้"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "แสดงตัวอย่างภาพ"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "เลือกภาพตัวอย่าง..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "ตั้งราคาให้กับรายการนี้"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "ราคา"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "ราคา:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "เหตุผลที่ต้องกำหนดราคา:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "ดึงส่วนเชื่อมโยงเนื้อหาจากเซิร์ฟเวอร์"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "สร้างเนื้อหาบนเซิร์ฟเวอร์"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "อัปโหลดเนื้อหา"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "อัปโหลดภาพตัวอย่างแรก"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "โปรดทราบ: คุณสามารถแก้ไข, ปรับปรุง และลบเนื้อหาของคุณบนเว็บไซต์ได้"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "อัปโหลดภาพตัวอย่างที่สอง"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "อัปโหลดภาพตัวอย่างที่สาม"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"ฉันแน่ใจว่า เนื้อหาของส่วนนี้ ไม่ได้ขัดแย้งกับสัญญาอนุญาต, กฎหมาย หรือเครื่องหมายการค้าใด ๆ "
+"และฉันยอมรับให้มีการบันทึกหมายเลขไอพีของฉัน "
+"(การเผยแพร่เนื้อหาโดยไม่ได้รับอนุญาตจากสิทธิ์ในการใช้งานนั้น ถือว่าผิดกฎหมาย)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "เริ่มการอัปโหลด"

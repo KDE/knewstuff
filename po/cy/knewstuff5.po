@@ -1,0 +1,940 @@
+# Cyfieithiad o kdelibs4.po i Cymraeg
+# translation of kdelibs4.po to Cymraeg
+# Translation of kdelibs4.po to Cymraeg
+# Translation of clearfuzzytest.po to Cymraeg
+# translation of clearfuzzytest.po to Cymraeg
+# translation of clearfuzzy.po to Cymraeg
+# KDE yn Gymraeg.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk <kyfieithu@dotmon.com>, 2003.
+# Kgyfieithu <kyfieithu@dotmon.com>, 2003.
+# KGyfieithu <kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2003, 2004.
+# Kyfieithu <kyfieithu@dotmon.com>, 2004.
+# Kevin Donnelly <kevin@dotmon.com>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-06-01 07:21+0000\n"
+"PO-Revision-Date: 2005-01-28 17:54+0000\n"
+"Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
+"Language-Team: Cymraeg\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: attica/atticaprovider.cpp:143
+#, fuzzy
+#| msgid "Image missing"
+msgid "Some categories are missing"
+msgstr "Llun ar goll"
+
+#: attica/atticaprovider.cpp:307
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:321
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:364
+#, fuzzy
+#| msgid "No text was replaced."
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Ni amnewidwyd testun. "
+
+#: attica/atticaprovider.cpp:380
+msgid "You are now a fan."
+msgstr ""
+
+#: attica/atticaprovider.cpp:391
+#, kde-format
+msgid "Network error. (%1)"
+msgstr ""
+
+#: attica/atticaprovider.cpp:395
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:397
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:49
+#, fuzzy
+#| msgid "Download New Stuff"
+msgid "Download New Stuff..."
+msgstr "Lawrlwytho y Diweddaraf"
+
+#: core/engine.cpp:93
+#, fuzzy
+#| msgid "Install"
+msgid "Initializing"
+msgstr "Arsefydlu"
+
+#: core/engine.cpp:97
+#, fuzzy, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Ffurfwedd"
+
+#: core/engine.cpp:110
+#, fuzzy, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Ffurfwedd"
+
+#: core/engine.cpp:161
+#, fuzzy
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "Gweld Gwybodaeth Ffrâm"
+
+#: core/engine.cpp:184
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:202
+#, fuzzy
+#| msgid "Error parsing providers list."
+msgid "Error initializing provider."
+msgstr "Gwall wrth ddosrannu'r rhestr o ddarparwyr."
+
+#: core/engine.cpp:206 core/engine.cpp:523
+#, fuzzy
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "Llwytho rhaglennig"
+
+#: core/engine.cpp:236
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:241
+#, fuzzy, kde-format
+#| msgid "Loading resource '%1' failed!"
+msgid "Loading of providers from file: %1 failed"
+msgstr "Methodd llwytho adnodd '%1'!"
+
+#: core/engine.cpp:483
+#, fuzzy, kde-format
+#| msgid "Redo: %1"
+msgid "Re: %1"
+msgstr "Ail-wneud: %1"
+
+#: core/engine.cpp:525
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "&Rhagweld Argraffiad"
+msgstr[1] "&Rhagweld Argraffiad"
+
+#: core/engine.cpp:527 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+#, fuzzy
+#| msgid "Install"
+msgid "Installing"
+msgstr "Arsefydlu"
+
+#: core/installation.cpp:175
+#, fuzzy
+#| msgid "invalid flags"
+msgid "Invalid item."
+msgstr "baneri annilys"
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:230
+#, fuzzy
+msgid "Possibly bad download link"
+msgstr "Methu creu'r ffeil newydd."
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:296
+#, fuzzy, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Methu canfod gwasanaeth '%1'."
+
+#: core/installation.cpp:533
+#, fuzzy
+#| msgid "Override existing entries"
+msgid "Overwrite existing file?"
+msgstr "Gwrthwneud cofnodion cyfredol"
+
+#: core/installation.cpp:533
+#, fuzzy
+#| msgid "Download"
+msgid "Download File"
+msgstr "Lawrlwytho"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:345
+#, fuzzy
+msgid "Select Signing Key"
+msgstr "Dewis Ardal Delwedd"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr ""
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+#, fuzzy
+#| msgid "Get Hot New Stuff"
+msgid "Get Hot New Stuff"
+msgstr "Nôl y Diweddaraf"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr ""
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr ""
+
+#: downloadwidget.cpp:179
+#, fuzzy, kde-format
+#| msgid "<Merge %1>"
+msgid "Server: %1"
+msgstr "<Cyfuno %1>"
+
+#: downloadwidget.cpp:180
+#, fuzzy, kde-format
+#| msgid "Hide %1"
+msgid "<br />Provider: %1"
+msgstr "Cuddio %1"
+
+#: downloadwidget.cpp:181
+#, fuzzy, kde-format
+#| msgid "Version:"
+msgid "<br />Version: %1"
+msgstr "Fersiwn :"
+
+#: downloadwidget.cpp:185
+#, fuzzy
+#| msgid "Show version information"
+msgid "Provider information"
+msgstr "Dangos gwybodaeth fersiwn"
+
+#: downloadwidget.cpp:196
+#, fuzzy, kde-format
+msgid "Could not install %1"
+msgstr "Methu canfod gwasanaeth '%1'."
+
+#: downloadwidget.cpp:197
+#, fuzzy
+#| msgid "Get Hot New Stuff"
+msgid "Get Hot New Stuff!"
+msgstr "Nôl y Diweddaraf"
+
+#: downloadwidget.cpp:249
+#, fuzzy
+#| msgid "Icon Size"
+msgid "Icons view mode"
+msgstr "Maint Eicon"
+
+#: downloadwidget.cpp:251
+#, fuzzy
+#| msgid "Details"
+msgid "Details view mode"
+msgstr " Manylion"
+
+#: downloadwidget.cpp:266
+#, fuzzy
+#| msgid "Hot New Stuff Providers"
+msgid "All Providers"
+msgstr "Darparwyr y Diweddaraf"
+
+#: downloadwidget.cpp:273
+#, fuzzy
+#| msgid "Categories"
+msgid "All Categories"
+msgstr "Categoriau"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, fuzzy
+#| msgid "Hide %1"
+msgid "Provider:"
+msgstr "Cuddio %1"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, fuzzy
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Categoriau"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, fuzzy
+#| msgid "New List"
+msgid "Newest"
+msgstr "Rhestr Newydd"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, fuzzy
+#| msgid "Rating"
+msgid "Rating"
+msgstr "Poblogrwydd"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, fuzzy
+#| msgid "Most Downloads"
+msgid "Most downloads"
+msgstr "Lawrlwythir yn Amlaf"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, fuzzy
+#| msgid "Install"
+msgid "Installed"
+msgstr "Arsefydlu"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, fuzzy
+#| msgid "S&earch:"
+msgid "Search:"
+msgstr "C&hwilio"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, fuzzy
+#| msgid "Internet Search"
+msgid "Enter search phrase here"
+msgstr "Chwiliad Rhyngrwyd"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Awdur:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Diweddaru"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+#, fuzzy
+#| msgid "Install"
+msgid "Uninstall"
+msgstr "Arsefydlu"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+#, fuzzy
+#| msgid "Home Fax"
+msgid "Become a Fan"
+msgstr "Facs Cartref"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Arsefydlu"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Mwy..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Arsefydlu"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Ffurf&weddu..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy
+#| msgid "Homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Tudalen gartref"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy
+#| msgid "No description available."
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Dim disgrifiad ar gael"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Ffurfweddu"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "&Ffurweddu %1..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy
+msgid "Main section"
+msgstr "Ffenest"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy
+msgid "Move down"
+msgstr "Symu&d i lawr"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy
+msgid "Move up"
+msgstr "Sym&ud i fyny"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Gweithrediad"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Ail-osod"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy
+#| msgid "Action"
+msgid "More section"
+msgstr "Gweithrediad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Mwy..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, fuzzy, kde-format
+#| msgid "Suggestion List"
+msgid "Details for %1"
+msgstr "Rhestr Awgrymiadau"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, fuzzy
+#| msgid "Change"
+msgid "Changelog:"
+msgstr "Newid"
+
+#: ui/entrydetailsdialog.cpp:111
+#, fuzzy
+#| msgid "Homepage"
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Tudalen gartref"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Gosodiadau HTML"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, fuzzy
+#| msgid "Open in New &Window"
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Agor mewn &Ffenest Newydd"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Rating: %1%"
+msgstr "Poblogrwydd"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, fuzzy, kde-format
+#| msgid "<b>Error</b>: %1: %2"
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<b>Gwall</b>: %1: %2"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Lawrlwytho"
+msgstr[1] "Lawrlwytho"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Loading Preview"
+msgstr "&Rhagweld Argraffiad"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr " Manylion"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Diweddaru"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+#, fuzzy
+#| msgid "Installation"
+msgid "Install Again"
+msgstr "Arsefydlu"
+
+#: uploaddialog.cpp:66
+#, fuzzy
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Nesaf"
+
+#: uploaddialog.cpp:71
+#, fuzzy
+msgid "Finish"
+msgstr "&Gorffen"
+
+#: uploaddialog.cpp:177
+#, fuzzy
+#| msgid "Show version information"
+msgid "Fetching provider information..."
+msgstr "Dangos gwybodaeth fersiwn"
+
+#: uploaddialog.cpp:184
+msgid "Fetching license data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:191
+msgid "Fetching content data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:266
+#, fuzzy
+#| msgid "Show version information"
+msgid "Could not fetch provider information."
+msgstr "Dangos gwybodaeth fersiwn"
+
+#: uploaddialog.cpp:290
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:314
+#, fuzzy
+#| msgid "Check Spelling..."
+msgid "Checking login..."
+msgstr "Gwirio Sillafu..."
+
+#: uploaddialog.cpp:336
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Fetching your previously updated content..."
+msgstr "&Rhagweld Argraffiad"
+
+#: uploaddialog.cpp:339
+#, fuzzy
+#| msgid "Save Login Information"
+msgid "Could not verify login, please try again."
+msgstr "Cadw Gwybodaeth Fewngofnodi"
+
+#: uploaddialog.cpp:358
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:376
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:399 uploaddialog.cpp:838
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:445 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Rhannu y Diweddaraf"
+
+#: uploaddialog.cpp:468
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr ""
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:763
+#, fuzzy, kde-format
+msgid "File not found: %1"
+msgstr "Methu darganfod yr ardull %1\n"
+
+#: uploaddialog.cpp:488 uploaddialog.cpp:614 uploaddialog.cpp:763
+#, fuzzy
+#| msgid "Upload Files"
+msgid "Upload Failed"
+msgstr "Lanlwytho Ffeiliau"
+
+#: uploaddialog.cpp:568
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: uploaddialog.cpp:571
+msgid "Error"
+msgstr "Gwall"
+
+#: uploaddialog.cpp:614
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr ""
+
+#: uploaddialog.cpp:663 uploaddialog.cpp:678 uploaddialog.cpp:692
+#, fuzzy
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "Dewis Ardal Delwedd"
+
+#: uploaddialog.cpp:707
+msgid "There was a network error."
+msgstr ""
+
+#: uploaddialog.cpp:707 uploaddialog.cpp:712
+#, fuzzy
+#| msgid "Upload Files"
+msgid "Uploading Failed"
+msgstr "Lanlwytho Ffeiliau"
+
+#: uploaddialog.cpp:712
+#, fuzzy
+#| msgid "Authentication"
+msgid "Authentication error."
+msgstr "Dilysiant"
+
+#: uploaddialog.cpp:722
+#, fuzzy, kde-format
+#| msgid "Upload Files"
+msgid "Upload failed: %1"
+msgstr "Lanlwytho Ffeiliau"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Cyfrinair:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, fuzzy
+msgid "Username:"
+msgstr "Defnyddiwr:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, fuzzy
+#| msgid "File reloaded."
+msgid "File to upload:"
+msgstr "Ffeil wedi ei ail-lwytho."
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, fuzzy
+#| msgid "&Upload"
+msgid "New Upload"
+msgstr "&Lanlwytho"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Disgrifiad:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Fersiwn :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Trwydded:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Teitl:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy
+#| msgid "Preview image: %1\n"
+msgid "Preview Images"
+msgstr "Rhagolygu delwedd: %1\n"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy
+msgid "Select Preview..."
+msgstr "Dewis Cydrannau ..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, fuzzy
+#| msgid "Ne&ver for This Site"
+msgid "Set a price for this item"
+msgstr "&Byth am y Wefan Yma"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy
+msgid "Price"
+msgstr "adnodd"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, fuzzy
+msgid "Price:"
+msgstr "adnodd"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy
+#| msgid "Upload Info"
+msgid "Upload content"
+msgstr "Gwybodaeth Lanlwytho"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload first preview"
+msgstr "&Rhagweld Argraffiad"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload second preview"
+msgstr "&Rhagweld Argraffiad"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy
+#| msgid "Print Previe&w..."
+msgid "Upload third preview"
+msgstr "&Rhagweld Argraffiad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy
+#| msgid "Start replace"
+msgid "Start Upload"
+msgstr "Dechrau amnewid"
