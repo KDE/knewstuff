@@ -438,10 +438,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
 
             // FIXME: check for overwriting, malicious archive entries (../foo) etc.
             // FIXME: KArchive should provide "safe mode" for this!
-            KArchive *archive = 0;
+            QScopedPointer<KArchive> archive;
 
             if (mimeType.inherits(QStringLiteral("application/zip"))) {
-                archive = new KZip(payloadfile);
+                archive.reset(new KZip(payloadfile));
             } else if (mimeType.inherits(QStringLiteral("application/tar"))
                        || mimeType.inherits(QStringLiteral("application/x-gzip"))
                        || mimeType.inherits(QStringLiteral("application/x-bzip"))
@@ -449,9 +449,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
                        || mimeType.inherits(QStringLiteral("application/x-xz"))
                        || mimeType.inherits(QStringLiteral("application/x-bzip-compressed-tar"))
                        || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
-                archive = new KTar(payloadfile);
+                archive.reset(new KTar(payloadfile));
             } else {
-                delete archive;
                 qCritical() << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompression == QLatin1String("always")) {
                     return QStringList();
@@ -479,7 +478,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
 
                     archive->close();
                     QFile::remove(payloadfile);
-                    delete archive;
                 }
             }
         }
