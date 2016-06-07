@@ -33,7 +33,7 @@
 #include "krandom.h"
 #include "kshell.h"
 #include "kmessagebox.h" // TODO get rid of message box
-#include <qdesktopservices.h> // TODO remove, this was only for my playing round
+#include <KRun>
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
 #include <knewstuff_debug.h>
@@ -229,7 +229,7 @@ void Installation::slotPayloadResult(KJob *job)
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
                     if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
                             == KMessageBox::Yes) {
-                        QDesktopServices::openUrl(fcjob->srcUrl());
+                        KRun::runUrl(fcjob->srcUrl(), QStringLiteral("text/html"), Q_NULLPTR);
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
                         entry.setStatus(Entry::Invalid);
                         emit signalEntryChanged(entry);
