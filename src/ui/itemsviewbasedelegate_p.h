@@ -43,17 +43,17 @@ public:
     explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent = 0);
     virtual ~ItemsViewBaseDelegate();
     // paint the item at index with all its attributes shown
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const = 0;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
 
     // get the list of widgets
-    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const = 0;
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
 
     // update the widgets
-    virtual void updateItemWidgets(const QList<QWidget *> widgets,
+    void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const = 0;
+                                   const QPersistentModelIndex &index) const Q_DECL_OVERRIDE = 0;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const = 0;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
 
 Q_SIGNALS:
     void signalShowDetails(const KNS3::EntryInternal &entry);
