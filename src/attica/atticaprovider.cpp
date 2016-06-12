@@ -300,7 +300,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     EntryInternal entry(pair.first);
     Content content = mCachedContent.value(entry.uniqueId());
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
-        qCDebug(KNEWSTUFF) << "Your balance is greather than the price."
+        qCDebug(KNEWSTUFF) << "Your balance is greater than the price."
                    << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
         if (KMessageBox::questionYesNo(0,
                                        i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
