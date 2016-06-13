@@ -17,7 +17,7 @@ set(REQUIRED_QT_VERSION 5.4.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 
 # Not part of kdelibs
-set(KF5_VERSION "5.23.0") # handled by release scripts
+set(KF5_VERSION "5.24.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.23.0") # handled by release scripts
 find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
