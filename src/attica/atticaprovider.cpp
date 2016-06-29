@@ -128,11 +128,12 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
         }
     }
 
-    bool correct = true;
+    bool correct = false;
     for(auto it = mCategoryMap.cbegin(), itEnd = mCategoryMap.cend(); it!=itEnd; ++it) {
         if (!it.value().isValid()) {
             qCWarning(KNEWSTUFF) << "Could not find category" << it.key();
-            correct = false;
+        } else {
+            correct = true;
         }
     }
 
@@ -140,7 +141,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
         mInitialized = true;
         emit providerInitialized(this);
     } else {
-        emit signalError(i18n("Some categories are missing"));
+        emit signalError(i18n("All categories are missing"));
     }
 }
 
