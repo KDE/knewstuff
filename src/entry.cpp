@@ -125,7 +125,7 @@ QList<QUrl> KNS3::Entry::previewThumbnails() const
 quint64 KNS3::Entry::size() const
 {
     const auto downloadInfo = d->e.downloadLinkInformationList();
-    return downloadInfo.at(0).size;
+    return downloadInfo.isEmpty() ? 0 : downloadInfo.at(0).size;
 }
 
 uint KNS3::Entry::numberOfComments() const
