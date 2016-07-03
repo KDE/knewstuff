@@ -1,0 +1,841 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# GunChleoc <fios@foramnagaidhlig.net>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-06-30 07:42+0000\n"
+"PO-Revision-Date: 2015-11-04 15:13+0000\n"
+"Last-Translator: Michael Bauer <fios@akerbeltz.org>\n"
+"Language-Team: Fòram na Gàidhlig\n"
+"Language: gd\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
+"(n > 2 && n < 20) ? 2 : 3;\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Project-Style: kde\n"
+
+#: attica/atticaprovider.cpp:144
+#, fuzzy
+#| msgid "All Categories"
+msgid "All categories are missing"
+msgstr "A h-uile roinn-seòrsa"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Tha an nì seo %1 %2.\n"
+"A bheil thu airson a cheannach?"
+
+#: attica/atticaprovider.cpp:322
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Chan eil airgead gu leòr sa chunntas agad:\n"
+"Am balans agad: %1\n"
+"A' phrìs: %2"
+
+#: attica/atticaprovider.cpp:365
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Chaidh a' bhòt agad a chlàradh."
+
+#: attica/atticaprovider.cpp:381
+msgid "You are now a fan."
+msgstr "Tha thu 'ga leantainn a-nis."
+
+#: attica/atticaprovider.cpp:392
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Mearachd lìonraidh. (%1)"
+
+#: attica/atticaprovider.cpp:396
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Tha iarrtasan aig an fhrithealaiche. Feuch ris a-rithist an ceann mionaid no "
+"dhà."
+
+#: attica/atticaprovider.cpp:398
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Mearachd Open Collaboration Service API nach aihne dhuinn. (%1)"
+
+#: button.cpp:49
+msgid "Download New Stuff..."
+msgstr "Luchdaich a-nuas stuth ùr..."
+
+#: core/engine.cpp:92
+msgid "Initializing"
+msgstr "'Ga thòiseachadh"
+
+#: core/engine.cpp:96
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Cha deach am faidhle rèiteachaidh a lorg: \"%1\""
+
+#: core/engine.cpp:109
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Chan eil am faidhle rèiteachaidh dligheach: \"%1\""
+
+#: core/engine.cpp:160
+msgid "Loading provider information"
+msgstr "A' luchdadh fiosrachadh an t-solaraiche"
+
+#: core/engine.cpp:183
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"Cha b' urrainn dhuinn solaraichean deagh-stuith ùir a luchdadh on fhaidhle: "
+"%1"
+
+#: core/engine.cpp:201
+msgid "Error initializing provider."
+msgstr "Mearachd le tòiseachadh an t-solaraiche."
+
+#: core/engine.cpp:205 core/engine.cpp:522
+msgid "Loading data"
+msgstr "A' luchdadh dàta"
+
+#: core/engine.cpp:235
+msgid "Loading data from provider"
+msgstr "A' luchdadh dàta on t-solaraiche"
+
+#: core/engine.cpp:240
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Dh'fhàillig le luchdadh nan solaraichean on fhaidhle: %1"
+
+#: core/engine.cpp:482
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:524
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "A' luchdadh %1 ro-shealladh"
+msgstr[1] "A' luchdadh %1 ro-shealladh"
+msgstr[2] "A' luchdadh %1 ro-sheallaidhean"
+msgstr[3] "A' luchdadh %1 ro-shealladh"
+
+#: core/engine.cpp:526 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "'Ga stàladh"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Nì mì-dhligheach."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"Cha deach leinn an nì a luchdadh: chan eil URL luchdaidh a-nuas airson "
+"\"%1\" ann."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Cha deach leinn \"%1\" a luchdadh a-nuas, mearachd: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Tha am faidhle air a luchdadh a-nuas 'na fhaidhle HTML. Tha seo a' "
+"riochdachadh ceangal seach dearbh-luchdadh a-nuas. A bheil thu airson an "
+"làrach-lìn fhosgladh le brabhsair 'na àite?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Droch-cheangal luchdaidh a-nuas ma dh'fhaoidte"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+"Tha am faidhle a chaidh a luchdadh a-nuas 'na fhaidhle HTML. Dh'fhosgail "
+"sinn sa bhrabhsair e."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Cha b' urrainn dhuinn \"%1\" a stàladh: cha deach am faidhle a lorg."
+
+#: core/installation.cpp:531
+msgid "Overwrite existing file?"
+msgstr "A bheil thu airson sgrìobhadh thairis air an fhaidhle a tha ann?"
+
+#: core/installation.cpp:531
+msgid "Download File"
+msgstr "Luchdaich a-nuas faidhle"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Chan urrainn dhuinn <i>gpg</i> a thòiseachadh is na h-iuchraichean ri am "
+"faighinn a luchdadh. Dèan cinnteach gun dèid <i>gpg</i> a stàladh air neo "
+"chan urrainn dhuinn na goireasan air an luchdadh a-nuas a dhearbhadh.</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Cuir a-steach an abairt-fhaire airson na h-iuchrach <b>0x%1</b> a tha "
+"le<br /><i>%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Chan urrainn dhuinn <i>gpg</i> a thòiseachadh airson dligheachd an "
+"fhaidhle a dhearbhadh. Dèan cinnteach gun dèid <i>gpg</i> a stàladh air neo "
+"chan urrainn dhuinn na goireasan air an luchdadh a-nuas a dhearbhadh.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Tagh iuchair soidhnidh"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Iuchair airson an t-soidhnidh:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Chan urrainn dhuinn <i>gpg</i> a thòiseachadh is am faidhle a "
+"shoidhneadh. Dèan cinnteach gun dèid <i>gpg</i> a stàladh air neo chan "
+"urrainn dhuinn na goireasan a shoidhneadh.</qt>"
+
+#: downloaddialog.cpp:80 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Faigh deagh-stuth ùr"
+
+#: downloaddialog.cpp:92
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Stàlaichear tuilleadain %1"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Dh'fhalbh an ùine air. Thoir sùil air a' cheangal dhan eadar-lìon."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Frithealaiche: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Solaraiche: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Tionndadh: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Fiosrachadh an t-solaraiche"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Cha b' urrainn dhuinn %1 a stàladh"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Faigh deagh-stuth ùr!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Modh sealladh nan ìomhaigheagan"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Modh sealladh an fhiosrachaidh"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "A h-uile solaraiche"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "A h-uile roinn-seòrsa"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Solaraiche:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Roinn-seòrsa:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "As ùire"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Rangachadh"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Air a luchdadh a-nuas as trice"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Air a stàladh"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Seòrsaich a-rèir:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Lorg:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Cuir a-steach faclan-luirg an-seo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:366
+msgid "Author:"
+msgstr "Ùghdar:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:391
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Duilleag-dhachaigh</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:567 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Ùraich"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:577 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Dì-stàlaich"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:584
+msgid "Become a Fan"
+msgstr "Lean air"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:591 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Stàlaich"
+
+#: kmoretools/kmoretools.cpp:633
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Barrachd"
+
+#: kmoretools/kmoretools.cpp:648
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Gun stàladh:"
+
+#: kmoretools/kmoretools.cpp:684
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Rèitich..."
+
+#: kmoretools/kmoretools_p.h:384
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Tadhail air an duilleag-dhachaigh"
+
+#: kmoretools/kmoretools_p.h:391
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Chan eil barrachd fiosrachaidh ri fhaighinn."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+msgid "Configure menu"
+msgstr "Clàr-taice rèiteachaidh"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Clàr-taice rèiteachaidh - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr "$GenericName - am pasgan làithreach"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr "$GenericName - an t-uidheam làithreach"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr "$GenericName - a h-uile uidheam"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+msgid "Main section"
+msgstr "Prìomh-earrann"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+msgid "Move down"
+msgstr "Gluais sìos"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+msgid "Move up"
+msgstr "Gluais suas"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr "Gluais dhan phrìomh-earrann"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+msgid "Move to More section"
+msgstr "Gluais dhan earrann le barrachd innealan"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Ath-shuidhich"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+msgid "More section"
+msgstr "Earrann le barrachd innealan"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Mholamaid barrachd innealan airson a' chlàir-thaice seo nach eil air an "
+"stàladh aig an àm seo:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+msgid "More tools..."
+msgstr "Barrachd innealan..."
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Fiosrachadh air %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Loga nan atharraichean:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Duilleag-dhachaigh"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Thoir tìodhlac"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Eòlas-lann (%1 nì)"
+msgstr[1] "Eòlas-lann (%1 nì)"
+msgstr[2] "Eòlas-lann (%1 nithean)"
+msgstr[3] "Eòlas-lann (%1 nì)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Thèid fhosgladh ann an uinneag brabhsair ùr"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Rangachadh: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Le <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 neach-leantainn"
+msgstr[1] "%1 luchd-leantainn"
+msgstr[2] "%1 luchd-leantainn"
+msgstr[3] "%1 luchd-leantainn"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "%1 luchdadh a-nuas"
+msgstr[1] "%1 luchdadh a-nuas"
+msgstr[2] "%1 luchdaidhean a-nuas"
+msgstr[3] "%1 luchdadh a-nuas"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "A' luchdadh an ro-sheallaidh"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Mion-fhiosrachadh"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "'Ga ùrachadh"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Stàlaich às ùr"
+
+#: uploaddialog.cpp:64
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Air adhart"
+
+#: uploaddialog.cpp:69
+msgid "Finish"
+msgstr "Crìochnaich"
+
+#: uploaddialog.cpp:175
+msgid "Fetching provider information..."
+msgstr "A' faighinn fiosrachadh an t-solaraiche..."
+
+#: uploaddialog.cpp:182
+msgid "Fetching license data from server..."
+msgstr "A' faighinn fiosrachadh a' cheadachais on fhrithealaiche..."
+
+#: uploaddialog.cpp:189
+msgid "Fetching content data from server..."
+msgstr "A' faighinn dàta na susbainte on fhrithealaiche..."
+
+#: uploaddialog.cpp:264
+msgid "Could not fetch provider information."
+msgstr "Cha b' urrainn dhuinn fiosrachadh an t-solaraiche fhaighinn."
+
+#: uploaddialog.cpp:288
+msgid "Register a new account"
+msgstr "Clàraich cunntas ùr"
+
+#: uploaddialog.cpp:312
+msgid "Checking login..."
+msgstr "A' dearbhadh a' chlàraidh a-steach..."
+
+#: uploaddialog.cpp:334
+msgid "Fetching your previously updated content..."
+msgstr "A' faighinn na susbainte a chaidh ùrachadh roimhe..."
+
+#: uploaddialog.cpp:337
+msgid "Could not verify login, please try again."
+msgstr ""
+"Cha b' urrainn dhuinn an clàradh a-steach a dhearbhadh, feuch ris a-rithist."
+
+#: uploaddialog.cpp:356
+msgid "Fetching your previously updated content finished."
+msgstr "Tha an t-susbaint agad a chaidh ùrachadh roimhe air a faighinn."
+
+#: uploaddialog.cpp:374
+msgid "Fetching content data from server finished."
+msgstr "Tha dàta na susbainte air fhaighinn on fhrithealaiche."
+
+#: uploaddialog.cpp:397 uploaddialog.cpp:836
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Tadhail air an làrach-lìn"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:443 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Co-roinn deagh-stuth ùr"
+
+#: uploaddialog.cpp:466
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Inneal luchdaidh suas tuilleadain %1"
+
+#: uploaddialog.cpp:486 uploaddialog.cpp:761
+#, kde-format
+msgid "File not found: %1"
+msgstr "Cha deach am faidhle a lorg: %1"
+
+#: uploaddialog.cpp:486 uploaddialog.cpp:612 uploaddialog.cpp:761
+msgid "Upload Failed"
+msgstr "Dh'fhàillig leis an luchdadh suas"
+
+#: uploaddialog.cpp:566
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"Chan aithnich am frithealaiche an roinn-seòrsa %2 dhan a tha thu a' "
+"feuchainn ri rud a luchdadh suas."
+msgstr[1] ""
+"Chan aithnich am frithealaiche gin dhe na roinnean-seòrsa dhan a tha thu a' "
+"feuchainn ri rud a luchdadh suas: %2"
+msgstr[2] ""
+"Chan aithnich am frithealaiche gin dhe na roinnean-seòrsa dhan a tha thu a' "
+"feuchainn ri rud a luchdadh suas: %2"
+msgstr[3] ""
+"Chan aithnich am frithealaiche gin dhe na roinnean-seòrsa dhan a tha thu a' "
+"feuchainn ri rud a luchdadh suas: %2"
+
+#: uploaddialog.cpp:569
+msgid "Error"
+msgstr "Mearachd"
+
+#: uploaddialog.cpp:612
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Chan eil an roinn-seòrsa \"%1\" a thagh thu dligheach."
+
+#: uploaddialog.cpp:661 uploaddialog.cpp:676 uploaddialog.cpp:690
+msgid "Select preview image"
+msgstr "Tagh dealbh ro-sheallaidh"
+
+#: uploaddialog.cpp:705
+msgid "There was a network error."
+msgstr "Bha mearachd lìonraidh ann."
+
+#: uploaddialog.cpp:705 uploaddialog.cpp:710
+msgid "Uploading Failed"
+msgstr "Dh'fhàillig leis an luchdadh suas"
+
+#: uploaddialog.cpp:710
+msgid "Authentication error."
+msgstr "Mearachd leis an dearbhadh."
+
+#: uploaddialog.cpp:720
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Dh'fhàillig leis an luchdadh suas: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Facal-faire:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Ainm-cleachdaiche:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Am faidhle ri luchdadh suas:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Luchdadh suas ùr"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Tuairisgeul:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Tionndadh:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Ceadachas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Feuch an lìon thu fiosrachadh mun luchdadh suas agad sa Bheurla."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Tiotal:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Ainm an fhaidhle mar a nochdas e air an làrach-lìn"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Bu chòir dha seo susbaint an fhaidhle a mhìneachadh gu soilleir. Faodaidh e "
+"bhith co-ionnann ris an tiotal air an fhaidhle kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Dealbhan ro-sheallaidh"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Tagh ro-shealladh..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Suidhich prìs airson an nì sei"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Prìs"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Prìs:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Adhbhar na prìse:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Faigh ceangail susbainte on fhrithealaiche"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Cruthaich susbaint air an fhrithealaiche"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Luchdaich suas susbaint"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Luchdaich suas a' chiad ro-shealladh"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"An aire: 'S urrainn dhut an t-susbaint agad a dheasachadh, ùrachadh is a "
+"sguabadh às air an làrach-lìn."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Luchdaich suas an dàrna ro-shealladh"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Luchdaich suas an treas ro-shealladh"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Tha mi a' dèanamh cinnteach nach eil an t-susbaint seo a' briseadh a-steach "
+"air còir-lethbhreac, lagh no comharra-malairt sam bith. Tha mi ag aontachadh "
+"gun dèid an seòladh IP agam a chlàradh. (Tha e mì-laghail a bhith a' "
+"sgaoileadh susbaint gun chead o sheilbheadair na còrach-lethbhreac.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Tòisich air an luchdadh suas"
