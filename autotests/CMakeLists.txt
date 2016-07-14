@@ -16,7 +16,7 @@ macro(knewstuff_unit_tests)
        set_target_properties(${_testname} PROPERTIES COMPILE_FLAGS -DKNEWSTUFF_STATIC_DEFINE)
        add_test("knewstuff-${_testname}" ${_testname})
        ecm_mark_as_test(${_testname})
-       target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore)
+       target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore)
     endforeach()
 endmacro()
 
@@ -29,7 +29,7 @@ knewstuff_unit_tests(
 add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp)
 add_test(kmoretoolstest kmoretoolstest)
 ecm_mark_as_test(kmoretoolstest)
-target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuff KF5::I18n)
+target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n)
 install(FILES kmoretools/1/a.desktop.notranslate
         DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1
         RENAME a.desktop)

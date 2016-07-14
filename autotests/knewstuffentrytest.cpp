@@ -71,7 +71,7 @@ KNS3::Entry testEntry::createEntry()
     KNS3::EntryInternal entryInternal;
     bool xmlResult = entryInternal.setEntryXML(node);
     qCDebug(KNEWSTUFF) << "Created entry from XML " << xmlResult;
-    return entryInternal.toEntry();
+    return KNS3::EntryPrivate::fromInternal(&entryInternal);
 }
 
 void testEntry::testProperties()
