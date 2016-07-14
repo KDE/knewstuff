@@ -204,6 +204,7 @@ private:
     QExplicitlySharedDataPointer<EntryPrivate> d;
 
     friend class EntryInternal;
+    friend class EntryPrivate;
 };
 
 }

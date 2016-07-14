@@ -25,7 +25,9 @@
 
 #include <kconfig.h>
 #include <knewstuff_debug.h>
-#include <kio/job.h>
+// #include <kio/job.h>
+
+#include "jobs/httpjob.h"
 
 namespace KNS3
 {
@@ -41,16 +43,17 @@ void XmlLoader::load(const QUrl &url)
 
     qCDebug(KNEWSTUFF) << "XmlLoader::load(): url: " << url;
 
-    KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
+//     KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
+    HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
     connect(job, &KJob::result,
             this, &XmlLoader::slotJobResult);
-    connect(job, &KIO::TransferJob::data,
+    connect(job, &HTTPJob::data,
             this, &XmlLoader::slotJobData);
 
     emit jobStarted(job);
 }
 
-void XmlLoader::slotJobData(KIO::Job *, const QByteArray &data)
+void XmlLoader::slotJobData(KJob *, const QByteArray &data)
 {
     qCDebug(KNEWSTUFF) << "XmlLoader::slotJobData()";
 

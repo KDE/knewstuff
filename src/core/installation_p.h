@@ -26,6 +26,8 @@
 
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 class KArchiveDirectory;
 class KJob;
 
@@ -42,7 +44,7 @@ namespace KNS3
  *
  * @internal
  */
-class Installation : public QObject
+class KNEWSTUFFCORE_EXPORT Installation : public QObject
 {
     Q_OBJECT
 public:

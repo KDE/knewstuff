@@ -302,11 +302,13 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
         qCDebug(KNEWSTUFF) << "Your balance is greater than the price."
                    << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
-        if (KMessageBox::questionYesNo(0,
-                                       i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
-                                             "This item costs %1 %2.\nDo you want to buy it?",
-                                             item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
-                                            )) == KMessageBox::Yes) {
+//         if (KMessageBox::questionYesNo(0,
+//                                        i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
+//                                              "This item costs %1 %2.\nDo you want to buy it?",
+//                                              item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
+//                                             )) == KMessageBox::Yes) {
+                   // TODO:KNSCore We need to support payment... emit the question, allow for response elsewhere
+                   if(false) {
             ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
             connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
             connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
@@ -318,8 +320,9 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     } else {
         qCDebug(KNEWSTUFF) << "You don't have enough money on your account!"
                << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
-        KMessageBox::information(0, i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
-                                         item.balance(), content.downloadUrlDescription(0).priceAmount()));
+               // TODO:KNSCore emit error message
+//         KMessageBox::information(0, i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
+//                                          item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
 }
 

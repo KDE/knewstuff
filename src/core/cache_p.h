@@ -25,10 +25,12 @@
 #include "engine_p.h"
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 namespace KNS3
 {
 
-class Cache : public QObject
+class KNEWSTUFFCORE_EXPORT Cache : public QObject
 {
     Q_OBJECT
 

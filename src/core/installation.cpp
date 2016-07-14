@@ -24,6 +24,7 @@
 #include <QTemporaryFile>
 #include <QtCore/QProcess>
 #include <QUrlQuery>
+#include <QDesktopServices>
 
 #include "qmimedatabase.h"
 #include "karchive.h"
@@ -33,11 +34,12 @@
 #include "krandom.h"
 #include "kshell.h"
 #include "kmessagebox.h" // TODO get rid of message box
-#include <KRun>
+
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
 #include <knewstuff_debug.h>
 
+#include "core/jobs/filecopyjob.h"
 #include "core/security_p.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -202,7 +204,7 @@ void Installation::downloadPayload(const KNS3::EntryInternal &entry)
     qCDebug(KNEWSTUFF) << "Downloading payload" << source << "to" << destination;
 
     // FIXME: check for validity
-    KIO::FileCopyJob *job = KIO::file_copy(source, destination, -1, KIO::Overwrite | KIO::HideProgressInfo);
+    FileCopyJob *job = FileCopyJob::file_copy(source, destination, -1, JobFlag::Overwrite | JobFlag::HideProgressInfo);
     connect(job,
             &KJob::result,
             this, &Installation::slotPayloadResult);
@@ -220,16 +222,18 @@ void Installation::slotPayloadResult(KJob *job)
         if (job->error()) {
             emit signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
         } else {
-            KIO::FileCopyJob *fcjob = static_cast<KIO::FileCopyJob *>(job);
+            FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
 
             // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
             if (!acceptHtml) {
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
-                    if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
-                            == KMessageBox::Yes) {
-                        KRun::runUrl(fcjob->srcUrl(), QStringLiteral("text/html"), Q_NULLPTR);
+                    // TODO:KNSCore emit question, respond to answer...
+//                     if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
+//                             == KMessageBox::Yes) {
+                    if(true) {
+                        QDesktopServices::openUrl(fcjob->srcUrl());
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
                         entry.setStatus(Entry::Invalid);
                         emit signalEntryChanged(entry);
@@ -528,7 +532,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
 
             if (QFile::exists(installpath)) {
                 if (!update) {
-                    if (KMessageBox::warningContinueCancel(0, i18n("Overwrite existing file?") + "\n'" + installpath + '\'', i18n("Download File")) == KMessageBox::Cancel) {
+                    // TODO:KNSCore warn delete, ask if that's ok...
+                    if(false) {
+//                     if (KMessageBox::warningContinueCancel(0, i18n("Overwrite existing file?") + "\n'" + installpath + '\'', i18n("Download File")) == KMessageBox::Cancel) {
                         return QStringList();
                     }
                 }

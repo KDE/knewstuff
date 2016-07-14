@@ -21,6 +21,7 @@
 #include <knewstuff_debug.h>
 
 #include "core/engine_p.h"
+#include "entry_p.h"
 
 namespace KNS3
 {
@@ -123,14 +124,14 @@ void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNS3::EntryInternal::Lis
 {
     KNS3::Entry::List result;
     foreach (const KNS3::EntryInternal &entry, entries) {
-        result.append(entry.toEntry());
+        result.append(EntryPrivate::fromInternal(&entry));
     }
     emit q->searchResult(result);
 }
 
 void KNS3::DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNS3::EntryInternal &entry)
 {
-    emit q->entryStatusChanged(entry.toEntry());
+    emit q->entryStatusChanged(EntryPrivate::fromInternal(&entry));
 }
 
 void DownloadManager::installEntry(const KNS3::Entry &entry)

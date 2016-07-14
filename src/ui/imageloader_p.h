@@ -24,13 +24,9 @@
 #include <QtCore/QByteArray>
 
 #include "core/entryinternal_p.h"
+#include "core/jobs/httpjob.h"
 
 class KJob;
-namespace KIO
-{
-class Job;
-class TransferJob;
-}
 
 namespace KNS3
 {
@@ -64,13 +60,13 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void slotDownload(KJob *job);
-    void slotData(KIO::Job *job, const QByteArray &buf);
+    void slotData(KJob *job, const QByteArray &buf);
 
 private:
     EntryInternal m_entry;
     EntryInternal::PreviewType m_previewType;
     QByteArray m_buffer;
-    KIO::TransferJob *m_job;
+    HTTPJob *m_job;
 };
 }
 #endif

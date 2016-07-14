@@ -24,6 +24,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
 
+#include "knewstuffcore_export.h"
+
 struct KeyStruct {
     QString id;
     QString name;
@@ -43,7 +45,7 @@ It is a private class, not meant to be used by third party applications.
 
 * @internal
 */
-class Security : public QObject
+class KNEWSTUFFCORE_EXPORT Security : public QObject
 {
     Q_OBJECT
 public:

@@ -26,6 +26,8 @@
 
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 class KJob;
 
 namespace KNS3
@@ -42,7 +44,7 @@ namespace KNS3
  *
  * @internal
  */
-class Provider: public QObject
+class KNEWSTUFFCORE_EXPORT Provider: public QObject
 {
     Q_OBJECT
 public:

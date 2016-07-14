@@ -26,12 +26,9 @@
 #include <QtCore/QString>
 #include <QUrl>
 
-class KJob;
+#include "knewstuffcore_export.h"
 
-namespace KIO
-{
-class Job;
-}
+class KJob;
 
 namespace KNS3
 {
@@ -47,7 +44,7 @@ QDomElement addElement(QDomDocument &doc, QDomElement &parent,
  *
  * @internal
  */
-class XmlLoader : public QObject
+class KNEWSTUFFCORE_EXPORT XmlLoader : public QObject
 {
     Q_OBJECT
 public:
@@ -74,7 +71,7 @@ Q_SIGNALS:
     void jobStarted(KJob *);
 
 protected Q_SLOTS:
-    void slotJobData(KIO::Job *, const QByteArray &);
+    void slotJobData(KJob *, const QByteArray &);
     void slotJobResult(KJob *);
 
 private:

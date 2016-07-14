@@ -28,6 +28,12 @@ class EntryPrivate : public QSharedData
 {
 public:
     EntryInternal e;
+    static Entry fromInternal(const EntryInternal* internal)
+    {
+        Entry e;
+        e.d->e = *internal;
+        return e;
+    }
 };
 }
 

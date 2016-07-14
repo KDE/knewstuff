@@ -37,6 +37,8 @@
 #include "ui/itemsviewdelegate_p.h"
 #include "ui/itemsgridviewdelegate_p.h"
 
+#include "entry_p.h"
+
 using namespace KNS3;
 
 DownloadWidget::DownloadWidget(QWidget *parent)
@@ -78,7 +80,7 @@ Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
     foreach (const EntryInternal &e, d->changedEntries) {
-        entries.append(e.toEntry());
+        entries.append(EntryPrivate::fromInternal(&e));
     }
     return entries;
 }
@@ -88,7 +90,7 @@ Entry::List DownloadWidget::installedEntries()
     Entry::List entries;
     foreach (const EntryInternal &e, d->changedEntries) {
         if (e.status() == Entry::Installed) {
-            entries.append(e.toEntry());
+            entries.append(EntryPrivate::fromInternal(&e));
         }
     }
     return entries;

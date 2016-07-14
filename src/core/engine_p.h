@@ -29,6 +29,8 @@
 #include "provider_p.h"
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 class QTimer;
 class KJob;
 
@@ -51,7 +53,7 @@ class Installation;
  *
  * @internal
  */
-class Engine : public QObject
+class KNEWSTUFFCORE_EXPORT Engine : public QObject
 {
     Q_OBJECT
 public:

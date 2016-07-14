@@ -30,6 +30,8 @@
 #include "core/author_p.h"
 #include "entry.h"
 
+#include "knewstuffcore_export.h"
+
 namespace KNS3
 {
 static const int PreviewWidth = 96;
@@ -38,7 +40,7 @@ static const int PreviewHeight = 72;
 /**
  function to remove bb code formatting that opendesktop sends
  */
-QString replaceBBCode(const QString &unformattedText);
+KNEWSTUFFCORE_EXPORT QString replaceBBCode(const QString &unformattedText);
 
 /**
  * @short KNewStuff data entry container.
@@ -50,7 +52,7 @@ QString replaceBBCode(const QString &unformattedText);
  * \par Maintainer:
  * Jeremy Whiting (jpwhiting@kde.org)
  */
-class EntryInternal
+class KNEWSTUFFCORE_EXPORT EntryInternal
 {
 public:
     typedef QList<EntryInternal> List;
@@ -430,7 +432,7 @@ public:
     //void setIdNumber(int number);
     //int idNumber() const;
 
-    Entry toEntry() const;
+//     Entry toEntry() const;
 
     static KNS3::EntryInternal fromEntry(const KNS3::Entry &entry);
 private:
