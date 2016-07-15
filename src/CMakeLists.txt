@@ -16,6 +16,7 @@ set(KNewStuffCore_SRCS
 
     core/jobs/downloadjob.cpp
     core/jobs/filecopyjob.cpp
+    core/jobs/filecopyworker.cpp
     core/jobs/httpjob.cpp
 
     attica/atticaprovider.cpp

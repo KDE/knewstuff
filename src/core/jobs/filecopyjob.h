@@ -45,6 +45,9 @@ public:
     // a subclass, depending on the nature of the URLs passed to
     // it
     static FileCopyJob* file_copy(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = 0);
+
+    Q_SLOT void handleProgressUpdate(qlonglong current, qlonglong total);
+    Q_SLOT void handleCompleted();
 private:
     class Private;
     Private* d;

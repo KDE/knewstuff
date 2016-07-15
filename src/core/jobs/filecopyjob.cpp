@@ -18,6 +18,7 @@
 #include "filecopyjob.h"
 
 #include "downloadjob.h"
+#include "filecopyworker.h"
 
 using namespace KNS3;
 
@@ -27,11 +28,14 @@ public:
     Private()
         : permissions(-1)
         , flags(DefaultFlags)
+        , worker(0)
     {}
     QUrl source;
     QUrl destination;
     int permissions;
     JobFlags flags;
+
+    FileCopyWorker* worker;
 };
 
 FileCopyJob::FileCopyJob(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
@@ -57,6 +61,14 @@ FileCopyJob::~FileCopyJob()
 
 void FileCopyJob::start()
 {
+    if(d->worker) {
+        // already started...
+        return;
+    }
+    d->worker = new FileCopyWorker(d->source, d->destination, this);
+    connect(d->worker, &FileCopyWorker::progress, this, &FileCopyJob::handleProgressUpdate);
+    connect(d->worker, &FileCopyWorker::completed, this, &FileCopyJob::handleCompleted);
+    d->worker->run();
 }
 
 QUrl FileCopyJob::destUrl() const
@@ -75,4 +87,18 @@ FileCopyJob* FileCopyJob::file_copy(const QUrl& source, const QUrl& destination,
         return new FileCopyJob(source, destination, permissions, flags, parent);
     }
     return new DownloadJob(source, destination, permissions, flags, parent);
+}
+
+void FileCopyJob::handleProgressUpdate(qlonglong current, qlonglong total)
+{
+    setTotalAmount(KJob::Bytes, total);
+    setProcessedAmount(KJob::Bytes, current);
+    emitPercent(current, total);
+}
+
+void FileCopyJob::handleCompleted()
+{
+    d->worker->deleteLater();
+    d->worker = 0;
+    emitResult();
 }
