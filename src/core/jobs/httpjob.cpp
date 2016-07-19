@@ -17,6 +17,11 @@
 
 #include "httpjob.h"
 
+#include "httpworker.h"
+
+#include <QDebug>
+#include <QTimer>
+
 using namespace KNS3;
 
 class HTTPJob::Private
@@ -53,9 +58,29 @@ HTTPJob::~HTTPJob()
 
 void HTTPJob::start()
 {
+//     qDebug() << Q_FUNC_INFO;
+    HTTPWorker* worker = new HTTPWorker(HTTPWorker::GetJob, d->source, this);
+    connect(worker, &HTTPWorker::data, this, &HTTPJob::handleWorkerData);
+    connect(worker, &HTTPWorker::completed, this, &HTTPJob::handleWorkerCompleted);
+    worker->startRequest();
+}
+
+void HTTPJob::handleWorkerData(const QByteArray& data)
+{
+//     qDebug() << Q_FUNC_INFO << data;
+    emit HTTPJob::data(this, data);
+}
+
+void HTTPJob::handleWorkerCompleted()
+{
+//     qDebug() << Q_FUNC_INFO;
+    emitResult();
 }
 
 HTTPJob* HTTPJob::get(const QUrl& source, LoadType loadType, JobFlags flags, QObject* parent)
 {
-    return new HTTPJob(source, loadType, flags, parent);
+//     qDebug() << Q_FUNC_INFO;
+    HTTPJob* job = new HTTPJob(source, loadType, flags, parent);
+    QTimer::singleShot(1, job, SLOT(start()));
+    return job;
 }

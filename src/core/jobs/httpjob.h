@@ -35,7 +35,7 @@ public:
     explicit HTTPJob(QObject* parent = 0);
     virtual ~HTTPJob();
 
-    Q_SCRIPTABLE virtual void start();
+    Q_SLOT virtual void start();
 
     static HTTPJob* get(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = 0);
 
@@ -49,8 +49,11 @@ Q_SIGNALS:
      * should not be certain of data.size() == 0 ever happening (e.g. in case
      * of an error), so you should rely on result() instead.
      */
-    void data(KJob *job, const QByteArray &data);
+    void data(KJob *job, const QByteArray& data);
 
+protected Q_SLOTS:
+    void handleWorkerData(const QByteArray& data);
+    void handleWorkerCompleted();
 private:
     class Private;
     Private* d;
