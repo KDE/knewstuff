@@ -260,7 +260,7 @@ void UploadDialogPrivate::_k_updatePage()
 
 void UploadDialogPrivate::_k_providersLoaded(const QStringList &providers)
 {
-    if (providers.size() == 0) {
+    if (providers.isEmpty()) {
         setIdle(i18n("Could not fetch provider information."));
         ui.stackedWidget->setEnabled(false);
         qWarning() << "Could not load providers.";
@@ -601,7 +601,8 @@ void UploadDialogPrivate::_k_startUpload()
     QString categoryName = ui.mCategoryCombo->currentText();
     QList<Attica::Category>::const_iterator iter = categories.constBegin();
     Attica::Category category;
-    while (iter != categories.constEnd()) {
+    QList<Attica::Category>::const_iterator iterEnd = categories.constEnd();
+    while (iter != iterEnd) {
         if (iter->name() == categoryName) {
             category = *iter;
             break;
