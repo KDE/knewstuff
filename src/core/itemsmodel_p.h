@@ -23,6 +23,7 @@
 #include <QImage>
 
 #include "core/entryinternal_p.h"
+#include "knewstuffcore_export.h"
 
 class KJob;
 
@@ -30,7 +31,7 @@ namespace KNS3
 {
 class Engine;
 
-class ItemsModel: public QAbstractListModel
+class KNEWSTUFFCORE_EXPORT ItemsModel: public QAbstractListModel
 {
     Q_OBJECT
 public:

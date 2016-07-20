@@ -18,7 +18,8 @@
 */
 #include "itemsviewbasedelegate_p.h"
 
-#include "itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
+
 #include "entrydetailsdialog_p.h"
 
 #include <knewstuff_debug.h>

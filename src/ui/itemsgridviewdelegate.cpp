@@ -33,7 +33,7 @@
 #include <kratingwidget.h>
 #include <ksqueezedtextlabel.h>
 
-#include "itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
 
 namespace KNS3
 {

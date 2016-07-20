@@ -20,13 +20,15 @@ set(KNewStuffCore_SRCS
     core/jobs/httpjob.cpp
     core/jobs/httpworker.cpp
 
+    core/imageloader.cpp
+    core/itemsmodel.cpp
+
     attica/atticaprovider.cpp
     staticxml/staticxmlprovider.cpp
 
-    # To be ported... gui and kio in here
+    # To be ported... gui in here
     core/installation.cpp
     core/security.cpp
-    ui/imageloader.cpp
 )
 
 set(KNewStuff_SRCS
@@ -42,7 +44,6 @@ set(KNewStuff_SRCS
     kmoretools/kmoretoolspresets.cpp
     ui/entrydetailsdialog.cpp
     ui/imagepreviewwidget.cpp
-    ui/itemsmodel.cpp
     ui/itemsview.cpp
     ui/itemsviewdelegate.cpp
     ui/itemsgridviewdelegate.cpp
@@ -79,8 +80,8 @@ target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 target_link_libraries(KF5NewStuffCore
   PUBLIC
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
-    KF5::CoreAddons
     KF5::Archive               # For decompressing archives
+    KF5::CoreAddons
   PRIVATE
     KF5::I18n                  # For translations
     KF5::ConfigCore

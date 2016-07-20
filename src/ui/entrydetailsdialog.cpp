@@ -22,7 +22,7 @@
 #include <klocalizedstring.h>
 
 #include "core/engine_p.h"
-#include "ui/imageloader_p.h"
+#include "core/imageloader_p.h"
 #include <attica/provider.h>
 
 using namespace KNS3;

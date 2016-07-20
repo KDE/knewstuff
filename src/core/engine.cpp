@@ -24,7 +24,7 @@
 #include "entry.h"
 #include "core/installation_p.h"
 #include "core/xmlloader_p.h"
-#include "ui/imageloader_p.h"
+#include "core/imageloader_p.h"
 
 #include <kconfig.h>
 #include <kconfiggroup.h>

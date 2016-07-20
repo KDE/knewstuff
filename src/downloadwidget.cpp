@@ -33,7 +33,8 @@
 #include <klocalizedstring.h>
 #include <knewstuff_debug.h>
 
-#include "ui/itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
+
 #include "ui/itemsviewdelegate_p.h"
 #include "ui/itemsgridviewdelegate_p.h"
 
