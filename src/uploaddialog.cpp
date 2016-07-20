@@ -260,7 +260,7 @@ void UploadDialogPrivate::_k_updatePage()
 
 void UploadDialogPrivate::_k_providersLoaded(const QStringList &providers)
 {
-    if (providers.size() == 0) {
+    if (providers.isEmpty()) {
         setIdle(i18n("Could not fetch provider information."));
         ui.stackedWidget->setEnabled(false);
         qWarning() << "Could not load providers.";
