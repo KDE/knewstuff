@@ -54,7 +54,7 @@ set(KNewStuff_SRCS
 )
 
 ecm_qt_declare_logging_category(KNewStuff_SRCS HEADER knewstuff_debug.h IDENTIFIER KNEWSTUFF CATEGORY_NAME org.kde.knewstuff)
-ecm_qt_declare_logging_category(KNewStuffCore_SRCS HEADER knewstuff_debug.h IDENTIFIER KNEWSTUFF CATEGORY_NAME org.kde.knewstuff)
+ecm_qt_declare_logging_category(KNewStuffCore_SRCS HEADER knewstuffcore_debug.h IDENTIFIER KNEWSTUFFCORE CATEGORY_NAME org.kde.knewstuff.core)
 
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui

@@ -68,7 +68,7 @@ void FileCopyJob::start()
     d->worker = new FileCopyWorker(d->source, d->destination, this);
     connect(d->worker, &FileCopyWorker::progress, this, &FileCopyJob::handleProgressUpdate);
     connect(d->worker, &FileCopyWorker::completed, this, &FileCopyJob::handleCompleted);
-    d->worker->run();
+    d->worker->start();
 }
 
 QUrl FileCopyJob::destUrl() const

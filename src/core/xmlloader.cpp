@@ -24,7 +24,7 @@
 #include <QtCore/QByteArray>
 
 #include <kconfig.h>
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 // #include <kio/job.h>
 
 #include "jobs/httpjob.h"
@@ -41,7 +41,7 @@ void XmlLoader::load(const QUrl &url)
 {
     m_jobdata.clear();
 
-    qCDebug(KNEWSTUFF) << "XmlLoader::load(): url: " << url;
+    qCDebug(KNEWSTUFFCORE) << "XmlLoader::load(): url: " << url;
 
 //     KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
     HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
@@ -55,7 +55,7 @@ void XmlLoader::load(const QUrl &url)
 
 void XmlLoader::slotJobData(KJob *, const QByteArray &data)
 {
-    qCDebug(KNEWSTUFF) << "XmlLoader::slotJobData()";
+    qCDebug(KNEWSTUFFCORE) << "XmlLoader::slotJobData()";
 
     m_jobdata.append(data);
 }
@@ -66,9 +66,9 @@ void XmlLoader::slotJobResult(KJob *job)
         emit signalFailed();
         return;
     }
-    qCDebug(KNEWSTUFF) << "--Xml Loader-START--";
-    qCDebug(KNEWSTUFF) << QString::fromUtf8(m_jobdata);
-    qCDebug(KNEWSTUFF) << "--Xml Loader-END--";
+    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-START--";
+    qCDebug(KNEWSTUFFCORE) << QString::fromUtf8(m_jobdata);
+    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-END--";
     QDomDocument doc;
     if (!doc.setContent(m_jobdata)) {
         emit signalFailed();

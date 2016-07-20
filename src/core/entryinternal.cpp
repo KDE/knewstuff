@@ -22,7 +22,7 @@
 
 #include <QtCore/QStringList>
 #include <QImage>
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 
 #include "core/xmlloader_p.h"
 #include "entry_p.h"
@@ -496,7 +496,7 @@ bool KNS3::EntryInternal::setEntryXML(const QDomElement &xmldata)
         } else if (e.tagName() == QLatin1String("status")) {
             QString statusText = e.text();
             if (statusText == QLatin1String("installed")) {
-                qCDebug(KNEWSTUFF) << "Found an installed entry in registry";
+                qCDebug(KNEWSTUFFCORE) << "Found an installed entry in registry";
                 d->mStatus = Entry::Installed;
             } else if (statusText == QLatin1String("updateable")) {
                 d->mStatus = Entry::Updateable;

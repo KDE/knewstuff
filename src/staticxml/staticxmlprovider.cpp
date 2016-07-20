@@ -23,7 +23,7 @@
 
 #include "core/xmlloader_p.h"
 
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
 
 #include <QtCore/QTimer>
@@ -44,7 +44,7 @@ QString StaticXmlProvider::id() const
 
 bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
-    qCDebug(KNEWSTUFF) << "setting provider xml";
+    qCDebug(KNEWSTUFFCORE) << "setting provider xml";
 
     if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
@@ -86,7 +86,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         if (e.tagName() == QLatin1String("title")) {
             //QString lang = e.attribute("lang");
             mName = e.text().trimmed();
-            qCDebug(KNEWSTUFF) << "add name for provider ("<< this << "): " << e.text();
+            qCDebug(KNEWSTUFFCORE) << "add name for provider ("<< this << "): " << e.text();
         }
     }
 
@@ -124,7 +124,7 @@ bool StaticXmlProvider::isInitialized() const
 
 void StaticXmlProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
 {
-    qCDebug(KNEWSTUFF) << "Set cached entries " << cachedEntries.size();
+    qCDebug(KNEWSTUFFCORE) << "Set cached entries " << cachedEntries.size();
     mCachedEntries.append(cachedEntries);
 }
 
@@ -139,7 +139,7 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
     }
 
     if (request.sortMode == Installed) {
-        qCDebug(KNEWSTUFF) << "Installed entries: " << mId << installedEntries().size();
+        qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
         emit loadingFinished(request, installedEntries());
         return;
     }
@@ -260,7 +260,7 @@ bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) co
 
 void StaticXmlProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int)
 {
-    qCDebug(KNEWSTUFF) << "Payload: " << entry.payload();
+    qCDebug(KNEWSTUFFCORE) << "Payload: " << entry.payload();
     emit payloadLinkLoaded(entry);
 }
 

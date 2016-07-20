@@ -24,7 +24,7 @@
 #include "../src/entry.h"
 #include "../src/entry_p.h"
 
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 
 const char *entryXML = "<stuff category=\"Category\"> "
 "<name>Name</name>"
@@ -70,7 +70,7 @@ KNS3::Entry testEntry::createEntry()
     QDomElement node = document.documentElement();
     KNS3::EntryInternal entryInternal;
     bool xmlResult = entryInternal.setEntryXML(node);
-    qCDebug(KNEWSTUFF) << "Created entry from XML " << xmlResult;
+    qCDebug(KNEWSTUFFCORE) << "Created entry from XML " << xmlResult;
     return KNS3::EntryPrivate::fromInternal(&entryInternal);
 }
 

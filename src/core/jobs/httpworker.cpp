@@ -17,6 +17,8 @@
 
 #include "httpworker.h"
 
+#include "knewstuffcore_debug.h"
+
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -42,7 +44,7 @@ HTTPWorker::HTTPWorker(JobType jobType, const QUrl& url, QObject* parent)
     : QObject(parent)
     , d(new Private)
 {
-    qDebug() << Q_FUNC_INFO;
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
     d->url = url;
 
@@ -74,7 +76,7 @@ void HTTPWorker::startRequest()
 
 void HTTPWorker::handleReadyRead()
 {
-//     qDebug() << Q_FUNC_INFO;
+//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     if (d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull()) {
         do {
             emit data(d->reply->read(32768));
@@ -84,9 +86,9 @@ void HTTPWorker::handleReadyRead()
 
 void HTTPWorker::handleFinished(QNetworkReply* reply)
 {
-    qDebug() << Q_FUNC_INFO;
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << reply->errorString() << '\n';
+        qCWarning(KNEWSTUFFCORE) << reply->errorString() << '\n';
     }
 
     // Handle redirections
@@ -94,13 +96,13 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
     if (!possibleRedirectUrl.isEmpty() && possibleRedirectUrl != d->redirectUrl) {
         d->redirectUrl = reply->url().resolved(possibleRedirectUrl);
         if (d->redirectUrl.scheme().startsWith("http")) {
-            qDebug() << "Redirected to " << d->redirectUrl.toDisplayString() << "...\n";
+            qCInfo(KNEWSTUFFCORE) << "Redirected to " << d->redirectUrl.toDisplayString() << "...\n";
             reply->deleteLater();
             d->reply = d->qnam->get(QNetworkRequest(d->redirectUrl));
             connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
             return;
         } else {
-            qDebug() << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.\n";
+            qCWarning(KNEWSTUFFCORE) << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.\n";
         }
     }
     d->redirectUrl.clear();
