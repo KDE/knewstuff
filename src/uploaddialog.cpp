@@ -601,7 +601,8 @@ void UploadDialogPrivate::_k_startUpload()
     QString categoryName = ui.mCategoryCombo->currentText();
     QList<Attica::Category>::const_iterator iter = categories.constBegin();
     Attica::Category category;
-    while (iter != categories.constEnd()) {
+    QList<Attica::Category>::const_iterator iterEnd = categories.constEnd();
+    while (iter != iterEnd) {
         if (iter->name() == categoryName) {
             category = *iter;
             break;
