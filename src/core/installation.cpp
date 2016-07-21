@@ -56,6 +56,17 @@ Installation::Installation(QObject *parent)
     , customName(false)
     , acceptHtml(false)
 {
+    Security *sec = Security::ref();
+
+    connect(sec,
+            &Security::validityResult,
+            this, &Installation::slotInstallationVerification);
+    connect(sec,
+            &Security::signalInformation,
+            this, &Installation::signalInformation);
+    connect(sec,
+            &Security::signalError,
+            this, &Installation::signalError);
 }
 
 bool Installation::readConfig(const KConfigGroup &group)
@@ -316,9 +327,9 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     // FIXME: security object lifecycle - it is a singleton!
     Security *sec = Security::ref();
 
-    connect(sec,
-            &Security::validityResult,
-            this, &Installation::slotInstallationVerification);
+//     connect(sec,
+//             &Security::validityResult,
+//             this, &Installation::slotInstallationVerification);
 
     // FIXME: change to accept filename + signature
     sec->checkValidity(QString());

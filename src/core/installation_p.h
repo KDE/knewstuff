@@ -119,6 +119,9 @@ Q_SIGNALS:
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
+    void signalInformation(const QString &) const;
+    void signalError(const QString &) const;
+
 private:
     void install(KNS3::EntryInternal entry, const QString &downloadedFile);
 

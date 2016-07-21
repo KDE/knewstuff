@@ -148,6 +148,9 @@ Q_SIGNALS:
      *    @return the result of the operation. See @ref Results
     */
     void fileSigned(int result);
+
+    void signalInformation(const QString &) const;
+    void signalError(const QString &) const;
 };
 
 }

@@ -72,6 +72,8 @@ Engine::Engine(QObject *parent)
     connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
+    connect(m_installation, &Installation::signalInformation, this, &Engine::signalMessage);
+    connect(m_installation, &Installation::signalError, this, &Engine::signalError);
 
 }
 

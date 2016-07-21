@@ -83,8 +83,7 @@ void Security::readKeys()
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
-        // TODO:KNSCore emit error message
-//         KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         delete m_process;
         m_process = 0;
     } else {
@@ -289,8 +288,7 @@ void Security::slotCheckValidity()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        // TODO:KNSCore emit error message...
-//         KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         emit validityResult(0);
         delete m_process;
         m_process = 0;
@@ -344,6 +342,7 @@ void Security::slotSignFile()
     }
 
     if (secretKeys.count() > 1) {
+        // TODO:KNSCore have user select the key...
 //         bool ok;
 //         QString selectedKey = QInputDialog::getItem(0, i18n("Select Signing Key"), i18n("Key used for signing:"), secretKeys, 0, false, &ok);
 //         QString selectedKey = QInputDialog::getItem(0, i18n("Select Signing Key"), i18n("Key used for signing:"), secretKeys, 0, false, &ok);
@@ -380,8 +379,7 @@ void Security::slotSignFile()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        // TODO:KNSCore emit error message...
-//         KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
         emit fileSigned(0);
         delete m_process;
         m_process = 0;

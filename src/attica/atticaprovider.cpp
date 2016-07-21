@@ -319,9 +319,8 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     } else {
         qCDebug(KNEWSTUFFCORE) << "You don't have enough money on your account!"
                << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
-               // TODO:KNSCore emit error message
-//         KMessageBox::information(0, i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
-//                                          item.balance(), content.downloadUrlDescription(0).priceAmount()));
+        emit signalInformation(i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
+                                     item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
 }
 

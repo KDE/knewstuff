@@ -40,8 +40,9 @@ namespace KNS3
 {
 class DownloadWidget;
 
-class DownloadWidgetPrivate
+class DownloadWidgetPrivate : public QObject
 {
+    Q_OBJECT
 public:
     DownloadWidget *q;
     EntryDetails *details;
@@ -70,6 +71,7 @@ public:
     ~DownloadWidgetPrivate();
 
     void init(const QString &configFile);
+    void slotShowMessage(const QString& msg);
     void displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs = 0);
 
     void slotProvidersLoaded();

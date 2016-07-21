@@ -227,6 +227,8 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     KStandardGuiItem::assign(ui.backButton, KStandardGuiItem::Back);
     q->connect(ui.backButton, SIGNAL(clicked()), q, SLOT(slotShowOverview()));
 
+    q->connect(engine, &Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
+
     q->connect(engine, &Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
     q->connect(engine, &Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
     q->connect(engine, &Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
@@ -348,6 +350,11 @@ void DownloadWidgetPrivate::slotEntriesLoaded(const EntryInternal::List &entries
         }
     }
     model->slotEntriesLoaded(entries);
+}
+
+void DownloadWidgetPrivate::slotShowMessage(const QString& msg)
+{
+    displayMessage(msg, KTitleWidget::InfoMessage);
 }
 
 void DownloadWidgetPrivate::displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs)
