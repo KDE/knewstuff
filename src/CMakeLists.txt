@@ -26,6 +26,8 @@ set(KNewStuffCore_SRCS
     attica/atticaprovider.cpp
     staticxml/staticxmlprovider.cpp
 
+    upload/atticahelper.cpp
+
     # To be ported... gui in here
     core/installation.cpp
     core/security.cpp
@@ -50,7 +52,6 @@ set(KNewStuff_SRCS
     ui/itemsviewbasedelegate.cpp
     ui/progressindicator.cpp
 
-    upload/atticahelper.cpp
     uploaddialog.cpp
 )
 
