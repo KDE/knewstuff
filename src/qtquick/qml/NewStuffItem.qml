@@ -61,6 +61,7 @@ Kirigami.SwipeListItem {
                 top: parent.top;
                 left: parent.left;
                 bottom: parent.bottom;
+                margins: Kirigami.Units.smallSpacing;
             }
             width: height;
             Image {
@@ -72,6 +73,32 @@ Kirigami.SwipeListItem {
                 asynchronous: true;
                 fillMode: Image.PreserveAspectFit;
                 source: model.previewsSmall.length > 0 ? model.previewsSmall[0] : "";
+                Kirigami.Icon {
+                    id: updateAvailableBadge;
+                    opacity: (model.status == NewStuff.ItemsModel.UpdateableStatus) ? 1 : 0;
+                    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+                    anchors {
+                        bottom: parent.bottom;
+                        right: parent.right;
+                        margins: -Kirigami.Units.smallSpacing;
+                    }
+                    height: Kirigami.Units.iconSizes.normal;
+                    width: height;
+                    source: "vcs-update-required";
+                }
+                Kirigami.Icon {
+                    id: installedBadge;
+                    opacity: (model.status == NewStuff.ItemsModel.InstalledStatus) ? 1 : 0;
+                    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+                    anchors {
+                        bottom: parent.bottom;
+                        right: parent.right;
+                        margins: -Kirigami.Units.smallSpacing;
+                    }
+                    height: Kirigami.Units.iconSizes.normal;
+                    width: height;
+                    source: "vcs-normal";
+                }
             }
         }
         Kirigami.Label {
