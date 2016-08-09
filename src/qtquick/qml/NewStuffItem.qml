@@ -21,13 +21,38 @@
 
 import QtQuick 2.2
 
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kirigami 1.0 as Kirigami
+import org.kde.newstuff 1.0 as NewStuff
 
 Kirigami.SwipeListItem {
     id: listItem;
     width: ListView.width;
     height: Kirigami.Units.iconSizes.huge + Kirigami.Units.smallSpacing * 2;
-    actions: []
+    property QtObject listModel;
+    actions: [
+        Kirigami.Action {
+            text: i18nc("Request installation of this item", "Install");
+            iconName: "list-add"
+            onTriggered: { listModel.installItem(model.index); }
+            enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
+            visible: enabled;
+        },
+        Kirigami.Action {
+            text: i18nc("Request updating of this item", "Update");
+            iconName: "refresh"
+            onTriggered: { listModel.installItem(model.index); }
+            enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
+            visible: enabled;
+        },
+        Kirigami.Action {
+            text: i18nc("Request uninstallation of this item", "Uninstall");
+            iconName: "list-remove"
+            onTriggered: { listModel.uninstallItem(model.index); }
+            enabled: model.status == NewStuff.ItemsModel.InstalledStatus
+            visible: enabled;
+        }
+    ]
     Item {
         anchors.fill: parent;
         Item {
@@ -56,6 +81,15 @@ Kirigami.SwipeListItem {
                 leftMargin: Kirigami.Units.largeSpacing;
             }
             text: model.name;
+        }
+        PlasmaComponents.BusyIndicator {
+            anchors {
+                verticalCenter: parent.verticalCenter;
+                right: parent.right;
+                rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.iconSizes.large;
+            }
+            visible: model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus;
+            running: visible;
         }
     }
 }
