@@ -297,6 +297,22 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
     return data;
 }
 
+bool ItemsModel::canFetchMore(const QModelIndex& parent) const
+{
+    if(parent.isValid()) {
+        return false;
+    }
+    return true;
+}
+
+void ItemsModel::fetchMore(const QModelIndex& parent)
+{
+    if(parent.isValid()) {
+        return;
+    }
+    d->engine->requestMoreData();
+}
+
 QObject * ItemsModel::engine() const
 {
     return d->engine;

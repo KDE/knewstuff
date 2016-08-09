@@ -74,9 +74,11 @@ public:
     };
     Q_ENUMS(ItemStatus)
 
-    virtual QHash<int, QByteArray> roleNames() const;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    virtual QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    virtual bool canFetchMore(const QModelIndex & parent) const Q_DECL_OVERRIDE;
+    virtual void fetchMore(const QModelIndex & parent) Q_DECL_OVERRIDE;
 
     QObject* engine() const;
     void setEngine(QObject* newEngine);
