@@ -25,7 +25,7 @@
 #include <knewstuffcore_debug.h>
 
 #include "core/xmlloader_p.h"
-#include "entry_p.h"
+#include "entry_p.h" // For Entry::Status ONLY!
 
 
 using namespace KNS3;
