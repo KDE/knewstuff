@@ -56,6 +56,10 @@ void Engine::setConfigFile(const QString& newFile)
 
     if(!d->engine) {
         d->engine = new KNS3::Engine(this);
+        connect(d->engine, &KNS3::Engine::signalMessage, this, &Engine::message);
+        connect(d->engine, &KNS3::Engine::signalIdle, this, &Engine::idleMessage);
+        connect(d->engine, &KNS3::Engine::signalBusy, this, &Engine::busyMessage);
+        connect(d->engine, &KNS3::Engine::signalError, this, &Engine::errorMessage);
         emit engineChanged();
     }
     d->engine->init(d->configFile);

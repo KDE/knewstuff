@@ -40,6 +40,12 @@ public:
     QObject* engine() const;
     Q_SIGNAL void engineChanged();
 
+Q_SIGNALS:
+    void message(const QString& message);
+    void idleMessage(const QString& message);
+    void busyMessage(const QString& message);
+    void errorMessage(const QString& message);
+
 private:
     class Private;
     Private* d;
