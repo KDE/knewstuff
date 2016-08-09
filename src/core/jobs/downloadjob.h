@@ -34,6 +34,9 @@ public:
     virtual ~DownloadJob();
 
     Q_SCRIPTABLE virtual void start();
+
+protected Q_SLOTS:
+    void handleWorkerCompleted();
 private:
     class Private;
     Private* d;

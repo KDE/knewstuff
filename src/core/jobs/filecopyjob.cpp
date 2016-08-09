@@ -20,6 +20,10 @@
 #include "downloadjob.h"
 #include "filecopyworker.h"
 
+#include "knewstuffcore_debug.h"
+
+#include <QTimer>
+
 using namespace KNS3;
 
 class FileCopyJob::Private
@@ -83,10 +87,17 @@ QUrl FileCopyJob::srcUrl() const
 
 FileCopyJob* FileCopyJob::file_copy(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
 {
+    FileCopyJob* job = 0;
     if(source.isLocalFile() && destination.isLocalFile()) {
-        return new FileCopyJob(source, destination, permissions, flags, parent);
+        qCDebug(KNEWSTUFFCORE) << "File copy job is local only";
+        job = new FileCopyJob(source, destination, permissions, flags, parent);
     }
-    return new DownloadJob(source, destination, permissions, flags, parent);
+    else {
+        qCDebug(KNEWSTUFFCORE) << "File copy job is from (or to) a remote URL";
+        job = new DownloadJob(source, destination, permissions, flags, parent);
+    }
+    QTimer::singleShot(1, job, SLOT(start()));
+    return job;
 }
 
 void FileCopyJob::handleProgressUpdate(qlonglong current, qlonglong total)

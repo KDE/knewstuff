@@ -17,18 +17,26 @@
 
 #include "downloadjob.h"
 
+#include "httpworker.h"
+
+#include "knewstuffcore_debug.h"
+
 using namespace KNS3;
 
 class DownloadJob::Private
 {
 public:
     Private() {}
+    QUrl source;
+    QUrl destination;
 };
 
 DownloadJob::DownloadJob(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
     : FileCopyJob(source, destination, permissions, flags, parent)
     , d(new Private)
 {
+    d->source = source;
+    d->destination = destination;
 }
 
 DownloadJob::DownloadJob(QObject* parent)
@@ -44,4 +52,14 @@ DownloadJob::~DownloadJob()
 
 void DownloadJob::start()
 {
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
+    HTTPWorker* worker = new HTTPWorker(d->source, d->destination, HTTPWorker::DownloadJob, this);
+    connect(worker, &HTTPWorker::completed, this, &DownloadJob::handleWorkerCompleted);
+    worker->startRequest();
+}
+
+void DownloadJob::handleWorkerCompleted()
+{
+//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
+    emitResult();
 }
