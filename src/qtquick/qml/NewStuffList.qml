@@ -30,6 +30,10 @@ ListView {
      * 
      */
     property alias configFile: newStuffEngine.configFile;
+    signal message(string message);
+    signal idleMessage(string message);
+    signal busyMessage(string message);
+    signal errorMessage(string message);
     delegate: NewStuffItem {
         listModel: newStuffModel;
     }
@@ -39,5 +43,9 @@ ListView {
     }
     NewStuff.Engine {
         id: newStuffEngine;
+        onMessage: root.message(message);
+        onIdleMessage: root.idleMessage(message);
+        onBusyMessage: root.busyMessage(message);
+        onErrorMessage: root.errorMessage(message);
     }
 }
