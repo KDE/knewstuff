@@ -28,9 +28,11 @@ class HTTPWorker : public QObject {
     Q_OBJECT
 public:
     enum JobType {
-        GetJob
+        GetJob,
+        DownloadJob // Much the same as a get... except with a filesystem destination, rather than outputting data
     };
-    explicit HTTPWorker(JobType jobType, const QUrl& url, QObject* parent = 0);
+    explicit HTTPWorker(const QUrl& url, JobType jobType = GetJob, QObject* parent = 0);
+    explicit HTTPWorker(const QUrl& source, const QUrl& destination, JobType jobType = DownloadJob, QObject* parent = 0);
     virtual ~HTTPWorker();
 
     void startRequest();
@@ -43,6 +45,7 @@ public:
 
     Q_SLOT void handleReadyRead();
     Q_SLOT void handleFinished(QNetworkReply* reply);
+    Q_SLOT void handleData(const QByteArray& data);
 private:
     class Private;
     Private* d;

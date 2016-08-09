@@ -19,6 +19,7 @@
 
 #include "knewstuffcore_debug.h"
 
+#include <QFile>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -34,19 +35,35 @@ public:
         , reply(0)
     {}
     JobType jobType;
-    QUrl url;
+    QUrl source;
+    QUrl destination;
     QNetworkAccessManager* qnam;
     QNetworkReply* reply;
     QUrl redirectUrl;
+
+    QFile dataFile;
 };
 
-HTTPWorker::HTTPWorker(JobType jobType, const QUrl& url, QObject* parent)
+HTTPWorker::HTTPWorker(const QUrl& url, JobType jobType, QObject* parent)
     : QObject(parent)
     , d(new Private)
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
-    d->url = url;
+    d->source = url;
+
+    d->qnam = new QNetworkAccessManager(parent);
+    connect(d->qnam, &QNetworkAccessManager::finished, this, &HTTPWorker::handleFinished);
+}
+
+HTTPWorker::HTTPWorker(const QUrl& source, const QUrl& destination, KNS3::HTTPWorker::JobType jobType, QObject* parent)
+    : QObject(parent)
+    , d(new Private)
+{
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
+    d->jobType = jobType;
+    d->source = source;
+    d->destination = destination;
 
     d->qnam = new QNetworkAccessManager(parent);
     connect(d->qnam, &QNetworkAccessManager::finished, this, &HTTPWorker::handleFinished);
@@ -59,7 +76,7 @@ HTTPWorker::~HTTPWorker()
 
 void HTTPWorker::setUrl(const QUrl& url)
 {
-    d->url = url;
+    d->source = url;
 }
 
 void HTTPWorker::startRequest()
@@ -69,9 +86,16 @@ void HTTPWorker::startRequest()
         return;
     }
 
-    QNetworkRequest request(d->url);
+    QNetworkRequest request(d->source);
     d->reply = d->qnam->get(request);
     connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
+    if(d->jobType == DownloadJob) {
+        d->dataFile.setFileName(d->destination.toLocalFile());
+        if(!d->dataFile.open(QIODevice::WriteOnly)) {
+            qCWarning(KNEWSTUFFCORE) << "Failed to open file for writing!";
+        }
+        connect(this, &HTTPWorker::data, this, &HTTPWorker::handleData);
+    }
 }
 
 void HTTPWorker::handleReadyRead()
@@ -107,5 +131,14 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
     }
     d->redirectUrl.clear();
 
+    if(d->dataFile.isOpen()) {
+        d->dataFile.close();
+    }
     emit completed();
+}
+
+void KNS3::HTTPWorker::handleData(const QByteArray& data)
+{
+    qCDebug(KNEWSTUFFCORE) << "Writing" << data.length() << "bytes of data to" << d->dataFile.fileName();
+    d->dataFile.write(data);
 }
