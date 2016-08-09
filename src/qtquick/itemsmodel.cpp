@@ -106,6 +106,7 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
     roles[DonationLinkRole] = "donationLink";
     roles[ProviderIdRole] = "providerId";
     roles[SourceRole] = "source";
+    roles[StatusRole] = "status";
     return roles;
 }
 
@@ -258,6 +259,36 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     }
                 }
                 break;
+            case StatusRole:
+                {
+                    KNS3::Entry::Status status = entry.status();
+                    switch(status)
+                    {
+                        case KNS3::Entry::Downloadable:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::DownloadableStatus);
+                            break;
+                        case KNS3::Entry::Installed:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::InstalledStatus);
+                            break;
+                        case KNS3::Entry::Updateable:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::UpdateableStatus);
+                            break;
+                        case KNS3::Entry::Deleted:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::DeletedStatus);
+                            break;
+                        case KNS3::Entry::Installing:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::InstallingStatus);
+                            break;
+                        case KNS3::Entry::Updating:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::UpdatingStatus);
+                            break;
+                        case KNS3::Entry::Invalid:
+                        default:
+                            data.setValue<ItemsModel::ItemStatus>(ItemsModel::InvalidStatus);
+                            break;
+                    }
+                }
+                break;
             default:
                 data.setValue<QString>(QLatin1String("Unknown role"));
                 break;
@@ -282,4 +313,24 @@ void ItemsModel::setEngine(QObject* newEngine)
     }
     emit engineChanged();
     reset();
+}
+
+void ItemsModel::installItem(int index)
+{
+    if(d->engine) {
+        KNS3::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNS3::EntryInternal>();
+        if(entry.isValid()) {
+            d->engine->install(entry);
+        }
+    }
+}
+
+void ItemsModel::uninstallItem(int index)
+{
+    if(d->engine) {
+        KNS3::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNS3::EntryInternal>();
+        if(entry.isValid()) {
+            d->engine->uninstall(entry);
+        }
+    }
 }
