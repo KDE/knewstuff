@@ -88,8 +88,18 @@ Kirigami.SwipeListItem {
                 right: parent.right;
                 rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.iconSizes.large;
             }
-            visible: model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus;
-            running: visible;
+            opacity: (model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus) ? 1 : 0;
+            Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+            running: opacity > 0;
+            Kirigami.Label {
+                anchors {
+                    verticalCenter: parent.verticalCenter;
+                    right: parent.left;
+                    rightMargin: Kirigami.Units.smallSpacing;
+                }
+                text: (model.status == NewStuff.ItemsModel.InstallingStatus) ? "Installing" : ((model.status == NewStuff.ItemsModel.UpdatingStatus) ? "Updating" : "");
+                width: paintedWidth;
+            }
         }
     }
 }
