@@ -59,7 +59,7 @@ HTTPJob::~HTTPJob()
 void HTTPJob::start()
 {
 //     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
-    HTTPWorker* worker = new HTTPWorker(HTTPWorker::GetJob, d->source, this);
+    HTTPWorker* worker = new HTTPWorker(d->source, HTTPWorker::GetJob, this);
     connect(worker, &HTTPWorker::data, this, &HTTPJob::handleWorkerData);
     connect(worker, &HTTPWorker::completed, this, &HTTPJob::handleWorkerCompleted);
     worker->startRequest();
