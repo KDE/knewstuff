@@ -31,8 +31,10 @@ ListView {
      */
     property alias configFile: newStuffEngine.configFile;
     delegate: NewStuffItem {
+        listModel: newStuffModel;
     }
     model: NewStuff.ItemsModel {
+        id: newStuffModel;
         engine: newStuffEngine.engine;
     }
     NewStuff.Engine {
