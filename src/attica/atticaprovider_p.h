@@ -22,6 +22,7 @@
 
 #include <attica/providermanager.h>
 #include <attica/provider.h>
+#include <attica/content.h>
 
 #include "core/provider_p.h"
 
