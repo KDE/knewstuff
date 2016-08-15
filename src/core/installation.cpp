@@ -362,8 +362,6 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             //crude translation KStandardDirs names -> QStandardPaths enum
             if (standardResourceDirectory == QLatin1String("tmp")) {
                 location = QStandardPaths::TempLocation;
-            } else if (standardResourceDirectory == QLatin1String("data")) {
-                location = QStandardPaths::GenericDataLocation;
             } else if (standardResourceDirectory == QLatin1String("config")) {
                 location = QStandardPaths::ConfigLocation;
             }
@@ -375,7 +373,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             }
             pathcounter++;
         }
-        if (!targetDirectory.isEmpty()) {
+        if (!targetDirectory.isEmpty() && targetDirectory != "/") {
             if (scope == ScopeUser) {
                 installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
             } else { // system scope
@@ -383,7 +381,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             }
             pathcounter++;
         }
-        if (!xdgTargetDirectory.isEmpty()) {
+        if (!xdgTargetDirectory.isEmpty() && xdgTargetDirectory != "/") {
             installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + QLatin1Char('/');
             pathcounter++;
         }
