@@ -53,6 +53,10 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFFCORE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffCoreConfigVersion.cmake"
                         SOVERSION 5)
+ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFFQUICK
+                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfigVersion.cmake"
+                        SOVERSION 5)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
@@ -67,6 +71,7 @@ endif()
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuff")
 set(CMAKECONFIGCORE_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffCore")
+set(CMAKECONFIGQUICK_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffQuick")
 
 include(ECMPackageConfigHelpers)
 
@@ -82,6 +87,12 @@ ecm_configure_package_config_file(
   INSTALL_DESTINATION ${CMAKECONFIGCORE_INSTALL_DIR}
 )
 
+ecm_configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KF5NewStuffQuickConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfig.cmake"
+  INSTALL_DESTINATION ${CMAKECONFIGQUICK_INSTALL_DIR}
+)
+
 install(FILES
   "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfig.cmake"
   "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfigVersion.cmake"
@@ -95,12 +106,21 @@ install(FILES
   COMPONENT Devel
 )
 
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfigVersion.cmake"
+  DESTINATION "${CMAKECONFIGQUICK_INSTALL_DIR}"
+  COMPONENT Devel
+)
+
 install(EXPORT KF5NewStuffTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5NewStuffTargets.cmake NAMESPACE KF5:: )
 install(EXPORT KF5NewStuffCoreTargets DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}" FILE KF5NewStuffCoreTargets.cmake NAMESPACE KF5:: )
+install(EXPORT KF5NewStuffQuickTargets DESTINATION "${CMAKECONFIGQUICK_INSTALL_DIR}" FILE KF5NewStuffQuickTargets.cmake NAMESPACE KF5:: )
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h
+  ${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
 
