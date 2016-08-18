@@ -23,11 +23,35 @@ import QtQuick 2.2
 
 import org.kde.newstuff 1.0 as NewStuff
 
+/**
+ * To use NewStuffList, simply instantiate it and pass the
+ * local file location of a knsrc file to the configFile property.
+ * The components will, in this case, take care of the rest for you.
+ * If you want more, you can look at what NewStuffItem does with the
+ * various bits, and be inspired by that.
+ *
+ * An (overly simple) example which might be used for managing
+ * wallpapers and just outputting any messages onto the console can
+ * be seen below. Note that you should obviously not be using
+ * hardcoded paths, it is done here to get the idea across.
+ *
+ * \code
+    NewStuff.NewStuffList {
+        configFile: "/some/filesystem/location/wallpaper.knsrc";
+        onMessage: console.log("KNS Message: " + message);
+        onIdleMessage: console.log("KNS Idle: " + message);
+        onBusyMessage: console.log("KNS Busy: " + message);
+        onErrorMessage: console.log("KNS Error: " + message);
+    }
+    \endcode
+ */
 ListView {
     id: root;
     /**
      * @brief The configuration file which describes the application (knsrc)
-     * 
+     *
+     * The format and location of this file is found in the documentation for
+     * KNS3::DownloadDialog
      */
     property alias configFile: newStuffEngine.configFile;
     signal message(string message);
