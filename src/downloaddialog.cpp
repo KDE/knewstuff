@@ -33,6 +33,8 @@
 #include <QCoreApplication>
 #include <kstandardguiitem.h>
 #include <klocalizedstring.h>
+#include <kauthorized.h>
+#include <kmessagebox.h>
 
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"
@@ -103,6 +105,33 @@ DownloadDialog::~DownloadDialog()
     KConfigGroup group(KSharedConfig::openConfig(), ConfigGroup);
     KWindowConfig::saveWindowSize(windowHandle(), group, KConfigBase::Persistent);
     delete d;
+}
+
+int DownloadDialog::exec()
+{
+    if (!KAuthorized::authorize("ghns")) {
+        KMessageBox::information(this, "Get Hot New Stuff is disabled by the administrator", "Get Hot New Stuff disabled");
+        return QDialog::Rejected;
+    }
+    return QDialog::exec();
+}
+
+void DownloadDialog::open()
+{
+    if (!KAuthorized::authorize("ghns")) {
+        KMessageBox::information(this, "Get Hot New Stuff is disabled by the administrator", "Get Hot New Stuff disabled");
+        return;
+    }
+    QDialog::open();
+}
+
+void DownloadDialog::showEvent(QShowEvent *event)
+{
+    if (!KAuthorized::authorize("ghns")) {
+        KMessageBox::information(this, "Get Hot New Stuff is disabled by the administrator", "Get Hot New Stuff disabled");
+        return;
+    }
+    QWidget::showEvent(event);
 }
 
 void DownloadDialog::setTitle(const QString &title)

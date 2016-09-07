@@ -19,6 +19,8 @@
 #include "button.h"
 
 #include <klocalizedstring.h>
+#include <kauthorized.h>
+#include <kmessagebox.h>
 #include "downloaddialog.h"
 
 #include <QPointer>
@@ -73,6 +75,10 @@ void Button::setConfigFile(const QString &configFile)
 
 void Button::showDialog()
 {
+    if (!KAuthorized::authorize("ghns")) {
+        KMessageBox::information(this, "Get Hot New Stuff is disabled by the administrator", "Get Hot New Stuff disabled");
+        return;
+    }
     emit aboutToShowDialog();
 
     QPointer<DownloadDialog> dialog = new DownloadDialog(d->configFile, this);
