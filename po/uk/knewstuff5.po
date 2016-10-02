@@ -1,0 +1,829 @@
+# Translation of knewstuff5.po to Ukrainian
+# Copyright (C) 2014-2016 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Eugene Onischenko <oneugene@ukr.net>, 2002, 2003, 2004, 2005, 2006.
+# Andriy Rysin <arysin@bcsii.com>, 2002, 2003, 2006, 2007.
+# Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2005, 2006, 2007, 2008.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: knewstuff5\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-09-08 07:29+0000\n"
+"PO-Revision-Date: 2016-06-30 18:38+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: attica/atticaprovider.cpp:144
+msgid "All categories are missing"
+msgstr "Усі категорії пропущено"
+
+#: attica/atticaprovider.cpp:308
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Вартість позначеного складає %2 %1.\n"
+"Підтверджуєте купівлю?"
+
+#: attica/atticaprovider.cpp:322
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"На вашому рахунку занадто мало грошей:\n"
+"На рахунку: %1\n"
+"Ціна: %2"
+
+#: attica/atticaprovider.cpp:365
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Ваш голос враховано."
+
+#: attica/atticaprovider.cpp:381
+msgid "You are now a fan."
+msgstr "Вас додано до списку прихильників."
+
+#: attica/atticaprovider.cpp:392
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Помилка мережі. (%1)"
+
+#: attica/atticaprovider.cpp:396
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Занадто багато запитів до сервера. Будь ласка, повторіть спробу за декілька "
+"хвилин."
+
+#: attica/atticaprovider.cpp:398
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+"Невідома помилка програмного інтерфейсу служби Open Collaboration. (%1)"
+
+#: button.cpp:51
+msgid "Download New Stuff..."
+msgstr "Отримати нові матеріали..."
+
+#: core/engine.cpp:92
+msgid "Initializing"
+msgstr "Ініціалізація"
+
+#: core/engine.cpp:96
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Не знайдено файла налаштувань: «%1»"
+
+#: core/engine.cpp:109
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Некоректний файл налаштувань: «%1»"
+
+#: core/engine.cpp:160
+msgid "Loading provider information"
+msgstr "Завантаження відомостей про надавача"
+
+#: core/engine.cpp:183
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
+
+#: core/engine.cpp:201
+msgid "Error initializing provider."
+msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
+
+#: core/engine.cpp:205 core/engine.cpp:522
+msgid "Loading data"
+msgstr "Завантаження даних"
+
+#: core/engine.cpp:235
+msgid "Loading data from provider"
+msgstr "Завантаження даних постачальника послуг"
+
+#: core/engine.cpp:240
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Завантаження параметрів надання з файла: помилка %1"
+
+#: core/engine.cpp:482
+#, kde-format
+msgid "Re: %1"
+msgstr "Відповідь: %1"
+
+#: core/engine.cpp:524
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Завантаження %1 ескізу"
+msgstr[1] "Завантаження %1 ескізів"
+msgstr[2] "Завантаження %1 ескізів"
+msgstr[3] "Завантаження ескізу"
+
+#: core/engine.cpp:526 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:128
+msgid "Installing"
+msgstr "Встановлення"
+
+#: core/installation.cpp:175
+msgid "Invalid item."
+msgstr "Некоректний елемент."
+
+#: core/installation.cpp:182
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"Спроба отримання елемента зазнала невдачі: для «%1» не вказано адреси "
+"отримання."
+
+#: core/installation.cpp:221
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Спроба отримання «%1» зазнала невдачі, помилка: %2"
+
+#: core/installation.cpp:230
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Отриманий файл є файлом у форматі HTML. Це означає, що отримано посилання на "
+"дані, а не самі дані. Бажаєте відкрити відповідну сторінку у переглядачі "
+"інтернету?"
+
+#: core/installation.cpp:230
+msgid "Possibly bad download link"
+msgstr "Ймовірно, помилкове посилання на отримання"
+
+#: core/installation.cpp:233
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Отримано файл HTML. Цей файл відкрито у переглядачі інтернету."
+
+#: core/installation.cpp:296
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Не вдалося встановити «%1»: файл не знайдено."
+
+#: core/installation.cpp:534
+msgid "Overwrite existing file?"
+msgstr "Перезаписати файл?"
+
+#: core/installation.cpp:534
+msgid "Download File"
+msgstr "Отримання файла"
+
+#: core/security.cpp:86
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і отримати наявні ключі. Перевірте чи "
+"встановлено <i>gpg</i>, інакше перевірка отриманих ресурсів буде неможливою."
+"</qt>"
+
+#: core/security.cpp:210
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Введіть фразу пароля для ключа <b>0x%1</b>, який належить <br /><i>%2&lt;"
+"%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:290
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і перевірити достовірність файла. "
+"Перевірте чи встановлено <i>gpg</i>, інакше перевірка отриманих ресурсів "
+"буде неможливою.</qt>"
+
+#: core/security.cpp:345
+msgid "Select Signing Key"
+msgstr "Вибір ключа підпису"
+
+#: core/security.cpp:345
+msgid "Key used for signing:"
+msgstr "Ключ для підписування:"
+
+#: core/security.cpp:378
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і підписати файл. Перевірте чи "
+"встановлено <i>gpg</i>, інакше підписування ресурсів буде неможливим.</qt>"
+
+#: downloaddialog.cpp:82 downloadwidget.cpp:207
+msgid "Get Hot New Stuff"
+msgstr "Отримати нові матеріали"
+
+#: downloaddialog.cpp:94
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Додаткові матеріали для програми %1"
+
+#: downloadwidget.cpp:121
+msgid "Timeout. Check Internet connection."
+msgstr "Перевищено час очікування. Перевірте з’єднання з інтернетом."
+
+#: downloadwidget.cpp:179
+#, kde-format
+msgid "Server: %1"
+msgstr "Сервер: %1"
+
+#: downloadwidget.cpp:180
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Провайдер: %1"
+
+#: downloadwidget.cpp:181
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Версія: %1"
+
+#: downloadwidget.cpp:185
+msgid "Provider information"
+msgstr "Інформація про провайдера"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "Could not install %1"
+msgstr "Не вдалося встановити «%1»"
+
+#: downloadwidget.cpp:197
+msgid "Get Hot New Stuff!"
+msgstr "Отримати нові матеріали!"
+
+#: downloadwidget.cpp:249
+msgid "Icons view mode"
+msgstr "Режим перегляду піктограм"
+
+#: downloadwidget.cpp:251
+msgid "Details view mode"
+msgstr "Режим докладного перегляду"
+
+#: downloadwidget.cpp:266
+msgid "All Providers"
+msgstr "Всі надавачі послуг"
+
+#: downloadwidget.cpp:273
+msgid "All Categories"
+msgstr "Всі категорії"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+msgid "Provider:"
+msgstr "Надавач послуг:"
+
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+msgid "Category:"
+msgstr "Категорія:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+msgid "Newest"
+msgstr "Датою"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+msgid "Rating"
+msgstr "Оцінкою"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+msgid "Most downloads"
+msgstr "Найбільше отримань"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+msgid "Installed"
+msgstr "Встановлено"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+msgid "Order by:"
+msgstr "Впорядкувати за:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+msgid "Search:"
+msgstr "Пошук:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+msgid "Enter search phrase here"
+msgstr "Введіть сюди фразу для пошуку"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+msgid "Author:"
+msgstr "Автор:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Домашня сторінка</a>"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:123 uploaddialog.ui:171
+msgid "Update"
+msgstr "Оновити"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:325
+#: ui/itemsviewdelegate.cpp:119
+msgid "Uninstall"
+msgstr "Прибрати"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+msgid "Become a Fan"
+msgstr "Долучитися до прихильників"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:344
+#: ui/itemsgridviewdelegate.cpp:354 ui/itemsviewdelegate.cpp:138
+#: ui/itemsviewdelegate.cpp:148
+msgid "Install"
+msgstr "Встановити"
+
+#: kmoretools/kmoretools.cpp:633
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Більше"
+
+#: kmoretools/kmoretools.cpp:648
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Не встановлено:"
+
+#: kmoretools/kmoretools.cpp:684
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Налаштувати…"
+
+#: kmoretools/kmoretools_p.h:384
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Відвідати сайт"
+
+#: kmoretools/kmoretools_p.h:391
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Додаткова інформація недоступна."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+msgid "Configure menu"
+msgstr "Налаштувати меню"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Налаштовування меню – %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr "$GenericName — поточна тека"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr "$GenericName — поточний пристрій"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr "$GenericName — усі пристрої"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+msgid "Main section"
+msgstr "Основний розділ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+msgid "Move down"
+msgstr "Пересунути нижче"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+msgid "Move up"
+msgstr "Пересунути вище"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+msgid "Move to Main section"
+msgstr "Пересунути до основного розділу"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+msgid "Move to More section"
+msgstr "Пересунути до додаткового розділу"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+msgid "Reset"
+msgstr "Скинути"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+msgid "More section"
+msgstr "Додатковий розділ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"У цьому меню передбачено декілька додаткових інструментів, які ще не "
+"встановлено:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+msgid "More tools..."
+msgstr "Додаткові інструменти…"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Подробиці щодо %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+msgid "Changelog:"
+msgstr "Журнал змін:"
+
+#: ui/entrydetailsdialog.cpp:111
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Домашня сторінка"
+
+#: ui/entrydetailsdialog.cpp:114
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Зробити пожертву"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "База знань (%1 записів)"
+msgstr[1] "База знань (%1 записи)"
+msgstr[2] "База знань (%1 записів)"
+msgstr[3] "База знань (%1 записів)"
+
+#: ui/entrydetailsdialog.cpp:121
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Відкрити у вікні переглядача інтернету"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:258
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Оцінка: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:218
+#: ui/itemsviewdelegate.cpp:220 ui/itemsviewdelegate.cpp:222
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Автор — <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 прихильник"
+msgstr[1] "%1 прихильники"
+msgstr[2] "%1 прихильників"
+msgstr[3] "1 прихильник"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:239
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "%1 отримання"
+msgstr[1] "%1 отримання"
+msgstr[2] "%1 отримань"
+msgstr[3] "1 отримання"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:309
+msgid "Loading Preview"
+msgstr "Завантаження перегляду"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:169
+msgid "Details"
+msgstr "Подробиці"
+
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsviewdelegate.cpp:133
+msgid "Updating"
+msgstr "Оновлення"
+
+#: ui/itemsgridviewdelegate.cpp:349 ui/itemsviewdelegate.cpp:143
+msgid "Install Again"
+msgstr "Повторне встановлення"
+
+#: uploaddialog.cpp:64
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Далі"
+
+#: uploaddialog.cpp:69
+msgid "Finish"
+msgstr "Завершити"
+
+#: uploaddialog.cpp:175
+msgid "Fetching provider information..."
+msgstr "Завантаження відомостей про надавача…"
+
+#: uploaddialog.cpp:182
+msgid "Fetching license data from server..."
+msgstr "Отримання даних щодо ліцензування з сервера..."
+
+#: uploaddialog.cpp:189
+msgid "Fetching content data from server..."
+msgstr "Отримання даних з сервера..."
+
+#: uploaddialog.cpp:264
+msgid "Could not fetch provider information."
+msgstr "Не вдалося завантажити відомості про надавача."
+
+#: uploaddialog.cpp:288
+msgid "Register a new account"
+msgstr "Зареєструвати новий обліковий запис"
+
+#: uploaddialog.cpp:312
+msgid "Checking login..."
+msgstr "Перевірка реєстраційних даних..."
+
+#: uploaddialog.cpp:334
+msgid "Fetching your previously updated content..."
+msgstr "Отримання попередньо оновлених вами даних..."
+
+#: uploaddialog.cpp:337
+msgid "Could not verify login, please try again."
+msgstr "Не вдалося зберегти реєстраційні дані, повторіть спробу."
+
+#: uploaddialog.cpp:356
+msgid "Fetching your previously updated content finished."
+msgstr "Отримання попередньо оновлених вами даних завершено."
+
+#: uploaddialog.cpp:374
+msgid "Fetching content data from server finished."
+msgstr "Отримання даних з сервера завершено."
+
+#: uploaddialog.cpp:397 uploaddialog.cpp:837
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Відвідати вебсайт"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:443 uploaddialog.ui:14
+msgid "Share Hot New Stuff"
+msgstr "Спільне використання нових матеріалів"
+
+#: uploaddialog.cpp:466
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Додаток вивантаження для %1"
+
+#: uploaddialog.cpp:486 uploaddialog.cpp:762
+#, kde-format
+msgid "File not found: %1"
+msgstr "Файл не знайдено: %1"
+
+#: uploaddialog.cpp:486 uploaddialog.cpp:613 uploaddialog.cpp:762
+msgid "Upload Failed"
+msgstr "Невдала спроба вивантаження"
+
+#: uploaddialog.cpp:566
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "Серверу невідома категорія вашого вивантаження: %2"
+msgstr[1] "Серверу невідома категорія ваших вивантажень: %2"
+msgstr[2] "Серверу невідома категорія ваших вивантажень: %2"
+msgstr[3] "Серверу невідома категорія вашого вивантаження: %2"
+
+#: uploaddialog.cpp:569
+msgid "Error"
+msgstr "Помилка"
+
+#: uploaddialog.cpp:613
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Вказане категорія, «%1», є некоректною."
+
+#: uploaddialog.cpp:662 uploaddialog.cpp:677 uploaddialog.cpp:691
+msgid "Select preview image"
+msgstr "Вибір ескізу"
+
+#: uploaddialog.cpp:706
+msgid "There was a network error."
+msgstr "Помилка під час обміну даними мережею."
+
+#: uploaddialog.cpp:706 uploaddialog.cpp:711
+msgid "Uploading Failed"
+msgstr "Невдала спроба вивантаження"
+
+#: uploaddialog.cpp:711
+msgid "Authentication error."
+msgstr "Помилка розпізнавання."
+
+#: uploaddialog.cpp:721
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Невдала спроба вивантаження: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+msgid "Password:"
+msgstr "Пароль:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+msgid "Username:"
+msgstr "Користувач:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+msgid "File to upload:"
+msgstr "Файл для вивантаження:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+msgid "New Upload"
+msgstr "Нове вивантаження"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+msgid "Description:"
+msgstr "Опис:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+msgid "Version:"
+msgstr "Версія:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+msgid "License:"
+msgstr "Ліцензія:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+msgid "Please fill out the information about your upload in English."
+msgstr "Будь ласка, надайте відомості про вивантажені дані англійською."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+msgid "Title:"
+msgstr "Заголовок:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+msgid "Name of the file as it will appear on the website"
+msgstr "Назва файла, яку буде використано на вебсайті"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Тут має бути точно описано вміст файла. Текст може збігатися з вмістом поля "
+"заголовка самого файла kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+msgid "Preview Images"
+msgstr "Ескізи зображень"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+msgid "Select Preview..."
+msgstr "Вибрати перегляд…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+msgid "Set a price for this item"
+msgstr "Встановити ціну"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+msgid "Price"
+msgstr "Ціна"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+msgid "Price:"
+msgstr "Ціна:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+msgid "Reason for price:"
+msgstr "Призначення грошей:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+msgid "Fetch content link from server"
+msgstr "Отримати посилання на дані з сервера"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+msgid "Create content on server"
+msgstr "Зберегти дані на сервері"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+msgid "Upload content"
+msgstr "Вивантаження даних"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+msgid "Upload first preview"
+msgstr "Вивантаження першого ескізу"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Зауваження: ви можете змінювати, оновлювати і вилучати ваші дані з вебсайта."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+msgid "Upload second preview"
+msgstr "Вивантаження другого ескізу"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+msgid "Upload third preview"
+msgstr "Вивантаження третього ескізу"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Я підтверджую, що ці дані не порушують жодних авторських прав, законів та "
+"прав на торговельні марки. Я погоджуюся з тим, що мою IP-адресу буде "
+"записано до журналу. Поширення даних, на яке ви не маєте дозволу від їхнього "
+"правовласника, є протизаконним!"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+msgid "Start Upload"
+msgstr "Почати вивантаження"
