@@ -34,8 +34,9 @@
 
 //kde includes
 #include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kpassworddialog.h>
+// #include <kmessagebox.h>
+// #include <kpassworddialog.h>
+// TODO get rid of message box
 
 using namespace KNS3;
 
