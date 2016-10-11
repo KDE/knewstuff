@@ -24,7 +24,6 @@
 #include "xmlloader_p.h"
 
 #include <klocalizedstring.h>
-#include <kio/job.h>
 
 namespace KNS3
 {

@@ -30,7 +30,6 @@
 #include "karchive.h"
 #include "kzip.h"
 #include "ktar.h"
-#include "kio/job.h"
 #include "krandom.h"
 #include "kshell.h"
 #include "kmessagebox.h" // TODO get rid of message box

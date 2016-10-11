@@ -30,7 +30,6 @@
 #include <kconfiggroup.h>
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
-#include <kio/job.h>
 #include <QDesktopServices>
 
 #include <QtCore/QTimer>
