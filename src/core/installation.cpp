@@ -32,7 +32,7 @@
 #include "ktar.h"
 #include "krandom.h"
 #include "kshell.h"
-#include "kmessagebox.h" // TODO get rid of message box
+// #include "kmessagebox.h" // TODO get rid of message box
 
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
