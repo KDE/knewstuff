@@ -58,8 +58,14 @@ ListView {
     signal idleMessage(string message);
     signal busyMessage(string message);
     signal errorMessage(string message);
+    signal downloadedItemClicked(variant installedFiles);
     delegate: NewStuffItem {
         listModel: newStuffModel;
+        onClicked: {
+            if(model.status == NewStuff.ItemsModel.InstalledStatus) {
+                root.downloadedItemClicked(model.installedFiles);
+            }
+        }
     }
     model: NewStuff.ItemsModel {
         id: newStuffModel;

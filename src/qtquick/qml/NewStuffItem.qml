@@ -30,6 +30,7 @@ Kirigami.SwipeListItem {
     width: ListView.width;
     height: Kirigami.Units.iconSizes.huge + Kirigami.Units.smallSpacing * 2;
     property QtObject listModel;
+    enabled: true;
     actions: [
         Kirigami.Action {
             text: i18nc("Request installation of this item", "Install");
