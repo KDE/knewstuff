@@ -83,7 +83,7 @@ Kirigami.SwipeListItem {
                         right: parent.right;
                         margins: -Kirigami.Units.smallSpacing;
                     }
-                    height: Kirigami.Units.iconSizes.normal;
+                    height: Kirigami.Units.iconSizes.smallMedium;
                     width: height;
                     source: "vcs-update-required";
                 }
@@ -96,7 +96,7 @@ Kirigami.SwipeListItem {
                         right: parent.right;
                         margins: -Kirigami.Units.smallSpacing;
                     }
-                    height: Kirigami.Units.iconSizes.normal;
+                    height: Kirigami.Units.iconSizes.smallMedium;
                     width: height;
                     source: "vcs-normal";
                 }
