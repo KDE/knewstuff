@@ -358,7 +358,7 @@ void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelI
         m_installButton->setEnabled(enabled);
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(m_installButton);
-            foreach (EntryInternal::DownloadLinkInformation info, entry.downloadLinkInformationList()) {
+            foreach (const EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text + " (" + info.distributionType.trimmed() + ')';
