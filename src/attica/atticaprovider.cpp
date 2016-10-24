@@ -179,6 +179,7 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
         // search in all categories
         categoriesToSearch = mCategoryMap.values();
     } else {
+        categoriesToSearch.reserve(request.categories.size());
         foreach (const QString &categoryName, request.categories) {
             categoriesToSearch.append(mCategoryMap.value(categoryName));
         }
@@ -253,16 +254,16 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
 
 Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMode)
 {
-    if (sortMode == Newest) {
-        return Attica::Provider::Newest;
+    switch(sortMode) {
+        case Newest:
+            return Attica::Provider::Newest;
+        case Alphabetical:
+            return Attica::Provider::Alphabetical;
+        case Downloads:
+            return Attica::Provider::Downloads;
+        default:
+            return Attica::Provider::Rating;
     }
-    if (sortMode == Alphabetical) {
-        return Attica::Provider::Alphabetical;
-    }
-    if (sortMode == Downloads) {
-        return Attica::Provider::Downloads;
-    }
-    return Attica::Provider::Rating;
 }
 
 void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkId)

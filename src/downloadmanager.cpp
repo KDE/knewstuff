@@ -122,6 +122,7 @@ void DownloadManager::checkForUpdates()
 void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries)
 {
     KNS3::Entry::List result;
+    result.reserve(entries.size());
     foreach (const KNS3::EntryInternal &entry, entries) {
         result.append(entry.toEntry());
     }
