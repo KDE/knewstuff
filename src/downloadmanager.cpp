@@ -35,6 +35,7 @@ public:
         , engine(new Engine)
         , isInitialized(false)
         , checkForUpdates(false)
+        , checkForInstalled(false)
         , doSearch(false)
         , page(0)
         , pageSize(100)
@@ -46,6 +47,7 @@ public:
 
     bool isInitialized;
     bool checkForUpdates;
+    bool checkForInstalled;
     bool doSearch;
 
     int page;
@@ -103,7 +105,9 @@ void DownloadManagerPrivate::_k_slotProvidersLoaded()
 {
     qCDebug(KNEWSTUFF) << "providers loaded";
     isInitialized = true;
-    if (checkForUpdates) {
+    if (checkForInstalled) {
+        engine->checkForInstalled();
+    } else if (checkForUpdates) {
         engine->checkForUpdates();
     } else if (doSearch) {
         engine->requestData(page, pageSize);
@@ -116,6 +120,15 @@ void DownloadManager::checkForUpdates()
         d->engine->checkForUpdates();
     } else {
         d->checkForUpdates = true;
+    }
+}
+
+void KNS3::DownloadManager::checkForInstalled()
+{
+    if (d->isInitialized) {
+        d->engine->checkForInstalled();
+    } else {
+        d->checkForInstalled = true;
     }
 }
 

@@ -113,6 +113,7 @@ public:
     void requestData(int page, int pageSize);
 
     void checkForUpdates();
+    void checkForInstalled();
 
     /**
      * Try to contact the author of the entry by email or showing their homepage.
