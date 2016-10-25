@@ -77,6 +77,12 @@ public:
     void checkForUpdates();
 
     /**
+      Check for installed resources
+      Use searchResult to get notified about installed entries.
+      */
+    void checkForInstalled();
+
+    /**
       Installs or updates an entry
       @param entry
       */

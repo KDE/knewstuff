@@ -538,3 +538,11 @@ void Engine::checkForUpdates()
     }
 }
 
+void KNS3::Engine::checkForInstalled()
+{
+    foreach (QSharedPointer<Provider> p, m_providers) {
+        Provider::SearchRequest request(KNS3::Provider::Installed);
+        request.page = 0;
+        p->loadEntries(request);
+    }
+}
