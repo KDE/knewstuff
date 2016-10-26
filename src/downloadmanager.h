@@ -79,6 +79,8 @@ public:
     /**
       Check for installed resources
       Use searchResult to get notified about installed entries.
+
+      @since 5.28
       */
     void checkForInstalled();
 
