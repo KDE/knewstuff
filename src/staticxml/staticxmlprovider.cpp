@@ -138,7 +138,7 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
         return;
     }
 
-    if (request.sortMode == Installed) {
+    if (request.filter == Installed) {
         qCDebug(KNEWSTUFF) << "Installed entries: " << mId << installedEntries().size();
         emit loadingFinished(request, installedEntries());
         return;
@@ -151,6 +151,8 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
         XmlLoader *loader = new XmlLoader(this);
         connect(loader, &XmlLoader::signalLoaded, this, &StaticXmlProvider::slotFeedFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &StaticXmlProvider::slotFeedFailed);
+        loader->setProperty("filter", request.filter);
+        loader->setProperty("searchTerm", request.searchTerm);
 
         mFeedLoaders.insert(request.sortMode, loader);
 
@@ -164,14 +166,12 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
 {
     QUrl url;
     switch (mode) {
-    case Installed: // should just query the registry and not end up here
     case Rating:
         url = mDownloadUrls.value(QStringLiteral("score"));
         break;
     case Alphabetical:
         url = mDownloadUrls.value(QString());
         break;
-    case Updates:
     case Newest:
         url = mDownloadUrls.value(QStringLiteral("latest"));
         break;
@@ -197,6 +197,8 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
     // load all the entries from the domdocument given
     EntryInternal::List entries;
     QDomElement element;
+    const Provider::Filter filter = loader->property("filter").value<Provider::Filter>();
+    const QString searchTerm = loader->property("searchTerm").toString();
 
     element = doc.documentElement();
     QDomElement n;
@@ -226,7 +228,23 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
         mCachedEntries.append(entry);
 
         if (searchIncludesEntry(entry)) {
-            entries << entry;
+            switch(filter) {
+                case Installed:
+                    //This is dealth with in loadEntries separately
+                    Q_UNREACHABLE();
+                case Updates:
+                    if (entry.status() == Entry::Updateable) {
+                        entries << entry;
+                    }
+                    break;
+                case ExactEntryId:
+                    if (entry.uniqueId() == searchTerm) {
+                        entries << entry;
+                    }
+                case None:
+                    entries << entry;
+                    break;
+            }
         }
     }
     emit loadingFinished(mCurrentRequest, entries);
@@ -239,7 +257,7 @@ void StaticXmlProvider::slotFeedFailed()
 
 bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) const
 {
-    if (mCurrentRequest.sortMode == Updates) {
+    if (mCurrentRequest.filter == Updates) {
         if (entry.status() != Entry::Updateable) {
             return false;
         }

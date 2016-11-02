@@ -259,7 +259,7 @@ void Engine::slotEntriesLoaded(const KNS3::Provider::SearchRequest &request, KNS
     m_currentPage = qMax<int>(request.page, m_currentPage);
     qCDebug(KNEWSTUFF) << "loaded page " << request.page << "current page" << m_currentPage;
 
-    if (request.sortMode == Provider::Updates) {
+    if (request.filter == Provider::Updates) {
         emit signalUpdateableEntriesLoaded(entries);
     } else {
         m_cache->insertRequest(request, entries);
@@ -279,7 +279,7 @@ void Engine::reloadEntries()
 
     foreach (const QSharedPointer<KNS3::Provider> &p, m_providers) {
         if (p->isInitialized()) {
-            if (m_currentRequest.sortMode == Provider::Installed) {
+            if (m_currentRequest.filter == Provider::Installed) {
                 // when asking for installed entries, never use the cache
                 p->loadEntries(m_currentRequest);
             } else {
@@ -325,6 +325,28 @@ void Engine::setSortMode(Provider::SortMode mode)
     }
     m_currentRequest.sortMode = mode;
     reloadEntries();
+}
+
+void KNS3::Engine::setFilter(Provider::Filter filter)
+{
+    if (m_currentRequest.filter != filter) {
+        m_currentRequest.page = -1;
+    }
+    m_currentRequest.filter = filter;
+    reloadEntries();
+}
+
+void KNS3::Engine::fetchEntryById(const QString& id)
+{
+    m_searchTimer->stop();
+    m_currentRequest = KNS3::Provider::SearchRequest(KNS3::Provider::Newest, KNS3::Provider::ExactEntryId, id);
+
+    EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
+    if (!cache.isEmpty()) {
+        reloadEntries();
+    } else {
+        m_searchTimer->start();
+    }
 }
 
 void Engine::setSearchTerm(const QString &searchString)
@@ -532,7 +554,7 @@ void Engine::updateStatus()
 void Engine::checkForUpdates()
 {
     foreach (QSharedPointer<Provider> p, m_providers) {
-        Provider::SearchRequest request(KNS3::Provider::Updates);
+        Provider::SearchRequest request(KNS3::Provider::Newest, KNS3::Provider::Updates);
         p->loadEntries(request);
     }
 }
@@ -540,7 +562,7 @@ void Engine::checkForUpdates()
 void KNS3::Engine::checkForInstalled()
 {
     foreach (QSharedPointer<Provider> p, m_providers) {
-        Provider::SearchRequest request(KNS3::Provider::Installed);
+        Provider::SearchRequest request(KNS3::Provider::Newest, KNS3::Provider::Installed);
         request.page = 0;
         p->loadEntries(request);
     }
