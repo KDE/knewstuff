@@ -37,6 +37,7 @@
 
 #include "ui/itemsviewdelegate_p.h"
 #include "ui/itemsgridviewdelegate_p.h"
+#include "ui/widgetquestionlistener.h"
 
 #include "entry_p.h"
 
@@ -60,6 +61,7 @@ DownloadWidget::DownloadWidget(const QString &configFile, QWidget *parent)
 void DownloadWidget::init(const QString &configFile)
 {
     d->init(configFile);
+    WidgetQuestionListener::instance();
 }
 
 DownloadWidget::~DownloadWidget()

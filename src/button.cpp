@@ -22,6 +22,7 @@
 #include <kauthorized.h>
 #include <kmessagebox.h>
 #include "downloaddialog.h"
+#include "ui/widgetquestionlistener.h"
 
 #include <QPointer>
 
@@ -61,6 +62,7 @@ void Button::init()
 {
     setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
     connect(this, &QAbstractButton::clicked, this, &Button::showDialog);
+    WidgetQuestionListener::instance();
 }
 
 void Button::setButtonText(const QString &what)

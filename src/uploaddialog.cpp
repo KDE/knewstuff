@@ -20,6 +20,7 @@
 
 #include "uploaddialog.h"
 #include "uploaddialog_p.h"
+#include "ui/widgetquestionlistener.h"
 
 #include <QDialogButtonBox>
 #include <QFileDialog>
@@ -148,6 +149,8 @@ bool UploadDialogPrivate::init(const QString &configfile)
     ui.busyWidget->setLayout(new QHBoxLayout());
     ui.busyWidget->layout()->addWidget(busyWidget);
     busyWidget->setVisible(false);
+
+    WidgetQuestionListener::instance();
 
     return success;
 }

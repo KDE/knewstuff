@@ -22,6 +22,7 @@
 
 #include "core/engine_p.h"
 #include "entry_p.h"
+#include "ui/widgetquestionlistener.h"
 
 namespace KNS3
 {
@@ -88,6 +89,7 @@ void DownloadManagerPrivate::init(const QString &configFile)
     q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(_k_slotEntryStatusChanged(KNS3::EntryInternal)));
     q->connect(engine, SIGNAL(signalError(QString)), q, SLOT(_k_slotEngineError(QString)));
     engine->init(configFile);
+    WidgetQuestionListener::instance();
 }
 
 DownloadManager::~DownloadManager()
