@@ -32,7 +32,6 @@
 #include "ktar.h"
 #include "krandom.h"
 #include "kshell.h"
-// #include "kmessagebox.h" // TODO get rid of message box
 
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
@@ -40,6 +39,7 @@
 
 #include "core/jobs/filecopyjob.h"
 #include "core/security_p.h"
+#include "question.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <shlobj.h>
@@ -239,10 +239,10 @@ void Installation::slotPayloadResult(KJob *job)
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
-                    // TODO:KNSCore emit question, respond to answer...
-//                     if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
-//                             == KMessageBox::Yes) {
-                    if(true) {
+                    Question question;
+                    question.setQuestion(i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"));
+                    question.setTitle(i18n("Possibly bad download link"));
+                    if(question.ask() == Question::YesResponse) {
                         QDesktopServices::openUrl(fcjob->srcUrl());
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
                         entry.setStatus(Entry::Invalid);
@@ -545,9 +545,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
 
             if (QFile::exists(installpath)) {
                 if (!update) {
-                    // TODO:KNSCore warn delete, ask if that's ok...
-                    if(false) {
-//                     if (KMessageBox::warningContinueCancel(0, i18n("Overwrite existing file?") + "\n'" + installpath + '\'', i18n("Download File")) == KMessageBox::Cancel) {
+                    Question question(Question::ContinueCancelQuestion);
+                    question.setQuestion(i18n("Overwrite existing file?") + "\n'" + installpath + '\'');
+                    question.setTitle(i18n("Download File"));
+                    if(question.ask() == Question::CancelResponse) {
                         return QStringList();
                     }
                 }

@@ -17,6 +17,8 @@
 
 #include "atticaprovider_p.h"
 
+#include "core/question.h"
+
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
 
@@ -302,13 +304,12 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
         qCDebug(KNEWSTUFFCORE) << "Your balance is greater than the price."
                    << content.downloadUrlDescription(pair.second).priceAmount() << " balance: " << item.balance();
-//         if (KMessageBox::questionYesNo(0,
-//                                        i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
-//                                              "This item costs %1 %2.\nDo you want to buy it?",
-//                                              item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
-//                                             )) == KMessageBox::Yes) {
-                   // TODO:KNSCore We need to support payment... emit the question, allow for response elsewhere
-                   if(false) {
+        Question question;
+        question.setQuestion(i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
+                "This item costs %1 %2.\nDo you want to buy it?",
+                item.currency(), content.downloadUrlDescription(pair.second).priceAmount()
+            ));
+        if(question.ask() == Question::YesResponse) {
             ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
             connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
             connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));

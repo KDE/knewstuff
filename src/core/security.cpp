@@ -19,6 +19,7 @@
 
 //app includes
 #include "security_p.h"
+#include "question.h"
 
 //qt includes
 #include <QtCore/QFile>
@@ -34,9 +35,6 @@
 
 //kde includes
 #include <klocalizedstring.h>
-// #include <kmessagebox.h>
-// #include <kpassworddialog.h>
-// TODO get rid of message box
 
 using namespace KNS3;
 
@@ -207,18 +205,15 @@ void Security::slotReadyReadStandardOutput()
         case Sign:
             if (data.contains(QStringLiteral("passphrase.enter"))) {
                 KeyStruct key = m_keys[m_secretKey];
-                // TODO:KNSCore request password from user...
-//                 QPointer<KPasswordDialog> dlg = new KPasswordDialog(NULL);
-//                 dlg->setPrompt(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
-//                 if (dlg->exec()) {
-//                     m_process->write(dlg->password().toLocal8Bit() + '\n');
-//                     delete dlg;
-//                 } else {
+                Question question(Question::PasswordQuestion);
+                question.setQuestion(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
+                if(question.ask() == Question::ContinueResponse) {
+                    m_process->write(question.response().toLocal8Bit() + '\n');
+                } else {
                     m_result |= BAD_PASSPHRASE;
                     m_process->kill();
-//                     delete dlg;
                     return;
-//                 }
+                }
             } else if (data.contains(QStringLiteral("BAD_PASSPHRASE"))) {
                 m_result |= BAD_PASSPHRASE;
             }
@@ -343,17 +338,17 @@ void Security::slotSignFile()
     }
 
     if (secretKeys.count() > 1) {
-        // TODO:KNSCore have user select the key...
-//         bool ok;
-//         QString selectedKey = QInputDialog::getItem(0, i18n("Select Signing Key"), i18n("Key used for signing:"), secretKeys, 0, false, &ok);
-//         QString selectedKey = QInputDialog::getItem(0, i18n("Select Signing Key"), i18n("Key used for signing:"), secretKeys, 0, false, &ok);
-//         if (ok) {
-//             m_secretKey = selectedKey;
-//         } else {
-        // emit an error to be forwarded to the user for selecting a signing key...
+        Question question(Question::SelectFromListQuestion);
+        question.setQuestion(i18n("Key used for signing:"));
+        question.setTitle(i18n("Select Signing Key"));
+        question.setList(secretKeys);
+        if(question.ask() == Question::OKResponse) {
+            m_secretKey = question.response();
+        } else {
+            // emit an error to be forwarded to the user for selecting a signing key...
             emit fileSigned(0);
             return;
-//         }
+        }
     } else {
         m_secretKey = secretKeys[0];
     }
