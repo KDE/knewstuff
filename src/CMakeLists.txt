@@ -28,6 +28,10 @@ set(KNewStuffCore_SRCS
 
     upload/atticahelper.cpp
 
+    core/question.cpp
+    core/questionmanager.cpp
+    core/questionlistener.cpp
+
     # To be ported... gui in here
     core/installation.cpp
     core/security.cpp
@@ -51,6 +55,7 @@ set(KNewStuff_SRCS
     ui/itemsgridviewdelegate.cpp
     ui/itemsviewbasedelegate.cpp
     ui/progressindicator.cpp
+    ui/widgetquestionlistener.cpp
 
     uploaddialog.cpp
 )
