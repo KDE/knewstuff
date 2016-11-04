@@ -595,13 +595,6 @@ QDomElement KNS3::EntryInternal::entryXML() const
     return el;
 }
 
-// Entry EntryInternal::toEntry() const
-// {
-//     Entry e;
-//     e.d->e = *this;
-//     return e;
-// }
-
 KNS3::EntryInternal EntryInternal::fromEntry(const KNS3::Entry &entry)
 {
     return entry.d->e;

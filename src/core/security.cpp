@@ -28,7 +28,6 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextStream>
 #include <QtCore/QTimer>
-// #include <QInputDialog>
 #include <qstandardpaths.h>
 
 #include <QCryptographicHash>

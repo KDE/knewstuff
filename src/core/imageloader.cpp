@@ -18,9 +18,6 @@
 
 #include "imageloader_p.h"
 
-// #include <kio/job.h>
-// #include <kio/scheduler.h>
-
 #include <QtCore/QFile>
 
 using namespace KNS3;
@@ -36,11 +33,9 @@ void ImageLoader::start()
 {
     QUrl url(m_entry.previewUrl(m_previewType));
     if (!url.isEmpty()) {
-//         m_job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
         m_job = HTTPJob::get(url, NoReload, JobFlag::HideProgressInfo);
         connect(m_job, &KJob::result, this, &ImageLoader::slotDownload);
         connect(m_job, &HTTPJob::data, this, &ImageLoader::slotData);
-//         KIO::Scheduler::setJobPriority(m_job, 1);
     }
 }
 

@@ -432,8 +432,6 @@ public:
     //void setIdNumber(int number);
     //int idNumber() const;
 
-//     Entry toEntry() const;
-
     static KNS3::EntryInternal fromEntry(const KNS3::Entry &entry);
 private:
     class Private;

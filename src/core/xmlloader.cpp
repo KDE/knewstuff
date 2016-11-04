@@ -21,13 +21,12 @@
 
 #include "xmlloader_p.h"
 
-#include <QtCore/QByteArray>
+#include "knewstuffcore_debug.h"
+#include "jobs/httpjob.h"
 
 #include <kconfig.h>
-#include <knewstuffcore_debug.h>
-// #include <kio/job.h>
 
-#include "jobs/httpjob.h"
+#include <QtCore/QByteArray>
 
 namespace KNS3
 {
@@ -43,7 +42,6 @@ void XmlLoader::load(const QUrl &url)
 
     qCDebug(KNEWSTUFFCORE) << "XmlLoader::load(): url: " << url;
 
-//     KIO::TransferJob *job = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
     HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
     connect(job, &KJob::result,
             this, &XmlLoader::slotJobResult);
