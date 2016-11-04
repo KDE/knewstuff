@@ -11,8 +11,16 @@ set(KNewStuffCore_SRCS
     core/cache.cpp
     core/engine.cpp
     core/entryinternal.cpp
+    core/imageloader.cpp
+    core/installation.cpp
+    core/itemsmodel.cpp
     core/provider.cpp
+    core/security.cpp
     core/xmlloader.cpp
+
+    core/question.cpp
+    core/questionmanager.cpp
+    core/questionlistener.cpp
 
     core/jobs/downloadjob.cpp
     core/jobs/filecopyjob.cpp
@@ -20,21 +28,10 @@ set(KNewStuffCore_SRCS
     core/jobs/httpjob.cpp
     core/jobs/httpworker.cpp
 
-    core/imageloader.cpp
-    core/itemsmodel.cpp
-
     attica/atticaprovider.cpp
     staticxml/staticxmlprovider.cpp
 
     upload/atticahelper.cpp
-
-    core/question.cpp
-    core/questionmanager.cpp
-    core/questionlistener.cpp
-
-    # To be ported... gui in here
-    core/installation.cpp
-    core/security.cpp
 )
 
 set(KNewStuff_SRCS
