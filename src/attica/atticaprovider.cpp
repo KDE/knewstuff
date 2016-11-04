@@ -158,18 +158,25 @@ void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
     }
 
     mCurrentRequest = request;
-    if (request.sortMode == Installed) {
-        if (request.page == 0) {
-            emit loadingFinished(request, installedEntries());
-        } else {
-            emit loadingFinished(request, EntryInternal::List());
+    switch (request.filter) {
+        case None:
+            break;
+        case ExactEntryId: {
+            ItemJob<Content> *job = m_provider.requestContent(request.searchTerm);
+            connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
+            job->start();
+            return;
         }
-        return;
-    }
-
-    if (request.sortMode == Updates) {
-        checkForUpdates();
-        return;
+        case Installed:
+            if (request.page == 0) {
+                emit loadingFinished(request, installedEntries());
+            } else {
+                emit loadingFinished(request, EntryInternal::List());
+            }
+            return;
+        case Updates:
+            checkForUpdates();
+            return;
     }
 
     Attica::Provider::SortMode sorting = atticaSortMode(request.sortMode);

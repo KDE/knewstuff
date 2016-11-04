@@ -55,22 +55,30 @@ public:
         Alphabetical,
         Rating,
         Downloads,
-        Installed, // only installed items
-        Updates // entries that can be updated
     };
+    Q_ENUM(SortMode)
+
+    enum Filter {
+        None,
+        Installed,
+        Updates,
+        ExactEntryId
+    };
+    Q_ENUM(Filter)
 
     /**
      * used to keep track of a search
      */
     struct SearchRequest {
         SortMode sortMode;
+        Filter filter;
         QString searchTerm;
         QStringList categories;
         int page;
         int pageSize;
 
-        SearchRequest(SortMode sortMode_ = Newest, const QString &searchTerm_ = QString(), const QStringList &categories_ = QStringList(), int page_ = -1, int pageSize_ = 20)
-            : sortMode(sortMode_), searchTerm(searchTerm_), categories(categories_), page(page_), pageSize(pageSize_)
+        SearchRequest(SortMode sortMode_ = Newest, Filter filter_ = None, const QString &searchTerm_ = QString(), const QStringList &categories_ = QStringList(), int page_ = -1, int pageSize_ = 20)
+            : sortMode(sortMode_), filter(filter_), searchTerm(searchTerm_), categories(categories_), page(page_), pageSize(pageSize_)
         {}
 
         QString hashForRequest() const;

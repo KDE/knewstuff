@@ -129,21 +129,23 @@ void DownloadWidgetPrivate::slotNetworkTimeout() // SLOT
 void DownloadWidgetPrivate::sortingChanged()
 {
     Provider::SortMode sortMode = Provider::Newest;
+    Provider::Filter filter = Provider::None;
     if (ui.ratingRadio->isChecked()) {
         sortMode = Provider::Rating;
     } else if (ui.mostDownloadsRadio->isChecked()) {
         sortMode = Provider::Downloads;
     } else if (ui.installedRadio->isChecked()) {
-        sortMode = Provider::Installed;
+        filter = Provider::Installed;
     }
 
     model->clearEntries();
-    if (sortMode == Provider::Installed) {
+    if (filter == Provider::Installed) {
         ui.m_searchEdit->clear();
     }
-    ui.m_searchEdit->setEnabled(sortMode != Provider::Installed);
+    ui.m_searchEdit->setEnabled(filter != Provider::Installed);
 
     engine->setSortMode(sortMode);
+    engine->setFilter(filter);
 }
 
 void DownloadWidgetPrivate::slotUpdateSearch()

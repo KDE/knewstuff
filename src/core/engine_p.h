@@ -104,6 +104,7 @@ public:
     void loadDetails(const KNS3::EntryInternal &entry);
 
     void setSortMode(Provider::SortMode mode);
+    void setFilter(Provider::Filter filter);
 
     /**
       Set the categories that will be included in searches
@@ -116,6 +117,8 @@ public:
 
     void checkForUpdates();
     void checkForInstalled();
+
+    void fetchEntryById(const QString &id);
 
     /**
      * Try to contact the author of the entry by email or showing their homepage.

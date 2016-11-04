@@ -112,6 +112,15 @@ public:
       */
     void setSearchOrder(SortOrder order);
 
+    /**
+     * Triggers a search for an entry with @p id as its unique id
+     *
+     * @see searchResult
+     *
+     * @since 5.28
+     */
+    void fetchEntryById(const QString &id);
+
 Q_SIGNALS:
     /**
       Returns the search result.
