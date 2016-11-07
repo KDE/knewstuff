@@ -20,12 +20,10 @@
 
 #include "filecopyjob.h"
 
-#include "knewstuffcore_export.h"
-
 namespace KNS3
 {
 
-class KNEWSTUFFCORE_EXPORT DownloadJob : public FileCopyJob
+class DownloadJob : public FileCopyJob
 {
     Q_OBJECT
 public:

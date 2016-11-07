@@ -22,12 +22,10 @@
 
 #include <QUrl>
 
-#include "knewstuffcore_export.h"
-
 namespace KNS3
 {
 
-class KNEWSTUFFCORE_EXPORT FileCopyJob : public KJob
+class FileCopyJob : public KJob
 {
     Q_OBJECT
 public:
