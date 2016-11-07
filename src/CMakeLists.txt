@@ -165,6 +165,4 @@ ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Att
 ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
 install(FILES ${COREPRI_FILENAME} ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-if(Qt5Qml_FOUND AND Qt5Quick_FOUND)
-    add_subdirectory(qtquick)
-endif()
+add_subdirectory(qtquick)
