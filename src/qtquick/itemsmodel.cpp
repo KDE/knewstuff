@@ -320,6 +320,7 @@ QObject * ItemsModel::engine() const
 
 void ItemsModel::setEngine(QObject* newEngine)
 {
+    beginResetModel();
     Engine* test = qobject_cast<Engine*>(newEngine);
     if(test) {
         d->engine = qobject_cast<KNS3::Engine*>(test->engine());
@@ -328,7 +329,7 @@ void ItemsModel::setEngine(QObject* newEngine)
         d->engine = qobject_cast<KNS3::Engine*>(newEngine);
     }
     emit engineChanged();
-    reset();
+    endResetModel();
 }
 
 void ItemsModel::installItem(int index)
