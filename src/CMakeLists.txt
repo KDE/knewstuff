@@ -1,8 +1,5 @@
 project(KNewStuff)
 
-message("NO! BAD CODER! THIS IS TERRIBLE!")
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
-
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
@@ -18,10 +15,15 @@ set(KNewStuffCore_SRCS
     core/security.cpp
     core/xmlloader.cpp
 
+    # A system by which queries can be passed to the user, and responses
+    # gathered, depending on implementation. See core/question.h for details.
     core/question.cpp
     core/questionmanager.cpp
     core/questionlistener.cpp
 
+    # A set of minimal KJob based classes, designed to replace the
+    # more powerful KIO based system in places where KIO is not available
+    # for one reason or another.
     core/jobs/downloadjob.cpp
     core/jobs/filecopyjob.cpp
     core/jobs/filecopyworker.cpp
