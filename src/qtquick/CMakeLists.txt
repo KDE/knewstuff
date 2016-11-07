@@ -5,7 +5,7 @@ set(qmlplugin_SRCS
     itemsmodel.cpp
 )
 
-add_library (newstuffqmlplugin SHARED ${qmlplugin_SRCS})
+add_library (newstuffqmlplugin MODULE ${qmlplugin_SRCS})
 
 target_link_libraries (newstuffqmlplugin
     Qt5::Core
