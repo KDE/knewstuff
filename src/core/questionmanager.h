@@ -28,6 +28,14 @@
 
 namespace KNS3
 {
+/**
+ * @short The central class handling Question redirection
+ *
+ * This class is used to ensure that KNS3::Question instances get redirected
+ * to the appropriate KNS3::QuestionListener instances. It is a very dumb class
+ * which only ensures the listeners have somewhere to listen to, and the
+ * questions have somewhere to ask to be asked.
+ */
 class KNEWSTUFFCORE_EXPORT QuestionManager : public QObject
 {
     Q_OBJECT
