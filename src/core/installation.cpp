@@ -45,7 +45,7 @@
 #include <shlobj.h>
 #endif
 
-using namespace KNS3;
+using namespace KNSCore;
 
 Installation::Installation(QObject *parent)
     : QObject(parent)
@@ -181,7 +181,7 @@ void Installation::install(EntryInternal entry)
     downloadPayload(entry);
 }
 
-void Installation::downloadPayload(const KNS3::EntryInternal &entry)
+void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
 {
     if (!entry.isValid()) {
         emit signalInstallationFailed(i18n("Invalid item."));
@@ -245,7 +245,7 @@ void Installation::slotPayloadResult(KJob *job)
                     if(question.ask() == Question::YesResponse) {
                         QDesktopServices::openUrl(fcjob->srcUrl());
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
-                        entry.setStatus(Entry::Invalid);
+                        entry.setStatus(KNS3::Entry::Invalid);
                         emit signalEntryChanged(entry);
                         return;
                     }
@@ -258,7 +258,7 @@ void Installation::slotPayloadResult(KJob *job)
     }
 }
 
-void Installation::install(KNS3::EntryInternal entry, const QString &downloadedFile)
+void Installation::install(KNSCore::EntryInternal entry, const QString &downloadedFile)
 {
     qCDebug(KNEWSTUFFCORE) << "Install: " << entry.name() << " from " << downloadedFile;
 
@@ -301,10 +301,10 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
 
     if (installedFiles.isEmpty()) {
-        if (entry.status() == Entry::Installing) {
-            entry.setStatus(Entry::Downloadable);
-        } else if (entry.status() == Entry::Updating) {
-            entry.setStatus(Entry::Updateable);
+        if (entry.status() == KNS3::Entry::Installing) {
+            entry.setStatus(KNS3::Entry::Downloadable);
+        } else if (entry.status() == KNS3::Entry::Updating) {
+            entry.setStatus(KNS3::Entry::Updateable);
         }
         emit signalEntryChanged(entry);
         emit signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
@@ -330,7 +330,7 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     sec->checkValidity(QString());
 
     // update version and release date to the new ones
-    if (entry.status() == Entry::Updating) {
+    if (entry.status() == KNS3::Entry::Updating) {
         if (!entry.updateVersion().isEmpty()) {
             entry.setVersion(entry.updateVersion());
         }
@@ -339,7 +339,7 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
         }
     }
 
-    entry.setStatus(Entry::Installed);
+    entry.setStatus(KNS3::Entry::Installed);
     emit signalEntryChanged(entry);
     emit signalInstallationFinished();
 }
@@ -427,7 +427,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
     return installdir;
 }
 
-QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
+QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
 {
     QString installpath(payloadfile);
     // Collect all files that were installed
@@ -537,7 +537,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
             QFile file(payloadfile);
             bool success = true;
-            const bool update = ((entry.status() == Entry::Updateable) || (entry.status() == Entry::Updating));
+            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
 
             if (QFile::exists(installpath)) {
                 if (!update) {
@@ -581,7 +581,7 @@ void Installation::runPostInstallationCommand(const QString &installPath)
 
 void Installation::uninstall(EntryInternal entry)
 {
-    entry.setStatus(Entry::Deleted);
+    entry.setStatus(KNS3::Entry::Deleted);
 
     if (!uninstallCommand.isEmpty()) {
         foreach (const QString &file, entry.installedFiles()) {

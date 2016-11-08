@@ -20,7 +20,7 @@
 
 #include <QtCore/QFile>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 ImageLoader::ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent)
     : QObject(parent)

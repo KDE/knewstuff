@@ -23,7 +23,7 @@
 
 #include <QCoreApplication>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class Question::Private {
 public:

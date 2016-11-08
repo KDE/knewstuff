@@ -48,17 +48,17 @@ public:
     EntryDetails *details;
 
     // The engine that does all the work
-    Engine *engine;
+    KNSCore::Engine *engine;
     Ui::DownloadWidget ui;
     // Model to show the entries
-    ItemsModel *model;
+    KNSCore::ItemsModel *model;
     // Timeout for messge display
     QTimer *messageTimer;
 
     ItemsViewBaseDelegate *delegate;
 
     QString searchTerm;
-    QSet<EntryInternal> changedEntries;
+    QSet<KNSCore::EntryInternal> changedEntries;
 
     QSet<QString> categories;
     QSet<QString> providers;
@@ -75,13 +75,13 @@ public:
     void displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs = 0);
 
     void slotProvidersLoaded();
-    void slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
-    void slotEntryChanged(const KNS3::EntryInternal &entry);
+    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void slotEntryChanged(const KNSCore::EntryInternal &entry);
 
-    void slotShowDetails(const KNS3::EntryInternal &entry);
+    void slotShowDetails(const KNSCore::EntryInternal &entry);
     void slotShowOverview();
 
-    void slotPayloadFailed(const EntryInternal &entry);
+    void slotPayloadFailed(const KNSCore::EntryInternal &entry);
     void slotPayloadLoaded(QUrl url);
 
     void slotResetMessage();

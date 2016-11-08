@@ -26,13 +26,13 @@
 
 #include "question.h"
 
-namespace KNS3
+namespace KNSCore
 {
 /**
  * @short The central class handling Question redirection
  *
- * This class is used to ensure that KNS3::Question instances get redirected
- * to the appropriate KNS3::QuestionListener instances. It is a very dumb class
+ * This class is used to ensure that KNSCore::Question instances get redirected
+ * to the appropriate KNSCore::QuestionListener instances. It is a very dumb class
  * which only ensures the listeners have somewhere to listen to, and the
  * questions have somewhere to ask to be asked.
  */
@@ -45,7 +45,7 @@ public:
     virtual ~QuestionManager();
 
 Q_SIGNALS:
-    void askQuestion(KNS3::Question* question);
+    void askQuestion(KNSCore::Question* question);
 
 private:
     QuestionManager();

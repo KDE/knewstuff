@@ -19,7 +19,7 @@
 
 #include "questionmanager.h"
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class QuestionManagerHelper {
 public:

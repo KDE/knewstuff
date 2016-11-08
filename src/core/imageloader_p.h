@@ -28,7 +28,7 @@
 
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 
 /**
@@ -56,7 +56,7 @@ public:
     KJob *job();
 
 Q_SIGNALS:
-    void signalPreviewLoaded(const KNS3::EntryInternal &, KNS3::EntryInternal::PreviewType);
+    void signalPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
 
 private Q_SLOTS:
     void slotDownload(KJob *job);

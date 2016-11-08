@@ -24,7 +24,7 @@
 
 namespace KNS3
 {
-class WidgetQuestionListener : public QuestionListener
+class WidgetQuestionListener : public KNSCore::QuestionListener
 {
     Q_OBJECT
     Q_DISABLE_COPY(WidgetQuestionListener)
@@ -32,7 +32,7 @@ public:
     static WidgetQuestionListener* instance();
     virtual ~WidgetQuestionListener();
 
-    Q_SLOT virtual void askQuestion(Question* question);
+    Q_SLOT virtual void askQuestion(KNSCore::Question* question);
 private:
     WidgetQuestionListener();
 };

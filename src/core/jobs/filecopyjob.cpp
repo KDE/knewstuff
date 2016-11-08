@@ -24,7 +24,7 @@
 
 #include <QTimer>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class FileCopyJob::Private
 {

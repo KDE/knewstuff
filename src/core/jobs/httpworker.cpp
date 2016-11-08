@@ -24,7 +24,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class HTTPWorker::Private
 {
@@ -56,7 +56,7 @@ HTTPWorker::HTTPWorker(const QUrl& url, JobType jobType, QObject* parent)
     connect(d->qnam, &QNetworkAccessManager::finished, this, &HTTPWorker::handleFinished);
 }
 
-HTTPWorker::HTTPWorker(const QUrl& source, const QUrl& destination, KNS3::HTTPWorker::JobType jobType, QObject* parent)
+HTTPWorker::HTTPWorker(const QUrl& source, const QUrl& destination, KNSCore::HTTPWorker::JobType jobType, QObject* parent)
     : QObject(parent)
     , d(new Private)
 {
@@ -137,7 +137,7 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
     emit completed();
 }
 
-void KNS3::HTTPWorker::handleData(const QByteArray& data)
+void HTTPWorker::handleData(const QByteArray& data)
 {
     qCDebug(KNEWSTUFFCORE) << "Writing" << data.length() << "bytes of data to" << d->dataFile.fileName();
     d->dataFile.write(data);

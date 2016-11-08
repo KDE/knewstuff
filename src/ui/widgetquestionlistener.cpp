@@ -44,7 +44,7 @@ WidgetQuestionListener* WidgetQuestionListener::instance()
 }
 
 WidgetQuestionListener::WidgetQuestionListener()
-    : QuestionListener(0)
+    : KNSCore::QuestionListener(0)
 {
     s_kns3_widgetQuestionListener()->q = this;
 }
@@ -53,55 +53,55 @@ WidgetQuestionListener::~WidgetQuestionListener()
 {
 }
 
-void KNS3::WidgetQuestionListener::askQuestion(KNS3::Question* question)
+void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question* question)
 {
     switch(question->questionType())
     {
-    case Question::SelectFromListQuestion:
+    case KNSCore::Question::SelectFromListQuestion:
         {
             bool ok = false;
             question->setResponse(QInputDialog::getItem(0, question->title(), question->question(), question->list(), 0, false, &ok));
             if(ok) {
-                question->setResponse(Question::OKResponse);
+                question->setResponse(KNSCore::Question::OKResponse);
             }
             else {
-                question->setResponse(Question::CancelResponse);
+                question->setResponse(KNSCore::Question::CancelResponse);
             }
         }
         break;
-    case Question::ContinueCancelQuestion:
+    case KNSCore::Question::ContinueCancelQuestion:
         {
             KMessageBox::ButtonCode response = KMessageBox::warningContinueCancel(0, question->question(), question->title());
             if(response == KMessageBox::Continue) {
-                question->setResponse(Question::ContinueResponse);
+                question->setResponse(KNSCore::Question::ContinueResponse);
             }
             else {
-                question->setResponse(Question::CancelResponse);
+                question->setResponse(KNSCore::Question::CancelResponse);
             }
         }
         break;
-    case Question::PasswordQuestion:
+    case KNSCore::Question::PasswordQuestion:
         {
             KPasswordDialog dlg;
             dlg.setPrompt(question->question());
             if(dlg.exec()) {
                 question->setResponse(dlg.password());
-                question->setResponse(Question::ContinueResponse);
+                question->setResponse(KNSCore::Question::ContinueResponse);
             }
             else {
-                question->setResponse(Question::CancelResponse);
+                question->setResponse(KNSCore::Question::CancelResponse);
             }
         }
         break;
-    case Question::YesNoQuestion:
+    case KNSCore::Question::YesNoQuestion:
     default:
         {
             KMessageBox::ButtonCode response = KMessageBox::questionYesNo(0, question->question(), question->title());
             if(response == KMessageBox::Yes) {
-                question->setResponse(Question::YesResponse);
+                question->setResponse(KNSCore::Question::YesResponse);
             }
             else {
-                question->setResponse(Question::NoResponse);
+                question->setResponse(KNSCore::Question::NoResponse);
             }
         }
         break;

@@ -22,7 +22,7 @@
 #include <QUrl>
 
 class QNetworkReply;
-namespace KNS3 {
+namespace KNSCore {
 
 class HTTPWorker : public QObject {
     Q_OBJECT

@@ -20,7 +20,7 @@
 
 #include <KCoreAddons/kjob.h>
 
-namespace KNS3
+namespace KNSCore
 {
 
 enum JobFlag {

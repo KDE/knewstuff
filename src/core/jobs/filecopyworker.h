@@ -21,7 +21,7 @@
 #include <QThread>
 #include <QUrl>
 
-namespace KNS3 {
+namespace KNSCore {
 
 class FileCopyWorker : public QThread {
     Q_OBJECT

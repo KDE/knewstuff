@@ -28,7 +28,7 @@
 
 #include <QtCore/QByteArray>
 
-namespace KNS3
+namespace KNSCore
 {
 
 XmlLoader::XmlLoader(QObject *parent)

@@ -19,7 +19,7 @@
 
 #include "author_p.h"
 
-using namespace KNS3;
+using namespace KNSCore;
 
 void Author::setName(const QString &_name)
 {

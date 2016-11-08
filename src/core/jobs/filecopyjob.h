@@ -22,7 +22,7 @@
 
 #include <QUrl>
 
-namespace KNS3
+namespace KNSCore
 {
 
 class FileCopyJob : public KJob

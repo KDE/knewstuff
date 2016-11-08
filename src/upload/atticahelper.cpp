@@ -24,7 +24,7 @@
 #include <attica/postjob.h>
 #include <attica/accountbalance.h>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 AtticaHelper::AtticaHelper(QObject *parent) :
     QObject(parent)
@@ -204,7 +204,7 @@ void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
     for (int previewNum = 1; previewNum <= 3; ++previewNum) {
         QUrl url = QUrl::fromUserInput(content.smallPreviewPicture(QString::number(previewNum)));
         if (! url.isEmpty()) {
-            m_previewJob[previewNum - 1] = HTTPJob::get(url, KNS3::NoReload, KNS3::HideProgressInfo);
+            m_previewJob[previewNum - 1] = HTTPJob::get(url, KNSCore::NoReload, KNSCore::HideProgressInfo);
             connect(m_previewJob[previewNum - 1], &KJob::result, this, &AtticaHelper::slotPreviewDownload);
             connect(m_previewJob[previewNum - 1], &HTTPJob::data, this, &AtticaHelper::slotPreviewData);
         }

@@ -30,7 +30,7 @@
 
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 /**
  * @short KNewStuff Base Provider class.
@@ -107,7 +107,7 @@ public:
 
     virtual bool isInitialized() const = 0;
 
-    virtual void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries) = 0;
+    virtual void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) = 0;
 
     /**
      * Retrieves the common name of the provider.
@@ -131,8 +131,8 @@ public:
      *
      * Note: the engine connects to loadingFinished() signal to get the result
      */
-    virtual void loadEntries(const KNS3::Provider::SearchRequest &request) = 0;
-    virtual void loadEntryDetails(const KNS3::EntryInternal &) {}
+    virtual void loadEntries(const KNSCore::Provider::SearchRequest &request) = 0;
+    virtual void loadEntryDetails(const KNSCore::EntryInternal &) {}
     virtual void loadPayloadLink(const EntryInternal &entry, int linkId) = 0;
 
     virtual bool userCanVote()
@@ -154,13 +154,13 @@ public:
     }
 
 Q_SIGNALS:
-    void providerInitialized(KNS3::Provider *);
+    void providerInitialized(KNSCore::Provider *);
 
-    void loadingFinished(const KNS3::Provider::SearchRequest &, const KNS3::EntryInternal::List &) const;
-    void loadingFailed(const KNS3::Provider::SearchRequest &);
+    void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::EntryInternal::List &) const;
+    void loadingFailed(const KNSCore::Provider::SearchRequest &);
 
-    void entryDetailsLoaded(const KNS3::EntryInternal &);
-    void payloadLinkLoaded(const KNS3::EntryInternal &);
+    void entryDetailsLoaded(const KNSCore::EntryInternal &);
+    void payloadLinkLoaded(const KNSCore::EntryInternal &);
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;

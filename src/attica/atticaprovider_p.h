@@ -31,7 +31,7 @@ namespace Attica
 class BaseJob;
 }
 
-namespace KNS3
+namespace KNSCore
 {
 /**
  * @short KNewStuff Attica Provider class.
@@ -60,10 +60,10 @@ public:
     bool setProviderXML(const QDomElement &xmldata) Q_DECL_OVERRIDE;
 
     bool isInitialized() const Q_DECL_OVERRIDE;
-    void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
+    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
 
-    void loadEntries(const KNS3::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
-    void loadEntryDetails(const KNS3::EntryInternal &entry) Q_DECL_OVERRIDE;
+    void loadEntries(const KNSCore::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
+    void loadEntryDetails(const KNSCore::EntryInternal &entry) Q_DECL_OVERRIDE;
     void loadPayloadLink(const EntryInternal &entry, int linkId) Q_DECL_OVERRIDE;
 
     bool userCanVote() Q_DECL_OVERRIDE
@@ -104,7 +104,7 @@ private:
     Attica::ProviderManager m_providerManager;
     Attica::Provider m_provider;
 
-    KNS3::EntryInternal::List mCachedEntries;
+    KNSCore::EntryInternal::List mCachedEntries;
     QHash<QString, Attica::Content> mCachedContent;
 
     // Associate job and entry, this is needed when fetching

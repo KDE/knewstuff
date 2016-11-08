@@ -30,7 +30,7 @@
 
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 
 QDomElement addElement(QDomDocument &doc, QDomElement &parent,

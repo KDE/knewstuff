@@ -33,14 +33,11 @@
 
 namespace KNS3
 {
-class ItemsModel;
-class Engine;
-
 class ItemsViewBaseDelegate: public KWidgetItemDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent = 0);
+    explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = 0);
     virtual ~ItemsViewBaseDelegate();
     // paint the item at index with all its attributes shown
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
@@ -56,7 +53,7 @@ public:
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
 
 Q_SIGNALS:
-    void signalShowDetails(const KNS3::EntryInternal &entry);
+    void signalShowDetails(const KNSCore::EntryInternal &entry);
 
 protected Q_SLOTS:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
@@ -67,7 +64,7 @@ protected Q_SLOTS:
     void slotDetailsClicked();
 
 protected:
-    Engine *m_engine;
+    KNSCore::Engine *m_engine;
     QAbstractItemView *m_itemView;
     QIcon m_iconInvalid;
     QIcon m_iconDownloadable;

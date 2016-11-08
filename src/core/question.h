@@ -24,7 +24,7 @@
 
 #include "knewstuffcore_export.h"
 
-namespace KNS3
+namespace KNSCore
 {
 /**
  * @short A way to ask a user a question from insude a GUI-less library (like KNewStuffCore)

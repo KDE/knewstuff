@@ -27,7 +27,7 @@
 
 using namespace KNS3;
 
-EntryDetails::EntryDetails(Engine *engine, Ui::DownloadWidget *widget)
+EntryDetails::EntryDetails(KNSCore::Engine *engine, Ui::DownloadWidget *widget)
     : QObject(widget->m_listView), m_engine(engine), ui(widget)
 {
     init();
@@ -57,15 +57,15 @@ void EntryDetails::init()
     ui->updateButton->setIcon(QIcon::fromTheme(QStringLiteral("system-software-update")));
     ui->uninstallButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
 
-    connect(m_engine, &Engine::signalEntryDetailsLoaded,
+    connect(m_engine, &KNSCore::Engine::signalEntryDetailsLoaded,
             this, &EntryDetails::entryChanged);
-    connect(m_engine, &Engine::signalEntryChanged,
+    connect(m_engine, &KNSCore::Engine::signalEntryChanged,
             this, &EntryDetails::entryStatusChanged);
-    connect(m_engine, &Engine::signalEntryPreviewLoaded,
+    connect(m_engine, &KNSCore::Engine::signalEntryPreviewLoaded,
             this, &EntryDetails::slotEntryPreviewLoaded);
 }
 
-void EntryDetails::setEntry(const KNS3::EntryInternal &entry)
+void EntryDetails::setEntry(const KNSCore::EntryInternal &entry)
 {
     m_entry = entry;
     // immediately show something
@@ -74,7 +74,7 @@ void EntryDetails::setEntry(const KNS3::EntryInternal &entry)
     m_engine->loadDetails(m_entry);
 }
 
-void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
+void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
 {
     if (ui->detailsStack->currentIndex() == 0) {
         return;
@@ -97,8 +97,8 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
         ui->authorLabel->setText(m_entry.author().name());
     }
 
-    QString summary = replaceBBCode(m_entry.summary()).replace('\n', QLatin1String("<br/>"));
-    QString changelog = replaceBBCode(m_entry.changelog()).replace('\n', QLatin1String("<br/>"));
+    QString summary = KNSCore::replaceBBCode(m_entry.summary()).replace('\n', QLatin1String("<br/>"));
+    QString changelog = KNSCore::replaceBBCode(m_entry.changelog()).replace('\n', QLatin1String("<br/>"));
 
     QString description = "<html><body>" + summary;
     if (!changelog.isEmpty()) {
@@ -131,30 +131,30 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
         ui->ratingWidget->setVisible(false);
     }
 
-    bool hideSmallPreviews = m_entry.previewUrl(EntryInternal::PreviewSmall2).isEmpty()
-                             && m_entry.previewUrl(EntryInternal::PreviewSmall3).isEmpty();
+    bool hideSmallPreviews = m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall2).isEmpty()
+                             && m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall3).isEmpty();
 
     ui->preview1->setVisible(!hideSmallPreviews);
     ui->preview2->setVisible(!hideSmallPreviews);
     ui->preview3->setVisible(!hideSmallPreviews);
 
     // in static xml we often only get a small preview, use that in details
-    if (m_entry.previewUrl(EntryInternal::PreviewBig1).isEmpty() && !m_entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
-        m_entry.setPreviewUrl(m_entry.previewUrl(EntryInternal::PreviewSmall1), EntryInternal::PreviewBig1);
-        m_entry.setPreviewImage(m_entry.previewImage(EntryInternal::PreviewSmall1), EntryInternal::PreviewBig1);
+    if (m_entry.previewUrl(KNSCore::EntryInternal::PreviewBig1).isEmpty() && !m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
+        m_entry.setPreviewUrl(m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1), KNSCore::EntryInternal::PreviewBig1);
+        m_entry.setPreviewImage(m_entry.previewImage(KNSCore::EntryInternal::PreviewSmall1), KNSCore::EntryInternal::PreviewBig1);
     }
 
-    for (int type = EntryInternal::PreviewSmall1; type <= EntryInternal::PreviewBig3; ++type) {
-        if (m_entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
+    for (int type = KNSCore::EntryInternal::PreviewSmall1; type <= KNSCore::EntryInternal::PreviewBig3; ++type) {
+        if (m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
             ui->previewBig->setVisible(false);
         } else
 
-            if (!m_entry.previewUrl((EntryInternal::PreviewType)type).isEmpty()) {
-                qCDebug(KNEWSTUFF) << "type: " << type << m_entry.previewUrl((EntryInternal::PreviewType)type);
-                if (m_entry.previewImage((EntryInternal::PreviewType)type).isNull()) {
-                    m_engine->loadPreview(m_entry, (EntryInternal::PreviewType)type);
+            if (!m_entry.previewUrl((KNSCore::EntryInternal::PreviewType)type).isEmpty()) {
+                qCDebug(KNEWSTUFF) << "type: " << type << m_entry.previewUrl((KNSCore::EntryInternal::PreviewType)type);
+                if (m_entry.previewImage((KNSCore::EntryInternal::PreviewType)type).isNull()) {
+                    m_engine->loadPreview(m_entry, (KNSCore::EntryInternal::PreviewType)type);
                 } else {
-                    slotEntryPreviewLoaded(m_entry, (EntryInternal::PreviewType)type);
+                    slotEntryPreviewLoaded(m_entry, (KNSCore::EntryInternal::PreviewType)type);
                 }
             }
     }
@@ -162,7 +162,7 @@ void EntryDetails::entryChanged(const KNS3::EntryInternal &entry)
     updateButtons();
 }
 
-void EntryDetails::entryStatusChanged(const KNS3::EntryInternal &entry)
+void EntryDetails::entryStatusChanged(const KNSCore::EntryInternal &entry)
 {
     Q_UNUSED(entry);
     updateButtons();
@@ -220,7 +220,7 @@ void EntryDetails::updateButtons()
     }
     if (ui->installButton->isVisible() && m_entry.downloadLinkCount() > 1) {
         QMenu *installMenu = new QMenu(ui->installButton);
-        foreach (EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
+        foreach (KNSCore::EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
                 text + " (" + info.distributionType.trimmed() + ')';
@@ -243,24 +243,24 @@ void EntryDetails::uninstall()
     m_engine->uninstall(m_entry);
 }
 
-void EntryDetails::slotEntryPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type)
+void EntryDetails::slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type)
 {
     if (!(entry == m_entry)) {
         return;
     }
 
     switch (type) {
-    case EntryInternal::PreviewSmall1:
-        ui->preview1->setImage(entry.previewImage(EntryInternal::PreviewSmall1));
+    case KNSCore::EntryInternal::PreviewSmall1:
+        ui->preview1->setImage(entry.previewImage(KNSCore::EntryInternal::PreviewSmall1));
         break;
-    case EntryInternal::PreviewSmall2:
-        ui->preview2->setImage(entry.previewImage(EntryInternal::PreviewSmall2));
+    case KNSCore::EntryInternal::PreviewSmall2:
+        ui->preview2->setImage(entry.previewImage(KNSCore::EntryInternal::PreviewSmall2));
         break;
-    case EntryInternal::PreviewSmall3:
-        ui->preview3->setImage(entry.previewImage(EntryInternal::PreviewSmall3));
+    case KNSCore::EntryInternal::PreviewSmall3:
+        ui->preview3->setImage(entry.previewImage(KNSCore::EntryInternal::PreviewSmall3));
         break;
-    case EntryInternal::PreviewBig1:
-        m_currentPreview = entry.previewImage(EntryInternal::PreviewBig1);
+    case KNSCore::EntryInternal::PreviewBig1:
+        m_currentPreview = entry.previewImage(KNSCore::EntryInternal::PreviewBig1);
         ui->previewBig->setImage(m_currentPreview);
         break;
     default:
@@ -285,7 +285,7 @@ void EntryDetails::preview3Selected()
 
 void EntryDetails::previewSelected(int current)
 {
-    EntryInternal::PreviewType type = static_cast<EntryInternal::PreviewType>(EntryInternal::PreviewBig1 + current);
+    KNSCore::EntryInternal::PreviewType type = static_cast<KNSCore::EntryInternal::PreviewType>(KNSCore::EntryInternal::PreviewBig1 + current);
     m_currentPreview = m_entry.previewImage(type);
     ui->previewBig->setImage(m_currentPreview);
 }

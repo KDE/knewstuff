@@ -24,7 +24,7 @@
 
 #include "knewstuffcore_export.h"
 
-namespace KNS3
+namespace KNSCore
 {
 class Question;
 /**

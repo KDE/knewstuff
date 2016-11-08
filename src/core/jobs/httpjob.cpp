@@ -22,7 +22,7 @@
 
 #include <QTimer>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class HTTPJob::Private
 {

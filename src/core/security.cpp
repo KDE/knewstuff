@@ -35,7 +35,7 @@
 //kde includes
 #include <klocalizedstring.h>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 static QString gpgExecutable()
 {

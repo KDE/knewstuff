@@ -51,7 +51,7 @@
 #include "core/cache_p.h"
 #include "staticxml/staticxmlprovider_p.h"
 
-using namespace KNS3;
+using namespace KNSCore;
 
 Engine::Engine(QObject *parent)
     : QObject(parent)
@@ -88,7 +88,7 @@ Engine::~Engine()
 
 bool Engine::init(const QString &configfile)
 {
-    qCDebug(KNEWSTUFFCORE) << "Initializing KNS3::Engine from '" << configfile << "'";
+    qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::Engine from '" << configfile << "'";
 
     emit signalBusy(i18n("Initializing"));
 
@@ -189,11 +189,11 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
     while (!n.isNull()) {
         qCDebug(KNEWSTUFFCORE) << "Provider attributes: " << n.attribute(QStringLiteral("type"));
 
-        QSharedPointer<KNS3::Provider> provider;
+        QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider = QSharedPointer<KNS3::Provider> (new AtticaProvider(m_categories));
+            provider = QSharedPointer<KNSCore::Provider> (new AtticaProvider(m_categories));
         } else {
-            provider = QSharedPointer<KNS3::Provider> (new StaticXmlProvider);
+            provider = QSharedPointer<KNSCore::Provider> (new StaticXmlProvider);
         }
 
         if (provider->setProviderXML(n)) {
@@ -213,18 +213,18 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         qCDebug(KNEWSTUFFCORE) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
-    QSharedPointer<KNS3::Provider> provider =
-        QSharedPointer<KNS3::Provider> (new AtticaProvider(atticaProvider, m_categories));
+    QSharedPointer<KNSCore::Provider> provider =
+        QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories));
     addProvider(provider);
 }
 
-void Engine::addProvider(QSharedPointer<KNS3::Provider> provider)
+void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
 {
     qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->id();
     m_providers.insert(provider->id(), provider);
     connect(provider.data(), &Provider::providerInitialized, this, &Engine::providerInitialized);
-    connect(provider.data(), SIGNAL(loadingFinished(KNS3::Provider::SearchRequest,KNS3::EntryInternal::List)),
-            SLOT(slotEntriesLoaded(KNS3::Provider::SearchRequest,KNS3::EntryInternal::List)));
+    connect(provider.data(), SIGNAL(loadingFinished(KNSCore::Provider::SearchRequest,KNSCore::EntryInternal::List)),
+            SLOT(slotEntriesLoaded(KNSCore::Provider::SearchRequest,KNSCore::EntryInternal::List)));
     connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
     connect(provider.data(), &Provider::signalError, this, &Engine::signalError);
@@ -247,7 +247,7 @@ void Engine::providerInitialized(Provider *p)
     p->setCachedEntries(m_cache->registryForProvider(p->id()));
     updateStatus();
 
-    foreach (const QSharedPointer<KNS3::Provider> &p, m_providers) {
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
         if (!p->isInitialized()) {
             return;
         }
@@ -255,7 +255,7 @@ void Engine::providerInitialized(Provider *p)
     emit signalProvidersLoaded();
 }
 
-void Engine::slotEntriesLoaded(const KNS3::Provider::SearchRequest &request, KNS3::EntryInternal::List entries)
+void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, KNSCore::EntryInternal::List entries)
 {
     m_currentPage = qMax<int>(request.page, m_currentPage);
     qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << m_currentPage;
@@ -278,7 +278,7 @@ void Engine::reloadEntries()
     m_currentRequest.page = 0;
     m_numDataJobs = 0;
 
-    foreach (const QSharedPointer<KNS3::Provider> &p, m_providers) {
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
         if (p->isInitialized()) {
             if (m_currentRequest.filter == Provider::Installed) {
                 // when asking for installed entries, never use the cache
@@ -328,7 +328,7 @@ void Engine::setSortMode(Provider::SortMode mode)
     reloadEntries();
 }
 
-void KNS3::Engine::setFilter(Provider::Filter filter)
+void KNSCore::Engine::setFilter(Provider::Filter filter)
 {
     if (m_currentRequest.filter != filter) {
         m_currentRequest.page = -1;
@@ -337,10 +337,10 @@ void KNS3::Engine::setFilter(Provider::Filter filter)
     reloadEntries();
 }
 
-void KNS3::Engine::fetchEntryById(const QString& id)
+void KNSCore::Engine::fetchEntryById(const QString& id)
 {
     m_searchTimer->stop();
-    m_currentRequest = KNS3::Provider::SearchRequest(KNS3::Provider::Newest, KNS3::Provider::ExactEntryId, id);
+    m_currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
 
     EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
     if (!cache.isEmpty()) {
@@ -388,7 +388,7 @@ void Engine::requestData(int page, int pageSize)
 
 void Engine::doRequest()
 {
-    foreach (const QSharedPointer<KNS3::Provider> &p, m_providers) {
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
         if (p->isInitialized()) {
             p->loadEntries(m_currentRequest);
             ++m_numDataJobs;
@@ -397,12 +397,12 @@ void Engine::doRequest()
     }
 }
 
-void Engine::install(KNS3::EntryInternal entry, int linkId)
+void Engine::install(KNSCore::EntryInternal entry, int linkId)
 {
-    if (entry.status() == Entry::Updateable) {
-        entry.setStatus(Entry::Updating);
+    if (entry.status() == KNS3::Entry::Updateable) {
+        entry.setStatus(KNS3::Entry::Updating);
     } else  {
-        entry.setStatus(Entry::Installing);
+        entry.setStatus(KNS3::Entry::Installing);
     }
     emit signalEntryChanged(entry);
 
@@ -429,23 +429,23 @@ void Engine::slotInstallationFailed(const QString &message)
     emit signalError(message);
 }
 
-void Engine::slotEntryDetailsLoaded(const KNS3::EntryInternal &entry)
+void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 {
     emit signalEntryDetailsLoaded(entry);
 }
 
-void Engine::downloadLinkLoaded(const KNS3::EntryInternal &entry)
+void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 {
     m_installation->install(entry);
 }
 
-void Engine::uninstall(KNS3::EntryInternal entry)
+void Engine::uninstall(KNSCore::EntryInternal entry)
 {
-    KNS3::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
+    KNSCore::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
     //we have to use the cached entry here, not the entry from the provider
     //since that does not contain the list of installed files
-    KNS3::EntryInternal actualEntryForUninstall;
-    foreach (const KNS3::EntryInternal &eInt, list) {
+    KNSCore::EntryInternal actualEntryForUninstall;
+    foreach (const KNSCore::EntryInternal &eInt, list) {
         if (eInt.uniqueId() == entry.uniqueId()) {
             actualEntryForUninstall = eInt;
             break;
@@ -457,26 +457,26 @@ void Engine::uninstall(KNS3::EntryInternal entry)
         return;
     }
 
-    entry.setStatus(Entry::Installing);
-    actualEntryForUninstall.setStatus(Entry::Installing);
+    entry.setStatus(KNS3::Entry::Installing);
+    actualEntryForUninstall.setStatus(KNS3::Entry::Installing);
     emit signalEntryChanged(entry);
 
     qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
     // FIXME: change the status?
     m_installation->uninstall(actualEntryForUninstall);
 
-    entry.setStatus(Entry::Deleted); //status for actual entry gets set in m_installation->uninstall()
+    entry.setStatus(KNS3::Entry::Deleted); //status for actual entry gets set in m_installation->uninstall()
     emit signalEntryChanged(entry);
 
 }
 
-void Engine::loadDetails(const KNS3::EntryInternal &entry)
+void Engine::loadDetails(const KNSCore::EntryInternal &entry)
 {
     QSharedPointer<Provider> p = m_providers.value(entry.providerId());
     p->loadEntryDetails(entry);
 }
 
-void Engine::loadPreview(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type)
+void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type)
 {
     qCDebug(KNEWSTUFFCORE) << "START  preview: " << entry.name() << type;
     ImageLoader *l = new ImageLoader(entry, type, this);
@@ -486,7 +486,7 @@ void Engine::loadPreview(const KNS3::EntryInternal &entry, EntryInternal::Previe
     updateStatus();
 }
 
-void Engine::slotPreviewLoaded(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type)
+void Engine::slotPreviewLoaded(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type)
 {
     qCDebug(KNEWSTUFFCORE) << "FINISH preview: " << entry.name() << type;
     emit signalEntryPreviewLoaded(entry, type);
@@ -510,7 +510,7 @@ void Engine::contactAuthor(const EntryInternal &entry)
     }
 }
 
-void Engine::slotEntryChanged(const KNS3::EntryInternal &entry)
+void Engine::slotEntryChanged(const KNSCore::EntryInternal &entry)
 {
     emit signalEntryChanged(entry);
 }
@@ -555,15 +555,15 @@ void Engine::updateStatus()
 void Engine::checkForUpdates()
 {
     foreach (QSharedPointer<Provider> p, m_providers) {
-        Provider::SearchRequest request(KNS3::Provider::Newest, KNS3::Provider::Updates);
+        Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Updates);
         p->loadEntries(request);
     }
 }
 
-void KNS3::Engine::checkForInstalled()
+void KNSCore::Engine::checkForInstalled()
 {
     foreach (QSharedPointer<Provider> p, m_providers) {
-        Provider::SearchRequest request(KNS3::Provider::Newest, KNS3::Provider::Installed);
+        Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Installed);
         request.page = 0;
         p->loadEntries(request);
     }

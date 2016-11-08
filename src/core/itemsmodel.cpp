@@ -25,7 +25,7 @@
 #include "core/engine_p.h"
 #include "imageloader_p.h"
 
-namespace KNS3
+namespace KNSCore
 {
 ItemsModel::ItemsModel(Engine *engine, QObject *parent)
     : QAbstractListModel(parent)
@@ -54,7 +54,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
 
 void ItemsModel::slotEntriesLoaded(EntryInternal::List entries)
 {
-    foreach (const KNS3::EntryInternal &entry, entries) {
+    foreach (const KNSCore::EntryInternal &entry, entries) {
         addEntry(entry);
     }
 }

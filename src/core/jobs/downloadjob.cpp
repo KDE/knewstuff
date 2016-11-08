@@ -21,7 +21,7 @@
 
 #include "knewstuffcore_debug.h"
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class DownloadJob::Private
 {

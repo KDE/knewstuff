@@ -31,7 +31,7 @@
 
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 class HTTPJob;
 class KNEWSTUFFCORE_EXPORT AtticaHelper : public QObject

@@ -19,7 +19,7 @@
 
 #include <QFile>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 class FileCopyWorker::Private {
 public:

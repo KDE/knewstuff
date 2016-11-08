@@ -34,7 +34,7 @@ struct KeyStruct {
     bool secret;
 };
 
-namespace KNS3
+namespace KNSCore
 {
 
 /**

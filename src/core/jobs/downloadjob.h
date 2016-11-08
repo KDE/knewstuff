@@ -20,7 +20,7 @@
 
 #include "filecopyjob.h"
 
-namespace KNS3
+namespace KNSCore
 {
 
 class DownloadJob : public FileCopyJob

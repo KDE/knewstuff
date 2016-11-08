@@ -32,7 +32,7 @@
 
 using namespace Attica;
 
-namespace KNS3
+namespace KNSCore
 {
 
 AtticaProvider::AtticaProvider(const QStringList &categories)
@@ -65,7 +65,7 @@ QString AtticaProvider::id() const
     return m_provider.baseUrl().toString();
 }
 
-void AtticaProvider::authenticationCredentialsMissing(const KNS3::Provider &)
+void AtticaProvider::authenticationCredentialsMissing(const KNSCore::Provider &)
 {
     qCDebug(KNEWSTUFFCORE) << "Authentication missing!";
     // FIXME Show autentication dialog
@@ -93,7 +93,7 @@ bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
     return true;
 }
 
-void AtticaProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
+void AtticaProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
 {
     mCachedEntries = cachedEntries;
 }
@@ -150,7 +150,7 @@ bool AtticaProvider::isInitialized() const
     return mInitialized;
 }
 
-void AtticaProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
+void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
     if (mEntryJob) {
         mEntryJob->abort();
@@ -210,7 +210,7 @@ void AtticaProvider::checkForUpdates()
     }
 }
 
-void AtticaProvider::loadEntryDetails(const KNS3::EntryInternal &entry)
+void AtticaProvider::loadEntryDetails(const KNSCore::EntryInternal &entry)
 {
     ItemJob<Content> *job = m_provider.requestContent(entry.uniqueId());
     connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
@@ -231,7 +231,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
         qCDebug(KNEWSTUFFCORE) << "check update finished.";
         QList<EntryInternal> updatable;
         foreach (const EntryInternal &entry, mCachedEntries) {
-            if (entry.status() == Entry::Updateable) {
+            if (entry.status() == KNS3::Entry::Updateable) {
                 updatable.append(entry);
             }
         }
@@ -273,7 +273,7 @@ Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMo
     }
 }
 
-void AtticaProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int linkId)
+void AtticaProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int linkId)
 {
     Attica::Content content = mCachedContent.value(entry.uniqueId());
     const DownloadDescription desc = content.downloadUrlDescription(linkId);
@@ -351,7 +351,7 @@ EntryInternal::List AtticaProvider::installedEntries() const
 {
     EntryInternal::List entries;
     foreach (const EntryInternal &entry, mCachedEntries) {
-        if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
+        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }
     }
@@ -424,9 +424,9 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     if (index >= 0) {
         EntryInternal &cacheEntry = mCachedEntries[index];
         // check if updateable
-        if (((cacheEntry.status() == Entry::Installed) || (cacheEntry.status() == Entry::Updateable)) &&
+        if (((cacheEntry.status() == KNS3::Entry::Installed) || (cacheEntry.status() == KNS3::Entry::Updateable)) &&
                 ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
-            cacheEntry.setStatus(Entry::Updateable);
+            cacheEntry.setStatus(KNS3::Entry::Updateable);
             cacheEntry.setUpdateVersion(entry.version());
             cacheEntry.setUpdateReleaseDate(entry.releaseDate());
         }
@@ -460,7 +460,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     author.setHomepage(content.attribute(QStringLiteral("profilepage")));
     entry.setAuthor(author);
 
-    entry.setSource(KNS3::EntryInternal::Online);
+    entry.setSource(EntryInternal::Online);
     entry.setSummary(content.description());
     entry.setShortSummary(content.summary());
     entry.setChangelog(content.changelog());

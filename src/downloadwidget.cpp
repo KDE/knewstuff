@@ -82,7 +82,7 @@ QString DownloadWidget::title() const
 Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
-    foreach (const EntryInternal &e, d->changedEntries) {
+    foreach (const KNSCore::EntryInternal &e, d->changedEntries) {
         entries.append(EntryPrivate::fromInternal(&e));
     }
     return entries;
@@ -91,7 +91,7 @@ Entry::List DownloadWidget::changedEntries()
 Entry::List DownloadWidget::installedEntries()
 {
     Entry::List entries;
-    foreach (const EntryInternal &e, d->changedEntries) {
+    foreach (const KNSCore::EntryInternal &e, d->changedEntries) {
         if (e.status() == Entry::Installed) {
             entries.append(EntryPrivate::fromInternal(&e));
         }
@@ -101,8 +101,8 @@ Entry::List DownloadWidget::installedEntries()
 
 DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *q)
     : q(q)
-    , engine(new Engine)
-    , model(new ItemsModel(engine))
+    , engine(new KNSCore::Engine)
+    , model(new KNSCore::ItemsModel(engine))
     , messageTimer(0)
     , dialogMode(false)
 {
@@ -128,21 +128,21 @@ void DownloadWidgetPrivate::slotNetworkTimeout() // SLOT
 
 void DownloadWidgetPrivate::sortingChanged()
 {
-    Provider::SortMode sortMode = Provider::Newest;
-    Provider::Filter filter = Provider::None;
+    KNSCore::Provider::SortMode sortMode = KNSCore::Provider::Newest;
+    KNSCore::Provider::Filter filter = KNSCore::Provider::None;
     if (ui.ratingRadio->isChecked()) {
-        sortMode = Provider::Rating;
+        sortMode = KNSCore::Provider::Rating;
     } else if (ui.mostDownloadsRadio->isChecked()) {
-        sortMode = Provider::Downloads;
+        sortMode = KNSCore::Provider::Downloads;
     } else if (ui.installedRadio->isChecked()) {
-        filter = Provider::Installed;
+        filter = KNSCore::Provider::Installed;
     }
 
     model->clearEntries();
-    if (filter == Provider::Installed) {
+    if (filter == KNSCore::Provider::Installed) {
         ui.m_searchEdit->clear();
     }
-    ui.m_searchEdit->setEnabled(filter != Provider::Installed);
+    ui.m_searchEdit->setEnabled(filter != KNSCore::Provider::Installed);
 
     engine->setSortMode(sortMode);
     engine->setFilter(filter);
@@ -192,13 +192,13 @@ void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString v
                              i18n("Provider information"));
 }
 
-void DownloadWidgetPrivate::slotEntryChanged(const EntryInternal &entry)
+void DownloadWidgetPrivate::slotEntryChanged(const KNSCore::EntryInternal &entry)
 {
     changedEntries.insert(entry);
     model->slotEntryChanged(entry);
 }
 
-void DownloadWidgetPrivate::slotPayloadFailed(const EntryInternal &entry)
+void DownloadWidgetPrivate::slotPayloadFailed(const KNSCore::EntryInternal &entry)
 {
     KMessageBox::error(0, i18n("Could not install %1", entry.name()),
                        i18n("Get Hot New Stuff!"));
@@ -231,11 +231,11 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     KStandardGuiItem::assign(ui.backButton, KStandardGuiItem::Back);
     q->connect(ui.backButton, SIGNAL(clicked()), q, SLOT(slotShowOverview()));
 
-    q->connect(engine, &Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
+    q->connect(engine, &KNSCore::Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
 
-    q->connect(engine, &Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
-    q->connect(engine, &Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
-    q->connect(engine, &Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
+    q->connect(engine, &KNSCore::Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
+    q->connect(engine, &KNSCore::Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
+    q->connect(engine, &KNSCore::Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
 
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
     // Entries have been fetched and should be shown:
@@ -244,9 +244,9 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     // An entry has changes - eg because it was installed
     q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(slotEntryChanged(KNS3::EntryInternal)));
 
-    q->connect(engine, &Engine::signalResetView, model, &ItemsModel::clearEntries);
-    q->connect(engine, &Engine::signalEntryPreviewLoaded,
-               model, &ItemsModel::slotEntryPreviewLoaded);
+    q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
+    q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded,
+               model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
     engine->init(configFile);
 
@@ -345,9 +345,9 @@ void DownloadWidgetPrivate::slotProvidersLoaded()
     engine->reloadEntries();
 }
 
-void DownloadWidgetPrivate::slotEntriesLoaded(const EntryInternal::List &entries)
+void DownloadWidgetPrivate::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 {
-    foreach (const KNS3::EntryInternal &entry, entries) {
+    foreach (const KNSCore::EntryInternal &entry, entries) {
         if (!categories.contains(entry.category())) {
             qCDebug(KNEWSTUFF) << "Found category: " << entry.category();
             categories.insert(entry.category());
@@ -381,7 +381,7 @@ void DownloadWidgetPrivate::displayMessage(const QString &msg, KTitleWidget::Mes
     }
 }
 
-void DownloadWidgetPrivate::slotShowDetails(const KNS3::EntryInternal &entry)
+void DownloadWidgetPrivate::slotShowDetails(const KNSCore::EntryInternal &entry)
 {
     if (!entry.isValid()) {
         qCDebug(KNEWSTUFF) << "invalid entry";

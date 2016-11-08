@@ -23,7 +23,7 @@
 #include "core/provider_p.h"
 #include <QMap>
 
-namespace KNS3
+namespace KNSCore
 {
 class XmlLoader;
 
@@ -58,10 +58,10 @@ public:
 
     bool isInitialized() const Q_DECL_OVERRIDE;
 
-    void setCachedEntries(const KNS3::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
+    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
 
-    void loadEntries(const KNS3::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
-    void loadPayloadLink(const KNS3::EntryInternal &entry, int) Q_DECL_OVERRIDE;
+    void loadEntries(const KNSCore::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
+    void loadPayloadLink(const KNSCore::EntryInternal &entry, int) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void slotEmitProviderInitialized();

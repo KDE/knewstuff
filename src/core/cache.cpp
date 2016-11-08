@@ -25,7 +25,7 @@
 #include <qstandardpaths.h>
 #include <knewstuffcore_debug.h>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 typedef QHash<QString, QWeakPointer<Cache> > CacheHash;
 Q_GLOBAL_STATIC(CacheHash, s_caches)
@@ -165,7 +165,7 @@ void Cache::readKns2MetaFiles()
                 continue;
             }
 
-            e.setStatus(Entry::Installed);
+            e.setStatus(KNS3::Entry::Installed);
 
             cache.insert(e);
             QDomDocument tmp(QStringLiteral("yay"));
@@ -213,7 +213,7 @@ void Cache::writeRegistry()
 
     foreach (const EntryInternal &entry, cache) {
         // Write the entry, unless the policy is CacheNever and the entry is not installed.
-        if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
+        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             QDomElement exml = entry.entryXML();
             root.appendChild(exml);
         }
@@ -225,19 +225,19 @@ void Cache::writeRegistry()
     f.close();
 }
 
-void Cache::registerChangedEntry(const KNS3::EntryInternal &entry)
+void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
     cache.insert(entry);
 }
 
-void Cache::insertRequest(const KNS3::Provider::SearchRequest &request, const KNS3::EntryInternal::List &entries)
+void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
 {
     // append new entries
     requestCache[request.hashForRequest()].append(entries);
     qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
 }
 
-EntryInternal::List Cache::requestFromCache(const KNS3::Provider::SearchRequest &request)
+EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
 {
     qCDebug(KNEWSTUFFCORE) << request.hashForRequest();
     return requestCache.value(request.hashForRequest());

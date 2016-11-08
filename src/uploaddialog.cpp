@@ -77,7 +77,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel);
     layout->addWidget(buttonBox);
 
-    atticaHelper = new AtticaHelper(q);
+    atticaHelper = new KNSCore::AtticaHelper(q);
 
     bool success = true;
     KConfig conf(configfile);

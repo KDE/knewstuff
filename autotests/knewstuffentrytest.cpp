@@ -68,7 +68,7 @@ KNS3::Entry testEntry::createEntry()
     QDomDocument document;
     document.setContent(QString::fromLatin1(entryXML));
     QDomElement node = document.documentElement();
-    KNS3::EntryInternal entryInternal;
+    KNSCore::EntryInternal entryInternal;
     bool xmlResult = entryInternal.setEntryXML(node);
     qCDebug(KNEWSTUFFCORE) << "Created entry from XML " << xmlResult;
     return KNS3::EntryPrivate::fromInternal(&entryInternal);

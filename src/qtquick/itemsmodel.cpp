@@ -33,8 +33,8 @@ public:
         , engine(0)
     {}
     ItemsModel* q;
-    KNS3::ItemsModel* model;
-    KNS3::Engine* engine;
+    KNSCore::ItemsModel* model;
+    KNSCore::Engine* engine;
 
     bool initModel()
     {
@@ -44,22 +44,22 @@ public:
         if(!engine) {
             return false;
         }
-        model = new KNS3::ItemsModel(engine, q);
+        model = new KNSCore::ItemsModel(engine, q);
 
-        q->connect(engine, &KNS3::Engine::signalProvidersLoaded, engine, &KNS3::Engine::reloadEntries);
+        q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, engine, &KNSCore::Engine::reloadEntries);
         // Entries have been fetched and should be shown:
-        q->connect(engine, &KNS3::Engine::signalEntriesLoaded, model, &KNS3::ItemsModel::slotEntriesLoaded);
+        q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, model, &KNSCore::ItemsModel::slotEntriesLoaded);
 
         // An entry has changes - eg because it was installed
-        q->connect(engine, &KNS3::Engine::signalEntryChanged, model, &KNS3::ItemsModel::slotEntryChanged);
+        q->connect(engine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);
 
-        q->connect(engine, &KNS3::Engine::signalResetView, model, &KNS3::ItemsModel::clearEntries);
-        q->connect(engine, &KNS3::Engine::signalEntryPreviewLoaded, model, &KNS3::ItemsModel::slotEntryPreviewLoaded);
+        q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
+        q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
-        q->connect(model, &KNS3::ItemsModel::rowsInserted, q, &ItemsModel::rowsInserted);
-        q->connect(model, &KNS3::ItemsModel::rowsRemoved, q, &ItemsModel::rowsRemoved);
-        q->connect(model, &KNS3::ItemsModel::dataChanged, q, &ItemsModel::dataChanged);
-        q->connect(model, &KNS3::ItemsModel::modelReset, q, &ItemsModel::modelReset);
+        q->connect(model, &KNSCore::ItemsModel::rowsInserted, q, &ItemsModel::rowsInserted);
+        q->connect(model, &KNSCore::ItemsModel::rowsRemoved, q, &ItemsModel::rowsRemoved);
+        q->connect(model, &KNSCore::ItemsModel::dataChanged, q, &ItemsModel::dataChanged);
+        q->connect(model, &KNSCore::ItemsModel::modelReset, q, &ItemsModel::modelReset);
         return true;
     }
 };
@@ -124,7 +124,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
     QVariant data;
     if(index.isValid() && d->initModel())
     {
-        KNS3::EntryInternal entry = d->model->data(d->model->index(index.row()), Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = d->model->data(d->model->index(index.row()), Qt::UserRole).value<KNSCore::EntryInternal>();
         switch(role)
         {
             case NameRole:
@@ -141,7 +141,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 break;
             case AuthorRole:
                 {
-                    KNS3::Author author = entry.author();
+                    KNSCore::Author author = entry.author();
                     QVariantMap returnAuthor;
                     returnAuthor["name"] = author.name();
                     returnAuthor["email"] = author.email();
@@ -180,9 +180,9 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
             case PreviewsSmallRole:
                 {
                     QStringList previews;
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewSmall1);
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewSmall2);
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewSmall3);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall2);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall3);
                     while(previews.last().isEmpty()) {
                         previews.takeLast();
                     }
@@ -192,9 +192,9 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
             case PreviewsRole:
                 {
                     QStringList previews;
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewBig1);
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewBig2);
-                    previews << entry.previewUrl(KNS3::EntryInternal::PreviewBig3);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig1);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig2);
+                    previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig3);
                     while(previews.last().isEmpty()) {
                         previews.takeLast();
                     }
@@ -227,7 +227,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 break;
             case DownloadLinksRole:
 //                 {
-//                     QList<KNS3::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
+//                     QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
 //                     QStringList links;
 //                     data.setValue<QString>(entry.());
 //                 }
@@ -241,16 +241,16 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 break;
             case SourceRole:
                 {
-                    KNS3::EntryInternal::Source src = entry.source();
+                    KNSCore::EntryInternal::Source src = entry.source();
                     switch(src)
                     {
-                        case KNS3::EntryInternal::Cache:
+                        case KNSCore::EntryInternal::Cache:
                             data.setValue<QString>(QLatin1String("Cache"));
                             break;
-                        case KNS3::EntryInternal::Online:
+                        case KNSCore::EntryInternal::Online:
                             data.setValue<QString>(QLatin1String("Online"));
                             break;
-                        case KNS3::EntryInternal::Registry:
+                        case KNSCore::EntryInternal::Registry:
                             data.setValue<QString>(QLatin1String("Registry"));
                             break;
                         default:
@@ -323,10 +323,10 @@ void ItemsModel::setEngine(QObject* newEngine)
     beginResetModel();
     Engine* test = qobject_cast<Engine*>(newEngine);
     if(test) {
-        d->engine = qobject_cast<KNS3::Engine*>(test->engine());
+        d->engine = qobject_cast<KNSCore::Engine*>(test->engine());
     }
     else {
-        d->engine = qobject_cast<KNS3::Engine*>(newEngine);
+        d->engine = qobject_cast<KNSCore::Engine*>(newEngine);
     }
     emit engineChanged();
     endResetModel();
@@ -335,7 +335,7 @@ void ItemsModel::setEngine(QObject* newEngine)
 void ItemsModel::installItem(int index)
 {
     if(d->engine) {
-        KNS3::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
         if(entry.isValid()) {
             d->engine->install(entry);
         }
@@ -345,7 +345,7 @@ void ItemsModel::installItem(int index)
 void ItemsModel::uninstallItem(int index)
 {
     if(d->engine) {
-        KNS3::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
         if(entry.isValid()) {
             d->engine->uninstall(entry);
         }

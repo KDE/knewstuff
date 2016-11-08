@@ -20,7 +20,7 @@
 #include "questionlistener.h"
 #include "questionmanager.h"
 
-using namespace KNS3;
+using namespace KNSCore;
 
 QuestionListener::QuestionListener(QObject* parent)
     : QObject(parent)
