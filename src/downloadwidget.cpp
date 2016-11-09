@@ -239,10 +239,10 @@ void DownloadWidgetPrivate::init(const QString &configFile)
 
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
     // Entries have been fetched and should be shown:
-    q->connect(engine, SIGNAL(signalEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(slotEntriesLoaded(KNS3::EntryInternal::List)));
+    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(slotEntriesLoaded(KNSCore::EntryInternal::List)));
 
     // An entry has changes - eg because it was installed
-    q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(slotEntryChanged(KNS3::EntryInternal)));
+    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SLOT(slotEntryChanged(KNSCore::EntryInternal)));
 
     q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
     q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded,
@@ -297,7 +297,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(ui.m_listView, SIGNAL(doubleClicked(QModelIndex)), delegate, SLOT(slotDetailsClicked(QModelIndex)));
 
     details = new EntryDetails(engine, &ui);
-    q->connect(delegate, SIGNAL(signalShowDetails(KNS3::EntryInternal)), q, SLOT(slotShowDetails(KNS3::EntryInternal)));
+    q->connect(delegate, SIGNAL(signalShowDetails(KNSCore::EntryInternal)), q, SLOT(slotShowDetails(KNSCore::EntryInternal)));
 
     slotShowOverview();
 }
@@ -336,7 +336,7 @@ void DownloadWidgetPrivate::setListViewMode(QListView::ViewMode mode)
     delete oldDelegate;
 
     q->connect(ui.m_listView, SIGNAL(doubleClicked(QModelIndex)), delegate, SLOT(slotDetailsClicked(QModelIndex)));
-    q->connect(delegate, SIGNAL(signalShowDetails(KNS3::EntryInternal)), q, SLOT(slotShowDetails(KNS3::EntryInternal)));
+    q->connect(delegate, SIGNAL(signalShowDetails(KNSCore::EntryInternal)), q, SLOT(slotShowDetails(KNSCore::EntryInternal)));
 }
 
 void DownloadWidgetPrivate::slotProvidersLoaded()
