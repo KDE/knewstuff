@@ -6,6 +6,7 @@ remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 set(KNewStuffCore_SRCS
     core/author.cpp
     core/cache.cpp
+    core/downloadmanager.cpp
     core/engine.cpp
     core/entryinternal.cpp
     core/imageloader.cpp
