@@ -23,8 +23,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QByteArray>
 
-#include "core/entryinternal_p.h"
-#include "core/jobs/httpjob.h"
+#include "entryinternal_p.h"
+#include "jobs/httpjob.h"
 
 class KJob;
 

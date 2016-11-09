@@ -37,8 +37,8 @@
 #include "klocalizedstring.h"
 #include <knewstuffcore_debug.h>
 
-#include "core/jobs/filecopyjob.h"
-#include "core/security_p.h"
+#include "jobs/filecopyjob.h"
+#include "security_p.h"
 #include "question.h"
 #ifdef Q_OS_WIN
 #include <windows.h>

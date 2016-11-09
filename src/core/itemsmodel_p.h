@@ -22,7 +22,7 @@
 #include <QAbstractListModel>
 #include <QImage>
 
-#include "core/entryinternal_p.h"
+#include "entryinternal_p.h"
 #include "knewstuffcore_export.h"
 
 class KJob;

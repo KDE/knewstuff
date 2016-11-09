@@ -21,8 +21,8 @@
 #include <knewstuffcore_debug.h>
 #include "klocalizedstring.h"
 
-#include "core/entryinternal_p.h"
-#include "core/engine_p.h"
+#include "entryinternal_p.h"
+#include "engine_p.h"
 #include "imageloader_p.h"
 
 namespace KNSCore

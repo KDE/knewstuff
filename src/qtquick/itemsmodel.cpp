@@ -22,8 +22,8 @@
 #include "itemsmodel.h"
 #include "engine.h"
 
-#include "core/itemsmodel_p.h"
-#include "core/engine_p.h"
+#include "itemsmodel_p.h"
+#include "engine_p.h"
 
 class ItemsModel::Private {
 public:

@@ -21,10 +21,10 @@
 
 #include "engine_p.h"
 
-#include "entry.h"
-#include "core/installation_p.h"
-#include "core/xmlloader_p.h"
-#include "core/imageloader_p.h"
+#include "../entry.h"
+#include "installation_p.h"
+#include "xmlloader_p.h"
+#include "imageloader_p.h"
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -47,9 +47,9 @@
 #include <qstandardpaths.h>
 
 // own
-#include "attica/atticaprovider_p.h"
-#include "core/cache_p.h"
-#include "staticxml/staticxmlprovider_p.h"
+#include "../attica/atticaprovider_p.h"
+#include "cache_p.h"
+#include "../staticxml/staticxmlprovider_p.h"
 
 using namespace KNSCore;
 

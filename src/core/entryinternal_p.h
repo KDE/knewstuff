@@ -27,8 +27,8 @@
 #include <QtCore/QString>
 #include <QUrl>
 
-#include "core/author_p.h"
-#include "entry.h"
+#include "author_p.h"
+#include "../entry.h"
 
 #include "knewstuffcore_export.h"
 

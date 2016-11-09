@@ -24,7 +24,7 @@
 #include <attica/provider.h>
 #include <attica/content.h>
 
-#include "core/provider_p.h"
+#include "provider_p.h"
 
 namespace Attica
 {

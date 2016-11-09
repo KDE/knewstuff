@@ -16,7 +16,7 @@
 */
 
 #include "atticahelper_p.h"
-#include "core/jobs/httpjob.h"
+#include "jobs/httpjob.h"
 
 #include <QImage>
 

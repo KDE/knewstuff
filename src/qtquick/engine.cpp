@@ -21,7 +21,7 @@
 
 #include "engine.h"
 
-#include "core/engine_p.h"
+#include "engine_p.h"
 
 class Engine::Private
 {

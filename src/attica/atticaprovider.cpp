@@ -17,7 +17,7 @@
 
 #include "atticaprovider_p.h"
 
-#include "core/question.h"
+#include "question.h"
 
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
