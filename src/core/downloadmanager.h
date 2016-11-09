@@ -140,11 +140,10 @@ Q_SIGNALS:
      */
     void errorFound(const QString &errorMessage);
 
+public Q_SLOTS:
+    void slotProvidersLoaded();
+
 private:
-    Q_PRIVATE_SLOT(d, void _k_slotProvidersLoaded())
-    Q_PRIVATE_SLOT(d, void _k_slotEngineError(const QString &error))
-    Q_PRIVATE_SLOT(d, void _k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry))
-    Q_PRIVATE_SLOT(d, void _k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries))
     DownloadManagerPrivate *const d;
     Q_DISABLE_COPY(DownloadManager)
 };

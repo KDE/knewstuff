@@ -57,11 +57,6 @@ public:
     int pageSize;
 
     void init(const QString &configFile);
-    void _k_slotProvidersLoaded();
-    void _k_slotEngineError(const QString &error);
-    void _k_slotUpdatesLoaded(const KNSCore::EntryInternal::List &entries);
-    void _k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry);
-    void _k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
 };
 }
 
@@ -84,11 +79,11 @@ DownloadManager::DownloadManager(const QString &configFile, QObject *parent)
 
 void DownloadManagerPrivate::init(const QString &configFile)
 {
-    q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(_k_slotProvidersLoaded()));
-    q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNSCore::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNSCore::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SLOT(_k_slotEntryStatusChanged(KNSCore::EntryInternal)));
-    q->connect(engine, SIGNAL(signalError(QString)), q, SLOT(_k_slotEngineError(QString)));
+    q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
+    q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNSCore::EntryInternal::List)), q, SIGNAL(searchResult(KNSCore::EntryInternal::List)));
+    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SIGNAL(searchResult(KNSCore::EntryInternal::List)));
+    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SIGNAL(entryStatusChanged(KNSCore::EntryInternal)));
+    q->connect(engine, SIGNAL(signalError(QString)), q, SIGNAL(errorFound(QString)));
     engine->init(configFile);
 }
 
@@ -97,23 +92,16 @@ DownloadManager::~DownloadManager()
     delete d;
 }
 
-void DownloadManagerPrivate::_k_slotEngineError(const QString &error)
-{
-    qCWarning(KNEWSTUFFCORE) << "engine error" << error;
-
-    Q_EMIT q->errorFound(error);
-}
-
-void DownloadManagerPrivate::_k_slotProvidersLoaded()
+void DownloadManager::slotProvidersLoaded()
 {
     qCDebug(KNEWSTUFFCORE) << "providers loaded";
-    isInitialized = true;
-    if (checkForInstalled) {
-        engine->checkForInstalled();
-    } else if (checkForUpdates) {
-        engine->checkForUpdates();
-    } else if (doSearch) {
-        engine->requestData(page, pageSize);
+    d->isInitialized = true;
+    if (d->checkForInstalled) {
+        d->engine->checkForInstalled();
+    } else if (d->checkForUpdates) {
+        d->engine->checkForUpdates();
+    } else if (d->doSearch) {
+        d->engine->requestData(d->page, d->pageSize);
     }
 }
 
@@ -133,21 +121,6 @@ void DownloadManager::checkForInstalled()
     } else {
         d->checkForInstalled = true;
     }
-}
-
-void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
-{
-    EntryInternal::List result;
-    result.reserve(entries.size());
-    foreach (const EntryInternal &entry, entries) {
-        result.append(entry);
-    }
-    emit q->searchResult(result);
-}
-
-void DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry)
-{
-    emit q->entryStatusChanged(entry);
 }
 
 void DownloadManager::installEntry(const EntryInternal &entry)
@@ -203,5 +176,3 @@ void DownloadManager::fetchEntryById(const QString& id)
 {
     d->engine->fetchEntryById(id);
 }
-
-#include "moc_downloadmanager.cpp"
