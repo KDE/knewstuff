@@ -3,39 +3,7 @@ project(KNewStuff)
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
-set(KNewStuffCore_SRCS
-    core/author.cpp
-    core/cache.cpp
-    core/downloadmanager.cpp
-    core/engine.cpp
-    core/entryinternal.cpp
-    core/imageloader.cpp
-    core/installation.cpp
-    core/itemsmodel.cpp
-    core/provider.cpp
-    core/security.cpp
-    core/xmlloader.cpp
-
-    # A system by which queries can be passed to the user, and responses
-    # gathered, depending on implementation. See core/question.h for details.
-    core/question.cpp
-    core/questionmanager.cpp
-    core/questionlistener.cpp
-
-    # A set of minimal KJob based classes, designed to replace the
-    # more powerful KIO based system in places where KIO is not available
-    # for one reason or another.
-    core/jobs/downloadjob.cpp
-    core/jobs/filecopyjob.cpp
-    core/jobs/filecopyworker.cpp
-    core/jobs/httpjob.cpp
-    core/jobs/httpworker.cpp
-
-    attica/atticaprovider.cpp
-    staticxml/staticxmlprovider.cpp
-
-    upload/atticahelper.cpp
-)
+add_subdirectory(core)
 
 set(KNewStuff_SRCS
     downloaddialog.cpp
@@ -61,7 +29,6 @@ set(KNewStuff_SRCS
 )
 
 ecm_qt_declare_logging_category(KNewStuff_SRCS HEADER knewstuff_debug.h IDENTIFIER KNEWSTUFF CATEGORY_NAME org.kde.knewstuff)
-ecm_qt_declare_logging_category(KNewStuffCore_SRCS HEADER knewstuffcore_debug.h IDENTIFIER KNEWSTUFFCORE CATEGORY_NAME org.kde.knewstuff.core)
 
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
@@ -69,37 +36,13 @@ ki18n_wrap_ui(KNewStuff_SRCS
     kmoretools/ui/kmoretoolsconfigwidget.ui
 )
 
-add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} )
-add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
-
 add_library(KF5NewStuff ${KNewStuff_SRCS} )
 add_library(KF5::NewStuff ALIAS KF5NewStuff)
 
-generate_export_header(KF5NewStuffCore BASE_NAME KNewStuffCore EXPORT_FILE_NAME knewstuffcore_export.h)
 generate_export_header(KF5NewStuff BASE_NAME KNewStuff EXPORT_FILE_NAME knewstuff_export.h)
 
-target_include_directories(KF5NewStuffCore PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>")
-target_include_directories(KF5NewStuffCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
 target_include_directories(KF5NewStuff PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>")
 target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
-
-target_link_libraries(KF5NewStuffCore
-  PUBLIC
-    KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
-    KF5::Archive               # For decompressing archives
-    KF5::CoreAddons
-  PRIVATE
-    KF5::I18n                  # For translations
-    KF5::ConfigCore
-    Qt5::Gui                   # For QImage
-    Qt5::Xml
-)
-
-set_target_properties(KF5NewStuffCore PROPERTIES
-   VERSION ${KNEWSTUFF_VERSION_STRING}
-   SOVERSION ${KNEWSTUFF_SOVERSION}
-   EXPORT_NAME NewStuffCore
-)
 
 target_link_libraries(KF5NewStuff
   PUBLIC
@@ -154,7 +97,6 @@ install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDED
 install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
 
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
-install(TARGETS KF5NewStuffCore KF5NewStuff EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
@@ -164,7 +106,6 @@ install(FILES
 )
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
 ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
 install(FILES ${COREPRI_FILENAME} ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
