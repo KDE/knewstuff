@@ -77,36 +77,39 @@ ItemsModel::~ItemsModel()
 
 QHash<int, QByteArray> ItemsModel::roleNames() const
 {
-    QHash<int, QByteArray> roles;
-    roles[NameRole] = "name";
-    roles[UniqueIdRole] = "uniqueId";
-    roles[CategoryRole] = "category";
-    roles[HomepageRole] = "homepage";
-    roles[AuthorRole] = "author";
-    roles[LicenseRole] = "license";
-    roles[ShortSummaryRole] = "shortSummary";
-    roles[SummaryRole] = "summary";
-    roles[ChangelogRole] = "changelog";
-    roles[VersionRole] = "version";
-    roles[ReleaseDateRole] = "releaseDate";
-    roles[UpdateVersionRole] = "updateVersion";
-    roles[UpdateReleaseDateRole] = "updateReleaseDate";
-    roles[PayloadRole] = "payload";
-    roles[PreviewsSmallRole] = "previewsSmall";
-    roles[PreviewsRole] = "previews";
-    roles[InstalledFilesRole] = "installedFiles";
-    roles[UnInstalledFilesRole] = "uninstalledFiles";
-    roles[RatingRole] = "rating";
-    roles[NumberOfCommentsRole] = "numberOfComments";
-    roles[DownloadCountRole] = "downloadCount";
-    roles[NumberFansRole] = "numberFans";
-    roles[NumberKnowledgebaseEntriesRole] = "numberKnowledgebaseEntries";
-    roles[KnowledgebaseLinkRole] = "knowledgebaseLink";
-    roles[DownloadLinksRole] = "downloadLinks";
-    roles[DonationLinkRole] = "donationLink";
-    roles[ProviderIdRole] = "providerId";
-    roles[SourceRole] = "source";
-    roles[StatusRole] = "status";
+    static const QHash<int, QByteArray> roles = QHash<int, QByteArray>{
+        {Qt::DisplayRole, "display"},
+        {NameRole, "name"},
+        {UniqueIdRole, "uniqueId"},
+        {CategoryRole, "category"},
+        {HomepageRole, "homepage"},
+        {AuthorRole, "author"},
+        {LicenseRole, "license"},
+        {ShortSummaryRole, "shortSummary"},
+        {SummaryRole, "summary"},
+        {ChangelogRole, "changelog"},
+        {VersionRole, "version"},
+        {ReleaseDateRole, "releaseDate"},
+        {UpdateVersionRole, "updateVersion"},
+        {UpdateReleaseDateRole, "updateReleaseDate"},
+        {PayloadRole, "payload"},
+        {Qt::DecorationRole, "decoration"},
+        {PreviewsSmallRole, "previewsSmall"},
+        {PreviewsRole, "previews"},
+        {InstalledFilesRole, "installedFiles"},
+        {UnInstalledFilesRole, "uninstalledFiles"},
+        {RatingRole, "rating"},
+        {NumberOfCommentsRole, "numberOfComments"},
+        {DownloadCountRole, "downloadCount"},
+        {NumberFansRole, "numberFans"},
+        {NumberKnowledgebaseEntriesRole, "numberKnowledgebaseEntries"},
+        {KnowledgebaseLinkRole, "knowledgebaseLink"},
+        {DownloadLinksRole, "downloadLinks"},
+        {DonationLinkRole, "donationLink"},
+        {ProviderIdRole, "providerId"},
+        {SourceRole, "source"},
+        {StatusRole, "status"}
+    };
     return roles;
 }
 
@@ -128,6 +131,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
         switch(role)
         {
             case NameRole:
+            case Qt::DisplayRole:
                 data.setValue<QString>(entry.name());
                 break;
             case UniqueIdRole:
@@ -176,6 +180,9 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 break;
             case PayloadRole:
                 data.setValue<QString>(entry.payload());
+                break;
+            case Qt::DecorationRole:
+                data.setValue<QString>(entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1));
                 break;
             case PreviewsSmallRole:
                 {
