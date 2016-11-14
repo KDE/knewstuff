@@ -5,6 +5,7 @@ set(qmlplugin_SRCS
 
     engine.cpp
     itemsmodel.cpp
+    downloadlinkinfo.cpp
 )
 
 add_library (newstuffqmlplugin ${qmlplugin_SRCS})
