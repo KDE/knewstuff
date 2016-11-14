@@ -52,7 +52,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     void slotEntryChanged(const KNSCore::EntryInternal &entry);
-    void slotEntriesLoaded(KNSCore::EntryInternal::List entries);
+    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
     void clearEntries();
     void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
 
