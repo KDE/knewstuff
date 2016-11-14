@@ -22,8 +22,6 @@
 
 #include "knewstuffcore_debug.h"
 
-#include <QTimer>
-
 using namespace KNSCore;
 
 class FileCopyJob::Private
@@ -96,7 +94,7 @@ FileCopyJob* FileCopyJob::file_copy(const QUrl& source, const QUrl& destination,
         qCDebug(KNEWSTUFFCORE) << "File copy job is from (or to) a remote URL";
         job = new DownloadJob(source, destination, permissions, flags, parent);
     }
-    QTimer::singleShot(1, job, SLOT(start()));
+    job->start();
     return job;
 }
 
