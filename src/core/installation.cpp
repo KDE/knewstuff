@@ -176,7 +176,7 @@ bool Installation::isRemote() const
     return true;
 }
 
-void Installation::install(EntryInternal entry)
+void Installation::install(const EntryInternal& entry)
 {
     downloadPayload(entry);
 }
@@ -258,7 +258,7 @@ void Installation::slotPayloadResult(KJob *job)
     }
 }
 
-void Installation::install(KNSCore::EntryInternal entry, const QString &downloadedFile)
+void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString& downloadedFile)
 {
     qCDebug(KNEWSTUFFCORE) << "Install: " << entry.name() << " from " << downloadedFile;
 

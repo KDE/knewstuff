@@ -87,23 +87,29 @@ public Q_SLOTS:
      * application's *.knsrc file.
      * Note that this method is asynchronous and thus the return value will
      * only report the successful start of the installation.
+     * Note also that while entry is const at this point, it will change later
+     * during the actual installation (the installedFiles list will change, as
+     * will its status)
      *
      * @param entry Entry to be installed
-     *
-     * @return Whether or not installation was started successfully
      *
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(KNSCore::EntryInternal entry);
+    void install(const KNSCore::EntryInternal &entry);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
      * during the installation.
      *
-     * @param entry The entry to deinstall
+     * The entry instance will be updated with any new information:
+     * <ul>
+     * <li>Status will be set to Deleted
+     * <li>uninstalledFiles will list files which were removed during uninstallation
+     * <li>installedFiles will become empty
+     * </ul>
      *
-     * @return Whether or not deinstallation was successful
+     * @param entry The entry to deinstall
      *
      * @note FIXME: I don't believe this works yet :)
      */
