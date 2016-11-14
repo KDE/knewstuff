@@ -24,6 +24,7 @@
 
 #include "itemsmodel_p.h"
 #include "engine_p.h"
+#include "downloadlinkinfo.h"
 
 class ItemsModel::Private {
 public:
@@ -233,12 +234,18 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 data.setValue<QString>(entry.knowledgebaseLink());
                 break;
             case DownloadLinksRole:
-//                 {
-//                     QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
-//                     QStringList links;
-//                     data.setValue<QString>(entry.());
-//                 }
-                data.setValue<QString>("download links need more things");
+                {
+                    // This would be good to cache... but it also needs marking as dirty, somehow...
+                    QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
+                    QObjectList list;
+                    Q_FOREACH(const KNSCore::EntryInternal::DownloadLinkInformation& link, dllinks)
+                    {
+                        DownloadLinkInfo* info = new DownloadLinkInfo();
+                        info->setData(link);
+                        list.append(info);
+                    }
+                    data.setValue<QObjectList>(list);
+                }
                 break;
             case DonationLinkRole:
                 data.setValue<QString>(entry.donationLink());

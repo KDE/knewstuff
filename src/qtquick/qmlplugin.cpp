@@ -23,6 +23,7 @@
 
 #include "engine.h"
 #include "itemsmodel.h"
+#include "downloadlinkinfo.h"
 
 #include <QQmlEngine>
 #include <QtQml/qqml.h>
@@ -35,4 +36,5 @@ void QmlPlugins::registerTypes(const char *uri)
 {
     qmlRegisterType<Engine>(uri, 1, 0, "Engine");
     qmlRegisterType<ItemsModel>(uri, 1, 0, "ItemsModel");
+    qmlRegisterUncreatableType<DownloadLinkInfo>(uri, 1, 0, "DownloadLinkInfo", "This should only be created by the ItemsModel, and is associated with one entry in that model");
 }
