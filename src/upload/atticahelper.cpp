@@ -16,18 +16,15 @@
 */
 
 #include "atticahelper_p.h"
+#include "jobs/httpjob.h"
+
 #include <QImage>
-
-#include <QDebug>
-
-#include <kio/job.h>
-#include <kio/scheduler.h>
 
 #include <attica/listjob.h>
 #include <attica/postjob.h>
 #include <attica/accountbalance.h>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 AtticaHelper::AtticaHelper(QObject *parent) :
     QObject(parent)
@@ -207,15 +204,14 @@ void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
     for (int previewNum = 1; previewNum <= 3; ++previewNum) {
         QUrl url = QUrl::fromUserInput(content.smallPreviewPicture(QString::number(previewNum)));
         if (! url.isEmpty()) {
-            m_previewJob[previewNum - 1] = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+            m_previewJob[previewNum - 1] = HTTPJob::get(url, KNSCore::NoReload, KNSCore::HideProgressInfo);
             connect(m_previewJob[previewNum - 1], &KJob::result, this, &AtticaHelper::slotPreviewDownload);
-            connect(m_previewJob[previewNum - 1], &KIO::TransferJob::data, this, &AtticaHelper::slotPreviewData);
-            KIO::Scheduler::setJobPriority(m_previewJob[previewNum - 1], 1);
+            connect(m_previewJob[previewNum - 1], &HTTPJob::data, this, &AtticaHelper::slotPreviewData);
         }
     }
 }
 
-void AtticaHelper::slotPreviewData(KIO::Job *job, const QByteArray &buf)
+void AtticaHelper::slotPreviewData(KJob* job, const QByteArray& buf)
 {
     if (job == m_previewJob[0]) {
         m_previewBuffer[0].append(buf);

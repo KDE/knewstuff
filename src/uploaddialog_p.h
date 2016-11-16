@@ -74,7 +74,7 @@ public:
     QPushButton *backButton;
     KPixmapSequenceWidget *busyWidget;
 
-    AtticaHelper *atticaHelper;
+    KNSCore::AtticaHelper *atticaHelper;
 
     QUrl uploadFile;
     QUrl previewFile1;

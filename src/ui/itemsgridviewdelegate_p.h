@@ -33,7 +33,7 @@ class ItemsGridViewDelegate: public ItemsViewBaseDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsGridViewDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent = 0);
+    explicit ItemsGridViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = 0);
     ~ItemsGridViewDelegate();
 
     // paint the item at index with all its attributes shown

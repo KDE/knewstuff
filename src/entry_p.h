@@ -27,7 +27,13 @@ namespace KNS3
 class EntryPrivate : public QSharedData
 {
 public:
-    EntryInternal e;
+    KNSCore::EntryInternal e;
+    static Entry fromInternal(const KNSCore::EntryInternal* internal)
+    {
+        Entry e;
+        e.d->e = *internal;
+        return e;
+    }
 };
 }
 

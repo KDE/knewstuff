@@ -107,18 +107,18 @@ static void appendIfValid(QList<QUrl>& list, const QUrl &value)
 QList<QUrl> KNS3::Entry::previewImages() const
 {
     QList<QUrl> ret;
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig1)));
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig2)));
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewBig3)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewBig1)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewBig2)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewBig3)));
     return ret;
 }
 
 QList<QUrl> KNS3::Entry::previewThumbnails() const
 {
     QList<QUrl> ret;
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall1)));
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall2)));
-    appendIfValid(ret, QUrl(d->e.previewUrl(EntryInternal::PreviewSmall3)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewSmall1)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewSmall2)));
+    appendIfValid(ret, QUrl(d->e.previewUrl(KNSCore::EntryInternal::PreviewSmall3)));
     return ret;
 }
 

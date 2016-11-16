@@ -3,6 +3,8 @@ project(KNewStuff)
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
+add_subdirectory(core)
+
 set(KNewStuff_SRCS
     downloaddialog.cpp
     downloadwidget.cpp
@@ -10,31 +12,19 @@ set(KNewStuff_SRCS
     entry.cpp
     button.cpp
     knewstuffaction.cpp
-    core/author.cpp
-    core/cache.cpp
-    core/engine.cpp
-    core/entryinternal.cpp
-    core/installation.cpp
-    core/provider.cpp
-    core/security.cpp
-    core/xmlloader.cpp
     kmoretools/kmoretools.cpp
     kmoretools/kmoretoolsconfigdialog_p.cpp
     kmoretools/kmoretoolsmenufactory.cpp
     kmoretools/kmoretoolspresets.cpp
-    staticxml/staticxmlprovider.cpp
     ui/entrydetailsdialog.cpp
-    ui/imageloader.cpp
     ui/imagepreviewwidget.cpp
-    ui/itemsmodel.cpp
     ui/itemsview.cpp
     ui/itemsviewdelegate.cpp
     ui/itemsgridviewdelegate.cpp
     ui/itemsviewbasedelegate.cpp
     ui/progressindicator.cpp
-    attica/atticaprovider.cpp
+    ui/widgetquestionlistener.cpp
 
-    upload/atticahelper.cpp
     uploaddialog.cpp
 )
 
@@ -56,14 +46,13 @@ target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 
 target_link_libraries(KF5NewStuff
   PUBLIC
-    KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
+    KF5::NewStuffCore
     KF5::XmlGui                # For KActionCollection in knewstuffaction.h
     KF5::Service               # For KMoreTools
     Qt5::Widgets
   PRIVATE
     KF5::KIOCore               # For network fetching operations
     KF5::KIOWidgets            # For KUrlRequester
-    KF5::Archive               # For decompressing archives
     KF5::Completion            # For KLineEdit in download dialog
     KF5::I18n                  # For translations
     KF5::ItemViews             # For buttons on download dialog
@@ -117,5 +106,7 @@ install(FILES
 )
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets Attica KXmlGui" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
+install(FILES ${COREPRI_FILENAME} ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
+add_subdirectory(qtquick)

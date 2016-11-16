@@ -24,27 +24,28 @@
 #include <QTemporaryFile>
 #include <QtCore/QProcess>
 #include <QUrlQuery>
+#include <QDesktopServices>
 
 #include "qmimedatabase.h"
 #include "karchive.h"
 #include "kzip.h"
 #include "ktar.h"
-#include "kio/job.h"
 #include "krandom.h"
 #include "kshell.h"
-#include "kmessagebox.h" // TODO get rid of message box
-#include <KRun>
+
 #include <qstandardpaths.h>
 #include "klocalizedstring.h"
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 
-#include "core/security_p.h"
+#include "jobs/filecopyjob.h"
+#include "security_p.h"
+#include "question.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <shlobj.h>
 #endif
 
-using namespace KNS3;
+using namespace KNSCore;
 
 Installation::Installation(QObject *parent)
     : QObject(parent)
@@ -54,6 +55,17 @@ Installation::Installation(QObject *parent)
     , customName(false)
     , acceptHtml(false)
 {
+    Security *sec = Security::ref();
+
+    connect(sec,
+            &Security::validityResult,
+            this, &Installation::slotInstallationVerification);
+    connect(sec,
+            &Security::signalInformation,
+            this, &Installation::signalInformation);
+    connect(sec,
+            &Security::signalError,
+            this, &Installation::signalError);
 }
 
 bool Installation::readConfig(const KConfigGroup &group)
@@ -164,12 +176,12 @@ bool Installation::isRemote() const
     return true;
 }
 
-void Installation::install(EntryInternal entry)
+void Installation::install(const EntryInternal& entry)
 {
     downloadPayload(entry);
 }
 
-void Installation::downloadPayload(const KNS3::EntryInternal &entry)
+void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
 {
     if (!entry.isValid()) {
         emit signalInstallationFailed(i18n("Invalid item."));
@@ -186,7 +198,7 @@ void Installation::downloadPayload(const KNS3::EntryInternal &entry)
     // FIXME no clue what this is supposed to do
     if (isRemote()) {
         // Remote resource
-        qCDebug(KNEWSTUFF) << "Relaying remote payload '" << source << "'";
+        qCDebug(KNEWSTUFFCORE) << "Relaying remote payload '" << source << "'";
         install(entry, source.toDisplayString(QUrl::PreferLocalFile));
         emit signalPayloadLoaded(source);
         // FIXME: we still need registration for eventual deletion
@@ -199,10 +211,10 @@ void Installation::downloadPayload(const KNS3::EntryInternal &entry)
         return;    // ERROR
     }
     QUrl destination = QUrl::fromLocalFile(tempFile.fileName());
-    qCDebug(KNEWSTUFF) << "Downloading payload" << source << "to" << destination;
+    qCDebug(KNEWSTUFFCORE) << "Downloading payload" << source << "to" << destination;
 
     // FIXME: check for validity
-    KIO::FileCopyJob *job = KIO::file_copy(source, destination, -1, KIO::Overwrite | KIO::HideProgressInfo);
+    FileCopyJob *job = FileCopyJob::file_copy(source, destination, -1, JobFlag::Overwrite | JobFlag::HideProgressInfo);
     connect(job,
             &KJob::result,
             this, &Installation::slotPayloadResult);
@@ -220,18 +232,20 @@ void Installation::slotPayloadResult(KJob *job)
         if (job->error()) {
             emit signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
         } else {
-            KIO::FileCopyJob *fcjob = static_cast<KIO::FileCopyJob *>(job);
+            FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
 
             // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
             if (!acceptHtml) {
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
-                    if (KMessageBox::questionYesNo(0, i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"), i18n("Possibly bad download link"))
-                            == KMessageBox::Yes) {
-                        KRun::runUrl(fcjob->srcUrl(), QStringLiteral("text/html"), Q_NULLPTR);
+                    Question question;
+                    question.setQuestion(i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open the site with a browser instead?"));
+                    question.setTitle(i18n("Possibly bad download link"));
+                    if(question.ask() == Question::YesResponse) {
+                        QDesktopServices::openUrl(fcjob->srcUrl());
                         emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
-                        entry.setStatus(Entry::Invalid);
+                        entry.setStatus(KNS3::Entry::Invalid);
                         emit signalEntryChanged(entry);
                         return;
                     }
@@ -244,12 +258,12 @@ void Installation::slotPayloadResult(KJob *job)
     }
 }
 
-void Installation::install(KNS3::EntryInternal entry, const QString &downloadedFile)
+void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString& downloadedFile)
 {
-    qCDebug(KNEWSTUFF) << "Install: " << entry.name() << " from " << downloadedFile;
+    qCDebug(KNEWSTUFFCORE) << "Install: " << entry.name() << " from " << downloadedFile;
 
     if (entry.payload().isEmpty()) {
-        qCDebug(KNEWSTUFF) << "No payload associated with: " << entry.name();
+        qCDebug(KNEWSTUFFCORE) << "No payload associated with: " << entry.name();
         return;
     }
 
@@ -260,25 +274,25 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     if (checksumPolicy() != Installation::CheckNever) {
         if (entry.checksum().isEmpty()) {
             if (checksumPolicy() == Installation::CheckIfPossible) {
-                qCDebug(KNEWSTUFF) << "Skip checksum verification";
+                qCDebug(KNEWSTUFFCORE) << "Skip checksum verification";
             } else {
                 qCritical() << "Checksum verification not possible" << endl;
                 return false;
             }
         } else {
-            qCDebug(KNEWSTUFF) << "Verify checksum...";
+            qCDebug(KNEWSTUFFCORE) << "Verify checksum...";
         }
     }
     if (signaturePolicy() != Installation::CheckNever) {
         if (entry.signature().isEmpty()) {
             if (signaturePolicy() == Installation::CheckIfPossible) {
-                qCDebug(KNEWSTUFF) << "Skip signature verification";
+                qCDebug(KNEWSTUFFCORE) << "Skip signature verification";
             } else {
                 qCritical() << "Signature verification not possible" << endl;
                 return false;
             }
         } else {
-            qCDebug(KNEWSTUFF) << "Verify signature...";
+            qCDebug(KNEWSTUFFCORE) << "Verify signature...";
         }
     }
     */
@@ -287,10 +301,10 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
 
     if (installedFiles.isEmpty()) {
-        if (entry.status() == Entry::Installing) {
-            entry.setStatus(Entry::Downloadable);
-        } else if (entry.status() == Entry::Updating) {
-            entry.setStatus(Entry::Updateable);
+        if (entry.status() == KNS3::Entry::Installing) {
+            entry.setStatus(KNS3::Entry::Downloadable);
+        } else if (entry.status() == KNS3::Entry::Updating) {
+            entry.setStatus(KNS3::Entry::Updateable);
         }
         emit signalEntryChanged(entry);
         emit signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
@@ -312,15 +326,11 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
     // FIXME: security object lifecycle - it is a singleton!
     Security *sec = Security::ref();
 
-    connect(sec,
-            &Security::validityResult,
-            this, &Installation::slotInstallationVerification);
-
     // FIXME: change to accept filename + signature
     sec->checkValidity(QString());
 
     // update version and release date to the new ones
-    if (entry.status() == Entry::Updating) {
+    if (entry.status() == KNS3::Entry::Updating) {
         if (!entry.updateVersion().isEmpty()) {
             entry.setVersion(entry.updateVersion());
         }
@@ -329,7 +339,7 @@ void Installation::install(KNS3::EntryInternal entry, const QString &downloadedF
         }
     }
 
-    entry.setStatus(Entry::Installed);
+    entry.setStatus(KNS3::Entry::Installed);
     emit signalEntryChanged(entry);
     emit signalInstallationFinished();
 }
@@ -408,7 +418,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             return QString();
         }
 
-        qCDebug(KNEWSTUFF) << "installdir: " << installdir;
+        qCDebug(KNEWSTUFFCORE) << "installdir: " << installdir;
 
         // create the dir if it doesn't exist (QStandardPaths doesn't create it, unlike KStandardDirs!)
         QDir().mkpath(installdir);
@@ -417,7 +427,7 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
     return installdir;
 }
 
-QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
+QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
 {
     QString installpath(payloadfile);
     // Collect all files that were installed
@@ -432,7 +442,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             installpath = installdir;
             QMimeDatabase db;
             QMimeType mimeType = db.mimeTypeForFile(payloadfile);
-            qCDebug(KNEWSTUFF) << "Postinstallation: uncompress the file";
+            qCDebug(KNEWSTUFFCORE) << "Postinstallation: uncompress the file";
 
             // FIXME: check for overwriting, malicious archive entries (../foo) etc.
             // FIXME: KArchive should provide "safe mode" for this!
@@ -485,7 +495,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             }
         }
 
-        qCDebug(KNEWSTUFF) << "isarchive: " << isarchive;
+        qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
 
         if (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive)) {
             // no decompress but move to target
@@ -493,7 +503,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
             // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
             QUrl source = QUrl(entry.payload());
-            qCDebug(KNEWSTUFF) << "installing non-archive from " << source.url();
+            qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
             QString installfile;
             QString ext = source.fileName().section('.', -1);
             if (customName) {
@@ -519,7 +529,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             }
             installpath = installdir + QLatin1Char('/') + installfile;
 
-            qCDebug(KNEWSTUFF) << "Install to file " << installpath;
+            qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
             // FIXME: what must be done now is to update the cache *again*
             //        in order to set the new payload filename (on root tag only)
@@ -527,11 +537,14 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
             QFile file(payloadfile);
             bool success = true;
-            const bool update = ((entry.status() == Entry::Updateable) || (entry.status() == Entry::Updating));
+            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
 
             if (QFile::exists(installpath)) {
                 if (!update) {
-                    if (KMessageBox::warningContinueCancel(0, i18n("Overwrite existing file?") + "\n'" + installpath + '\'', i18n("Download File")) == KMessageBox::Cancel) {
+                    Question question(Question::ContinueCancelQuestion);
+                    question.setQuestion(i18n("Overwrite existing file?") + "\n'" + installpath + '\'');
+                    question.setTitle(i18n("Download File"));
+                    if(question.ask() == Question::CancelResponse) {
                         return QStringList();
                     }
                 }
@@ -539,7 +552,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNS3::EntryIn
             }
             if (success) {
                 success = file.rename(installpath);
-                qCDebug(KNEWSTUFF) << "move: " << file.fileName() << " to " << installpath;
+                qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
             if (!success) {
                 qCritical() << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
@@ -557,7 +570,7 @@ void Installation::runPostInstallationCommand(const QString &installPath)
     QString fileArg(KShell::quoteArg(installPath));
     command.replace(QLatin1String("%f"), fileArg);
 
-    qCDebug(KNEWSTUFF) << "Run command: " << command;
+    qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
 
     int exitcode = QProcess::execute(command);
 
@@ -568,7 +581,7 @@ void Installation::runPostInstallationCommand(const QString &installPath)
 
 void Installation::uninstall(EntryInternal entry)
 {
-    entry.setStatus(Entry::Deleted);
+    entry.setStatus(KNS3::Entry::Deleted);
 
     if (!uninstallCommand.isEmpty()) {
         foreach (const QString &file, entry.installedFiles()) {
@@ -583,7 +596,7 @@ void Installation::uninstall(EntryInternal entry)
                 if (exitcode) {
                     qCritical() << "Command failed" << endl;
                 } else {
-                    qCDebug(KNEWSTUFF) << "Command executed successfully";
+                    qCDebug(KNEWSTUFFCORE) << "Command executed successfully";
                 }
             }
         }
@@ -618,7 +631,7 @@ void Installation::uninstall(EntryInternal entry)
 
 void Installation::slotInstallationVerification(int result)
 {
-    qCDebug(KNEWSTUFF) << "SECURITY result " << result;
+    qCDebug(KNEWSTUFFCORE) << "SECURITY result " << result;
 
     //FIXME do something here ??? and get the right entry again
     EntryInternal entry;

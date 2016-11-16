@@ -33,7 +33,7 @@
 #include <kratingwidget.h>
 #include <ksqueezedtextlabel.h>
 
-#include "itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
 
 namespace KNS3
 {
@@ -41,7 +41,7 @@ enum { DelegateTitleLabel, DelegateAuthorLabel, DelegateDownloadCounterLabel,
        DelegateGridRatingWidget
      };
 
-ItemsGridViewDelegate::ItemsGridViewDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent)
+ItemsGridViewDelegate::ItemsGridViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent)
     : ItemsViewBaseDelegate(itemView, engine, parent)
     , m_elementYPos(0)
 {
@@ -85,14 +85,14 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         const QStyleOptionViewItem &option,
         const QPersistentModelIndex &index) const
 {
-    const ItemsModel *model = qobject_cast<const ItemsModel *>(index.model());
+    const KNSCore::ItemsModel *model = qobject_cast<const KNSCore::ItemsModel *>(index.model());
     if (!model) {
         qCDebug(KNEWSTUFF) << "WARNING - INVALID MODEL!";
         return;
     }
 
-    EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
-    int elementYPos = PreviewHeight + ItemMargin + FrameThickness * 2;
+    KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
+    int elementYPos = KNSCore::PreviewHeight + ItemMargin + FrameThickness * 2;
 
     //setup rating widget
     KRatingWidget *rating = qobject_cast<KRatingWidget *>(widgets.at(DelegateGridRatingWidget));
@@ -224,17 +224,17 @@ void ItemsGridViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
         painter->setPen(QPen(option.palette.text().color()));
     }
 
-    const ItemsModel *realmodel = qobject_cast<const ItemsModel *>(index.model());
+    const KNSCore::ItemsModel *realmodel = qobject_cast<const KNSCore::ItemsModel *>(index.model());
 
     if (realmodel->hasPreviewImages()) {
         int width = option.rect.width();
 
-        KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
-        if (entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
+        KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
+        if (entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
             ;
         } else {
-            QPoint centralPoint(option.rect.left() + width / 2, option.rect.top() + ItemMargin + FrameThickness + PreviewHeight / 2);
-            QImage image = entry.previewImage(EntryInternal::PreviewSmall1);
+            QPoint centralPoint(option.rect.left() + width / 2, option.rect.top() + ItemMargin + FrameThickness + KNSCore::PreviewHeight / 2);
+            QImage image = entry.previewImage(KNSCore::EntryInternal::PreviewSmall1);
             if (!image.isNull()) {
                 QPoint previewPoint(centralPoint.x() - image.width() / 2, centralPoint.y() - image.height() / 2);
                 painter->drawImage(previewPoint, image);
@@ -243,8 +243,8 @@ void ItemsGridViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
                 QPoint framePoint(centralPoint.x() - frameImageScaled.width() / 2, centralPoint.y() - frameImageScaled.height() / 2);
                 painter->drawPixmap(framePoint, frameImageScaled);
             } else {
-                QPoint thumbnailPoint(option.rect.left() + ((width - PreviewWidth - FrameThickness * 2) / 2), option.rect.top() + ItemMargin);
-                QRect rect(thumbnailPoint, QSize(PreviewWidth + FrameThickness * 2, PreviewHeight + FrameThickness * 2));
+                QPoint thumbnailPoint(option.rect.left() + ((width - KNSCore::PreviewWidth - FrameThickness * 2) / 2), option.rect.top() + ItemMargin);
+                QRect rect(thumbnailPoint, QSize(KNSCore::PreviewWidth + FrameThickness * 2, KNSCore::PreviewHeight + FrameThickness * 2));
                 painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, i18n("Loading Preview"));
             }
         }
@@ -306,7 +306,7 @@ void ItemsGridViewDelegate::createOperationBar()
 
 void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelIndex &index)
 {
-    KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+    KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
     if (m_installButton != 0) {
         if (m_installButton->menu() != 0) {
             QMenu *buttonMenu = m_installButton->menu();
@@ -358,7 +358,7 @@ void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelI
         m_installButton->setEnabled(enabled);
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(m_installButton);
-            foreach (const EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
+            foreach (const KNSCore::EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text + " (" + info.distributionType.trimmed() + ')';

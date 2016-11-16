@@ -38,6 +38,7 @@
 
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"
+#include "ui/widgetquestionlistener.h"
 
 namespace KNS3
 {
@@ -98,6 +99,7 @@ void DownloadDialog::init(const QString &configFile)
     KStandardGuiItem::assign(d->downloadWidget->d->ui.closeButton, KStandardGuiItem::Close);
     d->downloadWidget->d->dialogMode = true;
     connect(d->downloadWidget->d->ui.closeButton, &QAbstractButton::clicked, this, &QDialog::accept);
+    WidgetQuestionListener::instance();
 }
 
 DownloadDialog::~DownloadDialog()

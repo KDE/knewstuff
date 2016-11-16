@@ -23,16 +23,12 @@
 #include <QtCore/QObject>
 #include <QtCore/QByteArray>
 
-#include "core/entryinternal_p.h"
+#include "entryinternal_p.h"
+#include "jobs/httpjob.h"
 
 class KJob;
-namespace KIO
-{
-class Job;
-class TransferJob;
-}
 
-namespace KNS3
+namespace KNSCore
 {
 
 /**
@@ -60,17 +56,17 @@ public:
     KJob *job();
 
 Q_SIGNALS:
-    void signalPreviewLoaded(const KNS3::EntryInternal &, KNS3::EntryInternal::PreviewType);
+    void signalPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
 
 private Q_SLOTS:
     void slotDownload(KJob *job);
-    void slotData(KIO::Job *job, const QByteArray &buf);
+    void slotData(KJob *job, const QByteArray &buf);
 
 private:
     EntryInternal m_entry;
     EntryInternal::PreviewType m_previewType;
     QByteArray m_buffer;
-    KIO::TransferJob *m_job;
+    HTTPJob *m_job;
 };
 }
 #endif

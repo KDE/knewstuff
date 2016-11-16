@@ -27,10 +27,12 @@
 #include <QtCore/QString>
 #include <QUrl>
 
-#include "core/author_p.h"
-#include "entry.h"
+#include "author_p.h"
+#include "../entry.h"
 
-namespace KNS3
+#include "knewstuffcore_export.h"
+
+namespace KNSCore
 {
 static const int PreviewWidth = 96;
 static const int PreviewHeight = 72;
@@ -38,7 +40,7 @@ static const int PreviewHeight = 72;
 /**
  function to remove bb code formatting that opendesktop sends
  */
-QString replaceBBCode(const QString &unformattedText);
+KNEWSTUFFCORE_EXPORT QString replaceBBCode(const QString &unformattedText);
 
 /**
  * @short KNewStuff data entry container.
@@ -50,7 +52,7 @@ QString replaceBBCode(const QString &unformattedText);
  * \par Maintainer:
  * Jeremy Whiting (jpwhiting@kde.org)
  */
-class EntryInternal
+class KNEWSTUFFCORE_EXPORT EntryInternal
 {
 public:
     typedef QList<EntryInternal> List;
@@ -418,27 +420,25 @@ public:
      *
      * @param status New status of the entry
      */
-    void setStatus(Entry::Status status);
+    void setStatus(KNS3::Entry::Status status);
 
     /**
      * Retrieves the entry's status.
      *
      * @return Current status of the entry
      */
-    Entry::Status status() const;
+    KNS3::Entry::Status status() const;
 
     //void setIdNumber(int number);
     //int idNumber() const;
 
-    Entry toEntry() const;
-
-    static KNS3::EntryInternal fromEntry(const KNS3::Entry &entry);
+    static KNSCore::EntryInternal fromEntry(const KNS3::Entry &entry);
 private:
     class Private;
     QExplicitlySharedDataPointer<Private> d;
 };
 
-inline uint qHash(const KNS3::EntryInternal &entry)
+inline uint qHash(const KNSCore::EntryInternal &entry)
 {
     return qHash(entry.uniqueId());
 }

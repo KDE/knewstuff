@@ -25,10 +25,12 @@
 #include "engine_p.h"
 #include "entryinternal_p.h"
 
-namespace KNS3
+#include "knewstuffcore_export.h"
+
+namespace KNSCore
 {
 
-class Cache : public QObject
+class KNEWSTUFFCORE_EXPORT Cache : public QObject
 {
     Q_OBJECT
 
@@ -52,11 +54,11 @@ public:
     /// Save the list of installed entries
     void writeRegistry();
 
-    void insertRequest(const KNS3::Provider::SearchRequest &, const KNS3::EntryInternal::List &entries);
-    EntryInternal::List requestFromCache(const KNS3::Provider::SearchRequest &);
+    void insertRequest(const KNSCore::Provider::SearchRequest &, const KNSCore::EntryInternal::List &entries);
+    EntryInternal::List requestFromCache(const KNSCore::Provider::SearchRequest &);
 
 public Q_SLOTS:
-    void registerChangedEntry(const KNS3::EntryInternal &entry);
+    void registerChangedEntry(const KNSCore::EntryInternal &entry);
 
 private:
     Q_DISABLE_COPY(Cache)

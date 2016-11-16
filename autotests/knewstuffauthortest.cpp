@@ -39,7 +39,7 @@ private Q_SLOTS:
 
 void testAuthor::testProperties()
 {
-    KNS3::Author author;
+    KNSCore::Author author;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);
@@ -52,12 +52,12 @@ void testAuthor::testProperties()
 
 void testAuthor::testCopy()
 {
-    KNS3::Author author;
+    KNSCore::Author author;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);
     author.setHomepage(homepage);
-    KNS3::Author author2(author);
+    KNSCore::Author author2(author);
     QCOMPARE(author.name(), author2.name());
     QCOMPARE(author.email(), author2.email());
     QCOMPARE(author.jabber(), author2.jabber());
@@ -66,8 +66,8 @@ void testAuthor::testCopy()
 
 void testAuthor::testAssignment()
 {
-    KNS3::Author author;
-    KNS3::Author author2;
+    KNSCore::Author author;
+    KNSCore::Author author2;
     author.setName(name);
     author.setEmail(email);
     author.setJabber(jabber);

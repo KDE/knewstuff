@@ -22,15 +22,16 @@
 #include <QAbstractListModel>
 #include <QImage>
 
-#include "core/entryinternal_p.h"
+#include "entryinternal_p.h"
+#include "knewstuffcore_export.h"
 
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 class Engine;
 
-class ItemsModel: public QAbstractListModel
+class KNEWSTUFFCORE_EXPORT ItemsModel: public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -50,10 +51,10 @@ Q_SIGNALS:
     void jobStarted(KJob *, const QString &label);
 
 public Q_SLOTS:
-    void slotEntryChanged(const KNS3::EntryInternal &entry);
-    void slotEntriesLoaded(KNS3::EntryInternal::List entries);
+    void slotEntryChanged(const KNSCore::EntryInternal &entry);
+    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
     void clearEntries();
-    void slotEntryPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type);
+    void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
 
 private:
     Engine *m_engine;
@@ -64,6 +65,6 @@ private:
 
 } // end KNS namespace
 
-Q_DECLARE_METATYPE(KNS3::EntryInternal)
+Q_DECLARE_METATYPE(KNSCore::EntryInternal)
 
 #endif

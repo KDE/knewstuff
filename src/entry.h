@@ -26,7 +26,7 @@
 #include <QLoggingCategory>
 
 #include "knewstuff_export.h"
-
+namespace KNSCore { class EntryInternal; }
 namespace KNS3
 {
 class EntryPrivate;
@@ -203,7 +203,8 @@ private:
 
     QExplicitlySharedDataPointer<EntryPrivate> d;
 
-    friend class EntryInternal;
+    friend class KNSCore::EntryInternal;
+    friend class EntryPrivate;
 };
 
 }

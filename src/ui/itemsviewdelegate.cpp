@@ -30,14 +30,15 @@
 #include <klocalizedstring.h>
 #include <kratingwidget.h>
 
-#include "itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
+
 #include "entrydetailsdialog_p.h"
 
 namespace KNS3
 {
 enum { DelegateLabel, DelegateInstallButton, DelegateDetailsButton,  DelegateRatingWidget };
 
-ItemsViewDelegate::ItemsViewDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent)
+ItemsViewDelegate::ItemsViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent)
     : ItemsViewBaseDelegate(itemView, engine, parent)
 {
 }
@@ -87,13 +88,13 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         const QStyleOptionViewItem &option,
         const QPersistentModelIndex &index) const
 {
-    const ItemsModel *model = qobject_cast<const ItemsModel *>(index.model());
+    const KNSCore::ItemsModel *model = qobject_cast<const KNSCore::ItemsModel *>(index.model());
     if (!model) {
         qCDebug(KNEWSTUFF) << "WARNING - INVALID MODEL!";
         return;
     }
 
-    EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+    KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
 
     // setup the install button
     int margin = option.fontMetrics.height() / 2;
@@ -152,7 +153,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         installButton->setIcon(icon);
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(installButton);
-            foreach (const EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
+            foreach (const KNSCore::EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text + " (" + info.distributionType.trimmed() + ')';
@@ -188,8 +189,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     if (infoLabel != NULL) {
         if (model->hasPreviewImages()) {
             // move the text right by kPreviewWidth + margin pixels to fit the preview
-            infoLabel->move(PreviewWidth + margin * 2, 0);
-            infoLabel->resize(QSize(option.rect.width() - PreviewWidth - (margin * 6) - m_buttonSize.width(), option.fontMetrics.height() * 7));
+            infoLabel->move(KNSCore::PreviewWidth + margin * 2, 0);
+            infoLabel->resize(QSize(option.rect.width() - KNSCore::PreviewWidth - (margin * 6) - m_buttonSize.width(), option.fontMetrics.height() * 7));
 
         } else {
             infoLabel->move(margin, 0);
@@ -248,7 +249,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         text += QLatin1String("</body></html>");
         // use simplified to get rid of newlines etc
-        text = replaceBBCode(text).simplified();
+        text = KNSCore::replaceBBCode(text).simplified();
         infoLabel->setText(text);
     }
 
@@ -283,29 +284,29 @@ void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
         painter->setPen(QPen(option.palette.text().color()));
     }
 
-    const ItemsModel *realmodel = qobject_cast<const ItemsModel *>(index.model());
+    const KNSCore::ItemsModel *realmodel = qobject_cast<const KNSCore::ItemsModel *>(index.model());
 
     if (realmodel->hasPreviewImages()) {
         int height = option.rect.height();
-        QPoint point(option.rect.left() + margin, option.rect.top() + ((height - PreviewHeight) / 2));
+        QPoint point(option.rect.left() + margin, option.rect.top() + ((height - KNSCore::PreviewHeight) / 2));
 
-        KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
-        if (entry.previewUrl(EntryInternal::PreviewSmall1).isEmpty()) {
+        KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
+        if (entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
             // paint the no preview icon
             //point.setX((PreviewWidth - m_noImage.width())/2 + 5);
             //point.setY(option.rect.top() + ((height - m_noImage.height()) / 2));
             //painter->drawPixmap(point, m_noImage);
         } else {
-            QImage image = entry.previewImage(EntryInternal::PreviewSmall1);
+            QImage image = entry.previewImage(KNSCore::EntryInternal::PreviewSmall1);
             if (!image.isNull()) {
-                point.setX((PreviewWidth - image.width()) / 2 + 5);
+                point.setX((KNSCore::PreviewWidth - image.width()) / 2 + 5);
                 point.setY(option.rect.top() + ((height - image.height()) / 2));
                 painter->drawImage(point, image);
 
                 QPoint framePoint(point.x() - 5, point.y() - 5);
                 painter->drawPixmap(framePoint, m_frameImage.scaled(image.width() + 10, image.height() + 10));
             } else {
-                QRect rect(point, QSize(PreviewWidth, PreviewHeight));
+                QRect rect(point, QSize(KNSCore::PreviewWidth, KNSCore::PreviewHeight));
                 painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, i18n("Loading Preview"));
             }
         }
@@ -322,7 +323,7 @@ QSize ItemsViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QMod
     QSize size;
 
     size.setWidth(option.fontMetrics.height() * 4);
-    size.setHeight(qMax(option.fontMetrics.height() * 7, PreviewHeight)); // up to 6 lines of text, and two margins
+    size.setHeight(qMax(option.fontMetrics.height() * 7, KNSCore::PreviewHeight)); // up to 6 lines of text, and two margins
     return size;
 }
 

@@ -30,8 +30,9 @@ class DownloadManagerPrivate;
  * without using the widgets and to look for updates of
  * already installed items without showing the dialog.
  * @since 4.5
+ * @deprecated Use KNSCore::DownloadManager instead
  */
-class KNEWSTUFF_EXPORT DownloadManager : public QObject
+class Q_DECL_DEPRECATED KNEWSTUFF_EXPORT DownloadManager : public QObject
 {
     Q_OBJECT
 
@@ -144,9 +145,9 @@ Q_SIGNALS:
 private:
     Q_PRIVATE_SLOT(d, void _k_slotProvidersLoaded())
     Q_PRIVATE_SLOT(d, void _k_slotEngineError(const QString &error))
-    Q_PRIVATE_SLOT(d, void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry))
-    Q_PRIVATE_SLOT(d, void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries))
-    DownloadManagerPrivate *const d;
+    Q_PRIVATE_SLOT(d, void _k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry))
+    Q_PRIVATE_SLOT(d, void _k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries))
+    KNS3::DownloadManagerPrivate *const d;
     Q_DISABLE_COPY(DownloadManager)
 };
 

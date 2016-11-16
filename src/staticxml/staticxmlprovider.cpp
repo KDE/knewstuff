@@ -21,15 +21,15 @@
 
 #include "staticxmlprovider_p.h"
 
-#include "core/xmlloader_p.h"
+#include "xmlloader_p.h"
 
-#include <knewstuff_debug.h>
+#include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
 
 #include <QtCore/QTimer>
 
 
-namespace KNS3
+namespace KNSCore
 {
 
 StaticXmlProvider::StaticXmlProvider()
@@ -44,7 +44,7 @@ QString StaticXmlProvider::id() const
 
 bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
-    qCDebug(KNEWSTUFF) << "setting provider xml";
+    qCDebug(KNEWSTUFFCORE) << "setting provider xml";
 
     if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
@@ -86,7 +86,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         if (e.tagName() == QLatin1String("title")) {
             //QString lang = e.attribute("lang");
             mName = e.text().trimmed();
-            qCDebug(KNEWSTUFF) << "add name for provider ("<< this << "): " << e.text();
+            qCDebug(KNEWSTUFFCORE) << "add name for provider ("<< this << "): " << e.text();
         }
     }
 
@@ -122,13 +122,13 @@ bool StaticXmlProvider::isInitialized() const
     return mInitialized;
 }
 
-void StaticXmlProvider::setCachedEntries(const KNS3::EntryInternal::List &cachedEntries)
+void StaticXmlProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
 {
-    qCDebug(KNEWSTUFF) << "Set cached entries " << cachedEntries.size();
+    qCDebug(KNEWSTUFFCORE) << "Set cached entries " << cachedEntries.size();
     mCachedEntries.append(cachedEntries);
 }
 
-void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request)
+void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
     mCurrentRequest = request;
 
@@ -139,7 +139,7 @@ void StaticXmlProvider::loadEntries(const KNS3::Provider::SearchRequest &request
     }
 
     if (request.filter == Installed) {
-        qCDebug(KNEWSTUFF) << "Installed entries: " << mId << installedEntries().size();
+        qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
         emit loadingFinished(request, installedEntries());
         return;
     }
@@ -187,7 +187,7 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
 
 void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
 {
-    XmlLoader *loader = qobject_cast<KNS3::XmlLoader *>(sender());
+    XmlLoader *loader = qobject_cast<KNSCore::XmlLoader *>(sender());
     if (!loader) {
         qWarning() << "Loader not found!";
         emit loadingFailed(mCurrentRequest);
@@ -205,7 +205,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
     for (n = element.firstChildElement(); !n.isNull(); n = n.nextSiblingElement()) {
         EntryInternal entry;
         entry.setEntryXML(n.toElement());
-        entry.setStatus(Entry::Downloadable);
+        entry.setStatus(KNS3::Entry::Downloadable);
         entry.setProviderId(mId);
 
         int index = mCachedEntries.indexOf(entry);
@@ -213,9 +213,9 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
 
             EntryInternal cacheEntry = mCachedEntries.takeAt(index);
             // check if updateable
-            if ((cacheEntry.status() == Entry::Installed) &&
+            if ((cacheEntry.status() == KNS3::Entry::Installed) &&
                     ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
-                entry.setStatus(Entry::Updateable);
+                entry.setStatus(KNS3::Entry::Updateable);
                 entry.setUpdateVersion(entry.version());
                 entry.setVersion(cacheEntry.version());
                 entry.setUpdateReleaseDate(entry.releaseDate());
@@ -233,7 +233,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                     //This is dealth with in loadEntries separately
                     Q_UNREACHABLE();
                 case Updates:
-                    if (entry.status() == Entry::Updateable) {
+                    if (entry.status() == KNS3::Entry::Updateable) {
                         entries << entry;
                     }
                     break;
@@ -255,10 +255,10 @@ void StaticXmlProvider::slotFeedFailed()
     emit loadingFailed(mCurrentRequest);
 }
 
-bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) const
+bool StaticXmlProvider::searchIncludesEntry(const KNSCore::EntryInternal &entry) const
 {
     if (mCurrentRequest.filter == Updates) {
-        if (entry.status() != Entry::Updateable) {
+        if (entry.status() != KNS3::Entry::Updateable) {
             return false;
         }
     }
@@ -276,9 +276,9 @@ bool StaticXmlProvider::searchIncludesEntry(const KNS3::EntryInternal &entry) co
     return false;
 }
 
-void StaticXmlProvider::loadPayloadLink(const KNS3::EntryInternal &entry, int)
+void StaticXmlProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int)
 {
-    qCDebug(KNEWSTUFF) << "Payload: " << entry.payload();
+    qCDebug(KNEWSTUFFCORE) << "Payload: " << entry.payload();
     emit payloadLinkLoaded(entry);
 }
 
@@ -286,7 +286,7 @@ EntryInternal::List StaticXmlProvider::installedEntries() const
 {
     EntryInternal::List entries;
     foreach (const EntryInternal &entry, mCachedEntries) {
-        if (entry.status() == Entry::Installed || entry.status() == Entry::Updateable) {
+        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }
     }

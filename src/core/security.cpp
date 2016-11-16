@@ -19,6 +19,7 @@
 
 //app includes
 #include "security_p.h"
+#include "question.h"
 
 //qt includes
 #include <QtCore/QFile>
@@ -27,17 +28,14 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTextStream>
 #include <QtCore/QTimer>
-#include <QInputDialog>
 #include <qstandardpaths.h>
 
 #include <QCryptographicHash>
 
 //kde includes
 #include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kpassworddialog.h>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 static QString gpgExecutable()
 {
@@ -83,7 +81,7 @@ void Security::readKeys()
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
-        KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         delete m_process;
         m_process = 0;
     } else {
@@ -206,15 +204,13 @@ void Security::slotReadyReadStandardOutput()
         case Sign:
             if (data.contains(QStringLiteral("passphrase.enter"))) {
                 KeyStruct key = m_keys[m_secretKey];
-                QPointer<KPasswordDialog> dlg = new KPasswordDialog(NULL);
-                dlg->setPrompt(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
-                if (dlg->exec()) {
-                    m_process->write(dlg->password().toLocal8Bit() + '\n');
-                    delete dlg;
+                Question question(Question::PasswordQuestion);
+                question.setQuestion(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
+                if(question.ask() == Question::ContinueResponse) {
+                    m_process->write(question.response().toLocal8Bit() + '\n');
                 } else {
                     m_result |= BAD_PASSPHRASE;
                     m_process->kill();
-                    delete dlg;
                     return;
                 }
             } else if (data.contains(QStringLiteral("BAD_PASSPHRASE"))) {
@@ -287,7 +283,7 @@ void Security::slotCheckValidity()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         emit validityResult(0);
         delete m_process;
         m_process = 0;
@@ -341,11 +337,14 @@ void Security::slotSignFile()
     }
 
     if (secretKeys.count() > 1) {
-        bool ok;
-        QString selectedKey = QInputDialog::getItem(0, i18n("Select Signing Key"), i18n("Key used for signing:"), secretKeys, 0, false, &ok);
-        if (ok) {
-            m_secretKey = selectedKey;
+        Question question(Question::SelectFromListQuestion);
+        question.setQuestion(i18n("Key used for signing:"));
+        question.setTitle(i18n("Select Signing Key"));
+        question.setList(secretKeys);
+        if(question.ask() == Question::OKResponse) {
+            m_secretKey = question.response();
         } else {
+            // emit an error to be forwarded to the user for selecting a signing key...
             emit fileSigned(0);
             return;
         }
@@ -375,7 +374,7 @@ void Security::slotSignFile()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        KMessageBox::error(0L, i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
+        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
         emit fileSigned(0);
         delete m_process;
         m_process = 0;

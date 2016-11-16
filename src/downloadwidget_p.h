@@ -29,7 +29,8 @@
 #include <QScrollBar>
 #include <QListView>
 
-#include "ui/itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
+
 #include "ui/itemsviewbasedelegate_p.h"
 #include "ui/entrydetailsdialog_p.h"
 
@@ -39,24 +40,25 @@ namespace KNS3
 {
 class DownloadWidget;
 
-class DownloadWidgetPrivate
+class DownloadWidgetPrivate : public QObject
 {
+    Q_OBJECT
 public:
     DownloadWidget *q;
     EntryDetails *details;
 
     // The engine that does all the work
-    Engine *engine;
+    KNSCore::Engine *engine;
     Ui::DownloadWidget ui;
     // Model to show the entries
-    ItemsModel *model;
+    KNSCore::ItemsModel *model;
     // Timeout for messge display
     QTimer *messageTimer;
 
     ItemsViewBaseDelegate *delegate;
 
     QString searchTerm;
-    QSet<EntryInternal> changedEntries;
+    QSet<KNSCore::EntryInternal> changedEntries;
 
     QSet<QString> categories;
     QSet<QString> providers;
@@ -69,16 +71,17 @@ public:
     ~DownloadWidgetPrivate();
 
     void init(const QString &configFile);
+    void slotShowMessage(const QString& msg);
     void displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs = 0);
 
     void slotProvidersLoaded();
-    void slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
-    void slotEntryChanged(const KNS3::EntryInternal &entry);
+    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void slotEntryChanged(const KNSCore::EntryInternal &entry);
 
-    void slotShowDetails(const KNS3::EntryInternal &entry);
+    void slotShowDetails(const KNSCore::EntryInternal &entry);
     void slotShowOverview();
 
-    void slotPayloadFailed(const EntryInternal &entry);
+    void slotPayloadFailed(const KNSCore::EntryInternal &entry);
     void slotPayloadLoaded(QUrl url);
 
     void slotResetMessage();

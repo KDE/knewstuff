@@ -18,7 +18,8 @@
 */
 #include "itemsviewbasedelegate_p.h"
 
-#include "itemsmodel_p.h"
+#include "core/itemsmodel_p.h"
+
 #include "entrydetailsdialog_p.h"
 
 #include <knewstuff_debug.h>
@@ -27,7 +28,7 @@
 
 namespace KNS3
 {
-ItemsViewBaseDelegate::ItemsViewBaseDelegate(QAbstractItemView *itemView, Engine *engine, QObject *parent)
+ItemsViewBaseDelegate::ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent)
     : KWidgetItemDelegate(itemView, parent)
     , m_engine(engine)
     , m_itemView(itemView)
@@ -61,7 +62,7 @@ void ItemsViewBaseDelegate::slotLinkClicked(const QString &url)
     QModelIndex index = focusedIndex();
     Q_ASSERT(index.isValid());
 
-    KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+    KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
     m_engine->contactAuthor(entry);
 }
 
@@ -69,7 +70,7 @@ void ItemsViewBaseDelegate::slotInstallClicked()
 {
     QModelIndex index = focusedIndex();
     if (index.isValid()) {
-        KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
         if (!entry.isValid()) {
             qCDebug(KNEWSTUFF) << "Invalid entry: " << entry.name();
             return;
@@ -89,7 +90,7 @@ void ItemsViewBaseDelegate::slotInstallActionTriggered(QAction *action)
     int row = rowDownload.x();
     QModelIndex index = m_itemView->model()->index(row, 0);
     if (index.isValid()) {
-        KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
         m_engine->install(entry, rowDownload.y());
     }
 }
@@ -103,7 +104,7 @@ void ItemsViewBaseDelegate::slotDetailsClicked()
 void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
 {
     if (index.isValid()) {
-        KNS3::EntryInternal entry = index.data(Qt::UserRole).value<KNS3::EntryInternal>();
+        KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
         if (!entry.isValid()) {
             return;
         }

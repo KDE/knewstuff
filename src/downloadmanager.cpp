@@ -21,6 +21,8 @@
 #include <knewstuff_debug.h>
 
 #include "core/engine_p.h"
+#include "entry_p.h"
+#include "ui/widgetquestionlistener.h"
 
 namespace KNS3
 {
@@ -28,11 +30,11 @@ class DownloadManagerPrivate
 {
 public:
     DownloadManager *q;
-    Engine *engine;
+    KNSCore::Engine *engine;
 
     DownloadManagerPrivate(DownloadManager *q)
         : q(q)
-        , engine(new Engine)
+        , engine(new KNSCore::Engine)
         , isInitialized(false)
         , checkForUpdates(false)
         , checkForInstalled(false)
@@ -56,9 +58,9 @@ public:
     void init(const QString &configFile);
     void _k_slotProvidersLoaded();
     void _k_slotEngineError(const QString &error);
-    void _k_slotUpdatesLoaded(const KNS3::EntryInternal::List &entries);
-    void _k_slotEntryStatusChanged(const KNS3::EntryInternal &entry);
-    void _k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries);
+    void _k_slotUpdatesLoaded(const KNSCore::EntryInternal::List &entries);
+    void _k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry);
+    void _k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
 };
 }
 
@@ -82,11 +84,12 @@ DownloadManager::DownloadManager(const QString &configFile, QObject *parent)
 void DownloadManagerPrivate::init(const QString &configFile)
 {
     q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(_k_slotProvidersLoaded()));
-    q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntriesLoaded(KNS3::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNS3::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntryChanged(KNS3::EntryInternal)), q, SLOT(_k_slotEntryStatusChanged(KNS3::EntryInternal)));
+    q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNSCore::EntryInternal::List)));
+    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(_k_slotEntriesLoaded(KNSCore::EntryInternal::List)));
+    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SLOT(_k_slotEntryStatusChanged(KNSCore::EntryInternal)));
     q->connect(engine, SIGNAL(signalError(QString)), q, SLOT(_k_slotEngineError(QString)));
     engine->init(configFile);
+    WidgetQuestionListener::instance();
 }
 
 DownloadManager::~DownloadManager()
@@ -132,24 +135,24 @@ void KNS3::DownloadManager::checkForInstalled()
     }
 }
 
-void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNS3::EntryInternal::List &entries)
+void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 {
     KNS3::Entry::List result;
     result.reserve(entries.size());
-    foreach (const KNS3::EntryInternal &entry, entries) {
-        result.append(entry.toEntry());
+    foreach (const KNSCore::EntryInternal &entry, entries) {
+        result.append(EntryPrivate::fromInternal(&entry));
     }
     emit q->searchResult(result);
 }
 
-void KNS3::DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNS3::EntryInternal &entry)
+void KNS3::DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry)
 {
-    emit q->entryStatusChanged(entry.toEntry());
+    emit q->entryStatusChanged(EntryPrivate::fromInternal(&entry));
 }
 
 void DownloadManager::installEntry(const KNS3::Entry &entry)
 {
-    KNS3::EntryInternal entryInternal = EntryInternal::fromEntry(entry);
+    KNSCore::EntryInternal entryInternal = KNSCore::EntryInternal::fromEntry(entry);
     if (entryInternal.isValid()) {
         d->engine->install(entryInternal);
     }
@@ -157,7 +160,7 @@ void DownloadManager::installEntry(const KNS3::Entry &entry)
 
 void DownloadManager::uninstallEntry(const KNS3::Entry &entry)
 {
-    KNS3::EntryInternal entryInternal = EntryInternal::fromEntry(entry);
+    KNSCore::EntryInternal entryInternal = KNSCore::EntryInternal::fromEntry(entry);
     if (entryInternal.isValid()) {
         d->engine->uninstall(entryInternal);
     }
@@ -179,16 +182,16 @@ void DownloadManager::setSearchOrder(DownloadManager::SortOrder order)
 {
     switch (order) {
     case Newest:
-        d->engine->setSortMode(Provider::Newest);
+        d->engine->setSortMode(KNSCore::Provider::Newest);
         break;
     case Rating:
-        d->engine->setSortMode(Provider::Rating);
+        d->engine->setSortMode(KNSCore::Provider::Rating);
         break;
     case Alphabetical:
-        d->engine->setSortMode(Provider::Alphabetical);
+        d->engine->setSortMode(KNSCore::Provider::Alphabetical);
         break;
     case Downloads:
-        d->engine->setSortMode(Provider::Downloads);
+        d->engine->setSortMode(KNSCore::Provider::Downloads);
         break;
     }
 }

@@ -24,9 +24,8 @@
 #include "xmlloader_p.h"
 
 #include <klocalizedstring.h>
-#include <kio/job.h>
 
-namespace KNS3
+namespace KNSCore
 {
 
 QString Provider::SearchRequest::hashForRequest() const

@@ -24,6 +24,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QProcess>
 
+#include "knewstuffcore_export.h"
+
 struct KeyStruct {
     QString id;
     QString name;
@@ -32,7 +34,7 @@ struct KeyStruct {
     bool secret;
 };
 
-namespace KNS3
+namespace KNSCore
 {
 
 /**
@@ -43,7 +45,7 @@ It is a private class, not meant to be used by third party applications.
 
 * @internal
 */
-class Security : public QObject
+class KNEWSTUFFCORE_EXPORT Security : public QObject
 {
     Q_OBJECT
 public:
@@ -146,6 +148,9 @@ Q_SIGNALS:
      *    @return the result of the operation. See @ref Results
     */
     void fileSigned(int result);
+
+    void signalInformation(const QString &) const;
+    void signalError(const QString &) const;
 };
 
 }

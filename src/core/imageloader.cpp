@@ -18,12 +18,9 @@
 
 #include "imageloader_p.h"
 
-#include <kio/job.h>
-#include <kio/scheduler.h>
-
 #include <QtCore/QFile>
 
-using namespace KNS3;
+using namespace KNSCore;
 
 ImageLoader::ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent)
     : QObject(parent)
@@ -36,10 +33,9 @@ void ImageLoader::start()
 {
     QUrl url(m_entry.previewUrl(m_previewType));
     if (!url.isEmpty()) {
-        m_job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
+        m_job = HTTPJob::get(url, NoReload, JobFlag::HideProgressInfo);
         connect(m_job, &KJob::result, this, &ImageLoader::slotDownload);
-        connect(m_job, &KIO::TransferJob::data, this, &ImageLoader::slotData);
-        KIO::Scheduler::setJobPriority(m_job, 1);
+        connect(m_job, &HTTPJob::data, this, &ImageLoader::slotData);
     }
 }
 
@@ -48,7 +44,7 @@ KJob *ImageLoader::job()
     return m_job;
 }
 
-void ImageLoader::slotData(KIO::Job *job, const QByteArray &buf)
+void ImageLoader::slotData(KJob *job, const QByteArray &buf)
 {
     Q_UNUSED(job)
     m_buffer.append(buf);

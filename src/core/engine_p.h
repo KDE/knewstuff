@@ -29,6 +29,8 @@
 #include "provider_p.h"
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 class QTimer;
 class KJob;
 
@@ -38,7 +40,7 @@ class ProviderManager;
 class Provider;
 }
 
-namespace KNS3
+namespace KNSCore
 {
 class Cache;
 class Installation;
@@ -51,7 +53,7 @@ class Installation;
  *
  * @internal
  */
-class Engine : public QObject
+class KNEWSTUFFCORE_EXPORT Engine : public QObject
 {
     Q_OBJECT
 public:
@@ -88,7 +90,7 @@ public:
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(KNS3::EntryInternal entry, int linkId = 1);
+    void install(KNSCore::EntryInternal entry, int linkId = 1);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
@@ -96,10 +98,10 @@ public:
      *
      * @param entry The entry to deinstall
      */
-    void uninstall(KNS3::EntryInternal entry);
+    void uninstall(KNSCore::EntryInternal entry);
 
-    void loadPreview(const KNS3::EntryInternal &entry, EntryInternal::PreviewType type);
-    void loadDetails(const KNS3::EntryInternal &entry);
+    void loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type);
+    void loadDetails(const KNSCore::EntryInternal &entry);
 
     void setSortMode(Provider::SortMode mode);
     void setFilter(Provider::Filter filter);
@@ -138,21 +140,21 @@ Q_SIGNALS:
     void signalMessage(const QString &message);
 
     void signalProvidersLoaded();
-    void signalEntriesLoaded(const KNS3::EntryInternal::List &entries);
-    void signalUpdateableEntriesLoaded(const KNS3::EntryInternal::List &entries);
-    void signalEntryChanged(const KNS3::EntryInternal &entry);
-    void signalEntryDetailsLoaded(const KNS3::EntryInternal &entry);
+    void signalEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void signalUpdateableEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void signalEntryChanged(const KNSCore::EntryInternal &entry);
+    void signalEntryDetailsLoaded(const KNSCore::EntryInternal &entry);
 
     // a new search result is there, clear the list of items
     void signalResetView();
 
-    void signalEntryPreviewLoaded(const KNS3::EntryInternal &, KNS3::EntryInternal::PreviewType);
+    void signalEntryPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
     void signalPreviewFailed();
 
     void signalEntryUploadFinished();
     void signalEntryUploadFailed();
 
-    void signalDownloadDialogDone(KNS3::EntryInternal::List);
+    void signalDownloadDialogDone(KNSCore::EntryInternal::List);
     void jobStarted(KJob *, const QString &);
 
     void signalError(const QString &);
@@ -169,18 +171,18 @@ private Q_SLOTS:
     void slotProvidersFailed();
 
     // called when a provider is ready to work
-    void providerInitialized(KNS3::Provider *);
+    void providerInitialized(KNSCore::Provider *);
 
-    void slotEntriesLoaded(const KNS3::Provider::SearchRequest &, KNS3::EntryInternal::List);
-    void slotEntryDetailsLoaded(const KNS3::EntryInternal &entry);
-    void slotPreviewLoaded(const KNS3::EntryInternal &entry, KNS3::EntryInternal::PreviewType type);
+    void slotEntriesLoaded(const KNSCore::Provider::SearchRequest &, KNSCore::EntryInternal::List);
+    void slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry);
+    void slotPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
 
     void slotSearchTimerExpired();
 
-    void slotEntryChanged(const KNS3::EntryInternal &entry);
+    void slotEntryChanged(const KNSCore::EntryInternal &entry);
     void slotInstallationFinished();
     void slotInstallationFailed(const QString &message);
-    void downloadLinkLoaded(const KNS3::EntryInternal &entry);
+    void downloadLinkLoaded(const KNSCore::EntryInternal &entry);
 
     void providerJobStarted(KJob *);
 
@@ -194,7 +196,7 @@ private:
     /**
       Add a provider and connect it to the right slots
      */
-    void addProvider(QSharedPointer<KNS3::Provider> provider);
+    void addProvider(QSharedPointer<KNSCore::Provider> provider);
 
     void updateStatus();
 
@@ -210,7 +212,7 @@ private:
     // Categories from knsrc file
     QStringList m_categories;
 
-    QHash<QString, QSharedPointer<KNS3::Provider> > m_providers;
+    QHash<QString, QSharedPointer<KNSCore::Provider> > m_providers;
 
     // the name of the app that uses hot new stuff
     QString m_applicationName;

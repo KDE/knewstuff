@@ -27,17 +27,14 @@
 #include <attica/content.h>
 #include <attica/license.h>
 
+#include "knewstuffcore_export.h"
+
 class KJob;
-namespace KIO
-{
-class Job;
-class TransferJob;
-}
 
-namespace KNS3
+namespace KNSCore
 {
-
-class AtticaHelper : public QObject
+class HTTPJob;
+class KNEWSTUFFCORE_EXPORT AtticaHelper : public QObject
 {
     Q_OBJECT
 public:
@@ -81,7 +78,7 @@ private Q_SLOTS:
     void contentLoaded(Attica::BaseJob *baseJob);
     void currencyLoaded(Attica::BaseJob *baseJob);
 
-    void slotPreviewData(KIO::Job *job, const QByteArray &buf);
+    void slotPreviewData(KJob *job, const QByteArray &buf);
     void slotPreviewDownload(KJob *job);
 
 private:
@@ -94,7 +91,7 @@ private:
     Attica::Content::List m_userCreatedContent;
 
     QByteArray m_previewBuffer[3];
-    KIO::TransferJob *m_previewJob[3];
+    HTTPJob *m_previewJob[3];
 
     Q_DISABLE_COPY(AtticaHelper)
 };

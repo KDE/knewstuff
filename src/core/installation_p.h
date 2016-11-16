@@ -26,10 +26,12 @@
 
 #include "entryinternal_p.h"
 
+#include "knewstuffcore_export.h"
+
 class KArchiveDirectory;
 class KJob;
 
-namespace KNS3
+namespace KNSCore
 {
 
 /**
@@ -42,7 +44,7 @@ namespace KNS3
  *
  * @internal
  */
-class Installation : public QObject
+class KNEWSTUFFCORE_EXPORT Installation : public QObject
 {
     Q_OBJECT
 public:
@@ -77,7 +79,7 @@ public Q_SLOTS:
      * @see signalPayloadLoaded
      * @see signalPayloadFailed
      */
-    void downloadPayload(const KNS3::EntryInternal &entry);
+    void downloadPayload(const KNSCore::EntryInternal &entry);
 
     /**
      * Installs an entry's payload file. This includes verification, if
@@ -85,43 +87,52 @@ public Q_SLOTS:
      * application's *.knsrc file.
      * Note that this method is asynchronous and thus the return value will
      * only report the successful start of the installation.
+     * Note also that while entry is const at this point, it will change later
+     * during the actual installation (the installedFiles list will change, as
+     * will its status)
      *
      * @param entry Entry to be installed
-     *
-     * @return Whether or not installation was started successfully
      *
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(KNS3::EntryInternal entry);
+    void install(const KNSCore::EntryInternal &entry);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
      * during the installation.
      *
-     * @param entry The entry to deinstall
+     * The entry instance will be updated with any new information:
+     * <ul>
+     * <li>Status will be set to Deleted
+     * <li>uninstalledFiles will list files which were removed during uninstallation
+     * <li>installedFiles will become empty
+     * </ul>
      *
-     * @return Whether or not deinstallation was successful
+     * @param entry The entry to deinstall
      *
      * @note FIXME: I don't believe this works yet :)
      */
-    void uninstall(KNS3::EntryInternal entry);
+    void uninstall(KNSCore::EntryInternal entry);
 
     void slotInstallationVerification(int result);
     void slotPayloadResult(KJob *job);
 
 Q_SIGNALS:
-    void signalEntryChanged(const KNS3::EntryInternal &entry);
+    void signalEntryChanged(const KNSCore::EntryInternal &entry);
     void signalInstallationFinished();
     void signalInstallationFailed(const QString &message);
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
+    void signalInformation(const QString &) const;
+    void signalError(const QString &) const;
+
 private:
-    void install(KNS3::EntryInternal entry, const QString &downloadedFile);
+    void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
     QString targetInstallationPath(const QString &payloadfile);
-    QStringList installDownloadedFileAndUncompress(const KNS3::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
+    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
     void runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
