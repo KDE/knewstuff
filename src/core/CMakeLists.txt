@@ -47,9 +47,9 @@ target_include_directories(KF5NewStuffCore INTERFACE "$<INSTALL_INTERFACE:${KDE_
 target_link_libraries(KF5NewStuffCore
   PUBLIC
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
-    KF5::Archive               # For decompressing archives
     KF5::CoreAddons
   PRIVATE
+    KF5::Archive               # For decompressing archives
     KF5::I18n                  # For translations
     KF5::ConfigCore
     Qt5::Gui                   # For QImage
