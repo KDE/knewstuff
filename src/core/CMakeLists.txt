@@ -1,5 +1,3 @@
-project(KNewStuffCore)
-
 set(KNewStuffCore_SRCS
     author.cpp
     cache.cpp

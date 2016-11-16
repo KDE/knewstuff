@@ -1,5 +1,3 @@
-project(KNewStuffQuick)
-
 set(qmlplugin_SRCS
     qmlplugin.cpp
 
