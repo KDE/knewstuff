@@ -39,7 +39,9 @@ add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
 
 generate_export_header(KF5NewStuffCore BASE_NAME KNewStuffCore EXPORT_FILE_NAME knewstuffcore_export.h)
 
-target_include_directories(KF5NewStuffCore PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>")
+# The src/ dir is needed for the entry.h header. This only happens because some
+# code in Core uses an enum from KNS3::Entry
+target_include_directories(KF5NewStuffCore PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR};${CMAKE_BINARY_DIR}/src>")
 target_include_directories(KF5NewStuffCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
 
 target_link_libraries(KF5NewStuffCore
