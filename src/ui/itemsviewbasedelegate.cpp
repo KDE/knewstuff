@@ -18,7 +18,7 @@
 */
 #include "itemsviewbasedelegate_p.h"
 
-#include "core/itemsmodel_p.h"
+#include "core/itemsmodel.h"
 
 #include "entrydetailsdialog_p.h"
 

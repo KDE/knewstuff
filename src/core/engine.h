@@ -26,8 +26,8 @@
 #include <QtCore/QMap>
 #include <QtCore/QSharedPointer>
 
-#include "provider_p.h"
-#include "entryinternal_p.h"
+#include "provider.h"
+#include "entryinternal.h"
 
 #include "knewstuffcore_export.h"
 

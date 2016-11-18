@@ -21,8 +21,8 @@
 
 #include "qmlplugin.h"
 
-#include "engine.h"
-#include "itemsmodel.h"
+#include "quickengine.h"
+#include "quickitemsmodel.h"
 #include "downloadlinkinfo.h"
 
 #include <QQmlEngine>

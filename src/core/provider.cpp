@@ -19,9 +19,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "provider_p.h"
+#include "provider.h"
 
-#include "xmlloader_p.h"
+#include "xmlloader.h"
 
 #include <klocalizedstring.h>
 

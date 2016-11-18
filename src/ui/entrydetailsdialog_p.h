@@ -19,7 +19,7 @@
 #define KNEWSTUFF3_ENTRYDETAILSDIALOG_P_H
 
 #include <QtCore/QObject>
-#include "core/entryinternal_p.h"
+#include "core/entryinternal.h"
 
 #include "ui_downloadwidget.h"
 

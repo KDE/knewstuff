@@ -22,7 +22,7 @@
 
 #include <qstandardpaths.h>
 
-#include <core/entryinternal_p.h>
+#include <core/entryinternal.h>
 
 using namespace KNS3;
 

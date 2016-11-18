@@ -22,8 +22,7 @@
 
 #include <QCoreApplication>
 
-#include "engine_p.h"
-#include "entryinternal_p.h"
+#include "engine.h"
 
 namespace KNSCore
 {

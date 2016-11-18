@@ -24,7 +24,7 @@
 
 #include <kconfiggroup.h>
 
-#include "entryinternal_p.h"
+#include "entryinternal.h"
 
 #include "knewstuffcore_export.h"
 

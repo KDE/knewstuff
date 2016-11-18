@@ -19,7 +19,7 @@
 #define KNEWSTUFF3_KNEWSTUFFENTRY_P_H
 
 #include <QtCore/QStringList>
-#include "core/entryinternal_p.h"
+#include "core/entryinternal.h"
 
 namespace KNS3
 {

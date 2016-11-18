@@ -29,7 +29,7 @@
 #include <QScrollBar>
 #include <QListView>
 
-#include "core/itemsmodel_p.h"
+#include "core/itemsmodel.h"
 
 #include "ui/itemsviewbasedelegate_p.h"
 #include "ui/entrydetailsdialog_p.h"

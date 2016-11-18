@@ -21,7 +21,7 @@
 #include <knewstuff_debug.h>
 #include <klocalizedstring.h>
 
-#include "core/engine_p.h"
+#include "core/engine.h"
 #include "core/imageloader_p.h"
 #include <attica/provider.h>
 

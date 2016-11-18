@@ -18,7 +18,7 @@
 */
 
 //app includes
-#include "security_p.h"
+#include "security.h"
 #include "question.h"
 
 //qt includes

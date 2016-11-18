@@ -19,11 +19,11 @@
  *
  */
 
+#include "quickitemsmodel.h"
+#include "quickengine.h"
+
 #include "itemsmodel.h"
 #include "engine.h"
-
-#include "itemsmodel_p.h"
-#include "engine_p.h"
 #include "downloadlinkinfo.h"
 
 class ItemsModel::Private {

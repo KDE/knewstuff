@@ -19,11 +19,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "engine_p.h"
+#include "engine.h"
 
 #include "../entry.h"
-#include "installation_p.h"
-#include "xmlloader_p.h"
+#include "installation.h"
+#include "xmlloader.h"
 #include "imageloader_p.h"
 
 #include <kconfig.h>
@@ -48,7 +48,7 @@
 
 // own
 #include "../attica/atticaprovider_p.h"
-#include "cache_p.h"
+#include "cache.h"
 #include "../staticxml/staticxmlprovider_p.h"
 
 using namespace KNSCore;

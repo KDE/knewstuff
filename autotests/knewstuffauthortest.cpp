@@ -21,7 +21,7 @@
 #include <QtTest/QtTest>
 #include <QString>
 
-#include "../src/core/author_p.h"
+#include "../src/core/author.h"
 
 const QString name = QStringLiteral("Name");
 const QString email = QStringLiteral("Email@nowhere.com");

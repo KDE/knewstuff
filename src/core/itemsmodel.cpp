@@ -16,13 +16,13 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "itemsmodel_p.h"
+#include "itemsmodel.h"
 
 #include <knewstuffcore_debug.h>
 #include "klocalizedstring.h"
 
-#include "entryinternal_p.h"
-#include "engine_p.h"
+#include "entryinternal.h"
+#include "engine.h"
 #include "imageloader_p.h"
 
 namespace KNSCore

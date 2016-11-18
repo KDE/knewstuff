@@ -19,9 +19,9 @@
  *
  */
 
-#include "engine.h"
+#include "quickengine.h"
 
-#include "engine_p.h"
+#include "engine.h"
 
 class Engine::Private
 {

@@ -62,7 +62,30 @@ set_target_properties(KF5NewStuffCore PROPERTIES
    EXPORT_NAME NewStuffCore
 )
 
+ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
+  HEADER_NAMES
+  Author
+  Cache
+  DownloadManager
+  Engine
+  EntryInternal
+  Installation
+  ItemsModel
+  Provider
+  Question
+  QuestionListener
+  QuestionManager
+  Security
+  XmlLoader
+
+  REQUIRED_HEADERS KNewStuffCore_HEADERS
+  PREFIX KNSCore
+)
+
 install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES ${KNewStuffCore_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore COMPONENT Devel)
+install(FILES ${KNewStuffCore_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore COMPONENT Devel)
 
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
+

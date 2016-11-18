@@ -17,7 +17,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "author_p.h"
+#include "author.h"
 
 using namespace KNSCore;
 

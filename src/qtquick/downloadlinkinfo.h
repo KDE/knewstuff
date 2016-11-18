@@ -24,7 +24,7 @@
 
 #include <QObject>
 
-#include "entryinternal_p.h"
+#include "entryinternal.h"
 
 class DownloadLinkInfo : public QObject
 {

@@ -19,7 +19,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "xmlloader_p.h"
+#include "xmlloader.h"
 
 #include "knewstuffcore_debug.h"
 #include "jobs/httpjob.h"

@@ -21,7 +21,7 @@
 
 #include "staticxmlprovider_p.h"
 
-#include "xmlloader_p.h"
+#include "xmlloader.h"
 
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>

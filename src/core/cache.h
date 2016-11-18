@@ -22,8 +22,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QSet>
 
-#include "engine_p.h"
-#include "entryinternal_p.h"
+#include "engine.h"
+#include "entryinternal.h"
 
 #include "knewstuffcore_export.h"
 

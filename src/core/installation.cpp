@@ -17,7 +17,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "installation_p.h"
+#include "installation.h"
 
 #include <QDir>
 #include <QFile>
@@ -38,7 +38,7 @@
 #include <knewstuffcore_debug.h>
 
 #include "jobs/filecopyjob.h"
-#include "security_p.h"
+#include "security.h"
 #include "question.h"
 #ifdef Q_OS_WIN
 #include <windows.h>

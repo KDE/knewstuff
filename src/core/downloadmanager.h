@@ -20,7 +20,7 @@
 #define KNSCORE_DownloadManager_H
 
 #include "knewstuffcore_export.h"
-#include "entryinternal_p.h"
+#include "entryinternal.h"
 
 namespace KNSCore
 {

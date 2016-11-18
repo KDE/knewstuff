@@ -20,7 +20,7 @@
 #include <QCoreApplication>
 #include <knewstuff_debug.h>
 
-#include "core/engine_p.h"
+#include "core/engine.h"
 #include "entry_p.h"
 #include "ui/widgetquestionlistener.h"
 

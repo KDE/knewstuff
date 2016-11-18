@@ -1,8 +1,8 @@
 set(qmlplugin_SRCS
     qmlplugin.cpp
 
-    engine.cpp
-    itemsmodel.cpp
+    quickengine.cpp
+    quickitemsmodel.cpp
     downloadlinkinfo.cpp
 )
 
