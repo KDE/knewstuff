@@ -12,8 +12,10 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 macro(knewstuff_unit_tests)
     foreach(_testname ${ARGN})
        add_executable(${_testname} ${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp ../src/core/jobs/httpjob.cpp ../src/core/jobs/httpworker.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp)
-       # fake static linking to prevent the export macros on windows to kick in.
-       set_target_properties(${_testname} PROPERTIES COMPILE_FLAGS -DKNEWSTUFF_STATIC_DEFINE)
+       set_property( TARGET ${_testname}
+                     APPEND
+                     PROPERTY COMPILE_DEFINITIONS KNEWSTUFF_STATIC_DEFINE KNEWSTUFFCORE_STATIC_DEFINE KNEWSTUFF_STATIC_DEFINE
+       )
        add_test("knewstuff-${_testname}" ${_testname})
        ecm_mark_as_test(${_testname})
        target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore)

@@ -32,7 +32,7 @@ class DownloadManagerPrivate;
  * @since 4.5
  * @deprecated Use KNSCore::DownloadManager instead
  */
-class Q_DECL_DEPRECATED KNEWSTUFF_EXPORT DownloadManager : public QObject
+class KNEWSTUFF_DEPRECATED_EXPORT DownloadManager : public QObject
 {
     Q_OBJECT
 
