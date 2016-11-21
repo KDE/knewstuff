@@ -39,6 +39,7 @@ public:
 
     void setUrl(const QUrl& url);
 
+    Q_SIGNAL void error(QString error);
     Q_SIGNAL void progress(qlonglong current, qlonglong total);
     Q_SIGNAL void completed();
     Q_SIGNAL void data(const QByteArray& data);
