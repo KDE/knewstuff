@@ -35,6 +35,7 @@ public:
 
 protected Q_SLOTS:
     void handleWorkerCompleted();
+    void handleWorkerError(const QString& error);
 private:
     class Private;
     Private* d;

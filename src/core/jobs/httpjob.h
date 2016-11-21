@@ -52,6 +52,7 @@ Q_SIGNALS:
 protected Q_SLOTS:
     void handleWorkerData(const QByteArray& data);
     void handleWorkerCompleted();
+    void handleWorkerError(const QString& error);
 private:
     class Private;
     Private* d;

@@ -55,6 +55,7 @@ void DownloadJob::start()
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     HTTPWorker* worker = new HTTPWorker(d->source, d->destination, HTTPWorker::DownloadJob, this);
     connect(worker, &HTTPWorker::completed, this, &DownloadJob::handleWorkerCompleted);
+    connect(worker, &HTTPWorker::error, this, &DownloadJob::handleWorkerError);
     worker->startRequest();
 }
 
@@ -62,4 +63,10 @@ void DownloadJob::handleWorkerCompleted()
 {
 //     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     emitResult();
+}
+
+void KNSCore::DownloadJob::handleWorkerError(const QString& error)
+{
+    setError(KJob::UserDefinedError);
+    setErrorText(error);
 }
