@@ -74,11 +74,14 @@ bool Installation::readConfig(const KConfigGroup &group)
     // FIXME: read out only when actually installing as a performance improvement?
     QString uncompresssetting = group.readEntry("Uncompress", QStringLiteral("never"));
     // support old value of true as equivalent of always
-    if (uncompresssetting == QLatin1String("true")) {
+    if (uncompresssetting == QLatin1String("subdir")) {
+        uncompresssetting = QStringLiteral("subdir");
+    }
+    else if (uncompresssetting == QLatin1String("true")) {
         uncompresssetting = QStringLiteral("always");
     }
-    if (uncompresssetting != QLatin1String("always") && uncompresssetting != QLatin1String("archive") && uncompresssetting != QLatin1String("never")) {
-        qCritical() << "invalid Uncompress setting chosen, must be one of: always, archive, or never" << endl;
+    if (uncompresssetting != QLatin1String("always") && uncompresssetting != QLatin1String("archive") && uncompresssetting != QLatin1String("never") && uncompresssetting != QLatin1String("subdir")) {
+        qCritical() << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, or never" << endl;
         return false;
     }
     uncompression = uncompresssetting;
@@ -91,6 +94,13 @@ bool Installation::readConfig(const KConfigGroup &group)
     // Provide some compatibility
     if (standardResourceDirectory == QLatin1String("wallpaper")) {
         xdgTargetDirectory = QStringLiteral("wallpapers");
+    }
+
+    // also, ensure wallpapers are decompressed into subdirectories
+    // this ensures that wallpapers with multiple resolutions continue to function
+    // as expected
+    if (xdgTargetDirectory == QStringLiteral("wallpapers")) {
+        uncompression = QStringLiteral("subdir");
     }
 
     installPath = group.readEntry("InstallPath", QString());
@@ -437,7 +447,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         bool isarchive = true;
 
         // respect the uncompress flag in the knsrc
-        if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive")) {
+        if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive") || uncompression == QLatin1String("subdir")) {
             // this is weird but a decompression is not a single name, so take the path instead
             installpath = installdir;
             QMimeDatabase db;
@@ -479,9 +489,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
                 if (isarchive) {
                     const KArchiveDirectory *dir = archive->directory();
-                    //if there is more than an item in the file,
+                    //if there is more than an item in the file, and we are requested to do so
                     //put contents in a subdirectory with the same name as the file
-                    if (dir->entries().count() > 1) {
+                    if (uncompression == QLatin1String("subdir") && dir->entries().count() > 1) {
                         installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
                     }
                     dir->copyTo(installpath);

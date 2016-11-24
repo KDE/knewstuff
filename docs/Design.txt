@@ -130,7 +130,7 @@ knsrc file format:
 [KNewStuff2]
 ProvidersUrl=
 TargetDir/InstallPath/etc=
-Uncompress=always/never/archive
+Uncompress=always/never/archive/subdir
 CachePolicy=never/resident/only/replaceable
 Categories=foo,bar
 

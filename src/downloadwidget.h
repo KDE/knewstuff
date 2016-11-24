@@ -57,6 +57,7 @@ class DownloadWidgetPrivate;
  * <li>always: assume all downloaded files are archives and need to be extracted</li>
  * <li>never: never try to extract the file</li>
  * <li>archive: if the file is an archive, uncompress it, otherwise just pass it on</li>
+ * <li>subdir: logic as archive, but decompress into a subdirectory named after the payload filename</li>
  * </ol>
  *
  * You have different options to set the target install directory:
