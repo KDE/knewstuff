@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.11)
 project(KNewStuff)
 
 include(FeatureSummary)
-find_package(ECM 5.28.0 NO_MODULE)
+find_package(ECM 5.29.0 NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://projects.kde.org/projects/kdesupport/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -19,7 +19,7 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
 
 # Not part of kdelibs
 set(KF5_VERSION "5.29.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.28.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
 find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
