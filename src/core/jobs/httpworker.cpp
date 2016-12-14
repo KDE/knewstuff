@@ -109,7 +109,7 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     if (reply->error() != QNetworkReply::NoError) {
-        qCWarning(KNEWSTUFFCORE) << reply->errorString() << '\n';
+        qCWarning(KNEWSTUFFCORE) << reply->errorString();
         emit error(reply->errorString());
     }
 
@@ -118,13 +118,13 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
     if (!possibleRedirectUrl.isEmpty() && possibleRedirectUrl != d->redirectUrl) {
         d->redirectUrl = reply->url().resolved(possibleRedirectUrl);
         if (d->redirectUrl.scheme().startsWith("http")) {
-            qCInfo(KNEWSTUFFCORE) << "Redirected to " << d->redirectUrl.toDisplayString() << "...\n";
+            qCInfo(KNEWSTUFFCORE) << "Redirected to " << d->redirectUrl.toDisplayString() << "...";
             reply->deleteLater();
             d->reply = d->qnam->get(QNetworkRequest(d->redirectUrl));
             connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
             return;
         } else {
-            qCWarning(KNEWSTUFFCORE) << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.\n";
+            qCWarning(KNEWSTUFFCORE) << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.";
         }
     }
 
