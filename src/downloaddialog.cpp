@@ -87,12 +87,16 @@ void DownloadDialog::init(const QString &configFile)
     layout->addWidget(d->downloadWidget);
     setLayout(layout);
 
-    QString displayName = QGuiApplication::applicationDisplayName();
-    if (displayName.isEmpty()) {
-        displayName = QCoreApplication::applicationName();
-    }
-    d->downloadWidget->setTitle(i18nc("Program name followed by 'Add On Installer'",
+    if (group.hasKey("Name")) {
+        d->downloadWidget->setTitle(group.readEntry("Name"));
+    } else {
+        QString displayName = QGuiApplication::applicationDisplayName();
+        if (displayName.isEmpty()) {
+            displayName = QCoreApplication::applicationName();
+        }
+        d->downloadWidget->setTitle(i18nc("Program name followed by 'Add On Installer'",
             "%1 Add-On Installer", displayName));
+    }
     //d->downloadWidget->d->ui.m_titleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
     d->downloadWidget->d->ui.m_titleWidget->setVisible(true);
     d->downloadWidget->d->ui.closeButton->setVisible(true);
