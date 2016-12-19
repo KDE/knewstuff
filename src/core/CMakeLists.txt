@@ -41,8 +41,9 @@ generate_export_header(KF5NewStuffCore BASE_NAME KNewStuffCore EXPORT_FILE_NAME 
 
 # The src/ dir is needed for the entry.h header. This only happens because some
 # code in Core uses an enum from KNS3::Entry
-target_include_directories(KF5NewStuffCore PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR};${CMAKE_BINARY_DIR}/src>")
-target_include_directories(KF5NewStuffCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
+target_include_directories(KF5NewStuffCore
+    PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR};${CMAKE_BINARY_DIR}/src;${CMAKE_SOURCE_DIR}/src;>"
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore>")
 
 target_link_libraries(KF5NewStuffCore
   PUBLIC
@@ -84,8 +85,12 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
 
 install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${KNewStuffCore_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore COMPONENT Devel)
-install(FILES ${KNewStuffCore_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore COMPONENT Devel)
+install(FILES
+    ${KNewStuffCore_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore COMPONENT Devel)
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
+ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3)
+install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 

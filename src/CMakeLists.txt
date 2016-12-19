@@ -40,7 +40,7 @@ add_library(KF5::NewStuff ALIAS KF5NewStuff)
 generate_export_header(KF5NewStuff BASE_NAME KNewStuff EXPORT_FILE_NAME knewstuff_export.h)
 
 target_include_directories(KF5NewStuff PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>")
-target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3>")
+target_include_directories(KF5NewStuff INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore>")
 
 target_link_libraries(KF5NewStuff
   PUBLIC
@@ -105,6 +105,6 @@ install(FILES
 
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
-install(FILES ${COREPRI_FILENAME} ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 add_subdirectory(qtquick)
