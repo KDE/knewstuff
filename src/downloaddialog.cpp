@@ -150,6 +150,11 @@ QString DownloadDialog::title() const
     return d->downloadWidget->title();
 }
 
+KNSCore::Engine *DownloadDialog::engine()
+{
+    return d->downloadWidget->engine();
+}
+
 Entry::List DownloadDialog::changedEntries()
 {
     return d->downloadWidget->changedEntries();

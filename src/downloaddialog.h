@@ -28,6 +28,11 @@
 #include "knewstuff_export.h"
 #include "entry.h"
 
+namespace KNSCore
+{
+class Engine;
+}
+
 namespace KNS3
 {
 class DownloadDialogPrivate;
@@ -121,6 +126,12 @@ public:
      * @return the current title
      */
     QString title() const;
+
+    /**
+     * @return the engine used by this dialog
+     * @since 5.30
+     */
+    KNSCore::Engine *engine();
 
 public Q_SLOTS:
     // Override these slots so we can add KAuthorized checks to them.

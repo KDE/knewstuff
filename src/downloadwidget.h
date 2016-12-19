@@ -28,6 +28,11 @@
 #include "knewstuff_export.h"
 #include "entry.h"
 
+namespace KNSCore
+{
+class Engine;
+}
+
 namespace KNS3
 {
 class DownloadWidgetPrivate;
@@ -121,6 +126,12 @@ public:
      * @return the current title
      */
     QString title() const;
+
+    /**
+     * @return the engine used by this download widget
+     * @since 5.30
+     */
+    KNSCore::Engine *engine();
 
 private:
     void init(const QString &configFile);

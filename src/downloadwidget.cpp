@@ -79,6 +79,11 @@ QString DownloadWidget::title() const
     return d->ui.m_titleWidget->text();
 }
 
+KNSCore::Engine *DownloadWidget::engine()
+{
+    return d->engine;
+}
+
 Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
