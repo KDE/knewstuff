@@ -1,4 +1,5 @@
 include(ECMMarkAsTest)
+include(ECMMarkNonGuiExecutable)
 
 find_package(Qt5Test ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED)
 set_package_properties(Qt5Test PROPERTIES
@@ -18,6 +19,7 @@ macro(knewstuff_unit_tests)
        )
        add_test("knewstuff-${_testname}" ${_testname})
        ecm_mark_as_test(${_testname})
+       ecm_mark_nongui_executable(${_testname})
        target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore)
     endforeach()
 endmacro()
@@ -29,6 +31,7 @@ knewstuff_unit_tests(
 
 # KMoreTools:
 add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp)
+ecm_mark_nongui_executable(kmoretoolstest)
 add_test(kmoretoolstest kmoretoolstest)
 ecm_mark_as_test(kmoretoolstest)
 target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n)
