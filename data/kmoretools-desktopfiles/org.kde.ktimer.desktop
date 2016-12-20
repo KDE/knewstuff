@@ -1,6 +1,5 @@
 [Desktop Entry]
 GenericName=Countdown Launcher
-GenericName[ast]=Llanzador de cuentratrás
 GenericName[ca]=Llançador amb compte enrere
 GenericName[ca@valencia]=Llançador amb compte arrere
 GenericName[cs]=Stopky
@@ -41,7 +40,6 @@ Icon=ktimer
 Type=Application
 Terminal=false
 Name=KTimer
-Name[ast]=KTimer
 Name[ca]=KTimer
 Name[ca@valencia]=KTimer
 Name[cs]=KTimer

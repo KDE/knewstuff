@@ -18,7 +18,6 @@ Icon=yast-disk
 Exec=xdg-su -c "/sbin/yast2 disk"
 
 Name=Partitioner
-Name[ast]=Particionador
 Name[ca]=Partitioner
 Name[ca@valencia]=Partitioner
 Name[da]=Partitionering
@@ -53,7 +52,6 @@ Name[x-test]=xxPartitionerxx
 Name[zh_CN]=分区管理
 Name[zh_TW]=Partitioner
 GenericName=Partition hard disks (including RAID, LVM, and encrypted file systems)
-GenericName[ast]=Particionáu de discos duros (incluyendo RAID, LVM y sistemes de ficheros cifraos)
 GenericName[ca]=Fa particions de discs durs (incloent-hi RAID, LVM, i sistemes de fitxers encriptats)
 GenericName[ca@valencia]=Fa particions de discs durs (incloent-hi RAID, LVM, i sistemes de fitxers encriptats)
 GenericName[da]=Partitionér harddiske (herunder RAID, LVM og krypterede filsystemer)

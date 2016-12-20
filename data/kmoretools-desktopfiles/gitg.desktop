@@ -1,7 +1,6 @@
 [Desktop Entry]
 X-SuSE-translate=true
 GenericName=Git repository viewer
-GenericName[ast]=Visor de repositorios GIT
 GenericName[ca]=Visualitzador del repositori Git
 GenericName[ca@valencia]=Visualitzador del repositori Git
 GenericName[da]=Fremviser til Git-depoter
@@ -71,7 +70,6 @@ Name[x-test]=xxgitgxx
 Name[zh_CN]= 
 Name[zh_TW]=gitg
 Comment=Git repository browser
-Comment[ast]=Restolador de repositorios GIT
 Comment[ca]=Navegador pel repositori Git
 Comment[ca@valencia]=Navegador pel repositori Git
 Comment[da]=Gennemse Git-depoter

@@ -1,7 +1,6 @@
 [Desktop Entry]
 X-SuSE-translate=true
 GenericName=Git repository viewer
-GenericName[ast]=Visor de repositorios GIT
 GenericName[ca]=Visualitzador del repositori Git
 GenericName[ca@valencia]=Visualitzador del repositori Git
 GenericName[da]=Fremviser til Git-depoter
@@ -38,7 +37,6 @@ GenericName[zh_TW]=Git 主目錄瀏覽器
 Version=1.0
 Type=Application
 Name=Giggle
-Name[ast]=Giggle
 Name[ca]=Giggle
 Name[ca@valencia]=Giggle
 Name[da]=Giggle
@@ -71,7 +69,6 @@ Name[x-test]=xxGigglexx
 Name[zh_CN]=Giggle
 Name[zh_TW]=Giggle
 Comment=Git repository viewer
-Comment[ast]=Visor de repositorios GIT
 Comment[ca]=Visualitzador del repositori Git
 Comment[ca@valencia]=Visualitzador del repositori Git
 Comment[da]=Fremviser til Git-depoter
