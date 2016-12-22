@@ -40,6 +40,7 @@ Icon=ktimer
 Type=Application
 Terminal=false
 Name=KTimer
+Name[ast]=KTimer
 Name[ca]=KTimer
 Name[ca@valencia]=KTimer
 Name[cs]=KTimer

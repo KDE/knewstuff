@@ -1,6 +1,7 @@
 [Desktop Entry]
 X-SuSE-translate=true
 Name=Clocks
+Name[ast]=Clocks
 Name[ca]=Rellotges
 Name[ca@valencia]=Rellotges
 Name[da]=Ure
@@ -35,6 +36,7 @@ Name[x-test]=xxClocksxx
 Name[zh_CN]=时钟
 Name[zh_TW]=時鐘
 GenericName=Clocks
+GenericName[ast]=Relós
 GenericName[ca]=Rellotges
 GenericName[ca@valencia]=Rellotges
 GenericName[da]=Ure
@@ -169,6 +171,7 @@ Comment[x-test]=xxClocks for world times, plus alarms, stopwatch and a timerxx
 Comment[zh_CN]=世界时间的时钟，外加闹钟，跑表，和计时器
 Comment[zh_TW]=世界時鐘，包含鬧鐘、計時器等
 Keywords=time;timer;alarm;world clock;stopwatch;time zone;
+Keywords[ast]=hora;tiempu;reló;alarma;reló mundial;fusu horariu:
 Keywords[ca]=hora;temporitzador;alarma;rellotge del món;compte enrere;zona horària;
 Keywords[ca@valencia]=hora;temporitzador;alarma;rellotge del món;compte arrere;zona horària;
 Keywords[da]=tide;timer;alarm;vækkeur;verdensur;stopur;tidszone;

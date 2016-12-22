@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=List and preview available icons
+Comment[ast]=Llista y previsualiza los iconos disponibles
 Comment[ca]=Llista i fa una vista prèvia de les icones disponibles
 Comment[ca@valencia]=Llista i fa una vista prèvia de les icones disponibles
 Comment[da]=Oplist og forhåndsvis tilgængelige ikoner
@@ -36,6 +37,7 @@ Comment[zh_TW]=列出並預覽可用的圖示
 Encoding=UTF-8
 Exec=cuttlefish
 GenericName=Icon Browser
+GenericName[ast]=Restolador d'iconos
 GenericName[ca]=Navegador d'icones
 GenericName[ca@valencia]=Navegador d'icones
 GenericName[cs]=Prohlížeč ikon
@@ -73,6 +75,7 @@ GenericName[zh_TW]=圖示瀏覽器
 Icon=internet-web-browser
 MimeType=
 Name=Cuttlefish
+Name[ast]=Cuttlefish
 Name[ca]=Cuttlefish
 Name[ca@valencia]=Cuttlefish
 Name[cs]=Cuttlefish
