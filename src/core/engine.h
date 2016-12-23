@@ -214,8 +214,8 @@ private:
 
     QHash<QString, QSharedPointer<KNSCore::Provider> > m_providers;
 
-    // the name of the app that uses hot new stuff
-    QString m_applicationName;
+    // TODO KF6: remove
+    QString m_unused;
 
     // the current request from providers
     Provider::SearchRequest m_currentRequest;

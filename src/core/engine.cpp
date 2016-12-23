@@ -116,8 +116,8 @@ bool Engine::init(const QString &configfile)
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
-    m_applicationName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName() + ':';
 
+    const QString configFileName = QFileInfo(QDir::isAbsolutePath(configfile) ? configfile : QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName();
     // let installation read install specific config
     if (!m_installation->readConfig(group)) {
         return false;
@@ -125,7 +125,7 @@ bool Engine::init(const QString &configfile)
 
     connect(m_installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
 
-    m_cache = Cache::getCache(m_applicationName.split(':')[0]);
+    m_cache = Cache::getCache(configFileName);
     connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
     m_cache->readRegistry();
 
