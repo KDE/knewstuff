@@ -137,6 +137,7 @@ X-GNOME-FullName[zh_CN]=GNOME 时钟
 X-GNOME-FullName[zh_HK]=GNOME Clocks
 X-GNOME-FullName[zh_TW]=GNOME Clocks
 Comment=Clocks for world times, plus alarms, stopwatch and a timer
+Comment[ast]=Relós mundiales amás d'alarmes, cronómetru y un temporizador
 Comment[ca]=Rellotges per hores del món, més alarmes, compte enrere i un temporitzador
 Comment[ca@valencia]=Rellotges per hores del món, més alarmes, compte arrere i un temporitzador
 Comment[da]=Ure til verdensur, alarmer, stopur og en timer

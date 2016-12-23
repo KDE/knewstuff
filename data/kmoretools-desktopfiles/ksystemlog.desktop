@@ -43,6 +43,7 @@ Icon=utilities-log-viewer
 Type=Application
 X-DocPath=ksystemlog/index.html
 Comment=System log viewer tool
+Comment[ast]=Ferramienta visora de rexistros del sistema
 Comment[ca]=Eina de visualització dels registres del sistema
 Comment[ca@valencia]=Eina de visualització dels registres del sistema
 Comment[cs]=Nástroj na prohlížení záznamů systému
