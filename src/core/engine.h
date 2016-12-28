@@ -85,8 +85,6 @@ public:
      *
      * @param entry Entry to be installed
      *
-     * @return Whether or not installation was started successfully
-     *
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
