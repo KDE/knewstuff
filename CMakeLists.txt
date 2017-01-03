@@ -73,21 +73,21 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuff")
 set(CMAKECONFIGCORE_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffCore")
 set(CMAKECONFIGQUICK_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffQuick")
 
-include(ECMPackageConfigHelpers)
+include(CMakePackageConfigHelpers)
 
-ecm_configure_package_config_file(
+configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5NewStuffConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfig.cmake"
   INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-ecm_configure_package_config_file(
+configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5NewStuffCoreConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffCoreConfig.cmake"
   INSTALL_DESTINATION ${CMAKECONFIGCORE_INSTALL_DIR}
 )
 
-ecm_configure_package_config_file(
+configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5NewStuffQuickConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfig.cmake"
   INSTALL_DESTINATION ${CMAKECONFIGQUICK_INSTALL_DIR}
