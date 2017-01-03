@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(KNewStuff)
+set(KF5_VERSION "5.30.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
+project(KNewStuff VERSION ${KF5_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.29.0 NO_MODULE)
@@ -18,8 +20,6 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xm
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
 
 # Not part of kdelibs
-set(KF5_VERSION "5.30.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
 find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
@@ -45,15 +45,15 @@ set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that imple
                       )
 
 
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFF
+ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFF
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfigVersion.cmake"
                         SOVERSION 5)
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFFCORE
+ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFCORE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffCoreConfigVersion.cmake"
                         SOVERSION 5)
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KNEWSTUFFQUICK
+ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfigVersion.cmake"
                         SOVERSION 5)
