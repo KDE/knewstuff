@@ -31,7 +31,7 @@ public:
     explicit DownloadJob(QObject* parent = 0);
     virtual ~DownloadJob();
 
-    Q_SCRIPTABLE virtual void start();
+    Q_SCRIPTABLE virtual void start() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void handleWorkerCompleted();

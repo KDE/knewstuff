@@ -33,7 +33,7 @@ public:
     explicit HTTPJob(QObject* parent = 0);
     virtual ~HTTPJob();
 
-    Q_SLOT virtual void start();
+    Q_SLOT virtual void start() Q_DECL_OVERRIDE;
 
     static HTTPJob* get(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = 0);
 

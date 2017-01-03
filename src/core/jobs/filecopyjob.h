@@ -34,7 +34,7 @@ public:
     explicit FileCopyJob(QObject* parent = 0);
     virtual ~FileCopyJob();
 
-    Q_SCRIPTABLE virtual void start();
+    Q_SCRIPTABLE virtual void start() Q_DECL_OVERRIDE;
 
     QUrl destUrl() const;
     QUrl srcUrl() const;
