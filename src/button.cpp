@@ -60,6 +60,12 @@ Button::~Button()
 
 void Button::init()
 {
+    const bool authorized = KAuthorized::authorize(QStringLiteral("ghns"));
+    if (!authorized) {
+        setEnabled(false);
+        setVisible(false);
+    }
+
     setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
     connect(this, &QAbstractButton::clicked, this, &Button::showDialog);
     WidgetQuestionListener::instance();
