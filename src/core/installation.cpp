@@ -554,7 +554,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     Question question(Question::ContinueCancelQuestion);
                     question.setQuestion(i18n("Overwrite existing file?") + "\n'" + installpath + '\'');
                     question.setTitle(i18n("Download File"));
-                    if(question.ask() == Question::CancelResponse) {
+                    if(question.ask() != Question::ContinueResponse) {
                         return QStringList();
                     }
                 }
