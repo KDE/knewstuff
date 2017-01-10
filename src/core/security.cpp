@@ -245,7 +245,7 @@ void Security::slotCheckValidity()
     QString md5sum;
     QCryptographicHash context(QCryptographicHash::Md5);
     QFile file(m_fileName);
-    if (file.open(QIODevice::ReadOnly)) {
+    if (!m_fileName.isEmpty() && file.open(QIODevice::ReadOnly)) {
         context.reset();
         context.addData(&file);
         md5sum = context.result().toHex();
