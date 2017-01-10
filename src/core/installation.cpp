@@ -604,7 +604,7 @@ void Installation::uninstall(EntryInternal entry)
                 int exitcode = QProcess::execute(command);
 
                 if (exitcode) {
-                    qCritical() << "Command failed" << endl;
+                    qCritical() << "Command failed";
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "Command executed successfully";
                 }
