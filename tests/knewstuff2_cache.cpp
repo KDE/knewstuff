@@ -47,14 +47,14 @@ void KNewStuff2Cache::run()
 
     if (ret) {
         connect(m_engine,
-                SIGNAL(signalEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)),
-                SLOT(slotEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)));
+                &KNS::CoreEngine::signalEntryLoaded,
+                this, &KNewStuff2Cache::slotEntryLoaded);
         connect(m_engine,
-                SIGNAL(signalEntriesFailed()),
-                SLOT(slotEntriesFailed()));
+                &KNS::CoreEngine::signalEntriesFailed,
+                this, &KNewStuff2Cache::slotEntriesFailed);
         connect(m_engine,
-                SIGNAL(signalEntriesFinished()),
-                SLOT(slotEntriesFinished()));
+                &KNS::CoreEngine::signalEntriesFinished,
+                this, &KNewStuff2Cache::slotEntriesFinished);
 
         m_engine->start();
     } else {

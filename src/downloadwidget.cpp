@@ -235,7 +235,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     ui.closeButton->setVisible(dialogMode);
     ui.backButton->setVisible(false);
     KStandardGuiItem::assign(ui.backButton, KStandardGuiItem::Back);
-    q->connect(ui.backButton, SIGNAL(clicked()), q, SLOT(slotShowOverview()));
+    q->connect(ui.backButton, &QPushButton::clicked, this, &DownloadWidgetPrivate::slotShowOverview);
 
     q->connect(engine, &KNSCore::Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
 
@@ -243,12 +243,12 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
     q->connect(engine, &KNSCore::Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
 
-    q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
+    q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, this, &DownloadWidgetPrivate::slotProvidersLoaded);
     // Entries have been fetched and should be shown:
-    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SLOT(slotEntriesLoaded(KNSCore::EntryInternal::List)));
+    q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, this, &DownloadWidgetPrivate::slotEntriesLoaded);
 
     // An entry has changes - eg because it was installed
-    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SLOT(slotEntryChanged(KNSCore::EntryInternal)));
+    q->connect(engine, &KNSCore::Engine::signalEntryChanged, this, &DownloadWidgetPrivate::slotEntryChanged);
 
     q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
     q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded,
@@ -265,16 +265,16 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     ui.listViewButton->setIcon(QIcon::fromTheme(QStringLiteral("view-list-details")));
     ui.listViewButton->setToolTip(i18n("Details view mode"));
 
-    q->connect(ui.listViewButton, SIGNAL(clicked()), q, SLOT(slotListViewListMode()));
-    q->connect(ui.iconViewButton, SIGNAL(clicked()), q, SLOT(slotListViewIconMode()));
+    q->connect(ui.listViewButton, &QPushButton::clicked, this, &DownloadWidgetPrivate::slotListViewListMode);
+    q->connect(ui.iconViewButton, &QPushButton::clicked, this, &DownloadWidgetPrivate::slotListViewIconMode);
 
-    q->connect(ui.newestRadio,  SIGNAL(clicked()), q, SLOT(sortingChanged()));
-    q->connect(ui.ratingRadio,  SIGNAL(clicked()), q, SLOT(sortingChanged()));
-    q->connect(ui.mostDownloadsRadio,  SIGNAL(clicked()), q, SLOT(sortingChanged()));
-    q->connect(ui.installedRadio,  SIGNAL(clicked()), q, SLOT(sortingChanged()));
+    q->connect(ui.newestRadio,        &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.ratingRadio,        &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.mostDownloadsRadio, &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.installedRadio,     &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
 
-    q->connect(ui.m_searchEdit, SIGNAL(textChanged(QString)), q, SLOT(slotSearchTextChanged()));
-    q->connect(ui.m_searchEdit, SIGNAL(editingFinished()), q, SLOT(slotUpdateSearch()));
+    q->connect(ui.m_searchEdit, &KLineEdit::textChanged,     this, &DownloadWidgetPrivate::slotSearchTextChanged);
+    q->connect(ui.m_searchEdit, &KLineEdit::editingFinished, this, &DownloadWidgetPrivate::slotUpdateSearch);
 
     ui.m_providerLabel->setVisible(false);
     ui.m_providerCombo->setVisible(false);
@@ -302,16 +302,17 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     ui.detailsStack->widget(0)->layout()->setMargin(0);
     ui.detailsStack->widget(1)->layout()->setMargin(0);
 
-    q->connect(ui.m_categoryCombo, SIGNAL(activated(int)), q, SLOT(slotCategoryChanged(int)));
+    q->connect(ui.m_categoryCombo, static_cast<void(KComboBox::*)(int)>(&KComboBox::activated),
+               this, &DownloadWidgetPrivate::slotCategoryChanged);
 
     // let the search line edit trap the enter key, otherwise it closes the dialog
     ui.m_searchEdit->setTrapReturnKey(true);
 
-    q->connect(ui.m_listView->verticalScrollBar(), SIGNAL(valueChanged(int)), q, SLOT(scrollbarValueChanged(int)));
+    q->connect(ui.m_listView->verticalScrollBar(), &QScrollBar::valueChanged, this, &DownloadWidgetPrivate::scrollbarValueChanged);
     q->connect(ui.m_listView, SIGNAL(doubleClicked(QModelIndex)), delegate, SLOT(slotDetailsClicked(QModelIndex)));
 
     details = new EntryDetails(engine, &ui);
-    q->connect(delegate, SIGNAL(signalShowDetails(KNSCore::EntryInternal)), q, SLOT(slotShowDetails(KNSCore::EntryInternal)));
+    q->connect(delegate, &KNS3::ItemsViewBaseDelegate::signalShowDetails, this, &DownloadWidgetPrivate::slotShowDetails);
 
     slotShowOverview();
 }
@@ -348,9 +349,8 @@ void DownloadWidgetPrivate::setListViewMode(QListView::ViewMode mode)
     }
     ui.m_listView->setItemDelegate(delegate);
     delete oldDelegate;
-
     q->connect(ui.m_listView, SIGNAL(doubleClicked(QModelIndex)), delegate, SLOT(slotDetailsClicked(QModelIndex)));
-    q->connect(delegate, SIGNAL(signalShowDetails(KNSCore::EntryInternal)), q, SLOT(slotShowDetails(KNSCore::EntryInternal)));
+    q->connect(delegate, &KNS3::ItemsViewBaseDelegate::signalShowDetails, this, &DownloadWidgetPrivate::slotShowDetails);
 }
 
 void DownloadWidgetPrivate::slotProvidersLoaded()
@@ -380,7 +380,7 @@ void DownloadWidgetPrivate::displayMessage(const QString &msg, KTitleWidget::Mes
     if (!messageTimer) {
         messageTimer = new QTimer;
         messageTimer->setSingleShot(true);
-        q->connect(messageTimer, SIGNAL(timeout()), q, SLOT(slotResetMessage()));
+        q->connect(messageTimer, &QTimer::timeout, this, &DownloadWidgetPrivate::slotResetMessage);
     }
     // stop the pending timer if present
     messageTimer->stop();

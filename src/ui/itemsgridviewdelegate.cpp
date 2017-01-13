@@ -276,7 +276,8 @@ void ItemsGridViewDelegate::createOperationBar()
     m_detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("documentinfo")));
     setBlockedEventTypes(m_detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(m_detailsButton, SIGNAL(clicked()), this, SLOT(slotDetailsClicked()));
+    connect(m_detailsButton, &QToolButton::clicked,
+            this, static_cast<void(ItemsGridViewDelegate::*)()>(&ItemsGridViewDelegate::slotDetailsClicked));
 
     m_installButton = new QToolButton();
     m_installButton->setToolButtonStyle(Qt::ToolButtonFollowStyle);

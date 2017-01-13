@@ -75,8 +75,8 @@ void Security::readKeys()
               << QStringLiteral("--no-tty")
               << QStringLiteral("--with-colon")
               << QStringLiteral("--list-keys");
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(slotFinished(int,QProcess::ExitStatus)));
+    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput,
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
@@ -102,8 +102,8 @@ void Security::readSecretKeys()
               << QStringLiteral("--no-tty")
               << QStringLiteral("--with-colon")
               << QStringLiteral("--list-secret-keys");
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(slotFinished(int,QProcess::ExitStatus)));
+    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput,
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
@@ -275,8 +275,8 @@ void Security::slotCheckValidity()
               << QStringLiteral("--verify")
               << f.path() + "/signature"
               << m_fileName;
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(slotFinished(int,QProcess::ExitStatus)));
+    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput,
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
@@ -365,8 +365,8 @@ void Security::slotSignFile()
               << QStringLiteral("-o")
               << f.path() + "/signature"
               << m_fileName;
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(slotFinished(int,QProcess::ExitStatus)));
+    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput,
             this, &Security::slotReadyReadStandardOutput);
     m_runMode = Sign;

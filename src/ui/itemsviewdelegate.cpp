@@ -73,7 +73,8 @@ QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) 
     list << detailsButton;
     setBlockedEventTypes(detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(detailsButton, SIGNAL(clicked()), this, SLOT(slotDetailsClicked()));
+    connect(detailsButton, &QToolButton::clicked,
+            this, static_cast<void(ItemsViewDelegate::*)()>(&ItemsViewDelegate::slotDetailsClicked));
 
     KRatingWidget *rating = new KRatingWidget();
     rating->setMaxRating(10);

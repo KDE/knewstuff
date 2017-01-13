@@ -104,10 +104,10 @@ KNewStuff2Download::KNewStuff2Download()
     setWindowTitle("KNewStuff2 Download Dialog Test");
 
     QPushButton *installbutton = new QPushButton("Install");
-    connect(installbutton, SIGNAL(clicked()), SLOT(slotInstall()));
+    connect(installbutton, &QPushButton::clicked, this, KNewStuff2Download::slotInstall);
 
     QPushButton *closebutton = new QPushButton("Close");
-    connect(closebutton, SIGNAL(clicked()), SLOT(close()));
+    connect(closebutton, &QPushButton::clicked, this, KNewStuff2Download::close);
 
     m_providerlist = new QListWidget();
     m_providerlist->setFixedWidth(200);
@@ -135,9 +135,9 @@ KNewStuff2Download::KNewStuff2Download()
     wantedButton->setIcon(QIcon::fromTheme("kget"));
     wantedButton->setText("Most wanted");
 
-    connect(recentButton, SIGNAL(toggled(bool)), this, SLOT(buttonToggled(bool)));
-    connect(estimatedButton, SIGNAL(toggled(bool)), this, SLOT(buttonToggled(bool)));
-    connect(wantedButton, SIGNAL(toggled(bool)), this, SLOT(buttonToggled(bool)));
+    connect(recentButton, &KNSButton::toggled, this, &KNewStuff2Download::buttonToggled);
+    connect(estimatedButton, &KNSButton::toggled, this, &KNewStuff2Download::buttonToggled);
+    connect(wantedButton, &KNSButton::toggled, this, &KNewStuff2Download::buttonToggled);
 
     frame->setMinimumHeight(40);
     recentButton->setChecked(true);
@@ -205,29 +205,29 @@ void KNewStuff2Download::run()
 
     if (success) {
         connect(m_engine,
-                SIGNAL(signalProviderLoaded(KNS::Provider*)),
-                SLOT(slotProviderLoaded(KNS::Provider*)));
+                &KNS::CoreEngine::signalProviderLoaded,
+                this, &KNewStuff2Download::slotProviderLoaded);
         connect(m_engine,
-                SIGNAL(signalProvidersFailed()),
-                SLOT(slotProvidersFailed()));
+                &KNS::CoreEngine::signalProvidersFailed,
+                this, &KNewStuff2Download::slotProvidersFailed);
         connect(m_engine,
-                SIGNAL(signalEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)),
-                SLOT(slotEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)));
+                &KNS::CoreEngine::signalEntryLoaded,
+                this, &KNewStuff2Download::slotEntryLoaded);
         connect(m_engine,
-                SIGNAL(signalEntriesFailed()),
-                SLOT(slotEntriesFailed()));
+                &KNS::CoreEngine::signalEntriesFailed,
+                this, &KNewStuff2Download::slotEntriesFailed);
         connect(m_engine,
-                SIGNAL(signalPayloadLoaded(QUrl)),
-                SLOT(slotPayloadLoaded(QUrl)));
+                &KNS::CoreEngine::signalPayloadLoaded,
+                this, &KNewStuff2Download::slotPayloadLoaded);
         connect(m_engine,
-                SIGNAL(signalPayloadFailed()),
-                SLOT(slotPayloadFailed()));
+                &KNS::CoreEngine::signalPayloadFailed,
+                this, &KNewStuff2Download::slotPayloadFailed);
         connect(m_engine,
-                SIGNAL(signalPreviewLoaded(QUrl)),
-                SLOT(slotPreviewLoaded(QUrl)));
+                &KNS::CoreEngine::signalPreviewLoaded,
+                this, &KNewStuff2Download::slotPreviewLoaded);
         connect(m_engine,
-                SIGNAL(signalPreviewFailed()),
-                SLOT(slotPreviewFailed()));
+                &KNS::CoreEngine::signalPreviewFailed,
+                this, &KNewStuff2Download::slotPreviewFailed);
 
         m_engine->start();
     } else {

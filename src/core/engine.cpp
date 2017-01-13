@@ -263,8 +263,7 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->id();
     m_providers.insert(provider->id(), provider);
     connect(provider.data(), &Provider::providerInitialized, this, &Engine::providerInitialized);
-    connect(provider.data(), SIGNAL(loadingFinished(KNSCore::Provider::SearchRequest,KNSCore::EntryInternal::List)),
-            SLOT(slotEntriesLoaded(KNSCore::Provider::SearchRequest,KNSCore::EntryInternal::List)));
+    connect(provider.data(), &Provider::loadingFinished, this, &Engine::slotEntriesLoaded);
     connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
     connect(provider.data(), &Provider::signalError, this, &Engine::signalError);

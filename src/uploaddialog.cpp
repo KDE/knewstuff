@@ -458,7 +458,7 @@ bool UploadDialog::init(const QString &configfile)
 
     connect(d->backButton, SIGNAL(clicked()), this, SLOT(_k_backPage()));
     connect(d->nextButton, SIGNAL(clicked()), this, SLOT(_k_nextPage()));
-    connect(d->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(d->buttonBox, &QDialogButtonBox::accepted, this, &UploadDialog::accept);
     connect(d->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
     QString displayName = QGuiApplication::applicationDisplayName();

@@ -78,11 +78,11 @@ DownloadManager::DownloadManager(const QString &configFile, QObject *parent)
 
 void DownloadManagerPrivate::init(const QString &configFile)
 {
-    q->connect(engine, SIGNAL(signalProvidersLoaded()), q, SLOT(slotProvidersLoaded()));
-    q->connect(engine, SIGNAL(signalUpdateableEntriesLoaded(KNSCore::EntryInternal::List)), q, SIGNAL(searchResult(KNSCore::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntriesLoaded(KNSCore::EntryInternal::List)), q, SIGNAL(searchResult(KNSCore::EntryInternal::List)));
-    q->connect(engine, SIGNAL(signalEntryChanged(KNSCore::EntryInternal)), q, SIGNAL(entryStatusChanged(KNSCore::EntryInternal)));
-    q->connect(engine, SIGNAL(signalError(QString)), q, SIGNAL(errorFound(QString)));
+    q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, q, &DownloadManager::slotProvidersLoaded);
+    q->connect(engine, &KNSCore::Engine::signalUpdateableEntriesLoaded, q, &DownloadManager::searchResult);
+    q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, q, &DownloadManager::searchResult);
+    q->connect(engine, &KNSCore::Engine::signalEntryChanged, q, &DownloadManager::entryStatusChanged);
+    q->connect(engine, &KNSCore::Engine::signalError, q, &DownloadManager::errorFound);
     engine->init(configFile);
 }
 

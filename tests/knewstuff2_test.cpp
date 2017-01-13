@@ -125,32 +125,32 @@ void KNewStuff2Test::engineTest()
 
     if (ret) {
         connect(m_engine,
-                SIGNAL(signalProviderLoaded(KNS::Provider*)),
-                SLOT(slotProviderLoaded(KNS::Provider*)));
+                &KNS::CoreEngine::signalProviderLoaded,
+                this, &KNewStuff2Test::slotProviderLoaded);
         connect(m_engine,
-                SIGNAL(signalProvidersFailed()),
-                SLOT(slotProvidersFailed()));
+                &KNS::CoreEngine::signalProvidersFailed,
+                this, &KNewStuff2Test::slotProvidersFailed);
         connect(m_engine,
-                SIGNAL(signalEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)),
-                SLOT(slotEntryLoaded(KNS::Entry*,const KNS::Feed*,const KNS::Provider*)));
+                &KNS::CoreEngine::signalEntryLoaded,
+                this, &KNewStuff2Test::slotEntryLoaded);
         connect(m_engine,
-                SIGNAL(signalEntriesFinished()),
-                SLOT(slotEntriesFinished()));
+                &KNS::CoreEngine::signalEntriesFinished,
+                this, &KNewStuff2Test::slotEntriesFinished);
         connect(m_engine,
-                SIGNAL(signalEntriesFailed()),
-                SLOT(slotEntriesFailed()));
+                &KNS::CoreEngine::signalEntriesFailed,
+                this, &KNewStuff2Test::slotEntriesFailed);
         connect(m_engine,
-                SIGNAL(signalPayloadLoaded(QUrl)),
-                SLOT(slotPayloadLoaded(QUrl)));
+                &KNS::CoreEngine::signalPayloadLoaded,
+                this, &KNewStuff2Test::slotPayloadLoaded);
         connect(m_engine,
-                SIGNAL(signalPayloadFailed()),
-                SLOT(slotPayloadFailed()));
+                &KNS::CoreEngine::signalPayloadFailed,
+                this, &KNewStuff2Test::slotPayloadFailed);
         connect(m_engine,
-                SIGNAL(signalInstallationFinished()),
-                SLOT(slotInstallationFinished()));
+                &KNS::CoreEngine::signalInstallationFinished,
+                this, &KNewStuff2Test::slotInstallationFinished);
         connect(m_engine,
-                SIGNAL(signalInstallationFailed()),
-                SLOT(slotInstallationFailed()));
+                &KNS::CoreEngine::signalInstallationFailed,
+                this, &KNewStuff2Test::slotInstallationFailed);
 
         m_engine->start();
     } else {

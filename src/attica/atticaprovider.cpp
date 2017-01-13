@@ -327,7 +327,6 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
         if(question.ask() == Question::YesResponse) {
             ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
             connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
-            connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
             mDownloadLinkJobs[job] = qMakePair(entry, pair.second);
             job->start();
         } else {
@@ -370,7 +369,6 @@ void AtticaProvider::vote(const EntryInternal &entry, uint rating)
 {
     PostJob *job = m_provider.voteForContent(entry.uniqueId(), rating);
     connect(job, &BaseJob::finished, this, &AtticaProvider::votingFinished);
-    connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
 
@@ -386,7 +384,6 @@ void AtticaProvider::becomeFan(const EntryInternal &entry)
 {
     PostJob *job = m_provider.becomeFan(entry.uniqueId());
     connect(job, &BaseJob::finished, this, &AtticaProvider::becomeFanFinished);
-    connect(job, SIGNAL(jobStarted(QNetworkReply*)), SLOT(atticaJobStarted(QNetworkReply*)));
     job->start();
 }
 
