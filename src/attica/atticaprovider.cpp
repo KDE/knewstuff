@@ -121,10 +121,17 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
     Attica::ListJob<Attica::Category> *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
     Category::List categoryList = job->itemList();
 
+    QList<CategoryMetadata> categoryMetadataList;
     foreach (const Category &category, categoryList) {
         if (mCategoryMap.contains(category.name())) {
-            qCDebug(KNEWSTUFFCORE) << "Adding category: " << category.name();
+            qCDebug(KNEWSTUFFCORE) << "Adding category: " << category.name() << category.displayName();
             mCategoryMap[category.name()] = category;
+
+            CategoryMetadata categoryMetadata;
+            categoryMetadata.id = category.id();
+            categoryMetadata.name = category.name();
+            categoryMetadata.displayName = category.displayName();
+            categoryMetadataList << categoryMetadata;
         }
     }
 
@@ -140,6 +147,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
     if (correct) {
         mInitialized = true;
         emit providerInitialized(this);
+        emit categoriesMetadataLoded(categoryMetadataList);
     } else {
         emit signalError(i18n("All categories are missing"));
     }

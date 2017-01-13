@@ -131,6 +131,8 @@ public:
     QStringList categories() const;
     QStringList categoriesFilter() const;
 
+    QList<Provider::CategoryMetadata> categoriesMetadata();
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
@@ -158,6 +160,8 @@ Q_SIGNALS:
     void signalError(const QString &);
     void signalBusy(const QString &);
     void signalIdle(const QString &);
+
+    void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 
 private Q_SLOTS:
     // the .knsrc file was loaded
@@ -200,6 +204,7 @@ private:
 
     void doRequest();
 
+    //FIXME KF6: move all of this in EnginePrivate
     // handle installation of entries
     Installation *m_installation;
     // read/write cache of entries
@@ -230,7 +235,6 @@ private:
     int m_numInstallJobs;
     // If the provider is ready to be used
     bool m_initialized;
-
 
     Q_DISABLE_COPY(Engine)
 };

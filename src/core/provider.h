@@ -85,6 +85,15 @@ public:
     };
 
     /**
+     * Describes a category: id/name/disaplayName
+     */
+    struct CategoryMetadata {
+        QString id;
+        QString name;
+        QString displayName;
+    };
+
+    /**
      * Constructor.
      */
     Provider();
@@ -164,6 +173,8 @@ Q_SIGNALS:
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;
+
+    void categoriesMetadataLoded(const QList<CategoryMetadata> &categories);
 
 protected:
     QString mName;

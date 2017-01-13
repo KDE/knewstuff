@@ -177,7 +177,8 @@ void DownloadWidgetPrivate::slotCategoryChanged(int idx)
         engine->setCategoriesFilter(QStringList());
 
     } else {
-        QString category = ui.m_categoryCombo->currentText();
+        QString category = ui.m_categoryCombo->currentData().toString();
+
         if (!category.isEmpty()) {
             QStringList filter(category);
             engine->setCategoriesFilter(filter);
@@ -285,11 +286,19 @@ void DownloadWidgetPrivate::init(const QString &configFile)
         ui.m_categoryCombo->setVisible(false);
     } else {
         ui.m_categoryCombo->addItem(i18n("All Categories"));
-        foreach (const QString &category, categories) {
-            ui.m_categoryCombo->addItem(category);
-        }
+        //NOTE: categories will be populated when we will get metadata from the server
     }
 
+    connect(engine, &KNSCore::Engine::signalCategoriesMetadataLoded,
+             this, [this](const QList<KNSCore::Provider::CategoryMetadata> &categories) {
+                for (auto data : categories) {
+                    if (!data.displayName.isEmpty()) {
+                        ui.m_categoryCombo->addItem(data.displayName, data.name);
+                    } else {
+                        ui.m_categoryCombo->addItem(data.name, data.name);
+                    }
+                }
+            });
     ui.detailsStack->widget(0)->layout()->setMargin(0);
     ui.detailsStack->widget(1)->layout()->setMargin(0);
 

@@ -53,6 +53,30 @@
 
 using namespace KNSCore;
 
+class EnginePrivate {
+public:
+    QList<Provider::CategoryMetadata> categoriesMetadata;
+};
+
+// BCI: Add a real d-pointer
+typedef QHash<const Engine *, EnginePrivate *> EnginePrivateHash;
+Q_GLOBAL_STATIC(EnginePrivateHash, d_func)
+static EnginePrivate *d(const Engine* engine)
+{
+    EnginePrivate* ret = d_func()->value(engine);
+    if (!ret) {
+        ret = new EnginePrivate;
+        d_func()->insert(engine, ret);
+    }
+    return ret;
+}
+static void delete_d(const Engine* engine)
+{
+    EnginePrivate* ret = d_func()->value(engine);
+    delete ret;
+    d_func()->remove(engine);
+}
+
 Engine::Engine(QObject *parent)
     : QObject(parent)
     , m_installation(new Installation)
@@ -84,6 +108,7 @@ Engine::~Engine()
     delete m_atticaProviderManager;
     delete m_searchTimer;
     delete m_installation;
+    delete_d(this);
 }
 
 bool Engine::init(const QString &configfile)
@@ -147,6 +172,11 @@ QStringList Engine::categoriesFilter() const
     return m_currentRequest.categories;
 }
 
+QList<Provider::CategoryMetadata> Engine::categoriesMetadata()
+{
+    return d(this)->categoriesMetadata;
+}
+
 void Engine::loadProviders()
 {
     if (m_providerFileUrl.isEmpty()) {
@@ -192,6 +222,11 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
             provider = QSharedPointer<KNSCore::Provider> (new AtticaProvider(m_categories));
+            connect(provider.data(), &Provider::categoriesMetadataLoded,
+                    this, [this](const QList<Provider::CategoryMetadata> &categories){
+                        d(this)->categoriesMetadata = categories;
+                        emit signalCategoriesMetadataLoded(categories);
+                    });
         } else {
             provider = QSharedPointer<KNSCore::Provider> (new StaticXmlProvider);
         }
@@ -215,6 +250,11 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
     }
     QSharedPointer<KNSCore::Provider> provider =
         QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories));
+    connect(provider.data(), &Provider::categoriesMetadataLoded,
+            this, [this](const QList<Provider::CategoryMetadata> &categories){
+                d(this)->categoriesMetadata = categories;
+                emit signalCategoriesMetadataLoded(categories);
+            });
     addProvider(provider);
 }
 
