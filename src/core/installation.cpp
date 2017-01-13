@@ -507,7 +507,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
         qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
 
-        if (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive)) {
+        //some wallpapers are compressed, some aren't
+        if ((standardResourceDirectory == QLatin1String("wallpaper")) ||
+            (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive))) {
             // no decompress but move to target
 
             /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
