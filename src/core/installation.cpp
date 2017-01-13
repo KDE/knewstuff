@@ -508,7 +508,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
 
         //some wallpapers are compressed, some aren't
-        if ((standardResourceDirectory == QLatin1String("wallpaper")) ||
+        if ((!isarchive && standardResourceDirectory == QLatin1String("wallpaper")) ||
             (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive))) {
             // no decompress but move to target
 
