@@ -217,7 +217,7 @@ void EntryDetails::updateButtons()
     if (ui->installButton->menu()) {
         QMenu *buttonMenu = ui->installButton->menu();
         buttonMenu->clear();
-        ui->installButton->setMenu(0);
+        ui->installButton->setMenu(nullptr);
         buttonMenu->deleteLater();
     }
     if (ui->installButton->isVisible() && m_entry.downloadLinkCount() > 1) {

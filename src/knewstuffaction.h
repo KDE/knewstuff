@@ -45,7 +45,7 @@ KNEWSTUFF_EXPORT QAction *standardAction(const QString &what,
         const QObject *receiver,
         const char *slot,
         KActionCollection *parent,
-        const char *name = 0);
+        const char *name = nullptr);
 
 /**
  * @brief Standard action for Uploading files with Hot New Stuff
@@ -65,7 +65,7 @@ KNEWSTUFF_EXPORT QAction *standardActionUpload(const QString &what,
         const QObject *receiver,
         const char *slot,
         KActionCollection *parent,
-        const char *name = 0);
+        const char *name = nullptr);
 }
 
 #endif // KNEWSTUFFACTION_H

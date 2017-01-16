@@ -26,7 +26,7 @@ namespace KNSCore {
 class FileCopyWorker : public QThread {
     Q_OBJECT
 public: 
-    explicit FileCopyWorker(const QUrl& source, const QUrl& destination, QObject* parent = 0); 
+    explicit FileCopyWorker(const QUrl& source, const QUrl& destination, QObject* parent = nullptr); 
     virtual ~FileCopyWorker();
     void run() Q_DECL_OVERRIDE;
 

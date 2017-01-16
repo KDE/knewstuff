@@ -29,7 +29,7 @@ class ItemsModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(QObject* engine READ engine WRITE setEngine NOTIFY engineChanged)
 public:
-    explicit ItemsModel(QObject* parent = 0);
+    explicit ItemsModel(QObject* parent = nullptr);
     virtual ~ItemsModel();
 
     enum Roles {

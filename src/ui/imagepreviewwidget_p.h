@@ -28,7 +28,7 @@ class ImagePreviewWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ImagePreviewWidget(QWidget *parent = 0);
+    explicit ImagePreviewWidget(QWidget *parent = nullptr);
 
     void setImage(const QImage &preview);
 

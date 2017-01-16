@@ -30,7 +30,7 @@ using namespace KNSCore;
 typedef QHash<QString, QWeakPointer<Cache> > CacheHash;
 Q_GLOBAL_STATIC(CacheHash, s_caches)
 
-Cache::Cache(const QString &appName): QObject(0)
+Cache::Cache(const QString &appName): QObject(nullptr)
 {
     m_kns2ComponentName = appName;
 

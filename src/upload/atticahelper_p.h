@@ -38,7 +38,7 @@ class KNEWSTUFFCORE_EXPORT AtticaHelper : public QObject
 {
     Q_OBJECT
 public:
-    explicit AtticaHelper(QObject *parent = 0);
+    explicit AtticaHelper(QObject *parent = nullptr);
     void init();
 
     void setCurrentProvider(const QString &provider);

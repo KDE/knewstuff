@@ -773,7 +773,7 @@ void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
 
     QString fileName = QFileInfo(path.toLocalFile()).fileName();
 
-    Attica::PostJob *job = 0;
+    Attica::PostJob *job = nullptr;
     if (index.isEmpty()) {
         job = currentProvider().setDownloadFile(contentId, fileName, fileContents);
         q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_fileUploadFinished(Attica::BaseJob*)));

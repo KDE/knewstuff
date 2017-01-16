@@ -117,7 +117,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
     //setup title label
     QLabel *titleLabel = qobject_cast<QLabel *>(widgets.at(DelegateTitleLabel));
-    if (titleLabel != NULL) {
+    if (titleLabel != nullptr) {
         titleLabel->setWordWrap(true);
         titleLabel->setAlignment(Qt::AlignHCenter);
         //titleLabel->setFrameStyle(QFrame::Panel);
@@ -136,7 +136,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     }
     //setup author label
     QLabel *authorLabel = qobject_cast<QLabel *>(widgets.at(DelegateAuthorLabel));
-    if (authorLabel != NULL) {
+    if (authorLabel != nullptr) {
         authorLabel->setWordWrap(true);
         authorLabel->setAlignment(Qt::AlignHCenter);
         authorLabel->resize(QSize(option.rect.width() - (ItemMargin * 2), option.fontMetrics.height()));
@@ -163,7 +163,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
     //setup download label
     QLabel *downloadLabel = qobject_cast<QLabel *>(widgets.at(DelegateDownloadCounterLabel));
-    if (downloadLabel != NULL) {
+    if (downloadLabel != nullptr) {
         downloadLabel->setWordWrap(true);
         downloadLabel->setAlignment(Qt::AlignHCenter);
         downloadLabel->resize(QSize(option.rect.width() - (ItemMargin * 2), option.fontMetrics.height()));
@@ -214,7 +214,7 @@ void ItemsGridViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
     }
 
     QStyle *style = QApplication::style();
-    style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, 0);
+    style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, nullptr);
 
     painter->save();
 
@@ -291,7 +291,7 @@ void ItemsGridViewDelegate::createOperationBar()
     if (m_installButton->menu()) {
         QMenu *buttonMenu = m_installButton->menu();
         buttonMenu->clear();
-        m_installButton->setMenu(0);
+        m_installButton->setMenu(nullptr);
         buttonMenu->deleteLater();
     }
 
@@ -308,11 +308,11 @@ void ItemsGridViewDelegate::createOperationBar()
 void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelIndex &index)
 {
     KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
-    if (m_installButton != 0) {
-        if (m_installButton->menu() != 0) {
+    if (m_installButton != nullptr) {
+        if (m_installButton->menu() != nullptr) {
             QMenu *buttonMenu = m_installButton->menu();
             buttonMenu->clear();
-            m_installButton->setMenu(0);
+            m_installButton->setMenu(nullptr);
             buttonMenu->deleteLater();
         }
 

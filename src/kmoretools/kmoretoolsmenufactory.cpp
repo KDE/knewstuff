@@ -49,7 +49,7 @@ private Q_SLOTS:
     }
 
 public:
-    KMoreToolsLazyMenu(QWidget* parent = 0) : QMenu(parent) {
+    KMoreToolsLazyMenu(QWidget* parent = nullptr) : QMenu(parent) {
         connect(this, &QMenu::aboutToShow, this, &KMoreToolsLazyMenu::onAboutToShow);
     }
 

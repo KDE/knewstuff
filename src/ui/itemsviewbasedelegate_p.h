@@ -37,7 +37,7 @@ class ItemsViewBaseDelegate: public KWidgetItemDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = 0);
+    explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = nullptr);
     virtual ~ItemsViewBaseDelegate();
     // paint the item at index with all its attributes shown
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;

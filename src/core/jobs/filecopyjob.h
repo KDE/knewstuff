@@ -30,8 +30,8 @@ class FileCopyJob : public KJob
     Q_OBJECT
 public:
 
-    explicit FileCopyJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = 0);
-    explicit FileCopyJob(QObject* parent = 0);
+    explicit FileCopyJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
+    explicit FileCopyJob(QObject* parent = nullptr);
     virtual ~FileCopyJob();
 
     Q_SCRIPTABLE virtual void start() Q_DECL_OVERRIDE;
@@ -42,7 +42,7 @@ public:
     // This will create either a FileCopyJob, or an instance of
     // a subclass, depending on the nature of the URLs passed to
     // it
-    static FileCopyJob* file_copy(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = 0);
+    static FileCopyJob* file_copy(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
 
 protected Q_SLOTS:
     void handleProgressUpdate(qlonglong current, qlonglong total);

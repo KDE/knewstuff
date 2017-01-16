@@ -102,12 +102,12 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     int right = option.rect.width();
 
     QToolButton *installButton = qobject_cast<QToolButton *>(widgets.at(DelegateInstallButton));
-    if (installButton != 0) {
+    if (installButton != nullptr) {
 
         if (installButton->menu()) {
             QMenu *buttonMenu = installButton->menu();
             buttonMenu->clear();
-            installButton->setMenu(0);
+            installButton->setMenu(nullptr);
             buttonMenu->deleteLater();
         }
 
@@ -187,7 +187,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
     QLabel *infoLabel = qobject_cast<QLabel *>(widgets.at(DelegateLabel));
     infoLabel->setWordWrap(true);
-    if (infoLabel != NULL) {
+    if (infoLabel != nullptr) {
         if (model->hasPreviewImages()) {
             // move the text right by kPreviewWidth + margin pixels to fit the preview
             infoLabel->move(KNSCore::PreviewWidth + margin * 2, 0);
@@ -275,7 +275,7 @@ void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
     int margin = option.fontMetrics.height() / 2;
 
     QStyle *style = QApplication::style();
-    style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, 0);
+    style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, nullptr);
 
     painter->save();
 

@@ -27,8 +27,8 @@ class DownloadJob : public FileCopyJob
 {
     Q_OBJECT
 public:
-    explicit DownloadJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = 0);
-    explicit DownloadJob(QObject* parent = 0);
+    explicit DownloadJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
+    explicit DownloadJob(QObject* parent = nullptr);
     virtual ~DownloadJob();
 
     Q_SCRIPTABLE virtual void start() Q_DECL_OVERRIDE;

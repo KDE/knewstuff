@@ -60,7 +60,7 @@ public:
     /**
      * Constructor.
      */
-    explicit Engine(QObject *parent = 0);
+    explicit Engine(QObject *parent = nullptr);
 
     /**
      * Destructor. Frees up all the memory again which might be taken

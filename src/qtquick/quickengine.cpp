@@ -27,7 +27,7 @@ class Engine::Private
 {
 public:
     Private()
-        : engine(0)
+        : engine(nullptr)
     {}
     KNSCore::Engine* engine;
     QString configFile;

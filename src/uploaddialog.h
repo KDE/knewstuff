@@ -56,14 +56,14 @@ public:
 
       @param parent the parent window
     */
-    explicit UploadDialog(QWidget *parent = 0);
+    explicit UploadDialog(QWidget *parent = nullptr);
 
     /**
       Create a new upload dialog.
 
       @param parent the parent window
     */
-    explicit UploadDialog(const QString &configFile, QWidget *parent = 0);
+    explicit UploadDialog(const QString &configFile, QWidget *parent = nullptr);
 
     /**
       Destructor.

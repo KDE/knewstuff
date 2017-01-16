@@ -51,7 +51,7 @@ public:
     /**
      * Constructor.
      */
-    explicit Installation(QObject *parent = 0);
+    explicit Installation(QObject *parent = nullptr);
 
     enum Policy {
         CheckNever,

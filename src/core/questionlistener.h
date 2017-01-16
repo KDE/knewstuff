@@ -41,7 +41,7 @@ class KNEWSTUFFCORE_EXPORT QuestionListener : public QObject
 {
     Q_OBJECT
 public:
-    explicit QuestionListener(QObject* parent = 0);
+    explicit QuestionListener(QObject* parent = nullptr);
     virtual ~QuestionListener();
 
     Q_SLOT virtual void askQuestion(Question* question);

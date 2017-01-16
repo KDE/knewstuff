@@ -30,7 +30,7 @@ class Engine : public QObject
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
     Q_PROPERTY(QObject* engine READ engine NOTIFY engineChanged)
 public:
-    explicit Engine(QObject* parent = 0);
+    explicit Engine(QObject* parent = nullptr);
     virtual ~Engine();
 
     QString configFile() const;

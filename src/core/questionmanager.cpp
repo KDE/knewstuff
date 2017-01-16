@@ -23,7 +23,7 @@ using namespace KNSCore;
 
 class QuestionManagerHelper {
 public:
-    QuestionManagerHelper() : q(0) {}
+    QuestionManagerHelper() : q(nullptr) {}
     ~QuestionManagerHelper() { delete q; }
     QuestionManager *q;
 };
@@ -45,7 +45,7 @@ QuestionManager* QuestionManager::instance()
 }
 
 QuestionManager::QuestionManager()
-    : QObject(0)
+    : QObject(nullptr)
     , d(new Private)
 {
     s_kns3_questionManager()->q = this;

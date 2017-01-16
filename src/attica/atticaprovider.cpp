@@ -36,7 +36,7 @@ namespace KNSCore
 {
 
 AtticaProvider::AtticaProvider(const QStringList &categories)
-    : mEntryJob(0)
+    : mEntryJob(nullptr)
     , mInitialized(false)
 {
     // init categories map with invalid categories
@@ -50,7 +50,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories)
 }
 
 AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories)
-    : mEntryJob(0)
+    : mEntryJob(nullptr)
     , mInitialized(false)
 {
     // init categories map with invalid categories
@@ -162,7 +162,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
 {
     if (mEntryJob) {
         mEntryJob->abort();
-        mEntryJob = 0;
+        mEntryJob = nullptr;
     }
 
     mCurrentRequest = request;
@@ -264,7 +264,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
 
     qCDebug(KNEWSTUFFCORE) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
     emit loadingFinished(mCurrentRequest, entries);
-    mEntryJob = 0;
+    mEntryJob = nullptr;
 }
 
 Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMode)

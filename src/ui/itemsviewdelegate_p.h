@@ -30,7 +30,7 @@ class ItemsViewDelegate: public ItemsViewBaseDelegate
 {
     Q_OBJECT
 public:
-    explicit ItemsViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = 0);
+    explicit ItemsViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = nullptr);
     ~ItemsViewDelegate();
 
     // paint the item at index with all its attributes shown

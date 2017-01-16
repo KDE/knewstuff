@@ -71,7 +71,7 @@ public:
         PasswordQuestion = 4
     };
 
-    explicit Question(QuestionType = YesNoQuestion, QObject* parent = 0);
+    explicit Question(QuestionType = YesNoQuestion, QObject* parent = nullptr);
     virtual ~Question();
 
     Response ask();

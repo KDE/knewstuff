@@ -50,7 +50,7 @@ public:
      *
      * @param parent the parent of the dialog
      */
-    explicit DownloadManager(QObject *parent = 0);
+    explicit DownloadManager(QObject *parent = nullptr);
 
     /**
      * Create a DownloadManager. Manually specifying the name of the .knsrc file.
@@ -58,7 +58,7 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
-    explicit DownloadManager(const QString &configFile, QObject *parent = 0);
+    explicit DownloadManager(const QString &configFile, QObject *parent = nullptr);
 
     /**
      * destructor

@@ -108,7 +108,7 @@ DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *q)
     : q(q)
     , engine(new KNSCore::Engine)
     , model(new KNSCore::ItemsModel(engine))
-    , messageTimer(0)
+    , messageTimer(nullptr)
     , dialogMode(false)
 {
 }
@@ -193,7 +193,7 @@ void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString v
     infostring += i18n("<br />Provider: %1", provider);
     infostring += i18n("<br />Version: %1", version);
 
-    KMessageBox::information(0,
+    KMessageBox::information(nullptr,
                              infostring,
                              i18n("Provider information"));
 }
@@ -206,7 +206,7 @@ void DownloadWidgetPrivate::slotEntryChanged(const KNSCore::EntryInternal &entry
 
 void DownloadWidgetPrivate::slotPayloadFailed(const KNSCore::EntryInternal &entry)
 {
-    KMessageBox::error(0, i18n("Could not install %1", entry.name()),
+    KMessageBox::error(nullptr, i18n("Could not install %1", entry.name()),
                        i18n("Get Hot New Stuff!"));
 }
 
@@ -217,7 +217,7 @@ void DownloadWidgetPrivate::slotPayloadLoaded(QUrl url)
 
 void DownloadWidgetPrivate::slotError(const QString &message)
 {
-    KMessageBox::error(0, message, i18n("Get Hot New Stuff"));
+    KMessageBox::error(nullptr, message, i18n("Get Hot New Stuff"));
 }
 
 void DownloadWidgetPrivate::scrollbarValueChanged(int value)

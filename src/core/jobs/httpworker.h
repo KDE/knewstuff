@@ -31,8 +31,8 @@ public:
         GetJob,
         DownloadJob // Much the same as a get... except with a filesystem destination, rather than outputting data
     };
-    explicit HTTPWorker(const QUrl& url, JobType jobType = GetJob, QObject* parent = 0);
-    explicit HTTPWorker(const QUrl& source, const QUrl& destination, JobType jobType = DownloadJob, QObject* parent = 0);
+    explicit HTTPWorker(const QUrl& url, JobType jobType = GetJob, QObject* parent = nullptr);
+    explicit HTTPWorker(const QUrl& source, const QUrl& destination, JobType jobType = DownloadJob, QObject* parent = nullptr);
     virtual ~HTTPWorker();
 
     void startRequest();

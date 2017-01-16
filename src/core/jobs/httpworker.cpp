@@ -31,8 +31,8 @@ class HTTPWorker::Private
 public:
     Private()
         : jobType(GetJob)
-        , qnam(0)
-        , reply(0)
+        , qnam(nullptr)
+        , reply(nullptr)
     {}
     JobType jobType;
     QUrl source;

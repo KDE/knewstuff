@@ -29,13 +29,13 @@ class HTTPJob : public KJob
 {
     Q_OBJECT
 public:
-    explicit HTTPJob(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = 0);
-    explicit HTTPJob(QObject* parent = 0);
+    explicit HTTPJob(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
+    explicit HTTPJob(QObject* parent = nullptr);
     virtual ~HTTPJob();
 
     Q_SLOT virtual void start() Q_DECL_OVERRIDE;
 
-    static HTTPJob* get(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = 0);
+    static HTTPJob* get(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
 
 Q_SIGNALS:
     /**

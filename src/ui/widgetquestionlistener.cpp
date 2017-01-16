@@ -29,7 +29,7 @@ using namespace KNS3;
 
 class WidgetQuestionListenerHelper {
 public:
-    WidgetQuestionListenerHelper() : q(0) {}
+    WidgetQuestionListenerHelper() : q(nullptr) {}
     ~WidgetQuestionListenerHelper() { delete q; }
     WidgetQuestionListener *q;
 };
@@ -44,7 +44,7 @@ WidgetQuestionListener* WidgetQuestionListener::instance()
 }
 
 WidgetQuestionListener::WidgetQuestionListener()
-    : KNSCore::QuestionListener(0)
+    : KNSCore::QuestionListener(nullptr)
 {
     s_kns3_widgetQuestionListener()->q = this;
 }
@@ -60,7 +60,7 @@ void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question* question)
     case KNSCore::Question::SelectFromListQuestion:
         {
             bool ok = false;
-            question->setResponse(QInputDialog::getItem(0, question->title(), question->question(), question->list(), 0, false, &ok));
+            question->setResponse(QInputDialog::getItem(nullptr, question->title(), question->question(), question->list(), 0, false, &ok));
             if(ok) {
                 question->setResponse(KNSCore::Question::OKResponse);
             }
@@ -71,7 +71,7 @@ void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question* question)
         break;
     case KNSCore::Question::ContinueCancelQuestion:
         {
-            KMessageBox::ButtonCode response = KMessageBox::warningContinueCancel(0, question->question(), question->title());
+            KMessageBox::ButtonCode response = KMessageBox::warningContinueCancel(nullptr, question->question(), question->title());
             if(response == KMessageBox::Continue) {
                 question->setResponse(KNSCore::Question::ContinueResponse);
             }
@@ -96,7 +96,7 @@ void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question* question)
     case KNSCore::Question::YesNoQuestion:
     default:
         {
-            KMessageBox::ButtonCode response = KMessageBox::questionYesNo(0, question->question(), question->title());
+            KMessageBox::ButtonCode response = KMessageBox::questionYesNo(nullptr, question->question(), question->title());
             if(response == KMessageBox::Yes) {
                 question->setResponse(KNSCore::Question::YesResponse);
             }

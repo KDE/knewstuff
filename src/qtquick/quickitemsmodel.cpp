@@ -30,8 +30,8 @@ class ItemsModel::Private {
 public:
     Private(ItemsModel* qq)
         : q(qq)
-        , model(0)
-        , engine(0)
+        , model(nullptr)
+        , engine(nullptr)
     {}
     ItemsModel* q;
     KNSCore::ItemsModel* model;

@@ -86,7 +86,7 @@ public:
      *
      * @param parent the parent of the dialog
      */
-    explicit DownloadDialog(QWidget *parent = 0);
+    explicit DownloadDialog(QWidget *parent = nullptr);
 
     /**
      * Create a DownloadDialog that lets the user install, update and uninstall
@@ -96,7 +96,7 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
-    explicit DownloadDialog(const QString &configFile, QWidget *parent = 0);
+    explicit DownloadDialog(const QString &configFile, QWidget *parent = nullptr);
 
     /**
      * destructor

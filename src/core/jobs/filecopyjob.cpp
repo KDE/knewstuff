@@ -30,7 +30,7 @@ public:
     Private()
         : permissions(-1)
         , flags(DefaultFlags)
-        , worker(0)
+        , worker(nullptr)
     {}
     QUrl source;
     QUrl destination;
@@ -85,7 +85,7 @@ QUrl FileCopyJob::srcUrl() const
 
 FileCopyJob* FileCopyJob::file_copy(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
 {
-    FileCopyJob* job = 0;
+    FileCopyJob* job = nullptr;
     if(source.isLocalFile() && destination.isLocalFile()) {
         qCDebug(KNEWSTUFFCORE) << "File copy job is local only";
         job = new FileCopyJob(source, destination, permissions, flags, parent);
@@ -108,6 +108,6 @@ void FileCopyJob::handleProgressUpdate(qlonglong current, qlonglong total)
 void FileCopyJob::handleCompleted()
 {
     d->worker->deleteLater();
-    d->worker = 0;
+    d->worker = nullptr;
     emitResult();
 }

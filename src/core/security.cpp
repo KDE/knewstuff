@@ -83,7 +83,7 @@ void Security::readKeys()
     if (!m_process->waitForStarted()) {
         emit signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         delete m_process;
-        m_process = 0;
+        m_process = nullptr;
     } else {
         m_gpgRunning = true;
     }
@@ -109,7 +109,7 @@ void Security::readSecretKeys()
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
         delete m_process;
-        m_process = 0;
+        m_process = nullptr;
     } else {
         m_gpgRunning = true;
     }
@@ -120,7 +120,7 @@ void Security::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
     if (exitStatus != QProcess::NormalExit) {
         m_gpgRunning = false;
         delete m_process;
-        m_process = 0;
+        m_process = nullptr;
         return;
     }
     switch (m_runMode) {
@@ -135,7 +135,7 @@ void Security::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
     }
     m_gpgRunning = false;
     delete m_process;
-    m_process = 0;
+    m_process = nullptr;
 
     Q_UNUSED(exitCode)
 }
@@ -286,7 +286,7 @@ void Security::slotCheckValidity()
         emit signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         emit validityResult(0);
         delete m_process;
-        m_process = 0;
+        m_process = nullptr;
     }
 }
 
@@ -377,7 +377,7 @@ void Security::slotSignFile()
         emit signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
         emit fileSigned(0);
         delete m_process;
-        m_process = 0;
+        m_process = nullptr;
     }
 }
 
