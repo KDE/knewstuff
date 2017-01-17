@@ -19,6 +19,7 @@
 
 #include "question.h"
 
+#include <QCollator>
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
 
@@ -134,6 +135,12 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
             categoryMetadataList << categoryMetadata;
         }
     }
+    std::sort(categoryMetadataList.begin(), categoryMetadataList.end(), [](const AtticaProvider::CategoryMetadata &i, const AtticaProvider::CategoryMetadata &j) -> bool {
+        const QString a(i.displayName.isEmpty() ? i.name : i.displayName);
+        const QString b(j.displayName.isEmpty() ? j.name : j.displayName);
+
+        return (QCollator().compare(a, b) < 0);
+    });
 
     bool correct = false;
     for(auto it = mCategoryMap.cbegin(), itEnd = mCategoryMap.cend(); it!=itEnd; ++it) {
