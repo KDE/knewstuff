@@ -551,7 +551,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             bool success = true;
             const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
 
-            if (QFile::exists(installpath)) {
+            if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
                     Question question(Question::ContinueCancelQuestion);
                     question.setQuestion(i18n("Overwrite existing file?") + "\n'" + installpath + '\'');
