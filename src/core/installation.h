@@ -28,6 +28,7 @@
 
 #include "knewstuffcore_export.h"
 
+class QProcess;
 class KArchiveDirectory;
 class KJob;
 
@@ -133,7 +134,7 @@ private:
 
     QString targetInstallationPath(const QString &payloadfile);
     QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
-    void runPostInstallationCommand(const QString &installPath);
+    QProcess* runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
 

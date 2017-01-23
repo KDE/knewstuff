@@ -262,8 +262,8 @@ void Installation::slotPayloadResult(KJob *job)
                 }
             }
 
-            install(entry, fcjob->destUrl().toLocalFile());
             emit signalPayloadLoaded(fcjob->destUrl());
+            install(entry, fcjob->destUrl().toLocalFile());
         }
     }
 }
@@ -322,15 +322,6 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     }
 
     entry.setInstalledFiles(installedFiles);
-
-    if (!postInstallationCommand.isEmpty()) {
-        if (installedFiles.size() == 1) {
-            runPostInstallationCommand(installedFiles.first());
-        } else {
-            runPostInstallationCommand(targetPath);
-        }
-    }
-
     // ==== FIXME: security code below must go above, when async handling is complete ====
 
     // FIXME: security object lifecycle - it is a singleton!
@@ -339,19 +330,28 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     // FIXME: change to accept filename + signature
     sec->checkValidity(QString());
 
-    // update version and release date to the new ones
-    if (entry.status() == KNS3::Entry::Updating) {
-        if (!entry.updateVersion().isEmpty()) {
-            entry.setVersion(entry.updateVersion());
+    auto installationFinished = [this, entry]() {
+        EntryInternal newentry = entry;
+        // update version and release date to the new ones
+        if (newentry.status() == KNS3::Entry::Updating) {
+            if (!newentry.updateVersion().isEmpty()) {
+                newentry.setVersion(newentry.updateVersion());
+            }
+            if (newentry.updateReleaseDate().isValid()) {
+                newentry.setReleaseDate(newentry.updateReleaseDate());
+            }
         }
-        if (entry.updateReleaseDate().isValid()) {
-            entry.setReleaseDate(entry.updateReleaseDate());
-        }
-    }
 
-    entry.setStatus(KNS3::Entry::Installed);
-    emit signalEntryChanged(entry);
-    emit signalInstallationFinished();
+        newentry.setStatus(KNS3::Entry::Installed);
+        emit signalEntryChanged(newentry);
+        emit signalInstallationFinished();
+    };
+    if (!postInstallationCommand.isEmpty()) {
+        QProcess* p = runPostInstallationCommand(installedFiles.size() == 1 ? installedFiles.first() : targetPath);
+        connect(p, static_cast<void(QProcess::*)(int)>(&QProcess::finished), this, installationFinished);
+    } else {
+        installationFinished();
+    }
 }
 
 QString Installation::targetInstallationPath(const QString &payloadfile)
@@ -576,7 +576,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
     return installedFiles;
 }
 
-void Installation::runPostInstallationCommand(const QString &installPath)
+QProcess* Installation::runPostInstallationCommand(const QString &installPath)
 {
     QString command(postInstallationCommand);
     QString fileArg(KShell::quoteArg(installPath));
@@ -584,11 +584,16 @@ void Installation::runPostInstallationCommand(const QString &installPath)
 
     qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
 
-    int exitcode = QProcess::execute(command);
-
-    if (exitcode) {
-        qCritical() << "Command failed" << endl;
-    }
+    QProcess* ret = new QProcess(this);
+    connect(ret, static_cast<void(QProcess::*)(int)>(&QProcess::finished), this, [this, command](int exitcode){
+        if (exitcode) {
+            qCritical() << "Command '" << command << "' failed with code" << exitcode;
+        }
+        sender()->deleteLater();
+    });
+    ret->setProgram(command);
+    ret->start();
+    return ret;
 }
 
 void Installation::uninstall(EntryInternal entry)
