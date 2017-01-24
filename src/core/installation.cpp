@@ -38,7 +38,6 @@
 #include <knewstuffcore_debug.h>
 
 #include "jobs/filecopyjob.h"
-#include "security.h"
 #include "question.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -55,17 +54,6 @@ Installation::Installation(QObject *parent)
     , customName(false)
     , acceptHtml(false)
 {
-    Security *sec = Security::ref();
-
-    connect(sec,
-            &Security::validityResult,
-            this, &Installation::slotInstallationVerification);
-    connect(sec,
-            &Security::signalInformation,
-            this, &Installation::signalInformation);
-    connect(sec,
-            &Security::signalError,
-            this, &Installation::signalError);
 }
 
 bool Installation::readConfig(const KConfigGroup &group)
@@ -277,7 +265,6 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
         return;
     }
 
-    // FIXME: first of all, do the security stuff here
     // this means check sum comparison and signature verification
     // signature verification might take a long time - make async?!
     /*
@@ -322,13 +309,6 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     }
 
     entry.setInstalledFiles(installedFiles);
-    // ==== FIXME: security code below must go above, when async handling is complete ====
-
-    // FIXME: security object lifecycle - it is a singleton!
-    Security *sec = Security::ref();
-
-    // FIXME: change to accept filename + signature
-    sec->checkValidity(QString());
 
     auto installationFinished = [this, entry]() {
         EntryInternal newentry = entry;
@@ -648,16 +628,7 @@ void Installation::uninstall(EntryInternal entry)
 
 void Installation::slotInstallationVerification(int result)
 {
-    qCDebug(KNEWSTUFFCORE) << "SECURITY result " << result;
-
-    //FIXME do something here ??? and get the right entry again
-    EntryInternal entry;
-
-    if (result & Security::SIGNED_OK) {
-        emit signalEntryChanged(entry);
-    } else {
-        emit signalEntryChanged(entry);
-    }
+    // Deprecated, was wired up to defunct Security class.
 }
 
 QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)
