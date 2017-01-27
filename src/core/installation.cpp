@@ -543,6 +543,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 success = QFile::remove(installpath);
             }
             if (success) {
+                if (installpath.startsWith(QDir::tempPath()))
+                    file.remove(installpath);
                 success = file.rename(installpath);
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
@@ -571,7 +573,10 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
         }
         sender()->deleteLater();
     });
-    ret->setProgram(command);
+
+    QStringList args = KShell::splitArgs(command);
+    ret->setProgram(args.takeFirst());
+    ret->setArguments(args);
     ret->start();
     return ret;
 }
