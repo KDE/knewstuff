@@ -543,8 +543,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 success = QFile::remove(installpath);
             }
             if (success) {
-                if (installpath.startsWith(QDir::tempPath()))
+                //remove in case it's already present and in a temporary directory, so we get to actually use the path again
+                if (installpath.startsWith(QDir::tempPath())) {
                     file.remove(installpath);
+                }
                 success = file.rename(installpath);
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
