@@ -25,10 +25,12 @@
 #include <QApplication>
 #include <QToolButton>
 #include <QMenu>
+#include <QProcess>
 #include <knewstuff_debug.h>
 
 #include <klocalizedstring.h>
 #include <kratingwidget.h>
+#include <KShell>
 
 #include "core/itemsmodel.h"
 
@@ -61,7 +63,6 @@ QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) 
 
     QToolButton *installButton = new QToolButton();
     installButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    installButton->setPopupMode(QToolButton::InstantPopup);
     list << installButton;
     setBlockedEventTypes(installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
@@ -152,6 +153,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         installButton->setText(text);
         installButton->setEnabled(enabled);
         installButton->setIcon(icon);
+        installButton->setPopupMode(QToolButton::InstantPopup);
+
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(installButton);
             foreach (const KNSCore::EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
@@ -163,6 +166,15 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
                 installAction->setData(QPoint(index.row(), info.id));
             }
             installButton->setMenu(installMenu);
+        } else if (entry.status() == Entry::Installed && m_engine->hasAdoptionCommand()) {
+            QMenu* m = new QMenu(installButton);
+            m->addAction(i18n("Use"), m, [this, entry](){
+                QStringList args = KShell::splitArgs(m_engine->adoptionCommand(entry));
+                qCDebug(KNEWSTUFF) << "executing AdoptionCommand" << args;
+                QProcess::startDetached(args.takeFirst(), args);
+            });
+            installButton->setPopupMode(QToolButton::MenuButtonPopup);
+            installButton->setMenu(m);
         }
     }
 

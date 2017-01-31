@@ -334,7 +334,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     }
 }
 
-QString Installation::targetInstallationPath()
+QString Installation::targetInstallationPath() const
 {
     QString installdir;
 

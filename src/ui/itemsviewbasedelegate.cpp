@@ -86,6 +86,9 @@ void ItemsViewBaseDelegate::slotInstallClicked()
 
 void ItemsViewBaseDelegate::slotInstallActionTriggered(QAction *action)
 {
+    if (action->data().isNull())
+        return;
+
     QPoint rowDownload = action->data().toPoint();
     int row = rowDownload.x();
     QModelIndex index = m_itemView->model()->index(row, 0);

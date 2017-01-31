@@ -121,6 +121,13 @@ public Q_SLOTS:
 
     void slotPayloadResult(KJob *job);
 
+    /**
+     * @returns the installation path
+     *
+     * @since 5.31
+     */
+    QString targetInstallationPath() const;
+
 Q_SIGNALS:
     void signalEntryChanged(const KNSCore::EntryInternal &entry);
     void signalInstallationFinished();
@@ -135,7 +142,6 @@ Q_SIGNALS:
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
-    QString targetInstallationPath();
     QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
     QProcess* runPostInstallationCommand(const QString &installPath);
 

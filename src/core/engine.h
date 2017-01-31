@@ -133,6 +133,9 @@ public:
 
     QList<Provider::CategoryMetadata> categoriesMetadata();
 
+    QString adoptionCommand(const KNSCore::EntryInternal &entry) const;
+    bool hasAdoptionCommand() const;
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
@@ -217,8 +220,7 @@ private:
 
     QHash<QString, QSharedPointer<KNSCore::Provider> > m_providers;
 
-    // TODO KF6: remove
-    QString m_unused;
+    QString m_adoptionCommand;
 
     // the current request from providers
     Provider::SearchRequest m_currentRequest;

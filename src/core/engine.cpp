@@ -135,6 +135,7 @@ bool Engine::init(const QString &configfile)
     }
 
     m_categories = group.readEntry("Categories", QStringList());
+    m_adoptionCommand = group.readEntry("AdoptionCommand", QString());
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
@@ -603,4 +604,58 @@ void KNSCore::Engine::checkForInstalled()
         request.page = 0;
         p->loadEntries(request);
     }
+}
+
+/**
+ * we look for the directory where all the resources got installed.
+ * assuming it was extracted into a directory
+ */
+static QDir sharedDir(QStringList dirs, const QString &rootPath)
+{
+    while(!dirs.isEmpty()) {
+        const QString currentPath = QDir::cleanPath(dirs.takeLast());
+        if (!currentPath.startsWith(rootPath))
+            continue;
+
+        const QFileInfo current(currentPath);
+        if (!current.isDir())
+            continue;
+
+        const QDir dir = current.dir();
+        if (dir.path()==(rootPath+dir.dirName())) {
+            return dir;
+        }
+    }
+    return {};
+}
+
+QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
+{
+    auto adoption = m_adoptionCommand;
+    if(adoption.isEmpty())
+        return {};
+
+    const QLatin1String dirReplace("%d");
+    if (adoption.contains(dirReplace)) {
+        QString installPath = sharedDir(entry.installedFiles(), m_installation->targetInstallationPath()).path();
+        adoption.replace(dirReplace, installPath);
+    }
+
+    const QLatin1String fileReplace("%f");
+    QStringList ret;
+    if (adoption.contains(fileReplace)) {
+        if (entry.installedFiles().isEmpty()) {
+            qCWarning(KNEWSTUFFCORE) << "no installed files to adopt";
+        } else if (entry.installedFiles().count() != 1) {
+            qCWarning(KNEWSTUFFCORE) << "can only adopt one file, will be using the first" << entry.installedFiles().at(0);
+        }
+
+        adoption.replace(fileReplace, entry.installedFiles().at(0));
+    }
+    return adoption;
+}
+
+bool KNSCore::Engine::hasAdoptionCommand() const
+{
+    return !m_adoptionCommand.isEmpty();
 }
