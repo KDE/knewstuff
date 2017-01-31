@@ -135,7 +135,7 @@ Q_SIGNALS:
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
-    QString targetInstallationPath(const QString &payloadfile);
+    QString targetInstallationPath();
     QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
     QProcess* runPostInstallationCommand(const QString &installPath);
 

@@ -95,7 +95,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         return;
     }
 
-    KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
+    const KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
 
     // setup the install button
     int margin = option.fontMetrics.height() / 2;

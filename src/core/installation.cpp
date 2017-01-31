@@ -294,7 +294,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     }
     */
 
-    QString targetPath = targetInstallationPath(downloadedFile);
+    QString targetPath = targetInstallationPath();
     QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
 
     if (installedFiles.isEmpty()) {
@@ -334,9 +334,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     }
 }
 
-QString Installation::targetInstallationPath(const QString &payloadfile)
+QString Installation::targetInstallationPath()
 {
-    QString installpath(payloadfile);
     QString installdir;
 
     if (!isRemote()) {
@@ -391,10 +390,10 @@ QString Installation::targetInstallationPath(const QString &payloadfile)
             if (SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
                 installdir = QString::fromUtf16((const ushort *) wPath) + QLatin1Char('/') + installpath + QLatin1Char('/');
             } else {
-                installdir =  QDir::home().path() + QLatin1Char('/') + installPath + QLatin1Char('/');
+                installdir =  QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
             }
 #else
-            installdir = QDir::home().path() + QLatin1Char('/') + installPath + QLatin1Char('/');
+            installdir = QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
 #endif
             pathcounter++;
         }
@@ -598,9 +597,9 @@ void Installation::uninstall(EntryInternal entry)
                 int exitcode = QProcess::execute(command);
 
                 if (exitcode) {
-                    qCritical() << "Command failed";
+                    qCritical() << "Command failed" << command;
                 } else {
-                    qCDebug(KNEWSTUFFCORE) << "Command executed successfully";
+                    qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
                 }
             }
         }
@@ -635,6 +634,7 @@ void Installation::uninstall(EntryInternal entry)
 
 void Installation::slotInstallationVerification(int result)
 {
+    Q_UNUSED(result)
     // Deprecated, was wired up to defunct Security class.
 }
 
