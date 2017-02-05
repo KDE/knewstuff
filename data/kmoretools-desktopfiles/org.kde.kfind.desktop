@@ -5,6 +5,7 @@ X-DocPath=kfind/index.html
 Type=Application
 Terminal=false
 Name=Find Files/Folders
+Name[ar]=أوجد ملفّات/مجلّدات
 Name[ca]=Cerca de fitxers/carpetes
 Name[ca@valencia]=Cerca de fitxers/carpetes
 Name[cs]=Najít soubory/složky

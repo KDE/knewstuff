@@ -80,6 +80,7 @@ GenericName[x-test]=xxQGitxx
 GenericName[zh_CN]= 
 GenericName[zh_TW]=QGit
 Comment=git repository browser
+Comment[ar]=متصفّح لمستودعات «غِت»
 Comment[ast]=Restolador de repositorios Git
 Comment[ca]=Navegador pel repositori Git
 Comment[ca@valencia]=Navegador pel repositori Git

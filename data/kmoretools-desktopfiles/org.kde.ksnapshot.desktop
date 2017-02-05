@@ -1,5 +1,6 @@
 [Desktop Entry]
 GenericName=Screen Capture Program
+GenericName[ar]=برنامج لالتقاط الشّاشة
 GenericName[ast]=Programa pa capturar pantalla
 GenericName[ca]=Programa de captura de pantalla
 GenericName[ca@valencia]=Programa de captura de pantalla
@@ -37,6 +38,7 @@ GenericName[x-test]=xxScreen Capture Programxx
 GenericName[zh_CN]=屏幕捕获程序
 GenericName[zh_TW]=畫面擷取程式
 Name=KSnapshot
+Name[ar]=لقطة شاشتك
 Name[ast]=KSnapshot
 Name[ca]=KSnapshot
 Name[ca@valencia]=KSnapshot
