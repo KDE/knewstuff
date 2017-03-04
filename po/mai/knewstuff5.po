@@ -1,0 +1,966 @@
+# translation of kdelibs4.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sangeeta Kumari <sangeeta09@gmail.com>, 2008.
+# Rajesh Ranjan <rajesh672@gmail.com>, 2010.
+# Rajesh Ranjan <rranjan@redhat.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-02-02 03:54+0100\n"
+"PO-Revision-Date: 2010-09-24 15:44+0530\n"
+"Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: attica/atticaprovider.cpp:159
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgid "All categories are missing"
+msgstr "सभ श्रेणीसभ"
+
+#: attica/atticaprovider.cpp:331
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "the price of a download item, parameter 1 is the currency, 2 is the price"
+#| msgid ""
+#| "This items costs %1 %2.\n"
+#| "Do you want to buy it?"
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"ई मदक लागत %1 %2 अछि.\n"
+"Do you want to buy it?"
+
+#: attica/atticaprovider.cpp:345
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:387
+#, fuzzy, kde-format
+#| msgid "Your vote was successful."
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "अहाँक वोट सफल अछि."
+
+#: attica/atticaprovider.cpp:402
+#, kde-format
+msgid "You are now a fan."
+msgstr "अहाँ एकटा प्रशसंक छी"
+
+#: attica/atticaprovider.cpp:413
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "संजालक त्रुटि. (%1)"
+
+#: attica/atticaprovider.cpp:417
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:419
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "टटका सामग्री डाउनलोड करू..."
+
+#: core/engine.cpp:115
+#, kde-format
+msgid "Initializing"
+msgstr "आरँभीकरण"
+
+#: core/engine.cpp:119
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "बिन्यास फाइल नहि भेटल: \"%1\""
+
+#: core/engine.cpp:132
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "बिन्यास फाइल अवैध अछि: \"%1\""
+
+#: core/engine.cpp:189
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "फ्रेम जानकारी देखू"
+
+#: core/engine.cpp:212
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:235
+#, kde-format
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:239 core/engine.cpp:582
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "डाटा लोड करैछै"
+
+#: core/engine.cpp:273
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:278
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr ""
+
+#: core/engine.cpp:542
+#, kde-format
+msgid "Re: %1"
+msgstr "जवाब: %1"
+
+#: core/engine.cpp:584
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "पूर्वावलोकन लोड कएल जाए रहल अछि"
+msgstr[1] "पूर्वावलोकन लोड कएल जाए रहल अछि"
+
+#: core/engine.cpp:586 ui/itemsgridviewdelegate.cpp:335
+#: ui/itemsviewdelegate.cpp:131
+#, kde-format
+msgid "Installing"
+msgstr "संस्थापित कए रहल अछि"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr "अवैध मद."
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:242
+#, fuzzy, kde-format
+#| msgid "Could not create temporary file."
+msgid "Possibly bad download link"
+msgstr "अस्थायी फाइल बनाए नहि सकल."
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:307
+#, fuzzy, kde-format
+#| msgid "Could not install %1"
+msgid "Could not install \"%1\": file not found."
+msgstr "%1 केँ संस्थापित  नहि कएल जाए सकल"
+
+#: core/installation.cpp:536
+#, kde-format
+msgid "Overwrite existing file?"
+msgstr "मोजुदा फाइल पर लिखू?"
+
+#: core/installation.cpp:537
+#, fuzzy, kde-format
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "फाइल डाउनलोड करू"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>कुंजी <b>0x%1</b> क' लेल पासफ्रेस भरू, सँ सम्बद्ध<br /><i>%2&lt;%3&gt;</i><br />:"
+"</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "हस्ताक्षर करब क' लेल उपयोग कुंजी:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "हस्ताक्षर कुँजी चुनू"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:220
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "नवीन टटका चीज प्राप्त करू"
+
+#: downloaddialog.cpp:98
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 एड-ऑन इंस्टालर"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "टाइमआउट. इंटरनेट कनेक्शन जाँचू."
+
+#: downloadwidget.cpp:192
+#, kde-format
+msgid "Server: %1"
+msgstr "सर्वरः %1"
+
+#: downloadwidget.cpp:193
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />देनिहार: %1"
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />संस्करण: %1"
+
+#: downloadwidget.cpp:198
+#, kde-format
+msgid "Provider information"
+msgstr "देनिहारक जानकारी"
+
+#: downloadwidget.cpp:209
+#, kde-format
+msgid "Could not install %1"
+msgstr "%1 केँ संस्थापित  नहि कएल जाए सकल"
+
+#: downloadwidget.cpp:210
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "नवीन टटका माल प्राप्त करू!"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Icons view mode"
+msgstr "चिह्न दृश्य केवल"
+
+#: downloadwidget.cpp:266
+#, kde-format
+msgid "Details view mode"
+msgstr "विभाजित दृश्य मोड"
+
+#: downloadwidget.cpp:281
+#, kde-format
+msgid "All Providers"
+msgstr "सभ देनिहार"
+
+#: downloadwidget.cpp:288
+#, kde-format
+msgid "All Categories"
+msgstr "सभ श्रेणीसभ"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "देनिहार"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "श्रेणी"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Newest"
+msgstr "नवीनतम"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Rating"
+msgstr "दर"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Most downloads"
+msgstr "अधिकतम डाउनलोड्स"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "संस्थापित"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "एकर द्वारा आर्डर:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "खोजू:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "ढूँढल जाए बला वाक्यांश एतए भरू"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "लेखक:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">होमपेज</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:330
+#: ui/itemsviewdelegate.cpp:126 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "अद्यतन"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:326
+#: ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Uninstall"
+msgstr "विसंस्थापित करू"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "एकटा प्रशंसक बनू"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:345
+#: ui/itemsgridviewdelegate.cpp:355 ui/itemsviewdelegate.cpp:141
+#: ui/itemsviewdelegate.cpp:151
+#, kde-format
+msgid "Install"
+msgstr "संस्थापित करू"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "चयन करू..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "संस्थापित"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "बिन्यस्त करू... (&g)"
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy, kde-format
+#| msgid "Homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "मुख्य पृष्ठ"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy, kde-format
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "ओतए कोनो मेल खाइबला वस्तुसभ मोजुद नहि छी.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "बिन्यस्त करू"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "%1 बिन्यस्त करू करू...(&C)"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "अनुरक्षक"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "नीच्चाँ जाउ (&D)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "उप्पर जाउ (&U)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "बेसी काज"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "रिसेट करू"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "बेसी काज"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "चयन करू..."
+
+#: qtquick/qml/NewStuffItem.qml:36
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "संस्थापित करू"
+
+#: qtquick/qml/NewStuffItem.qml:43
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "अद्यतन"
+
+#: qtquick/qml/NewStuffItem.qml:50
+#, fuzzy, kde-format
+#| msgid "Uninstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "विसंस्थापित करू"
+
+#: ui/entrydetailsdialog.cpp:91
+#, fuzzy, kde-format
+#| msgid "Suggestion List"
+msgid "Details for %1"
+msgstr "%1 क लेल विवरण"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "चेंजलॉग:"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "मुख्य पृष्ठ"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "दान दिअ'"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "ब्राउजर विंडोमे खोलैछ"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:272
+#, kde-format
+msgid "Rating: %1%"
+msgstr "दर: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:232
+#: ui/itemsviewdelegate.cpp:234 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "By <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:250
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 फैन"
+msgstr[1] "%1 फैन"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:253
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 डाउनलोड"
+msgstr[1] "%1 डाउनलोड"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:323
+#, kde-format
+msgid "Loading Preview"
+msgstr "पूर्वावलोकन लोड कएल जाए रहल अछि"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:183
+#, kde-format
+msgid "Details"
+msgstr "विवरण"
+
+#: ui/itemsgridviewdelegate.cpp:340 ui/itemsviewdelegate.cpp:136
+#, kde-format
+msgid "Updating"
+msgstr "अद्यतन कए रहल अछि"
+
+#: ui/itemsgridviewdelegate.cpp:350 ui/itemsviewdelegate.cpp:146
+#, kde-format
+msgid "Install Again"
+msgstr "फेर संस्थापित करू"
+
+#: ui/itemsviewdelegate.cpp:171
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: uploaddialog.cpp:65
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "अगिला"
+
+#: uploaddialog.cpp:70
+#, kde-format
+msgid "Finish"
+msgstr "समाप्त"
+
+#: uploaddialog.cpp:178
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Fetching provider information..."
+msgstr "फ्रेम जानकारी देखू"
+
+#: uploaddialog.cpp:185
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:192
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:267
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Could not fetch provider information."
+msgstr "फ्रेम जानकारी देखू"
+
+#: uploaddialog.cpp:291
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:315
+#, kde-format
+msgid "Checking login..."
+msgstr "लोगिन जाँचि रहल अछि..."
+
+#: uploaddialog.cpp:337
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Fetching your previously updated content..."
+msgstr "पूर्वावलोकन लोड कएल जाए रहल अछि"
+
+#: uploaddialog.cpp:340
+#, fuzzy, kde-format
+#| msgid "Could not create temporary file."
+msgid "Could not verify login, please try again."
+msgstr "अस्थायी फाइल बनाए नहि सकल."
+
+#: uploaddialog.cpp:359
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:377
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:400 uploaddialog.cpp:840
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "वेबसाइट देखू"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:446 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "नवीन टटका सामग्रीसभ क' साझा करू"
+
+#: uploaddialog.cpp:469
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 एड-ऑन अपलोडर"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:765
+#, kde-format
+msgid "File not found: %1"
+msgstr "फाइल नहि भेटल: %1"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:616 uploaddialog.cpp:765
+#, kde-format
+msgid "Upload Failed"
+msgstr "अपलोड विफल"
+
+#: uploaddialog.cpp:569
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: uploaddialog.cpp:572
+#, kde-format
+msgid "Error"
+msgstr "त्रुटि"
+
+#: uploaddialog.cpp:616
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr ""
+
+#: uploaddialog.cpp:665 uploaddialog.cpp:680 uploaddialog.cpp:694
+#, kde-format
+msgid "Select preview image"
+msgstr "पूर्वावलोकन छवि चुनू"
+
+#: uploaddialog.cpp:709
+#, kde-format
+msgid "There was a network error."
+msgstr ""
+
+#: uploaddialog.cpp:709 uploaddialog.cpp:714
+#, kde-format
+msgid "Uploading Failed"
+msgstr "अपलोड विफल"
+
+#: uploaddialog.cpp:714
+#, kde-format
+msgid "Authentication error."
+msgstr "सत्यापन त्रुटि"
+
+#: uploaddialog.cpp:724
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "अपलोड विफल: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "कूटशब्द: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "प्रयोक्ताक नाम:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "फाइल अपलोड करबाक लेल."
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "नव अपलोड"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "जीपीएल"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "एलजीपीएल"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "बीएसडी"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "विवरण:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "संस्करण:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "लाइसेंस:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "कृप्या अपन संबंधमे उचित जानकारी आँग्लभाषामे दिअ'."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "शीर्षक:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "पूर्वावलोकन छवि"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "पूर्वावलोकन चुनू..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "ई मदक' लेल एकटा दाम लगाउ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "दाम"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "लागत:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "सामग्री अपलोड करू"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "पहिल पूर्वावलोकन अपलोड करू"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "दोसर पूर्वावलोकन अपलोड करू"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "तेसर पूर्वावलोकन अपलोड करू"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "अपलोड प्रारंभ करू"
