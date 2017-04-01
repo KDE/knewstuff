@@ -1,0 +1,957 @@
+# Translation of knewstuff5 to Norwegian Nynorsk
+#
+# Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 2003, 2004, 2005, 2006.
+# Håvard Korsvoll <korsvoll@skulelinux.no>, 2003, 2005.
+# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016.
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-02-02 03:54+0100\n"
+"PO-Revision-Date: 2016-11-19 19:07+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: attica/atticaprovider.cpp:159
+#, kde-format
+msgid "All categories are missing"
+msgstr "Alle kategoriane manglar"
+
+#: attica/atticaprovider.cpp:331
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Dette kostar %2 %1.\n"
+"Ønskjer du å kjøpa det?"
+
+#: attica/atticaprovider.cpp:345
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Kontobalansen er for låg:\n"
+"Balanse: %1\n"
+"Pris: %2"
+
+#: attica/atticaprovider.cpp:387
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Stemmen din er registrert."
+
+#: attica/atticaprovider.cpp:402
+#, kde-format
+msgid "You are now a fan."
+msgstr "Du er no ein tilhengjar."
+
+#: attica/atticaprovider.cpp:413
+#, kde-format
+msgid "Network error. (%1)"
+msgstr "Nettverksfeil. (%1)"
+
+#: attica/atticaprovider.cpp:417
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "For mange førespurnadar til tenaren. Prøv om att om nokre minutt."
+
+#: attica/atticaprovider.cpp:419
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Ukjend API-feil for Open Collaboration Service. (%1)"
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Last ned nye saker …"
+
+#: core/engine.cpp:115
+#, kde-format
+msgid "Initializing"
+msgstr "Førebur"
+
+#: core/engine.cpp:119
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Fann ikkje oppsettfila: «%1»"
+
+#: core/engine.cpp:132
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Oppsettfila er ugyldig: «%1»"
+
+#: core/engine.cpp:189
+#, kde-format
+msgid "Loading provider information"
+msgstr "Hentar leverandørinformasjon"
+
+#: core/engine.cpp:212
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Klarte ikkje henta nye godsaker frå fila: %1"
+
+#: core/engine.cpp:235
+#, kde-format
+msgid "Error initializing provider."
+msgstr "Feil ved klargjering av leverandør."
+
+#: core/engine.cpp:239 core/engine.cpp:582
+#, kde-format
+msgid "Loading data"
+msgstr "Hentar data"
+
+#: core/engine.cpp:273
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Hentar data frå leverandør"
+
+#: core/engine.cpp:278
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Klarte ikkje henta leverandørinfo frå fila: %1 mislukka"
+
+#: core/engine.cpp:542
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:584
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Lastar éi førehandsvising"
+msgstr[1] "Lastar %1 førehandsvisingar"
+
+#: core/engine.cpp:586 ui/itemsgridviewdelegate.cpp:335
+#: ui/itemsviewdelegate.cpp:131
+#, kde-format
+msgid "Installing"
+msgstr "Installerer"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr "Ugyldig element."
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Klarte ikkje lasta ned element: manglar adresse for «%1»."
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Klarte ikkje lasta ned «%1» – feil: %2"
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Den nedlasta fila er ei HTML-fil. Dette er truleg ei lenkje til ei nettside "
+"i staden for den verkelege fila. Ønskjer du å opna nettsida i ein nettlesar "
+"i staden for?"
+
+#: core/installation.cpp:242
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Mogleg ugyldig nedlastingslenkje"
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Den nedlasta fila var ei HTML-fil. Vart opna i nettlesaren."
+
+#: core/installation.cpp:307
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Klarte ikkje installera «%1»: fann ikkje fila."
+
+#: core/installation.cpp:536
+#, kde-format
+msgid "Overwrite existing file?"
+msgstr "Vil du skriva over fila?"
+
+#: core/installation.cpp:537
+#, kde-format
+msgid "Download File"
+msgstr "Last ned fil"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Klarte ikkje starta <i>gpg</i> og henta tilgjengelege nøklar. Sjå etter "
+"at <i>gpg</i> er installert. Utan denne er det ikkje mogleg å verifisera "
+"ressursar som vert lasta ned.</qt>"
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Oppgje passord for nøkkel <b>0x%1</b> som høyrer til <br /><i>%2&lt;"
+"%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Klarte ikkje starta <i>gpg</i> og sjekka om fila er gyldig. Sjå etter at "
+"<i>gpg</i> er installert. Utan denne er det ikkje mogleg å verifisera "
+"ressursar som vert lasta ned.</qt>"
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Nøkkel brukt til signering:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Vel signeringsnøkkel"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Klarar ikkje starta <i>gpg</i> og signera fila. Sjå etter at <i>gpg</i> "
+"er installert, utan denne er det ikkje mogleg å signera ressursane.</qt>"
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:220
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Hent kule, nye ting"
+
+#: downloaddialog.cpp:98
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Tilleggsinstallering for %1"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Tidsavbrot. Kontroller Internett-sambandet."
+
+#: downloadwidget.cpp:192
+#, kde-format
+msgid "Server: %1"
+msgstr "Tenar: %1"
+
+#: downloadwidget.cpp:193
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Tilbydar: %1"
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Versjon: %1"
+
+#: downloadwidget.cpp:198
+#, kde-format
+msgid "Provider information"
+msgstr "Leverandørinformasjon"
+
+#: downloadwidget.cpp:209
+#, kde-format
+msgid "Could not install %1"
+msgstr "Klarte ikkje installera %1"
+
+#: downloadwidget.cpp:210
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Hent kule, nye ting!"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Icons view mode"
+msgstr "Ikonmodus"
+
+#: downloadwidget.cpp:266
+#, kde-format
+msgid "Details view mode"
+msgstr "Detaljmodus"
+
+#: downloadwidget.cpp:281
+#, kde-format
+msgid "All Providers"
+msgstr "Alle leverandørar"
+
+#: downloadwidget.cpp:288
+#, kde-format
+msgid "All Categories"
+msgstr "Alle kategoriar"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "Leverandør:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "Kategori:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Newest"
+msgstr "Nyaste"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Rating"
+msgstr "Karakter"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Most downloads"
+msgstr "Mest nedlasta"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "Installert"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Sorter etter:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Søk:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "Skriv inn søkjetekst"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Utviklar:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Heimeside</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:330
+#: ui/itemsviewdelegate.cpp:126 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Oppdater"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:326
+#: ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Uninstall"
+msgstr "Avinstaller"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "Vert tilhengjar"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:345
+#: ui/itemsgridviewdelegate.cpp:355 ui/itemsviewdelegate.cpp:141
+#: ui/itemsviewdelegate.cpp:151
+#, kde-format
+msgid "Install"
+msgstr "Installer"
+
+#: kmoretools/kmoretools.cpp:633
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Meir"
+
+#: kmoretools/kmoretools.cpp:648
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Ikkje installert:"
+
+#: kmoretools/kmoretools.cpp:684
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Set opp …"
+
+#: kmoretools/kmoretools_p.h:384
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Besøk heimesida"
+
+#: kmoretools/kmoretools_p.h:391
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Ingen tilleggsinformasjon tilgjengeleg."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, kde-format
+msgid "Configure menu"
+msgstr "Set opp meny"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Set opp meny – %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr "$GenericName – gjeldande mappe"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr "$GenericName – gjeldande eining"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr "$GenericName – alle einingar"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Hovuddel"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Flytt ned"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr "Flytt opp"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr "Flytt til hovuddelen"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr "Flytt til meir-delen"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Nullstill"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr "Meir-del"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Det er føreslått nokre fleire verktøy for denne menyen som ikkje er "
+"installerte:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr "Fleire verktøy …"
+
+#: qtquick/qml/NewStuffItem.qml:36
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Installer"
+
+#: qtquick/qml/NewStuffItem.qml:43
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Oppdater"
+
+#: qtquick/qml/NewStuffItem.qml:50
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Avinstaller"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Detaljar for %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "Endringslogg:"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Heimeside"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Gje pengar"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Kunnskapsbase (ingen oppføringar)"
+msgstr[1] "Kunnskapsbase (%1 oppføringar)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Opna i ein nettlesar"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:272
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Karakter: %1 %"
+
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsgridviewdelegate.cpp:154
+#: ui/itemsgridviewdelegate.cpp:156 ui/itemsviewdelegate.cpp:232
+#: ui/itemsviewdelegate.cpp:234 ui/itemsviewdelegate.cpp:236
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Av <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:250
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 tilhengjar"
+msgstr[1] "%1 tilhengjarar"
+
+#: ui/itemsgridviewdelegate.cpp:182 ui/itemsviewdelegate.cpp:253
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 nedlasting"
+msgstr[1] "%1 nedlastingar"
+
+#: ui/itemsgridviewdelegate.cpp:248 ui/itemsviewdelegate.cpp:323
+#, kde-format
+msgid "Loading Preview"
+msgstr "Lastar førehandsvising"
+
+#: ui/itemsgridviewdelegate.cpp:275 ui/itemsviewdelegate.cpp:183
+#, kde-format
+msgid "Details"
+msgstr "Detaljar"
+
+#: ui/itemsgridviewdelegate.cpp:340 ui/itemsviewdelegate.cpp:136
+#, kde-format
+msgid "Updating"
+msgstr "Oppdaterer"
+
+#: ui/itemsgridviewdelegate.cpp:350 ui/itemsviewdelegate.cpp:146
+#, kde-format
+msgid "Install Again"
+msgstr "Installer på nytt"
+
+#: ui/itemsviewdelegate.cpp:171
+#, kde-format
+msgid "Use"
+msgstr "Bruk"
+
+#: uploaddialog.cpp:65
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Neste"
+
+#: uploaddialog.cpp:70
+#, kde-format
+msgid "Finish"
+msgstr "Fullfør"
+
+#: uploaddialog.cpp:178
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "Hentar leverandørinformasjon …"
+
+#: uploaddialog.cpp:185
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "Hentar lisensvilkår frå tenaren …"
+
+#: uploaddialog.cpp:192
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "Hentar innhald frå tenaren …"
+
+#: uploaddialog.cpp:267
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "Klarte ikkje leverandørinformasjon."
+
+#: uploaddialog.cpp:291
+#, kde-format
+msgid "Register a new account"
+msgstr "Registrer ny konto"
+
+#: uploaddialog.cpp:315
+#, kde-format
+msgid "Checking login..."
+msgstr "Testar innlogging …"
+
+#: uploaddialog.cpp:337
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "Hentar tidlegare oppdatert innhald …"
+
+#: uploaddialog.cpp:340
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "Klarte ikkje stadfesta innlogging. Prøv på nytt."
+
+#: uploaddialog.cpp:359
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "Det tidlegare oppdaterte innhaldet ditt er henta ned."
+
+#: uploaddialog.cpp:377
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "Innhaldsdata frå tenaren er henta ned."
+
+#: uploaddialog.cpp:400 uploaddialog.cpp:840
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Besøk heimesida"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:446 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Del kule, nye ting"
+
+#: uploaddialog.cpp:469
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Tilleggsinstallering for %1"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:765
+#, kde-format
+msgid "File not found: %1"
+msgstr "Fann ikkje fila: %1"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:616 uploaddialog.cpp:765
+#, kde-format
+msgid "Upload Failed"
+msgstr "Feil ved opplasting"
+
+#: uploaddialog.cpp:569
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"Tenaren kjenner ikkje att kategorien %2 som du prøver å lasta opp til."
+msgstr[1] ""
+"Tenaren kjenner ikkje att kategoriane som du prøver å lasta opp til: %2"
+
+#: uploaddialog.cpp:572
+#, kde-format
+msgid "Error"
+msgstr "Feil"
+
+#: uploaddialog.cpp:616
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Den valde kategorien «%1» er ugyldig."
+
+#: uploaddialog.cpp:665 uploaddialog.cpp:680 uploaddialog.cpp:694
+#, kde-format
+msgid "Select preview image"
+msgstr "Vel bilete for førehandsvising"
+
+#: uploaddialog.cpp:709
+#, kde-format
+msgid "There was a network error."
+msgstr "Det oppstod ein nettverksfeil."
+
+#: uploaddialog.cpp:709 uploaddialog.cpp:714
+#, kde-format
+msgid "Uploading Failed"
+msgstr "Feil ved opplasting"
+
+#: uploaddialog.cpp:714
+#, kde-format
+msgid "Authentication error."
+msgstr "Autentiseringsfeil."
+
+#: uploaddialog.cpp:724
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Feil ved opplasting: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Passord:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Brukarnamn:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "Fil som skal lastast"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "Ny opplasting"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Skildring:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Versjon:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Lisens:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "Fyll ut informasjonen om opplastinga på engelsk."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Tittel:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "Namnet på fila slik det skal visast på nettsida"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Dette bør skildra innhaldet i fila godt. Det kan vera same teksten som "
+"tittelen til kvtml-fila."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "Førehandsvis bilete"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "Vel førehandsvising …"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "Vel ein pris på dette elementet"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "Førehandsvising"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "Pris:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "Grunn til pris:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "Hent innhaldslenkje frå tenaren"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "Lag innhald på tenaren"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "Last opp innhald"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "Last opp første førehandsvising"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "Merk: Du kan redigera, oppdatera og sletta innhaldet ditt på nettsida."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "Last opp andre førehandsvising"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "Last opp tredje førehandsvising"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Eg garanterer at innhaldet ikkje bryt med gjeldande lovverk for opphavsrett, "
+"varemerke eller andre lovar. Eg godtek at IP-adressa mi vert loggført. (Det "
+"er ulovleg å vidareformidla innhald utan løyve frå opphavspersonen/"
+"rettshavaren.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "Lastar opp"
