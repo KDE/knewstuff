@@ -128,7 +128,7 @@ void HTTPWorker::handleFinished(QNetworkReply* reply)
         }
     }
 
-    if(d->dataFile.isOpen() && d->redirectUrl.isEmpty()) {
+    if(d->dataFile.isOpen()) {
         d->dataFile.close();
     }
 
