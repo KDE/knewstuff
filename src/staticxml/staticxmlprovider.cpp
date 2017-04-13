@@ -241,6 +241,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                     if (entry.uniqueId() == searchTerm) {
                         entries << entry;
                     }
+                    break;
                 case None:
                     entries << entry;
                     break;
