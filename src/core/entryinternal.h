@@ -446,5 +446,6 @@ inline uint qHash(const KNSCore::EntryInternal &entry)
 }
 
 }
+Q_DECLARE_METATYPE(KNSCore::EntryInternal::List)
 
 #endif

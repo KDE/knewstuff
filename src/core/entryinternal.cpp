@@ -42,7 +42,9 @@ public:
         , mNumberKnowledgebaseEntries(0)
         , mStatus(KNS3::Entry::Invalid)
         , mSource(EntryInternal::Online)
-    {}
+    {
+        qRegisterMetaType<KNSCore::EntryInternal::List>();
+    }
 
     bool operator==(const Private &other) const
     {
