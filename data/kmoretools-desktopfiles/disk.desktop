@@ -70,6 +70,7 @@ GenericName[fr]=Partition des disques durs (incluant RAID, LVM, et systèmes de 
 GenericName[gd]=Pàirtich clàran-cruaidh (a' gabhail a-steach RAID, LVM is siostaman fhaidhlichean crioptaichte)
 GenericName[gl]=Xestiona particións de discos duros (compatíbel con RAID, LVM, e sistemas de ficheiros cifrados).
 GenericName[hu]=Lemezpartícionáló (valamint RAID- és LVM-kötetek és titkosított fájlrendszerek)
+GenericName[ia]=Partitiona discos dur (includente RAID, LVM, e systemas de file cryptate)
 GenericName[it]=Partizionamento dischi fissi (inclusi RAID, LVM e filesystem cifrati)
 GenericName[ko]=하드 디스크 파티션 관리(RAID, LVM, 암호화된 파일 시스템 포함)
 GenericName[nb]=Del opp harddisker i partisjoner (også RAID, LVM og krypterte filsystemer)
