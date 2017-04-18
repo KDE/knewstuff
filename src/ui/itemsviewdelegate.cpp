@@ -28,6 +28,7 @@
 #include <QProcess>
 #include <knewstuff_debug.h>
 
+#include <kformat.h>
 #include <klocalizedstring.h>
 #include <kratingwidget.h>
 #include <KShell>
@@ -219,6 +220,12 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             text += "<p><a href=\"" + link.url() + "\">" + entry.name() + "</a></p>\n";
         } else {
             text += entry.name();
+        }
+        
+        const auto downloadInfo = entry.downloadLinkInformationList();
+        if (!downloadInfo.isEmpty() && downloadInfo.at(0).size > 0) {
+            QString sizeString = KFormat().formatByteSize(downloadInfo.at(0).size * 1000);
+            text += i18nc("Show the size of the file in a list", "<p>Size: ") + sizeString + "</p>";
         }
 
         text += QLatin1String("</b></p>\n");
