@@ -28,6 +28,7 @@
 #include <QHBoxLayout>
 #include <QAbstractItemView>
 
+#include <kformat.h>
 #include <knewstuff_debug.h>
 #include <klocalizedstring.h>
 #include <kratingwidget.h>
@@ -131,6 +132,13 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         } else {
             title += "<b>" + entry.name() + "</b>";
         }
+
+        const auto downloadInfo = entry.downloadLinkInformationList();
+        if (!downloadInfo.isEmpty() && downloadInfo.at(0).size > 0) {
+            QString sizeString = KFormat().formatByteSize(downloadInfo.at(0).size * 1000);
+            title += i18nc("Show the size of the file in a list", "<br />Size: ") + sizeString;
+        }
+
         titleLabel->setText(title);
         elementYPos += titleLabel->height();
     }
