@@ -34,10 +34,11 @@ Cache::Cache(const QString &appName): QObject(nullptr)
 {
     m_kns2ComponentName = appName;
 
-    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("knewstuff3/");
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/knewstuff3/");
     QDir().mkpath(path);
     registryFile = path + appName + ".knsregistry";
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << registryFile;
+    setProperty("dirty", false); //KF6 make normal variable
 }
 
 QSharedPointer<Cache> Cache::getCache(const QString &appName)
@@ -183,6 +184,7 @@ void Cache::readKns2MetaFiles()
 
         }
     }
+    setProperty("dirty", false);
 }
 
 EntryInternal::List Cache::registryForProvider(const QString &providerId)
@@ -198,6 +200,9 @@ EntryInternal::List Cache::registryForProvider(const QString &providerId)
 
 void Cache::writeRegistry()
 {
+    if (!property("dirty").toBool())
+        return;
+
     qCDebug(KNEWSTUFFCORE) << "Write registry";
 
     QFile f(registryFile);
@@ -222,11 +227,12 @@ void Cache::writeRegistry()
     QTextStream metastream(&f);
     metastream << doc.toByteArray();
 
-    f.close();
+    setProperty("dirty", false);
 }
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
+    setProperty("dirty", true);
     cache.insert(entry);
 }
 

@@ -60,6 +60,7 @@ void XmlLoader::slotJobData(KJob *, const QByteArray &data)
 
 void XmlLoader::slotJobResult(KJob *job)
 {
+    deleteLater();
     if (job->error()) {
         emit signalFailed();
         return;
