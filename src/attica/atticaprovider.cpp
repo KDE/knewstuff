@@ -126,7 +126,12 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
     foreach (const Category &category, categoryList) {
         if (mCategoryMap.contains(category.name())) {
             qCDebug(KNEWSTUFFCORE) << "Adding category: " << category.name() << category.displayName();
-            mCategoryMap[category.name()] = category;
+            //If there is only the placeholder category, replace it
+            if (mCategoryMap.contains(category.name()) && !mCategoryMap.value(category.name()).isValid()) {
+                mCategoryMap.insert(category.name(), category);
+            } else {
+                mCategoryMap.insertMulti(category.name(), category);
+            }
 
             CategoryMetadata categoryMetadata;
             categoryMetadata.id = category.id();
@@ -203,7 +208,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
     } else {
         categoriesToSearch.reserve(request.categories.size());
         foreach (const QString &categoryName, request.categories) {
-            categoriesToSearch.append(mCategoryMap.value(categoryName));
+            categoriesToSearch.append(mCategoryMap.values(categoryName));
         }
     }
 
