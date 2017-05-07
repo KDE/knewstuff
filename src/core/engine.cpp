@@ -130,7 +130,7 @@ bool Engine::init(const QString &configfile)
         group = conf.group("KNewStuff2");
     } else {
         emit signalError(i18n("Configuration file is invalid: \"%1\"", configfile));
-        qCritical() << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
+        qCritical() << configfile << " doesn't contain a KNewStuff3 section.";
         return false;
     }
 
