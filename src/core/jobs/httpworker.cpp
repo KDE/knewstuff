@@ -20,9 +20,41 @@
 #include "knewstuffcore_debug.h"
 
 #include <QFile>
+#include <QGlobalStatic>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QNetworkAccessManager>
+#include <QNetworkDiskCache>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QStandardPaths>
+#include <QStorageInfo>
+
+class HTTPWorkerNAM {
+public:
+    HTTPWorkerNAM()
+    {
+        QMutexLocker locker(&mutex);
+        const QString cacheLocation = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QStringLiteral("/knewstuff");
+        cache.setCacheDirectory(cacheLocation);
+        QStorageInfo storageInfo(cacheLocation);
+        cache.setMaximumCacheSize(qMin(50 * 1024 * 1024, (int)(storageInfo.bytesTotal() / 1000)));
+        nam.setCache(&cache);
+    }
+    QNetworkAccessManager nam;
+    QMutex mutex;
+
+    QNetworkReply* get(const QNetworkRequest& request)
+    {
+        QMutexLocker locker(&mutex);
+        return nam.get(request);
+    }
+
+private:
+    QNetworkDiskCache cache;
+};
+
+Q_GLOBAL_STATIC(HTTPWorkerNAM, s_httpWorkerNAM)
 
 using namespace KNSCore;
 
@@ -31,13 +63,11 @@ class HTTPWorker::Private
 public:
     Private()
         : jobType(GetJob)
-        , qnam(nullptr)
         , reply(nullptr)
     {}
     JobType jobType;
     QUrl source;
     QUrl destination;
-    QNetworkAccessManager* qnam;
     QNetworkReply* reply;
     QUrl redirectUrl;
 
@@ -51,9 +81,6 @@ HTTPWorker::HTTPWorker(const QUrl& url, JobType jobType, QObject* parent)
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
     d->source = url;
-
-    d->qnam = new QNetworkAccessManager(parent);
-    connect(d->qnam, &QNetworkAccessManager::finished, this, &HTTPWorker::handleFinished);
 }
 
 HTTPWorker::HTTPWorker(const QUrl& source, const QUrl& destination, KNSCore::HTTPWorker::JobType jobType, QObject* parent)
@@ -64,9 +91,6 @@ HTTPWorker::HTTPWorker(const QUrl& source, const QUrl& destination, KNSCore::HTT
     d->jobType = jobType;
     d->source = source;
     d->destination = destination;
-
-    d->qnam = new QNetworkAccessManager(parent);
-    connect(d->qnam, &QNetworkAccessManager::finished, this, &HTTPWorker::handleFinished);
 }
 
 HTTPWorker::~HTTPWorker()
@@ -87,8 +111,10 @@ void HTTPWorker::startRequest()
     }
 
     QNetworkRequest request(d->source);
-    d->reply = d->qnam->get(request);
+    request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::PreferCache);
+    d->reply = s_httpWorkerNAM->get(request);
     connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
+    connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
     if(d->jobType == DownloadJob) {
         d->dataFile.setFileName(d->destination.toLocalFile());
         connect(this, &HTTPWorker::data, this, &HTTPWorker::handleData);
@@ -98,6 +124,7 @@ void HTTPWorker::startRequest()
 void HTTPWorker::handleReadyRead()
 {
 //     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
+    QMutexLocker locker(&s_httpWorkerNAM->mutex);
     if (d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull()) {
         do {
             emit data(d->reply->read(32768));
@@ -105,27 +132,36 @@ void HTTPWorker::handleReadyRead()
     }
 }
 
-void HTTPWorker::handleFinished(QNetworkReply* reply)
+void HTTPWorker::handleFinished()
 {
-    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
-    if (reply->error() != QNetworkReply::NoError) {
-        qCWarning(KNEWSTUFFCORE) << reply->errorString();
-        emit error(reply->errorString());
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
+    if (d->reply->error() != QNetworkReply::NoError) {
+        qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
+        emit error(d->reply->errorString());
     }
 
+    // Check if the data was obtained from cache or not
+    QString fromCache = d->reply->attribute(QNetworkRequest::SourceIsFromCacheAttribute).toBool() ? "(cached)" : "(NOT cached)";
+
     // Handle redirections
-    const QUrl possibleRedirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+    const QUrl possibleRedirectUrl = d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
     if (!possibleRedirectUrl.isEmpty() && possibleRedirectUrl != d->redirectUrl) {
-        d->redirectUrl = reply->url().resolved(possibleRedirectUrl);
+        d->redirectUrl = d->reply->url().resolved(possibleRedirectUrl);
         if (d->redirectUrl.scheme().startsWith("http")) {
-            qCInfo(KNEWSTUFFCORE) << "Redirected to " << d->redirectUrl.toDisplayString() << "...";
-            reply->deleteLater();
-            d->reply = d->qnam->get(QNetworkRequest(d->redirectUrl));
+            qCDebug(KNEWSTUFFCORE) << d->reply->url().toDisplayString() << "was redirected to" << d->redirectUrl.toDisplayString() << fromCache << d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+            d->reply->deleteLater();
+            QNetworkRequest request(d->redirectUrl);
+            request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::PreferCache);
+            d->reply = s_httpWorkerNAM->get(request);
             connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
+            connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
             return;
         } else {
             qCWarning(KNEWSTUFFCORE) << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.";
         }
+    }
+    else {
+        qCDebug(KNEWSTUFFCORE) << "Data for" << d->reply->url().toDisplayString() << "was fetched" << fromCache;
     }
 
     if(d->dataFile.isOpen()) {

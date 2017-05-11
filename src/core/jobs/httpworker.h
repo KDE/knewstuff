@@ -45,7 +45,7 @@ public:
     Q_SIGNAL void data(const QByteArray& data);
 
     Q_SLOT void handleReadyRead();
-    Q_SLOT void handleFinished(QNetworkReply* reply);
+    Q_SLOT void handleFinished();
     Q_SLOT void handleData(const QByteArray& data);
 private:
     class Private;
