@@ -36,6 +36,7 @@
 #include <QtCore/QDir>
 #include <QtXml/qdom.h>
 #include <QUrlQuery>
+#include <QThreadStorage>
 
 #if defined(Q_OS_WIN)
 #include <windows.h>
@@ -52,6 +53,9 @@
 #include "../staticxml/staticxmlprovider_p.h"
 
 using namespace KNSCore;
+
+typedef QHash<QString, XmlLoader*> EngineProviderLoaderHash;
+Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
 class EnginePrivate {
 public:
@@ -188,11 +192,17 @@ void Engine::loadProviders()
         qCDebug(KNEWSTUFFCORE) << "loading providers from " << m_providerFileUrl;
         emit signalBusy(i18n("Loading provider information"));
 
-        XmlLoader *loader = new XmlLoader(this);
+        XmlLoader *loader = s_engineProviderLoaders()->localData().value(m_providerFileUrl);
+        if (!loader) {
+            qCDebug(KNEWSTUFFCORE) << "No xml loader for this url yet, so create one and temporarily store that" << m_providerFileUrl;
+            loader = new XmlLoader(this);
+            s_engineProviderLoaders()->localData().insert(m_providerFileUrl, loader);
+            connect(loader, &XmlLoader::signalLoaded, this, [this](){ s_engineProviderLoaders()->localData().remove(m_providerFileUrl); });
+            connect(loader, &XmlLoader::signalFailed, this, [this](){ s_engineProviderLoaders()->localData().remove(m_providerFileUrl); });
+            loader->load(QUrl(m_providerFileUrl));
+        }
         connect(loader, &XmlLoader::signalLoaded, this, &Engine::slotProviderFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &Engine::slotProvidersFailed);
-
-        loader->load(QUrl(m_providerFileUrl));
     }
 }
 

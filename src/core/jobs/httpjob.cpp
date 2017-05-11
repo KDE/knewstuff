@@ -20,6 +20,8 @@
 #include "knewstuffcore_debug.h"
 #include "httpworker.h"
 
+#include <QTimer>
+
 using namespace KNSCore;
 
 class HTTPJob::Private
@@ -86,6 +88,6 @@ HTTPJob* HTTPJob::get(const QUrl& source, LoadType loadType, JobFlags flags, QOb
 {
 //     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     HTTPJob* job = new HTTPJob(source, loadType, flags, parent);
-    job->start();
+    QTimer::singleShot(0, job, &HTTPJob::start);
     return job;
 }
