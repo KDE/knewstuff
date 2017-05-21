@@ -36,6 +36,7 @@ find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
+include(ECMAddQch)
 
 find_package(KF5Attica ${KF5_DEP_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
@@ -44,6 +45,8 @@ set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that imple
                        TYPE REQUIRED
                       )
 
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFF
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h"
@@ -72,6 +75,24 @@ endif()
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuff")
 set(CMAKECONFIGCORE_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffCore")
 set(CMAKECONFIGQUICK_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5NewStuffQuick")
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5NewStuff_QCH
+        FILE KF5NewStuffQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5NewStuffQchTargets.cmake\")")
+    ecm_install_qch_export(
+        TARGETS KF5NewStuffCore_QCH
+        FILE KF5NewStuffCoreQchTargets.cmake
+        DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_CORE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5NewStuffCoreQchTargets.cmake\")")
+    # TODO: KF5NewStuffQuick
+endif()
 
 include(CMakePackageConfigHelpers)
 

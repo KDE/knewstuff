@@ -90,6 +90,27 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore COMPONENT Devel)
 
+if(BUILD_QCH)
+    ecm_add_qch(
+        KF5NewStuffCore_QCH
+        NAME KNewStuffCore
+        BASE_NAME KF5NewStuffCore
+        VERSION ${KF5_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES ${KNewStuffCore_HEADERS}
+        LINK_QCHS
+            KF5Attica_QCH
+            KF5CoreAddons_QCH
+        BLANK_MACROS
+            KNEWSTUFFCORE_EXPORT
+            KNEWSTUFFCORE_DEPRECATED
+            KNEWSTUFFCORE_DEPRECATED_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3)
 install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})

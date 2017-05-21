@@ -65,6 +65,10 @@ set_target_properties(KF5NewStuff PROPERTIES
    EXPORT_NAME NewStuff
 )
 
+set(KNewStuff_HEADERS
+  knewstuffaction.h
+)
+
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   HEADER_NAMES
   DownloadDialog
@@ -99,10 +103,36 @@ install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFA
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
-  knewstuffaction.h
   ${KNewStuff_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
 )
+
+if(BUILD_QCH)
+    ecm_add_qch(
+        KF5NewStuff_QCH
+        NAME KNewStuff
+        BASE_NAME KF5NewStuff
+        VERSION ${KF5_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${KNewStuff_HEADERS}
+            ${KNewStuff_HEADERS_KMoreTools}
+        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+        LINK_QCHS
+            KF5NewStuffCore_QCH
+            KF5XmlGui_QCH
+            KF5Service_QCH
+            Qt5Widgets_QCH
+        BLANK_MACROS
+            KNEWSTUFF_EXPORT
+            KNEWSTUFF_DEPRECATED
+            KNEWSTUFF_DEPRECATED_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
 
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
