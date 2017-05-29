@@ -37,6 +37,7 @@ public:
     KMoreTools* kmt = nullptr;
 
     QMenu* menu = nullptr;
+    QWidget* parentWidget = nullptr;
 };
 
 class KMoreToolsLazyMenu : public QMenu
@@ -69,7 +70,7 @@ KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
 
 KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
 {
-    if (d->menu) {
+    if (d->menu && !d->menu->parent()) {
         delete d->menu;
     }
 
@@ -273,7 +274,7 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
         delete d->menu;
     }
 
-    auto menu = new KMoreToolsLazyMenu();
+    auto menu = new KMoreToolsLazyMenu(d->parentWidget);
     menu->setAboutToShowAction([this, groupingNames, url](QMenu* m) { fillMenuFromGroupingNames(m, groupingNames, url); });
     d->menu = menu;
 
@@ -308,4 +309,9 @@ void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QString
     }
 
     menuBuilder->buildByAppendingToMenu(menu);
+}
+
+void KMoreToolsMenuFactory::setParentWidget(QWidget *widget)
+{
+    d->parentWidget = widget;
 }

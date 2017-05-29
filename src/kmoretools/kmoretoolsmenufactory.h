@@ -100,6 +100,15 @@ public:
     void fillMenuFromGroupingNames(QMenu* menu, const QStringList& groupingNames,
                                    const QUrl& url = QUrl());
 
+
+    /**
+     * Set @p widget as the parent widget of the QMenu that will be created
+     * by createMenuFromGroupingNames().
+     * @see createMenuFromGroupingNames()
+     * @since 5.37
+     */
+    void setParentWidget(QWidget* widget);
+
 private:
     /*
      * NOT USED. REMOVE this when possible.
