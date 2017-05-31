@@ -224,7 +224,7 @@ public: // should be private but we would like to unit test
     {
         std::stable_sort(list.begin(), list.end(), [](const KmtMenuItemDto& i1, const KmtMenuItemDto& i2) {
             return (i1.isInstalled && i1.menuSection == KMoreTools::MenuSection_Main && i2.isInstalled && i2.menuSection == KMoreTools::MenuSection_More)
-                   || (i1.isInstalled && i1.menuSection == KMoreTools::MenuSection_More && !i2.isInstalled);
+                   || (i1.isInstalled && !i2.isInstalled);
         });
     }
 

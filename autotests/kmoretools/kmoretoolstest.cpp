@@ -260,45 +260,88 @@ void KMoreToolsTest::test_MenuItemDto_removeMenuAmpersand()
     QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hall&&o")), QString(_("Hall&o")));
 }
 
-void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
+// Support method for KMoreToolsTest::test_MenuStructureDto_sortListBySection,
+// generates a list of menu items ordered by the passed-in indexes; this
+// helps test multiple permutations of the same list. Don't try *all*
+// permutations, since it's a stable sort -- items inside a section
+// must remain in the same relative order.
+//
+static void sortListBySection(int indexes[5])
 {
     KmtMenuStructureDto mstruct;
 
     KmtMenuItemDto ma1;
     ma1.id = QStringLiteral("main1");
     ma1.menuSection = KMoreTools::MenuSection_Main;
-    mstruct.list.append(ma1);
 
     KmtMenuItemDto mo1;
     mo1.id = QStringLiteral("more1");
     mo1.menuSection = KMoreTools::MenuSection_More;
-    mstruct.list.append(mo1);
 
     KmtMenuItemDto ma3;
     ma3.id = QStringLiteral("main3_ni");
     ma3.menuSection = KMoreTools::MenuSection_Main;
     ma3.isInstalled = false; // !!!
-    mstruct.list.append(ma3);
 
     KmtMenuItemDto mo2;
     mo2.id = QStringLiteral("more2");
     mo2.menuSection = KMoreTools::MenuSection_More;
-    mstruct.list.append(mo2);
 
     KmtMenuItemDto ma2;
     ma2.id = QStringLiteral("main2");
     ma2.menuSection = KMoreTools::MenuSection_Main;
-    mstruct.list.append(ma2);
 
-    //qDebug() << mstruct.list;
+    KmtMenuItemDto* items[5] = { &ma1, &mo1, &ma3, &mo2, &ma2 };
+
+    mstruct.list.clear();
+    for (unsigned int i=0; i<5; ++i)
+    {
+        mstruct.list.append(*items[indexes[i]]);
+    }
     mstruct.stableSortListBySection();
-    //qDebug() << mstruct.list;
 
     QCOMPARE(mstruct.list[0].id, QString(_("main1"))); // 1. main
     QCOMPARE(mstruct.list[1].id, QString(_("main2")));
     QCOMPARE(mstruct.list[2].id, QString(_("more1"))); // 2. more
     QCOMPARE(mstruct.list[3].id, QString(_("more2")));
     QCOMPARE(mstruct.list[4].id, QString(_("main3_ni"))); // 3. not installed
+}
+
+void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
+{
+    int indexes_plain[5] = { 0, 1, 2, 3, 4 };  // In normal order
+    int indexes_presorted[5] = { 0, 4, 1, 3, 2 };
+    int indexes_interleave[5] = { 0, 1, 3, 4, 2 };
+    int indexes_morefirst[5] = { 1, 3, 0, 4, 2 };
+    int indexes_uninstalledfirst[5] = { 2, 1, 0, 4, 3 };
+    // Permutations of where the uninstalled item is inserted
+    int indexes_uninstalled_p0[5] = { 2, 0, 1, 3, 4 };
+    int indexes_uninstalled_p1[5] = { 0, 2, 1, 3, 4 };
+    int indexes_uninstalled_p2[5] = { 0, 1, 2, 3, 4 };
+    int indexes_uninstalled_p3[5] = { 0, 1, 3, 2, 4 };
+    int indexes_uninstalled_p4[5] = { 0, 1, 3, 4, 2 };
+
+
+    qDebug() << "Plain";
+    sortListBySection(indexes_plain);
+    qDebug() << "Presorted";
+    sortListBySection(indexes_presorted);
+    qDebug() << "Interleaved";
+    sortListBySection(indexes_interleave);
+    qDebug() << "'More' first";
+    sortListBySection(indexes_morefirst);
+    qDebug() << "'Uninstalled' first";
+    sortListBySection(indexes_uninstalledfirst);
+    qDebug() << "'Uninstalled' first, p0";
+    sortListBySection(indexes_uninstalled_p0);
+    qDebug() << "'Uninstalled' first, p1";
+    sortListBySection(indexes_uninstalled_p1);
+    qDebug() << "'Uninstalled' first, p2";
+    sortListBySection(indexes_uninstalled_p2);
+    qDebug() << "'Uninstalled' first, p3";
+    sortListBySection(indexes_uninstalled_p3);
+    qDebug() << "'Uninstalled' first, p4";
+    sortListBySection(indexes_uninstalled_p4);
 }
 
 void KMoreToolsTest::test_MenuStructureDto_serialize()
