@@ -34,6 +34,8 @@
 
 #include "knewstuffcore_export.h"
 
+class QXmlStreamReader;
+
 namespace KNSCore
 {
 static const int PreviewWidth = 96;
@@ -375,7 +377,20 @@ public:
      *
      * @returns whether or not setting the values was successful
      */
-    bool setEntryXML(const QDomElement &xmldata);
+    bool setEntryXML(QXmlStreamReader &reader);
+
+    /**
+     * set the xml for the entry
+     * parses the xml and sets the private members accordingly
+     * used to deserialize data loaded from provider
+     *
+     * @param xmldata string to load xml data from
+     *
+     * @returns whether or not setting the values was successful
+     *
+     * @deprecated since 5.36, use setEntryXML(QXmlStreamReader&) instead
+     */
+    KNEWSTUFFCORE_DEPRECATED bool setEntryXML(const QDomElement &xmldata);
 
     /**
     * get the xml string for the entry

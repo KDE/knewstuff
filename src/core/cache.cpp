@@ -64,30 +64,30 @@ void Cache::readRegistry()
     readKns2MetaFiles();
 
     QFile f(registryFile);
-    if (!f.open(QIODevice::ReadOnly)) {
+    if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "The file " << registryFile << " could not be opened.";
         return;
     }
 
-    QDomDocument doc;
-    if (!doc.setContent(&f)) {
+    QXmlStreamReader reader(&f);
+    if (reader.hasError() || !reader.readNextStartElement()) {
         qWarning() << "The file could not be parsed.";
         return;
     }
 
-    QDomElement root = doc.documentElement();
-    if (root.tagName() != QLatin1String("hotnewstuffregistry")) {
+    if (reader.name() != QLatin1String("hotnewstuffregistry")) {
         qWarning() << "The file doesn't seem to be of interest.";
         return;
     }
 
-    QDomElement stuff = root.firstChildElement(QStringLiteral("stuff"));
-    while (!stuff.isNull()) {
+    for (auto token = reader.readNext(); !reader.atEnd(); token = reader.readNext()) {
+        if (token != QXmlStreamReader::StartElement)
+            continue;
         EntryInternal e;
-        e.setEntryXML(stuff);
+        e.setEntryXML(reader);
         e.setSource(EntryInternal::Cache);
         cache.insert(e);
-        stuff = stuff.nextSiblingElement(QStringLiteral("stuff"));
+        Q_ASSERT(reader.tokenType() == QXmlStreamReader::EndElement);
     }
 
     qCDebug(KNEWSTUFFCORE) << "Cache read... entries: " << cache.size();
@@ -97,7 +97,7 @@ void Cache::readKns2MetaFiles()
 {
     qCDebug(KNEWSTUFFCORE) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
 
-    QString realAppName = m_kns2ComponentName.split(':')[0];
+    const auto realAppName = m_kns2ComponentName.splitRef(':')[0];
 
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
     for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {

@@ -21,6 +21,7 @@
 #include "entryinternal.h"
 
 #include <QtCore/QStringList>
+#include <QtCore/QXmlStreamReader>
 #include <QImage>
 #include <knewstuffcore_debug.h>
 
@@ -435,6 +436,143 @@ void KNSCore::EntryInternal::appendDownloadLinkInformation(const KNSCore::EntryI
 void EntryInternal::clearDownloadLinkInformation()
 {
     d->mDownloadLinkInformationList.clear();
+}
+
+static QXmlStreamReader::TokenType readNextSkipComments(QXmlStreamReader* xml)
+{
+    do {
+        xml->readNext();
+    } while(xml->tokenType() == QXmlStreamReader::Comment || (xml->tokenType() == QXmlStreamReader::Characters && xml->text().trimmed().isEmpty()));
+    return xml->tokenType();
+}
+
+static QStringRef readText(QXmlStreamReader* xml)
+{
+    Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
+    QStringRef ret;
+    const auto token = readNextSkipComments(xml);
+    if (token == QXmlStreamReader::Characters) {
+        ret = xml->text();
+    }
+    return ret;
+}
+
+static QString readStringTrimmed(QXmlStreamReader* xml)
+{
+    Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
+    QString ret = readText(xml).trimmed().toString();
+
+    if (xml->tokenType() == QXmlStreamReader::Characters)
+        readNextSkipComments(xml);
+    Q_ASSERT(xml->tokenType() == QXmlStreamReader::EndElement);
+    return ret;
+}
+
+static int readInt(QXmlStreamReader* xml)
+{
+    Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
+    int ret = readText(xml).toInt();
+
+    xml->readNext();
+    Q_ASSERT(xml->tokenType() == QXmlStreamReader::EndElement);
+    return ret;
+}
+
+bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
+{
+    if (reader.name() != QLatin1String("stuff")) {
+        qWarning() << "Parsing Entry from invalid XML";
+        return false;
+    }
+
+    d->mCategory = reader.attributes().value("category").toString();
+
+    while (!reader.atEnd()) {
+        const auto token = readNextSkipComments(&reader);
+        if (token == QXmlStreamReader::EndElement)
+            break;
+        else if (token != QXmlStreamReader::StartElement)
+            continue;
+
+        if (reader.name() == QLatin1String("name")) {
+            // TODO maybe do something with the language attribute? QString lang = e.attribute("lang");
+            d->mName = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("author")) {
+            const auto email = reader.attributes().value(QStringLiteral("email"));
+            const auto jabber = reader.attributes().value(QStringLiteral("im"));
+            const auto homepage = reader.attributes().value(QStringLiteral("homepage"));
+            d->mAuthor.setName(readStringTrimmed(&reader));
+            d->mAuthor.setEmail(email.toString());
+            d->mAuthor.setJabber(jabber.toString());
+            d->mAuthor.setHomepage(homepage.toString());
+        } else if (reader.name() == QLatin1String("providerid")) {
+            d->mProviderId = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("homepage")) {
+            d->mHomepage = QUrl(reader.readElementText(QXmlStreamReader::SkipChildElements));
+        } else if (reader.name() == QLatin1String("licence")) { // krazy:exclude=spelling
+            d->mLicense = readStringTrimmed(&reader);
+        } else if (reader.name() == QLatin1String("summary")) {
+            d->mSummary = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("changelog")) {
+            d->mChangelog = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("version")) {
+            d->mVersion = readStringTrimmed(&reader);
+        } else if (reader.name() == QLatin1String("releasedate")) {
+            d->mReleaseDate = QDate::fromString(readStringTrimmed(&reader), Qt::ISODate);
+        } else if (reader.name() == QLatin1String("preview")) {
+            // TODO support for all 6 image links
+            d->mPreviewUrl[PreviewSmall1] = readStringTrimmed(&reader);
+        } else if (reader.name() == QLatin1String("previewBig")) {
+            d->mPreviewUrl[PreviewBig1] = readStringTrimmed(&reader);
+        } else if (reader.name() == QLatin1String("payload")) {
+            d->mPayload = readStringTrimmed(&reader);
+        } else if (reader.name() == QLatin1String("rating")) {
+            d->mRating = readInt(&reader);
+        } else if (reader.name() == QLatin1String("downloads")) {
+            d->mDownloadCount = readInt(&reader);
+        } else if (reader.name() == QLatin1String("category")) {
+            d->mCategory = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("signature")) {
+            d->mSignature = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("checksum")) {
+            d->mChecksum = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("installedfile")) {
+            d->mInstalledFiles.append(reader.readElementText(QXmlStreamReader::SkipChildElements));
+        } else if (reader.name() == QLatin1String("id")) {
+            d->mUniqueId = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("status")) {
+            const auto statusText = readText(&reader);
+            if (statusText == QLatin1String("installed")) {
+                qCDebug(KNEWSTUFFCORE) << "Found an installed entry in registry";
+                d->mStatus = KNS3::Entry::Installed;
+            } else if (statusText == QLatin1String("updateable")) {
+                d->mStatus = KNS3::Entry::Updateable;
+            }
+            if (reader.tokenType() == QXmlStreamReader::Characters)
+                readNextSkipComments(&reader);
+        }
+        Q_ASSERT(reader.tokenType() == QXmlStreamReader::EndElement);
+    }
+
+    // Validation
+    if (d->mName.isEmpty()) {
+        qWarning() << "Entry: no name given";
+        return false;
+    }
+
+    if (d->mUniqueId.isEmpty()) {
+        if (!d->mPayload.isEmpty()) {
+            d->mUniqueId = d->mPayload;
+        } else {
+            d->mUniqueId = d->mName;
+        }
+    }
+
+    if (d->mPayload.isEmpty()) {
+        qWarning() << "Entry: no payload URL given for: " << d->mName << " - " << d->mUniqueId;
+        return false;
+    }
+    return true;
 }
 
 bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
