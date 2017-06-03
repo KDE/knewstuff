@@ -1,0 +1,982 @@
+# translation of kdelibs4.po to Lithuanian
+# Ričardas Čepas <rch@richard.eu.org>, 2002-2004.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Gintautas Miselis <gintautas@miselis.lt>, 2008.
+# Andrius Štikonas <andrius@stikonas.eu>, 2009.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011, 2012, 2013, 2014.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013, 2015.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-05-12 02:56+0200\n"
+"PO-Revision-Date: 2015-12-29 20:59+0200\n"
+"Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
+"Language-Team: lt <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: attica/atticaprovider.cpp:164
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgid "All categories are missing"
+msgstr "Visos kategorijos"
+
+#: attica/atticaprovider.cpp:336
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Elementas kainuoja %1 %2.\n"
+"Ar norite jį pirkti?"
+
+#: attica/atticaprovider.cpp:350
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Jūsų sąskaitos likutis yra per mažas:\n"
+"Jūsų likutis: %1\n"
+"Kaina: %2"
+
+#: attica/atticaprovider.cpp:392
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Jūsų balsas įskaičiuotas."
+
+#: attica/atticaprovider.cpp:407
+#, kde-format
+msgid "You are now a fan."
+msgstr "Dabar esate fanas."
+
+#: attica/atticaprovider.cpp:418
+#, fuzzy, kde-format
+#| msgid "Network error. (%1)"
+msgid "Network error %1: %2"
+msgstr "Tinklo klaida. (%1)"
+
+#: attica/atticaprovider.cpp:422
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "Per daug užklausų serveriui. Prašome bandyti po kelių minučių."
+
+#: attica/atticaprovider.cpp:424
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Atsisiųsti naujų dalykų.."
+
+#: core/engine.cpp:119
+#, kde-format
+msgid "Initializing"
+msgstr "Paleidžiama"
+
+#: core/engine.cpp:123
+#, kde-format
+msgid "Configuration file not found: \"%1\""
+msgstr "Konfigūravimo failas nerastas: „%1“"
+
+#: core/engine.cpp:136
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Konfigūravimo failas sugadintas: „%1“"
+
+#: core/engine.cpp:193
+#, kde-format
+msgid "Loading provider information"
+msgstr "Įkeliama informacija apie tiekėją"
+
+#: core/engine.cpp:222
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:249 core/engine.cpp:592
+#, kde-format
+msgid "Loading data"
+msgstr "Įkeliami duomenys"
+
+#: core/engine.cpp:283
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:288
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr ""
+
+#: core/engine.cpp:552
+#, kde-format
+msgid "Re: %1"
+msgstr "Dėl: %1"
+
+#: core/engine.cpp:594
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Įkeliama viena peržiūra"
+msgstr[1] "Įkeliamos %1 peržiūros"
+msgstr[2] "Įkeliama %1 peržiūrų"
+msgstr[3] "Įkeliama %1 peržiūra"
+
+#: core/engine.cpp:596 ui/itemsgridviewdelegate.cpp:343
+#: ui/itemsviewdelegate.cpp:132
+#, kde-format
+msgid "Installing"
+msgstr "Diegiama"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr "Neteisingas objektas."
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Nepavyko objekto atsiuntimas: „%1“ neturi atsiuntimo URL."
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "„%1“ atsiuntimas nepavyko, klaida: %2"
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Atsiųstas failas yra html failas. Jis nurodo nuorodą į tinklapį, vietoje "
+"tikro atsisiuntimo. Ar norite atverti tinklapį su naršykle?"
+
+#: core/installation.cpp:242
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Tikriausiai bloga atsisiuntimo nuoroda"
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:307
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Nepavyko įdiegti „%1“: failas nerastas."
+
+#: core/installation.cpp:536
+#, kde-format
+msgid "Overwrite existing file?"
+msgstr "Perrašyti egzistuojantį failą?"
+
+#: core/installation.cpp:537
+#, kde-format
+msgid "Download File"
+msgstr "Atsisiųsti failą"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nepavyksta paleisti <i>gpg</i> ir gauti prieinamų raktų. Patikrinkite, "
+"ar <i>gpg</i> yra įdiegtas, antraip atsisiųstų resursų patikrinimas bus "
+"negalimas.</qt>"
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Įrašykite slaptažodžio frazę raktui <b>0x%1</b>, priklausančiam <br /><i>"
+"%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nepavyksta paleisti <i>gpg</i> ir patikrinti ar failas geras. "
+"Patikrinkite, ar <i>gpg</i> yra įdiegtas, antraip atsisiųstų resursų "
+"patikrinimas bus negalimas.</qt>"
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Raktas, naudojamas pasirašymui:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Nurodyti raktą pasirašymui"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nepavyksta paleisti <i>gpg</i> ir pasirašyti failo. Patikrinkite, ar "
+"<i>gpg</i> yra įdiegtas, antraip atsisiųstų resursų patikrinimas bus "
+"negalimas.</qt>"
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:220
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Gauk karštas naujienas!"
+
+#: downloaddialog.cpp:98
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 papildinių diegimo programa"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Baigėsi prisijungimui skirtas laikas. Patikrinkite ryšį su Internetu"
+
+#: downloadwidget.cpp:192
+#, kde-format
+msgid "Server: %1"
+msgstr "Serveris: %1"
+
+#: downloadwidget.cpp:193
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Teikėjas: %1"
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Versija: %1"
+
+#: downloadwidget.cpp:198
+#, kde-format
+msgid "Provider information"
+msgstr "Tiekėjo informacija"
+
+#: downloadwidget.cpp:209
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nepavyko įdiegti %1"
+
+#: downloadwidget.cpp:210
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Gauk karštas naujienas!"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Icons view mode"
+msgstr "Ženkliukų rodymo veiksena"
+
+#: downloadwidget.cpp:266
+#, kde-format
+msgid "Details view mode"
+msgstr "Detalių rodymo režimas"
+
+#: downloadwidget.cpp:281
+#, kde-format
+msgid "All Providers"
+msgstr "Visi tiekėjai"
+
+#: downloadwidget.cpp:288
+#, kde-format
+msgid "All Categories"
+msgstr "Visos kategorijos"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "Tiekėjas:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "Kategorija:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Newest"
+msgstr "Naujumą"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Rating"
+msgstr "Įvertinimą"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Most downloads"
+msgstr "Atsisiuntimų kiekį"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "Įdiegta"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Rikuoti pagal:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Ieškoti:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "Įveskite ieškomą žodį čia"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Autorius:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Namų puslapis</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:338
+#: ui/itemsviewdelegate.cpp:127 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Atnaujinti"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:123
+#, kde-format
+msgid "Uninstall"
+msgstr "Pašalinti"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "Tapti fanu"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:353
+#: ui/itemsgridviewdelegate.cpp:363 ui/itemsviewdelegate.cpp:142
+#: ui/itemsviewdelegate.cpp:152
+#, kde-format
+msgid "Install"
+msgstr "Įdiegti"
+
+#: kmoretools/kmoretools.cpp:633
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr ""
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Įdiegta"
+
+#: kmoretools/kmoretools.cpp:684
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr ""
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy, kde-format
+#| msgctxt "A link to the description of this Get Hot New Stuff item"
+#| msgid "Homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Namų puslapis"
+
+#: kmoretools/kmoretools_p.h:391
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr ""
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, kde-format
+msgid "Configure menu"
+msgstr ""
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, kde-format
+msgid "Configure menu - %1"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:193
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:208
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Most downloads"
+msgid "Move down"
+msgstr "Atsisiuntimų kiekį"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr ""
+
+#: qtquick/qml/NewStuffItem.qml:36
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Įdiegti"
+
+#: qtquick/qml/NewStuffItem.qml:43
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: qtquick/qml/NewStuffItem.qml:50
+#, fuzzy, kde-format
+#| msgid "Uninstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Pašalinti"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1 detalės"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "Pakeitimai:"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Namų puslapis"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Paaukoti"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Žinių bazė (nėra įrašų)"
+msgstr[1] "Žinių bazė (%1 įrašai)"
+msgstr[2] "Žinių bazė (%1 įrašų)"
+msgstr[3] "Žinių bazė (%1 įrašas)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Atveria naršyklės lange"
+
+#: ui/itemsgridviewdelegate.cpp:102 ui/itemsviewdelegate.cpp:279
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Įvertinimas: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "<br />Provider: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Teikėjas: %1"
+
+#: ui/itemsgridviewdelegate.cpp:160 ui/itemsgridviewdelegate.cpp:162
+#: ui/itemsgridviewdelegate.cpp:164 ui/itemsviewdelegate.cpp:239
+#: ui/itemsviewdelegate.cpp:241 ui/itemsviewdelegate.cpp:243
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:187 ui/itemsviewdelegate.cpp:257
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 fanas"
+msgstr[1] "%1 fanai"
+msgstr[2] "%1 fanų"
+msgstr[3] "%1 fanas"
+
+#: ui/itemsgridviewdelegate.cpp:190 ui/itemsviewdelegate.cpp:260
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "%1 atsiuntimas"
+msgstr[1] "%1 atsiuntimai"
+msgstr[2] "%1 atsiuntimų"
+msgstr[3] "%1 atsiuntimas"
+
+#: ui/itemsgridviewdelegate.cpp:256 ui/itemsviewdelegate.cpp:330
+#, kde-format
+msgid "Loading Preview"
+msgstr "Įkeliama peržiūra"
+
+#: ui/itemsgridviewdelegate.cpp:283 ui/itemsviewdelegate.cpp:184
+#, kde-format
+msgid "Details"
+msgstr "Detalės"
+
+#: ui/itemsgridviewdelegate.cpp:348 ui/itemsviewdelegate.cpp:137
+#, kde-format
+msgid "Updating"
+msgstr "Atnaujinama"
+
+#: ui/itemsgridviewdelegate.cpp:358 ui/itemsviewdelegate.cpp:147
+#, kde-format
+msgid "Install Again"
+msgstr "Pakartotinai įdiegti"
+
+#: ui/itemsviewdelegate.cpp:172
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: ui/itemsviewdelegate.cpp:228
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr ""
+
+#: uploaddialog.cpp:65
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Kitas"
+
+#: uploaddialog.cpp:70
+#, kde-format
+msgid "Finish"
+msgstr "Baigti"
+
+#: uploaddialog.cpp:178
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "Gaunama tiekėjo informacija..."
+
+#: uploaddialog.cpp:185
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "Iš serverio atsisiunčiam licencijos duomenys..."
+
+#: uploaddialog.cpp:192
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "Iš serverio atsiunčiami turinio duomenys..."
+
+#: uploaddialog.cpp:267
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "Nepavyko gauti tiekėjo informacijos."
+
+#: uploaddialog.cpp:291
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:315
+#, kde-format
+msgid "Checking login..."
+msgstr "Prisijungimo tikrinimas..."
+
+#: uploaddialog.cpp:337
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "Atsiųsti jūsų anksčiau įkeltą turinį..."
+
+#: uploaddialog.cpp:340
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "Nepavyko patikrinti prisijungimo. Pabandykite dar kartą."
+
+#: uploaddialog.cpp:359
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "Anksčiau atnaujinto turinio atsiuntimas baigtas."
+
+#: uploaddialog.cpp:377
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "Turinio duomenų atsiuntimas iš serverio baigtas."
+
+#: uploaddialog.cpp:400 uploaddialog.cpp:840
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Aplankyti žiniatinklio svetainę"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:446 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Pasidalinkite karštom naujienom"
+
+#: uploaddialog.cpp:469
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 papildinių įkėliklis"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:765
+#, kde-format
+msgid "File not found: %1"
+msgstr "Failas nerastas: %1"
+
+#: uploaddialog.cpp:489 uploaddialog.cpp:616 uploaddialog.cpp:765
+#, kde-format
+msgid "Upload Failed"
+msgstr "Nusiuntumas nepavyko"
+
+#: uploaddialog.cpp:569
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: uploaddialog.cpp:572
+#, kde-format
+msgid "Error"
+msgstr "Klaida"
+
+#: uploaddialog.cpp:616
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "Parinkta nekorektiška kategorija „%1“."
+
+#: uploaddialog.cpp:665 uploaddialog.cpp:680 uploaddialog.cpp:694
+#, kde-format
+msgid "Select preview image"
+msgstr "Pasirinkite peržiūros paveikslėlį"
+
+#: uploaddialog.cpp:709
+#, kde-format
+msgid "There was a network error."
+msgstr "Įvyko tinklo klaida."
+
+#: uploaddialog.cpp:709 uploaddialog.cpp:714
+#, kde-format
+msgid "Uploading Failed"
+msgstr "Nusiuntimas nepavyko"
+
+#: uploaddialog.cpp:714
+#, kde-format
+msgid "Authentication error."
+msgstr "Tapatybės nustatymo klaida."
+
+#: uploaddialog.cpp:724
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Nusiuntimas nepavyko: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Slaptažodis:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Naudotojas:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "Failas, kurį siųsite:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "Naujas nusiuntimas"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Aprašymas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Versija:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Licencija:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "Suteikite šiek tiek informacijos apie įkeliamą failą (angliškai)."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Antraštė:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "Failo pavadinimas, koks turėtų būti naudojamas svetainėje"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "Peržiūrėti paveikslėlius"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "Pasirinkite peržiūrą..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "Nustatyti šio objekto kainą"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "Kaina"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "Kaina:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "Kainos priežastis:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "Gauti turinio nuorodą iš serverio"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "Sukurti turinį serveryje"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "Įkeliama turinį"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "Įkeliama pirmoji peržiūra"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Pastaba: jūs galite keisti, atnaujinti ir naikinti savo turinį svetainėje."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "Įkeliama antroji peržiūra"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "Įkeliama trečioji peržiūra"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "Pradėti įkėlimą"
