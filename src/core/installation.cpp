@@ -418,7 +418,6 @@ QString Installation::targetInstallationPath() const
 
 QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir)
 {
-    QString installpath(payloadfile);
     // Collect all files that were installed
     QStringList installedFiles;
 
@@ -428,7 +427,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         // respect the uncompress flag in the knsrc
         if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive") || uncompression == QLatin1String("subdir")) {
             // this is weird but a decompression is not a single name, so take the path instead
-            installpath = installdir;
             QMimeDatabase db;
             QMimeType mimeType = db.mimeTypeForFile(payloadfile);
             qCDebug(KNEWSTUFFCORE) << "Postinstallation: uncompress the file";
@@ -470,13 +468,18 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     const KArchiveDirectory *dir = archive->directory();
                     //if there is more than an item in the file, and we are requested to do so
                     //put contents in a subdirectory with the same name as the file
+                    QString installpath;
                     if (uncompression == QLatin1String("subdir") && dir->entries().count() > 1) {
                         installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
+                    } else {
+                        installpath = installdir;
                     }
-                    dir->copyTo(installpath);
 
-                    installedFiles << archiveEntries(installpath, dir);
-                    installedFiles << installpath + QLatin1Char('/');
+                    if (dir->copyTo(installpath)) {
+                        installedFiles << archiveEntries(installpath, dir);
+                        installedFiles << installpath + QLatin1Char('/');
+                    } else
+                        qCWarning(KNEWSTUFFCORE) << "could not install" << entry.name() << "to" << installpath;
 
                     archive->close();
                     QFile::remove(payloadfile);
@@ -518,7 +521,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     installfile = source.fileName();
                 }
             }
-            installpath = installdir + QLatin1Char('/') + installfile;
+            QString installpath = installdir + QLatin1Char('/') + installfile;
 
             qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
@@ -613,6 +616,13 @@ void Installation::uninstall(EntryInternal entry)
                 // Maybe directory contains user created files, ignore it
                 continue;
             }
+        } else if (file.endsWith(QLatin1String("/*"))) {
+            QDir dir(file.left(file.size()-2));
+            bool worked = dir.removeRecursively();
+            if (!worked) {
+                qCWarning(KNEWSTUFFCORE) << "Couldn't remove" << dir.path();
+                continue;
+            }
         } else {
             QFileInfo info(file);
             if (info.exists() || info.isSymLink()) {
@@ -642,15 +652,13 @@ QStringList Installation::archiveEntries(const QString &path, const KArchiveDire
 {
     QStringList files;
     foreach (const QString &entry, dir->entries()) {
-        QString childPath = path + QLatin1Char('/') + entry;
-        if (dir->entry(entry)->isFile()) {
-            files << childPath;
-        }
+        const auto currentEntry = dir->entry(entry);
 
-        if (dir->entry(entry)->isDirectory()) {
-            const KArchiveDirectory *childDir = static_cast<const KArchiveDirectory *>(dir->entry(entry));
-            files << archiveEntries(childPath, childDir);
-            files << childPath + QLatin1Char('/');
+        const QString childPath = path + QLatin1Char('/') + entry;
+        if (currentEntry->isFile()) {
+            files << childPath;
+        } else if (currentEntry->isDirectory()) {
+            files << childPath + QStringLiteral("/*");
         }
     }
     return files;
