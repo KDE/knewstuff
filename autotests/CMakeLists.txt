@@ -1,5 +1,6 @@
 include(ECMMarkAsTest)
 include(ECMMarkNonGuiExecutable)
+include(ECMAddTests)
 
 find_package(Qt5Test ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED)
 set_package_properties(Qt5Test PROPERTIES
@@ -12,15 +13,14 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 
 macro(knewstuff_unit_tests)
     foreach(_testname ${ARGN})
-       add_executable(${_testname} ${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp ../src/core/jobs/httpjob.cpp ../src/core/jobs/httpworker.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp)
+       ecm_add_test(${_testname}.cpp ../src/core/author.cpp ../src/core/entryinternal.cpp ../src/entry.cpp ../src/core/xmlloader.cpp ../src/core/jobs/httpjob.cpp ../src/core/jobs/httpworker.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp
+                    LINK_LIBRARIES Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore
+                    TEST_NAME ${_testname}
+                    NAME_PREFIX "knewstuff-")
        set_property( TARGET ${_testname}
                      APPEND
                      PROPERTY COMPILE_DEFINITIONS KNEWSTUFF_STATIC_DEFINE KNEWSTUFFCORE_STATIC_DEFINE KNEWSTUFF_STATIC_DEFINE
        )
-       add_test("knewstuff-${_testname}" ${_testname})
-       ecm_mark_as_test(${_testname})
-       ecm_mark_nongui_executable(${_testname})
-       target_link_libraries(${_testname} Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore)
     endforeach()
 endmacro()
 
@@ -30,11 +30,9 @@ knewstuff_unit_tests(
 )
 
 # KMoreTools:
-add_executable(kmoretoolstest kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp)
-ecm_mark_nongui_executable(kmoretoolstest)
-add_test(kmoretoolstest kmoretoolstest)
-ecm_mark_as_test(kmoretoolstest)
-target_link_libraries(kmoretoolstest Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n)
+ecm_add_test(kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp
+             LINK_LIBRARIES Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n
+             TEST_NAME kmoretoolstest)
 install(FILES kmoretools/1/a.desktop.notranslate
         DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1
         RENAME a.desktop)
