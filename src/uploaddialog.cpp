@@ -755,7 +755,7 @@ void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
 
 void UploadDialogPrivate::_k_openRegisterAccountWebpage(QString)
 {
-    KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), QStringLiteral("text/html"), q);
+    KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), QStringLiteral("text/html"), q, KRun::RunFlags());
 }
 
 void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)

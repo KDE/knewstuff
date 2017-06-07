@@ -368,7 +368,7 @@ QString Installation::targetInstallationPath() const
             if (scope == ScopeUser) {
                 installdir = QStandardPaths::writableLocation(location);
             } else { // system scope
-                installdir = QStandardPaths::standardLocations(location).last();
+                installdir = QStandardPaths::standardLocations(location).constLast();
             }
             pathcounter++;
         }

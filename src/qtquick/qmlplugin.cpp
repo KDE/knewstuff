@@ -30,6 +30,7 @@
 
 void QmlPlugins::initializeEngine(QQmlEngine *engine, const char *)
 {
+    Q_UNUSED(engine);
 }
 
 void QmlPlugins::registerTypes(const char *uri)

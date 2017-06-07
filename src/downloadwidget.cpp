@@ -291,7 +291,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
 
     connect(engine, &KNSCore::Engine::signalCategoriesMetadataLoded,
              this, [this](const QList<KNSCore::Provider::CategoryMetadata> &categories) {
-                for (auto data : categories) {
+                for (const auto &data : categories) {
                     if (!data.displayName.isEmpty()) {
                         ui.m_categoryCombo->addItem(data.displayName, data.name);
                     } else {
