@@ -136,6 +136,12 @@ public:
     QString adoptionCommand(const KNSCore::EntryInternal &entry) const;
     bool hasAdoptionCommand() const;
 
+    /**
+     * Set the page size for requests not made explicitly with requestData(int,int)
+     * @param pageSize the default number of entries to request from the provider
+     * @see requestData(int,int)
+     */
+    void setPageSize(int pageSize);
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox

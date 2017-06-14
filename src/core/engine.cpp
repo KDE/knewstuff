@@ -322,6 +322,7 @@ void Engine::reloadEntries()
 {
     emit signalResetView();
     m_currentPage = -1;
+    m_currentRequest.pageSize = m_pageSize;
     m_currentRequest.page = 0;
     m_numDataJobs = 0;
 
@@ -388,6 +389,7 @@ void KNSCore::Engine::fetchEntryById(const QString& id)
 {
     m_searchTimer->stop();
     m_currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
+    m_currentRequest.pageSize = m_pageSize;
 
     EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
     if (!cache.isEmpty()) {
@@ -612,6 +614,7 @@ void KNSCore::Engine::checkForInstalled()
     foreach (QSharedPointer<Provider> p, m_providers) {
         Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Installed);
         request.page = 0;
+        request.pageSize = m_pageSize;
         p->loadEntries(request);
     }
 }
@@ -668,4 +671,9 @@ QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
 bool KNSCore::Engine::hasAdoptionCommand() const
 {
     return !m_adoptionCommand.isEmpty();
+}
+
+void KNSCore::Engine::setPageSize(int pageSize)
+{
+    m_pageSize = pageSize;
 }
