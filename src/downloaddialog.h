@@ -46,7 +46,7 @@ class DownloadDialogPrivate;
  *
  * \section knsrc knsrc Files
  * The Dialog is configured by a .knsrc file containing the KHotNewStuff configuration.
- * Your application should install a file called: <em>$KDEDIR/share/config/appname.knsrc</em>
+ * Your application should install a file into the XDG configuration location called: <em>/etc/xdg/appname.knsrc</em>
  *
  * The file could look like this for wallpapers:
  * <pre>

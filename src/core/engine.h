@@ -40,6 +40,19 @@ class ProviderManager;
 class Provider;
 }
 
+/**
+ * Contains the core functionality for handling interaction with NewStuff providers.
+ * The entrypoint for most things will be the creation of an instance of KNSCore::Engine
+ * which will other classes then either use or get instantiated from directly.
+ *
+ * NOTE: When implementing anything on top of KNSCore, without using either KNS3 or the
+ * Qt Quick components, you will need to implement a custom QuestionListener (see that
+ * class for instructions)
+ *
+ * @see KNSCore::Engine
+ * @see KNSCore::ItemsModel
+ * @see KNSCore::QuestionListener
+ */
 namespace KNSCore
 {
 class Cache;
@@ -50,8 +63,6 @@ class Installation;
  * An engine keeps track of data which is available locally and remote
  * and offers high-level synchronization calls as well as upload and download
  * primitives using an underlying GHNS protocol.
- *
- * @internal
  */
 class KNEWSTUFFCORE_EXPORT Engine : public QObject
 {
@@ -98,16 +109,70 @@ public:
      */
     void uninstall(KNSCore::EntryInternal entry);
 
+    /**
+     * Attempt to load a specific preview for the specified entry.
+     *
+     * @param entry The entry to fetch a preview for
+     * @param type The particular preview to fetch
+     *
+     * @see signalEntryPreviewLoaded(KNSCore::EntryInternal, KNSCore::EntryInternal::PreviewType);
+     * @see signalPreviewFailed();
+     */
     void loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type);
+    /**
+     * Get the full details of a specific entry
+     *
+     * @param entry The entry to get full details for
+     *
+     * @see Entry::signalEntryDetailsLoaded(KNSCore::EntryInternal)
+     */
     void loadDetails(const KNSCore::EntryInternal &entry);
 
+    /**
+     * Set the order the search results are returned in.
+     *
+     * Search requests default to showing the newest entries first.
+     *
+     * Note: This will automatically launch a search, which means
+     * you do not need to call requestData manually.
+     *
+     * @see KNSCore::Provider::SearchRequest
+     * @param mode The order you want search results to come back in.
+     */
     void setSortMode(Provider::SortMode mode);
+    /**
+     * Set a filter for results (defaults to none), which will allow you
+     * to show only installed entries, installed entries which have updates,
+     * or a specific item with a specified ID. The latter further requires
+     * the search term to be the exact ID of the entry you wish to retrieve.
+     *
+     * Note: This will automatically launch a search, which means
+     * you do not need to call requestData manually.
+     *
+     * @see fetchEntryById(QString)
+     * @see setSearchTerm(QString)
+     * @param filter The type of results you wish to see
+     */
     void setFilter(Provider::Filter filter);
 
     /**
-      Set the categories that will be included in searches
-      */
+     * Set the categories that will be included in searches
+     *
+     * Note: This will automatically launch a search, which means
+     * you do not need to call requestData manually.
+     *
+     * @see KNSCore::Engine::categories()
+     * @param categories A list of strings of categories
+     */
     void setCategoriesFilter(const QStringList &categories);
+    /**
+     * Sets a string search term.
+     *
+     * Note: This will automatically launch a search, which means
+     * you do not need to call requestData manually.
+     *
+     * @param searchString The search term you wish to search for
+     */
     void setSearchTerm(const QString &searchString);
     void reloadEntries();
     void requestMoreData();
@@ -116,6 +181,11 @@ public:
     void checkForUpdates();
     void checkForInstalled();
 
+    /**
+     * Convenience method to launch a search for one specific entry.
+     *
+     * @param id The ID of the entry you wish to fetch
+     */
     void fetchEntryById(const QString &id);
 
     /**
@@ -123,17 +193,88 @@ public:
      */
     void contactAuthor(const EntryInternal &entry);
 
+    /**
+     * Whether or not a user is able to vote on the passed entry.
+     *
+     * @param entry The entry to check votability on
+     * @return True if the user is able to vote on the entry
+     */
     bool userCanVote(const EntryInternal &entry);
+    /**
+     * Cast a vote on the passed entry.
+     *
+     * @param entry The entry to vote on
+     * @param rating A number from 0 to 100, 50 being neutral, 0 being most negative and 100 being most positive.
+     */
     void vote(const EntryInternal &entry, uint rating);
-    bool userCanBecomeFan(const EntryInternal &entry);
-    void becomeFan(const EntryInternal &entry);
 
+    /**
+     * Whether or not the user is allowed to become a fan of
+     * a particular entry.
+     * Not all providers (and consequently entries) support the fan functionality
+     * and you can use this function to determine this ability.
+     * @param entry The entry the user might wish to be a fan of
+     * @return Whether or not it is possible for the user to become a fan of that entry
+     */
+    bool userCanBecomeFan(const EntryInternal &entry);
+    /**
+     * This will mark the user who is currently authenticated as a fan
+     * of the entry passed to the function.
+     * @param entry The entry the user wants to be a fan of
+     */
+    void becomeFan(const EntryInternal &entry);
+    // FIXME There is currently no exposed API to remove the fan status
+
+    /**
+     * The list of the server-side names of the categories handled by this
+     * engine instance. This corresponds directly to the list of categories
+     * in your knsrc file. This is not supposed to be used as user-facing
+     * strings - @see categoriesMetadata() for that.
+     *
+     * @return The categories which this instance of Engine handles
+     */
     QStringList categories() const;
+    /**
+     * The list of categories searches will actually show results from. This
+     * is a subset of the categories() list.
+     *
+     * @see KNSCore::Engine::setCategoriesFilter(QString)
+     */
     QStringList categoriesFilter() const;
 
+    /**
+     * The list of metadata for the categories handled by this engine instance.
+     * If you wish to show the categories to the user, this is the data to use.
+     * The category name is the string used to set categories for the filter,
+     * and also what is returned by both categories() and categoriesFilter().
+     * The human-readable name is displayName, and the only thing which should
+     * be shown to the user.
+     *
+     * @return The metadata for all categories handled by this engine
+     */
     QList<Provider::CategoryMetadata> categoriesMetadata();
 
+    /**
+     * The adoption command can be used to allow a user to make use of an entry's
+     * installed data. For example, this command might be used to ask the system to
+     * switch to a wallpaper or icon theme which was installed with KNS.
+     *
+     * The following is how this might look in a knsrc file. The example shows how
+     * an external tool is called on the installed file represented by %d.
+     * <pre>
+       AdoptionCommand=/usr/lib64/libexec/plasma-changeicons %d
+     * </pre>
+     *
+     * @param entry The entry to return an adoption command for
+     * @return The command to run to adopt this entry's installed data
+     */
     QString adoptionCommand(const KNSCore::EntryInternal &entry) const;
+    /**
+     * Whether or not an adoption command exists for this engine
+     *
+     * @see adoptionCommand(KNSCore::EntryInternal)
+     * @return True if an adoption command exists
+     */
     bool hasAdoptionCommand() const;
 
     /**

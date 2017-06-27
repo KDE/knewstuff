@@ -34,6 +34,18 @@ class KJob;
 namespace KNSCore
 {
 class HTTPJob;
+/**
+ * @short Upload helper for Attica based providers
+ *
+ * Use this class to help you build upload functionality into applications
+ * which do not fit the KNS3::UploadDialog use case, such as situations where
+ * you have to fit the uploading into the middle of another workflow.
+ *
+ * As uploading is not entirely trivial, we suggest you look at the code in
+ * uploaddialog.cpp to see an example of an actual implementation.
+ *
+ * @see KNS3::UploadDialog
+ */
 class KNEWSTUFFCORE_EXPORT AtticaHelper : public QObject
 {
     Q_OBJECT

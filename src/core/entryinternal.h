@@ -121,22 +121,49 @@ public:
      */
     QString name() const;
 
+    /**
+     * Set the object's unique ID. This must be unique to the provider.
+     *
+     * @param id The unique ID of this entry as unique to this provider
+     * @see KNSCore::Provider
+     */
     void setUniqueId(const QString &id);
+    /**
+     * Get the object's unique ID. This will be unique to the provider.
+     * This is not intended as user-facing information - though it can
+     * be useful for certain purposes, this is supposed to only be used
+     * for keeping track of the entry.
+     *
+     * @return The unique ID of this entry
+     */
     QString uniqueId() const;
 
     /**
-     * Sets the data category, e.g. 'kdesktop/wallpaper'.
+     * Sets the data category, e.g. "KWin Scripts" or "Plasma Theme".
      */
     void setCategory(const QString &category);
 
     /**
-     * Retrieve the category of the data object.
+     * Retrieve the category of the data object. This is the category's
+     * name or ID (as opposed to displayName).
      *
+     * @see KNSCore::Provider::CategoryMetadata
+     * @see KNSCore::Engine::categories()
      * @return object category
      */
     QString category() const;
 
+    /**
+     * Set a link to a website containing information about this entry
+     *
+     * @param page The URL representing the entry's website
+     */
     void setHomepage(const QUrl &page);
+    /**
+     * A link to a website containing information about this entry
+     *
+     * @return The URL representing the entry's website
+     */
     QUrl homepage() const;
 
     /**
@@ -164,24 +191,24 @@ public:
     QString license() const;
 
     /**
-     * Sets a short description on what the object is all about.
+     * Sets a description (which can potentially be very long)
      */
     void setSummary(const QString &summary);
 
     /**
-     * Retrieve the license name of the object.
+     * Retrieve a short description of what the object is all about (should be very short)
      *
      * @return object license
      */
     QString shortSummary() const;
 
     /**
-     * Sets a short description on what the object is all about.
+     * Sets a short description of what the object is all about (should be very short)
      */
     void setShortSummary(const QString &summary);
 
     /**
-     * Retrieve a short description about the object.
+     * Retrieve a (potentially very long) description of the object.
      *
      * @return object description
      */
@@ -340,20 +367,77 @@ public:
      */
     int downloadCount() const;
 
+    /**
+     * How many people have marked themselves as fans of this entry
+     *
+     * @return The number of fans this entry has
+     * @see KNSCore::Engine::becomeFan(const EntryInternal& entry)
+     */
     int numberFans() const;
+    /**
+     * Sets how many people are fans.
+     * Note: This is purely informational. To become a fan, call the
+     * KNSCore::Engine::becomeFan function.
+     *
+     * @param fans The number of fans this entry has
+     * @see KNSCore::Engine::becomeFan(const EntryInternal& entry)
+     */
     void setNumberFans(int fans);
 
+    /**
+     * The number of entries in the knowledgebase for this entry
+     * @return The number of knowledgebase entries
+     */
     int numberKnowledgebaseEntries() const;
+    /**
+     * Set the number of knowledgebase entries for this entry
+     * @param num The number of entries
+     */
     void setNumberKnowledgebaseEntries(int num);
+    /**
+     * The link for the knowledgebase for this entry.
+     * @return A string version of the URL for the knowledgebase
+     */
     QString knowledgebaseLink() const;
+    /**
+     * Set the link for the knowledgebase.
+     * Note: This is not checked for validity, the caller must do this.
+     * @param link The string version of the URL for the knowledgebase
+     */
     void setKnowledgebaseLink(const QString &link);
 
+    /**
+     * The number of available download options for this entry
+     * @return The number of download options
+     */
     int downloadLinkCount() const;
+    /**
+     * A list of downloadable data for this entry
+     * @return The list of download options
+     * @see DownloadLinkInformation
+     */
     QList<DownloadLinkInformation> downloadLinkInformationList() const;
+    /**
+     * Add a new download option to this entry
+     * @param info The new download option
+     */
     void appendDownloadLinkInformation(const DownloadLinkInformation &info);
+    /**
+     * Remove all download options from this entry
+     */
     void clearDownloadLinkInformation();
 
+    /**
+     * A string representing the URL for a website where the user can donate
+     * to the author of this entry
+     * @return The string version of the URL for the entry's donation website
+     */
     QString donationLink() const;
+    /**
+     * Set a string representation of the URL for the donation website for this entry.
+     * Note: This is not checked for validity, the caller must do this.
+     * @param link String version of the URL for the entry's donation website
+     */
     void setDonationLink(const QString &link);
 
     /**
@@ -434,6 +518,11 @@ public:
     /**
      * Sets the entry's status. If no status is set, the default will be
      * \ref Invalid.
+     *
+     * Note that while this enum is currently found in KNS3::Entry,
+     * it will be moved to this class once the binary compatibility
+     * lock is lifted for Frameworks 6. For now, you should read any
+     * reference to the KNS3::Entry::Status enumerator as KNSCore::Entry::Status
      *
      * @param status New status of the entry
      */

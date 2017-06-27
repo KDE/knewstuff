@@ -24,6 +24,41 @@
 
 #include <QAbstractListModel>
 
+/**
+ * @short A model which shows the contents found in an Engine
+ *
+ * Use an instance of this model to show the content items represented by the configuration
+ * file passed to an engine. The following sample assumes you are using the Engine component,
+ * however it is also possible to pass a KNSCore::Engine instance created from C++ to this
+ * property, if you have specific requirements not covered by the convenience component.
+ *
+ * Most data in the model is simple, but the DownloadLinks role will return a list of
+ * DownloadLinkInfo entries, which you will need to manage in some way.
+ *
+ * You might also look at NewStuffList and NewStuffItem to see some more detail on what can be
+ * done with the data.
+ *
+ * @see NewStuffList
+ * @see NewStuffItem
+ *
+ * \code
+    import org.kde.newstuff 1.0 as NewStuff
+    Item {
+        NewStuff.ItemsModel {
+            id: newStuffModel;
+            engine: newStuffEngine.engine;
+        }
+        NewStuff.Engine {
+            id: newStuffEngine;
+            configFile: "/some/filesystem/location/wallpaper.knsrc";
+            onMessage: console.log("KNS Message: " + message);
+            onIdleMessage: console.log("KNS Idle: " + message);
+            onBusyMessage: console.log("KNS Busy: " + message);
+            onErrorMessage: console.log("KNS Error: " + message);
+        }
+    }
+    \endcode
+ */
 class ItemsModel : public QAbstractListModel
 {
     Q_OBJECT

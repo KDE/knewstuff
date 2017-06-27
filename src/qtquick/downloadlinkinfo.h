@@ -26,6 +26,13 @@
 
 #include "entryinternal.h"
 
+/**
+ * @short One downloadable item as contained within one content item
+ *
+ * A simple data container which wraps a KNSCore::EntryInternal::DownloadLinkInformation
+ * instance and provides property accessors for each of the pieces of information stored
+ * in it.
+ */
 class DownloadLinkInfo : public QObject
 {
     Q_OBJECT
