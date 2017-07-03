@@ -178,11 +178,24 @@ public:
     void requestMoreData();
     void requestData(int page, int pageSize);
 
+    /**
+     * Request for packages that are installed and need update
+     *
+     * These will be reported through the signal @see signalUpdateableEntriesLoaded().
+     */
     void checkForUpdates();
+
+    /**
+     * Requests installed packages with an up to date state
+     *
+     * @see signalEntriesLoaded()
+     */
     void checkForInstalled();
 
     /**
      * Convenience method to launch a search for one specific entry.
+     *
+     * @note it will reset the engine state
      *
      * @param id The ID of the entry you wish to fetch
      */
