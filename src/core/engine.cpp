@@ -118,12 +118,6 @@ bool Engine::init(const QString &configfile)
 
     emit signalBusy(i18n("Initializing"));
 
-    if(!QFileInfo::exists(configfile)) {
-        emit signalError(i18n("Configuration file not found: \"%1\"", configfile));
-        qCritical() << "No knsrc file named '" << configfile << "' was found.";
-        return false;
-    }
-
     KConfig conf(configfile);
     if (conf.accessMode() == KConfig::NoAccess) {
         emit signalError(i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile));
