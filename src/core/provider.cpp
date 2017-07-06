@@ -53,5 +53,19 @@ QUrl Provider::icon() const
     return mIcon;
 }
 
+QDebug operator<<(QDebug dbg, const Provider::SearchRequest & search)
+{
+    QDebugStateSaver saver(dbg);
+    dbg.nospace();
+    dbg << "Provider::SearchRequest(";
+    dbg << "searchTerm: " << search.searchTerm << ',';
+    dbg << "categories: " << search.categories << ',';
+    dbg << "filter: " << search.filter << ',';
+    dbg << "page: " << search.page << ',';
+    dbg << "pageSize: " << search.pageSize;
+    dbg << ')';
+    return dbg;
+}
+
 }
 

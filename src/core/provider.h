@@ -183,6 +183,8 @@ protected:
 private:
     Q_DISABLE_COPY(Provider)
 };
+
+KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug, const Provider::SearchRequest &);
 }
 
 #endif
