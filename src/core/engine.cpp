@@ -305,7 +305,7 @@ void Engine::providerInitialized(Provider *p)
 void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, KNSCore::EntryInternal::List entries)
 {
     m_currentPage = qMax<int>(request.page, m_currentPage);
-    qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << m_currentPage;
+    qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << m_currentPage << "count:" << entries.count();
 
     if (request.filter == Provider::Updates) {
         emit signalUpdateableEntriesLoaded(entries);
@@ -333,14 +333,15 @@ void Engine::reloadEntries()
                 p->loadEntries(m_currentRequest);
             } else {
                 // take entries from cache until there are no more
-                EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
-                while (!cache.isEmpty()) {
+                EntryInternal::List cache;
+                EntryInternal::List lastCache = m_cache->requestFromCache(m_currentRequest);
+                while (!lastCache.isEmpty()) {
                     qCDebug(KNEWSTUFFCORE) << "From cache";
-                    emit signalEntriesLoaded(cache);
+                    cache << lastCache;
 
                     m_currentPage = m_currentRequest.page;
                     ++m_currentRequest.page;
-                    cache = m_cache->requestFromCache(m_currentRequest);
+                    lastCache = m_cache->requestFromCache(m_currentRequest);
                 }
 
                 // Since the cache has no more pages, reset the request's page
@@ -348,8 +349,9 @@ void Engine::reloadEntries()
                     m_currentRequest.page = m_currentPage;
                 }
 
-                // if the cache was empty, request data from provider
-                if (m_currentPage == -1) {
+                if (!cache.isEmpty()) {
+                    emit signalEntriesLoaded(cache);
+                } else {
                     qCDebug(KNEWSTUFFCORE) << "From provider";
                     p->loadEntries(m_currentRequest);
 
