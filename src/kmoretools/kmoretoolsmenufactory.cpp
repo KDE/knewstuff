@@ -19,7 +19,7 @@
 
 #include "kmoretools_p.h"
 #include "kmoretoolspresets_p.h"
-
+#include "knewstuff_debug.h"
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -97,7 +97,7 @@ static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
             // then the isInstalled was true because of the Exec line check
             // and we use the desktopfile provided by KMoreTools.
             // Otherwise *kService would crash.
-            qDebug() << "Desktop file not installed:" << kmtService->desktopEntryName() << "=> Use desktop file provided by KMoreTools";
+            qCDebug(KNEWSTUFF) << "Desktop file not installed:" << kmtService->desktopEntryName() << "=> Use desktop file provided by KMoreTools";
             kService = kmtService->kmtProvidedService();
         }
 

@@ -17,7 +17,7 @@
 
 #include "kmoretoolspresets.h"
 #include "kmoretoolspresets_p.h"
-
+#include "knewstuff_debug.h"
 #include <QDebug>
 #include <QHash>
 
@@ -100,7 +100,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
         }
         return service;
     } else {
-        qDebug() << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
+        qCDebug(KNEWSTUFF) << "KMoreToolsPresets::registerServiceByDesktopEntryName: " << desktopEntryName << "was not found. Return nullptr.";
         return nullptr;
     }
 }
