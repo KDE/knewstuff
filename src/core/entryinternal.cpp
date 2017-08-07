@@ -133,6 +133,7 @@ QString EntryInternal::name() const
 
 void EntryInternal::setName(const QString &name)
 {
+    d.detach();
     d->mName = name;
 }
 
@@ -143,6 +144,7 @@ QString EntryInternal::uniqueId() const
 
 void EntryInternal::setUniqueId(const QString &id)
 {
+    d.detach();
     d->mUniqueId = id;
 }
 
@@ -153,6 +155,7 @@ QString EntryInternal::providerId() const
 
 void EntryInternal::setProviderId(const QString &id)
 {
+    d.detach();
     d->mProviderId = id;
 }
 
@@ -163,6 +166,7 @@ QString EntryInternal::category() const
 
 void EntryInternal::setCategory(const QString &category)
 {
+    d.detach();
     d->mCategory = category;
 }
 
@@ -173,6 +177,7 @@ QUrl EntryInternal::homepage() const
 
 void EntryInternal::setHomepage(const QUrl &page)
 {
+    d.detach();
     d->mHomepage = page;
 }
 
@@ -183,6 +188,7 @@ Author EntryInternal::author() const
 
 void EntryInternal::setAuthor(const KNSCore::Author &author)
 {
+    d.detach();
     d->mAuthor = author;
 }
 
@@ -193,6 +199,7 @@ QString EntryInternal::license() const
 
 void EntryInternal::setLicense(const QString &license)
 {
+    d.detach();
     d->mLicense = license;
 }
 
@@ -203,6 +210,7 @@ QString EntryInternal::summary() const
 
 void EntryInternal::setSummary(const QString &summary)
 {
+    d.detach();
     d->mSummary = summary;
 }
 
@@ -213,11 +221,13 @@ QString EntryInternal::shortSummary() const
 
 void EntryInternal::setShortSummary(const QString &summary)
 {
+    d.detach();
     d->mShortSummary = summary;
 }
 
 void EntryInternal::setChangelog(const QString &changelog)
 {
+    d.detach();
     d->mChangelog = changelog;
 }
 
@@ -233,6 +243,7 @@ QString EntryInternal::version() const
 
 void EntryInternal::setVersion(const QString &version)
 {
+    d.detach();
     d->mVersion = version;
 }
 
@@ -243,6 +254,7 @@ QDate EntryInternal::releaseDate() const
 
 void EntryInternal::setReleaseDate(const QDate &releasedate)
 {
+    d.detach();
     d->mReleaseDate = releasedate;
 }
 
@@ -253,6 +265,7 @@ QString EntryInternal::payload() const
 
 void EntryInternal::setPayload(const QString &url)
 {
+    d.detach();
     d->mPayload = url;
 }
 
@@ -263,6 +276,7 @@ QDate EntryInternal::updateReleaseDate() const
 
 void EntryInternal::setUpdateReleaseDate(const QDate &releasedate)
 {
+    d.detach();
     d->mUpdateReleaseDate = releasedate;
 }
 
@@ -273,6 +287,7 @@ QString EntryInternal::updateVersion() const
 
 void EntryInternal::setUpdateVersion(const QString &version)
 {
+    d.detach();
     d->mUpdateVersion = version;
 }
 
@@ -283,6 +298,7 @@ QString EntryInternal::previewUrl(PreviewType type) const
 
 void EntryInternal::setPreviewUrl(const QString &url, PreviewType type)
 {
+    d.detach();
     d->mPreviewUrl[type] = url;
 }
 
@@ -293,6 +309,7 @@ QImage EntryInternal::previewImage(PreviewType type) const
 
 void EntryInternal::setPreviewImage(const QImage &image, PreviewType type)
 {
+    d.detach();
     d->mPreviewImage[type] = image;
 }
 
@@ -303,6 +320,7 @@ int EntryInternal::rating() const
 
 void EntryInternal::setRating(int rating)
 {
+    d.detach();
     d->mRating = rating;
 }
 
@@ -313,6 +331,7 @@ int EntryInternal::numberOfComments() const
 
 void EntryInternal::setNumberOfComments (int comments)
 {
+    d.detach();
     d->mNumberOfComments = comments;
 }
 
@@ -323,6 +342,7 @@ int EntryInternal::downloadCount() const
 
 void EntryInternal::setDownloadCount(int downloads)
 {
+    d.detach();
     d->mDownloadCount = downloads;
 }
 
@@ -333,6 +353,7 @@ int EntryInternal::numberFans() const
 
 void EntryInternal::setNumberFans(int fans)
 {
+    d.detach();
     d->mNumberFans = fans;
 }
 
@@ -343,6 +364,7 @@ QString EntryInternal::donationLink() const
 
 void EntryInternal::setDonationLink(const QString &link)
 {
+    d.detach();
     d->mDonationLink = link;
 }
 
@@ -352,6 +374,7 @@ int EntryInternal::numberKnowledgebaseEntries() const
 }
 void EntryInternal::setNumberKnowledgebaseEntries(int num)
 {
+    d.detach();
     d->mNumberKnowledgebaseEntries = num;
 }
 
@@ -361,6 +384,7 @@ QString EntryInternal::knowledgebaseLink() const
 }
 void EntryInternal::setKnowledgebaseLink(const QString &link)
 {
+    d.detach();
     d->mKnowledgebaseLink = link;
 }
 
@@ -385,6 +409,7 @@ EntryInternal::Source EntryInternal::source() const
 
 void EntryInternal::setSource(Source source)
 {
+    d.detach();
     d->mSource = source;
 }
 
@@ -395,11 +420,13 @@ KNS3::Entry::Status EntryInternal::status() const
 
 void EntryInternal::setStatus(KNS3::Entry::Status status)
 {
+    d.detach();
     d->mStatus = status;
 }
 
 void KNSCore::EntryInternal::setInstalledFiles(const QStringList &files)
 {
+    d.detach();
     d->mInstalledFiles = files;
 }
 
@@ -410,6 +437,7 @@ QStringList KNSCore::EntryInternal::installedFiles() const
 
 void KNSCore::EntryInternal::setUnInstalledFiles(const QStringList &files)
 {
+    d.detach();
     d->mUnInstalledFiles = files;
 }
 
@@ -430,11 +458,13 @@ QList<KNSCore::EntryInternal::DownloadLinkInformation> KNSCore::EntryInternal::d
 
 void KNSCore::EntryInternal::appendDownloadLinkInformation(const KNSCore::EntryInternal::DownloadLinkInformation &info)
 {
+    d.detach();
     d->mDownloadLinkInformationList.append(info);
 }
 
 void EntryInternal::clearDownloadLinkInformation()
 {
+    d.detach();
     d->mDownloadLinkInformationList.clear();
 }
 
@@ -480,6 +510,7 @@ static int readInt(QXmlStreamReader* xml)
 
 bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
 {
+    d.detach();
     if (reader.name() != QLatin1String("stuff")) {
         qWarning() << "Parsing Entry from invalid XML";
         return false;
@@ -577,6 +608,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
 
 bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
 {
+    d.detach();
     if (xmldata.tagName() != QLatin1String("stuff")) {
         qWarning() << "Parsing Entry from invalid XML";
         return false;
