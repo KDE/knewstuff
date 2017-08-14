@@ -26,11 +26,6 @@ knewstuff_executable_tests(
 #)
 
 # KMoreTools:
-add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp ../src/knewstuff_debug.cpp)
 add_executable(kmoretoolstest_interactive kmoretools/kmoretoolstest_interactive.cpp ../src/knewstuff_debug.cpp)
-# The next line is commented out to prevent CI server to pick up those tests:
-# add_test(kmoretoolstest2 kmoretoolstest2) # uncomment to run tests locally
-ecm_mark_as_test(kmoretoolstest2)
 ecm_mark_as_test(kmoretoolstest_interactive)
-target_link_libraries(kmoretoolstest2 Qt5::Test KF5::NewStuff KF5::I18n)
 target_link_libraries(kmoretoolstest_interactive Qt5::Test KF5::NewStuff KF5::I18n Qt5::Widgets)

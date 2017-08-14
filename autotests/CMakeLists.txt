@@ -33,3 +33,12 @@ knewstuff_unit_tests(
 ecm_add_test(kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp
              LINK_LIBRARIES Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n
              TEST_NAME kmoretoolstest)
+
+# ===========
+
+add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp ../src/knewstuff_debug.cpp)
+# The next line is commented out to prevent CI server to pick up those tests:
+# add_test(kmoretoolstest2 kmoretoolstest2) # uncomment to run tests locally
+ecm_mark_as_test(kmoretoolstest2)
+target_link_libraries(kmoretoolstest2 Qt5::Test KF5::NewStuff KF5::I18n)
+
