@@ -268,7 +268,7 @@ public:
      *
      * Install Desktopfiles
      * --------------------
-     * Example 1 (CMakeFileLists.txt if uniqueId = "dolphin/statusbar-diskspace-menu"):
+     * Example 1 (CMakeLists.txt if uniqueId = "dolphin/statusbar-diskspace-menu"):
      * \verbatim
         # note the trailing slash       ------------. (it makes sure only the contents of the directory is copied)
         #                                           |                                 ----fix---
