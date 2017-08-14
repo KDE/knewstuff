@@ -37,8 +37,7 @@ class KMoreToolsTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
-    void init();
-    void cleanup();
+    void initTestCase();
 
     // corner, error cases and impl details:
     void testDesktopFileWithNoExec();
@@ -65,12 +64,29 @@ private Q_SLOTS:
     void test_KmtUrlUtil_localFileAbsoluteDir();
 };
 
-void KMoreToolsTest::init()
+void KMoreToolsTest::initTestCase()
 {
-}
+    QStandardPaths::setTestModeEnabled(true);
 
-void KMoreToolsTest::cleanup()
-{
+    const QString dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/1/";
+    QVERIFY(QDir(dest).removeRecursively());
+    QVERIFY(QDir().mkpath(dest));
+    for (const QString& fileName : {"a.desktop", "b.desktop", "c.desktop"}) {
+        const QString srcFile = QFINDTESTDATA("1/" + fileName + ".notranslate");
+        QVERIFY(!srcFile.isEmpty());
+        QVERIFY(QFile::copy(srcFile, dest + fileName));
+    }
+
+
+    const QString dest2 = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/2/";
+    QVERIFY(QDir(dest2).removeRecursively());
+    QVERIFY(QDir().mkpath(dest2));
+    for (const QString& fileName : {"org.kde.kate.desktop", "org.kde.kate.png", "mynotinstalledapp.desktop", "mynotinstalledapp.png", "mynotinstapp2.desktop"}) {
+        const QString origFile = fileName.endsWith("desktop") ? fileName + _(".notranslate") : fileName;
+        const QString srcFile = QFINDTESTDATA("2/" + origFile);
+        QVERIFY(!srcFile.isEmpty());
+        QVERIFY(QFile::copy(srcFile, dest2 + fileName));
+    }
 }
 
 /**
@@ -78,7 +94,7 @@ void KMoreToolsTest::cleanup()
  */
 void KMoreToolsTest::testDesktopFileWithNoExec()
 {
-    KMoreTools kmt(QLatin1String(_("unittest-kmoretools/1")));
+    KMoreTools kmt(_("unittest-kmoretools/1"));
     QTest::ignoreMessage(QtWarningMsg, QRegularExpression(_("The desktop entry file .+ has Type= \"Application\" but no Exec line")));
     // QTest::ignoreMessage(QtCriticalMsg, "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile .+ is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.");
     auto aApp = kmt.registerServiceByDesktopEntryName(_("a"));

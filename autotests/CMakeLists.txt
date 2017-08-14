@@ -33,12 +33,3 @@ knewstuff_unit_tests(
 ecm_add_test(kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp
              LINK_LIBRARIES Qt5::Test Qt5::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n
              TEST_NAME kmoretoolstest)
-install(FILES kmoretools/1/a.desktop.notranslate
-        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1
-        RENAME a.desktop)
-install(FILES kmoretools/1/b.desktop.notranslate
-        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1
-        RENAME b.desktop)
-install(FILES kmoretools/1/c.desktop.notranslate
-        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kmoretools/unittest-kmoretools/1
-        RENAME c.desktop)
