@@ -65,7 +65,9 @@ void Cache::readRegistry()
 
     QFile f(registryFile);
     if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "The file " << registryFile << " could not be opened.";
+        if (QFileInfo::exists(registryFile)) {
+            qWarning() << "The file " << registryFile << " could not be opened.";
+        }
         return;
     }
 
