@@ -33,6 +33,7 @@
 #include <QtCore/QSignalMapper>
 #include <QCoreApplication>
 
+#include <kiconloader.h>
 #include <kmessagebox.h>
 #include <klocalizedstring.h>
 
@@ -144,7 +145,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
 
     //Busy widget
     busyWidget = new KPixmapSequenceWidget();
-    busyWidget->setSequence(KPixmapSequence(QStringLiteral("process-working"), 22));
+    busyWidget->setSequence(KIconLoader::global()->loadPixmapSequence(QStringLiteral("process-working"), 22));
     busyWidget->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     ui.busyWidget->setLayout(new QHBoxLayout());
     ui.busyWidget->layout()->addWidget(busyWidget);
