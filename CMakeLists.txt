@@ -44,6 +44,12 @@ set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that imple
                        URL "https://projects.kde.org/attica"
                        TYPE REQUIRED
                       )
+find_package(KF5Kirigami2 2.1.0)
+set_package_properties(KF5Kirigami2 PROPERTIES
+    DESCRIPTION "KDE's lightweight user interface framework for mobile and convergent applications"
+    URL "https://techbase.kde.org/Kirigami"
+    PURPOSE "Required by KNewStuffQuick's qml components"
+    TYPE RUNTIME)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")

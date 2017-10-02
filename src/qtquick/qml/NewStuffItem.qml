@@ -22,12 +22,11 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.4 as QtControls
 
-import org.kde.kirigami 1.0 as Kirigami
+import org.kde.kirigami 2.1 as Kirigami
 import org.kde.newstuff 1.0 as NewStuff
 
 Kirigami.SwipeListItem {
     id: listItem;
-    width: ListView.width;
     height: Kirigami.Units.iconSizes.huge + Kirigami.Units.smallSpacing * 2;
     property QtObject listModel;
     enabled: true;
