@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=KDing
+GenericName=German-English Translator
+GenericName[de]=Deutsch-Englisch Übersetzer
+Comment=Translator
+Comment[de]=Übersetzungsprogramm
+Exec=kding
+Icon=kding
+Categories=Qt;KDE;Office;Dictionary;
+

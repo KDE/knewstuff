@@ -29,6 +29,10 @@
 
 #define _ QLatin1String
 
+/**
+ * The tests in this class have some runtime requirements.
+ * Details see comment in implementation of each test case.
+ */
 class KMoreToolsTest2 : public QObject
 {
     Q_OBJECT

@@ -68,6 +68,9 @@ public:
      *      You can specify 1 URL argument that points to the directory
      *      where the search should be started.
      *
+     * - "font-tools" (since 5.37.0)
+     *      Tools to manage and analyse fonts.
+     *
      * - "git-clients-for-folder"
      *      Collection of git clients which all take 1 URL argument pointing
      *      to a directory within a git repository. It may not be the
@@ -87,8 +90,17 @@ public:
      *      Browse for icons on your system
      *      (e.g. those under /usr/share/icons).
      *
+     * - "language-dictionary" (since 5.37.0)
+     *      Language dictionaries for translation
+     *
+     * - "mouse-tools" (since 5.37.0)
+     *      Tools related to the mouse pointer device.
+     *
+     * - "screenrecorder" (since 5.37.0)
+     *      Record screen contents to a video file (including animatated gif).
+     *
      * - "screenshot-take"
-     *      Collection of screenshot-taking tools.
+     *      Tools for taking and maybe also editing screenshots.
      *
      * - "system-monitor-processes"
      *      Tools to monitor the running processes on the system.

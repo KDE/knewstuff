@@ -244,9 +244,9 @@ void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
     auto list = KMoreToolsPresets::registerServicesByGroupingNames(&kmt, { _("screenshot-take") });
 
     if (std::find_if(list.begin(), list.end(), [](KMoreToolsService* s) {
-    return s->desktopEntryName() == _("org.kde.ksnapshot");
+    return s->desktopEntryName() == _("org.kde.spectacle");
     }) != list.end()) {
-        QVERIFY(true); // at least ksnapshot should currently be present
+        QVERIFY(true); // at least spectacle should currently be present
     }
     else {
         QVERIFY(false);

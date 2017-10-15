@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Utility;Filesystem;Qt;KDE;
+Encoding=UTF-8
+Name=ANGRYsearch
+GenericName=Linux file search, instant results as you type
+Type=Application
+Exec=/usr/bin/angrysearch.py
+Icon=/usr/share/angrysearch/angrysearch.svg
+

@@ -34,6 +34,11 @@
 
 #define _ QLatin1String
 
+/**
+ * Each test case starts a test GUI.
+ * Run kmoretoolstest_interactive with the test case name as first parameter
+ * (e.g. testDialogForGroupingNames) to run only this test GUI.
+ */
 class KMoreToolsTestInteractive : public QObject
 {
     Q_OBJECT
@@ -179,11 +184,19 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
     auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
 
     auto groupingNamesList = {
-        _("disk-usage"), _("disk-partitions"),
+        _("disk-usage"),
+        _("disk-partitions"),
         _("files-find"),
-        _("git-clients-for-folder"), _("git-clients-and-actions"),
-        _("icon-browser"), _("screenshot-take"),
-        _("system-monitor-processes"), _("system-monitor-logs"),
+        _("font-tools"),
+        _("git-clients-for-folder"),
+        _("git-clients-and-actions"),
+        _("icon-browser"),
+        _("language-dictionary"),
+        _("mouse-tools"),
+        _("screenrecorder"),
+        _("screenshot-take"),
+        _("system-monitor-processes"),
+        _("system-monitor-logs"),
         _("time-countdown")
     };
 
