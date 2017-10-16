@@ -66,7 +66,7 @@ private:
     EntryInternal m_entry;
     EntryInternal::PreviewType m_previewType;
     QByteArray m_buffer;
-    HTTPJob *m_job;
+    HTTPJob *m_job = nullptr;
 };
 }
 #endif
