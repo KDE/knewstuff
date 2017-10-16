@@ -199,8 +199,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     }
 
     QLabel *infoLabel = qobject_cast<QLabel *>(widgets.at(DelegateLabel));
-    infoLabel->setWordWrap(true);
     if (infoLabel != nullptr) {
+        infoLabel->setWordWrap(true);
         if (model->hasPreviewImages()) {
             // move the text right by kPreviewWidth + margin pixels to fit the preview
             infoLabel->move(KNSCore::PreviewWidth + margin * 2, 0);
