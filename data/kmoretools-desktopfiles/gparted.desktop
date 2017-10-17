@@ -179,5 +179,12 @@ Terminal=false
 Type=Application
 Categories=GNOME;System;Filesystem;
 Keywords=Partition;
+Keywords[ca]=Partició;
+Keywords[eu]=Partizioa;
+Keywords[nl]=Partitie;
+Keywords[pt]=Partição;
+Keywords[sv]=Partition;
+Keywords[uk]=Partition;розділ;поділ;
+Keywords[x-test]=xxPartitionxx;
 StartupNotify=true
 

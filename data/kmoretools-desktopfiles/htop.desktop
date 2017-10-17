@@ -122,4 +122,12 @@ GenericName[x-test]=xxProcess Viewerxx
 GenericName[zh_CN]=进程查看器
 GenericName[zh_TW]=行程檢視器
 Keywords=system;process;task;
+Keywords[ca]=sistema;procés;tasca;
+Keywords[es]=sistema;proceso;tarea;
+Keywords[eu]=sistema;prozesua;ataza;
+Keywords[nl]=systeem;proces;taak;
+Keywords[pt]=sistema;processo;tarefa;
+Keywords[sv]=system;process;aktivitet;
+Keywords[uk]=system;process;task;система;процес;завдання;
+Keywords[x-test]=xxsystemxx;xxprocessxx;xxtaskxx;
 

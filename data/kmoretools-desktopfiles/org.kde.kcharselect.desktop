@@ -1,11 +1,29 @@
 [Desktop Entry]
 GenericName=Character Selector
+GenericName[ca]=Selector de caràcters
+GenericName[es]=Selector de caracteres
+GenericName[eu]=Karaktere hautatzailea
+GenericName[fr]=Sélecteur de caractères
+GenericName[nl]=Speciale tekens
+GenericName[pt]=Selector de Caracteres
+GenericName[sv]=Teckenväljare
+GenericName[uk]=Вибір символів
+GenericName[x-test]=xxCharacter Selectorxx
 Exec=kcharselect --qwindowtitle %c
 Icon=accessories-character-map
 Type=Application
 Terminal=false
 X-DocPath=kcharselect/index.html
 Name=KCharSelect
+Name[ca]=KCharSelect
+Name[es]=KCharSelect
+Name[eu]=KCharSelect
+Name[fr]=KCharSelect
+Name[nl]=KCharSelect
+Name[pt]=KCharSelect
+Name[sv]=Kcharselect
+Name[uk]=KCharSelect
+Name[x-test]=xxKCharSelectxx
 StartupNotify=true
 Categories=Qt;KDE;Utility;Accessibility;
 

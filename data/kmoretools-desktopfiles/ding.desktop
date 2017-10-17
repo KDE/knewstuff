@@ -2,6 +2,21 @@
 Categories=Office;Dictionary;
 Type=Application
 Name=ding
+Name[ca]=ding
+Name[eu]=ding
+Name[nl]=ding
+Name[pt]=ding
+Name[sv]=ding
+Name[uk]=ding
+Name[x-test]=xxdingxx
 Exec=ding
 GenericName=German<=>English Dictionary
+GenericName[ca]=Diccionari alemany<=>anglès
+GenericName[es]=Diccionario alemán<=>inglés
+GenericName[eu]=Alemana<=>Ingelera hiztegia
+GenericName[nl]=Duits<=>Engels woordenboek
+GenericName[pt]=Dicionário de Alemão<=>Inglês
+GenericName[sv]=Tysk-engelsk ordbok
+GenericName[uk]=Німецько-англійський словник
+GenericName[x-test]=xxGerman<=>English Dictionaryxx
 

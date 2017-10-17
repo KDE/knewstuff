@@ -58,5 +58,12 @@ Name[x-test]=xxPartitionerxx
 Name[zh_CN]=分区管理
 Name[zh_TW]=Partitioner
 GenericName=Partition hard disks (a YaST module)
+GenericName[ca]=Fa particions de discs durs (un mòdul del YaST)
+GenericName[eu]=Disko zurrunaren partizioa egin (YaST modulu bat)
+GenericName[nl]=Vaste schijf partitioneren (een YaST-module)
+GenericName[pt]=Gestão das partições nos discos rígidos (um módulo do YaST)
+GenericName[sv]=Partitionera hårddiskar (en YaST-modul)
+GenericName[uk]=Поділ диска на розділи (модуль YaST)
+GenericName[x-test]=xxPartition hard disks (a YaST module)xx
 StartupNotify=true
 
