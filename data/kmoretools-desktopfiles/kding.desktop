@@ -29,6 +29,7 @@ Comment[pt]=Tradutor
 Comment[sv]=Översättning
 Comment[uk]=Перекладач
 Comment[x-test]=xxTranslatorxx
+Comment[zh_CN]=翻译
 Exec=kding
 Icon=kding
 Categories=Qt;KDE;Office;Dictionary;

@@ -86,6 +86,7 @@ Comment[pt]=Vigiar os processos em execução e a performance do sistema
 Comment[sv]=Övervaka processor som kör och systemprestanda
 Comment[uk]=Стеження за процесами та швидкодією системи
 Comment[x-test]=xxMonitor running processes and system performancexx
+Comment[zh_CN]=监视运行的进程和系统效率
 Exec=ksysguard %U
 Icon=utilities-system-monitor
 Type=Application

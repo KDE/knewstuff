@@ -9,6 +9,7 @@ GenericName[pt]=Selector de Caracteres
 GenericName[sv]=Teckenväljare
 GenericName[uk]=Вибір символів
 GenericName[x-test]=xxCharacter Selectorxx
+GenericName[zh_CN]=字符选择器
 Exec=kcharselect --qwindowtitle %c
 Icon=accessories-character-map
 Type=Application
