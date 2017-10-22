@@ -180,6 +180,7 @@ Type=Application
 Categories=GNOME;System;Filesystem;
 Keywords=Partition;
 Keywords[ca]=Partició;
+Keywords[ca@valencia]=Partició;
 Keywords[eu]=Partizioa;
 Keywords[nl]=Partitie;
 Keywords[pt]=Partição;

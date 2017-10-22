@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Character Selector
 GenericName[ca]=Selector de caràcters
+GenericName[ca@valencia]=Selector de caràcters
 GenericName[es]=Selector de caracteres
 GenericName[eu]=Karaktere hautatzailea
 GenericName[fr]=Sélecteur de caractères
@@ -17,6 +18,7 @@ Terminal=false
 X-DocPath=kcharselect/index.html
 Name=KCharSelect
 Name[ca]=KCharSelect
+Name[ca@valencia]=KCharSelect
 Name[es]=KCharSelect
 Name[eu]=KCharSelect
 Name[fr]=KCharSelect

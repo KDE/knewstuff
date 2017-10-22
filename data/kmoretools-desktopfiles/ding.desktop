@@ -3,6 +3,7 @@ Categories=Office;Dictionary;
 Type=Application
 Name=ding
 Name[ca]=ding
+Name[ca@valencia]=ding
 Name[eu]=ding
 Name[nl]=ding
 Name[pt]=ding
@@ -12,6 +13,7 @@ Name[x-test]=xxdingxx
 Exec=ding
 GenericName=German<=>English Dictionary
 GenericName[ca]=Diccionari alemany<=>anglès
+GenericName[ca@valencia]=Diccionari alemany<=>anglés
 GenericName[es]=Diccionario alemán<=>inglés
 GenericName[eu]=Alemana<=>Ingelera hiztegia
 GenericName[nl]=Duits<=>Engels woordenboek

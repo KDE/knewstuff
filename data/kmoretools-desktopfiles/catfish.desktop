@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Catfish File Search
 Name[ca]=Cerca de fitxers Catfish
+Name[ca@valencia]=Busca de fitxers Catfish
 Name[eu]=Catfish fitxategi bilaketa
 Name[nl]=Bestanden zoeken met Catfish
 Name[pt]=Pesquisa de Ficheiros Catfish
@@ -9,6 +10,7 @@ Name[uk]=Пошук файлів Catfish
 Name[x-test]=xxCatfish File Searchxx
 GenericName=File search
 GenericName[ca]=Cerca de fitxers
+GenericName[ca@valencia]=Busca de fitxers
 GenericName[es]=Búsqueda de archivos
 GenericName[eu]=Fitxategi bilaketa
 GenericName[nl]=Bestanden zoeken
@@ -18,6 +20,7 @@ GenericName[uk]=Пошук файлів
 GenericName[x-test]=xxFile searchxx
 Comment=Search the file system
 Comment[ca]=Cerca al sistema de fitxers
+Comment[ca@valencia]=Busca al sistema de fitxers
 Comment[es]=Buscar en el sistema de archivos
 Comment[eu]=Bilatu fitxategi sisteman
 Comment[nl]=Doorzoek het bestandssysteem
