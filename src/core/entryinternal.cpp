@@ -309,7 +309,8 @@ QImage EntryInternal::previewImage(PreviewType type) const
 
 void EntryInternal::setPreviewImage(const QImage &image, PreviewType type)
 {
-    d.detach();
+    // Don't detach here since this is how we get the fetched preview images.
+    //d.detach();
     d->mPreviewImage[type] = image;
 }
 
