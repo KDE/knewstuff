@@ -111,7 +111,6 @@ void HTTPWorker::startRequest()
     }
 
     QNetworkRequest request(d->source);
-    request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::PreferCache);
     d->reply = s_httpWorkerNAM->get(request);
     connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
     connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
@@ -151,7 +150,6 @@ void HTTPWorker::handleFinished()
             qCDebug(KNEWSTUFFCORE) << d->reply->url().toDisplayString() << "was redirected to" << d->redirectUrl.toDisplayString() << fromCache << d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
             d->reply->deleteLater();
             QNetworkRequest request(d->redirectUrl);
-            request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::PreferCache);
             d->reply = s_httpWorkerNAM->get(request);
             connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
             connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
