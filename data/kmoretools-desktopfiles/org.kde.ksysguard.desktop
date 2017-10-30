@@ -80,6 +80,7 @@ GenericName[zh_TW]=系統監視器
 Comment=Monitor running processes and system performance
 Comment[ca]=Controlador de processos en execució i rendiment del sistema
 Comment[ca@valencia]=Controlador de processos en execució i rendiment del sistema
+Comment[da]=Overvåg kørende processer og systemets ydelse
 Comment[eu]=Zelatatu martxan dauden prozesuak eta sistemaren errendimendua
 Comment[fr]=Surveiller les processus en cours d'exécution et les performances du système
 Comment[it]=Controlla i processi in esecuzione e le prestazioni del sistema
