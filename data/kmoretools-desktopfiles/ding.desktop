@@ -9,6 +9,10 @@ Name[eu]=ding
 Name[it]=ding
 Name[nl]=ding
 Name[pt]=ding
+Name[sr]=Динг
+Name[sr@ijekavian]=Динг
+Name[sr@ijekavianlatin]=Ding
+Name[sr@latin]=Ding
 Name[sv]=ding
 Name[uk]=ding
 Name[x-test]=xxdingxx
@@ -22,6 +26,10 @@ GenericName[eu]=Alemana<=>Ingelera hiztegia
 GenericName[it]=Dizionario tedesco<=>inglese
 GenericName[nl]=Duits<=>Engels woordenboek
 GenericName[pt]=Dicionário de Alemão<=>Inglês
+GenericName[sr]=Немачко–енглески речник
+GenericName[sr@ijekavian]=Немачко–енглески речник
+GenericName[sr@ijekavianlatin]=Nemačko–engleski rečnik
+GenericName[sr@latin]=Nemačko–engleski rečnik
 GenericName[sv]=Tysk-engelsk ordbok
 GenericName[uk]=Німецько-англійський словник
 GenericName[x-test]=xxGerman<=>English Dictionaryxx
