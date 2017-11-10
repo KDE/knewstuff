@@ -171,7 +171,7 @@ Comment[sv]=Skapa, organisera om och ta bort partitioner
 Comment[tr]=Bölümler oluştur, yeniden düzenle ve sil
 Comment[uk]=Створення, реорганізація та вилучення розділів диска
 Comment[x-test]=xxCreate, reorganize, and delete partitionsxx
-Comment[zh_CN]=创建，组织和删除分区
+Comment[zh_CN]=创建、组织和删除分区
 Comment[zh_TW]=建立、重新編排、刪除分割區
 Exec=/usr/sbin/gparted_polkit %f
 Icon=gparted
@@ -195,5 +195,6 @@ Keywords[sr@latin]=partition;particija;
 Keywords[sv]=Partition;
 Keywords[uk]=Partition;розділ;поділ;
 Keywords[x-test]=xxPartitionxx;
+Keywords[zh_CN]=分区;
 StartupNotify=true
 
