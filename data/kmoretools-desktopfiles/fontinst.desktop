@@ -28,6 +28,7 @@ Name[sv]=Teckensnittshantering
 Name[uk]=Керування шрифтами
 Name[x-test]=xxFont Managementxx
 Name[zh_CN]=字体管理
+Name[zh_TW]=字型管理
 
 Comment=Font Installation, Preview and Removal
 Comment[ca]=Instal·lació, vista prèvia i eliminació dels tipus de lletra
@@ -47,6 +48,7 @@ Comment[sv]=Installation, förhandsgranskning och borttagning av teckensnitt
 Comment[uk]=Встановлення, перегляд і вилучення шрифтів
 Comment[x-test]=xxFont Installation, Preview and Removalxx
 Comment[zh_CN]=字体安装，预览和删除
+Comment[zh_TW]=字型安裝、預覽與移除
 
 X-KDE-Keywords=font,fonts,installer,truetype,type1,bitmap
 X-KDE-Keywords[ca]=tipus de lletra,tipus de lletres,instal·lador,truetype,type1,mapa de bits
@@ -66,5 +68,6 @@ X-KDE-Keywords[sv]=teckensnitt,installation,truetype,type1,bitavbildning
 X-KDE-Keywords[uk]=font,fonts,installer,bitmap,шрифт,шрифти,встановлювач,truetype,type1,растрові
 X-KDE-Keywords[x-test]=xxfontxx,xxfontsxx,xxinstallerxx,xxtruetypexx,xxtype1xx,xxbitmapxx
 X-KDE-Keywords[zh_CN]=font,fonts,installer,truetype,type1,bitmap,字体,安装器,点阵
+X-KDE-Keywords[zh_TW]=font,fonts,installer,truetype,type1,bitmap
 
 

@@ -16,6 +16,7 @@ GenericName[sv]=Teckenväljare
 GenericName[uk]=Вибір символів
 GenericName[x-test]=xxCharacter Selectorxx
 GenericName[zh_CN]=字符选择器
+GenericName[zh_TW]=字元選擇器
 Exec=kcharselect --qwindowtitle %c
 Icon=accessories-character-map
 Type=Application
@@ -37,6 +38,7 @@ Name[sr@latin]=K‑birač-znakova
 Name[sv]=Kcharselect
 Name[uk]=KCharSelect
 Name[x-test]=xxKCharSelectxx
+Name[zh_TW]=KCharSelect
 StartupNotify=true
 Categories=Qt;KDE;Utility;Accessibility;
 
