@@ -2,6 +2,7 @@
 GenericName=Character Selector
 GenericName[ca]=Selector de caràcters
 GenericName[ca@valencia]=Selector de caràcters
+GenericName[cs]=Výběr znaků
 GenericName[es]=Selector de caracteres
 GenericName[eu]=Karaktere hautatzailea
 GenericName[fr]=Sélecteur de caractères
@@ -25,6 +26,7 @@ X-DocPath=kcharselect/index.html
 Name=KCharSelect
 Name[ca]=KCharSelect
 Name[ca@valencia]=KCharSelect
+Name[cs]=KCharSelect
 Name[es]=KCharSelect
 Name[eu]=KCharSelect
 Name[fr]=KCharSelect
