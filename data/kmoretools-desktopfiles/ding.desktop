@@ -4,6 +4,7 @@ Type=Application
 Name=ding
 Name[ca]=ding
 Name[ca@valencia]=ding
+Name[cs]=ding
 Name[da]=ding
 Name[es]=ding
 Name[eu]=ding
@@ -24,6 +25,7 @@ Exec=ding
 GenericName=German<=>English Dictionary
 GenericName[ca]=Diccionari alemany<=>anglès
 GenericName[ca@valencia]=Diccionari alemany<=>anglés
+GenericName[cs]=Německo-anglický slovník
 GenericName[da]=German<=>English-ordbog
 GenericName[es]=Diccionario alemán<=>inglés
 GenericName[eu]=Alemana<=>Ingelera hiztegia

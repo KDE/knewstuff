@@ -2,6 +2,7 @@
 Name=Peek
 Name[ca]=Peek
 Name[ca@valencia]=Peek
+Name[cs]=Peek
 Name[da]=Peek
 Name[es]=Peek
 Name[eu]=Peek
@@ -22,6 +23,7 @@ Exec=peek
 GenericName=Animated GIF recorder
 GenericName[ca]=Enregistrador de GIF animats
 GenericName[ca@valencia]=Gravadora de GIF animats
+GenericName[cs]=Nahráváhní animovaných GIFů
 GenericName[da]=Optagelse af animerede GIF'er
 GenericName[es]=Grabador de GIF animados
 GenericName[eu]=GIF bizidun grabatzailea
