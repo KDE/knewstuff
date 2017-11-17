@@ -33,9 +33,12 @@ void ImageLoader::start()
 {
     QUrl url(m_entry.previewUrl(m_previewType));
     if (!url.isEmpty()) {
-        m_job = HTTPJob::get(url, NoReload, JobFlag::HideProgressInfo);
+        m_job = HTTPJob::get(url, NoReload, JobFlag::HideProgressInfo, this);
         connect(m_job, &KJob::result, this, &ImageLoader::slotDownload);
         connect(m_job, &HTTPJob::data, this, &ImageLoader::slotData);
+    } else {
+        emit signalError(m_entry, m_previewType, QStringLiteral("Empty url"));
+        deleteLater();
     }
 }
 
@@ -54,11 +57,12 @@ void ImageLoader::slotDownload(KJob *job)
 {
     if (job->error()) {
         m_buffer.clear();
+        emit signalError(m_entry, m_previewType, job->errorText());
+        deleteLater();
         return;
     }
     QImage image;
-    image.loadFromData(m_buffer);
-    m_buffer.clear();
+    image.loadFromData(std::move(m_buffer));
 
     if (m_previewType == EntryInternal::PreviewSmall1
             || m_previewType == EntryInternal::PreviewSmall2

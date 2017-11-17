@@ -57,6 +57,7 @@ public:
 
 Q_SIGNALS:
     void signalPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
+    void signalError(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType, const QString &);
 
 private Q_SLOTS:
     void slotDownload(KJob *job);

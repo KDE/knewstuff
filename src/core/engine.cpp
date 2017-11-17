@@ -532,6 +532,13 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
     qCDebug(KNEWSTUFFCORE) << "START  preview: " << entry.name() << type;
     ImageLoader *l = new ImageLoader(entry, type, this);
     connect(l, &ImageLoader::signalPreviewLoaded, this, &Engine::slotPreviewLoaded);
+    connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry,
+                                                       EntryInternal::PreviewType type,
+                                                       const QString &errorText) {
+        qCDebug(KNEWSTUFFCORE) << "ERROR preview: " << errorText << entry.name() << type;
+        --m_numPictureJobs;
+        updateStatus();
+    });
     l->start();
     ++m_numPictureJobs;
     updateStatus();
