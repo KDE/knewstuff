@@ -148,10 +148,10 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 {
                     KNSCore::Author author = entry.author();
                     QVariantMap returnAuthor;
-                    returnAuthor["name"] = author.name();
-                    returnAuthor["email"] = author.email();
-                    returnAuthor["homepage"] = author.homepage();
-                    returnAuthor["jabber"] = author.jabber();
+                    returnAuthor[QStringLiteral("name")] = author.name();
+                    returnAuthor[QStringLiteral("email")] = author.email();
+                    returnAuthor[QStringLiteral("homepage")] = author.homepage();
+                    returnAuthor[QStringLiteral("jabber")] = author.jabber();
                     data.setValue<>(returnAuthor);
                 }
                 break;
@@ -259,16 +259,16 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     switch(src)
                     {
                         case KNSCore::EntryInternal::Cache:
-                            data.setValue<QString>(QLatin1String("Cache"));
+                            data.setValue<QString>(QStringLiteral("Cache"));
                             break;
                         case KNSCore::EntryInternal::Online:
-                            data.setValue<QString>(QLatin1String("Online"));
+                            data.setValue<QString>(QStringLiteral("Online"));
                             break;
                         case KNSCore::EntryInternal::Registry:
-                            data.setValue<QString>(QLatin1String("Registry"));
+                            data.setValue<QString>(QStringLiteral("Registry"));
                             break;
                         default:
-                            data.setValue<QString>(QLatin1String("Unknown source - shouldn't be possible"));
+                            data.setValue<QString>(QStringLiteral("Unknown source - shouldn't be possible"));
                             break;
                     }
                 }
@@ -304,7 +304,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 }
                 break;
             default:
-                data.setValue<QString>(QLatin1String("Unknown role"));
+                data.setValue<QString>(QStringLiteral("Unknown role"));
                 break;
         }
     }

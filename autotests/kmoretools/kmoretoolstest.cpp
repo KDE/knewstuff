@@ -82,7 +82,7 @@ void KMoreToolsTest::initTestCase()
     QVERIFY(QDir(dest2).removeRecursively());
     QVERIFY(QDir().mkpath(dest2));
     for (const QString& fileName : {"org.kde.kate.desktop", "org.kde.kate.png", "mynotinstalledapp.desktop", "mynotinstalledapp.png", "mynotinstapp2.desktop"}) {
-        const QString origFile = fileName.endsWith("desktop") ? fileName + _(".notranslate") : fileName;
+        const QString origFile = fileName.endsWith(QLatin1String("desktop")) ? fileName + _(".notranslate") : fileName;
         const QString srcFile = QFINDTESTDATA("2/" + origFile);
         QVERIFY(!srcFile.isEmpty());
         QVERIFY(QFile::copy(srcFile, dest2 + fileName));

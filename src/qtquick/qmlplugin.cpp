@@ -37,5 +37,5 @@ void QmlPlugins::registerTypes(const char *uri)
 {
     qmlRegisterType<Engine>(uri, 1, 0, "Engine");
     qmlRegisterType<ItemsModel>(uri, 1, 0, "ItemsModel");
-    qmlRegisterUncreatableType<DownloadLinkInfo>(uri, 1, 0, "DownloadLinkInfo", "This should only be created by the ItemsModel, and is associated with one entry in that model");
+    qmlRegisterUncreatableType<DownloadLinkInfo>(uri, 1, 0, "DownloadLinkInfo", QStringLiteral("This should only be created by the ItemsModel, and is associated with one entry in that model"));
 }

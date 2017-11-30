@@ -146,7 +146,7 @@ void HTTPWorker::handleFinished()
     const QUrl possibleRedirectUrl = d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
     if (!possibleRedirectUrl.isEmpty() && possibleRedirectUrl != d->redirectUrl) {
         d->redirectUrl = d->reply->url().resolved(possibleRedirectUrl);
-        if (d->redirectUrl.scheme().startsWith("http")) {
+        if (d->redirectUrl.scheme().startsWith(QLatin1String("http"))) {
             qCDebug(KNEWSTUFFCORE) << d->reply->url().toDisplayString() << "was redirected to" << d->redirectUrl.toDisplayString() << fromCache << d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
             d->reply->deleteLater();
             QNetworkRequest request(d->redirectUrl);
@@ -180,7 +180,7 @@ void HTTPWorker::handleData(const QByteArray& data)
         }
         else {
             qCWarning(KNEWSTUFFCORE) << "Failed to open file for writing!";
-            emit error(QString("Failed to open file %1 for writing!").arg(d->destination.toLocalFile()));
+            emit error(QStringLiteral("Failed to open file %1 for writing!").arg(d->destination.toLocalFile()));
         }
     }
     qCDebug(KNEWSTUFFCORE) << "Writing" << data.length() << "bytes of data to" << d->dataFile.fileName();

@@ -372,7 +372,7 @@ QString Installation::targetInstallationPath() const
             }
             pathcounter++;
         }
-        if (!targetDirectory.isEmpty() && targetDirectory != "/") {
+        if (!targetDirectory.isEmpty() && targetDirectory != QLatin1String("/")) {
             if (scope == ScopeUser) {
                 installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
             } else { // system scope
@@ -380,7 +380,7 @@ QString Installation::targetInstallationPath() const
             }
             pathcounter++;
         }
-        if (!xdgTargetDirectory.isEmpty() && xdgTargetDirectory != "/") {
+        if (!xdgTargetDirectory.isEmpty() && xdgTargetDirectory != QLatin1String("/")) {
             installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + QLatin1Char('/');
             pathcounter++;
         }

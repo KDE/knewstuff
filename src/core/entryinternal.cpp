@@ -485,7 +485,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
         return false;
     }
 
-    d->mCategory = reader.attributes().value("category").toString();
+    d->mCategory = reader.attributes().value(QStringLiteral("category")).toString();
 
     while (!reader.atEnd()) {
         const auto token = readNextSkipComments(&reader);

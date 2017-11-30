@@ -83,8 +83,8 @@ void Button::setConfigFile(const QString &configFile)
 
 void Button::showDialog()
 {
-    if (!KAuthorized::authorize("ghns")) {
-        KMessageBox::information(this, "Get Hot New Stuff is disabled by the administrator", "Get Hot New Stuff disabled");
+    if (!KAuthorized::authorize(QStringLiteral("ghns"))) {
+        KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return;
     }
     emit aboutToShowDialog();
