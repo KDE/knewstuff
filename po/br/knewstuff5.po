@@ -1,0 +1,1011 @@
+# KDE breton translation
+# Copyright (C) 1998-2001 Free Software Foundation, Inc.
+# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
+# Thierry Vignaud <tvignaud@mandriva.com>, 2001-2005
+# $Id$
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4-1.1\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-11-18 03:23+0100\n"
+"PO-Revision-Date: 2007-10-15 22:19+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: attica/atticaprovider.cpp:164
+#, fuzzy, kde-format
+#| msgid "Image missing"
+msgid "All categories are missing"
+msgstr "Skeudenn diank"
+
+#: attica/atticaprovider.cpp:336
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:350
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:392
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr ""
+
+#: attica/atticaprovider.cpp:407
+#, kde-format
+msgid "You are now a fan."
+msgstr ""
+
+#: attica/atticaprovider.cpp:418
+#, kde-format
+msgid "Network error %1: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:422
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:424
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr ""
+
+#: core/engine.cpp:119
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Initializing"
+msgstr "Staliañ"
+
+#: core/engine.cpp:123
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "Restroù kefluniadur"
+
+#: core/engine.cpp:136
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Restroù kefluniadur"
+
+#: core/engine.cpp:193
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "Sell ouzh titouroù diwar-benn ar stern"
+
+#: core/engine.cpp:222
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:245
+#, fuzzy, kde-format
+#| msgid "Error parsing providers list."
+msgid "Error initializing provider."
+msgstr "Fazi en ur lenn roll ar pourvezerien."
+
+#: core/engine.cpp:249 core/engine.cpp:603
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "Emaon o kargañ an arloadig"
+
+#: core/engine.cpp:283
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:288
+#, fuzzy, kde-format
+#| msgid "Loading resource '%1' failed!"
+msgid "Loading of providers from file: %1 failed"
+msgstr "Sac'het eo kargañ an danvez '%1' !"
+
+#: core/engine.cpp:563
+#, fuzzy, kde-format
+#| msgid "Redo: %1"
+msgid "Re: %1"
+msgstr "Adober : %1"
+
+#: core/engine.cpp:605
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Moulañ ar rakgwel ..."
+
+#: core/engine.cpp:607 ui/itemsgridviewdelegate.cpp:343
+#: ui/itemsviewdelegate.cpp:132
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installing"
+msgstr "Staliañ"
+
+#: core/installation.cpp:185
+#, fuzzy, kde-format
+#| msgid "Invalid Filenames"
+msgid "Invalid item."
+msgstr "Anvioù sac'het"
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:242
+#, fuzzy, kde-format
+msgid "Possibly bad download link"
+msgstr "Ne m'eus ket gallet krouiñ ar restr nevez."
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:307
+#, fuzzy, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Ne m'eus ket gallet kavout ar servij '%1'."
+
+#: core/installation.cpp:539
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgid "Overwrite existing file?"
+msgstr "Rasklañ ar restr ?"
+
+#: core/installation.cpp:540
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "Download File"
+msgstr "Enkargañ"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Alc'hwez implij evit sinañ :"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Dibabit an alc'hwez sinañ"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:220
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr ""
+
+#: downloaddialog.cpp:98
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr ""
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr ""
+
+#: downloadwidget.cpp:192
+#, kde-format
+msgid "Server: %1"
+msgstr "Servijer : %1"
+
+#: downloadwidget.cpp:193
+#, fuzzy, kde-format
+#| msgid "Provider: %1"
+msgid "<br />Provider: %1"
+msgstr "Pourchaser : %1"
+
+#: downloadwidget.cpp:194
+#, fuzzy, kde-format
+#| msgid "Version: %1"
+msgid "<br />Version: %1"
+msgstr "Doare : %1"
+
+#: downloadwidget.cpp:198
+#, fuzzy, kde-format
+msgid "Provider information"
+msgstr "Diskouez titouroù diwar-benn an doare"
+
+#: downloadwidget.cpp:209
+#, fuzzy, kde-format
+msgid "Could not install %1"
+msgstr "Ne m'eus ket gallet kavout ar servij '%1'."
+
+#: downloadwidget.cpp:210
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr ""
+
+#: downloadwidget.cpp:264
+#, fuzzy, kde-format
+#| msgid "Icon View"
+msgid "Icons view mode"
+msgstr "Gwel Arlun"
+
+#: downloadwidget.cpp:266
+#, fuzzy, kde-format
+#| msgid "Detailed View"
+msgid "Details view mode"
+msgstr "Gwell munut"
+
+#: downloadwidget.cpp:281
+#, fuzzy, kde-format
+#| msgid "*|All Folders"
+msgid "All Providers"
+msgstr "*|Pep renkell"
+
+#: downloadwidget.cpp:288
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "All Categories"
+msgstr "Rummoù"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, fuzzy, kde-format
+#| msgid "Provider: %1"
+msgid "Provider:"
+msgstr "Pourchaser : %1"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, fuzzy, kde-format
+#| msgid "Categories"
+msgid "Category:"
+msgstr "Rummoù"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, fuzzy, kde-format
+#| msgid "New List"
+msgid "Newest"
+msgstr "Listenn nevez"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Rating"
+msgstr "Feur"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, fuzzy, kde-format
+msgid "Most downloads"
+msgstr "&Diskennit"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installed"
+msgstr "Staliañ"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, fuzzy, kde-format
+#| msgid "Order by:"
+msgid "Order by:"
+msgstr "Urzhiañ dre :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Klask :"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, fuzzy, kde-format
+#| msgid "Internet Search"
+msgid "Enter search phrase here"
+msgstr "Kasl ouzh ar genrouedad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Oberour :"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:338
+#: ui/itemsviewdelegate.cpp:127 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Bremañaat"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:123
+#, fuzzy, kde-format
+#| msgid "Deinstall"
+msgid "Uninstall"
+msgstr "Distaliañ"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, fuzzy, kde-format
+#| msgid "Home Fax"
+msgid "Become a Fan"
+msgstr "Fax ar ger"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:353
+#: ui/itemsgridviewdelegate.cpp:363 ui/itemsviewdelegate.cpp:142
+#: ui/itemsviewdelegate.cpp:152
+#, kde-format
+msgid "Install"
+msgstr "Staliañ"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy, kde-format
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Mui ..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Staliañ"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Kefluniañ ..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy, kde-format
+#| msgid "Homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Pajenn Er-Gêr"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy, kde-format
+#| msgid "No description available."
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "N'eus deskrivadur ebet da gaout."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Kefluniañ"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "&Kefluniañ %1 ..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:186
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "Prenestr gentañ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "move down"
+msgid "Move down"
+msgstr "diskennit"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy, kde-format
+#| msgid "move up"
+msgid "Move up"
+msgstr "pignit"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgid "Move to Main section"
+msgstr "Fiñval d'ar pod-lastez"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Gwezhiad"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Adkorañ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "More section"
+msgstr "Gwezhiad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy, kde-format
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Mui ..."
+
+#: qtquick/qml/NewStuffItem.qml:35
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Staliañ"
+
+#: qtquick/qml/NewStuffItem.qml:42
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Bremañaat"
+
+#: qtquick/qml/NewStuffItem.qml:49
+#, fuzzy, kde-format
+#| msgid "Deinstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Distaliañ"
+
+#: ui/entrydetailsdialog.cpp:91
+#, fuzzy, kde-format
+#| msgid "Suggestion List"
+msgid "Details for %1"
+msgstr "Roll ar ginnigoù"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, fuzzy, kde-format
+#| msgid "Changelog"
+msgid "Changelog:"
+msgstr "Changelog"
+
+#: ui/entrydetailsdialog.cpp:111
+#, fuzzy, kde-format
+#| msgid "Homepage"
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Pajenn Er-Gêr"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy, kde-format
+#| msgid "HTML documentation"
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Teuliadur HTML"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, fuzzy, kde-format
+#| msgid "Open in New &Window"
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Digeriñ en ur prenestr &nevez"
+
+#: ui/itemsgridviewdelegate.cpp:102 ui/itemsviewdelegate.cpp:279
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgid "Rating: %1%"
+msgstr "Feur"
+
+#: ui/itemsgridviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "Provider: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "Pourchaser : %1"
+
+#: ui/itemsgridviewdelegate.cpp:160 ui/itemsgridviewdelegate.cpp:162
+#: ui/itemsgridviewdelegate.cpp:164 ui/itemsviewdelegate.cpp:239
+#: ui/itemsviewdelegate.cpp:241 ui/itemsviewdelegate.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "@interface/rich"
+#| msgid "<i>%1</i>"
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:187 ui/itemsviewdelegate.cpp:257
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+
+#: ui/itemsgridviewdelegate.cpp:190 ui/itemsviewdelegate.cpp:260
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Enkargañ"
+
+#: ui/itemsgridviewdelegate.cpp:256 ui/itemsviewdelegate.cpp:330
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Loading Preview"
+msgstr "Moulañ ar rakgwel ..."
+
+#: ui/itemsgridviewdelegate.cpp:283 ui/itemsviewdelegate.cpp:184
+#, kde-format
+msgid "Details"
+msgstr "Munudoù"
+
+#: ui/itemsgridviewdelegate.cpp:348 ui/itemsviewdelegate.cpp:137
+#, fuzzy, kde-format
+#| msgid "Update"
+msgid "Updating"
+msgstr "Bremañaat"
+
+#: ui/itemsgridviewdelegate.cpp:358 ui/itemsviewdelegate.cpp:147
+#, fuzzy, kde-format
+#| msgid "Installation"
+msgid "Install Again"
+msgstr "Staliadur"
+
+#: ui/itemsviewdelegate.cpp:172
+#, fuzzy, kde-format
+#| msgid "Unshade"
+msgid "Use"
+msgstr "Dirollañ"
+
+#: ui/itemsviewdelegate.cpp:228
+#, fuzzy, kde-format
+#| msgid "Download"
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "Enkargañ"
+
+#: uploaddialog.cpp:66
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "A heul"
+
+#: uploaddialog.cpp:71
+#, kde-format
+msgid "Finish"
+msgstr "Echuiñ"
+
+#: uploaddialog.cpp:179
+#, fuzzy, kde-format
+msgid "Fetching provider information..."
+msgstr "Diskouez titouroù diwar-benn an doare"
+
+#: uploaddialog.cpp:186
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:193
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:268
+#, fuzzy, kde-format
+msgid "Could not fetch provider information."
+msgstr "Diskouez titouroù diwar-benn an doare"
+
+#: uploaddialog.cpp:292
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:316
+#, fuzzy, kde-format
+#| msgid "Check Spelling..."
+msgid "Checking login..."
+msgstr "Gwiriekaat ar reizhskrivadur ..."
+
+#: uploaddialog.cpp:338
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Fetching your previously updated content..."
+msgstr "Moulañ ar rakgwel ..."
+
+#: uploaddialog.cpp:341
+#, fuzzy, kde-format
+msgid "Could not verify login, please try again."
+msgstr "Titouroù"
+
+#: uploaddialog.cpp:360
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:378
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:401 uploaddialog.cpp:841
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:447 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr ""
+
+#: uploaddialog.cpp:470
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr ""
+
+#: uploaddialog.cpp:490 uploaddialog.cpp:766
+#, fuzzy, kde-format
+msgid "File not found: %1"
+msgstr "N'eo ket bet kavet ar c'hiz %1\n"
+
+#: uploaddialog.cpp:490 uploaddialog.cpp:617 uploaddialog.cpp:766
+#, fuzzy, kde-format
+#| msgid "Upload Files"
+msgid "Upload Failed"
+msgstr "Ezkargañ ar restroù"
+
+#: uploaddialog.cpp:570
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+
+#: uploaddialog.cpp:573
+#, kde-format
+msgid "Error"
+msgstr "Fazi"
+
+#: uploaddialog.cpp:617
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr ""
+
+#: uploaddialog.cpp:666 uploaddialog.cpp:681 uploaddialog.cpp:695
+#, fuzzy, kde-format
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "Dibabit gorread ar skeudenn"
+
+#: uploaddialog.cpp:710
+#, kde-format
+msgid "There was a network error."
+msgstr ""
+
+#: uploaddialog.cpp:710 uploaddialog.cpp:715
+#, fuzzy, kde-format
+#| msgid "Upload Files"
+msgid "Uploading Failed"
+msgstr "Ezkargañ ar restroù"
+
+#: uploaddialog.cpp:715
+#, fuzzy, kde-format
+#| msgid "Authentication"
+msgid "Authentication error."
+msgstr "Dilesadur"
+
+#: uploaddialog.cpp:725
+#, fuzzy, kde-format
+#| msgid "Upload Files"
+msgid "Upload failed: %1"
+msgstr "Ezkargañ ar restroù"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Tremenger :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Anv an arveriad :"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, fuzzy, kde-format
+#| msgid "File reloaded."
+msgid "File to upload:"
+msgstr "Restr adkarget."
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, fuzzy, kde-format
+#| msgid "&Upload"
+msgid "New Upload"
+msgstr "&Ezkargañ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Deskrivadur :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Doare :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Aotre :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Titl :"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy, kde-format
+#| msgid "Preview image: %1\n"
+msgid "Preview Images"
+msgstr "Rakgwel ar skeudenn : %1\n"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy, kde-format
+#| msgid "Select Files..."
+msgid "Select Preview..."
+msgstr "D&ibabit ar restroù ..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, fuzzy, kde-format
+#| msgid "Ne&ver for This Site"
+msgid "Set a price for this item"
+msgstr "G&wech ebet evit al lec'hienn-mañ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy, kde-format
+#| msgid "Source:"
+msgid "Price"
+msgstr "Tarzh :"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, fuzzy, kde-format
+#| msgid "Source:"
+msgid "Price:"
+msgstr "Tarzh :"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy, kde-format
+#| msgid "Upload Info"
+msgid "Upload content"
+msgstr "Ezkargañ an titouroù"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Upload first preview"
+msgstr "Moulañ ar rakgwel ..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Upload second preview"
+msgstr "Moulañ ar rakgwel ..."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Upload third preview"
+msgstr "Moulañ ar rakgwel ..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy, kde-format
+msgid "Start Upload"
+msgstr "Klask ur restr"
