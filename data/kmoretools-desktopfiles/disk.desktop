@@ -61,6 +61,7 @@ GenericName=Partition hard disks (a YaST module)
 GenericName[ca]=Fa particions de discs durs (un mòdul del YaST)
 GenericName[ca@valencia]=Fa particions de discs durs (un mòdul del YaST)
 GenericName[da]=Partitionér harddiske (et YaST-modul)
+GenericName[de]=Partitioniert Festplatten, ein YaST-Modul
 GenericName[en_GB]=Partition hard disks (a YaST module)
 GenericName[es]=Particiones de discos duros (módulo de YaST)
 GenericName[eu]=Disko zurrunaren partizioa egin (YaST modulu bat)
