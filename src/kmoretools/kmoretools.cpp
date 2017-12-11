@@ -80,7 +80,7 @@ public:
     static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
     {
         //qDebug() << "--search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
-        const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + "/" + filename;
+        const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + QLatin1Char('/') + filename;
         //qDebug() << "---search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
         //qDebug() << "----QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename) -> foundKmtFile" << foundKmtFile;

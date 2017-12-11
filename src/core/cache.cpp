@@ -36,7 +36,7 @@ Cache::Cache(const QString &appName): QObject(nullptr)
 
     const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/knewstuff3/");
     QDir().mkpath(path);
-    registryFile = path + appName + ".knsregistry";
+    registryFile = path + appName + QStringLiteral(".knsregistry");
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << registryFile;
     setProperty("dirty", false); //KF6 make normal variable
 }
@@ -112,7 +112,7 @@ void Cache::readKns2MetaFiles()
         QDir dir((*it));
         const QStringList files = dir.entryList(QDir::Files | QDir::Readable);
         for (QStringList::const_iterator fit = files.begin(); fit != files.end(); ++fit) {
-            QString filepath = (*it) + '/' + (*fit);
+            QString filepath = (*it) + QLatin1Char('/') + (*fit);
 
             qCDebug(KNEWSTUFFCORE) << " Load from file '" + filepath + "'.";
 
@@ -126,7 +126,7 @@ void Cache::readKns2MetaFiles()
 
             // NOTE: the ":" needs to always coincide with the separator character used in
             // the id(Entry*) method
-            thisAppName = thisAppName.split(':')[0];
+            thisAppName = thisAppName.split(QLatin1Char(':'))[0];
 
             if (thisAppName != realAppName) {
                 continue;

@@ -40,7 +40,7 @@ public:
     QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE;
 
     // update the widgets
-    virtual void updateItemWidgets(const QList<QWidget *> widgets,
+    void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
                                    const QPersistentModelIndex &index) const Q_DECL_OVERRIDE;
 

@@ -50,7 +50,7 @@ public:
         delete downloadWidget;
     }
 
-    DownloadWidget *downloadWidget;
+    DownloadWidget *downloadWidget = nullptr;
 };
 }
 
@@ -63,7 +63,7 @@ DownloadDialog::DownloadDialog(QWidget *parent)
     , d(new DownloadDialogPrivate)
 {
     const QString name = QCoreApplication::applicationName();
-    init(name + ".knsrc");
+    init(name + QStringLiteral(".knsrc"));
 }
 
 DownloadDialog::DownloadDialog(const QString &configFile, QWidget *parent)
@@ -82,10 +82,9 @@ void DownloadDialog::init(const QString &configFile)
 
     setWindowTitle(i18n("Get Hot New Stuff"));
 
-    QVBoxLayout *layout = new QVBoxLayout;
+    QVBoxLayout *layout = new QVBoxLayout(this);
     d->downloadWidget = new DownloadWidget(configFile, this);
     layout->addWidget(d->downloadWidget);
-    setLayout(layout);
 
     if (group.hasKey("Name")) {
         d->downloadWidget->setTitle(group.readEntry("Name"));

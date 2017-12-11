@@ -97,8 +97,8 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
         ui->authorLabel->setText(m_entry.author().name());
     }
 
-    QString summary = KNSCore::replaceBBCode(m_entry.summary()).replace('\n', QLatin1String("<br/>"));
-    QString changelog = KNSCore::replaceBBCode(m_entry.changelog()).replace('\n', QLatin1String("<br/>"));
+    QString summary = KNSCore::replaceBBCode(m_entry.summary()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
+    QString changelog = KNSCore::replaceBBCode(m_entry.changelog()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
 
     QString description = "<html><body>" + summary;
     if (!changelog.isEmpty()) {
@@ -225,7 +225,7 @@ void EntryDetails::updateButtons()
         foreach (KNSCore::EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
-                text + " (" + info.distributionType.trimmed() + ')';
+                text + " (" + info.distributionType.trimmed() + QLatin1Char(')');
             }
             QAction *installAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
             installAction->setData(info.id);

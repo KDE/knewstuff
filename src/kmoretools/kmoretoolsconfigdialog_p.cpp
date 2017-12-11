@@ -38,12 +38,12 @@ public:
      */
     KmtMenuStructureDto currentStructure;
 
-    Ui::KMoreToolsConfigWidget* configUi;
+    Ui::KMoreToolsConfigWidget* configUi = nullptr;
 
-    QAction* moveUpAction;
-    QAction* moveDownAction;
-    QAction* moveToMoreSectionAction;
-    QAction* moveToMainSectionAction;
+    QAction* moveUpAction = nullptr;
+    QAction* moveDownAction = nullptr;
+    QAction* moveToMoreSectionAction = nullptr;
+    QAction* moveToMainSectionAction = nullptr;
 
 public:
     QAction* createActionForButton(QAbstractButton* button, QObject* parent)

@@ -289,7 +289,7 @@ void UploadDialogPrivate::_k_providerChanged(const QString &providerName)
     atticaHelper->setCurrentProvider(providerName);
     QString registerUrl = atticaHelper->provider().getRegisterAccountUrl();
     if (! registerUrl.isEmpty()) {
-        ui.registerNewAccountLabel->setText("<a href=\"register\">" + i18n("Register a new account") + "</a>");
+        ui.registerNewAccountLabel->setText(QStringLiteral("<a href=\"register\">") + i18n("Register a new account") + QStringLiteral("</a>"));
     } else {
         ui.registerNewAccountLabel->setText(QString());
     }
@@ -426,7 +426,7 @@ UploadDialog::UploadDialog(QWidget *parent)
     : QDialog(parent), d(new UploadDialogPrivate(this))
 {
     const QString name = QCoreApplication::applicationName();
-    init(name + ".knsrc");
+    init(name + QStringLiteral(".knsrc"));
 }
 
 UploadDialog::UploadDialog(const QString &configFile, QWidget *parent)

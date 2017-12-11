@@ -71,7 +71,7 @@ DownloadManager::DownloadManager(QObject *parent)
     , d(new DownloadManagerPrivate(this))
 {
     QString name = QCoreApplication::applicationName();
-    d->init(name + ".knsrc");
+    d->init(name + QStringLiteral(".knsrc"));
 }
 
 DownloadManager::DownloadManager(const QString &configFile, QObject *parent)

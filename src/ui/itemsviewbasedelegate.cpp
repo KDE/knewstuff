@@ -38,7 +38,7 @@ ItemsViewBaseDelegate::ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCor
     , m_iconDelete(QIcon::fromTheme(QStringLiteral("edit-delete")))
     , m_noImage(SmallIcon(QStringLiteral("image-missing"), KIconLoader::SizeLarge, KIconLoader::DisabledState))
 {
-    QString framefile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/knewstuff/pics/thumb_frame.png"));
+    const QString framefile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/knewstuff/pics/thumb_frame.png"));
     m_frameImage = QPixmap(framefile);
 }
 

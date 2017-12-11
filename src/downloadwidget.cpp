@@ -48,7 +48,7 @@ DownloadWidget::DownloadWidget(QWidget *parent)
     , d(new DownloadWidgetPrivate(this))
 {
     const QString name = QCoreApplication::applicationName();
-    init(name + ".knsrc");
+    init(name + QStringLiteral(".knsrc"));
 }
 
 DownloadWidget::DownloadWidget(const QString &configFile, QWidget *parent)
@@ -167,7 +167,7 @@ void DownloadWidgetPrivate::slotSearchTextChanged()
         return;
     }
     searchTerm = ui.m_searchEdit->text().trimmed();
-    engine->setSearchTerm(ui.m_searchEdit->text().trimmed());
+    engine->setSearchTerm(searchTerm);
 }
 
 void DownloadWidgetPrivate::slotCategoryChanged(int idx)
@@ -361,7 +361,7 @@ void DownloadWidgetPrivate::slotProvidersLoaded()
 
 void DownloadWidgetPrivate::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 {
-    foreach (const KNSCore::EntryInternal &entry, entries) {
+    for (const KNSCore::EntryInternal &entry : entries) {
         if (!categories.contains(entry.category())) {
             qCDebug(KNEWSTUFF) << "Found category: " << entry.category();
             categories.insert(entry.category());

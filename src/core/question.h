@@ -79,11 +79,11 @@ public:
     void setQuestionType(QuestionType newType = YesNoQuestion);
     QuestionType questionType() const;
 
-    void setQuestion(QString newQuestion);
+    void setQuestion(const QString &newQuestion);
     QString question() const;
-    void setTitle(QString newTitle);
+    void setTitle(const QString &newTitle);
     QString title() const;
-    void setList(QStringList newList);
+    void setList(const QStringList &newList);
     QStringList list() const;
 
     /**
@@ -97,8 +97,8 @@ public:
      * question as answered ( @see setResponse(Response) ).
      * @param response This sets the string response for the question
      */
-    void setResponse(QString response);
-    QString response();
+    void setResponse(const QString &response);
+    QString response() const;
 private:
     class Private;
     Private* d;

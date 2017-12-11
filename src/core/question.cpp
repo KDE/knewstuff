@@ -77,7 +77,7 @@ void Question::setQuestionType(Question::QuestionType newType)
     d->questionType = newType;
 }
 
-void Question::setQuestion(QString newQuestion)
+void Question::setQuestion(const QString &newQuestion)
 {
     d->question = newQuestion;
 }
@@ -87,7 +87,7 @@ QString Question::question() const
     return d->question;
 }
 
-void Question::setTitle(QString newTitle)
+void Question::setTitle(const QString &newTitle)
 {
     d->title = newTitle;
 }
@@ -97,7 +97,7 @@ QString Question::title() const
     return d->title;
 }
 
-void Question::setList(QStringList newList)
+void Question::setList(const QStringList &newList)
 {
     d->list = newList;
 }
@@ -113,12 +113,12 @@ void Question::setResponse(Response response)
     d->questionActive = false;
 }
 
-void Question::setResponse(QString response)
+void Question::setResponse(const QString &response)
 {
     d->textResponse = response;
 }
 
-QString Question::response()
+QString Question::response() const
 {
     return d->textResponse;
 }
