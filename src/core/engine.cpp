@@ -76,9 +76,9 @@ static EnginePrivate *d(const Engine* engine)
 }
 static void delete_d(const Engine* engine)
 {
-    EnginePrivate* ret = d_func()->value(engine);
-    delete ret;
-    d_func()->remove(engine);
+    if (auto d = d_func()) {
+        delete d->take(engine);
+    }
 }
 
 Engine::Engine(QObject *parent)

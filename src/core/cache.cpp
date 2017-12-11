@@ -50,6 +50,11 @@ QSharedPointer<Cache> Cache::getCache(const QString &appName)
 
     QSharedPointer<Cache> p(new Cache(appName));
     s_caches()->insert(appName, QWeakPointer<Cache>(p));
+    QObject::connect(p.data(), &QObject::destroyed, [appName] {
+        if (auto cache = s_caches()) {
+            cache->remove(appName);
+        }
+    });
 
     return p;
 }
