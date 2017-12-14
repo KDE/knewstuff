@@ -65,6 +65,7 @@ GenericName[de]=Partitioniert Festplatten, ein YaST-Modul
 GenericName[en_GB]=Partition hard disks (a YaST module)
 GenericName[es]=Particiones de discos duros (módulo de YaST)
 GenericName[eu]=Disko zurrunaren partizioa egin (YaST modulu bat)
+GenericName[fi]=Osioi kiintolevyt (YaST-moduuli)
 GenericName[fr]=Partition des disques durs (un module YaST)
 GenericName[it]=Partizionamento dischi fissi (come modulo di Yast)
 GenericName[ko]=하드 디스크 파티션 관리(YaST 모듈)
