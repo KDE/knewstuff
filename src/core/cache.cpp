@@ -246,7 +246,12 @@ void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
 {
     // append new entries
-    requestCache[request.hashForRequest()].append(entries);
+    auto &cacheList = requestCache[request.hashForRequest()];
+    for (const auto &entry : entries) {
+        if (!cacheList.contains(entry)) {
+            cacheList.append(entry);
+        }
+    }
     qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << requestCache.keys();
 }
 
