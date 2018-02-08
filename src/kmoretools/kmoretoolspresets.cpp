@@ -90,6 +90,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY("org.kde.spectacle",                  0, "https://www.kde.org/applications/graphics/spectacle");
     ADD_ENTRY("simplescreenrecorder",               0, "http://www.maartenbaert.be/simplescreenrecorder/");
     ADD_ENTRY("shutter",                            0, "http://shutter-project.org"); // good for edit screenshot after capture
+    ADD_ENTRY("vokoscreen",                         0, "https://github.com/vkohaupt/vokoscreen"); // feature-rich screen recorder
     ADD_ENTRY("xfce4-taskmanager",                  0, "http://goodies.xfce.org/projects/applications/xfce4-taskmanager");
     //
     // ...definitions end
@@ -150,7 +151,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     dict.insert(_("icon-browser"), { _("org.kde.plasma.cuttlefish.kmt-edition") });
     dict.insert(_("language-dictionary"), { _("ding"), _("kding") });
     dict.insert(_("mouse-tools"), { _("org.kde.kmousetool") }); // todo: add program "xbanish" to remove mouse cursor while typing
-    dict.insert(_("screenrecorder"), { _("com.uploadedlobster.peek"), _("simplescreenrecorder") });
+    dict.insert(_("screenrecorder"), { _("com.uploadedlobster.peek"), _("simplescreenrecorder"), _("vokoscreen") });
     dict.insert(_("screenshot-take"), { _("org.kde.spectacle"), _("shutter"), _("kaption"), _("hotshots") });
     dict.insert(_("system-monitor-processes"), { _("org.kde.ksysguard"), _("more:"), _("htop"), _("xfce4-taskmanager") });
     dict.insert(_("system-monitor-logs"), { _("org.kde.ksystemlog") });

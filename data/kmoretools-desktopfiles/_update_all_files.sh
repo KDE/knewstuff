@@ -59,4 +59,6 @@ cp $DIR_DFLT/org.kde.spectacle.desktop .
 cp $DIR_DFLT/simplescreenrecorder.desktop .
 cp $DIR_DFLT/shutter.desktop .
     cp /usr/share/icons/hicolor/scalable/apps/shutter.svg .
+cp $DIR_DFLT/vokoscreen.desktop .
+    cp /usr/share/pixmaps/vokoscreen.png .
 cp $DIR_DFLT/xfce4-taskmanager.desktop .
