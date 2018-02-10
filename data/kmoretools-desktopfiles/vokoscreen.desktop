@@ -1,10 +1,25 @@
 [Desktop Entry]
 Comment=screencast
+Comment[ca]=vídeo de captura de pantalla
+Comment[nl]=schermopname
+Comment[pt]=transmissão do ecrã
+Comment[uk]=скрінкаст
+Comment[x-test]=xxscreencastxx
 Exec=vokoscreen
 Icon=vokoscreen
 Name=vokoscreen
+Name[ca]=vokoscreen
+Name[nl]=vokoscreen
+Name[pt]=vokoscreen
+Name[uk]=vokoscreen
+Name[x-test]=xxvokoscreenxx
 StartupNotify=false
 Terminal=false
 Type=Application
 Categories=AudioVideo;Recorder;
 Keywords=Audio;Video;Recorder;Screencast;
+Keywords[ca]=Àudio;Vídeo;Enregistrador;Vídeo de captura de pantalla;
+Keywords[nl]=Audio;Video;Opnameapparaat;Schermopname
+Keywords[pt]=Áudio;Vídeo;Gravador;Transmissão do Ecrã;
+Keywords[uk]=Audio;Video;Recorder;Screencast;звук;відео;записувач;скрінкаст;
+Keywords[x-test]=xxAudioxx;xxVideoxx;xxRecorderxx;xxScreencastxx;
