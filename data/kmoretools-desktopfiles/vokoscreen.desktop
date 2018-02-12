@@ -1,6 +1,8 @@
 [Desktop Entry]
 Comment=screencast
 Comment[ca]=vídeo de captura de pantalla
+Comment[ca@valencia]=vídeo de captura de pantalla
+Comment[it]=trasmissione dello schermo
 Comment[nl]=schermopname
 Comment[pt]=transmissão do ecrã
 Comment[sv]=skärminspelning
@@ -10,6 +12,8 @@ Exec=vokoscreen
 Icon=vokoscreen
 Name=vokoscreen
 Name[ca]=vokoscreen
+Name[ca@valencia]=vokoscreen
+Name[it]=vokoscreen
 Name[nl]=vokoscreen
 Name[pt]=vokoscreen
 Name[sv]=vokoscreen
@@ -21,6 +25,8 @@ Type=Application
 Categories=AudioVideo;Recorder;
 Keywords=Audio;Video;Recorder;Screencast;
 Keywords[ca]=Àudio;Vídeo;Enregistrador;Vídeo de captura de pantalla;
+Keywords[ca@valencia]=Àudio;Vídeo;Gravadora;Vídeo de captura de pantalla;
+Keywords[it]=Audio;Video;Registratore;Trasmissione dello schermo;
 Keywords[nl]=Audio;Video;Opnameapparaat;Schermopname
 Keywords[pt]=Áudio;Vídeo;Gravador;Transmissão do Ecrã;
 Keywords[sv]=Ljud;Video;Inspelning;Skärminspelning;
