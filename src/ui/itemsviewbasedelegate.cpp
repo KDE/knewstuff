@@ -22,6 +22,8 @@
 
 #include "entrydetailsdialog_p.h"
 
+#include <QAction>
+
 #include <knewstuff_debug.h>
 #include <qstandardpaths.h>
 #include <kiconloader.h>
