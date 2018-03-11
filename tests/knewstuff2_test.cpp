@@ -27,7 +27,7 @@
 #include <QApplication>
 #include <QDebug>
 
-#include <QtCore/QFile>
+#include <QFile>
 
 #include <unistd.h> // for exit()
 #include <stdio.h> // for stdout

@@ -19,7 +19,7 @@
 #ifndef KNEWSTUFF3_AUTHOR_P_H
 #define KNEWSTUFF3_AUTHOR_P_H
 
-#include <QtCore/QString>
+#include <QString>
 
 #include "knewstuffcore_export.h"
 

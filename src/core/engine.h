@@ -21,10 +21,10 @@
 #ifndef KNEWSTUFF3_ENGINE_P_H
 #define KNEWSTUFF3_ENGINE_P_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QMap>
-#include <QtCore/QSharedPointer>
+#include <QObject>
+#include <QString>
+#include <QMap>
+#include <QSharedPointer>
 
 #include "provider.h"
 #include "entryinternal.h"

@@ -18,7 +18,7 @@
 
 // unit test for entry
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <QString>
 
 #include "../src/entry.h"

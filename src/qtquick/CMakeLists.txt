@@ -12,6 +12,7 @@ target_link_libraries (newstuffqmlplugin
     Qt5::Core
     Qt5::Qml
     Qt5::Quick
+    Qt5::Xml
     KF5::NewStuffCore
 )
 

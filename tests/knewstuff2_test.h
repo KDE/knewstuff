@@ -22,7 +22,7 @@
 #include <knewstuff2/core/provider.h>
 #include <knewstuff2/core/entry.h>
 
-#include <QtCore/QObject>
+#include <QObject>
 
 namespace KNS
 {

@@ -20,9 +20,9 @@
 #define KNEWSTUFF2_SECURITY_P_H
 
 //qt includes
-#include <QtCore/QMap>
-#include <QtCore/QObject>
-#include <QtCore/QProcess>
+#include <QMap>
+#include <QObject>
+#include <QProcess>
 
 #include "knewstuffcore_export.h"
 

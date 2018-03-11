@@ -19,8 +19,8 @@
 #ifndef KNEWSTUFF3_INSTALLATION_P_H
 #define KNEWSTUFF3_INSTALLATION_P_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 #include <kconfiggroup.h>
 

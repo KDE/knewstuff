@@ -19,7 +19,7 @@
 #define KNEWSTUFF3_KNEWSTUFFACTION_H
 
 #include "knewstuff_export.h"
-#include <QtCore/QString>
+#include <QString>
 
 class QObject;
 class QAction;

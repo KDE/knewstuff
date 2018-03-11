@@ -20,8 +20,8 @@
 #ifndef KNEWSTUFF3_PROVIDER_P_H
 #define KNEWSTUFF3_PROVIDER_P_H
 
-#include <QtCore/QList>
-#include <QtCore/QString>
+#include <QList>
+#include <QString>
 #include <QUrl>
 
 #include "entryinternal.h"

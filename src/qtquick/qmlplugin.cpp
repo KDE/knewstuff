@@ -26,7 +26,7 @@
 #include "downloadlinkinfo.h"
 
 #include <QQmlEngine>
-#include <QtQml/qqml.h>
+#include <qqml.h>
 
 void QmlPlugins::initializeEngine(QQmlEngine *engine, const char *)
 {

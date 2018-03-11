@@ -21,8 +21,8 @@
 #ifndef KNEWSTUFF3_KNEWSTUFFENTRY_H
 #define KNEWSTUFF3_KNEWSTUFFENTRY_H
 
-#include <QtCore/QStringList>
-#include <QtCore/QSharedDataPointer>
+#include <QStringList>
+#include <QSharedDataPointer>
 #include <QLoggingCategory>
 
 #include "knewstuff_export.h"

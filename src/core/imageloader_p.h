@@ -20,8 +20,8 @@
 #define KNEWSTUFF3_IMAGELOADER_P_H
 
 #include <QImage>
-#include <QtCore/QObject>
-#include <QtCore/QByteArray>
+#include <QObject>
+#include <QByteArray>
 
 #include "entryinternal.h"
 #include "jobs/httpjob.h"

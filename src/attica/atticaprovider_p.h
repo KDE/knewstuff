@@ -17,8 +17,8 @@
 #ifndef KNEWSTUFF3_ATTICAPROVIDER_P_H
 #define KNEWSTUFF3_ATTICAPROVIDER_P_H
 
-#include <QtCore/QSet>
-#include <QtCore/QPointer>
+#include <QSet>
+#include <QPointer>
 
 #include <attica/providermanager.h>
 #include <attica/provider.h>

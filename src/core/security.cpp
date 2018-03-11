@@ -22,12 +22,12 @@
 #include "question.h"
 
 //qt includes
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QPointer>
-#include <QtCore/QStringList>
-#include <QtCore/QTextStream>
-#include <QtCore/QTimer>
+#include <QFile>
+#include <QFileInfo>
+#include <QPointer>
+#include <QStringList>
+#include <QTextStream>
+#include <QTimer>
 #include <qstandardpaths.h>
 
 #include <QCryptographicHash>

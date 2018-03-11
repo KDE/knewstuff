@@ -22,7 +22,7 @@
 
 #include "downloaddialog.h"
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QSortFilterProxyModel>
 #include <QScrollBar>
 #include <QKeyEvent>

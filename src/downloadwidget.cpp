@@ -24,7 +24,7 @@
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QScrollBar>
 #include <QKeyEvent>
 #include <QCoreApplication>

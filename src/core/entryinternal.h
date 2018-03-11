@@ -22,9 +22,9 @@
 #ifndef KNEWSTUFF3_ENTRYINTERNAL_P_H
 #define KNEWSTUFF3_ENTRYINTERNAL_P_H
 
-#include <QtCore/QDate>
-#include <QtXml/QDomElement>
-#include <QtCore/QString>
+#include <QDate>
+#include <QDomElement>
+#include <QString>
 #include <QUrl>
 
 #include "author.h"

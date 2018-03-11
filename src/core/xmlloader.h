@@ -21,9 +21,9 @@
 #ifndef KNEWSTUFF3_XMLLOADER_P_H
 #define KNEWSTUFF3_XMLLOADER_P_H
 
-#include <QtXml/qdom.h>
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <qdom.h>
+#include <QObject>
+#include <QString>
 #include <QUrl>
 
 #include "knewstuffcore_export.h"

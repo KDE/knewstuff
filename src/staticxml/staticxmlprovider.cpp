@@ -26,7 +26,7 @@
 #include <knewstuffcore_debug.h>
 #include <klocalizedstring.h>
 
-#include <QtCore/QTimer>
+#include <QTimer>
 
 
 namespace KNSCore

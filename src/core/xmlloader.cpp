@@ -26,7 +26,7 @@
 
 #include <kconfig.h>
 
-#include <QtCore/QByteArray>
+#include <QByteArray>
 
 namespace KNSCore
 {

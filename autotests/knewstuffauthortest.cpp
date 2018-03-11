@@ -18,7 +18,7 @@
 
 // unit test for author
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <QString>
 
 #include "../src/core/author.h"

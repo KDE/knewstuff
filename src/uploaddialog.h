@@ -22,7 +22,7 @@
 #define KNEWSTUFF3_UI_UPLOADDIALOG_H
 
 #include <QDialog>
-#include <QtCore/QUrl>
+#include <QUrl>
 
 #include "knewstuff_export.h"
 

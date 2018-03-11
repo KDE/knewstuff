@@ -20,8 +20,8 @@
 
 #include "entryinternal.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QXmlStreamReader>
+#include <QStringList>
+#include <QXmlStreamReader>
 #include <QImage>
 #include <knewstuffcore_debug.h>
 

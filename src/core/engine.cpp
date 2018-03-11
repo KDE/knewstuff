@@ -32,9 +32,9 @@
 #include <klocalizedstring.h>
 #include <QDesktopServices>
 
-#include <QtCore/QTimer>
-#include <QtCore/QDir>
-#include <QtXml/qdom.h>
+#include <QTimer>
+#include <QDir>
+#include <qdom.h>
 #include <QUrlQuery>
 #include <QThreadStorage>
 

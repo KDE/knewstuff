@@ -29,8 +29,8 @@
 #include <QLayout>
 #include <QDoubleSpinBox>
 #include <QPointer>
-#include <QtCore/QString>
-#include <QtCore/QSignalMapper>
+#include <QString>
+#include <QSignalMapper>
 #include <QCoreApplication>
 
 #include <kiconloader.h>

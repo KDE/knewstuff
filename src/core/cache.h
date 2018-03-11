@@ -19,8 +19,8 @@
 #ifndef CACHE_H
 #define CACHE_H
 
-#include <QtCore/QObject>
-#include <QtCore/QSet>
+#include <QObject>
+#include <QSet>
 
 #include "engine.h"
 #include "entryinternal.h"

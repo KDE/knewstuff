@@ -18,7 +18,7 @@
 #ifndef KNEWSTUFF3_ATTICAHELPER_P_H
 #define KNEWSTUFF3_ATTICAHELPER_P_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <attica/providermanager.h>
 #include <attica/provider.h>

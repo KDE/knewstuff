@@ -22,7 +22,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTemporaryFile>
-#include <QtCore/QProcess>
+#include <QProcess>
 #include <QUrlQuery>
 #include <QDesktopServices>
 

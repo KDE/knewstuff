@@ -18,10 +18,10 @@
 
 #include "cache.h"
 
-#include <QtCore/QFile>
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QXmlStreamReader>
+#include <QFile>
+#include <QDir>
+#include <QFileInfo>
+#include <QXmlStreamReader>
 #include <qstandardpaths.h>
 #include <knewstuffcore_debug.h>
 
