@@ -2,6 +2,7 @@
 Comment=screencast
 Comment[ca]=vídeo de captura de pantalla
 Comment[ca@valencia]=vídeo de captura de pantalla
+Comment[de]=Bildschirmaufnahme
 Comment[en_GB]=screencast
 Comment[es]=screencast
 Comment[fi]=screencast
@@ -21,6 +22,7 @@ Icon=vokoscreen
 Name=vokoscreen
 Name[ca]=vokoscreen
 Name[ca@valencia]=vokoscreen
+Name[de]=vokoscreen
 Name[en_GB]=vokoscreen
 Name[es]=vokoscreen
 Name[fi]=vokoscreen
