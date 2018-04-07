@@ -1,0 +1,999 @@
+# translation of kdelibs4.po to தமிழ்
+# Copyright (C) 2000,2002, 2004, 2007, 2008 Free Software Foundation, Inc.
+#
+# Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
+# Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
+# ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-03-10 03:16+0100\n"
+"PO-Revision-Date: 2012-03-25 21:39+0530\n"
+"Last-Translator: Sri Ramadoss M <amachu@yavarkkum.org>\n"
+"Language-Team: Tamil <podhu@madaladal.yavarkkum.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: attica/atticaprovider.cpp:164
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgid "All categories are missing"
+msgstr "அனைத்து வகைகளும்"
+
+#: attica/atticaprovider.cpp:336
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "the price of a download item, parameter 1 is the currency, 2 is the price"
+#| msgid ""
+#| "This items costs %1 %2.\n"
+#| "Do you want to buy it?"
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"உருப்படிகள் %1 %2 விலைபோகின்றன.\n"
+"நீங்கள் வாங்க விரும்புகிறீர்களா?"
+
+#: attica/atticaprovider.cpp:350
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"உங்களுடைய கணக்கு மீதம் மிகக் குறைவாக உள்ளது:\n"
+"உங்கள் நிலுவை: %1\n"
+"விலை: %2"
+
+#: attica/atticaprovider.cpp:392
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "உங்கள் வாக்கு பதிவு செய்யப்பட்டது."
+
+#: attica/atticaprovider.cpp:407
+#, kde-format
+msgid "You are now a fan."
+msgstr "நீங்கள் வாசகராகிவிட்டீர்கள்."
+
+#: attica/atticaprovider.cpp:418
+#, fuzzy, kde-format
+#| msgid "Network error. (%1)"
+msgid "Network error %1: %2"
+msgstr "பிணைய வழு. (%1)"
+
+#: attica/atticaprovider.cpp:422
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "வழங்கிக்கு பல்வேறு கோரிக்கைகள். சில நிமிடங்கள் கழித்து முயற்சி செய்யவும்."
+
+#: attica/atticaprovider.cpp:424
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "அறியப்படாத Open Colloboration Service API வழு.(%1)"
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "புதியதை பதிவிறக்குக"
+
+#: core/engine.cpp:119
+#, kde-format
+msgid "Initializing"
+msgstr "தொடங்கப்படுகிறது"
+
+#: core/engine.cpp:123
+#, fuzzy, kde-format
+#| msgid "Configuration file not found: \"%1\""
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "வடிவமைப்புக் கோப்புகள் கிடைக்கப்பெறவில்லை: \"%1\""
+
+#: core/engine.cpp:136
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "வடிவமைப்புக் கோப்பு தவறானது: \"%1\""
+
+#: core/engine.cpp:193
+#, kde-format
+msgid "Loading provider information"
+msgstr "தருவோரது விவரம் ஏற்றப்படுகிறது"
+
+#: core/engine.cpp:222
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"%1 கோப்பிலிருந்து சூடான புதிய விஷயங்களைத் தருவோரைப் பற்றிய விவரங்களைப் பெற "
+"முடியவில்லை. "
+
+#: core/engine.cpp:245
+#, kde-format
+msgid "Error initializing provider."
+msgstr "தருவோரை தொடங்குவதில் சிக்கல்."
+
+#: core/engine.cpp:249 core/engine.cpp:603
+#, kde-format
+msgid "Loading data"
+msgstr "தரவு ஏற்றப்படுகிறது"
+
+#: core/engine.cpp:283
+#, kde-format
+msgid "Loading data from provider"
+msgstr "தருவோரிலிருந்து தரவு ஏற்றப்படுகிறது."
+
+#: core/engine.cpp:288
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "%1 கோப்பிலிருந்து தருவோர் விவரங்கள் ஏற்றுவதில் சிக்கல்"
+
+#: core/engine.cpp:563
+#, kde-format
+msgid "Re: %1"
+msgstr "மீண்டும்: %1  "
+
+#: core/engine.cpp:605
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "முன்தோற்றம் ஏற்றப்படுகிறது"
+msgstr[1] "%1 முன்தோற்றங்கள் ஏற்றப்படுகின்றன"
+
+#: core/engine.cpp:607 ui/itemsgridviewdelegate.cpp:343
+#: ui/itemsviewdelegate.cpp:134
+#, kde-format
+msgid "Installing"
+msgstr "நிறுவப்படுகிறது"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr "செல்லாத உருப்படி."
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "உருப்படி இறக்கம் பொய்த்தது: \"%1\" க்கு எவ்வித இறக்கு URL உம் இல்லை."
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "\"%1\" இறக்குவது பொய்த்தது, பிழை: %2"
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"பதிவிறக்கப்பட்ட கோப்பு html கோப்பாகும். சாதாரண பதிவிறக்கத்தைப் போலில்லாது இது இணையதள "
+"இணைப்பொன்றை உணர்த்துகிறது. நீங்கள் உலாவி கொண்டு தளத்தை திறக்க விரும்புகிறீர்களா?"
+
+#: core/installation.cpp:242
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "தவறான பதிவிறக்க இணைப்பாக இரக்கலாம்"
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "இறக்கப்பட்டக் கோப்பு HTML ஆகும். உலாவியில் திறக்கப்பட்டுள்ளது."
+
+#: core/installation.cpp:307
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "'%1' தனை நிறுவ இயலவில்லை: கோப்பு கிடைக்கப்பெறவில்லை."
+
+#: core/installation.cpp:539
+#, kde-format
+msgid "Overwrite existing file?"
+msgstr "கிடைக்கக்கூடிய கோப்பை மேலெழுதவா?"
+
+#: core/installation.cpp:540
+#, fuzzy, kde-format
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "கோப்பை பதிவிறக்குக:"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூடியத் துருப்புக்களை கொணர இயலவில்லை. <i>GPG</"
+"i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப்பட்ட "
+"வளங்களைச்சரிப்பார்த்தலியலாது.</qt>"
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt><br /><i>%2&lt;%3&gt;</i><br />, ற்குரிய துருப்பு <b>0x%1</b> க்கான "
+"கடவுச்சொல்லிடுக:</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூக்கூடியத் துருப்புக்களை கொணர இயலவில்லை. "
+"<i>GPG</i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப் வளங்களைச் சரி "
+"பார்த்தலியலாது.</qt>"
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "ஒப்பமிடும் பொருட்டு பயன்படும் துருப்பு:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "ஒப்பமிடுவதற்கான துருப்பைத் தேர்வு செய்க"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt><i>GPG</i>யைத் துவக்கி கோப்பினை ஒப்பமிட இயலவில்லை. <i>GPG</i> நிறுவப்பட்டுள்ளதை "
+"உறுதிச் செய்யவும். இல்லையெனில் ஒப்பமிட இயலாது.</qt>"
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:220
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "புதிய விவரங்களை உடனுக்குடன் பெறுக!"
+
+#: downloaddialog.cpp:97
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 கூடுதல் நிறுவி"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "காலதாமதமானது. இணைய இணைப்பைச் சரி பார்க்கவும்!"
+
+#: downloadwidget.cpp:192
+#, kde-format
+msgid "Server: %1"
+msgstr "வழங்கி: %1"
+
+#: downloadwidget.cpp:193
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />வழங்குவோர்: %1"
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />வெளியீடு: %1"
+
+#: downloadwidget.cpp:198
+#, kde-format
+msgid "Provider information"
+msgstr "வழங்குவோர் விவரம்"
+
+#: downloadwidget.cpp:209
+#, kde-format
+msgid "Could not install %1"
+msgstr "'%1' தனை நிறுவ இயலவில்லை"
+
+#: downloadwidget.cpp:210
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "புதிய விவரங்களை உடனுக்குடன் பெறுக!"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Icons view mode"
+msgstr "முகவுருக்கள் காட்டும் முறை"
+
+#: downloadwidget.cpp:266
+#, kde-format
+msgid "Details view mode"
+msgstr "விவரங்கள் காட்டப்படும் காட்சி"
+
+#: downloadwidget.cpp:281
+#, kde-format
+msgid "All Providers"
+msgstr "வழங்குவோர் அனைவரும்"
+
+#: downloadwidget.cpp:288
+#, kde-format
+msgid "All Categories"
+msgstr "அனைத்து வகைகளும்"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "வழங்குவோர்:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "வகை:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Newest"
+msgstr "புத்தம்புதியவை"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Rating"
+msgstr "மதிப்பீடு"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Most downloads"
+msgstr "அதிகமாக பதிவிறக்கப்பட்டவை"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "நிறுவப்பட்டது"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "வரிசை முறை:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "தேடுக:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "இவ்விடத்தில் தேடுவதற்கானப் பதத்தினை இடுக"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "இயற்றியவர்:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">முகப்பக்கம்</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:338
+#: ui/itemsviewdelegate.cpp:129 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "புதுப்பிக்கவும்"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:125
+#, kde-format
+msgid "Uninstall"
+msgstr "நீக்குக"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "ரசிகராகு"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:353
+#: ui/itemsgridviewdelegate.cpp:363 ui/itemsviewdelegate.cpp:144
+#: ui/itemsviewdelegate.cpp:154
+#, kde-format
+msgid "Install"
+msgstr "நிறுவுக"
+
+#: kmoretools/kmoretools.cpp:633
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "மேலும்..."
+
+#: kmoretools/kmoretools.cpp:648
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "நிறுவப்பட்டது"
+
+#: kmoretools/kmoretools.cpp:684
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "வடி&வமைக்க..."
+
+#: kmoretools/kmoretools_p.h:384
+#, fuzzy, kde-format
+#| msgid "Visit contributor's homepage"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "பங்களிப்பாளரது தொடக்கப்பக்கத்தை அணுகவும்"
+
+#: kmoretools/kmoretools_p.h:391
+#, fuzzy, kde-format
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "பொருத்தமான உருப்படி எதுவுுமில்லை.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "வடிவமை"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "%1 &வடிவமை..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:186
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "பராமரிப்பாளர்"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "&கீழே நகர்த்துக"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "&மேலே நகர்த்துக"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "மேற்கொண்ட செயல்கள்"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "மீட்டமை"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "மேற்கொண்ட செயல்கள்"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "மேலும்..."
+
+#: qtquick/qml/NewStuffItem.qml:35
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "நிறுவுக"
+
+#: qtquick/qml/NewStuffItem.qml:42
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "புதுப்பிக்கவும்"
+
+#: qtquick/qml/NewStuffItem.qml:49
+#, fuzzy, kde-format
+#| msgid "Uninstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "நீக்குக"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1 க்கான விவரங்கள்"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "மாற்றப்பதிவுகள்:"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "தொடக்கப்பக்கம்"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "கொடை வழங்குக"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "அறிவுக்களஞ்சியம் (பதிவேதும் இல்லை)"
+msgstr[1] "அறிவுக்களஞ்சியம் (%1 பதிவுகள்)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "புதிய &சாளரத்தில் திறக்கப்படும்"
+
+#: ui/itemsgridviewdelegate.cpp:102 ui/itemsviewdelegate.cpp:281
+#, kde-format
+msgid "Rating: %1%"
+msgstr "தரவரிசை: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "<br />Provider: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />வழங்குவோர்: %1"
+
+#: ui/itemsgridviewdelegate.cpp:160 ui/itemsgridviewdelegate.cpp:162
+#: ui/itemsgridviewdelegate.cpp:164 ui/itemsviewdelegate.cpp:241
+#: ui/itemsviewdelegate.cpp:243 ui/itemsviewdelegate.cpp:245
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "By <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:187 ui/itemsviewdelegate.cpp:259
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 வாசகர்"
+msgstr[1] "%1 வாசகர்கள்"
+
+#: ui/itemsgridviewdelegate.cpp:190 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 பதிவிறக்கம்"
+msgstr[1] "%1 பதிவிறக்கங்கள்"
+
+#: ui/itemsgridviewdelegate.cpp:256 ui/itemsviewdelegate.cpp:332
+#, kde-format
+msgid "Loading Preview"
+msgstr "முன்தோற்றம் ஏற்றப்படுகிறது"
+
+#: ui/itemsgridviewdelegate.cpp:283 ui/itemsviewdelegate.cpp:186
+#, kde-format
+msgid "Details"
+msgstr "விவரங்கள்"
+
+#: ui/itemsgridviewdelegate.cpp:348 ui/itemsviewdelegate.cpp:139
+#, kde-format
+msgid "Updating"
+msgstr "புதுப்பிக்கப்படுகிறது"
+
+#: ui/itemsgridviewdelegate.cpp:358 ui/itemsviewdelegate.cpp:149
+#, kde-format
+msgid "Install Again"
+msgstr "மீண்டும் நிறுவவும்"
+
+#: ui/itemsviewdelegate.cpp:174
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: ui/itemsviewdelegate.cpp:230
+#, fuzzy, kde-format
+#| msgid "<p>Downloads: %1</p>\n"
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>பதிவிறக்கங்கள்: %1</p>\n"
+
+#: uploaddialog.cpp:66
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "அடுத்த"
+
+#: uploaddialog.cpp:71
+#, kde-format
+msgid "Finish"
+msgstr "முடிக்க"
+
+#: uploaddialog.cpp:179
+#, fuzzy, kde-format
+#| msgid "Loading provider information"
+msgid "Fetching provider information..."
+msgstr "தருவோரது விவரம் ஏற்றப்படுகிறது"
+
+#: uploaddialog.cpp:186
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "உரிமம் பற்றிய தரவு வழங்கியிலிருந்து பெறப்படுகிறது"
+
+#: uploaddialog.cpp:193
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "விவரத் தரவு வழங்கியிலிருந்து பெறப்படுகிறது..."
+
+#: uploaddialog.cpp:268
+#, fuzzy, kde-format
+#| msgid "Loading provider information"
+msgid "Could not fetch provider information."
+msgstr "தருவோரது விவரம் ஏற்றப்படுகிறது"
+
+#: uploaddialog.cpp:292
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:316
+#, kde-format
+msgid "Checking login..."
+msgstr "நுழைவது சோதிக்கப்படுகிறது..."
+
+#: uploaddialog.cpp:338
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "முன்னதாகவே ஏற்றப்பட்ட விவரங்கள் எடுக்கப்படுகின்றன..."
+
+#: uploaddialog.cpp:341
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "நுழைவை சரிபார்க்க முடியவில்லொ, மீண்டும் முயற்சி செய்யவும்."
+
+#: uploaddialog.cpp:360
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "முன்னதாகவே இற்றைப்படுத்தப்பட்ட விவர எடுப்பு நிறைவடைந்தது."
+
+#: uploaddialog.cpp:378
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "விவரத்தரவை வழங்கியிலிருந்து எடுப்பது நிறைவுற்றது."
+
+#: uploaddialog.cpp:401 uploaddialog.cpp:841
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "இணையதளத்தை பார்க்க"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:447 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "புதிய செய்திகளைப் பகிர்க"
+
+#: uploaddialog.cpp:470
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 கூடுதல் நிறுவி"
+
+#: uploaddialog.cpp:490 uploaddialog.cpp:766
+#, kde-format
+msgid "File not found: %1"
+msgstr "கோப்பு %1 கிடைக்கப் பெறவில்லை."
+
+#: uploaddialog.cpp:490 uploaddialog.cpp:617 uploaddialog.cpp:766
+#, kde-format
+msgid "Upload Failed"
+msgstr "ஏற்றம் பொய்த்தது"
+
+#: uploaddialog.cpp:570
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "நீங்கள் ஏற்ற முற்படும் வகை %2 தனை வழங்கியால் இனங்காண முடியவில்லை"
+msgstr[1] "நீங்கள் ஏற்ற முற்படும் வகைகளை எதையுமே வழங்கியால் இனங்காண முடியவில்லை: %2"
+
+#: uploaddialog.cpp:573
+#, kde-format
+msgid "Error"
+msgstr "பிழை"
+
+#: uploaddialog.cpp:617
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "தேர்வு செய்யப்பட்ட வகை \"%1\" தவறானது."
+
+#: uploaddialog.cpp:666 uploaddialog.cpp:681 uploaddialog.cpp:695
+#, kde-format
+msgid "Select preview image"
+msgstr "முன்தோற்ற உருவத்தை தேர்வு செய்"
+
+#: uploaddialog.cpp:710
+#, kde-format
+msgid "There was a network error."
+msgstr "பிணைய வழு ஏற்பட்டது"
+
+#: uploaddialog.cpp:710 uploaddialog.cpp:715
+#, kde-format
+msgid "Uploading Failed"
+msgstr "பதிவேற்றம் பொய்த்தது"
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Authentication error."
+msgstr "இனங்காணுவதில் பிழை."
+
+#: uploaddialog.cpp:725
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "ஏற்றம் பொய்த்து: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "கடவுச்சொல்:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "பயனர் பெயர்:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "ஏற்றப்படவேண்டிய பக்கம்:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "புதியேற்றம்"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "விவரம்:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "வெளியீடு:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "உரிமம்:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "தாங்கள் பதிவேற்றுவது குறித்த தகவலை ஆங்கிலத்தில் தரவும்."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "தலைப்பு:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "இணையதளத்தில் தோன்றும் விதத்தில் கோப்பின் பெயர்"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"கோப்பின் விவரங்களை துல்லியமாக இது விவரிக்க வேண்டும். kvtml கோப்பின் தலைப்பில் உள்ள அதே "
+"உரையாகவும் இருக்கலாம்."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "படங்களை முன்பார்வை செய்"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "முன்பார்வையை தேர்வு செய்.."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "இவ்வுருப்படிக்கு விலை நிர்ணயிக்கவும்"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "விலை"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "விலை:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "விலைக்கானக் காரணம்:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "விவர இணைப்பை வழங்கியிலிருந்து கொணர்க"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "வழங்கியில் விவரங்களை உருவாக்குக"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "விவரங்களை ஏற்றுக"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "முதல் முன்தோற்றத்தை ஏற்றுக"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"குறிப்பு: உங்களுடைய தளத்தில் இருக்கக்கூடிய விவரங்களை நீங்கள் தொகுத்து, புதுப்பித்து, "
+"அழிக்கவும் செய்யலாம்"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "இரண்டாவது முன்தோற்றத்தை ஏற்றவும்"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "மூன்றாவது முன்தோற்றத்தை ஏற்றவும்"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"இவ்விவரம் எந்தவொரு பதிப்புரிமத்தையோ, சட்டத்தையோ, வணிகமுத்திரையையோ மீறவில்லை என உறுதி "
+"செய்கிறேன். என்னுடைய IP முகவரி பதிவு செய்துகொள்ளபட சம்மதம் தெரிவிக்கிறேன். "
+"(பதிப்புரிமம் பெற்றவரது ஒப்புதல் இல்லாமல் விவரங்களை விநியோகிப்பது சட்டவிரோதமானது.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "ஏற்றத் தொடங்கவும்"
