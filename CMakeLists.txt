@@ -141,7 +141,6 @@ install(FILES
 
 install(EXPORT KF5NewStuffTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5NewStuffTargets.cmake NAMESPACE KF5:: )
 install(EXPORT KF5NewStuffCoreTargets DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}" FILE KF5NewStuffCoreTargets.cmake NAMESPACE KF5:: )
-install(EXPORT KF5NewStuffQuickTargets DESTINATION "${CMAKECONFIGQUICK_INSTALL_DIR}" FILE KF5NewStuffQuickTargets.cmake NAMESPACE KF5:: )
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h

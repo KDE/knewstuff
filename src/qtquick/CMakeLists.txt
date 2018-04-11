@@ -16,6 +16,6 @@ target_link_libraries (newstuffqmlplugin
     KF5::NewStuffCore
 )
 
-install (TARGETS newstuffqmlplugin EXPORT KF5NewStuffQuickTargets DESTINATION ${QML_INSTALL_DIR}/org/kde/newstuff)
-install (DIRECTORY qml DESTINATION ${QML_INSTALL_DIR}/org/kde/newstuff)
-install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/newstuff)
+install (TARGETS newstuffqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/newstuff)
+install (DIRECTORY qml DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/newstuff)
+install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/newstuff)
