@@ -28,7 +28,7 @@
 class KmtServiceInfo
 {
 public:
-    KmtServiceInfo(QString desktopEntryName, QString homepageUrl, int maxUrlArgCount)
+    KmtServiceInfo(const QString &desktopEntryName, const QString &homepageUrl, int maxUrlArgCount)
         : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl), maxUrlArgCount(maxUrlArgCount)
     {
     }

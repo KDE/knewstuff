@@ -276,7 +276,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
         // widgets enabled or not
         //
         connect(configUi->listMainSection, &QListWidget::itemSelectionChanged, this,
-        [configUi, this]() {
+        [this]() {
             if (!d->selectedItemMainSection()) {
                 d->moveToMoreSectionAction->setEnabled(false);
                 d->moveUpAction->setEnabled(false);
@@ -300,7 +300,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
         });
 
         connect(configUi->listMoreSection, &QListWidget::itemSelectionChanged, this,
-        [configUi, this]() {
+        [this]() {
             if (!d->selectedItemMoreSection()) {
                 d->moveToMainSectionAction->setEnabled(false);
                 d->moveUpAction->setEnabled(false);

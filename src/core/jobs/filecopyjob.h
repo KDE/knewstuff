@@ -32,7 +32,7 @@ public:
 
     explicit FileCopyJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
     explicit FileCopyJob(QObject* parent = nullptr);
-    virtual ~FileCopyJob();
+    ~FileCopyJob() Q_DECL_OVERRIDE;
 
     Q_SCRIPTABLE void start() Q_DECL_OVERRIDE;
 

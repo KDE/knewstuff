@@ -29,7 +29,7 @@ class DownloadJob : public FileCopyJob
 public:
     explicit DownloadJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
     explicit DownloadJob(QObject* parent = nullptr);
-    virtual ~DownloadJob();
+    ~DownloadJob() Q_DECL_OVERRIDE;
 
     Q_SCRIPTABLE void start() Q_DECL_OVERRIDE;
 

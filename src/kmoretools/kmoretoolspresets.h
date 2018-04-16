@@ -51,7 +51,7 @@ class KNEWSTUFF_EXPORT KMoreToolsPresets
 {
 public:
     /**
-     * @Returns an _ordered_ list of KMoreToolsService instances.
+     * @returns an _ordered_ list of KMoreToolsService instances.
      * The most popular or recommended tools will be listed first.
      *
      * Available grouping names (listed in alphabetical order):

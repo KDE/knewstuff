@@ -138,9 +138,9 @@ class KMoreToolsPrivate;
  * src/kde/applications/kate/addons/project/kateprojecttreeviewcontextmenu.cpp
  *
  * \image html kmoretools-kate-project-1-all-installed.png "All git tools installed" width=100px
- * \n
+ *
  * \image html kmoretools-kate-project-2-two-not-installed.png "Not all git tools installed" width=100px
- * \n
+ *
  * \image html kmoretools-kate-project-3-config-dialog-all-installed.png "'Configure menu' dialog" width=100px
  *
  * ### Kate's Project plugin git menu

@@ -101,7 +101,7 @@ public:
     /**
      * destructor
      */
-    ~DownloadDialog();
+    ~DownloadDialog() Q_DECL_OVERRIDE;
 
     /**
      * The list of entries with changed status (installed/uninstalled)

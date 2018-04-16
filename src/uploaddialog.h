@@ -68,7 +68,7 @@ public:
     /**
       Destructor.
     */
-    ~UploadDialog();
+    ~UploadDialog() Q_DECL_OVERRIDE;
 
     /**
       Set the file to be uploaded.

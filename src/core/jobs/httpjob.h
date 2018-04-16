@@ -31,7 +31,7 @@ class HTTPJob : public KJob
 public:
     explicit HTTPJob(const QUrl& source, LoadType loadType = Reload, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
     explicit HTTPJob(QObject* parent = nullptr);
-    virtual ~HTTPJob();
+    ~HTTPJob() Q_DECL_OVERRIDE;
 
     Q_SLOT void start() Q_DECL_OVERRIDE;
 
