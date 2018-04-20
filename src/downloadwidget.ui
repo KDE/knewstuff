@@ -627,7 +627,7 @@
   </customwidget>
   <customwidget>
    <class>KRatingWidget</class>
-   <extends>QWidget</extends>
+   <extends>QFrame</extends>
    <header location="global">kratingwidget.h</header>
    <container>1</container>
   </customwidget>
