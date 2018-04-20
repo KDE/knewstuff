@@ -83,6 +83,7 @@ void DownloadDialog::init(const QString &configFile)
     setWindowTitle(i18n("Get Hot New Stuff"));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setMargin(0); // DownloadWidget already provides margins
     d->downloadWidget = new DownloadWidget(configFile, this);
     layout->addWidget(d->downloadWidget);
 
