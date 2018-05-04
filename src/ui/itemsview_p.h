@@ -28,7 +28,7 @@ public:
     explicit ItemsView(QWidget *parent = nullptr);
 
 protected:
-    void wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent *event) override;
 };
 
 } // end KNS namespace

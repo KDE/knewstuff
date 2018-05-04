@@ -32,7 +32,7 @@ public:
     static WidgetQuestionListener* instance();
     virtual ~WidgetQuestionListener();
 
-    Q_SLOT void askQuestion(KNSCore::Question* question) Q_DECL_OVERRIDE;
+    Q_SLOT void askQuestion(KNSCore::Question* question) override;
 private:
     WidgetQuestionListener();
 };

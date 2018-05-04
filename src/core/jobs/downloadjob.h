@@ -29,9 +29,9 @@ class DownloadJob : public FileCopyJob
 public:
     explicit DownloadJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
     explicit DownloadJob(QObject* parent = nullptr);
-    ~DownloadJob() Q_DECL_OVERRIDE;
+    ~DownloadJob() override;
 
-    Q_SCRIPTABLE void start() Q_DECL_OVERRIDE;
+    Q_SCRIPTABLE void start() override;
 
 protected Q_SLOTS:
     void handleWorkerCompleted();

@@ -109,11 +109,11 @@ public:
     };
     Q_ENUM(ItemStatus)
 
-    QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    bool canFetchMore(const QModelIndex & parent) const Q_DECL_OVERRIDE;
-    void fetchMore(const QModelIndex & parent) Q_DECL_OVERRIDE;
+    QHash< int, QByteArray > roleNames() const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    bool canFetchMore(const QModelIndex & parent) const override;
+    void fetchMore(const QModelIndex & parent) override;
 
     QObject* engine() const;
     void setEngine(QObject* newEngine);

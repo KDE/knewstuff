@@ -27,8 +27,8 @@ class FileCopyWorker : public QThread {
     Q_OBJECT
 public: 
     explicit FileCopyWorker(const QUrl& source, const QUrl& destination, QObject* parent = nullptr); 
-    ~FileCopyWorker() Q_DECL_OVERRIDE;
-    void run() Q_DECL_OVERRIDE;
+    ~FileCopyWorker() override;
+    void run() override;
 
     Q_SIGNAL void progress(qlonglong current, qlonglong total);
     Q_SIGNAL void completed();

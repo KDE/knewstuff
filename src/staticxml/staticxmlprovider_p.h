@@ -49,19 +49,19 @@ public:
      */
     StaticXmlProvider();
 
-    QString id() const Q_DECL_OVERRIDE;
+    QString id() const override;
 
     /**
      * set the provider data xml, to initialize the provider
      */
-    bool setProviderXML(const QDomElement &xmldata) Q_DECL_OVERRIDE;
+    bool setProviderXML(const QDomElement &xmldata) override;
 
-    bool isInitialized() const Q_DECL_OVERRIDE;
+    bool isInitialized() const override;
 
-    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
+    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
 
-    void loadEntries(const KNSCore::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
-    void loadPayloadLink(const KNSCore::EntryInternal &entry, int) Q_DECL_OVERRIDE;
+    void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
+    void loadPayloadLink(const KNSCore::EntryInternal &entry, int) override;
 
 private Q_SLOTS:
     void slotEmitProviderInitialized();

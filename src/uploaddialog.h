@@ -68,7 +68,7 @@ public:
     /**
       Destructor.
     */
-    ~UploadDialog() Q_DECL_OVERRIDE;
+    ~UploadDialog() override;
 
     /**
       Set the file to be uploaded.
@@ -156,7 +156,7 @@ public:
     void selectCategory(const QString &category);
 
 public Q_SLOTS:
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
 
 private:
     bool init(const QString &configfile);

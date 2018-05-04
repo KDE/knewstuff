@@ -52,31 +52,31 @@ public:
     explicit AtticaProvider(const QStringList &categories);
     AtticaProvider(const Attica::Provider &provider, const QStringList &categories);
 
-    QString id() const Q_DECL_OVERRIDE;
+    QString id() const override;
 
     /**
      * set the provider data xml, to initialize the provider
      */
-    bool setProviderXML(const QDomElement &xmldata) Q_DECL_OVERRIDE;
+    bool setProviderXML(const QDomElement &xmldata) override;
 
-    bool isInitialized() const Q_DECL_OVERRIDE;
-    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) Q_DECL_OVERRIDE;
+    bool isInitialized() const override;
+    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
 
-    void loadEntries(const KNSCore::Provider::SearchRequest &request) Q_DECL_OVERRIDE;
-    void loadEntryDetails(const KNSCore::EntryInternal &entry) Q_DECL_OVERRIDE;
-    void loadPayloadLink(const EntryInternal &entry, int linkId) Q_DECL_OVERRIDE;
+    void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
+    void loadEntryDetails(const KNSCore::EntryInternal &entry) override;
+    void loadPayloadLink(const EntryInternal &entry, int linkId) override;
 
-    bool userCanVote() Q_DECL_OVERRIDE
+    bool userCanVote() override
     {
         return true;
     }
-    void vote(const EntryInternal &entry, uint rating) Q_DECL_OVERRIDE;
+    void vote(const EntryInternal &entry, uint rating) override;
 
-    bool userCanBecomeFan() Q_DECL_OVERRIDE
+    bool userCanBecomeFan() override
     {
         return true;
     }
-    void becomeFan(const EntryInternal &entry) Q_DECL_OVERRIDE;
+    void becomeFan(const EntryInternal &entry) override;
 
 private Q_SLOTS:
     void providerLoaded(const Attica::Provider &provider);

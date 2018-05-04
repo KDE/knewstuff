@@ -40,23 +40,23 @@ public:
     explicit ItemsViewBaseDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = nullptr);
     virtual ~ItemsViewBaseDelegate();
     // paint the item at index with all its attributes shown
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override = 0;
 
     // get the list of widgets
-    QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const override = 0;
 
     // update the widgets
     void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const Q_DECL_OVERRIDE = 0;
+                                   const QPersistentModelIndex &index) const override = 0;
 
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE = 0;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override = 0;
 
 Q_SIGNALS:
     void signalShowDetails(const KNSCore::EntryInternal &entry);
 
 protected Q_SLOTS:
-    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *watched, QEvent *event) override;
     void slotInstallClicked();
     void slotInstallActionTriggered(QAction *action);
     void slotLinkClicked(const QString &url);

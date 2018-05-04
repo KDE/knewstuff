@@ -101,7 +101,7 @@ public:
     /**
      * destructor
      */
-    ~DownloadDialog() Q_DECL_OVERRIDE;
+    ~DownloadDialog() override;
 
     /**
      * The list of entries with changed status (installed/uninstalled)
@@ -135,11 +135,11 @@ public:
 
 public Q_SLOTS:
     // Override these slots so we can add KAuthorized checks to them.
-    int exec() Q_DECL_OVERRIDE;
-    void open() Q_DECL_OVERRIDE;
+    int exec() override;
+    void open() override;
     
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
 
 private:
     void init(const QString &configFile);
