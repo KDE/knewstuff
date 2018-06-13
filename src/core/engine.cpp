@@ -60,33 +60,15 @@ Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoader
 class EnginePrivate {
 public:
     QList<Provider::CategoryMetadata> categoriesMetadata;
+    Attica::ProviderManager *m_atticaProviderManager = nullptr;
 };
-
-// BCI: Add a real d-pointer
-typedef QHash<const Engine *, EnginePrivate *> EnginePrivateHash;
-Q_GLOBAL_STATIC(EnginePrivateHash, d_func)
-static EnginePrivate *d(const Engine* engine)
-{
-    EnginePrivate* ret = d_func()->value(engine);
-    if (!ret) {
-        ret = new EnginePrivate;
-        d_func()->insert(engine, ret);
-    }
-    return ret;
-}
-static void delete_d(const Engine* engine)
-{
-    if (auto d = d_func()) {
-        delete d->take(engine);
-    }
-}
 
 Engine::Engine(QObject *parent)
     : QObject(parent)
     , m_installation(new Installation)
     , m_cache()
     , m_searchTimer(new QTimer)
-    , m_atticaProviderManager(nullptr)
+    , d(new EnginePrivate)
     , m_currentPage(-1)
     , m_pageSize(20)
     , m_numDataJobs(0)
@@ -106,10 +88,10 @@ Engine::~Engine()
     if (m_cache) {
         m_cache->writeRegistry();
     }
-    delete m_atticaProviderManager;
+    delete d->m_atticaProviderManager;
     delete m_searchTimer;
     delete m_installation;
-    delete_d(this);
+    delete d;
 }
 
 bool Engine::init(const QString &configfile)
@@ -176,7 +158,7 @@ QStringList Engine::categoriesFilter() const
 
 QList<Provider::CategoryMetadata> Engine::categoriesMetadata()
 {
-    return d(this)->categoriesMetadata;
+    return d->categoriesMetadata;
 }
 
 void Engine::loadProviders()
@@ -184,10 +166,10 @@ void Engine::loadProviders()
     if (m_providerFileUrl.isEmpty()) {
         // it would be nicer to move the attica stuff into its own class
         qCDebug(KNEWSTUFFCORE) << "Using OCS default providers";
-        delete m_atticaProviderManager;
-        m_atticaProviderManager = new Attica::ProviderManager;
-        connect(m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
-        m_atticaProviderManager->loadDefaultProviders();
+        delete d->m_atticaProviderManager;
+        d->m_atticaProviderManager = new Attica::ProviderManager;
+        connect(d->m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
+        d->m_atticaProviderManager->loadDefaultProviders();
     } else {
         qCDebug(KNEWSTUFFCORE) << "loading providers from " << m_providerFileUrl;
         emit signalBusy(i18n("Loading provider information"));
@@ -232,7 +214,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
             provider = QSharedPointer<KNSCore::Provider> (new AtticaProvider(m_categories));
             connect(provider.data(), &Provider::categoriesMetadataLoded,
                     this, [this](const QList<Provider::CategoryMetadata> &categories){
-                        d(this)->categoriesMetadata = categories;
+                        d->categoriesMetadata = categories;
                         emit signalCategoriesMetadataLoded(categories);
                     });
         } else {
@@ -260,7 +242,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories));
     connect(provider.data(), &Provider::categoriesMetadataLoded,
             this, [this](const QList<Provider::CategoryMetadata> &categories){
-                d(this)->categoriesMetadata = categories;
+                d->categoriesMetadata = categories;
                 emit signalCategoriesMetadataLoded(categories);
             });
     addProvider(provider);

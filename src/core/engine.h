@@ -33,6 +33,7 @@
 
 class QTimer;
 class KJob;
+class EnginePrivate;
 
 namespace Attica
 {
@@ -384,7 +385,8 @@ private:
 
     // the current request from providers
     Provider::SearchRequest m_currentRequest;
-    Attica::ProviderManager *m_atticaProviderManager;
+
+    EnginePrivate * const d;
 
     // the page that is currently displayed, so it is not requested repeatedly
     int m_currentPage;
