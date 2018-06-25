@@ -201,7 +201,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
         for (const KmtMenuItemDto& registeredService : notInstalledServices) {
 
             QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                registeredService.text, menu, registeredService.icon, registeredService.homepageUrl);
+                registeredService.text, menu, registeredService.icon, registeredService.homepageUrl, registeredService.appstreamId);
             menu->addMenu(submenuForNotInstalled);
         }
         d->configUi->buttonNotInstalledTools->setMenu(menu);

@@ -485,6 +485,28 @@ public:
      */
     void setExec(const QString& exec);
 
+    /**
+     * Returns the associated appstream id that was previously set with setAppstreamId().
+     * If no appstream id was set, an empty string is returned.
+     *
+     * @return The service's appstream id.
+     *
+     * @since 5.48
+     */
+    QString appstreamId() const;
+
+    /**
+     * Sets the appstream id of the service. This is used to create a
+     * appstream url for installing the service via a software store
+     * (e.g. Discover). For instance, the appstream id for filelight is
+     * "org.kde.filelight.desktop".
+     *
+     * @param id the appstream id
+     *
+     * @since 5.48
+     */
+    void setAppstreamId(const QString&);
+
 private:
     /**
      * @param kmtDesktopfileSubdir where to find kmt-desktopfiles

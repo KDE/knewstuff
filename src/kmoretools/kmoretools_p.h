@@ -82,6 +82,8 @@ public:
      */
     QUrl homepageUrl;
 
+    QString appstreamId;
+
 public:
     void jsonRead(const QJsonObject &json)
     {
@@ -375,7 +377,7 @@ public:
      * It will be used as submenu for the menu that displays the not-installed
      * services.
      */
-    static QMenu* createSubmenuForNotInstalledApp(const QString& title, QWidget* parent, const QIcon& icon, const QUrl& homepageUrl)
+    static QMenu* createSubmenuForNotInstalledApp(const QString& title, QWidget* parent, const QIcon& icon, const QUrl& homepageUrl, const QString& appstreamId)
     {
         QMenu* submenuForNotInstalled = new QMenu(title, parent);
         submenuForNotInstalled->setIcon(icon);
@@ -387,7 +389,18 @@ public:
             QObject::connect(websiteAction, &QAction::triggered, websiteAction, [url](bool) {
                 QDesktopServices::openUrl(url);
             });
-        } else {
+        }
+
+        QUrl appstreamUrl = QUrl(QStringLiteral("appstream://") % appstreamId);
+
+        if (!appstreamId.isEmpty()) {
+            auto installAction = submenuForNotInstalled->addAction(i18nc("@action:inmenu", "Install"));
+            QObject::connect(installAction, &QAction::triggered, installAction, [appstreamUrl](bool) {
+                QDesktopServices::openUrl(appstreamUrl);
+            });
+        }
+
+        if (!homepageUrl.isValid() && appstreamId.isEmpty()) {
             submenuForNotInstalled->addAction(i18nc("@action:inmenu", "No further information available."))
             ->setEnabled(false);
         }

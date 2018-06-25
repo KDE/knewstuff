@@ -28,14 +28,15 @@
 class KmtServiceInfo
 {
 public:
-    KmtServiceInfo(const QString &desktopEntryName, const QString &homepageUrl, int maxUrlArgCount)
-        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl), maxUrlArgCount(maxUrlArgCount)
+    KmtServiceInfo(const QString &desktopEntryName, const QString &homepageUrl, int maxUrlArgCount, const QString &appstreamId)
+        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl), maxUrlArgCount(maxUrlArgCount), appstreamId(appstreamId)
     {
     }
 public:
     QString desktopEntryName;
     QString homepageUrl;
     int maxUrlArgCount;
+    QString appstreamId;
 };
 
 //
@@ -45,7 +46,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
 {
     static QHash<QString, KmtServiceInfo> dict;
 
-#define ADD_ENTRY(desktopEntryName, maxUrlArgCount, homepageUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl), maxUrlArgCount));
+#define ADD_ENTRY(desktopEntryName, maxUrlArgCount, homepageUrl, appstreamUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, QLatin1String(homepageUrl), maxUrlArgCount, appstreamUrl));
 
     //
     // definitions begin (sorted alphabetically):
@@ -55,43 +56,43 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     //                                              |       arguments also lead to errors. Watch the console
     //                                              v       output for messages from the program.
     //
-    ADD_ENTRY("angrysearch",                        0, "https://github.com/DoTheEvo/ANGRYsearch");
-    ADD_ENTRY("com.uploadedlobster.peek",           0, "https://github.com/phw/peek"); // easy to use screen recorder, creates gif
-    ADD_ENTRY("catfish",                            1, "http://www.twotoasts.de/index.php/catfish/");
-    ADD_ENTRY("ding",                               0, "https://www-user.tu-chemnitz.de/~fri/ding/"); // Offline dict, Online: http://dict.tu-chemnitz.de/dings.cgi
-    ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller");
-    ADD_ENTRY("fontinst",                           0, "https://docs.kde.org/trunk5/en/kde-workspace/kcontrol/fontinst/"); // good for previewing many fonts at once
-    ADD_ENTRY("fontmatrix",                         0, "https://github.com/fontmatrix/fontmatrix");
-    ADD_ENTRY("fsearch",                            0, "http://www.fsearch.org/");
-    ADD_ENTRY("giggle",                             1, "https://wiki.gnome.org/Apps/giggle/"); // good for searching in history
-    ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io");
-    ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io");
-    ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk");
-    ADD_ENTRY("qgit.kmt-edition",                   1, "http://libre.tibirna.org/projects/qgit");
-    ADD_ENTRY("gitg",                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg");
-    ADD_ENTRY("gnome-search-tool",                  0, "https://help.gnome.org/users/gnome-search-tool/"); // has good filtering options
-    ADD_ENTRY("gucharmap",                          0, "https://wiki.gnome.org/action/show/Apps/Gucharmap");
-    ADD_ENTRY("gparted",                            0, "http://gparted.org");
-    ADD_ENTRY("htop",                               0, "http://hisham.hm/htop/");
-    ADD_ENTRY("hotshots",                           1, "http://sourceforge.net/projects/hotshots/");
-    ADD_ENTRY("kaption",                            0, "http://kde-apps.org/content/show.php/?content=139302");
-    ADD_ENTRY("kding",                              0, ""); // Offline dict; unmaintained?
-    ADD_ENTRY("org.kde.kmousetool",                 0, "https://www.kde.org/applications/utilities/kmousetool/");
-    ADD_ENTRY("org.gnome.clocks",                   0, "https://wiki.gnome.org/Apps/Clocks");
-    ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight");
-    ADD_ENTRY("org.kde.kcharselect",                0, "https://utils.kde.org/projects/kcharselect/");
-    ADD_ENTRY("org.kde.kdf",                        0, "https://www.kde.org/applications/system/kdiskfree");
-    ADD_ENTRY("org.kde.kfind",                      1, "https://www.kde.org/applications/utilities/kfind/"); // has good filtering options
-    ADD_ENTRY("org.kde.partitionmanager",           0, "https://www.kde.org/applications/system/kdepartitionmanager/");
-    ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/");
-    ADD_ENTRY("org.kde.ksysguard",                  0, "https://userbase.kde.org/KSysGuard");
-    ADD_ENTRY("org.kde.ksystemlog",                 0, "https://www.kde.org/applications/system/ksystemlog/");
-    ADD_ENTRY("org.kde.ktimer",                     0, "https://www.kde.org/applications/utilities/ktimer/");
-    ADD_ENTRY("org.kde.spectacle",                  0, "https://www.kde.org/applications/graphics/spectacle");
-    ADD_ENTRY("simplescreenrecorder",               0, "http://www.maartenbaert.be/simplescreenrecorder/");
-    ADD_ENTRY("shutter",                            0, "http://shutter-project.org"); // good for edit screenshot after capture
-    ADD_ENTRY("vokoscreen",                         0, "https://github.com/vkohaupt/vokoscreen"); // feature-rich screen recorder
-    ADD_ENTRY("xfce4-taskmanager",                  0, "http://goodies.xfce.org/projects/applications/xfce4-taskmanager");
+    ADD_ENTRY("angrysearch",                        0, "https://github.com/DoTheEvo/ANGRYsearch", "");
+    ADD_ENTRY("com.uploadedlobster.peek",           0, "https://github.com/phw/peek", "com.uploadedlobster.peek.desktop"); // easy to use screen recorder, creates gif
+    ADD_ENTRY("catfish",                            1, "http://www.twotoasts.de/index.php/catfish/", "catfish");
+    ADD_ENTRY("ding",                               0, "https://www-user.tu-chemnitz.de/~fri/ding/", ""); // Offline dict, Online: http://dict.tu-chemnitz.de/dings.cgi
+    ADD_ENTRY("disk",                               0, "https://en.opensuse.org/YaST_Disk_Controller", "");
+    ADD_ENTRY("fontinst",                           0, "https://docs.kde.org/trunk5/en/kde-workspace/kcontrol/fontinst/", ""); // good for previewing many fonts at once
+    ADD_ENTRY("fontmatrix",                         0, "https://github.com/fontmatrix/fontmatrix", "");
+    ADD_ENTRY("fsearch",                            0, "http://www.fsearch.org/", "");
+    ADD_ENTRY("giggle",                             1, "https://wiki.gnome.org/Apps/giggle/", "giggle.desktop"); // good for searching in history
+    ADD_ENTRY("git-cola-folder-handler",            1, "https://git-cola.github.io", "git-cola.desktop");
+    ADD_ENTRY("git-cola-view-history.kmt-edition",  1, "https://git-cola.github.io", "git-cola.desktop");
+    ADD_ENTRY("gitk.kmt-edition",                   1, "http://git-scm.com/docs/gitk", "");
+    ADD_ENTRY("qgit.kmt-edition",                   1, "http://libre.tibirna.org/projects/qgit", "");
+    ADD_ENTRY("gitg",                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg", "gitg.desktop");
+    ADD_ENTRY("gnome-search-tool",                  0, "https://help.gnome.org/users/gnome-search-tool/", "gnome-search-tool.desktop"); // has good filtering options
+    ADD_ENTRY("gucharmap",                          0, "https://wiki.gnome.org/action/show/Apps/Gucharmap", "gucharmap.desktop");
+    ADD_ENTRY("gparted",                            0, "http://gparted.org", "gparted.desktop");
+    ADD_ENTRY("htop",                               0, "http://hisham.hm/htop/", "htop.desktop");
+    ADD_ENTRY("hotshots",                           1, "http://sourceforge.net/projects/hotshots/", "");
+    ADD_ENTRY("kaption",                            0, "http://kde-apps.org/content/show.php/?content=139302", "");
+    ADD_ENTRY("kding",                              0, "", ""); // Offline dict; unmaintained?
+    ADD_ENTRY("org.kde.kmousetool",                 0, "https://www.kde.org/applications/utilities/kmousetool/", "org.kde.kmousetool");
+    ADD_ENTRY("org.gnome.clocks",                   0, "https://wiki.gnome.org/Apps/Clocks", "org.gnome.clocks.desktop");
+    ADD_ENTRY("org.kde.filelight",                  1, "https://utils.kde.org/projects/filelight", "org.kde.filelight.desktop");
+    ADD_ENTRY("org.kde.kcharselect",                0, "https://utils.kde.org/projects/kcharselect/", "org.kde.kcharselect");
+    ADD_ENTRY("org.kde.kdf",                        0, "https://www.kde.org/applications/system/kdiskfree", "org.kde.kdf");
+    ADD_ENTRY("org.kde.kfind",                      1, "https://www.kde.org/applications/utilities/kfind/", "org.kde.kfind.desktop"); // has good filtering options
+    ADD_ENTRY("org.kde.partitionmanager",           0, "https://www.kde.org/applications/system/kdepartitionmanager/", "org.kde.partitionmanager.desktop");
+    ADD_ENTRY("org.kde.plasma.cuttlefish.kmt-edition", 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/", "org.kde.plasma.cuttlefish");
+    ADD_ENTRY("org.kde.ksysguard",                  0, "https://userbase.kde.org/KSysGuard", "org.kde.ksysguard");
+    ADD_ENTRY("org.kde.ksystemlog",                 0, "https://www.kde.org/applications/system/ksystemlog/", "org.kde.ksystemlog");
+    ADD_ENTRY("org.kde.ktimer",                     0, "https://www.kde.org/applications/utilities/ktimer/", "org.kde.ktimer");
+    ADD_ENTRY("org.kde.spectacle",                  0, "https://www.kde.org/applications/graphics/spectacle", "org.kde.spectacle.desktop");
+    ADD_ENTRY("simplescreenrecorder",               0, "http://www.maartenbaert.be/simplescreenrecorder/", "simplescreenrecorder.desktop");
+    ADD_ENTRY("shutter",                            0, "http://shutter-project.org", "org.shutterproject.shutter"); // good for edit screenshot after capture
+    ADD_ENTRY("vokoscreen",                         0, "https://github.com/vkohaupt/vokoscreen", ""); // feature-rich screen recorder
+    ADD_ENTRY("xfce4-taskmanager",                  0, "http://goodies.xfce.org/projects/applications/xfce4-taskmanager", "xfce4-taskmanager.desktop");
     //
     // ...definitions end
     //
@@ -108,6 +109,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
         if (service) { // We might get nullptr in case of missing or broken .desktop files
             service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
             service->setMaxUrlArgCount(kmtServiceInfo.maxUrlArgCount);
+            service->setAppstreamId(kmtServiceInfo.appstreamId);
         }
         return service;
     } else {

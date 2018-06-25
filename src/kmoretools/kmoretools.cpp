@@ -205,6 +205,7 @@ public:
     QUrl homepageUrl;
     int maxUrlArgCount = 0;
     bool isInstalled = false;
+    QString appstreamId;
 
 
 public:
@@ -367,6 +368,17 @@ void KMoreToolsService::setExec(const QString& exec)
         service->setExec(exec);
     }
 }
+
+QString KMoreToolsService::appstreamId() const
+{
+    return d->appstreamId;
+}
+
+void KMoreToolsService::setAppstreamId(const QString& id)
+{
+    d->appstreamId = id;
+}
+
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -650,7 +662,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
             Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
 
                 QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                                                    registeredService->formatString(QStringLiteral("$Name")), menu, registeredService->icon(), registeredService->homepageUrl());
+                                                    registeredService->formatString(QStringLiteral("$Name")), menu, registeredService->icon(), registeredService->homepageUrl(), registeredService->appstreamId());
                 moreMenu->addMenu(submenuForNotInstalled);
             }
         }
