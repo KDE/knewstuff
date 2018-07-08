@@ -191,7 +191,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1);
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall2);
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewSmall3);
-                    while(previews.last().isEmpty()) {
+                    while(!previews.isEmpty() && previews.last().isEmpty()) {
                         previews.takeLast();
                     }
                     data.setValue<QStringList>(previews);
@@ -203,7 +203,7 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig1);
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig2);
                     previews << entry.previewUrl(KNSCore::EntryInternal::PreviewBig3);
-                    while(previews.last().isEmpty()) {
+                    while(!previews.isEmpty() && previews.last().isEmpty()) {
                         previews.takeLast();
                     }
                     data.setValue<QStringList>(previews);
