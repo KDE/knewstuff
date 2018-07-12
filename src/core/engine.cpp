@@ -211,14 +211,14 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 
         QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider = QSharedPointer<KNSCore::Provider> (new AtticaProvider(m_categories));
+            provider.reset(new AtticaProvider(m_categories));
             connect(provider.data(), &Provider::categoriesMetadataLoded,
                     this, [this](const QList<Provider::CategoryMetadata> &categories){
                         d->categoriesMetadata = categories;
                         emit signalCategoriesMetadataLoded(categories);
                     });
         } else {
-            provider = QSharedPointer<KNSCore::Provider> (new StaticXmlProvider);
+            provider.reset(new StaticXmlProvider);
         }
 
         if (provider->setProviderXML(n)) {
