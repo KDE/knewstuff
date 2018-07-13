@@ -83,8 +83,11 @@ void DownloadDialog::init(const QString &configFile)
     setWindowTitle(i18n("Get Hot New Stuff"));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setMargin(0); // DownloadWidget already provides margins
     d->downloadWidget = new DownloadWidget(configFile, this);
+    // DownloadWidget already provides margins, which would duplicate the dialog layout margins.
+    // As the widget theme could use different margin sizes for a dialog/window outer layout,
+    // so from the duplicated margins we pick the internal margins to remove here.
+    d->downloadWidget->layout()->setMargin(0);
     layout->addWidget(d->downloadWidget);
 
     if (group.hasKey("Name")) {
