@@ -79,7 +79,7 @@
           <widget class="KComboBox" name="m_categoryCombo"/>
          </item>
          <item row="8" column="1" colspan="3">
-          <widget class="QRadioButton" name="newestRadio">
+          <widget class="QRadioButton" name="ratingRadio">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -87,7 +87,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Newest</string>
+            <string>Rating</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -95,12 +95,12 @@
           </widget>
          </item>
          <item row="9" column="1" colspan="3">
-          <widget class="QRadioButton" name="ratingRadio">
+          <widget class="QRadioButton" name="newestRadio">
            <property name="enabled">
             <bool>true</bool>
            </property>
            <property name="text">
-            <string>Rating</string>
+            <string>Newest</string>
            </property>
           </widget>
          </item>
