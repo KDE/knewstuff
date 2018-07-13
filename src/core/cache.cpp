@@ -257,7 +257,7 @@ void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const
 
 EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
 {
-    qDebug() << request.hashForRequest();
+    qCDebug(KNEWSTUFFCORE) << request.hashForRequest();
     return requestCache.value(request.hashForRequest());
 }
 
