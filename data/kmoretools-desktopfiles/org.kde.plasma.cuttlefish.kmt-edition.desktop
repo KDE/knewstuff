@@ -37,7 +37,6 @@ Comment[uk]=Показ списку і попередній перегляду �
 Comment[x-test]=xxList and preview available iconsxx
 Comment[zh_CN]=列出和预览可用图标
 Comment[zh_TW]=列出並預覽可用的圖示
-Encoding=UTF-8
 Exec=cuttlefish
 GenericName=Icon Browser
 GenericName[ar]=متصفّح أيقونات
