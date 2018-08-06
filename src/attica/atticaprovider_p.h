@@ -119,6 +119,7 @@ private:
     QSet<Attica::BaseJob *> m_updateJobs;
 
     bool mInitialized;
+    QString m_providerId;
 
     Q_DISABLE_COPY(AtticaProvider)
 };

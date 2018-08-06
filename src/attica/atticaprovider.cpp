@@ -63,7 +63,7 @@ AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringLi
 
 QString AtticaProvider::id() const
 {
-    return m_provider.baseUrl().toString();
+    return m_providerId;
 }
 
 void AtticaProvider::authenticationCredentialsMissing(const KNSCore::Provider &)
@@ -105,6 +105,7 @@ void AtticaProvider::providerLoaded(const Attica::Provider &provider)
     qCDebug(KNEWSTUFFCORE) << "Added provider: " << provider.name();
 
     m_provider = provider;
+    m_providerId = provider.baseUrl().toString();
 
     Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();
     connect(job, &BaseJob::finished, this, &AtticaProvider::listOfCategoriesLoaded);
