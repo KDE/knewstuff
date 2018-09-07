@@ -7,7 +7,7 @@ configure_file(khotnewstuff_test.knsrc.in khotnewstuff_test.knsrc @ONLY)
 
 macro(knewstuff_executable_tests)
    foreach(_testname ${ARGN})
-       add_executable(${_testname} ${_testname}.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp ../src/core/tagsfilterchecker.cpp ../src/staticxml/staticxmlprovider.cpp)
+       add_executable(${_testname} ${_testname}.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp ../src/staticxml/staticxmlprovider.cpp)
        target_link_libraries(${_testname} KF5::NewStuffCore KF5::NewStuff KF5::I18n Qt5::Xml Qt5::Test Qt5::Quick Qt5::Gui)
        target_compile_definitions(${_testname} PRIVATE
            KNSSRCDIR="${CMAKE_CURRENT_SOURCE_DIR}/"
