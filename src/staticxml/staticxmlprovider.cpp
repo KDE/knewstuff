@@ -27,6 +27,7 @@
 #include <klocalizedstring.h>
 
 #include <QTimer>
+#include <tagsfilterchecker.h>
 
 
 namespace KNSCore
@@ -200,6 +201,8 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
     const Provider::Filter filter = loader->property("filter").value<Provider::Filter>();
     const QString searchTerm = loader->property("searchTerm").toString();
 
+    TagsFilterChecker checker(mCurrentRequest.tagFilter);
+    TagsFilterChecker downloadschecker(mCurrentRequest.downloadTagFilter);
     element = doc.documentElement();
     QDomElement n;
     for (n = element.firstChildElement(); !n.isNull(); n = n.nextSiblingElement()) {
@@ -225,27 +228,45 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
             }
             cacheEntry = entry;
         }
-        mCachedEntries.append(entry);
 
-        if (searchIncludesEntry(entry)) {
-            switch(filter) {
-                case Installed:
-                    //This is dealth with in loadEntries separately
-                    Q_UNREACHABLE();
-                case Updates:
-                    if (entry.status() == KNS3::Entry::Updateable) {
-                        entries << entry;
+        if (checker.filterAccepts(entry.tags())) {
+            bool filterAcceptsDownloads = true;
+            if (entry.downloadCount() > 0) {
+                for (const KNSCore::EntryInternal::DownloadLinkInformation &dli : entry.downloadLinkInformationList()) {
+                    if (downloadschecker.filterAccepts(dli.tags)) {
+                        filterAcceptsDownloads = true;
+                        break;
                     }
-                    break;
-                case ExactEntryId:
-                    if (entry.uniqueId() == searchTerm) {
-                        entries << entry;
-                    }
-                    break;
-                case None:
-                    entries << entry;
-                    break;
+                }
             }
+            if (filterAcceptsDownloads) {
+                mCachedEntries.append(entry);
+
+                if (searchIncludesEntry(entry)) {
+                    switch(filter) {
+                        case Installed:
+                            //This is dealth with in loadEntries separately
+                            Q_UNREACHABLE();
+                        case Updates:
+                            if (entry.status() == KNS3::Entry::Updateable) {
+                                entries << entry;
+                            }
+                            break;
+                        case ExactEntryId:
+                            if (entry.uniqueId() == searchTerm) {
+                                entries << entry;
+                            }
+                            break;
+                        case None:
+                            entries << entry;
+                            break;
+                    }
+                }
+            } else {
+                qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << entry.name() << "on download filter" << mCurrentRequest.downloadTagFilter;
+            }
+        } else {
+            qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << entry.name() << "on entry filter" << mCurrentRequest.tagFilter;
         }
     }
     emit loadingFinished(mCurrentRequest, entries);

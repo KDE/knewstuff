@@ -61,6 +61,8 @@ class EnginePrivate {
 public:
     QList<Provider::CategoryMetadata> categoriesMetadata;
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
+    QStringList tagFilter;
+    QStringList downloadTagFilter;
 };
 
 Engine::Engine(QObject *parent)
@@ -125,6 +127,14 @@ bool Engine::init(const QString &configfile)
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
+
+    d->tagFilter = group.readEntry("TagFilter", QStringList());
+    if (d->tagFilter.isEmpty()) {
+        d->tagFilter.append(QStringLiteral("ghns_exclude!=1"));
+    }
+    m_currentRequest.tagFilter = d->tagFilter;
+    d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
+    m_currentRequest.downloadTagFilter = d->downloadTagFilter;
 
     const QString configFileName = QFileInfo(QDir::isAbsolutePath(configfile) ? configfile : QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName();
     // let installation read install specific config
@@ -304,6 +314,8 @@ void Engine::reloadEntries()
 {
     emit signalResetView();
     m_currentPage = -1;
+    m_currentRequest.tagFilter = tagFilter();
+    m_currentRequest.downloadTagFilter = downloadTagFilter();
     m_currentRequest.pageSize = m_pageSize;
     m_currentRequest.page = 0;
     m_numDataJobs = 0;
@@ -374,6 +386,8 @@ void KNSCore::Engine::fetchEntryById(const QString& id)
     m_searchTimer->stop();
     m_currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
     m_currentRequest.pageSize = m_pageSize;
+    m_currentRequest.tagFilter = tagFilter();
+    m_currentRequest.downloadTagFilter = downloadTagFilter();
 
     EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
     if (!cache.isEmpty()) {
@@ -393,6 +407,40 @@ void Engine::setSearchTerm(const QString &searchString)
     } else {
         m_searchTimer->start();
     }
+}
+
+void Engine::setTagFilter(const QStringList &filter)
+{
+    d->tagFilter = filter;
+    m_currentRequest.tagFilter = filter;
+}
+
+QStringList Engine::tagFilter() const
+{
+    return d->tagFilter;
+}
+
+void KNSCore::Engine::addTagFilter(const QString &filter)
+{
+    d->tagFilter << filter;
+    m_currentRequest.tagFilter = d->tagFilter;
+}
+
+void Engine::setDownloadTagFilter(const QStringList &filter)
+{
+    d->downloadTagFilter = filter;
+    m_currentRequest.downloadTagFilter = filter;
+}
+
+QStringList Engine::downloadTagFilter() const
+{
+    return d->downloadTagFilter;
+}
+
+void Engine::addDownloadTagFilter(const QString &filter)
+{
+    d->downloadTagFilter << filter;
+    m_currentRequest.downloadTagFilter = d->downloadTagFilter;
 }
 
 void Engine::slotSearchTimerExpired()
