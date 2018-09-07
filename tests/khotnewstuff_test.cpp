@@ -38,7 +38,6 @@
 #include <QFile>
 #include <QXmlStreamReader>
 
-#include <unistd.h> // for exit()
 #include <cstdio> // for stdout
 
 KNewStuff2Test::KNewStuff2Test(const QString &configFile)
@@ -205,7 +204,7 @@ void KNewStuff2Test::addMessage(const QString &message, const QString &iconName)
 }
 
 KNewStuff2Test *test = nullptr;
-static const QtMessageHandler QT_DEFAULT_MESSAGE_HANDLER = qInstallMessageHandler(0);
+static const QtMessageHandler QT_DEFAULT_MESSAGE_HANDLER = qInstallMessageHandler(nullptr);
 void debugOutputHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     if (test) {
