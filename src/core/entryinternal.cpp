@@ -564,7 +564,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
             if (reader.tokenType() == QXmlStreamReader::Characters)
                 readNextSkipComments(&reader);
         }
-        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QString("token name was %1 and the type was %2").arg(reader.name()).arg(reader.tokenString()).toLocal8Bit().data());
+        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QString("token name was %1 and the type was %2").arg(reader.name().toString()).arg(reader.tokenString()).toLocal8Bit().data());
     }
 
     // Validation
