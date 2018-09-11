@@ -70,7 +70,7 @@ public:
      * 'uniqueId' = @see uniqueId()
      *
      * @param can be a filename with or without relative path. But no absolute path.
-     * @returns the first occurence if there are more than one found
+     * @returns the first occurrence if there are more than one found
      */
     QString findFileInKmtDesktopfilesDir(const QString& filename)
     {

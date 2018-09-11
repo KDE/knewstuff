@@ -58,7 +58,7 @@ class KMoreToolsPrivate;
  * - Provide an API to define external applications for a given context.
  * - If a defined application is not installed (yet) the application is (optionally)
  *    still presented to the user with a hint that it is not installed and a link
- *    to the homepage (later with integration to package managment).
+ *    to the homepage (later with integration to package management).
  *    This increases the discoverability of useful applications the user never
  *    heard about yet.
  * - In case of many applications for a given context, it provides a GUI to the
@@ -260,7 +260,7 @@ public:
      * 2) the location where the kmt-desktopfiles should be installed because
      *    there they will be searched by default.
      *    If @p uniqueId contains slashes they will result in subdirectories.
-     *    The default location can be overriden by
+     *    The default location can be overridden by
      *    registerServiceByDesktopEntryName's kmtDesktopfileSubdir parameter.
      *    This is currently used in KMoreToolsPresets implementation to
      *    separate the kmt-desktopfiles location from the user's config section
@@ -439,7 +439,7 @@ public:
     /**
      * In KMoreToolsMenuFactory some minor magic is done. In the context of
      * connecting the action trigger signal we need to know the maximum number
-     * of URL arguments a given service can accept. Usaually a number between
+     * of URL arguments a given service can accept. Usually a number between
      * 0 and 1. Sometimes 2.
      * E.g. kdf must not be called with any positional argument.
      * E.g. gitg can be called with zero or one arguments.

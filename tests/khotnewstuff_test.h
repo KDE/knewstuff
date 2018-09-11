@@ -17,8 +17,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNEWSTUFF2_TEST_TEST_H
-#define KNEWSTUFF2_TEST_TEST_H
+#ifndef KHOTNEWSTUFF_TEST_H
+#define KHOTNEWSTUFF_TEST_H
 
 #include <KNSCore/Provider>
 #include <KNSCore/EntryInternal>

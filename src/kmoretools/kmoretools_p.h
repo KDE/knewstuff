@@ -105,7 +105,7 @@ public:
     }
 
     /**
-     * todo: is there a QT method that can be used insted of this?
+     * todo: is there a QT method that can be used instead of this?
      */
     static QString removeMenuAmpersand(const QString& str)
     {
@@ -232,7 +232,7 @@ public: // should be private but we would like to unit test
 
 public:
     /**
-    * moves an item up or down respecting its catgory
+    * moves an item up or down respecting its category
     * @param direction: 1: down, -1: up
     */
     void moveWithinSection(const QString& id, int direction)
@@ -331,7 +331,7 @@ public:
             const auto a = item->action();
             KmtMenuItemDto dto;
             dto.id = item->id();
-            dto.text = a->text(); // might be overriden, so we use directly from QAction
+            dto.text = a->text(); // might be overridden, so we use directly from QAction
             dto.icon = a->icon();
             dto.isInstalled = true;
             dto.menuSection = KMoreTools::MenuSection_Main;
@@ -342,7 +342,7 @@ public:
             const auto a = item->action();
             KmtMenuItemDto dto;
             dto.id = item->id();
-            dto.text = a->text(); // might be overriden, so we use directly from QAction
+            dto.text = a->text(); // might be overridden, so we use directly from QAction
             dto.icon = a->icon();
             dto.isInstalled = true;
             dto.menuSection = KMoreTools::MenuSection_More;

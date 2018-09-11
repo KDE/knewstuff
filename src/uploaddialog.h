@@ -117,7 +117,7 @@ public:
     // void setLicense(License license);
 
     /**
-      Set one of the threee preview images displayed in the upload dialog.
+      Set one of the three preview images displayed in the upload dialog.
       The user can still change this.
       @param number The number of the preview image to set, either 1, 2, or 3.
       @param file A URL to the file to be used as preview image

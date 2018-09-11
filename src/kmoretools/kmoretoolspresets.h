@@ -37,7 +37,7 @@ class KMoreToolsService;
  * registerServicesByGroupingNames takes a list of a set of predefined
  * grouping names and returns a list KMoreToolsService instances. Remember,
  * a KMoreToolsService represents a service which might or might not be
- * installed on the current maschine.
+ * installed on the current machine.
  *
  * The groupings defined here are used for the KMoreToolsMenuFactory.
  *
@@ -69,7 +69,7 @@ public:
      *      where the search should be started.
      *
      * - "font-tools" (since 5.37.0)
-     *      Tools to manage and analyse fonts.
+     *      Tools to manage and analyze fonts.
      *
      * - "git-clients-for-folder"
      *      Collection of git clients which all take 1 URL argument pointing
@@ -97,7 +97,7 @@ public:
      *      Tools related to the mouse pointer device.
      *
      * - "screenrecorder" (since 5.37.0)
-     *      Record screen contents to a video file (including animatated gif).
+     *      Record screen contents to a video file (including animated gif).
      *
      * - "screenshot-take"
      *      Tools for taking and maybe also editing screenshots.

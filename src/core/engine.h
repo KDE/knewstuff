@@ -189,7 +189,7 @@ public:
      * out entries marked as ghns_exclude=1. To retain this when setting a custom
      * filter, add "ghns_exclude!=1" as one of the filters.
      *
-     * @note Some tags provided by OCS do not supply a value (and are simply passsed
+     * @note Some tags provided by OCS do not supply a value (and are simply passed
      * as a key). These will be interpreted as having the value 1 for filtering
      * purposes. An example of this might be ghns_exclude, which in reality will
      * generally be passed through ocs as "ghns_exclude" rather than "ghns_exclude=1"

@@ -27,7 +27,7 @@
 namespace KNSCore
 {
 /**
- * @short A way to ask a user a question from insude a GUI-less library (like KNewStuffCore)
+ * @short A way to ask a user a question from inside a GUI-less library (like KNewStuffCore)
  *
  * Rather than using a message box (which is a UI thing), when you want to ask your user
  * a question, create an instance of this class and use that instead. The consuming library
