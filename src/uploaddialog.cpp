@@ -81,21 +81,25 @@ bool UploadDialogPrivate::init(const QString &configfile)
     atticaHelper = new KNSCore::AtticaHelper(q);
 
     bool success = true;
-    KConfig conf(configfile);
-    if (conf.accessMode() == KConfig::NoAccess) {
-        qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
-        success = false;
+    QFileInfo fi(configfile);
+    if (!fi.exists()) {
+        if (!fi.isAbsolute())
+            fi.setFile(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile));
+        if (!fi.exists()) {
+            qCritical() << "No knsrc file named '" << fi.absoluteFilePath() << "' was found." << endl;
+            success = false;
+        }
     }
-    // KConfig does not actually tell us whether the config file exists, so
-    // we check ourselves for better error messages.
-    if (QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile).isEmpty()) {
-        qCritical() << "No knsrc file named '" << configfile << "' was found." << endl;
+
+    KConfig conf(fi.absoluteFilePath());
+    if (conf.accessMode() == KConfig::NoAccess) {
+        qCritical() << "Knsrc file named '" << fi.absoluteFilePath() << "' could not be accessed." << endl;
         success = false;
     }
 
     KConfigGroup group;
     if (conf.hasGroup("KNewStuff3")) {
-        qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << configfile;
+        qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << fi.absoluteFilePath();
         group = conf.group("KNewStuff3");
     } else {
         qCritical() << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
