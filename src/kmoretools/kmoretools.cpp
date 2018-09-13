@@ -552,6 +552,31 @@ public:
 
         delete dlg;
     }
+
+    /**
+     * Create the 'More' menu with parent as parent
+     * @param parent The parent of the menu
+     */
+    void createMoreMenu(const KmtMenuStructure &mstruct, QMenu *parent)
+    {
+        Q_FOREACH (auto item, mstruct.moreItems) {
+            const auto action = item->action();
+            action->setParent(parent);
+            parent->addAction(action);
+        }
+
+        if (!mstruct.notInstalledServices.isEmpty()) {
+            //qDebug() << "notInstalledItems not empty => build 'Not installed' section";
+            parent->addSection(i18nc("@action:inmenu", "Not installed:"));
+
+            Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
+
+                QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
+                                                    registeredService->formatString(QStringLiteral("$Name")), parent, registeredService->icon(), registeredService->homepageUrl(), registeredService->appstreamId());
+                parent->addMenu(submenuForNotInstalled);
+            }
+        }
+    }
 };
 
 KMoreToolsMenuBuilder::KMoreToolsMenuBuilder()
@@ -646,25 +671,12 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
 
     if (!mstruct.moreItems.isEmpty() || !mstruct.notInstalledServices.isEmpty()) {
 
-        menu->addSeparator();
-        menu->addMenu(moreMenu);
-
-        Q_FOREACH (auto item, mstruct.moreItems) {
-            const auto action = item->action();
-            action->setParent(menu);
-            moreMenu->addAction(action);
-        }
-
-        if (!mstruct.notInstalledServices.isEmpty()) {
-            //qDebug() << "notInstalledItems not empty => build 'Not installed' section";
-            moreMenu->addSection(i18nc("@action:inmenu", "Not installed:"));
-
-            Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
-
-                QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                                                    registeredService->formatString(QStringLiteral("$Name")), menu, registeredService->icon(), registeredService->homepageUrl(), registeredService->appstreamId());
-                moreMenu->addMenu(submenuForNotInstalled);
-            }
+        if (mstruct.mainItems.isEmpty()) {
+            d->createMoreMenu(mstruct, menu);
+        } else {
+            menu->addSeparator();
+            menu->addMenu(moreMenu);
+            d->createMoreMenu(mstruct, moreMenu);
         }
     }
 
