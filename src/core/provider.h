@@ -72,15 +72,13 @@ public:
     struct SearchRequest {
         SortMode sortMode;
         Filter filter;
-        QStringList tagFilter;
-        QStringList downloadTagFilter;
         QString searchTerm;
         QStringList categories;
         int page;
         int pageSize;
 
-        SearchRequest(SortMode sortMode_ = Newest, Filter filter_ = None, const QString &searchTerm_ = QString(), const QStringList &categories_ = QStringList(), int page_ = -1, int pageSize_ = 20, const QStringList &tagFilter_ = QStringList(), const QStringList &downloadTagFilter_ = QStringList())
-            : sortMode(sortMode_), filter(filter_), tagFilter(tagFilter_), downloadTagFilter(downloadTagFilter_), searchTerm(searchTerm_), categories(categories_), page(page_), pageSize(pageSize_)
+        SearchRequest(SortMode sortMode_ = Newest, Filter filter_ = None, const QString &searchTerm_ = QString(), const QStringList &categories_ = QStringList(), int page_ = -1, int pageSize_ = 20)
+            : sortMode(sortMode_), filter(filter_), searchTerm(searchTerm_), categories(categories_), page(page_), pageSize(pageSize_)
         {}
 
         QString hashForRequest() const;

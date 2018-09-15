@@ -9,7 +9,6 @@ set(KNewStuffCore_SRCS
     itemsmodel.cpp
     provider.cpp
     security.cpp
-    tagsfilterchecker.cpp
     xmlloader.cpp
 
     # A system by which queries can be passed to the user, and responses
@@ -78,7 +77,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   QuestionListener
   QuestionManager
   Security
-  TagsFilterChecker
   XmlLoader
 
   REQUIRED_HEADERS KNewStuffCore_HEADERS

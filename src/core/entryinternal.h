@@ -89,7 +89,6 @@ public:
         int id;
         bool isDownloadtypeLink;
         quint64 size = 0;
-        QStringList tags;
     };
 
     /**
@@ -440,22 +439,6 @@ public:
      * @param link String version of the URL for the entry's donation website
      */
     void setDonationLink(const QString &link);
-
-    /**
-     * The set of tags assigned specifically to this content item. This does not include
-     * tags for the download links. To get those, you must concatenate the lists yourself.
-     * @see downloadLinkInformationList()
-     * @see DownloadLinkInformation
-     * @see Engine::setTagFilter(QStringList)
-     * @since 5.51
-     */
-    QStringList tags() const;
-    /**
-     * Set the tags for the content item.
-     * @param tags A string list containing the tags for this entry
-     * @since 5.51
-     */
-    void setTags(const QStringList &tags);
 
     /**
       The id of the provider this entry belongs to
