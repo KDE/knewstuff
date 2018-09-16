@@ -705,7 +705,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
 
         if (!baseMenu->isEmpty()) {
             baseMenu->addSeparator();
-            auto configureAction = baseMenu->addAction(i18nc("@action:inmenu", "Configure..."));
+            auto configureAction = baseMenu->addAction(QIcon::fromTheme(QStringLiteral("configure")), i18nc("@action:inmenu", "Configure..."));
             configureAction->setData("configureItem"); // tag the action (currently only used in unit-test)
             KmtMenuStructure mstructDefault = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
             KmtMenuStructureDto mstructDefaultDto = mstructDefault.toDto(); // makes sure the "Reset" button works as expected
