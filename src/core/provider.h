@@ -162,6 +162,35 @@ public:
         Q_UNUSED(entry)
     }
 
+    /**
+     * Set the tag filter used for entries by this provider
+     * @param tagFilter The new list of filters
+     * @see Engine::setTagFilter(QStringList)
+     * @since 5.51
+     */
+    void setTagFilter(const QStringList &tagFilter);
+    /**
+     * The tag filter used for downloads by this provider
+     * @return The list of filters
+     * @see Engine::setTagFilter(QStringList)
+     * @since 5.51
+     */
+    QStringList tagFilter() const;
+    /**
+     * Set the tag filter used for download items by this provider
+     * @param downloadTagFilter The new list of filters
+     * @see Engine::setDownloadTagFilter(QStringList)
+     * @since 5.51
+     */
+    void setDownloadTagFilter(const QStringList &downloadTagFilter);
+    /**
+     * The tag filter used for downloads by this provider
+     * @return The list of filters
+     * @see Engine::setDownloadTagFilter(QStringList)
+     * @since 5.51
+     */
+    QStringList downloadTagFilter() const;
+
 Q_SIGNALS:
     void providerInitialized(KNSCore::Provider *);
 

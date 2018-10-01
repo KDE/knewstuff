@@ -18,6 +18,7 @@
 #include "atticaprovider_p.h"
 
 #include "question.h"
+#include "tagsfilterchecker.h"
 
 #include <QCollator>
 #include <knewstuffcore_debug.h>
@@ -270,9 +271,29 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     Content::List contents = listJob->itemList();
 
     EntryInternal::List entries;
+    TagsFilterChecker checker(tagFilter());
+    TagsFilterChecker downloadschecker(downloadTagFilter());
     Q_FOREACH (const Content &content, contents) {
-        mCachedContent.insert(content.id(), content);
-        entries.append(entryFromAtticaContent(content));
+        if (checker.filterAccepts(content.tags())) {
+            bool filterAcceptsDownloads = true;
+            if (content.downloads() > 0) {
+                filterAcceptsDownloads = false;
+                for (const Attica::DownloadDescription &dli : content.downloadUrlDescriptions()) {
+                    if (downloadschecker.filterAccepts(dli.tags())) {
+                        filterAcceptsDownloads = true;
+                        break;
+                    }
+                }
+            }
+            if (filterAcceptsDownloads) {
+                mCachedContent.insert(content.id(), content);
+                entries.append(entryFromAtticaContent(content));
+            } else {
+                qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << content.name() << "on download filter" << downloadTagFilter();
+            }
+        } else {
+            qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << content.name() << "on entry filter" << tagFilter();
+        }
     }
 
     qCDebug(KNEWSTUFFCORE) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
@@ -482,6 +503,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setSummary(content.description());
     entry.setShortSummary(content.summary());
     entry.setChangelog(content.changelog());
+    entry.setTags(content.tags());
 
     entry.clearDownloadLinkInformation();
     QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
@@ -494,6 +516,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
         info.id = desc.id();
         info.size = desc.size();
         info.isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload;
+        info.tags = desc.tags();
         entry.appendDownloadLinkInformation(info);
     }
 

@@ -28,6 +28,32 @@
 namespace KNSCore
 {
 
+// BCI: Add a real d-pointer
+class ProviderPrivate {
+public:
+    QStringList tagFilter;
+    QStringList downloadTagFilter;
+};
+typedef QHash<const Provider *, ProviderPrivate *> ProviderPrivateHash;
+Q_GLOBAL_STATIC(ProviderPrivateHash, d_func)
+
+static ProviderPrivate *d(const Provider *provider)
+{
+    ProviderPrivate *ret = d_func()->value(provider);
+    if (!ret) {
+        ret = new ProviderPrivate;
+        d_func()->insert(provider, ret);
+    }
+    return ret;
+}
+
+static void delete_d(const Provider *provider)
+{
+    if (auto d = d_func()) {
+        delete d->take(provider);
+    }
+}
+
 QString Provider::SearchRequest::hashForRequest() const
 {
     return QString(QString::number((int)sortMode) + QLatin1Char(',')
@@ -41,7 +67,9 @@ Provider::Provider()
 {}
 
 Provider::~Provider()
-{}
+{
+    delete_d(this);
+}
 
 QString Provider::name() const
 {
@@ -51,6 +79,26 @@ QString Provider::name() const
 QUrl Provider::icon() const
 {
     return mIcon;
+}
+
+void Provider::setTagFilter(const QStringList &tagFilter)
+{
+    d(this)->tagFilter = tagFilter;
+}
+
+QStringList Provider::tagFilter() const
+{
+    return d(this)->tagFilter;
+}
+
+void Provider::setDownloadTagFilter(const QStringList &downloadTagFilter)
+{
+    d(this)->downloadTagFilter = downloadTagFilter;
+}
+
+QStringList Provider::downloadTagFilter() const
+{
+    return d(this)->downloadTagFilter;
 }
 
 QDebug operator<<(QDebug dbg, const Provider::SearchRequest & search)

@@ -61,6 +61,8 @@ class EnginePrivate {
 public:
     QList<Provider::CategoryMetadata> categoriesMetadata;
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
+    QStringList tagFilter;
+    QStringList downloadTagFilter;
 };
 
 Engine::Engine(QObject *parent)
@@ -125,6 +127,12 @@ bool Engine::init(const QString &configfile)
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
+
+    d->tagFilter = group.readEntry("TagFilter", QStringList());
+    if (d->tagFilter.isEmpty()) {
+        d->tagFilter.append(QStringLiteral("ghns_exclude!=1"));
+    }
+    d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
     const QString configFileName = QFileInfo(QDir::isAbsolutePath(configfile) ? configfile : QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName();
     // let installation read install specific config
@@ -252,6 +260,8 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
 {
     qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->id();
     m_providers.insert(provider->id(), provider);
+    provider->setTagFilter(d->tagFilter);
+    provider->setDownloadTagFilter(d->downloadTagFilter);
     connect(provider.data(), &Provider::providerInitialized, this, &Engine::providerInitialized);
     connect(provider.data(), &Provider::loadingFinished, this, &Engine::slotEntriesLoaded);
     connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
@@ -392,6 +402,48 @@ void Engine::setSearchTerm(const QString &searchString)
         reloadEntries();
     } else {
         m_searchTimer->start();
+    }
+}
+
+void Engine::setTagFilter(const QStringList &filter)
+{
+    d->tagFilter = filter;
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+        p->setTagFilter(d->tagFilter);
+    }
+}
+
+QStringList Engine::tagFilter() const
+{
+    return d->tagFilter;
+}
+
+void KNSCore::Engine::addTagFilter(const QString &filter)
+{
+    d->tagFilter << filter;
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+        p->setTagFilter(d->tagFilter);
+    }
+}
+
+void Engine::setDownloadTagFilter(const QStringList &filter)
+{
+    d->downloadTagFilter = filter;
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+        p->setDownloadTagFilter(d->downloadTagFilter);
+    }
+}
+
+QStringList Engine::downloadTagFilter() const
+{
+    return d->downloadTagFilter;
+}
+
+void Engine::addDownloadTagFilter(const QString &filter)
+{
+    d->downloadTagFilter << filter;
+    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+        p->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
 

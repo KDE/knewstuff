@@ -79,6 +79,7 @@ public:
     QString mProviderId;
     QStringList mUnInstalledFiles;
     QString mDonationLink;
+    QStringList mTags;
 
     QString mChecksum;
     QString mSignature;
@@ -154,6 +155,16 @@ QString EntryInternal::providerId() const
 void EntryInternal::setProviderId(const QString &id)
 {
     d->mProviderId = id;
+}
+
+QStringList KNSCore::EntryInternal::tags() const
+{
+    return d->mTags;
+}
+
+void KNSCore::EntryInternal::setTags(const QStringList &tags)
+{
+    d->mTags = tags;
 }
 
 QString EntryInternal::category() const
@@ -481,7 +492,7 @@ static int readInt(QXmlStreamReader* xml)
 bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
 {
     if (reader.name() != QLatin1String("stuff")) {
-        qWarning() << "Parsing Entry from invalid XML";
+        qCWarning(KNEWSTUFFCORE) << "Parsing Entry from invalid XML. Reader tag name was expected to be \"stuff\", but was found as:" << reader.name();
         return false;
     }
 
@@ -540,6 +551,8 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
             d->mInstalledFiles.append(reader.readElementText(QXmlStreamReader::SkipChildElements));
         } else if (reader.name() == QLatin1String("id")) {
             d->mUniqueId = reader.readElementText(QXmlStreamReader::SkipChildElements);
+        } else if (reader.name() == QLatin1String("tags")) {
+            d->mTags = reader.readElementText(QXmlStreamReader::SkipChildElements).split(QChar(','));
         } else if (reader.name() == QLatin1String("status")) {
             const auto statusText = readText(&reader);
             if (statusText == QLatin1String("installed")) {
@@ -551,7 +564,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
             if (reader.tokenType() == QXmlStreamReader::Characters)
                 readNextSkipComments(&reader);
         }
-        Q_ASSERT(reader.tokenType() == QXmlStreamReader::EndElement);
+        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QString("token name was %1 and the type was %2").arg(reader.name().toString()).arg(reader.tokenString()).toLocal8Bit().data());
     }
 
     // Validation
@@ -633,6 +646,8 @@ bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
             d->mInstalledFiles.append(e.text());
         } else if (e.tagName() == QLatin1String("id")) {
             d->mUniqueId = e.text();
+        } else if (e.tagName() == QLatin1String("tags")) {
+            d->mTags = e.text().split(QChar(','));
         } else if (e.tagName() == QLatin1String("status")) {
             QString statusText = e.text();
             if (statusText == QLatin1String("installed")) {
@@ -724,6 +739,7 @@ QDomElement KNSCore::EntryInternal::entryXML() const
     e = addElement(doc, el, QStringLiteral("preview"), d->mPreviewUrl[PreviewSmall1]);
     e = addElement(doc, el, QStringLiteral("previewBig"), d->mPreviewUrl[PreviewBig1]);
     e = addElement(doc, el, QStringLiteral("payload"), d->mPayload);
+    e = addElement(doc, el, QStringLiteral("tags"), d->mTags.join(QChar(',')));
 
     if (d->mStatus == KNS3::Entry::Installed) {
         (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("installed"));
