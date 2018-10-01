@@ -86,14 +86,14 @@ bool UploadDialogPrivate::init(const QString &configfile)
         if (!fi.isAbsolute())
             fi.setFile(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile));
         if (!fi.exists()) {
-            qCritical() << "No knsrc file named '" << fi.absoluteFilePath() << "' was found." << endl;
+            qCCritical(KNEWSTUFF) << "No knsrc file named '" << fi.absoluteFilePath() << "' was found." << endl;
             success = false;
         }
     }
 
     KConfig conf(fi.absoluteFilePath());
     if (conf.accessMode() == KConfig::NoAccess) {
-        qCritical() << "Knsrc file named '" << fi.absoluteFilePath() << "' could not be accessed." << endl;
+        qCCritical(KNEWSTUFF) << "Knsrc file named '" << fi.absoluteFilePath() << "' could not be accessed." << endl;
         success = false;
     }
 
@@ -102,7 +102,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
         qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << fi.absoluteFilePath();
         group = conf.group("KNewStuff3");
     } else {
-        qCritical() << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
+        qCCritical(KNEWSTUFF) << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
         success = false;
     }
 
@@ -554,7 +554,7 @@ void UploadDialog::setPreviewImageFile(uint number, const QUrl &file)
         d->ui.previewImage3->setPixmap(preview.scaled(d->ui.previewImage3->size()));
         break;
     default :
-        qCritical() << "Wrong preview image file number";
+        qCCritical(KNEWSTUFF) << "Wrong preview image file number";
         break;
     }
 }

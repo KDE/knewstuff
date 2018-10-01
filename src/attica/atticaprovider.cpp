@@ -89,7 +89,7 @@ bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
     if (!m_providerManager.providers().isEmpty()) {
         qCDebug(KNEWSTUFFCORE) << "base url of attica provider:" << m_providerManager.providers().constLast().baseUrl().toString();
     } else {
-        qCritical() << "Could not load provider.";
+        qCCritical(KNEWSTUFFCORE) << "Could not load provider.";
         return false;
     }
     return true;

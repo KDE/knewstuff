@@ -19,6 +19,7 @@
 
 #include "kmoretools_p.h"
 #include "kmoretoolsconfigdialog_p.h"
+#include "knewstuff_debug.h"
 
 #include <QDebug>
 #include <QDir>
@@ -121,7 +122,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         //Q_ASSERT_X(kmtDesktopfile->isValid(), "addServiceByDesktopFile", "the kmt-desktopfile is provided but not valid. This must be fixed.");
         //qDebug() << "  INFO: kmt-desktopfile provided and valid.";
         if (kmtDesktopfile->exec().isEmpty()) {
-            qCritical() << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
+            qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
             return nullptr;
         }
         //qDebug() << "  INFO: kmt-desktopfile provided.";
@@ -138,7 +139,7 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         //qDebug() << "----- isInstalled: " << isInstalled;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
-            qCritical() << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
+            qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
             return nullptr;
         }
 

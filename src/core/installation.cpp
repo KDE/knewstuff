@@ -69,7 +69,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         uncompresssetting = QStringLiteral("always");
     }
     if (uncompresssetting != QLatin1String("always") && uncompresssetting != QLatin1String("archive") && uncompresssetting != QLatin1String("never") && uncompresssetting != QLatin1String("subdir")) {
-        qCritical() << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, or never" << endl;
+        qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, or never" << endl;
         return false;
     }
     uncompression = uncompresssetting;
@@ -101,7 +101,7 @@ bool Installation::readConfig(const KConfigGroup &group)
             xdgTargetDirectory.isEmpty() &&
             installPath.isEmpty() &&
             absoluteInstallPath.isEmpty()) {
-        qCritical() << "No installation target set";
+        qCCritical(KNEWSTUFFCORE) << "No installation target set";
         return false;
     }
 
@@ -114,7 +114,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (checksumpolicy == QLatin1String("always")) {
             checksumPolicy = Installation::CheckAlways;
         } else {
-            qCritical() << "The checksum policy '" + checksumpolicy + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << "The checksum policy '" + checksumpolicy + "' is unknown." << endl;
             return false;
         }
     }
@@ -128,7 +128,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (signaturepolicy == QLatin1String("always")) {
             signaturePolicy = Installation::CheckAlways;
         } else {
-            qCritical() << "The signature policy '" + signaturepolicy + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << "The signature policy '" + signaturepolicy + "' is unknown." << endl;
             return false;
         }
     }
@@ -140,13 +140,13 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (scopeString == QLatin1String("system")) {
             scope = ScopeSystem;
         } else {
-            qCritical() << "The scope '" + scopeString + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << "The scope '" + scopeString + "' is unknown." << endl;
             return false;
         }
 
         if (scope == ScopeSystem) {
             if (!installPath.isEmpty()) {
-                qCritical() << "System installation cannot be mixed with InstallPath." << endl;
+                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath." << endl;
                 return false;
             }
         }
@@ -188,7 +188,7 @@ void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
     QUrl source = QUrl(entry.payload());
 
     if (!source.isValid()) {
-        qCritical() << "The entry doesn't have a payload." << endl;
+        qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload." << endl;
         emit signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
         return;
     }
@@ -273,7 +273,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             if (checksumPolicy() == Installation::CheckIfPossible) {
                 qCDebug(KNEWSTUFFCORE) << "Skip checksum verification";
             } else {
-                qCritical() << "Checksum verification not possible" << endl;
+                qCCritical(KNEWSTUFFCORE) << "Checksum verification not possible" << endl;
                 return false;
             }
         } else {
@@ -285,7 +285,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             if (signaturePolicy() == Installation::CheckIfPossible) {
                 qCDebug(KNEWSTUFFCORE) << "Skip signature verification";
             } else {
-                qCritical() << "Signature verification not possible" << endl;
+                qCCritical(KNEWSTUFFCORE) << "Signature verification not possible" << endl;
                 return false;
             }
         } else {
@@ -403,7 +403,7 @@ QString Installation::targetInstallationPath() const
         }
 
         if (pathcounter != 1) {
-            qCritical() << "Wrong number of installation directories given." << endl;
+            qCCritical(KNEWSTUFFCORE) << "Wrong number of installation directories given." << endl;
             return QString();
         }
 
@@ -446,7 +446,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                        || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
                 archive.reset(new KTar(payloadfile));
             } else {
-                qCritical() << "Could not determine type of archive file '" << payloadfile << "'";
+                qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompression == QLatin1String("always")) {
                     return QStringList();
                 }
@@ -456,7 +456,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (isarchive) {
                 bool success = archive->open(QIODevice::ReadOnly);
                 if (!success) {
-                    qCritical() << "Cannot open archive file '" << payloadfile << "'";
+                    qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
                     if (uncompression == QLatin1String("always")) {
                         return QStringList();
                     }
@@ -553,7 +553,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
             if (!success) {
-                qCritical() << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
+                qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
                 return QStringList();
             }
             installedFiles << installpath;
@@ -573,7 +573,7 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
     QProcess* ret = new QProcess(this);
     connect(ret, static_cast<void(QProcess::*)(int)>(&QProcess::finished), this, [this, command](int exitcode){
         if (exitcode) {
-            qCritical() << "Command '" << command << "' failed with code" << exitcode;
+            qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();
     });
@@ -600,7 +600,7 @@ void Installation::uninstall(EntryInternal entry)
                 int exitcode = QProcess::execute(command);
 
                 if (exitcode) {
-                    qCritical() << "Command failed" << command;
+                    qCCritical(KNEWSTUFFCORE) << "Command failed" << command;
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
                 }

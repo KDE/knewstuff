@@ -105,7 +105,7 @@ bool Engine::init(const QString &configfile)
     KConfig conf(configfile);
     if (conf.accessMode() == KConfig::NoAccess) {
         emit signalError(i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile));
-        qCritical() << "The knsrc file '" << configfile << "' was found but could not be opened.";
+        qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
         return false;
     }
 
@@ -118,7 +118,7 @@ bool Engine::init(const QString &configfile)
         group = conf.group("KNewStuff2");
     } else {
         emit signalError(i18n("Configuration file is invalid: \"%1\"", configfile));
-        qCritical() << configfile << " doesn't contain a KNewStuff3 section.";
+        qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
         return false;
     }
 
