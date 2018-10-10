@@ -8,7 +8,6 @@
 [Desktop Entry]
 X-SuSE-translate=true
 Name=QGit
-Name[ast]=QGit
 Name[ca]=QGit
 Name[ca@valencia]=QGit
 Name[cs]=QGit
@@ -48,7 +47,6 @@ Name[x-test]=xxQGitxx
 Name[zh_CN]= 
 Name[zh_TW]=QGit
 GenericName=QGit
-GenericName[ast]=QGit
 GenericName[ca]=QGit
 GenericName[ca@valencia]=QGit
 GenericName[cs]=QGit
@@ -89,7 +87,6 @@ GenericName[zh_CN]=QGit
 GenericName[zh_TW]=QGit
 Comment=git repository browser
 Comment[ar]=متصفّح لمستودعات «غِت»
-Comment[ast]=Restolador de repositorios Git
 Comment[ca]=Navegador pel repositori Git
 Comment[ca@valencia]=Navegador pel repositori Git
 Comment[cs]=Prohlížeč úložiště gitu

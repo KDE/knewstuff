@@ -1,7 +1,6 @@
 [Desktop Entry]
 Version=1.0
 Name=Htop
-Name[ast]=Htop
 Name[ca]=Htop
 Name[ca@valencia]=Htop
 Name[cs]=Htop
@@ -43,7 +42,6 @@ Name[zh_TW]=Htop
 Type=Application
 Comment=Show System Processes
 Comment[ar]=أظهر عمليّات النّظام
-Comment[ast]=Amuesa procesos del sistema
 Comment[ca]=Mostra els processos del sistema
 Comment[ca@valencia]=Mostra els processos del sistema
 Comment[da]=Vis systemprocesser
@@ -87,7 +85,6 @@ Icon=htop
 Categories=System;Monitor;System;
 GenericName=Process Viewer
 GenericName[ar]=عارض عمليّات
-GenericName[ast]=Visor de procesos
 GenericName[ca]=Visor de processos
 GenericName[ca@valencia]=Visor de processos
 GenericName[cs]=Prohlížeč porocesů

@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=KSysGuard
 Name[ar]=حارس نظامك
-Name[ast]=KSysGuard
 Name[ca]=KSysGuard
 Name[ca@valencia]=KSysGuard
 Name[cs]=KSysGuard
@@ -41,7 +40,6 @@ Name[x-test]=xxKSysGuardxx
 Name[zh_CN]=系统卫士
 Name[zh_TW]=KSysGuard
 GenericName=System Monitor
-GenericName[ast]=Monitor del sistema
 GenericName[ca]=Monitor del sistema
 GenericName[ca@valencia]=Monitor del sistema
 GenericName[cs]=Monitor systému
