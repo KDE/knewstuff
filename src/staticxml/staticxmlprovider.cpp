@@ -45,8 +45,6 @@ QString StaticXmlProvider::id() const
 
 bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 {
-    qCDebug(KNEWSTUFFCORE) << "setting provider xml";
-
     if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
     }
@@ -107,7 +105,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         mId = mDownloadUrls[mDownloadUrls.begin().key()].url();
     }
 
-    QTimer::singleShot(0, this, SLOT(slotEmitProviderInitialized()));
+    QTimer::singleShot(0, this, &StaticXmlProvider::slotEmitProviderInitialized);
 
     return true;
 }
