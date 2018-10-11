@@ -437,7 +437,7 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     qCDebug(KNEWSTUFFCORE) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
 
     if (job->metadata().error() == Attica::Metadata::NetworkError) {
-        emit signalError(i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().error()));
+        emit signalError(i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()));
     }
     if (job->metadata().error() == Attica::Metadata::OcsError) {
         if (job->metadata().statusCode() == 200) {
