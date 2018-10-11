@@ -231,11 +231,7 @@ void KMoreToolsTest::test_buildMenu_PruneDuplicateNotInstalledService()
     menuBuilder->addMenuItem(mynotInstalledApp); // duplicate (which can make sense if the service will be called with different arguments)
     QMenu menu;
     menuBuilder->buildByAppendingToMenu(&menu);
-    QCOMPARE(menu.actions().count(), 2);
-    QVERIFY(menu.actions()[0]->isSeparator()); // might change later: currently, even if there are no installed applications the more menu will be generated
-    QCOMPARE(menu.actions()[1]->text(), QString(_("More")));
-    auto moreMenu = menu.actions()[1]->menu();
-    QCOMPARE(moreMenu->actions().count(), 4); // "Not installed section", "Not installed app" (only once), "Separator", "Configure menu..."
+    QCOMPARE(menu.actions().count(), 4); // "Not installed section", "Not installed app" (only once), "Separator", "Configure menu..."
 }
 
 void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
