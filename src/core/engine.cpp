@@ -698,7 +698,6 @@ QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
     }
 
     const QLatin1String fileReplace("%f");
-    QStringList ret;
     if (adoption.contains(fileReplace)) {
         if (entry.installedFiles().isEmpty()) {
             qCWarning(KNEWSTUFFCORE) << "no installed files to adopt";
