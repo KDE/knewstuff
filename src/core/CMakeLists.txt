@@ -71,6 +71,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   DownloadManager
   Engine
   EntryInternal
+  ErrorCode
   Installation
   ItemsModel
   Provider

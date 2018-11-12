@@ -242,7 +242,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
 
     q->connect(engine, &KNSCore::Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
-    q->connect(engine, &KNSCore::Engine::signalError, ui.progressIndicator, &ProgressIndicator::error);
+    q->connect(engine, &KNSCore::Engine::signalErrorCode, ui.progressIndicator, &ProgressIndicator::error);
     q->connect(engine, &KNSCore::Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
 
     q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, this, &DownloadWidgetPrivate::slotProvidersLoaded);

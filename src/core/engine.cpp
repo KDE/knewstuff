@@ -83,6 +83,8 @@ Engine::Engine(QObject *parent)
     connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
+    // Pass along old error signal through new signal for locations which have not been updated yet
+    connect(this, &Engine::signalError, this, [this](const QString& message){ emit signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
 }
 
 Engine::~Engine()
@@ -104,7 +106,7 @@ bool Engine::init(const QString &configfile)
 
     KConfig conf(configfile);
     if (conf.accessMode() == KConfig::NoAccess) {
-        emit signalError(i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile));
+        emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
         return false;
     }
@@ -117,7 +119,7 @@ bool Engine::init(const QString &configfile)
         qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff2 config: " << configfile;
         group = conf.group("KNewStuff2");
     } else {
-        emit signalError(i18n("Configuration file is invalid: \"%1\"", configfile));
+        emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
         return false;
     }
@@ -209,7 +211,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         isAtticaProviderFile = true;
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
-        emit signalError(i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl));
+        emit signalErrorCode(KNSCore::ProviderError, i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl), m_providerFileUrl);
         return;
     }
 
@@ -232,7 +234,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         if (provider->setProviderXML(n)) {
             addProvider(provider);
         } else {
-            emit signalError(i18n("Error initializing provider."));
+            emit signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), m_providerFileUrl);
         }
         n = n.nextSiblingElement();
     }
@@ -267,6 +269,7 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
     connect(provider.data(), &Provider::signalError, this, &Engine::signalError);
+    connect(provider.data(), &Provider::signalErrorCode, this, &Engine::signalErrorCode);
     connect(provider.data(), &Provider::signalInformation, this, &Engine::signalIdle);
 }
 
@@ -277,7 +280,7 @@ void Engine::providerJobStarted(KJob *job)
 
 void Engine::slotProvidersFailed()
 {
-    emit signalError(i18n("Loading of providers from file: %1 failed", m_providerFileUrl));
+    emit signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", m_providerFileUrl), m_providerFileUrl);
 }
 
 void Engine::providerInitialized(Provider *p)
@@ -511,7 +514,7 @@ void Engine::slotInstallationFinished()
 void Engine::slotInstallationFailed(const QString &message)
 {
     --m_numInstallJobs;
-    emit signalError(message);
+    emit signalErrorCode(KNSCore::InstallationError, message, QVariant());
 }
 
 void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
@@ -569,6 +572,7 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
     connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry,
                                                        EntryInternal::PreviewType type,
                                                        const QString &errorText) {
+        emit signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
         qCDebug(KNEWSTUFFCORE) << "ERROR preview: " << errorText << entry.name() << type;
         --m_numPictureJobs;
         updateStatus();

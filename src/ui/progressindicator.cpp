@@ -59,7 +59,7 @@ void ProgressIndicator::busy(const QString &message)
     busyWidget->setSequence(m_busyPixmap);
 }
 
-void ProgressIndicator::error(const QString &message)
+void KNS3::ProgressIndicator::error(const KNSCore::ErrorCode& /*errorCode*/, const QString& message, const QVariant& /*metadata*/)
 {
     m_statusLabel->setText(message);
     busyWidget->setVisible(true);

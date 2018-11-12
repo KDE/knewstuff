@@ -21,6 +21,8 @@
 #ifndef KNEWSTUFF3_PROGRESSINDICATOR_P_H
 #define KNEWSTUFF3_PROGRESSINDICATOR_P_H
 
+#include "errorcode.h"
+
 #include <QFrame>
 #include <kpixmapsequence.h>
 
@@ -48,7 +50,7 @@ public:
 
 public Q_SLOTS:
     void busy(const QString &message);
-    void error(const QString &message);
+    void error(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
     void idle(const QString &message);
 
 private:

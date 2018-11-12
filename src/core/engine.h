@@ -28,6 +28,7 @@
 
 #include "provider.h"
 #include "entryinternal.h"
+#include "errorcode.h"
 
 #include "knewstuffcore_export.h"
 
@@ -417,9 +418,17 @@ Q_SIGNALS:
     void signalDownloadDialogDone(KNSCore::EntryInternal::List);
     void jobStarted(KJob *, const QString &);
 
-    void signalError(const QString &);
+    QT_DEPRECATED void signalError(const QString &);
     void signalBusy(const QString &);
     void signalIdle(const QString &);
+    /**
+     * Fires in the case of any critical or serious errors, such as network or API problems.
+     * @param errorCode Represents the specific type of error which has occurred
+     * @param message A human-readable message which can be shown to the end user
+     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the metadata details)
+     * @see KNSCore::EntryInternal::ErrorCode
+     */
+    void signalErrorCode(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 

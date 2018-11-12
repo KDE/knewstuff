@@ -163,7 +163,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
         emit providerInitialized(this);
         emit categoriesMetadataLoded(categoryMetadataList);
     } else {
-        emit signalError(i18n("All categories are missing"));
+        emit signalErrorCode(KNSCore::ConfigFileError, i18n("All categories are missing"), QVariant());
     }
 }
 
@@ -437,13 +437,13 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     qCDebug(KNEWSTUFFCORE) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
 
     if (job->metadata().error() == Attica::Metadata::NetworkError) {
-        emit signalError(i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()));
+        emit signalErrorCode(KNSCore::NetworkError, i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()), job->metadata().statusCode());
     }
     if (job->metadata().error() == Attica::Metadata::OcsError) {
         if (job->metadata().statusCode() == 200) {
-            emit signalError(i18n("Too many requests to server. Please try again in a few minutes."));
+            emit signalErrorCode(KNSCore::OcsError, i18n("Too many requests to server. Please try again in a few minutes."), job->metadata().statusCode());
         } else {
-            emit signalError(i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()));
+            emit signalErrorCode(KNSCore::OcsError, i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()), job->metadata().statusCode());
         }
     }
     return false;

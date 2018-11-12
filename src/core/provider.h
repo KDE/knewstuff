@@ -25,6 +25,7 @@
 #include <QUrl>
 
 #include "entryinternal.h"
+#include "errorcode.h"
 
 #include "knewstuffcore_export.h"
 
@@ -202,6 +203,7 @@ Q_SIGNALS:
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;
+    void signalErrorCode(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) const;
 
     void categoriesMetadataLoded(const QList<CategoryMetadata> &categories);
 
