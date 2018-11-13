@@ -427,6 +427,7 @@ Q_SIGNALS:
      * @param message A human-readable message which can be shown to the end user
      * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the metadata details)
      * @see KNSCore::EntryInternal::ErrorCode
+     * @since 5.53
      */
     void signalErrorCode(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
 
