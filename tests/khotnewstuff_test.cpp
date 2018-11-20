@@ -38,8 +38,6 @@
 #include <QFile>
 #include <QXmlStreamReader>
 
-#include <cstdio> // for stdout
-
 KNewStuff2Test::KNewStuff2Test(const QString &configFile)
     : QObject()
 {
