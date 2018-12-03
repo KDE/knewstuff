@@ -11,6 +11,7 @@ set(KNewStuffCore_SRCS
     security.cpp
     tagsfilterchecker.cpp
     xmlloader.cpp
+    errorcode.cpp
 
     # A system by which queries can be passed to the user, and responses
     # gathered, depending on implementation. See question.h for details.
