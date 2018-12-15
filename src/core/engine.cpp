@@ -179,6 +179,7 @@ void Engine::loadProviders()
         delete d->m_atticaProviderManager;
         d->m_atticaProviderManager = new Attica::ProviderManager;
         connect(d->m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
+        connect(d->m_atticaProviderManager, &Attica::ProviderManager::failedToLoad, this, &Engine::slotProvidersFailed);
         d->m_atticaProviderManager->loadDefaultProviders();
     } else {
         qCDebug(KNEWSTUFFCORE) << "loading providers from " << m_providerFileUrl;
