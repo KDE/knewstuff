@@ -133,7 +133,7 @@ void DownloadWidgetPrivate::slotNetworkTimeout() // SLOT
 
 void DownloadWidgetPrivate::sortingChanged()
 {
-    KNSCore::Provider::SortMode sortMode = KNSCore::Provider::Rating;
+    KNSCore::Provider::SortMode sortMode = KNSCore::Provider::Downloads;
     KNSCore::Provider::Filter filter = KNSCore::Provider::None;
     if (ui.ratingRadio->isChecked()) {
         sortMode = KNSCore::Provider::Rating;
@@ -257,7 +257,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
                model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
     engine->init(configFile);
-    engine->setSortMode(KNSCore::Provider::Rating);
+    engine->setSortMode(KNSCore::Provider::Downloads);
 
     delegate = new ItemsViewDelegate(ui.m_listView, engine, q);
     ui.m_listView->setItemDelegate(delegate);
