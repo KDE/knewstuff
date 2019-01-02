@@ -54,7 +54,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
 
 void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List& entries)
 {
-    foreach (const KNSCore::EntryInternal &entry, entries) {
+    for (const KNSCore::EntryInternal &entry : entries) {
         addEntry(entry);
     }
 }

@@ -41,6 +41,6 @@ namespace KNSCore
         InstallationError, ///< Installation of a content item has failed
         ImageError ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
     };
-    Q_ENUM_NS(ErrorCode);
+    Q_ENUM_NS(ErrorCode)
 }
 #endif//KNSCORE_ERRORCODE_H

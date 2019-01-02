@@ -166,7 +166,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     QSet<QString> alreadyUsedDesktopEntryNames; // including the "more:" keyword
     bool nextIsMore = false;
 
-    Q_FOREACH (const QString &groupingName, groupingNames) {
+    for (const QString &groupingName : groupingNames) {
         auto iter = dict.constFind(groupingName);
         if (iter != dict.constEnd()) {
             Q_FOREACH(const QString &desktopEntryName, *iter) {

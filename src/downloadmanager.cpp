@@ -139,7 +139,7 @@ void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNSCore::EntryInternal::
 {
     KNS3::Entry::List result;
     result.reserve(entries.size());
-    foreach (const KNSCore::EntryInternal &entry, entries) {
+    for (const KNSCore::EntryInternal &entry : entries) {
         result.append(EntryPrivate::fromInternal(&entry));
     }
     emit q->searchResult(result);

@@ -106,7 +106,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     int right = option.rect.width();
 
     QToolButton *installButton = qobject_cast<QToolButton *>(widgets.at(DelegateInstallButton));
-    if (installButton != nullptr) {
+    if (installButton) {
 
         if (installButton->menu()) {
             QMenu *buttonMenu = installButton->menu();
@@ -219,7 +219,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
-            text += "<p><a href=\"" + link.url() + "\">" + entry.name() + "</a></p>\n";
+            text += QStringLiteral("<p><a href=\"") + link.url() + QStringLiteral("\">") + entry.name() + QStringLiteral("</a></p>\n");
         } else {
             text += entry.name();
         }

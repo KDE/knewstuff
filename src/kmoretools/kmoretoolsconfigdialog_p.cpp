@@ -55,7 +55,7 @@ public:
     QListWidgetItem* selectedItemMainSection()
     {
         auto items = configUi->listMainSection->selectedItems();
-        if (items.count() == 0) {
+        if (items.isEmpty()) {
             return nullptr;
         } else {
             return items[0];
@@ -65,7 +65,7 @@ public:
     QListWidgetItem* selectedItemMoreSection()
     {
         auto items = configUi->listMoreSection->selectedItems();
-        if (items.count() == 0) {
+        if (items.isEmpty()) {
             return nullptr;
         } else {
             return items[0];
@@ -112,7 +112,7 @@ public:
     /**
      * refill lists and restore selection
      */
-    void updateListViews(QString idToSelect = QString())
+    void updateListViews(const QString &idToSelect = QString())
     {
         configUi->listMainSection->clear();
         configUi->listMoreSection->clear();

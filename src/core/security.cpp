@@ -233,7 +233,7 @@ void Security::slotCheckValidity()
         QTimer::singleShot(5, this, SLOT(slotCheckValidity()));
         return;
     }
-    if (m_keys.count() == 0) {
+    if (m_keys.isEmpty()) {
         emit validityResult(-1);
         return;
     }
@@ -251,7 +251,7 @@ void Security::slotCheckValidity()
         md5sum = context.result().toHex();
         file.close();
     }
-    file.setFileName(f.path() + "/md5sum");
+    file.setFileName(f.path() + QStringLiteral("/md5sum"));
     if (file.open(QIODevice::ReadOnly)) {
         QByteArray md5sum_file;
         file.readLine(md5sum_file.data(), 50);
@@ -310,7 +310,7 @@ void Security::slotSignFile()
         }
     }
 
-    if (secretKeys.count() == 0) {
+    if (secretKeys.isEmpty()) {
         emit fileSigned(-1);
         return;
     }
@@ -328,7 +328,7 @@ void Security::slotSignFile()
         md5sum = context.result().toHex();
         file.close();
     }
-    file.setFileName(f.path() + "/md5sum");
+    file.setFileName(f.path() + QStringLiteral("/md5sum"));
     if (file.open(QIODevice::WriteOnly)) {
         QTextStream stream(&file);
         stream << md5sum;

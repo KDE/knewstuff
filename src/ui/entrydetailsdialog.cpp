@@ -100,9 +100,9 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
     QString summary = KNSCore::replaceBBCode(m_entry.summary()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
     QString changelog = KNSCore::replaceBBCode(m_entry.changelog()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
 
-    QString description = "<html><body>" + summary;
+    QString description = QStringLiteral("<html><body>") + summary;
     if (!changelog.isEmpty()) {
-        description += "<br/><p><b>" + i18n("Changelog:") + "</b><br/>" + changelog + "</p>";
+        description += QStringLiteral("<br/><p><b>") + i18n("Changelog:") + QStringLiteral("</b><br/>") + changelog + QStringLiteral("</p>");
     }
     description += QLatin1String("</body></html>");
     ui->descriptionLabel->setText(description);
@@ -114,7 +114,7 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
         homepageText += "<br><a href=\"" + m_entry.donationLink() + "\">" + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + "</a>";
     }
     if (!m_entry.knowledgebaseLink().isEmpty()) {
-        homepageText += "<br><a href=\"" + m_entry.knowledgebaseLink() + "\">"
+        homepageText += QStringLiteral("<br><a href=\"") + m_entry.knowledgebaseLink() + QStringLiteral("\">")
                         + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + "</a>";
     }
     ui->homepageLabel->setText(homepageText);
@@ -214,8 +214,7 @@ void EntryDetails::updateButtons()
         break;
     }
 
-    if (ui->installButton->menu()) {
-        QMenu *buttonMenu = ui->installButton->menu();
+    if (QMenu *buttonMenu = ui->installButton->menu()) {
         buttonMenu->clear();
         ui->installButton->setMenu(nullptr);
         buttonMenu->deleteLater();
@@ -225,7 +224,7 @@ void EntryDetails::updateButtons()
         foreach (KNSCore::EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
-                text + " (" + info.distributionType.trimmed() + QLatin1Char(')');
+                text + QStringLiteral(" (") + info.distributionType.trimmed() + QLatin1Char(')');
             }
             QAction *installAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
             installAction->setData(info.id);

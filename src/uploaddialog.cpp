@@ -349,7 +349,7 @@ void UploadDialogPrivate::_k_checkCredentialsFinished(bool success)
 void UploadDialogPrivate::_k_licensesLoaded(const Attica::License::List &licenses)
 {
     ui.mLicenseCombo->clear();
-    foreach (const Attica::License &license, licenses) {
+    for (const Attica::License &license : licenses) {
         ui.mLicenseCombo->addItem(license.name(), license.id());
     }
 }
@@ -569,7 +569,7 @@ void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &load
     categories = loadedCategories;
 
     // at least one category is needed
-    if (categories.count() == 0) {
+    if (categories.isEmpty()) {
         KMessageBox::error(q,
                            i18np("The server does not recognize the category %2 to which you are trying to upload.",
                                  "The server does not recognize any of the categories to which you are trying to upload: %2",
@@ -849,8 +849,9 @@ void UploadDialogPrivate::_k_detailsLinkLoaded(const QUrl &url)
 QStringList UploadDialogPrivate::_supportedMimeTypes() const
 {
     QStringList mimeTypes;
-    QList<QByteArray> supported = QImageReader::supportedMimeTypes();
-    foreach (const QByteArray &mimeType, supported) {
+    const QList<QByteArray> supported = QImageReader::supportedMimeTypes();
+    mimeTypes.reserve(supported.count());
+    for (const QByteArray &mimeType : supported) {
         mimeTypes.append(QString(mimeType));
     }
     return mimeTypes;

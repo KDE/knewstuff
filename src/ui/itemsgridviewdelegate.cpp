@@ -128,9 +128,9 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         QString title;
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
-            title += "<b><a href=\"" + link.url() + "\">" + entry.name() + "</a></b>\n";
+            title += QStringLiteral("<b><a href=\"") + link.url() + QStringLiteral("\">") + entry.name() + QStringLiteral("</a></b>\n");
         } else {
-            title += "<b>" + entry.name() + "</b>";
+            title += QStringLiteral("<b>") + entry.name() + QStringLiteral("</b>");
         }
 
         const auto downloadInfo = entry.downloadLinkInformationList();
@@ -144,7 +144,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     }
     //setup author label
     QLabel *authorLabel = qobject_cast<QLabel *>(widgets.at(DelegateAuthorLabel));
-    if (authorLabel != nullptr) {
+    if (authorLabel) {
         authorLabel->setWordWrap(true);
         authorLabel->setAlignment(Qt::AlignHCenter);
         authorLabel->resize(QSize(option.rect.width() - (ItemMargin * 2), option.fontMetrics.height()));
@@ -190,7 +190,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             downloadString = i18np("1 download", "%1 downloads", downloads);
         }
         if (downloads > 0 || fans > 0) {
-            text += "<p>" + downloadString;
+            text += QStringLiteral("<p>") + downloadString;
             if (downloads > 0 && fans > 0) {
                 text += QLatin1String(", ");
             }

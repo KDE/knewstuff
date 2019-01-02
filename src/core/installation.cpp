@@ -609,7 +609,7 @@ void Installation::uninstall(EntryInternal entry)
     }
 
     foreach (const QString &file, entry.installedFiles()) {
-        if (file.endsWith('/')) {
+        if (file.endsWith(QLatin1Char('/'))) {
             QDir dir;
             bool worked = dir.rmdir(file);
             if (!worked) {

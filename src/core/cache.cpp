@@ -78,12 +78,12 @@ void Cache::readRegistry()
 
     QXmlStreamReader reader(&f);
     if (reader.hasError() || !reader.readNextStartElement()) {
-        qWarning() << "The file could not be parsed.";
+        qCWarning(KNEWSTUFFCORE) << "The file could not be parsed.";
         return;
     }
 
     if (reader.name() != QLatin1String("hotnewstuffregistry")) {
-        qWarning() << "The file doesn't seem to be of interest.";
+        qCWarning(KNEWSTUFFCORE) << "The file doesn't seem to be of interest.";
         return;
     }
 

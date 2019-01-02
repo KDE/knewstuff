@@ -87,6 +87,7 @@ KNSCore::Engine *DownloadWidget::engine()
 Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
+    entries.reserve(d->changedEntries.count());
     foreach (const KNSCore::EntryInternal &e, d->changedEntries) {
         entries.append(EntryPrivate::fromInternal(&e));
     }
@@ -179,7 +180,7 @@ void DownloadWidgetPrivate::slotCategoryChanged(int idx)
         engine->setCategoriesFilter(QStringList());
 
     } else {
-        QString category = ui.m_categoryCombo->currentData().toString();
+        const QString category = ui.m_categoryCombo->currentData().toString();
 
         if (!category.isEmpty()) {
             QStringList filter(category);

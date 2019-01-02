@@ -119,13 +119,13 @@ static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
 // "file static" => no symbol will be exported
 static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
                                        QMenu* menu,
-                                       QList<KMoreToolsService*> kmtServiceList,
+                                       const QList<KMoreToolsService*> &kmtServiceList,
                                        const QUrl& url,
                                        bool isMoreSection,
                                        QString firstMoreSectionDesktopEntryName
                                       )
 {
-    Q_FOREACH(auto kmtService, kmtServiceList) {
+    for (auto kmtService : kmtServiceList) {
         // Check the pointer just in case a null pointer got in somewhere
         if (!kmtService) continue;
         if (kmtService->desktopEntryName() == firstMoreSectionDesktopEntryName) {
@@ -270,9 +270,7 @@ QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
     const QStringList& groupingNames,
     const QUrl& url)
 {
-    if (d->menu) {
-        delete d->menu;
-    }
+    delete d->menu;
 
     auto menu = new KMoreToolsLazyMenu(d->parentWidget);
     menu->setAboutToShowAction([this, groupingNames, url](QMenu* m) { fillMenuFromGroupingNames(m, groupingNames, url); });
