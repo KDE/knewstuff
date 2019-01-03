@@ -573,7 +573,7 @@ void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &load
         KMessageBox::error(q,
                            i18np("The server does not recognize the category %2 to which you are trying to upload.",
                                  "The server does not recognize any of the categories to which you are trying to upload: %2",
-                                 categoryNames.size(), categoryNames.join(", ")),
+                                 categoryNames.size(), categoryNames.join(QStringLiteral(", "))),
                            i18n("Error"));
         // close the dialog
         q->reject();
@@ -647,7 +647,7 @@ void UploadDialogPrivate::_k_startUpload()
     //content.addAttribute("homepage1", ui.homepage->text());
     //content.addAttribute("blog1", ui.blog->text());
 
-    content.addAttribute(QStringLiteral("downloadbuy1"), ui.priceCheckBox->isChecked() ? "1" : "0");
+    content.addAttribute(QStringLiteral("downloadbuy1"), ui.priceCheckBox->isChecked() ? QStringLiteral("1") : QStringLiteral("0"));
     content.addAttribute(QStringLiteral("downloadbuyprice1"), QString::number(ui.priceSpinBox->value()));
     content.addAttribute(QStringLiteral("downloadbuyreason1"), ui.priceReasonLineEdit->text());
 
@@ -852,7 +852,7 @@ QStringList UploadDialogPrivate::_supportedMimeTypes() const
     const QList<QByteArray> supported = QImageReader::supportedMimeTypes();
     mimeTypes.reserve(supported.count());
     for (const QByteArray &mimeType : supported) {
-        mimeTypes.append(QString(mimeType));
+        mimeTypes.append(QString::fromLatin1(mimeType));
     }
     return mimeTypes;
 }

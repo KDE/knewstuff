@@ -552,7 +552,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
         } else if (reader.name() == QLatin1String("id")) {
             d->mUniqueId = reader.readElementText(QXmlStreamReader::SkipChildElements);
         } else if (reader.name() == QLatin1String("tags")) {
-            d->mTags = reader.readElementText(QXmlStreamReader::SkipChildElements).split(QChar(','));
+            d->mTags = reader.readElementText(QXmlStreamReader::SkipChildElements).split(QLatin1Char(','));
         } else if (reader.name() == QLatin1String("status")) {
             const auto statusText = readText(&reader);
             if (statusText == QLatin1String("installed")) {
@@ -564,7 +564,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
             if (reader.tokenType() == QXmlStreamReader::Characters)
                 readNextSkipComments(&reader);
         }
-        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QString("token name was %1 and the type was %2").arg(reader.name().toString()).arg(reader.tokenString()).toLocal8Bit().data());
+        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QStringLiteral("token name was %1 and the type was %2").arg(reader.name().toString()).arg(reader.tokenString()).toLocal8Bit().data());
     }
 
     // Validation
@@ -647,7 +647,7 @@ bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
         } else if (e.tagName() == QLatin1String("id")) {
             d->mUniqueId = e.text();
         } else if (e.tagName() == QLatin1String("tags")) {
-            d->mTags = e.text().split(QChar(','));
+            d->mTags = e.text().split(QLatin1Char(','));
         } else if (e.tagName() == QLatin1String("status")) {
             QString statusText = e.text();
             if (statusText == QLatin1String("installed")) {
@@ -739,7 +739,7 @@ QDomElement KNSCore::EntryInternal::entryXML() const
     e = addElement(doc, el, QStringLiteral("preview"), d->mPreviewUrl[PreviewSmall1]);
     e = addElement(doc, el, QStringLiteral("previewBig"), d->mPreviewUrl[PreviewBig1]);
     e = addElement(doc, el, QStringLiteral("payload"), d->mPayload);
-    e = addElement(doc, el, QStringLiteral("tags"), d->mTags.join(QChar(',')));
+    e = addElement(doc, el, QStringLiteral("tags"), d->mTags.join(QLatin1Char(',')));
 
     if (d->mStatus == KNS3::Entry::Installed) {
         (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("installed"));

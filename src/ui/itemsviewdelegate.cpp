@@ -163,7 +163,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             foreach (const KNSCore::EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
-                    text += " (" + info.distributionType.trimmed() + ')';
+                    text += QStringLiteral(" (") + info.distributionType.trimmed() + QLatin1Char(')');
                 }
                 QAction *installAction = installMenu->addAction(m_iconInstall, text);
                 installAction->setData(QPoint(index.row(), info.id));
@@ -238,16 +238,16 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         if (!authorName.isEmpty()) {
             if (!authorPage.isEmpty()) {
-                text += "<p>" + i18nc("Show the author of this item in a list", "By <i>%1</i>", " <a href=\"" + authorPage + "\">" + authorName + "</a>") + "</p>\n";
+                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", QStringLiteral(" <a href=\"") + authorPage + QStringLiteral("\">") + authorName + QStringLiteral("</a>")) + QStringLiteral("</p>\n");
             } else if (!email.isEmpty()) {
-                text += "<p>" + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + " <a href=\"mailto:" + email + "\">" + email + "</a></p>\n";
+                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QStringLiteral(" <a href=\"mailto:") + email + QStringLiteral("\">") + email + QStringLiteral("</a></p>\n");
             } else {
-                text += "<p>" + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + "</p>\n";
+                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QStringLiteral("</p>\n");
             }
         }
 
-        QString summary = "<p>" + option.fontMetrics.elidedText(entry.summary(),
-                          Qt::ElideRight, infoLabel->width() * 3) + "</p>\n";
+        QString summary = QStringLiteral("<p>") + option.fontMetrics.elidedText(entry.summary(),
+                          Qt::ElideRight, infoLabel->width() * 3) + QStringLiteral("</p>\n");
         text += summary;
 
         unsigned int fans = entry.numberFans();
@@ -262,7 +262,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             downloadString = i18np("1 download", "%1 downloads", downloads);
         }
         if (downloads > 0 || fans > 0) {
-            text += "<p>" + downloadString;
+            text += QStringLiteral("<p>") + downloadString;
             if (downloads > 0 && fans > 0) {
                 text += QLatin1String(", ");
             }

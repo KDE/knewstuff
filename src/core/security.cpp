@@ -155,7 +155,7 @@ void Security::slotReadyReadStandardOutput()
                 } else {
                     key.secret = true;
                 }
-                QStringList line = data.split(':', QString::KeepEmptyParts);
+                QStringList line = data.split(QLatin1Char(':'), QString::KeepEmptyParts);
                 key.id = line[4];
                 QString shortId = key.id.right(8);
                 QString trustStr = line[1];
@@ -164,21 +164,21 @@ void Security::slotReadyReadStandardOutput()
                     key.trusted = true;
                 }
                 data = line[9];
-                key.mail = data.section('<', -1, -1);
+                key.mail = data.section(QLatin1Char('<'), -1, -1);
                 key.mail.truncate(key.mail.length() - 1);
-                key.name = data.section('<', 0, 0);
+                key.name = data.section(QLatin1Char('<'), 0, 0);
                 if (key.name.contains(QStringLiteral("("))) {
-                    key.name = key.name.section('(', 0, 0);
+                    key.name = key.name.section(QLatin1Char('('), 0, 0);
                 }
                 m_keys[shortId] = key;
             }
             break;
         case Verify:
-            data = data.section(']', 1, -1).trimmed();
+            data = data.section(QLatin1Char(']'), 1, -1).trimmed();
             if (data.startsWith(QLatin1String("GOODSIG"))) {
                 m_result &= SIGNED_BAD_CLEAR;
                 m_result |= SIGNED_OK;
-                QString id = data.section(' ', 1, 1).right(8);
+                QString id = data.section(QLatin1Char(' '), 1, 1).right(8);
                 if (!m_keys.contains(id)) {
                     m_result |= UNKNOWN;
                 } else {
@@ -189,7 +189,7 @@ void Security::slotReadyReadStandardOutput()
                 m_result |= UNKNOWN;
             } else if (data.startsWith(QLatin1String("BADSIG"))) {
                 m_result |= SIGNED_BAD;
-                QString id = data.section(' ', 1, 1).right(8);
+                QString id = data.section(QLatin1Char(' '), 1, 1).right(8);
                 if (!m_keys.contains(id)) {
                     m_result |= UNKNOWN;
                 } else {
@@ -248,14 +248,14 @@ void Security::slotCheckValidity()
     if (!m_fileName.isEmpty() && file.open(QIODevice::ReadOnly)) {
         context.reset();
         context.addData(&file);
-        md5sum = context.result().toHex();
+        md5sum = QString::fromLatin1(context.result().toHex());
         file.close();
     }
     file.setFileName(f.path() + QStringLiteral("/md5sum"));
     if (file.open(QIODevice::ReadOnly)) {
         QByteArray md5sum_file;
         file.readLine(md5sum_file.data(), 50);
-        if (!md5sum_file.isEmpty() && QString(md5sum_file).startsWith(md5sum)) {
+        if (!md5sum_file.isEmpty() && QString::fromLatin1(md5sum_file).startsWith(md5sum)) {
             m_result |= MD5_OK;
         }
         file.close();
@@ -273,7 +273,7 @@ void Security::slotCheckValidity()
               << QStringLiteral("--status-fd=2")
               << QStringLiteral("--command-fd=0")
               << QStringLiteral("--verify")
-              << f.path() + "/signature"
+              << f.path() + QStringLiteral("/signature")
               << m_fileName;
     connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
             this, &Security::slotFinished);
@@ -325,7 +325,7 @@ void Security::slotSignFile()
     if (file.open(QIODevice::ReadOnly)) {
         context.reset();
         context.addData(&file);
-        md5sum = context.result().toHex();
+        md5sum = QString::fromLatin1(context.result().toHex());
         file.close();
     }
     file.setFileName(f.path() + QStringLiteral("/md5sum"));
@@ -363,7 +363,7 @@ void Security::slotSignFile()
               << QStringLiteral("-u")
               << m_secretKey
               << QStringLiteral("-o")
-              << f.path() + "/signature"
+              << f.path() + QStringLiteral("/signature")
               << m_fileName;
     connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
             this, &Security::slotFinished);

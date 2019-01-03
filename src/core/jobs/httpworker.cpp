@@ -140,7 +140,7 @@ void HTTPWorker::handleFinished()
     }
 
     // Check if the data was obtained from cache or not
-    QString fromCache = d->reply->attribute(QNetworkRequest::SourceIsFromCacheAttribute).toBool() ? "(cached)" : "(NOT cached)";
+    QString fromCache = d->reply->attribute(QNetworkRequest::SourceIsFromCacheAttribute).toBool() ? QStringLiteral("(cached)") : QStringLiteral("(NOT cached)");
 
     // Handle redirections
     const QUrl possibleRedirectUrl = d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();

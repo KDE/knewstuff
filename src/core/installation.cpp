@@ -114,7 +114,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (checksumpolicy == QLatin1String("always")) {
             checksumPolicy = Installation::CheckAlways;
         } else {
-            qCCritical(KNEWSTUFFCORE) << "The checksum policy '" + checksumpolicy + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The checksum policy '") + checksumpolicy + QStringLiteral("' is unknown.") << endl;
             return false;
         }
     }
@@ -128,7 +128,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (signaturepolicy == QLatin1String("always")) {
             signaturePolicy = Installation::CheckAlways;
         } else {
-            qCCritical(KNEWSTUFFCORE) << "The signature policy '" + signaturepolicy + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.") << endl;
             return false;
         }
     }
@@ -140,7 +140,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (scopeString == QLatin1String("system")) {
             scope = ScopeSystem;
         } else {
-            qCCritical(KNEWSTUFFCORE) << "The scope '" + scopeString + "' is unknown." << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.") << endl;
             return false;
         }
 
@@ -499,12 +499,12 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             QUrl source = QUrl(entry.payload());
             qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
             QString installfile;
-            QString ext = source.fileName().section('.', -1);
+            QString ext = source.fileName().section(QLatin1Char('.'), -1);
             if (customName) {
                 installfile = entry.name();
-                installfile += '-' + entry.version();
+                installfile += QLatin1Char('-') + entry.version();
                 if (!ext.isEmpty()) {
-                    installfile += '.' + ext;
+                    installfile += QLatin1Char('.') + ext;
                 }
             } else {
                 // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
@@ -512,7 +512,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 // Randa this is not going to happen anytime soon (if ever) so go with the hack
                 if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
                     installfile = QUrlQuery(source).queryItemValue(QStringLiteral("file"));
-                    int lastSlash = installfile.lastIndexOf('/');
+                    int lastSlash = installfile.lastIndexOf(QLatin1Char('/'));
                     if (lastSlash >= 0) {
                         installfile = installfile.mid(lastSlash);
                     }
@@ -536,7 +536,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
                     Question question(Question::ContinueCancelQuestion);
-                    question.setQuestion(i18n("Overwrite existing file?") + "\n'" + installpath + '\'');
+                    question.setQuestion(i18n("Overwrite existing file?") + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
                     question.setTitle(i18n("Download File"));
                     if(question.ask() != Question::ContinueResponse) {
                         return QStringList();

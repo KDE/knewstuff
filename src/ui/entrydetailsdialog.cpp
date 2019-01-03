@@ -90,9 +90,9 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
 
     ui->m_titleWidget->setText(i18n("Details for %1", m_entry.name()));
     if (!m_entry.author().homepage().isEmpty()) {
-        ui->authorLabel->setText("<a href=\"" + m_entry.author().homepage() + "\">" + m_entry.author().name() + "</a>");
+        ui->authorLabel->setText(QStringLiteral("<a href=\"") + m_entry.author().homepage() + QStringLiteral("\">") + m_entry.author().name() + QStringLiteral("</a>"));
     } else if (!m_entry.author().email().isEmpty()) {
-        ui->authorLabel->setText("<a href=\"mailto:" + m_entry.author().email() + "\">" + m_entry.author().name() + "</a>");
+        ui->authorLabel->setText(QStringLiteral("<a href=\"mailto:") + m_entry.author().email() + QStringLiteral("\">") + m_entry.author().name() + QStringLiteral("</a>"));
     } else {
         ui->authorLabel->setText(m_entry.author().name());
     }
@@ -107,15 +107,15 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
     description += QLatin1String("</body></html>");
     ui->descriptionLabel->setText(description);
 
-    QString homepageText("<a href=\"" + m_entry.homepage().url() + "\">" +
-                         i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + "</a>");
+    QString homepageText(QStringLiteral("<a href=\"") + m_entry.homepage().url() + QStringLiteral("\">") +
+                         i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + QStringLiteral("</a>"));
 
     if (!m_entry.donationLink().isEmpty()) {
-        homepageText += "<br><a href=\"" + m_entry.donationLink() + "\">" + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + "</a>";
+        homepageText += QStringLiteral("<br><a href=\"") + m_entry.donationLink() + QStringLiteral("\">") + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + QStringLiteral("</a>");
     }
     if (!m_entry.knowledgebaseLink().isEmpty()) {
         homepageText += QStringLiteral("<br><a href=\"") + m_entry.knowledgebaseLink() + QStringLiteral("\">")
-                        + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + "</a>";
+                        + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + QStringLiteral("</a>");
     }
     ui->homepageLabel->setText(homepageText);
     ui->homepageLabel->setToolTip(i18nc("Tooltip for a link in a dialog", "Opens in a browser window"));

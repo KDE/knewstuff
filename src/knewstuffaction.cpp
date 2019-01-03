@@ -30,7 +30,7 @@ QAction *KNS3::standardAction(const QString &what,
                               const char *name)
 {
     QAction *action = new QAction(what, parent);
-    parent->addAction(QString(name), action);
+    parent->addAction(QLatin1String(name), action);
     action->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
     QObject::connect(action, SIGNAL(triggered(bool)), receiver, slot);
 
@@ -43,7 +43,7 @@ QAction *KNS3::standardActionUpload(const QString &what,
                                     const char *name)
 {
     QAction *action = new QAction(what, parent);
-    parent->addAction(QString(name), action);
+    parent->addAction(QLatin1String(name), action);
     // FIXME: Get a specific upload icon!
     action->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
     QObject::connect(action, SIGNAL(triggered(bool)), receiver, slot);

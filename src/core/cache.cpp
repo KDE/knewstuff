@@ -104,17 +104,17 @@ void Cache::readKns2MetaFiles()
 {
     qCDebug(KNEWSTUFFCORE) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
 
-    const auto realAppName = m_kns2ComponentName.splitRef(':')[0];
+    const auto realAppName = m_kns2ComponentName.splitRef(QLatin1Char(':'))[0];
 
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
     for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {
-        qCDebug(KNEWSTUFFCORE) << " + Load from directory '" + (*it) + "'.";
+        qCDebug(KNEWSTUFFCORE) << QStringLiteral(" + Load from directory '") + (*it) + QStringLiteral("'.");
         QDir dir((*it));
         const QStringList files = dir.entryList(QDir::Files | QDir::Readable);
         for (QStringList::const_iterator fit = files.begin(); fit != files.end(); ++fit) {
             QString filepath = (*it) + QLatin1Char('/') + (*fit);
 
-            qCDebug(KNEWSTUFFCORE) << " Load from file '" + filepath + "'.";
+            qCDebug(KNEWSTUFFCORE) << QStringLiteral(" Load from file '") + filepath + QStringLiteral("'.");
 
             QFileInfo info(filepath);
             QFile f(filepath);

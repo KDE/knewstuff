@@ -127,8 +127,8 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         }
         //qDebug() << "  INFO: kmt-desktopfile provided.";
     } else {
-        qWarning() << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.";
-        qDebug() << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = " << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
+        qCWarning(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.";
+        qCDebug(KNEWSTUFF) << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = " << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
     }
 
     bool isInstalled = false;
@@ -241,7 +241,7 @@ public:
      */
     QIcon getKmtProvidedIcon()
     {
-        if (kmtDesktopfile == nullptr) {
+        if (!kmtDesktopfile) {
             return QIcon();
         }
 
@@ -636,15 +636,15 @@ QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) c
     QString s;
     s += QLatin1String("|main|:");
     Q_FOREACH (auto item, mstruct.mainItems) {
-        s += item->registeredService()->desktopEntryName() + ".";
+        s += item->registeredService()->desktopEntryName() + QLatin1Char('.');
     }
     s += QLatin1String("|more|:");
     Q_FOREACH (auto item, mstruct.moreItems) {
-        s += item->registeredService()->desktopEntryName() + ".";
+        s += item->registeredService()->desktopEntryName() + QLatin1Char('.');
     }
     s += QLatin1String("|notinstalled|:");
     Q_FOREACH (auto regService, mstruct.notInstalledServices) {
-        s += regService->desktopEntryName() + ".";
+        s += regService->desktopEntryName() + QLatin1Char('.');
     }
     return s;
 }
@@ -707,7 +707,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
         if (!baseMenu->isEmpty()) {
             baseMenu->addSeparator();
             auto configureAction = baseMenu->addAction(QIcon::fromTheme(QStringLiteral("configure")), i18nc("@action:inmenu", "Configure..."));
-            configureAction->setData("configureItem"); // tag the action (currently only used in unit-test)
+            configureAction->setData(QStringLiteral("configureItem")); // tag the action (currently only used in unit-test)
             KmtMenuStructure mstructDefault = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
             KmtMenuStructureDto mstructDefaultDto = mstructDefault.toDto(); // makes sure the "Reset" button works as expected
             QObject::connect(configureAction, &QAction::triggered, configureAction, [this, mstructDefaultDto](bool) {

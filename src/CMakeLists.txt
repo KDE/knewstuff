@@ -1,5 +1,4 @@
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=550)
-remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
 add_subdirectory(core)
 
