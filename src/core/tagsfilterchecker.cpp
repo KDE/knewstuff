@@ -67,6 +67,7 @@ public:
         {
             bool result = true;
             if (tag == m_tag && !m_acceptedValues.contains(value)) {
+                qCDebug(KNEWSTUFFCORE) << "Item excluded by filter on" << m_tag << "because" << value << "was not included in" << m_acceptedValues;
                 result = false;
             }
             return result;
@@ -85,6 +86,7 @@ public:
         {
             bool result = true;
             if (tag == m_tag && m_acceptedValues.contains(value)) {
+                qCDebug(KNEWSTUFFCORE) << "Item excluded by filter on" << m_tag << "because" << value << "was included in" << m_acceptedValues;
                 result = false;
             }
             return result;

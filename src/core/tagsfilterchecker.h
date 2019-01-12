@@ -37,11 +37,11 @@ namespace KNSCore {
  * A tag filter list is a string list of filters as shown above, and a combination
  * of which might look like:
  *
- * - ghns_exclude!=1
+ * - ghns_excluded!=1
  * - data##mimetype==application/cbr+zip
  * - data##mimetype==application/cbr+rar
  * 
- * which would filter out anything which has ghns_exclude set to 1, and
+ * which would filter out anything which has ghns_excluded set to 1, and
  * anything where the value of data##mimetype does not equal either
  * "application/cbr+zip" or "application/cbr+rar".
  * Notice in particular the two data##mimetype entries. Use this

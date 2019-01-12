@@ -44,7 +44,7 @@ const char *entryXML = "<stuff category=\"Category\"> "
 "<previewBig>https://testpreview</previewBig>"
 "<payload>http://testpayload</payload>"
 "<status>" "<!--randomcomment-->" "installed" "<!--randomcomment-->" "</status>"
-"<tags>ghns_exclude=1</tags>"
+"<tags>ghns_excluded=1</tags>"
 "</stuff>";
 
 const QString name = QStringLiteral("Name");

@@ -11,7 +11,7 @@
         <payload lang="en">http://some.http.server/coolstuff.tar.gz</payload>
         <rating>10</rating>
         <downloads>0</downloads>
-        <tags>ghns_exclude=1</tags>
+        <tags>ghns_excluded=1</tags>
     </stuff>
     <stuff category="app/media">
         <name lang="en">Entry 2 (ghns included)</name>
@@ -37,7 +37,7 @@
         <payload lang="en">http://some.http.server/coolstuff.tar.gz</payload>
         <rating>10</rating>
         <downloads>0</downloads>
-        <tags>ghns_exclude=1</tags>
+        <tags>ghns_excluded=1</tags>
     </stuff>
     <stuff category="app/media">
         <name lang="en">Entry 4 (ghns included)</name>

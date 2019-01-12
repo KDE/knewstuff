@@ -132,7 +132,7 @@ bool Engine::init(const QString &configfile)
 
     d->tagFilter = group.readEntry("TagFilter", QStringList());
     if (d->tagFilter.isEmpty()) {
-        d->tagFilter.append(QStringLiteral("ghns_exclude!=1"));
+        d->tagFilter.append(QStringLiteral("ghns_excluded!=1"));
     }
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 

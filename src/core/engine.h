@@ -187,13 +187,19 @@ public:
      * setDownloadTagFilter(QStringList).
      *
      * @note The default filter if one is not set from your knsrc file will filter
-     * out entries marked as ghns_exclude=1. To retain this when setting a custom
-     * filter, add "ghns_exclude!=1" as one of the filters.
+     * out entries marked as ghns_excluded=1. To retain this when setting a custom
+     * filter, add "ghns_excluded!=1" as one of the filters.
      *
      * @note Some tags provided by OCS do not supply a value (and are simply passed
      * as a key). These will be interpreted as having the value 1 for filtering
-     * purposes. An example of this might be ghns_exclude, which in reality will
-     * generally be passed through ocs as "ghns_exclude" rather than "ghns_exclude=1"
+     * purposes. An example of this might be ghns_excluded, which in reality will
+     * generally be passed through ocs as "ghns_excluded" rather than "ghns_excluded=1"
+     *
+     * @note As tags are metadata, they are provided in the form of adjectives. They
+     * are never supplied as action verbs or instructions (as an example, a good tag
+     * to suggest that for example a wallpaper is painted would be "painted" as opposed
+     * to "paint", and another example might be that an item should be "excluded" as
+     * opposed to "exclude").
      *
      * == Examples of use ==
      * Value for tag "tagname" must be exactly "tagdata":
@@ -206,7 +212,7 @@ public:
      * A tag filter line in a .knsrc file, which is a comma semarated list of
      * tag/value pairs, might look like:
      *
-     * TagFilter=ghns_exclude!=1,data##mimetype==application/cbr+zip,data##mimetype==application/cbr+rar
+     * TagFilter=ghns_excluded!=1,data##mimetype==application/cbr+zip,data##mimetype==application/cbr+rar
      * which would honour the exclusion and filter out anything that does not
      * include a comic book archive in either zip or rar format in one or more
      * of the download items.
@@ -249,7 +255,7 @@ public:
      *
      * For an entry to be accepted when a download tag filter is set, it must also
      * be accepted by the entry filter (so, for example, while a list of downloads
-     * might be accepted, if the entry has ghns_exclude set, and the default entry
+     * might be accepted, if the entry has ghns_excluded set, and the default entry
      * filter is set, the entry will still be filtered out).
      *
      * In your knsrc file, set DownloadTagFilter to the filter you wish to apply,
