@@ -292,6 +292,9 @@ public:
 
     ~KMoreTools();
 
+    KMoreTools(const KMoreTools &) = delete;
+    KMoreTools& operator=(const KMoreTools &) = delete;
+
     /**
      * Registers a service with KMoreTools.
      *
@@ -349,12 +352,6 @@ public:
     KMoreToolsMenuBuilder* menuBuilder(const QString& userConfigPostfix = QString()) const;
 
 private:
-    /**
-     * No copy semantic => private and no implementation
-     */
-    KMoreTools(const KMoreTools&);
-
-private:
     KMoreToolsPrivate* d;
 };
 
@@ -379,6 +376,9 @@ class KNEWSTUFF_EXPORT KMoreToolsService
 
 public:
     ~KMoreToolsService();
+
+    KMoreToolsService(const KMoreToolsService &) = delete;
+    KMoreToolsService& operator=(const KMoreToolsService &) = delete;
 
     /**
      * @return the desktop entry name which the service is identified by and with which
@@ -553,6 +553,9 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuBuilder
 public:
     ~KMoreToolsMenuBuilder();
 
+    KMoreToolsMenuBuilder(const KMoreToolsMenuBuilder &) = delete;
+    KMoreToolsMenuBuilder& operator=(const KMoreToolsMenuBuilder &) = delete;
+
     /**
      * Affects addMenuItem() if called before it.
      *
@@ -682,6 +685,9 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuItem
     friend class KMoreToolsMenuBuilder;
 
 public:
+    KMoreToolsMenuItem(const KMoreToolsMenuItem &) = delete;
+    KMoreToolsMenuItem& operator=(const KMoreToolsMenuItem &) = delete;
+
     /**
      * Auto-generated unique id that tries to be as stable as possible even if the
      * menu gets restructured after the user did some customization that was
@@ -773,12 +779,6 @@ private: // internal usage
     KMoreToolsMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation);
 
     ~KMoreToolsMenuItem();
-
-private:
-    /**
-     * No copy semantic => private and no implementation
-     */
-    KMoreToolsMenuItem(const KMoreTools&);
 
 private:
     KMoreToolsMenuItemPrivate* d;

@@ -64,6 +64,9 @@ public:
     TagsFilterChecker(const QStringList &tagFilter);
     ~TagsFilterChecker();
 
+    TagsFilterChecker(const TagsFilterChecker &) = delete;
+    TagsFilterChecker& operator=(const TagsFilterChecker &) = delete;
+
     /**
      * Check whether the filter list accepts the passed list of tags
      *

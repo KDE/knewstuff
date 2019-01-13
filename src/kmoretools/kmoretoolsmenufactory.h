@@ -49,6 +49,9 @@ public:
 
     ~KMoreToolsMenuFactory();
 
+    KMoreToolsMenuFactory(const KMoreToolsMenuFactory &) = delete;
+    KMoreToolsMenuFactory& operator=(const KMoreToolsMenuFactory &) = delete;
+
     /**
      * For each grouping name menu items will be created an appended to a
      * lazy menu which is returned. The menu is lazy in a sense that the
