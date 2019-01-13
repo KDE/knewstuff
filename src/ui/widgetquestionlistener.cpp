@@ -31,6 +31,8 @@ class WidgetQuestionListenerHelper {
 public:
     WidgetQuestionListenerHelper() : q(nullptr) {}
     ~WidgetQuestionListenerHelper() { delete q; }
+    WidgetQuestionListenerHelper(const WidgetQuestionListenerHelper &) = delete;
+    WidgetQuestionListenerHelper& operator=(const WidgetQuestionListenerHelper &) = delete;
     WidgetQuestionListener *q;
 };
 Q_GLOBAL_STATIC(WidgetQuestionListenerHelper, s_kns3_widgetQuestionListener)

@@ -25,6 +25,8 @@ class QuestionManagerHelper {
 public:
     QuestionManagerHelper() : q(nullptr) {}
     ~QuestionManagerHelper() { delete q; }
+    QuestionManagerHelper(const QuestionManagerHelper &) = delete;
+    QuestionManagerHelper& operator=(const QuestionManagerHelper &) = delete;
     QuestionManager *q;
 };
 Q_GLOBAL_STATIC(QuestionManagerHelper, s_kns3_questionManager)
