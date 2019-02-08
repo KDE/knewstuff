@@ -757,8 +757,8 @@ KMoreToolsMenuItem::~KMoreToolsMenuItem()
         // Disconnects the 'connect' event (and potentially more; is this bad?)
         // that was connected in action() to detect action deletion.
         d->action->disconnect(d->action);
-        delete d;
     }
+    delete d;
 }
 
 QString KMoreToolsMenuItem::id() const
