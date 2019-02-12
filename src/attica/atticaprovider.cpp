@@ -273,7 +273,11 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     EntryInternal::List entries;
     TagsFilterChecker checker(tagFilter());
     TagsFilterChecker downloadschecker(downloadTagFilter());
-    Q_FOREACH (const Content &content, contents) {
+    for (const Content &content : contents) {
+        if (!content.isValid()) {
+            qCDebug(KNEWSTUFFCORE) << "Filtered out an invalid entry. This suggests something is not right on the originating server. Please contact the administrators of" << name() << "and inform them there is an issue with content in the category or categories" << mCurrentRequest.categories;
+            continue;
+        }
         if (checker.filterAccepts(content.tags())) {
             bool filterAcceptsDownloads = true;
             if (content.downloads() > 0) {
