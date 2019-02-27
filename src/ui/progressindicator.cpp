@@ -39,7 +39,7 @@ ProgressIndicator::ProgressIndicator(QWidget *parent)
 {
     setFrameStyle(QFrame::NoFrame);
     QHBoxLayout *hbox = new QHBoxLayout(this);
-    hbox->setMargin(0);
+    hbox->setContentsMargins(0, 0, 0, 0);
 
     //Busy widget
     busyWidget = new KPixmapSequenceWidget(this);

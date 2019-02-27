@@ -87,7 +87,7 @@ void DownloadDialog::init(const QString &configFile)
     // DownloadWidget already provides margins, which would duplicate the dialog layout margins.
     // As the widget theme could use different margin sizes for a dialog/window outer layout,
     // so from the duplicated margins we pick the internal margins to remove here.
-    d->downloadWidget->layout()->setMargin(0);
+    d->downloadWidget->layout()->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(d->downloadWidget);
 
     if (group.hasKey("Name")) {

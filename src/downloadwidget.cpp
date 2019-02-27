@@ -303,8 +303,8 @@ void DownloadWidgetPrivate::init(const QString &configFile)
                     }
                 }
             });
-    ui.detailsStack->widget(0)->layout()->setMargin(0);
-    ui.detailsStack->widget(1)->layout()->setMargin(0);
+    ui.detailsStack->widget(0)->layout()->setContentsMargins(0, 0, 0, 0);
+    ui.detailsStack->widget(1)->layout()->setContentsMargins(0, 0, 0, 0);
 
     q->connect(ui.m_categoryCombo, static_cast<void(KComboBox::*)(int)>(&KComboBox::activated),
                this, &DownloadWidgetPrivate::slotCategoryChanged);
