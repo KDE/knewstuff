@@ -328,7 +328,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     };
     if (!postInstallationCommand.isEmpty()) {
         QProcess* p = runPostInstallationCommand(installedFiles.size() == 1 ? installedFiles.first() : targetPath);
-        connect(p, static_cast<void(QProcess::*)(int)>(&QProcess::finished), this, installationFinished);
+        connect(p, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, installationFinished);
     } else {
         installationFinished();
     }
@@ -571,8 +571,10 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
     qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
 
     QProcess* ret = new QProcess(this);
-    connect(ret, static_cast<void(QProcess::*)(int)>(&QProcess::finished), this, [this, command](int exitcode){
-        if (exitcode) {
+    connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, [this, command](int exitcode, QProcess::ExitStatus status) {
+        if (status == QProcess::CrashExit) {
+            qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
+        } else if (exitcode) {
             qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();

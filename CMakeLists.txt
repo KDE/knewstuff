@@ -67,8 +67,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
                         SOVERSION 5)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
-#add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
-
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
     ki18n_install(po)
 endif()
