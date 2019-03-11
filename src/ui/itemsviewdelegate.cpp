@@ -160,7 +160,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         if (installable && entry.downloadLinkCount() > 1) {
             QMenu *installMenu = new QMenu(installButton);
-            foreach (const KNSCore::EntryInternal::DownloadLinkInformation &info, entry.downloadLinkInformationList()) {
+            const auto lst = entry.downloadLinkInformationList();
+            for (const KNSCore::EntryInternal::DownloadLinkInformation &info : lst) {
                 QString text = info.name;
                 if (!info.distributionType.trimmed().isEmpty()) {
                     text += QStringLiteral(" (") + info.distributionType.trimmed() + QLatin1Char(')');

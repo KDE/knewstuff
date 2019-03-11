@@ -305,7 +305,7 @@ void StaticXmlProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int
 EntryInternal::List StaticXmlProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    foreach (const EntryInternal &entry, mCachedEntries) {
+    for (const EntryInternal &entry : qAsConst(mCachedEntries)) {
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }

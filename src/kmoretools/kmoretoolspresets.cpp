@@ -169,7 +169,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     for (const QString &groupingName : groupingNames) {
         auto iter = dict.constFind(groupingName);
         if (iter != dict.constEnd()) {
-            Q_FOREACH(const QString &desktopEntryName, *iter) {
+            for (const QString &desktopEntryName : qAsConst(*iter)) {
                 if (!alreadyUsedDesktopEntryNames.contains(desktopEntryName)) {
                     if (desktopEntryName == _("more:")) {
                         nextIsMore = true;

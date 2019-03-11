@@ -167,7 +167,7 @@ void KNewStuff2Test::slotEntriesLoaded(const KNSCore::EntryInternal::List &entri
     if (m_testall) {
         addMessage(QString::fromUtf8("-- now, download the entries' previews and payload files"), QStringLiteral("msg_info"));
 
-        Q_FOREACH(const KNSCore::EntryInternal &entry, entries) {
+        for (const KNSCore::EntryInternal &entry : entries) {
             addMessage(QString::fromUtf8("-- entry: %1").arg(entry.name()), QStringLiteral("msg_info"));
             if (!entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
                 m_engine->loadPreview(entry, KNSCore::EntryInternal::PreviewSmall1);

@@ -41,7 +41,8 @@ void AtticaHelper::addProviderFile(const QUrl &file)
 {
     if (! providerManager.providerFiles().contains(file)) {
         // If a custom provider file is added, remove all the default ones.
-        foreach (const QUrl &url, providerManager.defaultProviderFiles()) {
+        const auto lstUrl = providerManager.defaultProviderFiles();
+        for (const QUrl &url : lstUrl) {
             providerManager.removeProviderFileFromDefaultProviders(url);
         }
         providerManager.addProviderFile(file);
@@ -51,7 +52,8 @@ void AtticaHelper::addProviderFile(const QUrl &file)
 void AtticaHelper::defaultProvidersLoaded()
 {
     QStringList providers;
-    foreach (const Attica::Provider &p, providerManager.providers()) {
+    const auto lst = providerManager.providers();
+    for (const Attica::Provider &p : lst) {
         if (p.isEnabled()) {
             providers.append(p.name());
         }
@@ -61,7 +63,8 @@ void AtticaHelper::defaultProvidersLoaded()
 
 void AtticaHelper::setCurrentProvider(const QString &provider)
 {
-    foreach (const Attica::Provider &p, providerManager.providers()) {
+    const auto lst = providerManager.providers();
+    for (const Attica::Provider &p : lst) {
         if (p.name() == provider) {
             currentProvider = p;
             break;
@@ -114,15 +117,15 @@ void AtticaHelper::loadCategories(const QStringList &configuredCategories)
 void AtticaHelper::categoriesLoaded(Attica::BaseJob *baseJob)
 {
     Attica::ListJob<Attica::Category> *listJob = static_cast<Attica::ListJob<Attica::Category>*>(baseJob);
-    Attica::Category::List newCategories = listJob->itemList();
+    const Attica::Category::List newCategories = listJob->itemList();
 
     if (m_configuredCategories.isEmpty()) {
         qWarning() << "No category was set in knsrc file. Adding all categories.";
-        Q_FOREACH (const Attica::Category &category, newCategories) {
+        for (const Attica::Category &category : newCategories) {
             m_validCategories.append(category);
         }
     } else {
-        Q_FOREACH (const Attica::Category &category, newCategories) {
+        for (const Attica::Category &category : newCategories) {
             if (m_configuredCategories.contains(category.name())) {
                 m_validCategories.append(category);
             }

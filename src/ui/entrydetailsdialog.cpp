@@ -221,7 +221,8 @@ void EntryDetails::updateButtons()
     }
     if (ui->installButton->isVisible() && m_entry.downloadLinkCount() > 1) {
         QMenu *installMenu = new QMenu(ui->installButton);
-        foreach (KNSCore::EntryInternal::DownloadLinkInformation info, m_entry.downloadLinkInformationList()) {
+        const auto lst = m_entry.downloadLinkInformationList();
+        for (const KNSCore::EntryInternal::DownloadLinkInformation &info : lst) {
             QString text = info.name;
             if (!info.distributionType.trimmed().isEmpty()) {
                 text + QStringLiteral(" (") + info.distributionType.trimmed() + QLatin1Char(')');

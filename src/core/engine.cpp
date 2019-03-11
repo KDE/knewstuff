@@ -290,7 +290,7 @@ void Engine::providerInitialized(Provider *p)
     p->setCachedEntries(m_cache->registryForProvider(p->id()));
     updateStatus();
 
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         if (!p->isInitialized()) {
             return;
         }
@@ -322,7 +322,7 @@ void Engine::reloadEntries()
     m_currentRequest.page = 0;
     m_numDataJobs = 0;
 
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         if (p->isInitialized()) {
             if (m_currentRequest.filter == Provider::Installed) {
                 // when asking for installed entries, never use the cache
@@ -412,7 +412,7 @@ void Engine::setSearchTerm(const QString &searchString)
 void Engine::setTagFilter(const QStringList &filter)
 {
     d->tagFilter = filter;
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         p->setTagFilter(d->tagFilter);
     }
 }
@@ -425,7 +425,7 @@ QStringList Engine::tagFilter() const
 void KNSCore::Engine::addTagFilter(const QString &filter)
 {
     d->tagFilter << filter;
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         p->setTagFilter(d->tagFilter);
     }
 }
@@ -433,7 +433,7 @@ void KNSCore::Engine::addTagFilter(const QString &filter)
 void Engine::setDownloadTagFilter(const QStringList &filter)
 {
     d->downloadTagFilter = filter;
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         p->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
@@ -446,7 +446,7 @@ QStringList Engine::downloadTagFilter() const
 void Engine::addDownloadTagFilter(const QString &filter)
 {
     d->downloadTagFilter << filter;
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         p->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
@@ -477,7 +477,7 @@ void Engine::requestData(int page, int pageSize)
 
 void Engine::doRequest()
 {
-    foreach (const QSharedPointer<KNSCore::Provider> &p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         if (p->isInitialized()) {
             p->loadEntries(m_currentRequest);
             ++m_numDataJobs;
@@ -530,11 +530,11 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 
 void Engine::uninstall(KNSCore::EntryInternal entry)
 {
-    KNSCore::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
+    const KNSCore::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
     //we have to use the cached entry here, not the entry from the provider
     //since that does not contain the list of installed files
     KNSCore::EntryInternal actualEntryForUninstall;
-    foreach (const KNSCore::EntryInternal &eInt, list) {
+    for (const KNSCore::EntryInternal &eInt : list) {
         if (eInt.uniqueId() == entry.uniqueId()) {
             actualEntryForUninstall = eInt;
             break;
@@ -651,7 +651,7 @@ void Engine::updateStatus()
 
 void Engine::checkForUpdates()
 {
-    foreach (QSharedPointer<Provider> p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Updates);
         p->loadEntries(request);
     }
@@ -659,7 +659,7 @@ void Engine::checkForUpdates()
 
 void KNSCore::Engine::checkForInstalled()
 {
-    foreach (QSharedPointer<Provider> p, m_providers) {
+    for (const QSharedPointer<KNSCore::Provider> &p : qAsConst(m_providers)) {
         Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Installed);
         request.page = 0;
         request.pageSize = m_pageSize;

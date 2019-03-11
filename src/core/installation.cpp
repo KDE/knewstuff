@@ -592,7 +592,8 @@ void Installation::uninstall(EntryInternal entry)
     entry.setStatus(KNS3::Entry::Deleted);
 
     if (!uninstallCommand.isEmpty()) {
-        foreach (const QString &file, entry.installedFiles()) {
+        const auto lst = entry.installedFiles();
+        for (const QString &file : lst) {
             QFileInfo info(file);
             if (info.isFile()) {
                 QString fileArg(KShell::quoteArg(file));
@@ -610,7 +611,8 @@ void Installation::uninstall(EntryInternal entry)
         }
     }
 
-    foreach (const QString &file, entry.installedFiles()) {
+    const auto lst = entry.installedFiles();
+    for (const QString &file : lst) {
         if (file.endsWith(QLatin1Char('/'))) {
             QDir dir;
             bool worked = dir.rmdir(file);
@@ -653,7 +655,8 @@ void Installation::slotInstallationVerification(int result)
 QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)
 {
     QStringList files;
-    foreach (const QString &entry, dir->entries()) {
+    const auto lst = dir->entries();
+    for (const QString &entry : lst) {
         const auto currentEntry = dir->entry(entry);
 
         const QString childPath = path + QLatin1Char('/') + entry;

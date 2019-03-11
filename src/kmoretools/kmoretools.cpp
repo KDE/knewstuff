@@ -410,7 +410,7 @@ public:
 
     void deleteAndClearMenuItems()
     {
-        Q_FOREACH (auto item, menuItems)
+        for (auto item : qAsConst(menuItems))
         {
             //qDebug() << item;
             delete item;
@@ -491,7 +491,7 @@ public:
 
         // presort as in configuredStructure
         //
-        Q_FOREACH (const auto& item, configuredStructure.list) {
+        for (const auto& item : qAsConst(configuredStructure.list)) {
             auto foundItem = std::find_if(menuItemsSource.begin(), menuItemsSource.end(),
             [item](const KMoreToolsMenuItem* kMenuItem) {
                 return kMenuItem->id() == item.id;
@@ -509,7 +509,7 @@ public:
 
         // build MenuStructure from presorted list
         //
-        Q_FOREACH (auto item, menuItemsSortedAsConfigured) {
+        for (auto item : qAsConst(menuItemsSortedAsConfigured)) {
 
             const auto registeredService = item->registeredService();
 
@@ -560,7 +560,7 @@ public:
      */
     void createMoreMenu(const KmtMenuStructure &mstruct, QMenu *parent)
     {
-        Q_FOREACH (auto item, mstruct.moreItems) {
+        for (auto item : qAsConst(mstruct.moreItems)) {
             const auto action = item->action();
             action->setParent(parent);
             parent->addAction(action);
@@ -570,7 +570,7 @@ public:
             //qDebug() << "notInstalledItems not empty => build 'Not installed' section";
             parent->addSection(i18nc("@action:inmenu", "Not installed:"));
 
-            Q_FOREACH (auto registeredService, mstruct.notInstalledServices) {
+            for (auto registeredService : qAsConst(mstruct.notInstalledServices)) {
 
                 QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
                                                     registeredService->formatString(QStringLiteral("$Name")), parent, registeredService->icon(), registeredService->homepageUrl(), registeredService->appstreamId());
@@ -635,15 +635,15 @@ QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) c
                             : KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
     QString s;
     s += QLatin1String("|main|:");
-    Q_FOREACH (auto item, mstruct.mainItems) {
+    for (auto item : qAsConst(mstruct.mainItems)) {
         s += item->registeredService()->desktopEntryName() + QLatin1Char('.');
     }
     s += QLatin1String("|more|:");
-    Q_FOREACH (auto item, mstruct.moreItems) {
+    for (auto item : qAsConst(mstruct.moreItems)) {
         s += item->registeredService()->desktopEntryName() + QLatin1Char('.');
     }
     s += QLatin1String("|notinstalled|:");
-    Q_FOREACH (auto regService, mstruct.notInstalledServices) {
+    for (auto regService : qAsConst(mstruct.notInstalledServices)) {
         s += regService->desktopEntryName() + QLatin1Char('.');
     }
     return s;
@@ -660,7 +660,7 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
 {
     KmtMenuStructure mstruct = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig);
 
-    Q_FOREACH (auto item, mstruct.mainItems) {
+    for (auto item : qAsConst(mstruct.mainItems)) {
         const auto action = item->action();
         if (!action->parent()) { // if the action has no parent, set it to the menu to be filled
             action->setParent(menu);

@@ -363,7 +363,7 @@ void UploadDialogPrivate::_k_contentByCurrentUserLoaded(const Attica::Content::L
 {
     setIdle(i18n("Fetching your previously updated content finished."));
 
-    foreach (const Attica::Content &content, contentList) {
+    for (const Attica::Content &content : contentList) {
         QListWidgetItem *contentItem = new QListWidgetItem(content.name());
         contentItem->setData(Qt::UserRole, content.id());
         ui.userContentList->addItem(contentItem);
@@ -579,7 +579,7 @@ void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &load
         q->reject();
         return;
     }
-    foreach (const Attica::Category &c, categories) {
+    for (const Attica::Category &c : qAsConst(categories)) {
         ui.mCategoryCombo->addItem(c.name(), c.id());
     }
     atticaHelper->loadContentByCurrentUser();

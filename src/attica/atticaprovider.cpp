@@ -42,7 +42,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories)
     , mInitialized(false)
 {
     // init categories map with invalid categories
-    foreach (const QString &category, categories) {
+    for (const QString &category : categories) {
         mCategoryMap.insert(category, Attica::Category());
     }
 
@@ -56,7 +56,7 @@ AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringLi
     , mInitialized(false)
 {
     // init categories map with invalid categories
-    foreach (const QString &category, categories) {
+    for (const QString &category : categories) {
         mCategoryMap.insert(category, Attica::Category());
     }
     providerLoaded(provider);
@@ -122,10 +122,10 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
     qCDebug(KNEWSTUFFCORE) << "loading categories: " << mCategoryMap.keys();
 
     Attica::ListJob<Attica::Category> *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
-    Category::List categoryList = job->itemList();
+    const Category::List categoryList = job->itemList();
 
     QList<CategoryMetadata> categoryMetadataList;
-    foreach (const Category &category, categoryList) {
+    for (const Category &category : categoryList) {
         if (mCategoryMap.contains(category.name())) {
             qCDebug(KNEWSTUFFCORE) << "Adding category: " << category.name() << category.displayName();
             //If there is only the placeholder category, replace it
@@ -209,7 +209,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
         categoriesToSearch = mCategoryMap.values();
     } else {
         categoriesToSearch.reserve(request.categories.size());
-        foreach (const QString &categoryName, request.categories) {
+        for (const QString &categoryName : qAsConst(request.categories)) {
             categoriesToSearch.append(mCategoryMap.values(categoryName));
         }
     }
@@ -223,7 +223,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
 
 void AtticaProvider::checkForUpdates()
 {
-    foreach (const EntryInternal &e, mCachedEntries) {
+    for (const EntryInternal &e : qAsConst(mCachedEntries)) {
         ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         m_updateJobs.insert(job);
@@ -252,7 +252,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
     if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
         qCDebug(KNEWSTUFFCORE) << "check update finished.";
         QList<EntryInternal> updatable;
-        foreach (const EntryInternal &entry, mCachedEntries) {
+        for (const EntryInternal &entry : qAsConst(mCachedEntries)) {
             if (entry.status() == KNS3::Entry::Updateable) {
                 updatable.append(entry);
             }
@@ -395,7 +395,7 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
 EntryInternal::List AtticaProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    foreach (const EntryInternal &entry, mCachedEntries) {
+    for (const EntryInternal &entry : qAsConst(mCachedEntries)) {
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }
@@ -510,8 +510,8 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setTags(content.tags());
 
     entry.clearDownloadLinkInformation();
-    QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
-    foreach (const Attica::DownloadDescription &desc, descs) {
+    const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
+    for (const Attica::DownloadDescription &desc : descs) {
         EntryInternal::DownloadLinkInformation info;
         info.name = desc.name();
         info.priceAmount = desc.priceAmount();

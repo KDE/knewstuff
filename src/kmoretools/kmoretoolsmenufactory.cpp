@@ -234,7 +234,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
 
         menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
 
-        Q_FOREACH(auto kmtService, kmtServiceList) {
+        for (auto kmtService : qAsConst(kmtServiceList)) {
             // Check the pointer just in case a null pointer got in somewhere
             if (!kmtService) continue;
             QUrl argUrl = url;

@@ -88,7 +88,8 @@ void KMoreToolsTest2::testInstalledAppSetInitialItemText()
 
 bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
 {
-    Q_FOREACH(auto a, menu->actions())
+    const auto lstActions = menu->actions();
+    for (auto a : lstActions)
     {
         if (a->text() == text) {
             return true;
@@ -100,7 +101,8 @@ bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
 
 bool menuAtLeastNoActionWithText(const QMenu* menu, const QString& text)
 {
-    Q_FOREACH(auto a, menu->actions())
+    const auto lstActions = menu->actions();
+    for (auto a : lstActions)
     {
         if (a->text() == text) {
             qDebug() << a->text();

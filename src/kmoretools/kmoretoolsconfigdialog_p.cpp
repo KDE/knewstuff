@@ -121,7 +121,7 @@ public:
         QListWidgetItem* mainSelItem = nullptr;
         QListWidgetItem* moreSelItem = nullptr;
 
-        foreach (auto item, currentStructure.list) {
+        for (auto item : qAsConst(currentStructure.list)) {
             QIcon icon = item.icon;
             if (icon.isNull()) {
                 QPixmap pix(16, 16); // TODO: should same size as other icons in the listview

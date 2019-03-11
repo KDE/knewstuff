@@ -43,7 +43,8 @@ int main(int argc, char **argv)
         QString configfile = QLatin1String(argv[1]);
         QPointer<KNS3::DownloadDialog> dialog = new KNS3::DownloadDialog(configfile);
         dialog->exec();
-        foreach (const KNS3::Entry& e, dialog->changedEntries()) {
+        const auto lst = dialog->changedEntries();
+        for (const KNS3::Entry& e : lst) {
             qCDebug(KNEWSTUFF) << "Changed Entry: " << e.name();
         }
         delete dialog;

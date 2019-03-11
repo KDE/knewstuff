@@ -236,9 +236,9 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
             case DownloadLinksRole:
                 {
                     // This would be good to cache... but it also needs marking as dirty, somehow...
-                    QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
+                    const QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
                     QObjectList list;
-                    Q_FOREACH(const KNSCore::EntryInternal::DownloadLinkInformation& link, dllinks)
+                    for(const KNSCore::EntryInternal::DownloadLinkInformation& link : dllinks)
                     {
                         DownloadLinkInfo* info = new DownloadLinkInfo();
                         info->setData(link);

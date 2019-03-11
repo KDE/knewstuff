@@ -71,7 +71,8 @@ void KMoreToolsTestInteractive::cleanup()
 
 bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
 {
-    Q_FOREACH(auto a, menu->actions())
+    const auto lstActions = menu->actions();
+    for (auto a : lstActions)
     {
         if (a->text() == text) {
             return true;
@@ -183,7 +184,7 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
     urlLineEdit->setText(_("file:///etc/bash.bashrc"));
     auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
 
-    auto groupingNamesList = {
+    const auto groupingNamesList = {
         _("disk-usage"),
         _("disk-partitions"),
         _("files-find"),
@@ -204,7 +205,7 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
 
     auto groupingNamesMenu = new QMenu(dlg);
     QMenu* moreToolsMenu = nullptr;
-    Q_FOREACH(auto groupingName, groupingNamesList) {
+    for (auto groupingName : groupingNamesList) {
         auto action = new QAction(groupingName, groupingNamesMenu);
         action->setData(groupingName);
         groupingNamesMenu->addAction(action);
