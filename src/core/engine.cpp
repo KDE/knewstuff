@@ -63,6 +63,7 @@ public:
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
     QStringList tagFilter;
     QStringList downloadTagFilter;
+    bool configLocationFallback = true;
 };
 
 Engine::Engine(QObject *parent)
@@ -104,20 +105,39 @@ bool Engine::init(const QString &configfile)
 
     emit signalBusy(i18n("Initializing"));
 
-    KConfig conf(configfile);
-    if (conf.accessMode() == KConfig::NoAccess) {
+    QScopedPointer<KConfig> conf;
+    /// TODO KF6: This is fallback logic for an old location for the knsrc files. This should be considered deprecated in KF5,
+    /// and it would make a lot of sense to disable it entirely for KF6
+    bool isRelativeConfig = QFileInfo(configfile).isRelative();
+    QString actualConfig;
+    if (isRelativeConfig) {
+        // Don't do the expensive search unless the config is relative
+        actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("knsrcfiles/%1").arg(configfile));
+    }
+    if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
+        conf.reset(new KConfig(configfile));
+        qDebug() << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
+    } else if (isRelativeConfig) {
+        qDebug() << "Using the NEW location for knsrc file" << configfile;
+        conf.reset(new KConfig(QString::fromLatin1("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
+    } else {
+        qDebug() << "Absolute configuration path for" << configfile << ", this could be literally anywhere and we just do as we're told...";
+        conf.reset(new KConfig(configfile));
+    }
+
+    if (conf->accessMode() == KConfig::NoAccess) {
         emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
         return false;
     }
 
     KConfigGroup group;
-    if (conf.hasGroup("KNewStuff3")) {
+    if (conf->hasGroup("KNewStuff3")) {
         qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff3 config: " << configfile;
-        group = conf.group("KNewStuff3");
-    } else if (conf.hasGroup("KNewStuff2")) {
+        group = conf->group("KNewStuff3");
+    } else if (conf->hasGroup("KNewStuff2")) {
         qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff2 config: " << configfile;
-        group = conf.group("KNewStuff2");
+        group = conf->group("KNewStuff2");
     } else {
         emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
@@ -723,4 +743,22 @@ bool KNSCore::Engine::hasAdoptionCommand() const
 void KNSCore::Engine::setPageSize(int pageSize)
 {
     m_pageSize = pageSize;
+}
+
+QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations)
+{
+    QStringList ret;
+    if(includeFallbackLocations) {
+        ret += QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
+    }
+    QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    for( const QString& path : paths) {
+        ret << QString::fromLocal8Bit("%1/knsrcfiles").arg(path);
+    }
+    return ret;
+}
+
+void KNSCore::Engine::setConfigLocationFallback(bool enableFallback)
+{
+    d->configLocationFallback = enableFallback;
 }

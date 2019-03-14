@@ -55,6 +55,11 @@ by adding the following in your CMakeLists.txt sometime after the find statement
         PURPOSE "Required to Get Hot New Stuff for my applicaton"
         TYPE RUNTIME)
 
+When installing your knsrc configuration file, you should install it into the location
+where KNewStuffCore expects it to be found. Do this by using the CMake variable
+KDE_INSTALL_KNSRCDIR as provided by the KNewStuffCore module. You can also handle this
+yourself, which means you will need to feed Engine::init() the full path to the knsrc file.
+
 ## Which module should you use?
 
 When building applications designed to fit in with other classic, widget based

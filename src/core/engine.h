@@ -400,6 +400,27 @@ public:
      * @see requestData(int,int)
      */
     void setPageSize(int pageSize);
+
+    /**
+     * Get a list of all the locations which will be used when searching for knsrc
+     * files, in the order in which the search will occur.
+     *
+     * @param includeFallbackLocations Whether or not the deprecated search locations are included
+     * @return The search list for knsrc files
+     * @since 5.57
+     */
+    static QStringList configSearchLocations(bool includeFallbackLocations = false);
+    /**
+     * Sets whether or not the config file location discovery fallback should be active.
+     * If enabled (default), if the config file is not found in the knsrcfiles location,
+     * then the engine will also look in the systemwide config location (usually /etc/xdg
+     * on linux). If disabled, this fallback location will not be searched.
+     *
+     * @param enableFallback Whether or not the fallback discovery should be enabled
+     * @since 5.57
+     */
+    void setConfigLocationFallback(bool enableFallback);
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
