@@ -116,12 +116,10 @@ bool Engine::init(const QString &configfile)
     }
     if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
         conf.reset(new KConfig(configfile));
-        qDebug() << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
+        qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
     } else if (isRelativeConfig) {
-        qDebug() << "Using the NEW location for knsrc file" << configfile;
         conf.reset(new KConfig(QString::fromLatin1("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
     } else {
-        qDebug() << "Absolute configuration path for" << configfile << ", this could be literally anywhere and we just do as we're told...";
         conf.reset(new KConfig(configfile));
     }
 
