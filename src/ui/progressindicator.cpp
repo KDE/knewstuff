@@ -24,6 +24,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QLayout>
+#include <QVariant>
 
 #include "kjob.h"
 
@@ -59,8 +60,11 @@ void ProgressIndicator::busy(const QString &message)
     busyWidget->setSequence(m_busyPixmap);
 }
 
-void KNS3::ProgressIndicator::error(const KNSCore::ErrorCode& /*errorCode*/, const QString& message, const QVariant& /*metadata*/)
+void KNS3::ProgressIndicator::error(const KNSCore::ErrorCode& errorCode, const QString& message, const QVariant& metadata)
 {
+    if(errorCode == KNSCore::OcsError && metadata.value<int>() == 405) {
+        return;
+    }
     m_statusLabel->setText(message);
     busyWidget->setVisible(true);
     busyWidget->setSequence(m_errorPixmap);

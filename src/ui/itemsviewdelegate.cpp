@@ -280,8 +280,11 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     if (rating) {
         if (entry.rating() > 0) {
             rating->setToolTip(i18n("Rating: %1%", entry.rating()));
+            // Don't attempt to send a rating to the server if we're just updating the UI
+            rating->blockSignals(true);
             // assume all entries come with rating 0..100 but most are in the range 20 - 80, so 20 is 0 stars, 80 is 5 stars
             rating->setRating((entry.rating() - 20) * 10 / 60);
+            rating->blockSignals(false);
             // put the rating label below the install button
             rating->move(right - installButton->width() - margin, option.rect.height() / 2 + installButton->height() / 2);
             rating->resize(m_buttonSize);
