@@ -464,6 +464,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setStatus(KNS3::Entry::Downloadable);
     entry.setVersion(content.version());
     entry.setReleaseDate(content.updated().date());
+    entry.setCategory(content.attribute(QStringLiteral("typeid")));
 
     int index = mCachedEntries.indexOf(entry);
     if (index >= 0) {
