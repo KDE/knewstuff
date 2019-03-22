@@ -63,7 +63,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("disk"),                               0, "https://en.opensuse.org/YaST_Disk_Controller", QString());
     ADD_ENTRY(QStringLiteral("fontinst"),                           0, "https://docs.kde.org/trunk5/en/kde-workspace/kcontrol/fontinst/", QString()); // good for previewing many fonts at once
     ADD_ENTRY(QStringLiteral("fontmatrix"),                         0, "https://github.com/fontmatrix/fontmatrix", QString());
-    ADD_ENTRY(QStringLiteral("fsearch"),                            0, "http://www.fsearch.org/", QString());
+    ADD_ENTRY(QStringLiteral("fsearch"),                            0, "https://github.com/cboxdoerfer/fsearch", QString());
     ADD_ENTRY(QStringLiteral("giggle"),                             1, "https://wiki.gnome.org/Apps/giggle/", QStringLiteral("giggle.desktop")); // good for searching in history
     ADD_ENTRY(QStringLiteral("git-cola-folder-handler"),            1, "https://git-cola.github.io", QStringLiteral("git-cola.desktop"));
     ADD_ENTRY(QStringLiteral("git-cola-view-history.kmt-edition"),  1, "https://git-cola.github.io", QStringLiteral("git-cola.desktop"));
