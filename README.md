@@ -76,4 +76,4 @@ the functionality directly through the classes in the KNSCore namespace.
 
 Related information such as creation of <b>*.knsrc</b> files can be found on
 techbase in the [Get Hot New Stuff
-tutorials](http://techbase.kde.org/Development/Tutorials#Get_Hot_New_Stuff).
+tutorials](https://techbase.kde.org/Development/Tutorials#Get_Hot_New_Stuff).

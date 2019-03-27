@@ -59,7 +59,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("angrysearch"),                        0, "https://github.com/DoTheEvo/ANGRYsearch", QString());
     ADD_ENTRY(QStringLiteral("com.uploadedlobster.peek"),           0, "https://github.com/phw/peek", QStringLiteral("com.uploadedlobster.peek.desktop")); // easy to use screen recorder, creates gif
     ADD_ENTRY(QStringLiteral("catfish"),                            1, "http://www.twotoasts.de/index.php/catfish/", QStringLiteral("catfish"));
-    ADD_ENTRY(QStringLiteral("ding"),                               0, "https://www-user.tu-chemnitz.de/~fri/ding/", QString()); // Offline dict, Online: http://dict.tu-chemnitz.de/dings.cgi
+    ADD_ENTRY(QStringLiteral("ding"),                               0, "https://www-user.tu-chemnitz.de/~fri/ding/", QString()); // Offline dict, Online: https://dict.tu-chemnitz.de/dings.cgi
     ADD_ENTRY(QStringLiteral("disk"),                               0, "https://en.opensuse.org/YaST_Disk_Controller", QString());
     ADD_ENTRY(QStringLiteral("fontinst"),                           0, "https://docs.kde.org/trunk5/en/kde-workspace/kcontrol/fontinst/", QString()); // good for previewing many fonts at once
     ADD_ENTRY(QStringLiteral("fontmatrix"),                         0, "https://github.com/fontmatrix/fontmatrix", QString());
@@ -67,15 +67,15 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("giggle"),                             1, "https://wiki.gnome.org/Apps/giggle/", QStringLiteral("giggle.desktop")); // good for searching in history
     ADD_ENTRY(QStringLiteral("git-cola-folder-handler"),            1, "https://git-cola.github.io", QStringLiteral("git-cola.desktop"));
     ADD_ENTRY(QStringLiteral("git-cola-view-history.kmt-edition"),  1, "https://git-cola.github.io", QStringLiteral("git-cola.desktop"));
-    ADD_ENTRY(QStringLiteral("gitk.kmt-edition"),                   1, "http://git-scm.com/docs/gitk", QString());
-    ADD_ENTRY(QStringLiteral("qgit.kmt-edition"),                   1, "http://libre.tibirna.org/projects/qgit", QString());
+    ADD_ENTRY(QStringLiteral("gitk.kmt-edition"),                   1, "https://git-scm.com/docs/gitk", QString());
+    ADD_ENTRY(QStringLiteral("qgit.kmt-edition"),                   1, "https://github.com/tibirna/qgit", QString());
     ADD_ENTRY(QStringLiteral("gitg"),                               1, "https://wiki.gnome.org/action/show/Apps/Gitg?action=show&redirect=Gitg", QStringLiteral("gitg.desktop"));
     ADD_ENTRY(QStringLiteral("gnome-search-tool"),                  0, "https://help.gnome.org/users/gnome-search-tool/", QStringLiteral("gnome-search-tool.desktop")); // has good filtering options
     ADD_ENTRY(QStringLiteral("gucharmap"),                          0, "https://wiki.gnome.org/action/show/Apps/Gucharmap", QStringLiteral("gucharmap.desktop"));
-    ADD_ENTRY(QStringLiteral("gparted"),                            0, "http://gparted.org", QStringLiteral("gparted.desktop"));
-    ADD_ENTRY(QStringLiteral("htop"),                               0, "http://hisham.hm/htop/", QStringLiteral("htop.desktop"));
-    ADD_ENTRY(QStringLiteral("hotshots"),                           1, "http://sourceforge.net/projects/hotshots/", QString());
-    ADD_ENTRY(QStringLiteral("kaption"),                            0, "http://kde-apps.org/content/show.php/?content=139302", QString());
+    ADD_ENTRY(QStringLiteral("gparted"),                            0, "https://gparted.org", QStringLiteral("gparted.desktop"));
+    ADD_ENTRY(QStringLiteral("htop"),                               0, "https://hisham.hm/htop/", QStringLiteral("htop.desktop"));
+    ADD_ENTRY(QStringLiteral("hotshots"),                           1, "https://sourceforge.net/projects/hotshots/", QString());
+    ADD_ENTRY(QStringLiteral("kaption"),                            0, "https://www.linux-apps.com/content/show.php/?content=139302", QString());
     ADD_ENTRY(QStringLiteral("kding"),                              0, "", QString()); // Offline dict; unmaintained?
     ADD_ENTRY(QStringLiteral("org.kde.kmousetool"),                 0, "https://www.kde.org/applications/utilities/kmousetool/", QStringLiteral("org.kde.kmousetool"));
     ADD_ENTRY(QStringLiteral("org.gnome.clocks"),                   0, "https://wiki.gnome.org/Apps/Clocks", QStringLiteral("org.gnome.clocks.desktop"));
@@ -84,15 +84,14 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("org.kde.kdf"),                        0, "https://www.kde.org/applications/system/kdiskfree", QStringLiteral("org.kde.kdf"));
     ADD_ENTRY(QStringLiteral("org.kde.kfind"),                      1, "https://www.kde.org/applications/utilities/kfind/", QStringLiteral("org.kde.kfind.desktop")); // has good filtering options
     ADD_ENTRY(QStringLiteral("org.kde.partitionmanager"),           0, "https://www.kde.org/applications/system/kdepartitionmanager/", QStringLiteral("org.kde.partitionmanager.desktop"));
-    ADD_ENTRY(QStringLiteral("org.kde.plasma.cuttlefish.kmt-edition"), 0, "http://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/", QStringLiteral("org.kde.plasma.cuttlefish"));
+    ADD_ENTRY(QStringLiteral("org.kde.plasma.cuttlefish.kmt-edition"), 0, "https://vizzzion.org/blog/2015/02/say-hi-to-cuttlefish/", QStringLiteral("org.kde.plasma.cuttlefish"));
     ADD_ENTRY(QStringLiteral("org.kde.ksysguard"),                  0, "https://userbase.kde.org/KSysGuard", QStringLiteral("org.kde.ksysguard"));
     ADD_ENTRY(QStringLiteral("org.kde.ksystemlog"),                 0, "https://www.kde.org/applications/system/ksystemlog/", QStringLiteral("org.kde.ksystemlog"));
     ADD_ENTRY(QStringLiteral("org.kde.ktimer"),                     0, "https://www.kde.org/applications/utilities/ktimer/", QStringLiteral("org.kde.ktimer"));
     ADD_ENTRY(QStringLiteral("org.kde.spectacle"),                  0, "https://www.kde.org/applications/graphics/spectacle", QStringLiteral("org.kde.spectacle.desktop"));
-    ADD_ENTRY(QStringLiteral("simplescreenrecorder"),               0, "http://www.maartenbaert.be/simplescreenrecorder/", QStringLiteral("simplescreenrecorder.desktop"));
-    ADD_ENTRY(QStringLiteral("shutter"),                            0, "http://shutter-project.org", QStringLiteral("org.shutterproject.shutter")); // good for edit screenshot after capture
+    ADD_ENTRY(QStringLiteral("simplescreenrecorder"),               0, "https://www.maartenbaert.be/simplescreenrecorder/", QStringLiteral("simplescreenrecorder.desktop"));
     ADD_ENTRY(QStringLiteral("vokoscreen"),                         0, "https://github.com/vkohaupt/vokoscreen", QString()); // feature-rich screen recorder
-    ADD_ENTRY(QStringLiteral("xfce4-taskmanager"),                  0, "http://goodies.xfce.org/projects/applications/xfce4-taskmanager", QStringLiteral("xfce4-taskmanager.desktop"));
+    ADD_ENTRY(QStringLiteral("xfce4-taskmanager"),                  0, "https://goodies.xfce.org/projects/applications/xfce4-taskmanager", QStringLiteral("xfce4-taskmanager.desktop"));
     //
     // ...definitions end
     //

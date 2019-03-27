@@ -387,7 +387,7 @@
               <item row="1" column="0">
                <widget class="QLabel" name="homepageLabel">
                 <property name="text">
-                 <string>&lt;a href=&quot;http://opendesktop.org&quot;&gt;Homepage&lt;/a&gt;</string>
+                 <string>&lt;a href=&quot;https://opendesktop.org&quot;&gt;Homepage&lt;/a&gt;</string>
                 </property>
                 <property name="openExternalLinks">
                  <bool>true</bool>
