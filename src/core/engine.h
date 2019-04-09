@@ -377,7 +377,9 @@ public:
      * switch to a wallpaper or icon theme which was installed with KNS.
      *
      * The following is how this might look in a knsrc file. The example shows how
-     * an external tool is called on the installed file represented by %d.
+     * an external tool is called on the directory containing the installed file
+     * represented by %d. If you wish to directly point to the installed file, the
+     * substitution variable is %f.
      * <pre>
        AdoptionCommand=/usr/lib64/libexec/plasma-changeicons %d
      * </pre>
