@@ -30,9 +30,6 @@ ImagePreviewWidget::ImagePreviewWidget(QWidget *parent) :
     QWidget(parent)
 {
     //installEventFilter(this);
-
-    const QString framefile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kf5/knewstuff/pics/thumb_frame.png"));
-    m_frameImage = QPixmap(framefile);
 }
 
 void ImagePreviewWidget::setImage(const QImage &preview)
@@ -80,7 +77,6 @@ void ImagePreviewWidget::paintEvent(QPaintEvent * /*event*/)
     point.setY(contentsRect().top() + ((height - m_scaledImage.height()) / 2));
 
     QPoint framePoint(point.x() - 5, point.y() - 5);
-    painter.drawPixmap(framePoint, m_frameImage.scaled(m_scaledImage.width() + 10, m_scaledImage.height() + 10));
     painter.drawImage(point, m_scaledImage);
 }
 

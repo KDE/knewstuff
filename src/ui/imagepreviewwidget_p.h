@@ -45,7 +45,6 @@ protected:
 private:
     QImage m_image;
     QImage m_scaledImage;
-    QPixmap m_frameImage;
 };
 
 }
