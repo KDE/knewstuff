@@ -1,0 +1,1039 @@
+# translation of kdelibs4.po to Qırımtatarca (Qırım Türkçesi)
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+#
+# Reşat SABIQ <tilde.birlik@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 02:57+0200\n"
+"PO-Revision-Date: 2009-02-12 23:29-0600\n"
+"Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
+"Language-Team: Qırımtatarca (Qırım Türkçesi)\n"
+"Language: crh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: attica/atticaprovider.cpp:166
+#, fuzzy, kde-format
+#| msgid "Pages"
+msgid "All categories are missing"
+msgstr "Saife"
+
+#: attica/atticaprovider.cpp:362
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:376
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:418
+#, fuzzy, kde-format
+#| msgid "No text was replaced."
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "İç bir metin deñiştirilmedi."
+
+#: attica/atticaprovider.cpp:433
+#, kde-format
+msgid "You are now a fan."
+msgstr ""
+
+#: attica/atticaprovider.cpp:444
+#, kde-format
+msgid "Network error %1: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:448
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:450
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+
+#: attica/atticaprovider.cpp:452
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:52
+#, fuzzy, kde-format
+#| msgid "Download New Stuff"
+msgid "Download New Stuff..."
+msgstr "Yañı Şeylerni Endir"
+
+#: core/engine.cpp:106
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Initializing"
+msgstr "Qur"
+
+#: core/engine.cpp:127
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "Ayarlama dosyeleri"
+
+#: core/engine.cpp:140
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Ayarlama dosyeleri"
+
+#: core/engine.cpp:204
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "Çerçive Malümatını Köster"
+
+#: core/engine.cpp:233
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/engine.cpp:256
+#, kde-format
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:260 core/engine.cpp:660
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "Aplet Yüklene"
+
+#: core/engine.cpp:297
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:302
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr ""
+
+#: core/engine.cpp:620
+#, kde-format
+msgid "Re: %1"
+msgstr "Cvp: %1"
+
+#: core/engine.cpp:662
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Ög-baquv Yüklene"
+msgstr[1] "Ög-baquv Yüklene"
+
+#: core/engine.cpp:664 ui/itemsgridviewdelegate.cpp:343
+#: ui/itemsviewdelegate.cpp:134
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installing"
+msgstr "Qur"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr ""
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:242
+#, fuzzy, kde-format
+#| msgid "Could not create temporary file."
+msgid "Possibly bad download link"
+msgstr "Muvaqqat dosye icat etilamadı."
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:307
+#, fuzzy, kde-format
+#| msgid "Could not install %1"
+msgid "Could not install \"%1\": file not found."
+msgstr "'%1'dosyesi qurulamadı"
+
+#: core/installation.cpp:539
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgid "Overwrite existing file?"
+msgstr "Dosye Üstüne Yazılsınmı?"
+
+#: core/installation.cpp:540
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "Download File"
+msgstr "Endir"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt><i>%2&lt;%3&gt;</i><br /> kimligine ait olğan <b>0x%1</b> anahtarı içün "
+"<br />sır-sözni kirsetiñiz:</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "İmzalav içün qullanılacaq anahtar:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "İmzalav Anahtarını Saylañız"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:223
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Yañı Meraqlı Şeylerni Endir"
+
+#: downloaddialog.cpp:101
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 Eklenti Qurucısı"
+
+#: downloadwidget.cpp:132
+#, fuzzy, kde-format
+#| msgid "Timeout. Check Internet connection!"
+msgid "Timeout. Check Internet connection."
+msgstr "Zaman aşımı. İnternet alâqañıznı teşkeriñiz!"
+
+#: downloadwidget.cpp:195
+#, kde-format
+msgid "Server: %1"
+msgstr "Server: %1"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Teminatçı: %1"
+
+#: downloadwidget.cpp:197
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Sürüm: %1"
+
+#: downloadwidget.cpp:201
+#, kde-format
+msgid "Provider information"
+msgstr "Teminatçı malümatı"
+
+#: downloadwidget.cpp:212
+#, kde-format
+msgid "Could not install %1"
+msgstr "'%1'dosyesi qurulamadı"
+
+#: downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Yañı Meraqlı Şeylerni Endir!"
+
+#: downloadwidget.cpp:268
+#, kde-format
+msgid "Icons view mode"
+msgstr ""
+
+#: downloadwidget.cpp:270
+#, kde-format
+msgid "Details view mode"
+msgstr ""
+
+#: downloadwidget.cpp:285
+#, fuzzy, kde-format
+#| msgid "Provider: %1"
+msgid "All Providers"
+msgstr "Teminatçı: %1"
+
+#: downloadwidget.cpp:292
+#, fuzzy, kde-format
+#| msgid "Pages"
+msgid "All Categories"
+msgstr "Saife"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, fuzzy, kde-format
+#| msgid "Provider: %1"
+msgid "Provider:"
+msgstr "Teminatçı: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, fuzzy, kde-format
+#| msgid "Character:"
+msgid "Category:"
+msgstr "Remiz:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgid "Most downloads"
+msgstr "Eñ Çoq Endirilgen"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New"
+msgid "Newest"
+msgstr "Yañı"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgid "Rating"
+msgstr "Derecelendirme:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installed"
+msgstr "Qur"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, fuzzy, kde-format
+#| msgid "&Order by:"
+msgid "Order by:"
+msgstr "Buña köre &sırala:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, fuzzy, kde-format
+#| msgid "S&earch:"
+msgid "Search:"
+msgstr "&Qıdır"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "Bir qıdıruv ibaresini mında kirsetiñiz"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Müellif:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:338
+#: ui/itemsviewdelegate.cpp:129 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Yañart"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:125
+#, kde-format
+msgid "Uninstall"
+msgstr "Ğayrı Qur"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:353
+#: ui/itemsgridviewdelegate.cpp:363 ui/itemsviewdelegate.cpp:144
+#: ui/itemsviewdelegate.cpp:154
+#, kde-format
+msgid "Install"
+msgstr "Qur"
+
+#: kmoretools/kmoretools.cpp:571
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Qur"
+
+#: kmoretools/kmoretools.cpp:671
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Sayla..."
+
+#: kmoretools/kmoretools.cpp:709
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "&Ayarla..."
+
+#: kmoretools/kmoretools_p.h:386
+#, fuzzy, kde-format
+#| msgctxt "keyboard-key-name"
+#| msgid "Home"
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Ev"
+
+#: kmoretools/kmoretools_p.h:397
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Qur"
+
+#: kmoretools/kmoretools_p.h:404
+#, fuzzy, kde-format
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Eşleşken unsur mevcut degil.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Ayarla"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "%1 &Ayarlaması..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:186
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "Ana pencere"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "&Aşağı Taşı"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "&Yuqarı Taşı"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "Daa Çoq Amel"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Sıfırla"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "Daa Çoq Amel"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "Sayla..."
+
+#: qtquick/qml/NewStuffItem.qml:35
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Qur"
+
+#: qtquick/qml/NewStuffItem.qml:42
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Yañart"
+
+#: qtquick/qml/NewStuffItem.qml:49
+#, fuzzy, kde-format
+#| msgid "Uninstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Ğayrı Qur"
+
+#: ui/entrydetailsdialog.cpp:91
+#, fuzzy, kde-format
+#| msgid "Suggestions"
+msgid "Details for %1"
+msgstr "Telqinler"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, fuzzy, kde-format
+#| msgid "Changelog"
+msgid "Changelog:"
+msgstr "Deñişme kütügi"
+
+#: ui/entrydetailsdialog.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "keyboard-key-name"
+#| msgid "Home"
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Ev"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy, kde-format
+#| msgid "HTML documentation"
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "HTML vesiqalandırması"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, fuzzy, kde-format
+#| msgid "Open in New &Window"
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Yañı &Pencerede Aç"
+
+#: ui/itemsgridviewdelegate.cpp:102 ui/itemsviewdelegate.cpp:282
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgid "Rating: %1%"
+msgstr "Derecelendirme:"
+
+#: ui/itemsgridviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "<br />Provider: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Teminatçı: %1"
+
+#: ui/itemsgridviewdelegate.cpp:160 ui/itemsgridviewdelegate.cpp:162
+#: ui/itemsgridviewdelegate.cpp:164 ui/itemsviewdelegate.cpp:242
+#: ui/itemsviewdelegate.cpp:244 ui/itemsviewdelegate.cpp:246
+#, fuzzy, kde-format
+#| msgctxt "@interface/rich"
+#| msgid "<i>%1</i>"
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:187 ui/itemsviewdelegate.cpp:260
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ui/itemsgridviewdelegate.cpp:190 ui/itemsviewdelegate.cpp:263
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Endir"
+msgstr[1] "Endir"
+
+#: ui/itemsgridviewdelegate.cpp:256 ui/itemsviewdelegate.cpp:336
+#, kde-format
+msgid "Loading Preview"
+msgstr "Ög-baquv Yüklene"
+
+#: ui/itemsgridviewdelegate.cpp:283 ui/itemsviewdelegate.cpp:187
+#, kde-format
+msgid "Details"
+msgstr "Tafsilât"
+
+#: ui/itemsgridviewdelegate.cpp:348 ui/itemsviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "Update"
+msgid "Updating"
+msgstr "Yañart"
+
+#: ui/itemsgridviewdelegate.cpp:358 ui/itemsviewdelegate.cpp:149
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Install Again"
+msgstr "Qur"
+
+#: ui/itemsviewdelegate.cpp:175
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: ui/itemsviewdelegate.cpp:231
+#, fuzzy, kde-format
+#| msgid "Downloads: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "Endirmeler: %1"
+
+#: uploaddialog.cpp:66
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Nevbetteki"
+
+#: uploaddialog.cpp:71
+#, kde-format
+msgid "Finish"
+msgstr "Yekünle"
+
+#: uploaddialog.cpp:183
+#, fuzzy, kde-format
+#| msgid "Provider information"
+msgid "Fetching provider information..."
+msgstr "Teminatçı malümatı"
+
+#: uploaddialog.cpp:190
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:197
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr ""
+
+#: uploaddialog.cpp:272
+#, fuzzy, kde-format
+#| msgid "Provider information"
+msgid "Could not fetch provider information."
+msgstr "Teminatçı malümatı"
+
+#: uploaddialog.cpp:296
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:320
+#, fuzzy, kde-format
+#| msgid "Check Spelling..."
+msgid "Checking login..."
+msgstr "İmlâ Teşkerüvi..."
+
+#: uploaddialog.cpp:342
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Fetching your previously updated content..."
+msgstr "Ög-baquv Yüklene"
+
+#: uploaddialog.cpp:345
+#, fuzzy, kde-format
+#| msgid "Save Login Information"
+msgid "Could not verify login, please try again."
+msgstr "Oturım Açma Malümatını Saqla"
+
+#: uploaddialog.cpp:364
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:382
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:405 uploaddialog.cpp:845
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:451 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Yañı Meraqlı Şeylerni Paylaş"
+
+#: uploaddialog.cpp:474
+#, fuzzy, kde-format
+#| msgctxt "Program name followed by 'Add On Installer'"
+#| msgid "%1 Add-On Installer"
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 Eklenti Qurucısı"
+
+#: uploaddialog.cpp:494 uploaddialog.cpp:770
+#, fuzzy, kde-format
+#| msgid "File %1 not found."
+msgid "File not found: %1"
+msgstr "%1 dosyesi tapılamadı."
+
+#: uploaddialog.cpp:494 uploaddialog.cpp:621 uploaddialog.cpp:770
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "Upload Failed"
+msgstr "Endir"
+
+#: uploaddialog.cpp:574
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: uploaddialog.cpp:577
+#, kde-format
+msgid "Error"
+msgstr "Hata"
+
+#: uploaddialog.cpp:621
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr ""
+
+#: uploaddialog.cpp:670 uploaddialog.cpp:685 uploaddialog.cpp:699
+#, fuzzy, kde-format
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "Suretniñ Bölgesini Sayla"
+
+#: uploaddialog.cpp:714
+#, kde-format
+msgid "There was a network error."
+msgstr ""
+
+#: uploaddialog.cpp:714 uploaddialog.cpp:719
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "Uploading Failed"
+msgstr "Endir"
+
+#: uploaddialog.cpp:719
+#, fuzzy, kde-format
+#| msgid "Communication error"
+msgid "Authentication error."
+msgstr "Haberleşme hatası"
+
+#: uploaddialog.cpp:729
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "Upload failed: %1"
+msgstr "Endir"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Sır-söz:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Qullanıcı adı:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, fuzzy, kde-format
+#| msgid "Page loaded."
+msgid "File to upload:"
+msgstr "Saife yüklendi."
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, fuzzy, kde-format
+#| msgctxt "Reload KDE configuration messagebox"
+#| msgid "Reload"
+msgid "New Upload"
+msgstr "Kene Yükle"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Tasvir: "
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Sürüm:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Lisans:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, fuzzy, kde-format
+#| msgid "Please give some information about yourself."
+msgid "Please fill out the information about your upload in English."
+msgstr "Özüñiz aqqında biraz malümat beriñiz."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Başlıq:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy, kde-format
+#| msgid "Preview URL:"
+msgid "Preview Images"
+msgstr "Ög-baquv URL:"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy, kde-format
+#| msgid "Select Files..."
+msgid "Select Preview..."
+msgstr "Dosyelerni Sayla..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, fuzzy, kde-format
+#| msgid "Ne&ver for This Site"
+msgid "Set a price for this item"
+msgstr "Bu Sayt içün &Asla"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy, kde-format
+#| msgctxt "The source url of a job"
+#| msgid "Source:"
+msgid "Price"
+msgstr "Menba:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, fuzzy, kde-format
+#| msgctxt "The source url of a job"
+#| msgid "Source:"
+msgid "Price:"
+msgstr "Menba:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload content"
+msgstr "Ög-baquv Yüklene"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload first preview"
+msgstr "Ög-baquv Yüklene"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload second preview"
+msgstr "Ög-baquv Yüklene"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload third preview"
+msgstr "Ög-baquv Yüklene"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy, kde-format
+#| msgid "Start replace"
+msgid "Start Upload"
+msgstr "Deñiştirmeni başlat"

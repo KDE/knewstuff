@@ -1,0 +1,1051 @@
+# translation of kdelibs4.po to Macedonian
+#
+# Copyright (C) 2000,2002,2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Dimitar Indovski <dime@gord.com.mk>
+# Damjan Janevski <miopa@freemail.org.mk>
+# Dragan Sekulovski <d_sekulovski@yahoo.com>
+#
+# Maratonec , 2002.
+# Dragan Bocevski <d_bocevski@hotmail.com>, 2002.
+# Danko Ilik <danko@mindless.com>, 2002,2003.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2002,2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Danko Ilik <danko@on.net.mk>, 2003.
+# Darko Nikolovski <darkon@macedonia.homelinux.org>, 2003.
+# Ivan Dimitrov <ivan34mk@yahoo.com>, 2003.
+# Magdica Shambevska <magdica@yahoo.com>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 02:57+0200\n"
+"PO-Revision-Date: 2010-01-27 10:39+0100\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: attica/atticaprovider.cpp:166
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgid "All categories are missing"
+msgstr "Сите категории"
+
+#: attica/atticaprovider.cpp:362
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "the price of a download item, parameter 1 is the currency, 2 is the price"
+#| msgid ""
+#| "This items costs %1 %2.\n"
+#| "Do you want to buy it?"
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Оваа ставка чини %1 %2.\n"
+"Дали сакате да ја купите?"
+
+#: attica/atticaprovider.cpp:376
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Состојбата на вашата сметка е многу ниска:\n"
+"Вашата сметка: %1\n"
+"Цена: %2"
+
+#: attica/atticaprovider.cpp:418
+#, fuzzy, kde-format
+#| msgid "Your vote was successful."
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Вашето гласање беше успешно."
+
+#: attica/atticaprovider.cpp:433
+#, kde-format
+msgid "You are now a fan."
+msgstr ""
+
+#: attica/atticaprovider.cpp:444
+#, kde-format
+msgid "Network error %1: %2"
+msgstr ""
+
+#: attica/atticaprovider.cpp:448
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+
+#: attica/atticaprovider.cpp:450
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+
+#: attica/atticaprovider.cpp:452
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Земете ги последните новости..."
+
+#: core/engine.cpp:106
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgid "Initializing"
+msgstr "Инсталирам"
+
+#: core/engine.cpp:127
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "Датотеки со конфигурација"
+
+#: core/engine.cpp:140
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Датотеки со конфигурација"
+
+#: core/engine.cpp:204
+#, fuzzy, kde-format
+#| msgid "Loading Server Information..."
+msgid "Loading provider information"
+msgstr "Вчитувам информации за серверот..."
+
+#: core/engine.cpp:233
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"Не можам да преземам листа со доставувачи на последни новости од датотеката: "
+"%1"
+
+#: core/engine.cpp:256
+#, kde-format
+msgid "Error initializing provider."
+msgstr ""
+
+#: core/engine.cpp:260 core/engine.cpp:660
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "Вчитувам аплет"
+
+#: core/engine.cpp:297
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:302
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Вчитувањето на доставувачи од датотеката: %1 не успеа"
+
+#: core/engine.cpp:620
+#, kde-format
+msgid "Re: %1"
+msgstr "Ре: %1"
+
+#: core/engine.cpp:662
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Вчитувам преглед"
+msgstr[1] "Вчитувам преглед"
+msgstr[2] "Вчитувам преглед"
+
+#: core/engine.cpp:664 ui/itemsgridviewdelegate.cpp:343
+#: ui/itemsviewdelegate.cpp:134
+#, kde-format
+msgid "Installing"
+msgstr "Инсталирам"
+
+#: core/installation.cpp:185
+#, kde-format
+msgid "Invalid item."
+msgstr ""
+
+#: core/installation.cpp:192
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+
+#: core/installation.cpp:231
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr ""
+
+#: core/installation.cpp:241
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+
+#: core/installation.cpp:242
+#, fuzzy, kde-format
+#| msgid "Could not get download link."
+msgid "Possibly bad download link"
+msgstr "Не можам да ја преземам адресата за симнување."
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr ""
+
+#: core/installation.cpp:307
+#, fuzzy, kde-format
+#| msgid "Could not install %1"
+msgid "Could not install \"%1\": file not found."
+msgstr "Не можам да ја инсталирам %1"
+
+#: core/installation.cpp:539
+#, kde-format
+msgid "Overwrite existing file?"
+msgstr "Да запишам врз постојната датотека?"
+
+#: core/installation.cpp:540
+#, fuzzy, kde-format
+#| msgid "Download File:"
+msgid "Download File"
+msgstr "Симни датотека:"
+
+#: core/security.cpp:84
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Не можам да го стартувам <i>gpg</i> и да ги преземам достапните клучеви. "
+"Осигурете се дека е <i>gpg</i> инсталиран, инаку проверката на симнатите "
+"ресурси нема да биде возможна.</qt>"
+
+#: core/security.cpp:208
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Внесете ја тајната фраза за клучот <b>0x%1</b> што му припаѓа на <br /"
+"><i>%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:286
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Не можам да го стартувам <i>gpg</i> и да ја проверам валидноста на "
+"датотеката. Осигурете се дека е <i>gpg</i> инсталиран, инаку проверката на "
+"симнатите ресурси нема да биде возможна.</qt>"
+
+#: core/security.cpp:341
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Клуч за потпишување:"
+
+#: core/security.cpp:342
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Изберете клуч за потпишување"
+
+#: core/security.cpp:377
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Не можам да го стартувам <i>gpg</i> и да ја потпишам датотеката. "
+"Осигурете се дека е <i>gpg</i> инсталиран, инаку проверката на симнатите "
+"ресурси нема да биде возможна.</qt>"
+
+#: downloaddialog.cpp:83 downloadwidget.cpp:223
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Земете ги последните новости!"
+
+#: downloaddialog.cpp:101
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Инсталација за додатокот %1"
+
+#: downloadwidget.cpp:132
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Истече времетот. Проверете ја врската кон Интернет."
+
+#: downloadwidget.cpp:195
+#, kde-format
+msgid "Server: %1"
+msgstr "Сервер: %1"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Доставувач: %1"
+
+#: downloadwidget.cpp:197
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Верзија: %1"
+
+#: downloadwidget.cpp:201
+#, kde-format
+msgid "Provider information"
+msgstr "Информации за доставувачот"
+
+#: downloadwidget.cpp:212
+#, kde-format
+msgid "Could not install %1"
+msgstr "Не можам да ја инсталирам %1"
+
+#: downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Земете ги последните новости!"
+
+#: downloadwidget.cpp:268
+#, kde-format
+msgid "Icons view mode"
+msgstr ""
+
+#: downloadwidget.cpp:270
+#, kde-format
+msgid "Details view mode"
+msgstr ""
+
+#: downloadwidget.cpp:285
+#, kde-format
+msgid "All Providers"
+msgstr "Сите доставувачи"
+
+#: downloadwidget.cpp:292
+#, kde-format
+msgid "All Categories"
+msgstr "Сите категории"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "Доставувач:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "Категорија:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgid "Most downloads"
+msgstr "Најмногу симнувања"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "Најново"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Rating"
+msgstr "Рангирање"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "Инсталирано"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Подредување според:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Барање:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "Внесете тука термин за пребарување"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Автор:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, fuzzy, kde-format
+#| msgid "<a href=\"http://opendesktop.org\">Visit Homepage</a>"
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Посетете ја домашната страница</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:338
+#: ui/itemsviewdelegate.cpp:129 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Ажурирај"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:334
+#: ui/itemsviewdelegate.cpp:125
+#, kde-format
+msgid "Uninstall"
+msgstr "Одинсталирај"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 ui/itemsgridviewdelegate.cpp:353
+#: ui/itemsgridviewdelegate.cpp:363 ui/itemsviewdelegate.cpp:144
+#: ui/itemsviewdelegate.cpp:154
+#, kde-format
+msgid "Install"
+msgstr "Инсталирај"
+
+#: kmoretools/kmoretools.cpp:571
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Инсталирано"
+
+#: kmoretools/kmoretools.cpp:671
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Избери..."
+
+#: kmoretools/kmoretools.cpp:709
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Конфи&гурирај..."
+
+#: kmoretools/kmoretools_p.h:386
+#, fuzzy, kde-format
+#| msgctxt "A link to the description of this Get Hot New Stuff item"
+#| msgid "Visit homepage..."
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Посетете ја домашната страница..."
+
+#: kmoretools/kmoretools_p.h:397
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Инсталирај"
+
+#: kmoretools/kmoretools_p.h:404
+#, fuzzy, kde-format
+#| msgid "There is no matching item available.\n"
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Нема совпаѓања.\n"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:187
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgid "Configure menu"
+msgstr "Конфигурација"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:189
+#, fuzzy, kde-format
+#| msgid "&Configure %1..."
+msgid "Configure menu - %1"
+msgstr "&Конфигурирај %1..."
+
+#: kmoretools/kmoretoolsmenufactory.cpp:186
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current folder"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - current device"
+msgstr ""
+
+#: kmoretools/kmoretoolsmenufactory.cpp:209
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "$GenericName - all devices"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "Одржувач"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "Помести &долу"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "Помести &горе"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "Уште дејства"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Ресетирај"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "Уште дејства"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "Избери..."
+
+#: qtquick/qml/NewStuffItem.qml:35
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Инсталирај"
+
+#: qtquick/qml/NewStuffItem.qml:42
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Ажурирај"
+
+#: qtquick/qml/NewStuffItem.qml:49
+#, fuzzy, kde-format
+#| msgid "Uninstall"
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Одинсталирај"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Детали за %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, fuzzy, kde-format
+#| msgid "Changelog"
+msgid "Changelog:"
+msgstr "Дневник на измени"
+
+#: ui/entrydetailsdialog.cpp:111
+#, fuzzy, kde-format
+#| msgid "Homepage"
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Домашна страница"
+
+#: ui/entrydetailsdialog.cpp:114
+#, fuzzy, kde-format
+#| msgid "HTML documentation"
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "HTML-документација"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ui/entrydetailsdialog.cpp:121
+#, fuzzy, kde-format
+#| msgid "Open in New &Window"
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Отвори во &нов прозорец"
+
+#: ui/itemsgridviewdelegate.cpp:102 ui/itemsviewdelegate.cpp:282
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Рангирање: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:139
+#, fuzzy, kde-format
+#| msgid "<br />Provider: %1"
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Доставувач: %1"
+
+#: ui/itemsgridviewdelegate.cpp:160 ui/itemsgridviewdelegate.cpp:162
+#: ui/itemsgridviewdelegate.cpp:164 ui/itemsviewdelegate.cpp:242
+#: ui/itemsviewdelegate.cpp:244 ui/itemsviewdelegate.cpp:246
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Од <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:187 ui/itemsviewdelegate.cpp:260
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ui/itemsgridviewdelegate.cpp:190 ui/itemsviewdelegate.cpp:263
+#, fuzzy, kde-format
+#| msgid "Download"
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "Симни"
+msgstr[1] "Симни"
+msgstr[2] "Симни"
+
+#: ui/itemsgridviewdelegate.cpp:256 ui/itemsviewdelegate.cpp:336
+#, kde-format
+msgid "Loading Preview"
+msgstr "Вчитувам преглед"
+
+#: ui/itemsgridviewdelegate.cpp:283 ui/itemsviewdelegate.cpp:187
+#, kde-format
+msgid "Details"
+msgstr "Детали"
+
+#: ui/itemsgridviewdelegate.cpp:348 ui/itemsviewdelegate.cpp:139
+#, kde-format
+msgid "Updating"
+msgstr "Ажурирам"
+
+#: ui/itemsgridviewdelegate.cpp:358 ui/itemsviewdelegate.cpp:149
+#, fuzzy, kde-format
+#| msgid "Install again"
+msgid "Install Again"
+msgstr "Инсталирај повторно"
+
+#: ui/itemsviewdelegate.cpp:175
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: ui/itemsviewdelegate.cpp:231
+#, fuzzy, kde-format
+#| msgid "<p>Downloads: %1</p>\n"
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>Симнувања: %1</p>\n"
+
+#: uploaddialog.cpp:66
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Следно"
+
+#: uploaddialog.cpp:71
+#, kde-format
+msgid "Finish"
+msgstr "Заврши"
+
+#: uploaddialog.cpp:183
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "Преземам информации за доставувачот..."
+
+#: uploaddialog.cpp:190
+#, fuzzy, kde-format
+#| msgid "Creating Content on Server..."
+msgid "Fetching license data from server..."
+msgstr "Креирање содржина на серверот..."
+
+#: uploaddialog.cpp:197
+#, fuzzy, kde-format
+#| msgid "Creating Content on Server..."
+msgid "Fetching content data from server..."
+msgstr "Креирање содржина на серверот..."
+
+#: uploaddialog.cpp:272
+#, fuzzy, kde-format
+#| msgid "Fetching provider information..."
+msgid "Could not fetch provider information."
+msgstr "Преземам информации за доставувачот..."
+
+#: uploaddialog.cpp:296
+#, kde-format
+msgid "Register a new account"
+msgstr ""
+
+#: uploaddialog.cpp:320
+#, fuzzy, kde-format
+#| msgid "Check Spelling..."
+msgid "Checking login..."
+msgstr "Провери правопис..."
+
+#: uploaddialog.cpp:342
+#, fuzzy, kde-format
+#| msgid "Uploading preview and content..."
+msgid "Fetching your previously updated content..."
+msgstr "Качувам преглед и содржина..."
+
+#: uploaddialog.cpp:345
+#, fuzzy, kde-format
+#| msgid "Show version information"
+msgid "Could not verify login, please try again."
+msgstr "Прикажува информации за верзијата"
+
+#: uploaddialog.cpp:364
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr ""
+
+#: uploaddialog.cpp:382
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr ""
+
+#: uploaddialog.cpp:405 uploaddialog.cpp:845
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:451 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Сподели ги последните новости"
+
+#: uploaddialog.cpp:474
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Инсталација за додатокот од %1"
+
+#: uploaddialog.cpp:494 uploaddialog.cpp:770
+#, kde-format
+msgid "File not found: %1"
+msgstr "Датотеката не е пронајдена: %1"
+
+#: uploaddialog.cpp:494 uploaddialog.cpp:621 uploaddialog.cpp:770
+#, fuzzy, kde-format
+#| msgid "Uploading Failed"
+msgid "Upload Failed"
+msgstr "Качувањето не успеа"
+
+#: uploaddialog.cpp:574
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: uploaddialog.cpp:577
+#, kde-format
+msgid "Error"
+msgstr "Грешка"
+
+#: uploaddialog.cpp:621
+#, fuzzy, kde-format
+#| msgctxt "SSL error"
+#| msgid "The certificate is invalid"
+msgid "The selected category \"%1\" is invalid."
+msgstr "Сертификатот не е валиден"
+
+#: uploaddialog.cpp:670 uploaddialog.cpp:685 uploaddialog.cpp:699
+#, fuzzy, kde-format
+#| msgid "Select Region of Image"
+msgid "Select preview image"
+msgstr "Изберете регион од сликата"
+
+#: uploaddialog.cpp:714
+#, kde-format
+msgid "There was a network error."
+msgstr "Имаше грешка во мрежата."
+
+#: uploaddialog.cpp:714 uploaddialog.cpp:719
+#, kde-format
+msgid "Uploading Failed"
+msgstr "Качувањето не успеа"
+
+#: uploaddialog.cpp:719
+#, kde-format
+msgid "Authentication error."
+msgstr "Грешка во проверката на автентичност."
+
+#: uploaddialog.cpp:729
+#, fuzzy, kde-format
+#| msgid "Uploading Failed"
+msgid "Upload failed: %1"
+msgstr "Качувањето не успеа"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Лозинка:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Корисник:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, fuzzy, kde-format
+#| msgid "File Uploaded"
+msgid "File to upload:"
+msgstr "Датотеката е качена"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, fuzzy, kde-format
+#| msgid "Upload"
+msgid "New Upload"
+msgstr "Качи"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Опис:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Верзија:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Лиценца:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "Молам внесете ги на англиски информациите за вашата датотека."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Наслов:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr ""
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, fuzzy, kde-format
+#| msgid "Preview Image:"
+msgid "Preview Images"
+msgstr "Преглед на слика:"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, fuzzy, kde-format
+#| msgid "Select Files..."
+msgid "Select Preview..."
+msgstr "Избирање датотеки..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "Одредете цена за овој елемент"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, fuzzy, kde-format
+#| msgid "Price:"
+msgid "Price"
+msgstr "Цена:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "Цена:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, fuzzy, kde-format
+#| msgid "Creating Content on Server..."
+msgid "Fetch content link from server"
+msgstr "Креирање содржина на серверот..."
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, fuzzy, kde-format
+#| msgid "Creating Content on Server..."
+msgid "Create content on server"
+msgstr "Креирање содржина на серверот..."
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, fuzzy, kde-format
+#| msgid "Uploading content..."
+msgid "Upload content"
+msgstr "Качувам содржина..."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload first preview"
+msgstr "Вчитувам преглед"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload second preview"
+msgstr "Вчитувам преглед"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgid "Upload third preview"
+msgstr "Вчитувам преглед"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, fuzzy, kde-format
+#| msgid "Start replace"
+msgid "Start Upload"
+msgstr "Почни замена"
