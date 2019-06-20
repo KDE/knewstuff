@@ -384,6 +384,7 @@ public:
 
         if (homepageUrl.isValid()) {
             auto websiteAction = submenuForNotInstalled->addAction(i18nc("@action:inmenu", "Visit homepage"));
+            websiteAction->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet")));
             auto url = homepageUrl;
             // todo/review: is it ok to have sender and receiver the same object?
             QObject::connect(websiteAction, &QAction::triggered, websiteAction, [url](bool) {
@@ -395,6 +396,7 @@ public:
 
         if (!appstreamId.isEmpty()) {
             auto installAction = submenuForNotInstalled->addAction(i18nc("@action:inmenu", "Install"));
+            installAction->setIcon(QIcon::fromTheme(QStringLiteral("download")));
             QObject::connect(installAction, &QAction::triggered, installAction, [appstreamUrl](bool) {
                 QDesktopServices::openUrl(appstreamUrl);
             });
