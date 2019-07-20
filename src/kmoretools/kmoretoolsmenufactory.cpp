@@ -105,12 +105,12 @@ static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
         if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
             menu->connect(menuItem->action(), &QAction::triggered, menu,
             [kService, url](bool) {
-                KRun::runService(*kService, { url }, nullptr);
+                KRun::runApplication(*kService, { url }, nullptr);
             });
         } else {
             menu->connect(menuItem->action(), &QAction::triggered, menu,
             [kService](bool) {
-                KRun::runService(*kService, { }, nullptr);
+                KRun::runApplication(*kService, { }, nullptr);
             });
         }
     }
@@ -186,7 +186,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                                                           i18nc("@action:inmenu", "$GenericName - current folder")));
                     menu->connect(filelight1Item->action(), &QAction::triggered, menu,
                     [filelightService, url](bool) {
-                        KRun::runService(*filelightService, { url }, nullptr);
+                        KRun::runApplication(*filelightService, { url }, nullptr);
                     });
 
                     const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
@@ -196,7 +196,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                     [filelightService, url](bool) {
                         KMountPoint::Ptr mountPoint
                             = KMountPoint::currentMountPoints().findByPath(url.toLocalFile());
-                        KRun::runService(*filelightService,
+                        KRun::runApplication(*filelightService,
                         { QUrl::fromLocalFile(mountPoint->mountPoint()) },
                         nullptr);
                     });
@@ -210,7 +210,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                 const auto filelightService = filelightApp->installedService();
                 menu->connect(filelight3Item->action(), &QAction::triggered, menu,
                 [filelightService](bool) {
-                    KRun::runService(*filelightService, { }, nullptr);
+                    KRun::runApplication(*filelightService, { }, nullptr);
                 });
             }
         } else {
