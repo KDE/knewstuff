@@ -384,7 +384,7 @@ public:
 
         if (homepageUrl.isValid()) {
             auto websiteAction = submenuForNotInstalled->addAction(i18nc("@action:inmenu", "Visit homepage"));
-            websiteAction->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet")));
+            websiteAction->setIcon(QIcon::fromTheme(QStringLiteral("internet-services")));
             auto url = homepageUrl;
             // todo/review: is it ok to have sender and receiver the same object?
             QObject::connect(websiteAction, &QAction::triggered, websiteAction, [url](bool) {
