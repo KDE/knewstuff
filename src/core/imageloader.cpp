@@ -18,7 +18,6 @@
 
 #include "imageloader_p.h"
 
-#include <QFile>
 
 using namespace KNSCore;
 

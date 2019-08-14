@@ -18,7 +18,6 @@
 #ifndef KNEWSTUFF3_KNEWSTUFFENTRY_P_H
 #define KNEWSTUFF3_KNEWSTUFFENTRY_P_H
 
-#include <QStringList>
 #include "core/entryinternal.h"
 
 namespace KNS3

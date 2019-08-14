@@ -25,7 +25,6 @@
 #include <KLocalizedString>
 #include <KMountPoint>
 #include <KRun>
-#include <KService>
 #include <KNS3/KMoreTools>
 #include <KNS3/KMoreToolsPresets>
 

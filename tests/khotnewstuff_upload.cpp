@@ -22,7 +22,6 @@
 
 #include <QApplication>
 #include <QPointer>
-#include <QtDebug>
 #include <QUrl>
 
 #include <klocalizedstring.h>

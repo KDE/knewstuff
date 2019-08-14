@@ -25,12 +25,9 @@
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QImageReader>
-#include <QLabel>
 #include <QLayout>
-#include <QDoubleSpinBox>
 #include <QPointer>
 #include <QString>
-#include <QSignalMapper>
 #include <QCoreApplication>
 
 #include <kiconloader.h>

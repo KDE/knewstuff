@@ -25,7 +25,6 @@
 #include <../src/kmoretools/kmoretoolsmenufactory.h>
 
 #include <QTest>
-#include <QRegularExpression>
 
 #define _ QLatin1String
 

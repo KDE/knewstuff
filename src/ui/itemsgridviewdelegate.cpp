@@ -20,7 +20,6 @@
 #include "itemsgridviewdelegate_p.h"
 
 #include <QPainter>
-#include <QSortFilterProxyModel>
 #include <QApplication>
 #include <QLabel>
 #include <QToolButton>

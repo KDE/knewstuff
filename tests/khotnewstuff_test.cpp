@@ -31,7 +31,6 @@
 #include <QApplication>
 #include <QDebug>
 #include <QStandardPaths>
-#include <QTimer>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 

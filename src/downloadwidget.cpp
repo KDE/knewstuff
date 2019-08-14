@@ -26,7 +26,6 @@
 
 #include <QTimer>
 #include <QScrollBar>
-#include <QKeyEvent>
 #include <QCoreApplication>
 
 #include <kmessagebox.h>

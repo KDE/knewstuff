@@ -25,9 +25,6 @@
 
 #include <QTest>
 #include <QRegularExpression>
-#include <QDialog>
-#include <QLabel>
-#include <QHBoxLayout>
 #include <QPushButton>
 
 #define _ QLatin1String

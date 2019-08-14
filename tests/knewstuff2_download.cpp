@@ -26,7 +26,6 @@
 
 #include <QApplication>
 #include <QPushButton>
-#include <QLayout>
 #include <QListWidget>
 #include <QTabWidget>
 #include <QTableWidget>

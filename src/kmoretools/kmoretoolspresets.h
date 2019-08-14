@@ -20,7 +20,6 @@
 
 #include <QString>
 #include <QUrl>
-#include <QMenu>
 
 #include "knewstuff_export.h"
 

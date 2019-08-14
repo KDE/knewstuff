@@ -21,10 +21,8 @@
 #define KNEWSTUFF3_ITEMSVIEWBASEDELEGATE_P_H
 
 #include <QList>
-#include <QMap>
 #include <QModelIndex>
 #include <QObject>
-#include <QImage>
 
 #include "core/engine.h"
 #include "core/entryinternal.h"

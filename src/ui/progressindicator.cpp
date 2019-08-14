@@ -20,11 +20,10 @@
 
 #include "progressindicator_p.h"
 
-#include <QProgressBar>
 #include <QPushButton>
 #include <QLabel>
-#include <QLayout>
 #include <QVariant>
+#include <QHBoxLayout>
 
 #include "kjob.h"
 

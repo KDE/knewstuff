@@ -20,7 +20,6 @@
 #define KNEWSTUFF3_ITEMSMODEL_P_H
 
 #include <QAbstractListModel>
-#include <QImage>
 
 #include "entryinternal.h"
 #include "knewstuffcore_export.h"

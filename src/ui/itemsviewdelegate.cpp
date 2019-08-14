@@ -21,7 +21,6 @@
 #include "itemsviewdelegate_p.h"
 
 #include <QPainter>
-#include <QSortFilterProxyModel>
 #include <QApplication>
 #include <QToolButton>
 #include <QMenu>

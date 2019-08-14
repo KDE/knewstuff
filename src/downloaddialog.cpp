@@ -22,10 +22,6 @@
 
 #include "downloaddialog.h"
 
-#include <QTimer>
-#include <QSortFilterProxyModel>
-#include <QScrollBar>
-#include <QKeyEvent>
 
 #include <ksharedconfig.h>
 #include <ktitlewidget.h>

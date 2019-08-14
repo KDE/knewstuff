@@ -25,7 +25,6 @@
 #include <qapplication.h>
 #include <QDebug>
 
-#include <QFile>
 
 #include <unistd.h> // for exit()
 

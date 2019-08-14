@@ -23,8 +23,8 @@
 
 #include <QObject>
 #include <QString>
-#include <QMap>
 #include <QSharedPointer>
+#include <QHash>
 
 #include "provider.h"
 #include "entryinternal.h"

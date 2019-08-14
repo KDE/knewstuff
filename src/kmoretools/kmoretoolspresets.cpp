@@ -18,7 +18,6 @@
 #include "kmoretoolspresets.h"
 #include "kmoretoolspresets_p.h"
 #include "knewstuff_debug.h"
-#include <QDebug>
 #include <QHash>
 
 #include <KNS3/KMoreTools>

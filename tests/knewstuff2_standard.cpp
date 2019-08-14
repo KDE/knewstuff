@@ -23,7 +23,6 @@
 #include <kstandarddirs.h>
 #include <QApplication>
 #include <kcmdlineargs.h>
-#include <QDebug>
 
 KNewStuff2Standard::KNewStuff2Standard()
     : QObject()

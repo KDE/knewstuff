@@ -21,7 +21,6 @@
 
 #include <QDebug>
 #include <QStandardItemModel>
-#include <QMessageBox>
 
 #include <KLocalizedString>
 

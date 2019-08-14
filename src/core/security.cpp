@@ -24,7 +24,6 @@
 //qt includes
 #include <QFile>
 #include <QFileInfo>
-#include <QPointer>
 #include <QStringList>
 #include <QTextStream>
 #include <QTimer>

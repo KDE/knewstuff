@@ -20,7 +20,6 @@
 #include "knewstuffcore_debug.h"
 
 #include <QFile>
-#include <QGlobalStatic>
 #include <QMutex>
 #include <QMutexLocker>
 #include <QNetworkAccessManager>

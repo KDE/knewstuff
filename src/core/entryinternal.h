@@ -26,6 +26,7 @@
 #include <QDomElement>
 #include <QString>
 #include <QUrl>
+#include <QImage>
 
 #include "author.h"
 // This include only exists for the KNS3::Entry::Status enum

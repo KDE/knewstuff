@@ -23,6 +23,7 @@
 #include <QList>
 #include <QString>
 #include <QUrl>
+#include <QDebug>
 
 #include "entryinternal.h"
 #include "errorcode.h"
