@@ -164,9 +164,9 @@ void Security::slotReadyReadStandardOutput()
                 }
                 data = line[9];
                 key.mail = data.section(QLatin1Char('<'), -1, -1);
-                key.mail.truncate(key.mail.length() - 1);
+                key.mail.chop(1);
                 key.name = data.section(QLatin1Char('<'), 0, 0);
-                if (key.name.contains(QStringLiteral("("))) {
+                if (key.name.contains(QLatin1Char('('))) {
                     key.name = key.name.section(QLatin1Char('('), 0, 0);
                 }
                 m_keys[shortId] = key;
@@ -201,7 +201,7 @@ void Security::slotReadyReadStandardOutput()
             break;
 
         case Sign:
-            if (data.contains(QStringLiteral("passphrase.enter"))) {
+            if (data.contains(QLatin1String("passphrase.enter"))) {
                 KeyStruct key = m_keys[m_secretKey];
                 Question question(Question::PasswordQuestion);
                 question.setQuestion(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
@@ -212,7 +212,7 @@ void Security::slotReadyReadStandardOutput()
                     m_process->kill();
                     return;
                 }
-            } else if (data.contains(QStringLiteral("BAD_PASSPHRASE"))) {
+            } else if (data.contains(QLatin1String("BAD_PASSPHRASE"))) {
                 m_result |= BAD_PASSPHRASE;
             }
             break;

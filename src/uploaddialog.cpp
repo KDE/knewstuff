@@ -570,7 +570,7 @@ void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &load
         KMessageBox::error(q,
                            i18np("The server does not recognize the category %2 to which you are trying to upload.",
                                  "The server does not recognize any of the categories to which you are trying to upload: %2",
-                                 categoryNames.size(), categoryNames.join(QStringLiteral(", "))),
+                                 categoryNames.size(), categoryNames.join(QLatin1String(", "))),
                            i18n("Error"));
         // close the dialog
         q->reject();

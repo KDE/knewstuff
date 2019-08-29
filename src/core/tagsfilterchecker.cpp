@@ -96,7 +96,7 @@ public:
     void addValidator(const QString &filter)
     {
         int pos = 0;
-        if ((pos = filter.indexOf(QStringLiteral("=="))) > -1) {
+        if ((pos = filter.indexOf(QLatin1String("=="))) > -1) {
             QString tag = filter.left(pos);
             QString value = filter.mid(tag.length() + 2);
             Validator *val = validators.value(tag, nullptr);
@@ -106,7 +106,7 @@ public:
             }
             val->m_acceptedValues << value;
             qCDebug(KNEWSTUFFCORE) << "Created EqualityValidator for tag" << tag << "with value" << value;
-        } else if ((pos = filter.indexOf(QStringLiteral("!="))) > -1) {
+        } else if ((pos = filter.indexOf(QLatin1String("!="))) > -1) {
             QString tag = filter.left(pos);
             QString value = filter.mid(tag.length() + 2);
             Validator *val = validators.value(tag, nullptr);

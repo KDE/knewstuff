@@ -87,7 +87,7 @@ bool Installation::readConfig(const KConfigGroup &group)
     // also, ensure wallpapers are decompressed into subdirectories
     // this ensures that wallpapers with multiple resolutions continue to function
     // as expected
-    if (xdgTargetDirectory == QStringLiteral("wallpapers")) {
+    if (xdgTargetDirectory == QLatin1String("wallpapers")) {
         uncompression = QStringLiteral("subdir");
     }
 
