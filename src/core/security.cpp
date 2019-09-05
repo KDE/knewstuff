@@ -159,7 +159,7 @@ void Security::slotReadyReadStandardOutput()
                 QString shortId = key.id.right(8);
                 QString trustStr = line[1];
                 key.trusted = false;
-                if (trustStr == QLatin1String("u") || trustStr == QLatin1String("f")) {
+                if (trustStr == QLatin1Char('u') || trustStr == QLatin1Char('f')) {
                     key.trusted = true;
                 }
                 data = line[9];

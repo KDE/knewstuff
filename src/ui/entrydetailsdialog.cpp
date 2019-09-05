@@ -90,9 +90,9 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
 
     ui->m_titleWidget->setText(i18n("Details for %1", m_entry.name()));
     if (!m_entry.author().homepage().isEmpty()) {
-        ui->authorLabel->setText(QStringLiteral("<a href=\"") + m_entry.author().homepage() + QStringLiteral("\">") + m_entry.author().name() + QStringLiteral("</a>"));
+        ui->authorLabel->setText(QLatin1String("<a href=\"") + m_entry.author().homepage() + QLatin1String("\">") + m_entry.author().name() + QLatin1String("</a>"));
     } else if (!m_entry.author().email().isEmpty()) {
-        ui->authorLabel->setText(QStringLiteral("<a href=\"mailto:") + m_entry.author().email() + QStringLiteral("\">") + m_entry.author().name() + QStringLiteral("</a>"));
+        ui->authorLabel->setText(QLatin1String("<a href=\"mailto:") + m_entry.author().email() + QLatin1String("\">") + m_entry.author().name() + QLatin1String("</a>"));
     } else {
         ui->authorLabel->setText(m_entry.author().name());
     }
@@ -100,21 +100,21 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
     QString summary = KNSCore::replaceBBCode(m_entry.summary()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
     QString changelog = KNSCore::replaceBBCode(m_entry.changelog()).replace(QLatin1Char('\n'), QLatin1String("<br/>"));
 
-    QString description = QStringLiteral("<html><body>") + summary;
+    QString description = QLatin1String("<html><body>") + summary;
     if (!changelog.isEmpty()) {
-        description += QStringLiteral("<br/><p><b>") + i18n("Changelog:") + QStringLiteral("</b><br/>") + changelog + QStringLiteral("</p>");
+        description += QLatin1String("<br/><p><b>") + i18n("Changelog:") + QLatin1String("</b><br/>") + changelog + QLatin1String("</p>");
     }
     description += QLatin1String("</body></html>");
     ui->descriptionLabel->setText(description);
 
-    QString homepageText(QStringLiteral("<a href=\"") + m_entry.homepage().url() + QStringLiteral("\">") +
+    QString homepageText(QLatin1String("<a href=\"") + m_entry.homepage().url() + QLatin1String("\">") +
                          i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + QStringLiteral("</a>"));
 
     if (!m_entry.donationLink().isEmpty()) {
-        homepageText += QStringLiteral("<br><a href=\"") + m_entry.donationLink() + QStringLiteral("\">") + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + QStringLiteral("</a>");
+        homepageText += QLatin1String("<br><a href=\"") + m_entry.donationLink() + QLatin1String("\">") + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + QLatin1String("</a>");
     }
     if (!m_entry.knowledgebaseLink().isEmpty()) {
-        homepageText += QStringLiteral("<br><a href=\"") + m_entry.knowledgebaseLink() + QStringLiteral("\">")
+        homepageText += QLatin1String("<br><a href=\"") + m_entry.knowledgebaseLink() + QLatin1String("\">")
                         + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + QStringLiteral("</a>");
     }
     ui->homepageLabel->setText(homepageText);

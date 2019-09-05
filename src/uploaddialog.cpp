@@ -384,7 +384,7 @@ void UploadDialogPrivate::_k_updatedContentFetched(const Attica::Content &conten
     ui.mSummaryEdit->setText(content.description());
     ui.mVersionEdit->setText(content.version());
     ui.changelog->setText(content.changelog());
-    ui.priceCheckBox->setChecked(content.attribute(QStringLiteral("downloadbuy1")) == QLatin1String("1"));
+    ui.priceCheckBox->setChecked(content.attribute(QStringLiteral("downloadbuy1")) == QLatin1Char('1'));
     ui.priceSpinBox->setValue(content.attribute(QStringLiteral("downloadbuyprice1")).toDouble());
     ui.priceReasonLineEdit->setText(content.attribute(QStringLiteral("downloadbuyreason1")));
 
@@ -779,13 +779,13 @@ void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
     if (index.isEmpty()) {
         job = currentProvider().setDownloadFile(contentId, fileName, fileContents);
         q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_fileUploadFinished(Attica::BaseJob*)));
-    } else if (index == QLatin1String("1")) {
+    } else if (index == QLatin1Char('1')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
         q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview1UploadFinished(Attica::BaseJob*)));
-    } else if (index == QLatin1String("2")) {
+    } else if (index == QLatin1Char('2')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
         q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview2UploadFinished(Attica::BaseJob*)));
-    } else if (index == QLatin1String("3")) {
+    } else if (index == QLatin1Char('3')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
         q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview3UploadFinished(Attica::BaseJob*)));
     }

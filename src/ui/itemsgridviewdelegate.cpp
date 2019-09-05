@@ -127,9 +127,9 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         QString title;
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
-            title += QStringLiteral("<b><a href=\"") + link.url() + QStringLiteral("\">") + entry.name() + QStringLiteral("</a></b>\n");
+            title += QLatin1String("<b><a href=\"") + link.url() + QLatin1String("\">") + entry.name() + QLatin1String("</a></b>\n");
         } else {
-            title += QStringLiteral("<b>") + entry.name() + QStringLiteral("</b>");
+            title += QLatin1String("<b>") + entry.name() + QLatin1String("</b>");
         }
 
         const auto downloadInfo = entry.downloadLinkInformationList();
@@ -156,11 +156,11 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         if (!authorName.isEmpty()) {
             if (!authorPage.isEmpty()) {
-                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", QStringLiteral(" <a href=\"") + authorPage + QStringLiteral("\">") + authorName + QStringLiteral("</a>")) + QStringLiteral("</p>\n");
+                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", QLatin1String(" <a href=\"") + authorPage + QLatin1String("\">") + authorName + QLatin1String("</a>")) + QLatin1String("</p>\n");
             } else if (!email.isEmpty()) {
-                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QStringLiteral(" <a href=\"mailto:") + email + QStringLiteral("\">") + email + QStringLiteral("</a></p>\n");
+                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String(" <a href=\"mailto:") + email + QLatin1String("\">") + email + QLatin1String("</a></p>\n");
             } else {
-                text += QStringLiteral("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QStringLiteral("</p>\n");
+                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String("</p>\n");
             }
         }
         authorLabel->setText(text);
@@ -189,7 +189,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             downloadString = i18np("1 download", "%1 downloads", downloads);
         }
         if (downloads > 0 || fans > 0) {
-            text += QStringLiteral("<p>") + downloadString;
+            text += QLatin1String("<p>") + downloadString;
             if (downloads > 0 && fans > 0) {
                 text += QLatin1String(", ");
             }
