@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Git repository viewer
 GenericName[ar]=عارض لمستودعات «غِت»
+GenericName[ast]=Visor de repositorios Git
 GenericName[ca]=Visualitzador del repositori Git
 GenericName[ca@valencia]=Visualitzador del repositori Git
 GenericName[da]=Fremviser til Git-depoter
@@ -43,6 +44,7 @@ GenericName[zh_TW]=Git 主目錄瀏覽器
 Version=1.0
 Type=Application
 Name=Giggle
+Name[ast]=Giggle
 Name[ca]=Giggle
 Name[ca@valencia]=Giggle
 Name[cs]=Giggle
@@ -83,6 +85,7 @@ Name[zh_CN]=Giggle
 Name[zh_TW]=Giggle
 Comment=Git repository viewer
 Comment[ar]=عارض لمستودعات «غِت»
+Comment[ast]=Visor de repositorios Git
 Comment[ca]=Visualitzador del repositori Git
 Comment[ca@valencia]=Visualitzador del repositori Git
 Comment[da]=Fremviser til Git-depoter

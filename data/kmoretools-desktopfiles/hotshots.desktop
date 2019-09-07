@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=HotShots
+Name[ast]=HotShots
 Name[ca]=HotShots
 Name[ca@valencia]=HotShots
 Name[cs]=HotShots
@@ -41,6 +42,7 @@ Name[zh_CN]=HotShots
 Name[zh_TW]=HotShots
 Comment=Screenshot manager
 Comment[ar]=مدير للقطات الشّاشة
+Comment[ast]=Xestor de captures de pantalla
 Comment[ca]=Gestor de captures de pantalla
 Comment[ca@valencia]=Gestor de captures de pantalla
 Comment[da]=Håndtering af skærmbilleder
@@ -83,6 +85,7 @@ Comment[zh_TW]=螢幕快照管理員
 Type=Application
 GenericName=Screenshot manager
 GenericName[ar]=مدير للقطات الشّاشة
+GenericName[ast]=Xestor de captures de pantalla
 GenericName[ca]=Gestor de captures de pantalla
 GenericName[ca@valencia]=Gestor de captures de pantalla
 GenericName[da]=Håndtering af skærmbilleder

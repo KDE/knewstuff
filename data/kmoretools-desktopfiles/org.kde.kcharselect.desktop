@@ -1,5 +1,6 @@
 [Desktop Entry]
 GenericName=Character Selector
+GenericName[ast]=Seleutor de caráuteres
 GenericName[ca]=Selector de caràcters
 GenericName[ca@valencia]=Selector de caràcters
 GenericName[cs]=Výběr znaků
@@ -41,6 +42,7 @@ Type=Application
 Terminal=false
 X-DocPath=kcharselect/index.html
 Name=KCharSelect
+Name[ast]=KCharSelect
 Name[ca]=KCharSelect
 Name[ca@valencia]=KCharSelect
 Name[cs]=KCharSelect

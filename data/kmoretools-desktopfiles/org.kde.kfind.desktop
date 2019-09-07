@@ -5,6 +5,7 @@ X-DocPath=kfind/index.html
 Type=Application
 Terminal=false
 Name=KFind
+Name[ast]=KFind
 Name[ca]=KFind
 Name[ca@valencia]=KFind
 Name[cs]=KFind

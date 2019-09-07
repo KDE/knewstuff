@@ -30,6 +30,7 @@ Comment[zh_TW]=screencast
 Exec=vokoscreen
 Icon=vokoscreen
 Name=vokoscreen
+Name[ast]=vokoscreen
 Name[ca]=vokoscreen
 Name[ca@valencia]=vokoscreen
 Name[da]=vokoscreen

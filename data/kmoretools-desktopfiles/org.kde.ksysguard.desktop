@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KSysGuard
 Name[ar]=حارس نظامك
+Name[ast]=KSysGuard
 Name[ca]=KSysGuard
 Name[ca@valencia]=KSysGuard
 Name[cs]=KSysGuard
@@ -41,6 +42,7 @@ Name[x-test]=xxKSysGuardxx
 Name[zh_CN]=系统卫士
 Name[zh_TW]=KSysGuard
 GenericName=System Monitor
+GenericName[ast]=Supervisor del sistema
 GenericName[ca]=Monitor del sistema
 GenericName[ca@valencia]=Monitor del sistema
 GenericName[cs]=Monitor systému
@@ -82,6 +84,7 @@ GenericName[x-test]=xxSystem Monitorxx
 GenericName[zh_CN]=系统监视器
 GenericName[zh_TW]=系統監視器
 Comment=Monitor running processes and system performance
+Comment[ast]=Supervisa los procesos n'execución y el rindimientu del sistema
 Comment[ca]=Controlador de processos en execució i rendiment del sistema
 Comment[ca@valencia]=Controlador de processos en execució i rendiment del sistema
 Comment[da]=Overvåg kørende processer og systemets ydelse

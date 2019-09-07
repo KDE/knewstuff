@@ -1,6 +1,7 @@
 [Desktop Entry]
 Categories=Utility;Filesystem;Qt;KDE;
 Name=ANGRYsearch
+Name[ast]=ANGRYsearch
 Name[ca]=ANGRYsearch
 Name[ca@valencia]=ANGRYsearch
 Name[cs]=ANGRYsearch
@@ -36,6 +37,7 @@ Name[x-test]=xxANGRYsearchxx
 Name[zh_CN]=ANGRYsearch
 Name[zh_TW]=ANGRYsearch
 GenericName=Linux file search, instant results as you type
+GenericName[ast]=Gueta de ficheros en GNU/Linux, resultaos nel intre al empar que teclexes
 GenericName[ca]=Cerca de fitxers Linux, resultats instantanis a mesura que s'escriu
 GenericName[ca@valencia]=Cerca de fitxers Linux, resultats instantanis a mesura que s'escriu
 GenericName[da]=Linux-filsøgning, øjeblikkelige resultater mens du taster

@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Git repository viewer
 GenericName[ar]=عارض لمستودعات «غِت»
+GenericName[ast]=Visor de repositorios Git
 GenericName[ca]=Visualitzador del repositori Git
 GenericName[ca@valencia]=Visualitzador del repositori Git
 GenericName[da]=Fremviser til Git-depoter
@@ -41,6 +42,7 @@ GenericName[x-test]=xxGit repository viewerxx
 GenericName[zh_CN]=Git 仓库查看器
 GenericName[zh_TW]=Git 主目錄瀏覽器
 Name=gitg
+Name[ast]=gitg
 Name[ca]=gitg
 Name[ca@valencia]=gitg
 Name[cs]=gitg
@@ -82,6 +84,7 @@ Name[zh_CN]= 
 Name[zh_TW]=gitg
 Comment=Git repository browser
 Comment[ar]=متصفّح لمستودعات «غِت»
+Comment[ast]=Restolador de repostorios Git
 Comment[ca]=Navegador pel repositori Git
 Comment[ca@valencia]=Navegador pel repositori Git
 Comment[da]=Gennemse Git-depoter

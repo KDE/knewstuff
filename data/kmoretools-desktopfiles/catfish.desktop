@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Catfish File Search
+Name[ast]=Gueta de ficheros Catfish
 Name[ca]=Cerca de fitxers Catfish
 Name[ca@valencia]=Cerca de fitxers Catfish
 Name[cs]=Vyhledávač souborů Catfish
@@ -35,6 +36,7 @@ Name[x-test]=xxCatfish File Searchxx
 Name[zh_CN]=Catfish 文件搜素
 Name[zh_TW]=Catfish 檔案搜尋
 GenericName=File search
+GenericName[ast]=Gueta de ficheros
 GenericName[ca]=Cerca de fitxers
 GenericName[ca@valencia]=Cerca de fitxers
 GenericName[cs]=Hledání souboru
@@ -70,6 +72,7 @@ GenericName[x-test]=xxFile searchxx
 GenericName[zh_CN]=文件搜索
 GenericName[zh_TW]=檔案搜尋
 Comment=Search the file system
+Comment[ast]=Gueta nel sistema de ficheros
 Comment[ca]=Cerca al sistema de fitxers
 Comment[ca@valencia]=Cerca al sistema de fitxers
 Comment[cs]=Prohledávat souborový systém

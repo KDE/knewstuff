@@ -2,6 +2,7 @@
 Version=1.0
 Name=Shutter
 Name[ar]=شَتِرّ
+Name[ast]=Shutter
 Name[ca]=Shutter
 Name[ca@valencia]=Shutter
 Name[cs]=Shutter
@@ -84,6 +85,7 @@ GenericName[x-test]=xxScreenshot Toolxx
 GenericName[zh_CN]=屏幕截图工具
 GenericName[zh_TW]=擷取螢幕快照的工具
 Comment=Capture, edit and share screenshots
+Comment[ast]=Captura, edita y comparti captures de pantalla
 Comment[ca]=Captura, edita i comparteix captures de pantalla
 Comment[ca@valencia]=Captura, edita i comparteix captures de pantalla
 Comment[da]=Tag, redigér og del skærmbilleder
