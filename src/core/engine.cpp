@@ -22,6 +22,7 @@
 #include "engine.h"
 
 #include "../entry.h"
+#include "commentsmodel.h"
 #include "installation.h"
 #include "xmlloader.h"
 #include "imageloader_p.h"
@@ -64,6 +65,8 @@ public:
     QStringList tagFilter;
     QStringList downloadTagFilter;
     bool configLocationFallback = true;
+    QString name;
+    QMap<EntryInternal, CommentsModel*> commentsModels;
 };
 
 Engine::Engine(QObject *parent)
@@ -142,6 +145,7 @@ bool Engine::init(const QString &configfile)
         return false;
     }
 
+    d->name = group.readEntry("Name", QString());
     m_categories = group.readEntry("Categories", QStringList());
     m_adoptionCommand = group.readEntry("AdoptionCommand", QString());
 
@@ -172,6 +176,11 @@ bool Engine::init(const QString &configfile)
     loadProviders();
 
     return true;
+}
+
+QString KNSCore::Engine::name() const
+{
+    return d->name;
 }
 
 QStringList Engine::categories() const
@@ -392,6 +401,11 @@ void Engine::setSortMode(Provider::SortMode mode)
     reloadEntries();
 }
 
+Provider::SortMode KNSCore::Engine::sortMode() const
+{
+    return m_currentRequest.sortMode;
+}
+
 void KNSCore::Engine::setFilter(Provider::Filter filter)
 {
     if (m_currentRequest.filter != filter) {
@@ -401,7 +415,12 @@ void KNSCore::Engine::setFilter(Provider::Filter filter)
     reloadEntries();
 }
 
-void KNSCore::Engine::fetchEntryById(const QString& id)
+Provider::Filter KNSCore::Engine::filter() const
+{
+    return m_currentRequest.filter;
+}
+
+void KNSCore::Engine::fetchEntryById(const QString &id)
 {
     m_searchTimer->stop();
     m_currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
@@ -425,6 +444,11 @@ void Engine::setSearchTerm(const QString &searchString)
     } else {
         m_searchTimer->start();
     }
+}
+
+QString KNSCore::Engine::searchTerm() const
+{
+    return m_currentRequest.searchTerm;
 }
 
 void Engine::setTagFilter(const QStringList &filter)
@@ -759,4 +783,30 @@ QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations
 void KNSCore::Engine::setConfigLocationFallback(bool enableFallback)
 {
     d->configLocationFallback = enableFallback;
+}
+
+QSharedPointer<KNSCore::Provider> KNSCore::Engine::provider(const QString &providerId) const
+{
+    return m_providers.value(providerId);
+}
+
+QSharedPointer<KNSCore::Provider> KNSCore::Engine::defaultProvider() const
+{
+    if (m_providers.count() > 0)
+        return m_providers.constBegin().value();
+    return nullptr;
+}
+
+KNSCore::CommentsModel *KNSCore::Engine::commentsForEntry(const KNSCore::EntryInternal &entry)
+{
+    CommentsModel *model = d->commentsModels[entry];
+    if (!model) {
+        model = new CommentsModel(this);
+        model->setEntry(entry);
+        connect(model, &QObject::destroyed, this, [=](){
+            d->commentsModels.remove(entry);
+        });
+        d->commentsModels[entry] = model;
+    }
+    return model;
 }

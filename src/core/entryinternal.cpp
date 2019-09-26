@@ -319,7 +319,7 @@ void EntryInternal::setRating(int rating)
 
 int EntryInternal::numberOfComments() const
 {
-    return d->mRating;
+    return d->mNumberOfComments;
 }
 
 void EntryInternal::setNumberOfComments (int comments)

@@ -42,7 +42,7 @@ public:
     QString textResponse;
 };
 
-Question::Question(QuestionType questionType, QObject* parent)
+Question::Question(QuestionType questionType, QObject *parent)
     : QObject(parent)
     , d(new Private)
 {

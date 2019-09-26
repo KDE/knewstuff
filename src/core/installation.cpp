@@ -535,10 +535,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
-                    Question question(Question::ContinueCancelQuestion);
-                    question.setQuestion(i18n("Overwrite existing file?") + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
-                    question.setTitle(i18n("Download File"));
-                    if(question.ask() != Question::ContinueResponse) {
+                    Question question(Question::YesNoQuestion);
+                    question.setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means overwriting it. Do you wish to overwrite the existing file?") + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
+                    question.setTitle(i18n("Overwrite File"));
+                    if(question.ask() != Question::YesResponse) {
                         return QStringList();
                     }
                 }

@@ -39,6 +39,12 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    /**
+     * The row of the entry passed to the function, or -1 if the entry is not contained
+     * within the model.
+     * @since 5.63
+     */
+    int row(const EntryInternal &entry) const;
 
     void addEntry(const EntryInternal &entry);
     void removeEntry(const EntryInternal &entry);

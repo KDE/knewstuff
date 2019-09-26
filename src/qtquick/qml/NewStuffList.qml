@@ -19,9 +19,11 @@
  *
  */
 
-import QtQuick 2.2
+import QtQuick 2.11
+import QtQuick.Controls 2.11 as QtControls
+import QtQuick.Layouts 1.11 as QtLayouts
 
-import org.kde.newstuff 1.0 as NewStuff
+import org.kde.newstuff 1.62 as NewStuff
 
 /**
  * To use NewStuffList, simply instantiate it and pass the
@@ -59,6 +61,50 @@ ListView {
     signal busyMessage(string message);
     signal errorMessage(string message);
     signal downloadedItemClicked(variant installedFiles);
+    header: QtLayouts.RowLayout {
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
+        QtControls.ComboBox {
+            id: categoriesCombo
+            QtLayouts.Layout.fillWidth: true
+            model: newStuffEngine.categories
+            textRole: "displayName"
+            onCurrentIndexChanged: {
+                newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
+            }
+        }
+        QtControls.ComboBox {
+            id: filterCombo
+            QtLayouts.Layout.fillWidth: true
+            model: ListModel {}
+            Component.onCompleted: {
+                filterCombo.model.append({ text: i18nc("List option which will set the filter to show everything", "Show Everything") });
+                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items are shown", "Installed Only") });
+                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
+                filterCombo.currentIndex = newStuffEngine.filter;
+            }
+            onCurrentIndexChanged: {
+                newStuffEngine.filter = currentIndex;
+            }
+        }
+        QtControls.ComboBox {
+            id: sortCombo
+            QtLayouts.Layout.fillWidth: true
+            model: ListModel { }
+            Component.onCompleted: {
+                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on when items were most recently updated", "Show most recent first") });
+                sortCombo.model.append({ text: i18nc("List option which will set the sort order to be alphabetical based on the name", "Sort alphabetically") });
+                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on user ratings", "Show highest rated first") });
+                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on number of downloads", "Show most downloaded first") });
+                sortCombo.currentIndex = newStuffEngine.sortOrder;
+            }
+            onCurrentIndexChanged: {
+                newStuffEngine.sortOrder = currentIndex;
+            }
+        }
+    }
     delegate: NewStuffItem {
         listModel: newStuffModel;
         onClicked: {
@@ -69,7 +115,7 @@ ListView {
     }
     model: NewStuff.ItemsModel {
         id: newStuffModel;
-        engine: newStuffEngine.engine;
+        engine: newStuffEngine;
     }
     NewStuff.Engine {
         id: newStuffEngine;
@@ -78,4 +124,5 @@ ListView {
         onBusyMessage: root.busyMessage(message);
         onErrorMessage: root.errorMessage(message);
     }
+    NewStuff.QuestionAsker {}
 }

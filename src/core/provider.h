@@ -25,6 +25,8 @@
 #include <QUrl>
 #include <QDebug>
 
+#include <memory>
+
 #include "entryinternal.h"
 #include "errorcode.h"
 
@@ -34,6 +36,7 @@ class KJob;
 
 namespace KNSCore
 {
+struct Comment;
 /**
  * @short KNewStuff Base Provider class.
  *
@@ -145,6 +148,29 @@ public:
     virtual void loadEntries(const KNSCore::Provider::SearchRequest &request) = 0;
     virtual void loadEntryDetails(const KNSCore::EntryInternal &) {}
     virtual void loadPayloadLink(const EntryInternal &entry, int linkId) = 0;
+    /**
+     * Request a loading of comments from this provider. The engine listens to the
+     * commentsLoaded() signal for the result
+     *
+     * @note Implementation detail: All subclasses should connect to this signal
+     * and point it at a slot which does the actual work, if they support comments.
+     *
+     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
+     * @see commentsLoaded(const QList<shared_ptr<KNSCore::Comment>> comments)
+     * @since 5.63
+     */
+    Q_SIGNAL void loadComments(const EntryInternal &entry, int commentsPerPage, int page);
+    /**
+     * Request loading of the details for a specific person with the given username.
+     * The engine listens to the personLoaded() for the result
+     *
+     * @note Implementation detail: All subclasses should connect to this signal
+     * and point it at a slot which does the actual work, if they support comments.
+     *
+     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
+     * @since 5.63
+     */
+    Q_SIGNAL void loadPerson(const QString &username);
 
     virtual bool userCanVote()
     {
@@ -201,6 +227,18 @@ Q_SIGNALS:
 
     void entryDetailsLoaded(const KNSCore::EntryInternal &);
     void payloadLinkLoaded(const KNSCore::EntryInternal &);
+    /**
+     * Fired when new comments have been loaded
+     * @param comments The list of newly loaded comments, in a depth-first order
+     * @since 5.63
+     */
+    void commentsLoaded(const QList<std::shared_ptr<KNSCore::Comment>> comments);
+    /**
+     * Fired when the details of a person have been loaded
+     * @param author The person we've just loaded data for
+     * @since 5.63
+     */
+    void personLoaded(const std::shared_ptr<KNSCore::Author> author);
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;

@@ -52,7 +52,12 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
     return QVariant::fromValue(entry);
 }
 
-void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List& entries)
+int ItemsModel::row(const EntryInternal &entry) const
+{
+    return m_entries.indexOf(entry);
+}
+
+void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 {
     for (const KNSCore::EntryInternal &entry : entries) {
         addEntry(entry);

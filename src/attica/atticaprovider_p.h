@@ -65,6 +65,16 @@ public:
     void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
     void loadEntryDetails(const KNSCore::EntryInternal &entry) override;
     void loadPayloadLink(const EntryInternal &entry, int linkId) override;
+    /**
+     * The slot which causes loading of comments for the Attica provider
+     * @see Provider::loadComments(const EntryInternal &entry, int commentsPerPage, int page)
+     */
+    Q_SLOT void loadComments(const EntryInternal &entry, int commentsPerPage, int page);
+    /**
+     * The slot which causes loading of a person's details
+     * @see Provider::loadPerson(const QString &username)
+     */
+    Q_SLOT void loadPerson(const QString &username);
 
     bool userCanVote() override
     {
@@ -88,6 +98,8 @@ private Q_SLOTS:
     void votingFinished(Attica::BaseJob *);
     void becomeFanFinished(Attica::BaseJob *job);
     void detailsLoaded(Attica::BaseJob *job);
+    void loadedComments(Attica::BaseJob *job);
+    void loadedPerson(Attica::BaseJob *job);
 
 private:
     void checkForUpdates();

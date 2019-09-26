@@ -62,6 +62,7 @@ public:
         CancelResponse = 4,
         OKResponse = YesResponse
     };
+    Q_ENUM(Response)
 
     enum QuestionType {
         YesNoQuestion = 0,
@@ -70,8 +71,9 @@ public:
         SelectFromListQuestion = 3,
         PasswordQuestion = 4
     };
+    Q_ENUM(QuestionType)
 
-    explicit Question(QuestionType = YesNoQuestion, QObject* parent = nullptr);
+    explicit Question(QuestionType = YesNoQuestion, QObject *parent = nullptr);
     virtual ~Question();
 
     Response ask();

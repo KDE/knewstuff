@@ -35,11 +35,14 @@
  * Most data in the model is simple, but the DownloadLinks role will return a list of
  * DownloadLinkInfo entries, which you will need to manage in some way.
  *
- * You might also look at NewStuffList and NewStuffItem to see some more detail on what can be
- * done with the data.
+ * You might also look at NewStuffList, NewStuffItem, and the other items, to see some more
+ * detail on what can be done with the data.
  *
  * @see NewStuffList
  * @see NewStuffItem
+ * @see NewStuffPage
+ * @see NewStuffEntryDetails
+ * @see NewStuffEntryComments
  *
  * \code
     import org.kde.newstuff 1.0 as NewStuff
@@ -62,9 +65,12 @@
 class ItemsModel : public QAbstractListModel
 {
     Q_OBJECT
+    /**
+     * The NewStuffQuickEngine to show items from
+     */
     Q_PROPERTY(QObject* engine READ engine WRITE setEngine NOTIFY engineChanged)
 public:
-    explicit ItemsModel(QObject* parent = nullptr);
+    explicit ItemsModel(QObject *parent = nullptr);
     virtual ~ItemsModel();
 
     enum Roles {
@@ -96,8 +102,10 @@ public:
         DonationLinkRole,
         ProviderIdRole,
         SourceRole,
-        StatusRole
+        StatusRole,
+        CommentsModelRole
     };
+    Q_ENUM(Roles)
     enum ItemStatus {
         InvalidStatus,
         DownloadableStatus,
@@ -115,8 +123,8 @@ public:
     bool canFetchMore(const QModelIndex & parent) const override;
     void fetchMore(const QModelIndex & parent) override;
 
-    QObject* engine() const;
-    void setEngine(QObject* newEngine);
+    QObject *engine() const;
+    void setEngine(QObject *newEngine);
     Q_SIGNAL void engineChanged();
 
     /**
@@ -128,7 +136,7 @@ public:
      *
      * @param index The index of the item to install or update
      */
-    Q_INVOKABLE void installItem(int index);
+    Q_INVOKABLE void installItem(int index, int linkId);
     /**
      * @brief Uninstall an already installed item
      *
@@ -139,9 +147,25 @@ public:
      * @param index The index of the item to be uninstalled
      */
     Q_INVOKABLE void uninstallItem(int index);
+
+    /**
+     * @brief Run the adoption command on an already installed item
+     *
+     * @note This will simply fail quietly if the item is not installed
+     *
+     * @param index The intex of the item to be adopted
+     */
+    Q_INVOKABLE void adoptItem(int index);
+
+    /**
+     * @brief Fired when an entry's data changes
+     *
+     * @param index The index of the item which has changed
+     */
+    Q_SIGNAL void entryChanged(int index);
 private:
     class Private;
-    Private* d;
+    Private *d;
 };
 Q_DECLARE_METATYPE(ItemsModel::ItemStatus)
 

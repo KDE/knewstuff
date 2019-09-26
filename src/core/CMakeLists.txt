@@ -1,5 +1,6 @@
 set(KNewStuffCore_SRCS
     author.cpp
+    commentsmodel.cpp
     cache.cpp
     downloadmanager.cpp
     engine.cpp

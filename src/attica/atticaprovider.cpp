@@ -17,6 +17,7 @@
 
 #include "atticaprovider_p.h"
 
+#include "commentsmodel.h"
 #include "question.h"
 #include "tagsfilterchecker.h"
 
@@ -49,6 +50,8 @@ AtticaProvider::AtticaProvider(const QStringList &categories)
     connect(&m_providerManager, &ProviderManager::providerAdded, this, &AtticaProvider::providerLoaded);
     connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)),
             SLOT(authenticationCredentialsMissing(Provider)));
+    connect(this, &Provider::loadComments, this, &AtticaProvider::loadComments);
+    connect(this, &Provider::loadPerson, this, &AtticaProvider::loadPerson);
 }
 
 AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories)
@@ -342,6 +345,79 @@ void AtticaProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int li
     }
 }
 
+void AtticaProvider::loadComments(const EntryInternal &entry, int commentsPerPage, int page)
+{
+    ListJob<Attica::Comment> *job = m_provider.requestComments(Attica::Comment::ContentComment, entry.uniqueId(), QLatin1String("0"), page, commentsPerPage);
+    connect(job, &BaseJob::finished, this, &AtticaProvider::loadedComments);
+    job->start();
+}
+
+/// TODO KF6 QList is discouraged, and we'll probably want to switch this (and the rest of the KNS library) to QVector instead
+QList<std::shared_ptr<KNSCore::Comment>> getCommentsList(const Attica::Comment::List &comments, std::shared_ptr<KNSCore::Comment> parent) {
+    QList<std::shared_ptr<KNSCore::Comment>> knsComments;
+    for (const Attica::Comment &comment : comments) {
+        qCDebug(KNEWSTUFFCORE) << "Appending comment with id" << comment.id() << ", which has" << comment.childCount() << "children";
+        auto knsComment = std::make_shared<KNSCore::Comment>();
+        knsComment->id = comment.id();
+        knsComment->subject = comment.subject();
+        knsComment->text = comment.text();
+        knsComment->childCount = comment.childCount();
+        knsComment->username = comment.user();
+        knsComment->date = comment.date();
+        knsComment->score = comment.score();
+        knsComment->parent = parent;
+        knsComments << knsComment;
+        if (comment.childCount() > 0) {
+            qCDebug(KNEWSTUFFCORE) << "Getting more comments, as this one has children, and we currently have this number of comments:" << knsComments.count();
+            knsComments << getCommentsList(comment.children(), knsComment);
+            qCDebug(KNEWSTUFFCORE) << "After getting the children, we now have the following number of comments:" << knsComments.count();
+        }
+    }
+    return knsComments;
+}
+
+void AtticaProvider::loadedComments(Attica::BaseJob *baseJob)
+{
+    if (!jobSuccess(baseJob)) {
+        return;
+    }
+
+    ListJob<Attica::Comment> *job = static_cast<ListJob<Attica::Comment>*>(baseJob);
+    Attica::Comment::List comments = job->itemList();
+
+    QList<std::shared_ptr<KNSCore::Comment>> receivedComments = getCommentsList(comments, nullptr);
+    emit commentsLoaded(receivedComments);
+}
+
+void AtticaProvider::loadPerson(const QString &username)
+{
+    if (m_provider.hasPersonService()) {
+        ItemJob<Attica::Person> *job = m_provider.requestPerson(username);
+        job->setProperty("username", username);
+        connect(job, &BaseJob::finished, this, &AtticaProvider::loadedPerson);
+        job->start();
+    }
+}
+
+void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
+{
+    if (!jobSuccess(baseJob)) {
+        return;
+    }
+
+    ItemJob<Attica::Person> *job = static_cast<ItemJob<Attica::Person>*>(baseJob);
+    Attica::Person person = job->result();
+
+    auto author = std::make_shared<KNSCore::Author>();
+    author->setId(job->property("username").toString()); // This is a touch hack-like, but it ensures we actually have the data in case it is not returned by the server
+    author->setName(QString::fromLatin1("%1 %2").arg(person.firstName()).arg(person.lastName()).trimmed());
+    author->setHomepage(person.homepage());
+    author->setProfilepage(person.extendedAttribute(QStringLiteral("profilepage")));
+    author->setAvatarUrl(person.avatarUrl());
+    author->setDescription(person.extendedAttribute(QStringLiteral("description")));
+    emit personLoaded(author);
+}
+
 void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
 {
     if (!jobSuccess(baseJob)) {
@@ -502,6 +578,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
 
     entry.setLicense(content.license());
     Author author;
+    author.setId(content.author());
     author.setName(content.author());
     author.setHomepage(content.attribute(QStringLiteral("profilepage")));
     entry.setAuthor(author);

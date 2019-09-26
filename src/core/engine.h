@@ -58,6 +58,7 @@ class Provider;
 namespace KNSCore
 {
 class Cache;
+class CommentsModel;
 class Installation;
 
 /**
@@ -90,6 +91,13 @@ public:
      * @return \b true if any valid configuration was found, \b false otherwise
      */
     bool init(const QString &configfile);
+
+    /**
+     * The name as defined by the knsrc file
+     * @return The name associated with the engine's configuration file
+     * @since 5.63
+     */
+    QString name() const;
 
     /**
      * Installs an entry's payload file. This includes verification, if
@@ -143,6 +151,12 @@ public:
      */
     void setSortMode(Provider::SortMode mode);
     /**
+     * The sort mode set on the current request
+     * @see setSortMode(Provider::SortMode)
+     * @since 5.63
+     */
+    Provider::SortMode sortMode() const;
+    /**
      * Set a filter for results (defaults to none), which will allow you
      * to show only installed entries, installed entries which have updates,
      * or a specific item with a specified ID. The latter further requires
@@ -156,6 +170,12 @@ public:
      * @param filter The type of results you wish to see
      */
     void setFilter(Provider::Filter filter);
+    /**
+     * The result filter set on the current request
+     * @see setFilter(Provider::Filter)
+     * @since 5.63
+     */
+    Provider::Filter filter() const;
 
     /**
      * Set the categories that will be included in searches
@@ -176,6 +196,12 @@ public:
      * @param searchString The search term you wish to search for
      */
     void setSearchTerm(const QString &searchString);
+    /**
+     * The search term for the current search (empty if none is set)
+     * @return The current search term
+     * @since 5.63
+     */
+    QString searchTerm() const;
     void reloadEntries();
     void requestMoreData();
     void requestData(int page, int pageSize);
@@ -422,6 +448,34 @@ public:
      * @since 5.57
      */
     void setConfigLocationFallback(bool enableFallback);
+
+    /**
+     * The Provider instance with the passed ID
+     *
+     * @param providerId The ID of the Provider to fetch
+     * @return The Provider with the passed ID, or null if non such Provider exists
+     * @since 5.63
+     */
+    QSharedPointer<Provider> provider(const QString &providerId) const;
+
+    /**
+     * Return the first provider in the providers list (usually the default provider)
+     * @return The first Provider (or null if the engine is not initialized)
+     * @since 5.63
+     */
+    QSharedPointer<Provider> defaultProvider() const;
+
+    /**
+     * This function will return an instance of a model which contains comments for
+     * the entry passed to it. The model may be empty (if there are no comments for
+     * the entry, which also covers situations where the entry's provider does not
+     * support commenting)
+     *
+     * @param entry The entry to fetch comments for
+     * @return A model which contains the comments for the specified entry
+     * @since 5.63
+     */
+    CommentsModel *commentsForEntry(const KNSCore::EntryInternal &entry);
 
 Q_SIGNALS:
     /**

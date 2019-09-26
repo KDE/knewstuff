@@ -21,41 +21,58 @@
 
 #include "quickitemsmodel.h"
 #include "quickengine.h"
+#include "knewstuffquick_debug.h"
 
 #include "itemsmodel.h"
 #include "engine.h"
 #include "downloadlinkinfo.h"
+#include "core/commentsmodel.h"
+
+#include <KLocalizedString>
+#include <KShell>
+#include <QProcess>
 
 class ItemsModel::Private {
 public:
-    Private(ItemsModel* qq)
+    Private(ItemsModel *qq)
         : q(qq)
         , model(nullptr)
         , engine(nullptr)
+        , coreEngine(nullptr)
     {}
-    ItemsModel* q;
-    KNSCore::ItemsModel* model;
-    KNSCore::Engine* engine;
+    ~Private()
+    {
+        qDeleteAll(commentsModels);
+    }
+    ItemsModel *q;
+    KNSCore::ItemsModel *model;
+    Engine *engine;
+    KNSCore::Engine *coreEngine;
+
+    QHash<QString, KNSCore::CommentsModel*> commentsModels;
 
     bool initModel()
     {
-        if(model) {
+        if (model) {
             return true;
         }
-        if(!engine) {
+        if (!coreEngine) {
             return false;
         }
-        model = new KNSCore::ItemsModel(engine, q);
+        model = new KNSCore::ItemsModel(coreEngine, q);
 
-        q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, engine, &KNSCore::Engine::reloadEntries);
+        q->connect(coreEngine, &KNSCore::Engine::signalProvidersLoaded, coreEngine, &KNSCore::Engine::reloadEntries);
         // Entries have been fetched and should be shown:
-        q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, model, &KNSCore::ItemsModel::slotEntriesLoaded);
+        q->connect(coreEngine, &KNSCore::Engine::signalEntriesLoaded, model, &KNSCore::ItemsModel::slotEntriesLoaded);
 
         // An entry has changes - eg because it was installed
-        q->connect(engine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, q, [=](const KNSCore::EntryInternal &entry){
+            emit q->entryChanged(model->row(entry));
+        });
 
-        q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
-        q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
+        q->connect(coreEngine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
         q->connect(model, &KNSCore::ItemsModel::rowsInserted, q, &ItemsModel::rowsInserted);
         q->connect(model, &KNSCore::ItemsModel::rowsRemoved, q, &ItemsModel::rowsRemoved);
@@ -65,7 +82,7 @@ public:
     }
 };
 
-ItemsModel::ItemsModel(QObject* parent)
+ItemsModel::ItemsModel(QObject *parent)
     : QAbstractListModel(parent)
     , d(new Private(this))
 {
@@ -116,20 +133,20 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
 
 int ItemsModel::rowCount(const QModelIndex& parent) const
 {
-    if(parent.isValid())
+    if (parent.isValid())
         return 0;
-    if(d->initModel())
+    if (d->initModel())
         return d->model->rowCount(QModelIndex());
     return 0;
 }
 
-QVariant ItemsModel::data(const QModelIndex& index, int role) const
+QVariant ItemsModel::data(const QModelIndex &index, int role) const
 {
     QVariant data;
-    if(index.isValid() && d->initModel())
+    if (index.isValid() && d->initModel())
     {
         KNSCore::EntryInternal entry = d->model->data(d->model->index(index.row()), Qt::UserRole).value<KNSCore::EntryInternal>();
-        switch(role)
+        switch (role)
         {
             case NameRole:
             case Qt::DisplayRole:
@@ -148,10 +165,13 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                 {
                     KNSCore::Author author = entry.author();
                     QVariantMap returnAuthor;
+                    returnAuthor[QStringLiteral("id")] = author.id();
                     returnAuthor[QStringLiteral("name")] = author.name();
                     returnAuthor[QStringLiteral("email")] = author.email();
                     returnAuthor[QStringLiteral("homepage")] = author.homepage();
                     returnAuthor[QStringLiteral("jabber")] = author.jabber();
+                    returnAuthor[QStringLiteral("avatarUrl")] = author.avatarUrl();
+                    returnAuthor[QStringLiteral("description")] = author.description();
                     data.setValue<>(returnAuthor);
                 }
                 break;
@@ -238,9 +258,9 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     // This would be good to cache... but it also needs marking as dirty, somehow...
                     const QList<KNSCore::EntryInternal::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
                     QObjectList list;
-                    for(const KNSCore::EntryInternal::DownloadLinkInformation& link : dllinks)
+                    for(const KNSCore::EntryInternal::DownloadLinkInformation &link : dllinks)
                     {
-                        DownloadLinkInfo* info = new DownloadLinkInfo();
+                        DownloadLinkInfo *info = new DownloadLinkInfo();
                         info->setData(link);
                         list.append(info);
                     }
@@ -303,6 +323,18 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
                     }
                 }
                 break;
+            case CommentsModelRole:
+                {
+                    KNSCore::CommentsModel *commentsModel{nullptr};
+                    if (!d->commentsModels.contains(entry.uniqueId())) {
+                        commentsModel = d->coreEngine->commentsForEntry(entry);
+                        d->commentsModels[entry.uniqueId()] = commentsModel;
+                    } else {
+                        commentsModel = d->commentsModels[entry.uniqueId()];
+                    }
+                    data.setValue<QObject*>(commentsModel);
+                }
+                break;
             default:
                 data.setValue<QString>(QStringLiteral("Unknown role"));
                 break;
@@ -311,57 +343,79 @@ QVariant ItemsModel::data(const QModelIndex& index, int role) const
     return data;
 }
 
-bool ItemsModel::canFetchMore(const QModelIndex& parent) const
+bool ItemsModel::canFetchMore(const QModelIndex &parent) const
 {
-    if(parent.isValid()) {
-        return false;
+    if (!parent.isValid() && d->coreEngine && d->coreEngine->categoriesMetadata().count() > 0) {
+        return true;
     }
-    return true;
+    return false;
 }
 
-void ItemsModel::fetchMore(const QModelIndex& parent)
+void ItemsModel::fetchMore(const QModelIndex &parent)
 {
-    if(parent.isValid()) {
+    if (parent.isValid() || !d->coreEngine) {
         return;
     }
-    d->engine->requestMoreData();
+    d->coreEngine->requestMoreData();
 }
 
-QObject * ItemsModel::engine() const
+QObject *ItemsModel::engine() const
 {
     return d->engine;
 }
 
-void ItemsModel::setEngine(QObject* newEngine)
+void ItemsModel::setEngine(QObject *newEngine)
 {
-    beginResetModel();
-    Engine* test = qobject_cast<Engine*>(newEngine);
-    if(test) {
-        d->engine = qobject_cast<KNSCore::Engine*>(test->engine());
+    if (d->engine != newEngine) {
+        beginResetModel();
+        d->engine = qobject_cast<Engine*>(newEngine);
+        d->model->deleteLater();
+        d->model = nullptr;
+        d->coreEngine = nullptr;
+        if (d->engine) {
+            d->coreEngine = qobject_cast<KNSCore::Engine*>(d->engine->engine());
+        }
+        connect(d->engine, &Engine::engineChanged, this, [this](){
+            beginResetModel();
+            d->model->deleteLater();
+            d->model = nullptr;
+            d->coreEngine = qobject_cast<KNSCore::Engine*>(d->engine->engine());
+            endResetModel();
+        });
+        emit engineChanged();
+        endResetModel();
     }
-    else {
-        d->engine = qobject_cast<KNSCore::Engine*>(newEngine);
-    }
-    emit engineChanged();
-    endResetModel();
 }
 
-void ItemsModel::installItem(int index)
+void ItemsModel::installItem(int index, int linkId)
 {
-    if(d->engine) {
+    if (d->coreEngine) {
         KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
         if(entry.isValid()) {
-            d->engine->install(entry);
+            d->coreEngine->install(entry, linkId);
         }
     }
 }
 
 void ItemsModel::uninstallItem(int index)
 {
-    if(d->engine) {
+    if (d->coreEngine) {
         KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
         if(entry.isValid()) {
-            d->engine->uninstall(entry);
+            d->coreEngine->uninstall(entry);
+        }
+    }
+}
+
+void ItemsModel::adoptItem(int index)
+{
+    if (d->coreEngine) {
+        KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
+        if (entry.isValid()) {
+            QStringList args = KShell::splitArgs(d->coreEngine->adoptionCommand(entry));
+            qCDebug(KNEWSTUFFQUICK) << "executing AdoptionCommand" << args;
+            QProcess::startDetached(args.takeFirst(), args);
+            d->engine->idleMessage(i18n("Using %1").arg(entry.name()));
         }
     }
 }
