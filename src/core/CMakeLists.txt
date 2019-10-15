@@ -40,7 +40,16 @@ ecm_qt_declare_logging_category(KNewStuffCore_SRCS HEADER knewstuffcore_debug.h 
 add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} )
 add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
 
-generate_export_header(KF5NewStuffCore BASE_NAME KNewStuffCore EXPORT_FILE_NAME knewstuffcore_export.h)
+ecm_generate_export_header(KF5NewStuffCore
+    EXPORT_FILE_NAME knewstuffcore_export.h
+    BASE_NAME KNewStuffCore
+    # GROUP_BASE_NAME KF <- enable once all of KF modules use ecm_generate_export_header
+    VERSION ${KF5_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 5.31 5.36 5.53
+)
+# TODO: add support for EXCLUDE_DEPRECATED_BEFORE_AND_AT
+# needs fixing of undeprecated API being still implemented using own deprecated API
 
 # The src/ dir is needed for the entry.h header. This only happens because some
 # code in Core uses an enum from KNS3::Entry

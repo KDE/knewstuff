@@ -35,7 +35,14 @@ ki18n_wrap_ui(KNewStuff_SRCS
 add_library(KF5NewStuff ${KNewStuff_SRCS} )
 add_library(KF5::NewStuff ALIAS KF5NewStuff)
 
-generate_export_header(KF5NewStuff BASE_NAME KNewStuff EXPORT_FILE_NAME knewstuff_export.h)
+ecm_generate_export_header(KF5NewStuff
+    EXPORT_FILE_NAME knewstuff_export.h
+    BASE_NAME KNewStuff
+    # GROUP_BASE_NAME KF <- enable once all of KF modules use ecm_generate_export_header
+    VERSION ${KF5_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 5.29
+)
 
 target_include_directories(KF5NewStuff
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"

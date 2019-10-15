@@ -26,6 +26,8 @@
 
 #include "knewstuffcore_export.h"
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
+
 struct KeyStruct {
     QString id;
     QString name;
@@ -42,7 +44,8 @@ namespace KNSCore
  * @internal
  * @deprecated
 */
-class Q_DECL_DEPRECATED KNEWSTUFFCORE_EXPORT Security : public QObject
+class KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
+KNEWSTUFFCORE_EXPORT Security : public QObject
 {
     Q_OBJECT
 public:
@@ -151,5 +154,7 @@ Q_SIGNALS:
 };
 
 }
+
+#endif // KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
 
 #endif

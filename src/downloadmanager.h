@@ -21,6 +21,8 @@
 #include "knewstuff_export.h"
 #include "entry.h"
 
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 29)
+
 namespace KNS3
 {
 class DownloadManagerPrivate;
@@ -30,9 +32,9 @@ class DownloadManagerPrivate;
  * without using the widgets and to look for updates of
  * already installed items without showing the dialog.
  * @since 4.5
- * @deprecated Use KNSCore::DownloadManager instead
+ * @deprecated Since 5.29, use KNSCore::DownloadManager instead
  */
-class KNEWSTUFF_DEPRECATED_EXPORT DownloadManager : public QObject
+class KNEWSTUFF_EXPORT DownloadManager : public QObject
 {
     Q_OBJECT
 
@@ -50,7 +52,9 @@ public:
      * Appname is the name of your application as provided in the about data->
      *
      * @param parent the parent of the dialog
+     * @deprecated Since 5.29, use KNSCore::DownloadManager instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 29, "Use KNSCore::DownloadManager")
     explicit DownloadManager(QObject *parent = nullptr);
 
     /**
@@ -58,7 +62,9 @@ public:
      *
      * @param configFile the name of the configuration file
      * @param parent
+     * @deprecated Since 5.29, use KNSCore::DownloadManager instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 29, "Use KNSCore::DownloadManager")
     explicit DownloadManager(const QString &configFile, QObject *parent = nullptr);
 
     /**
@@ -152,5 +158,7 @@ private:
 };
 
 }
+
+#endif // KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 29)
 
 #endif

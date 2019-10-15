@@ -501,7 +501,10 @@ Q_SIGNALS:
     void signalDownloadDialogDone(KNSCore::EntryInternal::List);
     void jobStarted(KJob *, const QString &);
 
-    QT_DEPRECATED void signalError(const QString &);
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 53)
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 53, "Use Engine::signalErrorCode(const KNSCore::ErrorCode &, const QString &, const QVariant &)")
+    void signalError(const QString &);
+#endif
     void signalBusy(const QString &);
     void signalIdle(const QString &);
     /**

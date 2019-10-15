@@ -478,9 +478,12 @@ public:
      * @param xmldata string to load xml data from
      *
      * @returns whether or not setting the values was successful
+     *
+     * @since 5.36
      */
     bool setEntryXML(QXmlStreamReader &reader);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 36)
     /**
      * set the xml for the entry
      * parses the xml and sets the private members accordingly
@@ -492,7 +495,9 @@ public:
      *
      * @deprecated since 5.36, use setEntryXML(QXmlStreamReader&) instead
      */
-    KNEWSTUFFCORE_DEPRECATED bool setEntryXML(const QDomElement &xmldata);
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 36, "Use EntryInternal::setEntryXML(QXmlStreamReader &)")
+    bool setEntryXML(const QDomElement &xmldata);
+#endif
 
     /**
     * get the xml string for the entry

@@ -117,7 +117,10 @@ public Q_SLOTS:
     void uninstall(KNSCore::EntryInternal entry);
 
     // TODO KF6: remove, was used with deprecated Security class.
-    Q_DECL_DEPRECATED void slotInstallationVerification(int result);
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
+    void slotInstallationVerification(int result);
+#endif
 
     void slotPayloadResult(KJob *job);
 
@@ -136,8 +139,12 @@ Q_SIGNALS:
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
     // TODO KF6: remove, was used with deprecated Security class.
-    Q_DECL_DEPRECATED void signalInformation(const QString &) const;
-    Q_DECL_DEPRECATED void signalError(const QString &) const;
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
+    void signalInformation(const QString &) const;
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
+    void signalError(const QString &) const;
+#endif
 
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
