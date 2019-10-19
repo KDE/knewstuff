@@ -117,12 +117,15 @@ bool Engine::init(const QString &configfile)
         // Don't do the expensive search unless the config is relative
         actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("knsrcfiles/%1").arg(configfile));
     }
+    QString configFileName{configfile};
     if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
         conf.reset(new KConfig(configfile));
         qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
     } else if (isRelativeConfig) {
+        configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("knsrcfiles/%1").arg(configfile))).baseName();
         conf.reset(new KConfig(QString::fromLatin1("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
     } else {
+        configFileName = QFileInfo(configfile).baseName();
         conf.reset(new KConfig(configfile));
     }
 
@@ -158,7 +161,6 @@ bool Engine::init(const QString &configfile)
     }
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
-    const QString configFileName = QFileInfo(QDir::isAbsolutePath(configfile) ? configfile : QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile)).baseName();
     // let installation read install specific config
     if (!m_installation->readConfig(group)) {
         return false;
@@ -167,6 +169,7 @@ bool Engine::init(const QString &configfile)
     connect(m_installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
 
     m_cache = Cache::getCache(configFileName);
+    qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
     connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
     m_cache->readRegistry();
 
