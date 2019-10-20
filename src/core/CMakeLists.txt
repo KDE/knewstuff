@@ -43,7 +43,7 @@ add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
 ecm_generate_export_header(KF5NewStuffCore
     EXPORT_FILE_NAME knewstuffcore_export.h
     BASE_NAME KNewStuffCore
-    # GROUP_BASE_NAME KF <- enable once all of KF modules use ecm_generate_export_header
+    GROUP_BASE_NAME KF
     VERSION ${KF5_VERSION}
     DEPRECATED_BASE_VERSION 0
     DEPRECATION_VERSIONS 5.31 5.36 5.53
