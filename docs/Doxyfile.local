@@ -1,0 +1,10 @@
+### KApiDox Project-specific Overrides File
+
+# define so that deprecated API is not skipped
+PREDEFINED += \
+    "KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(x, y)=1" \
+    "KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(x, y)=1" \
+    "KNEWSTUFFCORE_DEPRECATED_VERSION(x, y, t)=" \
+    "KNEWSTUFF_ENABLE_DEPRECATED_SINCE(x, y)=1" \
+    "KNEWSTUFF_BUILD_DEPRECATED_SINCE(x, y)=1" \
+    "KNEWSTUFF_DEPRECATED_VERSION(x, y, t)="
