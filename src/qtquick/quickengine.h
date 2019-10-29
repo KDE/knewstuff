@@ -47,6 +47,7 @@ class Engine : public QObject
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(KNSCore::EntryInternal::List changedEntries READ changedEntries RESET resetChangedEntries NOTIFY changedEntriesChanged)
+    Q_PROPERTY(int changedEntriesCount READ changedEntriesCount NOTIFY changedEntriesChanged)
 public:
     explicit Engine(QObject *parent = nullptr);
     virtual ~Engine();
@@ -88,6 +89,7 @@ public:
     KNSCore::EntryInternal::List changedEntries() const;
     Q_INVOKABLE void resetChangedEntries();
     Q_SIGNAL void changedEntriesChanged();
+    int changedEntriesCount() const;
 Q_SIGNALS:
     void message(const QString &message);
     void idleMessage(const QString &message);

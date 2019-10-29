@@ -212,6 +212,11 @@ KNSCore::EntryInternal::List Engine::changedEntries() const
     return d->changedEntries;
 }
 
+int Engine::changedEntriesCount() const
+{
+    return d->changedEntries.count();
+}
+
 void Engine::resetChangedEntries()
 {
     d->changedEntries.clear();
