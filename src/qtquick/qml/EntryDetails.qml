@@ -91,54 +91,38 @@ KCM.SimpleKCM {
         username: author.name
     }
     title: i18nc("Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2").arg(component.name).arg(entryAuthor.name)
-    titleDelegate: QtLayouts.RowLayout {
-        implicitHeight: title.height
-        Kirigami.Heading {
-            id: title
-            level: 1
-
-            QtLayouts.Layout.fillWidth: true;
-            QtLayouts.Layout.preferredWidth: titleTextMetrics.width
-            QtLayouts.Layout.minimumWidth: titleTextMetrics.width
-            opacity: component.isCurrentPage ? 1 : 0.4
-            maximumLineCount: 1
-            elide: Text.ElideRight
-            text: component.title
-            TextMetrics {
-                id: titleTextMetrics
-                text: component.title
-                font: title.font
-            }
-        }
-        QtControls.ToolButton {
-            text: component.downloadCount == 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
-            icon.name: "install"
-            onClicked: {
-                if (component.downloadCount == 1) {
-                    newStuffModel.installItem(component.index);
-                } else {
-                    downloadItemsSheet.downloadLinks = component.downloadLinks;
-                    downloadItemsSheet.entryId = component.index;
-                    downloadItemsSheet.open();
+    actions {
+        contextualActions: [
+            Kirigami.Action {
+                text: component.downloadCount == 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
+                icon.name: "install"
+                onTriggered: {
+                    if (component.downloadCount == 1) {
+                        newStuffModel.installItem(component.index);
+                    } else {
+                        downloadItemsSheet.downloadLinks = component.downloadLinks;
+                        downloadItemsSheet.entryId = component.index;
+                        downloadItemsSheet.open();
+                    }
                 }
+                enabled: component.status == NewStuff.ItemsModel.DownloadableStatus || component.status == NewStuff.ItemsModel.DeletedStatus;
+                visible: enabled;
+            },
+            Kirigami.Action {
+                text: i18nc("Request updating of this item", "Update");
+                icon.name: "update"
+                onTriggered: { newStuffModel.installItem(component.index); }
+                enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
+                visible: enabled;
+            },
+            Kirigami.Action {
+                text: i18nc("Request uninstallation of this item", "Uninstall");
+                icon.name: "uninstall"
+                onTriggered: { newStuffModel.uninstallItem(component.index); }
+                enabled: component.status == NewStuff.ItemsModel.InstalledStatus
+                visible: enabled;
             }
-            enabled: component.status == NewStuff.ItemsModel.DownloadableStatus || component.status == NewStuff.ItemsModel.DeletedStatus;
-            visible: enabled;
-        }
-        QtControls.ToolButton {
-            text: i18nc("Request updating of this item", "Update");
-            icon.name: "update"
-            onClicked: { newStuffModel.installItem(component.index); }
-            enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
-            visible: enabled;
-        }
-        QtControls.ToolButton {
-            text: i18nc("Request uninstallation of this item", "Uninstall");
-            icon.name: "uninstall"
-            onClicked: { newStuffModel.uninstallItem(component.index); }
-            enabled: component.status == NewStuff.ItemsModel.InstalledStatus
-            visible: enabled;
-        }
+        ]
     }
     QtLayouts.ColumnLayout {
         spacing: Kirigami.Units.smallSpacing

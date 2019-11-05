@@ -95,22 +95,16 @@ KCM.GridViewKCM {
     NewStuff.QuestionAsker {}
 
     titleDelegate: QtLayouts.RowLayout {
+        QtLayouts.Layout.fillWidth: true
         Kirigami.Heading {
             id: title
             level: 1
 
             QtLayouts.Layout.fillWidth: true;
-            QtLayouts.Layout.preferredWidth: titleTextMetrics.width
-            QtLayouts.Layout.minimumWidth: titleTextMetrics.width
             opacity: root.isCurrentPage ? 1 : 0.4
             maximumLineCount: 1
             elide: Text.ElideRight
             text: root.title
-            TextMetrics {
-                id: titleTextMetrics
-                text: root.title
-                font: title.font
-            }
         }
         QtControls.ButtonGroup {
             id: displayModeGroup
