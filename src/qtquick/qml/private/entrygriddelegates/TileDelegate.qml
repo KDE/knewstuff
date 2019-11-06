@@ -214,6 +214,7 @@ Private.GridTileDelegate {
         }
         MouseArea {
             anchors.fill: parent;
+            cursorShape: Qt.PointingHandCursor;
             onClicked: component.showDetails();
         }
     }

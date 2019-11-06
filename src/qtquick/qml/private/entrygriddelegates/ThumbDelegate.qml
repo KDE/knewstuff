@@ -134,6 +134,7 @@ KCM.GridDelegate {
         }
         MouseArea {
             anchors.fill: parent;
+            cursorShape: Qt.PointingHandCursor;
             onClicked: pageStack.push(detailsPage, {
                 newStuffModel: GridView.view.model,
                 index: model.index,
