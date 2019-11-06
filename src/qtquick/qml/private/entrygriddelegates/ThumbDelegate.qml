@@ -54,10 +54,10 @@ KCM.GridDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadCount == 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
+            text: model.downloadLinks.length === 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
             iconName: "install"
             onTriggered: {
-                if (model.downloadCount == 1) {
+                if (model.downloadLinks.length === 1) {
                     newStuffModel.installItem(model.index);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
