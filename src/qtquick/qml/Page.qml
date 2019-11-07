@@ -87,10 +87,23 @@ KCM.GridViewKCM {
     title: newStuffEngine.name
     NewStuff.Engine {
         id: newStuffEngine;
-        onMessage: root.message(message);
-        onIdleMessage: root.idleMessage(message);
-        onBusyMessage: root.busyMessage(message);
-        onErrorMessage: root.errorMessage(message);
+        property string statusMessage;
+        onMessage: {
+            root.message(message);
+            statusMessage = message;
+        }
+        onIdleMessage: {
+            root.idleMessage(message);
+            statusMessage = message;
+        }
+        onBusyMessage: {
+            root.busyMessage(message);
+            statusMessage = message;
+        }
+        onErrorMessage: {
+            root.errorMessage(message);
+            statusMessage = message;
+        }
     }
     NewStuff.QuestionAsker {}
 
@@ -226,5 +239,35 @@ KCM.GridViewKCM {
     Component {
         id: detailsPage;
         NewStuff.EntryDetails { }
+    }
+
+    Item {
+        anchors.fill: parent
+        opacity: newStuffEngine.isLoading ? 1 : 0
+        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
+        visible: opacity > 0
+        Rectangle {
+            anchors.fill: parent
+            color: Kirigami.Theme.backgroundColor
+            opacity: 0.7
+        }
+        QtControls.BusyIndicator {
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.verticalCenter
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
+            running: newStuffEngine.isLoading
+        }
+        QtControls.Label {
+            anchors {
+                top: parent.verticalCenter
+                left: parent.left
+                right: parent.right
+                margins: Kirigami.Units.largeSpacing
+            }
+            horizontalAlignment: Text.AlignHCenter
+            text: newStuffEngine.statusMessage
+        }
     }
 }

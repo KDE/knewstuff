@@ -37,6 +37,7 @@ public:
         , categoriesModel(nullptr)
     {}
     KNSCore::Engine *engine;
+    bool isLoading{false};
     CategoriesModel *categoriesModel;
     QString configFile;
     KNSCore::EntryInternal::List changedEntries;
@@ -66,17 +67,30 @@ QString Engine::configFile() const
 void Engine::setConfigFile(const QString &newFile)
 {
     if (d->configFile != newFile) {
+        d->isLoading = true;
+        emit isLoadingChanged();
         d->configFile = newFile;
         emit configFileChanged();
 
         if (allowedByKiosk()) {
             if (!d->engine) {
                 d->engine = new KNSCore::Engine(this);
+                connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=](){
+                    d->isLoading = false;
+                    emit isLoadingChanged();
+                });
                 connect(d->engine, &KNSCore::Engine::signalMessage, this, &Engine::message);
                 connect(d->engine, &KNSCore::Engine::signalIdle, this, &Engine::idleMessage);
                 connect(d->engine, &KNSCore::Engine::signalBusy, this, &Engine::busyMessage);
                 connect(d->engine, &KNSCore::Engine::signalError, this, &Engine::errorMessage);
-                connect(d->engine, &KNSCore::Engine::signalErrorCode, this, [=](const KNSCore::ErrorCode &/*errorCode*/, const QString &message, const QVariant &/*metadata*/) {
+                connect(d->engine, &KNSCore::Engine::signalErrorCode, this, [=](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &/*metadata*/) {
+                    if (errorCode == KNSCore::ProviderError) {
+                        // This means loading the providers file failed entirely and we cannot complete the
+                        // initialisation. It also means the engine is done loading, but that nothing will
+                        // work, and we need to inform the user of this.
+                        d->isLoading = false;
+                        emit isLoadingChanged();
+                    }
                     emit errorMessage(message);
                 });
                 connect(d->engine, &KNSCore::Engine::signalEntryChanged, this, [this](const KNSCore::EntryInternal &entry){
@@ -102,6 +116,11 @@ void Engine::setConfigFile(const QString &newFile)
 QObject *Engine::engine() const
 {
     return d->engine;
+}
+
+bool Engine::isLoading() const
+{
+    return d->isLoading;
 }
 
 bool Engine::hasAdoptionCommand() const

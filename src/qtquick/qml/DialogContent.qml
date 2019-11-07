@@ -63,9 +63,16 @@ Kirigami.ApplicationItem {
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.Auto
     pageStack.initialPage: NewStuff.Page {
         id: newStuffPage
-        onMessage: component.showPassiveNotification(message);
-        onIdleMessage: component.showPassiveNotification(message);
-        onBusyMessage: component.showPassiveNotification(message);
-        onErrorMessage: component.showPassiveNotification(message);
+        function showMessage(message) {
+            // As the Page shows something nice and friendly while loading,
+            // there's no reason to do the passive notification thing for those.
+            if (!engine.isLoading) {
+                component.showPassiveNotification(message);
+            }
+        }
+        onMessage: showMessage(message);
+        onIdleMessage: showMessage(message);
+        onBusyMessage: showMessage(message);
+        onErrorMessage: showMessage(message);
     }
 }

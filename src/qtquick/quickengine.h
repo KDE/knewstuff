@@ -39,6 +39,11 @@ class Engine : public QObject
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
     Q_PROPERTY(QObject* engine READ engine NOTIFY engineChanged)
+    /**
+     * Whether or not the engine is performing its initial loading operations
+     * @since 5.64
+     */
+    Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY engineInitialized)
     Q_PROPERTY(QString name READ name NOTIFY engineInitialized)
     Q_PROPERTY(QObject* categories READ categories NOTIFY categoriesChanged)
@@ -60,6 +65,17 @@ public:
 
     QObject *engine() const;
     Q_SIGNAL void engineChanged();
+
+    /**
+     * Whether or not the engine is performing its initial loading operations
+     * @since 5.64
+     */
+    bool isLoading() const;
+    /**
+     * Fired when the isLoading value changes
+     * @since 5.64
+     */
+    Q_SIGNAL void isLoadingChanged();
 
     bool hasAdoptionCommand() const;
     QString name() const;
