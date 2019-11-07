@@ -200,19 +200,9 @@ Private.GridTileDelegate {
                 elide: Text.ElideRight
             }
         }
-        Item {
+        FeedbackOverlay {
             anchors.fill: parent
-            opacity: (model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus) ? 1 : 0
-            Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
-            Rectangle {
-                anchors.fill: parent
-                color: Kirigami.Theme.backgroundColor
-                opacity: 0.5;
-            }
-            QtControls.BusyIndicator {
-                anchors.centerIn: parent
-                running: parent.opacity > 0
-            }
+            newStuffModel: component.GridView.view.model
         }
         MouseArea {
             anchors.fill: parent;

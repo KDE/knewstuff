@@ -196,8 +196,6 @@ KCM.GridViewKCM {
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
         onItemPicked: {
-            var entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
-            applicationWindow().showPassiveNotification(i18nc("A passive notification shown when installation of an item is initiated", "Installing %1 from %2").arg(downloadName).arg(entryName), 1500);
             newStuffModel.installItem(entryId, downloadItemId);
         }
     }
