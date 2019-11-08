@@ -182,7 +182,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                     const auto filelightService = filelightApp->installedService();
 
                     filelight1Item->action()->setText(filelightApp->formatString(
-                                                          i18nc("@action:inmenu", "$GenericName - current folder")));
+                                                          i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current folder", QStringLiteral("$GenericName"))));
                     menu->connect(filelight1Item->action(), &QAction::triggered, menu,
                     [filelightService, url](bool) {
                         KRun::runApplication(*filelightService, { url }, nullptr);
@@ -190,7 +190,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
 
                     const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
                     filelight2Item->action()->setText(filelightApp->formatString(
-                                                          i18nc("@action:inmenu", "$GenericName - current device")));
+                                                          i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
                     menu->connect(filelight2Item->action(), &QAction::triggered, menu,
                     [filelightService, url](bool) {
                         KMountPoint::Ptr mountPoint
@@ -205,7 +205,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
             auto filelight3Item = menuBuilder->addMenuItem(filelightApp, KMoreTools::MenuSection_More);
             if (filelightApp->isInstalled()) {
                 filelight3Item->action()->setText(filelightApp->formatString(
-                                                      i18nc("@action:inmenu", "$GenericName - all devices")));
+                                                      i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - all devices", QStringLiteral("$GenericName"))));
                 const auto filelightService = filelightApp->installedService();
                 menu->connect(filelight3Item->action(), &QAction::triggered, menu,
                 [filelightService](bool) {
