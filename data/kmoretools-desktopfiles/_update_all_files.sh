@@ -62,3 +62,5 @@ cp $DIR_DFLT/shutter.desktop .
 cp $DIR_DFLT/vokoscreen.desktop .
     cp /usr/share/pixmaps/vokoscreen.png .
 cp $DIR_DFLT/xfce4-taskmanager.desktop .
+cp $DIR_DFLT/com.obsproject.Studio.desktop .
+cp $DIR_DFLT/com.obsproject.Studio.png .

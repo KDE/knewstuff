@@ -89,6 +89,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("org.kde.ktimer"),                     0, "https://kde.org/applications/utilities/org.kde.ktimer/", QStringLiteral("org.kde.ktimer"));
     ADD_ENTRY(QStringLiteral("org.kde.spectacle"),                  0, "https://kde.org/applications/utilities/org.kde.spectacle", QStringLiteral("org.kde.spectacle.desktop"));
     ADD_ENTRY(QStringLiteral("simplescreenrecorder"),               0, "https://www.maartenbaert.be/simplescreenrecorder/", QStringLiteral("simplescreenrecorder.desktop"));
+    ADD_ENTRY(QStringLiteral("com.obsproject.Studio"),              0, "https://obsproject.com/", QStringLiteral("com.obsproject.Studio.desktop"));
     ADD_ENTRY(QStringLiteral("vokoscreen"),                         0, "https://github.com/vkohaupt/vokoscreen", QString()); // feature-rich screen recorder
     ADD_ENTRY(QStringLiteral("xfce4-taskmanager"),                  0, "https://goodies.xfce.org/projects/applications/xfce4-taskmanager", QStringLiteral("xfce4-taskmanager.desktop"));
     //
@@ -151,7 +152,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     dict.insert(_("icon-browser"), { _("org.kde.plasma.cuttlefish.kmt-edition") });
     dict.insert(_("language-dictionary"), { _("ding"), _("kding") });
     dict.insert(_("mouse-tools"), { _("org.kde.kmousetool") }); // todo: add program "xbanish" to remove mouse cursor while typing
-    dict.insert(_("screenrecorder"), { _("com.uploadedlobster.peek"), _("simplescreenrecorder"), _("vokoscreen") });
+    dict.insert(_("screenrecorder"), { _("com.uploadedlobster.peek"), _("simplescreenrecorder"), _("vokoscreen"), _("com.obsproject.Studio") });
     dict.insert(_("screenshot-take"), { _("org.kde.spectacle"), _("shutter"), _("kaption"), _("hotshots") });
     dict.insert(_("system-monitor-processes"), { _("org.kde.ksysguard"), _("more:"), _("htop"), _("xfce4-taskmanager") });
     dict.insert(_("system-monitor-logs"), { _("org.kde.ksystemlog") });
