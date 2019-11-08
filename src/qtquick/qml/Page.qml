@@ -217,6 +217,35 @@ KCM.GridViewKCM {
     view.implicitCellHeight: root.viewMode == Page.ViewMode.Tiles ? Math.round(view.implicitCellWidth / 3) : (root.viewMode == Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit*2)
     view.delegate: root.viewMode == Page.ViewMode.Tiles ? tileDelegate : (root.viewMode == Page.ViewMode.Preview ? bigPreviewDelegate : thumbDelegate)
 
+    view.footer: Item {
+        width: GridView.view.width
+        height: GridView.view.count > 0 ? Kirigami.Units.gridUnit * 3 : GridView.view.height
+        Behavior on height { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+        visible: opacity > 0
+        opacity: newStuffModel.isLoadingData && !newStuffEngine.isLoading ? 1 : 0
+        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+        QtControls.BusyIndicator {
+            anchors {
+                top: parent.top
+                right: parent.horizontalCenter
+                bottom: parent.bottom
+                margins: Kirigami.Units.smallSpacing
+            }
+            width: Kirigami.Units.gridUnit * 3 - Kirigami.Units.smallSpacing * 2
+            running: parent.visible
+            QtControls.Label {
+                anchors {
+                    top: parent.top
+                    left: parent.right
+                    leftMargin: Kirigami.Units.largeSpacing
+                    bottom: parent.bottom
+                }
+                text: i18nc("A text shown beside a busy indicator suggesting that data is being fetched", "Loading more...")
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
+    }
+
     Component {
         id: bigPreviewDelegate
         EntryGridDelegates.BigPreviewDelegate { }

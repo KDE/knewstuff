@@ -69,6 +69,11 @@ class ItemsModel : public QAbstractListModel
      * The NewStuffQuickEngine to show items from
      */
     Q_PROPERTY(QObject* engine READ engine WRITE setEngine NOTIFY engineChanged)
+    /**
+     * Whether or not the model is fetching information from a remote location
+     * @since 5.64
+     */
+    Q_PROPERTY(bool isLoadingData READ isLoadingData NOTIFY isLoadingDataChanged)
 public:
     explicit ItemsModel(QObject *parent = nullptr);
     virtual ~ItemsModel();
@@ -126,6 +131,17 @@ public:
     QObject *engine() const;
     void setEngine(QObject *newEngine);
     Q_SIGNAL void engineChanged();
+
+    /**
+     * Whether or not the model is fetching information from a remote location
+     * @since 5.64
+     */
+    bool isLoadingData() const;
+    /**
+     * Fired when the isLoadingData value changes
+     * @since 5.64
+     */
+    Q_SIGNAL void isLoadingDataChanged();
 
     /**
      * @brief This will install (or update, if already installed) the item at the given index

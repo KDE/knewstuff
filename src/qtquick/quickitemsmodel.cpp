@@ -51,6 +51,8 @@ public:
 
     QHash<QString, KNSCore::CommentsModel*> commentsModels;
 
+    bool isLoadingData{false};
+
     bool initModel()
     {
         if (model) {
@@ -60,6 +62,9 @@ public:
             return false;
         }
         model = new KNSCore::ItemsModel(coreEngine, q);
+
+        q->connect(coreEngine, &KNSCore::Engine::signalBusy, q, [=](){ isLoadingData = true; emit q->isLoadingDataChanged(); });
+        q->connect(coreEngine, &KNSCore::Engine::signalIdle, q, [=](){ isLoadingData = false; emit q->isLoadingDataChanged(); });
 
         q->connect(coreEngine, &KNSCore::Engine::signalProvidersLoaded, coreEngine, &KNSCore::Engine::reloadEntries);
         // Entries have been fetched and should be shown:
@@ -385,6 +390,11 @@ void ItemsModel::setEngine(QObject *newEngine)
         emit engineChanged();
         endResetModel();
     }
+}
+
+bool ItemsModel::isLoadingData() const
+{
+    return d->isLoadingData;
 }
 
 void ItemsModel::installItem(int index, int linkId)

@@ -70,9 +70,8 @@ Kirigami.ApplicationItem {
                 component.showPassiveNotification(message);
             }
         }
-        onMessage: showMessage(message);
-        onIdleMessage: showMessage(message);
-        onBusyMessage: showMessage(message);
-        onErrorMessage: showMessage(message);
+        onMessage: component.showPassiveNotification(message);
+        onIdleMessage: component.showPassiveNotification(message);
+        onErrorMessage: component.showPassiveNotification(message);
     }
 }
