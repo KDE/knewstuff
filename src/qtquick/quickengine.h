@@ -41,7 +41,7 @@ class Engine : public QObject
     Q_PROPERTY(QObject* engine READ engine NOTIFY engineChanged)
     /**
      * Whether or not the engine is performing its initial loading operations
-     * @since 5.64
+     * @since 5.65
      */
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY engineInitialized)
@@ -68,12 +68,12 @@ public:
 
     /**
      * Whether or not the engine is performing its initial loading operations
-     * @since 5.64
+     * @since 5.65
      */
     bool isLoading() const;
     /**
      * Fired when the isLoading value changes
-     * @since 5.64
+     * @since 5.65
      */
     Q_SIGNAL void isLoadingChanged();
 

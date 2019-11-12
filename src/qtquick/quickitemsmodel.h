@@ -71,7 +71,7 @@ class ItemsModel : public QAbstractListModel
     Q_PROPERTY(QObject* engine READ engine WRITE setEngine NOTIFY engineChanged)
     /**
      * Whether or not the model is fetching information from a remote location
-     * @since 5.64
+     * @since 5.65
      */
     Q_PROPERTY(bool isLoadingData READ isLoadingData NOTIFY isLoadingDataChanged)
 public:
@@ -134,12 +134,12 @@ public:
 
     /**
      * Whether or not the model is fetching information from a remote location
-     * @since 5.64
+     * @since 5.65
      */
     bool isLoadingData() const;
     /**
      * Fired when the isLoadingData value changes
-     * @since 5.64
+     * @since 5.65
      */
     Q_SIGNAL void isLoadingDataChanged();
 
