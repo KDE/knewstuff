@@ -56,7 +56,7 @@ QtControls.Button {
      * @note For the sake of consistency, you should NOT override the text propety, just set this one
      */
     property string downloadNewWhat: i18nc("Used to contruct the button's label (which will become Download New 'this value')", "Stuff")
-    text: i18n("Download New %1").arg(downloadNewWhat)
+    text: i18n("Download New %1", downloadNewWhat)
 
     /**
      * The default view mode of the dialog spawned by this button. This should be
