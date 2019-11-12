@@ -163,7 +163,7 @@ QVariant KNSCore::CommentsModel::data(const QModelIndex &index, int role) const
                 {
                     int idx{-1};
                     if (comment->parent) {
-                        d->comments.indexOf(std::shared_ptr<KNSCore::Comment>(comment->parent));
+                        idx = d->comments.indexOf(comment->parent);
                     }
                     value.setValue(idx);
                 }

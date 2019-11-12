@@ -22,7 +22,7 @@
 #ifndef KNSQUICK_COMMENTSMODEL_H
 #define KNSQUICK_COMMENTSMODEL_H
 
-#include <QIdentityProxyModel>
+#include <QSortFilterProxyModel>
 #include <QQmlParserStatus>
 #include <entryinternal.h>
 
@@ -36,7 +36,7 @@ namespace KNewStuffQuick
  * and updated for display
  * @since 5.63
  */
-class CommentsModel : public QIdentityProxyModel, public QQmlParserStatus
+class CommentsModel : public QSortFilterProxyModel, public QQmlParserStatus
 {
     Q_OBJECT
     Q_INTERFACES(QQmlParserStatus)
@@ -48,7 +48,24 @@ class CommentsModel : public QIdentityProxyModel, public QQmlParserStatus
      * The index in the model of the entry to fetch comments for
      */
     Q_PROPERTY(int entryIndex READ entryIndex WRITE setEntryIndex NOTIFY entryIndexChanged)
+    /**
+     * Which types of comments should be included
+     * @default AllComments
+     * @since 5.65
+     */
+    Q_PROPERTY(KNewStuffQuick::CommentsModel::IncludedComments includedComments READ includedComments WRITE setIncludedComments NOTIFY includedCommentsChanged)
 public:
+    /**
+     * The options which can be set for which comments to include
+     * @since 5.65
+     */
+    enum IncludedComments {
+        IncludeAllComments = 0, //< All comments should be included
+        IncludeOnlyReviews = 1, //< Only comments which have a rating (and thus is considered a review) should be included
+        IncludeReviewsAndReplies = 2 //< Reviews (as OnlyReviews), except child comments are also included
+    };
+    Q_ENUM(IncludedComments)
+
     explicit CommentsModel(QObject *parent = nullptr);
     ~CommentsModel() override;
     void classBegin() override;
@@ -62,11 +79,28 @@ public:
     void setEntryIndex(int entryIndex);
     Q_SIGNAL void entryIndexChanged();
 
+    /**
+     * Which comments should be included
+     * @since 5.65
+     */
+    CommentsModel::IncludedComments includedComments() const;
+    /**
+     * Set which comments should be included
+     * @since 5.65
+     */
+    void setIncludedComments(CommentsModel::IncludedComments includedComments);
+    /**
+     * Fired when the value of includedComments changes
+     * @since 5.65
+     */
+    Q_SIGNAL void includedCommentsChanged();
+
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
     class Private;
     Private *d;
 };
 }
-
+Q_DECLARE_METATYPE(KNewStuffQuick::CommentsModel::IncludedComments)
 #endif//KNSQUICK_COMMENTSMODEL_H

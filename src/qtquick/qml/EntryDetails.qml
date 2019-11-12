@@ -175,7 +175,7 @@ KCM.SimpleKCM {
             Kirigami.LinkButton {
                 Kirigami.FormData.label: i18n("Comments and Reviews:")
                 enabled: component.commentsCount > 0
-                text: i18nc("A link which, when clicked, opens a new sub page with reviews (comments) for this entry", "%1 Reviews").arg(component.commentsCount)
+                text: i18nc("A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments").arg(component.commentsCount)
                 onClicked: pageStack.push(commentsPage)
             }
             Private.Rating {
