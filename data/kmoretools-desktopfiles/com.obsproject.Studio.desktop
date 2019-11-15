@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=OBS Studio
 Name[ca]=OBS Studio
+Name[cs]=OBS Studio
 Name[en_GB]=OBS Studio
 Name[et]=OBS Studio
 Name[eu]=OBS Studio
@@ -14,6 +15,7 @@ Name[x-test]=xxOBS Studioxx
 Name[zh_TW]=OBS Studio
 GenericName=Streaming/Recording Software
 GenericName[ca]=Programari d'emissió/enregistrament
+GenericName[cs]=Software na vysílání a nahrávání proudů
 GenericName[en_GB]=Streaming/Recording Software
 GenericName[et]=Vooesituse/-salvestamise tarkvara
 GenericName[eu]=Igortzeko/Grabatzeko softwarea
