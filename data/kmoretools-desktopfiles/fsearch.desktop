@@ -115,6 +115,6 @@ Keywords[tg]=ҷустуҷӯ;ф-ҷустуҷӯ;файлҳо;ҷузвадонҳо;
 Keywords[tr]=arama;fsearch;dosya;klasör;dizin;müzik;video;belge;bul;araç;herşey;
 Keywords[uk]=search;fsearch;files;folders;music;video;documents;find;tool;everything;пошук;файли;теки;музика;відео;документи;знайти;інструмент;засіб;
 Keywords[x-test]=xxsearchxx;xxfsearchxx;xxfilesxx;xxfoldersxx;xxmusicxx;xxvideoxx;xxdocumentsxx;xxfindxx;xxtoolxx;xxeverythingxx;
-Keywords[zh_CN]=搜索;文件;文件夹;音乐;视频;文档;查找;发现;工具;所有;全部;
+Keywords[zh_CN]=search;fsearch;files;folders;music;video;documents;find;tool;everything;搜索;文件;文件夹;音乐;视频;文档;查找;发现;工具;所有;全部;
 Keywords[zh_TW]=search;fsearch;files;folders;music;video;documents;find;tool;everything;
 StartupNotify=true
