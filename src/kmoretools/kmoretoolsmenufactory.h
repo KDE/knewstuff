@@ -114,7 +114,7 @@ public:
 
 private:
     /*
-     * NOT USED. REMOVE this when possible.
+     * TODO KF6: Not used, remove in the KF6 transition.
      * Preserves object size to counteract BIC introduced with
      * 3ecc3701f7e1aa83104b06fa90ea07eeca47f93d.
      */
