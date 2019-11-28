@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
     property string entryProviderId
     property alias entryIndex: commentsModel.entryIndex
     property alias itemsModel: commentsModel.itemsModel
-    title: i18nc("Title for the page containing a view of the comments for the entry", "Comments and Reviews for %1").arg(component.entryName)
+    title: i18nc("Title for the page containing a view of the comments for the entry", "Comments and Reviews for %1", component.entryName)
     actions {
         contextualActions: [
             Kirigami.Action {

@@ -425,7 +425,7 @@ void ItemsModel::adoptItem(int index)
             QStringList args = KShell::splitArgs(d->coreEngine->adoptionCommand(entry));
             qCDebug(KNEWSTUFFQUICK) << "executing AdoptionCommand" << args;
             QProcess::startDetached(args.takeFirst(), args);
-            d->engine->idleMessage(i18n("Using %1").arg(entry.name()));
+            d->engine->idleMessage(i18n("Using %1", entry.name()));
         }
     }
 }

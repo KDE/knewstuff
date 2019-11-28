@@ -52,7 +52,7 @@ QtDialogs.Dialog {
      * @note For the sake of consistency, you should NOT override the text propety, just set this one
      */
     property string downloadNewWhat: engine.name
-    title: i18n("Download New %1").arg(component.downloadNewWhat)
+    title: i18n("Download New %1", component.downloadNewWhat)
 
     /**
      * The engine which handles the content in this dialog

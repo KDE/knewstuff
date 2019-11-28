@@ -177,7 +177,7 @@ Private.GridTileDelegate {
                 QtLayouts.Layout.fillWidth: true
                 level: 5
                 elide: Text.ElideRight
-                text: i18nc("The number of times the item has been downloaded", "%1 downloads").arg(model.downloadCount)
+                text: i18nc("The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
             }
             Kirigami.Heading {
                 QtLayouts.Layout.fillWidth: true
@@ -190,7 +190,7 @@ Private.GridTileDelegate {
                 elide: Text.ElideRight
                 level: 4
                 textFormat: Text.StyledText
-                text: i18nc("Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>").arg(model.author.name)
+                text: i18nc("Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
             }
             QtControls.Label {
                 QtLayouts.Layout.fillWidth: true

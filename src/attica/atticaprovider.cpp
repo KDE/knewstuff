@@ -523,7 +523,7 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
         if (job->metadata().statusCode() == 200) {
             emit signalErrorCode(KNSCore::OcsError, i18n("Too many requests to server. Please try again in a few minutes."), job->metadata().statusCode());
         } else if (job->metadata().statusCode() == 405) {
-            emit signalErrorCode(KNSCore::OcsError, i18n("The Open Collaboration Services instance %1 does not support the attempted function.").arg(name()), job->metadata().statusCode());
+            emit signalErrorCode(KNSCore::OcsError, i18n("The Open Collaboration Services instance %1 does not support the attempted function.", name()), job->metadata().statusCode());
         } else {
             emit signalErrorCode(KNSCore::OcsError, i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()), job->metadata().statusCode());
         }

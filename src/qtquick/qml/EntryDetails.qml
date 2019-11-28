@@ -60,7 +60,7 @@ KCM.SimpleKCM {
         id: downloadItemsSheet
         onItemPicked: {
             var entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
-            applicationWindow().showPassiveNotification(i18nc("A passive notification shown when installation of an item is initiated", "Installing %1 from %2").arg(downloadName).arg(entryName), 1500);
+            applicationWindow().showPassiveNotification(i18nc("A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
             newStuffModel.installItem(entryId, downloadItemId);
         }
     }
@@ -75,9 +75,9 @@ KCM.SimpleKCM {
              || status == NewStuff.ItemsModel.DeletedStatus) {
                 statusCard.message = "";
             } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being installed", "Currently installing the item %1 by %2. Please wait...").arg(component.name).arg(entryAuthor.name);
+                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being installed", "Currently installing the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
-                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...").arg(component.name).arg(entryAuthor.name);
+                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else {
                 statusCard.message = i18nc("Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. Please report this to the KDE Community in a bug report.");
             }
@@ -90,7 +90,7 @@ KCM.SimpleKCM {
         providerId: component.providerId
         username: author.name
     }
-    title: i18nc("Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2").arg(component.name).arg(entryAuthor.name)
+    title: i18nc("Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2", component.name, entryAuthor.name)
     actions {
         contextualActions: [
             Kirigami.Action {
@@ -175,7 +175,7 @@ KCM.SimpleKCM {
             Kirigami.LinkButton {
                 Kirigami.FormData.label: i18n("Comments and Reviews:")
                 enabled: component.commentsCount > 0
-                text: i18nc("A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments").arg(component.commentsCount)
+                text: i18nc("A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
                 onClicked: pageStack.push(commentsPage)
             }
             Private.Rating {
@@ -185,7 +185,7 @@ KCM.SimpleKCM {
             }
             Kirigami.LinkButton {
                 Kirigami.FormData.label: i18n("Homepage:")
-                text: i18nc("A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %2").arg(component.name)
+                text: i18nc("A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %1", component.name)
                 onClicked: Qt.openUrlExternally(component.homepage)
             }
             Kirigami.LinkButton {
