@@ -79,7 +79,7 @@ KCM.SimpleKCM {
             } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
                 statusCard.message = i18nc("Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else {
-                statusCard.message = i18nc("Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. Please report this to the KDE Community in a bug report.");
+                statusCard.message = i18nc("Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
             }
         }
     }
@@ -146,7 +146,6 @@ KCM.SimpleKCM {
                         left: parent.left
                     }
                     running: statusCard.opacity > 0
-                    Rectangle { anchors.fill: parent; color: "red"; opacity: 0.3; }
                 }
                 QtControls.Label {
                     id: statusLabel
@@ -158,7 +157,7 @@ KCM.SimpleKCM {
                     }
                     text: statusCard.message
                     wrapMode: Text.Wrap
-                    Rectangle { anchors.fill: parent; color: "blue"; opacity: 0.3; }
+                    onLinkActivated: Qt.openUrlExternally(link);
                 }
             }
         }

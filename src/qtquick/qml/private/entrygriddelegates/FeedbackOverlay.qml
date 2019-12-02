@@ -60,10 +60,11 @@ Item {
                 } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
                     statusLabel.text = i18nc("Label for the busy indicator showing an item is in the process of being updated", "Updating...");
                 } else {
-                    statusLabel.text = i18nc("Label for the busy indicator which should only be shown when the entry has been given some unknown or invalid status.", "Invalid or unknown state. Please report this to the KDE Community in a bug report.");
+                    statusLabel.text = i18nc("Label for the busy indicator which should only be shown when the entry has been given some unknown or invalid status.", "Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
                 }
             }
         }
+        onLinkActivated: Qt.openUrlExternally(link);
         anchors {
             top: parent.verticalCenter
             left: parent.left
