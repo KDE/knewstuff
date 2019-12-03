@@ -49,8 +49,8 @@ class AtticaProvider: public Provider
 {
     Q_OBJECT
 public:
-    explicit AtticaProvider(const QStringList &categories);
-    AtticaProvider(const Attica::Provider &provider, const QStringList &categories);
+    explicit AtticaProvider(const QStringList &categories, const QString& additionalAgentInformation);
+    AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString& additionalAgentInformation);
 
     QString id() const override;
 

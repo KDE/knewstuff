@@ -38,7 +38,7 @@ using namespace Attica;
 namespace KNSCore
 {
 
-AtticaProvider::AtticaProvider(const QStringList &categories)
+AtticaProvider::AtticaProvider(const QStringList &categories, const QString& additionalAgentInformation)
     : mEntryJob(nullptr)
     , mInitialized(false)
 {
@@ -47,14 +47,17 @@ AtticaProvider::AtticaProvider(const QStringList &categories)
         mCategoryMap.insert(category, Attica::Category());
     }
 
-    connect(&m_providerManager, &ProviderManager::providerAdded, this, &AtticaProvider::providerLoaded);
+    connect(&m_providerManager, &ProviderManager::providerAdded, this, [=](const Attica::Provider &provider){
+        providerLoaded(provider);
+        m_provider.setAdditionalAgentInformation(additionalAgentInformation);
+    });
     connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)),
             SLOT(authenticationCredentialsMissing(Provider)));
     connect(this, &Provider::loadComments, this, &AtticaProvider::loadComments);
     connect(this, &Provider::loadPerson, this, &AtticaProvider::loadPerson);
 }
 
-AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories)
+AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString& additionalAgentInformation)
     : mEntryJob(nullptr)
     , mInitialized(false)
 {
@@ -63,6 +66,7 @@ AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringLi
         mCategoryMap.insert(category, Attica::Category());
     }
     providerLoaded(provider);
+    m_provider.setAdditionalAgentInformation(additionalAgentInformation);
 }
 
 QString AtticaProvider::id() const
@@ -109,6 +113,7 @@ void AtticaProvider::providerLoaded(const Attica::Provider &provider)
     qCDebug(KNEWSTUFFCORE) << "Added provider: " << provider.name();
 
     m_provider = provider;
+    m_provider.setAdditionalAgentInformation(mName);
     m_providerId = provider.baseUrl().toString();
 
     Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();

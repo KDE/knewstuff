@@ -252,7 +252,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 
         QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider.reset(new AtticaProvider(m_categories));
+            provider.reset(new AtticaProvider(m_categories, d->name));
             connect(provider.data(), &Provider::categoriesMetadataLoded,
                     this, [this](const QList<Provider::CategoryMetadata> &categories){
                         d->categoriesMetadata = categories;
@@ -280,7 +280,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         return;
     }
     QSharedPointer<KNSCore::Provider> provider =
-        QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories));
+        QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories, d->name));
     connect(provider.data(), &Provider::categoriesMetadataLoded,
             this, [this](const QList<Provider::CategoryMetadata> &categories){
                 d->categoriesMetadata = categories;
