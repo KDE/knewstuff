@@ -114,7 +114,7 @@ void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool
     const auto gitgApp = kmt.registerServiceByDesktopEntryName(_("gitg"));
     const auto notinstApp = kmt.registerServiceByDesktopEntryName(_("mynotinstalledapp"));
     const auto notinstApp2 = kmt.registerServiceByDesktopEntryName(_("mynotinstapp2"));
-    notinstApp2->setHomepageUrl(QUrl(_("http://www.kde.org")));
+    notinstApp2->setHomepageUrl(QUrl(_("https://www.kde.org")));
     const auto menuBuilder = kmt.menuBuilder();
     menuBuilder->addMenuItem(kateApp);
     menuBuilder->addMenuItem(gitgApp);
@@ -175,10 +175,10 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
 {
     // show resulting menu
     auto dlg = new QDialog();
-    auto labelInfo = new QLabel(_("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or http://). Then, select a grouping name. => A menu will be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
+    auto labelInfo = new QLabel(_("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or https://). Then, select a grouping name. => A menu will be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
     labelInfo->setWordWrap(true);
     auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
-    auto labelLineEdit = new QLabel(_("URL 1 (file://..., http://...)"), dlg);
+    auto labelLineEdit = new QLabel(_("URL 1 (file://..., https://...)"), dlg);
     auto urlLineEdit = new QLineEdit(dlg);
     urlLineEdit->setText(_("file:///etc/bash.bashrc"));
     auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
