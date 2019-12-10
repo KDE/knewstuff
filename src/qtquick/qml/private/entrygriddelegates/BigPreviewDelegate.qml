@@ -143,31 +143,6 @@ Private.GridTileDelegate {
                     width: height;
                     source: "package-installed-updated";
                 }
-                Item {
-                    anchors {
-                        top: parent.top;
-                        right: parent.right;
-                    }
-                    height: Kirigami.Units.iconSizes.large;
-                    width: height;
-                    Kirigami.Icon {
-                        id: infoIcon
-                        source: "documentinfo"
-                        anchors.fill: parent
-                    }
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: { component.showDetails(); }
-                    }
-                    QtEffects.Glow {
-                        anchors.fill: infoIcon
-                        radius: 1
-                        samples: 2
-                        spread: 0.3
-                        color: "white"
-                        source: infoIcon
-                    }
-                }
             }
             Private.Rating {
                 QtLayouts.Layout.fillWidth: true
