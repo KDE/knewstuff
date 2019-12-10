@@ -716,22 +716,39 @@ void KNSCore::Engine::checkForInstalled()
  * we look for the directory where all the resources got installed.
  * assuming it was extracted into a directory
  */
-static QDir sharedDir(QStringList dirs, const QString &rootPath)
+static QDir sharedDir(QStringList dirs, QString rootPath)
 {
+    // Ensure that rootPath definitely is a clean path with a slash at the end
+    rootPath = QDir::cleanPath(rootPath) + QStringLiteral("/");
+    qCInfo(KNEWSTUFFCORE) << Q_FUNC_INFO << dirs << rootPath;
     while(!dirs.isEmpty()) {
-        const QString currentPath = QDir::cleanPath(dirs.takeLast());
-        if (!currentPath.startsWith(rootPath))
+        QString thisDir(dirs.takeLast());
+        if (thisDir.endsWith(QStringLiteral("*"))) {
+            qCInfo(KNEWSTUFFCORE) << "Directory entry" << thisDir << "ends in a *, indicating this was installed from an archive - see Installation::archiveEntries";
+            thisDir.chop(1);
+        }
+
+        const QString currentPath = QDir::cleanPath(thisDir);
+        qCInfo(KNEWSTUFFCORE) << "Current path is" << currentPath;
+        if (!currentPath.startsWith(rootPath)) {
+            qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "does not start with" << rootPath << "and should be ignored";
             continue;
+        }
 
         const QFileInfo current(currentPath);
-        if (!current.isDir())
+        qCInfo(KNEWSTUFFCORE) << "Current file info is" << current;
+        if (!current.isDir()) {
+            qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "is not a directory, and should be ignored";
             continue;
+        }
 
-        const QDir dir = current.dir();
+        const QDir dir(currentPath);
         if (dir.path()==(rootPath+dir.dirName())) {
+            qCDebug(KNEWSTUFFCORE) << "Found directory" << dir;
             return dir;
         }
     }
+    qCWarning(KNEWSTUFFCORE) << "Failed to locate any shared installed directory in" << dirs << "and this is almost certainly very bad.";
     return {};
 }
 
