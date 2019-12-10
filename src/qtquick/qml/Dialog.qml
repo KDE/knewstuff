@@ -49,10 +49,10 @@ QtDialogs.Dialog {
      * i18n("Download New %1").
      *
      * @default The name defined by your knsrc config file
-     * @note For the sake of consistency, you should NOT override the text propety, just set this one
+     * @note For the sake of consistency, you should NOT override the title property, just set this one
      */
     property string downloadNewWhat: engine.name
-    title: i18n("Download New %1", component.downloadNewWhat)
+    title: component.downloadNewWhat.length > 0 ? i18nc("The dialog title when we know which type of stuff is being requested", "Download New %1", component.downloadNewWhat) : i18nc("A placeholder title used in the dialog when there is no better title available", "Download New Stuff")
 
     /**
      * The engine which handles the content in this dialog
