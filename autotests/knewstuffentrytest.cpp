@@ -18,7 +18,8 @@
 
 // unit test for entry
 
-#include <QtTest>
+#include <QTest>
+#include <QXmlStreamReader>
 #include <QString>
 
 #include "../src/entry.h"
