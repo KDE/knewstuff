@@ -6,7 +6,7 @@ project(KNewStuff VERSION ${KF5_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.65.0 NO_MODULE)
-set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://projects.kde.org/projects/kdesupport/extra-cmake-modules")
+set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
@@ -40,7 +40,7 @@ include(ECMAddQch)
 find_package(KF5Attica ${KF5_DEP_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
                        PURPOSE "Support for Get Hot New Stuff in KNewStuff"
-                       URL "https://projects.kde.org/attica"
+                       URL "https://commits.kde.org/attica"
                        TYPE REQUIRED
                       )
 find_package(KF5Kirigami2 2.1.0)
