@@ -138,9 +138,9 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
             qCDebug(KNEWSTUFFCORE) << "Adding category: " << category.name() << category.displayName();
             //If there is only the placeholder category, replace it
             if (mCategoryMap.contains(category.name()) && !mCategoryMap.value(category.name()).isValid()) {
-                mCategoryMap.insert(category.name(), category);
+                mCategoryMap.replace(category.name(), category);
             } else {
-                mCategoryMap.insertMulti(category.name(), category);
+                mCategoryMap.insert(category.name(), category);
             }
 
             CategoryMetadata categoryMetadata;

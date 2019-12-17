@@ -111,7 +111,7 @@ private:
     EntryInternal entryFromAtticaContent(const Attica::Content &);
 
     // the attica categories we are interested in (e.g. Wallpaper, Application, Vocabulary File...)
-    QHash<QString, Attica::Category> mCategoryMap;
+    QMultiHash<QString, Attica::Category> mCategoryMap;
 
     Attica::ProviderManager m_providerManager;
     Attica::Provider m_provider;
