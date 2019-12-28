@@ -57,8 +57,11 @@ by adding the following in your CMakeLists.txt sometime after the find statement
 
 When installing your knsrc configuration file, you should install it into the location
 where KNewStuffCore expects it to be found. Do this by using the CMake variable
-KDE_INSTALL_KNSRCDIR as provided by the KNewStuffCore module. You can also handle this
-yourself, which means you will need to feed Engine::init() the full path to the knsrc file.
+`KDE_INSTALL_KNSRCDIR` as provided by the KNewStuffCore module, since 5.57.0.
+To support older versions you can use the CMake variable `KDE_INSTALL_CONFDIR` from
+[Extra-CMake-Modules' KDEInstallDirs](https://api.kde.org/ecm/kde-module/KDEInstallDirs.html).
+You can also handle this yourself, which means you will need to feed `Engine::init()`
+the full path to the knsrc file.
 
 ## Which module should you use?
 
