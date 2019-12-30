@@ -83,14 +83,14 @@ bool UploadDialogPrivate::init(const QString &configfile)
         if (!fi.isAbsolute())
             fi.setFile(QStandardPaths::locate(QStandardPaths::GenericConfigLocation, configfile));
         if (!fi.exists()) {
-            qCCritical(KNEWSTUFF) << "No knsrc file named '" << fi.absoluteFilePath() << "' was found." << endl;
+            qCCritical(KNEWSTUFF) << "No knsrc file named '" << fi.absoluteFilePath() << "' was found.";
             success = false;
         }
     }
 
     KConfig conf(fi.absoluteFilePath());
     if (conf.accessMode() == KConfig::NoAccess) {
-        qCCritical(KNEWSTUFF) << "Knsrc file named '" << fi.absoluteFilePath() << "' could not be accessed." << endl;
+        qCCritical(KNEWSTUFF) << "Knsrc file named '" << fi.absoluteFilePath() << "' could not be accessed.";
         success = false;
     }
 
@@ -99,7 +99,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
         qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << fi.absoluteFilePath();
         group = conf.group("KNewStuff3");
     } else {
-        qCCritical(KNEWSTUFF) << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << endl;
+        qCCritical(KNEWSTUFF) << "A knsrc file was found but it doesn't contain a KNewStuff3 section.";
         success = false;
     }
 

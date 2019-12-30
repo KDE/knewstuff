@@ -214,7 +214,7 @@ void Cache::writeRegistry()
 
     QFile f(registryFile);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qWarning() << "Cannot write meta information to '" << registryFile << "'." << endl;
+        qWarning() << "Cannot write meta information to '" << registryFile << "'.";
         return;
     }
 

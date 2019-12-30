@@ -69,7 +69,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         uncompresssetting = QStringLiteral("always");
     }
     if (uncompresssetting != QLatin1String("always") && uncompresssetting != QLatin1String("archive") && uncompresssetting != QLatin1String("never") && uncompresssetting != QLatin1String("subdir")) {
-        qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, or never" << endl;
+        qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, or never";
         return false;
     }
     uncompression = uncompresssetting;
@@ -114,7 +114,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (checksumpolicy == QLatin1String("always")) {
             checksumPolicy = Installation::CheckAlways;
         } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The checksum policy '") + checksumpolicy + QStringLiteral("' is unknown.") << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The checksum policy '") + checksumpolicy + QStringLiteral("' is unknown.");
             return false;
         }
     }
@@ -128,7 +128,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (signaturepolicy == QLatin1String("always")) {
             signaturePolicy = Installation::CheckAlways;
         } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.") << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.");
             return false;
         }
     }
@@ -140,13 +140,13 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else if (scopeString == QLatin1String("system")) {
             scope = ScopeSystem;
         } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.") << endl;
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.");
             return false;
         }
 
         if (scope == ScopeSystem) {
             if (!installPath.isEmpty()) {
-                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath." << endl;
+                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath.";
                 return false;
             }
         }
@@ -188,7 +188,7 @@ void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
     QUrl source = QUrl(entry.payload());
 
     if (!source.isValid()) {
-        qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload." << endl;
+        qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload.";
         emit signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
         return;
     }
@@ -273,7 +273,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             if (checksumPolicy() == Installation::CheckIfPossible) {
                 qCDebug(KNEWSTUFFCORE) << "Skip checksum verification";
             } else {
-                qCCritical(KNEWSTUFFCORE) << "Checksum verification not possible" << endl;
+                qCCritical(KNEWSTUFFCORE) << "Checksum verification not possible";
                 return false;
             }
         } else {
@@ -285,7 +285,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             if (signaturePolicy() == Installation::CheckIfPossible) {
                 qCDebug(KNEWSTUFFCORE) << "Skip signature verification";
             } else {
-                qCCritical(KNEWSTUFFCORE) << "Signature verification not possible" << endl;
+                qCCritical(KNEWSTUFFCORE) << "Signature verification not possible";
                 return false;
             }
         } else {
@@ -403,7 +403,7 @@ QString Installation::targetInstallationPath() const
         }
 
         if (pathcounter != 1) {
-            qCCritical(KNEWSTUFFCORE) << "Wrong number of installation directories given." << endl;
+            qCCritical(KNEWSTUFFCORE) << "Wrong number of installation directories given.";
             return QString();
         }
 
