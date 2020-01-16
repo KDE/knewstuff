@@ -23,7 +23,9 @@
 #define ENGINE_H
 
 #include <QObject>
-#include <entryinternal.h>
+#include <QQmlListProperty>
+
+#include "entrywrapper.h"
 
 /**
  * @short Encapsulates a KNSCore::Engine for use in Qt Quick
@@ -51,7 +53,7 @@ class Engine : public QObject
     Q_PROPERTY(int filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
-    Q_PROPERTY(KNSCore::EntryInternal::List changedEntries READ changedEntries RESET resetChangedEntries NOTIFY changedEntriesChanged)
+    Q_PROPERTY(QQmlListProperty<KNSCore::EntryWrapper> changedEntries READ changedEntries NOTIFY changedEntriesChanged)
     Q_PROPERTY(int changedEntriesCount READ changedEntriesCount NOTIFY changedEntriesChanged)
 public:
     explicit Engine(QObject *parent = nullptr);
@@ -102,7 +104,7 @@ public:
     Q_INVOKABLE void resetSearchTerm();
     Q_SIGNAL void searchTermChanged();
 
-    KNSCore::EntryInternal::List changedEntries() const;
+    QQmlListProperty<KNSCore::EntryWrapper> changedEntries();
     Q_INVOKABLE void resetChangedEntries();
     Q_SIGNAL void changedEntriesChanged();
     int changedEntriesCount() const;

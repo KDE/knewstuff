@@ -28,6 +28,7 @@
 #include "categoriesmodel.h"
 #include "commentsmodel.h"
 #include "downloadlinkinfo.h"
+#include "entrywrapper.h"
 
 #include "provider.h"
 #include "question.h"
@@ -42,17 +43,25 @@ void QmlPlugins::initializeEngine(QQmlEngine *engine, const char *)
 
 void QmlPlugins::registerTypes(const char *uri)
 {
+    const char* coreUri{"org.kde.newstuff.core"};
+
+    // Initial version
     qmlRegisterType<Engine>(uri, 1, 0, "Engine");
     qmlRegisterType<ItemsModel>(uri, 1, 0, "ItemsModel");
+
+    // Version 1.62
     qmlRegisterType<KNewStuffQuick::Author>(uri, 1, 62, "Author");
     qmlRegisterType<KNewStuffQuick::CommentsModel>(uri, 1, 62, "CommentsModel");
     qmlRegisterUncreatableType<DownloadLinkInfo>(uri, 1, 0, "DownloadLinkInfo", QStringLiteral("This should only be created by the ItemsModel, and is associated with one entry in that model"));
     qmlRegisterUncreatableType<CategoriesModel>(uri, 1, 0, "CategoriesModel", QStringLiteral("This should only be created by the Engine, and provides the categories available in that engine"));
-    qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject, "org.kde.newstuff.core", 1, 62, "Provider", QLatin1String("Error: this only exists to forward enums"));
-    qmlRegisterUncreatableMetaObject(KNSCore::Question::staticMetaObject, "org.kde.newstuff.core", 1, 62, "Question", QLatin1String("Error: this only exists to forward enums"));
+    qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject, coreUri, 1, 62, "Provider", QLatin1String("Error: this only exists to forward enums"));
+    qmlRegisterUncreatableMetaObject(KNSCore::Question::staticMetaObject, coreUri, 1, 62, "Question", QLatin1String("Error: this only exists to forward enums"));
     qmlRegisterSingletonType<KNewStuffQuick::QuickQuestionListener>(uri, 1, 62, "QuickQuestionListener", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
         Q_UNUSED(scriptEngine)
         engine->setObjectOwnership(KNewStuffQuick::QuickQuestionListener::instance(), QQmlEngine::CppOwnership);
         return KNewStuffQuick::QuickQuestionListener::instance();
     });
+
+    // Version 1.67
+    qmlRegisterUncreatableType<KNSCore::EntryWrapper>(coreUri, 1, 67, "EntryWrapper", QStringLiteral("This should only be created by the Engine, and wraps EntryInternal objects for passing through Qt Quick"));
 }

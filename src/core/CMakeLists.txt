@@ -5,6 +5,7 @@ set(KNewStuffCore_SRCS
     downloadmanager.cpp
     engine.cpp
     entryinternal.cpp
+    entrywrapper.cpp
     imageloader.cpp
     installation.cpp
     itemsmodel.cpp
@@ -82,6 +83,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   DownloadManager
   Engine
   EntryInternal
+  EntryWrapper
   ErrorCode
   Installation
   ItemsModel

@@ -82,7 +82,12 @@ QtControls.Button {
      * changed since the dialog was opened most recently (rather than the lifetime
      * of the instance of the Button component)
      */
-    property alias changedEntries: ghnsDialog.changedEntries
+    property var changedEntries
+    Binding {
+        target: component
+        property: "changedEntries"
+        value: ghnsDialog.engine.changedEntries
+    }
 
     /**
      * If this is true (default is false), the button will be shown when the Kiosk settings are such

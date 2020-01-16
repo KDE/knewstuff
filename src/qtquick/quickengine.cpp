@@ -25,6 +25,7 @@
 #include <KLocalizedString>
 
 #include "categoriesmodel.h"
+#include "entrywrapper.h"
 #include "quickquestionlistener.h"
 
 #include "engine.h"
@@ -40,7 +41,34 @@ public:
     bool isLoading{false};
     CategoriesModel *categoriesModel;
     QString configFile;
+
     KNSCore::EntryInternal::List changedEntries;
+    static KNSCore::EntryWrapper *getChangedEntry(QQmlListProperty<KNSCore::EntryWrapper>* property, int i)
+    {
+        KNSCore::EntryWrapper *entry{nullptr};
+        if (property) {
+            Private* d = static_cast<Engine::Private*>(property->data);
+            if (d) {
+                if (i >= 0 && i < d->changedEntries.count()) {
+                    // Lifetime management for these objects should be done by the consumer,
+                    // but are also parented for auto-delete on application shutdown
+                    entry = new KNSCore::EntryWrapper(d->changedEntries[i], property->object);
+                }
+            }
+        }
+        return entry;
+    }
+    static int getChangedEntriesCount(QQmlListProperty<KNSCore::EntryWrapper>* property)
+    {
+        int count{0};
+        if (property) {
+            Private* d = static_cast<Engine::Private*>(property->data);
+            if (d) {
+                count = d->changedEntries.count();
+            }
+        }
+        return count;
+    }
 };
 
 Engine::Engine(QObject *parent)
@@ -94,6 +122,9 @@ void Engine::setConfigFile(const QString &newFile)
                     emit errorMessage(message);
                 });
                 connect(d->engine, &KNSCore::Engine::signalEntryChanged, this, [this](const KNSCore::EntryInternal &entry){
+                    if (d->changedEntries.contains(entry) ) {
+                        d->changedEntries.removeAll(entry);
+                    }
                     d->changedEntries << entry;
                     emit changedEntriesChanged();
                 });
@@ -226,9 +257,9 @@ void Engine::resetSearchTerm()
     setSearchTerm(QString{});
 }
 
-KNSCore::EntryInternal::List Engine::changedEntries() const
+QQmlListProperty<KNSCore::EntryWrapper> Engine::changedEntries()
 {
-    return d->changedEntries;
+    return QQmlListProperty<KNSCore::EntryWrapper>(this, d, &Private::getChangedEntriesCount, &Private::getChangedEntry);
 }
 
 int Engine::changedEntriesCount() const
