@@ -34,6 +34,7 @@ import QtQuick.Controls 2.5 as QtControls
 import QtQuick.Layouts 1.11 as QtLayouts
 import QtQuick.Dialogs 1.3 as QtDialogs
 
+import org.kde.kirigami 2.7 as Kirigami
 import org.kde.newstuff 1.62 as NewStuff
 
 QtDialogs.Dialog {
@@ -86,25 +87,30 @@ QtDialogs.Dialog {
         }
     }
 
-    contentItem: QtLayouts.ColumnLayout {
+    contentItem: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+        implicitWidth: 700
+        implicitHeight: 540
+        Keys.onEscapePressed: component.close()
         NewStuff.DialogContent {
             id: newStuffPage
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.fillHeight: true
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+                bottom: buttonBox.top
+            }
             downloadNewWhat: component.downloadNewWhat
         }
         QtControls.DialogButtonBox {
-            QtLayouts.Layout.fillWidth: true
-            QtControls.Button {
-                action: QtControls.Action {
-                    text: i18n("Close")
-                    shortcut: "esc"
-                    onTriggered: {
-                        component.close();
-                    }
-                }
-                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.RejectRole // this is a close button, dialog close buttons have a rejection role...
+            id: buttonBox
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
             }
+            standardButtons: QtControls.DialogButtonBox.Close
+            onRejected: component.close()
         }
     }
 }
