@@ -60,7 +60,7 @@ KCM.SimpleKCM {
         id: downloadItemsSheet
         onItemPicked: {
             var entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
-            applicationWindow().showPassiveNotification(i18nc("A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
+            applicationWindow().showPassiveNotification(i18ndc("knewstuff5", "A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
             newStuffModel.installItem(entryId, downloadItemId);
         }
     }
@@ -75,11 +75,11 @@ KCM.SimpleKCM {
              || status == NewStuff.ItemsModel.DeletedStatus) {
                 statusCard.message = "";
             } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being installed", "Currently installing the item %1 by %2. Please wait...", component.name, entryAuthor.name);
+                statusCard.message = i18ndc("knewstuff5", "Status message to be shown when the entry is in the process of being installed", "Currently installing the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
-                statusCard.message = i18nc("Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
+                statusCard.message = i18ndc("knewstuff5", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else {
-                statusCard.message = i18nc("Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
+                statusCard.message = i18ndc("knewstuff5", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
             }
         }
     }
@@ -90,11 +90,11 @@ KCM.SimpleKCM {
         providerId: component.providerId
         username: author.name
     }
-    title: i18nc("Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2", component.name, entryAuthor.name)
+    title: i18ndc("knewstuff5", "Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2", component.name, entryAuthor.name)
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: component.downloadCount == 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
+                text: component.downloadCount == 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
                 icon.name: "install"
                 onTriggered: {
                     if (component.downloadCount == 1) {
@@ -109,14 +109,14 @@ KCM.SimpleKCM {
                 visible: enabled;
             },
             Kirigami.Action {
-                text: i18nc("Request updating of this item", "Update");
+                text: i18ndc("knewstuff5", "Request updating of this item", "Update");
                 icon.name: "update"
                 onTriggered: { newStuffModel.installItem(component.index); }
                 enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
                 visible: enabled;
             },
             Kirigami.Action {
-                text: i18nc("Request uninstallation of this item", "Uninstall");
+                text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
                 icon.name: "uninstall"
                 onTriggered: { newStuffModel.uninstallItem(component.index); }
                 enabled: component.status == NewStuff.ItemsModel.InstalledStatus
@@ -172,24 +172,24 @@ KCM.SimpleKCM {
         Kirigami.FormLayout {
             QtLayouts.Layout.fillWidth: true
             Kirigami.LinkButton {
-                Kirigami.FormData.label: i18n("Comments and Reviews:")
+                Kirigami.FormData.label: i18nd("knewstuff5", "Comments and Reviews:")
                 enabled: component.commentsCount > 0
-                text: i18nc("A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
+                text: i18ndc("knewstuff5", "A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
                 onClicked: pageStack.push(commentsPage)
             }
             Private.Rating {
                 id: ratingsItem
-                Kirigami.FormData.label: i18n("Rating:")
+                Kirigami.FormData.label: i18nd("knewstuff5", "Rating:")
                 rating: Math.floor(component.rating / 10)
             }
             Kirigami.LinkButton {
-                Kirigami.FormData.label: i18n("Homepage:")
-                text: i18nc("A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %1", component.name)
+                Kirigami.FormData.label: i18nd("knewstuff5", "Homepage:")
+                text: i18ndc("knewstuff5", "A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %1", component.name)
                 onClicked: Qt.openUrlExternally(component.homepage)
             }
             Kirigami.LinkButton {
-                Kirigami.FormData.label: i18n("How To Donate:")
-                text: i18nc("A link which, when clicked, opens a website with information on donation in support of the entry", "Find out how to donate to this project")
+                Kirigami.FormData.label: i18nd("knewstuff5", "How To Donate:")
+                text: i18ndc("knewstuff5", "A link which, when clicked, opens a website with information on donation in support of the entry", "Find out how to donate to this project")
                 onClicked: Qt.openUrlExternally(component.donationLink)
             }
         }

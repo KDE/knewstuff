@@ -38,23 +38,23 @@ Kirigami.ScrollablePage {
     property string entryProviderId
     property alias entryIndex: commentsModel.entryIndex
     property alias itemsModel: commentsModel.itemsModel
-    title: i18nc("Title for the page containing a view of the comments for the entry", "Comments and Reviews for %1", component.entryName)
+    title: i18ndc("knewstuff5", "Title for the page containing a view of the comments for the entry", "Comments and Reviews for %1", component.entryName)
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: i18nc("Title for the item which is checked when all comments should be shown", "Show All Comments")
+                text: i18ndc("knewstuff5", "Title for the item which is checked when all comments should be shown", "Show All Comments")
                 checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeAllComments
                 checkable: true
                 onTriggered: commentsModel.includedComments = NewStuff.CommentsModel.IncludeAllComments
             },
             Kirigami.Action {
-                text: i18nc("Title for the item which is checked when only comments which are reviews should be shown", "Show Reviews Only")
+                text: i18ndc("knewstuff5", "Title for the item which is checked when only comments which are reviews should be shown", "Show Reviews Only")
                 checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeOnlyReviews
                 checkable: true
                 onTriggered: commentsModel.includedComments = NewStuff.CommentsModel.IncludeOnlyReviews
             },
             Kirigami.Action {
-                text: i18nc("Title for the item which is checked when comments which are reviews, and their children should be shown", "Show Reviews and Replies")
+                text: i18ndc("knewstuff5", "Title for the item which is checked when comments which are reviews, and their children should be shown", "Show Reviews and Replies")
                 checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeReviewsAndReplies
                 checkable: true
                 onTriggered: commentsModel.includedComments = NewStuff.CommentsModel.IncludeReviewsAndReplies

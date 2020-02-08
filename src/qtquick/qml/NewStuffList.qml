@@ -80,9 +80,9 @@ ListView {
             QtLayouts.Layout.fillWidth: true
             model: ListModel {}
             Component.onCompleted: {
-                filterCombo.model.append({ text: i18nc("List option which will set the filter to show everything", "Show Everything") });
-                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items are shown", "Installed Only") });
-                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show Everything") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Installed Only") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
                 filterCombo.currentIndex = newStuffEngine.filter;
             }
             onCurrentIndexChanged: {
@@ -94,10 +94,10 @@ ListView {
             QtLayouts.Layout.fillWidth: true
             model: ListModel { }
             Component.onCompleted: {
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on when items were most recently updated", "Show most recent first") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to be alphabetical based on the name", "Sort alphabetically") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on user ratings", "Show highest rated first") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on number of downloads", "Show most downloaded first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show most recent first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort alphabetically") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show highest rated first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show most downloaded first") });
                 sortCombo.currentIndex = newStuffEngine.sortOrder;
             }
             onCurrentIndexChanged: {

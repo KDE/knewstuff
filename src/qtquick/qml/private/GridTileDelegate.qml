@@ -110,7 +110,7 @@ T2.ItemDelegate {
                 anchors.centerIn: parent
                 width: Kirigami.Units.iconSizes.large
                 height: width
-                source: delegate.text === i18n("None") ? "edit-none" : "view-preview"
+                source: delegate.text === i18nd("knewstuff5", "None") ? "edit-none" : "view-preview"
             }
         }
 

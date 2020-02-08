@@ -34,21 +34,21 @@ Kirigami.SwipeListItem {
     enabled: true;
     actions: [
         Kirigami.Action {
-            text: i18nc("Request installation of this item", "Install");
+            text: i18ndc("knewstuff5", "Request installation of this item", "Install");
             iconName: "list-add"
             onTriggered: { listModel.installItem(model.index, 1); }
             enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18nc("Request updating of this item", "Update");
+            text: i18ndc("knewstuff5", "Request updating of this item", "Update");
             iconName: "refresh"
             onTriggered: { listModel.installItem(model.index, 1); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18nc("Request uninstallation of this item", "Uninstall");
+            text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
             iconName: "list-remove"
             onTriggered: { listModel.uninstallItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus

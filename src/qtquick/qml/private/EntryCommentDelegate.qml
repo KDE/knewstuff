@@ -122,7 +122,7 @@ QtLayouts.RowLayout {
             QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
             Kirigami.Heading {
                 id: titleLabel
-                text: ((component.title === "") ? i18nc("Placeholder title for when a comment has no subject, but does have a rating", "<i>(no title)</i>") : component.title)
+                text: ((component.title === "") ? i18ndc("knewstuff5", "Placeholder title for when a comment has no subject, but does have a rating", "<i>(no title)</i>") : component.title)
                 level: 4
                 QtLayouts.Layout.fillWidth: true
             }
@@ -153,7 +153,7 @@ QtLayouts.RowLayout {
                 id: authorLabel
                 visible: (url !== "")
                 url: (component.commentAuthor.homepage === "") ? component.commentAuthor.profilepage : component.commentAuthor.homepage
-                text: (component.author === component.entryAuthorId) ? i18nc("The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name) : component.commentAuthor.name
+                text: (component.author === component.entryAuthorId) ? i18ndc("knewstuff5", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name) : component.commentAuthor.name
             }
             QtControls.Label {
                 visible: !authorLabel.visible

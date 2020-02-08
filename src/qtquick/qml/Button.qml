@@ -51,12 +51,12 @@ QtControls.Button {
 
     /**
      * Set the text that should appear on the button. Will be set as
-     * i18n("Download New %1...").
+     * i18nd("knewstuff5", "Download New %1...").
      *
      * @note For the sake of consistency, you should NOT override the text propety, just set this one
      */
-    property string downloadNewWhat: i18nc("Used to contruct the button's label (which will become Download New 'this value'...)", "Stuff")
-    text: i18n("Download New %1...", downloadNewWhat)
+    property string downloadNewWhat: i18ndc("knewstuff5", "Used to contruct the button's label (which will become Download New 'this value'...)", "Stuff")
+    text: i18nd("knewstuff5", "Download New %1...", downloadNewWhat)
 
     /**
      * The default view mode of the dialog spawned by this button. This should be

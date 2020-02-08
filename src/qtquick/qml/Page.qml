@@ -74,8 +74,8 @@ KCM.GridViewKCM {
      */
     signal errorMessage(string message);
 
-    property string uninstallLabel: i18nc("Request uninstallation of this item", "Uninstall");
-    property string useLabel: i18nc("If a knsrc file defines an adoption command, the option to run this command and 'use' an item becomes available. This is the text for an action to do so.", "Use");
+    property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
+    property string useLabel: i18ndc("knewstuff5", "If a knsrc file defines an adoption command, the option to run this command and 'use' an item becomes available. This is the text for an action to do so.", "Use");
 
     property int viewMode: Page.ViewMode.Tiles
     enum ViewMode {
@@ -143,7 +143,7 @@ KCM.GridViewKCM {
         }
         Kirigami.ActionTextField {
             id: searchField
-            placeholderText: i18n("Search...")
+            placeholderText: i18nd("knewstuff5", "Search...")
             focusSequence: "Ctrl+F"
             rightActions: [
                 Kirigami.Action {
@@ -176,9 +176,9 @@ KCM.GridViewKCM {
             QtLayouts.Layout.fillWidth: true
             model: ListModel {}
             Component.onCompleted: {
-                filterCombo.model.append({ text: i18nc("List option which will set the filter to show everything", "Show Everything") });
-                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items are shown", "Installed Only") });
-                filterCombo.model.append({ text: i18nc("List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show Everything") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Installed Only") });
+                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
                 filterCombo.currentIndex = newStuffEngine.filter;
             }
             onCurrentIndexChanged: {
@@ -190,10 +190,10 @@ KCM.GridViewKCM {
             QtLayouts.Layout.fillWidth: true
             model: ListModel { }
             Component.onCompleted: {
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on when items were most recently updated", "Show most recent first") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to be alphabetical based on the name", "Sort alphabetically") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on user ratings", "Show highest rated first") });
-                sortCombo.model.append({ text: i18nc("List option which will set the sort order to based on number of downloads", "Show most downloaded first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show most recent first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort alphabetically") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show highest rated first") });
+                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show most downloaded first") });
                 sortCombo.currentIndex = newStuffEngine.sortOrder;
             }
             onCurrentIndexChanged: {
@@ -240,7 +240,7 @@ KCM.GridViewKCM {
                     leftMargin: Kirigami.Units.largeSpacing
                     bottom: parent.bottom
                 }
-                text: i18nc("A text shown beside a busy indicator suggesting that data is being fetched", "Loading more...")
+                text: i18ndc("knewstuff5", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more...")
                 verticalAlignment: Text.AlignVCenter
             }
         }

@@ -46,13 +46,13 @@ Kirigami.OverlaySheet {
         spacing: Kirigami.Units.largeSpacing
         Kirigami.Heading {
             QtLayouts.Layout.fillWidth: true
-            text: i18n("Pick Your Installation Option")
+            text: i18nd("knewstuff5", "Pick Your Installation Option")
             elide: Text.ElideRight
         }
         QtControls.Label {
             QtLayouts.Layout.fillWidth: true
             QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
-            text: i18n("Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
+            text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
             wrapMode: Text.Wrap
         }
     }
@@ -69,7 +69,7 @@ Kirigami.OverlaySheet {
             text: modelData.name
             icon: "download"
             QtControls.ToolButton {
-                text: i18n("Install")
+                text: i18nd("knewstuff5", "Install")
                 icon.name: "install"
                 QtLayouts.Layout.alignment: Qt.AlignRight
                 onClicked: {

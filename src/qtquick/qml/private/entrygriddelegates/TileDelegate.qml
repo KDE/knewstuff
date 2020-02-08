@@ -62,7 +62,7 @@ Private.GridTileDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18nc("Request installation of this item, available when there is exactly one downloadable item", "Install") : i18nc("Show installation options, where there is more than one downloadable item", "Install...");
+            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
             iconName: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
@@ -77,7 +77,7 @@ Private.GridTileDelegate {
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18nc("Request updating of this item", "Update");
+            text: i18ndc("knewstuff5", "Request updating of this item", "Update");
             iconName: "update"
             onTriggered: { newStuffModel.installItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
@@ -91,7 +91,7 @@ Private.GridTileDelegate {
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18nc("Show a page with details for this item", "Details...")
+            text: i18ndc("knewstuff5", "Show a page with details for this item", "Details...")
             iconName: "documentinfo"
             onTriggered: { component.showDetails(); }
         }
@@ -177,7 +177,7 @@ Private.GridTileDelegate {
                     elide: Text.ElideRight
                     level: 4
                     textFormat: Text.StyledText
-                    text: i18nc("Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
+                    text: i18ndc("knewstuff5", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
                 }
                 QtControls.Label {
                     QtLayouts.Layout.fillWidth: true
@@ -195,7 +195,7 @@ Private.GridTileDelegate {
                 QtLayouts.Layout.fillWidth: true
                 level: 5
                 elide: Text.ElideRight
-                text: i18nc("The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
+                text: i18ndc("knewstuff5", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
             }
         }
         FeedbackOverlay {
