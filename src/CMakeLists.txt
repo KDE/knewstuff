@@ -24,7 +24,13 @@ set(KNewStuff_SRCS
     uploaddialog.cpp
 )
 
-ecm_qt_declare_logging_category(KNewStuff_SRCS HEADER knewstuff_debug.h IDENTIFIER KNEWSTUFF CATEGORY_NAME org.kde.knewstuff)
+ecm_qt_declare_logging_category(KNewStuff_SRCS
+    HEADER knewstuff_debug.h
+    IDENTIFIER KNEWSTUFF
+    CATEGORY_NAME org.kde.knewstuff
+    DESCRIPTION "knewstuff (knewstuff)"
+    EXPORT KNEWSTUFF
+)
 
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
@@ -110,6 +116,12 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
   ${KNewStuff_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
+)
+
+ecm_qt_install_logging_categories(
+    EXPORT KNEWSTUFF
+    FILE knewstuff.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
 if(BUILD_QCH)

@@ -36,7 +36,13 @@ set(KNewStuffCore_SRCS
     ../upload/atticahelper.cpp
 )
 
-ecm_qt_declare_logging_category(KNewStuffCore_SRCS HEADER knewstuffcore_debug.h IDENTIFIER KNEWSTUFFCORE CATEGORY_NAME org.kde.knewstuff.core)
+ecm_qt_declare_logging_category(KNewStuffCore_SRCS
+    HEADER knewstuffcore_debug.h
+    IDENTIFIER KNEWSTUFFCORE
+    CATEGORY_NAME org.kde.knewstuff.core
+    DESCRIPTION "knewstuff (Core Lib)"
+    EXPORT KNEWSTUFF
+)
 
 add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} )
 add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
