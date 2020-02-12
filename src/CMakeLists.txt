@@ -118,12 +118,6 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
 )
 
-ecm_qt_install_logging_categories(
-    EXPORT KNEWSTUFF
-    FILE knewstuff.categories
-    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
-)
-
 if(BUILD_QCH)
     ecm_add_qch(
         KF5NewStuff_QCH
@@ -157,3 +151,9 @@ ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXm
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 add_subdirectory(qtquick)
+
+ecm_qt_install_logging_categories(
+    EXPORT KNEWSTUFF
+    FILE knewstuff.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)

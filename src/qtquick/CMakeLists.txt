@@ -10,7 +10,13 @@ set(qmlplugin_SRCS
     downloadlinkinfo.cpp
 )
 
-ecm_qt_declare_logging_category(qmlplugin_SRCS HEADER knewstuffquick_debug.h IDENTIFIER KNEWSTUFFQUICK CATEGORY_NAME org.kde.knewstuff.quick)
+ecm_qt_declare_logging_category(qmlplugin_SRCS
+    HEADER knewstuffquick_debug.h
+    IDENTIFIER KNEWSTUFFQUICK
+    CATEGORY_NAME org.kde.knewstuff.quick
+    DESCRIPTION "knewstuff (qtquick)"
+    EXPORT KNEWSTUFF
+)
 
 add_library (newstuffqmlplugin ${qmlplugin_SRCS})
 
