@@ -600,7 +600,7 @@ void Installation::uninstall(EntryInternal entry)
                 QString command(uninstallCommand);
                 command.replace(QLatin1String("%f"), fileArg);
 
-                int exitcode = QProcess::execute(command);
+                int exitcode = QProcess::execute(command, QStringList());
 
                 if (exitcode) {
                     qCCritical(KNEWSTUFFCORE) << "Command failed" << command;
