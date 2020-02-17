@@ -42,7 +42,6 @@ public:
     {}
     ~Private()
     {
-        qDeleteAll(commentsModels);
     }
     ItemsModel *q;
     KNSCore::ItemsModel *model;
