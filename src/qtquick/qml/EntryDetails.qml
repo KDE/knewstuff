@@ -199,16 +199,15 @@ KCM.SimpleKCM {
             QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
             wrapMode: Text.Wrap
         }
-    }
-
-    Component {
-        id: commentsPage
-        Private.EntryCommentsPage {
-            itemsModel: component.newStuffModel
-            entryIndex: component.index
-            entryName: component.name
-            entryAuthorId: component.author.name
-            entryProviderId: component.providerId
+        Component {
+            id: commentsPage
+            Private.EntryCommentsPage {
+                itemsModel: component.newStuffModel
+                entryIndex: component.index
+                entryName: component.name
+                entryAuthorId: component.author.name
+                entryProviderId: component.providerId
+            }
         }
     }
 }
