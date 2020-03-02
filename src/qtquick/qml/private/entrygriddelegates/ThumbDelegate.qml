@@ -126,7 +126,7 @@ KCM.GridDelegate {
             anchors.fill: parent;
             cursorShape: Qt.PointingHandCursor;
             onClicked: pageStack.push(detailsPage, {
-                newStuffModel: GridView.view.model,
+                newStuffModel: component.GridView.view.model,
                 index: model.index,
                 name: model.name,
                 author: model.author,
