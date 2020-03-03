@@ -154,7 +154,11 @@ void Security::slotReadyReadStandardOutput()
                 } else {
                     key.secret = true;
                 }
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                 QStringList line = data.split(QLatin1Char(':'), QString::KeepEmptyParts);
+#else
+                QStringList line = data.split(QLatin1Char(':'), Qt::KeepEmptyParts);
+#endif
                 key.id = line[4];
                 QString shortId = key.id.right(8);
                 QString trustStr = line[1];

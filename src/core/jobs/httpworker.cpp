@@ -133,11 +133,7 @@ void HTTPWorker::handleReadyRead()
 void HTTPWorker::handleFinished()
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
     if (d->reply->error() != QNetworkReply::NoError) {
-#else
-    if (d->reply->networkError() != QNetworkReply::NoError) {
-#endif
         qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
         emit error(d->reply->errorString());
     }
