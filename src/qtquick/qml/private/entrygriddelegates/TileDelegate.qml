@@ -66,7 +66,7 @@ Private.GridTileDelegate {
             iconName: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.installItem(model.index, 1);
+                    newStuffModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
                     downloadItemsSheet.entryId = model.index;
@@ -79,7 +79,7 @@ Private.GridTileDelegate {
         Kirigami.Action {
             text: i18ndc("knewstuff5", "Request updating of this item", "Update");
             iconName: "update"
-            onTriggered: { newStuffModel.installItem(model.index); }
+            onTriggered: { newStuffModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },

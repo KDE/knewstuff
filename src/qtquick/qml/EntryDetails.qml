@@ -98,7 +98,7 @@ KCM.SimpleKCM {
                 icon.name: "install"
                 onTriggered: {
                     if (component.downloadCount == 1) {
-                        newStuffModel.installItem(component.index);
+                        newStuffModel.installItem(component.index, NewStuff.ItemsModel.FirstLinkId);
                     } else {
                         downloadItemsSheet.downloadLinks = component.downloadLinks;
                         downloadItemsSheet.entryId = component.index;
@@ -111,7 +111,7 @@ KCM.SimpleKCM {
             Kirigami.Action {
                 text: i18ndc("knewstuff5", "Request updating of this item", "Update");
                 icon.name: "update"
-                onTriggered: { newStuffModel.installItem(component.index); }
+                onTriggered: { newStuffModel.updateItem(component.index); }
                 enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
                 visible: enabled;
             },

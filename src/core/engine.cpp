@@ -24,9 +24,11 @@
 #include "../entry.h"
 #include "commentsmodel.h"
 #include "installation.h"
+#include "question.h"
 #include "xmlloader.h"
 #include "imageloader_p.h"
 
+#include <memory>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <knewstuffcore_debug.h>
@@ -67,6 +69,11 @@ public:
     bool configLocationFallback = true;
     QString name;
     QMap<EntryInternal, CommentsModel*> commentsModels;
+
+    // Used for updating purposes - we ought to be saving this information, but we also have to deal with old stuff, and so... this will have to do for now, and so
+    // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
+    QMap<EntryInternal, QStringList> payloads;
+    QMap<EntryInternal, QString> payloadToIdentify;
 };
 
 Engine::Engine(QObject *parent)
@@ -544,6 +551,24 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
        << " from: " << entry.providerId();
     QSharedPointer<Provider> p = m_providers.value(entry.providerId());
     if (p) {
+        // If linkId is -1, assume that it's an update and that we don't know what to update
+        if (entry.status() == KNS3::Entry::Updating && linkId == -1) {
+            if (entry.downloadCount() == 1) {
+                // If there is only one downloadable item, then we can fairly safely assume that's what we're wanting
+                // to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
+                d->payloadToIdentify[entry] = QString{};
+                linkId = 1;
+            } else {
+                // While this seems silly, the payload gets reset when fetching the new download link information
+                d->payloadToIdentify[entry] = entry.payload();
+                // Drop a fresh list in place so we've got something to work with when we get the links
+                d->payloads[entry] = QStringList{};
+            }
+        } else {
+            // If there is no payload to identify, we will assume the payload is already known and just use that
+            d->payloadToIdentify[entry] = QString{};
+        }
+
         p->loadPayloadLink(entry, linkId);
 
         ++m_numInstallJobs;
@@ -570,7 +595,64 @@ void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 
 void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 {
-    m_installation->install(entry);
+    if (entry.status() == KNS3::Entry::Updating) {
+        if (d->payloadToIdentify.isEmpty()) {
+            // If there's nothing to identify, and we've arrived here, then we know what the payload is
+            m_installation->install(entry);
+        } else if (d->payloads[entry].count() < entry.downloadCount()) {
+            // We've got more to get before we can attempt to identify anything, so fetch the next one...
+            QStringList payloads = d->payloads[entry];
+            payloads << entry.payload();
+            d->payloads[entry] = payloads;
+            QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+            if (p) {
+                // ok, so this should definitely always work, but... safety first, kids!
+                p->loadPayloadLink(entry, payloads.count());
+            }
+        } else {
+            // We now have all the links, so let's try and identify the correct one...
+            QString identifiedLink;
+            const QString payloadToIdentify = d->payloadToIdentify[entry];
+            const QStringList &payloads = d->payloads[entry];
+            if (payloads.contains(payloadToIdentify)) {
+                // Simplest option, the link hasn't changed at all
+                identifiedLink = payloadToIdentify;
+            } else {
+                // Next simplest option, filename is the same but in a different folder
+                const QStringRef fileName = payloadToIdentify.splitRef(QChar::fromLatin1('/')).last();
+                for (const QString &payload : payloads) {
+                    if (payload.endsWith(fileName)) {
+                        identifiedLink = payload;
+                        break;
+                    }
+                }
+
+                if (identifiedLink.isEmpty()) {
+                    // Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)
+                    auto question = std::make_unique<Question>(Question::SelectFromListQuestion);
+                    question->setTitle(i18n("Pick Update Item"));
+                    question->setQuestion(i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to select, based on the original item, which was named %1").arg(fileName));
+                    question->setList(payloads);
+                    if(question->ask() == Question::OKResponse) {
+                        identifiedLink = question->response();
+                    }
+                }
+            }
+            if (!identifiedLink.isEmpty()) {
+                KNSCore::EntryInternal theEntry(entry);
+                theEntry.setPayload(identifiedLink);
+                m_installation->install(theEntry);
+            } else {
+                qCWarning(KNEWSTUFFCORE) << "We failed to identify a good link for updating" << entry.name() << "and are unable to perform the update";
+            }
+            // As the serverside data may change before next time this is called, even in the same session,
+            // let's not make assumptions, and just get rid of this
+            d->payloads.remove(entry);
+            d->payloadToIdentify.remove(entry);
+        }
+    } else {
+        m_installation->install(entry);
+    }
 }
 
 void Engine::uninstall(KNSCore::EntryInternal entry)

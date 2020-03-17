@@ -121,6 +121,14 @@ public:
         UpdatingStatus
     };
     Q_ENUM(ItemStatus)
+    // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
+    // Consequently, this enum removes what would seem like magic numbers from the code, and
+    // makes their meaning more explicit.
+    enum LinkId {
+        AutoDetectLinkId = -1,
+        FirstLinkId = 1
+    };
+    Q_ENUM(LinkId)
 
     QHash< int, QByteArray > roleNames() const override;
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
@@ -151,8 +159,23 @@ public:
      * the function will simply return without performing any actions)
      *
      * @param index The index of the item to install or update
+     * @param linkId The download item to install. If this is -1, it is assumed to be an update with an unknown payload, and a number of heuristics will be applied by the engine
+     * @see Engine::downloadLinkLoaded implementation for details
+     * @see LinkId
      */
     Q_INVOKABLE void installItem(int index, int linkId);
+    /**
+     * @brief This will request an update of the given item
+     *
+     * There are no side effects of this function if it is called on an item which is not
+     * in an updateable state (that is, nothing will happen if this is called on an item
+     * which is not already installed, or on an installed item which does not have updates
+     * available).
+     *
+     * @param index The index of the item you wish to update
+     * @since 5.69
+     */
+    Q_INVOKABLE void updateItem(int index);
     /**
      * @brief Uninstall an already installed item
      *

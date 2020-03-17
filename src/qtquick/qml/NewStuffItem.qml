@@ -36,14 +36,14 @@ Kirigami.SwipeListItem {
         Kirigami.Action {
             text: i18ndc("knewstuff5", "Request installation of this item", "Install");
             iconName: "list-add"
-            onTriggered: { listModel.installItem(model.index, 1); }
+            onTriggered: { listModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId); }
             enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: i18ndc("knewstuff5", "Request updating of this item", "Update");
             iconName: "refresh"
-            onTriggered: { listModel.installItem(model.index, 1); }
+            onTriggered: { listModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },

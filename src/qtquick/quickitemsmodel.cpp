@@ -406,6 +406,11 @@ void ItemsModel::installItem(int index, int linkId)
     }
 }
 
+void ItemsModel::updateItem(int index)
+{
+    installItem(index, AutoDetectLinkId);
+}
+
 void ItemsModel::uninstallItem(int index)
 {
     if (d->coreEngine) {
