@@ -48,7 +48,7 @@ set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that imple
                        URL "https://commits.kde.org/attica"
                        TYPE REQUIRED
                       )
-find_package(KF5Kirigami2 2.1.0)
+find_package(KF5Kirigami2 2.12.0)
 set_package_properties(KF5Kirigami2 PROPERTIES
     DESCRIPTION "KDE's lightweight user interface framework for mobile and convergent applications"
     URL "https://techbase.kde.org/Kirigami"

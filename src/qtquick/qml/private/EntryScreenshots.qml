@@ -23,7 +23,7 @@ import QtQuick.Controls 2.11
 import QtQuick.Layouts 1.11
 import QtGraphicalEffects 1.11
 
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 Flickable {
     id: root
@@ -103,6 +103,8 @@ Flickable {
         id: screenshotsLayout
         height: root.contentHeight
         spacing: Kirigami.Units.largeSpacing
+        leftPadding: spacing
+        rightPadding: spacing
         focus: overlay.visible
 
         Keys.onLeftPressed:  if (leftAction.visible)  leftAction.trigger()
@@ -114,8 +116,9 @@ Flickable {
             delegate: MouseArea {
                 readonly property url imageSource: modelData
                 readonly property real proportion: thumbnail.sourceSize.width>1 ? thumbnail.sourceSize.height/thumbnail.sourceSize.width : 1
+                anchors.verticalCenter: parent.verticalCenter
                 width: Math.max(50, height/proportion)
-                height: screenshotsLayout.height
+                height: screenshotsLayout.height - 2 * Kirigami.Units.largeSpacing
 
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
@@ -125,15 +128,11 @@ Flickable {
                     overlay.open()
                 }
 
-                DropShadow {
-                    source: thumbnail
+                Kirigami.ShadowedRectangle {
                     anchors.fill: thumbnail
-                    verticalOffset: Kirigami.Units.largeSpacing
-                    horizontalOffset: 0
-                    radius: 12.0
-                    samples: 25
-                    color: Kirigami.Theme.disabledTextColor
-                    cached: true
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+                    shadow.size: Kirigami.Units.largeSpacing
+                    shadow.color: Qt.rgba(0, 0, 0, 0.3)
                 }
 
                 BusyIndicator {

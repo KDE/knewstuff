@@ -24,7 +24,7 @@ import QtQuick.Controls 2.11 as QtControls
 import QtQuick.Layouts 1.11 as QtLayouts
 import QtGraphicalEffects 1.11 as QtEffects
 
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.newstuff 1.62 as NewStuff
 
@@ -102,21 +102,20 @@ Private.GridTileDelegate {
                 QtLayouts.Layout.fillWidth: true
                 QtLayouts.Layout.minimumHeight: width / 1.8
                 QtLayouts.Layout.maximumHeight: width / 1.8
+                Kirigami.ShadowedRectangle {
+                    anchors.centerIn: bigPreview;
+                    width: Math.min(bigPreview.paintedWidth, bigPreview.width);
+                    height: Math.min(bigPreview.paintedHeight, bigPreview.height);
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+                    shadow.size: 10
+                    shadow.color: Qt.rgba(0, 0, 0, 0.3)
+                }
                 Image {
                     id: bigPreview
                     asynchronous: true;
                     fillMode: Image.PreserveAspectCrop;
                     source: thumbnailAvailable ? model.previews[0] : "";
                     anchors.fill: parent
-                }
-                QtEffects.DropShadow {
-                    anchors.fill: bigPreview
-                    horizontalOffset: 0
-                    verticalOffset: 0
-                    radius: Kirigami.Units.largeSpacing
-                    samples: radius * 2
-                    color: "#80000000"
-                    source: bigPreview
                 }
                 Kirigami.Icon {
                     id: updateAvailableBadge;

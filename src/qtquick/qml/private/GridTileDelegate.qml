@@ -23,7 +23,7 @@ import QtQuick.Templates 2.11 as T2
 import QtQuick.Layouts 1.11
 import QtGraphicalEffects 1.11
 
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 /**
  * Base delegate for KControlmodules based on Grid views of thumbnails
@@ -71,7 +71,7 @@ T2.ItemDelegate {
     height: GridView.view.cellHeight
     hoverEnabled: true
 
-    Rectangle {
+    Kirigami.ShadowedRectangle {
         id: tile
         anchors.centerIn: parent
         width: Kirigami.Settings.isMobile ? delegate.width - Kirigami.Units.gridUnit : Math.min(delegate.GridView.view.implicitCellWidth, delegate.width - Kirigami.Units.gridUnit)
@@ -79,6 +79,11 @@ T2.ItemDelegate {
         radius: Kirigami.Units.smallSpacing
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+        shadow.xOffset: 0
+        shadow.yOffset: 2
+        shadow.size: 10
+        shadow.color: Qt.rgba(0, 0, 0, 0.3)
 
         color: {
             if (delegate.GridView.isCurrentItem) {
@@ -149,10 +154,7 @@ T2.ItemDelegate {
                             icon.name: modelData.iconName
                             text: modelData.text
                             activeFocusOnTab: focus || delegate.focus
-                            onClicked: {
-                                delegate.clicked()
-                                modelData.trigger()
-                            }
+                            onClicked: modelData.trigger()
                             enabled: modelData.enabled
                             visible: modelData.visible
                             //NOTE: there aren't any global settings where to take "official" tooltip timeouts
@@ -164,15 +166,6 @@ T2.ItemDelegate {
                     }
                 }
             }
-        }
-        // Bug 397367: explicitly using "delegate" as otherwise it crashes when switching between KCMs
-        layer.enabled: delegate.GraphicsInfo.api === GraphicsInfo.OpenGL
-        layer.effect: DropShadow {
-            horizontalOffset: 0
-            verticalOffset: 2
-            radius: 10
-            samples: 32
-            color: Qt.rgba(0, 0, 0, 0.3)
         }
     }
 
