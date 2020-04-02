@@ -182,15 +182,17 @@ KCM.SimpleKCM {
                 Kirigami.FormData.label: i18nd("knewstuff5", "Rating:")
                 rating: Math.floor(component.rating / 10)
             }
-            Kirigami.LinkButton {
+            Kirigami.UrlButton {
                 Kirigami.FormData.label: i18nd("knewstuff5", "Homepage:")
                 text: i18ndc("knewstuff5", "A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %1", component.name)
-                onClicked: Qt.openUrlExternally(component.homepage)
+                url: component.homepage
+                visible: component.homepage
             }
-            Kirigami.LinkButton {
+            Kirigami.UrlButton {
                 Kirigami.FormData.label: i18nd("knewstuff5", "How To Donate:")
                 text: i18ndc("knewstuff5", "A link which, when clicked, opens a website with information on donation in support of the entry", "Find out how to donate to this project")
-                onClicked: Qt.openUrlExternally(component.donationLink)
+                url: component.donationLink
+                visible: component.donationLink
             }
         }
         QtControls.Label {
