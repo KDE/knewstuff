@@ -58,14 +58,7 @@ Kirigami.OverlaySheet {
     }
     contentItem: ListView {
         id: itemsView
-        QtLayouts.Layout.preferredWidth: parent.width - Kirigami.Units.largeSpacing * 2
         delegate: Kirigami.BasicListItem {
-            anchors {
-                left: parent.left
-                right: parent.right
-                leftMargin: Kirigami.Units.largeSpacing * 2
-                rightMargin: Kirigami.Units.largeSpacing * 2
-            }
             text: modelData.name
             icon: "download"
             QtControls.ToolButton {
