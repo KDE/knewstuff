@@ -99,7 +99,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
         qCDebug(KNEWSTUFF) << "Loading KNewStuff3 config: " << fi.absoluteFilePath();
         group = conf.group("KNewStuff3");
     } else {
-        qCCritical(KNEWSTUFF) << "A knsrc file was found but it doesn't contain a KNewStuff3 section.";
+        qCCritical(KNEWSTUFF) << "A knsrc file was found but it doesn't contain a KNewStuff3 section." << fi.absoluteFilePath();
         success = false;
     }
 
