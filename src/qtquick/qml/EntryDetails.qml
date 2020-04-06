@@ -64,6 +64,7 @@ KCM.SimpleKCM {
             newStuffModel.installItem(entryId, downloadItemId);
         }
     }
+    Private.ErrorDisplayer { engine: component.newStuffModel.engine; active: component.isCurrentPage; }
 
     Connections {
         target: newStuffModel

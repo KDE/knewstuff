@@ -94,6 +94,7 @@ Engine::Engine(QObject *parent)
     connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
+    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ emit signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
     // Pass along old error signal through new signal for locations which have not been updated yet
     connect(this, &Engine::signalError, this, [this](const QString& message){ emit signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
 }

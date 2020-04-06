@@ -61,6 +61,7 @@ Kirigami.ScrollablePage {
             }
         ]
     }
+    ErrorDisplayer { engine: component.itemsModel.engine; active: component.isCurrentPage; }
     ListView {
         id: commentsView
         model: NewStuff.CommentsModel {

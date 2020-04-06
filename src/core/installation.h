@@ -135,6 +135,12 @@ Q_SIGNALS:
     void signalEntryChanged(const KNSCore::EntryInternal &entry);
     void signalInstallationFinished();
     void signalInstallationFailed(const QString &message);
+    /**
+     * An informational signal fired when a serious error occurs during the installation.
+     * @param message The description of the error (a message intended to be human readable)
+     * @since 5.69
+     */
+    void signalInstallationError(const QString &message);
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 

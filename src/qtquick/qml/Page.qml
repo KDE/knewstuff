@@ -106,6 +106,7 @@ KCM.GridViewKCM {
         }
     }
     NewStuff.QuestionAsker {}
+    Private.ErrorDisplayer { engine: newStuffEngine; active: root.isCurrentPage; }
 
     titleDelegate: QtLayouts.RowLayout {
         QtLayouts.Layout.fillWidth: true

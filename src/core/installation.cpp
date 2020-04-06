@@ -448,6 +448,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             } else {
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompression == QLatin1String("always")) {
+                    emit signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
                     return QStringList();
                 }
                 isarchive = false;
@@ -458,6 +459,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 if (!success) {
                     qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
                     if (uncompression == QLatin1String("always")) {
+                        emit signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
                         return QStringList();
                     }
                     // otherwise, just copy the file
@@ -553,6 +555,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
             if (!success) {
+                emit signalInstallationError(i18n("Unable to mode the file %1 to the intended destination %2", payloadfile, installpath));
                 qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
                 return QStringList();
             }
@@ -571,10 +574,13 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
     qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
 
     QProcess* ret = new QProcess(this);
-    connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, [this, command](int exitcode, QProcess::ExitStatus status) {
+    connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, [this, command, ret](int exitcode, QProcess::ExitStatus status) {
+        const QString output{QString::fromLocal8Bit(ret->readAllStandardError())};
         if (status == QProcess::CrashExit) {
+            emit signalInstallationError(i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output));
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
+            emit signalInstallationError(i18n("The installation failed while with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
             qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();
@@ -603,6 +609,7 @@ void Installation::uninstall(EntryInternal entry)
                 int exitcode = QProcess::execute(command, QStringList());
 
                 if (exitcode) {
+                    emit signalInstallationError(i18n("The uninstallation process failed to successfully run the command %1", command));
                     qCCritical(KNEWSTUFFCORE) << "Command failed" << command;
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
