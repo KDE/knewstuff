@@ -555,7 +555,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
             if (!success) {
-                emit signalInstallationError(i18n("Unable to mode the file %1 to the intended destination %2", payloadfile, installpath));
+                emit signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
                 qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
                 return QStringList();
             }
