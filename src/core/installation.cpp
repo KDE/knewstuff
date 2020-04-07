@@ -580,7 +580,7 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
             emit signalInstallationError(i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output));
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
-            emit signalInstallationError(i18n("The installation failed while with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
+            emit signalInstallationError(i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
             qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();
