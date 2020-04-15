@@ -33,6 +33,7 @@ Comment[zh_TW]=screencast
 Exec=vokoscreenNG
 Icon=vokoscreenNG
 Name=VokoscreenNG
+Name[ast]=VokoscreenNG
 Name[ca]=VokoscreenNG
 Name[en_GB]=VokoscreenNG
 Name[es]=VokoscreenNG
