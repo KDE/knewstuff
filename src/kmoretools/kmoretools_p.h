@@ -27,6 +27,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QDir>
+#include <QRegularExpression>
 
 #include <klocalizedstring.h>
 
@@ -110,7 +111,7 @@ public:
     static QString removeMenuAmpersand(const QString& str)
     {
         QString newStr = str;
-        newStr.replace(QRegExp(_("\\&([^&])")), _("\\1")); // &Hallo --> Hallo
+        newStr.replace(QRegularExpression(QStringLiteral("\\&([^&])")), QStringLiteral("\\1")); // &Hallo --> Hallo
         newStr.replace(_("&&"), _("&")); // &&Hallo --> &Hallo
         return newStr;
     }
