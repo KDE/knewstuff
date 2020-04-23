@@ -22,9 +22,10 @@
 #include "knewstuff_debug.h"
 #include <QDebug>
 
+#include <KDialogJobUiDelegate>
 #include <KLocalizedString>
+#include <KIO/ApplicationLauncherJob>
 #include <KMountPoint>
-#include <KRun>
 #include <KNS3/KMoreTools>
 #include <KNS3/KMoreToolsPresets>
 
@@ -78,6 +79,14 @@ KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
     delete d;
 }
 
+static void runApplication(const KService::Ptr &service, const QList<QUrl> &urls)
+{
+    auto *job = new KIO::ApplicationLauncherJob(service);
+    job->setUrls(urls);
+    job->setUiDelegate(new KDialogJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+    job->start();
+}
+
 // "file static" => no symbol will be exported
 static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
                                   QMenu* menu,
@@ -104,12 +113,12 @@ static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
         if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
             menu->connect(menuItem->action(), &QAction::triggered, menu,
             [kService, url](bool) {
-                KRun::runApplication(*kService, { url }, nullptr);
+                runApplication(kService, { url });
             });
         } else {
             menu->connect(menuItem->action(), &QAction::triggered, menu,
             [kService](bool) {
-                KRun::runApplication(*kService, { }, nullptr);
+                runApplication(kService, { });
             });
         }
     }
@@ -185,7 +194,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                                                           i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current folder", QStringLiteral("$GenericName"))));
                     menu->connect(filelight1Item->action(), &QAction::triggered, menu,
                     [filelightService, url](bool) {
-                        KRun::runApplication(*filelightService, { url }, nullptr);
+                        runApplication(filelightService, { url });
                     });
 
                     const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
@@ -195,9 +204,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                     [filelightService, url](bool) {
                         KMountPoint::Ptr mountPoint
                             = KMountPoint::currentMountPoints().findByPath(url.toLocalFile());
-                        KRun::runApplication(*filelightService,
-                        { QUrl::fromLocalFile(mountPoint->mountPoint()) },
-                        nullptr);
+                        runApplication(filelightService, { QUrl::fromLocalFile(mountPoint->mountPoint()) });
                     });
                 }
             }
@@ -209,7 +216,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                 const auto filelightService = filelightApp->installedService();
                 menu->connect(filelight3Item->action(), &QAction::triggered, menu,
                 [filelightService](bool) {
-                    KRun::runApplication(*filelightService, { }, nullptr);
+                    runApplication(filelightService, { });
                 });
             }
         } else {
