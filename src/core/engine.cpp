@@ -557,18 +557,22 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
     if (p) {
         // If linkId is -1, assume that it's an update and that we don't know what to update
         if (entry.status() == KNS3::Entry::Updating && linkId == -1) {
-            if (entry.downloadCount() == 1) {
+            if (entry.downloadLinkCount() == 1) {
                 // If there is only one downloadable item, then we can fairly safely assume that's what we're wanting
                 // to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
+                qCDebug(KNEWSTUFFCORE) << "Just the one download link, so let's use that";
                 d->payloadToIdentify[entry] = QString{};
                 linkId = 1;
             } else {
+                qCDebug(KNEWSTUFFCORE) << "Try and identify a download link to use from a total of" << entry.downloadLinkCount();
                 // While this seems silly, the payload gets reset when fetching the new download link information
                 d->payloadToIdentify[entry] = entry.payload();
                 // Drop a fresh list in place so we've got something to work with when we get the links
                 d->payloads[entry] = QStringList{};
+                linkId = 1;
             }
         } else {
+            qCDebug(KNEWSTUFFCORE) << "Link ID already known" << linkId;
             // If there is no payload to identify, we will assume the payload is already known and just use that
             d->payloadToIdentify[entry] = QString{};
         }
@@ -602,9 +606,11 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
     if (entry.status() == KNS3::Entry::Updating) {
         if (d->payloadToIdentify.isEmpty()) {
             // If there's nothing to identify, and we've arrived here, then we know what the payload is
+            qCDebug(KNEWSTUFFCORE) << "If there's nothing to identify, and we've arrived here, then we know what the payload is";
             m_installation->install(entry);
-        } else if (d->payloads[entry].count() < entry.downloadCount()) {
+        } else if (d->payloads[entry].count() < entry.downloadLinkCount()) {
             // We've got more to get before we can attempt to identify anything, so fetch the next one...
+            qCDebug(KNEWSTUFFCORE) << "We've got more to get before we can attempt to identify anything, so fetch the next one...";
             QStringList payloads = d->payloads[entry];
             payloads << entry.payload();
             d->payloads[entry] = payloads;
@@ -615,14 +621,19 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
             }
         } else {
             // We now have all the links, so let's try and identify the correct one...
+            qCDebug(KNEWSTUFFCORE) << "We now have all the links, so let's try and identify the correct one...";
             QString identifiedLink;
             const QString payloadToIdentify = d->payloadToIdentify[entry];
+            const QList<EntryInternal::DownloadLinkInformation> downloadLinks = entry.downloadLinkInformationList();
             const QStringList &payloads = d->payloads[entry];
+
             if (payloads.contains(payloadToIdentify)) {
                 // Simplest option, the link hasn't changed at all
+                qCDebug(KNEWSTUFFCORE) << "Simplest option, the link hasn't changed at all";
                 identifiedLink = payloadToIdentify;
             } else {
                 // Next simplest option, filename is the same but in a different folder
+                qCDebug(KNEWSTUFFCORE) << "Next simplest option, filename is the same but in a different folder";
                 const QStringRef fileName = payloadToIdentify.splitRef(QChar::fromLatin1('/')).last();
                 for (const QString &payload : payloads) {
                     if (payload.endsWith(fileName)) {
@@ -631,14 +642,27 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
                     }
                 }
 
+                // Possibly the payload itself is named differently (by a CDN, for example), but the link identifier is the same...
+                qCDebug(KNEWSTUFFCORE) << "Possibly the payload itself is named differently (by a CDN, for example), but the link identifier is the same...";
+                QStringList payloadNames;
+                for (const EntryInternal::DownloadLinkInformation &downloadLink : downloadLinks) {
+                    qCDebug(KNEWSTUFFCORE) << "Download link" << downloadLink.name << downloadLink.id << downloadLink.size << downloadLink.descriptionLink;
+                    payloadNames << downloadLink.name;
+                    if (downloadLink.name == fileName) {
+                        identifiedLink = payloads[payloadNames.count() - 1];
+                        qCDebug(KNEWSTUFFCORE) << "Found a suitable download link for" << fileName << "which should match" << identifiedLink;
+                    }
+                }
+
                 if (identifiedLink.isEmpty()) {
                     // Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)
+                    qCDebug(KNEWSTUFFCORE) << "Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)";
                     auto question = std::make_unique<Question>(Question::SelectFromListQuestion);
                     question->setTitle(i18n("Pick Update Item"));
                     question->setQuestion(i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to select, based on the original item, which was named %1").arg(fileName));
-                    question->setList(payloads);
+                    question->setList(payloadNames);
                     if(question->ask() == Question::OKResponse) {
-                        identifiedLink = question->response();
+                        identifiedLink = payloads.value(payloadNames.indexOf(question->response()));
                     }
                 }
             }
