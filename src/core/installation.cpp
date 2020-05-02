@@ -523,7 +523,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     installfile = source.fileName();
                 }
             }
-            QString installpath = installdir + QLatin1Char('/') + installfile;
+            QString installpath = QDir(installdir).filePath(installfile);
 
             qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
@@ -606,7 +606,9 @@ void Installation::uninstall(EntryInternal entry)
                 QString command(uninstallCommand);
                 command.replace(QLatin1String("%f"), fileArg);
 
-                int exitcode = QProcess::execute(command, QStringList());
+                QStringList args = KShell::splitArgs(command);
+                const QString program = args.takeFirst();
+                int exitcode = QProcess::execute(program, args);
 
                 if (exitcode) {
                     emit signalInstallationError(i18n("The uninstallation process failed to successfully run the command %1", command));
