@@ -21,6 +21,7 @@
 #include <QFile>
 #include <QDir>
 #include <QFileInfo>
+#include <QTimer>
 #include <QXmlStreamReader>
 #include <qstandardpaths.h>
 #include <knewstuffcore_debug.h>
@@ -241,6 +242,7 @@ void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
     setProperty("dirty", true);
     cache.insert(entry);
+    QTimer::singleShot(1000, this, [this](){ writeRegistry(); });
 }
 
 void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
@@ -261,3 +263,22 @@ EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchReque
     return requestCache.value(request.hashForRequest());
 }
 
+void KNSCore::Cache::removeDeletedEntries()
+{
+    QMutableSetIterator<KNSCore::EntryInternal> i(cache);
+    while (i.hasNext()) {
+        const KNSCore::EntryInternal &entry = i.next();
+        bool installedFileExists{false};
+        for (const auto &installedFile: entry.installedFiles()) {
+            if (QFile::exists(installedFile)) {
+                installedFileExists = true;
+                break;
+            }
+        }
+        if (!installedFileExists) {
+            i.remove();
+            setProperty("dirty", true);
+        }
+    }
+    writeRegistry();
+}

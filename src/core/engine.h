@@ -89,6 +89,7 @@ public:
      *
      * @param configfile KNewStuff2 configuration file (*.knsrc)
      * @return \b true if any valid configuration was found, \b false otherwise
+    * @see KNS3::DownloadDialog
      */
     bool init(const QString &configfile);
 

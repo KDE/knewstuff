@@ -180,6 +180,9 @@ bool Engine::init(const QString &configfile)
     qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
     connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
     m_cache->readRegistry();
+    if (m_installation->uncompressionSetting() == Installation::UseKPackageUncompression) {
+        m_cache->removeDeletedEntries();
+    }
 
     m_initialized = true;
 

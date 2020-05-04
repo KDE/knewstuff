@@ -64,6 +64,13 @@ public:
         ScopeUser,
         ScopeSystem
     };
+    enum UncompressionOptions {
+        NeverUncompress, ///@< Never attempt to decompress a file, whatever format it is. Matches "never" knsrc setting
+        AlwaysUncompress, ///@< Assume all downloaded files are archives, and attempt to decompress them. Will cause failure if decompression fails. Matches "always" knsrc setting
+        UncompressIfArchive, ///@< If the file is an archive, decompress it, otherwise just pass it on. Matches "archive" knsrc setting
+        UncompressIntoSubdir, ///@< As Archive, except that if there is more than an item in the file, put contents in a subdirectory with the same name as the file. Matches "subdir" knsrc setting
+        UseKPackageUncompression ///@< Use the internal KPackage support for installing and uninstalling the package. Matches "kpackage" knsrc setting
+    };
 
     bool readConfig(const KConfigGroup &group);
     bool isRemote() const;
@@ -115,6 +122,14 @@ public Q_SLOTS:
      * @note FIXME: I don't believe this works yet :)
      */
     void uninstall(KNSCore::EntryInternal entry);
+
+    /**
+     * Returns the uncompression setting, in a computer-readable format
+     *
+     * @return The value of this setting
+     * @since 5.71
+     */
+    UncompressionOptions uncompressionSetting() const;
 
     // TODO KF6: remove, was used with deprecated Security class.
 #if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)

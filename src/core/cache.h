@@ -57,6 +57,19 @@ public:
     void insertRequest(const KNSCore::Provider::SearchRequest &, const KNSCore::EntryInternal::List &entries);
     EntryInternal::List requestFromCache(const KNSCore::Provider::SearchRequest &);
 
+    /**
+     * This will run through all entries in the cache, and remove all entries
+     * where all the installed files they refer to no longer exist.
+     *
+     * This cannot be done wholesale for all caches, as some consumers will allow
+     * this to happen (or indeed expect it to), and so we have to do this on a
+     * per-type basis
+     *
+     * This will also cause the cache store to be updated
+     *
+     * @since 5.71
+     */
+    void removeDeletedEntries();
 public Q_SLOTS:
     void registerChangedEntry(const KNSCore::EntryInternal &entry);
 

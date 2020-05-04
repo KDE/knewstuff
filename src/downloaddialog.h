@@ -63,6 +63,7 @@ class DownloadDialogPrivate;
  * <li>never: never try to extract the file</li>
  * <li>archive: if the file is an archive, uncompress it, otherwise just pass it on</li>
  * <li>subdir: logic as archive, but decompress into a subdirectory named after the payload filename</li>
+ * <li>kpackage: require that the downloaded file is a kpackage, and use the kpackage framework for handling installation and removal (since 5.70)</li>
  * </ol>
  *
  * You have different options to set the target install directory:
@@ -71,6 +72,24 @@ class DownloadDialogPrivate;
  *       <li>XdgTargetDir: a directory in the $XDG_DATA_HOME directory such as <em>.local/share/wallpapers</em>.
  *           This is what QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + name will return.</li>
  *   </ol>
+ *
+ * \subsection KPackage Support
+ *
+ * To make use of the KPackage option described above, in addition to the Uncompress setting above, you should also specify
+ * the type of archive expected by KPackage. While it is possible to deduce this from the package metadata in many situations,
+ * it is not a requirement of the format that this information exists, and we need to have a fallback in the case it is not
+ * available there. As such, you will want to add a KPackageType entry to your knsrc file. The following example shows how this
+ * is done for Plasma themes:
+ *
+ * <pre>
+   ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
+   Categories=Plasma Theme
+   StandardResource=tmp
+   TagFilter=ghns_excluded!=1,plasma##version==5
+   DownloadTagFilter=plasma##version==5
+   Uncompress=kpackage
+   KPackageType=Plasma/Theme
+ * </pre>
  *
  * @since 4.4
  */

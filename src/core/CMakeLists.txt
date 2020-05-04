@@ -30,6 +30,9 @@ set(KNewStuffCore_SRCS
     jobs/httpjob.cpp
     jobs/httpworker.cpp
 
+    # A simple wrapper around KPackage operations, which allows for asynchronous interaction
+    jobs/kpackagejob.cpp
+
     ../attica/atticaprovider.cpp
     ../staticxml/staticxmlprovider.cpp
 
@@ -73,6 +76,7 @@ target_link_libraries(KF5NewStuffCore
     KF5::Archive               # For decompressing archives
     KF5::I18n                  # For translations
     KF5::ConfigCore
+    KF5::Package
     Qt5::Gui                   # For QImage
 )
 
