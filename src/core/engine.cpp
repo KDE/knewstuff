@@ -169,8 +169,10 @@ bool Engine::init(const QString &configfile)
     }
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
-    // let installation read install specific config
+    // Make sure that config is valid
     if (!m_installation->readConfig(group)) {
+        Q_EMIT signalError(i18n("Could not initialise the installation handler for %1\n"
+                                "This is a critical error and should be reported to the application author", configfile));
         return false;
     }
 

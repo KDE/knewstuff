@@ -73,7 +73,11 @@ public:
     };
 
     bool readConfig(const KConfigGroup &group);
+
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 71)
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 71, "No longer use, feature obsolete")
     bool isRemote() const;
+#endif
 
 public Q_SLOTS:
     /**

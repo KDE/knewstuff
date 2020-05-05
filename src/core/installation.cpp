@@ -179,22 +179,7 @@ bool Installation::readConfig(const KConfigGroup &group)
 
 bool Installation::isRemote() const
 {
-    if (!installPath.isEmpty()) {
-        return false;
-    }
-    if (!targetDirectory.isEmpty()) {
-        return false;
-    }
-    if (!xdgTargetDirectory.isEmpty()) {
-        return false;
-    }
-    if (!absoluteInstallPath.isEmpty()) {
-        return false;
-    }
-    if (!standardResourceDirectory.isEmpty()) {
-        return false;
-    }
-    return true;
+    return false;
 }
 
 void Installation::install(const EntryInternal& entry)
@@ -213,16 +198,6 @@ void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
     if (!source.isValid()) {
         qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload.";
         emit signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
-        return;
-    }
-
-    // FIXME no clue what this is supposed to do
-    if (isRemote()) {
-        // Remote resource
-        qCDebug(KNEWSTUFFCORE) << "Relaying remote payload '" << source << "'";
-        install(entry, source.toDisplayString(QUrl::PreferLocalFile));
-        emit signalPayloadLoaded(source);
-        // FIXME: we still need registration for eventual deletion
         return;
     }
 
@@ -371,82 +346,79 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
 
 QString Installation::targetInstallationPath() const
 {
+    // installdir is the target directory
     QString installdir;
 
-    if (!isRemote()) {
-        // installdir is the target directory
-
-        // installpath also contains the file name if it's a single file, otherwise equal to installdir
-        int pathcounter = 0;
+    // installpath also contains the file name if it's a single file, otherwise equal to installdir
+    int pathcounter = 0;
 #if 0 // not available in KF5
-        if (!standardResourceDirectory.isEmpty()) {
-            if (scope == ScopeUser) {
-                installdir = KStandardDirs::locateLocal(standardResourceDirectory.toUtf8(), "/");
-            } else { // system scope
-                installdir = KStandardDirs::installPath(standardResourceDirectory.toUtf8());
-            }
-            pathcounter++;
+    if (!standardResourceDirectory.isEmpty()) {
+        if (scope == ScopeUser) {
+            installdir = KStandardDirs::locateLocal(standardResourceDirectory.toUtf8(), "/");
+        } else { // system scope
+            installdir = KStandardDirs::installPath(standardResourceDirectory.toUtf8());
         }
-#endif
-       /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
-        porting, but will make many kde4 ksnsrc files work out of the box*/
-       //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
-        if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != QLatin1String("wallpaper")) {
-            QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;
-            //crude translation KStandardDirs names -> QStandardPaths enum
-            if (standardResourceDirectory == QLatin1String("tmp")) {
-                location = QStandardPaths::TempLocation;
-            } else if (standardResourceDirectory == QLatin1String("config")) {
-                location = QStandardPaths::ConfigLocation;
-            }
-
-            if (scope == ScopeUser) {
-                installdir = QStandardPaths::writableLocation(location);
-            } else { // system scope
-                installdir = QStandardPaths::standardLocations(location).constLast();
-            }
-            pathcounter++;
-        }
-        if (!targetDirectory.isEmpty() && targetDirectory != QLatin1String("/")) {
-            if (scope == ScopeUser) {
-                installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
-            } else { // system scope
-                installdir = QStandardPaths::locate(QStandardPaths::GenericDataLocation, targetDirectory, QStandardPaths::LocateDirectory) + QLatin1Char('/');
-            }
-            pathcounter++;
-        }
-        if (!xdgTargetDirectory.isEmpty() && xdgTargetDirectory != QLatin1String("/")) {
-            installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + QLatin1Char('/');
-            pathcounter++;
-        }
-        if (!installPath.isEmpty()) {
-#if defined(Q_OS_WIN)
-            WCHAR wPath[MAX_PATH + 1];
-            if (SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
-                installdir = QString::fromUtf16((const ushort *) wPath) + QLatin1Char('/') + installPath + QLatin1Char('/');
-            } else {
-                installdir =  QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
-            }
-#else
-            installdir = QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
-#endif
-            pathcounter++;
-        }
-        if (!absoluteInstallPath.isEmpty()) {
-            installdir = absoluteInstallPath + QLatin1Char('/');
-            pathcounter++;
-        }
-
-        if (pathcounter != 1) {
-            qCCritical(KNEWSTUFFCORE) << "Wrong number of installation directories given.";
-            return QString();
-        }
-
-        qCDebug(KNEWSTUFFCORE) << "installdir: " << installdir;
-
-        // create the dir if it doesn't exist (QStandardPaths doesn't create it, unlike KStandardDirs!)
-        QDir().mkpath(installdir);
+        pathcounter++;
     }
+#endif
+   /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
+    porting, but will make many kde4 ksnsrc files work out of the box*/
+   //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
+    if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != QLatin1String("wallpaper")) {
+        QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;
+        //crude translation KStandardDirs names -> QStandardPaths enum
+        if (standardResourceDirectory == QLatin1String("tmp")) {
+            location = QStandardPaths::TempLocation;
+        } else if (standardResourceDirectory == QLatin1String("config")) {
+            location = QStandardPaths::ConfigLocation;
+        }
+
+        if (scope == ScopeUser) {
+            installdir = QStandardPaths::writableLocation(location);
+        } else { // system scope
+            installdir = QStandardPaths::standardLocations(location).constLast();
+        }
+        pathcounter++;
+    }
+    if (!targetDirectory.isEmpty() && targetDirectory != QLatin1String("/")) {
+        if (scope == ScopeUser) {
+            installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
+        } else { // system scope
+            installdir = QStandardPaths::locate(QStandardPaths::GenericDataLocation, targetDirectory, QStandardPaths::LocateDirectory) + QLatin1Char('/');
+        }
+        pathcounter++;
+    }
+    if (!xdgTargetDirectory.isEmpty() && xdgTargetDirectory != QLatin1String("/")) {
+        installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + xdgTargetDirectory + QLatin1Char('/');
+        pathcounter++;
+    }
+    if (!installPath.isEmpty()) {
+#if defined(Q_OS_WIN)
+        WCHAR wPath[MAX_PATH + 1];
+        if (SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
+            installdir = QString::fromUtf16((const ushort *) wPath) + QLatin1Char('/') + installPath + QLatin1Char('/');
+        } else {
+            installdir =  QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
+        }
+#else
+        installdir = QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
+#endif
+        pathcounter++;
+    }
+    if (!absoluteInstallPath.isEmpty()) {
+        installdir = absoluteInstallPath + QLatin1Char('/');
+        pathcounter++;
+    }
+
+    if (pathcounter != 1) {
+        qCCritical(KNEWSTUFFCORE) << "Wrong number of installation directories given.";
+        return QString();
+    }
+
+    qCDebug(KNEWSTUFFCORE) << "installdir: " << installdir;
+
+    // create the dir if it doesn't exist (QStandardPaths doesn't create it, unlike KStandardDirs!)
+    QDir().mkpath(installdir);
 
     return installdir;
 }
@@ -455,249 +427,247 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 {
     // Collect all files that were installed
     QStringList installedFiles;
+    bool isarchive = true;
 
-    if (!isRemote()) {
-        bool isarchive = true;
-
-        // respect the uncompress flag in the knsrc
-        if (uncompression == QLatin1String("kpackage")) {
-            qCDebug(KNEWSTUFFCORE) << "Using KPackage for installation";
-            KPackage::PackageStructure structure;
-            KPackage::Package package(&structure);
-            QString serviceType;
-            package.setPath(payloadfile);
-            auto resetEntryStatus = [this,entry](){
-                KNSCore::EntryInternal changedEntry(entry);
-                if (changedEntry.status() == KNS3::Entry::Installing) {
-                    changedEntry.setStatus(KNS3::Entry::Downloadable);
-                } else if (changedEntry.status() == KNS3::Entry::Updating) {
-                    changedEntry.setStatus(KNS3::Entry::Updateable);
-                }
-                emit signalEntryChanged(changedEntry);
-            };
-            if (package.isValid() && package.metadata().isValid()) {
-                qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-                serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
-                if (serviceType.isEmpty() && !package.metadata().serviceTypes().isEmpty()) {
-                    serviceType = package.metadata().serviceTypes().first();
-                }
-                if (serviceType.isEmpty()) {
-                    serviceType = property("kpackageType").toString();
-                }
-                if (!serviceType.isEmpty()) {
-                    qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << serviceType;
-                    KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
-                    if (structure) {
-                        KPackage::Package installer = KPackage::Package(structure);
-                        if (installer.hasValidStructure()) {
-                            QString packageRoot = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
-                            qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
-                            const QString expectedDir{packageRoot + package.metadata().pluginId()};
-                            KJob *installJob = KPackageJob::update(payloadfile, packageRoot, serviceType);
-                            // TODO KF6 Really, i would prefer to make more functions to handle this, but as this is
-                            // an exported class, i'd rather not pollute the public namespace with internal functions,
-                            // and we don't have a pimpl, so... we'll just have to deal with it for now
-                            connect(installJob, &KJob::result, this, [this,entry,payloadfile,expectedDir,resetEntryStatus](KJob* job){
-                                if (job->error() == KJob::NoError) {
-                                    if (QFile::exists(expectedDir)) {
-                                        EntryInternal newentry = entry;
-                                        newentry.setInstalledFiles(QStringList{expectedDir});
-                                        // update version and release date to the new ones
-                                        if (newentry.status() == KNS3::Entry::Updating) {
-                                            if (!newentry.updateVersion().isEmpty()) {
-                                                newentry.setVersion(newentry.updateVersion());
-                                            }
-                                            if (newentry.updateReleaseDate().isValid()) {
-                                                newentry.setReleaseDate(newentry.updateReleaseDate());
-                                            }
+    // respect the uncompress flag in the knsrc
+    if (uncompression == QLatin1String("kpackage")) {
+        qCDebug(KNEWSTUFFCORE) << "Using KPackage for installation";
+        KPackage::PackageStructure structure;
+        KPackage::Package package(&structure);
+        QString serviceType;
+        package.setPath(payloadfile);
+        auto resetEntryStatus = [this,entry](){
+            KNSCore::EntryInternal changedEntry(entry);
+            if (changedEntry.status() == KNS3::Entry::Installing) {
+                changedEntry.setStatus(KNS3::Entry::Downloadable);
+            } else if (changedEntry.status() == KNS3::Entry::Updating) {
+                changedEntry.setStatus(KNS3::Entry::Updateable);
+            }
+            emit signalEntryChanged(changedEntry);
+        };
+        if (package.isValid() && package.metadata().isValid()) {
+            qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
+            serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
+            if (serviceType.isEmpty() && !package.metadata().serviceTypes().isEmpty()) {
+                serviceType = package.metadata().serviceTypes().first();
+            }
+            if (serviceType.isEmpty()) {
+                serviceType = property("kpackageType").toString();
+            }
+            if (!serviceType.isEmpty()) {
+                qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << serviceType;
+                KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+                if (structure) {
+                    KPackage::Package installer = KPackage::Package(structure);
+                    if (installer.hasValidStructure()) {
+                        QString packageRoot = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
+                        qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
+                        const QString expectedDir{packageRoot + package.metadata().pluginId()};
+                        KJob *installJob = KPackageJob::update(payloadfile, packageRoot, serviceType);
+                        // TODO KF6 Really, i would prefer to make more functions to handle this, but as this is
+                        // an exported class, i'd rather not pollute the public namespace with internal functions,
+                        // and we don't have a pimpl, so... we'll just have to deal with it for now
+                        connect(installJob, &KJob::result, this, [this,entry,payloadfile,expectedDir,resetEntryStatus](KJob* job){
+                            if (job->error() == KJob::NoError) {
+                                if (QFile::exists(expectedDir)) {
+                                    EntryInternal newentry = entry;
+                                    newentry.setInstalledFiles(QStringList{expectedDir});
+                                    // update version and release date to the new ones
+                                    if (newentry.status() == KNS3::Entry::Updating) {
+                                        if (!newentry.updateVersion().isEmpty()) {
+                                            newentry.setVersion(newentry.updateVersion());
                                         }
-                                        newentry.setStatus(KNS3::Entry::Installed);
-                                        emit signalEntryChanged(newentry);
-                                        emit signalInstallationFinished();
-                                        qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
-                                    } else {
-                                        emit signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile).arg(expectedDir));
-                                        resetEntryStatus();
-                                        qCDebug(KNEWSTUFFCORE) << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
+                                        if (newentry.updateReleaseDate().isValid()) {
+                                            newentry.setReleaseDate(newentry.updateReleaseDate());
+                                        }
                                     }
+                                    newentry.setStatus(KNS3::Entry::Installed);
+                                    emit signalEntryChanged(newentry);
+                                    emit signalInstallationFinished();
+                                    qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
                                 } else {
-                                    if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
-                                        EntryInternal newentry = entry;
-                                        newentry.setStatus(KNS3::Entry::Installed);
-                                        emit signalEntryChanged(newentry);
-                                        emit signalInstallationFinished();
-                                        newentry.setInstalledFiles(QStringList{expectedDir});
-                                        qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's just make a small fib and say we totally installed that, honest, and we now have files" << expectedDir;
-                                    } else {
-                                        emit signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
-                                        resetEntryStatus();
-                                        qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
-                                    }
+                                    emit signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile).arg(expectedDir));
+                                    resetEntryStatus();
+                                    qCDebug(KNEWSTUFFCORE) << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
                                 }
-                            });
-                            installJob->start();
-                        } else {
-                            emit signalInstallationFailed(i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage support plugin for this type of package?)", payloadfile, serviceType));
-                            resetEntryStatus();
-                            qCWarning(KNEWSTUFFCORE) << "Package serviceType" << serviceType << "not found";
-                        }
+                            } else {
+                                if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
+                                    EntryInternal newentry = entry;
+                                    newentry.setStatus(KNS3::Entry::Installed);
+                                    emit signalEntryChanged(newentry);
+                                    emit signalInstallationFinished();
+                                    newentry.setInstalledFiles(QStringList{expectedDir});
+                                    qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's just make a small fib and say we totally installed that, honest, and we now have files" << expectedDir;
+                                } else {
+                                    emit signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
+                                    resetEntryStatus();
+                                    qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
+                                }
+                            }
+                        });
+                        installJob->start();
                     } else {
-                        // no package structure
-                        emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
+                        emit signalInstallationFailed(i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage support plugin for this type of package?)", payloadfile, serviceType));
                         resetEntryStatus();
-                        qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << serviceType;
+                        qCWarning(KNEWSTUFFCORE) << "Package serviceType" << serviceType << "not found";
                     }
                 } else {
-                    // no service type
-                    emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
+                    // no package structure
+                    emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
                     resetEntryStatus();
-                    qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
+                    qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << serviceType;
                 }
             } else {
-                // package or package metadata is invalid
-                emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain any useful meta information, which means it is not a valid KPackage.", payloadfile));
+                // no service type
+                emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
                 resetEntryStatus();
-                qCWarning(KNEWSTUFFCORE) << "No valid meta information (which suggests no valid KPackage) found in" << payloadfile;
+                qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
             }
         } else {
-            if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive") || uncompression == QLatin1String("subdir")) {
-                // this is weird but a decompression is not a single name, so take the path instead
-                QMimeDatabase db;
-                QMimeType mimeType = db.mimeTypeForFile(payloadfile);
-                qCDebug(KNEWSTUFFCORE) << "Postinstallation: uncompress the file";
+            // package or package metadata is invalid
+            emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain any useful meta information, which means it is not a valid KPackage.", payloadfile));
+            resetEntryStatus();
+            qCWarning(KNEWSTUFFCORE) << "No valid meta information (which suggests no valid KPackage) found in" << payloadfile;
+        }
+    } else {
+        if (uncompression == QLatin1String("always") || uncompression == QLatin1String("archive") || uncompression == QLatin1String("subdir")) {
+            // this is weird but a decompression is not a single name, so take the path instead
+            QMimeDatabase db;
+            QMimeType mimeType = db.mimeTypeForFile(payloadfile);
+            qCDebug(KNEWSTUFFCORE) << "Postinstallation: uncompress the file";
 
-                // FIXME: check for overwriting, malicious archive entries (../foo) etc.
-                // FIXME: KArchive should provide "safe mode" for this!
-                QScopedPointer<KArchive> archive;
+            // FIXME: check for overwriting, malicious archive entries (../foo) etc.
+            // FIXME: KArchive should provide "safe mode" for this!
+            QScopedPointer<KArchive> archive;
 
-                if (mimeType.inherits(QStringLiteral("application/zip"))) {
-                    archive.reset(new KZip(payloadfile));
-                } else if (mimeType.inherits(QStringLiteral("application/tar"))
-                        || mimeType.inherits(QStringLiteral("application/x-gzip"))
-                        || mimeType.inherits(QStringLiteral("application/x-bzip"))
-                        || mimeType.inherits(QStringLiteral("application/x-lzma"))
-                        || mimeType.inherits(QStringLiteral("application/x-xz"))
-                        || mimeType.inherits(QStringLiteral("application/x-bzip-compressed-tar"))
-                        || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
-                    archive.reset(new KTar(payloadfile));
-                } else {
-                    qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
+            if (mimeType.inherits(QStringLiteral("application/zip"))) {
+                archive.reset(new KZip(payloadfile));
+            } else if (mimeType.inherits(QStringLiteral("application/tar"))
+                    || mimeType.inherits(QStringLiteral("application/x-gzip"))
+                    || mimeType.inherits(QStringLiteral("application/x-bzip"))
+                    || mimeType.inherits(QStringLiteral("application/x-lzma"))
+                    || mimeType.inherits(QStringLiteral("application/x-xz"))
+                    || mimeType.inherits(QStringLiteral("application/x-bzip-compressed-tar"))
+                    || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
+                archive.reset(new KTar(payloadfile));
+            } else {
+                qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
+                if (uncompression == QLatin1String("always")) {
+                    emit signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
+                    return QStringList();
+                }
+                isarchive = false;
+            }
+
+            if (isarchive) {
+                bool success = archive->open(QIODevice::ReadOnly);
+                if (!success) {
+                    qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
                     if (uncompression == QLatin1String("always")) {
-                        emit signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
+                        emit signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
                         return QStringList();
                     }
+                    // otherwise, just copy the file
                     isarchive = false;
                 }
 
                 if (isarchive) {
-                    bool success = archive->open(QIODevice::ReadOnly);
-                    if (!success) {
-                        qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
-                        if (uncompression == QLatin1String("always")) {
-                            emit signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
-                            return QStringList();
-                        }
-                        // otherwise, just copy the file
-                        isarchive = false;
+                    const KArchiveDirectory *dir = archive->directory();
+                    //if there is more than an item in the file, and we are requested to do so
+                    //put contents in a subdirectory with the same name as the file
+                    QString installpath;
+                    if (uncompression == QLatin1String("subdir") && dir->entries().count() > 1) {
+                        installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
+                    } else {
+                        installpath = installdir;
                     }
 
-                    if (isarchive) {
-                        const KArchiveDirectory *dir = archive->directory();
-                        //if there is more than an item in the file, and we are requested to do so
-                        //put contents in a subdirectory with the same name as the file
-                        QString installpath;
-                        if (uncompression == QLatin1String("subdir") && dir->entries().count() > 1) {
-                            installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
-                        } else {
-                            installpath = installdir;
-                        }
+                    if (dir->copyTo(installpath)) {
+                        installedFiles << archiveEntries(installpath, dir);
+                        installedFiles << installpath + QLatin1Char('/');
+                    } else
+                        qCWarning(KNEWSTUFFCORE) << "could not install" << entry.name() << "to" << installpath;
 
-                        if (dir->copyTo(installpath)) {
-                            installedFiles << archiveEntries(installpath, dir);
-                            installedFiles << installpath + QLatin1Char('/');
-                        } else
-                            qCWarning(KNEWSTUFFCORE) << "could not install" << entry.name() << "to" << installpath;
-
-                        archive->close();
-                        QFile::remove(payloadfile);
-                    }
+                    archive->close();
+                    QFile::remove(payloadfile);
                 }
-            }
-
-            qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
-
-            //some wallpapers are compressed, some aren't
-            if ((!isarchive && standardResourceDirectory == QLatin1String("wallpaper")) ||
-                (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive))) {
-                // no decompress but move to target
-
-                /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
-                // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
-                QUrl source = QUrl(entry.payload());
-                qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
-                QString installfile;
-                QString ext = source.fileName().section(QLatin1Char('.'), -1);
-                if (customName) {
-                    installfile = entry.name();
-                    installfile += QLatin1Char('-') + entry.version();
-                    if (!ext.isEmpty()) {
-                        installfile += QLatin1Char('.') + ext;
-                    }
-                } else {
-                    // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
-                    // and using the http headers if they exist to get the file name, but as discussed in
-                    // Randa this is not going to happen anytime soon (if ever) so go with the hack
-                    if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
-                        installfile = QUrlQuery(source).queryItemValue(QStringLiteral("file"));
-                        int lastSlash = installfile.lastIndexOf(QLatin1Char('/'));
-                        if (lastSlash >= 0) {
-                            installfile = installfile.mid(lastSlash);
-                        }
-                    }
-                    if (installfile.isEmpty()) {
-                        installfile = source.fileName();
-                    }
-                }
-                QString installpath = QDir(installdir).filePath(installfile);
-
-                qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
-                // FIXME: copy goes here (including overwrite checking)
-                // FIXME: what must be done now is to update the cache *again*
-                //        in order to set the new payload filename (on root tag only)
-                //        - this might or might not need to take uncompression into account
-                // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
-                QFile file(payloadfile);
-                bool success = true;
-                const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
-
-                if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
-                    if (!update) {
-                        Question question(Question::YesNoQuestion);
-                        question.setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means overwriting it. Do you wish to overwrite the existing file?") + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
-                        question.setTitle(i18n("Overwrite File"));
-                        if(question.ask() != Question::YesResponse) {
-                            return QStringList();
-                        }
-                    }
-                    success = QFile::remove(installpath);
-                }
-                if (success) {
-                    //remove in case it's already present and in a temporary directory, so we get to actually use the path again
-                    if (installpath.startsWith(QDir::tempPath())) {
-                        file.remove(installpath);
-                    }
-                    success = file.rename(installpath);
-                    qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
-                }
-                if (!success) {
-                    emit signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
-                    qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
-                    return QStringList();
-                }
-                installedFiles << installpath;
             }
         }
+
+        qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
+
+        //some wallpapers are compressed, some aren't
+        if ((!isarchive && standardResourceDirectory == QLatin1String("wallpaper")) ||
+            (uncompression == QLatin1String("never") || (uncompression == QLatin1String("archive") && !isarchive))) {
+            // no decompress but move to target
+
+            /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
+            // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
+            QUrl source = QUrl(entry.payload());
+            qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
+            QString installfile;
+            QString ext = source.fileName().section(QLatin1Char('.'), -1);
+            if (customName) {
+                installfile = entry.name();
+                installfile += QLatin1Char('-') + entry.version();
+                if (!ext.isEmpty()) {
+                    installfile += QLatin1Char('.') + ext;
+                }
+            } else {
+                // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
+                // and using the http headers if they exist to get the file name, but as discussed in
+                // Randa this is not going to happen anytime soon (if ever) so go with the hack
+                if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
+                    installfile = QUrlQuery(source).queryItemValue(QStringLiteral("file"));
+                    int lastSlash = installfile.lastIndexOf(QLatin1Char('/'));
+                    if (lastSlash >= 0) {
+                        installfile = installfile.mid(lastSlash);
+                    }
+                }
+                if (installfile.isEmpty()) {
+                    installfile = source.fileName();
+                }
+            }
+            QString installpath = QDir(installdir).filePath(installfile);
+
+            qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
+            // FIXME: copy goes here (including overwrite checking)
+            // FIXME: what must be done now is to update the cache *again*
+            //        in order to set the new payload filename (on root tag only)
+            //        - this might or might not need to take uncompression into account
+            // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
+            QFile file(payloadfile);
+            bool success = true;
+            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
+
+            if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
+                if (!update) {
+                    Question question(Question::YesNoQuestion);
+                    question.setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means overwriting it. Do you wish to overwrite the existing file?") + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
+                    question.setTitle(i18n("Overwrite File"));
+                    if(question.ask() != Question::YesResponse) {
+                        return QStringList();
+                    }
+                }
+                success = QFile::remove(installpath);
+            }
+            if (success) {
+                //remove in case it's already present and in a temporary directory, so we get to actually use the path again
+                if (installpath.startsWith(QDir::tempPath())) {
+                    file.remove(installpath);
+                }
+                success = file.rename(installpath);
+                qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
+            }
+            if (!success) {
+                emit signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
+                qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
+                return QStringList();
+            }
+            installedFiles << installpath;
+        }
     }
+
     return installedFiles;
 }
 
