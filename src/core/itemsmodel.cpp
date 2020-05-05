@@ -66,21 +66,24 @@ void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 
 void ItemsModel::addEntry(const EntryInternal &entry)
 {
-    QString preview = entry.previewUrl(EntryInternal::PreviewSmall1);
-    if (!m_hasPreviewImages && !preview.isEmpty()) {
-        m_hasPreviewImages = true;
-        if (rowCount() > 0) {
-            emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+    // This might be expensive, but it avoids duplicates, which is not awesome for the user
+    if (!m_entries.contains(entry)) {
+        QString preview = entry.previewUrl(EntryInternal::PreviewSmall1);
+        if (!m_hasPreviewImages && !preview.isEmpty()) {
+            m_hasPreviewImages = true;
+            if (rowCount() > 0) {
+                emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+            }
         }
-    }
 
-    qCDebug(KNEWSTUFFCORE) << "adding entry " << entry.name() << " to the model";
-    beginInsertRows(QModelIndex(), m_entries.count(), m_entries.count());
-    m_entries.append(entry);
-    endInsertRows();
+        qCDebug(KNEWSTUFFCORE) << "adding entry " << entry.name() << " to the model";
+        beginInsertRows(QModelIndex(), m_entries.count(), m_entries.count());
+        m_entries.append(entry);
+        endInsertRows();
 
-    if (!preview.isEmpty() && entry.previewImage(EntryInternal::PreviewSmall1).isNull()) {
-        m_engine->loadPreview(entry, EntryInternal::PreviewSmall1);
+        if (!preview.isEmpty() && entry.previewImage(EntryInternal::PreviewSmall1).isNull()) {
+            m_engine->loadPreview(entry, EntryInternal::PreviewSmall1);
+        }
     }
 }
 

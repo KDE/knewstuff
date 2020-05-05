@@ -67,7 +67,16 @@ public:
 
         q->connect(coreEngine, &KNSCore::Engine::signalProvidersLoaded, coreEngine, &KNSCore::Engine::reloadEntries);
         // Entries have been fetched and should be shown:
-        q->connect(coreEngine, &KNSCore::Engine::signalEntriesLoaded, model, &KNSCore::ItemsModel::slotEntriesLoaded);
+        q->connect(coreEngine, &KNSCore::Engine::signalEntriesLoaded, model, [this](const KNSCore::EntryInternal::List& entries){
+            if (coreEngine->filter() != KNSCore::Provider::Updates) {
+                model->slotEntriesLoaded(entries);
+            }
+        });
+        q->connect(coreEngine, &KNSCore::Engine::signalUpdateableEntriesLoaded, model, [this](const KNSCore::EntryInternal::List& entries){
+            if (coreEngine->filter() == KNSCore::Provider::Updates) {
+                model->slotEntriesLoaded(entries);
+            }
+        });
 
         // An entry has changes - eg because it was installed
         q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);

@@ -33,7 +33,7 @@ import QtQuick.Layouts 1.11 as QtLayouts
 import QtGraphicalEffects 1.11 as QtEffects
 
 import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.newstuff 1.62 as NewStuff
 
@@ -300,4 +300,14 @@ KCM.GridViewKCM {
             text: newStuffEngine.statusMessage
         }
     }
+    Kirigami.PlaceholderMessage {
+         anchors.centerIn: parent
+         anchors.left: parent.left
+         anchors.right: parent.right
+         anchors.margins: Kirigami.Units.largeSpacing
+
+         visible: newStuffEngine.isLoading === false && newStuffModel.isLoadingData === false && view.count === 0
+
+         text: i18ndc("knewstuff5", "A message shown when there are no entries in the list, and when it is not trying to load anything", "There is no hot new stuff to get here")
+     }
 }
