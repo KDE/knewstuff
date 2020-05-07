@@ -352,7 +352,17 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
         };
         if (!postInstallationCommand.isEmpty()) {
             QProcess* p = runPostInstallationCommand(installedFiles.size() == 1 ? installedFiles.first() : targetPath);
-            connect(p, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, installationFinished);
+            connect(p, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
+                    [entry, installationFinished, this] (int exitCode, QProcess::ExitStatus) {
+                        if (exitCode) {
+                            EntryInternal newEntry = entry;
+                            newEntry.setStatus(KNS3::Entry::Invalid);
+                            emit signalEntryChanged(newEntry);
+                            emit signalInstallationFailed(i18n("Failed to execute install script"));
+                        } else {
+                            installationFinished();
+                        }
+                    });
         } else {
             installationFinished();
         }
