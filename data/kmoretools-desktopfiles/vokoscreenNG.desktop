@@ -51,6 +51,7 @@ Name[ru]=VokoscreenNG
 Name[sv]=VokoscreenNG
 Name[uk]=VokoscreenNG
 Name[x-test]=xxVokoscreenNGxx
+Name[zh_CN]=VokoscreenNG
 Name[zh_TW]=VokoscreenNG
 StartupNotify=false
 Terminal=false
