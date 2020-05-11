@@ -708,12 +708,10 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
     emit signalEntryChanged(entry);
 
     qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
-    // FIXME: change the status?
     m_installation->uninstall(actualEntryForUninstall);
 
-    entry.setStatus(KNS3::Entry::Deleted); //status for actual entry gets set in m_installation->uninstall()
+    entry.setStatus(actualEntryForUninstall.status());
     emit signalEntryChanged(entry);
-
 }
 
 void Engine::loadDetails(const KNSCore::EntryInternal &entry)

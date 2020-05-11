@@ -114,16 +114,16 @@ public Q_SLOTS:
      * Uninstalls an entry. It reverses the steps which were performed
      * during the installation.
      *
-     * The entry instance will be updated with any new information:
+     * The entry emitted by signalEntryChanged will be updated with any new information, in particular the following:
      * <ul>
-     * <li>Status will be set to Deleted
+     * <li>Status will be set to Deleted, unless the uninstall
+     * script exists with an error and the user chooses to cancel the uninstallation
      * <li>uninstalledFiles will list files which were removed during uninstallation
      * <li>installedFiles will become empty
      * </ul>
      *
      * @param entry The entry to deinstall
      *
-     * @note FIXME: I don't believe this works yet :)
      */
     void uninstall(KNSCore::EntryInternal entry);
 
