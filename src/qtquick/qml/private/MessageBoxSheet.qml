@@ -36,6 +36,9 @@ Kirigami.OverlaySheet {
         QtLayouts.Layout.fillWidth: true
         elide: Text.ElideRight
     }
+    // This is a TextEdit rather than a label, because the QQC Label control
+    // does not support text selection (and it's very useful to be able to
+    // select error texts for searchy purposes)
     contentItem: TextEdit {
         id: messageLabel
         QtLayouts.Layout.preferredWidth: Kirigami.Units.gridUnit * 10
@@ -43,6 +46,9 @@ Kirigami.OverlaySheet {
         wrapMode: Text.Wrap
         readOnly: true
         selectByMouse: true
+        color: Kirigami.Theme.textColor
+        selectedTextColor: Kirigami.Theme.highlightedTextColor
+        selectionColor: Kirigami.Theme.highlightColor
     }
     footer: QtLayouts.RowLayout {
         Item { QtLayouts.Layout.fillWidth: true }
