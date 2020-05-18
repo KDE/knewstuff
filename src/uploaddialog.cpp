@@ -36,7 +36,8 @@
 
 #include <kpixmapsequence.h>
 #include <kpixmapsequencewidget.h>
-#include <krun.h>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegate>
 
 #include <knewstuff_debug.h>
 #include <QLoggingCategory>
@@ -757,7 +758,9 @@ void UploadDialogPrivate::_k_contentAdded(Attica::BaseJob *baseJob)
 
 void UploadDialogPrivate::_k_openRegisterAccountWebpage(QString)
 {
-    KRun::runUrl(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), QStringLiteral("text/html"), q, KRun::RunFlags());
+    KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromUserInput(atticaHelper->provider().getRegisterAccountUrl()), QStringLiteral("text/html"));
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, q));
+    job->start();
 }
 
 void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
