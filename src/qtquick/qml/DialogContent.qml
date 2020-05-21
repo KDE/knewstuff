@@ -72,6 +72,5 @@ Kirigami.ApplicationItem {
         }
         onMessage: component.showPassiveNotification(message);
         onIdleMessage: component.showPassiveNotification(message);
-        onErrorMessage: component.showPassiveNotification(message);
     }
 }
