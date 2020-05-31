@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Git Cola
 Name[ast]=Git Cola
+Name[az]=Git Cola
 Name[ca]=Git Cola
 Name[ca@valencia]=Git Cola
 Name[cs]=Git Cola
@@ -43,6 +44,7 @@ Name[zh_CN]=Git Cola
 Name[zh_TW]=Git Cola
 Comment=The highly caffeinated Git GUI
 Comment[ast]=Una IGU pa Git con bien de cafeína
+Comment[az]=Git çevik qrafik interfeysi
 Comment[ca]=La IGU amb alta dosi de cafeïna del Git
 Comment[ca@valencia]=La IGU amb alta dosi de cafeïna del Git
 Comment[da]=Git GUI med højt koffeinindhold

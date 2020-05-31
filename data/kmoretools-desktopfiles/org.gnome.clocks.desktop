@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Clocks
 Name[ast]=Relós
+Name[az]=Saatlar
 Name[ca]=Rellotges
 Name[ca@valencia]=Rellotges
 Name[cs]=Clocks
@@ -43,6 +44,7 @@ Name[zh_CN]=时钟
 Name[zh_TW]=時鐘
 GenericName=Clocks
 GenericName[ast]=Relós
+GenericName[az]=Saatlar
 GenericName[ca]=Rellotges
 GenericName[ca@valencia]=Rellotges
 GenericName[cs]=Clocks
@@ -152,6 +154,7 @@ X-GNOME-FullName[ug]=گىنوم سائەتلىرى
 X-GNOME-FullName=GNOME Clocks
 Comment=Clocks for world times, plus alarms, stopwatch and a timer
 Comment[ast]=Relós mundiales amás d'alarmes, un cronómetru y un temporizador
+Comment[az]=Dünya vaxtı üçün saatlar, zəngçalar, saniyəölçən və vaxtölçən
 Comment[ca]=Rellotges per hores del món, més alarmes, compte enrere i un temporitzador
 Comment[ca@valencia]=Rellotges per hores del món, més alarmes, compte arrere i un temporitzador
 Comment[da]=Ure til verdensur, alarmer, stopur og en timer
@@ -194,6 +197,7 @@ Comment[zh_TW]=世界時鐘，包含鬧鐘、計時器等
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=time;timer;alarm;world clock;stopwatch;time zone;
 Keywords[ast]=hora;tiempu;temporizador;temporizar;alarma;mundu;cronómetru;cronometraxe;fusu horariu;
+Keywords[az]=vaxt;taymer;zəngçalar;dünya vaxtı;vaxtölçən;saat qurşağı;
 Keywords[ca]=hora;temporitzador;alarma;rellotge del món;compte enrere;zona horària;
 Keywords[ca@valencia]=hora;temporitzador;alarma;rellotge del món;compte arrere;zona horària;
 Keywords[da]=tide;timer;alarm;vækkeur;verdensur;stopur;tidszone;

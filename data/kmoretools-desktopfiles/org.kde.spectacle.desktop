@@ -2,6 +2,7 @@
 GenericName=Screenshot Capture Utility
 GenericName[ar]=أداة لالتقاط الشّاشة
 GenericName[ast]=Utilidá pa capturar pantalles
+GenericName[az]=Ekran Şəklini Çəkmə Aləti
 GenericName[ca]=Utilitat de captura de pantalla
 GenericName[ca@valencia]=Utilitat de captura de pantalla
 GenericName[cs]=Nástroj na snímání obrazovky
@@ -44,6 +45,7 @@ GenericName[zh_CN]=截图抓取工具
 GenericName[zh_TW]=畫面擷取工具
 Name=Spectacle
 Name[ast]=Spectacle
+Name[az]=Spectacle
 Name[ca]=Spectacle
 Name[ca@valencia]=Spectacle
 Name[cs]=Spectacle
@@ -93,6 +95,7 @@ X-DBUS-ServiceName=org.kde.Spectacle
 
 [Desktop Action FullScreenScreenShot]
 Name=Capture Entire Desktop
+Name[az]=Bütün Masaüstlərini Çəkin
 Name[ca]=Captura l'escriptori sencer
 Name[ca@valencia]=Captura l'escriptori sencer
 Name[cs]=Zachytit celou plochu
@@ -134,6 +137,7 @@ Exec=spectacle -f
 
 [Desktop Action CurrentMonitorScreenShot]
 Name=Capture Current Monitor
+Name[az]=Cari Masaüstünü Çəkin
 Name[ca]=Captura el monitor actual
 Name[ca@valencia]=Captura el monitor actual
 Name[cs]=Zachytit současný monitor
@@ -175,6 +179,7 @@ Exec=spectacle -m
 
 [Desktop Action ActiveWindowScreenShot]
 Name=Capture Active Window
+Name[az]=Aktiv Pəncərəni Çəkin
 Name[ca]=Captura la finestra activa
 Name[ca@valencia]=Captura la finestra activa
 Name[cs]=Zachytit aktivní okno
@@ -216,6 +221,7 @@ Exec=spectacle -a
 
 [Desktop Action RectangularRegionScreenShot]
 Name=Capture Rectangular Region
+Name[az]=Ekranın düzbucaqlı sahəsinin çəkin
 Name[ca]=Captura una regió rectangular
 Name[ca@valencia]=Captura una regió rectangular
 Name[cs]=Zachytit obdélníkový výběr na obrazovce

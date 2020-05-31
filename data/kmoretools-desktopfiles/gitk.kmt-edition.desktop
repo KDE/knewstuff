@@ -4,6 +4,7 @@
 [Desktop Entry]
 Name=gitk
 Name[ast]=gitk
+Name[az]=gitk
 Name[ca]=gitk
 Name[ca@valencia]=gitk
 Name[cs]=gitk
@@ -46,6 +47,7 @@ Name[zh_CN]=gitk
 Name[zh_TW]=gitk
 GenericName=gitk
 GenericName[ast]=gitk
+GenericName[az]=gitk
 GenericName[ca]=gitk
 GenericName[ca@valencia]=gitk
 GenericName[cs]=gitk

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=screencast
+Comment[az]=Ekrandakı videonun translyasiyası
 Comment[ca]=vídeo de captura de pantalla
 Comment[ca@valencia]=vídeo de captura de pantalla
 Comment[da]=skærmoptagelse
@@ -34,6 +35,7 @@ Exec=vokoscreenNG
 Icon=vokoscreenNG
 Name=VokoscreenNG
 Name[ast]=VokoscreenNG
+Name[az]=VokoscreenNG
 Name[ca]=VokoscreenNG
 Name[en_GB]=VokoscreenNG
 Name[es]=VokoscreenNG
@@ -58,6 +60,7 @@ Terminal=false
 Type=Application
 Categories=AudioVideo;Recorder;
 Keywords=Audio;Video;Recorder;Screencast;
+Keywords[az]=Audio;Video;Recorder;Screencast;ekran yazıcı;translyasiya
 Keywords[ca]=Àudio;Vídeo;Enregistrador;Vídeo de captura de pantalla;
 Keywords[ca@valencia]=Àudio;Vídeo;Enregistrador;Vídeo de captura de pantalla;
 Keywords[da]=Lyd;Video;Optager;Screencast;Skærm;

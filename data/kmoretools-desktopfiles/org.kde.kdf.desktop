@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KDiskFree
 Name[ast]=KDiskFree
+Name[az]=KDiskFree
 Name[ca]=KDiskFree
 Name[ca@valencia]=KDiskFree
 Name[cs]=KDiskFree
@@ -47,6 +48,7 @@ Type=Application
 GenericName=View Disk Usage
 GenericName[ar]=اعرض استخدام القرص
 GenericName[ast]=Visualización del usu en discu
+GenericName[az]=Diskin istifadəsinə Bax
 GenericName[ca]=Veure l'ús de disc
 GenericName[ca@valencia]=Veure l'ús de disc
 GenericName[cs]=Zobrazení využití disku

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Comment=List and preview available icons
 Comment[ast]=Llista y previsualiza los iconos disponibles
+Comment[az]=Mövcud ikonları göstər və sırala
 Comment[ca]=Llista i fa una vista prèvia de les icones disponibles
 Comment[ca@valencia]=Llista i fa una vista prèvia de les icones disponibles
 Comment[da]=Oplist og forhåndsvis tilgængelige ikoner
@@ -44,6 +45,7 @@ Exec=cuttlefish
 GenericName=Icon Browser
 GenericName[ar]=متصفّح أيقونات
 GenericName[ast]=Restolador d'iconos
+GenericName[az]=ikonlara Baxış
 GenericName[ca]=Navegador d'icones
 GenericName[ca@valencia]=Navegador d'icones
 GenericName[cs]=Prohlížeč ikon
@@ -89,6 +91,7 @@ MimeType=
 Name=Cuttlefish
 Name[ar]=الحبّار
 Name[ast]=Cuttlefish
+Name[az]=Cuttlefish
 Name[ca]=Cuttlefish
 Name[ca@valencia]=Cuttlefish
 Name[cs]=Cuttlefish
