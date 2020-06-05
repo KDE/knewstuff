@@ -184,6 +184,7 @@ Private.GridTileDelegate {
                     wrapMode: Text.Wrap
                     text: model.shortSummary.length > 0 ? model.shortSummary : model.summary
                     elide: Text.ElideRight
+                    clip: true // We are dealing with content over which we have very little control. Sometimes that means being a bit abrupt.
                 }
             }
             Private.Rating {
