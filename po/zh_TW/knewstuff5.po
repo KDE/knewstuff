@@ -1,0 +1,1579 @@
+# translation of kdelibs4.po to Chinese Traditional
+# Copyright (C) 2001, 2002, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Eric Cheng <ericc@shinewave.com.tw>, unknown.
+# This file referenced zh_CN translations at 2002.
+# Chih-Wei Huang <cwhuang@linux.org.tw>, 2001.
+# Kenduest Lee <kenduest@i18n.linux.org.tw>, 2001, 2002.
+# Jouston Huang (Huang, Jiun-Jeng) <jouston@housediy.com>, 2002.
+# Chia-Lin, Kao <acelan@linux.org.tw>, 2004.
+# Yuan-Chen Cheng <ycheng@slat.org>, 2002.
+# Goodhorse <franklin@goodhorse.idv.tw>, 2008.
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006-2009, 2010.
+# Franklin Weng <franklin@mail.everfocus.com.tw>, 2010, 2011, 2012.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
+# Jeff Huang <s8321414@gmail.com>, 2016, 2017.
+# pan93412 <pan93412@gmail.com>, 2018, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-31 17:58+0200\n"
+"PO-Revision-Date: 2020-05-14 23:33+0800\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.04.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: attica/atticaprovider.cpp:174
+#, kde-format
+msgid "All categories are missing"
+msgstr "遺失所有分類"
+
+# %2 元 %1
+#
+# RAWSTR:
+# This item costs USD 1.\n
+# Do you want to buy it?
+#
+# TRANSTR:
+# 這個項目要價 1 USD。\n
+# 確定購買？
+#: attica/atticaprovider.cpp:443
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"這個項目要價 %2 %1。\n"
+"確定購買？"
+
+#: attica/atticaprovider.cpp:457
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"您的帳戶餘額過少：\n"
+"餘額：%1\n"
+"售價：%2"
+
+#: attica/atticaprovider.cpp:499
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "已記錄投票。"
+
+#: attica/atticaprovider.cpp:514
+#, kde-format
+msgid "You are now a fan."
+msgstr "您已成為粉絲。"
+
+#: attica/atticaprovider.cpp:525
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "網路錯誤 %1：%2"
+
+#: attica/atticaprovider.cpp:529
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "太多要求到伺服器。請稍等幾分鐘後再嘗試。"
+
+#: attica/atticaprovider.cpp:531
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr "%1 開放協同服務實例不支援嘗試使用的功能。"
+
+#: attica/atticaprovider.cpp:533
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "未知的開放協同服務 API 錯誤。(%1)"
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "下載熱門玩意..."
+
+#: core/commentsmodel.cpp:185
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr "未知 CommentsModel 角色"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+"安裝程序發生錯誤：\n"
+"%1"
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Initializing"
+msgstr "初始化中"
+
+#: core/engine.cpp:141
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "設定檔已存在，但無法開啟：「%1」"
+
+#: core/engine.cpp:154
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "設定檔不合法：%1"
+
+#: core/engine.cpp:174
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+"無法初始化 %1 的安裝處理器\n"
+"此為嚴重錯誤，應向應用程式作者回報"
+
+#: core/engine.cpp:229
+#, kde-format
+msgid "Loading provider information"
+msgstr "載入提供者資訊中"
+
+#: core/engine.cpp:258
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "無法從檔案 %1 載入熱門新玩意的供應者"
+
+#: core/engine.cpp:281
+#, kde-format
+msgid "Error initializing provider."
+msgstr "初始化提供者時發生錯誤。"
+
+#: core/engine.cpp:285 core/engine.cpp:797
+#, kde-format
+msgid "Loading data"
+msgstr "載入資料中"
+
+#: core/engine.cpp:322
+#, kde-format
+msgid "Loading data from provider"
+msgstr "從提供者載入資料中"
+
+#: core/engine.cpp:327
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "從檔案 %1 載入提供者失敗"
+
+#: core/engine.cpp:663
+#, kde-format
+msgid "Pick Update Item"
+msgstr "選擇更新項目"
+
+#: core/engine.cpp:664
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"請從下方列表選擇要套用此更新的項目。我們無法基於名稱為 %1 的原始項目來識別要"
+"選擇的項目。"
+
+#: core/engine.cpp:757
+#, kde-format
+msgid "Re: %1"
+msgstr "重做：%1"
+
+#: core/engine.cpp:799
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "載入 %1 個預覽"
+
+#: core/engine.cpp:801 ui/itemsgridviewdelegate.cpp:342
+#: ui/itemsviewdelegate.cpp:133
+#, kde-format
+msgid "Installing"
+msgstr "安裝中"
+
+#: core/installation.cpp:193
+#, kde-format
+msgid "Invalid item."
+msgstr "無效的項目"
+
+#: core/installation.cpp:200
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "下載項目失敗：沒有 %1 的下載網址。"
+
+#: core/installation.cpp:229
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "下載 %1 失敗，錯誤：%2"
+
+#: core/installation.cpp:239
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"下載的檔案是一個 html 檔。它指向一個網站而不是實際上會下載內容。您要改成用瀏"
+"覽器開啟此網站嗎？"
+
+#: core/installation.cpp:240
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "可能是錯誤的下載連結"
+
+#: core/installation.cpp:243
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "下載的檔案是一個 HTML 檔。在瀏覽器內開啟。"
+
+#: core/installation.cpp:306
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "無法安裝 %1：找不到檔案。"
+
+#: core/installation.cpp:336
+#, kde-format
+msgid "Failed to execute install script"
+msgstr "無法執行安裝文稿"
+
+#: core/installation.cpp:489
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr "%1 安裝程式無法建立應新增的目錄 %2"
+
+#: core/installation.cpp:502 core/installation.cpp:737
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "%1 安裝失敗：%2"
+
+#: core/installation.cpp:510
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+"%1 安裝失敗，%2 服務類型系統不接受 (是否忘記安裝此類型軟體包的 KPackage 支援"
+"外掛程式？)"
+
+#: core/installation.cpp:516
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr "%1 安裝失敗，下載的軟體包未包含正確的 KPackage 結構。"
+
+#: core/installation.cpp:522
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr "%1 安裝失敗，下載的軟體包未列舉服務類型。"
+
+#: core/installation.cpp:528
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"%1 安裝失敗，下載的軟體包未包含任何有用的中繼資訊，即此非有效的 KPackage。"
+
+#: core/installation.cpp:556
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr "無法確定下載的 %1 檔案的封存檔類型"
+
+#: core/installation.cpp:567
+#, kde-format
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "無法開啟 %1 封存檔。回傳錯誤：%2"
+
+#: core/installation.cpp:646
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+"此檔案已在磁碟中（可能是因為稍早的下載嘗試失敗）。選擇繼續則會覆寫該檔案，確"
+"定覆寫？"
+
+#: core/installation.cpp:647
+#, kde-format
+msgid "Overwrite File"
+msgstr "覆寫檔案"
+
+#: core/installation.cpp:663
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr "無法移動 %1 檔案至預定的目的地 %2"
+
+#: core/installation.cpp:686
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+"嘗試執行此命令時發生安裝失敗：\n"
+"%1\n"
+"\n"
+"回傳輸出：\n"
+"%2"
+
+#: core/installation.cpp:689
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+"嘗試執行此命令時發生安裝失敗，結束碼是 %1：\n"
+"%2\n"
+"\n"
+"回傳輸出：\n"
+"%3"
+
+#: core/installation.cpp:743
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr "%1 移除失敗，安裝的軟體包未包含正確的 KPackage 結構。"
+
+#: core/installation.cpp:747
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+"%1 移除失敗，安裝的軟體包非支援的類型 (是否忘記安裝此類型軟體包的 KPackage 支"
+"援外掛程式？)"
+
+#: core/installation.cpp:751
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"%1 移除失敗，安裝的軟體包未包含任何有用的中繼資訊，即此非有效的 KPackage。"
+
+#: core/installation.cpp:792
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr "%1 移除失敗，下載的 %2 檔案無法自動移除。"
+
+#: core/installation.cpp:796
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+"%1 移除失敗，安裝的檔案不是 KPackage。有問題的檔案為 %2，如您確定已用不到，則"
+"可嘗試自行刪除。"
+
+#: core/installation.cpp:800
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+
+#: core/installation.cpp:837
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+"解除安裝程序無法成功執行 %1 命令\n"
+"輸出為：\n"
+"%2\n"
+"如您覺得有誤，您可繼續或取消解除安裝程序。"
+
+#: core/jobs/kpackagejob.cpp:100
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+"無法建立軟體包管理行程的作業。這通常是因為軟體包無效。已嘗試在 %1 軟體包操"
+"作。"
+
+#: core/jobs/kpackagejob.cpp:104
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr "無法建立 %1 服務類型的軟體包安裝程式：安裝程式看似結構無效"
+
+#: core/jobs/kpackagejob.cpp:108
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr "KPackage 安裝程式無法解析 %1 服務類型"
+
+#: core/security.cpp:83
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來取得可用的密鑰。請確定<i>gpg</i>已安裝，否則將無法對"
+"下載的資源進行檢驗。</qt>"
+
+#: core/security.cpp:211
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>請輸入金鑰<b>0x%1</b>的密碼片語。這個金鑰是屬於<br /><i>%2&lt;%3&gt;</i>"
+"的<br />：</qt>"
+
+#: core/security.cpp:289
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來檢驗檔案。請確定<i>gpg</i>已安裝，否則將無法對下載的"
+"資源進行檢驗。</qt>"
+
+#: core/security.cpp:344
+#, kde-format
+msgid "Key used for signing:"
+msgstr "用作簽署的密鑰："
+
+#: core/security.cpp:345
+#, kde-format
+msgid "Select Signing Key"
+msgstr "選擇用作簽署的密鑰"
+
+#: core/security.cpp:380
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>無法開啟<i>gpg</i>來簽署檔案。請確定<i>gpg</i>已安裝，否則將無法對資源進"
+"行簽署。</qt>"
+
+#: downloaddialog.cpp:79 downloadwidget.cpp:222
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "取得熱門新玩意"
+
+#: downloaddialog.cpp:97
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 新增安裝器"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "發生逾時。請檢查網路連線。"
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "Server: %1"
+msgstr "伺服器：%1"
+
+#: downloadwidget.cpp:195
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />提供者：%1"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />版本：%1"
+
+#: downloadwidget.cpp:200
+#, kde-format
+msgid "Provider information"
+msgstr "提供者資訊"
+
+#: downloadwidget.cpp:211
+#, kde-format
+msgid "Could not install %1"
+msgstr "無法安裝 %1"
+
+#: downloadwidget.cpp:212
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "取得熱門新玩意"
+
+#: downloadwidget.cpp:267
+#, kde-format
+msgid "Icons view mode"
+msgstr "圖示檢視模式"
+
+#: downloadwidget.cpp:269
+#, kde-format
+msgid "Details view mode"
+msgstr "詳細資料檢視模式"
+
+#: downloadwidget.cpp:284
+#, kde-format
+msgid "All Providers"
+msgstr "所有提供者"
+
+#: downloadwidget.cpp:291
+#, kde-format
+msgid "All Categories"
+msgstr "所有分類"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "提供者："
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "類別："
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "最多下載"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "最新的"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Rating"
+msgstr "評分"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "已安裝"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "排序依據："
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "搜尋："
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "在此輸入搜尋字串"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "作者："
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"https://opendesktop.org\">造訪首頁</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:337
+#: ui/itemsviewdelegate.cpp:128 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "更新"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:333
+#: ui/itemsviewdelegate.cpp:124
+#, kde-format
+msgid "Uninstall"
+msgstr "解除安裝"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "成為粉絲"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 qtquick/qml/DownloadItemsSheet.qml:65
+#: ui/itemsgridviewdelegate.cpp:352 ui/itemsgridviewdelegate.cpp:362
+#: ui/itemsviewdelegate.cpp:143 ui/itemsviewdelegate.cpp:153
+#, kde-format
+msgid "Install"
+msgstr "安裝"
+
+#: kmoretools/kmoretools.cpp:570
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "未安裝："
+
+#: kmoretools/kmoretools.cpp:670
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "更多"
+
+#: kmoretools/kmoretools.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "設定..."
+
+#: kmoretools/kmoretools_p.h:387
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "造訪首頁"
+
+#: kmoretools/kmoretools_p.h:399
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "安裝"
+
+#: kmoretools/kmoretools_p.h:407
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "找不到更多資訊。"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:186
+#, kde-format
+msgid "Configure menu"
+msgstr "設定選單"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:188
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "設定選單 - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "%1 - 目前資料夾"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:202
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "%1 - 目前裝置"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:215
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "%1 - 所有裝置"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "主要區段"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "下移"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr "上移"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr "移到主要區段"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr "移到更多區段"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "重置"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr "更多區段"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "在這個選單中，還有些建議使用的工具尚未安裝："
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr "更多工具..."
+
+#: qtquick/categoriesmodel.cpp:79
+#, kde-format
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "Show All Categories"
+msgstr "顯示所有分類"
+
+#: qtquick/categoriesmodel.cpp:108
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "未知分類"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text propety, just set this one
+#.
+#: qtquick/qml/Button.qml:58
+#, kde-format
+msgctxt ""
+"Used to contruct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr "項目"
+
+#: qtquick/qml/Button.qml:59
+#, kde-format
+msgid "Download New %1..."
+msgstr "下載新%1…"
+
+#: qtquick/qml/Dialog.qml:56
+#, kde-format
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "下載新%1"
+
+#: qtquick/qml/Dialog.qml:56
+#, kde-format
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "下載熱門玩意"
+
+#: qtquick/qml/DownloadItemsSheet.qml:49
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "選擇安裝選項"
+
+#: qtquick/qml/DownloadItemsSheet.qml:55
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+"請在下方的可下載項目清單中選擇你要安裝的選項。如果你所要選的可用選項不夠清"
+"楚，請聯絡此項目的作者，並請求他們說明這個項目的命名意義。"
+
+#: qtquick/qml/EntryDetails.qml:63
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "從 %2 安裝 %1"
+
+#: qtquick/qml/EntryDetails.qml:79
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed"
+msgid "Currently installing the item %1 by %2. Please wait..."
+msgstr "正在使用 %2 安裝 %1 項目。請稍候..."
+
+#: qtquick/qml/EntryDetails.qml:81
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr "正在使用 %2 更新 %1 項目。請稍候..."
+
+#: qtquick/qml/EntryDetails.qml:83
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+"這個項目目前無效或處於不明狀態。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">請在漏洞回報中回報此問題至 KDE 社群</a>。"
+
+#: qtquick/qml/EntryDetails.qml:94
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1 由 %2"
+
+#: qtquick/qml/EntryDetails.qml:98
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "安裝"
+
+#: qtquick/qml/EntryDetails.qml:98
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "安裝…"
+
+#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:44
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:79
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:72
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:80
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "更新"
+
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:51
+#: qtquick/qml/Page.qml:77
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "解除安裝"
+
+#: qtquick/qml/EntryDetails.qml:176
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "留言及評論："
+
+#: qtquick/qml/EntryDetails.qml:178
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "%1 則評論及留言"
+
+#: qtquick/qml/EntryDetails.qml:183
+#, kde-format
+msgid "Rating:"
+msgstr "評價："
+
+#: qtquick/qml/EntryDetails.qml:187
+#, kde-format
+msgid "Homepage:"
+msgstr "首頁："
+
+#: qtquick/qml/EntryDetails.qml:188
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr "開啟 %1 首頁"
+
+#: qtquick/qml/EntryDetails.qml:193
+#, kde-format
+msgid "How To Donate:"
+msgstr "捐助方法："
+
+#: qtquick/qml/EntryDetails.qml:194
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr "得知如何捐助此專案"
+
+#: qtquick/qml/NewStuffItem.qml:37
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "安裝"
+
+#: qtquick/qml/NewStuffList.qml:83 qtquick/qml/Page.qml:180
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr "顯示所有項目"
+
+#: qtquick/qml/NewStuffList.qml:84 qtquick/qml/Page.qml:181
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "僅顯示已安裝項"
+
+#: qtquick/qml/NewStuffList.qml:85 qtquick/qml/Page.qml:182
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr "只顯示可更新項"
+
+#: qtquick/qml/NewStuffList.qml:97 qtquick/qml/Page.qml:194
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "先顯示最近項目"
+
+#: qtquick/qml/NewStuffList.qml:98 qtquick/qml/Page.qml:195
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr "依字母排序"
+
+#: qtquick/qml/NewStuffList.qml:99 qtquick/qml/Page.qml:196
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "先顯示最高評價"
+
+#: qtquick/qml/NewStuffList.qml:100 qtquick/qml/Page.qml:197
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "先顯示下載數最多項"
+
+#: qtquick/qml/Page.qml:78
+#, kde-format
+msgctxt ""
+"If a knsrc file defines an adoption command, the option to run this command "
+"and 'use' an item becomes available. This is the text for an action to do so."
+msgid "Use"
+msgstr "使用"
+
+#: qtquick/qml/Page.qml:147
+#, kde-format
+msgid "Search..."
+msgstr "搜尋…"
+
+#: qtquick/qml/Page.qml:244
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more..."
+msgstr "載入更多..."
+
+#: qtquick/qml/Page.qml:311
+#, kde-format
+msgctxt ""
+"A message shown when there are no entries in the list, and when it is not "
+"trying to load anything"
+msgid "There is no hot new stuff to get here"
+msgstr "沒有什麼熱門的新東西"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:125
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<i>（沒有標題）</i>"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:156
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr "%1<i>（作者）</i>"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:41
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr "%1 的留言及評論"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:45
+#, kde-format
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "顯示所有評論"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:51
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr "只顯示評論"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:57
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr "顯示評論及回覆"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:197
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "下載 %1 次"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:167
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:179
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "由 <i>%1</i>"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:59
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is being installed"
+msgid "Installing..."
+msgstr "安裝中..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "更新中..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+"處於無效或未知狀態。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">請在臭蟲報告中回報此問題至 KDE 社群</a>。"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:76
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "安裝中"
+
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:94
+#, kde-format
+msgctxt "Show a page with details for this item"
+msgid "Details..."
+msgstr "詳細資料..."
+
+#: qtquick/qml/private/ErrorDisplayer.qml:24
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr "發生錯誤"
+
+#: qtquick/qml/private/GridTileDelegate.qml:118
+#, kde-format
+msgid "None"
+msgstr "無"
+
+#: qtquick/quickengine.cpp:142
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+"您未授權使用「取得新熱門項目」。如果你認為這是錯誤，請聯絡負責您權限的人。"
+
+#: qtquick/quickitemsmodel.cpp:441
+#, kde-format
+msgid "Using %1"
+msgstr "使用 %1"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "%1 的詳情"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "變更紀錄："
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "首頁"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "捐獻"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "知識庫（%1 個項目）"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "在瀏覽器視窗中開啟"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:281
+#, kde-format
+msgid "Rating: %1%"
+msgstr "評分：%1%"
+
+#: ui/itemsgridviewdelegate.cpp:138
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />大小：%1"
+
+#: ui/itemsgridviewdelegate.cpp:159 ui/itemsgridviewdelegate.cpp:161
+#: ui/itemsgridviewdelegate.cpp:163 ui/itemsviewdelegate.cpp:241
+#: ui/itemsviewdelegate.cpp:243 ui/itemsviewdelegate.cpp:245
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "由 <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:186 ui/itemsviewdelegate.cpp:259
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 個粉絲"
+
+#: ui/itemsgridviewdelegate.cpp:189 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "下載 %1 次"
+
+#: ui/itemsgridviewdelegate.cpp:255 ui/itemsviewdelegate.cpp:335
+#, kde-format
+msgid "Loading Preview"
+msgstr "載入預覽"
+
+#: ui/itemsgridviewdelegate.cpp:282 ui/itemsviewdelegate.cpp:186
+#, kde-format
+msgid "Details"
+msgstr "詳細資料"
+
+#: ui/itemsgridviewdelegate.cpp:347 ui/itemsviewdelegate.cpp:138
+#, kde-format
+msgid "Updating"
+msgstr "更新中"
+
+#: ui/itemsgridviewdelegate.cpp:357 ui/itemsviewdelegate.cpp:148
+#, kde-format
+msgid "Install Again"
+msgstr "再次安裝"
+
+#: ui/itemsviewdelegate.cpp:174
+#, kde-format
+msgid "Use"
+msgstr "使用"
+
+#: ui/itemsviewdelegate.cpp:230
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>大小：%1</p>"
+
+#: uploaddialog.cpp:64
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "下一步"
+
+#: uploaddialog.cpp:69
+#, kde-format
+msgid "Finish"
+msgstr "完成"
+
+#: uploaddialog.cpp:181
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "取得提供者資訊中..."
+
+#: uploaddialog.cpp:188
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "在伺服器上抓取授權資料..."
+
+#: uploaddialog.cpp:195
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "在伺服器上抓取內容資料..."
+
+#: uploaddialog.cpp:270
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "無法取的提供者資訊。"
+
+#: uploaddialog.cpp:294
+#, kde-format
+msgid "Register a new account"
+msgstr "註冊新帳號"
+
+#: uploaddialog.cpp:318
+#, kde-format
+msgid "Checking login..."
+msgstr "檢查登入中..."
+
+#: uploaddialog.cpp:340
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "抓取您上次上傳的內容..."
+
+#: uploaddialog.cpp:343
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "無法查驗登入，請再試一次。"
+
+#: uploaddialog.cpp:362
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "已完成抓取您上次上傳的內容。"
+
+#: uploaddialog.cpp:380
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "已完成抓取內容資料。"
+
+#: uploaddialog.cpp:403 uploaddialog.cpp:845
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "造訪網站"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:449 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "分享熱門玩意"
+
+#: uploaddialog.cpp:472
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 外加上傳器"
+
+#: uploaddialog.cpp:492 uploaddialog.cpp:770
+#, kde-format
+msgid "File not found: %1"
+msgstr "檔案找不到：%1"
+
+#: uploaddialog.cpp:492 uploaddialog.cpp:619 uploaddialog.cpp:770
+#, kde-format
+msgid "Upload Failed"
+msgstr "上傳失敗"
+
+#: uploaddialog.cpp:572
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "伺服器無法辨識出您要上傳到哪個類別：%2"
+
+#: uploaddialog.cpp:575
+#, kde-format
+msgid "Error"
+msgstr "錯誤"
+
+#: uploaddialog.cpp:619
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "選取的類別 %1 不合法"
+
+#: uploaddialog.cpp:668 uploaddialog.cpp:683 uploaddialog.cpp:697
+#, kde-format
+msgid "Select preview image"
+msgstr "選擇預覽影像"
+
+#: uploaddialog.cpp:712
+#, kde-format
+msgid "There was a network error."
+msgstr "發生網路錯誤。"
+
+#: uploaddialog.cpp:712 uploaddialog.cpp:717
+#, kde-format
+msgid "Uploading Failed"
+msgstr "上傳失敗"
+
+#: uploaddialog.cpp:717
+#, kde-format
+msgid "Authentication error."
+msgstr "認證錯誤。"
+
+#: uploaddialog.cpp:727
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "上傳失敗：%1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "密碼："
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "使用者名稱："
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "要上傳的檔案；"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "新增上傳"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "描述："
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "版本："
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "授權："
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "請用英文填寫您的上傳檔的資訊。"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "標題："
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "出現在網站上的檔名"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr "應該要能清楚描述檔案的內容。它可以跟 kvtml 檔的標題一樣。"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "預覽影像"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "選擇預覽..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "對此項目設定價格"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "價格"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "價格："
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "設定價格的理由："
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "從伺服器上抓取內容連結"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "在伺服器上建立內容"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "上傳內容"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "上傳第一個預覽"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "注意：您可以編輯、更新與刪除網站上您的內容。"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "上傳第二個預覽"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "上傳第三個預覽"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"我確定此內容並未違反任何現有的授權、法律或商標。我同意我的 IP 位址被紀錄。"
+"（未經版權持有者同意即散布內容是違法的。）"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "開始上傳"
