@@ -113,6 +113,7 @@ Private.GridTileDelegate {
                     QtLayouts.Layout.minimumHeight: width
                     QtLayouts.Layout.maximumHeight: width
                     Kirigami.ShadowedRectangle {
+                        visible: tilePreview.status == Image.Ready
                         anchors.centerIn: tilePreview;
                         width: Math.min(tilePreview.paintedWidth, tilePreview.width);
                         height: Math.min(tilePreview.paintedHeight, tilePreview.height);

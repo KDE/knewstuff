@@ -129,6 +129,7 @@ Flickable {
                 }
 
                 Kirigami.ShadowedRectangle {
+                    visible: thumbnail.status == Image.Ready
                     anchors.fill: thumbnail
                     Kirigami.Theme.colorSet: Kirigami.Theme.View
                     shadow.size: Kirigami.Units.largeSpacing
