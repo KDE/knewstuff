@@ -326,7 +326,11 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             emit signalInstallationFinished();
         };
         if (!postInstallationCommand.isEmpty()) {
-            QProcess* p = runPostInstallationCommand(installedFiles.size() == 1 ? installedFiles.first() : targetPath);
+            QString scriptArgPath = !installedFiles.isEmpty() ? installedFiles.first() : targetPath;
+            if (scriptArgPath.endsWith(QLatin1Char('*'))) {
+                scriptArgPath = scriptArgPath.left(scriptArgPath.lastIndexOf(QLatin1Char('*')));
+            }
+            QProcess* p = runPostInstallationCommand(scriptArgPath);
             connect(p, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
                     [entry, installationFinished, this] (int exitCode, QProcess::ExitStatus) {
                         if (exitCode) {
@@ -918,7 +922,7 @@ QStringList Installation::archiveEntries(const QString &path, const KArchiveDire
     for (const QString &entry : lst) {
         const auto currentEntry = dir->entry(entry);
 
-        const QString childPath = path + QLatin1Char('/') + entry;
+        const QString childPath = QDir(path).filePath(entry);
         if (currentEntry->isFile()) {
             files << childPath;
         } else if (currentEntry->isDirectory()) {
