@@ -48,7 +48,6 @@ Name[sv]=Ksystemlog
 Name[tg]=KSystemLog
 Name[tr]=KSystemLog
 Name[uk]=KSystemLog
-Name[x-test]=xxKSystemLogxx
 Name[zh_CN]=KSystemLog
 Name[zh_TW]=KSystemLog
 
@@ -93,7 +92,6 @@ Comment[sv]=Visningsverktyg för systemloggar
 Comment[tg]=Абзори намоиши сабти рӯйдодҳои низом
 Comment[tr]=Sistem günlük kayıtlarını gösterme aracı
 Comment[uk]=Засіб перегляду системних журналів
-Comment[x-test]=xxSystem log viewer toolxx
 Comment[zh_CN]=系统日志查看工具
 Comment[zh_TW]=系統紀錄檢視工具
 
@@ -138,7 +136,6 @@ GenericName[sv]=Visningsverktyg för systemloggar
 GenericName[tg]=Намоиши сабти рӯйдодҳои низом
 GenericName[tr]=Sistem Günlük Görüntüleyicisi
 GenericName[uk]=Переглядач системних журналів
-GenericName[x-test]=xxSystem Log Viewerxx
 GenericName[zh_CN]=系统日志查看器
 GenericName[zh_TW]=系統紀錄檔檢視器
 
