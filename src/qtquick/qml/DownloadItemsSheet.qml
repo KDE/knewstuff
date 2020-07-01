@@ -49,6 +49,8 @@ Kirigami.OverlaySheet {
     contentItem: ListView {
         id: itemsView
 
+        implicitWidth: Kirigami.Units.gridUnit * 24
+
         header: QtControls.Label {
             leftPadding: Kirigami.Units.largeSpacing
             rightPadding: Kirigami.Units.largeSpacing
