@@ -30,7 +30,7 @@ import org.kde.newstuff 1.62 as NewStuff
 /**
  * @brief An overlay sheet for showing a list of download options for one entry
  *
- * This is used by the NewStuff.Page componet
+ * This is used by the NewStuff.Page component
  * @since 5.63
  */
 
