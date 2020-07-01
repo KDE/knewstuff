@@ -42,22 +42,22 @@ Kirigami.OverlaySheet {
     signal itemPicked(string entryId, int downloadItemId, string downloadName)
 
     showCloseButton: true
-    header: QtLayouts.ColumnLayout {
-        spacing: Kirigami.Units.largeSpacing
-        Kirigami.Heading {
-            QtLayouts.Layout.fillWidth: true
-            text: i18nd("knewstuff5", "Pick Your Installation Option")
-            elide: Text.ElideRight
-        }
-        QtControls.Label {
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
-            text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
-            wrapMode: Text.Wrap
-        }
+    header: Kirigami.Heading {
+        text: i18nd("knewstuff5", "Pick Your Installation Option")
+        elide: Text.ElideRight
     }
     contentItem: ListView {
         id: itemsView
+
+        header: QtControls.Label {
+            leftPadding: Kirigami.Units.largeSpacing
+            rightPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+            width: parent.width
+            text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
+            wrapMode: Text.Wrap
+        }
+
         delegate: Kirigami.BasicListItem {
             text: modelData.name
             icon: "download"
