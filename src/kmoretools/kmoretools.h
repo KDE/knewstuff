@@ -118,7 +118,7 @@ class KMoreToolsPrivate;
  *
  * ### KSnapshot's Send To... menu
  *
- * Last updated: 2015-04-17, uncommited demo, source code:
+ * Last updated: 2015-04-17, uncommitted demo, source code:
  * src/kde/kdegraphics/ksnapshot/ksnapshotsendtoactions.cpp
  *
  * Note, that the last item in the 'More' menu in the following screenshot was
@@ -128,13 +128,13 @@ class KMoreToolsPrivate;
  *
  * ### Dolphins's Space info menu
  *
- * Last updated: 2015-04-17, uncommited demo, source code: src/kde/applications/dolphin/src/statusbar/spaceinfotoolsmenu.cpp
+ * Last updated: 2015-04-17, uncommitted demo, source code: src/kde/applications/dolphin/src/statusbar/spaceinfotoolsmenu.cpp
  *
  * \image html kmoretools-dolphin-spaceinfo-1.png "Space info menu" width=100px
  *
  * ### Kate's Project plugin git menu
  *
- * Last updated: 2015-03-25, uncommited demo, source code:
+ * Last updated: 2015-03-25, uncommitted demo, source code:
  * src/kde/applications/kate/addons/project/kateprojecttreeviewcontextmenu.cpp
  *
  * \image html kmoretools-kate-project-1-all-installed.png "All git tools installed" width=100px

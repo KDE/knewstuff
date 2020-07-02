@@ -121,7 +121,7 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
         KMoreTools kmt(_("unittest-kmoretools/2"));
         const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
         // porcelain: other (interactive) tests will reuse the kmt id so we make sure that
-        // no user configurment disburbs this test:
+        // no user configuration disturbs this test:
         const auto menuBuilder = kmt.menuBuilder(_("porcelain"));
         menuBuilder->addMenuItem(kateApp);
         QMenu menu;

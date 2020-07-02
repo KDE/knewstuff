@@ -50,7 +50,7 @@ public:
     Ui::DownloadWidget ui;
     // Model to show the entries
     KNSCore::ItemsModel *model;
-    // Timeout for messge display
+    // Timeout for message display
     QTimer *messageTimer;
 
     ItemsViewBaseDelegate *delegate;

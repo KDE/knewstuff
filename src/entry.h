@@ -126,7 +126,7 @@ public:
 
     /**
      * Id of this Entry. It is guaranteed to be unique for one provider.
-     * Id and ProviderId together identifiy this entry.
+     * Id and ProviderId together identify this entry.
      * @return the id
      * @since 4.5
      */

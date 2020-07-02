@@ -171,7 +171,7 @@ public:
         // http://stackoverflow.com/questions/14131127/qbytearray-to-qstring
         // QJsonDocument uses UTF-8 => we use 106=UTF-8
         //return QTextCodec::codecForMib(106)->toUnicode(jByteArray);
-        return _(jByteArray); // accidently the ctor of QString takes an UTF-8 byte array
+        return _(jByteArray); // accidentally the ctor of QString takes an UTF-8 byte array
     }
 
     void deserialize(const QString& text)

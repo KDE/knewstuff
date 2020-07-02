@@ -236,7 +236,7 @@ public:
      * tagname!=tagdata
      *
      * == KNSRC entry ==
-     * A tag filter line in a .knsrc file, which is a comma semarated list of
+     * A tag filter line in a .knsrc file, which is a comma separated list of
      * tag/value pairs, might look like:
      *
      * TagFilter=ghns_excluded!=1,data##mimetype==application/cbr+zip,data##mimetype==application/cbr+rar
