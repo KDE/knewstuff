@@ -1,0 +1,1580 @@
+# Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# Kristof Kiszel <kiszel.kristof@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-07-03 02:01+0200\n"
+"PO-Revision-Date: 2018-10-14 15:57+0200\n"
+"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: attica/atticaprovider.cpp:174
+#, kde-format
+msgid "All categories are missing"
+msgstr "Minden kategória hiányzik"
+
+#: attica/atticaprovider.cpp:443
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Az elem ára: %2 %1.\n"
+"Szeretné megvenni?"
+
+#: attica/atticaprovider.cpp:457
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Az egyenlege túl alacsony:\n"
+"Egyenleg: %1\n"
+"Ár: %2"
+
+#: attica/atticaprovider.cpp:499
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Rögzítettük a szavazatát."
+
+#: attica/atticaprovider.cpp:514
+#, kde-format
+msgid "You are now a fan."
+msgstr "Sikerült beállítani rajongónak."
+
+#: attica/atticaprovider.cpp:525
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "Hálózati hiba (%1): %2"
+
+#: attica/atticaprovider.cpp:529
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "Túl sok kérés a szerverhez. Próbálkozzon újra néhány perc múlva."
+
+#: attica/atticaprovider.cpp:531
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+
+#: attica/atticaprovider.cpp:533
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Ismeretlen Open Collaboration Service API hiba. (%1)"
+
+#: button.cpp:52
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Új kiegészítők letöltése…"
+
+#: core/commentsmodel.cpp:185
+#, fuzzy, kde-format
+#| msgid "Unknown socket error"
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr "Ismeretlen aljazathiba"
+
+#: core/engine.cpp:97
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+
+#: core/engine.cpp:117
+#, kde-format
+msgid "Initializing"
+msgstr "Inicializálás"
+
+#: core/engine.cpp:141
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "A konfigurációs fájl létezik, de nem nyitható meg: „%1”"
+
+#: core/engine.cpp:154
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Érvénytelen beállítófájl: „%1”"
+
+#: core/engine.cpp:174
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+
+#: core/engine.cpp:229
+#, kde-format
+msgid "Loading provider information"
+msgstr "Kiszolgálójellemzők betöltése"
+
+#: core/engine.cpp:258
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+"Nem sikerült betölteni az új kiegészítők szolgáltatólistáját ebből a "
+"fájlból: %1"
+
+#: core/engine.cpp:281
+#, kde-format
+msgid "Error initializing provider."
+msgstr "Hiba a szolgáltató inicializálásakor."
+
+#: core/engine.cpp:285 core/engine.cpp:797
+#, kde-format
+msgid "Loading data"
+msgstr "Adatok betöltése"
+
+#: core/engine.cpp:322
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Adatok betöltése a szolgáltatótól"
+
+#: core/engine.cpp:327
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Nem sikerült betölteni a szolgáltatólistát. Fájl: %1."
+
+#: core/engine.cpp:663
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/engine.cpp:664
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/engine.cpp:757
+#, kde-format
+msgid "Re: %1"
+msgstr "Válasz: %1"
+
+#: core/engine.cpp:799
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Egy előnézet betöltése"
+msgstr[1] "%1 előnézet betöltése"
+
+#: core/engine.cpp:801 ui/itemsgridviewdelegate.cpp:342
+#: ui/itemsviewdelegate.cpp:133
+#, kde-format
+msgid "Installing"
+msgstr "Telepítés"
+
+#: core/installation.cpp:193
+#, kde-format
+msgid "Invalid item."
+msgstr "Érvénytelen elem."
+
+#: core/installation.cpp:200
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"Az elem letöltése meghiúsult: nincs letöltési URL a következőhöz: „%1”."
+
+#: core/installation.cpp:229
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "„%1” letöltése meghiúsult, a hiba oka: %2"
+
+#: core/installation.cpp:239
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr "A letöltött fájl egy HTML-fájl. "
+
+#: core/installation.cpp:240
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Valószínűleg hibás letöltési hivatkozás"
+
+#: core/installation.cpp:243
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "A letöltött fájl egy HTML-fájl. Megnyitva webböngészőben."
+
+#: core/installation.cpp:306
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "„%1” nem telepíthető: a fájl nem található."
+
+#: core/installation.cpp:340
+#, fuzzy, kde-format
+#| msgid "Failed to open scriptfile \"%1\""
+msgid "Failed to execute install script"
+msgstr "Nem sikerült megnyitni ezt a szkriptfájlt: „%1”"
+
+#: core/installation.cpp:493
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr ""
+
+#: core/installation.cpp:506 core/installation.cpp:741
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgid "Installation of %1 failed: %2"
+msgstr "Telepítés"
+
+#: core/installation.cpp:514
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+
+#: core/installation.cpp:520
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:526
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr ""
+
+#: core/installation.cpp:532
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:560
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr ""
+
+#: core/installation.cpp:571
+#, fuzzy, kde-format
+#| msgid "Unable to open temporary file. Error was: %1."
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "Nem sikerült megnyitni az átmeneti fájlt. A hiba: %1."
+
+#: core/installation.cpp:650
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+
+#: core/installation.cpp:651
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgid "Overwrite File"
+msgstr "Felülírás?"
+
+#: core/installation.cpp:667
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr ""
+
+#: core/installation.cpp:690
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+
+#: core/installation.cpp:693
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+
+#: core/installation.cpp:747
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:751
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+
+#: core/installation.cpp:755
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:796
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr ""
+
+#: core/installation.cpp:800
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+
+#: core/installation.cpp:804
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+
+#: core/installation.cpp:841
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:100
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:104
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:108
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr ""
+
+#: core/security.cpp:83
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a kulcslista "
+"lekérdezéséhez. A <i>gpg</i> programnak telepítve kell lennie, mert ezt "
+"használja a rendszer a letöltött erőforrások ellenőrzéséhez.</qt>"
+
+#: core/security.cpp:211
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Adja meg a(z) <b>0x%1</b> kulcshoz tartozó jelszót. A kulcs tulajdonosa: "
+"<br /><i>%2&lt;%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:289
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a fájl integritásának "
+"ellenőrzéséhez. A <i>gpg</i> programnak telepítve kell lennie, enélkül nem "
+"lehet a letöltött erőforrásokat ellenőrizni.</qt>"
+
+#: core/security.cpp:344
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Aláírási kulcs:"
+
+#: core/security.cpp:345
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Válassza ki az aláírási kulcsot"
+
+#: core/security.cpp:380
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nem sikerült elindítani a <i>gpg</i> programot a fájl aláírásához. A "
+"<i>gpg</i> programnak telepítve kell lennie, enélkül nem lehet erőforrásokat "
+"aláírni.</qt>"
+
+#: downloaddialog.cpp:79 downloadwidget.cpp:222
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Új dolgok letöltése"
+
+#: downloaddialog.cpp:97
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 modultelepítő"
+
+#: downloadwidget.cpp:131
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Időtúllépési hiba történt, ellenőrizze az internetkapcsolatot."
+
+#: downloadwidget.cpp:194
+#, kde-format
+msgid "Server: %1"
+msgstr "Kiszolgáló: %1"
+
+#: downloadwidget.cpp:195
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Szolgáltató: %1"
+
+#: downloadwidget.cpp:196
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Verzió: %1"
+
+#: downloadwidget.cpp:200
+#, kde-format
+msgid "Provider information"
+msgstr "A szolgáltató adatai"
+
+#: downloadwidget.cpp:211
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nem sikerült telepíteni: %1"
+
+#: downloadwidget.cpp:212
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Új dolgok letöltése"
+
+#: downloadwidget.cpp:267
+#, kde-format
+msgid "Icons view mode"
+msgstr "Ikonnézetmód"
+
+#: downloadwidget.cpp:269
+#, kde-format
+msgid "Details view mode"
+msgstr "Részletes nézetmód"
+
+#: downloadwidget.cpp:284
+#, kde-format
+msgid "All Providers"
+msgstr "Minden szolgáltató"
+
+#: downloadwidget.cpp:291
+#, kde-format
+msgid "All Categories"
+msgstr "Minden kategória"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "Szolgáltató:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "Kategória:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "Legtöbbször letöltöttek"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "Legújabb"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Rating"
+msgstr "Pontszám"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "Telepítve"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Rendezés:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Keresés:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:211
+#, kde-format
+msgid "Enter search phrase here"
+msgstr "Itt lehet megadni a keresendő szöveget"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:365
+#, kde-format
+msgid "Author:"
+msgstr "Szerző:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:390
+#, fuzzy, kde-format
+#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"http://opendesktop.org\">Honlap</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:566 ui/itemsgridviewdelegate.cpp:337
+#: ui/itemsviewdelegate.cpp:128 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Frissítés"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:576 ui/itemsgridviewdelegate.cpp:333
+#: ui/itemsviewdelegate.cpp:124
+#, kde-format
+msgid "Uninstall"
+msgstr "Eltávolítás"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:583
+#, kde-format
+msgid "Become a Fan"
+msgstr "Rajongó vagyok"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:590 qtquick/qml/DownloadItemsSheet.qml:65
+#: ui/itemsgridviewdelegate.cpp:352 ui/itemsgridviewdelegate.cpp:362
+#: ui/itemsviewdelegate.cpp:143 ui/itemsviewdelegate.cpp:153
+#, kde-format
+msgid "Install"
+msgstr "Telepítés"
+
+#: kmoretools/kmoretools.cpp:570
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Nincs telepítve:"
+
+#: kmoretools/kmoretools.cpp:670
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Több"
+
+#: kmoretools/kmoretools.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Beállítás…"
+
+#: kmoretools/kmoretools_p.h:387
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Honlap megnyitása"
+
+#: kmoretools/kmoretools_p.h:399
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Telepítés"
+
+#: kmoretools/kmoretools_p.h:407
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Nincsenek további információk."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:186
+#, kde-format
+msgid "Configure menu"
+msgstr "Beállítások"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:188
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Beállítások - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:194
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "$GenericName - current folder"
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "$GenericName - jelenlegi mappa"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:202
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "$GenericName - current device"
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "$GenericName - jelenlegi eszköz"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:215
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "$GenericName - all devices"
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "$GenericName - minden eszköz"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Fő szekció"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Le"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr "Fel"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr "Áthelyezés a fő szekcióba"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr "Áthelyezés az Egyéb szekcióba"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Alapállapot"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr "Egyéb szekció"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "Ehhez a menühöz elérhetők további ajánlott, nem telepített eszközök:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr "További eszközök…"
+
+#: qtquick/categoriesmodel.cpp:79
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "Show All Categories"
+msgstr "Minden kategória"
+
+#: qtquick/categoriesmodel.cpp:108
+#, fuzzy, kde-format
+#| msgid "Unknown error"
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "Ismeretlen hiba"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:58
+#, kde-format
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr ""
+
+#: qtquick/qml/Button.qml:59
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgid "Download New %1..."
+msgstr "Új kiegészítők letöltése…"
+
+#: qtquick/qml/Dialog.qml:56
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "Új kiegészítők letöltése…"
+
+#: qtquick/qml/Dialog.qml:56
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "Új kiegészítők letöltése…"
+
+#: qtquick/qml/DownloadItemsSheet.qml:46
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr ""
+
+#: qtquick/qml/DownloadItemsSheet.qml:57
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:63
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "Telepítés"
+
+#: qtquick/qml/EntryDetails.qml:79
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed"
+msgid "Currently installing the item %1 by %2. Please wait..."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:81
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:83
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:94
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:98
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Telepítés"
+
+#: qtquick/qml/EntryDetails.qml:98
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "Telepítés"
+
+#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:44
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:79
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:72
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:80
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Frissítés"
+
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:51
+#: qtquick/qml/Page.qml:77
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Eltávolítás"
+
+#: qtquick/qml/EntryDetails.qml:176
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:178
+#, fuzzy, kde-format
+#| msgid "View Comments"
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "Megjegyzések"
+
+#: qtquick/qml/EntryDetails.qml:183
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgid "Rating:"
+msgstr "Értékelés: "
+
+#: qtquick/qml/EntryDetails.qml:187
+#, fuzzy, kde-format
+#| msgid "Homepage"
+msgid "Homepage:"
+msgstr "Honlap"
+
+#: qtquick/qml/EntryDetails.qml:188
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:193
+#, kde-format
+msgid "How To Donate:"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:194
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr ""
+
+#: qtquick/qml/NewStuffItem.qml:37
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Telepítés"
+
+#: qtquick/qml/NewStuffList.qml:83 qtquick/qml/Page.qml:180
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr ""
+
+#: qtquick/qml/NewStuffList.qml:84 qtquick/qml/Page.qml:181
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "Telepítve"
+
+#: qtquick/qml/NewStuffList.qml:85 qtquick/qml/Page.qml:182
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr ""
+
+#: qtquick/qml/NewStuffList.qml:97 qtquick/qml/Page.qml:194
+#, fuzzy, kde-format
+#| msgid "Show directories first"
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "Előbb a mappák, utána a fájlok"
+
+#: qtquick/qml/NewStuffList.qml:98 qtquick/qml/Page.qml:195
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr ""
+
+#: qtquick/qml/NewStuffList.qml:99 qtquick/qml/Page.qml:196
+#, fuzzy, kde-format
+#| msgid "Show directories first"
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "Előbb a mappák, utána a fájlok"
+
+#: qtquick/qml/NewStuffList.qml:100 qtquick/qml/Page.qml:197
+#, fuzzy, kde-format
+#| msgid "Most downloads"
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "Legtöbbször letöltöttek"
+
+#: qtquick/qml/Page.qml:78
+#, fuzzy, kde-format
+#| msgid "Use"
+msgctxt ""
+"If a knsrc file defines an adoption command, the option to run this command "
+"and 'use' an item becomes available. This is the text for an action to do so."
+msgid "Use"
+msgstr "Használat"
+
+#: qtquick/qml/Page.qml:147
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "Keresés"
+
+#: qtquick/qml/Page.qml:244
+#, fuzzy, kde-format
+#| msgid "Loading Preview"
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more..."
+msgstr "Előnézet betöltése"
+
+#: qtquick/qml/Page.qml:311
+#, kde-format
+msgctxt ""
+"A message shown when there are no entries in the list, and when it is not "
+"trying to load anything"
+msgid "There is no hot new stuff to get here"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@note/rich"
+#| msgid "<i>Note</i>: %1"
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<i>Megjegyzés</i>: %1"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:156
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:41
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:45
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "Minden kategória"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:51
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:57
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:155
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:199
+#, fuzzy, kde-format
+#| msgid "1 download"
+#| msgid_plural "%1 downloads"
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "1 letöltés"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:168
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:180
+#, fuzzy, kde-format
+#| msgctxt "Show the author of this item in a list"
+#| msgid "By <i>%1</i>"
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:59
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgctxt "Label for the busy indicator showing an item is being installed"
+msgid "Installing..."
+msgstr "Telepítés"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, fuzzy, kde-format
+#| msgid "Updating"
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "Frissítés"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:76
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "Telepítés"
+
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:94
+#, fuzzy, kde-format
+#| msgid "Details"
+msgctxt "Show a page with details for this item"
+msgid "Details..."
+msgstr "Részletek"
+
+#: qtquick/qml/private/ErrorDisplayer.qml:24
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr ""
+
+#: qtquick/qml/private/GridTileDelegate.qml:118
+#, fuzzy, kde-format
+#| msgctxt "No border line"
+#| msgid "None"
+msgid "None"
+msgstr "Nincs"
+
+#: qtquick/quickengine.cpp:142
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+
+#: qtquick/quickitemsmodel.cpp:441
+#, fuzzy, kde-format
+#| msgid "loading %1"
+msgid "Using %1"
+msgstr "%1 betöltése"
+
+#: ui/entrydetailsdialog.cpp:91
+#, kde-format
+msgid "Details for %1"
+msgstr "Részletek: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:105 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "Változások listája:"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Honlap"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Pénzadomány küldése"
+
+#: ui/entrydetailsdialog.cpp:118
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Tudásbázis (nincs bejegyzés)"
+msgstr[1] "Tudásbázis (%1 bejegyzés)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Megnyitás böngészőablakban"
+
+#: ui/itemsgridviewdelegate.cpp:101 ui/itemsviewdelegate.cpp:281
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Pontszám: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:138
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Méret: %1"
+
+#: ui/itemsgridviewdelegate.cpp:159 ui/itemsgridviewdelegate.cpp:161
+#: ui/itemsgridviewdelegate.cpp:163 ui/itemsviewdelegate.cpp:241
+#: ui/itemsviewdelegate.cpp:243 ui/itemsviewdelegate.cpp:245
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:186 ui/itemsviewdelegate.cpp:259
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 rajongó"
+msgstr[1] "%1 rajongó"
+
+#: ui/itemsgridviewdelegate.cpp:189 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 letöltés"
+msgstr[1] "%1 letöltés"
+
+#: ui/itemsgridviewdelegate.cpp:255 ui/itemsviewdelegate.cpp:335
+#, kde-format
+msgid "Loading Preview"
+msgstr "Előnézet betöltése"
+
+#: ui/itemsgridviewdelegate.cpp:282 ui/itemsviewdelegate.cpp:186
+#, kde-format
+msgid "Details"
+msgstr "Részletek"
+
+#: ui/itemsgridviewdelegate.cpp:347 ui/itemsviewdelegate.cpp:138
+#, kde-format
+msgid "Updating"
+msgstr "Frissítés"
+
+#: ui/itemsgridviewdelegate.cpp:357 ui/itemsviewdelegate.cpp:148
+#, kde-format
+msgid "Install Again"
+msgstr "Új telepítési kísérlet"
+
+#: ui/itemsviewdelegate.cpp:174
+#, kde-format
+msgid "Use"
+msgstr "Használat"
+
+#: ui/itemsviewdelegate.cpp:230
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>Méret: %1</p>"
+
+#: uploaddialog.cpp:64
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Tovább"
+
+#: uploaddialog.cpp:69
+#, kde-format
+msgid "Finish"
+msgstr "Befejezés"
+
+#: uploaddialog.cpp:181
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "Szolgáltatóadatok letöltése…"
+
+#: uploaddialog.cpp:188
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "Licencadatok letöltése a kiszolgálóról…"
+
+#: uploaddialog.cpp:195
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "Tartalomadatok letöltése a kiszolgálóról…"
+
+#: uploaddialog.cpp:270
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "Nem sikerült letölteni a szolgáltató adatait."
+
+#: uploaddialog.cpp:294
+#, kde-format
+msgid "Register a new account"
+msgstr "Új fiók regisztrálása"
+
+#: uploaddialog.cpp:318
+#, kde-format
+msgid "Checking login..."
+msgstr "Bejelentkezés ellenőrzése…"
+
+#: uploaddialog.cpp:340
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "Előzőleg feltöltött tartalom letöltése…"
+
+#: uploaddialog.cpp:343
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "A bejelentkezés nem hitelesíthető, próbálja újra."
+
+#: uploaddialog.cpp:362
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "Az előzőleg feltöltött tartalom letöltése befejeződött."
+
+#: uploaddialog.cpp:380
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "A tartalomadatok letöltése a szerverről befejeződött."
+
+#: uploaddialog.cpp:403 uploaddialog.cpp:845
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Weboldal meglátogatása"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:449 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Új kiegészítők közzététele"
+
+#: uploaddialog.cpp:472
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 bővítményfeltöltő"
+
+#: uploaddialog.cpp:492 uploaddialog.cpp:770
+#, kde-format
+msgid "File not found: %1"
+msgstr "Nem található ez a fájl: %1"
+
+#: uploaddialog.cpp:492 uploaddialog.cpp:619 uploaddialog.cpp:770
+#, kde-format
+msgid "Upload Failed"
+msgstr "A feltöltés nem sikerült"
+
+#: uploaddialog.cpp:572
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"A szerver nem ismeri fel a kategóriát, amelybe megpróbál feltölteni: %2"
+msgstr[1] ""
+"A szerver nem ismeri fel egyik kategóriát sem azok közül, amelyekbe "
+"megpróbál feltölteni: %2"
+
+#: uploaddialog.cpp:575
+#, kde-format
+msgid "Error"
+msgstr "Hiba"
+
+#: uploaddialog.cpp:619
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "A kiválasztott „%1” kategória érvénytelen."
+
+#: uploaddialog.cpp:668 uploaddialog.cpp:683 uploaddialog.cpp:697
+#, kde-format
+msgid "Select preview image"
+msgstr "Előnézeti kép kiválasztása"
+
+#: uploaddialog.cpp:712
+#, kde-format
+msgid "There was a network error."
+msgstr "Hálózati hiba történt."
+
+#: uploaddialog.cpp:712 uploaddialog.cpp:717
+#, kde-format
+msgid "Uploading Failed"
+msgstr "A feltöltés nem sikerült"
+
+#: uploaddialog.cpp:717
+#, kde-format
+msgid "Authentication error."
+msgstr "Felhasználóazonosítási hiba."
+
+#: uploaddialog.cpp:727
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "A feltöltés nem sikerült: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Jelszó:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Felhasználónév:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "Feltöltendő fájl:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "Új feltöltés"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Leírás:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Verzió:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Licenc:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "Töltse ki a feltöltött fájl jellemzőit (angolul)."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Cím:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "A fájl webhelyen megjelenítendő neve"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Egyértelműen leírja a fájltartalmat. Lehet ugyanaz a szöveg, mint a kvtml "
+"fájl címe."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "Képek előnézete"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "Előnézet kiválasztása…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "Ár beállítása"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "Ár"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "Ár:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "Az ár oka:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "Tartalomhivatkozás letöltése a kiszolgálóról"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "Tartalom létrehozása a kiszolgálón"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "Tartalom feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "Első előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr ""
+"Megjegyzés: szerkesztheti, frissítheti és törölheti a webhely tartalmát."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "Második előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "Harmadik előnézet feltöltése"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Ellenőriztem, hogy a tartalom nem sért semmilyen létező szerzői jogot, "
+"törvényt vagy védjegyet. Beleegyezem az IP-címem naplózásába. (Tartalom "
+"terjesztése szerzői jog tulajdonosának beleegyezése nélkül illegális.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "Feltöltés indítása"
