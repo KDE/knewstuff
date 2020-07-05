@@ -60,7 +60,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("catfish"),                            1, "http://www.twotoasts.de/index.php/catfish/", QStringLiteral("catfish"));
     ADD_ENTRY(QStringLiteral("ding"),                               0, "https://www-user.tu-chemnitz.de/~fri/ding/", QString()); // Offline dict, Online: https://dict.tu-chemnitz.de/dings.cgi
     ADD_ENTRY(QStringLiteral("disk"),                               0, "https://en.opensuse.org/YaST_Disk_Controller", QString());
-    ADD_ENTRY(QStringLiteral("fontinst"),                           0, "https://docs.kde.org/trunk5/en/kde-workspace/kcontrol/fontinst/", QString()); // good for previewing many fonts at once
+    ADD_ENTRY(QStringLiteral("fontinst"),                           0, "https://docs.kde.org/?application=kcontrol/fontinst&branch=trunk5", QString()); // good for previewing many fonts at once
     ADD_ENTRY(QStringLiteral("fontmatrix"),                         0, "https://github.com/fontmatrix/fontmatrix", QString());
     ADD_ENTRY(QStringLiteral("fsearch"),                            0, "https://github.com/cboxdoerfer/fsearch", QString());
     ADD_ENTRY(QStringLiteral("giggle"),                             1, "https://wiki.gnome.org/Apps/giggle/", QStringLiteral("giggle.desktop")); // good for searching in history
