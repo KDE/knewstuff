@@ -27,7 +27,7 @@
 #include "core/engine.h"
 #include "core/entryinternal.h"
 
-#include <kwidgetitemdelegate.h>
+#include <KWidgetItemDelegate>
 
 namespace KNS3
 {

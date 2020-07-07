@@ -19,8 +19,8 @@
 #include "knewstuffaction.h"
 
 #include <QAction>
-#include <klocalizedstring.h>
-#include <kactioncollection.h>
+#include <KLocalizedString>
+#include <KActionCollection>
 
 using namespace KNS3;
 

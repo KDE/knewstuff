@@ -22,7 +22,7 @@
 #include <QObject>
 #include <QString>
 
-#include <kconfiggroup.h>
+#include <KConfigGroup>
 
 #include "entryinternal.h"
 

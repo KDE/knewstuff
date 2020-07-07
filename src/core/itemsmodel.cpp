@@ -19,7 +19,7 @@
 #include "itemsmodel.h"
 
 #include <knewstuffcore_debug.h>
-#include "klocalizedstring.h"
+#include <KLocalizedString>
 
 #include "entryinternal.h"
 #include "engine.h"

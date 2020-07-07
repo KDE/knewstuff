@@ -32,7 +32,7 @@
 #include <QCryptographicHash>
 
 //kde includes
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 using namespace KNSCore;
 

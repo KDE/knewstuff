@@ -25,10 +25,10 @@
 #include <QVariant>
 #include <QHBoxLayout>
 
-#include "kjob.h"
+#include <KJob>
 
-#include <kiconloader.h>
-#include <kpixmapsequencewidget.h>
+#include <KIconLoader>
+#include <KPixmapSequenceWidget>
 
 using namespace KNS3;
 

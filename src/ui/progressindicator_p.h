@@ -24,7 +24,7 @@
 #include "errorcode.h"
 
 #include <QFrame>
-#include <kpixmapsequence.h>
+#include <KPixmapSequence>
 
 class QVBoxLayout;
 class QLabel;

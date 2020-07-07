@@ -27,9 +27,9 @@
 #include <QProcess>
 #include <knewstuff_debug.h>
 
-#include <kformat.h>
-#include <klocalizedstring.h>
-#include <kratingwidget.h>
+#include <KFormat>
+#include <KLocalizedString>
+#include <KRatingWidget>
 #include <KShell>
 
 #include "core/itemsmodel.h"

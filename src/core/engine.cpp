@@ -29,10 +29,10 @@
 #include "imageloader_p.h"
 
 #include <memory>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <knewstuffcore_debug.h>
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 #include <QDesktopServices>
 
 #include <QTimer>

@@ -23,14 +23,14 @@
 #include "downloaddialog.h"
 
 
-#include <ksharedconfig.h>
-#include <ktitlewidget.h>
+#include <KSharedConfig>
+#include <KTitleWidget>
 #include <kwindowconfig.h>
 #include <QCoreApplication>
-#include <kstandardguiitem.h>
-#include <klocalizedstring.h>
-#include <kauthorized.h>
-#include <kmessagebox.h>
+#include <KStandardGuiItem>
+#include <KLocalizedString>
+#include <KAuthorized>
+#include <KMessageBox>
 
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"

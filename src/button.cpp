@@ -18,9 +18,9 @@
 
 #include "button.h"
 
-#include <klocalizedstring.h>
-#include <kauthorized.h>
-#include <kmessagebox.h>
+#include <KLocalizedString>
+#include <KAuthorized>
+#include <KMessageBox>
 #include "downloaddialog.h"
 #include "ui/widgetquestionlistener.h"
 

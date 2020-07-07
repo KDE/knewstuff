@@ -28,8 +28,8 @@
 #include <QScrollBar>
 #include <QCoreApplication>
 
-#include <kmessagebox.h>
-#include <klocalizedstring.h>
+#include <KMessageBox>
+#include <KLocalizedString>
 #include <knewstuff_debug.h>
 
 #include "core/itemsmodel.h"

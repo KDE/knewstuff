@@ -21,7 +21,7 @@
 
 #include "core/question.h"
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KPasswordDialog>
 #include <QInputDialog>
 

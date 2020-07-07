@@ -26,7 +26,7 @@
 #include <QStandardPaths>
 #include <QApplication>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 #include <KConfig>
 #include <KConfigGroup>
 

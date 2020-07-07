@@ -30,19 +30,19 @@
 #include <QString>
 #include <QCoreApplication>
 
-#include <kiconloader.h>
-#include <kmessagebox.h>
-#include <klocalizedstring.h>
+#include <KIconLoader>
+#include <KMessageBox>
+#include <KLocalizedString>
 
-#include <kpixmapsequence.h>
-#include <kpixmapsequencewidget.h>
+#include <KPixmapSequence>
+#include <KPixmapSequenceWidget>
 #include <KIO/OpenUrlJob>
 #include <KIO/JobUiDelegate>
 
 #include <knewstuff_debug.h>
 #include <QLoggingCategory>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <qstandardpaths.h>
 
 using namespace KNS3;

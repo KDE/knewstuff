@@ -21,8 +21,8 @@
 #include <knewstuff2/core/entryhandler.h>
 #include <knewstuff2/core/coreengine.h>
 
-#include <kstandarddirs.h>
-#include <qapplication.h>
+#include <KStandardDirs>
+#include <QApplication>
 #include <QDebug>
 
 

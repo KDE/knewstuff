@@ -24,7 +24,7 @@
 #include "xmlloader.h"
 
 #include <knewstuffcore_debug.h>
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include <QTimer>
 #include <tagsfilterchecker.h>

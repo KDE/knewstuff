@@ -23,7 +23,7 @@
 
 #include "xmlloader.h"
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 namespace KNSCore
 {

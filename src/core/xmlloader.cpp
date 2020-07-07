@@ -24,7 +24,7 @@
 #include "knewstuffcore_debug.h"
 #include "jobs/httpjob.h"
 
-#include <kconfig.h>
+#include <KConfig>
 
 #include <QByteArray>
 

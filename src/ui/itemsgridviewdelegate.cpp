@@ -27,11 +27,11 @@
 #include <QHBoxLayout>
 #include <QAbstractItemView>
 
-#include <kformat.h>
+#include <KFormat>
 #include <knewstuff_debug.h>
-#include <klocalizedstring.h>
-#include <kratingwidget.h>
-#include <ksqueezedtextlabel.h>
+#include <KLocalizedString>
+#include <KRatingWidget>
+#include <KSqueezedTextLabel>
 
 #include "core/itemsmodel.h"
 

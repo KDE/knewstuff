@@ -24,7 +24,7 @@
 #include <QPointer>
 #include <QUrl>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include <iostream>
 

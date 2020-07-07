@@ -28,10 +28,10 @@
 
 #include "qmimedatabase.h"
 #include "karchive.h"
-#include "kzip.h"
-#include "ktar.h"
-#include "krandom.h"
-#include "kshell.h"
+#include <KZip>
+#include <KTar>
+#include <KRandom>
+#include <KShell>
 
 #include <KPackage/PackageStructure>
 #include <KPackage/Package>
@@ -39,7 +39,7 @@
 #include "jobs/kpackagejob.h"
 
 #include <qstandardpaths.h>
-#include "klocalizedstring.h"
+#include <KLocalizedString>
 #include <knewstuffcore_debug.h>
 
 #include "jobs/filecopyjob.h"

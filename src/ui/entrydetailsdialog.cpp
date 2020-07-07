@@ -19,7 +19,7 @@
 
 #include <QMenu>
 #include <knewstuff_debug.h>
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include "core/engine.h"
 #include "core/imageloader_p.h"

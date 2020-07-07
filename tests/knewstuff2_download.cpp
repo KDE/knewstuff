@@ -21,7 +21,7 @@
 #include <knewstuff2/core/coreengine.h>
 #include <knewstuff2/core/author.h>
 
-#include <kstandarddirs.h>
+#include <KStandardDirs>
 #include <QDebug>
 
 #include <QApplication>

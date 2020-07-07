@@ -24,7 +24,7 @@
 #include <QPointer>
 #include <knewstuff_debug.h>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include <iostream>
 

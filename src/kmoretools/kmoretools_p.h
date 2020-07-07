@@ -29,7 +29,7 @@
 #include <QDir>
 #include <QRegularExpression>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #define _ QLatin1String
 

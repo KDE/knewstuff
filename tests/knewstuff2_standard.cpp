@@ -20,9 +20,9 @@
 
 #include <knewstuff2/engine.h>
 
-#include <kstandarddirs.h>
+#include <KStandardDirs>
 #include <QApplication>
-#include <kcmdlineargs.h>
+#include <KCmdLineArgs>
 
 KNewStuff2Standard::KNewStuff2Standard()
     : QObject()
