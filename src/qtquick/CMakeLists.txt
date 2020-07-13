@@ -13,7 +13,8 @@ set(qmlplugin_SRCS
 ecm_qt_declare_logging_category(qmlplugin_SRCS
     HEADER knewstuffquick_debug.h
     IDENTIFIER KNEWSTUFFQUICK
-    CATEGORY_NAME org.kde.knewstuff.quick
+    CATEGORY_NAME kf.newstuff.quick
+    OLD_CATEGORY_NAMES org.kde.knewstuff.quick
     DESCRIPTION "knewstuff (qtquick)"
     EXPORT KNEWSTUFF
 )

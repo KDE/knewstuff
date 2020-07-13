@@ -42,7 +42,8 @@ set(KNewStuffCore_SRCS
 ecm_qt_declare_logging_category(KNewStuffCore_SRCS
     HEADER knewstuffcore_debug.h
     IDENTIFIER KNEWSTUFFCORE
-    CATEGORY_NAME org.kde.knewstuff.core
+    CATEGORY_NAME kf.newstuff.core
+    OLD_CATEGORY_NAMES org.kde.knewstuff.core
     DESCRIPTION "knewstuff (Core Lib)"
     EXPORT KNEWSTUFF
 )

@@ -27,7 +27,8 @@ set(KNewStuff_SRCS
 ecm_qt_declare_logging_category(KNewStuff_SRCS
     HEADER knewstuff_debug.h
     IDENTIFIER KNEWSTUFF
-    CATEGORY_NAME org.kde.knewstuff
+    CATEGORY_NAME kf.newstuff
+    OLD_CATEGORY_NAMES org.kde.knewstuff
     DESCRIPTION "knewstuff (knewstuff)"
     EXPORT KNEWSTUFF
 )
