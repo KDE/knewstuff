@@ -144,7 +144,6 @@ void Engine::setConfigFile(const QString &newFile)
                 emit searchTermChanged();
             }
             d->engine->init(d->configFile);
-            d->engine->setSortMode(KNSCore::Provider::Downloads);
             emit engineInitialized();
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
