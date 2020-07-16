@@ -442,7 +442,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         package.setPath(payloadfile);
         auto resetEntryStatus = [this,entry](){
             KNSCore::EntryInternal changedEntry(entry);
-            if (changedEntry.status() == KNS3::Entry::Installing) {
+            if (changedEntry.status() == KNS3::Entry::Installing || changedEntry.status() == KNS3::Entry::Installed) {
                 changedEntry.setStatus(KNS3::Entry::Downloadable);
             } else if (changedEntry.status() == KNS3::Entry::Updating) {
                 changedEntry.setStatus(KNS3::Entry::Updateable);
