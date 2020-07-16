@@ -129,18 +129,27 @@ KCM.GridViewKCM {
             icon.name: "view-list-details"
             onClicked: { root.viewMode = Page.ViewMode.Tiles; }
             checked: root.viewMode == Page.ViewMode.Tiles
+            QtControls.ToolTip {
+                text: i18nd("knewstuff5", "Tiles view mode")
+            }
         }
         QtControls.ToolButton {
             id: displayModeIcons
             icon.name: "view-list-icons"
             onClicked: { root.viewMode = Page.ViewMode.Icons; }
             checked: root.viewMode == Page.ViewMode.Icons
+            QtControls.ToolTip {
+                text: i18nd("knewstuff5", "Icons view mode")
+            }
         }
         QtControls.ToolButton {
             id: displayPreview
             icon.name: "view-preview"
             onClicked: { root.viewMode = Page.ViewMode.Preview; }
             checked: root.viewMode == Page.ViewMode.Preview
+            QtControls.ToolTip {
+                text: i18nd("knewstuff5", "Preview view mode")
+            }
         }
         Kirigami.ActionTextField {
             id: searchField
