@@ -57,7 +57,7 @@ Private.GridTileDelegate {
         Kirigami.Action {
             text: component.useLabel
             iconName: "dialog-ok-apply"
-            onTriggered: { model.adopt(model.index); }
+            onTriggered: { model.adoptItem(model.index); }
             enabled: (model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
