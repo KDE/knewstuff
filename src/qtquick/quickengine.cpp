@@ -132,6 +132,16 @@ void Engine::setConfigFile(const QString &newFile)
                 KNewStuffQuick::QuickQuestionListener::instance();
                 d->categoriesModel = new CategoriesModel(this);
                 emit categoriesChanged();
+                // And finally, let's just make sure we don't miss out the various things here getting changed
+                // In other words, when we're asked to reset the view, actually do that
+                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::categoriesFilterChanged);
+                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::filterChanged);
+                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::sortOrderChanged);
+                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::searchTermChanged);
+                emit categoriesFilterChanged();
+                emit filterChanged();
+                emit sortOrderChanged();
+                emit searchTermChanged();
             }
             d->engine->init(d->configFile);
             d->engine->setSortMode(KNSCore::Provider::Downloads);
