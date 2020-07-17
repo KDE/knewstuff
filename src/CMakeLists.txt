@@ -152,6 +152,7 @@ ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXm
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 add_subdirectory(qtquick)
+add_subdirectory(tools)
 
 ecm_qt_install_logging_categories(
     EXPORT KNEWSTUFF

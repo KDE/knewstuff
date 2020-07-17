@@ -19,7 +19,6 @@ knewstuff_executable_tests(
      khotnewstuff
      khotnewstuff_upload
      khotnewstuff_test
-     khotnewstuff-dialog
 )
 # FIXME: port to new API
 #knewstuff_executable_tests(
