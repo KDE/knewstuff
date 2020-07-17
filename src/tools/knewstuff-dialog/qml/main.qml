@@ -22,7 +22,7 @@
 import QtQuick 2.7
 import QtQuick.Dialogs 1.3 as QtDialogs
 import QtQuick.Layouts 1.12 as QtLayouts
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.newstuff 1.62 as NewStuff
 import org.kde.newstuff.tools.dialog 1.0 as Myself
 
@@ -36,11 +36,6 @@ Kirigami.ApplicationWindow {
         titleIcon: "get-hot-new-stuff"
         drawerOpen: true;
         modal: false;
-        topContent: NewStuff.Button {
-            id: newStuffButton
-            QtLayouts.Layout.fillWidth: true
-            configFile: knsrcfile
-        }
 
         actions: [
             Kirigami.Action {
@@ -58,9 +53,8 @@ Kirigami.ApplicationWindow {
                 text: model.name
                 icon.name: "get-hot-new-stuff"
                 onTriggered: {
-                    newStuffButton.configFile = model.filePath
                     pageStack.clear();
-                    pageStack.push(mainPageComponent, { configFile: newStuffButton.configFile });
+                    pageStack.push(mainPageComponent, { configFile: model.filePath });
                 }
             }
             onObjectAdded: globalDrawer.actions.push(object);
@@ -75,8 +69,13 @@ Kirigami.ApplicationWindow {
         id: mainPageComponent
         NewStuff.Page { }
     }
+    Component {
+        id: startPageComponent
+        Kirigami.AboutPage {
+        }
+    }
     Component.onCompleted: {
-        pageStack.push(mainPageComponent, { configFile: knsrcfile } );
+        pageStack.push(startPageComponent);
     }
 
     QtDialogs.FileDialog {
@@ -85,9 +84,8 @@ Kirigami.ApplicationWindow {
         folder: knsrcFilesLocation
         nameFilters: [ "KNewStuff Configuration Files (*.knsrc)", "All Files (*)" ]
         onAccepted: {
-            newStuffButton.configFile = fileDialog.fileUrl.toString().substring(7)
             pageStack.clear();
-            pageStack.push(mainPageComponent, { configFile: newStuffButton.configFile });
+            pageStack.push(mainPageComponent, { configFile: fileDialog.fileUrl.toString().substring(7) });
         }
     }
 }
