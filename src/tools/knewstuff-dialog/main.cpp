@@ -16,6 +16,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "knsrcmodel.h"
+
+#include "engine.h"
+
 #include <KLocalizedString>
 
 #include <QCommandLineParser>
@@ -23,8 +27,6 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-
-#include "engine.h"
 
 int main(int argc, char **argv)
 {
@@ -39,14 +41,13 @@ int main(int argc, char **argv)
     parser->process(app);
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
+    qmlRegisterType<KNSRCModel>("org.kde.newstuff.tools.dialog", 1, 0, "KNSRCModel");
     if (parser->positionalArguments().count() > 0) {
         appengine->rootContext()->setContextProperty(QLatin1String("knsrcfile"), parser->positionalArguments().first());
-    } else {
-        appengine->rootContext()->setContextProperty(QLatin1String("knsrcfile"), QString::fromLatin1("%1/khotnewstuff_test.knsrc").arg(QStringLiteral(KNSBUILDDIR)));
     }
     appengine->rootContext()->setContextProperty(QLatin1String("knsrcFilesLocation"), KNSCore::Engine::configSearchLocations().last());
 
-    appengine->load(QUrl::fromLocalFile(QString::fromLatin1("%1/khotnewstuff-dialog-ui/main.qml").arg(QStringLiteral(KNSSRCDIR))));
+    appengine->load(QStringLiteral("qrc:/qml/main.qml"));
 
     return app.exec();
 }
