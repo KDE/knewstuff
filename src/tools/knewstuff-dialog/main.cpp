@@ -42,12 +42,14 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
     qmlRegisterType<KNSRCModel>("org.kde.newstuff.tools.dialog", 1, 0, "KNSRCModel");
-    if (parser->positionalArguments().count() > 0) {
-        appengine->rootContext()->setContextProperty(QLatin1String("knsrcfile"), parser->positionalArguments().first());
-    }
     appengine->rootContext()->setContextProperty(QLatin1String("knsrcFilesLocation"), KNSCore::Engine::configSearchLocations().last());
 
-    appengine->load(QStringLiteral("qrc:/qml/main.qml"));
+    if (parser->positionalArguments().count() > 0) {
+        appengine->rootContext()->setContextProperty(QLatin1String("knsrcfile"), parser->positionalArguments().first());
+        appengine->load(QStringLiteral("qrc:/qml/dialog.qml"));
+    } else {
+        appengine->load(QStringLiteral("qrc:/qml/main.qml"));
+    }
 
     return app.exec();
 }
