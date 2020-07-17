@@ -24,12 +24,14 @@ import QtQuick.Dialogs 1.3 as QtDialogs
 import QtQuick.Layouts 1.12 as QtLayouts
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff.tools.dialog 1.0 as Myself
 
 Kirigami.ApplicationWindow {
     id: root;
     title: "KNewStuff Dialog"
 
     globalDrawer: Kirigami.GlobalDrawer {
+        id: globalDrawer
         title: "KNewStuff Dialog"
         titleIcon: "get-hot-new-stuff"
         drawerOpen: true;
@@ -49,6 +51,20 @@ Kirigami.ApplicationWindow {
                 }
             }
         ]
+        Instantiator {
+            id: configsInstantiator
+            model: Myself.KNSRCModel { folder: "file://"+knsrcFilesLocation }
+            Kirigami.Action {
+                text: model.name
+                icon.name: "get-hot-new-stuff"
+                onTriggered: {
+                    newStuffButton.configFile = model.filePath
+                    pageStack.clear();
+                    pageStack.push(mainPageComponent, { configFile: newStuffButton.configFile });
+                }
+            }
+            onObjectAdded: globalDrawer.actions.push(object);
+        }
     }
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
