@@ -227,8 +227,11 @@ void EntryDetails::updateButtons()
             if (!info.distributionType.trimmed().isEmpty()) {
                 text + QStringLiteral(" (") + info.distributionType.trimmed() + QLatin1Char(')');
             }
-            QAction *installAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
-            installAction->setData(info.id);
+            QAction *installMenuAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
+            installMenuAction->setData(info.id);
+            connect(installMenuAction, &QAction::triggered, this, [this, installMenuAction](){
+                Q_EMIT installAction(installMenuAction);
+            });
         }
         qCDebug(KNEWSTUFF) << "links: " << m_entry.downloadLinkInformationList().size();
         ui->installButton->setMenu(installMenu);
@@ -302,5 +305,10 @@ void EntryDetails::ratingChanged(uint rating)
 void EntryDetails::becomeFan()
 {
     m_engine->becomeFan(m_entry);
+}
+
+void EntryDetails::installAction(QAction *action)
+{
+    m_engine->install(m_entry, action->data().toInt());
 }
 

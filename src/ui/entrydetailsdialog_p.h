@@ -46,6 +46,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
     void install();
+    void installAction(QAction *action);
     void uninstall();
 
     void ratingChanged(uint rating);
