@@ -31,13 +31,13 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    QCoreApplication::setApplicationName(QStringLiteral("khotnewstuff-dialog"));
+    QCoreApplication::setApplicationName(QStringLiteral("knewstuff-dialog"));
     QCoreApplication::setApplicationVersion(QStringLiteral("0.1"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
 
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addHelpOption();
-    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to show. If none is passed, we will use khotnewstuff_test.knsrc, which must be installed."));
+    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between all the config files installed on the system."));
     parser->process(app);
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
