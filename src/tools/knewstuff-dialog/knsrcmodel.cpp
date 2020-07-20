@@ -63,7 +63,6 @@ public:
             entry->name = group.readEntry("Name", file.baseName());
             entry->filePath = file.absoluteFilePath();
             entries << entry;
-            qDebug() << entry->name;
         }
         q->endResetModel();
     }
