@@ -20,7 +20,6 @@
  */
 
 import QtQuick 2.7
-import QtQuick.Dialogs 1.3 as QtDialogs
 import QtQuick.Layouts 1.12 as QtLayouts
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.newstuff 1.62 as NewStuff
@@ -37,15 +36,7 @@ Kirigami.ApplicationWindow {
         drawerOpen: true;
         modal: false;
 
-        actions: [
-            Kirigami.Action {
-                text: "Find Different Hot New Stuff..."
-                icon.name: "document-open"
-                onTriggered: {
-                    fileDialog.open();
-                }
-            }
-        ]
+        actions: []
         Instantiator {
             id: configsInstantiator
             model: Myself.KNSRCModel { folder: "file://"+knsrcFilesLocation }
@@ -72,20 +63,33 @@ Kirigami.ApplicationWindow {
     Component {
         id: startPageComponent
         Kirigami.AboutPage {
+            aboutData: {
+                "displayName" : "KNewStuff Dialog",
+                "productName" : "org.kde.knewstuff.tools.dialog",
+                "programLogo" : "get-hot-new-stuff",
+                "componentName" : "knewstuff-dialog",
+                "shortDescription" : "Get All Your Hot New Stuff",
+                "homepage" : "https://kde.org/",
+                "bugAddress" : "https://bugs.kde.org/",
+                "version" : "v1.0",
+                "otherText": "",
+                "authors" : [
+                            {
+                                "name" : "Dan Leinir Turthra Jensen\n",
+                                "task" : "Lead Developer",
+                                "emailAddress" : "admin@leinir.dk",
+                                "webAddress" : "https://leinir.dk/",
+                                "ocsUsername" : "leinir"
+                            }
+                        ],
+                "credits" : [],
+                "translators" : [],
+                "copyrightStatement" : "© 2020 The KDE Community",
+                "desktopFileName" : "org.kde.knewstuff.tools.dialog"
+            }
         }
     }
     Component.onCompleted: {
         pageStack.push(startPageComponent);
-    }
-
-    QtDialogs.FileDialog {
-        id: fileDialog
-        title: "Open KNewStuff configuration file"
-        folder: knsrcFilesLocation
-        nameFilters: [ "KNewStuff Configuration Files (*.knsrc)", "All Files (*)" ]
-        onAccepted: {
-            pageStack.clear();
-            pageStack.push(mainPageComponent, { configFile: fileDialog.fileUrl.toString().substring(7) });
-        }
     }
 }
