@@ -661,7 +661,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
                     qCDebug(KNEWSTUFFCORE) << "Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)";
                     auto question = std::make_unique<Question>(Question::SelectFromListQuestion);
                     question->setTitle(i18n("Pick Update Item"));
-                    question->setQuestion(i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to select, based on the original item, which was named %1").arg(fileName));
+                    question->setQuestion(i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to select, based on the original item, which was named %1", fileName.toString()));
                     question->setList(payloadNames);
                     if(question->ask() == Question::OKResponse) {
                         identifiedLink = payloads.value(payloadNames.indexOf(question->response()));
