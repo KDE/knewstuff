@@ -32,12 +32,13 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QCoreApplication::setApplicationName(QStringLiteral("knewstuff-dialog"));
-    QCoreApplication::setApplicationVersion(QStringLiteral("0.1"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("1.0"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+    KLocalizedString::setApplicationDomain("knewstuff-dialog");
 
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addHelpOption();
-    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between all the config files installed on the system."));
+    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between all the config files installed into the systemwide knsrc file location, which on your system is: %1", KNSCore::Engine::configSearchLocations().last()));
     parser->process(app);
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
