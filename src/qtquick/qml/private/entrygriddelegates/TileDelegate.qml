@@ -88,12 +88,13 @@ Private.GridTileDelegate {
             iconName: "uninstall"
             onTriggered: { newStuffModel.uninstallItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus
-            visible: enabled;
+            visible: enabled && hovered;
         },
         Kirigami.Action {
             text: i18ndc("knewstuff5", "Show a page with details for this item", "Details...")
             iconName: "documentinfo"
             onTriggered: { component.showDetails(); }
+            visible: hovered
         }
     ]
     thumbnailAvailable: model.previewsSmall.length > 0
