@@ -205,10 +205,16 @@
            </property>
           </spacer>
          </item>
-         <item row="14" column="1" colspan="3">
+         <item row="14" column="0" colspan="4">
           <widget class="KLineEdit" name="m_searchEdit">
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="placeholderText">
-            <string>Enter search phrase here</string>
+            <string>Search...</string>
            </property>
            <property name="showClearButton" stdset="0">
             <bool>true</bool>
