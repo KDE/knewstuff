@@ -157,7 +157,8 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         installButton->setIcon(icon);
         installButton->setPopupMode(QToolButton::InstantPopup);
 
-        if (installable && entry.downloadLinkCount() > 1) {
+        // If there are multiple files we want to show a dropdown, but not if it is just an update
+        if (installable && entry.downloadLinkCount() > 1 && entry.status() != Entry::Updateable) {
             QMenu *installMenu = new QMenu(installButton);
             const auto lst = entry.downloadLinkInformationList();
             for (const KNSCore::EntryInternal::DownloadLinkInformation &info : lst) {
@@ -171,10 +172,25 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             installButton->setMenu(installMenu);
         } else if (entry.status() == Entry::Installed && m_engine->hasAdoptionCommand()) {
             QMenu* m = new QMenu(installButton);
-            m->addAction(i18n("Use"), m, [this, entry](){
+            // Add icon to use dropdown, see also BUG: 385858
+            QAction *action = m->addAction(QIcon::fromTheme(QStringLiteral("checkmark")), i18n("Use"));
+            connect(action, &QAction::triggered, m, [this, entry](bool) {
                 QStringList args = KShell::splitArgs(m_engine->adoptionCommand(entry));
                 qCDebug(KNEWSTUFF) << "executing AdoptionCommand" << args;
                 QProcess::startDetached(args.takeFirst(), args);
+            });
+            installButton->setPopupMode(QToolButton::MenuButtonPopup);
+            installButton->setMenu(m);
+        }
+        // Add uninstall option for updatable entries, BUG: 422047
+        if (entry.status() == Entry::Updateable) {
+            QMenu* m = installButton->menu();
+            if (!m) {
+                m = new QMenu(installButton);
+            }
+            QAction *action = m->addAction(m_iconDelete, i18n("Uninstall"));
+            connect(action, &QAction::triggered, m, [this, entry](bool){
+                m_engine->uninstall(entry);
             });
             installButton->setPopupMode(QToolButton::MenuButtonPopup);
             installButton->setMenu(m);

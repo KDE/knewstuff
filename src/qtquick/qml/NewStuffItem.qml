@@ -51,7 +51,7 @@ Kirigami.SwipeListItem {
             text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
             iconName: "list-remove"
             onTriggered: { listModel.uninstallItem(model.index); }
-            enabled: model.status == NewStuff.ItemsModel.InstalledStatus
+            enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled;
         }
     ]

@@ -86,7 +86,7 @@ Private.GridTileDelegate {
             text: root.uninstallLabel
             iconName: "uninstall"
             onTriggered: { newStuffModel.uninstallItem(model.index); }
-            enabled: model.status == NewStuff.ItemsModel.InstalledStatus
+            enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled;
         }
     ]

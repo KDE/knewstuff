@@ -120,7 +120,7 @@ KCM.SimpleKCM {
                 text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
                 icon.name: "uninstall"
                 onTriggered: { newStuffModel.uninstallItem(component.index); }
-                enabled: component.status == NewStuff.ItemsModel.InstalledStatus
+                enabled: component.status == NewStuff.ItemsModel.InstalledStatus || NewStuff.ItemsModel.UpdateableStatus
                 visible: enabled;
             }
         ]
