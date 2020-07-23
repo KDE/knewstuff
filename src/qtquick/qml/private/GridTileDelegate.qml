@@ -86,9 +86,11 @@ T2.ItemDelegate {
         shadow.color: Qt.rgba(0, 0, 0, 0.3)
 
         color: {
-            if (delegate.GridView.isCurrentItem) {
+            // Otherwise the first item is focused, BUG: 417843
+            // We should rethink this when fixing the keyboard navigation
+            /*if (delegate.GridView.isCurrentItem) {
                 return Kirigami.Theme.highlightColor;
-            } else if (parent.hovered) {
+            } else */ if (parent.hovered) {
                 return Kirigami.Theme.highlightColor;
             } else {
                 return Kirigami.Theme.backgroundColor;
