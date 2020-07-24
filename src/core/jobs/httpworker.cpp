@@ -121,7 +121,6 @@ void HTTPWorker::startRequest()
 
 void HTTPWorker::handleReadyRead()
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     QMutexLocker locker(&s_httpWorkerNAM->mutex);
     if (d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull()) {
         do {

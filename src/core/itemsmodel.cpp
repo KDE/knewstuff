@@ -121,33 +121,6 @@ void ItemsModel::slotEntryPreviewLoaded(const EntryInternal &entry, EntryInterna
     slotEntryChanged(entry);
 }
 
-/*
-void ItemsModel::slotEntryPreviewLoaded(const QString &url, const QImage & pix)
-{
-    if (pix.isNull()) {
-        return;
-    }
-
-    QImage image = pix;
-    m_largePreviewImages.insert(url, image);
-    if (image.width() > PreviewWidth || image.height() > PreviewHeight) {
-        // if the preview is really big, first scale fast to a smaller size, then smooth to desired size
-        if (image.width() > 4 * PreviewWidth || image.height() > 4 * PreviewHeight) {
-            image = image.scaled(2 * PreviewWidth, 2 * PreviewHeight, Qt::KeepAspectRatio, Qt::FastTransformation);
-        }
-        m_previewImages.insert(url, image.scaled(PreviewWidth, PreviewHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));
-    } else if (image.width() <= PreviewWidth / 2 && image.height() <= PreviewHeight / 2) {
-        // upscale tiny previews to double size
-        m_previewImages.insert(url, image.scaled(2 * image.width(), 2 * image.height()));
-    } else {
-        m_previewImages.insert(url, image);
-    }
-
-    QModelIndex thisIndex = m_imageIndexes[url];
-
-    emit dataChanged(thisIndex, thisIndex);
-}*/
-
 bool ItemsModel::hasPreviewImages() const
 {
     return m_hasPreviewImages;

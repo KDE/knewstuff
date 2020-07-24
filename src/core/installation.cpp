@@ -263,34 +263,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
         return;
     }
 
-    // this means check sum comparison and signature verification
-    // signature verification might take a long time - make async?!
-    /*
-    if (checksumPolicy() != Installation::CheckNever) {
-        if (entry.checksum().isEmpty()) {
-            if (checksumPolicy() == Installation::CheckIfPossible) {
-                qCDebug(KNEWSTUFFCORE) << "Skip checksum verification";
-            } else {
-                qCCritical(KNEWSTUFFCORE) << "Checksum verification not possible";
-                return false;
-            }
-        } else {
-            qCDebug(KNEWSTUFFCORE) << "Verify checksum...";
-        }
-    }
-    if (signaturePolicy() != Installation::CheckNever) {
-        if (entry.signature().isEmpty()) {
-            if (signaturePolicy() == Installation::CheckIfPossible) {
-                qCDebug(KNEWSTUFFCORE) << "Skip signature verification";
-            } else {
-                qCCritical(KNEWSTUFFCORE) << "Signature verification not possible";
-                return false;
-            }
-        } else {
-            qCDebug(KNEWSTUFFCORE) << "Verify signature...";
-        }
-    }
-    */
+    // TODO Add async checksum verification
 
     QString targetPath = targetInstallationPath();
     QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
@@ -355,18 +328,6 @@ QString Installation::targetInstallationPath() const
 
     // installpath also contains the file name if it's a single file, otherwise equal to installdir
     int pathcounter = 0;
-#if 0 // not available in KF5
-    if (!standardResourceDirectory.isEmpty()) {
-        if (scope == ScopeUser) {
-            installdir = KStandardDirs::locateLocal(standardResourceDirectory.toUtf8(), "/");
-        } else { // system scope
-            installdir = KStandardDirs::installPath(standardResourceDirectory.toUtf8());
-        }
-        pathcounter++;
-    }
-#endif
-   /* this is a partial reimplementation of the above, it won't ensure a perfect 1:1
-    porting, but will make many kde4 ksnsrc files work out of the box*/
    //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
     if (!standardResourceDirectory.isEmpty() && standardResourceDirectory != QLatin1String("wallpaper")) {
         QStandardPaths::StandardLocation location = QStandardPaths::TempLocation;

@@ -61,7 +61,6 @@ void DownloadJob::start()
 
 void DownloadJob::handleWorkerCompleted()
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     emitResult();
 }
 

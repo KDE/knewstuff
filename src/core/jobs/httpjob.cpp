@@ -58,7 +58,6 @@ HTTPJob::~HTTPJob()
 
 void HTTPJob::start()
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     HTTPWorker* worker = new HTTPWorker(d->source, HTTPWorker::GetJob, this);
     connect(worker, &HTTPWorker::data, this, &HTTPJob::handleWorkerData);
     connect(worker, &HTTPWorker::completed, this, &HTTPJob::handleWorkerCompleted);
@@ -68,13 +67,11 @@ void HTTPJob::start()
 
 void HTTPJob::handleWorkerData(const QByteArray& data)
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << data;
     emit HTTPJob::data(this, data);
 }
 
 void HTTPJob::handleWorkerCompleted()
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     emitResult();
 }
 
@@ -86,7 +83,6 @@ void KNSCore::HTTPJob::handleWorkerError(const QString& error)
 
 HTTPJob* HTTPJob::get(const QUrl& source, LoadType loadType, JobFlags flags, QObject* parent)
 {
-//     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     HTTPJob* job = new HTTPJob(source, loadType, flags, parent);
     QTimer::singleShot(0, job, &HTTPJob::start);
     return job;

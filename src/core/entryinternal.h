@@ -505,40 +505,6 @@ public:
     QDomElement entryXML() const;
 
     /**
-     * Returns the checksum for the entry.
-     *
-     * If an empty string is returned, no checksum was assigned.
-     *
-     * @return Checksum of this entry
-     */
-    //QString checksum() const;
-
-    /**
-     * Sets the checksum of the entry. This will be a string representation
-     * of an MD5 sum of the entry's selected payload file.
-     *
-     * @ref checksum Checksum for the entry
-     */
-    //void setChecksum(const QString& checksum);
-
-    /**
-     * Returns the signature for the entry.
-     *
-     * If an empty string is returned, no signature was assigned.
-     *
-     * @return Signature of this entry
-     */
-    //QString signature() const;
-
-    /**
-     * Sets the signature of the entry. This will be a digital signature
-     * in OpenPGP-compliant format.
-     *
-     * @ref signature Signature for the entry
-     */
-    //void setSignature(const QString& signature);
-
-    /**
      * Sets the entry's status. If no status is set, the default will be
      * \ref Invalid.
      *

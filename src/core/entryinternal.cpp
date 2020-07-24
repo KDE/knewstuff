@@ -375,20 +375,6 @@ void EntryInternal::setKnowledgebaseLink(const QString &link)
     d->mKnowledgebaseLink = link;
 }
 
-/*
-QString EntryInternal::checksum() const
-{
-
-    return d->mChecksum;
-}
-
-QString EntryInternal::signature() const
-{
-
-    return d->mSignature;
-}
-*/
-
 EntryInternal::Source EntryInternal::source() const
 {
     return d->mSource;
