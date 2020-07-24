@@ -15,7 +15,7 @@ target_link_libraries(knewstuff-dialog
     Qt5::Quick
     KF5::ConfigCore
     KF5::I18n
-    newstuffqmlplugin
+    KF5::NewStuffCore
 )
 
 install(TARGETS knewstuff-dialog ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
