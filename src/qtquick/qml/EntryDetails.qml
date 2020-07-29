@@ -98,10 +98,10 @@ KCM.SimpleKCM {
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: component.downloadCount == 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
+                text: component.downloadLinks.length == 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
                 icon.name: "install"
                 onTriggered: {
-                    if (component.downloadCount == 1) {
+                    if (component.downloadLinks.length == 1) {
                         newStuffModel.installItem(component.index, NewStuff.ItemsModel.FirstLinkId);
                     } else {
                         downloadItemsSheet.downloadLinks = component.downloadLinks;
