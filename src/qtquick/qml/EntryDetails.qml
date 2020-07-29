@@ -82,6 +82,9 @@ KCM.SimpleKCM {
             } else {
                 statusCard.message = i18ndc("knewstuff5", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
             }
+            if (component.status != status) {
+                component.status = status;
+            }
         }
     }
 
@@ -120,7 +123,7 @@ KCM.SimpleKCM {
                 text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
                 icon.name: "uninstall"
                 onTriggered: { newStuffModel.uninstallItem(component.index); }
-                enabled: component.status == NewStuff.ItemsModel.InstalledStatus || NewStuff.ItemsModel.UpdateableStatus
+                enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
                 visible: enabled;
             }
         ]
@@ -136,26 +139,13 @@ KCM.SimpleKCM {
             Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
             QtLayouts.Layout.fillWidth: true
             QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
-            Item {
-                id: statusContent
-                implicitHeight: statusCard.message.length > 0 ? Math.max(statusBusy.height, statusLabel.height) + Kirigami.Units.largeSpacing * 4 : 0
-                implicitWidth: statusCard.width
+            contentItem: QtLayouts.RowLayout {
+                QtLayouts.Layout.fillWidth: true
                 QtControls.BusyIndicator {
-                    id: statusBusy
-                    anchors {
-                        top: parent.top
-                        left: parent.left
-                    }
                     running: statusCard.opacity > 0
                 }
                 QtControls.Label {
-                    id: statusLabel
-                    anchors {
-                        top: parent.top
-                        left: statusBusy.right
-                        leftMargin: Kirigami.Units.largeSpacing
-                        right: parent.right
-                    }
+                    QtLayouts.Layout.fillWidth: true
                     text: statusCard.message
                     wrapMode: Text.Wrap
                     onLinkActivated: Qt.openUrlExternally(link);
