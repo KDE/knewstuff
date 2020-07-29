@@ -130,7 +130,6 @@ KCM.SimpleKCM {
     }
     QtLayouts.ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
-        Item { width: parent.width; height: Kirigami.Units.gridUnit * 3; }
         Kirigami.AbstractCard {
             id: statusCard
             property string message;
@@ -141,17 +140,18 @@ KCM.SimpleKCM {
             QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
             contentItem: QtLayouts.RowLayout {
                 QtLayouts.Layout.fillWidth: true
-                QtControls.BusyIndicator {
-                    running: statusCard.opacity > 0
-                }
                 QtControls.Label {
                     QtLayouts.Layout.fillWidth: true
                     text: statusCard.message
                     wrapMode: Text.Wrap
                     onLinkActivated: Qt.openUrlExternally(link);
                 }
+                QtControls.BusyIndicator {
+                    running: statusCard.opacity > 0
+                }
             }
         }
+        Item { width: parent.width; height: Kirigami.Units.gridUnit * 3; }
         Private.EntryScreenshots {
             id: screenshotsItem
             QtLayouts.Layout.fillWidth: true
