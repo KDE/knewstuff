@@ -121,7 +121,7 @@ KCM.SimpleKCM {
             },
             Kirigami.Action {
                 text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
-                icon.name: "uninstall"
+                icon.name: "edit-delete"
                 onTriggered: { newStuffModel.uninstallItem(component.index); }
                 enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
                 visible: enabled;
