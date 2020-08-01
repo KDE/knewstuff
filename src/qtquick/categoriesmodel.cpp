@@ -76,7 +76,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
                     result.setValue(0);
                     break;
                 case DisplayNameRole:
-                    result.setValue(i18nc("The first entry in the category selection list (also the default value)", "Show All Categories"));
+                    result.setValue(i18nc("The first entry in the category selection list (also the default value)", "All Categories"));
                     break;
                 default:
                     result.setValue(QString::fromLatin1("Unknown role"));
