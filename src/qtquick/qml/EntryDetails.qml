@@ -114,7 +114,7 @@ KCM.SimpleKCM {
             },
             Kirigami.Action {
                 text: i18ndc("knewstuff5", "Request updating of this item", "Update");
-                icon.name: "update"
+                icon.name: "update-none"
                 onTriggered: { newStuffModel.updateItem(component.index); }
                 enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
                 visible: enabled;
