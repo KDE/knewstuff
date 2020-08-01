@@ -78,7 +78,7 @@ Private.GridTileDelegate {
         },
         Kirigami.Action {
             text: i18ndc("knewstuff5", "Request updating of this item", "Update");
-            iconName: "update"
+            iconName: "update-none"
             onTriggered: { newStuffModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
