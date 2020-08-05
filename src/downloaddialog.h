@@ -73,6 +73,13 @@ class DownloadDialogPrivate;
  *           This is what QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + name will return.</li>
  *   </ol>
  *
+ * \subsection Remove Dead Entries
+ *
+ * If you set <em>RemoveDeadEntries=true</em>, entries whose installed files have all been deleted without going through
+ * KNewStuff will be removed from the cache. The removal will happen if, and only if, all listed files were removed, which
+ * means that if, for example, an entry was installed from archive, which was decompressed to yield multiple installed files,
+ * if even one of those files remains, the entry will remain marked as installed.
+ *
  * \subsection KPackage Support
  *
  * To make use of the KPackage option described above, in addition to the Uncompress setting above, you should also specify
@@ -91,6 +98,8 @@ class DownloadDialogPrivate;
    KPackageType=Plasma/Theme
  * </pre>
  *
+ * \note Using KPackage support will automatically set the removal of dead entries option to true. You can override this if you
+ * want to, by explicitly adding <em>RemoveDeadEntries=false</em> to your knsrc file
  * @since 4.4
  */
 class KNEWSTUFF_EXPORT DownloadDialog : public QDialog

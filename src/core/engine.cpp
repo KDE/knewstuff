@@ -182,7 +182,15 @@ bool Engine::init(const QString &configfile)
     qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
     connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
     m_cache->readRegistry();
+
+    // Cache cleanup option, to help work around people deleting files from underneath KNewStuff (this
+    // happens a lot with e.g. wallpapers and icons)
+    bool shouldRemoveDeletedEntries{false};
     if (m_installation->uncompressionSetting() == Installation::UseKPackageUncompression) {
+        shouldRemoveDeletedEntries = true;
+    }
+    shouldRemoveDeletedEntries = group.readEntry("RemoveDeadEntries", shouldRemoveDeletedEntries);
+    if (shouldRemoveDeletedEntries) {
         m_cache->removeDeletedEntries();
     }
 
