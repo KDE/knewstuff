@@ -251,7 +251,7 @@ public:
      * which do not mark themselves as having a 64bit application binary in at
      * least one download item.
      *
-     * The value does not current suppport wildcards. The list should be considered
+     * The value does not current support wildcards. The list should be considered
      * a binary AND operation (that is, all filter entries must match for the data
      * entry to be included in the return data)
      *
