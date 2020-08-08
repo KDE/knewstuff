@@ -753,29 +753,20 @@ void Installation::uninstall(EntryInternal entry)
             emit signalInstallationFailed(i18n("The removal of %1 failed, as there seems to somehow be more than one thing installed, which is not supposed to be possible for KPackage based entries.", entry.name()));
         }
     } else {
-        // If all the files are removed assume that the entry got manually removed
-        // otherwise there would be no way to delete the entry that editing the register
-        bool manuallyUninstalled = true;
         const auto lst = entry.installedFiles();
-        for (const auto &file : lst) {
-            if (QFile::exists(file)) {
-                manuallyUninstalled = false;
-                break;
-            }
-        }
-        if (manuallyUninstalled) {
-            entry.setStatus(KNS3::Entry::Deleted);
-            emit signalEntryChanged(entry);
-            return;
-        }
-
         // If there is an uninstall script, make sure it runs without errors
         if (!uninstallCommand.isEmpty()) {
-            const auto lst = entry.installedFiles();
             for (const QString &file : lst) {
-                QFileInfo info(file);
-                if (info.isFile()) {
-                    QString fileArg(KShell::quoteArg(file));
+                QString filePath = file;
+                bool validFile = QFileInfo::exists(filePath);
+                // If we have uncompressed a subdir we write <path>/* in the config, but when calling a script
+                // we want to convert this to a normal path
+                if (!validFile && file.endsWith(QLatin1Char('*'))) {
+                    filePath = filePath.left(filePath.lastIndexOf(QLatin1Char('*')));
+                    validFile = QFileInfo::exists(filePath);
+                }
+                if (validFile) {
+                    QString fileArg(KShell::quoteArg(filePath));
                     QString command(uninstallCommand);
                     command.replace(QLatin1String("%f"), fileArg);
 
