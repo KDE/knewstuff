@@ -731,8 +731,7 @@ void Installation::uninstall(EntryInternal entry)
                                 const QString supposedInstallationDir{packageRoot + package.metadata().pluginId()};
                                 // Frankly, we don't care whether or not this next step succeeds, and it can just fizzle if it wants
                                 // to. This is a cleanup step, and if it fails, it's just not really important.
-                                KJob *removalJob = KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, serviceType);
-                                removalJob->start();
+                                KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, serviceType);
                             }
                         }
                     }
