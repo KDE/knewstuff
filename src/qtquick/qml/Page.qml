@@ -69,6 +69,11 @@ KCM.GridViewKCM {
         Preview
     }
 
+    // Otherwise the first item will be focused, see BUG: 424894
+    Component.onCompleted: {
+        view.currentIndex = -1
+    }
+
     title: newStuffEngine.name
     NewStuff.Engine {
         id: newStuffEngine;
