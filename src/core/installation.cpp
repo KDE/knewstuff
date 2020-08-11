@@ -538,7 +538,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
                     if (dir->copyTo(installpath)) {
                         installedFiles << archiveEntries(installpath, dir);
-                        installedFiles << installpath + QLatin1Char('/');
                     } else
                         qCWarning(KNEWSTUFFCORE) << "could not install" << entry.name() << "to" << installpath;
 
@@ -801,13 +800,9 @@ void Installation::uninstall(EntryInternal entry)
         }
 
         for (const QString &file : lst) {
+            // This was used to delete the download location if there are no more entries
             if (file.endsWith(QLatin1Char('/'))) {
-                QDir dir;
-                bool worked = dir.rmdir(file);
-                if (!worked) {
-                    // Maybe directory contains user created files, ignore it
-                    continue;
-                }
+                 QDir().rmdir(file);
             } else if (file.endsWith(QLatin1String("/*"))) {
                 QDir dir(file.left(file.size()-2));
                 bool worked = dir.removeRecursively();
