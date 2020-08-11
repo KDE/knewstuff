@@ -59,6 +59,20 @@ class Installation;
 class KNEWSTUFFCORE_EXPORT Engine : public QObject
 {
     Q_OBJECT
+
+    /**
+     * Current state of the engine, the state con contain multiple operations
+     * an empty BusyState represents the idle status
+     * @since 5.74
+     */
+    Q_PROPERTY(BusyState busyState READ busyState WRITE setBusyState NOTIFY busyStateChanged)
+
+    /**
+     * String representation of the engines busy state, in the case of idle this string is empty
+     * @since 5.74
+     */
+    Q_PROPERTY(QString busyMessage READ busyMessage WRITE setBusyMessage NOTIFY busyMessageChanged)
+
 public:
     /**
      * Constructor.
@@ -70,6 +84,14 @@ public:
      * by cached entries and providers.
      */
     ~Engine();
+
+    enum class BusyOperation {
+        Initializing,
+        LoadingData,
+        LoadingPreview,
+        InstallingEntry,
+    };
+    Q_DECLARE_FLAGS(BusyState, BusyOperation)
 
     /**
      * Initializes the engine. This step is application-specific and relies
@@ -467,6 +489,51 @@ public:
      */
     CommentsModel *commentsForEntry(const KNSCore::EntryInternal &entry);
 
+    /**
+     * String representation of the engines busy state
+     * @since 5.74
+     */
+    QString busyMessage() const;
+
+    /**
+     * @since 5.74
+     * @see setBusy
+     * @see setBusyState
+     */
+    void setBusyMessage(const QString &busyMessage);
+
+    /**
+     * Signal gets emitted when the busy message changes
+     * @since 5.74 String representation of the engines busy state
+     */
+    Q_SIGNAL void busyMessageChanged();
+
+    /**
+     * Busy state of the engine
+     * @since 5.74
+     */
+    BusyState busyState() const;
+
+    /**
+     * Sets the busy state of the engine
+     * @since 5.74
+     * @see setBusy
+     * @see setBusyMessage
+     */
+    void setBusyState(BusyState state);
+
+    /**
+     * Signal gets emitted when the busy state changes
+     * @since 5.74
+     */
+    Q_SIGNAL void busyStateChanged();
+
+    /**
+     * Utility method to set both the state and busyMessage
+     * @since 5.74
+     */
+    void setBusy(BusyState state, const QString &busyMessage);
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
@@ -495,8 +562,15 @@ Q_SIGNALS:
     KNEWSTUFFCORE_DEPRECATED_VERSION(5, 53, "Use Engine::signalErrorCode(const KNSCore::ErrorCode &, const QString &, const QVariant &)")
     void signalError(const QString &);
 #endif
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
+        KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
     void signalBusy(const QString &);
+#endif
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
+        KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
     void signalIdle(const QString &);
+#endif
+
     /**
      * Fires in the case of any critical or serious errors, such as network or API problems.
      * @param errorCode Represents the specific type of error which has occurred

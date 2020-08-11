@@ -63,6 +63,8 @@ public:
     // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
     QMap<EntryInternal, QStringList> payloads;
     QMap<EntryInternal, QString> payloadToIdentify;
+    Engine::BusyState busyState;
+    QString busyMessage;
 };
 
 Engine::Engine(QObject *parent)
@@ -103,7 +105,7 @@ bool Engine::init(const QString &configfile)
 {
     qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::Engine from '" << configfile << "'";
 
-    emit signalBusy(i18n("Initializing"));
+    setBusy(BusyOperation::Initializing, i18n("Initializing"));
 
     QScopedPointer<KConfig> conf;
     /// TODO KF6: This is fallback logic for an old location for the knsrc files. This should be considered deprecated in KF5,
@@ -223,7 +225,7 @@ void Engine::loadProviders()
         d->m_atticaProviderManager->loadDefaultProviders();
     } else {
         qCDebug(KNEWSTUFFCORE) << "loading providers from " << m_providerFileUrl;
-        emit signalBusy(i18n("Loading provider information"));
+        setBusy(BusyOperation::LoadingData, i18n("Loading provider information"));
 
         XmlLoader *loader = s_engineProviderLoaders()->localData().value(m_providerFileUrl);
         if (!loader) {
@@ -279,7 +281,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         }
         n = n.nextSiblingElement();
     }
-    emit signalBusy(i18n("Loading data"));
+    setBusy(BusyOperation::LoadingData, i18n("Loading data"));
 }
 
 void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
@@ -311,7 +313,9 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
     connect(provider.data(), &Provider::signalError, this, &Engine::signalError);
     connect(provider.data(), &Provider::signalErrorCode, this, &Engine::signalErrorCode);
-    connect(provider.data(), &Provider::signalInformation, this, &Engine::signalIdle);
+    connect(provider.data(), &Provider::signalInformation, this, [this](const QString &message) {
+        Q_EMIT signalMessage(message);
+    });
 }
 
 void Engine::providerJobStarted(KJob *job)
@@ -790,15 +794,21 @@ void Engine::becomeFan(const EntryInternal &entry)
 
 void Engine::updateStatus()
 {
-    if (m_numDataJobs > 0) {
-        emit signalBusy(i18n("Loading data"));
-    } else if (m_numPictureJobs > 0) {
-        emit signalBusy(i18np("Loading one preview", "Loading %1 previews", m_numPictureJobs));
-    } else if (m_numInstallJobs > 0) {
-        emit signalBusy(i18n("Installing"));
-    } else {
-        emit signalIdle(QString());
+    BusyState state;
+    QString busyMessage;
+    if (m_numInstallJobs > 0) {
+        busyMessage = i18n("Installing");
+        state |= BusyOperation::InstallingEntry;
     }
+    if (m_numPictureJobs > 0) {
+        busyMessage = i18np("Loading one preview", "Loading %1 previews", m_numPictureJobs);
+        state |= BusyOperation::LoadingPreview;
+    }
+    if (m_numDataJobs > 0) {
+        busyMessage = i18n("Loading data");
+        state |= BusyOperation::LoadingPreview;
+    }
+    setBusy(state, busyMessage);
 }
 
 void Engine::checkForUpdates()
@@ -936,4 +946,42 @@ KNSCore::CommentsModel *KNSCore::Engine::commentsForEntry(const KNSCore::EntryIn
         d->commentsModels[entry] = model;
     }
     return model;
+}
+
+QString Engine::busyMessage() const
+{
+    return d->busyMessage;
+}
+
+void Engine::setBusyMessage(const QString &busyMessage)
+{
+    if (busyMessage != d->busyMessage) {
+        d->busyMessage = busyMessage;
+        Q_EMIT busyMessageChanged();
+    }
+    // TODO KF6 Remove compat block
+    // Emit old signals for compatibility
+    if (busyMessage.isEmpty()) {
+        Q_EMIT signalIdle({});
+    } else {
+        Q_EMIT signalBusy(busyMessage);
+    }
+}
+
+Engine::BusyState Engine::busyState() const
+{
+    return d->busyState;
+}
+
+void Engine::setBusyState(Engine::BusyState state)
+{
+    if (d->busyState != state) {
+        d->busyState = state;
+        Q_EMIT busyStateChanged();
+    }
+}
+
+void Engine::setBusy(Engine::BusyState state, const QString &busyMessage) {
+    setBusyState(state);
+    setBusyMessage(busyMessage);
 }
