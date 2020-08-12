@@ -654,6 +654,40 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
 
 void Installation::uninstall(EntryInternal entry)
 {
+    // TODO Put this in pimpl or job
+    const auto deleteFilesAndMarkAsUninstalled = [entry, this](){
+        const auto lst = entry.installedFiles();
+        for (const QString &file : lst) {
+            // This was used to delete the download location if there are no more entries
+            if (file.endsWith(QLatin1Char('/'))) {
+                QDir().rmdir(file);
+            } else if (file.endsWith(QLatin1String("/*"))) {
+                QDir dir(file.left(file.size() - 2));
+                bool worked = dir.removeRecursively();
+                if (!worked) {
+                    qCWarning(KNEWSTUFFCORE) << "Couldn't remove" << dir.path();
+                    continue;
+                }
+            } else {
+                QFileInfo info(file);
+                if (info.exists() || info.isSymLink()) {
+                    bool worked = QFile::remove(file);
+                    if (!worked) {
+                        qWarning() << "unable to delete file " << file;
+                        return;
+                    }
+                } else {
+                    qWarning() << "unable to delete file " << file << ". file does not exist.";
+                }
+            }
+        }
+        EntryInternal newEntry = entry;
+        newEntry.setUnInstalledFiles(entry.installedFiles());
+        newEntry.setInstalledFiles(QStringList());
+        newEntry.setStatus(KNS3::Entry::Deleted);
+        emit signalEntryChanged(newEntry);
+    };
+
     if (uncompression == QLatin1String("kpackage")) {
         const auto lst = entry.installedFiles();
         if (lst.length() == 1) {
@@ -751,6 +785,7 @@ void Installation::uninstall(EntryInternal entry)
         } else {
             emit signalInstallationFailed(i18n("The removal of %1 failed, as there seems to somehow be more than one thing installed, which is not supposed to be possible for KPackage based entries.", entry.name()));
         }
+        deleteFilesAndMarkAsUninstalled();
     } else {
         const auto lst = entry.installedFiles();
         // If there is an uninstall script, make sure it runs without errors
@@ -769,64 +804,40 @@ void Installation::uninstall(EntryInternal entry)
                     QString command(uninstallCommand);
                     command.replace(QLatin1String("%f"), fileArg);
 
-                QStringList args = KShell::splitArgs(command);
-                const QString program = args.takeFirst();
-                QProcess process;
-                process.start(program, args);
-                process.waitForFinished(-1);
-
-                if (process.exitCode()) {
-                    const QString processOutput = QString::fromLocal8Bit(process.readAllStandardError());
-                    const QString err = i18n("The uninstallation process failed to successfully run the command %1\n"
-                                             "The output of was: \n%2\n"
-                                             "If you think this is incorrect, you can continue or cancel the uninstallation process",
-                                             KShell::quoteArg(command), processOutput);
-                    emit signalInstallationError(err);
-                    // Ask the user if he wants to continue, even though the script failed
-                    Question question(Question::ContinueCancelQuestion);
-                    question.setQuestion(err);
-                    Question::Response response = question.ask();
-                    if (response == Question::CancelResponse) {
-                        // Use can delete files manually
-                        entry.setStatus(KNS3::Entry::Installed);
-                        emit signalEntryChanged(entry);
-                        return;
-                    }
-                } else {
-                        qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
-                    }
+                    QStringList args = KShell::splitArgs(command);
+                    const QString program = args.takeFirst();
+                    QProcess *process = new QProcess(this);
+                    process->start(program, args);
+                    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
+                    [this, command, process, entry, deleteFilesAndMarkAsUninstalled](int, QProcess::ExitStatus status) {
+                        if (status == QProcess::CrashExit) {
+                            const QString processOutput = QString::fromLocal8Bit(process->readAllStandardError());
+                            const QString err = i18n("The uninstallation process failed to successfully run the command %1\n"
+                                                     "The output of was: \n%2\n"
+                                                     "If you think this is incorrect, you can continue or cancel the uninstallation process",
+                                                     KShell::quoteArg(command), processOutput);
+                            emit signalInstallationError(err);
+                            // Ask the user if he wants to continue, even though the script failed
+                            Question question(Question::ContinueCancelQuestion);
+                            question.setQuestion(err);
+                            Question::Response response = question.ask();
+                            if (response == Question::CancelResponse) {
+                                // Use can delete files manually
+                                EntryInternal newEntry = entry;
+                                newEntry.setStatus(KNS3::Entry::Installed);
+                                emit signalEntryChanged(newEntry);
+                                return;
+                            }
+                        } else {
+                            qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
+                        }
+                        deleteFilesAndMarkAsUninstalled();
+                    });
                 }
             }
+        } else {
+            deleteFilesAndMarkAsUninstalled();
         }
-
-        for (const QString &file : lst) {
-            // This was used to delete the download location if there are no more entries
-            if (file.endsWith(QLatin1Char('/'))) {
-                 QDir().rmdir(file);
-            } else if (file.endsWith(QLatin1String("/*"))) {
-                QDir dir(file.left(file.size()-2));
-                bool worked = dir.removeRecursively();
-                if (!worked) {
-                    qCWarning(KNEWSTUFFCORE) << "Couldn't remove" << dir.path();
-                    continue;
-                }
-            } else {
-                QFileInfo info(file);
-                if (info.exists() || info.isSymLink()) {
-                    bool worked = QFile::remove(file);
-                    if (!worked) {
-                        qWarning() << "unable to delete file " << file;
-                        return;
-                    }
-                } else {
-                    qWarning() << "unable to delete file " << file << ". file does not exist.";
-                }
-            }
-        }
-        entry.setUnInstalledFiles(entry.installedFiles());
-        entry.setInstalledFiles(QStringList());
-        entry.setStatus(KNS3::Entry::Deleted);
-        emit signalEntryChanged(entry);
     }
 }
 
