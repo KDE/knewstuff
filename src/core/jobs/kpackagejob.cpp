@@ -80,7 +80,8 @@ public:
                     qCDebug(KNEWSTUFFCORE) << "Created job, now let's wait for it to do its thing...";
                     QEventLoop loop;
                     connect(job, &KJob::result, this, [this,job,&loop](){
-                        emit result(job);
+                        emit error(job->error(), job->errorText());
+                        emit result();
                         loop.exit(0);
                     });
                     loop.exec();
@@ -97,7 +98,7 @@ public:
             emit error(1, i18n("The service type %1 was not understood by the KPackage installer", serviceType));
         }
     }
-    Q_SIGNAL void result(KJob* job);
+    Q_SIGNAL void result();
     Q_SIGNAL void error(int errorCode, const QString& errorText);
 };
 
@@ -127,11 +128,7 @@ void KPackageJob::start()
         setError(errorCode);
         setErrorText(errorText);
     }, Qt::QueuedConnection);
-    connect(d->runnable, &KPackageTask::result, this, [this](KJob* job){
-        setError(job->error());
-        setErrorText(job->errorText());
-        emitResult();
-    }, Qt::QueuedConnection);
+    connect(d->runnable, &KPackageTask::result, this, [this](){ emitResult(); }, Qt::QueuedConnection);
     QThreadPool::globalInstance()->start(d->runnable);
 }
 
