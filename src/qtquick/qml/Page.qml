@@ -158,6 +158,7 @@ KCM.GridViewKCM {
             onAccepted: {
                 newStuffEngine.searchTerm = searchField.text;
             }
+            enabled: filterCombo.currentIndex === 0
         }
     }
 
