@@ -561,7 +561,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             QString installfile;
             QString ext = source.fileName().section(QLatin1Char('.'), -1);
             if (customName) {
-                installfile = entry.name();
+                // Otherwise name can be interpreted as path
+                installfile = entry.name().remove(QLatin1Char('/'));
                 installfile += QLatin1Char('-') + entry.version();
                 if (!ext.isEmpty()) {
                     installfile += QLatin1Char('.') + ext;
