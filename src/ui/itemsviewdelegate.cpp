@@ -334,7 +334,11 @@ void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
                 painter->drawImage(point, image);
 
                 QPoint framePoint(point.x() - 5, point.y() - 5);
-                painter->drawPixmap(framePoint, m_frameImage.scaled(image.width() + 10, image.height() + 10));
+                if (m_frameImage.isNull()) {
+                    painter->drawPixmap(framePoint, m_frameImage);
+                } else {
+                    painter->drawPixmap(framePoint, m_frameImage.scaled(image.width() + 10, image.height() + 10));
+                }
             } else {
                 QRect rect(point, QSize(KNSCore::PreviewWidth, KNSCore::PreviewHeight));
                 painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, i18n("Loading Preview"));
