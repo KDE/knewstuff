@@ -59,6 +59,17 @@ public:
      * @since 5.71
      */
     void removeDeletedEntries();
+
+    /**
+     * Get the entry which installed the passed file. If no entry lists the
+     * passed file as having been installed by it, an invalid entry will be
+     * returned.
+     * @param installedFile The full path name for an installed file
+     * @return An entry if one was found, or an invalid entry if no entry says it installed that file
+     * since 5.74
+     */
+    KNSCore::EntryInternal entryFromInstalledFile(const QString& installedFile) const;
+
 public Q_SLOTS:
     void registerChangedEntry(const KNSCore::EntryInternal &entry);
 

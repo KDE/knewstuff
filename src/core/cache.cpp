@@ -277,3 +277,13 @@ void KNSCore::Cache::removeDeletedEntries()
     }
     writeRegistry();
 }
+
+KNSCore::EntryInternal KNSCore::Cache::entryFromInstalledFile(const QString& installedFile) const
+{
+    for (const EntryInternal& entry : cache) {
+        if (entry.installedFiles().contains(installedFile)) {
+            return entry;
+        }
+    }
+    return EntryInternal{};
+}
