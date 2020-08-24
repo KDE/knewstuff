@@ -985,3 +985,8 @@ void Engine::setBusy(Engine::BusyState state, const QString &busyMessage) {
     setBusyState(state);
     setBusyMessage(busyMessage);
 }
+
+QSharedPointer<KNSCore::Cache> KNSCore::Engine::cache() const
+{
+    return m_cache;
+}

@@ -534,6 +534,13 @@ public:
      */
     void setBusy(BusyState state, const QString &busyMessage);
 
+    /**
+     * Get the entries cache for this engine (note that it may be null if the engine is
+     * not yet initialized).
+     * @return The cache for this engine (or null if the engine is not initialized)
+     * @since 5.74
+     */
+    QSharedPointer<Cache> cache() const;
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
