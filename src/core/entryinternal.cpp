@@ -618,6 +618,8 @@ bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
         } else if (e.tagName() == QLatin1String("checksum")) {
             d->mChecksum = e.text();
         } else if (e.tagName() == QLatin1String("installedfile")) {
+            // TODO KF6 Add a "installeddirectory" entry to avoid
+            // all the issues with the "/*" notation which is currently used as a workaround
             d->mInstalledFiles.append(e.text());
         } else if (e.tagName() == QLatin1String("id")) {
             d->mUniqueId = e.text();
