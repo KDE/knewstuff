@@ -265,7 +265,13 @@ void KNSCore::Cache::removeDeletedEntries()
         const KNSCore::EntryInternal &entry = i.next();
         bool installedFileExists{false};
         for (const auto &installedFile: entry.installedFiles()) {
-            if (QFile::exists(installedFile)) {
+            // Handle the /* notation, BUG: 425704
+            if (installedFile.endsWith(QLatin1String("/*"))) {
+                if (QDir(installedFile.left(installedFile.size() - 2)).exists()) {
+                    installedFileExists = true;
+                    break;
+                }
+            } else if (QFile::exists(installedFile)) {
                 installedFileExists = true;
                 break;
             }
