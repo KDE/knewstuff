@@ -106,6 +106,15 @@ bool Installation::readConfig(const KConfigGroup &group)
         // Not clearing uninstallCommand, as this is used for the fallback situation
         setProperty("kpackageType", uninstallCommand.mid(17, uninstallCommand.length() - 17 - 6));
         qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
+    } else if (postInstallationCommand.startsWith(QLatin1String("kpackagetool5 --type")) &&
+            postInstallationCommand.endsWith(QLatin1String("--install %f")) &&
+            uninstallCommand.startsWith(QLatin1String("kpackagetool5 --type")) &&
+            uninstallCommand.endsWith(QLatin1String("--remove %f"))) {
+        uncompression = QLatin1String("kpackage");
+        postInstallationCommand = QLatin1String("");
+        // Not clearing uninstallCommand, as this is used for the fallback situation
+        setProperty("kpackageType", uninstallCommand.mid(21, uninstallCommand.length() - 21 - 12));
+        qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
     }
 
     installPath = group.readEntry("InstallPath", QString());
