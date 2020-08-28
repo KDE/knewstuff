@@ -450,6 +450,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                         }
                                     }
                                     newentry.setStatus(KNS3::Entry::Installed);
+                                    // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
+                                    QFile::remove(payloadfile);
                                     emit signalEntryChanged(newentry);
                                     emit signalInstallationFinished();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
