@@ -49,26 +49,42 @@ public:
     QString packageRoot;
     QString serviceType;
     Operation operation{UnknownOperation};
+
+    explicit KPackageTask(QObject* parent = nullptr)
+        : QObject(parent)
+        , QRunnable()
+    {
+        // We'll handle our own deletion - otherwise we may end up deleted
+        // before things have been read out that we need to have read
+        // As this has to be set before QThreadPool runs things, we need to do so here
+        setAutoDelete(false);
+    };
+    virtual ~KPackageTask() {
+        if (structure) { delete structure; }
+        if (installer) { delete installer; }
+    }
     void run() override
     {
         qCDebug(KNEWSTUFFCORE) << "Attempting to perform an installation operation of type" << operation << "on the package" << package << "of type" << serviceType << "in the package root" << packageRoot;
-        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+        int errorlevel{0};
+        QString errordescription;
+        structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
         if (structure) {
             qCDebug(KNEWSTUFFCORE) << "Service type understood";
-            KPackage::Package installer = KPackage::Package(structure);
-            if (installer.hasValidStructure()) {
+            installer = new KPackage::Package(structure);
+            if (installer->hasValidStructure()) {
                 qCDebug(KNEWSTUFFCORE) << "Installer successfully created and has a valid structure";
                 KJob *job{nullptr};
                 switch(operation)
                 {
                 case InstallOperation:
-                    job = installer.install(package, packageRoot);
+                    job = installer->install(package, packageRoot);
                     break;
                 case UpdateOperation:
-                    job = installer.update(package, packageRoot);
+                    job = installer->update(package, packageRoot);
                     break;
                 case UninstallOperation:
-                    job = installer.uninstall(package, packageRoot);
+                    job = installer->uninstall(package, packageRoot);
                     break;
                 case UnknownOperation:
                 default:
@@ -79,27 +95,33 @@ public:
                 if (job) {
                     qCDebug(KNEWSTUFFCORE) << "Created job, now let's wait for it to do its thing...";
                     QEventLoop loop;
-                    connect(job, &KJob::result, this, [this,job,&loop](){
-                        emit error(job->error(), job->errorText());
-                        emit result();
-                        loop.exit(0);
-                    });
-                    loop.exec();
+                    connect(job, &KJob::result, this, [&loop,&errordescription](KJob* job){
+                        errordescription = job->errorText();
+                        loop.exit(job->error());
+                    }, Qt::QueuedConnection);
+                    errorlevel = loop.exec();
                 } else {
-                    qCWarning(KNEWSTUFFCORE) << "Failed to create a job to perform our task";
-                    emit error(3, i18n("Failed to create a job for the package management task. This is usually because the package is invalid. We attempted to operate on the package %1", package));
+                    errorlevel = 3;
+                    errordescription = i18n("Failed to create a job for the package management task. This is usually because the package is invalid. We attempted to operate on the package %1", package);
                 }
             } else {
-                qCWarning(KNEWSTUFFCORE) << "Failed to create package installer";
-                emit error(2, i18n("Could not create a package installer for the service type %1: The installer does not have a valid structure", serviceType));
+                errorlevel = 2;
+                errordescription = i18n("Could not create a package installer for the service type %1: The installer does not have a valid structure", serviceType);
             }
         } else {
-            qCWarning(KNEWSTUFFCORE) << "Service type was not understood";
-            emit error(1, i18n("The service type %1 was not understood by the KPackage installer", serviceType));
+            errorlevel = 1;
+            errordescription = i18n("The service type %1 was not understood by the KPackage installer", serviceType);
         }
+        if (errorlevel > 0) {
+            emit error(errorlevel, errordescription);
+        }
+        emit result();
     }
     Q_SIGNAL void result();
     Q_SIGNAL void error(int errorCode, const QString& errorText);
+private:
+    KPackage::PackageStructure *structure{nullptr};
+    KPackage::Package *installer{nullptr};
 };
 
 KPackageJob::KPackageJob(QObject* parent)
@@ -119,7 +141,7 @@ void KPackageJob::start()
         // refuse to start the task more than once
         return;
     }
-    d->runnable = new KPackageTask();
+    d->runnable = new KPackageTask(this);
     d->runnable->package = d->package;
     d->runnable->packageRoot = d->packageRoot;
     d->runnable->serviceType = d->serviceType;
