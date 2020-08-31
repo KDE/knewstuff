@@ -817,6 +817,7 @@ void Installation::uninstall(EntryInternal entry)
         const auto lst = entry.installedFiles();
         // If there is an uninstall script, make sure it runs without errors
         if (!uninstallCommand.isEmpty()) {
+            bool validFileExisted = false;
             for (const QString &file : lst) {
                 QString filePath = file;
                 bool validFile = QFileInfo::exists(filePath);
@@ -827,6 +828,7 @@ void Installation::uninstall(EntryInternal entry)
                     validFile = QFileInfo::exists(filePath);
                 }
                 if (validFile) {
+                    validFileExisted = true;
                     QString fileArg(KShell::quoteArg(filePath));
                     QString command(uninstallCommand);
                     command.replace(QLatin1String("%f"), fileArg);
@@ -861,6 +863,10 @@ void Installation::uninstall(EntryInternal entry)
                         deleteFilesAndMarkAsUninstalled();
                     });
                 }
+            }
+            // If the entry got deleted, but the RemoveDeadEntries option was not selected this case can happen
+            if (!validFileExisted) {
+                deleteFilesAndMarkAsUninstalled();
             }
         } else {
             deleteFilesAndMarkAsUninstalled();
