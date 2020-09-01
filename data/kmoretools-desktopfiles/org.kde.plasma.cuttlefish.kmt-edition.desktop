@@ -141,7 +141,6 @@ X-DBUS-ServiceName=
 X-DBUS-StartupType=
 X-KDE-PluginInfo-Author=Sebastian Kügler
 X-KDE-PluginInfo-Category=Online Services
-X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-Email=sebas@kde.org
 X-KDE-PluginInfo-EnabledByDefault=true
 X-KDE-PluginInfo-License=GPL
