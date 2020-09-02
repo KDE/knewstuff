@@ -219,7 +219,7 @@ void EntryDetails::updateButtons()
             QAction *installMenuAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
             installMenuAction->setData(info.id);
             connect(installMenuAction, &QAction::triggered, this, [this, installMenuAction](){
-                Q_EMIT installAction(installMenuAction);
+                installAction(installMenuAction);
             });
         }
         qCDebug(KNEWSTUFF) << "links: " << m_entry.downloadLinkInformationList().size();

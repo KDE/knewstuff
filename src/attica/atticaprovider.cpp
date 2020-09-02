@@ -265,7 +265,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     }
 
     ListJob<Content> *listJob = static_cast<ListJob<Content>*>(job);
-    Content::List contents = listJob->itemList();
+    const Content::List contents = listJob->itemList();
 
     EntryInternal::List entries;
     TagsFilterChecker checker(tagFilter());
@@ -279,7 +279,8 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
             bool filterAcceptsDownloads = true;
             if (content.downloads() > 0) {
                 filterAcceptsDownloads = false;
-                for (const Attica::DownloadDescription &dli : content.downloadUrlDescriptions()) {
+                const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
+                for (const Attica::DownloadDescription &dli : descs) {
                     if (downloadschecker.filterAccepts(dli.tags())) {
                         filterAcceptsDownloads = true;
                         break;
@@ -404,7 +405,7 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
 
     auto author = std::make_shared<KNSCore::Author>();
     author->setId(job->property("username").toString()); // This is a touch hack-like, but it ensures we actually have the data in case it is not returned by the server
-    author->setName(QString::fromLatin1("%1 %2").arg(person.firstName()).arg(person.lastName()).trimmed());
+    author->setName(QString::fromLatin1("%1 %2").arg(person.firstName(), person.lastName()).trimmed());
     author->setHomepage(person.homepage());
     author->setProfilepage(person.extendedAttribute(QStringLiteral("profilepage")));
     author->setAvatarUrl(person.avatarUrl());

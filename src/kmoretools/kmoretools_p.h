@@ -185,7 +185,7 @@ public:
     void jsonWrite(QJsonObject &json) const
     {
         QJsonArray jArr;
-        for (const auto item : qAsConst(list)) {
+        for (const auto &item : qAsConst(list)) {
             QJsonObject jObj;
             item.jsonWrite(jObj);
             jArr.append(jObj);

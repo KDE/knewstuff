@@ -219,7 +219,8 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
         if (checker.filterAccepts(entry.tags())) {
             bool filterAcceptsDownloads = true;
             if (entry.downloadCount() > 0) {
-                for (const KNSCore::EntryInternal::DownloadLinkInformation &dli : entry.downloadLinkInformationList()) {
+                const auto downloadInfoList = entry.downloadLinkInformationList();
+                for (const KNSCore::EntryInternal::DownloadLinkInformation &dli : downloadInfoList) {
                     if (downloadschecker.filterAccepts(dli.tags)) {
                         filterAcceptsDownloads = true;
                         break;

@@ -132,10 +132,11 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
         menuBuilder->buildByAppendingToMenu(&menu); // == KMoreTools::ConfigureDialogAccessible_Always
 
         auto doAssert = [](QMenu* menu) {
-            QCOMPARE(menu->actions().count(), 3); // "Kate", "Separator", "More..."
-            auto moreMenu = menu->actions()[2]->menu();
+            const QList<QAction *> actions = menu->actions();
+            QCOMPARE(actions.count(), 3); // "Kate", "Separator", "More..."
+            auto moreMenu = actions[2]->menu();
             QCOMPARE(moreMenu->actions().count(), 4); // "Not-installed-section", "Not installed app", "Separator", "Configure menu..."
-            auto configureMenu = moreMenu->actions()[3];
+            auto configureMenu = actions[3];
             QCOMPARE(configureMenu->data().toString(), QString(_("configureItem")));
         };
 

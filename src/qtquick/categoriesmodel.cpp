@@ -91,7 +91,8 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
 QString CategoriesModel::idToDisplayName(const QString &id) const
 {
     QString dispName = i18nc("The string passed back in the case the requested category is not known", "Unknown Category");
-    for (const KNSCore::Provider::CategoryMetadata &cat : d->engine->categoriesMetadata()) {
+    const auto metaData = d->engine->categoriesMetadata();
+    for (const KNSCore::Provider::CategoryMetadata &cat : metaData) {
         if (cat.id == id) {
             dispName = cat.displayName;
             break;

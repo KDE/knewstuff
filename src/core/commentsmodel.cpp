@@ -52,14 +52,14 @@ public:
         if (engine && entry.isValid()) {
             QSharedPointer<Provider> provider = engine->provider(entry.providerId());
             if (option == ClearModel) {
-                emit q->beginResetModel();
+                q->beginResetModel();
                 comments.clear();
                 provider->disconnect(q);
                 q->connect(provider.data(), &Provider::commentsLoaded, q, [=](const QList<std::shared_ptr<KNSCore::Comment>> &newComments){
                     QList<std::shared_ptr<KNSCore::Comment>> actualNewComments;
-                    for (std::shared_ptr<KNSCore::Comment> comment : newComments) {
+                    for (const std::shared_ptr<KNSCore::Comment> &comment : newComments) {
                         bool commentIsKnown = false;
-                        for (std::shared_ptr<KNSCore::Comment> existingComment : comments) {
+                        for (const std::shared_ptr<KNSCore::Comment> &existingComment : qAsConst(comments)) {
                             if (existingComment->id == comment->id) {
                                 commentIsKnown = true;
                                 break;
@@ -77,12 +77,12 @@ public:
                         q->endInsertRows();
                     }
                 });
-                emit q->endResetModel();
+                q->endResetModel();
             }
             int commentsPerPage = 100;
             int pageToLoad = comments.count() / commentsPerPage;
             qCDebug(KNEWSTUFFCORE) << "Loading comments, page" << pageToLoad << "with current comment count" << comments.count() << "out of a total of" << entry.numberOfComments();
-            provider->loadComments(entry, commentsPerPage, pageToLoad);
+            Q_EMIT provider->loadComments(entry, commentsPerPage, pageToLoad);
         }
     }
 };

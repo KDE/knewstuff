@@ -911,7 +911,7 @@ QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations
     if(includeFallbackLocations) {
         ret += QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
     }
-    QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     for( const QString& path : paths) {
         ret << QString::fromLocal8Bit("%1/knsrcfiles").arg(path);
     }

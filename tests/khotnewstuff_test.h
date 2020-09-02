@@ -36,7 +36,7 @@ public:
     Q_INVOKABLE void engineTest();
 
     Q_INVOKABLE QObject *messages();
-    void addMessage(const QString &message, const QString &iconName = QStringLiteral());
+    void addMessage(const QString &message, const QString &iconName = QString());
 
 public Q_SLOTS:
     void slotProvidersLoaded();

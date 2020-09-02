@@ -456,7 +456,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                     emit signalInstallationFinished();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
                                 } else {
-                                    emit signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile).arg(expectedDir));
+                                    emit signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile, expectedDir));
                                     resetEntryStatus();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
                                 }
@@ -788,7 +788,6 @@ void Installation::uninstall(EntryInternal entry)
                             if (installer.hasValidStructure()) {
                                 QString packageRoot = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
                                 qCDebug(KNEWSTUFFCORE) << "About to attempt to uninstall" << package.metadata().pluginId() << "from" << packageRoot;
-                                const QString supposedInstallationDir{packageRoot + package.metadata().pluginId()};
                                 // Frankly, we don't care whether or not this next step succeeds, and it can just fizzle if it wants
                                 // to. This is a cleanup step, and if it fails, it's just not really important.
                                 KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, serviceType);
