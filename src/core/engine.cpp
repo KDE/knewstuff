@@ -58,6 +58,7 @@ public:
     bool configLocationFallback = true;
     QString name;
     QMap<EntryInternal, CommentsModel*> commentsModels;
+    bool shouldRemoveDeletedEntries = false;
 
     // Used for updating purposes - we ought to be saving this information, but we also have to deal with old stuff, and so... this will have to do for now, and so
     // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
@@ -176,12 +177,12 @@ bool Engine::init(const QString &configfile)
 
     // Cache cleanup option, to help work around people deleting files from underneath KNewStuff (this
     // happens a lot with e.g. wallpapers and icons)
-    bool shouldRemoveDeletedEntries{false};
     if (m_installation->uncompressionSetting() == Installation::UseKPackageUncompression) {
-        shouldRemoveDeletedEntries = true;
+        d->shouldRemoveDeletedEntries = true;
     }
-    shouldRemoveDeletedEntries = group.readEntry("RemoveDeadEntries", shouldRemoveDeletedEntries);
-    if (shouldRemoveDeletedEntries) {
+
+    d->shouldRemoveDeletedEntries = group.readEntry("RemoveDeadEntries", d->shouldRemoveDeletedEntries);
+    if (d->shouldRemoveDeletedEntries) {
         m_cache->removeDeletedEntries();
     }
 
@@ -989,4 +990,27 @@ void Engine::setBusy(Engine::BusyState state, const QString &busyMessage) {
 QSharedPointer<KNSCore::Cache> KNSCore::Engine::cache() const
 {
     return m_cache;
+}
+
+void KNSCore::Engine::revalidateCacheEntries()
+{
+    // This gets called from QML, because in QtQuick we reuse the engine, BUG: 417985
+    // We can't handle this in the cache, because it can't access the configuration of the engine
+    if (m_cache && d->shouldRemoveDeletedEntries) {
+        for (const auto &provider : qAsConst(m_providers)) {
+            if (provider && provider->isInitialized()) {
+                const EntryInternal::List cacheBefore = m_cache->registryForProvider(provider->id());
+                m_cache->removeDeletedEntries();
+                const EntryInternal::List cacheAfter = m_cache->registryForProvider(provider->id());
+                // If the user has deleted them in the background we have to update the state to deleted
+                for (const auto &oldCachedEntry : cacheBefore){
+                    if (!cacheAfter.contains(oldCachedEntry)) {
+                        EntryInternal removedEntry = oldCachedEntry;
+                        removedEntry.setStatus(KNS3::Entry::Deleted);
+                        Q_EMIT signalEntryChanged(removedEntry);
+                    }
+                }
+            }
+        }
+    }
 }

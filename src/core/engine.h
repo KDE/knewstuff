@@ -541,6 +541,15 @@ public:
      * @since 5.74
      */
     QSharedPointer<Cache> cache() const;
+
+    /**
+     * If the same engine gets reused and the user could have used the delete functionality of the KCMs the cache could
+     * be out of sync. If the RemoveDeadEntries option is set to true this will remove deleted entries from the cache
+     * and the signalEntryChanged slot will be emitted with the updated entry
+     * @since 5.74
+     */
+    Q_INVOKABLE void revalidateCacheEntries();
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
