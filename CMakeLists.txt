@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 set(KF5_VERSION "5.74.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.73.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.74.0") # handled by release scripts
 project(KNewStuff VERSION ${KF5_VERSION})
 
 # Require at least C++14
@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(FeatureSummary)
-find_package(ECM 5.73.0 NO_MODULE)
+find_package(ECM 5.74.0 NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
