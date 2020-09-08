@@ -391,7 +391,11 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
         QCOMPARE(urlIn.toString(), QString(_("file:///home/u1/dev/kf5/src/kde/applications/dolphin/.reviewboardrc")));
 
         auto urlOut = KmtUrlUtil::localFileAbsoluteDir(urlIn);
+#ifdef Q_OS_WINDOWS
+        QCOMPARE(urlOut.toString(), QString(_("file:///C:/home/u1/dev/kf5/src/kde/applications/dolphin")));
+#else
         QCOMPARE(urlOut.toString(), QString(_("file:///home/u1/dev/kf5/src/kde/applications/dolphin")));
+#endif
     }
 
     {
