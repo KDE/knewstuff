@@ -379,7 +379,11 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
 
         auto urlOut = KmtUrlUtil::localFileAbsoluteDir(urlIn);
         //qDebug() << urlOut;
+#ifdef Q_OS_WINDOWS
+        QCOMPARE(urlOut.toString(), QString(_("file:///C:/etc")));
+#else
         QCOMPARE(urlOut.toString(), QString(_("file:///etc")));
+#endif
     }
 
     {
