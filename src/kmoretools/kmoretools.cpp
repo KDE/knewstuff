@@ -68,11 +68,8 @@ public:
 
     static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
     {
-        //qDebug() << "--search locations:" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
         const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + QLatin1Char('/') + filename;
-        //qDebug() << "---search for:" << kmtDesktopfilesFilename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
-        //qDebug() << "----QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename) -> foundKmtFile" << foundKmtFile;
 
         return foundKmtFile;
     }
@@ -94,8 +91,6 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     const QString& kmtDesktopfileSubdir,
     KMoreTools::ServiceLocatingMode serviceLocatingMode)
 {
-    //qDebug() << "* registerServiceByDesktopEntryName(desktopEntryName=" << desktopEntryName;
-
     const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(
             d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
             desktopEntryName + QLatin1String(".desktop"));
@@ -124,7 +119,6 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_Default) { // == default behaviour: search for installed services
         installedService = KService::serviceByDesktopName(desktopEntryName);
         isInstalled = installedService != nullptr;
-        //qDebug() << "----- isInstalled: " << isInstalled;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
             qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
@@ -137,12 +131,6 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     } else {
         Q_ASSERT(false); // case not handled
     }
-
-//     if (isInstalled) {
-//         qDebug() << "registerServiceByDesktopEntryName:" << desktopEntryName << ": installed.";
-//     } else {
-//         qDebug() << "registerServiceByDesktopEntryName:" << desktopEntryName << ": NOT installed.";
-//     }
 
     auto registeredService = new KMoreToolsService(
         d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
@@ -157,16 +145,12 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         return service->desktopEntryName() == desktopEntryName;
     });
     if (foundService == d->serviceList.end()) {
-        //qDebug() << "not found, add new service";
         d->serviceList.append(registeredService);
     } else {
         KMoreToolsService* foundServicePtr = *foundService;
         int i = d->serviceList.indexOf(foundServicePtr);
-        //qDebug() << "found: replace it with new service, index=" << i;
         delete foundServicePtr;
-        //qDebug() << "   deleted";
         d->serviceList.replace(i, registeredService);
-        //qDebug() << "   replaced in list";
     }
 
     return registeredService;
@@ -234,14 +218,12 @@ public:
         }
 
         QString iconPath = KMoreToolsPrivate::findFileInKmtDesktopfilesDir(kmtDesktopfileSubdir, kmtDesktopfile->icon() + QLatin1String(".svg"));
-        //qDebug() << "kmt iconPath" << iconPath;
         QIcon svgIcon(iconPath);
         if (!svgIcon.isNull()) {
             return svgIcon;
         }
 
         iconPath = KMoreToolsPrivate::findFileInKmtDesktopfilesDir(kmtDesktopfileSubdir, kmtDesktopfile->icon() + QLatin1String(".png"));
-        //qDebug() << "kmt iconPath" << iconPath;
         QIcon pngIcon(iconPath);
         if (!pngIcon.isNull()) {
             return pngIcon;
@@ -400,7 +382,6 @@ public:
     {
         for (auto item : qAsConst(menuItems))
         {
-            //qDebug() << item;
             delete item;
         }
 
@@ -413,7 +394,6 @@ public:
         auto configGroup = config.group(uniqueId + userConfigPostfix);
         QString json = configGroup.readEntry(configKey, "");
         KmtMenuStructureDto configuredStructure;
-        //qDebug() << "read from config: " << json;
         configuredStructure.deserialize(json);
         return configuredStructure;
     }
@@ -423,7 +403,6 @@ public:
         KConfig config(configFile, KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         auto configGroup = config.group(uniqueId + userConfigPostfix);
         auto configValue = mstruct.serialize();
-        //qDebug() << "write to config: " << configValue;
         configGroup.writeEntry(configKey, configValue);
         configGroup.sync();
     }
@@ -478,7 +457,6 @@ public:
         QList<KMoreToolsMenuItem*> menuItemsSortedAsConfigured;
 
         // presort as in configuredStructure
-        //
         for (const auto& item : qAsConst(configuredStructure.list)) {
             auto foundItem = std::find_if(menuItemsSource.begin(), menuItemsSource.end(),
             [item](const KMoreToolsMenuItem* kMenuItem) {
@@ -496,7 +474,6 @@ public:
         menuItemsSortedAsConfigured.append(menuItemsSource);
 
         // build MenuStructure from presorted list
-        //
         for (auto item : qAsConst(menuItemsSortedAsConfigured)) {
 
             const auto registeredService = item->registeredService();
@@ -529,7 +506,6 @@ public:
     void showConfigDialog(KmtMenuStructureDto defaultStructureDto, const QString& title = QString()) const
     {
         // read from config
-        //
         auto currentStructure = createMenuStructure(CreateMenuStructure_MergeWithUserConfig);
         auto currentStructureDto = currentStructure.toDto();
 
@@ -555,7 +531,6 @@ public:
         }
 
         if (!mstruct.notInstalledServices.isEmpty()) {
-            //qDebug() << "notInstalledItems not empty => build 'Not installed' section";
             parent->addSection(i18nc("@action:inmenu", "Not installed:"));
 
             for (auto registeredService : qAsConst(mstruct.notInstalledServices)) {
@@ -608,11 +583,7 @@ KMoreToolsMenuItem* KMoreToolsMenuBuilder::addMenuItem(QAction* action, const QS
 
 void KMoreToolsMenuBuilder::clear()
 {
-    //qDebug() << "----KMoreToolsMenuBuilder::clear()";
-    //qDebug() << "d" << d;
-    //qDebug() << "d->menuItems" << d->menuItems.count();
     d->deleteAndClearMenuItems();
-    //qDebug() << "----after d->menuItems.clear();";
     d->menuItemIdGen.reset();
 }
 

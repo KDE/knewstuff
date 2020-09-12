@@ -98,17 +98,6 @@ void KNewStuff2Test::providerTest()
     p.setProviderXML(doc.documentElement());
 
     addMessage(QString::fromUtf8("-- xml->provider test result: %1").arg(p.isInitialized()), p.isInitialized()? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
-
-//     QDomElement pxml = p.providerXML();
-
-    // qDebug() << "-- provider->xml test result: " << ph.isValid();
-
-//     if (!p.isValid()) {
-//         quitTest();
-//     } else {
-//         QTextStream out(stdout);
-//         out << pxml;
-//     }
 }
 
 void KNewStuff2Test::engineTest()

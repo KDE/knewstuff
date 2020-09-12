@@ -78,7 +78,6 @@ void KMoreToolsTest::testDesktopFileWithNoExec()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
     QTest::ignoreMessage(QtWarningMsg, QRegularExpression(_("The desktop entry file .+ has Type= \"Application\" but no Exec line")));
-    // QTest::ignoreMessage(QtCriticalMsg, "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile .+ is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.");
     auto aApp = kmt.registerServiceByDesktopEntryName(_("a"));
     QVERIFY(!aApp);
 }
@@ -113,7 +112,6 @@ void KMoreToolsTest::testDesktopFileWithNoName()
 void KMoreToolsTest::testDesktopFileNotProvided()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    //QTest::ignoreMessage(QtWarningMsg, "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName .+ (kmtDesktopfileSubdir= .+ ) not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.");
     auto eeeApp = kmt.registerServiceByDesktopEntryName(_("eee"));
     QVERIFY(eeeApp);
     QCOMPARE(eeeApp->desktopEntryName(), QString(_("eee")));
@@ -122,7 +120,6 @@ void KMoreToolsTest::testDesktopFileNotProvided()
 void KMoreToolsTest::testDetectByExecLineButNoFileProvided()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    //QTest::ignoreMessage(QtCriticalMsg, "KMoreTools::registerServiceByDesktopEntryName: If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.");
     auto eeeApp = kmt.registerServiceByDesktopEntryName(_("eee"), QString(), KMoreTools::ServiceLocatingMode_ByProvidedExecLine);
     QVERIFY(!eeeApp);
 }
@@ -374,11 +371,9 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
 {
     {
         auto urlIn = QUrl::fromLocalFile(QStringLiteral("/etc/bash.bashrc"));
-        //qDebug() << urlIn;
         QCOMPARE(urlIn.toString(), QString(_("file:///etc/bash.bashrc")));
 
         auto urlOut = KmtUrlUtil::localFileAbsoluteDir(urlIn);
-        //qDebug() << urlOut;
 #ifdef Q_OS_WINDOWS
         QCOMPARE(urlOut.toString(), QString(_("file:///C:/etc")));
 #else
@@ -400,7 +395,6 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
 
     {
         auto urlIn2 = QUrl::fromLocalFile(QStringLiteral("aaa/bbb"));
-        // qDebug() << urlIn2;
         QCOMPARE(urlIn2.toString(), QString(_("file:aaa/bbb")));
     }
 }

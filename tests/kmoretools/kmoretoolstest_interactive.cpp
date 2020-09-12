@@ -83,13 +83,7 @@ void KMoreToolsTestInteractive::test_buildMenu_WithQActions_interative1()
     };
 
     f(_("test_buildMenu_WithQActions 1"));
-    //f(_("test_buildMenu_WithQActions 2"));
 }
-
-// QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
-//     d << "id:" << m.id << ", section:" << m.menuSection << ", isInstalled:" << m.isInstalled;
-//     return d;
-// }
 
 void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description)
 {

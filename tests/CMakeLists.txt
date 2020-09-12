@@ -20,12 +20,6 @@ knewstuff_executable_tests(
      khotnewstuff_upload
      khotnewstuff_test
 )
-# FIXME: port to new API
-#knewstuff_executable_tests(
-#    knewstuff2_download
-#    knewstuff2_standard
-#    knewstuff2_cache
-#)
 
 # KMoreTools:
 add_executable(kmoretoolstest_interactive kmoretools/kmoretoolstest_interactive.cpp ../src/knewstuff_debug.cpp)

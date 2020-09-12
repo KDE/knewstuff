@@ -121,15 +121,12 @@ public:
                 auto listItem = new QListWidgetItem(icon, KmtMenuItemDto::removeMenuAmpersand(item.text) /*+ " - " + item.id*/);
                 listItem->setData(Qt::UserRole, item.id);
                 if (item.menuSection == KMoreTools::MenuSection_Main) {
-                    //qDebug() << item.text << item.icon << item.icon.isNull() << item.icon.availableSizes();
-                    //itemModel->appendRow(new QStandardItem(icon, item.text /*+ " - " + item.id*/));
                     configUi->listMainSection->addItem(listItem);
                     if (item.id == idToSelect) {
                         mainSelItem = listItem;
                     }
                 } else if (item.menuSection == KMoreTools::MenuSection_More) {
                     configUi->listMoreSection->addItem(listItem);
-                    //configUi->listMoreSection->addItem("test"); // DND copies item instead of moving it
                     if (item.id == idToSelect) {
                         moreSelItem = listItem;
                     }
@@ -194,15 +191,6 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
         }
         d->configUi->buttonNotInstalledTools->setMenu(menu);
     }
-
-    //auto itemModel = new QStandardItemModel();
-    //configUi->listMainSection->setModel(itemModel);
-    //configUi->listMainSection->setDragDropMode(QAbstractItemView::DragOnly);
-    //configUi->listMainSection->setDragEnabled(true); // QWARN  : KMoreToolsTest::testConfigDialog() Trying to construct an instance of an invalid type, type id: 872443648
-    //configUi->listMainSection->setAcceptDrops(true); // ...and crash when doing to much DND. Why? ...
-    //configUi->listMainSection->setDropIndicatorShown(true);
-    //configUi->listMoreSection->setDragEnabled(true); // crashes on DND. Why?
-    //configUi->listMoreSection->setAcceptDrops(true);
 
     //
     // connect signals
