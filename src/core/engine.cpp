@@ -109,8 +109,7 @@ bool Engine::init(const QString &configfile)
     setBusy(BusyOperation::Initializing, i18n("Initializing"));
 
     QScopedPointer<KConfig> conf;
-    /// TODO KF6: This is fallback logic for an old location for the knsrc files. This should be considered deprecated in KF5,
-    /// and it would make a lot of sense to disable it entirely for KF6
+    // TODO KF6: This is fallback logic for an old location for the knsrc files. This is deprecated in KF5 and should be removed in KF6
     bool isRelativeConfig = QFileInfo(configfile).isRelative();
     QString actualConfig;
     if (isRelativeConfig) {
