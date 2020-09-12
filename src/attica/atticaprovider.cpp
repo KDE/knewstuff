@@ -157,10 +157,10 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
 
     if (correct) {
         mInitialized = true;
-        emit providerInitialized(this);
-        emit categoriesMetadataLoded(categoryMetadataList);
+        Q_EMIT providerInitialized(this);
+        Q_EMIT categoriesMetadataLoded(categoryMetadataList);
     } else {
-        emit signalErrorCode(KNSCore::ConfigFileError, i18n("All categories are missing"), QVariant());
+        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("All categories are missing"), QVariant());
     }
 }
 
@@ -188,9 +188,9 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
         }
         case Installed:
             if (request.page == 0) {
-                emit loadingFinished(request, installedEntries());
+                Q_EMIT loadingFinished(request, installedEntries());
             } else {
-                emit loadingFinished(request, EntryInternal::List());
+                Q_EMIT loadingFinished(request, EntryInternal::List());
             }
             return;
         case Updates:
@@ -242,7 +242,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
         ItemJob<Content> *contentJob = static_cast<ItemJob<Content>*>(job);
         Content content = contentJob->result();
         EntryInternal entry = entryFromAtticaContent(content);
-        emit entryDetailsLoaded(entry);
+        Q_EMIT entryDetailsLoaded(entry);
         qCDebug(KNEWSTUFFCORE) << "check update finished: " << entry.name();
     }
 
@@ -254,7 +254,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
                 updatable.append(entry);
             }
         }
-        emit loadingFinished(mCurrentRequest, updatable);
+        Q_EMIT loadingFinished(mCurrentRequest, updatable);
     }
 }
 
@@ -299,7 +299,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     }
 
     qCDebug(KNEWSTUFFCORE) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
-    emit loadingFinished(mCurrentRequest, entries);
+    Q_EMIT loadingFinished(mCurrentRequest, entries);
     mEntryJob = nullptr;
 }
 
@@ -381,7 +381,7 @@ void AtticaProvider::loadedComments(Attica::BaseJob *baseJob)
     Attica::Comment::List comments = job->itemList();
 
     QList<std::shared_ptr<KNSCore::Comment>> receivedComments = getCommentsList(comments, nullptr);
-    emit commentsLoaded(receivedComments);
+    Q_EMIT commentsLoaded(receivedComments);
 }
 
 void AtticaProvider::loadPerson(const QString &username)
@@ -410,7 +410,7 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
     author->setProfilepage(person.extendedAttribute(QStringLiteral("profilepage")));
     author->setAvatarUrl(person.avatarUrl());
     author->setDescription(person.extendedAttribute(QStringLiteral("description")));
-    emit personLoaded(author);
+    Q_EMIT personLoaded(author);
 }
 
 void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
@@ -444,7 +444,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     } else {
         qCDebug(KNEWSTUFFCORE) << "You don't have enough money on your account!"
                << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
-        emit signalInformation(i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
+        Q_EMIT signalInformation(i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
                                      item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
 }
@@ -460,7 +460,7 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
 
     EntryInternal entry = mDownloadLinkJobs.take(job).first;
     entry.setPayload(QString(item.url().toString()));
-    emit payloadLinkLoaded(entry);
+    Q_EMIT payloadLinkLoaded(entry);
 }
 
 EntryInternal::List AtticaProvider::installedEntries() const
@@ -486,7 +486,7 @@ void AtticaProvider::votingFinished(Attica::BaseJob *job)
     if (!jobSuccess(job)) {
         return;
     }
-    emit signalInformation(i18nc("voting for an item (good/bad)", "Your vote was recorded."));
+    Q_EMIT signalInformation(i18nc("voting for an item (good/bad)", "Your vote was recorded."));
 }
 
 void AtticaProvider::becomeFan(const EntryInternal &entry)
@@ -501,7 +501,7 @@ void AtticaProvider::becomeFanFinished(Attica::BaseJob *job)
     if (!jobSuccess(job)) {
         return;
     }
-    emit signalInformation(i18n("You are now a fan."));
+    Q_EMIT signalInformation(i18n("You are now a fan."));
 }
 
 bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
@@ -512,15 +512,15 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     qCDebug(KNEWSTUFFCORE) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
 
     if (job->metadata().error() == Attica::Metadata::NetworkError) {
-        emit signalErrorCode(KNSCore::NetworkError, i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()), job->metadata().statusCode());
+        Q_EMIT signalErrorCode(KNSCore::NetworkError, i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()), job->metadata().statusCode());
     }
     if (job->metadata().error() == Attica::Metadata::OcsError) {
         if (job->metadata().statusCode() == 200) {
-            emit signalErrorCode(KNSCore::OcsError, i18n("Too many requests to server. Please try again in a few minutes."), job->metadata().statusCode());
+            Q_EMIT signalErrorCode(KNSCore::OcsError, i18n("Too many requests to server. Please try again in a few minutes."), job->metadata().statusCode());
         } else if (job->metadata().statusCode() == 405) {
-            emit signalErrorCode(KNSCore::OcsError, i18n("The Open Collaboration Services instance %1 does not support the attempted function.", name()), job->metadata().statusCode());
+            Q_EMIT signalErrorCode(KNSCore::OcsError, i18n("The Open Collaboration Services instance %1 does not support the attempted function.", name()), job->metadata().statusCode());
         } else {
-            emit signalErrorCode(KNSCore::OcsError, i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()), job->metadata().statusCode());
+            Q_EMIT signalErrorCode(KNSCore::OcsError, i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()), job->metadata().statusCode());
         }
     }
     return false;

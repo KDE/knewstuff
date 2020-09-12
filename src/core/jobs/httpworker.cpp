@@ -113,7 +113,7 @@ void HTTPWorker::handleReadyRead()
     QMutexLocker locker(&s_httpWorkerNAM->mutex);
     if (d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull()) {
         do {
-            emit data(d->reply->read(32768));
+            Q_EMIT data(d->reply->read(32768));
         } while(!d->reply->atEnd());
     }
 }
@@ -123,7 +123,7 @@ void HTTPWorker::handleFinished()
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
     if (d->reply->error() != QNetworkReply::NoError) {
         qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
-        emit error(d->reply->errorString());
+        Q_EMIT error(d->reply->errorString());
     }
 
     // Check if the data was obtained from cache or not
@@ -154,7 +154,7 @@ void HTTPWorker::handleFinished()
     }
 
     d->redirectUrl.clear();
-    emit completed();
+    Q_EMIT completed();
 }
 
 void HTTPWorker::handleData(const QByteArray& data)
@@ -167,7 +167,7 @@ void HTTPWorker::handleData(const QByteArray& data)
         }
         else {
             qCWarning(KNEWSTUFFCORE) << "Failed to open file for writing!";
-            emit error(QStringLiteral("Failed to open file %1 for writing!").arg(d->destination.toLocalFile()));
+            Q_EMIT error(QStringLiteral("Failed to open file %1 for writing!").arg(d->destination.toLocalFile()));
         }
     }
     qCDebug(KNEWSTUFFCORE) << "Writing" << data.length() << "bytes of data to" << d->dataFile.fileName();

@@ -131,12 +131,12 @@ void DownloadManagerPrivate::_k_slotEntriesLoaded(const KNSCore::EntryInternal::
     for (const KNSCore::EntryInternal &entry : entries) {
         result.append(EntryPrivate::fromInternal(&entry));
     }
-    emit q->searchResult(result);
+    Q_EMIT q->searchResult(result);
 }
 
 void KNS3::DownloadManagerPrivate::_k_slotEntryStatusChanged(const KNSCore::EntryInternal &entry)
 {
-    emit q->entryStatusChanged(EntryPrivate::fromInternal(&entry));
+    Q_EMIT q->entryStatusChanged(EntryPrivate::fromInternal(&entry));
 }
 
 void DownloadManager::installEntry(const KNS3::Entry &entry)

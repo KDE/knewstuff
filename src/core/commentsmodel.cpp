@@ -206,5 +206,5 @@ void KNSCore::CommentsModel::setEntry(const KNSCore::EntryInternal &newEntry)
 {
     d->entry = newEntry;
     d->fetch(Private::ClearModel);
-    emit entryChanged();
+    Q_EMIT entryChanged();
 }

@@ -56,7 +56,7 @@ void HTTPJob::start()
 
 void HTTPJob::handleWorkerData(const QByteArray& data)
 {
-    emit HTTPJob::data(this, data);
+    Q_EMIT HTTPJob::data(this, data);
 }
 
 void HTTPJob::handleWorkerCompleted()

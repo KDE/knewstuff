@@ -47,7 +47,7 @@ void AtticaHelper::defaultProvidersLoaded()
             providers.append(p.name());
         }
     }
-    emit providersLoaded(providers);
+    Q_EMIT providersLoaded(providers);
 }
 
 void AtticaHelper::setCurrentProvider(const QString &provider)
@@ -75,7 +75,7 @@ void AtticaHelper::checkLogin(const QString &name, const QString &password)
 
 void AtticaHelper::checkLoginFinished(Attica::BaseJob *baseJob)
 {
-    emit loginChecked(baseJob->metadata().error() == Attica::Metadata::NoError);
+    Q_EMIT loginChecked(baseJob->metadata().error() == Attica::Metadata::NoError);
 }
 
 bool AtticaHelper::loadCredentials(QString &name, QString &password)
@@ -120,7 +120,7 @@ void AtticaHelper::categoriesLoaded(Attica::BaseJob *baseJob)
             }
         }
     }
-    emit categoriesLoaded(m_validCategories);
+    Q_EMIT categoriesLoaded(m_validCategories);
 }
 
 void AtticaHelper::loadContentByCurrentUser()
@@ -137,7 +137,7 @@ void AtticaHelper::contentByCurrentUserLoaded(Attica::BaseJob *baseJob)
 {
     Attica::ListJob<Attica::Content> *contentList = static_cast<Attica::ListJob<Attica::Content>*>(baseJob);
     m_userCreatedContent = contentList->itemList();
-    emit contentByCurrentUserLoaded(m_userCreatedContent);
+    Q_EMIT contentByCurrentUserLoaded(m_userCreatedContent);
 }
 
 void AtticaHelper::loadLicenses()
@@ -151,7 +151,7 @@ void AtticaHelper::loadLicenses()
 void AtticaHelper::licensesLoaded(Attica::BaseJob *baseJob)
 {
     Attica::ListJob<Attica::License> *licenseList = static_cast<Attica::ListJob<Attica::License>*>(baseJob);
-    emit licensesLoaded(licenseList->itemList());
+    Q_EMIT licensesLoaded(licenseList->itemList());
 }
 
 void AtticaHelper::loadDetailsLink(const QString &contentId)
@@ -167,7 +167,7 @@ void AtticaHelper::detailsLinkLoaded(Attica::BaseJob *baseJob)
     Attica::ItemJob<Attica::Content> *contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
     Attica::Content content = contentItemJob->result();
 
-    emit detailsLinkLoaded(content.detailpage());
+    Q_EMIT detailsLinkLoaded(content.detailpage());
 }
 
 void AtticaHelper::loadContent(const QString &contentId)
@@ -190,7 +190,7 @@ void AtticaHelper::currencyLoaded(Attica::BaseJob *baseJob)
 {
     Attica::ItemJob<Attica::AccountBalance> *balanceJob = static_cast<Attica::ItemJob<Attica::AccountBalance>* >(baseJob);
     Attica::AccountBalance balance = balanceJob->result();
-    emit currencyLoaded(balance.currency());
+    Q_EMIT currencyLoaded(balance.currency());
 }
 
 void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
@@ -198,7 +198,7 @@ void AtticaHelper::contentLoaded(Attica::BaseJob *baseJob)
     Attica::ItemJob<Attica::Content> *contentItemJob = static_cast<Attica::ItemJob<Attica::Content>* >(baseJob);
 
     const Attica::Content content(contentItemJob->result());
-    emit contentLoaded(content);
+    Q_EMIT contentLoaded(content);
 
     for (int previewNum = 1; previewNum <= 3; ++previewNum) {
         QUrl url = QUrl::fromUserInput(content.smallPreviewPicture(QString::number(previewNum)));
@@ -240,6 +240,6 @@ void AtticaHelper::slotPreviewDownload(KJob *job)
     image.loadFromData(m_previewBuffer[previewNum - 1]);
     m_previewBuffer[previewNum - 1].clear();
 
-    emit previewLoaded(previewNum, image);
+    Q_EMIT previewLoaded(previewNum, image);
 }
 

@@ -59,20 +59,20 @@ void QuickQuestionListener::askQuestion(KNSCore::Question *question)
     switch(question->questionType())
     {
     case KNSCore::Question::SelectFromListQuestion:
-        emit askListQuestion(question->title(), question->question(), question->list());
+        Q_EMIT askListQuestion(question->title(), question->question(), question->list());
         break;
     case KNSCore::Question::ContinueCancelQuestion:
-        emit askContinueCancelQuestion(d->question->title(), d->question->question());
+        Q_EMIT askContinueCancelQuestion(d->question->title(), d->question->question());
         break;
     case KNSCore::Question::InputTextQuestion:
-        emit askTextInputQuestion(d->question->title(), d->question->question());
+        Q_EMIT askTextInputQuestion(d->question->title(), d->question->question());
         break;
     case KNSCore::Question::PasswordQuestion:
-        emit askPasswordQuestion(d->question->title(), d->question->question());
+        Q_EMIT askPasswordQuestion(d->question->title(), d->question->question());
         break;
     case KNSCore::Question::YesNoQuestion:
     default:
-        emit askYesNoQuestion(d->question->title(), d->question->question());
+        Q_EMIT askYesNoQuestion(d->question->title(), d->question->question());
         break;
     }
 }

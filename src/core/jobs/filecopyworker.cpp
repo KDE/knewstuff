@@ -39,7 +39,7 @@ void FileCopyWorker::run()
         d->source.seek(i);
         d->destination.seek(i);
 
-        emit progress(i, totalSize / 1024);
+        Q_EMIT progress(i, totalSize / 1024);
     }
-    emit completed();
+    Q_EMIT completed();
 }

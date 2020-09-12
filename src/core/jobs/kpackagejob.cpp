@@ -113,9 +113,9 @@ public:
             errordescription = i18n("The service type %1 was not understood by the KPackage installer", serviceType);
         }
         if (errorlevel > 0) {
-            emit error(errorlevel, errordescription);
+            Q_EMIT error(errorlevel, errordescription);
         }
-        emit result();
+        Q_EMIT result();
     }
     Q_SIGNAL void result();
     Q_SIGNAL void error(int errorCode, const QString& errorText);

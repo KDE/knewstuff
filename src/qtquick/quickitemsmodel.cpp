@@ -72,7 +72,7 @@ public:
         // An entry has changes - eg because it was installed
         q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);
         q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, q, [=](const KNSCore::EntryInternal &entry){
-            emit q->entryChanged(model->row(entry));
+            Q_EMIT q->entryChanged(model->row(entry));
         });
         // If we update/uninstall an entry we have to update the UI, see BUG: 425135
         q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, q, [=](const KNSCore::EntryInternal &entry){
@@ -394,7 +394,7 @@ void ItemsModel::setEngine(QObject *newEngine)
             d->coreEngine = qobject_cast<KNSCore::Engine*>(d->engine->engine());
             endResetModel();
         });
-        emit engineChanged();
+        Q_EMIT engineChanged();
         endResetModel();
     }
 }

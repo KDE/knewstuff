@@ -193,14 +193,14 @@ void Installation::install(const EntryInternal& entry)
 void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
 {
     if (!entry.isValid()) {
-        emit signalInstallationFailed(i18n("Invalid item."));
+        Q_EMIT signalInstallationFailed(i18n("Invalid item."));
         return;
     }
     QUrl source = QUrl(entry.payload());
 
     if (!source.isValid()) {
         qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload.";
-        emit signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
+        Q_EMIT signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
         return;
     }
 
@@ -229,7 +229,7 @@ void Installation::slotPayloadResult(KJob *job)
         entry_jobs.remove(job);
 
         if (job->error()) {
-            emit signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
+            Q_EMIT signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
 
@@ -243,15 +243,15 @@ void Installation::slotPayloadResult(KJob *job)
                     question.setTitle(i18n("Possibly bad download link"));
                     if(question.ask() == Question::YesResponse) {
                         QDesktopServices::openUrl(fcjob->srcUrl());
-                        emit signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
+                        Q_EMIT signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
                         entry.setStatus(KNS3::Entry::Invalid);
-                        emit signalEntryChanged(entry);
+                        Q_EMIT signalEntryChanged(entry);
                         return;
                     }
                 }
             }
 
-            emit signalPayloadLoaded(fcjob->destUrl());
+            Q_EMIT signalPayloadLoaded(fcjob->destUrl());
             install(entry, fcjob->destUrl().toLocalFile());
         }
     }
@@ -278,8 +278,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             } else if (entry.status() == KNS3::Entry::Updating) {
                 entry.setStatus(KNS3::Entry::Updateable);
             }
-            emit signalEntryChanged(entry);
-            emit signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
+            Q_EMIT signalEntryChanged(entry);
+            Q_EMIT signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
             return;
         }
 
@@ -298,8 +298,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
             }
 
             newentry.setStatus(KNS3::Entry::Installed);
-            emit signalEntryChanged(newentry);
-            emit signalInstallationFinished();
+            Q_EMIT signalEntryChanged(newentry);
+            Q_EMIT signalInstallationFinished();
         };
         if (!postInstallationCommand.isEmpty()) {
             QString scriptArgPath = !installedFiles.isEmpty() ? installedFiles.first() : targetPath;
@@ -312,8 +312,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
                         if (exitCode) {
                             EntryInternal newEntry = entry;
                             newEntry.setStatus(KNS3::Entry::Invalid);
-                            emit signalEntryChanged(newEntry);
-                            emit signalInstallationFailed(i18n("Failed to execute install script"));
+                            Q_EMIT signalEntryChanged(newEntry);
+                            Q_EMIT signalInstallationFailed(i18n("Failed to execute install script"));
                         } else {
                             installationFinished();
                         }
@@ -411,7 +411,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             } else if (changedEntry.status() == KNS3::Entry::Updating) {
                 changedEntry.setStatus(KNS3::Entry::Updateable);
             }
-            emit signalEntryChanged(changedEntry);
+            Q_EMIT signalEntryChanged(changedEntry);
         };
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
@@ -452,11 +452,11 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                     newentry.setStatus(KNS3::Entry::Installed);
                                     // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
                                     QFile::remove(payloadfile);
-                                    emit signalEntryChanged(newentry);
-                                    emit signalInstallationFinished();
+                                    Q_EMIT signalEntryChanged(newentry);
+                                    Q_EMIT signalInstallationFinished();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
                                 } else {
-                                    emit signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile, expectedDir));
+                                    Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile, expectedDir));
                                     resetEntryStatus();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
                                 }
@@ -464,12 +464,12 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                 if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
                                     EntryInternal newentry = entry;
                                     newentry.setStatus(KNS3::Entry::Installed);
-                                    emit signalEntryChanged(newentry);
-                                    emit signalInstallationFinished();
+                                    Q_EMIT signalEntryChanged(newentry);
+                                    Q_EMIT signalInstallationFinished();
                                     newentry.setInstalledFiles(QStringList{expectedDir});
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's just make a small fib and say we totally installed that, honest, and we now have files" << expectedDir;
                                 } else {
-                                    emit signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
+                                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
                                     resetEntryStatus();
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
                                 }
@@ -477,25 +477,25 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                         });
                         installJob->start();
                     } else {
-                        emit signalInstallationFailed(i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage support plugin for this type of package?)", payloadfile, serviceType));
+                        Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage support plugin for this type of package?)", payloadfile, serviceType));
                         resetEntryStatus();
                         qCWarning(KNEWSTUFFCORE) << "Package serviceType" << serviceType << "not found";
                     }
                 } else {
                     // no package structure
-                    emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
+                    Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
                     resetEntryStatus();
                     qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << serviceType;
                 }
             } else {
                 // no service type
-                emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
+                Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
                 resetEntryStatus();
                 qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
             }
         } else {
             // package or package metadata is invalid
-            emit signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain any useful meta information, which means it is not a valid KPackage.", payloadfile));
+            Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not contain any useful meta information, which means it is not a valid KPackage.", payloadfile));
             resetEntryStatus();
             qCWarning(KNEWSTUFFCORE) << "No valid meta information (which suggests no valid KPackage) found in" << payloadfile;
         }
@@ -523,7 +523,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             } else {
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompression == QLatin1String("always")) {
-                    emit signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
+                    Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
                     return QStringList();
                 }
                 isarchive = false;
@@ -534,7 +534,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 if (!success) {
                     qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
                     if (uncompression == QLatin1String("always")) {
-                        emit signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
+                        Q_EMIT signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
                         return QStringList();
                     }
                     // otherwise, just copy the file
@@ -640,7 +640,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
             }
             if (!success) {
-                emit signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
+                Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
                 qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '"  << installpath << "'";
                 return QStringList();
             }
@@ -663,10 +663,10 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
     connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, [this, command, ret](int exitcode, QProcess::ExitStatus status) {
         const QString output{QString::fromLocal8Bit(ret->readAllStandardError())};
         if (status == QProcess::CrashExit) {
-            emit signalInstallationError(i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output));
+            Q_EMIT signalInstallationError(i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output));
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
-            emit signalInstallationError(i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
+            Q_EMIT signalInstallationError(i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
             qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();
@@ -712,7 +712,7 @@ void Installation::uninstall(EntryInternal entry)
         newEntry.setUnInstalledFiles(entry.installedFiles());
         newEntry.setInstalledFiles(QStringList());
         newEntry.setStatus(KNS3::Entry::Deleted);
-        emit signalEntryChanged(newEntry);
+        Q_EMIT signalEntryChanged(newEntry);
     };
 
     if (uncompression == QLatin1String("kpackage")) {
@@ -746,23 +746,23 @@ void Installation::uninstall(EntryInternal entry)
                                     newEntry.setStatus(KNS3::Entry::Deleted);
                                     newEntry.setUnInstalledFiles(newEntry.installedFiles());
                                     newEntry.setInstalledFiles(QStringList());
-                                    emit signalEntryChanged(newEntry);
+                                    Q_EMIT signalEntryChanged(newEntry);
                                 } else {
-                                    emit signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
+                                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
                                 }
                             });
                             removalJob->start();
                         } else {
                             // no package structure
-                            emit signalInstallationFailed(i18n("The removal of %1 failed, as the installed package does not contain a correct KPackage structure.", installedFile));
+                            Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, as the installed package does not contain a correct KPackage structure.", installedFile));
                         }
                     } else {
                         // no service type
-                        emit signalInstallationFailed(i18n("The removal of %1 failed, as the installed package is not a supported type (did you forget to install the KPackage support plugin for this type of package?)", installedFile));
+                        Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, as the installed package is not a supported type (did you forget to install the KPackage support plugin for this type of package?)", installedFile));
                     }
                 } else {
                     // package or package metadata is invalid
-                    emit signalInstallationFailed(i18n("The removal of %1 failed, as the installed package does not contain any useful meta information, which means it is not a valid KPackage.", entry.name()));
+                    Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, as the installed package does not contain any useful meta information, which means it is not a valid KPackage.", entry.name()));
                 }
             } else {
                 QMimeDatabase db;
@@ -799,17 +799,17 @@ void Installation::uninstall(EntryInternal entry)
                         entry.setStatus(KNS3::Entry::Deleted);
                         entry.setUnInstalledFiles(entry.installedFiles());
                         entry.setInstalledFiles(QStringList());
-                        emit signalEntryChanged(entry);
+                        Q_EMIT signalEntryChanged(entry);
                     } else {
-                        emit signalInstallationFailed(i18n("The removal of %1 failed, as the downloaded file %2 could not be automatically removed.", entry.name(), installedFile));
+                        Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, as the downloaded file %2 could not be automatically removed.", entry.name(), installedFile));
                     }
                 } else {
                     // Not sure what's installed, but it's not a KPackage, not a lot we can do with this...
-                    emit signalInstallationFailed(i18n("The removal of %1 failed, due to the installed file not being a KPackage. The file in question was %2, and you can attempt to delete it yourself, if you are certain that it is not needed.", entry.name(), installedFile));
+                    Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, due to the installed file not being a KPackage. The file in question was %2, and you can attempt to delete it yourself, if you are certain that it is not needed.", entry.name(), installedFile));
                 }
             }
         } else {
-            emit signalInstallationFailed(i18n("The removal of %1 failed, as there seems to somehow be more than one thing installed, which is not supposed to be possible for KPackage based entries.", entry.name()));
+            Q_EMIT signalInstallationFailed(i18n("The removal of %1 failed, as there seems to somehow be more than one thing installed, which is not supposed to be possible for KPackage based entries.", entry.name()));
         }
         deleteFilesAndMarkAsUninstalled();
     } else {
@@ -844,7 +844,7 @@ void Installation::uninstall(EntryInternal entry)
                                                      "The output of was: \n%2\n"
                                                      "If you think this is incorrect, you can continue or cancel the uninstallation process",
                                                      KShell::quoteArg(command), processOutput);
-                            emit signalInstallationError(err);
+                            Q_EMIT signalInstallationError(err);
                             // Ask the user if he wants to continue, even though the script failed
                             Question question(Question::ContinueCancelQuestion);
                             question.setQuestion(err);
@@ -853,7 +853,7 @@ void Installation::uninstall(EntryInternal entry)
                                 // Use can delete files manually
                                 EntryInternal newEntry = entry;
                                 newEntry.setStatus(KNS3::Entry::Installed);
-                                emit signalEntryChanged(newEntry);
+                                Q_EMIT signalEntryChanged(newEntry);
                                 return;
                             }
                         } else {

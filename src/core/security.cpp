@@ -69,7 +69,7 @@ void Security::readKeys()
             this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
-        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
         delete m_process;
         m_process = nullptr;
     } else {
@@ -115,9 +115,9 @@ void Security::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
     case ListSecret:
         m_keysRead = true;
         break;
-    case Verify: emit validityResult(m_result);
+    case Verify: Q_EMIT validityResult(m_result);
         break;
-    case Sign:   emit fileSigned(m_result);
+    case Sign:   Q_EMIT fileSigned(m_result);
         break;
 
     }
@@ -226,7 +226,7 @@ void Security::slotCheckValidity()
         return;
     }
     if (m_keys.isEmpty()) {
-        emit validityResult(-1);
+        Q_EMIT validityResult(-1);
         return;
     }
 
@@ -275,8 +275,8 @@ void Security::slotCheckValidity()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
-        emit validityResult(0);
+        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        Q_EMIT validityResult(0);
         delete m_process;
         m_process = nullptr;
     }
@@ -303,7 +303,7 @@ void Security::slotSignFile()
     }
 
     if (secretKeys.isEmpty()) {
-        emit fileSigned(-1);
+        Q_EMIT fileSigned(-1);
         return;
     }
 
@@ -337,7 +337,7 @@ void Security::slotSignFile()
             m_secretKey = question.response();
         } else {
             // emit an error to be forwarded to the user for selecting a signing key...
-            emit fileSigned(0);
+            Q_EMIT fileSigned(0);
             return;
         }
     } else {
@@ -366,8 +366,8 @@ void Security::slotSignFile()
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        emit signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
-        emit fileSigned(0);
+        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
+        Q_EMIT fileSigned(0);
         delete m_process;
         m_process = nullptr;
     }

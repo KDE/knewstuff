@@ -84,7 +84,7 @@ void CommentsModel::setItemsModel(QObject *newItemsModel)
     if (d->itemsModel != newItemsModel) {
         d->itemsModel = qobject_cast<ItemsModel*>(newItemsModel);
         d->resetConnections();
-        emit itemsModelChanged();
+        Q_EMIT itemsModelChanged();
     }
 }
 
@@ -98,7 +98,7 @@ void CommentsModel::setEntryIndex(int entryIndex)
     if (d->entryIndex != entryIndex) {
         d->entryIndex = entryIndex;
         d->resetConnections();
-        emit entryIndexChanged();
+        Q_EMIT entryIndexChanged();
     }
 }
 
@@ -112,7 +112,7 @@ void KNewStuffQuick::CommentsModel::setIncludedComments(CommentsModel::IncludedC
     if (d->includedComments != includedComments) {
         d->includedComments = includedComments;
         invalidateFilter();
-        emit includedCommentsChanged();
+        Q_EMIT includedCommentsChanged();
     }
 }
 

@@ -86,9 +86,9 @@ Engine::Engine(QObject *parent)
     connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
-    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ emit signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
+    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
     // Pass along old error signal through new signal for locations which have not been updated yet
-    connect(this, &Engine::signalError, this, [this](const QString& message){ emit signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
+    connect(this, &Engine::signalError, this, [this](const QString& message){ Q_EMIT signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
 }
 
 Engine::~Engine()
@@ -129,7 +129,7 @@ bool Engine::init(const QString &configfile)
     }
 
     if (conf->accessMode() == KConfig::NoAccess) {
-        emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
+        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
         return false;
     }
@@ -142,7 +142,7 @@ bool Engine::init(const QString &configfile)
         qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff2 config: " << configfile;
         group = conf->group("KNewStuff2");
     } else {
-        emit signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
+        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
         return false;
     }
@@ -254,7 +254,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         isAtticaProviderFile = true;
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
-        emit signalErrorCode(KNSCore::ProviderError, i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl), m_providerFileUrl);
+        Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl), m_providerFileUrl);
         return;
     }
 
@@ -268,7 +268,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
             connect(provider.data(), &Provider::categoriesMetadataLoded,
                     this, [this](const QList<Provider::CategoryMetadata> &categories){
                         d->categoriesMetadata = categories;
-                        emit signalCategoriesMetadataLoded(categories);
+                        Q_EMIT signalCategoriesMetadataLoded(categories);
                     });
         } else {
             provider.reset(new StaticXmlProvider);
@@ -277,7 +277,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         if (provider->setProviderXML(n)) {
             addProvider(provider);
         } else {
-            emit signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), m_providerFileUrl);
+            Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), m_providerFileUrl);
         }
         n = n.nextSiblingElement();
     }
@@ -296,7 +296,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
     connect(provider.data(), &Provider::categoriesMetadataLoded,
             this, [this](const QList<Provider::CategoryMetadata> &categories){
                 d->categoriesMetadata = categories;
-                emit signalCategoriesMetadataLoded(categories);
+                Q_EMIT signalCategoriesMetadataLoded(categories);
             });
     addProvider(provider);
 }
@@ -320,12 +320,12 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
 
 void Engine::providerJobStarted(KJob *job)
 {
-    emit jobStarted(job, i18n("Loading data from provider"));
+    Q_EMIT jobStarted(job, i18n("Loading data from provider"));
 }
 
 void Engine::slotProvidersFailed()
 {
-    emit signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", m_providerFileUrl), m_providerFileUrl);
+    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", m_providerFileUrl), m_providerFileUrl);
 }
 
 void Engine::providerInitialized(Provider *p)
@@ -339,7 +339,7 @@ void Engine::providerInitialized(Provider *p)
             return;
         }
     }
-    emit signalProvidersLoaded();
+    Q_EMIT signalProvidersLoaded();
 }
 
 void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, KNSCore::EntryInternal::List entries)
@@ -348,10 +348,10 @@ void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, 
     qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << m_currentPage << "count:" << entries.count();
 
     if (request.filter == Provider::Updates) {
-        emit signalUpdateableEntriesLoaded(entries);
+        Q_EMIT signalUpdateableEntriesLoaded(entries);
     } else {
         m_cache->insertRequest(request, entries);
-        emit signalEntriesLoaded(entries);
+        Q_EMIT signalEntriesLoaded(entries);
     }
 
     --m_numDataJobs;
@@ -360,7 +360,7 @@ void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, 
 
 void Engine::reloadEntries()
 {
-    emit signalResetView();
+    Q_EMIT signalResetView();
     m_currentPage = -1;
     m_currentRequest.pageSize = m_pageSize;
     m_currentRequest.page = 0;
@@ -390,7 +390,7 @@ void Engine::reloadEntries()
                 }
 
                 if (!cache.isEmpty()) {
-                    emit signalEntriesLoaded(cache);
+                    Q_EMIT signalEntriesLoaded(cache);
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "From provider";
                     p->loadEntries(m_currentRequest);
@@ -552,7 +552,7 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
     } else  {
         entry.setStatus(KNS3::Entry::Installing);
     }
-    emit signalEntryChanged(entry);
+    Q_EMIT signalEntryChanged(entry);
 
     qCDebug(KNEWSTUFFCORE) << "Install " << entry.name()
        << " from: " << entry.providerId();
@@ -596,12 +596,12 @@ void Engine::slotInstallationFinished()
 void Engine::slotInstallationFailed(const QString &message)
 {
     --m_numInstallJobs;
-    emit signalErrorCode(KNSCore::InstallationError, message, QVariant());
+    Q_EMIT signalErrorCode(KNSCore::InstallationError, message, QVariant());
 }
 
 void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 {
-    emit signalEntryDetailsLoaded(entry);
+    Q_EMIT signalEntryDetailsLoaded(entry);
 }
 
 void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
@@ -706,13 +706,13 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
 
     entry.setStatus(KNS3::Entry::Installing);
     actualEntryForUninstall.setStatus(KNS3::Entry::Installing);
-    emit signalEntryChanged(entry);
+    Q_EMIT signalEntryChanged(entry);
 
     qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
     m_installation->uninstall(actualEntryForUninstall);
 
     entry.setStatus(actualEntryForUninstall.status());
-    emit signalEntryChanged(entry);
+    Q_EMIT signalEntryChanged(entry);
 }
 
 void Engine::loadDetails(const KNSCore::EntryInternal &entry)
@@ -729,7 +729,7 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
     connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry,
                                                        EntryInternal::PreviewType type,
                                                        const QString &errorText) {
-        emit signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
+        Q_EMIT signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
         qCDebug(KNEWSTUFFCORE) << "ERROR preview: " << errorText << entry.name() << type;
         --m_numPictureJobs;
         updateStatus();
@@ -742,7 +742,7 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
 void Engine::slotPreviewLoaded(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type)
 {
     qCDebug(KNEWSTUFFCORE) << "FINISH preview: " << entry.name() << type;
-    emit signalEntryPreviewLoaded(entry, type);
+    Q_EMIT signalEntryPreviewLoaded(entry, type);
     --m_numPictureJobs;
     updateStatus();
 }
@@ -765,7 +765,7 @@ void Engine::contactAuthor(const EntryInternal &entry)
 
 void Engine::slotEntryChanged(const KNSCore::EntryInternal &entry)
 {
-    emit signalEntryChanged(entry);
+    Q_EMIT signalEntryChanged(entry);
 }
 
 bool Engine::userCanVote(const EntryInternal &entry)

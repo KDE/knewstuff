@@ -46,7 +46,7 @@ Question::Response Question::ask()
 {
     d->questionActive = true;
 
-    emit QuestionManager::instance()->askQuestion(this);
+    Q_EMIT QuestionManager::instance()->askQuestion(this);
     while(d->questionActive)
     {
         qApp->processEvents();

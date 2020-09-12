@@ -71,7 +71,7 @@ void DownloadManagerPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalUpdateableEntriesLoaded, q, &DownloadManager::searchResult);
     q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, q, &DownloadManager::searchResult);
     q->connect(engine, &KNSCore::Engine::signalEntryChanged, q, &DownloadManager::entryStatusChanged);
-    q->connect(engine, &KNSCore::Engine::signalErrorCode, q, [this](const KNSCore::ErrorCode &, const QString &message, const QVariant &){ emit q->errorFound(message); });
+    q->connect(engine, &KNSCore::Engine::signalErrorCode, q, [this](const KNSCore::ErrorCode &, const QString &message, const QVariant &){ Q_EMIT q->errorFound(message); });
     engine->init(configFile);
 }
 

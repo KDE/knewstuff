@@ -25,7 +25,7 @@ void ImageLoader::start()
         connect(m_job, &KJob::result, this, &ImageLoader::slotDownload);
         connect(m_job, &HTTPJob::data, this, &ImageLoader::slotData);
     } else {
-        emit signalError(m_entry, m_previewType, QStringLiteral("Empty url"));
+        Q_EMIT signalError(m_entry, m_previewType, QStringLiteral("Empty url"));
         deleteLater();
     }
 }
@@ -45,7 +45,7 @@ void ImageLoader::slotDownload(KJob *job)
 {
     if (job->error()) {
         m_buffer.clear();
-        emit signalError(m_entry, m_previewType, job->errorText());
+        Q_EMIT signalError(m_entry, m_previewType, job->errorText());
         deleteLater();
         return;
     }
@@ -68,7 +68,7 @@ void ImageLoader::slotDownload(KJob *job)
     }
 
     m_entry.setPreviewImage(image, m_previewType);
-    emit signalPreviewLoaded(m_entry, m_previewType);
+    Q_EMIT signalPreviewLoaded(m_entry, m_previewType);
     deleteLater();
 }
 

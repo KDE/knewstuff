@@ -61,7 +61,7 @@ void ItemsModel::addEntry(const EntryInternal &entry)
         if (!m_hasPreviewImages && !preview.isEmpty()) {
             m_hasPreviewImages = true;
             if (rowCount() > 0) {
-                emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+                Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
             }
         }
 
@@ -91,7 +91,7 @@ void ItemsModel::slotEntryChanged(const EntryInternal &entry)
 {
     int i = m_entries.indexOf(entry);
     QModelIndex entryIndex = index(i, 0);
-    emit dataChanged(entryIndex, entryIndex);
+    Q_EMIT dataChanged(entryIndex, entryIndex);
 }
 
 void ItemsModel::clearEntries()

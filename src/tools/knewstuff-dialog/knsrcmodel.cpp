@@ -110,6 +110,6 @@ void KNSRCModel::setFolder(const QUrl& folder)
     if(d->folder != folder) {
         d->folder = folder;
         d->refreshEntries();
-        emit folderChanged();
+        Q_EMIT folderChanged();
     }
 }

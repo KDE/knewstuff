@@ -102,7 +102,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
 void StaticXmlProvider::slotEmitProviderInitialized()
 {
     mInitialized = true;
-    emit providerInitialized(this);
+    Q_EMIT providerInitialized(this);
 }
 
 bool StaticXmlProvider::isInitialized() const
@@ -122,13 +122,13 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
 
     // static providers only have on page containing everything
     if (request.page > 0) {
-        emit loadingFinished(request, EntryInternal::List());
+        Q_EMIT loadingFinished(request, EntryInternal::List());
         return;
     }
 
     if (request.filter == Installed) {
         qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
-        emit loadingFinished(request, installedEntries());
+        Q_EMIT loadingFinished(request, installedEntries());
         return;
     }
 
@@ -146,7 +146,7 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
 
         loader->load(url);
     } else {
-        emit loadingFailed(request);
+        Q_EMIT loadingFailed(request);
     }
 }
 
@@ -178,7 +178,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
     XmlLoader *loader = qobject_cast<KNSCore::XmlLoader *>(sender());
     if (!loader) {
         qWarning() << "Loader not found!";
-        emit loadingFailed(mCurrentRequest);
+        Q_EMIT loadingFailed(mCurrentRequest);
         return;
     }
 
@@ -257,12 +257,12 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
             qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << entry.name() << "on entry filter" << tagFilter();
         }
     }
-    emit loadingFinished(mCurrentRequest, entries);
+    Q_EMIT loadingFinished(mCurrentRequest, entries);
 }
 
 void StaticXmlProvider::slotFeedFailed()
 {
-    emit loadingFailed(mCurrentRequest);
+    Q_EMIT loadingFailed(mCurrentRequest);
 }
 
 bool StaticXmlProvider::searchIncludesEntry(const KNSCore::EntryInternal &entry) const
@@ -289,7 +289,7 @@ bool StaticXmlProvider::searchIncludesEntry(const KNSCore::EntryInternal &entry)
 void StaticXmlProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int)
 {
     qCDebug(KNEWSTUFFCORE) << "Payload: " << entry.payload();
-    emit payloadLinkLoaded(entry);
+    Q_EMIT payloadLinkLoaded(entry);
 }
 
 EntryInternal::List StaticXmlProvider::installedEntries() const

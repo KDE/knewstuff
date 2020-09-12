@@ -38,7 +38,7 @@ KNewStuff2Test::KNewStuff2Test(const QString &configFile)
 void KNewStuff2Test::setTestAll(bool testall)
 {
     m_testall = testall;
-    emit testAllChanged();
+    Q_EMIT testAllChanged();
 }
 
 bool KNewStuff2Test::testAll() const

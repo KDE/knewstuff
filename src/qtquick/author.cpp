@@ -53,7 +53,7 @@ public:
         if (provider) {
             connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr< KNSCore::Author > author){
                 allAuthors()->insert(QString::fromLatin1("%1 %2").arg(provider->id(), author->id()), author);
-                emit q->dataChanged();
+                Q_EMIT q->dataChanged();
             });
             author(); // Check and make sure...
         }
@@ -108,7 +108,7 @@ void Author::setEngine(QObject *newEngine)
     if (d->engine != newEngine) {
         d->engine = qobject_cast<Engine*>(newEngine);
         d->resetConnections();
-        emit engineChanged();
+        Q_EMIT engineChanged();
     }
 }
 
@@ -122,7 +122,7 @@ void Author::setProviderId(const QString &providerId)
     if (d->providerId != providerId) {
         d->providerId = providerId;
         d->resetConnections();
-        emit providerIdChanged();
+        Q_EMIT providerIdChanged();
     }
 }
 
@@ -136,7 +136,7 @@ void Author::setUsername(const QString &username)
     if (d->username != username) {
         d->username = username;
         d->resetConnections();
-        emit usernameChanged();
+        Q_EMIT usernameChanged();
     }
 }
 

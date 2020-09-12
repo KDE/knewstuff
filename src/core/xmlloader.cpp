@@ -37,7 +37,7 @@ void XmlLoader::load(const QUrl &url)
     connect(job, &HTTPJob::data,
             this, &XmlLoader::slotJobData);
 
-    emit jobStarted(job);
+    Q_EMIT jobStarted(job);
 }
 
 void XmlLoader::slotJobData(KJob *, const QByteArray &data)
@@ -51,7 +51,7 @@ void XmlLoader::slotJobResult(KJob *job)
 {
     deleteLater();
     if (job->error()) {
-        emit signalFailed();
+        Q_EMIT signalFailed();
         return;
     }
     qCDebug(KNEWSTUFFCORE) << "--Xml Loader-START--";
@@ -59,10 +59,10 @@ void XmlLoader::slotJobResult(KJob *job)
     qCDebug(KNEWSTUFFCORE) << "--Xml Loader-END--";
     QDomDocument doc;
     if (!doc.setContent(m_jobdata)) {
-        emit signalFailed();
+        Q_EMIT signalFailed();
         return;
     }
-    emit signalLoaded(doc);
+    Q_EMIT signalLoaded(doc);
 }
 
 QDomElement addElement(QDomDocument &doc, QDomElement &parent,

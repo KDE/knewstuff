@@ -32,7 +32,7 @@ void ImagePreviewWidget::setImage(const QImage &preview)
 void ImagePreviewWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
-    emit clicked();
+    Q_EMIT clicked();
 }
 
 void ImagePreviewWidget::resizeEvent(QResizeEvent *event)

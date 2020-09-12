@@ -76,13 +76,13 @@ void Button::showDialog()
         KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return;
     }
-    emit aboutToShowDialog();
+    Q_EMIT aboutToShowDialog();
 
     QPointer<DownloadDialog> dialog = new DownloadDialog(d->configFile, this);
     dialog->exec();
 
     if (dialog)
-        emit dialogFinished(dialog->changedEntries());
+        Q_EMIT dialogFinished(dialog->changedEntries());
 
     delete dialog;
 }

@@ -81,16 +81,16 @@ void Engine::setConfigFile(const QString &newFile)
 {
     if (d->configFile != newFile) {
         d->isLoading = true;
-        emit isLoadingChanged();
+        Q_EMIT isLoadingChanged();
         d->configFile = newFile;
-        emit configFileChanged();
+        Q_EMIT configFileChanged();
 
         if (allowedByKiosk()) {
             if (!d->engine) {
                 d->engine = new KNSCore::Engine(this);
                 connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=](){
                     d->isLoading = false;
-                    emit isLoadingChanged();
+                    Q_EMIT isLoadingChanged();
                 });
                 connect(d->engine, &KNSCore::Engine::signalMessage, this, &Engine::message);
                 connect(d->engine, &KNSCore::Engine::signalIdle, this, &Engine::idleMessage);
@@ -102,38 +102,38 @@ void Engine::setConfigFile(const QString &newFile)
                         // initialisation. It also means the engine is done loading, but that nothing will
                         // work, and we need to inform the user of this.
                         d->isLoading = false;
-                        emit isLoadingChanged();
+                        Q_EMIT isLoadingChanged();
                     }
-                    emit errorMessage(message);
+                    Q_EMIT errorMessage(message);
                 });
                 connect(d->engine, &KNSCore::Engine::signalEntryChanged, this, [this](const KNSCore::EntryInternal &entry){
                     if (d->changedEntries.contains(entry) ) {
                         d->changedEntries.removeAll(entry);
                     }
                     d->changedEntries << entry;
-                    emit changedEntriesChanged();
+                    Q_EMIT changedEntriesChanged();
                 });
-                emit engineChanged();
+                Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();
                 d->categoriesModel = new CategoriesModel(this);
-                emit categoriesChanged();
+                Q_EMIT categoriesChanged();
                 // And finally, let's just make sure we don't miss out the various things here getting changed
                 // In other words, when we're asked to reset the view, actually do that
                 connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::categoriesFilterChanged);
                 connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::filterChanged);
                 connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::sortOrderChanged);
                 connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::searchTermChanged);
-                emit categoriesFilterChanged();
-                emit filterChanged();
-                emit sortOrderChanged();
-                emit searchTermChanged();
+                Q_EMIT categoriesFilterChanged();
+                Q_EMIT filterChanged();
+                Q_EMIT sortOrderChanged();
+                Q_EMIT searchTermChanged();
             }
             d->engine->init(d->configFile);
-            emit engineInitialized();
+            Q_EMIT engineInitialized();
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
             // nothing the user can do to fix it, and we just tell them so they're not wondering what's wrong)
-            emit message(i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality", "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
+            Q_EMIT message(i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality", "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
         }
     }
 }
@@ -186,7 +186,7 @@ void Engine::setCategoriesFilter(const QStringList &newCategoriesFilter)
         filter.removeAll({});
         if (d->engine->categoriesFilter() != filter) {
             d->engine->setCategoriesFilter(filter);
-            emit categoriesFilterChanged();
+            Q_EMIT categoriesFilterChanged();
         }
     }
 }
@@ -210,7 +210,7 @@ void Engine::setFilter(int newFilter)
 {
     if (d->engine && d->engine->filter() != newFilter) {
         d->engine->setFilter(static_cast<KNSCore::Provider::Filter>(newFilter));
-        emit filterChanged();
+        Q_EMIT filterChanged();
     }
 }
 
@@ -226,7 +226,7 @@ void Engine::setSortOrder(int newSortOrder)
 {
     if (d->engine && d->engine->sortMode() != newSortOrder) {
         d->engine->setSortMode(static_cast<KNSCore::Provider::SortMode>(newSortOrder));
-        emit sortOrderChanged();
+        Q_EMIT sortOrderChanged();
     }
 }
 
@@ -242,7 +242,7 @@ void Engine::setSearchTerm(const QString &newSearchTerm)
 {
     if (d->engine && d->engine->searchTerm() != newSearchTerm) {
         d->engine->setSearchTerm(newSearchTerm);
-        emit searchTermChanged();
+        Q_EMIT searchTermChanged();
     }
 }
 
@@ -264,5 +264,5 @@ int Engine::changedEntriesCount() const
 void Engine::resetChangedEntries()
 {
     d->changedEntries.clear();
-    emit changedEntriesChanged();
+    Q_EMIT changedEntriesChanged();
 }

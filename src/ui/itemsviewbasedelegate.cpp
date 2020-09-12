@@ -102,7 +102,7 @@ void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
             return;
         }
         qCDebug(KNEWSTUFF) << "Details: " << entry.name();
-        emit signalShowDetails(entry);
+        Q_EMIT signalShowDetails(entry);
     }
 }
 }
