@@ -101,7 +101,7 @@ bool Installation::readConfig(const KConfigGroup &group)
             postInstallationCommand.endsWith(QLatin1String("-i %f")) &&
             uninstallCommand.startsWith(QLatin1String("kpackagetool5 -t")) &&
             uninstallCommand.endsWith(QLatin1String("-r %f"))) {
-        uncompression = QLatin1String("kpackage");
+        uncompression = QStringLiteral("kpackage");
         postInstallationCommand = QLatin1String("");
         // Not clearing uninstallCommand, as this is used for the fallback situation
         setProperty("kpackageType", uninstallCommand.mid(17, uninstallCommand.length() - 17 - 6));
@@ -110,7 +110,7 @@ bool Installation::readConfig(const KConfigGroup &group)
             postInstallationCommand.endsWith(QLatin1String("--install %f")) &&
             uninstallCommand.startsWith(QLatin1String("kpackagetool5 --type")) &&
             uninstallCommand.endsWith(QLatin1String("--remove %f"))) {
-        uncompression = QLatin1String("kpackage");
+        uncompression = QStringLiteral("kpackage");
         postInstallationCommand = QLatin1String("");
         // Not clearing uninstallCommand, as this is used for the fallback situation
         setProperty("kpackageType", uninstallCommand.mid(21, uninstallCommand.length() - 21 - 12));

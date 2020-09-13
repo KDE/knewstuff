@@ -114,15 +114,15 @@ bool Engine::init(const QString &configfile)
     QString actualConfig;
     if (isRelativeConfig) {
         // Don't do the expensive search unless the config is relative
-        actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("knsrcfiles/%1").arg(configfile));
+        actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
     }
     QString configFileName{configfile};
     if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
         conf.reset(new KConfig(configfile));
         qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
     } else if (isRelativeConfig) {
-        configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString::fromLatin1("knsrcfiles/%1").arg(configfile))).baseName();
-        conf.reset(new KConfig(QString::fromLatin1("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
+        configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile))).baseName();
+        conf.reset(new KConfig(QStringLiteral("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
     } else {
         configFileName = QFileInfo(configfile).baseName();
         conf.reset(new KConfig(configfile));

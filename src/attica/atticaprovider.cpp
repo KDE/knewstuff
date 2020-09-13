@@ -342,7 +342,7 @@ void AtticaProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int li
 
 void AtticaProvider::loadComments(const EntryInternal &entry, int commentsPerPage, int page)
 {
-    ListJob<Attica::Comment> *job = m_provider.requestComments(Attica::Comment::ContentComment, entry.uniqueId(), QLatin1String("0"), page, commentsPerPage);
+    ListJob<Attica::Comment> *job = m_provider.requestComments(Attica::Comment::ContentComment, entry.uniqueId(), QStringLiteral("0"), page, commentsPerPage);
     connect(job, &BaseJob::finished, this, &AtticaProvider::loadedComments);
     job->start();
 }
@@ -405,7 +405,7 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
 
     auto author = std::make_shared<KNSCore::Author>();
     author->setId(job->property("username").toString()); // This is a touch hack-like, but it ensures we actually have the data in case it is not returned by the server
-    author->setName(QString::fromLatin1("%1 %2").arg(person.firstName(), person.lastName()).trimmed());
+    author->setName(QStringLiteral("%1 %2").arg(person.firstName(), person.lastName()).trimmed());
     author->setHomepage(person.homepage());
     author->setProfilepage(person.extendedAttribute(QStringLiteral("profilepage")));
     author->setAvatarUrl(person.avatarUrl());
