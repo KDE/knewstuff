@@ -55,7 +55,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
         if (index.row() == 0) {
             switch (role) {
                 case NameRole:
-                    result.setValue(QString::fromLatin1(""));
+                    result.setValue(QString());
                     break;
                 case IdRole:
                     result.setValue(0);
@@ -64,7 +64,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
                     result.setValue(i18nc("The first entry in the category selection list (also the default value)", "All Categories"));
                     break;
                 default:
-                    result.setValue(QString::fromLatin1("Unknown role"));
+                    result.setValue(QStringLiteral("Unknown role"));
                     break;
             }
         } else if (index.row() <= categoriesMetadata.count()) {
@@ -80,7 +80,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
                     result.setValue(category.displayName);
                     break;
                 default:
-                    result.setValue(QString::fromLatin1("Unknown role"));
+                    result.setValue(QStringLiteral("Unknown role"));
                     break;
             }
         }

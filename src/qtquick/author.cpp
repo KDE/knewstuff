@@ -52,7 +52,7 @@ public:
         }
         if (provider) {
             connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr< KNSCore::Author > author){
-                allAuthors()->insert(QString::fromLatin1("%1 %2").arg(provider->id(), author->id()), author);
+                allAuthors()->insert(QStringLiteral("%1 %2").arg(provider->id(), author->id()), author);
                 Q_EMIT q->dataChanged();
             });
             author(); // Check and make sure...
@@ -63,7 +63,7 @@ public:
     {
         std::shared_ptr<KNSCore::Author> ret;
         if (provider && !username.isEmpty()) {
-            ret = allAuthors()->value(QString::fromLatin1("%1 %2").arg(provider->id(), username));
+            ret = allAuthors()->value(QStringLiteral("%1 %2").arg(provider->id(), username));
             if(!ret.get()) {
                 Q_EMIT provider->loadPerson(username);
             }

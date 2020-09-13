@@ -39,8 +39,8 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<KNewStuffQuick::CommentsModel>(uri, 1, 62, "CommentsModel");
     qmlRegisterUncreatableType<DownloadLinkInfo>(uri, 1, 0, "DownloadLinkInfo", QStringLiteral("This should only be created by the ItemsModel, and is associated with one entry in that model"));
     qmlRegisterUncreatableType<CategoriesModel>(uri, 1, 0, "CategoriesModel", QStringLiteral("This should only be created by the Engine, and provides the categories available in that engine"));
-    qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject, coreUri, 1, 62, "Provider", QLatin1String("Error: this only exists to forward enums"));
-    qmlRegisterUncreatableMetaObject(KNSCore::Question::staticMetaObject, coreUri, 1, 62, "Question", QLatin1String("Error: this only exists to forward enums"));
+    qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject, coreUri, 1, 62, "Provider", QStringLiteral("Error: this only exists to forward enums"));
+    qmlRegisterUncreatableMetaObject(KNSCore::Question::staticMetaObject, coreUri, 1, 62, "Question", QStringLiteral("Error: this only exists to forward enums"));
     qmlRegisterSingletonType<KNewStuffQuick::QuickQuestionListener>(uri, 1, 62, "QuickQuestionListener", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
         Q_UNUSED(scriptEngine)
         engine->setObjectOwnership(KNewStuffQuick::QuickQuestionListener::instance(), QQmlEngine::CppOwnership);
