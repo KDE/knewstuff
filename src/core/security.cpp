@@ -52,7 +52,7 @@ Security::~Security()
 void Security::readKeys()
 {
     if (m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(readKeys()));
+        QTimer::singleShot(5, this, &Security::readKeys);
         return;
     }
     m_runMode = List;
@@ -80,7 +80,7 @@ void Security::readKeys()
 void Security::readSecretKeys()
 {
     if (m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(readSecretKeys()));
+        QTimer::singleShot(5, this, &Security::readSecretKeys);
         return;
     }
     m_runMode = ListSecret;
@@ -222,7 +222,7 @@ void Security::checkValidity(const QString &filename)
 void Security::slotCheckValidity()
 {
     if (!m_keysRead || m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(slotCheckValidity()));
+        QTimer::singleShot(5, this, &Security::slotCheckValidity);
         return;
     }
     if (m_keys.isEmpty()) {
@@ -291,7 +291,7 @@ void Security::signFile(const QString &fileName)
 void Security::slotSignFile()
 {
     if (!m_keysRead || m_gpgRunning) {
-        QTimer::singleShot(5, this, SLOT(slotSignFile()));
+        QTimer::singleShot(5, this, &Security::slotSignFile);
         return;
     }
 
