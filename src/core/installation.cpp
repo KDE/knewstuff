@@ -287,16 +287,12 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
 
         auto installationFinished = [this, entry]() {
             EntryInternal newentry = entry;
-            // update version and release date to the new ones
-            if (newentry.status() == KNS3::Entry::Updating) {
-                if (!newentry.updateVersion().isEmpty()) {
-                    newentry.setVersion(newentry.updateVersion());
-                }
-                if (newentry.updateReleaseDate().isValid()) {
-                    newentry.setReleaseDate(newentry.updateReleaseDate());
-                }
+            if (!newentry.updateVersion().isEmpty()) {
+                newentry.setVersion(newentry.updateVersion());
             }
-
+            if (newentry.updateReleaseDate().isValid()) {
+                newentry.setReleaseDate(newentry.updateReleaseDate());
+            }
             newentry.setStatus(KNS3::Entry::Installed);
             Q_EMIT signalEntryChanged(newentry);
             Q_EMIT signalInstallationFinished();
