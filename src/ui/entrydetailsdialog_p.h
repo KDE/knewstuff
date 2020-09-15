@@ -54,13 +54,13 @@ private:
     void init();
     void previewSelected(int current);
 
-    KNSCore::Engine *m_engine;
-    Ui::DownloadWidget *ui;
+    KNSCore::Engine *const m_engine;
+    Ui::DownloadWidget *const ui;
     KNSCore::EntryInternal m_entry;
     QImage m_currentPreview;
-    QListWidgetItem *m_previewItem1;
-    QListWidgetItem *m_previewItem2;
-    QListWidgetItem *m_previewItem3;
+    QListWidgetItem *m_previewItem1 = nullptr;
+    QListWidgetItem *m_previewItem2 = nullptr;
+    QListWidgetItem *m_previewItem3 = nullptr;
 };
 
 }

@@ -16,13 +16,9 @@ using namespace KNSCore;
 class HTTPJob::Private
 {
 public:
-    Private()
-        : loadType(Reload)
-        , flags(DefaultFlags)
-    {}
     QUrl source;
-    LoadType loadType;
-    JobFlags flags;
+    LoadType loadType = Reload;
+    JobFlags flags = DefaultFlags;
 };
 
 HTTPJob::HTTPJob(const QUrl& source, LoadType loadType, JobFlags flags, QObject* parent)

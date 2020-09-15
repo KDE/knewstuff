@@ -51,10 +51,10 @@ public Q_SLOTS:
     void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
 
 private:
-    Engine *m_engine;
+    Engine *const m_engine;
     // the list of entries
     QList<EntryInternal> m_entries;
-    bool m_hasPreviewImages;
+    bool m_hasPreviewImages = false;
 };
 
 } // end KNS namespace

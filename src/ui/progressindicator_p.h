@@ -43,11 +43,11 @@ public Q_SLOTS:
     void idle(const QString &message);
 
 private:
-    QLabel *m_statusLabel;
-    KPixmapSequenceWidget *busyWidget;
+    QLabel *m_statusLabel = nullptr;
+    KPixmapSequenceWidget *busyWidget = nullptr;
 
-    KPixmapSequence m_busyPixmap;
-    KPixmapSequence m_errorPixmap;
+    const KPixmapSequence m_busyPixmap;
+    const KPixmapSequence m_errorPixmap;
 };
 }
 

@@ -16,17 +16,12 @@ using namespace KNSCore;
 class FileCopyJob::Private
 {
 public:
-    Private()
-        : permissions(-1)
-        , flags(DefaultFlags)
-        , worker(nullptr)
-    {}
     QUrl source;
     QUrl destination;
-    int permissions;
-    JobFlags flags;
+    int permissions = -1;
+    JobFlags flags = DefaultFlags;
 
-    FileCopyWorker* worker;
+    FileCopyWorker* worker = nullptr;
 };
 
 FileCopyJob::FileCopyJob(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)

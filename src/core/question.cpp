@@ -16,15 +16,14 @@ using namespace KNSCore;
 class Question::Private {
 public:
     Private()
-        : questionActive(false)
-        , questionType(YesNoQuestion)
+        : questionType(YesNoQuestion)
         , response(InvalidResponse)
     {}
     QString question;
     QString title;
     QStringList list;
 
-    bool questionActive;
+    bool questionActive = false;
     Question::QuestionType questionType;
     Question::Response response;
     QString textResponse;

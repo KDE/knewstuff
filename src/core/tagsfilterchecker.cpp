@@ -36,7 +36,7 @@ public:
                 m_acceptedValues << value;
             }
         }
-        virtual ~Validator() {};
+        virtual ~Validator() {}
         virtual bool filterAccepts(const QString &tag, const QString &value) = 0;
     protected:
         friend class TagsFilterChecker::Private;

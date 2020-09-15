@@ -18,31 +18,25 @@ namespace KNSCore
 class DownloadManagerPrivate
 {
 public:
-    DownloadManager *q;
-    Engine *engine;
+    DownloadManager *const q;
+    Engine *const engine;
 
     DownloadManagerPrivate(DownloadManager *q)
         : q(q)
         , engine(new Engine)
-        , isInitialized(false)
-        , checkForUpdates(false)
-        , checkForInstalled(false)
-        , doSearch(false)
-        , page(0)
-        , pageSize(100)
     {}
     ~DownloadManagerPrivate()
     {
         delete engine;
     }
 
-    bool isInitialized;
-    bool checkForUpdates;
-    bool checkForInstalled;
-    bool doSearch;
+    bool isInitialized = false;
+    bool checkForUpdates = false;
+    bool checkForInstalled = false;
+    bool doSearch = false;
 
-    int page;
-    int pageSize;
+    int page = 0;
+    int pageSize = 100;
 
     void init(const QString &configFile);
 };

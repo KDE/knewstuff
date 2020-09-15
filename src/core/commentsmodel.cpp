@@ -21,7 +21,7 @@ public:
     Private(CommentsModel *qq)
         : q(qq)
     {}
-    CommentsModel *q = nullptr;
+    CommentsModel *const q;
     Engine *engine = nullptr;
 
     EntryInternal entry;

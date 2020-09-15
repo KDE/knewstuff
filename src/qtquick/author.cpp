@@ -27,7 +27,7 @@ public:
     Private(Author *qq)
         : q(qq)
     {}
-    Author *q;
+    Author *const q;
     bool componentCompleted{false};
     Engine *engine{nullptr};
     QString providerId;

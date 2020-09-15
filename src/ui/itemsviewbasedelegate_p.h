@@ -51,8 +51,8 @@ protected Q_SLOTS:
     void slotDetailsClicked();
 
 protected:
-    KNSCore::Engine *m_engine;
-    QAbstractItemView *m_itemView;
+    KNSCore::Engine *const m_engine;
+    QAbstractItemView *const m_itemView;
     QIcon m_iconInvalid;
     QIcon m_iconDownloadable;
     QIcon m_iconInstall;

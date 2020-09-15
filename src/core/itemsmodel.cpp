@@ -19,7 +19,6 @@ namespace KNSCore
 ItemsModel::ItemsModel(Engine *engine, QObject *parent)
     : QAbstractListModel(parent)
     , m_engine(engine)
-    , m_hasPreviewImages(false)
 {
 }
 

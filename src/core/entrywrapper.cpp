@@ -13,7 +13,7 @@ namespace KNSCore {
         )
             : entry(entry)
         {}
-        EntryInternal entry;
+        const EntryInternal entry;
     };
 }
 
