@@ -40,7 +40,7 @@ class DownloadWidgetPrivate;
  * The file could look like this for wallpapers:
  * <pre>
    [KNewStuff3]
-   ProvidersUrl=https://download.kde.org/ocs/providers.xml
+   ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
    Categories=KDE Wallpaper 1920x1200,KDE Wallpaper 1600x1200
    StandardResource=wallpaper
    Uncompress=archive
