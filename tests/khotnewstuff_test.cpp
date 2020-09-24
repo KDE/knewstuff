@@ -50,9 +50,9 @@ void KNewStuff2Test::entryTest()
 {
     addMessage(QStringLiteral("-- test kns2 entry class"), QStringLiteral("msg_info"));
 
-    QFile f(QString::fromLatin1("%1/testdata/entry.xml").arg(QStringLiteral(KNSSRCDIR)));
+    QFile f(QStringLiteral("%1/testdata/entry.xml").arg(QStringLiteral(KNSSRCDIR)));
     if (!f.open(QIODevice::ReadOnly)) {
-        addMessage(QString::fromUtf8("Error loading entry file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
+        addMessage(QStringLiteral("Error loading entry file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
         return;
     }
 
@@ -64,11 +64,11 @@ void KNewStuff2Test::entryTest()
 
     f.close();
     if (!xmlResult) {
-        addMessage(QString::fromUtf8("Error parsing entry file."), QStringLiteral("msg_error"));
+        addMessage(QStringLiteral("Error parsing entry file."), QStringLiteral("msg_error"));
         return;
     }
 
-    addMessage(QString::fromUtf8("-- entry->xml test result: %1").arg(e.isValid()), e.isValid() ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("-- entry->xml test result: %1").arg(e.isValid()), e.isValid() ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
     if (!e.isValid()) {
         return;
     } else {
@@ -79,16 +79,16 @@ void KNewStuff2Test::entryTest()
 
 void KNewStuff2Test::providerTest()
 {
-    addMessage(QString::fromUtf8("-- test kns2 provider class"), QStringLiteral("msg_info"));
+    addMessage(QStringLiteral("-- test kns2 provider class"), QStringLiteral("msg_info"));
 
     QDomDocument doc;
-    QFile f(QString::fromLatin1("%1/testdata/provider.xml").arg(QStringLiteral(KNSSRCDIR)));
+    QFile f(QStringLiteral("%1/testdata/provider.xml").arg(QStringLiteral(KNSSRCDIR)));
     if (!f.open(QIODevice::ReadOnly)) {
-        addMessage(QString::fromUtf8("Error loading provider file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
+        addMessage(QStringLiteral("Error loading provider file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
         return;
     }
     if (!doc.setContent(&f)) {
-        addMessage(QString::fromUtf8("Error parsing provider file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
+        addMessage(QStringLiteral("Error parsing provider file: %1").arg(f.fileName()), QStringLiteral("msg_error"));
         f.close();
         return;
     }
@@ -97,12 +97,12 @@ void KNewStuff2Test::providerTest()
     KNSCore::StaticXmlProvider p;
     p.setProviderXML(doc.documentElement());
 
-    addMessage(QString::fromUtf8("-- xml->provider test result: %1").arg(p.isInitialized()), p.isInitialized()? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("-- xml->provider test result: %1").arg(p.isInitialized()), p.isInitialized()? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
 }
 
 void KNewStuff2Test::engineTest()
 {
-    addMessage(QString::fromUtf8("-- test kns2 engine"), QStringLiteral("msg_info"));
+    addMessage(QStringLiteral("-- test kns2 engine"), QStringLiteral("msg_info"));
 
     m_engine = new KNSCore::Engine(this);
 
@@ -121,17 +121,17 @@ void KNewStuff2Test::engineTest()
 
     bool ret = m_engine->init(m_configFile);
 
-    addMessage(QString::fromUtf8("-- engine test result: %1").arg(ret), ret ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("-- engine test result: %1").arg(ret), ret ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
 
     if (!ret) {
-        addMessage(QString::fromUtf8("ACHTUNG: you probably need to 'make install' the knsrc file first. Although this is not required anymore, so something went really wrong."), QStringLiteral("msg_warning"));
+        addMessage(QStringLiteral("ACHTUNG: you probably need to 'make install' the knsrc file first. Although this is not required anymore, so something went really wrong."), QStringLiteral("msg_warning"));
     }
-    addMessage(QString::fromUtf8("-- initial engine test completed"), QStringLiteral("msg_info"));
+    addMessage(QStringLiteral("-- initial engine test completed"), QStringLiteral("msg_info"));
 }
 
 void KNewStuff2Test::slotProvidersLoaded()
 {
-    addMessage(QString::fromUtf8("SLOT: slotProvidersLoaded"), QStringLiteral("msg_info"));
+    addMessage(QStringLiteral("SLOT: slotProvidersLoaded"), QStringLiteral("msg_info"));
 //     qDebug() << "-- provider: " << provider->name().representation();
 
     m_engine->reloadEntries();
@@ -139,13 +139,13 @@ void KNewStuff2Test::slotProvidersLoaded()
 
 void KNewStuff2Test::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 {
-    addMessage(QString::fromUtf8("SLOT: slotEntriesLoaded. Number of entries %1").arg(entries.count()), QStringLiteral("msg_info"));
+    addMessage(QStringLiteral("SLOT: slotEntriesLoaded. Number of entries %1").arg(entries.count()), QStringLiteral("msg_info"));
 
     if (m_testall) {
-        addMessage(QString::fromUtf8("-- now, download the entries' previews and payload files"), QStringLiteral("msg_info"));
+        addMessage(QStringLiteral("-- now, download the entries' previews and payload files"), QStringLiteral("msg_info"));
 
         for (const KNSCore::EntryInternal &entry : entries) {
-            addMessage(QString::fromUtf8("-- entry: %1").arg(entry.name()), QStringLiteral("msg_info"));
+            addMessage(QStringLiteral("-- entry: %1").arg(entry.name()), QStringLiteral("msg_info"));
             if (!entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
                 m_engine->loadPreview(entry, KNSCore::EntryInternal::PreviewSmall1);
             }
@@ -158,12 +158,12 @@ void KNewStuff2Test::slotEntriesLoaded(const KNSCore::EntryInternal::List &entri
 
 void KNewStuff2Test::slotInstallationFinished()
 {
-    addMessage(QString::fromUtf8("SLOT: slotInstallationFinished"));
+    addMessage(QStringLiteral("SLOT: slotInstallationFinished"));
 }
 
 void KNewStuff2Test::slotEngineError(const QString &error)
 {
-    addMessage(QString::fromUtf8("SLOT: slotEngineError %1").arg(error), QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("SLOT: slotEngineError %1").arg(error), QStringLiteral("msg_error"));
 }
 
 QObject *KNewStuff2Test::messages()
@@ -202,13 +202,13 @@ int main(int argc, char **argv)
     if (parser->positionalArguments().count() > 0) {
         test = new KNewStuff2Test(parser->positionalArguments().first());
     } else {
-        test = new KNewStuff2Test(QString::fromLatin1("%1/khotnewstuff_test.knsrc").arg(QStringLiteral(KNSBUILDDIR)));
+        test = new KNewStuff2Test(QStringLiteral("%1/khotnewstuff_test.knsrc").arg(QStringLiteral(KNSBUILDDIR)));
     }
     test->setTestAll(parser->isSet(QStringLiteral("testall")));
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
     appengine->rootContext()->setContextProperty(QStringLiteral("testObject"), test);
-    appengine->load(QUrl::fromLocalFile(QString::fromLatin1("%1/khotnewstuff_test-ui/main.qml").arg(QStringLiteral(KNSSRCDIR))));
+    appengine->load(QUrl::fromLocalFile(QStringLiteral("%1/khotnewstuff_test-ui/main.qml").arg(QStringLiteral(KNSSRCDIR))));
 
     // Don't really want to add messages until the tester
     // begins to actually request stuff in the UI,

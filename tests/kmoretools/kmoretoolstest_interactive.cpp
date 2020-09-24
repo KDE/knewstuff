@@ -16,8 +16,6 @@
 #include <QPushButton>
 #include <QLineEdit>
 
-#define _ QLatin1String
-
 /**
  * Each test case starts a test GUI.
  * Run kmoretoolstest_interactive with the test case name as first parameter

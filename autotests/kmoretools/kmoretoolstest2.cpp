@@ -11,8 +11,6 @@
 
 #include <QTest>
 
-#define _ QLatin1String
-
 /**
  * The tests in this class have some runtime requirements.
  * Details see comment in implementation of each test case.

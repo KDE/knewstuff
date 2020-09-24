@@ -12,8 +12,6 @@
 #include <QRegularExpression>
 #include <QPushButton>
 
-#define _ QLatin1String
-
 class KMoreToolsTest : public QObject
 {
     Q_OBJECT
@@ -101,9 +99,9 @@ void KMoreToolsTest::testDesktopFileWithNoName()
     KMoreTools kmt(_("unittest-kmoretools/1"));
     auto cApp = kmt.registerServiceByDesktopEntryName(_("c"));
     QVERIFY(cApp);
-    QCOMPARE(cApp->desktopEntryName(), QString(_("c")));
+    QCOMPARE(cApp->desktopEntryName(), _("c"));
     QVERIFY(cApp->kmtProvidedService());
-    QCOMPARE(cApp->kmtProvidedService()->exec(), QString(_("hallo")));
+    QCOMPARE(cApp->kmtProvidedService()->exec(), _("hallo"));
 }
 
 /**
@@ -114,7 +112,7 @@ void KMoreToolsTest::testDesktopFileNotProvided()
     KMoreTools kmt(_("unittest-kmoretools/1"));
     auto eeeApp = kmt.registerServiceByDesktopEntryName(_("eee"));
     QVERIFY(eeeApp);
-    QCOMPARE(eeeApp->desktopEntryName(), QString(_("eee")));
+    QCOMPARE(eeeApp->desktopEntryName(), _("eee"));
 }
 
 void KMoreToolsTest::testDetectByExecLineButNoFileProvided()
@@ -153,7 +151,7 @@ void KMoreToolsTest::testNotInstalledAppStructure()
     menuBuilder->addMenuItem(mynotInstalledApp);
     QString s = menuBuilder->menuStructureAsString(false);
     qDebug() << s;
-    QCOMPARE(s, QString(_("|main|:|more|:|notinstalled|:mynotinstalledapp.")));
+    QCOMPARE(s, _("|main|:|more|:|notinstalled|:mynotinstalledapp."));
 }
 
 void KMoreToolsTest::testNotInstalledAppIcon()
@@ -233,10 +231,10 @@ void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
 void KMoreToolsTest::testMenuItemIdGen()
 {
     KmtMenuItemIdGen idGen;
-    QCOMPARE(idGen.getId(_("a")), QString(_("a0")));
-    QCOMPARE(idGen.getId(_("a")), QString(_("a1")));
-    QCOMPARE(idGen.getId(_("b")), QString(_("b0")));
-    QCOMPARE(idGen.getId(_("a")), QString(_("a2")));
+    QCOMPARE(idGen.getId(_("a")), _("a0"));
+    QCOMPARE(idGen.getId(_("a")), _("a1"));
+    QCOMPARE(idGen.getId(_("b")), _("b0"));
+    QCOMPARE(idGen.getId(_("a")), _("a2"));
 }
 
 QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
@@ -246,11 +244,11 @@ QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
 
 void KMoreToolsTest::test_MenuItemDto_removeMenuAmpersand()
 {
-    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hallo")), QString(_("Hallo")));
-    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("Hall&o")), QString(_("Hallo")));
-    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("H&all&o")), QString(_("Hallo"))); // is this ok for menus items?
-    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&&Hallo")), QString(_("&Hallo")));
-    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hall&&o")), QString(_("Hall&o")));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hallo")), _("Hallo"));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("Hall&o")), _("Hallo"));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("H&all&o")), _("Hallo")); // is this ok for menus items?
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&&Hallo")), _("&Hallo"));
+    QCOMPARE(KmtMenuItemDto::removeMenuAmpersand(_("&Hall&&o")), _("Hall&o"));
 }
 
 // Support method for KMoreToolsTest::test_MenuStructureDto_sortListBySection,
@@ -293,11 +291,11 @@ static void sortListBySection(int indexes[5])
     }
     mstruct.stableSortListBySection();
 
-    QCOMPARE(mstruct.list[0].id, QString(_("main1"))); // 1. main
-    QCOMPARE(mstruct.list[1].id, QString(_("main2")));
-    QCOMPARE(mstruct.list[2].id, QString(_("more1"))); // 2. more
-    QCOMPARE(mstruct.list[3].id, QString(_("more2")));
-    QCOMPARE(mstruct.list[4].id, QString(_("main3_ni"))); // 3. not installed
+    QCOMPARE(mstruct.list[0].id, _("main1")); // 1. main
+    QCOMPARE(mstruct.list[1].id, _("main2"));
+    QCOMPARE(mstruct.list[2].id, _("more1")); // 2. more
+    QCOMPARE(mstruct.list[3].id, _("more2"));
+    QCOMPARE(mstruct.list[4].id, _("main3_ni")); // 3. not installed
 }
 
 void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
