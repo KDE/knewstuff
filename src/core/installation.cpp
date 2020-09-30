@@ -74,12 +74,12 @@ bool Installation::readConfig(const KConfigGroup &group)
         return false;
     }
     uncompression = uncompresssetting;
-    setProperty("kpackageType", group.readEntry("KPackageType", QString()));
-    postInstallationCommand = group.readEntry("InstallationCommand", QString());
-    uninstallCommand = group.readEntry("UninstallCommand", QString());
-    standardResourceDirectory = group.readEntry("StandardResource", QString());
-    targetDirectory = group.readEntry("TargetDir", QString());
-    xdgTargetDirectory = group.readEntry("XdgTargetDir", QString());
+    setProperty("kpackageType", group.readEntry("KPackageType"));
+    postInstallationCommand = group.readEntry("InstallationCommand");
+    uninstallCommand = group.readEntry("UninstallCommand");
+    standardResourceDirectory = group.readEntry("StandardResource");
+    targetDirectory = group.readEntry("TargetDir");
+    xdgTargetDirectory = group.readEntry("XdgTargetDir");
 
     // Provide some compatibility
     if (standardResourceDirectory == QLatin1String("wallpaper")) {
@@ -117,8 +117,8 @@ bool Installation::readConfig(const KConfigGroup &group)
         qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
     }
 
-    installPath = group.readEntry("InstallPath", QString());
-    absoluteInstallPath = group.readEntry("AbsoluteInstallPath", QString());
+    installPath = group.readEntry("InstallPath");
+    absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
     customName = group.readEntry("CustomName", false);
     acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
 
@@ -131,7 +131,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         return false;
     }
 
-    QString checksumpolicy = group.readEntry("ChecksumPolicy", QString());
+    QString checksumpolicy = group.readEntry("ChecksumPolicy");
     if (!checksumpolicy.isEmpty()) {
         if (checksumpolicy == QLatin1String("never")) {
             checksumPolicy = Installation::CheckNever;
@@ -145,7 +145,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         }
     }
 
-    QString signaturepolicy = group.readEntry("SignaturePolicy", QString());
+    QString signaturepolicy = group.readEntry("SignaturePolicy");
     if (!signaturepolicy.isEmpty()) {
         if (signaturepolicy == QLatin1String("never")) {
             signaturePolicy = Installation::CheckNever;
@@ -159,7 +159,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         }
     }
 
-    QString scopeString = group.readEntry("Scope", QString());
+    QString scopeString = group.readEntry("Scope");
     if (!scopeString.isEmpty()) {
         if (scopeString == QLatin1String("user")) {
             scope = ScopeUser;

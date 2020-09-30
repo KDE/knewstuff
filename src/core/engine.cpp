@@ -147,12 +147,12 @@ bool Engine::init(const QString &configfile)
         return false;
     }
 
-    d->name = group.readEntry("Name", QString());
+    d->name = group.readEntry("Name");
     m_categories = group.readEntry("Categories", QStringList());
-    m_adoptionCommand = group.readEntry("AdoptionCommand", QString());
+    m_adoptionCommand = group.readEntry("AdoptionCommand");
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
-    m_providerFileUrl = group.readEntry("ProvidersUrl", QString());
+    m_providerFileUrl = group.readEntry("ProvidersUrl");
 
     d->tagFilter = group.readEntry("TagFilter", QStringList());
     if (d->tagFilter.isEmpty()) {

@@ -392,7 +392,7 @@ public:
     {
         KConfig config(configFile, KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         auto configGroup = config.group(uniqueId + userConfigPostfix);
-        QString json = configGroup.readEntry(configKey, "");
+        QString json = configGroup.readEntry(configKey);
         KmtMenuStructureDto configuredStructure;
         configuredStructure.deserialize(json);
         return configuredStructure;

@@ -94,7 +94,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
     }
 
     if (success) {
-        const QString providersFileUrl = group.readEntry("ProvidersUrl", QString());
+        const QString providersFileUrl = group.readEntry("ProvidersUrl");
 
         categoryNames = group.readEntry("UploadCategories", QStringList());
         // fall back to download categories
