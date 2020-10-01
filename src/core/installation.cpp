@@ -460,9 +460,16 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                 if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
                                     EntryInternal newentry = entry;
                                     newentry.setStatus(KNS3::Entry::Installed);
+                                    newentry.setInstalledFiles(QStringList{expectedDir});
+                                    // update version and release date to the new ones
+                                    if (!newentry.updateVersion().isEmpty()) {
+                                        newentry.setVersion(newentry.updateVersion());
+                                    }
+                                    if (newentry.updateReleaseDate().isValid()) {
+                                        newentry.setReleaseDate(newentry.updateReleaseDate());
+                                    }
                                     Q_EMIT signalEntryChanged(newentry);
                                     Q_EMIT signalInstallationFinished();
-                                    newentry.setInstalledFiles(QStringList{expectedDir});
                                     qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's just make a small fib and say we totally installed that, honest, and we now have files" << expectedDir;
                                 } else {
                                     Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
