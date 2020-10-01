@@ -98,7 +98,7 @@ public:
                     connect(job, &KJob::result, this, [&loop,&errordescription](KJob* job){
                         errordescription = job->errorText();
                         loop.exit(job->error());
-                    }, Qt::QueuedConnection);
+                    }, Qt::BlockingQueuedConnection);
                     errorlevel = loop.exec();
                 } else {
                     errorlevel = 3;
