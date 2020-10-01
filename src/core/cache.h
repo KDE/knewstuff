@@ -70,6 +70,14 @@ public:
      */
     KNSCore::EntryInternal entryFromInstalledFile(const QString& installedFile) const;
 
+    /**
+     * Emitted when the cache has changed underneath us, and need users of the cache to know
+     * that this has happened.
+     * @param entry The entry which has changed
+     * @since 5.75
+     */
+    Q_SIGNAL void entryChanged(const KNSCore::EntryInternal &entry);
+
 public Q_SLOTS:
     void registerChangedEntry(const KNSCore::EntryInternal &entry);
 

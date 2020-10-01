@@ -172,6 +172,7 @@ bool Engine::init(const QString &configfile)
     m_cache = Cache::getCache(configFileName);
     qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
     connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
+    connect(m_cache.data(), &Cache::entryChanged, this, &Engine::slotEntryChanged);
     m_cache->readRegistry();
 
     // Cache cleanup option, to help work around people deleting files from underneath KNewStuff (this

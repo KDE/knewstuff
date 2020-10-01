@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QDir>
 #include <QFileInfo>
+#include <QFileSystemWatcher>
 #include <QTimer>
 #include <QXmlStreamReader>
 #include <qstandardpaths.h>
@@ -29,6 +30,45 @@ Cache::Cache(const QString &appName): QObject(nullptr)
     registryFile = path + appName + QStringLiteral(".knsregistry");
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << registryFile;
     setProperty("dirty", false); //KF6 make normal variable
+
+    QFileSystemWatcher* watcher = new QFileSystemWatcher(QStringList{registryFile}, this);
+    std::function<void()> changeChecker = [this, &changeChecker](){
+        if (property("writingRegistry").toBool()) {
+            QTimer::singleShot(0, this, changeChecker);
+        } else {
+            setProperty("reloadingRegistry", true);
+            const QSet<KNSCore::EntryInternal> oldCache = cache;
+            cache.clear();
+            readRegistry();
+            // First run through the old cache and see if any have disappeared (at
+            // which point we need to set them as available and emit that change)
+            for (const EntryInternal &entry : oldCache) {
+                if (!cache.contains(entry)) {
+                    EntryInternal removedEntry(entry);
+                    removedEntry.setStatus(KNS3::Entry::Deleted);
+                    Q_EMIT entryChanged(removedEntry);
+                }
+            }
+            // Then run through the new cache and see if there's any that were not
+            // in the old cache (at which point just emit those as having changed,
+            // they're already the correct status)
+            for (const EntryInternal &entry: cache) {
+                auto iterator = oldCache.constFind(entry);
+                if (iterator == oldCache.constEnd()) {
+                    Q_EMIT entryChanged(entry);
+                } else if ((*iterator).status() != entry.status()) {
+                    // If there are entries which are in both, but which have changed their
+                    // status, we should adopt the status from the newly loaded cache in place
+                    // of the one in the old cache. In reality, what this means is we just
+                    // need to emit the changed signal for anything in the new cache which
+                    // doesn't match the old one
+                    Q_EMIT entryChanged(entry);
+                }
+            }
+            setProperty("reloadingRegistry", false);
+        }
+    };
+    connect(watcher, &QFileSystemWatcher::fileChanged, this, changeChecker);
 }
 
 QSharedPointer<Cache> Cache::getCache(const QString &appName)
@@ -202,6 +242,7 @@ void Cache::writeRegistry()
 
     qCDebug(KNEWSTUFFCORE) << "Write registry";
 
+    setProperty("writingRegistry", true);
     QFile f(registryFile);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning() << "Cannot write meta information to '" << registryFile << "'.";
@@ -231,13 +272,16 @@ void Cache::writeRegistry()
     metastream << doc.toByteArray();
 
     setProperty("dirty", false);
+    setProperty("writingRegistry", false);
 }
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
-    setProperty("dirty", true);
-    cache.insert(entry);
-    QTimer::singleShot(1000, this, [this](){ writeRegistry(); });
+    if (!property("reloadingRegistry").toBool()) {
+        setProperty("dirty", true);
+        cache.insert(entry);
+        QTimer::singleShot(1000, this, [this](){ writeRegistry(); });
+    }
 }
 
 void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
