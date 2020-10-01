@@ -59,32 +59,28 @@ public:
         // As this has to be set before QThreadPool runs things, we need to do so here
         setAutoDelete(false);
     };
-    virtual ~KPackageTask() {
-        if (structure) { delete structure; }
-        if (installer) { delete installer; }
-    }
+    virtual ~KPackageTask() {}
     void run() override
     {
         qCDebug(KNEWSTUFFCORE) << "Attempting to perform an installation operation of type" << operation << "on the package" << package << "of type" << serviceType << "in the package root" << packageRoot;
         int errorlevel{0};
         QString errordescription;
-        structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+        structure.reset(KPackage::PackageLoader::self()->loadPackageStructure(serviceType));
         if (structure) {
             qCDebug(KNEWSTUFFCORE) << "Service type understood";
-            installer = new KPackage::Package(structure);
+            installer.reset(new KPackage::Package(structure.data()));
             if (installer->hasValidStructure()) {
                 qCDebug(KNEWSTUFFCORE) << "Installer successfully created and has a valid structure";
-                KJob *job{nullptr};
                 switch(operation)
                 {
                 case InstallOperation:
-                    job = installer->install(package, packageRoot);
+                    job.reset(installer->install(package, packageRoot));
                     break;
                 case UpdateOperation:
-                    job = installer->update(package, packageRoot);
+                    job.reset(installer->update(package, packageRoot));
                     break;
                 case UninstallOperation:
-                    job = installer->uninstall(package, packageRoot);
+                    job.reset(installer->uninstall(package, packageRoot));
                     break;
                 case UnknownOperation:
                 default:
@@ -94,8 +90,9 @@ public:
                 };
                 if (job) {
                     qCDebug(KNEWSTUFFCORE) << "Created job, now let's wait for it to do its thing...";
+                    job->setAutoDelete(false);
                     QEventLoop loop;
-                    connect(job, &KJob::result, this, [&loop,&errordescription](KJob* job){
+                    connect(job.get(), &KJob::result, this, [&loop,&errordescription](KJob* job){
                         errordescription = job->errorText();
                         loop.exit(job->error());
                     }, Qt::BlockingQueuedConnection);
@@ -120,8 +117,9 @@ public:
     Q_SIGNAL void result();
     Q_SIGNAL void error(int errorCode, const QString& errorText);
 private:
-    KPackage::PackageStructure *structure{nullptr};
-    KPackage::Package *installer{nullptr};
+    QScopedPointer<KPackage::PackageStructure> structure;
+    QScopedPointer<KPackage::Package> installer;
+    QScopedPointer<KJob> job;
 };
 
 KPackageJob::KPackageJob(QObject* parent)
