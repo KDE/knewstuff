@@ -277,10 +277,16 @@ void Cache::writeRegistry()
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
+    static QTimer* writeThrottle{nullptr};
+    if (!writeThrottle) {
+        writeThrottle = new QTimer(this);
+        connect(writeThrottle, &QTimer::timeout, this, [this](){ writeRegistry(); });
+        writeThrottle->setInterval(1000);
+    }
     if (!property("reloadingRegistry").toBool()) {
         setProperty("dirty", true);
         cache.insert(entry);
-        QTimer::singleShot(1000, this, [this](){ writeRegistry(); });
+        writeThrottle->start();
     }
 }
 
