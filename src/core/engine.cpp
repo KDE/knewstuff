@@ -154,10 +154,7 @@ bool Engine::init(const QString &configfile)
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl");
 
-    d->tagFilter = group.readEntry("TagFilter", QStringList());
-    if (d->tagFilter.isEmpty()) {
-        d->tagFilter.append(QStringLiteral("ghns_excluded!=1"));
-    }
+    d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
     // Make sure that config is valid
