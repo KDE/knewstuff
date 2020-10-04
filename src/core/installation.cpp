@@ -93,6 +93,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         uncompression = QStringLiteral("subdir");
     }
 
+    // TODO KF6 Remove this compatibility block
     // A touch of special treatment for the various old kpackage based knsrc files, so they work
     // with the new, internal stuff. The result unfortunately is that all entries marked as
     // installed in knewstuff no longer will be, but since it never worked right anyway... we'll
