@@ -883,6 +883,7 @@ QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
     if (adoption.contains(fileReplace)) {
         if (entry.installedFiles().isEmpty()) {
             qCWarning(KNEWSTUFFCORE) << "no installed files to adopt";
+            return {};
         } else if (entry.installedFiles().count() != 1) {
             qCWarning(KNEWSTUFFCORE) << "can only adopt one file, will be using the first" << entry.installedFiles().at(0);
         }
