@@ -136,6 +136,9 @@ if(BUILD_QCH)
             KF5XmlGui_QCH
             KF5Service_QCH
             Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+            ${KNewStuff_BINARY_DIR}
         BLANK_MACROS
             KNEWSTUFF_EXPORT
             KNEWSTUFF_DEPRECATED

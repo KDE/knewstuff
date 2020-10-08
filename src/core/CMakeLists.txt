@@ -64,8 +64,15 @@ ecm_generate_export_header(KF5NewStuffCore
 
 # The src/ dir is needed for the entry.h header. This only happens because some
 # code in Core uses an enum from KNS3::Entry
+set(KNewStuffCore_BUILD_INCLUDE_DIRS
+    ${KNewStuff_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_BINARY_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src
+)
+
 target_include_directories(KF5NewStuffCore
-    PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR};${CMAKE_BINARY_DIR}/src;${CMAKE_SOURCE_DIR}/src;>"
+    PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore>")
 
 target_link_libraries(KF5NewStuffCore
@@ -128,6 +135,8 @@ if(BUILD_QCH)
         LINK_QCHS
             KF5Attica_QCH
             KF5CoreAddons_QCH
+        INCLUDE_DIRS
+            ${KNewStuffCore_BUILD_INCLUDE_DIRS}
         BLANK_MACROS
             KNEWSTUFFCORE_EXPORT
             KNEWSTUFFCORE_DEPRECATED
