@@ -56,11 +56,14 @@ public:
      */
     void setConfigFile(const QString &configFile);
 
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 76)
     /**
-     * set the text that should appear on the button. will be prefaced
-     * with i18n("Download New")
+     * Set the text that should appear on the button.
+     * @deprecated Since 5.0, use setText(const QString&) instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION_BELATED(5, 76, 5, 0, "Use setText(const QString&) instead")
     void setButtonText(const QString &text);
+#endif
 
 Q_SIGNALS:
     /**

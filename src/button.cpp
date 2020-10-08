@@ -29,7 +29,7 @@ Button::Button(const QString &text,
     : QPushButton(parent),
       d(new ButtonPrivate)
 {
-    setButtonText(text);
+    setText(text);
     d->configFile = configFile;
     init();
 }
@@ -38,7 +38,7 @@ Button::Button(QWidget *parent)
     : QPushButton(parent),
       d(new ButtonPrivate)
 {
-    setButtonText(i18n("Download New Stuff..."));
+    setText(i18n("Download New Stuff..."));
     init();
 }
 
@@ -60,10 +60,12 @@ void Button::init()
     WidgetQuestionListener::instance();
 }
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 76)
 void Button::setButtonText(const QString &what)
 {
     setText(what);
 }
+#endif
 
 void Button::setConfigFile(const QString &configFile)
 {
