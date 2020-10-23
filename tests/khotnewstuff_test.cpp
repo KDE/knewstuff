@@ -8,8 +8,6 @@
 
 #include "khotnewstuff_test.h"
 
-#include <KNSCore/Provider>
-#include <KNSCore/EntryInternal>
 #include <KNSCore/Engine>
 #include "../src/staticxml/staticxmlprovider_p.h"
 

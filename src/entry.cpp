@@ -8,7 +8,6 @@
 #include "entry_p.h"
 #include <knewstuff_debug.h>
 
-#include <QStringList>
 
 using namespace KNS3;
 

@@ -10,7 +10,6 @@
 #include <knewstuffcore_debug.h>
 #include <KLocalizedString>
 
-#include "entryinternal.h"
 #include "engine.h"
 #include "imageloader_p.h"
 

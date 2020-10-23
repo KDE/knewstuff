@@ -11,7 +11,6 @@
 #include "knewstuff_debug.h"
 
 #include <QDebug>
-#include <KService>
 #include <QStandardPaths>
 #include <QApplication>
 

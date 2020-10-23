@@ -10,7 +10,6 @@
 #include <KLocalizedString>
 
 #include "categoriesmodel.h"
-#include "entrywrapper.h"
 #include "quickquestionlistener.h"
 
 #include "engine.h"

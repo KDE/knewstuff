@@ -7,12 +7,10 @@
 #include "commentsmodel.h"
 
 #include "entryinternal.h"
-#include "engine.h"
 #include "knewstuffcore_debug.h"
 
 #include <KLocalizedString>
 
-#include <QDateTime>
 #include <QTimer>
 
 namespace KNSCore {

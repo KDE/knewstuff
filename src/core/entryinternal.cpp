@@ -11,7 +11,6 @@
 
 #include <QStringList>
 #include <QXmlStreamReader>
-#include <QImage>
 #include <knewstuffcore_debug.h>
 
 #include "xmlloader.h"
