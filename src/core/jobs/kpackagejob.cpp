@@ -69,7 +69,7 @@ public:
         if (structure) {
             qCDebug(KNEWSTUFFCORE) << "Service type understood";
             // Ensure we clear the pointer if the structure's deleted (for some reason)
-            connect(structure.get(), &QObject::destroyed, this, [this](){ structure.reset(); });
+            connect(structure.get(), &QObject::destroyed, this, [this](){ structure.take(); });
             installer.reset(new KPackage::Package(structure.data()));
             if (installer->hasValidStructure()) {
                 qCDebug(KNEWSTUFFCORE) << "Installer successfully created and has a valid structure";
