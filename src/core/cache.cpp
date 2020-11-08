@@ -285,6 +285,7 @@ void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
     }
     if (!property("reloadingRegistry").toBool()) {
         setProperty("dirty", true);
+        cache.remove(entry); // If value already exists in the set, the set is left unchanged
         cache.insert(entry);
         writeThrottle->start();
     }
