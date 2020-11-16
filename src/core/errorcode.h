@@ -20,6 +20,7 @@ namespace KNSCore
      * users of KNewStuff would want to react to. It is used by both the Engine and
      * Provider classes.
      * @since 5.53
+     * TODO: KF6 do not repeat entry properties in the QVariantList
      */
     enum ErrorCode {
         UnknownError, ///< An unknown error (this should not be used, an error report of this nature should be considered a bug)
