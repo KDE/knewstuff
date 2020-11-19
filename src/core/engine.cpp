@@ -22,9 +22,11 @@
 #include <KConfigGroup>
 #include <knewstuffcore_debug.h>
 #include <KLocalizedString>
+#include <KShell>
 #include <QDesktopServices>
 
 #include <QTimer>
+#include <QProcess>
 #include <QDir>
 #include <qdom.h>
 #include <QUrlQuery>
@@ -51,6 +53,71 @@ Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoader
 
 class EnginePrivate {
 public:
+    QString getAdoptionCommand(const QString &command, const KNSCore::EntryInternal& entry, Installation *inst)
+    {
+        auto adoption = command;
+        if(adoption.isEmpty())
+            return {};
+
+        const QLatin1String dirReplace("%d");
+        if (adoption.contains(dirReplace)) {
+            QString installPath = sharedDir(entry.installedFiles(), inst->targetInstallationPath()).path();
+            adoption.replace(dirReplace, KShell::quoteArg(installPath));
+        }
+
+        const QLatin1String fileReplace("%f");
+        if (adoption.contains(fileReplace)) {
+            if (entry.installedFiles().isEmpty()) {
+                qCWarning(KNEWSTUFFCORE) << "no installed files to adopt";
+                return {};
+            } else if (entry.installedFiles().count() != 1) {
+                qCWarning(KNEWSTUFFCORE) << "can only adopt one file, will be using the first" << entry.installedFiles().at(0);
+            }
+
+            adoption.replace(fileReplace, KShell::quoteArg(entry.installedFiles().at(0)));
+        }
+        return adoption;
+    }
+    /**
+     * we look for the directory where all the resources got installed.
+     * assuming it was extracted into a directory
+     */
+    static QDir sharedDir(QStringList dirs, QString rootPath)
+    {
+        // Ensure that rootPath definitely is a clean path with a slash at the end
+        rootPath = QDir::cleanPath(rootPath) + QStringLiteral("/");
+        qCInfo(KNEWSTUFFCORE) << Q_FUNC_INFO << dirs << rootPath;
+        while(!dirs.isEmpty()) {
+            QString thisDir(dirs.takeLast());
+            if (thisDir.endsWith(QStringLiteral("*"))) {
+                qCInfo(KNEWSTUFFCORE) << "Directory entry" << thisDir << "ends in a *, indicating this was installed from an archive - see Installation::archiveEntries";
+                thisDir.chop(1);
+            }
+
+            const QString currentPath = QDir::cleanPath(thisDir);
+            qCInfo(KNEWSTUFFCORE) << "Current path is" << currentPath;
+            if (!currentPath.startsWith(rootPath)) {
+                qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "does not start with" << rootPath << "and should be ignored";
+                continue;
+            }
+
+            const QFileInfo current(currentPath);
+            qCInfo(KNEWSTUFFCORE) << "Current file info is" << current;
+            if (!current.isDir()) {
+                qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "is not a directory, and should be ignored";
+                continue;
+            }
+
+            const QDir dir(currentPath);
+            if (dir.path()==(rootPath+dir.dirName())) {
+                qCDebug(KNEWSTUFFCORE) << "Found directory" << dir;
+                return dir;
+            }
+        }
+        qCWarning(KNEWSTUFFCORE) << "Failed to locate any shared installed directory in" << dirs << "and this is almost certainly very bad.";
+        return {};
+    }
+
     QList<Provider::CategoryMetadata> categoriesMetadata;
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
     QStringList tagFilter;
@@ -66,6 +133,7 @@ public:
     QMap<EntryInternal, QString> payloadToIdentify;
     Engine::BusyState busyState;
     QString busyMessage;
+    QString useLabel;
 };
 
 Engine::Engine(QObject *parent)
@@ -150,6 +218,8 @@ bool Engine::init(const QString &configfile)
     d->name = group.readEntry("Name");
     m_categories = group.readEntry("Categories", QStringList());
     m_adoptionCommand = group.readEntry("AdoptionCommand");
+    d->useLabel = group.readEntry("UseLabel", i18n("Use"));
+    Q_EMIT useLabelChanged();
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl");
@@ -827,71 +897,12 @@ void KNSCore::Engine::checkForInstalled()
     }
 }
 
-/**
- * we look for the directory where all the resources got installed.
- * assuming it was extracted into a directory
- */
-static QDir sharedDir(QStringList dirs, QString rootPath)
-{
-    // Ensure that rootPath definitely is a clean path with a slash at the end
-    rootPath = QDir::cleanPath(rootPath) + QStringLiteral("/");
-    qCInfo(KNEWSTUFFCORE) << Q_FUNC_INFO << dirs << rootPath;
-    while(!dirs.isEmpty()) {
-        QString thisDir(dirs.takeLast());
-        if (thisDir.endsWith(QStringLiteral("*"))) {
-            qCInfo(KNEWSTUFFCORE) << "Directory entry" << thisDir << "ends in a *, indicating this was installed from an archive - see Installation::archiveEntries";
-            thisDir.chop(1);
-        }
-
-        const QString currentPath = QDir::cleanPath(thisDir);
-        qCInfo(KNEWSTUFFCORE) << "Current path is" << currentPath;
-        if (!currentPath.startsWith(rootPath)) {
-            qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "does not start with" << rootPath << "and should be ignored";
-            continue;
-        }
-
-        const QFileInfo current(currentPath);
-        qCInfo(KNEWSTUFFCORE) << "Current file info is" << current;
-        if (!current.isDir()) {
-            qCInfo(KNEWSTUFFCORE) << "Current path" << currentPath << "is not a directory, and should be ignored";
-            continue;
-        }
-
-        const QDir dir(currentPath);
-        if (dir.path()==(rootPath+dir.dirName())) {
-            qCDebug(KNEWSTUFFCORE) << "Found directory" << dir;
-            return dir;
-        }
-    }
-    qCWarning(KNEWSTUFFCORE) << "Failed to locate any shared installed directory in" << dirs << "and this is almost certainly very bad.";
-    return {};
-}
-
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
 QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
 {
-    auto adoption = m_adoptionCommand;
-    if(adoption.isEmpty())
-        return {};
-
-    const QLatin1String dirReplace("%d");
-    if (adoption.contains(dirReplace)) {
-        QString installPath = sharedDir(entry.installedFiles(), m_installation->targetInstallationPath()).path();
-        adoption.replace(dirReplace, installPath);
-    }
-
-    const QLatin1String fileReplace("%f");
-    if (adoption.contains(fileReplace)) {
-        if (entry.installedFiles().isEmpty()) {
-            qCWarning(KNEWSTUFFCORE) << "no installed files to adopt";
-            return {};
-        } else if (entry.installedFiles().count() != 1) {
-            qCWarning(KNEWSTUFFCORE) << "can only adopt one file, will be using the first" << entry.installedFiles().at(0);
-        }
-
-        adoption.replace(fileReplace, entry.installedFiles().at(0));
-    }
-    return adoption;
+    return d->getAdoptionCommand(m_adoptionCommand, entry, m_installation);
 }
+#endif
 
 bool KNSCore::Engine::hasAdoptionCommand() const
 {
@@ -1011,4 +1022,46 @@ void KNSCore::Engine::revalidateCacheEntries()
             }
         }
     }
+}
+
+void Engine::adoptEntry(const EntryInternal &entry)
+{
+    if (!hasAdoptionCommand()) {
+        qCWarning(KNEWSTUFFCORE) << "no adoption command specified";
+        return;
+    }
+    const QString command = d->getAdoptionCommand(m_adoptionCommand, entry, m_installation);
+    QStringList split = KShell::splitArgs(command);
+    QProcess *process = new QProcess(this);
+    process->setProgram(split.takeFirst());
+    process->setArguments(split);
+
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    // The debug output is too talkative to be useful
+    env.insert(QStringLiteral("QT_LOGGING_RULES"), QStringLiteral("*.debug=false"));
+    process->setProcessEnvironment(env);
+
+    process->start();
+
+    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
+            [this, process ,entry, command](int exitCode, QProcess::ExitStatus) {
+                if (exitCode == 0) {
+                    Q_EMIT signalEntryEvent(entry, EntryInternal::EntryEvent::AdoptedEvent);
+
+                    // Handle error output as warnings if the process hasn't crashed
+                    const QString stdErr = QString::fromLocal8Bit(process->readAllStandardError());
+                    if (!stdErr.isEmpty()) {
+                        Q_EMIT signalMessage(stdErr);
+                    }
+                } else {
+                    const QString errorMsg = i18n("Failed to adopt '%1'\n%2",
+                                                  entry.name(), QString::fromLocal8Bit(process->readAllStandardError()));
+                    Q_EMIT signalErrorCode(KNSCore::AdoptionError, errorMsg, QVariantList{command});
+                }
+            });
+}
+
+QString Engine::useLabel() const
+{
+    return d->useLabel;
 }

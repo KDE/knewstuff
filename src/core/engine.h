@@ -73,6 +73,12 @@ class KNEWSTUFFCORE_EXPORT Engine : public QObject
      */
     Q_PROPERTY(QString busyMessage READ busyMessage WRITE setBusyMessage NOTIFY busyMessageChanged)
 
+    /**
+     * Text that should be displayed for the adoption button, this defaults to "Use"
+     * @since 5.77
+     */
+    Q_PROPERTY(QString useLabel READ useLabel NOTIFY useLabelChanged)
+
 public:
     /**
      * Constructor.
@@ -409,6 +415,7 @@ public:
      */
     QList<Provider::CategoryMetadata> categoriesMetadata();
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
     /**
      * The adoption command can be used to allow a user to make use of an entry's
      * installed data. For example, this command might be used to ask the system to
@@ -424,8 +431,12 @@ public:
      *
      * @param entry The entry to return an adoption command for
      * @return The command to run to adopt this entry's installed data
+     * @deprecated Since 5.77, use Engine::adoptEntry(const KNSCore::EntryInternal &entry) instead
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 77, "Use Engine::adoptEntry(const KNSCore::EntryInternal &entry) instead")
     QString adoptionCommand(const KNSCore::EntryInternal &entry) const;
+#endif
+
     /**
      * Whether or not an adoption command exists for this engine
      *
@@ -433,6 +444,27 @@ public:
      * @return True if an adoption command exists
      */
     bool hasAdoptionCommand() const;
+
+    /**
+     * Adopt an entry using the adoption command. This will also take care of displaying error messages
+     * @param entry Entry that should be adopted
+     * @see signalErrorCode
+     * @see signalEntryEvent
+     * @since 5.77
+     */
+    Q_INVOKABLE void adoptEntry(const KNSCore::EntryInternal &entry);
+
+    /**
+     * Text that should be displayed for the adoption button, this defaults to i18n("Use")
+     * @since 5.77
+     */
+    QString useLabel() const;
+
+    /**
+     * Signal gets emitted when the useLabel property changes
+     * @since 5.77
+     */
+    Q_SIGNAL void useLabelChanged();
 
     /**
      * Set the page size for requests not made explicitly with requestData(int,int)
@@ -598,6 +630,8 @@ Q_SIGNALS:
     void signalErrorCode(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
+
+    void signalEntryEvent(const EntryInternal &entry, EntryInternal::EntryEvent event);
 
 private Q_SLOTS:
     // the .knsrc file was loaded

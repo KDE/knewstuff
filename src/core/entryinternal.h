@@ -82,6 +82,12 @@ public:
         QStringList tags;
     };
 
+    enum EntryEvent {
+        UnknownEvent = 0,
+        StatusChangedEvent = 1,
+        AdoptedEvent = 2,
+    };
+
     /**
      * Constructor.
      */

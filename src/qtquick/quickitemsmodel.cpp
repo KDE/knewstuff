@@ -434,10 +434,7 @@ void ItemsModel::adoptItem(int index)
     if (d->coreEngine) {
         KNSCore::EntryInternal entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::EntryInternal>();
         if (entry.isValid()) {
-            QStringList args = KShell::splitArgs(d->coreEngine->adoptionCommand(entry));
-            qCDebug(KNEWSTUFFQUICK) << "executing AdoptionCommand" << args;
-            QProcess::startDetached(args.takeFirst(), args);
-            d->engine->idleMessage(i18n("Using %1", entry.name()));
+            d->coreEngine->adoptEntry(entry);
         }
     }
 }

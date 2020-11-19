@@ -60,7 +60,7 @@ KCM.GridViewKCM {
     signal errorMessage(string message);
 
     property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
-    property string useLabel: i18ndc("knewstuff5", "If a knsrc file defines an adoption command, the option to run this command and 'use' an item becomes available. This is the text for an action to do so.", "Use");
+    property string useLabel: engine.engine.useLabel
 
     property int viewMode: Page.ViewMode.Tiles
     enum ViewMode {

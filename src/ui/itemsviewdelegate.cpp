@@ -162,11 +162,9 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         } else if (entry.status() == Entry::Installed && m_engine->hasAdoptionCommand()) {
             QMenu* m = new QMenu(installButton);
             // Add icon to use dropdown, see also BUG: 385858
-            QAction *action = m->addAction(QIcon::fromTheme(QStringLiteral("checkmark")), i18n("Use"));
+            QAction *action = m->addAction(QIcon::fromTheme(QStringLiteral("checkmark")), m_engine->useLabel());
             connect(action, &QAction::triggered, m, [this, entry](bool) {
-                QStringList args = KShell::splitArgs(m_engine->adoptionCommand(entry));
-                qCDebug(KNEWSTUFF) << "executing AdoptionCommand" << args;
-                QProcess::startDetached(args.takeFirst(), args);
+                m_engine->adoptEntry(entry);
             });
             installButton->setPopupMode(QToolButton::MenuButtonPopup);
             installButton->setMenu(m);

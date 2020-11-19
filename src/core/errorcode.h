@@ -29,8 +29,9 @@ namespace KNSCore
         ConfigFileError, ///< The configuration file is missing or somehow incorrect. The configuration file filename will be held in the metadata
         ProviderError, ///< A provider has failed to load or initialize. The provider file URL or provider URL will be held in the metadata
         InstallationError, ///< Installation of a content item has failed
-        ImageError ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
-    };
+        ImageError, ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
+        AdoptionError, ///< Adopting one entry has failed. The adoption command will be in the metadata as a QVariantList.
+};
     Q_ENUM_NS(ErrorCode)
 }
 #endif//KNSCORE_ERRORCODE_H

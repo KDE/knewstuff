@@ -57,7 +57,7 @@ ecm_generate_export_header(KF5NewStuffCore
     GROUP_BASE_NAME KF
     VERSION ${KF5_VERSION}
     DEPRECATED_BASE_VERSION 0
-    DEPRECATION_VERSIONS 5.31 5.36 5.53 5.71 5.74
+    DEPRECATION_VERSIONS 5.31 5.36 5.53 5.71 5.74 5.77
 )
 # TODO: add support for EXCLUDE_DEPRECATED_BEFORE_AND_AT
 # needs fixing of undeprecated API being still implemented using own deprecated API
