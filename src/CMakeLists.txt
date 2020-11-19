@@ -48,7 +48,7 @@ ecm_generate_export_header(KF5NewStuff
     GROUP_BASE_NAME KF
     VERSION ${KF5_VERSION}
     DEPRECATED_BASE_VERSION 0
-    DEPRECATION_VERSIONS 5.29 5.76
+    DEPRECATION_VERSIONS 5.29 5.76 5.77
 )
 
 target_include_directories(KF5NewStuff

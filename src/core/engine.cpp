@@ -157,6 +157,15 @@ Engine::Engine(QObject *parent)
     connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
     // Pass along old error signal through new signal for locations which have not been updated yet
     connect(this, &Engine::signalError, this, [this](const QString& message){ Q_EMIT signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
+
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
+    connect(this, &Engine::signalEntryEvent, this,
+            [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
+        if (event == EntryInternal::StatusChangedEvent) {
+            Q_EMIT signalEntryChanged(entry);
+        }
+    });
+#endif
 }
 
 Engine::~Engine()
@@ -620,7 +629,7 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
     } else  {
         entry.setStatus(KNS3::Entry::Installing);
     }
-    Q_EMIT signalEntryChanged(entry);
+    Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
     qCDebug(KNEWSTUFFCORE) << "Install " << entry.name()
        << " from: " << entry.providerId();
@@ -774,13 +783,13 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
 
     entry.setStatus(KNS3::Entry::Installing);
     actualEntryForUninstall.setStatus(KNS3::Entry::Installing);
-    Q_EMIT signalEntryChanged(entry);
+    Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
     qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
     m_installation->uninstall(actualEntryForUninstall);
 
     entry.setStatus(actualEntryForUninstall.status());
-    Q_EMIT signalEntryChanged(entry);
+    Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 }
 
 void Engine::loadDetails(const KNSCore::EntryInternal &entry)
@@ -833,7 +842,7 @@ void Engine::contactAuthor(const EntryInternal &entry)
 
 void Engine::slotEntryChanged(const KNSCore::EntryInternal &entry)
 {
-    Q_EMIT signalEntryChanged(entry);
+    Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 }
 
 bool Engine::userCanVote(const EntryInternal &entry)
@@ -1016,7 +1025,7 @@ void KNSCore::Engine::revalidateCacheEntries()
                     if (!cacheAfter.contains(oldCachedEntry)) {
                         EntryInternal removedEntry = oldCachedEntry;
                         removedEntry.setStatus(KNS3::Entry::Deleted);
-                        Q_EMIT signalEntryChanged(removedEntry);
+                        Q_EMIT signalEntryEvent(removedEntry, EntryInternal::StatusChangedEvent);
                     }
                 }
             }
