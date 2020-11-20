@@ -46,8 +46,12 @@ void EntryDetails::init()
     ui->updateButton->setIcon(QIcon::fromTheme(QStringLiteral("system-software-update")));
     ui->uninstallButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
 
-    connect(m_engine, &KNSCore::Engine::signalEntryDetailsLoaded,
-            this, &EntryDetails::entryChanged);
+    connect(m_engine, &KNSCore::Engine::signalEntryEvent, this,
+            [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
+                    Q_EMIT entryChanged(entry);
+                }
+            });
     connect(m_engine, &KNSCore::Engine::signalEntryChanged,
             this, &EntryDetails::entryStatusChanged);
     connect(m_engine, &KNSCore::Engine::signalEntryPreviewLoaded,

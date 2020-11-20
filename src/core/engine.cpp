@@ -163,6 +163,8 @@ Engine::Engine(QObject *parent)
             [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
         if (event == EntryInternal::StatusChangedEvent) {
             Q_EMIT signalEntryChanged(entry);
+        } else if (event == EntryInternal::DetailsLoadedEvent){
+            Q_EMIT signalEntryDetailsLoaded(entry);
         }
     });
 #endif
@@ -678,7 +680,7 @@ void Engine::slotInstallationFailed(const QString &message)
 
 void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 {
-    Q_EMIT signalEntryDetailsLoaded(entry);
+    Q_EMIT signalEntryEvent(entry, EntryInternal::DetailsLoadedEvent);
 }
 
 void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)

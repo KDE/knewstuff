@@ -597,7 +597,10 @@ Q_SIGNALS:
     void signalEntryChanged(const KNSCore::EntryInternal &entry);
 #endif
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 77, "Use Engine::signalEntryEvent instead")
     void signalEntryDetailsLoaded(const KNSCore::EntryInternal &entry);
+#endif
 
     // a new search result is there, clear the list of items
     void signalResetView();
