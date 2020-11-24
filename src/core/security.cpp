@@ -23,8 +23,11 @@
 //kde includes
 #include <KLocalizedString>
 
+#include "knewstuffcore_export.h"
+
 using namespace KNSCore;
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 31)
 static QString gpgExecutable()
 {
     QString gpgExe = QStandardPaths::findExecutable(QStringLiteral("gpg"));
@@ -372,4 +375,4 @@ void Security::slotSignFile()
         m_process = nullptr;
     }
 }
-
+#endif

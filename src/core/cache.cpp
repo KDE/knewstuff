@@ -95,8 +95,10 @@ Cache::~Cache()
 
 void Cache::readRegistry()
 {
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
     // read KNS2 registry first to migrate it
     readKns2MetaFiles();
+#endif
 
     QFile f(registryFile);
     if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -130,6 +132,7 @@ void Cache::readRegistry()
     qCDebug(KNEWSTUFFCORE) << "Cache read... entries: " << cache.size();
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
 void Cache::readKns2MetaFiles()
 {
     qCDebug(KNEWSTUFFCORE) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
@@ -223,6 +226,7 @@ void Cache::readKns2MetaFiles()
     }
     setProperty("dirty", false);
 }
+#endif
 
 EntryInternal::List Cache::registryForProvider(const QString &providerId)
 {

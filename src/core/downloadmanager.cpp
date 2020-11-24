@@ -64,7 +64,11 @@ void DownloadManagerPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, q, &DownloadManager::slotProvidersLoaded);
     q->connect(engine, &KNSCore::Engine::signalUpdateableEntriesLoaded, q, &DownloadManager::searchResult);
     q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, q, &DownloadManager::searchResult);
-    q->connect(engine, &KNSCore::Engine::signalEntryChanged, q, &DownloadManager::entryStatusChanged);
+    q->connect(engine, &KNSCore::Engine::signalEntryEvent, q, [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
+        if (event == EntryInternal::StatusChangedEvent) {
+            q->entryStatusChanged(entry);
+        }
+    });
     q->connect(engine, &KNSCore::Engine::signalErrorCode, q, [this](const KNSCore::ErrorCode &, const QString &message, const QVariant &){ Q_EMIT q->errorFound(message); });
     engine->init(configFile);
 }

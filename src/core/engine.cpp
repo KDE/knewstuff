@@ -155,8 +155,12 @@ Engine::Engine(QObject *parent)
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
     connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
-    // Pass along old error signal through new signal for locations which have not been updated yet
-    connect(this, &Engine::signalError, this, [this](const QString& message){ Q_EMIT signalErrorCode(ErrorCode::UnknownError, message, QVariant()); });
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 53)
+    // Pass along old error signal for compatibility
+    connect(this, &Engine::signalErrorCode, this, [this] (const KNSCore::ErrorCode &, const QString &msg, const QVariant &) {
+        Q_EMIT signalError(msg);
+    });
+#endif
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
     connect(this, &Engine::signalEntryEvent, this,
@@ -240,8 +244,10 @@ bool Engine::init(const QString &configfile)
 
     // Make sure that config is valid
     if (!m_installation->readConfig(group)) {
-        Q_EMIT signalError(i18n("Could not initialise the installation handler for %1\n"
-                                "This is a critical error and should be reported to the application author", configfile));
+        Q_EMIT signalErrorCode(ErrorCode::ConfigFileError,
+                               i18n("Could not initialise the installation handler for %1\n"
+                                "This is a critical error and should be reported to the application author", configfile),
+                                configfile);
         return false;
     }
 
@@ -249,7 +255,11 @@ bool Engine::init(const QString &configfile)
 
     m_cache = Cache::getCache(configFileName);
     qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
-    connect(this, &Engine::signalEntryChanged, m_cache.data(), &Cache::registerChangedEntry);
+    connect(this, &Engine::signalEntryEvent, m_cache.data(), [this] (const EntryInternal &entry, EntryInternal::EntryEvent event) {
+        if (event == EntryInternal::StatusChangedEvent) {
+            m_cache->registerChangedEntry(entry);
+        }
+    });
     connect(m_cache.data(), &Cache::entryChanged, this, &Engine::slotEntryChanged);
     m_cache->readRegistry();
 
@@ -980,13 +990,14 @@ void Engine::setBusyMessage(const QString &busyMessage)
         d->busyMessage = busyMessage;
         Q_EMIT busyMessageChanged();
     }
-    // TODO KF6 Remove compat block
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 74)
     // Emit old signals for compatibility
     if (busyMessage.isEmpty()) {
         Q_EMIT signalIdle({});
     } else {
         Q_EMIT signalBusy(busyMessage);
     }
+#endif
 }
 
 Engine::BusyState Engine::busyState() const

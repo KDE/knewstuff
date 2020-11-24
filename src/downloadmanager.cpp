@@ -13,6 +13,7 @@
 #include "entry_p.h"
 #include "ui/widgetquestionlistener.h"
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 29)
 namespace KNS3
 {
 class DownloadManagerPrivate
@@ -190,3 +191,5 @@ void KNS3::DownloadManager::fetchEntryById(const QString& id)
 }
 
 #include "moc_downloadmanager.cpp"
+#endif
+

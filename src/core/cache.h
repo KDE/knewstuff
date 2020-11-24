@@ -85,8 +85,10 @@ private:
     Q_DISABLE_COPY(Cache)
     Cache(const QString &appName);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
     // compatibility with KNS2
     void readKns2MetaFiles();
+#endif
 
 private:
     // The file that is used to keep track of downloaded entries

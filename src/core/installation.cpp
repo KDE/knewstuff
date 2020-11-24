@@ -181,10 +181,12 @@ bool Installation::readConfig(const KConfigGroup &group)
     return true;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 71)
 bool Installation::isRemote() const
 {
     return false;
 }
+#endif
 
 void Installation::install(const EntryInternal& entry)
 {
@@ -893,11 +895,13 @@ Installation::UncompressionOptions Installation::uncompressionSetting() const
     return NeverUncompress;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 31)
 void Installation::slotInstallationVerification(int result)
 {
     Q_UNUSED(result)
     // Deprecated, was wired up to defunct Security class.
 }
+#endif
 
 QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)
 {
