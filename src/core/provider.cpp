@@ -17,7 +17,7 @@
 namespace KNSCore
 {
 
-// BCI: Add a real d-pointer
+// TODO KF6 BCI: Add a real d-pointer
 class ProviderPrivate {
 public:
     QStringList tagFilter;
