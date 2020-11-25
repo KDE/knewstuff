@@ -50,10 +50,10 @@ void EntryDetails::init()
             [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
                 if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
                     Q_EMIT entryChanged(entry);
+                } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+                    updateButtons();
                 }
             });
-    connect(m_engine, &KNSCore::Engine::signalEntryChanged,
-            this, &EntryDetails::entryStatusChanged);
     connect(m_engine, &KNSCore::Engine::signalEntryPreviewLoaded,
             this, &EntryDetails::slotEntryPreviewLoaded);
 }
@@ -154,12 +154,6 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
             }
     }
 
-    updateButtons();
-}
-
-void EntryDetails::entryStatusChanged(const KNSCore::EntryInternal &entry)
-{
-    Q_UNUSED(entry);
     updateButtons();
 }
 

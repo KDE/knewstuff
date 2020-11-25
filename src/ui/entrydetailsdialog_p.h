@@ -43,7 +43,6 @@ private Q_SLOTS:
     // more details loaded
     void entryChanged(const KNSCore::EntryInternal &entry);
     // installed/updateable etc
-    void entryStatusChanged(const KNSCore::EntryInternal &entry);
     void updateButtons();
 
     void preview1Selected();

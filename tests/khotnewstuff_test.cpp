@@ -105,7 +105,7 @@ void KNewStuff2Test::engineTest()
     m_engine = new KNSCore::Engine(this);
 
     connect(m_engine,
-            &KNSCore::Engine::signalError,
+            &KNSCore::Engine::signalErrorCode,
             this, &KNewStuff2Test::slotEngineError);
     connect(m_engine,
             &KNSCore::Engine::signalProvidersLoaded,
@@ -114,7 +114,7 @@ void KNewStuff2Test::engineTest()
             &KNSCore::Engine::signalEntriesLoaded,
             this, &KNewStuff2Test::slotEntriesLoaded);
     connect(m_engine,
-            &KNSCore::Engine::signalEntryChanged,
+            &KNSCore::Engine::signalEntryEvent,
             this, &KNewStuff2Test::slotInstallationFinished);
 
     bool ret = m_engine->init(m_configFile);
@@ -159,9 +159,9 @@ void KNewStuff2Test::slotInstallationFinished()
     addMessage(QStringLiteral("SLOT: slotInstallationFinished"));
 }
 
-void KNewStuff2Test::slotEngineError(const QString &error)
+void KNewStuff2Test::slotEngineError(const KNSCore::ErrorCode &, const QString &message, const QVariant &)
 {
-    addMessage(QStringLiteral("SLOT: slotEngineError %1").arg(error), QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("SLOT: slotEngineError %1").arg(message), QStringLiteral("msg_error"));
 }
 
 QObject *KNewStuff2Test::messages()

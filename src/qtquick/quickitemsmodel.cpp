@@ -69,20 +69,9 @@ public:
             }
         });
 
-        // An entry has changes - eg because it was installed
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, model, &KNSCore::ItemsModel::slotEntryChanged);
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, q, [=](const KNSCore::EntryInternal &entry){
-            Q_EMIT q->entryChanged(model->row(entry));
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryEvent, q, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+            onEntryEvent(entry, event);
         });
-        // If we update/uninstall an entry we have to update the UI, see BUG: 425135
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryChanged, q, [=](const KNSCore::EntryInternal &entry){
-            if (coreEngine->filter() == KNSCore::Provider::Updates && entry.status() != KNS3::Entry::Updateable) {
-                model->removeEntry(entry);
-            } else if (coreEngine->filter() == KNSCore::Provider::Installed && entry.status() == KNS3::Entry::Deleted) {
-                model->removeEntry(entry);
-            }
-        });
-
         q->connect(coreEngine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
         q->connect(coreEngine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
@@ -91,6 +80,21 @@ public:
         q->connect(model, &KNSCore::ItemsModel::dataChanged, q, &ItemsModel::dataChanged);
         q->connect(model, &KNSCore::ItemsModel::modelReset, q, &ItemsModel::modelReset);
         return true;
+    }
+
+    void onEntryEvent(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event)
+    {
+        if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+            model->slotEntryChanged(entry);
+            Q_EMIT q->entryChanged(model->row(entry));
+
+            // If we update/uninstall an entry we have to update the UI, see BUG: 425135
+            if (coreEngine->filter() == KNSCore::Provider::Updates && entry.status() != KNS3::Entry::Updateable) {
+                model->removeEntry(entry);
+            } else if (coreEngine->filter() == KNSCore::Provider::Installed && entry.status() == KNS3::Entry::Deleted) {
+                model->removeEntry(entry);
+            }
+        }
     }
 };
 

@@ -133,7 +133,6 @@ private:
 
     Q_PRIVATE_SLOT(d, void slotProvidersLoaded())
     Q_PRIVATE_SLOT(d, void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries))
-    Q_PRIVATE_SLOT(d, void slotEntryChanged(const KNSCore::EntryInternal &entry))
     Q_PRIVATE_SLOT(d, void slotShowDetails(const KNSCore::EntryInternal &entry))
     Q_PRIVATE_SLOT(d, void slotShowOverview())
 

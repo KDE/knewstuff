@@ -400,7 +400,10 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     connect(provider.data(), &Provider::loadingFinished, this, &Engine::slotEntriesLoaded);
     connect(provider.data(), &Provider::entryDetailsLoaded, this, &Engine::slotEntryDetailsLoaded);
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
-    connect(provider.data(), &Provider::signalError, this, &Engine::signalError);
+
+    connect(provider.data(), &Provider::signalError, this, [this, provider](const QString &msg) {
+        Q_EMIT signalErrorCode(ErrorCode::ProviderError, msg, m_providerFileUrl);
+    });
     connect(provider.data(), &Provider::signalErrorCode, this, &Engine::signalErrorCode);
     connect(provider.data(), &Provider::signalInformation, this, [this](const QString &message) {
         Q_EMIT signalMessage(message);

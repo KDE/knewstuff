@@ -63,7 +63,7 @@ public:
 
     void slotProvidersLoaded();
     void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
-    void slotEntryChanged(const KNSCore::EntryInternal &entry);
+    void slotEntryEvent(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event);
 
     void slotShowDetails(const KNSCore::EntryInternal &entry);
     void slotShowOverview();

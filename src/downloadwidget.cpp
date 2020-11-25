@@ -189,10 +189,12 @@ void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString v
                              i18n("Provider information"));
 }
 
-void DownloadWidgetPrivate::slotEntryChanged(const KNSCore::EntryInternal &entry)
+void DownloadWidgetPrivate::slotEntryEvent(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event)
 {
-    changedEntries.insert(entry);
-    model->slotEntryChanged(entry);
+    if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+        changedEntries.insert(entry);
+        model->slotEntryChanged(entry);
+    }
 }
 
 void DownloadWidgetPrivate::slotPayloadFailed(const KNSCore::EntryInternal &entry)
@@ -230,16 +232,21 @@ void DownloadWidgetPrivate::init(const QString &configFile)
 
     q->connect(engine, &KNSCore::Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
 
-    q->connect(engine, &KNSCore::Engine::signalBusy, ui.progressIndicator, &ProgressIndicator::busy);
     q->connect(engine, &KNSCore::Engine::signalErrorCode, ui.progressIndicator, &ProgressIndicator::error);
-    q->connect(engine, &KNSCore::Engine::signalIdle, ui.progressIndicator, &ProgressIndicator::idle);
+    q->connect(engine, &KNSCore::Engine::busyStateChanged, this ,[this]() {
+        if (!engine->busyState()) {
+            ui.progressIndicator->idle(QString());
+        } else {
+            ui.progressIndicator->busy(engine->busyMessage());
+        }
+    });
 
     q->connect(engine, &KNSCore::Engine::signalProvidersLoaded, this, &DownloadWidgetPrivate::slotProvidersLoaded);
     // Entries have been fetched and should be shown:
     q->connect(engine, &KNSCore::Engine::signalEntriesLoaded, this, &DownloadWidgetPrivate::slotEntriesLoaded);
 
     // An entry has changes - eg because it was installed
-    q->connect(engine, &KNSCore::Engine::signalEntryChanged, this, &DownloadWidgetPrivate::slotEntryChanged);
+    q->connect(engine, &KNSCore::Engine::signalEntryEvent, this, &DownloadWidgetPrivate::slotEntryEvent);
 
     q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
     q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded,

@@ -92,9 +92,13 @@ void Engine::setConfigFile(const QString &newFile)
                     Q_EMIT isLoadingChanged();
                 });
                 connect(d->engine, &KNSCore::Engine::signalMessage, this, &Engine::message);
-                connect(d->engine, &KNSCore::Engine::signalIdle, this, &Engine::idleMessage);
-                connect(d->engine, &KNSCore::Engine::signalBusy, this, &Engine::busyMessage);
-                connect(d->engine, &KNSCore::Engine::signalError, this, &Engine::errorMessage);
+                connect(d->engine, &KNSCore::Engine::busyStateChanged, this, [this]() {
+                    if (!d->engine->busyState()) {
+                        idleMessage(QString());
+                    } else {
+                        busyMessage(d->engine->busyMessage());
+                    }
+                });
                 connect(d->engine, &KNSCore::Engine::signalErrorCode, this, [=](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &/*metadata*/) {
                     if (errorCode == KNSCore::ProviderError) {
                         // This means loading the providers file failed entirely and we cannot complete the
@@ -105,13 +109,17 @@ void Engine::setConfigFile(const QString &newFile)
                     }
                     Q_EMIT errorMessage(message);
                 });
-                connect(d->engine, &KNSCore::Engine::signalEntryChanged, this, [this](const KNSCore::EntryInternal &entry){
-                    if (d->changedEntries.contains(entry) ) {
-                        d->changedEntries.removeAll(entry);
-                    }
-                    d->changedEntries << entry;
-                    Q_EMIT changedEntriesChanged();
-                });
+                connect(d->engine, &KNSCore::Engine::signalEntryEvent,
+                        this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                            if (event != KNSCore::EntryInternal::StatusChangedEvent) {
+                                return;
+                            }
+                            if (d->changedEntries.contains(entry)) {
+                                d->changedEntries.removeAll(entry);
+                            }
+                            d->changedEntries << entry;
+                            Q_EMIT changedEntriesChanged();
+                        });
                 Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();
                 d->categoriesModel = new CategoriesModel(this);
