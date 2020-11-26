@@ -21,6 +21,7 @@ class ButtonPrivate
 {
 public:
     QString configFile;
+    QPointer<DownloadDialog> dialog;
 };
 
 Button::Button(const QString &text,
@@ -80,13 +81,14 @@ void Button::showDialog()
     }
     Q_EMIT aboutToShowDialog();
 
-    QPointer<DownloadDialog> dialog = new DownloadDialog(d->configFile, this);
-    dialog->exec();
+    if (!d->dialog) {
+       d->dialog = new DownloadDialog(d->configFile, this);
+    }
+    d->dialog->exec();
 
-    if (dialog)
-        Q_EMIT dialogFinished(dialog->changedEntries());
-
-    delete dialog;
+    if (d->dialog) {
+        Q_EMIT dialogFinished(d->dialog->changedEntries());
+    }
 }
 
 }
