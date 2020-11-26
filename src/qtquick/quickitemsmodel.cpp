@@ -86,7 +86,8 @@ public:
             Q_EMIT q->entryChanged(model->row(entry));
 
             // If we update/uninstall an entry we have to update the UI, see BUG: 425135
-            if (coreEngine->filter() == KNSCore::Provider::Updates && entry.status() != KNS3::Entry::Updateable) {
+            if (coreEngine->filter() == KNSCore::Provider::Updates
+                && entry.status() != KNS3::Entry::Updateable && entry.status() != KNS3::Entry::Updating) {
                 model->removeEntry(entry);
             } else if (coreEngine->filter() == KNSCore::Provider::Installed && entry.status() == KNS3::Entry::Deleted) {
                 model->removeEntry(entry);
