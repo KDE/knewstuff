@@ -460,7 +460,6 @@ bool UploadDialog::init(const QString &configfile)
     d->ui.mTitleWidget->setText(i18nc("Program name followed by 'Add On Uploader'",
                                       "%1 Add-On Uploader",
                                       displayName));
-    //d->ui.mTitleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
 
     if (success) {
         d->_k_showPage(0);

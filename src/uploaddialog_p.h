@@ -124,10 +124,6 @@ public:
     void _k_priceToggled(bool);
     void _k_updateContentsToggled(bool update);
     void _k_detailsLinkLoaded(const QUrl &url);
-
-    void getAccountBalance();
-    void _k_accountBalanceFetched(Attica::BaseJob *baseJob);
-
     void _k_openRegisterAccountWebpage(QString);
 
     QStringList _supportedMimeTypes() const;

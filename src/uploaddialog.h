@@ -97,14 +97,6 @@ public:
       */
     void setChangelog(const QString &changelog);
 
-    /* *
-      Set the suggested license displayed in the upload dialog.
-      The user can still change this.
-      @param version version
-      */
-    // enum License {}; // see fd.o api spec
-    // void setLicense(License license);
-
     /**
       Set one of the three preview images displayed in the upload dialog.
       The user can still change this.
