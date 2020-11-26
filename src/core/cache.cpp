@@ -258,13 +258,7 @@ void Cache::writeRegistry()
     QDomElement root = doc.createElement(QStringLiteral("hotnewstuffregistry"));
     doc.appendChild(root);
 
-    for (EntryInternal entry : cache) {
-        // This might possibly seem a little naughty, but the cache data only cares about installed
-        // items, and in reality Updateable will be set when checking installed items against
-        // the remote server's information on the load of the cache
-        if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
-            entry.setStatus(KNS3::Entry::Installed);
-        }
+    for (const EntryInternal &entry : qAsConst(cache)) {
         // Write the entry, unless the policy is CacheNever and the entry is not installed.
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             QDomElement exml = entry.entryXML();
@@ -281,6 +275,11 @@ void Cache::writeRegistry()
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
+
+    // If we have intermediate states, like updating or installing we do not want to write them
+    if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
+        return;
+    }
     static QTimer* writeThrottle{nullptr};
     if (!writeThrottle) {
         writeThrottle = new QTimer(this);
