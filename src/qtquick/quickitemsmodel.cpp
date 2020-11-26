@@ -6,14 +6,11 @@
 
 #include "quickitemsmodel.h"
 #include "quickengine.h"
-#include "knewstuffquick_debug.h"
-
 #include "itemsmodel.h"
 #include "engine.h"
 #include "downloadlinkinfo.h"
 #include "core/commentsmodel.h"
 
-#include <KLocalizedString>
 #include <KShell>
 #include <QProcess>
 

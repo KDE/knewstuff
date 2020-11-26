@@ -10,8 +10,6 @@
 
 #include <KConfig>
 #include <KConfigGroup>
-
-#include <QDebug>
 #include <QDir>
 
 class KNSRCModel::Private {

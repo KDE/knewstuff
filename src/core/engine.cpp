@@ -10,7 +10,6 @@
 
 #include "engine.h"
 
-#include "../entry.h"
 #include "commentsmodel.h"
 #include "installation.h"
 #include "question.h"

@@ -13,8 +13,6 @@
 #include "xmlloader.h"
 
 #include <knewstuffcore_debug.h>
-#include <KLocalizedString>
-
 #include <QTimer>
 #include <tagsfilterchecker.h>
 
