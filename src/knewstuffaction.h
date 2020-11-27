@@ -14,6 +14,9 @@ class QObject;
 class QAction;
 class KActionCollection;
 
+/**
+ * The namespace for the KNewStuff classes
+ */
 namespace KNS3
 {
 /**
