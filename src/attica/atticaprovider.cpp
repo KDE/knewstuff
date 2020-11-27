@@ -118,7 +118,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
 
     qCDebug(KNEWSTUFFCORE) << "loading categories: " << mCategoryMap.keys();
 
-    Attica::ListJob<Attica::Category> *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
+    auto *job = static_cast<Attica::ListJob<Attica::Category>*>(listJob);
     const Category::List categoryList = job->itemList();
 
     QList<CategoryMetadata> categoryMetadataList;
@@ -239,7 +239,7 @@ void AtticaProvider::loadEntryDetails(const KNSCore::EntryInternal &entry)
 void AtticaProvider::detailsLoaded(BaseJob *job)
 {
     if (jobSuccess(job)) {
-        ItemJob<Content> *contentJob = static_cast<ItemJob<Content>*>(job);
+        auto *contentJob = static_cast<ItemJob<Content>*>(job);
         Content content = contentJob->result();
         EntryInternal entry = entryFromAtticaContent(content);
         Q_EMIT entryDetailsLoaded(entry);
@@ -264,7 +264,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
         return;
     }
 
-    ListJob<Content> *listJob = static_cast<ListJob<Content>*>(job);
+    auto *listJob = static_cast<ListJob<Content>*>(job);
     const Content::List contents = listJob->itemList();
 
     EntryInternal::List entries;
@@ -377,7 +377,7 @@ void AtticaProvider::loadedComments(Attica::BaseJob *baseJob)
         return;
     }
 
-    ListJob<Attica::Comment> *job = static_cast<ListJob<Attica::Comment>*>(baseJob);
+    auto *job = static_cast<ListJob<Attica::Comment>*>(baseJob);
     Attica::Comment::List comments = job->itemList();
 
     QList<std::shared_ptr<KNSCore::Comment>> receivedComments = getCommentsList(comments, nullptr);
@@ -400,7 +400,7 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
         return;
     }
 
-    ItemJob<Attica::Person> *job = static_cast<ItemJob<Attica::Person>*>(baseJob);
+    auto *job = static_cast<ItemJob<Attica::Person>*>(baseJob);
     Attica::Person person = job->result();
 
     auto author = std::make_shared<KNSCore::Author>();
@@ -419,7 +419,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
         return;
     }
 
-    ItemJob<AccountBalance> *job = static_cast<ItemJob<AccountBalance>*>(baseJob);
+    auto *job = static_cast<ItemJob<AccountBalance>*>(baseJob);
     AccountBalance item = job->result();
 
     QPair<EntryInternal, int> pair = mDownloadLinkJobs.take(job);
@@ -455,7 +455,7 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
         return;
     }
 
-    ItemJob<DownloadItem> *job = static_cast<ItemJob<DownloadItem>*>(baseJob);
+    auto *job = static_cast<ItemJob<DownloadItem>*>(baseJob);
     DownloadItem item = job->result();
 
     EntryInternal entry = mDownloadLinkJobs.take(job).first;
