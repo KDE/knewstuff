@@ -520,9 +520,6 @@ public:
      */
     KNS3::Entry::Status status() const;
 
-    //void setIdNumber(int number);
-    //int idNumber() const;
-
     static KNSCore::EntryInternal fromEntry(const KNS3::Entry &entry);
 private:
     class Private;
