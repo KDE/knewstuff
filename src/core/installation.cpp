@@ -87,6 +87,7 @@ bool Installation::readConfig(const KConfigGroup &group)
     targetDirectory = group.readEntry("TargetDir");
     xdgTargetDirectory = group.readEntry("XdgTargetDir");
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
     // Provide some compatibility
     if (standardResourceDirectory == QLatin1String("wallpaper")) {
         xdgTargetDirectory = QStringLiteral("wallpapers");
@@ -99,7 +100,6 @@ bool Installation::readConfig(const KConfigGroup &group)
         uncompression = QStringLiteral("subdir");
     }
 
-    // TODO KF6 Remove this compatibility block
     // A touch of special treatment for the various old kpackage based knsrc files, so they work
     // with the new, internal stuff. The result unfortunately is that all entries marked as
     // installed in knewstuff no longer will be, but since it never worked right anyway... we'll
@@ -123,6 +123,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         setProperty("kpackageType", uninstallCommand.mid(21, uninstallCommand.length() - 21 - 12));
         qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
     }
+#endif
 
     installPath = group.readEntry("InstallPath");
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
