@@ -359,10 +359,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
 
 bool ItemsModel::canFetchMore(const QModelIndex &parent) const
 {
-    if (!parent.isValid() && d->coreEngine && d->coreEngine->categoriesMetadata().count() > 0) {
-        return true;
-    }
-    return false;
+    return !parent.isValid() && d->coreEngine && d->coreEngine->categoriesMetadata().count() > 0;
 }
 
 void ItemsModel::fetchMore(const QModelIndex &parent)
