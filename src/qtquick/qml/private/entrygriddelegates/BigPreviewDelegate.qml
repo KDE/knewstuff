@@ -68,7 +68,10 @@ Private.GridTileDelegate {
             visible: enabled;
         },
         Kirigami.Action {
-            text: root.uninstallLabel
+            text: {
+                console.error(model.entry)
+                model.entry.getStatusText(Entry.Status.Installed)
+            }
             iconName: "edit-delete"
             onTriggered: { newStuffModel.uninstallItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus

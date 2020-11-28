@@ -140,7 +140,8 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {DonationLinkRole, "donationLink"},
         {ProviderIdRole, "providerId"},
         {SourceRole, "source"},
-        {StatusRole, "status"}
+        {StatusRole, "status"},
+        {EntryRole, "entry"},
     };
     return roles;
 }
@@ -363,7 +364,7 @@ bool ItemsModel::canFetchMore(const QModelIndex &parent) const
         return true;
     }
     return false;
-}
+}//TODO
 
 void ItemsModel::fetchMore(const QModelIndex &parent)
 {
@@ -438,5 +439,24 @@ void ItemsModel::adoptItem(int index)
         if (entry.isValid()) {
             d->coreEngine->adoptEntry(entry);
         }
+    }
+}
+QString ItemsModel::getStatusDescription(ItemsModel::ItemStatus status)
+{
+    switch (status) {
+        case InvalidStatus:
+            break;
+        case DownloadableStatus:
+            break;
+        case InstalledStatus:
+            break;
+        case UpdateableStatus:
+            break;
+        case DeletedStatus:
+            break;
+        case InstallingStatus:
+            break;
+        case UpdatingStatus:
+            break;
     }
 }

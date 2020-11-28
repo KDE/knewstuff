@@ -12,6 +12,7 @@
 #include <QStringList>
 #include <QXmlStreamReader>
 #include <knewstuffcore_debug.h>
+#include <KLocalizedString>
 
 #include "xmlloader.h"
 #include "../entry_p.h" // For Entry::Status ONLY!
@@ -730,6 +731,32 @@ QDomElement KNSCore::EntryInternal::entryXML() const
 KNSCore::EntryInternal EntryInternal::fromEntry(const KNS3::Entry &entry)
 {
     return entry.d->e;
+}
+
+QString KNSCore::EntryInternal::getStatusText(KNS3::Entry::Status status) const
+{
+    switch (status) {
+        // Intermediate states
+        case KNS3::Entry::Installing:
+            return i18n("Installing...");
+        case KNS3::Entry::Updating:
+            return i18n("Updating...");
+        // Non-intermediate states, labels for actions that the user can trigger
+        case KNS3::Entry::Installed:
+            return i18n("Uninstall");
+        case KNS3::Entry::Updateable:
+            return i18n("Update");
+        case KNS3::Entry::Downloadable:
+            return downloadLinkCount() ? i18n("Install...") : i18n("Install") ;
+        case KNS3::Entry::Deleted:
+            return downloadLinkCount() ? i18n("Install Again...") : i18n("Install Again") ;
+        // Error case
+        case KNS3::Entry::Invalid:
+            return i18nc("Status message which should only be shown when the entry has been given some unknown or invalid status.",
+                "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
+        default:
+            return QString();
+    }
 }
 
 QString KNSCore::replaceBBCode(const QString &unformattedText)

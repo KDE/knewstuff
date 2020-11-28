@@ -314,41 +314,29 @@ void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelI
 
         bool installable = false;
         bool enabled = true;
-        QString text;
+        const QString text = entry.getStatusText(entry.status());
         QIcon icon;
 
         switch (entry.status()) {
         case Entry::Installed:
-            text = i18n("Uninstall");
             icon = m_iconDelete;
             break;
         case Entry::Updateable:
-            text = i18n("Update");
             icon = m_iconUpdate;
             installable = true;
             break;
         case Entry::Installing:
-            text = i18n("Installing");
-            enabled = false;
-            icon = m_iconUpdate;
-            break;
         case Entry::Updating:
-            text = i18n("Updating");
             enabled = false;
             icon = m_iconUpdate;
             break;
         case Entry::Downloadable:
-            text = i18n("Install");
-            icon = m_iconInstall;
-            installable = true;
-            break;
         case Entry::Deleted:
-            text = i18n("Install Again");
             icon = m_iconInstall;
             installable = true;
             break;
         default:
-            text = i18n("Install");
+            break;
         }
         m_installButton->setToolTip(text);
         m_installButton->setIcon(icon);

@@ -518,7 +518,15 @@ public:
      *
      * @return Current status of the entry
      */
-    KNS3::Entry::Status status() const;
+    Q_INVOKABLE KNS3::Entry::Status status() const;
+
+    /**
+     *
+     * @since 5.77
+     * @return String representation of this entries status
+     */
+    Q_INVOKABLE QString getStatusText(KNS3::Entry::Status status) const;
+
 
     //void setIdNumber(int number);
     //int idNumber() const;

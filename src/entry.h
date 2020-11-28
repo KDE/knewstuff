@@ -52,6 +52,7 @@ public:
         Installing,
         Updating
     };
+    Q_ENUMS(Status)
 
     ~Entry();
     Entry(const Entry &other);
@@ -198,4 +199,5 @@ private:
 
 }
 
+Q_DECLARE_METATYPE(KNS3::Entry::Status)
 #endif

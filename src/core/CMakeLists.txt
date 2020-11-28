@@ -79,9 +79,9 @@ target_link_libraries(KF5NewStuffCore
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF5::CoreAddons
     Qt5::Xml
+    KF5::I18n                  # For translations
   PRIVATE
     KF5::Archive               # For decompressing archives
-    KF5::I18n                  # For translations
     KF5::ConfigCore
     KF5::Package
     Qt5::Gui                   # For QImage

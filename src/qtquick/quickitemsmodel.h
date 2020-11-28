@@ -136,6 +136,8 @@ public:
      */
     Q_SIGNAL void isLoadingDataChanged();
 
+    Q_INVOKABLE QString getStatusDescription(ItemStatus status);
+
     /**
      * @brief This will install (or update, if already installed) the item at the given index
      *
