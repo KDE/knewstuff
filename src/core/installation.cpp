@@ -611,19 +611,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     installfile += QLatin1Char('.') + ext;
                 }
             } else {
-                // TODO HACK This is a hack, the correct way of fixing it would be doing the KIO::get
-                // and using the http headers if they exist to get the file name, but as discussed in
-                // Randa this is not going to happen anytime soon (if ever) so go with the hack
-                if (source.url().startsWith(QLatin1String("http://newstuff.kde.org/cgi-bin/hotstuff-access?file="))) {
-                    installfile = QUrlQuery(source).queryItemValue(QStringLiteral("file"));
-                    int lastSlash = installfile.lastIndexOf(QLatin1Char('/'));
-                    if (lastSlash >= 0) {
-                        installfile = installfile.mid(lastSlash);
-                    }
-                }
-                if (installfile.isEmpty()) {
-                    installfile = source.fileName();
-                }
+                installfile = source.fileName();
             }
             QString installpath = QDir(installdir).filePath(installfile);
 
