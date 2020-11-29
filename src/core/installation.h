@@ -62,6 +62,7 @@ public:
         UncompressIntoSubdir, ///@< As Archive, except that if there is more than an item in the file, put contents in a subdirectory with the same name as the file. Matches "subdir" knsrc setting
         UseKPackageUncompression ///@< Use the internal KPackage support for installing and uninstalling the package. Matches "kpackage" knsrc setting
     };
+    Q_ENUM(UncompressionOptions)
 
     bool readConfig(const KConfigGroup &group);
 

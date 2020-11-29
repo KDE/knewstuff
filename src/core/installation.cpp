@@ -48,32 +48,38 @@ Installation::Installation(QObject *parent)
     , customName(false)
     , acceptHtml(false)
 {
-    // TODO KF6 Make this a real property, when we can refactor this and add a proper dptr
+    // TODO KF6 Make these real properties, when we can refactor this and add a proper dptr
     setProperty("kpackageType", QLatin1String(""));
+    setProperty("uncompressSetting", UncompressionOptions::NeverUncompress);
 }
 
 bool Installation::readConfig(const KConfigGroup &group)
 {
     // FIXME: add support for several categories later on
     // FIXME: read out only when actually installing as a performance improvement?
-    QString uncompresssetting = group.readEntry("Uncompress", QStringLiteral("never"));
+    uncompression = group.readEntry("Uncompress", QStringLiteral("never"));
+    UncompressionOptions opt;
     // support old value of true as equivalent of always
-    if (uncompresssetting == QLatin1String("subdir")) {
-        uncompresssetting = QStringLiteral("subdir");
+    if (uncompression == QLatin1String("true")) {
+        uncompression = QStringLiteral("always");
     }
-    else if (uncompresssetting == QLatin1String("true")) {
-        uncompresssetting = QStringLiteral("always");
-    }
-    if (uncompresssetting != QLatin1String("always")
-        && uncompresssetting != QLatin1String("archive")
-        && uncompresssetting != QLatin1String("subdir-archive")
-        && uncompresssetting != QLatin1String("never")
-        && uncompresssetting != QLatin1String("subdir")
-        && uncompresssetting != QLatin1String("kpackage")) {
+    if (uncompression == QLatin1String("always")) {
+        opt = AlwaysUncompress;
+    } else if (uncompression == QLatin1String("archive")) {
+        opt = UncompressIfArchive;
+    } else if (uncompression == QLatin1String("subdir")) {
+        opt = UncompressIntoSubdir;
+    } else if (uncompression == QLatin1String("kpackage")) {
+        opt = UseKPackageUncompression;
+    } else if (uncompression == QLatin1String("subdir-archive")) {
+        opt = UncompressIntoSubdirIfArchive;
+    } else if (uncompression == QLatin1String("never")) {
+        opt =  NeverUncompress;
+    } else {
         qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, never, or kpackage";
         return false;
     }
-    uncompression = uncompresssetting;
+    setProperty("uncompressSetting", opt);
     setProperty("kpackageType", group.readEntry("KPackageType"));
     postInstallationCommand = group.readEntry("InstallationCommand");
     uninstallCommand = group.readEntry("UninstallCommand");
@@ -274,7 +280,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString&
     QString targetPath = targetInstallationPath();
     QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
 
-    if (uncompression != QLatin1String("kpackage")) {
+    if (uncompressionSetting() != UseKPackageUncompression) {
         if (installedFiles.isEmpty()) {
             if (entry.status() == KNS3::Entry::Installing) {
                 entry.setStatus(KNS3::Entry::Downloadable);
@@ -395,9 +401,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
     // Collect all files that were installed
     QStringList installedFiles;
     bool isarchive = true;
+    UncompressionOptions uncompressionOpt = uncompressionSetting();
 
     // respect the uncompress flag in the knsrc
-    if (uncompression == QLatin1String("kpackage")) {
+    if (uncompressionOpt == UseKPackageUncompression) {
         qCDebug(KNEWSTUFFCORE) << "Using KPackage for installation";
         KPackage::PackageStructure structure;
         KPackage::Package package(&structure);
@@ -506,7 +513,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             qCWarning(KNEWSTUFFCORE) << "No valid meta information (which suggests no valid KPackage) found in" << payloadfile;
         }
     } else {
-        if (uncompression == QLatin1String("always") || uncompression == QLatin1String("subdir-archive") || uncompression == QLatin1String("archive") || uncompression == QLatin1String("subdir")) {
+        if (uncompressionOpt == AlwaysUncompress
+            || uncompressionOpt == UncompressIntoSubdirIfArchive
+            || uncompressionOpt == UncompressIfArchive
+            || uncompressionOpt == UncompressIntoSubdir) {
             // this is weird but a decompression is not a single name, so take the path instead
             QMimeDatabase db;
             QMimeType mimeType = db.mimeTypeForFile(payloadfile);
@@ -528,7 +538,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 archive.reset(new KTar(payloadfile));
             } else {
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
-                if (uncompression == QLatin1String("always")) {
+                if (uncompressionOpt == AlwaysUncompress) {
                     Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
                     return QStringList();
                 }
@@ -539,7 +549,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 bool success = archive->open(QIODevice::ReadOnly);
                 if (!success) {
                     qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
-                    if (uncompression == QLatin1String("always")) {
+                    if (uncompressionOpt == AlwaysUncompress) {
                         Q_EMIT signalInstallationError(i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
                         return QStringList();
                     }
@@ -552,7 +562,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     //if there is more than an item in the file, and we are requested to do so
                     //put contents in a subdirectory with the same name as the file
                     QString installpath;
-                    const bool isSubdir = (uncompression == QLatin1String("subdir-archive") || uncompression == QLatin1String("subdir")) && dir->entries().count() > 1;
+                    const bool isSubdir = (uncompressionOpt == UncompressIntoSubdir || uncompressionOpt == UncompressIntoSubdirIfArchive) && dir->entries().count() > 1;
                     if (isSubdir) {
                         installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
                     } else {
@@ -580,9 +590,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
         //some wallpapers are compressed, some aren't
         if ((!isarchive && standardResourceDirectory == QLatin1String("wallpaper")) ||
-            (uncompression == QLatin1String("never")
-            || (uncompression == QLatin1String("archive") && !isarchive)
-            || (uncompression == QLatin1String("subdir-archive") && !isarchive))
+            (uncompressionOpt == NeverUncompress
+            || (uncompressionOpt == UncompressIfArchive && !isarchive)
+            || (uncompressionOpt == UncompressIntoSubdirIfArchive && !isarchive))
             ) {
             // no decompress but move to target
 
@@ -721,7 +731,7 @@ void Installation::uninstall(EntryInternal entry)
         Q_EMIT signalEntryChanged(newEntry);
     };
 
-    if (uncompression == QLatin1String("kpackage")) {
+    if (uncompressionSetting() == UseKPackageUncompression) {
         const auto lst = entry.installedFiles();
         if (lst.length() == 1) {
             const QString installedFile{lst.first()};
@@ -881,18 +891,7 @@ void Installation::uninstall(EntryInternal entry)
 
 Installation::UncompressionOptions Installation::uncompressionSetting() const
 {
-    if (uncompression == QLatin1String("always")) {
-        return AlwaysUncompress;
-    } else if (uncompression == QLatin1String("archive")) {
-        return UncompressIfArchive;
-    } else if (uncompression == QLatin1String("subdir")) {
-        return UncompressIntoSubdir;
-    } else if (uncompression == QLatin1String("kpackage")) {
-        return UseKPackageUncompression;
-    } else if (uncompression == QLatin1String("subdir-archive")) {
-        return UncompressIntoSubdirIfArchive;
-    }
-    return NeverUncompress;
+    return property("uncompressSetting").value<UncompressionOptions>();
 }
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 31)
