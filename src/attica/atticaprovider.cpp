@@ -220,6 +220,10 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
 
 void AtticaProvider::checkForUpdates()
 {
+    if (mCachedEntries.isEmpty()) {
+        Q_EMIT loadingFinished(mCurrentRequest, {});
+    }
+
     for (const EntryInternal &e : qAsConst(mCachedEntries)) {
         ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
