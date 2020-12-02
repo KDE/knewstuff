@@ -22,6 +22,8 @@ set(KNewStuff_SRCS
     ui/widgetquestionlistener.cpp
 
     uploaddialog.cpp
+
+    qtquickdialogwrapper.cpp
 )
 
 ecm_qt_declare_logging_category(KNewStuff_SRCS
@@ -69,6 +71,7 @@ target_link_libraries(KF5NewStuff
     KF5::I18n                  # For translations
     KF5::ItemViews             # For buttons on download dialog
     KF5::IconThemes           # For KIcon
+    Qt5::Qml
     KF5::TextWidgets          # For KTextEdit in upload dialog
 )
 
@@ -90,6 +93,7 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   UploadDialog
   Entry
   Button
+  QtQuickDialogWrapper
 
   REQUIRED_HEADERS KNewStuff_HEADERS
   PREFIX KNS3
