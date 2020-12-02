@@ -792,7 +792,7 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
     if (!actualEntryForUninstall.isValid()) {
         qCDebug(KNEWSTUFFCORE) << "could not find a cached entry with following id:" << entry.uniqueId() <<
                  " ->  using the non-cached version";
-        return;
+        actualEntryForUninstall = entry;
     }
 
     entry.setStatus(KNS3::Entry::Installing);
