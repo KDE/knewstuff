@@ -1,0 +1,1655 @@
+# translation of kdelibs4.po to galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2008, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# marce villarino <mvillarino@gmail.com>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2010, 2011, 2012.
+# Xosé <xosecalvo@gmail.com>, 2010.
+# Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
+# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-12-03 02:17+0100\n"
+"PO-Revision-Date: 2019-11-26 23:31+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.08.3\n"
+
+#: attica/atticaprovider.cpp:163
+#, kde-format
+msgid "All categories are missing"
+msgstr "Faltan todas as categorías"
+
+#: attica/atticaprovider.cpp:437
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Este elemento custa %2 %1.\n"
+"Quere mercalo?"
+
+#: attica/atticaprovider.cpp:451
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"O saldo da súa conta é baixo de máis:\n"
+"Saldo: %1\n"
+"Prezo: %2"
+
+#: attica/atticaprovider.cpp:493
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Rexistrouse o seu voto."
+
+#: attica/atticaprovider.cpp:508
+#, kde-format
+msgid "You are now a fan."
+msgstr "Agora é o seu fan."
+
+#: attica/atticaprovider.cpp:519
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "Erro de rede %1: %2"
+
+#: attica/atticaprovider.cpp:523
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Hai demasiadas solicitudes que servir. Inténteo de novo dentro duns minutos, "
+"por favor."
+
+#: attica/atticaprovider.cpp:525
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+"A instancia de Open Collaboration Services %1 non dispón da función que "
+"intentou usar."
+
+#: attica/atticaprovider.cpp:527
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+"Produciuse un erro descoñecido da API de Servizo de Colaboración Aberta. (%1)"
+
+#: button.cpp:42
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Descargar novidades…"
+
+#: core/commentsmodel.cpp:168
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr "Rol descoñecido de CommentsModel"
+
+#: core/engine.cpp:156
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+
+#: core/engine.cpp:191
+#, kde-format
+msgid "Initializing"
+msgstr "Estase a inicializar"
+
+#: core/engine.cpp:214
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "O ficheiro de configuración existe, pero non pode abrirse: «%1»"
+
+#: core/engine.cpp:227
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "O ficheiro de configuración é incorrecto: «%1»"
+
+#: core/engine.cpp:235
+#, kde-format
+msgid "Use"
+msgstr "Usar"
+
+#: core/engine.cpp:247
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+
+#: core/engine.cpp:316
+#, kde-format
+msgid "Loading provider information"
+msgstr "Cargando a información do fornecedor"
+
+#: core/engine.cpp:345
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Non se puideron obter fornecedores de novidades do ficheiro: %1"
+
+#: core/engine.cpp:368
+#, kde-format
+msgid "Error initializing provider."
+msgstr "Produciuse un erro ao inicializar o fornecedor."
+
+#: core/engine.cpp:372 core/engine.cpp:899
+#, kde-format
+msgid "Loading data"
+msgstr "Estanse a cargar os datos"
+
+#: core/engine.cpp:414
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Estanse a cargar os datos do fornecedor"
+
+#: core/engine.cpp:419
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Carga dos fornecedores desde o ficheiro: %1 fallou"
+
+#: core/engine.cpp:755
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/engine.cpp:756
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/engine.cpp:849
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:891 ui/itemsgridviewdelegate.cpp:331
+#: ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Installing"
+msgstr "Instalando"
+
+#: core/engine.cpp:895
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Estase cargar unha vista previa"
+msgstr[1] "Estanse cargar %1 vistas previas"
+
+#: core/engine.cpp:1081
+#, fuzzy, kde-format
+#| msgid "Failed to load file '%1'"
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr "Produciuse un erro ao cargar o ficheiro «%1»"
+
+#: core/installation.cpp:206
+#, kde-format
+msgid "Invalid item."
+msgstr "Este elemento é incorrecto."
+
+#: core/installation.cpp:213
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Fallou a descarga do elemento: «%1» non ten URL para descargalo."
+
+#: core/installation.cpp:242
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Fallou a descarga de «%1»; erro: %2"
+
+#: core/installation.cpp:252
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"O ficheiro descargado é un ficheiro html. Isto indica unha ligazón a un "
+"sitio web no canto da descarga real. Desexa daquela abrir o sitio cun "
+"navegador?"
+
+#: core/installation.cpp:253
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Posibelmente esta ligazón de descarga sexa incorrecta"
+
+#: core/installation.cpp:256
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "O ficheiro descargado era un ficheiro HTML. Abriuse no navegador."
+
+#: core/installation.cpp:292
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Non se puido instalar «%1»: non se atopou o ficheiro."
+
+#: core/installation.cpp:322
+#, fuzzy, kde-format
+#| msgid "Failed to open scriptfile \"%1\""
+msgid "Failed to execute install script"
+msgstr "Produciuse un erro ao abrir o script «%1»"
+
+#: core/installation.cpp:466
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr ""
+
+#: core/installation.cpp:486 core/installation.cpp:756
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A passive notification shown when installation of an item is initiated"
+#| msgid "Installing %1 from %2"
+msgid "Installation of %1 failed: %2"
+msgstr "Instalando %1 de %2"
+
+#: core/installation.cpp:494
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+
+#: core/installation.cpp:500
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:506
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr ""
+
+#: core/installation.cpp:512
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:543
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr ""
+
+#: core/installation.cpp:554
+#, fuzzy, kde-format
+#| msgid "Unable to open temporary file. Error was: %1."
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "Non foi posíbel abrir o ficheiro temporal. O erro foi: %1."
+
+#: core/installation.cpp:631
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+"Este ficheiro xa existe en disco (posibelmente por un intento de descarga "
+"errado anterior). Continuar implica sobrescribilo. Quere sobrescribir o "
+"ficheiro existente?"
+
+#: core/installation.cpp:632
+#, kde-format
+msgid "Overwrite File"
+msgstr "Substituír o ficheiro"
+
+#: core/installation.cpp:648
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr ""
+
+#: core/installation.cpp:671
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+
+#: core/installation.cpp:674
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+
+#: core/installation.cpp:762
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:766
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+
+#: core/installation.cpp:770
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:809
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr ""
+
+#: core/installation.cpp:813
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+
+#: core/installation.cpp:817
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+
+#: core/installation.cpp:848
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:104
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:108
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:112
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr ""
+
+#: core/security.cpp:75
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Non se pode iniciar <i>gpg</i> e descubrir as chaves dispoñíbeis. "
+"Verifique que ten <i>gpg</i> instalado; doutro xeito non será posíbel "
+"verificar os recursos descargados.</qt>"
+
+#: core/security.cpp:203
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Insira a frase de paso da chave <b>0x%1</b>, pertencente a <br/><i>%2 "
+"&lt;%3&gt;</i><br/>:</qt>"
+
+#: core/security.cpp:281
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Non se pode iniciar <i>gpg</i> e comprobar a validez do ficheiro. "
+"Comprobe que <i>gpg</i> está instalado; doutro xeito non será posíbel "
+"comprobar os recursos descargados.</qt>"
+
+#: core/security.cpp:336
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Chave usada para asinar:"
+
+#: core/security.cpp:337
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Escolla a chave para asinar"
+
+#: core/security.cpp:372
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Non se pode iniciar <i>gpg</i> e asinar o ficheiro. Verifique que "
+"<i>gpg</i> estea instalado; doutro xeito non será posíbel asinar os recursos."
+"</qt>"
+
+#: downloaddialog.cpp:68 downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Obter novidades"
+
+#: downloaddialog.cpp:86
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Instalador de complementos de %1"
+
+#: downloadwidget.cpp:120
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Esgotouse o tempo. Comprobe a conexión a Internet."
+
+#: downloadwidget.cpp:183
+#, kde-format
+msgid "Server: %1"
+msgstr "Servidor: %1"
+
+#: downloadwidget.cpp:184
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Fornecedor: %1"
+
+#: downloadwidget.cpp:185
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Versión: %1"
+
+#: downloadwidget.cpp:189
+#, kde-format
+msgid "Provider information"
+msgstr "Información do fornecedor"
+
+#: downloadwidget.cpp:202
+#, kde-format
+msgid "Could not install %1"
+msgstr "Non se puido instalar %1"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Obter novidades!"
+
+#: downloadwidget.cpp:263 qtquick/qml/Page.qml:132
+#, kde-format
+msgid "Icons view mode"
+msgstr "Modo de vista en iconas"
+
+#: downloadwidget.cpp:265
+#, kde-format
+msgid "Details view mode"
+msgstr "Modo de vista de detalles"
+
+#: downloadwidget.cpp:280
+#, kde-format
+msgid "All Providers"
+msgstr "Todos os fornecedores"
+
+#: downloadwidget.cpp:287
+#, kde-format
+msgid "All Categories"
+msgstr "Todas as categorías"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "Fornecedor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "Categoría:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "Máis descargados"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "O máis recente"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Rating"
+msgstr "Cualificación"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "Instalado"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Ordenar segundo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Buscar:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:217 qtquick/qml/Page.qml:146
+#, kde-format
+msgid "Search..."
+msgstr "Buscar…"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:371
+#, kde-format
+msgid "Author:"
+msgstr "Autor:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:396
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"https://opendesktop.org\">Páxina web</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:326
+#: ui/itemsviewdelegate.cpp:117 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "Actualizar"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:322
+#: ui/itemsviewdelegate.cpp:113 ui/itemsviewdelegate.cpp:178
+#, kde-format
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:589
+#, kde-format
+msgid "Become a Fan"
+msgstr "Facerme fan"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:50
+#: ui/itemsgridviewdelegate.cpp:341 ui/itemsgridviewdelegate.cpp:351
+#: ui/itemsviewdelegate.cpp:132 ui/itemsviewdelegate.cpp:142
+#, kde-format
+msgid "Install"
+msgstr "Instalar"
+
+#: kmoretools/kmoretools.cpp:533
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Non instalado:"
+
+#: kmoretools/kmoretools.cpp:629
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Máis"
+
+#: kmoretools/kmoretools.cpp:667
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Configurar…"
+
+#: kmoretools/kmoretools_p.h:376
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Visitar a páxina web"
+
+#: kmoretools/kmoretools_p.h:388
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Instalar"
+
+#: kmoretools/kmoretools_p.h:396
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Non hai información adicional dispoñíbel."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
+#, kde-format
+msgid "Configure menu"
+msgstr "Configurar o menú"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:174
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Configurar o menú - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:183
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "%1 - cartafol actual"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:191
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "%1 - dispositivo actual"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:204
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "%1 - todos os dispositivos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Sección principal"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Baixar"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr "Subir"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr "Mover á sección principal"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr "Mover á sección «Máis»"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "Reiniciar"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr "Sección «Máis»"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Para este menú suxírense máis ferramentas que non están instaladas "
+"actualmente:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr "Máis ferramentas…"
+
+#: qtquick/categoriesmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "All Categories"
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "All Categories"
+msgstr "Todas as categorías"
+
+#: qtquick/categoriesmodel.cpp:93
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "Categoría descoñecida"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:43
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to contruct the button's label (which will become Download New 'this "
+#| "value')"
+#| msgid "Stuff"
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr "Cousas"
+
+#: qtquick/qml/Button.qml:44
+#, fuzzy, kde-format
+#| msgid "Download New %1"
+msgid "Download New %1..."
+msgstr "Descargar novidades de %1"
+
+#: qtquick/qml/Dialog.qml:41
+#, fuzzy, kde-format
+#| msgid "Download New %1"
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "Descargar novidades de %1"
+
+#: qtquick/qml/Dialog.qml:41
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "Descargar novidades…"
+
+#: qtquick/qml/DownloadItemsSheet.qml:31
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "Escolla a súa opción de instalación"
+
+#: qtquick/qml/DownloadItemsSheet.qml:42
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+"Seleccione a opción que queira instalar da lista de elementos para descargar "
+"de embaixo. Se non ten claro que elixir de entre as opcións dispoñíbeis, "
+"contacte co autor do elemento e pídalle que clarifique o nome dos elementos "
+"para que quede máis claro."
+
+#: qtquick/qml/EntryDetails.qml:48
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "Instalando %1 de %2"
+
+#: qtquick/qml/EntryDetails.qml:64
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed"
+msgid "Currently installing the item %1 by %2. Please wait..."
+msgstr "Instalando o elemento %1 de %2. Agarde…"
+
+#: qtquick/qml/EntryDetails.qml:66
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr "Actualizando o elemento %1 de %2. Agarde…"
+
+#: qtquick/qml/EntryDetails.qml:68
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message which should only be shown when the entry has been given "
+#| "some unknown or invalid status."
+#| msgid ""
+#| "This item is currently in an invalid or unknown state. Please report this "
+#| "to the KDE Community in a bug report."
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+"Este elemento está nun estado incorrecto ou descoñecido. Informe disto á "
+"comunidade KDE mediante un informe de fallo."
+
+#: qtquick/qml/EntryDetails.qml:82
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1 de %2"
+
+#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:50
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Instalar"
+
+#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:50
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "Instalar…"
+
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Actualizar"
+
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/Page.qml:62
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: qtquick/qml/EntryDetails.qml:151
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "Comentarios e recensións:"
+
+#: qtquick/qml/EntryDetails.qml:153
+#, fuzzy, kde-format
+#| msgid "View Comments"
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "Ver os comentarios"
+
+#: qtquick/qml/EntryDetails.qml:158
+#, kde-format
+msgid "Rating:"
+msgstr "Cualificación:"
+
+#: qtquick/qml/EntryDetails.qml:162
+#, kde-format
+msgid "Homepage:"
+msgstr "Páxina web:"
+
+#: qtquick/qml/EntryDetails.qml:163
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens the website associated with the entry "
+#| "(this could be either one specific to the project, the author's homepage, "
+#| "or any other website they have chosen for the purpose)"
+#| msgid "Open the homepage for %2"
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr "Abrir a páxina principal de %2"
+
+#: qtquick/qml/EntryDetails.qml:168
+#, kde-format
+msgid "How To Donate:"
+msgstr "Como doar:"
+
+#: qtquick/qml/EntryDetails.qml:169
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr "Descubra como doar a este proxecto"
+
+#: qtquick/qml/NewStuffItem.qml:22
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Instalar"
+
+#: qtquick/qml/NewStuffList.qml:68
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr "Mostralo todo"
+
+#: qtquick/qml/NewStuffList.qml:69 qtquick/qml/Page.qml:186
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "Só o instalado"
+
+#: qtquick/qml/NewStuffList.qml:70 qtquick/qml/Page.qml:187
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr "Só o actualizábel"
+
+#: qtquick/qml/NewStuffList.qml:82
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "Mostrar primeiro o máis recente"
+
+#: qtquick/qml/NewStuffList.qml:83
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr "Ordenar alfabeticamente"
+
+#: qtquick/qml/NewStuffList.qml:84
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "Mostrar primeiro o de mellor cualificación"
+
+#: qtquick/qml/NewStuffList.qml:85
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "Mostrar primeiro o máis descargado"
+
+#: qtquick/qml/Page.qml:123
+#, fuzzy, kde-format
+#| msgid "Details view mode"
+msgid "Tiles view mode"
+msgstr "Modo de vista de detalles"
+
+#: qtquick/qml/Page.qml:141
+#, fuzzy, kde-format
+#| msgid "Details view mode"
+msgid "Preview view mode"
+msgstr "Modo de vista de detalles"
+
+#: qtquick/qml/Page.qml:167
+#, fuzzy, kde-format
+#| msgid "Show %1"
+msgid "Show:"
+msgstr "Mostrar %1"
+
+#: qtquick/qml/Page.qml:185
+#, fuzzy, kde-format
+#| msgctxt "List option which will set the filter to show everything"
+#| msgid "Show Everything"
+msgctxt "List option which will set the filter to show everything"
+msgid "Everything"
+msgstr "Mostralo todo"
+
+#: qtquick/qml/Page.qml:199
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "List option which will set the sort order to based on when items were "
+#| "most recently updated"
+#| msgid "Show most recent first"
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Most recent first"
+msgstr "Mostrar primeiro o máis recente"
+
+#: qtquick/qml/Page.qml:200
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "A-Z"
+msgstr ""
+
+#: qtquick/qml/Page.qml:201
+#, fuzzy, kde-format
+#| msgctxt "List option which will set the sort order to based on user ratings"
+#| msgid "Show highest rated first"
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Highest rated first"
+msgstr "Mostrar primeiro o de mellor cualificación"
+
+#: qtquick/qml/Page.qml:202
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "List option which will set the sort order to based on number of downloads"
+#| msgid "Show most downloaded first"
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Most downloaded first"
+msgstr "Mostrar primeiro o máis descargado"
+
+#: qtquick/qml/Page.qml:277
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more..."
+msgstr "Cargando máis…"
+
+#: qtquick/qml/Page.qml:288
+#, kde-format
+msgctxt ""
+"A message shown when there are no entries in the list, and when it is not "
+"trying to load anything"
+msgid "There is no hot new stuff to get here"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<i>(sen título)</i>"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:141
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr "%1 <i>(autor)</i>"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:26
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr "Comentarios e recensións de %1"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:30
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The first entry in the category selection list (also the default value)"
+#| msgid "Show All Categories"
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "Mostrar todas as categorías"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:36
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:42
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:179
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "%1 descargas"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:160
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "Por <i>%1</i>"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is being installed"
+msgid "Installing..."
+msgstr "Instalando…"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "Actualizando…"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator which should only be shown when the entry "
+#| "has been given some unknown or invalid status."
+#| msgid ""
+#| "Invalid or unknown state. Please report this to the KDE Community in a "
+#| "bug report."
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+"Estado incorrecto ou descoñecido. Informe disto á comunidade KDE mediante un "
+"informe de fallo."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "Instalando…"
+
+#: qtquick/qml/private/ErrorDisplayer.qml:11
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr ""
+
+#: qtquick/qml/private/GridTileDelegate.qml:108
+#, kde-format
+msgid "None"
+msgstr "Ningún"
+
+#: qtquick/quickengine.cpp:143
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+"Non ten autorización para usar Get Hot New Stuff. Se pensa que se trata dun "
+"erro, contacte coa persoa responsábel dos seus permisos."
+
+#: tools/knewstuff-dialog/main.cpp:30
+#, kde-format
+msgid ""
+"The KNSRC file you want to show. If none is passed, you will be presented "
+"with a dialog which lets you switch between all the config files installed "
+"into the systemwide knsrc file location, which on your system is: %1"
+msgstr ""
+
+#: ui/entrydetailsdialog.cpp:84
+#, kde-format
+msgid "Details for %1"
+msgstr "Detalles de %1"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:98 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "Rexistro de cambios:"
+
+#: ui/entrydetailsdialog.cpp:104
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Páxina web"
+
+#: ui/entrydetailsdialog.cpp:107
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Doe"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Base de coñecemento (sen entradas)"
+msgstr[1] "Base de coñecemento (%1 entradas)"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Ábrese nunha xanela de navegador"
+
+#: ui/itemsgridviewdelegate.cpp:90 ui/itemsviewdelegate.cpp:284
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Cualificación: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:127
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Tamaño: %1"
+
+#: ui/itemsgridviewdelegate.cpp:148 ui/itemsgridviewdelegate.cpp:150
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsviewdelegate.cpp:244
+#: ui/itemsviewdelegate.cpp:246 ui/itemsviewdelegate.cpp:248
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Por <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:175 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 fan"
+msgstr[1] "%1 fans"
+
+#: ui/itemsgridviewdelegate.cpp:178 ui/itemsviewdelegate.cpp:265
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 descarga"
+msgstr[1] "%1 descargas"
+
+#: ui/itemsgridviewdelegate.cpp:244 ui/itemsviewdelegate.cpp:342
+#, kde-format
+msgid "Loading Preview"
+msgstr "Estase a cargar a vista previa"
+
+#: ui/itemsgridviewdelegate.cpp:271 ui/itemsviewdelegate.cpp:189
+#, kde-format
+msgid "Details"
+msgstr "Detalles"
+
+#: ui/itemsgridviewdelegate.cpp:336 ui/itemsviewdelegate.cpp:127
+#, kde-format
+msgid "Updating"
+msgstr "Actualizando"
+
+#: ui/itemsgridviewdelegate.cpp:346 ui/itemsviewdelegate.cpp:137
+#, kde-format
+msgid "Install Again"
+msgstr "Instalar de novo"
+
+#: ui/itemsviewdelegate.cpp:233
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>Tamaño: %1</p>"
+
+#: uploaddialog.cpp:53
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "Seguinte"
+
+#: uploaddialog.cpp:58
+#, kde-format
+msgid "Finish"
+msgstr "Finalizar"
+
+#: uploaddialog.cpp:170
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "Obtendo información do fornecedor…"
+
+#: uploaddialog.cpp:177
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "Estanse a obter os datos da licenza do servidor…"
+
+#: uploaddialog.cpp:184
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "Estanse a obter os datos do contido desde o servidor…"
+
+#: uploaddialog.cpp:259
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "Non se puido obter información do fornecedor."
+
+#: uploaddialog.cpp:283
+#, kde-format
+msgid "Register a new account"
+msgstr "Rexistrar unha conta nova"
+
+#: uploaddialog.cpp:307
+#, kde-format
+msgid "Checking login..."
+msgstr "Comprobando a identificación…"
+
+#: uploaddialog.cpp:329
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "Estase a obter o contido actualizado anteriormente…"
+
+#: uploaddialog.cpp:332
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "Non se puido verificar a información de acceso, inténteo de novo."
+
+#: uploaddialog.cpp:351
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "Rematou a obtención do contido actualizado previamente."
+
+#: uploaddialog.cpp:369
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "Rematou a obtención dos datos de contido do servidor."
+
+#: uploaddialog.cpp:392 uploaddialog.cpp:833
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "Visitar o sitio web"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:438 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "Compartir as novidades"
+
+#: uploaddialog.cpp:461
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "Publicador de complementos de %1"
+
+#: uploaddialog.cpp:480 uploaddialog.cpp:758
+#, kde-format
+msgid "File not found: %1"
+msgstr "Non se atopou o ficheiro: %1"
+
+#: uploaddialog.cpp:480 uploaddialog.cpp:607 uploaddialog.cpp:758
+#, kde-format
+msgid "Upload Failed"
+msgstr "Fallou o envío"
+
+#: uploaddialog.cpp:560
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] ""
+"O servidor non recoñece a categoría %2 á que vostede intenta enviar."
+msgstr[1] ""
+"O servidor non recoñece ningunha das categorías ás que vostede intenta "
+"enviar: %2"
+
+#: uploaddialog.cpp:563
+#, kde-format
+msgid "Error"
+msgstr "Erro"
+
+#: uploaddialog.cpp:607
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "A categoría seleccionada, «%1», é incorrecta."
+
+#: uploaddialog.cpp:656 uploaddialog.cpp:671 uploaddialog.cpp:685
+#, kde-format
+msgid "Select preview image"
+msgstr "Seleccione a imaxe de vista previa"
+
+#: uploaddialog.cpp:700
+#, kde-format
+msgid "There was a network error."
+msgstr "Produciuse un erro de rede."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+#, kde-format
+msgid "Uploading Failed"
+msgstr "O envío fallou"
+
+#: uploaddialog.cpp:705
+#, kde-format
+msgid "Authentication error."
+msgstr "Erro de autenticación."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "Fallou o envío: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "Contrasinal:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "Nome de usuario:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "Ficheiro para enviar:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "Envío novo"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "Descrición:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "Versión:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "Licenza:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "Por favor, preencha a información sobre o envío en inglés."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "Título:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "O nome do ficheiro tal como ha aparecer no sitio web"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"Isto debería describir con claridade o contido do ficheiro. Pode ser o mesmo "
+"texto que o título do ficheiro kvtml."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "Previsualización das imaxes"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "Escoller a vista previa…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "Definir un prezo para este elemento"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "Prezo"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "Prezo:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "Motivo do prezo:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "Obter o contido da ligazón desde o servidor"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "Crear o contido no servidor"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "Enviar o contido"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "Enviar a primeira vista previa"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "Nota: pode editar, actualizar e eliminar o seu contido no sitio web."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "Enviar a segunda vista previa"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "Enviar a terza vista previa"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"Garanto que este contido non viola ningún dereito de autor, lei nin marca "
+"rexistrada existente. Consinto con que se conserve rexistro do meu enderezo "
+"IP (A distribución de contido sen o permiso de quen posúa os dereitos de "
+"autor é inaceptábel)."
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "Iniciar o envío"
