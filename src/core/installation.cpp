@@ -606,7 +606,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (customName) {
                 // Otherwise name can be interpreted as path
                 installfile = entry.name().remove(QLatin1Char('/'));
-                installfile += QLatin1Char('-') + entry.version();
+                if (!entry.version().isEmpty()) {
+                    installfile += QLatin1Char('-') + entry.version();
+                }
                 if (!ext.isEmpty()) {
                     installfile += QLatin1Char('.') + ext;
                 }
