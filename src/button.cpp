@@ -10,7 +10,8 @@
 #include <KLocalizedString>
 #include <KAuthorized>
 #include <KMessageBox>
-#include "downloaddialog.h"
+#include "qtquickdialogwrapper.h"
+#include "entry_p.h"
 #include "ui/widgetquestionlistener.h"
 
 #include <QPointer>
@@ -21,7 +22,7 @@ class ButtonPrivate
 {
 public:
     QString configFile;
-    QPointer<DownloadDialog> dialog;
+    QPointer<QtQuickDialogWrapper> dialog;
 };
 
 Button::Button(const QString &text,
@@ -82,13 +83,14 @@ void Button::showDialog()
     Q_EMIT aboutToShowDialog();
 
     if (!d->dialog) {
-       d->dialog = new DownloadDialog(d->configFile, this);
+       d->dialog = new QtQuickDialogWrapper(d->configFile, this);
     }
-    d->dialog->exec();
-
-    if (d->dialog) {
-        Q_EMIT dialogFinished(d->dialog->changedEntries());
+    const auto changedInternalEntries = d->dialog->exec();
+    QList<KNS3::Entry> changedEntries;
+    for (const KNSCore::EntryInternal &e : changedInternalEntries) {
+        changedEntries << EntryPrivate::fromInternal(&e);
     }
+    Q_EMIT dialogFinished(changedEntries);
 }
 
 }
