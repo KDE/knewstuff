@@ -19,6 +19,7 @@ class KActionCollection;
  */
 namespace KNS3
 {
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 78)
 /**
  * @brief Standard action for the Hot New Stuff Download
  *
@@ -32,13 +33,17 @@ namespace KNS3
  * @param parent the action's parent collection.
  * @param name The name by which the action will be retrieved again from the collection.
  * @since 4.4
+ * @deprecated Since 5.78, create the QAction instance manually.
  */
+KNEWSTUFF_DEPRECATED_VERSION(5, 78, "Create the QAction instance manually")
 KNEWSTUFF_EXPORT QAction *standardAction(const QString &what,
         const QObject *receiver,
         const char *slot,
         KActionCollection *parent,
         const char *name = nullptr);
+#endif
 
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 78)
 /**
  * @brief Standard action for Uploading files with Hot New Stuff
  *
@@ -52,12 +57,15 @@ KNEWSTUFF_EXPORT QAction *standardAction(const QString &what,
  * @param parent the action's parent collection.
  * @param name The name by which the action will be retrieved again from the collection.
  * @since 4.5
+ * @deprecated Since 5.78, create the QAction instance manually.
  */
+KNEWSTUFF_DEPRECATED_VERSION(5, 78, "Create the QAction instance manually")
 KNEWSTUFF_EXPORT QAction *standardActionUpload(const QString &what,
         const QObject *receiver,
         const char *slot,
         KActionCollection *parent,
         const char *name = nullptr);
+#endif
 }
 
 #endif // KNEWSTUFFACTION_H
