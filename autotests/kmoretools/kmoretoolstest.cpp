@@ -75,7 +75,6 @@ void KMoreToolsTest::initTestCase()
 void KMoreToolsTest::testDesktopFileWithNoExec()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    QTest::ignoreMessage(QtWarningMsg, QRegularExpression(_("The desktop entry file .+ has Type= \"Application\" but no Exec line")));
     auto aApp = kmt.registerServiceByDesktopEntryName(_("a"));
     QVERIFY(!aApp);
 }
@@ -86,7 +85,6 @@ void KMoreToolsTest::testDesktopFileWithNoExec()
 void KMoreToolsTest::testDesktopFileWithInvalidHeader()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    QTest::ignoreMessage(QtWarningMsg, QRegularExpression(_("The desktop entry file .+ has Type= \"Application\" but no Exec line")));
     auto bApp = kmt.registerServiceByDesktopEntryName(_("b"));
     QVERIFY(!bApp);
 }
