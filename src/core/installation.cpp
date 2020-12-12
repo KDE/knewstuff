@@ -597,35 +597,59 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             ) {
             // no decompress but move to target
 
-            /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
-            // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
-            QUrl source = QUrl(entry.payload());
+            const QUrl source = QUrl(entry.payload());
+            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
             qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
             QString installfile;
             QString ext = source.fileName().section(QLatin1Char('.'), -1);
+            QDir installQDir(installdir);
             if (customName) {
                 // Otherwise name can be interpreted as path
-                installfile = entry.name().remove(QLatin1Char('/'));
+                QString installFileName = entry.name().remove(QLatin1Char('/'));
+                QString installFileVersion;
+                QString installFileExtension;
                 if (!entry.version().isEmpty()) {
-                    installfile += QLatin1Char('-') + entry.version();
+                    installFileVersion += QLatin1Char('-') + entry.version();
                 }
                 if (!ext.isEmpty()) {
-                    installfile += QLatin1Char('.') + ext;
+                    installFileExtension += QLatin1Char('.') + ext;
+                }
+                installfile = installFileName + installFileVersion + installFileExtension;
+                QString fullInstallFilePath = installQDir.filePath(installfile);
+                // In the case of wallpapers different entries often have the same name, like "Nature"
+                // Then we append a number, we try this out until we find a filename that does not exist
+                if (!update && QFileInfo::exists(installQDir.filePath(installfile))) {
+                    int number = 1;
+                    while (true) {
+                        installfile = installFileName
+                            + installFileVersion
+                            + QLatin1Char('-')
+                            + QString::number(number)
+                            + installFileExtension;
+                        if (!QFileInfo::exists(installQDir.filePath(installfile))) {
+                            break;
+                        } else {
+                            ++number;
+                        }
+                    }
+                } else if (update && QFileInfo::exists(installQDir.filePath(installfile))) {
+                    // If we update the entry we want to take the previous name
+                   if (entry.installedFiles().size() == 1)  {
+                       installfile = QFileInfo(entry.installedFiles().constFirst()).completeBaseName();
+                   }
                 }
             } else {
                 installfile = source.fileName();
             }
-            QString installpath = QDir(installdir).filePath(installfile);
+            const QString installpath = installQDir.filePath(installfile);
 
             qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
             // FIXME: what must be done now is to update the cache *again*
             //        in order to set the new payload filename (on root tag only)
             //        - this might or might not need to take uncompression into account
-            // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
             QFile file(payloadfile);
             bool success = true;
-            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
 
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
