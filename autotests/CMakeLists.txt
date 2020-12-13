@@ -11,23 +11,18 @@ set_package_properties(Qt5Test PROPERTIES
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 
+add_library(knewstuff_test_static STATIC
+        ${CMAKE_BINARY_DIR}/src/knewstuff_debug.cpp
+        ${CMAKE_BINARY_DIR}/src/core/knewstuffcore_debug.cpp)
+target_link_libraries(knewstuff_test_static PUBLIC Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore KF5::NewStuff)
 macro(knewstuff_unit_tests)
     foreach(_testmain ${ARGN})
        get_filename_component(_testname ${_testmain} NAME)
        ecm_add_test(${_testmain}
-                        ${CMAKE_SOURCE_DIR}/src/core/author.cpp
-                        ${CMAKE_SOURCE_DIR}/src/core/entryinternal.cpp
-                        ${CMAKE_SOURCE_DIR}/src/entry.cpp
-                        ${CMAKE_SOURCE_DIR}/src/core/xmlloader.cpp
-                        ${CMAKE_SOURCE_DIR}/src/core/jobs/httpjob.cpp
-                        ${CMAKE_SOURCE_DIR}/src/core/jobs/httpworker.cpp
-                        ${CMAKE_BINARY_DIR}/src/knewstuff_debug.cpp
-                        ${CMAKE_BINARY_DIR}/src/core/knewstuffcore_debug.cpp
-                    LINK_LIBRARIES Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore
                     TEST_NAME ${_testname}
                     NAME_PREFIX "knewstuff-")
-       MESSAGE(WARNING "${CMAKE_CURRENT_BINARY_DIR}/data/")
        target_compile_definitions(${_testname} PUBLIC -DDATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data/")
+       target_link_libraries(${_testname} knewstuff_test_static)
        set_property( TARGET ${_testname}
                      APPEND
                      PROPERTY COMPILE_DEFINITIONS KNEWSTUFF_STATIC_DEFINE KNEWSTUFFCORE_STATIC_DEFINE KNEWSTUFF_STATIC_DEFINE
