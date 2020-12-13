@@ -1,4 +1,9 @@
+set(DATA_DIR "${CMAKE_CURRENT_BINARY_DIR}/data/")
+configure_file(data/entry.xml.in data/entry.xml)
+configure_file(data/provider.xml.in data/provider.xml)
+configure_file(data/installcommand.knsrc.in data/installcommand.knsrc)
 
 knewstuff_unit_tests(
         knewstuffauthortest.cpp
+        knewstuffenginetest.cpp
 )

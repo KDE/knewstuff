@@ -26,6 +26,8 @@ macro(knewstuff_unit_tests)
                     LINK_LIBRARIES Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore
                     TEST_NAME ${_testname}
                     NAME_PREFIX "knewstuff-")
+       MESSAGE(WARNING "${CMAKE_CURRENT_BINARY_DIR}/data/")
+       target_compile_definitions(${_testname} PUBLIC -DDATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data/")
        set_property( TARGET ${_testname}
                      APPEND
                      PROPERTY COMPILE_DEFINITIONS KNEWSTUFF_STATIC_DEFINE KNEWSTUFFCORE_STATIC_DEFINE KNEWSTUFF_STATIC_DEFINE
