@@ -16,9 +16,11 @@
 
 #include "knewstuffcore_export.h"
 
+#include <memory.h>
+
 namespace KNSCore
 {
-
+class CachePrivate;
 class KNEWSTUFFCORE_EXPORT Cache : public QObject
 {
     Q_OBJECT
@@ -99,7 +101,8 @@ private:
     QString m_kns2ComponentName;
 
     QSet<EntryInternal> cache;
-    QHash<QString, EntryInternal::List> requestCache;
+
+    std::unique_ptr<CachePrivate> d;
 };
 
 }
