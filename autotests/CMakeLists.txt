@@ -23,10 +23,6 @@ macro(knewstuff_unit_tests)
                     NAME_PREFIX "knewstuff-")
        target_compile_definitions(${_testname} PUBLIC -DDATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data/")
        target_link_libraries(${_testname} knewstuff_test_static)
-       set_property( TARGET ${_testname}
-                     APPEND
-                     PROPERTY COMPILE_DEFINITIONS KNEWSTUFF_STATIC_DEFINE KNEWSTUFFCORE_STATIC_DEFINE KNEWSTUFF_STATIC_DEFINE
-       )
     endforeach()
 endmacro()
 
