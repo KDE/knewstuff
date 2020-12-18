@@ -20,7 +20,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
-set(REQUIRED_QT_VERSION 5.13.0)
+set(REQUIRED_QT_VERSION 5.14.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
 
@@ -75,7 +75,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
                         SOVERSION 5)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054B00)
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
