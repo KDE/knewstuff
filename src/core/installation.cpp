@@ -129,6 +129,25 @@ bool Installation::readConfig(const KConfigGroup &group)
     if (customName) {
         qWarning(KNEWSTUFFCORE) << "The CustomName property is deprecated and will be removed in KF6";
     }
+    QString scopeString = group.readEntry("Scope");
+    if (!scopeString.isEmpty()) {
+        qWarning(KNEWSTUFFCORE) << "Setting the scope is deprecated, it will default to user";
+        if (scopeString == QLatin1String("user")) {
+            scope = ScopeUser;
+        } else if (scopeString == QLatin1String("system")) {
+            scope = ScopeSystem;
+        } else {
+            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.");
+            return false;
+        }
+
+        if (scope == ScopeSystem) {
+            if (!installPath.isEmpty()) {
+                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath.";
+                return false;
+            }
+        }
+    }
 #endif
 
     installPath = group.readEntry("InstallPath");
@@ -169,25 +188,6 @@ bool Installation::readConfig(const KConfigGroup &group)
         } else {
             qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.");
             return false;
-        }
-    }
-
-    QString scopeString = group.readEntry("Scope");
-    if (!scopeString.isEmpty()) {
-        if (scopeString == QLatin1String("user")) {
-            scope = ScopeUser;
-        } else if (scopeString == QLatin1String("system")) {
-            scope = ScopeSystem;
-        } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.");
-            return false;
-        }
-
-        if (scope == ScopeSystem) {
-            if (!installPath.isEmpty()) {
-                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath.";
-                return false;
-            }
         }
     }
     return true;
