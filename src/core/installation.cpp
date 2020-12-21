@@ -148,23 +148,10 @@ bool Installation::readConfig(const KConfigGroup &group)
             }
         }
     }
-#endif
-
-    installPath = group.readEntry("InstallPath");
-    absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
-    acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
-
-    if (standardResourceDirectory.isEmpty() &&
-            targetDirectory.isEmpty() &&
-            xdgTargetDirectory.isEmpty() &&
-            installPath.isEmpty() &&
-            absoluteInstallPath.isEmpty()) {
-        qCCritical(KNEWSTUFFCORE) << "No installation target set";
-        return false;
-    }
 
     QString checksumpolicy = group.readEntry("ChecksumPolicy");
     if (!checksumpolicy.isEmpty()) {
+        qWarning(KNEWSTUFFCORE) << "The ChecksumPolicy feature is defunct";
         if (checksumpolicy == QLatin1String("never")) {
             checksumPolicy = Installation::CheckNever;
         } else if (checksumpolicy == QLatin1String("ifpossible")) {
@@ -179,6 +166,7 @@ bool Installation::readConfig(const KConfigGroup &group)
 
     QString signaturepolicy = group.readEntry("SignaturePolicy");
     if (!signaturepolicy.isEmpty()) {
+        qWarning(KNEWSTUFFCORE) << "The SignaturePolicy feature is defunct";
         if (signaturepolicy == QLatin1String("never")) {
             signaturePolicy = Installation::CheckNever;
         } else if (signaturepolicy == QLatin1String("ifpossible")) {
@@ -189,6 +177,20 @@ bool Installation::readConfig(const KConfigGroup &group)
             qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.");
             return false;
         }
+    }
+#endif
+
+    installPath = group.readEntry("InstallPath");
+    absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
+    acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
+
+    if (standardResourceDirectory.isEmpty() &&
+            targetDirectory.isEmpty() &&
+            xdgTargetDirectory.isEmpty() &&
+            installPath.isEmpty() &&
+            absoluteInstallPath.isEmpty()) {
+        qCCritical(KNEWSTUFFCORE) << "No installation target set";
+        return false;
     }
     return true;
 }
