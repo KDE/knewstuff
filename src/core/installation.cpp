@@ -124,10 +124,15 @@ bool Installation::readConfig(const KConfigGroup &group)
         qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
     }
 #endif
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
+    customName = group.readEntry("CustomName", false);
+    if (customName) {
+        qWarning(KNEWSTUFFCORE) << "The CustomName property is deprecated and will be removed in KF6";
+    }
+#endif
 
     installPath = group.readEntry("InstallPath");
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
-    customName = group.readEntry("CustomName", false);
     acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
 
     if (standardResourceDirectory.isEmpty() &&
@@ -601,6 +606,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
             QUrl source = QUrl(entry.payload());
             qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 79)
             QString installfile;
             QString ext = source.fileName().section(QLatin1Char('.'), -1);
             if (customName) {
@@ -615,7 +621,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             } else {
                 installfile = source.fileName();
             }
-            QString installpath = QDir(installdir).filePath(installfile);
+            const QString installpath = QDir(installdir).filePath(installfile);
+#else
+            const QString installpath = QDir(installdir).filePath(source.fileName());
+#endif
 
             qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
             // FIXME: copy goes here (including overwrite checking)
