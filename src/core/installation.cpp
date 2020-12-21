@@ -178,11 +178,15 @@ bool Installation::readConfig(const KConfigGroup &group)
             return false;
         }
     }
+    acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
+    if (acceptHtml) {
+        qWarning(KNEWSTUFFCORE) << "The AcceptHtmlDownload property is deprecated and will default to false. If there"
+                                   "is a HTML download link the user will be prompted if the installation should proceed";
+    }
 #endif
 
     installPath = group.readEntry("InstallPath");
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
-    acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
 
     if (standardResourceDirectory.isEmpty() &&
             targetDirectory.isEmpty() &&
