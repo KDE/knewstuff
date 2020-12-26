@@ -20,7 +20,7 @@ public:
 
     enum Roles {
         NameRole = Qt::UserRole + 1,
-        FilePathRole
+        FilePathRole,
     };
 
     QHash< int, QByteArray > roleNames() const override;

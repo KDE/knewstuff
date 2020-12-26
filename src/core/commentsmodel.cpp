@@ -28,7 +28,7 @@ public:
 
     enum FetchOptions {
         NoOption,
-        ClearModel
+        ClearModel,
     };
     bool fetchThrottle = false;
     void fetch(FetchOptions option = NoOption) {

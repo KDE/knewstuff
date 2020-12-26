@@ -82,7 +82,7 @@ public:
         TRUSTED = 8, /// The signature is trusted
         UNKNOWN = 16, ///The key is unknown
         SIGNED_BAD_CLEAR = 27, ///used to clear the SIGNED_BAD flag
-        BAD_PASSPHRASE = 32 ///wrong passhprase entered
+        BAD_PASSPHRASE = 32, ///wrong passhprase entered
     };
 
 public Q_SLOTS:
@@ -109,7 +109,7 @@ private:
         List = 0, ///read the public keys
         ListSecret, ///read the secret keys
         Verify, ///verify the signature
-        Sign ///create signature
+        Sign, ///create signature
     };
 
     KeyStruct m_signatureKey;

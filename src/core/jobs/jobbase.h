@@ -17,7 +17,7 @@ enum JobFlag {
     HideProgressInfo = 1,
     Resume = 2,
     Overwrite = 4,
-    DefaultFlags = None
+    DefaultFlags = None,
 };
 Q_DECLARE_FLAGS(JobFlags, JobFlag)
 Q_DECLARE_OPERATORS_FOR_FLAGS(JobFlags)

@@ -47,12 +47,12 @@ public:
     enum Policy {
         CheckNever,
         CheckIfPossible,
-        CheckAlways
+        CheckAlways,
     };
 
     enum Scope {
         ScopeUser,
-        ScopeSystem
+        ScopeSystem,
     };
     enum UncompressionOptions {
         NeverUncompress, ///@< Never attempt to decompress a file, whatever format it is. Matches "never" knsrc setting
@@ -60,7 +60,7 @@ public:
         UncompressIfArchive, ///@< If the file is an archive, decompress it, otherwise just pass it on. Matches "archive" knsrc setting
         UncompressIntoSubdirIfArchive, ///@< If the file is an archive, decompress it in a subdirectory if it contains multiple files, otherwise just pass it on. Matches "subdir-archive" knsrc setting
         UncompressIntoSubdir, ///@< As Archive, except that if there is more than an item in the file, put contents in a subdirectory with the same name as the file. Matches "subdir" knsrc setting
-        UseKPackageUncompression ///@< Use the internal KPackage support for installing and uninstalling the package. Matches "kpackage" knsrc setting
+        UseKPackageUncompression, ///@< Use the internal KPackage support for installing and uninstalling the package. Matches "kpackage" knsrc setting
     };
     Q_ENUM(UncompressionOptions)
 

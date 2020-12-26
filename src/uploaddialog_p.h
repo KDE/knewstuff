@@ -47,7 +47,7 @@ public:
         FileNewUpdatePage,
         Details1Page,
         Details2Page,
-        UploadFinalPage
+        UploadFinalPage,
     };
     WizardPage currentPage;
 

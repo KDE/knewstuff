@@ -59,7 +59,7 @@ public:
     enum Source {
         Cache,
         Online,
-        Registry
+        Registry,
     };
 
     enum PreviewType {
@@ -68,7 +68,7 @@ public:
         PreviewSmall3,
         PreviewBig1,
         PreviewBig2,
-        PreviewBig3
+        PreviewBig3,
     };
 
     struct DownloadLinkInformation {

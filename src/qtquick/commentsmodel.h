@@ -47,7 +47,7 @@ public:
     enum IncludedComments {
         IncludeAllComments = 0, //< All comments should be included
         IncludeOnlyReviews = 1, //< Only comments which have a rating (and thus is considered a review) should be included
-        IncludeReviewsAndReplies = 2 //< Reviews (as OnlyReviews), except child comments are also included
+        IncludeReviewsAndReplies = 2, //< Reviews (as OnlyReviews), except child comments are also included
     };
     Q_ENUM(IncludedComments)
 

@@ -178,7 +178,7 @@ public:
          * by existence of executable defined in the TryExec or Exec line of
          * the provided kmt-desktopfile
          */
-        ServiceLocatingMode_ByProvidedExecLine
+        ServiceLocatingMode_ByProvidedExecLine,
     };
 
     /**
@@ -194,7 +194,7 @@ public:
         /**
          * The item is placed in the "More" submenu.
          */
-        MenuSection_More
+        MenuSection_More,
     };
 
 //     /* *
@@ -238,7 +238,7 @@ public:
          * Note, that the "Configure..." menu item still becomes visible when the
          * user holds the Ctrl key while opening the menu.
          */
-        ConfigureDialogAccessible_Defensive
+        ConfigureDialogAccessible_Defensive,
     };
 
 public:

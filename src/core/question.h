@@ -48,7 +48,7 @@ public:
         NoResponse = 2,
         ContinueResponse = 3,
         CancelResponse = 4,
-        OKResponse = YesResponse
+        OKResponse = YesResponse,
     };
     Q_ENUM(Response)
 
@@ -57,7 +57,7 @@ public:
         ContinueCancelQuestion = 1,
         InputTextQuestion = 2,
         SelectFromListQuestion = 3,
-        PasswordQuestion = 4
+        PasswordQuestion = 4,
     };
     Q_ENUM(QuestionType)
 

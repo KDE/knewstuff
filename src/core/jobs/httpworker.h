@@ -18,7 +18,7 @@ class HTTPWorker : public QObject {
 public:
     enum JobType {
         GetJob,
-        DownloadJob // Much the same as a get... except with a filesystem destination, rather than outputting data
+        DownloadJob, // Much the same as a get... except with a filesystem destination, rather than outputting data
     };
     explicit HTTPWorker(const QUrl& url, JobType jobType = GetJob, QObject* parent = nullptr);
     explicit HTTPWorker(const QUrl& source, const QUrl& destination, JobType jobType = DownloadJob, QObject* parent = nullptr);

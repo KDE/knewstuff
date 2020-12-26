@@ -93,7 +93,7 @@ public:
         ProviderIdRole,
         SourceRole,
         StatusRole,
-        CommentsModelRole
+        CommentsModelRole,
     };
     Q_ENUM(Roles)
     enum ItemStatus {
@@ -103,7 +103,7 @@ public:
         UpdateableStatus,
         DeletedStatus,
         InstallingStatus,
-        UpdatingStatus
+        UpdatingStatus,
     };
     Q_ENUM(ItemStatus)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
@@ -111,7 +111,7 @@ public:
     // makes their meaning more explicit.
     enum LinkId {
         AutoDetectLinkId = -1,
-        FirstLinkId = 1
+        FirstLinkId = 1,
     };
     Q_ENUM(LinkId)
 

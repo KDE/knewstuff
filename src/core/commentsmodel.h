@@ -64,7 +64,7 @@ public:
         DateRole,
         ScoreRole,
         ParentIndexRole,
-        DepthRole
+        DepthRole,
     };
     Q_ENUM(Roles)
 

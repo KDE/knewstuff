@@ -26,7 +26,7 @@ enum Operation {
     UnknownOperation,
     InstallOperation,
     UpdateOperation,
-    UninstallOperation
+    UninstallOperation,
 };
 class KPackageTask;
 class KPackageJob::Private {

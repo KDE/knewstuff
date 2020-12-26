@@ -29,7 +29,7 @@ public:
         Newest,
         Alphabetical,
         Rating,
-        Downloads
+        Downloads,
     };
 
     /**

@@ -66,7 +66,7 @@ KCM.GridViewKCM {
     enum ViewMode {
         Tiles,
         Icons,
-        Preview
+        Preview,
     }
 
     // Otherwise the first item will be focused, see BUG: 424894

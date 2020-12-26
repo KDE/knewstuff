@@ -409,7 +409,7 @@ public:
     enum CreateMenuStructureOption
     {
         CreateMenuStructure_Default,
-        CreateMenuStructure_MergeWithUserConfig
+        CreateMenuStructure_MergeWithUserConfig,
     };
 
     /**

@@ -50,7 +50,7 @@ public:
         Updateable,
         Deleted,
         Installing,
-        Updating
+        Updating,
     };
 
     ~Entry();
