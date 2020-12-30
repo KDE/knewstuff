@@ -278,6 +278,13 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                         info->setData(link);
                         list.append(info);
                     }
+                    if (list.isEmpty() && !entry.payload().isEmpty()) {
+                        DownloadLinkInfo *info = new DownloadLinkInfo();
+                        KNSCore::EntryInternal::DownloadLinkInformation data;
+                        data.descriptionLink = entry.payload();
+                        info->setData(data);
+                        list.append(info);
+                    }
                     data.setValue<QObjectList>(list);
                 }
                 break;
