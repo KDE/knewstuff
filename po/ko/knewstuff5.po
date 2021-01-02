@@ -1,0 +1,1623 @@
+# Korean messages for kdelibs.
+# Copyright (C) Free Software Foundation, Inc.
+# Cho Sung Jae <cho.sungjae@gmail.com>, 2007.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# JungHee Lee (이정희) <daemul72@gmail.com>, 2019, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-12-11 02:20+0100\n"
+"PO-Revision-Date: 2020-09-16 19:31+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#: attica/atticaprovider.cpp:163
+#, kde-format
+msgid "All categories are missing"
+msgstr "모든 분류가 누락되었습니다"
+
+#: attica/atticaprovider.cpp:437
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"이 항목의 가격은 %1 %2입니다.\n"
+"구매하시겠습니까?"
+
+#: attica/atticaprovider.cpp:451
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"계정 잔액이 부족합니다:\n"
+"계정 잔액: %1\n"
+"가격: %2"
+
+#: attica/atticaprovider.cpp:493
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "투표가 기록되었습니다."
+
+#: attica/atticaprovider.cpp:508
+#, kde-format
+msgid "You are now a fan."
+msgstr "팬으로 등록되었습니다."
+
+#: attica/atticaprovider.cpp:519
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "네트워크 오류 %1: %2"
+
+#: attica/atticaprovider.cpp:523
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "서버에 너무 많은 요청을 보냈습니다. 잠시 후 다시 시도하십시오."
+
+#: attica/atticaprovider.cpp:525
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+"Open Collaboration Services 인스턴스 %1에서 시도한 기능을 지원하지 않습니다."
+
+#: attica/atticaprovider.cpp:527
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "알 수 없는 Open Collaboration Service API 오류. (%1)"
+
+#: button.cpp:43
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "새로운 항목 다운로드..."
+
+#: core/commentsmodel.cpp:168
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr "알 수 없는 CommentsModel 역할"
+
+#: core/engine.cpp:156
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+"설치 중 오류가 발생했습니다:\n"
+"%1"
+
+#: core/engine.cpp:191
+#, kde-format
+msgid "Initializing"
+msgstr "초기화 중"
+
+#: core/engine.cpp:214
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "설정 파일이 있지만 열 수 없음: \"%1\""
+
+#: core/engine.cpp:227
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "설정 파일이 잘못됨: \"%1\""
+
+#: core/engine.cpp:235
+#, kde-format
+msgid "Use"
+msgstr "사용"
+
+#: core/engine.cpp:247
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+"%1의 설치 핸들러를 초기화할 수 없음\n"
+"치명적인 오류입니다.프로그램 개발자에게 보고해 주십시오"
+
+#: core/engine.cpp:316
+#, kde-format
+msgid "Loading provider information"
+msgstr "공급자 정보 가져오는 중"
+
+#: core/engine.cpp:345
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "파일에서 새로운 항목 다운로드 공급자를 불러올 수 없음: %1"
+
+#: core/engine.cpp:368
+#, kde-format
+msgid "Error initializing provider."
+msgstr "공급자를 초기화하는 중 오류가 발생했습니다."
+
+#: core/engine.cpp:372 core/engine.cpp:899
+#, kde-format
+msgid "Loading data"
+msgstr "데이터 불러오는 중"
+
+#: core/engine.cpp:414
+#, kde-format
+msgid "Loading data from provider"
+msgstr "공급자로부터 데이터 불러오는 중"
+
+#: core/engine.cpp:419
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "파일에서 공급자 목록을 불러오는 중: %1 실패"
+
+#: core/engine.cpp:755
+#, kde-format
+msgid "Pick Update Item"
+msgstr "업데이트 항목 선택"
+
+#: core/engine.cpp:756
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"이 업데이트를 적용할 때 사용할 항목을 아래 목록에서 선택하십시오. 이름이 %1"
+"인 원래 항목에서 선택할 항목을 식별할 수 없었습니다"
+
+#: core/engine.cpp:849
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:891 ui/itemsgridviewdelegate.cpp:331
+#: ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Installing"
+msgstr "설치 중"
+
+#: core/engine.cpp:895
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "미리 보기 %1개 불러오는 중"
+
+#: core/engine.cpp:1081
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+
+#: core/installation.cpp:206
+#, kde-format
+msgid "Invalid item."
+msgstr "항목이 잘못되었습니다."
+
+#: core/installation.cpp:213
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "항목 다운로드 실패: \"%1\"의 다운로드 URL이 없습니다."
+
+#: core/installation.cpp:242
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "\"%1\" 다운로드 실패. 오류: %2"
+
+#: core/installation.cpp:252
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"다운로드한 파일은 HTML 파일입니다. 이것은 실제 다운로드 대신 웹 사이트에 대"
+"한 링크를 나타냅니다. 대신 브라우저를 사용하여 사이트를 열겠습니까?"
+
+#: core/installation.cpp:253
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "잘못된 다운로드 링크일 수 있음"
+
+#: core/installation.cpp:256
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "다운로드한 파일은 HTML 파일입니다. 브라우저에서 열립니다."
+
+#: core/installation.cpp:292
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "\"%1\"(을)를 설치할 수 없음: 파일을 찾을 수 없습니다."
+
+#: core/installation.cpp:322
+#, kde-format
+msgid "Failed to execute install script"
+msgstr "설치 스크립트를 실행할 수 없음"
+
+#: core/installation.cpp:466
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr "%1 설치 실패. 필요한 새 디렉터리 %2을(를) 만들 수 없음"
+
+#: core/installation.cpp:486 core/installation.cpp:758
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "%1 설치 실패: %2"
+
+#: core/installation.cpp:494
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+"%1 설치가 실패했습니다. 시스템에서 서비스 형식 %2을(를) 수락하지 않았습니다"
+"(이 패키지 형식에 대한 KPackage 지원이 설치되어 있습니까?)"
+
+#: core/installation.cpp:500
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr ""
+"%1 설치가 실패했습니다. 다운로드한 패키지에 올바른 KPackage 구조가 없습니다."
+
+#: core/installation.cpp:506
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr ""
+"%1 설치가 실패했습니다. 다운로드한 패키지에 서비스 형식 목록이 없습니다."
+
+#: core/installation.cpp:512
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"%1 설치가 실패했습니다. 다운로드한 패키지에 올바른 메타데이터 정보가 없습니"
+"다. 올바른 KPackage가 아닙니다."
+
+#: core/installation.cpp:543
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr "다운로드한 파일 %1의 압축 형식을 결정할 수 없음"
+
+#: core/installation.cpp:554
+#, kde-format
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "압축 파일 %1을(를) 열 수 없습니다. 오류: %2"
+
+#: core/installation.cpp:633
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+"파일이 이미 디스크에 존재합니다(이전에 실패한 다운로드 시도 때문일 수 있음). "
+"계속 진행하면 덮어씁니다. 기존 파일을 덮어쓰시겠습니까?"
+
+#: core/installation.cpp:634
+#, kde-format
+msgid "Overwrite File"
+msgstr "파일 덮어쓰기"
+
+#: core/installation.cpp:650
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr "파일 %1을(를) 대상 %2(으)로 이동할 수 없음"
+
+#: core/installation.cpp:673
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+"설치 중 다음 명령을 실행하는 중 오류가 발생했습니다:\n"
+"%1\n"
+"\n"
+"출력은 다음과 같습니다:\n"
+"%2"
+
+#: core/installation.cpp:676
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+"설치 중 다음 명령을 실행하는 중 오류가 발생했습니다(코드 %1):\n"
+"%2\n"
+"\n"
+"출력은 다음과 같습니다:\n"
+"%3"
+
+#: core/installation.cpp:764
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr ""
+"%1 삭제가 실패했습니다. 설치한 패키지에 올바른 KPackage 구조가 없습니다."
+
+#: core/installation.cpp:768
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+"%1 삭제가 실패했습니다. 설치한 패키지가 지원하는 형식이 아닙니다(이 패키지 형"
+"식에 대한 KPackage 지원이 설치되어 있습니까?)"
+
+#: core/installation.cpp:772
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"%1 삭제가 실패했습니다. 설치한 패키지에 올바른 메타데이터 정보가 없습니다. 올"
+"바른 KPackage가 아닙니다."
+
+#: core/installation.cpp:811
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr ""
+"%1 삭제가 실패했습니다. 다운로드한 파일 %2을(를) 자동으로 삭제할 수 없습니다."
+
+#: core/installation.cpp:815
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+"%1 삭제가 실패했습니다. 설치한 파일이 KPackage가 아닙니다. 해당 파일은 %2이"
+"며, 필요하지 않다면 직접 삭제하십시오."
+
+#: core/installation.cpp:819
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+"%1 삭제가 실패했습니다. 하나 이상이 설치되어 있는 것 같습니다. KPackage 기반 "
+"항목에서는 발생하면 안 됩니다."
+
+#: core/installation.cpp:850
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+"%1 명령을 실행할 수 없어서 삭제가 실패했습니다.\n"
+"출력은 다음과 같습니다: \n"
+"%2\n"
+"잘못된 것 같으면 삭제 작업을 계속 진행하거나 취소할 수 있습니다."
+
+#: core/jobs/kpackagejob.cpp:104
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+"패키지 관리 작업을 만들 수 없습니다. 패키지가 잘못된 것 같습니다. 작업할 패키"
+"지: %1"
+
+#: core/jobs/kpackagejob.cpp:108
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr ""
+"서비스 형식 %1의 패키지 설치 도구를 만들 수 없음: 설치 도구에 올바른 구조가 "
+"없음"
+
+#: core/jobs/kpackagejob.cpp:112
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr "KPackage 설치 도구에서 서비스 형식 %1을(를) 인식할 수 없음"
+
+#: core/security.cpp:75
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 사용 가능한 키를 검색할 수 없습니다. "
+"<i>gpg</i>가 설치되어 있는지 확인하십시오. 설치되어 있지 않으면 다운로드한 리"
+"소스를 확인할 수 없습니다.</qt>"
+
+#: core/security.cpp:203
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt><br /><i>%2&lt;%3&gt;</i><br />의 키 <b>0x%1</b>의 암구호를 입력하십시오:"
+"</qt>"
+
+#: core/security.cpp:281
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 파일의 유효성을 검사할 수 없습니다. "
+"<i>gpg</i>가 설치되어 있는지 확인하십시오. 설치되어 있지 않은 경우에는 다운로"
+"드한 리소스를 확인할 수 없습니다.</qt>"
+
+#: core/security.cpp:336
+#, kde-format
+msgid "Key used for signing:"
+msgstr "서명에 사용할 키:"
+
+#: core/security.cpp:337
+#, kde-format
+msgid "Select Signing Key"
+msgstr "서명할 키 선택"
+
+#: core/security.cpp:372
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt><i>gpg</i>를 시작할 수 없으며, 파일을 서명할 수 없습니다. <i>gpg</i>가 설"
+"치되어 있는지 확인하십시오. 설치되어 있지 않은 경우에는 리소스에 서명할 수 없"
+"습니다.</qt>"
+
+#: downloaddialog.cpp:68 downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "새로운 항목 다운로드"
+
+#: downloaddialog.cpp:86
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "%1 추가 기능 설치 도구"
+
+#: downloadwidget.cpp:120
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "시간이 초과되었습니다. 인터넷 연결을 확인하십시오."
+
+#: downloadwidget.cpp:183
+#, kde-format
+msgid "Server: %1"
+msgstr "서버: %1"
+
+#: downloadwidget.cpp:184
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />제공자: %1"
+
+#: downloadwidget.cpp:185
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />버전: %1"
+
+#: downloadwidget.cpp:189
+#, kde-format
+msgid "Provider information"
+msgstr "제공자 정보"
+
+#: downloadwidget.cpp:202
+#, kde-format
+msgid "Could not install %1"
+msgstr "%1(을)를 설치할 수 없습니다"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "새로운 항목 다운로드!"
+
+#: downloadwidget.cpp:263 qtquick/qml/Page.qml:132
+#, kde-format
+msgid "Icons view mode"
+msgstr "아이콘 보기 모드"
+
+#: downloadwidget.cpp:265
+#, kde-format
+msgid "Details view mode"
+msgstr "자세히 보기 모드"
+
+#: downloadwidget.cpp:280
+#, kde-format
+msgid "All Providers"
+msgstr "모든 제공자"
+
+#: downloadwidget.cpp:287
+#, kde-format
+msgid "All Categories"
+msgstr "모든 분류"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: downloadwidget.ui:54 uploaddialog.ui:127
+#, kde-format
+msgid "Provider:"
+msgstr "제공자:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#. i18n: ectx: property (text), widget (QLabel, mCategoryLabel)
+#: downloadwidget.ui:71 uploaddialog.ui:304
+#, kde-format
+msgid "Category:"
+msgstr "분류:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "최다 다운로드"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "날짜"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110
+#, kde-format
+msgid "Rating"
+msgstr "별점"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117
+#, kde-format
+msgid "Installed"
+msgstr "설치됨"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "정렬 순서:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "검색:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:217 qtquick/qml/Page.qml:146
+#, kde-format
+msgid "Search..."
+msgstr "검색..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:371
+#, kde-format
+msgid "Author:"
+msgstr "작성자:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:396
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"https://opendesktop.org\">홈페이지</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#. i18n: ectx: property (text), widget (QRadioButton, radioUpdate)
+#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:326
+#: ui/itemsviewdelegate.cpp:117 uploaddialog.ui:171
+#, kde-format
+msgid "Update"
+msgstr "업데이트"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:322
+#: ui/itemsviewdelegate.cpp:113 ui/itemsviewdelegate.cpp:178
+#, kde-format
+msgid "Uninstall"
+msgstr "삭제"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:589
+#, kde-format
+msgid "Become a Fan"
+msgstr "너무 좋아요"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:50
+#: ui/itemsgridviewdelegate.cpp:341 ui/itemsgridviewdelegate.cpp:351
+#: ui/itemsviewdelegate.cpp:132 ui/itemsviewdelegate.cpp:142
+#, kde-format
+msgid "Install"
+msgstr "설치"
+
+#: kmoretools/kmoretools.cpp:533
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "설치되지 않음:"
+
+#: kmoretools/kmoretools.cpp:629
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "더 보기"
+
+#: kmoretools/kmoretools.cpp:667
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "설정..."
+
+#: kmoretools/kmoretools_p.h:376
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "홈페이지 보기"
+
+#: kmoretools/kmoretools_p.h:388
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "설치"
+
+#: kmoretools/kmoretools_p.h:396
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "사용 가능한 추가 정보가 없습니다."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
+#, kde-format
+msgid "Configure menu"
+msgstr "메뉴 설정"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:174
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "메뉴 설정 - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:183
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "%1 - 현재 폴더"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:191
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "%1 - 현재 장치"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:204
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "%1 - 모든 장치"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "주 보기"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "아래로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:79
+#, kde-format
+msgid "Move up"
+msgstr "위로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:100
+#, kde-format
+msgid "Move to Main section"
+msgstr "주 보기로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:121
+#, kde-format
+msgid "Move to More section"
+msgstr "추가 보기로 이동"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:142
+#, kde-format
+msgid "Reset"
+msgstr "초기화"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:161
+#, kde-format
+msgid "More section"
+msgstr "추가 보기"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:213
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "이 메뉴에 현재 설치되지 않은 도구 제안:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:223
+#, kde-format
+msgid "More tools..."
+msgstr "더 많은 도구..."
+
+#: qtquick/categoriesmodel.cpp:64
+#, kde-format
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "All Categories"
+msgstr "모든 분류"
+
+#: qtquick/categoriesmodel.cpp:93
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "알 수 없는 분류"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:43
+#, kde-format
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr "항목"
+
+#: qtquick/qml/Button.qml:44
+#, kde-format
+msgid "Download New %1..."
+msgstr "새 %1 다운로드..."
+
+#: qtquick/qml/Dialog.qml:41
+#, kde-format
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "새 %1 다운로드"
+
+#: qtquick/qml/Dialog.qml:41
+#, kde-format
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "새로운 항목 다운로드"
+
+#: qtquick/qml/DownloadItemsSheet.qml:31
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "설치 옵션 선택"
+
+#: qtquick/qml/DownloadItemsSheet.qml:42
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+"아래 목록에 있는 다운로드 가능한 항목 중 설치하려는 항목을 선택하십시오. 어"
+"떤 옵션을 선택해야 할지 모르겠으면 항목의 개발자에게 연락하여 명확한 이름으"
+"로 변경해 줄 것을 요청하십시오."
+
+#: qtquick/qml/EntryDetails.qml:48
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "%2에서 %1 설치 중"
+
+#: qtquick/qml/EntryDetails.qml:64
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed"
+msgid "Currently installing the item %1 by %2. Please wait..."
+msgstr "현재 %1(%2 제작) 항목을 설치하고 있습니다. 기다려 주십시오..."
+
+#: qtquick/qml/EntryDetails.qml:66
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr "현재 %1(%2 제작) 항목을 업데이트하고 있습니다. 기다려 주십시오..."
+
+#: qtquick/qml/EntryDetails.qml:68
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+"이 항목은 현재 잘못되었거나 알 수 없는 상태입니다. <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">KDE 커뮤니티에 버그를 보"
+"고해 주십시오</a>."
+
+#: qtquick/qml/EntryDetails.qml:82
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1(%2 제작)"
+
+#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:50
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "설치"
+
+#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:50
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "설치..."
+
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:65
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "업데이트"
+
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/Page.qml:62
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "삭제"
+
+#: qtquick/qml/EntryDetails.qml:151
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "댓글과 리뷰:"
+
+#: qtquick/qml/EntryDetails.qml:153
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "댓글과 리뷰 %1개"
+
+#: qtquick/qml/EntryDetails.qml:158
+#, kde-format
+msgid "Rating:"
+msgstr "별점:"
+
+#: qtquick/qml/EntryDetails.qml:162
+#, kde-format
+msgid "Homepage:"
+msgstr "홈페이지:"
+
+#: qtquick/qml/EntryDetails.qml:163
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr "%1의 홈페이지 열기"
+
+#: qtquick/qml/EntryDetails.qml:168
+#, kde-format
+msgid "How To Donate:"
+msgstr "기부 방법:"
+
+#: qtquick/qml/EntryDetails.qml:169
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr "이 프로젝트에 기부하는 방법 알아보기"
+
+#: qtquick/qml/NewStuffItem.qml:22
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "설치"
+
+#: qtquick/qml/NewStuffList.qml:68
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr "모든 항목 표시"
+
+#: qtquick/qml/NewStuffList.qml:69 qtquick/qml/Page.qml:186
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "설치된 것만"
+
+#: qtquick/qml/NewStuffList.qml:70 qtquick/qml/Page.qml:187
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr "업데이트 가능한 것만"
+
+#: qtquick/qml/NewStuffList.qml:82
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "가장 최근 항목 먼저 표시"
+
+#: qtquick/qml/NewStuffList.qml:83
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr "가나다순으로 정렬"
+
+#: qtquick/qml/NewStuffList.qml:84
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "별점이 높은 항목부터 표시"
+
+#: qtquick/qml/NewStuffList.qml:85
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "최다 다운로드 항목부터 표시"
+
+#: qtquick/qml/Page.qml:123
+#, kde-format
+msgid "Tiles view mode"
+msgstr "바둑판식 보기 모드"
+
+#: qtquick/qml/Page.qml:141
+#, kde-format
+msgid "Preview view mode"
+msgstr "미리 보기 보기 모드"
+
+#: qtquick/qml/Page.qml:167
+#, kde-format
+msgid "Show:"
+msgstr "표시:"
+
+#: qtquick/qml/Page.qml:185
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Everything"
+msgstr "모두"
+
+#: qtquick/qml/Page.qml:199
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Most recent first"
+msgstr "최근 항목부터"
+
+#: qtquick/qml/Page.qml:200
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "A-Z"
+msgstr "가-힣"
+
+#: qtquick/qml/Page.qml:201
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Highest rated first"
+msgstr "별점이 높은 항목부터"
+
+#: qtquick/qml/Page.qml:202
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Most downloaded first"
+msgstr "최다 다운로드 항목부터"
+
+#: qtquick/qml/Page.qml:277
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more..."
+msgstr "더 불러오는 중..."
+
+#: qtquick/qml/Page.qml:288
+#, kde-format
+msgctxt ""
+"A message shown when there are no entries in the list, and when it is not "
+"trying to load anything"
+msgid "There is no hot new stuff to get here"
+msgstr "다운로드할 새로운 항목이 없습니다"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<i>(제목 없음)</i>"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:141
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr "%1<i>(작성자)</i>"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:26
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr "%1의 댓글과 리뷰"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:30
+#, kde-format
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "모든 댓글 표시"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:36
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr "리뷰만 표시"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:42
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr "리뷰와 답글 표시"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:179
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "다운로드 %1회"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:160
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i> 제작"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is being installed"
+msgid "Installing..."
+msgstr "설치 중..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "업데이트 중..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+"잘못되었거나 알 수 없는 상태입니다. <a href=\"https://bugs.kde.org/enter_bug."
+"cgi?product=frameworks-knewstuff\">KDE 커뮤니티에 버그를 보고해 주십시오</a>."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "설치 중..."
+
+#: qtquick/qml/private/ErrorDisplayer.qml:11
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr "오류 발생"
+
+#: qtquick/qml/private/GridTileDelegate.qml:108
+#, kde-format
+msgid "None"
+msgstr "없음"
+
+#: qtquick/quickengine.cpp:143
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+"새로운 항목 다운로드 사용 권한이 없습니다. 오류가 있다고 생각하면 권한 담당자"
+"에게 문의하십시오."
+
+#: tools/knewstuff-dialog/main.cpp:30
+#, kde-format
+msgid ""
+"The KNSRC file you want to show. If none is passed, you will be presented "
+"with a dialog which lets you switch between all the config files installed "
+"into the systemwide knsrc file location, which on your system is: %1"
+msgstr ""
+"표시할 KNSRC 파일입니다. 아무것도 전달하지 않으면 시스템 전역 knsrc 파일 위치"
+"에 있는 모든 설정 파일을 전환할 수 있습니다. 대상 위치: %1"
+
+#: ui/entrydetailsdialog.cpp:84
+#, kde-format
+msgid "Details for %1"
+msgstr "%1의 자세한 정보"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel_2)
+#: ui/entrydetailsdialog.cpp:98 uploaddialog.ui:230
+#, kde-format
+msgid "Changelog:"
+msgstr "변경 기록:"
+
+#: ui/entrydetailsdialog.cpp:104
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "홈페이지"
+
+#: ui/entrydetailsdialog.cpp:107
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "기부하기"
+
+#: ui/entrydetailsdialog.cpp:111
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "기술 자료(항목 %1개)"
+
+#: ui/entrydetailsdialog.cpp:114
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "브라우저 창에서 열기"
+
+#: ui/itemsgridviewdelegate.cpp:90 ui/itemsviewdelegate.cpp:284
+#, kde-format
+msgid "Rating: %1%"
+msgstr "별점: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:127
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />크기: %1"
+
+#: ui/itemsgridviewdelegate.cpp:148 ui/itemsgridviewdelegate.cpp:150
+#: ui/itemsgridviewdelegate.cpp:152 ui/itemsviewdelegate.cpp:244
+#: ui/itemsviewdelegate.cpp:246 ui/itemsviewdelegate.cpp:248
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "<i>%1</i> 제작"
+
+#: ui/itemsgridviewdelegate.cpp:175 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "좋아하는 사람 %1명"
+
+#: ui/itemsgridviewdelegate.cpp:178 ui/itemsviewdelegate.cpp:265
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "다운로드 %1회"
+
+#: ui/itemsgridviewdelegate.cpp:244 ui/itemsviewdelegate.cpp:342
+#, kde-format
+msgid "Loading Preview"
+msgstr "미리 보기 불러오는 중"
+
+#: ui/itemsgridviewdelegate.cpp:271 ui/itemsviewdelegate.cpp:189
+#, kde-format
+msgid "Details"
+msgstr "자세한 정보"
+
+#: ui/itemsgridviewdelegate.cpp:336 ui/itemsviewdelegate.cpp:127
+#, kde-format
+msgid "Updating"
+msgstr "업데이트 중"
+
+#: ui/itemsgridviewdelegate.cpp:346 ui/itemsviewdelegate.cpp:137
+#, kde-format
+msgid "Install Again"
+msgstr "다시 설치"
+
+#: ui/itemsviewdelegate.cpp:233
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>크기: %1</p>"
+
+#: uploaddialog.cpp:53
+#, kde-format
+msgctxt "Opposite to Back"
+msgid "Next"
+msgstr "다음"
+
+#: uploaddialog.cpp:58
+#, kde-format
+msgid "Finish"
+msgstr "완료"
+
+#: uploaddialog.cpp:170
+#, kde-format
+msgid "Fetching provider information..."
+msgstr "제공자 정보 가져오는 중..."
+
+#: uploaddialog.cpp:177
+#, kde-format
+msgid "Fetching license data from server..."
+msgstr "서버에서 라이선스 데이터 가져오는 중..."
+
+#: uploaddialog.cpp:184
+#, kde-format
+msgid "Fetching content data from server..."
+msgstr "서버에서 내용 데이터 가져오는 중..."
+
+#: uploaddialog.cpp:259
+#, kde-format
+msgid "Could not fetch provider information."
+msgstr "제공자 정보를 가져올 수 없습니다."
+
+#: uploaddialog.cpp:283
+#, kde-format
+msgid "Register a new account"
+msgstr "새 계정 등록"
+
+#: uploaddialog.cpp:307
+#, kde-format
+msgid "Checking login..."
+msgstr "로그인 확인 중..."
+
+#: uploaddialog.cpp:329
+#, kde-format
+msgid "Fetching your previously updated content..."
+msgstr "이전에 업데이트한 콘텐츠를 가져오는 중..."
+
+#: uploaddialog.cpp:332
+#, kde-format
+msgid "Could not verify login, please try again."
+msgstr "로그인 정보를 확인할 수 없습니다. 다시 시도하십시오."
+
+#: uploaddialog.cpp:351
+#, kde-format
+msgid "Fetching your previously updated content finished."
+msgstr "이전에 업데이트한 콘텐츠를 가져왔습니다."
+
+#: uploaddialog.cpp:369
+#, kde-format
+msgid "Fetching content data from server finished."
+msgstr "서버에서 콘텐츠 데이터를 가져왔습니다."
+
+#: uploaddialog.cpp:392 uploaddialog.cpp:833
+#, kde-format
+msgctxt "A link to the website where the get hot new stuff upload can be seen"
+msgid "Visit website"
+msgstr "웹사이트 방문"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UploadDialog)
+#: uploaddialog.cpp:438 uploaddialog.ui:14
+#, kde-format
+msgid "Share Hot New Stuff"
+msgstr "새로운 항목 공유"
+
+#: uploaddialog.cpp:461
+#, kde-format
+msgctxt "Program name followed by 'Add On Uploader'"
+msgid "%1 Add-On Uploader"
+msgstr "%1 추가 기능 업로드 도구"
+
+#: uploaddialog.cpp:480 uploaddialog.cpp:758
+#, kde-format
+msgid "File not found: %1"
+msgstr "파일을 찾을 수 없음: %1"
+
+#: uploaddialog.cpp:480 uploaddialog.cpp:607 uploaddialog.cpp:758
+#, kde-format
+msgid "Upload Failed"
+msgstr "업로드 실패"
+
+#: uploaddialog.cpp:560
+#, kde-format
+msgid ""
+"The server does not recognize the category %2 to which you are trying to "
+"upload."
+msgid_plural ""
+"The server does not recognize any of the categories to which you are trying "
+"to upload: %2"
+msgstr[0] "서버에서 업로드하려는 분류를 인식하지 못했습니다: %2"
+
+#: uploaddialog.cpp:563
+#, kde-format
+msgid "Error"
+msgstr "오류"
+
+#: uploaddialog.cpp:607
+#, kde-format
+msgid "The selected category \"%1\" is invalid."
+msgstr "선택한 \"%1\" 분류가 올바르지 않습니다."
+
+#: uploaddialog.cpp:656 uploaddialog.cpp:671 uploaddialog.cpp:685
+#, kde-format
+msgid "Select preview image"
+msgstr "미리 보기 그림 선택"
+
+#: uploaddialog.cpp:700
+#, kde-format
+msgid "There was a network error."
+msgstr "네트워크 오류가 발생했습니다."
+
+#: uploaddialog.cpp:700 uploaddialog.cpp:705
+#, kde-format
+msgid "Uploading Failed"
+msgstr "업로드 실패"
+
+#: uploaddialog.cpp:705
+#, kde-format
+msgid "Authentication error."
+msgstr "인증 오류입니다."
+
+#: uploaddialog.cpp:715
+#, kde-format
+msgid "Upload failed: %1"
+msgstr "업로드 실패: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: uploaddialog.ui:89
+#, kde-format
+msgid "Password:"
+msgstr "암호:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: uploaddialog.ui:105
+#, kde-format
+msgid "Username:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadFileLabel)
+#: uploaddialog.ui:148
+#, kde-format
+msgid "File to upload:"
+msgstr "업로드할 파일:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioNewUpload)
+#: uploaddialog.ui:158
+#, kde-format
+msgid "New Upload"
+msgstr "새 업로드"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:196
+#, kde-format
+msgid "GPL"
+msgstr "GPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:201
+#, kde-format
+msgid "LGPL"
+msgstr "LGPL"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, mLicenseCombo)
+#: uploaddialog.ui:206
+#, kde-format
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: uploaddialog.ui:214
+#, kde-format
+msgid "Description:"
+msgstr "설명:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: uploaddialog.ui:240
+#, kde-format
+msgid "Version:"
+msgstr "버전:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: uploaddialog.ui:253
+#, kde-format
+msgid "License:"
+msgstr "라이선스:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: uploaddialog.ui:266
+#, kde-format
+msgid "Please fill out the information about your upload in English."
+msgstr "업로드한 항목의 정보를 영어로 입력하십시오."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: uploaddialog.ui:282
+#, kde-format
+msgid "Title:"
+msgstr "제목:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:317
+#, kde-format
+msgid "Name of the file as it will appear on the website"
+msgstr "웹 사이트에 표시할 파일 이름"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, mNameEdit)
+#: uploaddialog.ui:320
+#, kde-format
+msgid ""
+"This should clearly describe the file content. It can be the same text as "
+"the title of the kvtml file."
+msgstr ""
+"파일 내용을 명확하게 설명해야 합니다. kvtml 파일의 제목과 같아도 됩니다."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: uploaddialog.ui:334
+#, kde-format
+msgid "Preview Images"
+msgstr "미리 보기 그림"
+
+#. i18n: ectx: property (text), widget (QPushButton, changePreview1Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview3Button)
+#. i18n: ectx: property (text), widget (QPushButton, changePreview2Button)
+#: uploaddialog.ui:343 uploaddialog.ui:350 uploaddialog.ui:357
+#, kde-format
+msgid "Select Preview..."
+msgstr "미리 보기 선택..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
+#: uploaddialog.ui:433
+#, kde-format
+msgid "Set a price for this item"
+msgstr "이 항목의 가격 설정"
+
+#. i18n: ectx: property (title), widget (QGroupBox, priceGroupBox)
+#: uploaddialog.ui:443
+#, kde-format
+msgid "Price"
+msgstr "가격"
+
+#. i18n: ectx: property (text), widget (QLabel, priceLabel)
+#: uploaddialog.ui:452
+#, kde-format
+msgid "Price:"
+msgstr "가격:"
+
+#. i18n: ectx: property (text), widget (QLabel, priceReasonLabel)
+#: uploaddialog.ui:479
+#, kde-format
+msgid "Reason for price:"
+msgstr "가격을 매긴 이유:"
+
+#. i18n: ectx: property (text), widget (QLabel, contentWebsiteLinkLabel)
+#: uploaddialog.ui:596
+#, kde-format
+msgid "Fetch content link from server"
+msgstr "서버에서 콘텐츠 링크 가져오기"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel)
+#: uploaddialog.ui:609
+#, kde-format
+msgid "Create content on server"
+msgstr "서버에서 콘텐츠 만들기"
+
+#. i18n: ectx: property (text), widget (QLabel, creatingContentLabel_2)
+#: uploaddialog.ui:622
+#, kde-format
+msgid "Upload content"
+msgstr "콘텐츠 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview1Label)
+#: uploaddialog.ui:635
+#, kde-format
+msgid "Upload first preview"
+msgstr "첫 번째 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: uploaddialog.ui:665
+#, kde-format
+msgid "Note: You can edit, update and delete your content on the website."
+msgstr "메모: 웹 사이트에서 콘텐츠를 편집, 업데이트 및 삭제할 수 있습니다."
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview2Label)
+#: uploaddialog.ui:681
+#, kde-format
+msgid "Upload second preview"
+msgstr "두 번째 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, uploadPreview3Label)
+#: uploaddialog.ui:694
+#, kde-format
+msgid "Upload third preview"
+msgstr "세 번째 미리 보기 업로드"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: uploaddialog.ui:739
+#, kde-format
+msgid ""
+"I ensure that this content does not violate any existing copyright, law or "
+"trademark. I agree for my IP address to be logged. (Distributing content "
+"without the permission of the copyright holder is illegal.)"
+msgstr ""
+"본인은 이 콘텐츠가 기존의 저작권, 법률 또는 상표를 위반하지 않음을 확인합니"
+"다. IP 주소가 기록되는 데 동의합니다.(저작권자의 허락 없이 콘텐츠를 배포하는 "
+"것은 불법입니다.)"
+
+#. i18n: ectx: property (text), widget (QPushButton, uploadButton)
+#: uploaddialog.ui:764
+#, kde-format
+msgid "Start Upload"
+msgstr "업로드 시작"
