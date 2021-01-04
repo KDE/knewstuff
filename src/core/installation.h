@@ -43,7 +43,7 @@ public:
      * Constructor.
      */
     explicit Installation(QObject *parent = nullptr);
-
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
     enum Policy {
         CheckNever,
         CheckIfPossible,
@@ -54,6 +54,8 @@ public:
         ScopeUser,
         ScopeSystem,
     };
+#endif
+
     enum UncompressionOptions {
         NeverUncompress, ///@< Never attempt to decompress a file, whatever format it is. Matches "never" knsrc setting
         AlwaysUncompress, ///@< Assume all downloaded files are archives, and attempt to decompress them. Will cause failure if decompression fails. Matches "always" knsrc setting
@@ -185,16 +187,16 @@ private:
     QString xdgTargetDirectory;
     QString installPath;
     QString absoluteInstallPath;
-
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
     // policies whether verification needs to be done
-    Policy checksumPolicy;
-    Policy signaturePolicy;
+    Policy checksumPolicy = CheckIfPossible;
+    Policy signaturePolicy = CheckIfPossible;
     // scope: install into user or system dirs
-    Scope scope;
-
+    Scope scope = ScopeUser;
     // FIXME this throws together a file name from entry name and version - why would anyone want that?
-    bool customName;
-    bool acceptHtml;
+    bool customName = false;
+    bool acceptHtml = false;
+#endif
 
     QMap<KJob *, EntryInternal> entry_jobs;
 

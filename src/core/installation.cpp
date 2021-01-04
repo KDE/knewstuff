@@ -42,11 +42,6 @@ using namespace KNSCore;
 
 Installation::Installation(QObject *parent)
     : QObject(parent)
-    , checksumPolicy(Installation::CheckIfPossible)
-    , signaturePolicy(Installation::CheckIfPossible)
-    , scope(Installation::ScopeUser)
-    , customName(false)
-    , acceptHtml(false)
 {
     // TODO KF6 Make these real properties, when we can refactor this and add a proper dptr
     setProperty("kpackageType", QLatin1String(""));
@@ -253,9 +248,10 @@ void Installation::slotPayloadResult(KJob *job)
             Q_EMIT signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
-
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
             // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
             if (!acceptHtml) {
+#endif
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
@@ -270,7 +266,9 @@ void Installation::slotPayloadResult(KJob *job)
                         return;
                     }
                 }
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
             }
+#endif
 
             Q_EMIT signalPayloadLoaded(fcjob->destUrl());
             install(entry, fcjob->destUrl().toLocalFile());
@@ -346,6 +344,11 @@ QString Installation::targetInstallationPath() const
     // installdir is the target directory
     QString installdir;
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
+    const bool userScope = scope == ScopeUser;
+#else
+    const bool userScope = true;
+#endif
     // installpath also contains the file name if it's a single file, otherwise equal to installdir
     int pathcounter = 0;
    //wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
@@ -358,7 +361,7 @@ QString Installation::targetInstallationPath() const
             location = QStandardPaths::ConfigLocation;
         }
 
-        if (scope == ScopeUser) {
+        if (userScope) {
             installdir = QStandardPaths::writableLocation(location);
         } else { // system scope
             installdir = QStandardPaths::standardLocations(location).constLast();
@@ -366,7 +369,7 @@ QString Installation::targetInstallationPath() const
         pathcounter++;
     }
     if (!targetDirectory.isEmpty() && targetDirectory != QLatin1String("/")) {
-        if (scope == ScopeUser) {
+        if (userScope) {
             installdir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + targetDirectory + QLatin1Char('/');
         } else { // system scope
             installdir = QStandardPaths::locate(QStandardPaths::GenericDataLocation, targetDirectory, QStandardPaths::LocateDirectory) + QLatin1Char('/');
