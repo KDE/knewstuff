@@ -65,12 +65,11 @@ public:
         qCDebug(KNEWSTUFFCORE) << "Attempting to perform an installation operation of type" << operation << "on the package" << package << "of type" << serviceType << "in the package root" << packageRoot;
         int errorlevel{0};
         QString errordescription;
-        structure.reset(KPackage::PackageLoader::self()->loadPackageStructure(serviceType));
+        // PackageStructure instances are managed internally by KPackage, never delete them
+        KPackage::PackageStructure* structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
         if (structure) {
             qCDebug(KNEWSTUFFCORE) << "Service type understood";
-            // Ensure we clear the pointer if the structure's deleted (for some reason)
-            connect(structure.get(), &QObject::destroyed, this, [this](){ structure.take(); });
-            installer.reset(new KPackage::Package(structure.data()));
+            installer.reset(new KPackage::Package(structure));
             if (installer->hasValidStructure()) {
                 qCDebug(KNEWSTUFFCORE) << "Installer successfully created and has a valid structure";
                 switch(operation)
@@ -119,7 +118,6 @@ public:
     Q_SIGNAL void result();
     Q_SIGNAL void error(int errorCode, const QString& errorText);
 private:
-    QScopedPointer<KPackage::PackageStructure> structure;
     QScopedPointer<KPackage::Package> installer;
     QScopedPointer<KJob> job;
 };
