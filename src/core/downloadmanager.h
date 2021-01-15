@@ -11,6 +11,7 @@
 #include "knewstuffcore_export.h"
 #include "entryinternal.h"
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 79)
 namespace KNSCore
 {
 class DownloadManagerPrivate;
@@ -39,6 +40,7 @@ public:
      *
      * @param parent the parent of the dialog
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 79, "Use KNSCore::Cache for details on installed entries, or KNSCore::Engine directly for update and installation functionality")
     explicit DownloadManager(QObject *parent = nullptr);
 
     /**
@@ -47,6 +49,7 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 79, "Use KNSCore::Cache for details on installed entries, or KNSCore::Engine directly for update and installation functionality")
     explicit DownloadManager(const QString &configFile, QObject *parent = nullptr);
 
     /**
@@ -138,5 +141,5 @@ private:
 };
 
 }
-
+#endif
 #endif

@@ -5,6 +5,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
+#include "knewstuff_export.h"
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 79)
 #include "downloadmanager.h"
 
 #include <knewstuffcore_debug.h>
@@ -162,3 +164,4 @@ void DownloadManager::fetchEntryById(const QString& id)
 {
     d->engine->fetchEntryById(id);
 }
+#endif
