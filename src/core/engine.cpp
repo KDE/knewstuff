@@ -766,6 +766,10 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
                 m_installation->install(theEntry);
             } else {
                 qCWarning(KNEWSTUFFCORE) << "We failed to identify a good link for updating" << entry.name() << "and are unable to perform the update";
+                KNSCore::EntryInternal theEntry(entry);
+                theEntry.setStatus(KNS3::Entry::Updateable);
+                Q_EMIT signalEntryEvent(theEntry, EntryInternal::StatusChangedEvent);
+                Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("We failed to identify a good link for updating %1, and are unable to perform the update", entry.name()), {entry.uniqueId()});
             }
             // As the serverside data may change before next time this is called, even in the same session,
             // let's not make assumptions, and just get rid of this

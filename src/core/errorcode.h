@@ -28,7 +28,7 @@ namespace KNSCore
         OcsError, ///< An error reported by the OCS API server. In signalErrorCode, this will be accompanied by the OCS error code in the metadata
         ConfigFileError, ///< The configuration file is missing or somehow incorrect. The configuration file filename will be held in the metadata
         ProviderError, ///< A provider has failed to load or initialize. The provider file URL or provider URL will be held in the metadata
-        InstallationError, ///< Installation of a content item has failed
+        InstallationError, ///< Installation of a content item has failed. If known, the entry's unique ID will be the metadata
         ImageError, ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
         AdoptionError, ///< Adopting one entry has failed. The adoption command will be in the metadata as a QVariantList.
 };
