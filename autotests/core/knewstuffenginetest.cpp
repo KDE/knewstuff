@@ -31,7 +31,7 @@ private Q_SLOTS:
 void EngineTest::initTestCase()
 {
     engine = new Engine(this);
-    QVERIFY(engine->init(dataDir + "installcommand.knsrc"));
+    QVERIFY(engine->init(dataDir + "enginetest.knsrc"));
     QCOMPARE(engine->busyState(), Engine::BusyOperation::LoadingData);
     QSignalSpy providersLoaded(engine, &Engine::signalProvidersLoaded);
     QVERIFY(providersLoaded.wait());
