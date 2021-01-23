@@ -32,6 +32,8 @@ FileCopyWorker::~FileCopyWorker()
 
 void FileCopyWorker::run()
 {
+    d->source.open(QIODevice::ReadOnly);
+    d->destination.open(QIODevice::WriteOnly);
     qint64 totalSize = d->source.size();
 
     for (qint64 i = 0; i < totalSize; i += 1024) {
