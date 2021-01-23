@@ -37,6 +37,7 @@ find_package(KF5Service ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Syndication ${KF5_DEP_VERSION} REQUIRED)
 
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)

@@ -35,6 +35,7 @@ set(KNewStuffCore_SRCS
 
     ../attica/atticaprovider.cpp
     ../staticxml/staticxmlprovider.cpp
+    ../opds/opdsprovider.cpp
 
     ../upload/atticahelper.cpp
 )
@@ -85,6 +86,7 @@ target_link_libraries(KF5NewStuffCore
     KF5::ConfigCore
     KF5::Package
     Qt5::Gui                   # For QImage
+    KF5::Syndication #OPDS
 )
 
 set_target_properties(KF5NewStuffCore PROPERTIES

@@ -44,7 +44,9 @@
 // own
 #include "../attica/atticaprovider_p.h"
 #include "../staticxml/staticxmlprovider_p.h"
+#include "../opds/opdsprovider_p.h"
 #include "cache.h"
+
 
 using namespace KNSCore;
 
@@ -368,6 +370,8 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
                 d->categoriesMetadata = categories;
                 Q_EMIT signalCategoriesMetadataLoded(categories);
             });
+        } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")){
+            provider.reset(new OPDSProvider);
         } else {
             provider.reset(new StaticXmlProvider);
         }
