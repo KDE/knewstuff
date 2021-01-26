@@ -10,7 +10,10 @@ import org.kde.newstuff 1.62 as NewStuff
 NewStuff.Dialog {
     id: component
     configFile: knsrcfile
-    Component.onCompleted: open()
+    Component.onCompleted: {
+        open();
+        showEntryDetails(knsProviderId, knsEntryId);
+    }
     onVisibleChanged: {
         if (visible === false) {
             Qt.quit();

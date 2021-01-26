@@ -343,11 +343,31 @@ public:
     /**
      * Convenience method to launch a search for one specific entry.
      *
-     * @note it will reset the engine state
+     * @note it will reset the engine state (use storeSearch() and restoreSearch() to handle this if needed)
      *
      * @param id The ID of the entry you wish to fetch
      */
-    void fetchEntryById(const QString &id);
+    Q_INVOKABLE void fetchEntryById(const QString &id);
+
+    /**
+     * Restore a previously saved search to be current
+     * Also emits the appropriate signals so any views depending
+     * on the information can be updated)
+     *
+     * @since 5.79
+     */
+    Q_INVOKABLE void restoreSearch();
+
+    /**
+     * Stores the current search parameters internally
+     * This might for example be used to allow you to restore the current view state
+     * after performing a single-entry fetch with fetchEntryById(QString). That function
+     * does not perform this action itself, because it may well not be the desired
+     * outcome.
+     *
+     * @since 5.79
+     */
+    Q_INVOKABLE void storeSearch();
 
     /**
      * Try to contact the author of the entry by email or showing their homepage.

@@ -60,6 +60,11 @@ public:
                 model->slotEntriesLoaded(entries);
             }
         });
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryDetailsLoaded, model, [this](const KNSCore::EntryInternal& entry){
+            if (coreEngine->filter() != KNSCore::Provider::Updates) {
+                model->slotEntriesLoaded(KNSCore::EntryInternal::List{entry});
+            }
+        });
         q->connect(coreEngine, &KNSCore::Engine::signalUpdateableEntriesLoaded, model, [this](const KNSCore::EntryInternal::List& entries){
             if (coreEngine->filter() == KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(entries);
@@ -403,6 +408,21 @@ void ItemsModel::setEngine(QObject *newEngine)
         Q_EMIT engineChanged();
         endResetModel();
     }
+}
+
+int ItemsModel::indexOfEntryId(const QString& providerId, const QString& entryId)
+{
+    int idx{-1};
+    if (d->coreEngine && d->model) {
+        for (int i = 0 ; i < rowCount(); ++i) {
+            KNSCore::EntryInternal testEntry = d->model->data(d->model->index(i), Qt::UserRole).value<KNSCore::EntryInternal>();
+            if (providerId == QUrl(testEntry.providerId()).host() && entryId == testEntry.uniqueId()) {
+                idx = i;
+                break;
+            }
+        }
+    }
+    return idx;
 }
 
 bool ItemsModel::isLoadingData() const

@@ -125,6 +125,7 @@ public:
     QString name;
     QMap<EntryInternal, CommentsModel*> commentsModels;
     bool shouldRemoveDeletedEntries = false;
+    KNSCore::Provider::SearchRequest storedRequest;
 
     // Used for updating purposes - we ought to be saving this information, but we also have to deal with old stuff, and so... this will have to do for now, and so
     // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
@@ -542,6 +543,27 @@ void KNSCore::Engine::fetchEntryById(const QString &id)
     }
 }
 
+void KNSCore::Engine::restoreSearch()
+{
+    m_searchTimer->stop();
+    m_currentRequest = d->storedRequest;
+    if (m_cache) {
+        EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
+        if (!cache.isEmpty()) {
+            reloadEntries();
+        } else {
+            m_searchTimer->start();
+        }
+    } else {
+        qCWarning(KNEWSTUFFCORE) << "Attempted to call restoreSearch() without a correctly initialized engine. You will likely get unexpected behaviour.";
+    }
+}
+
+void KNSCore::Engine::storeSearch()
+{
+    d->storedRequest = m_currentRequest;
+}
+
 void Engine::setSearchTerm(const QString &searchString)
 {
     m_searchTimer->stop();
@@ -692,6 +714,8 @@ void Engine::slotInstallationFailed(const QString &message)
 
 void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 {
+    --m_numDataJobs;
+    updateStatus();
     Q_EMIT signalEntryEvent(entry, EntryInternal::DetailsLoadedEvent);
 }
 

@@ -126,6 +126,16 @@ public:
     Q_SIGNAL void engineChanged();
 
     /**
+     * Get the index of an entry based on that entry's unique ID
+     * @param providerId The provider inside of which you wish to search for an entry
+     * @param entryId The unique ID within the given provider of the entry you want to know the index of
+     * @return The index of the entry. In case the entry is not found, -1 is returned
+     * @see KNSCore::EntryInternal::uniqueId()
+     * @since 5.79
+     */
+    Q_INVOKABLE int indexOfEntryId(const QString& providerId, const QString& entryId);
+
+    /**
      * Whether or not the model is fetching information from a remote location
      * @since 5.65
      */

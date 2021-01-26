@@ -59,6 +59,73 @@ KCM.GridViewKCM {
      */
     signal errorMessage(string message);
 
+    /**
+     * Show the details page for a specific entry.
+     * If you call this function before the engine initialisation has been completed,
+     * the action itself will be postponed until that has happened.
+     * @param providerId The provider ID for the entry you wish to show details for
+     * @param entryId The unique ID for the entry you wish to show details for
+     * @since 5.79
+     */
+    function showEntryDetails(providerId, entryId) {
+        _showEntryDetailsThrottle.providerId = providerId;
+        _showEntryDetailsThrottle.entryId = entryId;
+        newStuffEngine.engine.storeSearch();
+        newStuffEngine.engine.fetchEntryById(entryId);
+        if (newStuffEngine.isLoading) {
+            _showEntryDetailsThrottle.enabled = true;
+        } else {
+            _showEntryDetailsThrottle.onIsLoadingDataChanged();
+        }
+    }
+    Connections {
+        id: _showEntryDetailsThrottle;
+        target: newStuffModel;
+        enabled: false;
+        property var entryId;
+        property var providerId;
+        function onIsLoadingDataChanged() {
+            if (newStuffModel.isLoadingData === false && root.view.count > 0) {
+                _showEntryDetailsThrottle.enabled = false;
+                var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
+                if (theIndex > -1) {
+                    pageStack.push(detailsPage, {
+                        newStuffModel: newStuffModel,
+                        index: theIndex,
+                        name: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NameRole),
+                        author: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.AuthorRole),
+                        previews: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PreviewsRole),
+                        shortSummary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.ShortSummaryRole),
+                        summary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.SummaryRole),
+                        homepage: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.HomepageRole),
+                        donationLink: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DonationLinkRole),
+                        status: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.StatusRole),
+                        commentsCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NumberOfCommentsRole),
+                        rating: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.RatingRole),
+                        downloadCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadCountRole),
+                        downloadLinks: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
+                        providerId: _showEntryDetailsThrottle.providerId
+                    });
+                    _restoreSearchState.enabled = true;
+                } else {
+                    root.message(i18ndc("knewstuff5", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
+                    newStuffEngine.engine.restoreSearch();
+                }
+            }
+        }
+    }
+    Connections {
+        id: _restoreSearchState;
+        target: pageStack;
+        enabled: false;
+        function onCurrentIndexChanged() {
+            if (pageStack.currentIndex === 0) {
+                newStuffEngine.engine.restoreSearch();
+                _restoreSearchState.enabled = false;
+            }
+        }
+    }
+
     property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
     property string useLabel: engine.engine.useLabel
 
