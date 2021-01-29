@@ -12,9 +12,12 @@
 #ifndef KNEWSTUFF3_UI_DOWNLOADWIDGET_H
 #define KNEWSTUFF3_UI_DOWNLOADWIDGET_H
 
-#include <QWidget>
 
 #include "knewstuff_export.h"
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 80)
+
+#include <QWidget>
+
 #include "entry.h"
 
 namespace KNSCore
@@ -74,7 +77,9 @@ public:
      * Appname is the name of your application as provided in the about data->
      *
      * @param parent the parent of the dialog
+     * @deprecated Since 5.80, use the QML components instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components instead")
     explicit DownloadWidget(QWidget *parent = nullptr);
 
     /**
@@ -84,7 +89,9 @@ public:
      *
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
+     * @deprecated Since 5.80, use the QML components instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components instead")
     explicit DownloadWidget(const QString &configFile, QWidget *parent = nullptr);
 
     /**
@@ -155,4 +162,5 @@ private:
 
 }
 
+#endif
 #endif

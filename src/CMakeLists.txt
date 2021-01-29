@@ -2,9 +2,6 @@
 add_subdirectory(core)
 
 set(KNewStuff_SRCS
-    downloaddialog.cpp
-    downloadwidget.cpp
-    downloadmanager.cpp
     entry.cpp
     button.cpp
     knewstuffaction.cpp
@@ -12,19 +9,26 @@ set(KNewStuff_SRCS
     kmoretools/kmoretoolsconfigdialog_p.cpp
     kmoretools/kmoretoolsmenufactory.cpp
     kmoretools/kmoretoolspresets.cpp
-    ui/entrydetailsdialog.cpp
-    ui/imagepreviewwidget.cpp
-    ui/itemsview.cpp
-    ui/itemsviewdelegate.cpp
-    ui/itemsgridviewdelegate.cpp
-    ui/itemsviewbasedelegate.cpp
-    ui/progressindicator.cpp
     ui/widgetquestionlistener.cpp
-
     uploaddialog.cpp
-
     qtquickdialogwrapper.cpp
 )
+# Exclude deprecated classes from the build
+if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND
+   NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.80)
+list(APPEND KNewStuff_SRCS
+        downloaddialog.cpp
+        downloadwidget.cpp
+        downloadmanager.cpp
+        ui/entrydetailsdialog.cpp
+        ui/imagepreviewwidget.cpp
+        ui/itemsview.cpp
+        ui/itemsviewdelegate.cpp
+        ui/itemsgridviewdelegate.cpp
+        ui/itemsviewbasedelegate.cpp
+        ui/progressindicator.cpp
+        )
+endif()
 
 ecm_qt_declare_logging_category(KNewStuff_SRCS
     HEADER knewstuff_debug.h
@@ -51,7 +55,7 @@ ecm_generate_export_header(KF5NewStuff
     VERSION ${KF5_VERSION}
     DEPRECATED_BASE_VERSION 0
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
-    DEPRECATION_VERSIONS 5.29 5.76 5.77 5.78 5.79
+    DEPRECATION_VERSIONS 5.29 5.76 5.77 5.78 5.79 5.80
 )
 
 target_include_directories(KF5NewStuff

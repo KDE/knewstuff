@@ -17,6 +17,8 @@
 #include "knewstuff_export.h"
 #include "entry.h"
 
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 80)
+
 namespace KNSCore
 {
 class Engine;
@@ -102,7 +104,9 @@ public:
      * Appname is the name of your application as provided in the about data->
      *
      * @param parent the parent of the dialog
+     * @deprecates Since 5.80, use the QML components or the QtQuickDialogWrapper instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the QtQuickDialogWrapper instead")
     explicit DownloadDialog(QWidget *parent = nullptr);
 
     /**
@@ -112,7 +116,9 @@ public:
      *
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
+     * @deprecates Since 5.80, use the QML components or the QtQuickDialogWrapper instead
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the QtQuickDialogWrapper instead")
     explicit DownloadDialog(const QString &configFile, QWidget *parent = nullptr);
 
     /**
@@ -167,4 +173,5 @@ private:
 
 }
 
+#endif
 #endif

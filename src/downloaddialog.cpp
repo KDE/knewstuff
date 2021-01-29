@@ -11,6 +11,7 @@
 
 #include "downloaddialog.h"
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 80)
 
 #include <KSharedConfig>
 #include <KTitleWidget>
@@ -153,3 +154,4 @@ Entry::List DownloadDialog::installedEntries()
     return d->downloadWidget->installedEntries();
 }
 
+#endif
