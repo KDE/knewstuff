@@ -101,7 +101,6 @@ QtControls.Button {
         if (ghnsDialog.engine.allowedByKiosk) {
             ghnsDialog.engine.configFile = component.configFile
             component.aboutToShowDialog();
-            ghnsDialog.engine.engine.revalidateCacheEntries();
             ghnsDialog.open();
         } else {
             // make some noise, because silently doing nothing is a bit annoying

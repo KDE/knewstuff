@@ -80,6 +80,7 @@ QtDialogs.Dialog {
 
     onVisibleChanged: {
         if (visible === true) {
+            newStuffPage.engine.engine.revalidateCacheEntries();
             newStuffPage.engine.resetChangedEntries();
         }
     }
