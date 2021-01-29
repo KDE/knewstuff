@@ -60,8 +60,8 @@ public:
                 model->slotEntriesLoaded(entries);
             }
         });
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryDetailsLoaded, model, [this](const KNSCore::EntryInternal& entry){
-            if (coreEngine->filter() != KNSCore::Provider::Updates) {
+        q->connect(coreEngine, &KNSCore::Engine::signalEntryEvent, model, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event){
+            if (event == KNSCore::EntryInternal::DetailsLoadedEvent && coreEngine->filter() != KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(KNSCore::EntryInternal::List{entry});
             }
         });
