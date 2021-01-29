@@ -16,7 +16,6 @@ macro(knewstuff_executable_tests)
 endmacro()
 
 knewstuff_executable_tests(
-     khotnewstuff
      khotnewstuff_upload
      khotnewstuff_test
 )
