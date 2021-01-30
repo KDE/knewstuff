@@ -31,11 +31,15 @@ private Q_SLOTS:
     void cleanupTestCase();
     void testConfigFileReading();
     void testInstallCommand();
+    void testInstallCommandArchive();
+    void testInstallCommandTopLevelFilesInArchive();
     void testUninstallCommand();
 };
 
 void InstallationTest::initTestCase()
 {
+    // Just in case a previous test crashed
+    cleanupTestCase();
     qRegisterMetaType<EntryInternal>();
     QStandardPaths::setTestModeEnabled(true);
     installation = new Installation();
@@ -50,6 +54,10 @@ void InstallationTest::cleanupTestCase()
 {
     QFile::remove("installed.txt");
     QFile::remove("uninstalled.txt");
+    const QString dataPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "demo/", QStandardPaths::LocateDirectory);
+    if (!dataPath.isEmpty()) {
+        QDir(dataPath).removeRecursively();
+    }
 }
 
 void InstallationTest::testConfigFileReading()
@@ -90,6 +98,55 @@ void InstallationTest::testUninstallCommand()
     QCOMPARE(entry.status(), KNS3::Entry::Deleted);
     QVERIFY(!QFileInfo(file).exists());
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
+}
+
+void InstallationTest::testInstallCommandArchive()
+{
+    EntryInternal entry;
+    entry.setUniqueId("0");
+    entry.setStatus(KNS3::Entry::Downloadable);
+    entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/archive_dir.tar.gz")).toString());
+
+    installation->install(entry);
+    QSignalSpy spy(installation, &Installation::signalEntryChanged);
+    QVERIFY(spy.wait());
+
+    QCOMPARE(entry.installedFiles().count(), 1);
+    const QString file = entry.installedFiles().constFirst();
+    const QFileInfo fileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "demo/data", QStandardPaths::LocateDirectory));
+    QCOMPARE(file, fileInfo.absoluteFilePath() + "/*");
+    QVERIFY(fileInfo.exists());
+    QVERIFY(fileInfo.isDir());
+
+    // Check if the files that are in the archive exist
+    const QStringList files = QDir(fileInfo.absoluteFilePath()).entryList(QDir::Filter::Files | QDir::Filter::NoDotAndDotDot);
+    QCOMPARE(files, QStringList({"test1.txt", "test2.txt"}));
+}
+
+void InstallationTest::testInstallCommandTopLevelFilesInArchive()
+{
+    EntryInternal entry;
+    entry.setUniqueId("0");
+    entry.setStatus(KNS3::Entry::Downloadable);
+    entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/archive_toplevel_files.tar.gz")).toString());
+
+    installation->install(entry);
+    QSignalSpy spy(installation, &Installation::signalEntryChanged);
+    QVERIFY(spy.wait());
+
+    QCOMPARE(entry.installedFiles().count(), 1);
+    const QString file = entry.installedFiles().constFirst();
+    QVERIFY(file.endsWith("/*"));
+
+    // The file is given a random name, so we can't easily check that
+    const QFileInfo fileOnDisk(file.left(file.size() - 2));
+    QVERIFY(fileOnDisk.exists());
+    QVERIFY(fileOnDisk.isDir());
+    // The by checking the parent dir we can check if it is properly in a subdir uncompressed
+    QCOMPARE(fileOnDisk.absoluteDir().path(),  QStandardPaths::locate(QStandardPaths::GenericDataLocation, "demo", QStandardPaths::LocateDirectory));
+    // Check if the files that are in the archive exist
+    const QStringList files = QDir(fileOnDisk.absoluteFilePath()).entryList(QDir::Filter::Files | QDir::Filter::NoDotAndDotDot);
+    QCOMPARE(files, QStringList({"test1.txt", "test2.txt"}));
 }
 
 QTEST_MAIN(InstallationTest)
