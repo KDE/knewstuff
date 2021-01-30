@@ -54,7 +54,7 @@ void InstallationTest::cleanupTestCase()
 
 void InstallationTest::testConfigFileReading()
 {
-    QCOMPARE(installation->uncompressionSetting(), Installation::NeverUncompress);
+    QCOMPARE(installation->uncompressionSetting(), Installation::UncompressIntoSubdirIfArchive);
     const QString actualPath = installation->targetInstallationPath();
     const QString expectedPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/demo/";
     QCOMPARE(actualPath, expectedPath);

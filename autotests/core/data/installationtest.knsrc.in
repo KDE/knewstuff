@@ -6,5 +6,6 @@ UploadCategories=KDE Wallpaper 800x600
 TargetDir=demo
 UseLabel=UseLabelTest
 AdoptionCommand=/bin/true
+Uncompress=subdir-archive
 InstallationCommand=touch installed.txt
 UninstallCommand=touch uninstalled.txt
