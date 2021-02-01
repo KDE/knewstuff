@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.11
+import QtQuick.Window 2.15
 import QtQuick.Controls 2.5 as QtControls
 import QtQuick.Layouts 1.11 as QtLayouts
 import QtQuick.Dialogs 1.3 as QtDialogs
@@ -87,8 +88,8 @@ QtDialogs.Dialog {
 
     contentItem: Rectangle {
         color: Kirigami.Theme.backgroundColor
-        implicitWidth: 700
-        implicitHeight: 540
+        implicitWidth: Math.min(Kirigami.Units.gridUnit * 65, Screen.width)
+        implicitHeight: Math.min(Kirigami.Units.gridUnit * 40, Screen.height)
         Keys.onEscapePressed: component.close()
         NewStuff.DialogContent {
             id: newStuffPage
