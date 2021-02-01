@@ -12,7 +12,9 @@ NewStuff.Dialog {
     configFile: knsrcfile
     Component.onCompleted: {
         open();
-        showEntryDetails(knsProviderId, knsEntryId);
+        if (typeof(knsProviderId) !== "undefined" && typeof(knsEntryId) !== "undefined") {
+            showEntryDetails(knsProviderId, knsEntryId);
+        }
     }
     onVisibleChanged: {
         if (visible === false) {
