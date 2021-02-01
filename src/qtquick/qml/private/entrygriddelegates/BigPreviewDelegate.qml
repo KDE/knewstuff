@@ -85,7 +85,8 @@ Private.GridTileDelegate {
             anchors.fill: parent;
             Item {
                 QtLayouts.Layout.fillWidth: true
-                QtLayouts.Layout.minimumHeight: width / 1.8
+                QtLayouts.Layout.fillHeight: true
+                QtLayouts.Layout.minimumHeight: width / 5
                 QtLayouts.Layout.maximumHeight: width / 1.8
                 Kirigami.ShadowedRectangle {
                     visible: bigPreview.status == Image.Ready
@@ -155,11 +156,13 @@ Private.GridTileDelegate {
             QtControls.Label {
                 QtLayouts.Layout.fillWidth: true
                 QtLayouts.Layout.fillHeight: true
+                QtLayouts.Layout.minimumHeight: Kirigami.Units.gridUnit
+                QtLayouts.Layout.maximumHeight: Kirigami.Units.gridUnit * 3
                 wrapMode: Text.Wrap
                 text: model.shortSummary.length > 0 ? model.shortSummary : model.summary
                 elide: Text.ElideRight
-                clip: true // We are dealing with content over which we have very little control. Sometimes that means being a bit abrupt.
             }
+            clip: true // We are dealing with content over which we have very little control. Sometimes that means being a bit abrupt.
         }
         FeedbackOverlay {
             anchors.fill: parent
