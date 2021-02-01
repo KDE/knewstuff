@@ -79,7 +79,12 @@ T2.ItemDelegate {
             /*if (delegate.GridView.isCurrentItem) {
                 return Kirigami.Theme.highlightColor;
             } else */ if (parent.hovered) {
-                return Kirigami.Theme.highlightColor;
+                // Match appearance of hovered list items
+                return Qt.rgba(Kirigami.Theme.highlightColor.r,
+                               Kirigami.Theme.highlightColor.g,
+                               Kirigami.Theme.highlightColor.b,
+                               0.5);
+
             } else {
                 return Kirigami.Theme.backgroundColor;
             }
