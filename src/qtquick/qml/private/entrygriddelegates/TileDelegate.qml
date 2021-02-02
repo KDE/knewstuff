@@ -170,10 +170,11 @@ Private.GridTileDelegate {
             }
             Private.Rating {
                 QtLayouts.Layout.fillWidth: true
-                rating: model.rating / 10
+                rating: model.rating
             }
             Kirigami.Heading {
                 QtLayouts.Layout.fillWidth: true
+                horizontalAlignment: Text.AlignRight
                 level: 5
                 elide: Text.ElideRight
                 text: i18ndc("knewstuff5", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)

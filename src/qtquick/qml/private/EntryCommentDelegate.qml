@@ -113,7 +113,8 @@ QtLayouts.RowLayout {
             }
             Rating {
                 id: ratingStars
-                rating: Math.floor(component.score / 10)
+                rating: component.score
+                reverseLayout: true
             }
             Item {
                 QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing

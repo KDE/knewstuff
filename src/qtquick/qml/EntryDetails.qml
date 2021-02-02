@@ -156,7 +156,7 @@ KCM.SimpleKCM {
             Private.Rating {
                 id: ratingsItem
                 Kirigami.FormData.label: i18nd("knewstuff5", "Rating:")
-                rating: Math.floor(component.rating / 10)
+                rating: component.rating
             }
             Kirigami.UrlButton {
                 Kirigami.FormData.label: i18nd("knewstuff5", "Homepage:")
