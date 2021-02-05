@@ -165,112 +165,194 @@ KCM.GridViewKCM {
     NewStuff.QuestionAsker {}
     Private.ErrorDisplayer { engine: newStuffEngine; active: root.isCurrentPage; }
 
-    titleDelegate: QtLayouts.RowLayout {
-        QtLayouts.Layout.fillWidth: true
-        Kirigami.Heading {
-            id: title
-            level: 1
-
-            QtLayouts.Layout.fillWidth: true;
-            opacity: root.isCurrentPage ? 1 : 0.4
-            maximumLineCount: 1
-            elide: Text.ElideRight
-            text: root.title
-        }
-        QtControls.ButtonGroup {
-            id: displayModeGroup
-            buttons: [displayModeTiles, displayModeIcons]
-        }
-        QtControls.ToolButton {
-            id: displayModeTiles
-            icon.name: "view-list-details"
-            onClicked: { root.viewMode = Page.ViewMode.Tiles; }
-            checked: root.viewMode == Page.ViewMode.Tiles
-            QtControls.ToolTip {
-                text: i18nd("knewstuff5", "Tiles view mode")
-            }
-        }
-        QtControls.ToolButton {
-            id: displayModeIcons
-            icon.name: "view-list-icons"
-            onClicked: { root.viewMode = Page.ViewMode.Icons; }
-            checked: root.viewMode == Page.ViewMode.Icons
-            QtControls.ToolTip {
-                text: i18nd("knewstuff5", "Icons view mode")
-            }
-        }
-        QtControls.ToolButton {
-            id: displayPreview
-            icon.name: "view-preview"
-            onClicked: { root.viewMode = Page.ViewMode.Preview; }
-            checked: root.viewMode == Page.ViewMode.Preview
-            QtControls.ToolTip {
-                text: i18nd("knewstuff5", "Preview view mode")
-            }
-        }
-        Kirigami.ActionTextField {
-            id: searchField
-            placeholderText: i18nd("knewstuff5", "Search...")
-            focusSequence: "Ctrl+F"
-            rightActions: [
-                Kirigami.Action {
-                    iconName: "edit-clear"
-                    visible: searchField.text !== ""
-                    onTriggered: {
-                        searchField.text = "";
-                        searchField.accepted();
+    QtControls.ActionGroup { id: viewModeActionGroup }
+    QtControls.ActionGroup { id: viewFilterActionGroup }
+    QtControls.ActionGroup { id: viewSortingActionGroup }
+    actions {
+        contextualActions: [
+            Kirigami.Action {
+                text: {
+                    if (root.viewMode == Page.ViewMode.Tiles) {
+                        return i18nd("knewstuff5", "Tiles");
+                    } else if (root.viewMode == Page.ViewMode.Icons) {
+                        return i18nd("knewstuff5", "Icons");
+                    } else {
+                        return i18nd("knewstuff5", "Preview");
                     }
                 }
-            ]
-            onAccepted: {
-                newStuffEngine.searchTerm = searchField.text;
+                checkable: false
+                icon.name: {
+                    if (root.viewMode == Page.ViewMode.Tiles) {
+                        return "view-list-details";
+                    } else if (root.viewMode == Page.ViewMode.Icons) {
+                        return "view-list-icons";
+                    } else {
+                        return "view-preview";
+                    }
+                }
+                Kirigami.Action {
+                    icon.name: "view-list-details"
+                    text: i18nd("knewstuff5", "Detailed Tiles View Mode")
+                    onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
+                    checked: root.viewMode == Page.ViewMode.Tiles
+                    checkable: true
+                    QtControls.ActionGroup.group: viewModeActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "view-list-icons"
+                    text: i18nd("knewstuff5", "Icons Only View Mode")
+                    onTriggered: { root.viewMode = Page.ViewMode.Icons; }
+                    checked: root.viewMode == Page.ViewMode.Icons
+                    checkable: true
+                    QtControls.ActionGroup.group: viewModeActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "view-preview"
+                    text: i18nd("knewstuff5", "Large Preview View Mode")
+                    onTriggered: { root.viewMode = Page.ViewMode.Preview; }
+                    checked: root.viewMode == Page.ViewMode.Preview
+                    checkable: true
+                    QtControls.ActionGroup.group: viewModeActionGroup
+                }
+            },
+            Kirigami.Action {
+                text: {
+                    if (newStuffEngine.filter === 0) {
+                        return i18nd("knewstuff5", "Everything");
+                    } else if (newStuffEngine.filter === 1) {
+                        return i18nd("knewstuff5", "Installed");
+                    } else if (newStuffEngine.filter === 2) {
+                        return i18nd("knewstuff5", "Updateable");
+                    } else {
+                        // then it's ExactEntryId and we want to probably just ignore that
+                    }
+                }
+                checkable: false
+                icon.name: {
+                    if (newStuffEngine.filter === 0) {
+                        return "package-available"
+                    } else if (newStuffEngine.filter === 1) {
+                        return "package-installed-updated"
+                    } else if (newStuffEngine.filter === 2) {
+                        return "package-installed-outdated"
+                    } else {
+                        // then it's ExactEntryId and we want to probably just ignore that
+                    }
+                }
+                Kirigami.Action {
+                    icon.name: "package-available"
+                    text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show All Entries")
+                    checkable: true
+                    checked: newStuffEngine.filter === 0
+                    onTriggered: { newStuffEngine.filter = 0; }
+                    QtControls.ActionGroup.group: viewFilterActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "package-installed-updated"
+                    text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
+                    checkable: true
+                    checked: newStuffEngine.filter === 1
+                    onTriggered: { newStuffEngine.filter = 1; }
+                    QtControls.ActionGroup.group: viewFilterActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "package-installed-outdated"
+                    text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
+                    checkable: true
+                    checked: newStuffEngine.filter === 2
+                    onTriggered: { newStuffEngine.filter = 2; }
+                    QtControls.ActionGroup.group: viewFilterActionGroup
+                }
+            },
+            Kirigami.Action {
+                text: {
+                    if (newStuffEngine.sortOrder === 0) {
+                        return i18nd("knewstuff5", "Recent");
+                    } else if (newStuffEngine.sortOrder === 1) {
+                        return i18nd("knewstuff5", "Alphabetical");
+                    } else if (newStuffEngine.sortOrder === 2) {
+                        return i18nd("knewstuff5", "Rating");
+                    } else if (newStuffEngine.sortOrder === 3) {
+                        return i18nd("knewstuff5", "Downloads");
+                    } else {
+                    }
+                }
+                checkable: false
+                icon.name: {
+                    if (newStuffEngine.sortOrder === 0) {
+                        return "change-date-symbolic";
+                    } else if (newStuffEngine.sortOrder === 1) {
+                        return "sort-name";
+                    } else if (newStuffEngine.sortOrder === 2) {
+                        return "rating";
+                    } else if (newStuffEngine.sortOrder === 3) {
+                        return "download";
+                    } else {
+                    }
+                }
+                Kirigami.Action {
+                    icon.name: "change-date-symbolic"
+                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
+                    checkable: true
+                    checked: newStuffEngine.sortOrder === 0
+                    onTriggered: { newStuffEngine.sortOrder = 0; }
+                    QtControls.ActionGroup.group: viewSortingActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "sort-name"
+                    text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
+                    checkable: true
+                    checked: newStuffEngine.sortOrder === 1
+                    onTriggered: { newStuffEngine.sortOrder = 1; }
+                    QtControls.ActionGroup.group: viewSortingActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "rating"
+                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
+                    checkable: true
+                    checked: newStuffEngine.sortOrder === 2
+                    onTriggered: { newStuffEngine.sortOrder = 2; }
+                    QtControls.ActionGroup.group: viewSortingActionGroup
+                }
+                Kirigami.Action {
+                    icon.name: "download"
+                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
+                    checkable: true
+                    checked: newStuffEngine.sortOrder === 3
+                    onTriggered: { newStuffEngine.sortOrder = 3; }
+                    QtControls.ActionGroup.group: viewSortingActionGroup
+                }
+            },
+            Kirigami.Action {
+                text: i18nd("knewstuff5", "Search...")
+                iconName: "system-search";
+                displayComponent: Kirigami.SearchField {
+                    id: searchField
+                    focusSequence: "Ctrl+F"
+                    placeholderText: i18nd("knewstuff5", "Search...")
+                    onAccepted: { newStuffEngine.searchTerm = searchField.text; }
+                }
             }
-            enabled: filterCombo.currentIndex === 0
-        }
+        ]
     }
 
-    footer: QtLayouts.RowLayout {
+    // Only show this footer when there are multiple categories
+    // nb: This would be more sensibly done by just setting the footer item visibility,
+    // but that causes holes in the layout. This works, however, so we'll just deal with that.
+    footer: categoriesCombo.count > 2 ? categoriesFooter : null
+    readonly property Item categoriesFooter: QtLayouts.RowLayout {
+        width: parent ? parent.width - Kirigami.Units.smallSpacing * 2 : 0
+        x: Kirigami.Units.smallSpacing // Not super keen on this, but it's what the Page does for moving stuff around internally, so let's be consistent...
         QtControls.Label {
-            text: i18n("Show:")
+            text: i18nd("knewstuff5", "Category:")
         }
         QtControls.ComboBox {
             id: categoriesCombo
             QtLayouts.Layout.fillWidth: true
-            // Only show this combobox when there are multiple categories
-            visible: count > 2
             model: newStuffEngine.categories
             textRole: "displayName"
             onCurrentIndexChanged: {
                 newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
-            }
-        }
-        QtControls.ComboBox {
-            id: filterCombo
-            QtLayouts.Layout.fillWidth: true
-            model: ListModel {}
-            Component.onCompleted: {
-                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Everything") });
-                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Installed Only") });
-                filterCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Updateable Only") });
-                filterCombo.currentIndex = newStuffEngine.filter;
-            }
-            onCurrentIndexChanged: {
-                newStuffEngine.filter = currentIndex;
-            }
-        }
-        QtControls.ComboBox {
-            id: sortCombo
-            QtLayouts.Layout.fillWidth: true
-            model: ListModel { }
-            Component.onCompleted: {
-                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Most recent first") });
-                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "A-Z") });
-                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Highest rated first") });
-                sortCombo.model.append({ text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Most downloaded first") });
-                sortCombo.currentIndex = newStuffEngine.sortOrder;
-            }
-            onCurrentIndexChanged: {
-                newStuffEngine.sortOrder = currentIndex;
             }
         }
     }

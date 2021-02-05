@@ -208,7 +208,7 @@ void Engine::resetCategoriesFilter()
 int Engine::filter() const
 {
     if (d->engine) {
-        d->engine->filter();
+        return d->engine->filter();
     }
     return 0;
 }

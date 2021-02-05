@@ -70,4 +70,7 @@ Kirigami.ApplicationItem {
         onMessage: component.showPassiveNotification(message);
         onIdleMessage: component.showPassiveNotification(message);
     }
+    contextDrawer: Kirigami.ContextDrawer {
+        id: contextDrawer
+    }
 }
