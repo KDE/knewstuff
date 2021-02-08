@@ -15,7 +15,7 @@ set(KNewStuff_SRCS
 )
 # Exclude deprecated classes from the build
 if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND
-   NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.80)
+        EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.80.0)
 list(APPEND KNewStuff_SRCS
         downloaddialog.cpp
         downloadwidget.cpp
