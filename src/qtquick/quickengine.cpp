@@ -23,6 +23,7 @@ public:
     {}
     KNSCore::Engine *engine;
     bool isLoading{false};
+    bool isValid{false};
     CategoriesModel *categoriesModel;
     QString configFile;
 
@@ -135,7 +136,7 @@ void Engine::setConfigFile(const QString &newFile)
                 Q_EMIT sortOrderChanged();
                 Q_EMIT searchTermChanged();
             }
-            d->engine->init(d->configFile);
+            d->isValid = d->engine->init(d->configFile);
             Q_EMIT engineInitialized();
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
@@ -247,7 +248,7 @@ QString Engine::searchTerm() const
 
 void Engine::setSearchTerm(const QString &newSearchTerm)
 {
-    if (d->engine && d->engine->searchTerm() != newSearchTerm) {
+    if (d->engine && d->isValid && d->engine->searchTerm() != newSearchTerm) {
         d->engine->setSearchTerm(newSearchTerm);
         Q_EMIT searchTermChanged();
     }
