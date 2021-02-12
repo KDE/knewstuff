@@ -327,6 +327,7 @@ KCM.GridViewKCM {
                 text: i18nd("knewstuff5", "Search...")
                 iconName: "system-search";
                 displayComponent: Kirigami.SearchField {
+                    enabled: engine.isValid
                     id: searchField
                     focusSequence: "Ctrl+F"
                     placeholderText: i18nd("knewstuff5", "Search...")
@@ -412,7 +413,7 @@ KCM.GridViewKCM {
                 bottom: parent.verticalCenter
                 bottomMargin: Kirigami.Units.largeSpacing
             }
-            running: newStuffEngine.isLoading || newStuffModel.isLoadingData
+            running: (newStuffEngine.isLoading || newStuffModel.isLoadingData)  && newStuffEngine.isValid
         }
         QtControls.Label {
             anchors {

@@ -274,3 +274,7 @@ void Engine::resetChangedEntries()
     d->changedEntries.clear();
     Q_EMIT changedEntriesChanged();
 }
+bool Engine::isValid()
+{
+    return d->isValid;
+}

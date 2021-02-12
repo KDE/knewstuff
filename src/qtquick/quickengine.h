@@ -40,6 +40,7 @@ class Engine : public QObject
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(QQmlListProperty<KNSCore::EntryWrapper> changedEntries READ changedEntries NOTIFY changedEntriesChanged)
     Q_PROPERTY(int changedEntriesCount READ changedEntriesCount NOTIFY changedEntriesChanged)
+    Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
 public:
     explicit Engine(QObject *parent = nullptr);
     virtual ~Engine();
@@ -93,6 +94,8 @@ public:
     Q_INVOKABLE void resetChangedEntries();
     Q_SIGNAL void changedEntriesChanged();
     int changedEntriesCount() const;
+
+    bool isValid();
 Q_SIGNALS:
     void message(const QString &message);
     void idleMessage(const QString &message);
