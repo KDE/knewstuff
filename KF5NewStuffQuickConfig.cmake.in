@@ -1,4 +1,4 @@
 @PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
-find_dependency(KF5NewStuffCore "@KF5_VERSION@")
+find_dependency(KF5NewStuffCore "@KF_VERSION@")

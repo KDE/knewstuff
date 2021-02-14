@@ -55,7 +55,7 @@ ecm_generate_export_header(KF5NewStuffCore
     EXPORT_FILE_NAME knewstuffcore_export.h
     BASE_NAME KNewStuffCore
     GROUP_BASE_NAME KF
-    VERSION ${KF5_VERSION}
+    VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
     DEPRECATION_VERSIONS 5.31 5.36 5.53 5.71 5.74 5.77
@@ -128,7 +128,7 @@ if(BUILD_QCH)
         KF5NewStuffCore_QCH
         NAME KNewStuffCore
         BASE_NAME KF5NewStuffCore
-        VERSION ${KF5_VERSION}
+        VERSION ${KF_VERSION}
         ORG_DOMAIN org.kde
         SOURCES ${KNewStuffCore_HEADERS}
         LINK_QCHS
