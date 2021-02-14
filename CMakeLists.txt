@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(KF5_VERSION "5.79.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.79.0") # handled by release scripts
-project(KNewStuff VERSION ${KF5_VERSION})
+set(KF_VERSION "5.80.0") # handled by release scripts
+set(KF_DEP_VERSION "5.79.0") # handled by release scripts
+project(KNewStuff VERSION ${KF_VERSION})
 
 # Require at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -24,19 +24,19 @@ set(REQUIRED_QT_VERSION 5.14.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Widgets Xml)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
 
-find_package(KF5Archive ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5CoreAddons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5KIO ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5ItemViews ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Package ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5TextWidgets ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5Archive ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Completion ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Config ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5CoreAddons ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5I18n ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5IconThemes ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5KIO ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5ItemViews ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Package ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Service ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5XmlGui ${KF_DEP_VERSION} REQUIRED)
 
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
@@ -44,7 +44,7 @@ include(ECMGenerateHeaders)
 include(ECMAddQch)
 include(KDEClangFormat)
 
-find_package(KF5Attica ${KF5_DEP_VERSION} CONFIG REQUIRED)
+find_package(KF5Attica ${KF_DEP_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
                        PURPOSE "Support for Get Hot New Stuff in KNewStuff"
                        URL "https://commits.kde.org/attica"
