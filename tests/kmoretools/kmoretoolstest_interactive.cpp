@@ -187,7 +187,7 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
         groupingNamesMenu->addAction(action);
 
         QObject::connect(action, &QAction::triggered, action,
-        [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() {
+        [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() { // clazy:exclude=lambda-in-connect
             auto groupingName = action->data().toString();
             QUrl url;
             if (!urlLineEdit->text().isEmpty()) {

@@ -93,7 +93,7 @@ public:
                     qCDebug(KNEWSTUFFCORE) << "Created job, now let's wait for it to do its thing...";
                     job->setAutoDelete(false);
                     QEventLoop loop;
-                    connect(job.get(), &KJob::result, this, [&loop,&errordescription](KJob* job){
+                    connect(job.get(), &KJob::result, this, [&loop,&errordescription](KJob* job){ // clazy:exclude=lambda-in-connect
                         errordescription = job->errorText();
                         loop.exit(job->error());
                     }, Qt::BlockingQueuedConnection);

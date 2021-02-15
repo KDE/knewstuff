@@ -55,6 +55,7 @@ KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
     : d(new KMoreToolsMenuFactoryPrivate())
 {
     d->kmt = new KMoreTools(uniqueId);
+    Q_UNUSED(m_off)
 }
 
 KMoreToolsMenuFactory::~KMoreToolsMenuFactory()

@@ -92,5 +92,3 @@ QList<KNSCore::EntryInternal> QtQuickDialogWrapper::exec()
     loop.exec();
     return d->changedEntries;
 }
-
-#include "qtquickdialogwrapper.moc"
