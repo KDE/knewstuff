@@ -100,6 +100,7 @@ KNSCore::CommentsModel::~CommentsModel()
 
 QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
 {
+    // clang-format off
     static const QHash<int, QByteArray> roles{
         {IdRole, "id"},
         {SubjectRole, "subject"},
@@ -111,6 +112,7 @@ QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
         {ParentIndexRole, "parentIndex"},
         {DepthRole, "depth"}
     };
+    // clang-format on
     return roles;
 }
 
@@ -162,8 +164,8 @@ QVariant KNSCore::CommentsModel::data(const QModelIndex &index, int role) const
                         }
                     }
                     value.setValue(depth);
+                    break;
                 }
-                break;
             default:
                 value.setValue(i18nc("The value returned for an unknown role when requesting data from the model.", "Unknown CommentsModel role"));
                 break;

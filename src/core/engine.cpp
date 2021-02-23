@@ -127,7 +127,7 @@ public:
     bool shouldRemoveDeletedEntries = false;
     KNSCore::Provider::SearchRequest storedRequest;
 
-    // Used for updating purposes - we ought to be saving this information, but we also have to deal with old stuff, and so... this will have to do for now, and so
+    // Used for updating purposes - we ought to be saving this information, but we also have to deal with old stuff, and so... this will have to do for now
     // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
     QMap<EntryInternal, QStringList> payloads;
     QMap<EntryInternal, QString> payloadToIdentify;

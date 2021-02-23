@@ -408,7 +408,8 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
     Attica::Person person = job->result();
 
     auto author = std::make_shared<KNSCore::Author>();
-    author->setId(job->property("username").toString()); // This is a touch hack-like, but it ensures we actually have the data in case it is not returned by the server
+    // This is a touch hack-like, but it ensures we actually have the data in case it is not returned by the server
+    author->setId(job->property("username").toString());
     author->setName(QStringLiteral("%1 %2").arg(person.firstName(), person.lastName()).trimmed());
     author->setHomepage(person.homepage());
     author->setProfilepage(person.extendedAttribute(QStringLiteral("profilepage")));
@@ -448,7 +449,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     } else {
         qCDebug(KNEWSTUFFCORE) << "You don't have enough money on your account!"
                << content.downloadUrlDescription(0).priceAmount() << " balance: " << item.balance();
-        Q_EMIT signalInformation(i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2",
+        Q_EMIT signalInformation(i18n("Your account balance is too low:\nYour balance: %1\nPrice: %2", //
                                      item.balance(), content.downloadUrlDescription(0).priceAmount()));
     }
 }

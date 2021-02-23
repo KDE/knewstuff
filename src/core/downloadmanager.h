@@ -40,8 +40,10 @@ public:
      *
      * @param parent the parent of the dialog
      */
+    // clang-format off
     KNEWSTUFF_DEPRECATED_VERSION(5, 79, "Use KNSCore::Cache for details on installed entries, or KNSCore::Engine directly for update and installation functionality")
     explicit DownloadManager(QObject *parent = nullptr);
+    // clang-format on
 
     /**
      * Create a DownloadManager. Manually specifying the name of the .knsrc file.
@@ -49,8 +51,10 @@ public:
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
      */
+    // clang-format off
     KNEWSTUFF_DEPRECATED_VERSION(5, 79, "Use KNSCore::Cache for details on installed entries, or KNSCore::Engine directly for update and installation functionality")
     explicit DownloadManager(const QString &configFile, QObject *parent = nullptr);
+    // clang-format on
 
     /**
      * destructor

@@ -114,6 +114,7 @@ ItemsModel::~ItemsModel()
 
 QHash<int, QByteArray> ItemsModel::roleNames() const
 {
+    // clang-format off
     static const QHash<int, QByteArray> roles = QHash<int, QByteArray>{
         {Qt::DisplayRole, "display"},
         {NameRole, "name"},
@@ -147,6 +148,7 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {SourceRole, "source"},
         {StatusRole, "status"}
     };
+    // clang-format on
     return roles;
 }
 

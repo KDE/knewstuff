@@ -99,6 +99,7 @@ bool Installation::readConfig(const KConfigGroup &group)
     // with the new, internal stuff. The result unfortunately is that all entries marked as
     // installed in knewstuff no longer will be, but since it never worked right anyway... we'll
     // simply have to live with that.
+    // clang-format off
     if (postInstallationCommand.startsWith(QLatin1String("kpackagetool5 -t")) &&
             postInstallationCommand.endsWith(QLatin1String("-i %f")) &&
             uninstallCommand.startsWith(QLatin1String("kpackagetool5 -t")) &&
@@ -118,6 +119,7 @@ bool Installation::readConfig(const KConfigGroup &group)
         setProperty("kpackageType", uninstallCommand.mid(21, uninstallCommand.length() - 21 - 12));
         qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
     }
+    // clang-format on
 #endif
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
     customName = group.readEntry("CustomName", false);
@@ -543,6 +545,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
             if (mimeType.inherits(QStringLiteral("application/zip"))) {
                 archive.reset(new KZip(payloadfile));
+                // clang-format off
             } else if (mimeType.inherits(QStringLiteral("application/tar"))
                     || mimeType.inherits(QStringLiteral("application/x-gzip"))
                     || mimeType.inherits(QStringLiteral("application/x-bzip"))
@@ -550,6 +553,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     || mimeType.inherits(QStringLiteral("application/x-xz"))
                     || mimeType.inherits(QStringLiteral("application/x-bzip-compressed-tar"))
                     || mimeType.inherits(QStringLiteral("application/x-compressed-tar"))) {
+                // clang-format on
                 archive.reset(new KTar(payloadfile));
             } else {
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
@@ -685,17 +689,19 @@ QProcess* Installation::runPostInstallationCommand(const QString &installPath)
     qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
 
     QProcess* ret = new QProcess(this);
-    connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, [this, command, ret](int exitcode, QProcess::ExitStatus status) {
+    auto onProcessFinished = [this, command, ret](int exitcode, QProcess::ExitStatus status) {
         const QString output{QString::fromLocal8Bit(ret->readAllStandardError())};
         if (status == QProcess::CrashExit) {
-            Q_EMIT signalInstallationError(i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output));
+            QString errorMessage = i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output);
+            Q_EMIT signalInstallationError(errorMessage);
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
             Q_EMIT signalInstallationError(i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3", exitcode, command, output));
             qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
         }
         sender()->deleteLater();
-    });
+    };
+    connect(ret, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, onProcessFinished);
 
     QStringList args = KShell::splitArgs(command);
     ret->setProgram(args.takeFirst());
@@ -861,8 +867,7 @@ void Installation::uninstall(EntryInternal entry)
                     const QString program = args.takeFirst();
                     QProcess *process = new QProcess(this);
                     process->start(program, args);
-                    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
-                    [this, command, process, entry, deleteFilesAndMarkAsUninstalled](int, QProcess::ExitStatus status) {
+                    auto onProcessFinished = [this, command, process, entry, deleteFilesAndMarkAsUninstalled](int, QProcess::ExitStatus status) {
                         if (status == QProcess::CrashExit) {
                             const QString processOutput = QString::fromLocal8Bit(process->readAllStandardError());
                             const QString err = i18n("The uninstallation process failed to successfully run the command %1\n"
@@ -885,7 +890,8 @@ void Installation::uninstall(EntryInternal entry)
                             qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
                         }
                         deleteFilesAndMarkAsUninstalled();
-                    });
+                    };
+                    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, onProcessFinished);
                 }
             }
             // If the entry got deleted, but the RemoveDeadEntries option was not selected this case can happen

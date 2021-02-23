@@ -33,7 +33,7 @@ public:
 KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
 {
     static QHash<QString, KmtServiceInfo> dict;
-
+    // clang-format off
 #define ADD_ENTRY(desktopEntryName, maxUrlArgCount, homepageUrl, appstreamUrl) dict.insert(desktopEntryName, KmtServiceInfo(desktopEntryName, homepageUrl, maxUrlArgCount, appstreamUrl));
 
     //
@@ -86,6 +86,7 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     //
 
 #undef ADD_ENTRY
+    // clang-format on
 
     auto iter = dict.constFind(desktopEntryName);
     if (iter != dict.constEnd()) {
@@ -130,6 +131,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     //
     // grouping definitions begin (sorted alphabetically):
     //
+    // clang-format off
     dict.insert(_("disk-usage"), { _("org.kde.kdf"), _("org.kde.filelight") });
     dict.insert(_("disk-partitions"), { _("gparted"), _("org.kde.partitionmanager"), _("disk") });
     dict.insert(_("files-find"), { _("org.kde.kfind"), _("fsearch"), _("more:"), _("gnome-search-tool"), _("catfish"), _("angrysearch") });
@@ -149,6 +151,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     //
     // ...grouping definitions end
     //
+    // clang-format on
 
     QList<KMoreToolsService*> resultList;
     QSet<QString> alreadyUsedDesktopEntryNames; // including the "more:" keyword
