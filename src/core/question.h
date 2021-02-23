@@ -89,10 +89,11 @@ public:
      */
     void setResponse(const QString &response);
     QString response() const;
+
 private:
     class Private;
-    Private* d;
+    Private *d;
 };
 }
 
-#endif//KNS3_QUESTION_H
+#endif // KNS3_QUESTION_H

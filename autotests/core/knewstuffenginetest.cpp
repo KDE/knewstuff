@@ -5,19 +5,18 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-
+#include <QSignalSpy>
 #include <QTest>
 #include <QtGlobal>
-#include <QSignalSpy>
 
 #include "core/engine.h"
 #include "core/entryinternal.h"
 
 using namespace KNSCore;
 
-class EngineTest: public QObject
+class EngineTest : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     Engine *engine = nullptr;
     const QString dataDir = QStringLiteral(DATA_DIR);
@@ -54,8 +53,14 @@ void EngineTest::testProviderFileLoading()
     QCOMPARE(engine->defaultProvider(), provider);
 
     KNSCore::EntryInternal::List list;
-    connect(engine, &Engine::signalEntriesLoaded, this,
-            [&list](const KNSCore::EntryInternal::List &loaded){ list = loaded; }, Qt::DirectConnection);
+    connect(
+        engine,
+        &Engine::signalEntriesLoaded,
+        this,
+        [&list](const KNSCore::EntryInternal::List &loaded) {
+            list = loaded;
+        },
+        Qt::DirectConnection);
 
     engine->setSearchTerm(QStringLiteral("Entry 4"));
     QSignalSpy spy(engine, &Engine::signalEntriesLoaded);

@@ -17,9 +17,13 @@ class KmtServiceInfo
 {
 public:
     KmtServiceInfo(const QString &desktopEntryName, const QString &homepageUrl, int maxUrlArgCount, const QString &appstreamId)
-        : desktopEntryName(desktopEntryName), homepageUrl(homepageUrl), maxUrlArgCount(maxUrlArgCount), appstreamId(appstreamId)
+        : desktopEntryName(desktopEntryName)
+        , homepageUrl(homepageUrl)
+        , maxUrlArgCount(maxUrlArgCount)
+        , appstreamId(appstreamId)
     {
     }
+
 public:
     QString desktopEntryName;
     QString homepageUrl;
@@ -30,7 +34,7 @@ public:
 //
 // todo later: add a property "maturity" with values "stable" > "new" > "incubating" or similar
 //
-KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools* kmt, const QString& desktopEntryName)
+KMoreToolsService *KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreTools *kmt, const QString &desktopEntryName)
 {
     static QHash<QString, KmtServiceInfo> dict;
     // clang-format off
@@ -92,8 +96,8 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     if (iter != dict.constEnd()) {
         auto kmtServiceInfo = *iter;
         const QString subdir = QStringLiteral("presets-kmoretools");
-        auto serviceLocatingMode = desktopEntryName.endsWith(QLatin1String(".kmt-edition")) ?
-                                   KMoreTools::ServiceLocatingMode_ByProvidedExecLine : KMoreTools::ServiceLocatingMode_Default;
+        auto serviceLocatingMode = desktopEntryName.endsWith(QLatin1String(".kmt-edition")) ? KMoreTools::ServiceLocatingMode_ByProvidedExecLine
+                                                                                            : KMoreTools::ServiceLocatingMode_Default;
         auto service = kmt->registerServiceByDesktopEntryName(desktopEntryName, subdir, serviceLocatingMode);
         if (service) { // We might get nullptr in case of missing or broken .desktop files
             service->setHomepageUrl(QUrl(kmtServiceInfo.homepageUrl));
@@ -107,13 +111,14 @@ KMoreToolsService* KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     }
 }
 
-QList<KMoreToolsService*> KMoreToolsPresets::registerServicesByGroupingNames(KMoreTools* kmt, const QStringList& groupingNames)
+QList<KMoreToolsService *> KMoreToolsPresets::registerServicesByGroupingNames(KMoreTools *kmt, const QStringList &groupingNames)
 {
     QString firstMoreSectionDesktopEntryName;
     return KMoreToolsPresetsPrivate::registerServicesByGroupingNames(&firstMoreSectionDesktopEntryName, kmt, groupingNames);
 }
 
-QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNames(QString* firstMoreSectionDesktopEntryName, KMoreTools* kmt, const QStringList& groupingNames)
+QList<KMoreToolsService *>
+KMoreToolsPresetsPrivate::registerServicesByGroupingNames(QString *firstMoreSectionDesktopEntryName, KMoreTools *kmt, const QStringList &groupingNames)
 {
     static QHash<QString, QList<QString>> dict;
 
@@ -153,7 +158,7 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     //
     // clang-format on
 
-    QList<KMoreToolsService*> resultList;
+    QList<KMoreToolsService *> resultList;
     QSet<QString> alreadyUsedDesktopEntryNames; // including the "more:" keyword
     bool nextIsMore = false;
 
@@ -184,10 +189,9 @@ QList<KMoreToolsService*> KMoreToolsPresetsPrivate::registerServicesByGroupingNa
     }
 
     if (resultList.isEmpty()) {
-        qCWarning(KNEWSTUFF) << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames << ". Nothing found in this groupings. HINT: check for invalid grouping names.";
+        qCWarning(KNEWSTUFF) << "KMoreToolsPresets::registerServicesByGroupingName: " << groupingNames
+                             << ". Nothing found in this groupings. HINT: check for invalid grouping names.";
     }
 
     return resultList;
 }
-
-

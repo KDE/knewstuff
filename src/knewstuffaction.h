@@ -36,11 +36,7 @@ namespace KNS3
  * @deprecated Since 5.78, create the QAction instance manually.
  */
 KNEWSTUFF_DEPRECATED_VERSION(5, 78, "Create the QAction instance manually")
-KNEWSTUFF_EXPORT QAction *standardAction(const QString &what,
-        const QObject *receiver,
-        const char *slot,
-        KActionCollection *parent,
-        const char *name = nullptr);
+KNEWSTUFF_EXPORT QAction *standardAction(const QString &what, const QObject *receiver, const char *slot, KActionCollection *parent, const char *name = nullptr);
 #endif
 
 #if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 78)
@@ -60,11 +56,8 @@ KNEWSTUFF_EXPORT QAction *standardAction(const QString &what,
  * @deprecated Since 5.78, create the QAction instance manually.
  */
 KNEWSTUFF_DEPRECATED_VERSION(5, 78, "Create the QAction instance manually")
-KNEWSTUFF_EXPORT QAction *standardActionUpload(const QString &what,
-        const QObject *receiver,
-        const char *slot,
-        KActionCollection *parent,
-        const char *name = nullptr);
+KNEWSTUFF_EXPORT QAction *
+standardActionUpload(const QString &what, const QObject *receiver, const char *slot, KActionCollection *parent, const char *name = nullptr);
 #endif
 }
 

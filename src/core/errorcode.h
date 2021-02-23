@@ -5,7 +5,6 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-
 #ifndef KNSCORE_ERRORCODE_H
 #define KNSCORE_ERRORCODE_H
 
@@ -14,7 +13,7 @@
 
 namespace KNSCore
 {
-    KNEWSTUFFCORE_EXPORT Q_NAMESPACE
+KNEWSTUFFCORE_EXPORT Q_NAMESPACE
     /**
      * An enumeration of specific error conditions which might occur and which
      * users of KNewStuff would want to react to. It is used by both the Engine and
@@ -31,7 +30,7 @@ namespace KNSCore
         InstallationError, ///< Installation of a content item has failed. If known, the entry's unique ID will be the metadata
         ImageError, ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
         AdoptionError, ///< Adopting one entry has failed. The adoption command will be in the metadata as a QVariantList.
-};
-    Q_ENUM_NS(ErrorCode)
+    };
+Q_ENUM_NS(ErrorCode)
 }
-#endif//KNSCORE_ERRORCODE_H
+#endif // KNSCORE_ERRORCODE_H

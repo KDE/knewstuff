@@ -12,25 +12,28 @@
 #include <KConfigGroup>
 #include <QDir>
 
-class KNSRCModel::Private {
+class KNSRCModel::Private
+{
 public:
     struct Entry {
         QString name;
         QString filePath;
     };
-    Private(KNSRCModel* qq)
+    Private(KNSRCModel *qq)
         : q(qq)
-    {}
-    KNSRCModel* q;
+    {
+    }
+    KNSRCModel *q;
     QUrl folder;
-    QList<Entry*> entries;
+    QList<Entry *> entries;
 
-    void refreshEntries() {
+    void refreshEntries()
+    {
         q->beginResetModel();
         qDeleteAll(entries);
         entries.clear();
         QDir configDir(folder.toLocalFile());
-        for(const QFileInfo& file : configDir.entryInfoList(QDir::Files)) {
+        for (const QFileInfo &file : configDir.entryInfoList(QDir::Files)) {
             KConfig conf(file.absoluteFilePath());
             KConfigGroup group;
             if (conf.hasGroup("KNewStuff3")) {
@@ -42,7 +45,7 @@ public:
                 continue;
             }
 
-            Entry* entry = new Entry;
+            Entry *entry = new Entry;
             entry->name = group.readEntry("Name", file.baseName());
             entry->filePath = file.absoluteFilePath();
             entries << entry;
@@ -51,7 +54,7 @@ public:
     }
 };
 
-KNSRCModel::KNSRCModel(QObject* parent)
+KNSRCModel::KNSRCModel(QObject *parent)
     : QAbstractListModel(parent)
     , d(new Private(this))
 {
@@ -64,35 +67,32 @@ KNSRCModel::~KNSRCModel()
 
 QHash<int, QByteArray> KNSRCModel::roleNames() const
 {
-    static const QHash<int, QByteArray> roleNames{
-        {NameRole, "name"},
-        {FilePathRole, "filePath"}
-    };
+    static const QHash<int, QByteArray> roleNames{{NameRole, "name"}, {FilePathRole, "filePath"}};
     return roleNames;
 }
 
-int KNSRCModel::rowCount(const QModelIndex& parent) const
+int KNSRCModel::rowCount(const QModelIndex &parent) const
 {
-    if(parent.isValid()) {
+    if (parent.isValid()) {
         return 0;
     }
     return d->entries.count();
 }
 
-QVariant KNSRCModel::data(const QModelIndex& index, int role) const
+QVariant KNSRCModel::data(const QModelIndex &index, int role) const
 {
     QVariant result;
-    if(checkIndex(index)) {
-        Private::Entry* entry = d->entries[index.row()];
-        switch(role) {
-            case NameRole:
-                result.setValue(entry->name);
-                break;
-            case FilePathRole:
-                result.setValue(entry->filePath);
-                break;
-            default:
-                break;
+    if (checkIndex(index)) {
+        Private::Entry *entry = d->entries[index.row()];
+        switch (role) {
+        case NameRole:
+            result.setValue(entry->name);
+            break;
+        case FilePathRole:
+            result.setValue(entry->filePath);
+            break;
+        default:
+            break;
         }
     }
     return result;
@@ -103,9 +103,9 @@ QUrl KNSRCModel::folder() const
     return d->folder;
 }
 
-void KNSRCModel::setFolder(const QUrl& folder)
+void KNSRCModel::setFolder(const QUrl &folder)
 {
-    if(d->folder != folder) {
+    if (d->folder != folder) {
         d->folder = folder;
         d->refreshEntries();
         Q_EMIT folderChanged();

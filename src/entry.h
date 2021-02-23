@@ -10,12 +10,15 @@
 #ifndef KNEWSTUFF3_KNEWSTUFFENTRY_H
 #define KNEWSTUFF3_KNEWSTUFFENTRY_H
 
-#include <QStringList>
-#include <QSharedDataPointer>
 #include <QLoggingCategory>
+#include <QSharedDataPointer>
+#include <QStringList>
 
 #include "knewstuff_export.h"
-namespace KNSCore { class EntryInternal; }
+namespace KNSCore
+{
+class EntryInternal;
+}
 namespace KNS3
 {
 class EntryPrivate;
@@ -35,14 +38,14 @@ public:
     typedef QList<Entry> List;
 
     /**
-    * Status of the entry. An entry will be downloadable from the provider's
-    * site prior to the download. Once downloaded and installed, it will
-    * be either installed or updateable, implying an out-of-date
-    * installation. Finally, the entry can be deleted and hence show up as
-    * downloadable again.
-    * Entries not taking part in this cycle, for example those in upload,
-    * have an invalid status.
-    */
+     * Status of the entry. An entry will be downloadable from the provider's
+     * site prior to the download. Once downloaded and installed, it will
+     * be either installed or updateable, implying an out-of-date
+     * installation. Finally, the entry can be deleted and hence show up as
+     * downloadable again.
+     * Entries not taking part in this cycle, for example those in upload,
+     * have an invalid status.
+     */
     enum Status {
         Invalid,
         Downloadable,
@@ -91,26 +94,26 @@ public:
     Status status() const;
 
     /**
-    * Retrieve the license name of the object.
-    *
-    * @return object license
-    */
+     * Retrieve the license name of the object.
+     *
+     * @return object license
+     */
     QString license() const;
 
     /**
-    * Retrieve a short description about the object.
-    *
-    * @return object description
-    */
+     * Retrieve a short description about the object.
+     *
+     * @return object description
+     */
     QString summary() const;
 
     /**
-    * Retrieve the version string of the object.
-    *
-    * @return object version
-    *
-    * @sa installedVersion()
-    */
+     * Retrieve the version string of the object.
+     *
+     * @return object version
+     *
+     * @sa installedVersion()
+     */
     QString version() const;
 
     /**

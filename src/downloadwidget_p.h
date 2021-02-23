@@ -13,13 +13,13 @@
 #ifndef KNEWSTUFF3_UI_DOWNLOADWIDGET_P_H
 #define KNEWSTUFF3_UI_DOWNLOADWIDGET_P_H
 
-#include <QTimer>
 #include <QListView>
+#include <QTimer>
 
 #include "core/itemsmodel.h"
 
-#include "ui/itemsviewbasedelegate_p.h"
 #include "ui/entrydetailsdialog_p.h"
+#include "ui/itemsviewbasedelegate_p.h"
 
 #include "ui_downloadwidget.h"
 
@@ -58,7 +58,7 @@ public:
     ~DownloadWidgetPrivate();
 
     void init(const QString &configFile);
-    void slotShowMessage(const QString& msg);
+    void slotShowMessage(const QString &msg);
     void displayMessage(const QString &msg, KTitleWidget::MessageType type, int timeOutMs = 0);
 
     void slotProvidersLoaded();

@@ -17,8 +17,8 @@ public:
      * If there is no such service @p firstMoreSectionDesktopEntryName
      * will not be changed.
      */
-    static QList<KMoreToolsService*> registerServicesByGroupingNames(
-        QString* firstMoreSectionDesktopEntryName, KMoreTools* kmt, const QStringList& groupingNames);
+    static QList<KMoreToolsService *>
+    registerServicesByGroupingNames(QString *firstMoreSectionDesktopEntryName, KMoreTools *kmt, const QStringList &groupingNames);
 };
 
 #endif

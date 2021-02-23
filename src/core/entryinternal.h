@@ -13,9 +13,9 @@
 
 #include <QDate>
 #include <QDomElement>
+#include <QImage>
 #include <QString>
 #include <QUrl>
-#include <QImage>
 
 #include "author.h"
 // This include only exists for the KNS3::Entry::Status enum
@@ -52,10 +52,10 @@ public:
     typedef QList<EntryInternal> List;
 
     /**
-    * Source of the entry, A entry's data is coming from either cache, or an online provider
-    * this helps the engine know which data to use when merging cached entries with online
-    * entry data
-    */
+     * Source of the entry, A entry's data is coming from either cache, or an online provider
+     * this helps the engine know which data to use when merging cached entries with online
+     * entry data
+     */
     enum Source {
         Cache,
         Online,
@@ -479,7 +479,7 @@ public:
      */
     bool setEntryXML(QXmlStreamReader &reader);
 
-//#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 36) // TODO This is still internally used and has not been fully ported
+    //#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 36) // TODO This is still internally used and has not been fully ported
     /**
      * set the xml for the entry
      * parses the xml and sets the private members accordingly
@@ -493,11 +493,11 @@ public:
      */
     KNEWSTUFFCORE_DEPRECATED_VERSION(5, 36, "Use EntryInternal::setEntryXML(QXmlStreamReader &)")
     bool setEntryXML(const QDomElement &xmldata);
-//#endif
+    //#endif
 
     /**
-    * get the xml string for the entry
-    */
+     * get the xml string for the entry
+     */
     QDomElement entryXML() const;
 
     /**
@@ -521,6 +521,7 @@ public:
     KNS3::Entry::Status status() const;
 
     static KNSCore::EntryInternal fromEntry(const KNS3::Entry &entry);
+
 private:
     class Private;
     QExplicitlySharedDataPointer<Private> d;

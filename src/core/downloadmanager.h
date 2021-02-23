@@ -8,8 +8,8 @@
 #ifndef KNSCORE_DownloadManager_H
 #define KNSCORE_DownloadManager_H
 
-#include "knewstuffcore_export.h"
 #include "entryinternal.h"
+#include "knewstuffcore_export.h"
 
 #if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 79)
 namespace KNSCore

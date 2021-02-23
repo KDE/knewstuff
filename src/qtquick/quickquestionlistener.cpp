@@ -13,25 +13,34 @@
 
 using namespace KNewStuffQuick;
 
-class QuickQuestionListenerHelper {
+class QuickQuestionListenerHelper
+{
 public:
-    QuickQuestionListenerHelper() : q(nullptr) {}
-    ~QuickQuestionListenerHelper() { }
+    QuickQuestionListenerHelper()
+        : q(nullptr)
+    {
+    }
+    ~QuickQuestionListenerHelper()
+    {
+    }
     QuickQuestionListenerHelper(const QuickQuestionListenerHelper &) = delete;
-    QuickQuestionListenerHelper& operator=(const QuickQuestionListenerHelper &) = delete;
+    QuickQuestionListenerHelper &operator=(const QuickQuestionListenerHelper &) = delete;
     QuickQuestionListener *q;
 };
 Q_GLOBAL_STATIC(QuickQuestionListenerHelper, s_kns3_quickQuestionListener)
 
-class QuickQuestionListener::Private {
+class QuickQuestionListener::Private
+{
 public:
-    Private() {}
+    Private()
+    {
+    }
     KNSCore::Question *question = nullptr;
 };
 
 QuickQuestionListener *QuickQuestionListener::instance()
 {
-    if(!s_kns3_quickQuestionListener()->q) {
+    if (!s_kns3_quickQuestionListener()->q) {
         new QuickQuestionListener;
     }
     return s_kns3_quickQuestionListener()->q;
@@ -56,8 +65,7 @@ QuickQuestionListener::~QuickQuestionListener()
 void QuickQuestionListener::askQuestion(KNSCore::Question *question)
 {
     d->question = question;
-    switch(question->questionType())
-    {
+    switch (question->questionType()) {
     case KNSCore::Question::SelectFromListQuestion:
         Q_EMIT askListQuestion(question->title(), question->question(), question->list());
         break;
@@ -82,8 +90,7 @@ void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue
     if (d->question) {
         if (responseIsContinue) {
             d->question->setResponse(input);
-            switch(d->question->questionType())
-            {
+            switch (d->question->questionType()) {
             case KNSCore::Question::ContinueCancelQuestion:
                 d->question->setResponse(KNSCore::Question::ContinueResponse);
                 break;
@@ -98,8 +105,7 @@ void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue
                 break;
             }
         } else {
-            switch(d->question->questionType())
-            {
+            switch (d->question->questionType()) {
             case KNSCore::Question::YesNoQuestion:
                 d->question->setResponse(KNSCore::Question::NoResponse);
                 break;

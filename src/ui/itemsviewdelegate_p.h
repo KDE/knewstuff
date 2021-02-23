@@ -14,8 +14,7 @@
 
 namespace KNS3
 {
-
-class ItemsViewDelegate: public ItemsViewBaseDelegate
+class ItemsViewDelegate : public ItemsViewBaseDelegate
 {
     Q_OBJECT
 public:
@@ -29,9 +28,7 @@ public:
     QList<QWidget *> createItemWidgets(const QModelIndex &index) const override;
 
     // update the widgets
-    void updateItemWidgets(const QList<QWidget *> widgets,
-                                   const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const override;
+    void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const override;
 
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };

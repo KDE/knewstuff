@@ -53,7 +53,7 @@ class ItemsModel : public QAbstractListModel
     /**
      * The NewStuffQuickEngine to show items from
      */
-    Q_PROPERTY(QObject* engine READ engine WRITE setEngine NOTIFY engineChanged)
+    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged)
     /**
      * Whether or not the model is fetching information from a remote location
      * @since 5.65
@@ -115,11 +115,11 @@ public:
     };
     Q_ENUM(LinkId)
 
-    QHash< int, QByteArray > roleNames() const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
-    bool canFetchMore(const QModelIndex & parent) const override;
-    void fetchMore(const QModelIndex & parent) override;
+    QHash<int, QByteArray> roleNames() const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    bool canFetchMore(const QModelIndex &parent) const override;
+    void fetchMore(const QModelIndex &parent) override;
 
     QObject *engine() const;
     void setEngine(QObject *newEngine);
@@ -133,7 +133,7 @@ public:
      * @see KNSCore::EntryInternal::uniqueId()
      * @since 5.79
      */
-    Q_INVOKABLE int indexOfEntryId(const QString& providerId, const QString& entryId);
+    Q_INVOKABLE int indexOfEntryId(const QString &providerId, const QString &entryId);
 
     /**
      * Whether or not the model is fetching information from a remote location
@@ -154,7 +154,8 @@ public:
      * the function will simply return without performing any actions)
      *
      * @param index The index of the item to install or update
-     * @param linkId The download item to install. If this is -1, it is assumed to be an update with an unknown payload, and a number of heuristics will be applied by the engine
+     * @param linkId The download item to install. If this is -1, it is assumed to be an update with an unknown payload, and a number of heuristics will be
+     * applied by the engine
      * @see Engine::downloadLinkLoaded implementation for details
      * @see LinkId
      */
@@ -197,10 +198,11 @@ public:
      * @param index The index of the item which has changed
      */
     Q_SIGNAL void entryChanged(int index);
+
 private:
     class Private;
     Private *d;
 };
 Q_DECLARE_METATYPE(ItemsModel::ItemStatus)
 
-#endif//ITEMSMODEL_H
+#endif // ITEMSMODEL_H

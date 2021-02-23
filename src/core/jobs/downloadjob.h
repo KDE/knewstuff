@@ -11,25 +11,25 @@
 
 namespace KNSCore
 {
-
 class DownloadJob : public FileCopyJob
 {
     Q_OBJECT
 public:
-    explicit DownloadJob(const QUrl& source, const QUrl& destination, int permissions=-1, JobFlags flags = DefaultFlags, QObject* parent = nullptr);
-    explicit DownloadJob(QObject* parent = nullptr);
+    explicit DownloadJob(const QUrl &source, const QUrl &destination, int permissions = -1, JobFlags flags = DefaultFlags, QObject *parent = nullptr);
+    explicit DownloadJob(QObject *parent = nullptr);
     ~DownloadJob() override;
 
     Q_SCRIPTABLE void start() override;
 
 protected Q_SLOTS:
     void handleWorkerCompleted();
-    void handleWorkerError(const QString& error);
+    void handleWorkerError(const QString &error);
+
 private:
     class Private;
-    Private* d;
+    Private *d;
 };
 
 }
 
-#endif//DOWNLOADJOB_H
+#endif // DOWNLOADJOB_H

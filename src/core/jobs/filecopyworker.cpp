@@ -10,14 +10,17 @@
 
 using namespace KNSCore;
 
-class FileCopyWorker::Private {
+class FileCopyWorker::Private
+{
 public:
-    Private() {}
+    Private()
+    {
+    }
     QFile source;
     QFile destination;
 };
 
-FileCopyWorker::FileCopyWorker(const QUrl& source, const QUrl& destination, QObject* parent)
+FileCopyWorker::FileCopyWorker(const QUrl &source, const QUrl &destination, QObject *parent)
     : QThread(parent)
     , d(new Private)
 {

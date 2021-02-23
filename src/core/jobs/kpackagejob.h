@@ -9,8 +9,8 @@
 
 #include <KCoreAddons/KJob>
 
-namespace KNSCore {
-
+namespace KNSCore
+{
 /**
  * @brief A job for performing basic actions on KPackage packages asynchronously
  *
@@ -47,7 +47,8 @@ public:
      * Create a job for removing the given installed package
      *
      * @param packageName The name to the package you wish to remove (this is the plugin name, not the full path name, e.g. The.Package.Name)
-     * @param packageRoot The full path name to the location the package is currently installed (e.g. /home/username/.share/plasma/desktoptheme/The.Package.Name)
+     * @param packageRoot The full path name to the location the package is currently installed (e.g.
+     * /home/username/.share/plasma/desktoptheme/The.Package.Name)
      * @param serviceType The name of the type of KPackage you intend to remove (e.g. Plasma/Theme)
      * @return A job which you can use to track the completion of the process (there will be useful details in error() and errorText() on failures)
      */
@@ -60,12 +61,13 @@ public:
      * @see KJob::start()
      */
     Q_SLOT void start() override;
+
 private:
-    explicit KPackageJob(QObject* parent = nullptr);
+    explicit KPackageJob(QObject *parent = nullptr);
     class Private;
-    Private* d;
+    Private *d;
 };
 
 }
 
-#endif//KPACKAGEJOB_H
+#endif // KPACKAGEJOB_H

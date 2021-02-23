@@ -34,12 +34,9 @@ int main(int argc, char **argv)
         }
         dialog->exec();
         delete dialog;
-    }
-    else
-    {
+    } else {
         std::cout << "Enter the knsrc file to use followed by a filename to upload\n";
         return -1;
     }
     return 0;
 }
-

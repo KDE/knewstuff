@@ -7,9 +7,9 @@
 #ifndef KNEWSTUFF_QTQUICKDIALOGWRAPPER_H
 #define KNEWSTUFF_QTQUICKDIALOGWRAPPER_H
 
-#include <QObject>
-#include <KNSCore/ErrorCode>
 #include <KNSCore/EntryInternal>
+#include <KNSCore/ErrorCode>
+#include <QObject>
 
 namespace KNSCore
 {
@@ -54,7 +54,7 @@ public:
      * Engine that is used by the dialog, might be null if the engine failed to initialize.
      * @return KNSCore::Engine used by the dialog
      */
-    KNSCore::Engine* engine();
+    KNSCore::Engine *engine();
 
 private:
     std::unique_ptr<QtQuickDialogWrapperPrivate> d;
@@ -63,5 +63,4 @@ private:
 };
 }
 
-
-#endif //KNEWSTUFF_QTQUICKDIALOGWRAPPER_H
+#endif // KNEWSTUFF_QTQUICKDIALOGWRAPPER_H

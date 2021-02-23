@@ -73,4 +73,4 @@ private:
 };
 }
 
-#endif//KNSQUICK_AUTHOR_H
+#endif // KNSQUICK_AUTHOR_H

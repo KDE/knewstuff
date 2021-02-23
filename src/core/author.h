@@ -32,8 +32,8 @@ class KNEWSTUFFCORE_EXPORT Author
 public:
     explicit Author();
     Author(const Author &other);
-    Author& operator=(const Author &other) = default;
-    Author& operator=(Author&&) = default;
+    Author &operator=(const Author &other) = default;
+    Author &operator=(Author &&) = default;
     ~Author();
 
     /**
@@ -129,6 +129,7 @@ public:
      * Set the user's description
      */
     void setDescription(const QString &description);
+
 private:
     QString mName;
     QString mEmail;

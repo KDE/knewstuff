@@ -7,9 +7,9 @@
 #ifndef KMORETOOLS_H
 #define KMORETOOLS_H
 
+#include <QMenu>
 #include <QString>
 #include <QUrl>
-#include <QMenu>
 
 #include <KService>
 
@@ -152,7 +152,7 @@ class KMoreToolsPrivate;
  * ----------
  * - question: KMoreTools::registerServiceByDesktopEntryName():
  *      - warn if service is not of Type=Application (KService::isApplication()) or just leave it?
-  * Add support for package managers to install software (e.g. muon discover)
+ * Add support for package managers to install software (e.g. muon discover)
  * - maybe: kmt-desktopfiles: add a config file that can configure the homepage URLs
  *   and e.g. the package name if needed for package manager support
  *
@@ -167,8 +167,7 @@ public:
     /**
      * Specify how should be determined if a service is installed or not
      */
-    enum ServiceLocatingMode
-    {
+    enum ServiceLocatingMode {
         /**
          * by existence of desktop file (discoverable by KService)
          */
@@ -184,8 +183,7 @@ public:
     /**
      * Specify where a menu item be placed by default
      */
-    enum MenuSection
-    {
+    enum MenuSection {
         /**
          * The item is placed in the main section (default)
          */
@@ -197,29 +195,28 @@ public:
         MenuSection_More,
     };
 
-//     /* *
-//      * todo/later: introduce when needed
-//      */
-//     enum NotInstalledSectionOption
-//     {
-//         /* *
-//          * default
-//          */
-//         NotInstalledSection_Show,
-//
-//         /* *
-//          * Even if there are non-installed apps the Not-Installed section will
-//          * not be shown
-//          */
-//         NotInstalledSection_Hide
-//     };
+    //     /* *
+    //      * todo/later: introduce when needed
+    //      */
+    //     enum NotInstalledSectionOption
+    //     {
+    //         /* *
+    //          * default
+    //          */
+    //         NotInstalledSection_Show,
+    //
+    //         /* *
+    //          * Even if there are non-installed apps the Not-Installed section will
+    //          * not be shown
+    //          */
+    //         NotInstalledSection_Hide
+    //     };
 
     /**
      * Specify if the Configure dialog be accessible from the menu
      * (via a "Configure..." menu item)
      */
-    enum ConfigureDialogAccessibleSetting
-    {
+    enum ConfigureDialogAccessibleSetting {
         /**
          * Always show the "Configure..." menu item
          * (default)
@@ -277,12 +274,12 @@ public:
      *
      * To use it, you need to add \verbatim include(KDEInstallDirs) \endverbatim to your CMakeLists.txt.
      */
-    explicit KMoreTools(const QString& uniqueId);
+    explicit KMoreTools(const QString &uniqueId);
 
     ~KMoreTools();
 
     KMoreTools(const KMoreTools &) = delete;
-    KMoreTools& operator=(const KMoreTools &) = delete;
+    KMoreTools &operator=(const KMoreTools &) = delete;
 
     /**
      * Registers a service with KMoreTools.
@@ -319,10 +316,9 @@ public:
      *         This kind of error must be fixed before you ship your application.
      *         This case is only used for unit tests.
      */
-    KMoreToolsService* registerServiceByDesktopEntryName(
-        const QString& desktopEntryName,
-        const QString& kmtDesktopfileSubdir = QString(),
-        ServiceLocatingMode serviceLocatingMode = ServiceLocatingMode_Default);
+    KMoreToolsService *registerServiceByDesktopEntryName(const QString &desktopEntryName,
+                                                         const QString &kmtDesktopfileSubdir = QString(),
+                                                         ServiceLocatingMode serviceLocatingMode = ServiceLocatingMode_Default);
 
     /**
      * @returns the interface to build the menu. It is a singleton instance
@@ -338,10 +334,10 @@ public:
      *
      * @sa KMoreToolsMenuBuilder::clear()
      */
-    KMoreToolsMenuBuilder* menuBuilder(const QString& userConfigPostfix = QString()) const;
+    KMoreToolsMenuBuilder *menuBuilder(const QString &userConfigPostfix = QString()) const;
 
 private:
-    KMoreToolsPrivate* d;
+    KMoreToolsPrivate *d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -367,7 +363,7 @@ public:
     ~KMoreToolsService();
 
     KMoreToolsService(const KMoreToolsService &) = delete;
-    KMoreToolsService& operator=(const KMoreToolsService &) = delete;
+    KMoreToolsService &operator=(const KMoreToolsService &) = delete;
 
     /**
      * @return the desktop entry name which the service is identified by and with which
@@ -418,7 +414,7 @@ public:
      * This way the user gets some information of how to install the
      * application.
      */
-    void setHomepageUrl(const QUrl& url);
+    void setHomepageUrl(const QUrl &url);
 
     /**
      * @see setMaxUrlArgCount()
@@ -454,7 +450,7 @@ public:
      * @sa KMoreToolsMenuItem::setInitialItemText
      * @sa KMoreToolsMenuBuilder::setInitialItemTextTemplate
      */
-    QString formatString(const QString& formatString) const;
+    QString formatString(const QString &formatString) const;
 
     /**
      * 1. Icon from installed desktop file
@@ -472,7 +468,7 @@ public:
      *
      * @see KService::setExec(...)
      */
-    void setExec(const QString& exec);
+    void setExec(const QString &exec);
 
     /**
      * Returns the associated appstream id that was previously set with setAppstreamId().
@@ -494,7 +490,7 @@ public:
      *
      * @since 5.48
      */
-    void setAppstreamId(const QString&);
+    void setAppstreamId(const QString &);
 
 private:
     /**
@@ -504,17 +500,18 @@ private:
      * @param installedService not nullptr if @p isInstalled is true
      * @param kmtDesktopfile not null if app-local kmt-desktopfile is found and valid
      */
-    KMoreToolsService(const QString& kmtDesktopfileSubdir,
-                      const QString& desktopEntryName,
-                      bool isInstalled, KService::Ptr installedService,
+    KMoreToolsService(const QString &kmtDesktopfileSubdir,
+                      const QString &desktopEntryName,
+                      bool isInstalled,
+                      KService::Ptr installedService,
                       KService::Ptr kmtDesktopfile);
 
     /**
      * No copy semantic => private and no implementation
      */
-    KMoreToolsService(const KMoreTools&);
+    KMoreToolsService(const KMoreTools &);
 
-    KMoreToolsServicePrivate* d;
+    KMoreToolsServicePrivate *d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -543,7 +540,7 @@ public:
     ~KMoreToolsMenuBuilder();
 
     KMoreToolsMenuBuilder(const KMoreToolsMenuBuilder &) = delete;
-    KMoreToolsMenuBuilder& operator=(const KMoreToolsMenuBuilder &) = delete;
+    KMoreToolsMenuBuilder &operator=(const KMoreToolsMenuBuilder &) = delete;
 
     /**
      * Affects addMenuItem() if called before it.
@@ -552,7 +549,7 @@ public:
      *
      * The default template text is "$GenericName".
      */
-    void setInitialItemTextTemplate(const QString& templateText);
+    void setInitialItemTextTemplate(const QString &templateText);
 
     /**
      * Adds a registered service (which can installed or not) to the menu.
@@ -573,8 +570,7 @@ public:
      *
      * @sa KMoreToolsMenuItem::action()
      */
-    KMoreToolsMenuItem* addMenuItem(KMoreToolsService* registeredService,
-                                    KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
+    KMoreToolsMenuItem *addMenuItem(KMoreToolsService *registeredService, KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
 
     /**
      * Adds an action to the menu which is created and managed by the caller.
@@ -592,8 +588,7 @@ public:
      *
      * @sa KMoreToolsMenuItem::action()
      */
-    KMoreToolsMenuItem* addMenuItem(QAction* action, const QString& itemId,
-                                    KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
+    KMoreToolsMenuItem *addMenuItem(QAction *action, const QString &itemId, KMoreTools::MenuSection defaultLocation = KMoreTools::MenuSection_Main);
 
     /**
      * Clears all added menu items. This can be useful if the menuBuilder is reused more than once.
@@ -616,11 +611,9 @@ public:
      * Otherwise the pointer will set to nullptr.
      * This can be used to add some custom items to the @p menu.
      */
-    void buildByAppendingToMenu(
-        QMenu* menu,
-        KMoreTools::ConfigureDialogAccessibleSetting configureDialogAccessibleSetting
-        = KMoreTools::ConfigureDialogAccessible_Always,
-        QMenu** outMoreMenu = nullptr);
+    void buildByAppendingToMenu(QMenu *menu,
+                                KMoreTools::ConfigureDialogAccessibleSetting configureDialogAccessibleSetting = KMoreTools::ConfigureDialogAccessible_Always,
+                                QMenu **outMoreMenu = nullptr);
 
 private:
     /**
@@ -631,7 +624,7 @@ private:
     /**
      * for unit testing
      */
-    void showConfigDialog(const QString& title);
+    void showConfigDialog(const QString &title);
 
     /**
      * (needed because QMap needs a default ctor)
@@ -641,14 +634,14 @@ private:
     /**
      * internal usage
      */
-    KMoreToolsMenuBuilder(const QString& uniqueId, const QString& userConfigPostfix);
+    KMoreToolsMenuBuilder(const QString &uniqueId, const QString &userConfigPostfix);
 
     /**
      * No copy semantic => private and no implementation
      */
-    KMoreToolsMenuBuilder(const KMoreTools&);
+    KMoreToolsMenuBuilder(const KMoreTools &);
 
-    KMoreToolsMenuBuilderPrivate* d;
+    KMoreToolsMenuBuilderPrivate *d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -675,7 +668,7 @@ class KNEWSTUFF_EXPORT KMoreToolsMenuItem
 
 public:
     KMoreToolsMenuItem(const KMoreToolsMenuItem &) = delete;
-    KMoreToolsMenuItem& operator=(const KMoreToolsMenuItem &) = delete;
+    KMoreToolsMenuItem &operator=(const KMoreToolsMenuItem &) = delete;
 
     /**
      * Auto-generated unique id that tries to be as stable as possible even if the
@@ -697,7 +690,7 @@ public:
      * todo: make sure to show error if the id contains characters other than
      *       alphanumerica, dashes and underscores etc.
      */
-    void setId(const QString& id);
+    void setId(const QString &id);
 
     /**
      * @return the underlying KMoreToolsService instance,
@@ -705,7 +698,7 @@ public:
      * Or nullptr when KMoreToolsMenuBuilder::addMenuItem (with QAction* argument
      * was used).
      */
-    KMoreToolsService* registeredService() const;
+    KMoreToolsService *registeredService() const;
 
     /**
      * see KMoreToolsMenuBuilder::addMenuItem
@@ -730,7 +723,7 @@ public:
      * - action()
      * - You can use the static method KMoreToolsService::formatString here.
      */
-    void setInitialItemText(const QString& itemText);
+    void setInitialItemText(const QString &itemText);
 
     /**
      * Case 1
@@ -757,20 +750,20 @@ public:
      *
      * @see KMoreToolsService::isInstalled
      */
-    QAction* action() const;
+    QAction *action() const;
 
 private: // internal usage
     /**
      * Sets the initial item text.
      */
-    KMoreToolsMenuItem(KMoreToolsService* registeredService, KMoreTools::MenuSection defaultLocation, const QString& initialItemTextTemplate);
+    KMoreToolsMenuItem(KMoreToolsService *registeredService, KMoreTools::MenuSection defaultLocation, const QString &initialItemTextTemplate);
 
-    KMoreToolsMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation);
+    KMoreToolsMenuItem(QAction *action, const QString &itemId, KMoreTools::MenuSection defaultLocation);
 
     ~KMoreToolsMenuItem();
 
 private:
-    KMoreToolsMenuItemPrivate* d;
+    KMoreToolsMenuItemPrivate *d;
 };
 
 #endif // KMORETOOLS_H

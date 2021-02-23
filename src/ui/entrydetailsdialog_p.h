@@ -7,8 +7,8 @@
 #ifndef KNEWSTUFF3_ENTRYDETAILSDIALOG_P_H
 #define KNEWSTUFF3_ENTRYDETAILSDIALOG_P_H
 
-#include <QObject>
 #include "core/entryinternal.h"
+#include <QObject>
 
 #include "ui_downloadwidget.h"
 

@@ -23,12 +23,12 @@ public:
         FilePathRole,
     };
 
-    QHash< int, QByteArray > roleNames() const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QHash<int, QByteArray> roleNames() const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QUrl folder() const;
-    void setFolder(const QUrl& folder);
+    void setFolder(const QUrl &folder);
     Q_SIGNAL void folderChanged();
 
 private:
@@ -36,4 +36,4 @@ private:
     Private *d;
 };
 
-#endif//KNSRCMODEL_H
+#endif // KNSRCMODEL_H

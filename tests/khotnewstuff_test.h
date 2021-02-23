@@ -9,8 +9,8 @@
 #ifndef KHOTNEWSTUFF_TEST_H
 #define KHOTNEWSTUFF_TEST_H
 
-#include <KNSCore/Provider>
 #include <KNSCore/EntryInternal>
+#include <KNSCore/Provider>
 
 #include <QObject>
 #include <QStandardItemModel>
@@ -48,7 +48,7 @@ private:
     KNSCore::Engine *m_engine;
     bool m_testall;
     QString m_configFile;
-    QStandardItemModel* m_messages;
+    QStandardItemModel *m_messages;
 };
 
 #endif

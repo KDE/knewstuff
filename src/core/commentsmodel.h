@@ -68,7 +68,7 @@ public:
     };
     Q_ENUM(Roles)
 
-    QHash< int, QByteArray > roleNames() const override;
+    QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     bool canFetchMore(const QModelIndex &parent) const override;
@@ -84,4 +84,4 @@ private:
 };
 }
 
-#endif//KNSCORE_COMMENTSMODEL_H
+#endif // KNSCORE_COMMENTSMODEL_H

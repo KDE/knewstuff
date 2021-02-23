@@ -13,7 +13,8 @@ public:
         : id(0)
         , isDownloadtypeLink(true)
         , size(0)
-    {}
+    {
+    }
 
     QString name;
     QString priceAmount;
@@ -24,7 +25,7 @@ public:
     quint64 size;
 };
 
-DownloadLinkInfo::DownloadLinkInfo(QObject* parent)
+DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
     : QObject(parent)
     , d(new Private)
 {
@@ -35,7 +36,7 @@ DownloadLinkInfo::~DownloadLinkInfo()
     delete d;
 }
 
-void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInformation& data)
+void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInformation &data)
 {
     d->name = data.name;
     d->priceAmount = data.priceAmount;

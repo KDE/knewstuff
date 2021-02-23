@@ -11,29 +11,29 @@
 #include "engine.h"
 
 #include "commentsmodel.h"
+#include "imageloader_p.h"
 #include "installation.h"
 #include "question.h"
 #include "xmlloader.h"
-#include "imageloader_p.h"
 
-#include <memory>
 #include <KConfig>
 #include <KConfigGroup>
-#include <knewstuffcore_debug.h>
 #include <KLocalizedString>
 #include <KShell>
 #include <QDesktopServices>
+#include <knewstuffcore_debug.h>
+#include <memory>
 
-#include <QTimer>
-#include <QProcess>
 #include <QDir>
-#include <qdom.h>
-#include <QUrlQuery>
+#include <QProcess>
 #include <QThreadStorage>
+#include <QTimer>
+#include <QUrlQuery>
+#include <qdom.h>
 
 #if defined(Q_OS_WIN)
-#include <windows.h>
 #include <shlobj.h>
+#include <windows.h>
 #endif
 
 // libattica
@@ -42,20 +42,21 @@
 
 // own
 #include "../attica/atticaprovider_p.h"
-#include "cache.h"
 #include "../staticxml/staticxmlprovider_p.h"
+#include "cache.h"
 
 using namespace KNSCore;
 
-typedef QHash<QString, XmlLoader*> EngineProviderLoaderHash;
+typedef QHash<QString, XmlLoader *> EngineProviderLoaderHash;
 Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
-class EnginePrivate {
+class EnginePrivate
+{
 public:
-    QString getAdoptionCommand(const QString &command, const KNSCore::EntryInternal& entry, Installation *inst)
+    QString getAdoptionCommand(const QString &command, const KNSCore::EntryInternal &entry, Installation *inst)
     {
         auto adoption = command;
-        if(adoption.isEmpty())
+        if (adoption.isEmpty())
             return {};
 
         const QLatin1String dirReplace("%d");
@@ -86,10 +87,11 @@ public:
         // Ensure that rootPath definitely is a clean path with a slash at the end
         rootPath = QDir::cleanPath(rootPath) + QStringLiteral("/");
         qCInfo(KNEWSTUFFCORE) << Q_FUNC_INFO << dirs << rootPath;
-        while(!dirs.isEmpty()) {
+        while (!dirs.isEmpty()) {
             QString thisDir(dirs.takeLast());
             if (thisDir.endsWith(QStringLiteral("*"))) {
-                qCInfo(KNEWSTUFFCORE) << "Directory entry" << thisDir << "ends in a *, indicating this was installed from an archive - see Installation::archiveEntries";
+                qCInfo(KNEWSTUFFCORE) << "Directory entry" << thisDir
+                                      << "ends in a *, indicating this was installed from an archive - see Installation::archiveEntries";
                 thisDir.chop(1);
             }
 
@@ -108,7 +110,7 @@ public:
             }
 
             const QDir dir(currentPath);
-            if (dir.path()==(rootPath+dir.dirName())) {
+            if (dir.path() == (rootPath + dir.dirName())) {
                 qCDebug(KNEWSTUFFCORE) << "Found directory" << dir;
                 return dir;
             }
@@ -123,7 +125,7 @@ public:
     QStringList downloadTagFilter;
     bool configLocationFallback = true;
     QString name;
-    QMap<EntryInternal, CommentsModel*> commentsModels;
+    QMap<EntryInternal, CommentsModel *> commentsModels;
     bool shouldRemoveDeletedEntries = false;
     KNSCore::Provider::SearchRequest storedRequest;
 
@@ -154,20 +156,21 @@ Engine::Engine(QObject *parent)
     connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
     connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
     connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
-    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message){ Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant()); });
+    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message) {
+        Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant());
+    });
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 53)
     // Pass along old error signal for compatibility
-    connect(this, &Engine::signalErrorCode, this, [this] (const KNSCore::ErrorCode &, const QString &msg, const QVariant &) {
+    connect(this, &Engine::signalErrorCode, this, [this](const KNSCore::ErrorCode &, const QString &msg, const QVariant &) {
         Q_EMIT signalError(msg);
     });
 #endif
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-    connect(this, &Engine::signalEntryEvent, this,
-            [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
+    connect(this, &Engine::signalEntryEvent, this, [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
         if (event == EntryInternal::StatusChangedEvent) {
             Q_EMIT signalEntryChanged(entry);
-        } else if (event == EntryInternal::DetailsLoadedEvent){
+        } else if (event == EntryInternal::DetailsLoadedEvent) {
             Q_EMIT signalEntryDetailsLoaded(entry);
         }
     });
@@ -202,7 +205,8 @@ bool Engine::init(const QString &configfile)
     QString configFileName{configfile};
     if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
         conf.reset(new KConfig(configfile));
-        qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile << " - please contact the author of the software which provides this file to get it updated to use the new location";
+        qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile
+                                 << " - please contact the author of the software which provides this file to get it updated to use the new location";
     } else if (isRelativeConfig) {
         configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile))).baseName();
         conf.reset(new KConfig(QStringLiteral("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
@@ -246,8 +250,9 @@ bool Engine::init(const QString &configfile)
     if (!m_installation->readConfig(group)) {
         Q_EMIT signalErrorCode(ErrorCode::ConfigFileError,
                                i18n("Could not initialise the installation handler for %1\n"
-                                "This is a critical error and should be reported to the application author", configfile),
-                                configfile);
+                                    "This is a critical error and should be reported to the application author",
+                                    configfile),
+                               configfile);
         return false;
     }
 
@@ -255,7 +260,7 @@ bool Engine::init(const QString &configfile)
 
     m_cache = Cache::getCache(configFileName);
     qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
-    connect(this, &Engine::signalEntryEvent, m_cache.data(), [this] (const EntryInternal &entry, EntryInternal::EntryEvent event) {
+    connect(this, &Engine::signalEntryEvent, m_cache.data(), [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
         if (event == EntryInternal::StatusChangedEvent) {
             m_cache->registerChangedEntry(entry);
         }
@@ -321,8 +326,12 @@ void Engine::loadProviders()
             qCDebug(KNEWSTUFFCORE) << "No xml loader for this url yet, so create one and temporarily store that" << m_providerFileUrl;
             loader = new XmlLoader(this);
             s_engineProviderLoaders()->localData().insert(m_providerFileUrl, loader);
-            connect(loader, &XmlLoader::signalLoaded, this, [this](){ s_engineProviderLoaders()->localData().remove(m_providerFileUrl); });
-            connect(loader, &XmlLoader::signalFailed, this, [this](){ s_engineProviderLoaders()->localData().remove(m_providerFileUrl); });
+            connect(loader, &XmlLoader::signalLoaded, this, [this]() {
+                s_engineProviderLoaders()->localData().remove(m_providerFileUrl);
+            });
+            connect(loader, &XmlLoader::signalFailed, this, [this]() {
+                s_engineProviderLoaders()->localData().remove(m_providerFileUrl);
+            });
             loader->load(QUrl(m_providerFileUrl));
         }
         connect(loader, &XmlLoader::signalLoaded, this, &Engine::slotProviderFileLoaded);
@@ -354,11 +363,10 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
             provider.reset(new AtticaProvider(m_categories, d->name));
-            connect(provider.data(), &Provider::categoriesMetadataLoded,
-                    this, [this](const QList<Provider::CategoryMetadata> &categories){
-                        d->categoriesMetadata = categories;
-                        Q_EMIT signalCategoriesMetadataLoded(categories);
-                    });
+            connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
+                d->categoriesMetadata = categories;
+                Q_EMIT signalCategoriesMetadataLoded(categories);
+            });
         } else {
             provider.reset(new StaticXmlProvider);
         }
@@ -380,13 +388,11 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         qCDebug(KNEWSTUFFCORE) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
-    QSharedPointer<KNSCore::Provider> provider =
-        QSharedPointer<KNSCore::Provider> (new AtticaProvider(atticaProvider, m_categories, d->name));
-    connect(provider.data(), &Provider::categoriesMetadataLoded,
-            this, [this](const QList<Provider::CategoryMetadata> &categories){
-                d->categoriesMetadata = categories;
-                Q_EMIT signalCategoriesMetadataLoded(categories);
-            });
+    QSharedPointer<KNSCore::Provider> provider = QSharedPointer<KNSCore::Provider>(new AtticaProvider(atticaProvider, m_categories, d->name));
+    connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
+        d->categoriesMetadata = categories;
+        Q_EMIT signalCategoriesMetadataLoded(categories);
+    });
     addProvider(provider);
 }
 
@@ -630,7 +636,7 @@ void Engine::slotSearchTimerExpired()
 
 void Engine::requestMoreData()
 {
-    qCDebug(KNEWSTUFFCORE) << "Get more data! current page: " << m_currentPage  << " requested: " << m_currentRequest.page;
+    qCDebug(KNEWSTUFFCORE) << "Get more data! current page: " << m_currentPage << " requested: " << m_currentRequest.page;
 
     if (m_currentPage < m_currentRequest.page) {
         return;
@@ -662,13 +668,12 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
 {
     if (entry.status() == KNS3::Entry::Updateable) {
         entry.setStatus(KNS3::Entry::Updating);
-    } else  {
+    } else {
         entry.setStatus(KNS3::Entry::Installing);
     }
     Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
-    qCDebug(KNEWSTUFFCORE) << "Install " << entry.name()
-       << " from: " << entry.providerId();
+    qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
     QSharedPointer<Provider> p = m_providers.value(entry.providerId());
     if (p) {
         // If linkId is -1, assume that it's an update and that we don't know what to update
@@ -774,12 +779,16 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 
                 if (identifiedLink.isEmpty()) {
                     // Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)
-                    qCDebug(KNEWSTUFFCORE) << "Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)";
+                    qCDebug(KNEWSTUFFCORE)
+                        << "Least simple option, no match - ask the user to pick (and if we still haven't got one... that's us done, no installation)";
                     auto question = std::make_unique<Question>(Question::SelectFromListQuestion);
                     question->setTitle(i18n("Pick Update Item"));
-                    question->setQuestion(i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to select, based on the original item, which was named %1", fileName.toString()));
+                    question->setQuestion(
+                        i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to "
+                             "select, based on the original item, which was named %1",
+                             fileName.toString()));
                     question->setList(payloadNames);
-                    if(question->ask() == Question::OKResponse) {
+                    if (question->ask() == Question::OKResponse) {
                         identifiedLink = payloads.value(payloadNames.indexOf(question->response()));
                     }
                 }
@@ -793,7 +802,9 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
                 KNSCore::EntryInternal theEntry(entry);
                 theEntry.setStatus(KNS3::Entry::Updateable);
                 Q_EMIT signalEntryEvent(theEntry, EntryInternal::StatusChangedEvent);
-                Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("We failed to identify a good link for updating %1, and are unable to perform the update", entry.name()), {entry.uniqueId()});
+                Q_EMIT signalErrorCode(ErrorCode::InstallationError,
+                                       i18n("We failed to identify a good link for updating %1, and are unable to perform the update", entry.name()),
+                                       {entry.uniqueId()});
             }
             // As the serverside data may change before next time this is called, even in the same session,
             // let's not make assumptions, and just get rid of this
@@ -808,8 +819,8 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 void Engine::uninstall(KNSCore::EntryInternal entry)
 {
     const KNSCore::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
-    //we have to use the cached entry here, not the entry from the provider
-    //since that does not contain the list of installed files
+    // we have to use the cached entry here, not the entry from the provider
+    // since that does not contain the list of installed files
     KNSCore::EntryInternal actualEntryForUninstall;
     for (const KNSCore::EntryInternal &eInt : list) {
         if (eInt.uniqueId() == entry.uniqueId()) {
@@ -818,8 +829,7 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
         }
     }
     if (!actualEntryForUninstall.isValid()) {
-        qCDebug(KNEWSTUFFCORE) << "could not find a cached entry with following id:" << entry.uniqueId() <<
-                 " ->  using the non-cached version";
+        qCDebug(KNEWSTUFFCORE) << "could not find a cached entry with following id:" << entry.uniqueId() << " ->  using the non-cached version";
         actualEntryForUninstall = entry;
     }
 
@@ -845,9 +855,7 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
     qCDebug(KNEWSTUFFCORE) << "START  preview: " << entry.name() << type;
     ImageLoader *l = new ImageLoader(entry, type, this);
     connect(l, &ImageLoader::signalPreviewLoaded, this, &Engine::slotPreviewLoaded);
-    connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry,
-                                                       EntryInternal::PreviewType type,
-                                                       const QString &errorText) {
+    connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type, const QString &errorText) {
         Q_EMIT signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
         qCDebug(KNEWSTUFFCORE) << "ERROR preview: " << errorText << entry.name() << type;
         --m_numPictureJobs;
@@ -949,7 +957,7 @@ void KNSCore::Engine::checkForInstalled()
 }
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-QString Engine::adoptionCommand(const KNSCore::EntryInternal& entry) const
+QString Engine::adoptionCommand(const KNSCore::EntryInternal &entry) const
 {
     return d->getAdoptionCommand(m_adoptionCommand, entry, m_installation);
 }
@@ -968,11 +976,11 @@ void KNSCore::Engine::setPageSize(int pageSize)
 QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations)
 {
     QStringList ret;
-    if(includeFallbackLocations) {
+    if (includeFallbackLocations) {
         ret += QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
     }
     const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    for( const QString& path : paths) {
+    for (const QString &path : paths) {
         ret << QString::fromLocal8Bit("%1/knsrcfiles").arg(path);
     }
     return ret;
@@ -1001,7 +1009,7 @@ KNSCore::CommentsModel *KNSCore::Engine::commentsForEntry(const KNSCore::EntryIn
     if (!model) {
         model = new CommentsModel(this);
         model->setEntry(entry);
-        connect(model, &QObject::destroyed, this, [=](){
+        connect(model, &QObject::destroyed, this, [=]() {
             d->commentsModels.remove(entry);
         });
         d->commentsModels[entry] = model;
@@ -1043,7 +1051,8 @@ void Engine::setBusyState(Engine::BusyState state)
     }
 }
 
-void Engine::setBusy(Engine::BusyState state, const QString &busyMessage) {
+void Engine::setBusy(Engine::BusyState state, const QString &busyMessage)
+{
     setBusyState(state);
     setBusyMessage(busyMessage);
 }
@@ -1064,7 +1073,7 @@ void KNSCore::Engine::revalidateCacheEntries()
                 m_cache->removeDeletedEntries();
                 const EntryInternal::List cacheAfter = m_cache->registryForProvider(provider->id());
                 // If the user has deleted them in the background we have to update the state to deleted
-                for (const auto &oldCachedEntry : cacheBefore){
+                for (const auto &oldCachedEntry : cacheBefore) {
                     if (!cacheAfter.contains(oldCachedEntry)) {
                         EntryInternal removedEntry = oldCachedEntry;
                         removedEntry.setStatus(KNS3::Entry::Deleted);
@@ -1095,22 +1104,20 @@ void Engine::adoptEntry(const EntryInternal &entry)
 
     process->start();
 
-    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
-            [this, process ,entry, command](int exitCode, QProcess::ExitStatus) {
-                if (exitCode == 0) {
-                    Q_EMIT signalEntryEvent(entry, EntryInternal::EntryEvent::AdoptedEvent);
+    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, [this, process, entry, command](int exitCode, QProcess::ExitStatus) {
+        if (exitCode == 0) {
+            Q_EMIT signalEntryEvent(entry, EntryInternal::EntryEvent::AdoptedEvent);
 
-                    // Handle error output as warnings if the process hasn't crashed
-                    const QString stdErr = QString::fromLocal8Bit(process->readAllStandardError());
-                    if (!stdErr.isEmpty()) {
-                        Q_EMIT signalMessage(stdErr);
-                    }
-                } else {
-                    const QString errorMsg = i18n("Failed to adopt '%1'\n%2",
-                                                  entry.name(), QString::fromLocal8Bit(process->readAllStandardError()));
-                    Q_EMIT signalErrorCode(KNSCore::AdoptionError, errorMsg, QVariantList{command});
-                }
-            });
+            // Handle error output as warnings if the process hasn't crashed
+            const QString stdErr = QString::fromLocal8Bit(process->readAllStandardError());
+            if (!stdErr.isEmpty()) {
+                Q_EMIT signalMessage(stdErr);
+            }
+        } else {
+            const QString errorMsg = i18n("Failed to adopt '%1'\n%2", entry.name(), QString::fromLocal8Bit(process->readAllStandardError()));
+            Q_EMIT signalErrorCode(KNSCore::AdoptionError, errorMsg, QVariantList{command});
+        }
+    });
 }
 
 QString Engine::useLabel() const

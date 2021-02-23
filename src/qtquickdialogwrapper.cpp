@@ -6,11 +6,11 @@
 
 #include "qtquickdialogwrapper.h"
 
-#include <QQmlEngine>
+#include <QEventLoop>
 #include <QQmlComponent>
 #include <QQmlContext>
+#include <QQmlEngine>
 #include <QTimer>
-#include <QEventLoop>
 
 #include "core/engine.h"
 
@@ -26,8 +26,8 @@ public:
 };
 
 QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *parent)
-    : QObject(parent),
-    d(new QtQuickDialogWrapperPrivate())
+    : QObject(parent)
+    , d(new QtQuickDialogWrapperPrivate())
 {
     d->engine = new QQmlEngine(this);
     QQmlComponent component(d->engine);
@@ -40,7 +40,8 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
                                         "    signal closed()\n"
                                         "    configFile: knsrcfile\n"
                                         "    onVisibleChanged: if (!visible) {closed()}\n"
-                                        "}"), QUrl());
+                                        "}"),
+                      QUrl());
     d->item = component.create();
     // If there is an error on the QML side of things we get a nullptr
     if (d->item) {
@@ -49,8 +50,7 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
         d->coreEngine = qtquickEngine->property("engine").value<KNSCore::Engine *>();
         Q_ASSERT(d->coreEngine);
 
-        connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent,
-                this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event){
+        connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
             if (event == KNSCore::EntryInternal::StatusChangedEvent) {
                 if (entry.status() == KNS3::Entry::Installing || entry.status() == KNS3::Entry::Updating) {
                     return; // We do not care about intermediate states

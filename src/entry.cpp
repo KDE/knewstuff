@@ -8,7 +8,6 @@
 #include "entry_p.h"
 #include <knewstuff_debug.h>
 
-
 using namespace KNS3;
 
 Entry::Entry()
@@ -86,7 +85,7 @@ QUrl KNS3::Entry::url() const
     return d->e.homepage();
 }
 
-static void appendIfValid(QList<QUrl>& list, const QUrl &value)
+static void appendIfValid(QList<QUrl> &list, const QUrl &value)
 {
     if (value.isValid() && !value.isEmpty())
         list << value;

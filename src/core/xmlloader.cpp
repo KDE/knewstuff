@@ -10,8 +10,8 @@
 
 #include "xmlloader.h"
 
-#include "knewstuffcore_debug.h"
 #include "jobs/httpjob.h"
+#include "knewstuffcore_debug.h"
 
 #include <KConfig>
 
@@ -19,7 +19,6 @@
 
 namespace KNSCore
 {
-
 XmlLoader::XmlLoader(QObject *parent)
     : QObject(parent)
 {
@@ -32,10 +31,8 @@ void XmlLoader::load(const QUrl &url)
     qCDebug(KNEWSTUFFCORE) << "XmlLoader::load(): url: " << url;
 
     HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
-    connect(job, &KJob::result,
-            this, &XmlLoader::slotJobResult);
-    connect(job, &HTTPJob::data,
-            this, &XmlLoader::slotJobData);
+    connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
+    connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
 
     Q_EMIT jobStarted(job);
 }
@@ -65,8 +62,7 @@ void XmlLoader::slotJobResult(KJob *job)
     Q_EMIT signalLoaded(doc);
 }
 
-QDomElement addElement(QDomDocument &doc, QDomElement &parent,
-                       const QString &tag, const QString &value)
+QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &tag, const QString &value)
 {
     QDomElement n = doc.createElement(tag);
     n.appendChild(doc.createTextNode(value));
@@ -75,4 +71,3 @@ QDomElement addElement(QDomDocument &doc, QDomElement &parent,
     return n;
 }
 } // end KNS namespace
-

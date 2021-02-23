@@ -7,17 +7,14 @@
 
 #include "knewstuffaction.h"
 
-#include <QAction>
-#include <KLocalizedString>
 #include <KActionCollection>
+#include <KLocalizedString>
+#include <QAction>
 
 using namespace KNS3;
 
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 78)
-QAction *KNS3::standardAction(const QString &what,
-                              const QObject *receiver,
-                              const char *slot, KActionCollection *parent,
-                              const char *name)
+QAction *KNS3::standardAction(const QString &what, const QObject *receiver, const char *slot, KActionCollection *parent, const char *name)
 {
     QAction *action = new QAction(what, parent);
     parent->addAction(QLatin1String(name), action);
@@ -29,10 +26,7 @@ QAction *KNS3::standardAction(const QString &what,
 #endif
 
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 78)
-QAction *KNS3::standardActionUpload(const QString &what,
-                                    const QObject *receiver,
-                                    const char *slot, KActionCollection *parent,
-                                    const char *name)
+QAction *KNS3::standardActionUpload(const QString &what, const QObject *receiver, const char *slot, KActionCollection *parent, const char *name)
 {
     QAction *action = new QAction(what, parent);
     parent->addAction(QLatin1String(name), action);

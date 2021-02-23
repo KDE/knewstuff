@@ -10,9 +10,12 @@
 
 #include <KLocalizedString>
 
-class CategoriesModel::Private {
+class CategoriesModel::Private
+{
 public:
-    Private() {}
+    Private()
+    {
+    }
     KNSCore::Engine *engine;
 };
 
@@ -20,8 +23,11 @@ CategoriesModel::CategoriesModel(Engine *parent)
     : QAbstractListModel(parent)
     , d(new Private)
 {
-    d->engine = qobject_cast<KNSCore::Engine*>(parent->engine());
-    connect(d->engine, &KNSCore::Engine::signalCategoriesMetadataLoded, this, [this](){ beginResetModel(); endResetModel(); });
+    d->engine = qobject_cast<KNSCore::Engine *>(parent->engine());
+    connect(d->engine, &KNSCore::Engine::signalCategoriesMetadataLoded, this, [this]() {
+        beginResetModel();
+        endResetModel();
+    });
 }
 
 CategoriesModel::~CategoriesModel()
@@ -31,17 +37,13 @@ CategoriesModel::~CategoriesModel()
 
 QHash<int, QByteArray> CategoriesModel::roleNames() const
 {
-    static const QHash<int, QByteArray> roles{
-        {NameRole, "name"},
-        {IdRole, "id"},
-        {DisplayNameRole, "displayName"}
-    };
+    static const QHash<int, QByteArray> roles{{NameRole, "name"}, {IdRole, "id"}, {DisplayNameRole, "displayName"}};
     return roles;
 }
 
 int CategoriesModel::rowCount(const QModelIndex &parent) const
 {
-    if(parent.isValid()) {
+    if (parent.isValid()) {
         return 0;
     }
     return d->engine->categoriesMetadata().count() + 1;
@@ -54,34 +56,34 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
     if (index.isValid()) {
         if (index.row() == 0) {
             switch (role) {
-                case NameRole:
-                    result.setValue(QString());
-                    break;
-                case IdRole:
-                    result.setValue(0);
-                    break;
-                case DisplayNameRole:
-                    result.setValue(i18nc("The first entry in the category selection list (also the default value)", "All Categories"));
-                    break;
-                default:
-                    result.setValue(QStringLiteral("Unknown role"));
-                    break;
+            case NameRole:
+                result.setValue(QString());
+                break;
+            case IdRole:
+                result.setValue(0);
+                break;
+            case DisplayNameRole:
+                result.setValue(i18nc("The first entry in the category selection list (also the default value)", "All Categories"));
+                break;
+            default:
+                result.setValue(QStringLiteral("Unknown role"));
+                break;
             }
         } else if (index.row() <= categoriesMetadata.count()) {
             const KNSCore::Provider::CategoryMetadata category = categoriesMetadata[index.row() - 1];
             switch (role) {
-                case NameRole:
-                    result.setValue(category.name);
-                    break;
-                case IdRole:
-                    result.setValue(category.id);
-                    break;
-                case DisplayNameRole:
-                    result.setValue(category.displayName);
-                    break;
-                default:
-                    result.setValue(QStringLiteral("Unknown role"));
-                    break;
+            case NameRole:
+                result.setValue(category.name);
+                break;
+            case IdRole:
+                result.setValue(category.id);
+                break;
+            case DisplayNameRole:
+                result.setValue(category.displayName);
+                break;
+            default:
+                result.setValue(QStringLiteral("Unknown role"));
+                break;
             }
         }
     }

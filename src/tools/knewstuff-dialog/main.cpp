@@ -11,9 +11,9 @@
 
 #include <KLocalizedString>
 
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
@@ -27,8 +27,17 @@ int main(int argc, char **argv)
 
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addHelpOption();
-    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between all the config files installed into the systemwide knsrc file location, which on your system is: %1", KNSCore::Engine::configSearchLocations().last()));
-    parser->addOption(QCommandLineOption(QStringLiteral("url"), i18n("A kns url to show information from. The format for a kns url is kns://knsrcfile/providerid/entryid\n'knsrcfile'\nis the name of a knsrc file as might be passed directly through this tool's knsrcfile argument\n'providerid'\nis the hostname of the provider the entry should exist on\n'entryid'\nis the unique ID of an entry found in the provider specified by the knsrc file.\n An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"), QStringLiteral("knsurl")));
+    parser->addPositionalArgument(QStringLiteral("knsrcfile"),
+                                  i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between "
+                                       "all the config files installed into the systemwide knsrc file location, which on your system is: %1",
+                                       KNSCore::Engine::configSearchLocations().last()));
+    parser->addOption(
+        QCommandLineOption(QStringLiteral("url"),
+                           i18n("A kns url to show information from. The format for a kns url is kns://knsrcfile/providerid/entryid\n'knsrcfile'\nis the name "
+                                "of a knsrc file as might be passed directly through this tool's knsrcfile argument\n'providerid'\nis the hostname of the "
+                                "provider the entry should exist on\n'entryid'\nis the unique ID of an entry found in the provider specified by the knsrc "
+                                "file.\n An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"),
+                           QStringLiteral("knsurl")));
     parser->process(app);
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();

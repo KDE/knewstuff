@@ -29,17 +29,17 @@ class KNEWSTUFFCORE_EXPORT QuestionManager : public QObject
     Q_OBJECT
     Q_DISABLE_COPY(QuestionManager)
 public:
-    static QuestionManager* instance();
+    static QuestionManager *instance();
     virtual ~QuestionManager();
 
 Q_SIGNALS:
-    void askQuestion(KNSCore::Question* question);
+    void askQuestion(KNSCore::Question *question);
 
 private:
     QuestionManager();
     class Private;
-    Private* d;
+    Private *d;
 };
 }
 
-#endif//KNS3_QUESTIONMANAGER_H
+#endif // KNS3_QUESTIONMANAGER_H

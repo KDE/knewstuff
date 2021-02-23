@@ -7,11 +7,11 @@
 #ifndef KNSCORE_TAGSFILTERCHECKER_H
 #define KNSCORE_TAGSFILTERCHECKER_H
 
-#include <QStringList>
 #include "knewstuffcore_export.h"
+#include <QStringList>
 
-namespace KNSCore {
-
+namespace KNSCore
+{
 /**
  * @brief Apply simple filtering logic to a list of tags
  *
@@ -29,7 +29,7 @@ namespace KNSCore {
  * - ghns_excluded!=1
  * - data##mimetype==application/cbr+zip
  * - data##mimetype==application/cbr+rar
- * 
+ *
  * which would filter out anything which has ghns_excluded set to 1, and
  * anything where the value of data##mimetype does not equal either
  * "application/cbr+zip" or "application/cbr+rar".
@@ -41,7 +41,8 @@ namespace KNSCore {
  * entry to be included in the return data)
  * @since 5.51
  */
-class KNEWSTUFFCORE_EXPORT TagsFilterChecker {
+class KNEWSTUFFCORE_EXPORT TagsFilterChecker
+{
 public:
     /**
      * Constructs an instance of the tags filter checker, prepopulated
@@ -54,7 +55,7 @@ public:
     ~TagsFilterChecker();
 
     TagsFilterChecker(const TagsFilterChecker &) = delete;
-    TagsFilterChecker& operator=(const TagsFilterChecker &) = delete;
+    TagsFilterChecker &operator=(const TagsFilterChecker &) = delete;
 
     /**
      * Check whether the filter list accepts the passed list of tags
@@ -72,4 +73,4 @@ private:
 
 }
 
-#endif//KNSCORE_TAGSFILTERCHECKER_H
+#endif // KNSCORE_TAGSFILTERCHECKER_H

@@ -6,9 +6,9 @@
 
 #include "entrydetailsdialog_p.h"
 
+#include <KLocalizedString>
 #include <QMenu>
 #include <knewstuff_debug.h>
-#include <KLocalizedString>
 
 #include "core/engine.h"
 #include "core/imageloader_p.h"
@@ -17,7 +17,9 @@
 using namespace KNS3;
 
 EntryDetails::EntryDetails(KNSCore::Engine *engine, Ui::DownloadWidget *widget)
-    : QObject(widget->m_listView), m_engine(engine), ui(widget)
+    : QObject(widget->m_listView)
+    , m_engine(engine)
+    , ui(widget)
 {
     init();
 }
@@ -46,16 +48,14 @@ void EntryDetails::init()
     ui->updateButton->setIcon(QIcon::fromTheme(QStringLiteral("system-software-update")));
     ui->uninstallButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
 
-    connect(m_engine, &KNSCore::Engine::signalEntryEvent, this,
-            [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-                if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
-                    Q_EMIT entryChanged(entry);
-                } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
-                    updateButtons();
-                }
-            });
-    connect(m_engine, &KNSCore::Engine::signalEntryPreviewLoaded,
-            this, &EntryDetails::slotEntryPreviewLoaded);
+    connect(m_engine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+        if (event == KNSCore::EntryInternal::DetailsLoadedEvent) {
+            Q_EMIT entryChanged(entry);
+        } else if (event == KNSCore::EntryInternal::StatusChangedEvent) {
+            updateButtons();
+        }
+    });
+    connect(m_engine, &KNSCore::Engine::signalEntryPreviewLoaded, this, &EntryDetails::slotEntryPreviewLoaded);
 }
 
 void EntryDetails::setEntry(const KNSCore::EntryInternal &entry)
@@ -75,7 +75,7 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
     m_entry = entry;
 
     // FIXME
-    //ui->ratingWidget->setEditable(m_engine->userCanVote(m_entry));
+    // ui->ratingWidget->setEditable(m_engine->userCanVote(m_entry));
 
     if (!m_engine->userCanBecomeFan(m_entry)) {
         ui->becomeFanButton->setEnabled(false);
@@ -83,9 +83,11 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
 
     ui->m_titleWidget->setText(i18n("Details for %1", m_entry.name()));
     if (!m_entry.author().homepage().isEmpty()) {
-        ui->authorLabel->setText(QLatin1String("<a href=\"") + m_entry.author().homepage() + QLatin1String("\">") + m_entry.author().name() + QLatin1String("</a>"));
+        ui->authorLabel->setText(QLatin1String("<a href=\"") + m_entry.author().homepage() + QLatin1String("\">") + m_entry.author().name()
+                                 + QLatin1String("</a>"));
     } else if (!m_entry.author().email().isEmpty()) {
-        ui->authorLabel->setText(QLatin1String("<a href=\"mailto:") + m_entry.author().email() + QLatin1String("\">") + m_entry.author().name() + QLatin1String("</a>"));
+        ui->authorLabel->setText(QLatin1String("<a href=\"mailto:") + m_entry.author().email() + QLatin1String("\">") + m_entry.author().name()
+                                 + QLatin1String("</a>"));
     } else {
         ui->authorLabel->setText(m_entry.author().name());
     }
@@ -100,34 +102,37 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
     description += QLatin1String("</body></html>");
     ui->descriptionLabel->setText(description);
 
-    QString homepageText(QLatin1String("<a href=\"") + m_entry.homepage().url() + QLatin1String("\">") +
-                         i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + QStringLiteral("</a>"));
+    QString homepageText(QLatin1String("<a href=\"") + m_entry.homepage().url() + QLatin1String("\">")
+                         + i18nc("A link to the description of this Get Hot New Stuff item", "Homepage") + QStringLiteral("</a>"));
 
     if (!m_entry.donationLink().isEmpty()) {
-        homepageText += QLatin1String("<br><a href=\"") + m_entry.donationLink() + QLatin1String("\">") + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + QLatin1String("</a>");
+        homepageText += QLatin1String("<br><a href=\"") + m_entry.donationLink() + QLatin1String("\">")
+            + i18nc("A link to make a donation for a Get Hot New Stuff item (opens a web browser)", "Make a donation") + QLatin1String("</a>");
     }
     if (!m_entry.knowledgebaseLink().isEmpty()) {
         homepageText += QLatin1String("<br><a href=\"") + m_entry.knowledgebaseLink() + QLatin1String("\">")
-                        + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)", "Knowledgebase (no entries)", "Knowledgebase (%1 entries)", m_entry.numberKnowledgebaseEntries()) + QStringLiteral("</a>");
+            + i18ncp("A link to the knowledgebase (like a forum) (opens a web browser)",
+                     "Knowledgebase (no entries)",
+                     "Knowledgebase (%1 entries)",
+                     m_entry.numberKnowledgebaseEntries())
+            + QStringLiteral("</a>");
     }
     ui->homepageLabel->setText(homepageText);
     ui->homepageLabel->setToolTip(i18nc("Tooltip for a link in a dialog", "Opens in a browser window"));
 
     if (m_entry.rating() > 0) {
         ui->ratingWidget->setVisible(true);
-        disconnect(ui->ratingWidget, static_cast<void(KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged),
-                   this, &EntryDetails::ratingChanged);
+        disconnect(ui->ratingWidget, static_cast<void (KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged), this, &EntryDetails::ratingChanged);
         // Most of the voting is 20 - 80, so rate 20 as 0 stars and 80 as 5 stars
         int rating = qMax(0, qMin(10, (m_entry.rating() - 20) / 6));
         ui->ratingWidget->setRating(rating);
-        connect(ui->ratingWidget, static_cast<void(KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged),
-                this, &EntryDetails::ratingChanged);
+        connect(ui->ratingWidget, static_cast<void (KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged), this, &EntryDetails::ratingChanged);
     } else {
         ui->ratingWidget->setVisible(false);
     }
 
-    bool hideSmallPreviews = m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall2).isEmpty()
-                             && m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall3).isEmpty();
+    bool hideSmallPreviews =
+        m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall2).isEmpty() && m_entry.previewUrl(KNSCore::EntryInternal::PreviewSmall3).isEmpty();
 
     ui->preview1->setVisible(!hideSmallPreviews);
     ui->preview2->setVisible(!hideSmallPreviews);
@@ -145,13 +150,13 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
         } else
 
             if (!m_entry.previewUrl((KNSCore::EntryInternal::PreviewType)type).isEmpty()) {
-                qCDebug(KNEWSTUFF) << "type: " << type << m_entry.previewUrl((KNSCore::EntryInternal::PreviewType)type);
-                if (m_entry.previewImage((KNSCore::EntryInternal::PreviewType)type).isNull()) {
-                    m_engine->loadPreview(m_entry, (KNSCore::EntryInternal::PreviewType)type);
-                } else {
-                    slotEntryPreviewLoaded(m_entry, (KNSCore::EntryInternal::PreviewType)type);
-                }
+            qCDebug(KNEWSTUFF) << "type: " << type << m_entry.previewUrl((KNSCore::EntryInternal::PreviewType)type);
+            if (m_entry.previewImage((KNSCore::EntryInternal::PreviewType)type).isNull()) {
+                m_engine->loadPreview(m_entry, (KNSCore::EntryInternal::PreviewType)type);
+            } else {
+                slotEntryPreviewLoaded(m_entry, (KNSCore::EntryInternal::PreviewType)type);
             }
+        }
     }
 
     updateButtons();
@@ -216,7 +221,7 @@ void EntryDetails::updateButtons()
             }
             QAction *installMenuAction = installMenu->addAction(QIcon::fromTheme(QStringLiteral("dialog-ok")), text);
             installMenuAction->setData(info.id);
-            connect(installMenuAction, &QAction::triggered, this, [this, installMenuAction](){
+            connect(installMenuAction, &QAction::triggered, this, [this, installMenuAction]() {
                 installAction(installMenuAction);
             });
         }
@@ -285,7 +290,7 @@ void EntryDetails::previewSelected(int current)
 void EntryDetails::ratingChanged(uint rating)
 {
     // engine expects values from 0..100
-    qCDebug(KNEWSTUFF) << "rating: " << rating << " -> " << rating*10;
+    qCDebug(KNEWSTUFF) << "rating: " << rating << " -> " << rating * 10;
     m_engine->vote(m_entry, rating * 10);
 }
 
@@ -298,4 +303,3 @@ void EntryDetails::installAction(QAction *action)
 {
     m_engine->install(m_entry, action->data().toInt());
 }
-

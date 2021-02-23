@@ -26,7 +26,8 @@ public:
     DownloadManagerPrivate(DownloadManager *q)
         : q(q)
         , engine(new Engine)
-    {}
+    {
+    }
     ~DownloadManagerPrivate()
     {
         delete engine;
@@ -71,7 +72,9 @@ void DownloadManagerPrivate::init(const QString &configFile)
             q->entryStatusChanged(entry);
         }
     });
-    q->connect(engine, &KNSCore::Engine::signalErrorCode, q, [this](const KNSCore::ErrorCode &, const QString &message, const QVariant &){ Q_EMIT q->errorFound(message); });
+    q->connect(engine, &KNSCore::Engine::signalErrorCode, q, [this](const KNSCore::ErrorCode &, const QString &message, const QVariant &) {
+        Q_EMIT q->errorFound(message);
+    });
     engine->init(configFile);
 }
 
@@ -160,7 +163,7 @@ void DownloadManager::setSearchTerm(const QString &searchTerm)
     d->engine->setSearchTerm(searchTerm);
 }
 
-void DownloadManager::fetchEntryById(const QString& id)
+void DownloadManager::fetchEntryById(const QString &id)
 {
     d->engine->fetchEntryById(id);
 }

@@ -8,18 +8,18 @@
 
 #include "khotnewstuff_test.h"
 
-#include <KNSCore/Engine>
 #include "../src/staticxml/staticxmlprovider_p.h"
+#include <KNSCore/Engine>
 
 #include <KLocalizedString>
 
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QDebug>
-#include <QStandardPaths>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QStandardPaths>
 
 #include <QFile>
 #include <QXmlStreamReader>
@@ -95,7 +95,8 @@ void KNewStuff2Test::providerTest()
     KNSCore::StaticXmlProvider p;
     p.setProviderXML(doc.documentElement());
 
-    addMessage(QStringLiteral("-- xml->provider test result: %1").arg(p.isInitialized()), p.isInitialized()? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
+    addMessage(QStringLiteral("-- xml->provider test result: %1").arg(p.isInitialized()),
+               p.isInitialized() ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
 }
 
 void KNewStuff2Test::engineTest()
@@ -104,25 +105,20 @@ void KNewStuff2Test::engineTest()
 
     m_engine = new KNSCore::Engine(this);
 
-    connect(m_engine,
-            &KNSCore::Engine::signalErrorCode,
-            this, &KNewStuff2Test::slotEngineError);
-    connect(m_engine,
-            &KNSCore::Engine::signalProvidersLoaded,
-            this, &KNewStuff2Test::slotProvidersLoaded);
-    connect(m_engine,
-            &KNSCore::Engine::signalEntriesLoaded,
-            this, &KNewStuff2Test::slotEntriesLoaded);
-    connect(m_engine,
-            &KNSCore::Engine::signalEntryEvent,
-            this, &KNewStuff2Test::slotInstallationFinished);
+    connect(m_engine, &KNSCore::Engine::signalErrorCode, this, &KNewStuff2Test::slotEngineError);
+    connect(m_engine, &KNSCore::Engine::signalProvidersLoaded, this, &KNewStuff2Test::slotProvidersLoaded);
+    connect(m_engine, &KNSCore::Engine::signalEntriesLoaded, this, &KNewStuff2Test::slotEntriesLoaded);
+    connect(m_engine, &KNSCore::Engine::signalEntryEvent, this, &KNewStuff2Test::slotInstallationFinished);
 
     bool ret = m_engine->init(m_configFile);
 
     addMessage(QStringLiteral("-- engine test result: %1").arg(ret), ret ? QStringLiteral("msg_info") : QStringLiteral("msg_error"));
 
     if (!ret) {
-        addMessage(QStringLiteral("ACHTUNG: you probably need to 'make install' the knsrc file first. Although this is not required anymore, so something went really wrong."), QStringLiteral("msg_warning"));
+        addMessage(
+            QStringLiteral(
+                "ACHTUNG: you probably need to 'make install' the knsrc file first. Although this is not required anymore, so something went really wrong."),
+            QStringLiteral("msg_warning"));
     }
     addMessage(QStringLiteral("-- initial engine test completed"), QStringLiteral("msg_info"));
 }
@@ -130,7 +126,7 @@ void KNewStuff2Test::engineTest()
 void KNewStuff2Test::slotProvidersLoaded()
 {
     addMessage(QStringLiteral("SLOT: slotProvidersLoaded"), QStringLiteral("msg_info"));
-//     qDebug() << "-- provider: " << provider->name().representation();
+    //     qDebug() << "-- provider: " << provider->name().representation();
 
     m_engine->reloadEntries();
 }
@@ -194,7 +190,9 @@ int main(int argc, char **argv)
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addHelpOption();
     parser->addOption(QCommandLineOption(QStringLiteral("testall"), i18n("Downloads all previews and payloads")));
-    parser->addPositionalArgument(QStringLiteral("knsrcfile"), i18n("The KNSRC file you want to use for testing. If none is passed, we will use khotnewstuff_test.knsrc, which must be installed."));
+    parser->addPositionalArgument(
+        QStringLiteral("knsrcfile"),
+        i18n("The KNSRC file you want to use for testing. If none is passed, we will use khotnewstuff_test.knsrc, which must be installed."));
     parser->process(app);
 
     if (parser->positionalArguments().count() > 0) {

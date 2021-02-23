@@ -6,8 +6,8 @@
 
 #include "httpjob.h"
 
-#include "knewstuffcore_debug.h"
 #include "httpworker.h"
+#include "knewstuffcore_debug.h"
 
 #include <QTimer>
 
@@ -21,7 +21,7 @@ public:
     JobFlags flags = DefaultFlags;
 };
 
-HTTPJob::HTTPJob(const QUrl& source, LoadType loadType, JobFlags flags, QObject* parent)
+HTTPJob::HTTPJob(const QUrl &source, LoadType loadType, JobFlags flags, QObject *parent)
     : KJob(parent)
     , d(new Private)
 {
@@ -30,7 +30,7 @@ HTTPJob::HTTPJob(const QUrl& source, LoadType loadType, JobFlags flags, QObject*
     d->flags = flags;
 }
 
-HTTPJob::HTTPJob(QObject* parent)
+HTTPJob::HTTPJob(QObject *parent)
     : KJob(parent)
     , d(new Private)
 {
@@ -43,14 +43,14 @@ HTTPJob::~HTTPJob()
 
 void HTTPJob::start()
 {
-    HTTPWorker* worker = new HTTPWorker(d->source, HTTPWorker::GetJob, this);
+    HTTPWorker *worker = new HTTPWorker(d->source, HTTPWorker::GetJob, this);
     connect(worker, &HTTPWorker::data, this, &HTTPJob::handleWorkerData);
     connect(worker, &HTTPWorker::completed, this, &HTTPJob::handleWorkerCompleted);
     connect(worker, &HTTPWorker::error, this, &HTTPJob::handleWorkerError);
     worker->startRequest();
 }
 
-void HTTPJob::handleWorkerData(const QByteArray& data)
+void HTTPJob::handleWorkerData(const QByteArray &data)
 {
     Q_EMIT HTTPJob::data(this, data);
 }
@@ -60,15 +60,15 @@ void HTTPJob::handleWorkerCompleted()
     emitResult();
 }
 
-void KNSCore::HTTPJob::handleWorkerError(const QString& error)
+void KNSCore::HTTPJob::handleWorkerError(const QString &error)
 {
     setError(KJob::UserDefinedError);
     setErrorText(error);
 }
 
-HTTPJob* HTTPJob::get(const QUrl& source, LoadType loadType, JobFlags flags, QObject* parent)
+HTTPJob *HTTPJob::get(const QUrl &source, LoadType loadType, JobFlags flags, QObject *parent)
 {
-    HTTPJob* job = new HTTPJob(source, loadType, flags, parent);
+    HTTPJob *job = new HTTPJob(source, loadType, flags, parent);
     QTimer::singleShot(0, job, &HTTPJob::start);
     return job;
 }

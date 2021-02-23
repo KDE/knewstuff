@@ -10,8 +10,8 @@
 
 #include <QPushButton>
 
-#include "knewstuff_export.h"
 #include "entry.h"
+#include "knewstuff_export.h"
 
 namespace KNS3
 {
@@ -37,9 +37,7 @@ public:
      * @param configFile the name of the .knsrc file
      * @param parent the parent widget
      */
-    Button(const QString &text,
-           const QString &configFile,
-           QWidget *parent);
+    Button(const QString &text, const QString &configFile, QWidget *parent);
 
     /**
      * Constructor used when the details of the KHotNewStuff

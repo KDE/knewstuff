@@ -16,18 +16,18 @@
 
 #include "downloadwidget_p.h"
 
-#include <QTimer>
-#include <QScrollBar>
 #include <QCoreApplication>
+#include <QScrollBar>
+#include <QTimer>
 
-#include <KMessageBox>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <knewstuff_debug.h>
 
 #include "core/itemsmodel.h"
 
-#include "ui/itemsviewdelegate_p.h"
 #include "ui/itemsgridviewdelegate_p.h"
+#include "ui/itemsviewdelegate_p.h"
 #include "ui/widgetquestionlistener.h"
 
 #include "entry_p.h"
@@ -187,9 +187,7 @@ void DownloadWidgetPrivate::slotInfo(QString provider, QString server, QString v
     infostring += i18n("<br />Provider: %1", provider);
     infostring += i18n("<br />Version: %1", version);
 
-    KMessageBox::information(nullptr,
-                             infostring,
-                             i18n("Provider information"));
+    KMessageBox::information(nullptr, infostring, i18n("Provider information"));
 }
 
 void DownloadWidgetPrivate::slotEntryEvent(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event)
@@ -202,8 +200,7 @@ void DownloadWidgetPrivate::slotEntryEvent(const KNSCore::EntryInternal &entry, 
 
 void DownloadWidgetPrivate::slotPayloadFailed(const KNSCore::EntryInternal &entry)
 {
-    KMessageBox::error(nullptr, i18n("Could not install %1", entry.name()),
-                       i18n("Get Hot New Stuff!"));
+    KMessageBox::error(nullptr, i18n("Could not install %1", entry.name()), i18n("Get Hot New Stuff!"));
 }
 
 void DownloadWidgetPrivate::slotPayloadLoaded(QUrl url)
@@ -236,7 +233,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalMessage, this, &DownloadWidgetPrivate::slotShowMessage);
 
     q->connect(engine, &KNSCore::Engine::signalErrorCode, ui.progressIndicator, &ProgressIndicator::error);
-    q->connect(engine, &KNSCore::Engine::busyStateChanged, this ,[this]() {
+    q->connect(engine, &KNSCore::Engine::busyStateChanged, this, [this]() {
         if (!engine->busyState()) {
             ui.progressIndicator->idle(QString());
         } else {
@@ -252,8 +249,7 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(engine, &KNSCore::Engine::signalEntryEvent, this, &DownloadWidgetPrivate::slotEntryEvent);
 
     q->connect(engine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
-    q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded,
-               model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
+    q->connect(engine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
     engine->init(configFile);
     engine->setSortMode(KNSCore::Provider::Downloads);
@@ -270,12 +266,12 @@ void DownloadWidgetPrivate::init(const QString &configFile)
     q->connect(ui.listViewButton, &QPushButton::clicked, this, &DownloadWidgetPrivate::slotListViewListMode);
     q->connect(ui.iconViewButton, &QPushButton::clicked, this, &DownloadWidgetPrivate::slotListViewIconMode);
 
-    q->connect(ui.newestRadio,        &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
-    q->connect(ui.ratingRadio,        &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.newestRadio, &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.ratingRadio, &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
     q->connect(ui.mostDownloadsRadio, &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
-    q->connect(ui.installedRadio,     &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
+    q->connect(ui.installedRadio, &QRadioButton::clicked, this, &DownloadWidgetPrivate::sortingChanged);
 
-    q->connect(ui.m_searchEdit, &KLineEdit::textChanged,     this, &DownloadWidgetPrivate::slotSearchTextChanged);
+    q->connect(ui.m_searchEdit, &KLineEdit::textChanged, this, &DownloadWidgetPrivate::slotSearchTextChanged);
     q->connect(ui.m_searchEdit, &KLineEdit::editingFinished, this, &DownloadWidgetPrivate::slotUpdateSearch);
 
     ui.m_providerLabel->setVisible(false);
@@ -288,24 +284,22 @@ void DownloadWidgetPrivate::init(const QString &configFile)
         ui.m_categoryCombo->setVisible(false);
     } else {
         ui.m_categoryCombo->addItem(i18n("All Categories"));
-        //NOTE: categories will be populated when we will get metadata from the server
+        // NOTE: categories will be populated when we will get metadata from the server
     }
 
-    connect(engine, &KNSCore::Engine::signalCategoriesMetadataLoded,
-             this, [this](const QList<KNSCore::Provider::CategoryMetadata> &categories) {
-                for (const auto &data : categories) {
-                    if (!data.displayName.isEmpty()) {
-                        ui.m_categoryCombo->addItem(data.displayName, data.name);
-                    } else {
-                        ui.m_categoryCombo->addItem(data.name, data.name);
-                    }
-                }
-            });
+    connect(engine, &KNSCore::Engine::signalCategoriesMetadataLoded, this, [this](const QList<KNSCore::Provider::CategoryMetadata> &categories) {
+        for (const auto &data : categories) {
+            if (!data.displayName.isEmpty()) {
+                ui.m_categoryCombo->addItem(data.displayName, data.name);
+            } else {
+                ui.m_categoryCombo->addItem(data.name, data.name);
+            }
+        }
+    });
     ui.detailsStack->widget(0)->layout()->setContentsMargins(0, 0, 0, 0);
     ui.detailsStack->widget(1)->layout()->setContentsMargins(0, 0, 0, 0);
 
-    q->connect(ui.m_categoryCombo, static_cast<void(KComboBox::*)(int)>(&KComboBox::activated),
-               this, &DownloadWidgetPrivate::slotCategoryChanged);
+    q->connect(ui.m_categoryCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::activated), this, &DownloadWidgetPrivate::slotCategoryChanged);
 
     // let the search line edit trap the enter key, otherwise it closes the dialog
     ui.m_searchEdit->setTrapReturnKey(true);
@@ -372,7 +366,7 @@ void DownloadWidgetPrivate::slotEntriesLoaded(const KNSCore::EntryInternal::List
     model->slotEntriesLoaded(entries);
 }
 
-void DownloadWidgetPrivate::slotShowMessage(const QString& msg)
+void DownloadWidgetPrivate::slotShowMessage(const QString &msg)
 {
     displayMessage(msg, KTitleWidget::InfoMessage);
 }

@@ -6,11 +6,11 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-//app includes
+// app includes
 #include "security.h"
 #include "question.h"
 
-//qt includes
+// qt includes
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
@@ -20,7 +20,7 @@
 
 #include <QCryptographicHash>
 
-//kde includes
+// kde includes
 #include <KLocalizedString>
 
 #include "knewstuffcore_export.h"
@@ -62,17 +62,14 @@ void Security::readKeys()
     m_keys.clear();
     m_process = new QProcess();
     QStringList arguments;
-    arguments << QStringLiteral("--no-secmem-warning")
-              << QStringLiteral("--no-tty")
-              << QStringLiteral("--with-colon")
-              << QStringLiteral("--list-keys");
-    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
-            this, &Security::slotFinished);
-    connect(m_process, &QProcess::readyReadStandardOutput,
-            this, &Security::slotReadyReadStandardOutput);
+    arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--no-tty") << QStringLiteral("--with-colon") << QStringLiteral("--list-keys");
+    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
-        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        Q_EMIT signalError(
+            i18n("<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded "
+                 "resources will not be possible.</qt>"));
         delete m_process;
         m_process = nullptr;
     } else {
@@ -89,14 +86,9 @@ void Security::readSecretKeys()
     m_runMode = ListSecret;
     m_process = new QProcess();
     QStringList arguments;
-    arguments << QStringLiteral("--no-secmem-warning")
-              << QStringLiteral("--no-tty")
-              << QStringLiteral("--with-colon")
-              << QStringLiteral("--list-secret-keys");
-    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
-            this, &Security::slotFinished);
-    connect(m_process, &QProcess::readyReadStandardOutput,
-            this, &Security::slotReadyReadStandardOutput);
+    arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--no-tty") << QStringLiteral("--with-colon") << QStringLiteral("--list-secret-keys");
+    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
         delete m_process;
@@ -118,11 +110,12 @@ void Security::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
     case ListSecret:
         m_keysRead = true;
         break;
-    case Verify: Q_EMIT validityResult(m_result);
+    case Verify:
+        Q_EMIT validityResult(m_result);
         break;
-    case Sign:   Q_EMIT fileSigned(m_result);
+    case Sign:
+        Q_EMIT fileSigned(m_result);
         break;
-
     }
     m_gpgRunning = false;
     delete m_process;
@@ -196,8 +189,9 @@ void Security::slotReadyReadStandardOutput()
             if (data.contains(QLatin1String("passphrase.enter"))) {
                 KeyStruct key = m_keys[m_secretKey];
                 Question question(Question::PasswordQuestion);
-                question.setQuestion(i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
-                if(question.ask() == Question::ContinueResponse) {
+                question.setQuestion(
+                    i18n("<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</i><br />:</qt>", m_secretKey, key.name, key.mail));
+                if (question.ask() == Question::ContinueResponse) {
                     m_process->write(question.response().toLocal8Bit() + '\n');
                 } else {
                     m_result |= BAD_PASSPHRASE;
@@ -232,7 +226,7 @@ void Security::slotCheckValidity()
     m_result = 0;
     m_runMode = Verify;
     QFileInfo f(m_fileName);
-    //check the MD5 sum
+    // check the MD5 sum
     QString md5sum;
     QCryptographicHash context(QCryptographicHash::Md5);
     QFile file(m_fileName);
@@ -257,24 +251,20 @@ void Security::slotCheckValidity()
     m_signatureKey.mail = QLatin1String("");
     m_signatureKey.trusted = false;
 
-    //verify the signature
+    // verify the signature
     m_process = new QProcess();
     QStringList arguments;
-    arguments << QStringLiteral("--no-secmem-warning")
-              << QStringLiteral("--status-fd=2")
-              << QStringLiteral("--command-fd=0")
-              << QStringLiteral("--verify")
-              << f.path() + QStringLiteral("/signature")
-              << m_fileName;
-    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
-            this, &Security::slotFinished);
-    connect(m_process, &QProcess::readyReadStandardOutput,
-            this, &Security::slotReadyReadStandardOutput);
+    arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--status-fd=2") << QStringLiteral("--command-fd=0") << QStringLiteral("--verify")
+              << f.path() + QStringLiteral("/signature") << m_fileName;
+    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded resources will not be possible.</qt>"));
+        Q_EMIT signalError(
+            i18n("<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure that <i>gpg</i> is installed, otherwise verification of downloaded "
+                 "resources will not be possible.</qt>"));
         Q_EMIT validityResult(0);
         delete m_process;
         m_process = nullptr;
@@ -309,7 +299,7 @@ void Security::slotSignFile()
     m_result = 0;
     QFileInfo f(m_fileName);
 
-    //create the MD5 sum
+    // create the MD5 sum
     QString md5sum;
     QCryptographicHash context(QCryptographicHash::Md5);
     QFile file(m_fileName);
@@ -332,7 +322,7 @@ void Security::slotSignFile()
         question.setQuestion(i18n("Key used for signing:"));
         question.setTitle(i18n("Select Signing Key"));
         question.setList(secretKeys);
-        if(question.ask() == Question::OKResponse) {
+        if (question.ask() == Question::OKResponse) {
             m_secretKey = question.response();
         } else {
             // emit an error to be forwarded to the user for selecting a signing key...
@@ -343,29 +333,22 @@ void Security::slotSignFile()
         m_secretKey = secretKeys[0];
     }
 
-    //verify the signature
+    // verify the signature
     m_process = new QProcess();
     QStringList arguments;
-    arguments << QStringLiteral("--no-secmem-warning")
-              << QStringLiteral("--status-fd=2")
-              << QStringLiteral("--command-fd=0")
-              << QStringLiteral("--no-tty")
-              << QStringLiteral("--detach-sign")
-              << QStringLiteral("-u")
-              << m_secretKey
-              << QStringLiteral("-o")
-              << f.path() + QStringLiteral("/signature")
+    arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--status-fd=2") << QStringLiteral("--command-fd=0") << QStringLiteral("--no-tty")
+              << QStringLiteral("--detach-sign") << QStringLiteral("-u") << m_secretKey << QStringLiteral("-o") << f.path() + QStringLiteral("/signature")
               << m_fileName;
-    connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
-            this, &Security::slotFinished);
-    connect(m_process, &QProcess::readyReadStandardOutput,
-            this, &Security::slotReadyReadStandardOutput);
+    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_runMode = Sign;
     m_process->start(gpgExecutable(), arguments);
     if (m_process->waitForStarted()) {
         m_gpgRunning = true;
     } else {
-        Q_EMIT signalError(i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be possible.</qt>"));
+        Q_EMIT signalError(
+            i18n("<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is installed, otherwise signing of the resources will not be "
+                 "possible.</qt>"));
         Q_EMIT fileSigned(0);
         delete m_process;
         m_process = nullptr;

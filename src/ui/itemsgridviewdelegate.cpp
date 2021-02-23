@@ -8,27 +8,25 @@
 
 #include "itemsgridviewdelegate_p.h"
 
-#include <QPainter>
-#include <QApplication>
-#include <QLabel>
-#include <QToolButton>
-#include <QMenu>
-#include <QHBoxLayout>
 #include <QAbstractItemView>
+#include <QApplication>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QMenu>
+#include <QPainter>
+#include <QToolButton>
 
 #include <KFormat>
-#include <knewstuff_debug.h>
 #include <KLocalizedString>
 #include <KRatingWidget>
 #include <KSqueezedTextLabel>
+#include <knewstuff_debug.h>
 
 #include "core/itemsmodel.h"
 
 namespace KNS3
 {
-enum { DelegateTitleLabel, DelegateAuthorLabel, DelegateDownloadCounterLabel,
-       DelegateGridRatingWidget
-     };
+enum { DelegateTitleLabel, DelegateAuthorLabel, DelegateDownloadCounterLabel, DelegateGridRatingWidget };
 
 ItemsGridViewDelegate::ItemsGridViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent)
     : ItemsViewBaseDelegate(itemView, engine, parent)
@@ -70,9 +68,7 @@ QList<QWidget *> ItemsGridViewDelegate::createItemWidgets(const QModelIndex &ind
     return m_widgetList;
 }
 
-void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
-        const QStyleOptionViewItem &option,
-        const QPersistentModelIndex &index) const
+void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
 {
     const KNSCore::ItemsModel *model = qobject_cast<const KNSCore::ItemsModel *>(index.model());
     if (!model) {
@@ -83,33 +79,33 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
     int elementYPos = KNSCore::PreviewHeight + ItemMargin + FrameThickness * 2;
 
-    //setup rating widget
+    // setup rating widget
     KRatingWidget *rating = qobject_cast<KRatingWidget *>(widgets.at(DelegateGridRatingWidget));
     if (rating) {
         if (entry.rating() > 0) {
             rating->setToolTip(i18n("Rating: %1%", entry.rating()));
             // assume all entries come with rating 0..100 but most are in the range 20 - 80, so 20 is 0 stars, 80 is 5 stars
             rating->setRating((entry.rating() - 20) * 10 / 60);
-            //make the rating widget smaller than the one at list view
+            // make the rating widget smaller than the one at list view
             int newWidth = 68;
             QSize size(newWidth, 15);
             rating->resize(size);
-            //put rating widget under image rectangle
+            // put rating widget under image rectangle
             rating->move((ItemGridWidth - newWidth) / 2, elementYPos);
             elementYPos += rating->height();
         } else {
-            //is it better to stay visible?
+            // is it better to stay visible?
             rating->setVisible(false);
         }
     }
     elementYPos += ItemMargin;
 
-    //setup title label
+    // setup title label
     QLabel *titleLabel = qobject_cast<QLabel *>(widgets.at(DelegateTitleLabel));
     if (titleLabel != nullptr) {
         titleLabel->setWordWrap(true);
         titleLabel->setAlignment(Qt::AlignHCenter);
-        //titleLabel->setFrameStyle(QFrame::Panel);
+        // titleLabel->setFrameStyle(QFrame::Panel);
         titleLabel->resize(QSize(option.rect.width() - (ItemMargin * 2), option.fontMetrics.height() * 2));
         titleLabel->move((ItemGridWidth - titleLabel->width()) / 2, elementYPos);
 
@@ -130,7 +126,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         titleLabel->setText(title);
         elementYPos += titleLabel->height();
     }
-    //setup author label
+    // setup author label
     QLabel *authorLabel = qobject_cast<QLabel *>(widgets.at(DelegateAuthorLabel));
     if (authorLabel) {
         authorLabel->setWordWrap(true);
@@ -145,9 +141,14 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         if (!authorName.isEmpty()) {
             if (!authorPage.isEmpty()) {
-                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", QLatin1String(" <a href=\"") + authorPage + QLatin1String("\">") + authorName + QLatin1String("</a>")) + QLatin1String("</p>\n");
+                text += QLatin1String("<p>")
+                    + i18nc("Show the author of this item in a list",
+                            "By <i>%1</i>",
+                            QLatin1String(" <a href=\"") + authorPage + QLatin1String("\">") + authorName + QLatin1String("</a>"))
+                    + QLatin1String("</p>\n");
             } else if (!email.isEmpty()) {
-                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String(" <a href=\"mailto:") + email + QLatin1String("\">") + email + QLatin1String("</a></p>\n");
+                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String(" <a href=\"mailto:")
+                    + email + QLatin1String("\">") + email + QLatin1String("</a></p>\n");
             } else {
                 text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String("</p>\n");
             }
@@ -157,7 +158,7 @@ void ItemsGridViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
     }
     elementYPos += ItemMargin;
 
-    //setup download label
+    // setup download label
     QLabel *downloadLabel = qobject_cast<QLabel *>(widgets.at(DelegateDownloadCounterLabel));
     if (downloadLabel != nullptr) {
         downloadLabel->setWordWrap(true);
@@ -270,17 +271,14 @@ void ItemsGridViewDelegate::createOperationBar()
     m_detailsButton->setPopupMode(QToolButton::InstantPopup);
     m_detailsButton->setToolTip(i18n("Details"));
     m_detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("documentinfo")));
-    setBlockedEventTypes(m_detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(m_detailsButton, &QToolButton::clicked,
-            this, static_cast<void(ItemsGridViewDelegate::*)()>(&ItemsGridViewDelegate::slotDetailsClicked));
+    setBlockedEventTypes(m_detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+    connect(m_detailsButton, &QToolButton::clicked, this, static_cast<void (ItemsGridViewDelegate::*)()>(&ItemsGridViewDelegate::slotDetailsClicked));
 
     m_installButton = new QToolButton();
     m_installButton->setToolButtonStyle(Qt::ToolButtonFollowStyle);
     m_installButton->setPopupMode(QToolButton::InstantPopup);
 
-    setBlockedEventTypes(m_installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+    setBlockedEventTypes(m_installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
     connect(m_installButton, &QAbstractButton::clicked, this, &ItemsGridViewDelegate::slotInstallClicked);
     connect(m_installButton, &QToolButton::triggered, this, &ItemsGridViewDelegate::slotInstallActionTriggered);
 
@@ -372,4 +370,3 @@ void ItemsGridViewDelegate::displayOperationBar(const QRect &rect, const QModelI
     }
 }
 }
-

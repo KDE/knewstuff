@@ -9,12 +9,19 @@
 
 using namespace KNSCore;
 
-class QuestionManagerHelper {
+class QuestionManagerHelper
+{
 public:
-    QuestionManagerHelper() : q(nullptr) {}
-    ~QuestionManagerHelper() { delete q; }
+    QuestionManagerHelper()
+        : q(nullptr)
+    {
+    }
+    ~QuestionManagerHelper()
+    {
+        delete q;
+    }
     QuestionManagerHelper(const QuestionManagerHelper &) = delete;
-    QuestionManagerHelper& operator=(const QuestionManagerHelper &) = delete;
+    QuestionManagerHelper &operator=(const QuestionManagerHelper &) = delete;
     QuestionManager *q;
 };
 Q_GLOBAL_STATIC(QuestionManagerHelper, s_kns3_questionManager)
@@ -22,13 +29,14 @@ Q_GLOBAL_STATIC(QuestionManagerHelper, s_kns3_questionManager)
 class QuestionManager::Private
 {
 public:
-    Private() {}
+    Private()
+    {
+    }
 };
 
-
-QuestionManager* QuestionManager::instance()
+QuestionManager *QuestionManager::instance()
 {
-    if(!s_kns3_questionManager()->q) {
+    if (!s_kns3_questionManager()->q) {
         new QuestionManager;
     }
     return s_kns3_questionManager()->q;

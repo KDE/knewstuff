@@ -70,7 +70,7 @@ public:
      * @return An entry if one was found, or an invalid entry if no entry says it installed that file
      * since 5.74
      */
-    KNSCore::EntryInternal entryFromInstalledFile(const QString& installedFile) const;
+    KNSCore::EntryInternal entryFromInstalledFile(const QString &installedFile) const;
 
     /**
      * Emitted when the cache has changed underneath us, and need users of the cache to know

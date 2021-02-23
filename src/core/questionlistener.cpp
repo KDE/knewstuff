@@ -10,7 +10,7 @@
 
 using namespace KNSCore;
 
-QuestionListener::QuestionListener(QObject* parent)
+QuestionListener::QuestionListener(QObject *parent)
     : QObject(parent)
 {
     connect(QuestionManager::instance(), &QuestionManager::askQuestion, this, &QuestionListener::askQuestion);
@@ -20,7 +20,7 @@ QuestionListener::~QuestionListener()
 {
 }
 
-void QuestionListener::askQuestion(Question* question)
+void QuestionListener::askQuestion(Question *question)
 {
     Q_UNUSED(question)
 }

@@ -8,30 +8,30 @@
 */
 
 #include "uploaddialog.h"
-#include "uploaddialog_p.h"
 #include "ui/widgetquestionlistener.h"
+#include "uploaddialog_p.h"
 
+#include <QCoreApplication>
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QImageReader>
 #include <QLayout>
 #include <QPointer>
 #include <QString>
-#include <QCoreApplication>
 
 #include <KIconLoader>
-#include <KMessageBox>
 #include <KLocalizedString>
+#include <KMessageBox>
 
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
 #include <KPixmapSequence>
 #include <KPixmapSequenceWidget>
-#include <KIO/OpenUrlJob>
-#include <KIO/JobUiDelegate>
 
-#include <knewstuff_debug.h>
-#include <QLoggingCategory>
 #include <KConfig>
 #include <KConfigGroup>
+#include <QLoggingCategory>
+#include <knewstuff_debug.h>
 #include <qstandardpaths.h>
 
 using namespace KNS3;
@@ -122,7 +122,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
     q->connect(atticaHelper, SIGNAL(contentLoaded(Attica::Content)), q, SLOT(_k_updatedContentFetched(Attica::Content)));
     q->connect(atticaHelper, SIGNAL(detailsLinkLoaded(QUrl)), q, SLOT(_k_detailsLinkLoaded(QUrl)));
     q->connect(atticaHelper, SIGNAL(currencyLoaded(QString)), q, SLOT(_k_currencyLoaded(QString)));
-    q->connect(atticaHelper, SIGNAL(previewLoaded(int,QImage)), q, SLOT(_k_previewLoaded(int,QImage)));
+    q->connect(atticaHelper, SIGNAL(previewLoaded(int, QImage)), q, SLOT(_k_previewLoaded(int, QImage)));
     atticaHelper->init();
 
     q->connect(ui.changePreview1Button, SIGNAL(clicked()), q, SLOT(_k_changePreview1()));
@@ -134,7 +134,7 @@ bool UploadDialogPrivate::init(const QString &configfile)
 
     q->connect(ui.registerNewAccountLabel, SIGNAL(linkActivated(QString)), q, SLOT(_k_openRegisterAccountWebpage(QString)));
 
-    //Busy widget
+    // Busy widget
     busyWidget = new KPixmapSequenceWidget();
     busyWidget->setSequence(KIconLoader::global()->loadPixmapSequence(QStringLiteral("process-working"), 22));
     busyWidget->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
@@ -279,7 +279,7 @@ void UploadDialogPrivate::_k_providerChanged(const QString &providerName)
 {
     atticaHelper->setCurrentProvider(providerName);
     QString registerUrl = atticaHelper->provider().getRegisterAccountUrl();
-    if (! registerUrl.isEmpty()) {
+    if (!registerUrl.isEmpty()) {
         ui.registerNewAccountLabel->setText(QStringLiteral("<a href=\"register\">") + i18n("Register a new account") + QStringLiteral("</a>"));
     } else {
         ui.registerNewAccountLabel->setText(QString());
@@ -361,7 +361,6 @@ void UploadDialogPrivate::_k_contentByCurrentUserLoaded(const Attica::Content::L
         ui.radioUpdate->setEnabled(true);
         _k_updatePage();
     }
-
 }
 
 void UploadDialogPrivate::_k_updatedContentFetched(const Attica::Content &content)
@@ -414,14 +413,16 @@ void UploadDialogPrivate::_k_updateContentsToggled(bool update)
 }
 
 UploadDialog::UploadDialog(QWidget *parent)
-    : QDialog(parent), d(new UploadDialogPrivate(this))
+    : QDialog(parent)
+    , d(new UploadDialogPrivate(this))
 {
     const QString name = QCoreApplication::applicationName();
     init(name + QStringLiteral(".knsrc"));
 }
 
 UploadDialog::UploadDialog(const QString &configFile, QWidget *parent)
-    : QDialog(parent), d(new UploadDialogPrivate(this))
+    : QDialog(parent)
+    , d(new UploadDialogPrivate(this))
 {
     init(configFile);
 }
@@ -457,9 +458,7 @@ bool UploadDialog::init(const QString &configfile)
     if (displayName.isEmpty()) {
         displayName = QCoreApplication::applicationName();
     }
-    d->ui.mTitleWidget->setText(i18nc("Program name followed by 'Add On Uploader'",
-                                      "%1 Add-On Uploader",
-                                      displayName));
+    d->ui.mTitleWidget->setText(i18nc("Program name followed by 'Add On Uploader'", "%1 Add-On Uploader", displayName));
 
     if (success) {
         d->_k_showPage(0);
@@ -527,19 +526,19 @@ void UploadDialog::setPreviewImageFile(uint number, const QUrl &file)
 {
     QPixmap preview(file.toLocalFile());
     switch (number) {
-    case 0 :
+    case 0:
         d->previewFile1 = file;
         d->ui.previewImage1->setPixmap(preview.scaled(d->ui.previewImage1->size()));
         break;
-    case 1 :
+    case 1:
         d->previewFile2 = file;
         d->ui.previewImage2->setPixmap(preview.scaled(d->ui.previewImage2->size()));
         break;
-    case 2 :
+    case 2:
         d->previewFile3 = file;
         d->ui.previewImage3->setPixmap(preview.scaled(d->ui.previewImage3->size()));
         break;
-    default :
+    default:
         qCCritical(KNEWSTUFF) << "Wrong preview image file number";
         break;
     }
@@ -559,7 +558,8 @@ void UploadDialogPrivate::_k_categoriesLoaded(const Attica::Category::List &load
         KMessageBox::error(q,
                            i18np("The server does not recognize the category %2 to which you are trying to upload.",
                                  "The server does not recognize any of the categories to which you are trying to upload: %2",
-                                 categoryNames.size(), categoryNames.join(QLatin1String(", "))),
+                                 categoryNames.size(),
+                                 categoryNames.join(QLatin1String(", "))),
                            i18n("Error"));
         // close the dialog
         q->reject();
@@ -628,10 +628,10 @@ void UploadDialogPrivate::_k_startUpload()
     content.addAttribute(QStringLiteral("changelog"), ui.changelog->toPlainText());
 
     // TODO: add additional attributes
-    //content.addAttribute("downloadlink1", ui.link1->text());
-    //content.addAttribute("downloadlink2", ui.link2->text());
-    //content.addAttribute("homepage1", ui.homepage->text());
-    //content.addAttribute("blog1", ui.blog->text());
+    // content.addAttribute("downloadlink1", ui.link1->text());
+    // content.addAttribute("downloadlink2", ui.link2->text());
+    // content.addAttribute("homepage1", ui.homepage->text());
+    // content.addAttribute("blog1", ui.blog->text());
 
     content.addAttribute(QStringLiteral("downloadbuy1"), ui.priceCheckBox->isChecked() ? QStringLiteral("1") : QStringLiteral("0"));
     content.addAttribute(QStringLiteral("downloadbuyprice1"), QString::number(ui.priceSpinBox->value()));
@@ -640,12 +640,13 @@ void UploadDialogPrivate::_k_startUpload()
     if (ui.radioNewUpload->isChecked()) {
         // upload a new content
         Attica::ItemPostJob<Attica::Content> *job = currentProvider().addNewContent(category, content);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_contentAdded(Attica::BaseJob*)));
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_contentAdded(Attica::BaseJob *)));
         job->start();
     } else {
         // update old content
-        Attica::ItemPostJob<Attica::Content> *job = currentProvider().editContent(category, ui.userContentList->currentItem()->data(Qt::UserRole).toString(), content);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_contentAdded(Attica::BaseJob*)));
+        Attica::ItemPostJob<Attica::Content> *job =
+            currentProvider().editContent(category, ui.userContentList->currentItem()->data(Qt::UserRole).toString(), content);
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_contentAdded(Attica::BaseJob *)));
         job->start();
     }
 }
@@ -769,16 +770,16 @@ void UploadDialogPrivate::doUpload(const QString &index, const QUrl &path)
     Attica::PostJob *job = nullptr;
     if (index.isEmpty()) {
         job = currentProvider().setDownloadFile(contentId, fileName, fileContents);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_fileUploadFinished(Attica::BaseJob*)));
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_fileUploadFinished(Attica::BaseJob *)));
     } else if (index == QLatin1Char('1')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview1UploadFinished(Attica::BaseJob*)));
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_preview1UploadFinished(Attica::BaseJob *)));
     } else if (index == QLatin1Char('2')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview2UploadFinished(Attica::BaseJob*)));
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_preview2UploadFinished(Attica::BaseJob *)));
     } else if (index == QLatin1Char('3')) {
         job = currentProvider().setPreviewImage(contentId, index, fileName, fileContents);
-        q->connect(job, SIGNAL(finished(Attica::BaseJob*)), q, SLOT(_k_preview3UploadFinished(Attica::BaseJob*)));
+        q->connect(job, SIGNAL(finished(Attica::BaseJob *)), q, SLOT(_k_preview3UploadFinished(Attica::BaseJob *)));
     }
     if (job) {
         job->start();
@@ -816,9 +817,8 @@ void UploadDialogPrivate::_k_preview3UploadFinished(Attica::BaseJob *)
 void UploadDialogPrivate::uploadFileFinished()
 {
     // FIXME multiple previews
-    if (finishedContents && (previewFile1.isEmpty() || finishedPreview1)
-            && (previewFile2.isEmpty() || finishedPreview2)
-            && (previewFile3.isEmpty() || finishedPreview3)) {
+    if (finishedContents && (previewFile1.isEmpty() || finishedPreview1) && (previewFile2.isEmpty() || finishedPreview2)
+        && (previewFile3.isEmpty() || finishedPreview3)) {
         finished = true;
         ui.uploadProgressBar->setMinimum(0);
         ui.uploadProgressBar->setMaximum(100);

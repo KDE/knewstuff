@@ -11,10 +11,10 @@
 #ifndef KNEWSTUFF3_XMLLOADER_P_H
 #define KNEWSTUFF3_XMLLOADER_P_H
 
-#include <qdom.h>
 #include <QObject>
 #include <QString>
 #include <QUrl>
+#include <qdom.h>
 
 #include "knewstuffcore_export.h"
 
@@ -22,9 +22,7 @@ class KJob;
 
 namespace KNSCore
 {
-
-QDomElement addElement(QDomDocument &doc, QDomElement &parent,
-                       const QString &tag, const QString &value);
+QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &tag, const QString &value);
 
 /**
  * KNewStuff xml loader.

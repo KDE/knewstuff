@@ -13,9 +13,8 @@
 #include <QXmlStreamReader>
 #include <knewstuffcore_debug.h>
 
-#include "xmlloader.h"
 #include "../entry_p.h" // For Entry::Status ONLY!
-
+#include "xmlloader.h"
 
 using namespace KNSCore;
 
@@ -310,7 +309,7 @@ int EntryInternal::numberOfComments() const
     return d->mNumberOfComments;
 }
 
-void EntryInternal::setNumberOfComments (int comments)
+void EntryInternal::setNumberOfComments(int comments)
 {
     d->mNumberOfComments = comments;
 }
@@ -423,15 +422,15 @@ void EntryInternal::clearDownloadLinkInformation()
     d->mDownloadLinkInformationList.clear();
 }
 
-static QXmlStreamReader::TokenType readNextSkipComments(QXmlStreamReader* xml)
+static QXmlStreamReader::TokenType readNextSkipComments(QXmlStreamReader *xml)
 {
     do {
         xml->readNext();
-    } while(xml->tokenType() == QXmlStreamReader::Comment || (xml->tokenType() == QXmlStreamReader::Characters && xml->text().trimmed().isEmpty()));
+    } while (xml->tokenType() == QXmlStreamReader::Comment || (xml->tokenType() == QXmlStreamReader::Characters && xml->text().trimmed().isEmpty()));
     return xml->tokenType();
 }
 
-static QStringRef readText(QXmlStreamReader* xml)
+static QStringRef readText(QXmlStreamReader *xml)
 {
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
     QStringRef ret;
@@ -442,7 +441,7 @@ static QStringRef readText(QXmlStreamReader* xml)
     return ret;
 }
 
-static QString readStringTrimmed(QXmlStreamReader* xml)
+static QString readStringTrimmed(QXmlStreamReader *xml)
 {
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
     QString ret = readText(xml).trimmed().toString();
@@ -453,7 +452,7 @@ static QString readStringTrimmed(QXmlStreamReader* xml)
     return ret;
 }
 
-static int readInt(QXmlStreamReader* xml)
+static int readInt(QXmlStreamReader *xml)
 {
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
     int ret = readText(xml).toInt();
@@ -463,7 +462,7 @@ static int readInt(QXmlStreamReader* xml)
     return ret;
 }
 
-bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
+bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
 {
     if (reader.name() != QLatin1String("stuff")) {
         qCWarning(KNEWSTUFFCORE) << "Parsing Entry from invalid XML. Reader tag name was expected to be \"stuff\", but was found as:" << reader.name();
@@ -538,7 +537,9 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader& reader)
             if (reader.tokenType() == QXmlStreamReader::Characters)
                 readNextSkipComments(&reader);
         }
-        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement, Q_FUNC_INFO, QStringLiteral("token name was %1 and the type was %2").arg(reader.name().toString(), reader.tokenString()).toLocal8Bit().data());
+        Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement,
+                   Q_FUNC_INFO,
+                   QStringLiteral("token name was %1 and the type was %2").arg(reader.name().toString(), reader.tokenString()).toLocal8Bit().data());
     }
 
     // Validation
@@ -707,8 +708,7 @@ QDomElement KNSCore::EntryInternal::entryXML() const
         addElement(doc, el, QStringLiteral("id"), d->mUniqueId);
     }
 
-    (void)addElement(doc, el, QStringLiteral("releasedate"),
-                     d->mReleaseDate.toString(Qt::ISODate));
+    (void)addElement(doc, el, QStringLiteral("releasedate"), d->mReleaseDate.toString(Qt::ISODate));
 
     e = addElement(doc, el, QStringLiteral("summary"), d->mSummary);
     e = addElement(doc, el, QStringLiteral("changelog"), d->mChangelog);

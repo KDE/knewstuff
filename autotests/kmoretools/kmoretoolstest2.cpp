@@ -6,8 +6,8 @@
 
 #include <../src/kmoretools/kmoretools.h>
 #include <../src/kmoretools/kmoretools_p.h>
-#include <../src/kmoretools/kmoretoolspresets.h>
 #include <../src/kmoretools/kmoretoolsmenufactory.h>
+#include <../src/kmoretools/kmoretoolspresets.h>
 
 #include <QTest>
 
@@ -67,12 +67,10 @@ void KMoreToolsTest2::testInstalledAppSetInitialItemText()
     QCOMPARE(action->text(), QString(_("Kate in super-user mode")));
 }
 
-
-bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
+bool menuAtLeastOneActionWithText(const QMenu *menu, const QString &text)
 {
     const auto lstActions = menu->actions();
-    for (auto a : lstActions)
-    {
+    for (auto a : lstActions) {
         if (a->text() == text) {
             return true;
         }
@@ -81,11 +79,10 @@ bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
     return false;
 }
 
-bool menuAtLeastNoActionWithText(const QMenu* menu, const QString& text)
+bool menuAtLeastNoActionWithText(const QMenu *menu, const QString &text)
 {
     const auto lstActions = menu->actions();
-    for (auto a : lstActions)
-    {
+    for (auto a : lstActions) {
         if (a->text() == text) {
             qDebug() << a->text();
             return false;
@@ -129,7 +126,7 @@ void KMoreToolsTest2::test_buildMenu_ShowConfigureMenuItem()
         QMenu menu;
         menuBuilder->buildByAppendingToMenu(&menu); // == KMoreTools::ConfigureDialogAccessible_Always
 
-        auto doAssert = [](QMenu* menu) {
+        auto doAssert = [](QMenu *menu) {
             const QList<QAction *> actions = menu->actions();
             QCOMPARE(actions.count(), 3); // "Kate", "Separator", "More..."
             auto moreMenu = actions[2]->menu();

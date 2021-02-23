@@ -11,7 +11,6 @@
 
 namespace KNSCore
 {
-
 enum JobFlag {
     None = 0,
     HideProgressInfo = 1,
@@ -26,4 +25,4 @@ enum LoadType { Reload, NoReload };
 
 }
 
-#endif//JOBBASE_H
+#endif // JOBBASE_H

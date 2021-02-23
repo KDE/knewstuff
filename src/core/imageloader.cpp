@@ -7,7 +7,6 @@
 
 #include "imageloader_p.h"
 
-
 using namespace KNSCore;
 
 ImageLoader::ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent)
@@ -52,9 +51,7 @@ void ImageLoader::slotDownload(KJob *job)
     QImage image;
     image.loadFromData(std::move(m_buffer));
 
-    if (m_previewType == EntryInternal::PreviewSmall1
-            || m_previewType == EntryInternal::PreviewSmall2
-            || m_previewType == EntryInternal::PreviewSmall3) {
+    if (m_previewType == EntryInternal::PreviewSmall1 || m_previewType == EntryInternal::PreviewSmall2 || m_previewType == EntryInternal::PreviewSmall3) {
         if (image.width() > PreviewWidth || image.height() > PreviewHeight) {
             // if the preview is really big, first scale fast to a smaller size, then smooth to desired size
             if (image.width() > 4 * PreviewWidth || image.height() > 4 * PreviewHeight) {
@@ -71,4 +68,3 @@ void ImageLoader::slotDownload(KJob *job)
     Q_EMIT signalPreviewLoaded(m_entry, m_previewType);
     deleteLater();
 }
-

@@ -12,8 +12,8 @@
 
 #include "errorcode.h"
 
-#include <QFrame>
 #include <KPixmapSequence>
+#include <QFrame>
 
 class QVBoxLayout;
 class QLabel;
@@ -22,7 +22,6 @@ class KPixmapSequenceWidget;
 
 namespace KNS3
 {
-
 /**
  * Embedded progress indicator for the download dialog.
  *

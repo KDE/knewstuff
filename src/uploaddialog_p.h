@@ -7,16 +7,16 @@
 #ifndef KNEWSTUFF3_UI_UPLOADDIALOG_P_H
 #define KNEWSTUFF3_UI_UPLOADDIALOG_P_H
 
-#include "upload/atticahelper_p.h"
 #include "ui_uploaddialog.h"
+#include "upload/atticahelper_p.h"
 
-#include <attica/providermanager.h>
-#include <attica/provider.h>
 #include <attica/category.h>
 #include <attica/content.h>
-#include <attica/listjob.h>
 #include <attica/license.h>
+#include <attica/listjob.h>
 #include <attica/postjob.h>
+#include <attica/provider.h>
+#include <attica/providermanager.h>
 
 #include <QUrl>
 

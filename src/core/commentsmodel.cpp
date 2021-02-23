@@ -13,12 +13,15 @@
 
 #include <QTimer>
 
-namespace KNSCore {
-class CommentsModel::Private {
+namespace KNSCore
+{
+class CommentsModel::Private
+{
 public:
     Private(CommentsModel *qq)
         : q(qq)
-    {}
+    {
+    }
     CommentsModel *const q;
     Engine *engine = nullptr;
 
@@ -31,12 +34,13 @@ public:
         ClearModel,
     };
     bool fetchThrottle = false;
-    void fetch(FetchOptions option = NoOption) {
+    void fetch(FetchOptions option = NoOption)
+    {
         if (fetchThrottle) {
             return;
         }
         fetchThrottle = true;
-        QTimer::singleShot(1, q, [this](){
+        QTimer::singleShot(1, q, [this]() {
             fetchThrottle = false;
         });
         // Sanity checks, because we need a few things to be correct before we can actually fetch comments...
@@ -53,7 +57,7 @@ public:
                 q->beginResetModel();
                 comments.clear();
                 provider->disconnect(q);
-                q->connect(provider.data(), &Provider::commentsLoaded, q, [=](const QList<std::shared_ptr<KNSCore::Comment>> &newComments){
+                q->connect(provider.data(), &Provider::commentsLoaded, q, [=](const QList<std::shared_ptr<KNSCore::Comment>> &newComments) {
                     QList<std::shared_ptr<KNSCore::Comment>> actualNewComments;
                     for (const std::shared_ptr<KNSCore::Comment> &comment : newComments) {
                         bool commentIsKnown = false;
@@ -79,7 +83,8 @@ public:
             }
             int commentsPerPage = 100;
             int pageToLoad = comments.count() / commentsPerPage;
-            qCDebug(KNEWSTUFFCORE) << "Loading comments, page" << pageToLoad << "with current comment count" << comments.count() << "out of a total of" << entry.numberOfComments();
+            qCDebug(KNEWSTUFFCORE) << "Loading comments, page" << pageToLoad << "with current comment count" << comments.count() << "out of a total of"
+                                   << entry.numberOfComments();
             Q_EMIT provider->loadComments(entry, commentsPerPage, pageToLoad);
         }
     }
@@ -121,54 +126,50 @@ QVariant KNSCore::CommentsModel::data(const QModelIndex &index, int role) const
     QVariant value;
     if (checkIndex(index)) {
         std::shared_ptr<KNSCore::Comment> comment = d->comments[index.row()];
-        switch (role)
-        {
-            case IdRole:
-                value.setValue(comment->id);
-                break;
-            case SubjectRole:
-                value.setValue(comment->subject);
-                break;
-            case TextRole:
-                value.setValue(comment->text);
-                break;
-            case ChildCountRole:
-                value.setValue(comment->childCount);
-                break;
-            case UsernameRole:
-                value.setValue(comment->username);
-                break;
-            case DateRole:
-                value.setValue(comment->date);
-                break;
-            case ScoreRole:
-                value.setValue(comment->score);
-                break;
-            case ParentIndexRole:
-                {
-                    int idx{-1};
-                    if (comment->parent) {
-                        idx = d->comments.indexOf(comment->parent);
-                    }
-                    value.setValue(idx);
+        switch (role) {
+        case IdRole:
+            value.setValue(comment->id);
+            break;
+        case SubjectRole:
+            value.setValue(comment->subject);
+            break;
+        case TextRole:
+            value.setValue(comment->text);
+            break;
+        case ChildCountRole:
+            value.setValue(comment->childCount);
+            break;
+        case UsernameRole:
+            value.setValue(comment->username);
+            break;
+        case DateRole:
+            value.setValue(comment->date);
+            break;
+        case ScoreRole:
+            value.setValue(comment->score);
+            break;
+        case ParentIndexRole: {
+            int idx{-1};
+            if (comment->parent) {
+                idx = d->comments.indexOf(comment->parent);
+            }
+            value.setValue(idx);
+        } break;
+        case DepthRole: {
+            int depth{0};
+            if (comment->parent) {
+                std::shared_ptr<KNSCore::Comment> child = comment->parent;
+                while (child) {
+                    ++depth;
+                    child = child->parent;
                 }
-                break;
-            case DepthRole:
-                {
-                    int depth{0};
-                    if (comment->parent) {
-                        std::shared_ptr<KNSCore::Comment> child = comment->parent;
-                        while (child) {
-                            ++depth;
-                            child = child->parent;
-                        }
-                    }
-                    value.setValue(depth);
-                    break;
-                }
-            default:
-                value.setValue(i18nc("The value returned for an unknown role when requesting data from the model.", "Unknown CommentsModel role"));
-                break;
+            }
+            value.setValue(depth);
+            break;
+        }
+        default:
+            value.setValue(i18nc("The value returned for an unknown role when requesting data from the model.", "Unknown CommentsModel role"));
+            break;
         }
     }
     return value;
@@ -192,7 +193,7 @@ bool KNSCore::CommentsModel::canFetchMore(const QModelIndex &parent) const
 
 void KNSCore::CommentsModel::fetchMore(const QModelIndex &parent)
 {
-    if(parent.isValid())
+    if (parent.isValid())
         return;
     d->fetch();
 }

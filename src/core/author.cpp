@@ -11,7 +11,8 @@
 #include <QHash>
 
 // BCI: Add a real d-pointer
-namespace KNSCore {
+namespace KNSCore
+{
 struct AuthorPrivate {
 public:
     QString id;
@@ -23,7 +24,7 @@ public:
 
 using namespace KNSCore;
 
-typedef QHash<const Author *, AuthorPrivate*> AuthorPrivateHash;
+typedef QHash<const Author *, AuthorPrivate *> AuthorPrivateHash;
 Q_GLOBAL_STATIC(AuthorPrivateHash, d_func)
 
 static AuthorPrivate *d(const Author *author)

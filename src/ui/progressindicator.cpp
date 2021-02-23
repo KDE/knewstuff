@@ -9,10 +9,10 @@
 
 #include "progressindicator_p.h"
 
-#include <QPushButton>
-#include <QLabel>
-#include <QVariant>
 #include <QHBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QVariant>
 
 #include <KJob>
 
@@ -30,7 +30,7 @@ ProgressIndicator::ProgressIndicator(QWidget *parent)
     QHBoxLayout *hbox = new QHBoxLayout(this);
     hbox->setContentsMargins(0, 0, 0, 0);
 
-    //Busy widget
+    // Busy widget
     busyWidget = new KPixmapSequenceWidget(this);
     busyWidget->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
@@ -48,9 +48,9 @@ void ProgressIndicator::busy(const QString &message)
     busyWidget->setSequence(m_busyPixmap);
 }
 
-void KNS3::ProgressIndicator::error(const KNSCore::ErrorCode& errorCode, const QString& message, const QVariant& metadata)
+void KNS3::ProgressIndicator::error(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata)
 {
-    if(errorCode == KNSCore::OcsError && metadata.value<int>() == 405) {
+    if (errorCode == KNSCore::OcsError && metadata.value<int>() == 405) {
         return;
     }
     m_statusLabel->setText(message);
@@ -63,4 +63,3 @@ void ProgressIndicator::idle(const QString &message)
     m_statusLabel->setText(message);
     busyWidget->setVisible(false);
 }
-

@@ -24,7 +24,6 @@ class KJob;
 
 namespace KNSCore
 {
-
 /**
  * @short KNewStuff entry installation.
  *
@@ -58,10 +57,13 @@ public:
 
     enum UncompressionOptions {
         NeverUncompress, ///@< Never attempt to decompress a file, whatever format it is. Matches "never" knsrc setting
-        AlwaysUncompress, ///@< Assume all downloaded files are archives, and attempt to decompress them. Will cause failure if decompression fails. Matches "always" knsrc setting
+        AlwaysUncompress, ///@< Assume all downloaded files are archives, and attempt to decompress them. Will cause failure if decompression fails. Matches
+                          ///"always" knsrc setting
         UncompressIfArchive, ///@< If the file is an archive, decompress it, otherwise just pass it on. Matches "archive" knsrc setting
-        UncompressIntoSubdirIfArchive, ///@< If the file is an archive, decompress it in a subdirectory if it contains multiple files, otherwise just pass it on. Matches "subdir-archive" knsrc setting
-        UncompressIntoSubdir, ///@< As Archive, except that if there is more than an item in the file, put contents in a subdirectory with the same name as the file. Matches "subdir" knsrc setting
+        UncompressIntoSubdirIfArchive, ///@< If the file is an archive, decompress it in a subdirectory if it contains multiple files, otherwise just pass it
+                                       /// on. Matches "subdir-archive" knsrc setting
+        UncompressIntoSubdir, ///@< As Archive, except that if there is more than an item in the file, put contents in a subdirectory with the same name as the
+                              /// file. Matches "subdir" knsrc setting
         UseKPackageUncompression, ///@< Use the internal KPackage support for installing and uninstalling the package. Matches "kpackage" knsrc setting
     };
     Q_ENUM(UncompressionOptions)
@@ -168,8 +170,8 @@ Q_SIGNALS:
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
-    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal  &entry, const QString &payloadfile, const QString installdir);
-    QProcess* runPostInstallationCommand(const QString &installPath);
+    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
+    QProcess *runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
 

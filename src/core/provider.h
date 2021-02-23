@@ -10,10 +10,10 @@
 #ifndef KNEWSTUFF3_PROVIDER_P_H
 #define KNEWSTUFF3_PROVIDER_P_H
 
+#include <QDebug>
 #include <QList>
 #include <QString>
 #include <QUrl>
-#include <QDebug>
 
 #include <memory>
 
@@ -39,7 +39,7 @@ struct Comment;
  *
  * @internal
  */
-class KNEWSTUFFCORE_EXPORT Provider: public QObject
+class KNEWSTUFFCORE_EXPORT Provider : public QObject
 {
     Q_OBJECT
 public:
@@ -72,9 +72,20 @@ public:
         int page;
         int pageSize;
 
-        SearchRequest(SortMode sortMode_ = Newest, Filter filter_ = None, const QString &searchTerm_ = QString(), const QStringList &categories_ = QStringList(), int page_ = -1, int pageSize_ = 20)
-            : sortMode(sortMode_), filter(filter_), searchTerm(searchTerm_), categories(categories_), page(page_), pageSize(pageSize_)
-        {}
+        SearchRequest(SortMode sortMode_ = Newest,
+                      Filter filter_ = None,
+                      const QString &searchTerm_ = QString(),
+                      const QStringList &categories_ = QStringList(),
+                      int page_ = -1,
+                      int pageSize_ = 20)
+            : sortMode(sortMode_)
+            , filter(filter_)
+            , searchTerm(searchTerm_)
+            , categories(categories_)
+            , page(page_)
+            , pageSize(pageSize_)
+        {
+        }
 
         QString hashForRequest() const;
     };
@@ -136,7 +147,9 @@ public:
      * Note: the engine connects to loadingFinished() signal to get the result
      */
     virtual void loadEntries(const KNSCore::Provider::SearchRequest &request) = 0;
-    virtual void loadEntryDetails(const KNSCore::EntryInternal &) {}
+    virtual void loadEntryDetails(const KNSCore::EntryInternal &)
+    {
+    }
     virtual void loadPayloadLink(const EntryInternal &entry, int linkId) = 0;
     /**
      * Request a loading of comments from this provider. The engine listens to the
@@ -168,7 +181,8 @@ public:
     }
     virtual void vote(const EntryInternal &entry, uint rating)
     {
-        Q_UNUSED(entry) Q_UNUSED(rating)
+        Q_UNUSED(entry)
+        Q_UNUSED(rating)
     }
 
     virtual bool userCanBecomeFan()

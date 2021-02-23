@@ -6,15 +6,15 @@
 
 #include <../src/kmoretools/kmoretools.h>
 #include <../src/kmoretools/kmoretools_p.h>
-#include <../src/kmoretools/kmoretoolspresets.h>
 #include <../src/kmoretools/kmoretoolsmenufactory.h>
+#include <../src/kmoretools/kmoretoolspresets.h>
 
-#include <QTest>
 #include <QDialog>
-#include <QLabel>
 #include <QHBoxLayout>
-#include <QPushButton>
+#include <QLabel>
 #include <QLineEdit>
+#include <QPushButton>
+#include <QTest>
 
 /**
  * Each test case starts a test GUI.
@@ -40,7 +40,7 @@ private Q_SLOTS:
     void testLazyMenu();
 
 private:
-    void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description);
+    void testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString &description);
 };
 
 void KMoreToolsTestInteractive::init()
@@ -51,11 +51,10 @@ void KMoreToolsTestInteractive::cleanup()
 {
 }
 
-bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
+bool menuAtLeastOneActionWithText(const QMenu *menu, const QString &text)
 {
     const auto lstActions = menu->actions();
-    for (auto a : lstActions)
-    {
+    for (auto a : lstActions) {
         if (a->text() == text) {
             return true;
         }
@@ -83,9 +82,8 @@ void KMoreToolsTestInteractive::test_buildMenu_WithQActions_interative1()
     f(_("test_buildMenu_WithQActions 1"));
 }
 
-void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString& description)
+void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool withMultipleItemsPerNotInstalledService, const QString &description)
 {
-
     KMoreTools kmt(_("unittest-kmoretools/2"));
     const auto kateApp = kmt.registerServiceByDesktopEntryName(_("org.kde.kate"));
     const auto gitgApp = kmt.registerServiceByDesktopEntryName(_("gitg"));
@@ -120,14 +118,15 @@ void KMoreToolsTestInteractive::testConfigDialogImpl(bool withNotInstalled, bool
     auto menu = new QMenu(dlg);
     menuBuilder->buildByAppendingToMenu(menu);
     button->setMenu(menu); // TODO: connect to the button click signal to always rebuild the menu
-    auto label = new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
+    auto label =
+        new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
     label->setWordWrap(true);
     auto layout = new QHBoxLayout();
     layout->addWidget(button);
     layout->addWidget(label);
     dlg->setLayout(layout);
     QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
-        qDebug () << "delete dlg;";
+        qDebug() << "delete dlg;";
         delete dlg;
     });
     dlg->exec();
@@ -152,7 +151,10 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
 {
     // show resulting menu
     auto dlg = new QDialog();
-    auto labelInfo = new QLabel(_("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or https://). Then, select a grouping name. => A menu will be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"), dlg);
+    auto labelInfo = new QLabel(
+        _("First, select a URL (leave the URL box empty to give no URL; don't forget to add file:// or https://). Then, select a grouping name. => A menu will "
+          "be created that you can try out. KDE4/KF5: If an application does not start even there is the launch indicator, try: $ eval `dbus-launch`"),
+        dlg);
     labelInfo->setWordWrap(true);
     auto selectButton = new QPushButton(_("Select grouping name..."), dlg);
     auto labelLineEdit = new QLabel(_("URL 1 (file://..., https://...)"), dlg);
@@ -160,43 +162,44 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
     urlLineEdit->setText(_("file:///etc/bash.bashrc"));
     auto menuButton = new QPushButton(_("<wait for selection>"), dlg);
 
-    const auto groupingNamesList = {
-        _("disk-usage"),
-        _("disk-partitions"),
-        _("files-find"),
-        _("font-tools"),
-        _("git-clients-for-folder"),
-        _("git-clients-and-actions"),
-        _("icon-browser"),
-        _("language-dictionary"),
-        _("mouse-tools"),
-        _("screenrecorder"),
-        _("screenshot-take"),
-        _("system-monitor-processes"),
-        _("system-monitor-logs"),
-        _("time-countdown")
-    };
+    const auto groupingNamesList = {_("disk-usage"),
+                                    _("disk-partitions"),
+                                    _("files-find"),
+                                    _("font-tools"),
+                                    _("git-clients-for-folder"),
+                                    _("git-clients-and-actions"),
+                                    _("icon-browser"),
+                                    _("language-dictionary"),
+                                    _("mouse-tools"),
+                                    _("screenrecorder"),
+                                    _("screenshot-take"),
+                                    _("system-monitor-processes"),
+                                    _("system-monitor-logs"),
+                                    _("time-countdown")};
 
     KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/3"));
 
     auto groupingNamesMenu = new QMenu(dlg);
-    QMenu* moreToolsMenu = nullptr;
+    QMenu *moreToolsMenu = nullptr;
     for (auto groupingName : groupingNamesList) {
         auto action = new QAction(groupingName, groupingNamesMenu);
         action->setData(groupingName);
         groupingNamesMenu->addAction(action);
 
-        QObject::connect(action, &QAction::triggered, action,
-        [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() { // clazy:exclude=lambda-in-connect
-            auto groupingName = action->data().toString();
-            QUrl url;
-            if (!urlLineEdit->text().isEmpty()) {
-                url.setUrl(urlLineEdit->text());
-            }
-            moreToolsMenu = menuFactory.createMenuFromGroupingNames( { groupingName }, url);
-            menuButton->setText(QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName, url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
-            menuButton->setMenu(moreToolsMenu);
-        });
+        QObject::connect(action,
+                         &QAction::triggered,
+                         action,
+                         [action, &menuFactory, &moreToolsMenu, urlLineEdit, menuButton]() { // clazy:exclude=lambda-in-connect
+                             auto groupingName = action->data().toString();
+                             QUrl url;
+                             if (!urlLineEdit->text().isEmpty()) {
+                                 url.setUrl(urlLineEdit->text());
+                             }
+                             moreToolsMenu = menuFactory.createMenuFromGroupingNames({groupingName}, url);
+                             menuButton->setText(
+                                 QString(_("menu for: '%1' (URL arg: %2)...")).arg(groupingName, url.isEmpty() ? _("<empty>") : _("<see URL 1>")));
+                             menuButton->setMenu(moreToolsMenu);
+                         });
     }
 
     selectButton->setMenu(groupingNamesMenu);
@@ -212,7 +215,7 @@ void KMoreToolsTestInteractive::testDialogForGroupingNames()
     dlg->setLayout(hLayout);
     dlg->setBaseSize(300, 150);
     QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
-        qDebug () << "delete dlg;";
+        qDebug() << "delete dlg;";
         delete dlg;
     });
     dlg->exec();
@@ -222,19 +225,20 @@ void KMoreToolsTestInteractive::testLazyMenu()
 {
     KMoreToolsMenuFactory menuFactory(_("unittest-kmoretools/4"));
 
-    auto moreToolsMenu = menuFactory.createMenuFromGroupingNames( { _("git-clients-for-folder") } );
+    auto moreToolsMenu = menuFactory.createMenuFromGroupingNames({_("git-clients-for-folder")});
 
     auto dlg = new QDialog();
     auto button = new QPushButton(_("Test the lazy menu"), dlg);
     button->setMenu(moreToolsMenu);
-    auto label = new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
+    auto label =
+        new QLabel(_("Test the menu and hit Esc to exit if you are done. Note that changes made via the Configure dialog will have no immediate effect."), dlg);
     label->setWordWrap(true);
     auto layout = new QHBoxLayout();
     layout->addWidget(button);
     layout->addWidget(label);
     dlg->setLayout(layout);
     QObject::connect(dlg, &QDialog::finished, dlg, [dlg]() {
-        qDebug () << "delete dlg;";
+        qDebug() << "delete dlg;";
         delete dlg;
     });
     dlg->exec();

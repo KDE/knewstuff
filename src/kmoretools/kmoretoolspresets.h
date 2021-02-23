@@ -104,8 +104,7 @@ public:
      * Services which are present in more than one grouping are only added once
      * to the resulting list.
      */
-    static QList<KMoreToolsService*> registerServicesByGroupingNames(
-        KMoreTools* kmt, const QStringList& groupingNames);
+    static QList<KMoreToolsService *> registerServicesByGroupingNames(KMoreTools *kmt, const QStringList &groupingNames);
 
     /**
      * Registers a service who's kmt-desktopfile is provided by the
@@ -126,8 +125,7 @@ public:
      *
      * @returns the added KMoreToolsService
      */
-    static KMoreToolsService* registerServiceByDesktopEntryName(
-        KMoreTools* kmt, const QString& desktopEntryName);
+    static KMoreToolsService *registerServiceByDesktopEntryName(KMoreTools *kmt, const QString &desktopEntryName);
 
     // todo later: add another method registerServiceByDesktopEntryNames (plural) that handles
     // a list of desktopEntryNames.

@@ -36,7 +36,7 @@ class KNEWSTUFFCORE_EXPORT EntryWrapper : public QObject
 {
     Q_OBJECT
 public:
-    explicit EntryWrapper(const EntryInternal& entry, QObject *parent = nullptr);
+    explicit EntryWrapper(const EntryInternal &entry, QObject *parent = nullptr);
     virtual ~EntryWrapper();
 
     /**
@@ -44,11 +44,12 @@ public:
      * @return A copy of the entry
      */
     EntryInternal entry() const;
+
 private:
     class Private;
     Private *d;
 };
 }
-Q_DECLARE_METATYPE(KNSCore::EntryWrapper*)
+Q_DECLARE_METATYPE(KNSCore::EntryWrapper *)
 
-#endif//ENTRYWRAPPER_H
+#endif // ENTRYWRAPPER_H

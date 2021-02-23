@@ -10,7 +10,6 @@
 
 namespace KNS3
 {
-
 ItemsView::ItemsView(QWidget *parent)
     : QListView(parent)
 {
@@ -24,4 +23,3 @@ void ItemsView::wheelEvent(QWheelEvent *event)
 }
 
 } // end KNS namespace
-

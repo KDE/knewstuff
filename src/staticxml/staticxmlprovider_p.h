@@ -29,7 +29,7 @@ class XmlLoader;
  *
  * @internal
  */
-class StaticXmlProvider: public Provider
+class StaticXmlProvider : public Provider
 {
     Q_OBJECT
 public:

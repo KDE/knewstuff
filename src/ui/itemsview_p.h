@@ -11,7 +11,7 @@
 
 namespace KNS3
 {
-class ItemsView: public QListView
+class ItemsView : public QListView
 {
 public:
     explicit ItemsView(QWidget *parent = nullptr);

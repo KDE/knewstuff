@@ -10,22 +10,24 @@
 #include <QThread>
 #include <QUrl>
 
-namespace KNSCore {
-
-class FileCopyWorker : public QThread {
+namespace KNSCore
+{
+class FileCopyWorker : public QThread
+{
     Q_OBJECT
-public: 
-    explicit FileCopyWorker(const QUrl& source, const QUrl& destination, QObject* parent = nullptr); 
+public:
+    explicit FileCopyWorker(const QUrl &source, const QUrl &destination, QObject *parent = nullptr);
     ~FileCopyWorker() override;
     void run() override;
 
     Q_SIGNAL void progress(qlonglong current, qlonglong total);
     Q_SIGNAL void completed();
+
 private:
     class Private;
-    Private* d;
+    Private *d;
 };
 
 }
 
-#endif//FILECOPYWORKER_H
+#endif // FILECOPYWORKER_H

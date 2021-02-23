@@ -15,10 +15,10 @@
 
 using namespace KNS3;
 
-ImagePreviewWidget::ImagePreviewWidget(QWidget *parent) :
-    QWidget(parent)
+ImagePreviewWidget::ImagePreviewWidget(QWidget *parent)
+    : QWidget(parent)
 {
-    //installEventFilter(this);
+    // installEventFilter(this);
 }
 
 void ImagePreviewWidget::setImage(const QImage &preview)
@@ -50,7 +50,7 @@ void ImagePreviewWidget::paintEvent(QPaintEvent * /*event*/)
 
     QPainter painter(this);
     int margin = painter.fontMetrics().height() / 2;
-    //painter.drawImage(contentsRect(), m_image);
+    // painter.drawImage(contentsRect(), m_image);
 
     int width = contentsRect().width();
     int height = contentsRect().height();

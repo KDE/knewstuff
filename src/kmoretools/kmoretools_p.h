@@ -9,14 +9,14 @@
 
 #include "kmoretools.h"
 
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QTextCodec>
 #include <QDebug>
 #include <QDesktopServices>
-#include <QUrl>
 #include <QDir>
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QRegularExpression>
+#include <QTextCodec>
+#include <QUrl>
 
 #include <KLocalizedString>
 
@@ -31,7 +31,7 @@
 class KmtMenuItemIdGen
 {
 public:
-    QString getId(const QString& inputId)
+    QString getId(const QString &inputId)
     {
         int postFix = desktopEntryNameUsageMap[inputId];
         desktopEntryNameUsageMap[inputId] = postFix + 1;
@@ -97,7 +97,7 @@ public:
     /**
      * todo: is there a QT method that can be used instead of this?
      */
-    static QString removeMenuAmpersand(const QString& str)
+    static QString removeMenuAmpersand(const QString &str)
     {
         QString newStr = str;
         newStr.replace(QRegularExpression(QStringLiteral("\\&([^&])")), QStringLiteral("\\1")); // &Hallo --> Hallo
@@ -116,15 +116,14 @@ public:
     QList<KmtMenuItemDto> list;
 
 public: // should be private but we would like to unit test
-
     /**
      * NOT USED
      */
-    QList<const KmtMenuItemDto*> itemsBySection(KMoreTools::MenuSection menuSection) const
+    QList<const KmtMenuItemDto *> itemsBySection(KMoreTools::MenuSection menuSection) const
     {
-        QList<const KmtMenuItemDto*> r;
+        QList<const KmtMenuItemDto *> r;
 
-        for (const auto& item : qAsConst(list)) {
+        for (const auto &item : qAsConst(list)) {
             if (item.menuSection == menuSection) {
                 r.append(&item);
             }
@@ -136,9 +135,9 @@ public: // should be private but we would like to unit test
     /**
      * don't store the returned pointer, but you can deref it which calls copy ctor
      */
-    const KmtMenuItemDto* findInstalled(const QString& id) const {
-        auto foundItem = std::find_if(list.begin(), list.end(),
-        [id](const KmtMenuItemDto& item) {
+    const KmtMenuItemDto *findInstalled(const QString &id) const
+    {
+        auto foundItem = std::find_if(list.begin(), list.end(), [id](const KmtMenuItemDto &item) {
             return item.id == id && item.isInstalled;
         });
         if (foundItem != list.end()) {
@@ -159,11 +158,11 @@ public:
         auto jByteArray = doc.toJson(QJsonDocument::Compact);
         // http://stackoverflow.com/questions/14131127/qbytearray-to-qstring
         // QJsonDocument uses UTF-8 => we use 106=UTF-8
-        //return QTextCodec::codecForMib(106)->toUnicode(jByteArray);
+        // return QTextCodec::codecForMib(106)->toUnicode(jByteArray);
         return QString::fromUtf8(jByteArray); // accidentally the ctor of QString takes an UTF-8 byte array
     }
 
-    void deserialize(const QString& text)
+    void deserialize(const QString &text)
     {
         QJsonParseError parseError;
         QJsonDocument doc(QJsonDocument::fromJson(text.toUtf8(), &parseError));
@@ -196,10 +195,10 @@ public:
     /**
      * @returns true if there are any not-installed items
      */
-    std::vector<KmtMenuItemDto> notInstalledServices() const {
+    std::vector<KmtMenuItemDto> notInstalledServices() const
+    {
         std::vector<KmtMenuItemDto> target;
-        std::copy_if(list.begin(), list.end(), std::back_inserter(target),
-        [](const KmtMenuItemDto& item) {
+        std::copy_if(list.begin(), list.end(), std::back_inserter(target), [](const KmtMenuItemDto &item) {
             return !item.isInstalled;
         });
         return target;
@@ -214,30 +213,30 @@ public: // should be private but we would like to unit test
      */
     void stableSortListBySection()
     {
-        std::stable_sort(list.begin(), list.end(), [](const KmtMenuItemDto& i1, const KmtMenuItemDto& i2) {
+        std::stable_sort(list.begin(), list.end(), [](const KmtMenuItemDto &i1, const KmtMenuItemDto &i2) {
             return (i1.isInstalled && i1.menuSection == KMoreTools::MenuSection_Main && i2.isInstalled && i2.menuSection == KMoreTools::MenuSection_More)
-                   || (i1.isInstalled && !i2.isInstalled);
+                || (i1.isInstalled && !i2.isInstalled);
         });
     }
 
 public:
     /**
-    * moves an item up or down respecting its category
-    * @param direction: 1: down, -1: up
-    */
-    void moveWithinSection(const QString& id, int direction)
+     * moves an item up or down respecting its category
+     * @param direction: 1: down, -1: up
+     */
+    void moveWithinSection(const QString &id, int direction)
     {
-        auto selItem = std::find_if(list.begin(), list.end(),
-        [id](const KmtMenuItemDto& item) {
+        auto selItem = std::find_if(list.begin(), list.end(), [id](const KmtMenuItemDto &item) {
             return item.id == id;
         });
 
         if (selItem != list.end()) { // if found
             if (direction == 1) { // "down"
-                auto itemAfter = std::find_if(selItem + 1, list.end(), // find item where to insert after in the same category
-                [selItem](const KmtMenuItemDto& item) {
-                    return item.menuSection == selItem->menuSection;
-                });
+                auto itemAfter = std::find_if(selItem + 1,
+                                              list.end(), // find item where to insert after in the same category
+                                              [selItem](const KmtMenuItemDto &item) {
+                                                  return item.menuSection == selItem->menuSection;
+                                              });
 
                 if (itemAfter != list.end()) {
                     int prevIndex = list.indexOf(*selItem);
@@ -245,15 +244,15 @@ public:
                     list.removeAt(prevIndex);
                 }
             } else if (direction == -1) { // "up"
-                //auto r_list = list;
-                //std::reverse(r_list.begin(), r_list.end()); // we need to search "up"
-                //auto itemBefore = std::find_if(selItem, list.begin(),// find item where to insert before in the same category
+                // auto r_list = list;
+                // std::reverse(r_list.begin(), r_list.end()); // we need to search "up"
+                // auto itemBefore = std::find_if(selItem, list.begin(),// find item where to insert before in the same category
                 //                               [selItem](const MenuItemDto& item) { return item.menuSection == selItem->menuSection; });
 
                 // todo: can't std::find_if be used instead of this loop?
                 QList<KmtMenuItemDto>::iterator itemBefore = list.end();
                 auto it = selItem;
-                while(it != list.begin()) {
+                while (it != list.begin()) {
                     --it;
                     if (it->menuSection == selItem->menuSection) {
                         itemBefore = it;
@@ -276,10 +275,11 @@ public:
         stableSortListBySection();
     }
 
-    void moveToOtherSection(const QString& id)
+    void moveToOtherSection(const QString &id)
     {
-        auto selItem = std::find_if(list.begin(), list.end(),
-                                    [id](const KmtMenuItemDto& item) -> bool { return item.id == id; });
+        auto selItem = std::find_if(list.begin(), list.end(), [id](const KmtMenuItemDto &item) -> bool {
+            return item.id == id;
+        });
 
         if (selItem != list.end()) { // if found
             if (selItem->menuSection == KMoreTools::MenuSection_Main) {
@@ -304,13 +304,13 @@ public:
 class KmtMenuStructure
 {
 public:
-    QList<KMoreToolsMenuItem*> mainItems;
-    QList<KMoreToolsMenuItem*> moreItems;
+    QList<KMoreToolsMenuItem *> mainItems;
+    QList<KMoreToolsMenuItem *> moreItems;
 
     /**
      * contains each not installed registered service once
      */
-    QList<KMoreToolsService*> notInstalledServices;
+    QList<KMoreToolsService *> notInstalledServices;
 
 public:
     KmtMenuStructureDto toDto()
@@ -341,7 +341,7 @@ public:
 
         for (auto registeredService : qAsConst(notInstalledServices)) {
             KmtMenuItemDto dto;
-            //dto.id = item->id(); // not used in this case
+            // dto.id = item->id(); // not used in this case
             dto.text = registeredService->formatString(_("$Name"));
             dto.icon = registeredService->icon();
             dto.isInstalled = false;
@@ -367,9 +367,9 @@ public:
      * It will be used as submenu for the menu that displays the not-installed
      * services.
      */
-    static QMenu* createSubmenuForNotInstalledApp(const QString& title, QWidget* parent, const QIcon& icon, const QUrl& homepageUrl, const QString& appstreamId)
+    static QMenu *createSubmenuForNotInstalledApp(const QString &title, QWidget *parent, const QIcon &icon, const QUrl &homepageUrl, const QString &appstreamId)
     {
-        QMenu* submenuForNotInstalled = new QMenu(title, parent);
+        QMenu *submenuForNotInstalled = new QMenu(title, parent);
         submenuForNotInstalled->setIcon(icon);
 
         if (homepageUrl.isValid()) {
@@ -393,8 +393,7 @@ public:
         }
 
         if (!homepageUrl.isValid() && appstreamId.isEmpty()) {
-            submenuForNotInstalled->addAction(i18nc("@action:inmenu", "No further information available."))
-            ->setEnabled(false);
+            submenuForNotInstalled->addAction(i18nc("@action:inmenu", "No further information available."))->setEnabled(false);
         }
 
         return submenuForNotInstalled;
@@ -410,7 +409,7 @@ public:
     /**
      * "file:///home/abc/hallo.txt" becomes "file:///home/abc"
      */
-    static QUrl localFileAbsoluteDir(const QUrl& url)
+    static QUrl localFileAbsoluteDir(const QUrl &url)
     {
         if (!url.isLocalFile()) {
             qWarning() << "localFileAbsoluteDir: url must be local file";

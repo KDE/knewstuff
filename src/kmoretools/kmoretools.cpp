@@ -10,13 +10,13 @@
 #include "kmoretoolsconfigdialog_p.h"
 #include "knewstuff_debug.h"
 
+#include <QApplication>
 #include <QDebug>
 #include <QStandardPaths>
-#include <QApplication>
 
-#include <KLocalizedString>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 class KMoreToolsPrivate
 {
@@ -24,12 +24,12 @@ public:
     QString uniqueId;
 
     // allocated via new, don't forget to delete
-    QList<KMoreToolsService*> serviceList;
+    QList<KMoreToolsService *> serviceList;
 
-    QMap<QString, KMoreToolsMenuBuilder*> menuBuilderMap;
+    QMap<QString, KMoreToolsMenuBuilder *> menuBuilderMap;
 
 public:
-    KMoreToolsPrivate(const QString& uniqueId)
+    KMoreToolsPrivate(const QString &uniqueId)
         : uniqueId(uniqueId)
     {
     }
@@ -44,7 +44,8 @@ public:
      * @return uniqueId if kmtDesktopfileSubdir is empty
      * else kmtDesktopfileSubdir
      */
-    QString kmtDesktopfileSubdirOrUniqueId(const QString& kmtDesktopfileSubdir) {
+    QString kmtDesktopfileSubdirOrUniqueId(const QString &kmtDesktopfileSubdir)
+    {
         if (kmtDesktopfileSubdir.isEmpty()) {
             return uniqueId;
         }
@@ -60,12 +61,12 @@ public:
      * @param can be a filename with or without relative path. But no absolute path.
      * @returns the first occurrence if there are more than one found
      */
-    QString findFileInKmtDesktopfilesDir(const QString& filename)
+    QString findFileInKmtDesktopfilesDir(const QString &filename)
     {
         return findFileInKmtDesktopfilesDir(uniqueId, filename);
     }
 
-    static QString findFileInKmtDesktopfilesDir(const QString& kmtDesktopfileSubdir, const QString& filename)
+    static QString findFileInKmtDesktopfilesDir(const QString &kmtDesktopfileSubdir, const QString &filename)
     {
         const QString kmtDesktopfilesFilename = QLatin1String("kf5/kmoretools/") + kmtDesktopfileSubdir + QLatin1Char('/') + filename;
         const QString foundKmtFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, kmtDesktopfilesFilename);
@@ -74,10 +75,9 @@ public:
     }
 };
 
-KMoreTools::KMoreTools(const QString& uniqueId)
+KMoreTools::KMoreTools(const QString &uniqueId)
     : d(new KMoreToolsPrivate(uniqueId))
 {
-
 }
 
 KMoreTools::~KMoreTools()
@@ -85,14 +85,12 @@ KMoreTools::~KMoreTools()
     delete d;
 }
 
-KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
-    const QString& desktopEntryName,
-    const QString& kmtDesktopfileSubdir,
-    KMoreTools::ServiceLocatingMode serviceLocatingMode)
+KMoreToolsService *KMoreTools::registerServiceByDesktopEntryName(const QString &desktopEntryName,
+                                                                 const QString &kmtDesktopfileSubdir,
+                                                                 KMoreTools::ServiceLocatingMode serviceLocatingMode)
 {
-    const QString foundKmtDesktopfilePath = d->findFileInKmtDesktopfilesDir(
-            d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
-            desktopEntryName + QLatin1String(".desktop"));
+    const QString foundKmtDesktopfilePath =
+        d->findFileInKmtDesktopfilesDir(d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir), desktopEntryName + QLatin1String(".desktop"));
     const bool isKmtDesktopfileProvided = !foundKmtDesktopfilePath.isEmpty();
 
     KService::Ptr kmtDesktopfile;
@@ -101,16 +99,21 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         kmtDesktopfile = KService::Ptr(new KService(foundKmtDesktopfilePath));
         // todo later: what exactly does "isValid" mean? Valid syntax? Or installed in system?
         //             right now we cannot use it
-        //Q_ASSERT_X(kmtDesktopfile->isValid(), "addServiceByDesktopFile", "the kmt-desktopfile is provided but not valid. This must be fixed.");
-        //qDebug() << "  INFO: kmt-desktopfile provided and valid.";
+        // Q_ASSERT_X(kmtDesktopfile->isValid(), "addServiceByDesktopFile", "the kmt-desktopfile is provided but not valid. This must be fixed.");
+        // qDebug() << "  INFO: kmt-desktopfile provided and valid.";
         if (kmtDesktopfile->exec().isEmpty()) {
-            qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
+            qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: the kmt-desktopfile " << desktopEntryName
+                                  << " is provided but no Exec line is specified. The desktop file is probably faulty. Please fix. Return nullptr.";
             return nullptr;
         }
-        //qDebug() << "  INFO: kmt-desktopfile provided.";
+        // qDebug() << "  INFO: kmt-desktopfile provided.";
     } else {
-        qCWarning(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on the system the user won't get nice translated app name and description.";
-        qCDebug(KNEWSTUFF) << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = " << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
+        qCWarning(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName: desktopEntryName " << desktopEntryName
+                             << " (kmtDesktopfileSubdir=" << kmtDesktopfileSubdir
+                             << ") not provided (or at the wrong place) in the installed kmt-desktopfiles directory. If the service is also not installed on "
+                                "the system the user won't get nice translated app name and description.";
+        qCDebug(KNEWSTUFF) << "`-- More info at findFileInKmtDesktopfilesDir, QStandardPaths::standardLocations = "
+                           << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation); // /usr/share etc.
     }
 
     bool isInstalled = false;
@@ -120,33 +123,30 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
         isInstalled = installedService != nullptr;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
-            qCCritical(KNEWSTUFF) << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
+            qCCritical(KNEWSTUFF)
+                << "KMoreTools::registerServiceByDesktopEntryName for " << desktopEntryName
+                << ": If detectServiceExistenceViaProvidedExecLine is true then a kmt-desktopfile must be provided. Please fix. Return nullptr.";
             return nullptr;
         }
 
         auto tryExecProp = kmtDesktopfile->property(QStringLiteral("TryExec"), QVariant::String);
         isInstalled = (tryExecProp.isValid() && !QStandardPaths::findExecutable(tryExecProp.toString()).isEmpty())
-                      || !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
+            || !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
     } else {
         Q_ASSERT(false); // case not handled
     }
 
-    auto registeredService = new KMoreToolsService(
-        d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir),
-        desktopEntryName,
-        isInstalled,
-        installedService,
-        kmtDesktopfile);
+    auto registeredService =
+        new KMoreToolsService(d->kmtDesktopfileSubdirOrUniqueId(kmtDesktopfileSubdir), desktopEntryName, isInstalled, installedService, kmtDesktopfile);
 
     // add or replace item in serviceList
-    auto foundService = std::find_if(d->serviceList.begin(), d->serviceList.end(),
-    [desktopEntryName](KMoreToolsService* service) {
+    auto foundService = std::find_if(d->serviceList.begin(), d->serviceList.end(), [desktopEntryName](KMoreToolsService *service) {
         return service->desktopEntryName() == desktopEntryName;
     });
     if (foundService == d->serviceList.end()) {
         d->serviceList.append(registeredService);
     } else {
-        KMoreToolsService* foundServicePtr = *foundService;
+        KMoreToolsService *foundServicePtr = *foundService;
         int i = d->serviceList.indexOf(foundServicePtr);
         delete foundServicePtr;
         d->serviceList.replace(i, registeredService);
@@ -155,11 +155,10 @@ KMoreToolsService* KMoreTools::registerServiceByDesktopEntryName(
     return registeredService;
 }
 
-KMoreToolsMenuBuilder* KMoreTools::menuBuilder(const QString& userConfigPostfix) const
+KMoreToolsMenuBuilder *KMoreTools::menuBuilder(const QString &userConfigPostfix) const
 {
     if (d->menuBuilderMap.find(userConfigPostfix) == d->menuBuilderMap.end()) {
-        d->menuBuilderMap.insert(userConfigPostfix,
-                                 new KMoreToolsMenuBuilder(d->uniqueId, userConfigPostfix));
+        d->menuBuilderMap.insert(userConfigPostfix, new KMoreToolsMenuBuilder(d->uniqueId, userConfigPostfix));
     }
     return d->menuBuilderMap[userConfigPostfix];
 }
@@ -178,7 +177,6 @@ public:
     int maxUrlArgCount = 0;
     bool isInstalled = false;
     QString appstreamId;
-
 
 public:
     QString getServiceName()
@@ -232,8 +230,8 @@ public:
     }
 };
 
-KMoreToolsService::KMoreToolsService(const QString& kmtDesktopfileSubdir,
-                                     const QString& desktopEntryName,
+KMoreToolsService::KMoreToolsService(const QString &kmtDesktopfileSubdir,
+                                     const QString &desktopEntryName,
                                      bool isInstalled,
                                      KService::Ptr installedService,
                                      KService::Ptr kmtDesktopfile)
@@ -281,7 +279,7 @@ QUrl KMoreToolsService::homepageUrl() const
     return d->homepageUrl;
 }
 
-void KMoreToolsService::setHomepageUrl(const QUrl& url)
+void KMoreToolsService::setHomepageUrl(const QUrl &url)
 {
     d->homepageUrl = url;
 }
@@ -296,7 +294,7 @@ void KMoreToolsService::setMaxUrlArgCount(int maxUrlArgCount)
     d->maxUrlArgCount = maxUrlArgCount;
 }
 
-QString KMoreToolsService::formatString(const QString& formatString) const
+QString KMoreToolsService::formatString(const QString &formatString) const
 {
     QString result = formatString;
 
@@ -331,7 +329,7 @@ QIcon KMoreToolsService::icon() const
     }
 }
 
-void KMoreToolsService::setExec(const QString& exec)
+void KMoreToolsService::setExec(const QString &exec)
 {
     auto service = installedService();
     if (service) {
@@ -344,11 +342,10 @@ QString KMoreToolsService::appstreamId() const
     return d->appstreamId;
 }
 
-void KMoreToolsService::setAppstreamId(const QString& id)
+void KMoreToolsService::setAppstreamId(const QString &id)
 {
     d->appstreamId = id;
 }
-
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -364,7 +361,7 @@ public:
      * default value is "", see KMoreTools::menuBuilder()
      */
     QString userConfigPostfix;
-    QList<KMoreToolsMenuItem*> menuItems;
+    QList<KMoreToolsMenuItem *> menuItems;
     KmtMenuItemIdGen menuItemIdGen;
     QString initialItemTextTemplate = QStringLiteral("$GenericName");
 
@@ -379,8 +376,7 @@ public:
 
     void deleteAndClearMenuItems()
     {
-        for (auto item : qAsConst(menuItems))
-        {
+        for (auto item : qAsConst(menuItems)) {
             delete item;
         }
 
@@ -397,7 +393,7 @@ public:
         return configuredStructure;
     }
 
-    void writeUserConfig(const KmtMenuStructureDto& mstruct) const
+    void writeUserConfig(const KmtMenuStructureDto &mstruct) const
     {
         KConfig config(configFile, KConfig::NoGlobals, QStandardPaths::ConfigLocation);
         auto configGroup = config.group(uniqueId + userConfigPostfix);
@@ -406,8 +402,7 @@ public:
         configGroup.sync();
     }
 
-    enum CreateMenuStructureOption
-    {
+    enum CreateMenuStructureOption {
         CreateMenuStructure_Default,
         CreateMenuStructure_MergeWithUserConfig,
     };
@@ -452,13 +447,12 @@ public:
 
         KmtMenuStructure mstruct;
 
-        QList<KMoreToolsMenuItem*> menuItemsSource = menuItems;
-        QList<KMoreToolsMenuItem*> menuItemsSortedAsConfigured;
+        QList<KMoreToolsMenuItem *> menuItemsSource = menuItems;
+        QList<KMoreToolsMenuItem *> menuItemsSortedAsConfigured;
 
         // presort as in configuredStructure
-        for (const auto& item : qAsConst(configuredStructure.list)) {
-            auto foundItem = std::find_if(menuItemsSource.begin(), menuItemsSource.end(),
-            [item](const KMoreToolsMenuItem* kMenuItem) {
+        for (const auto &item : qAsConst(configuredStructure.list)) {
+            auto foundItem = std::find_if(menuItemsSource.begin(), menuItemsSource.end(), [item](const KMoreToolsMenuItem *kMenuItem) {
                 return kMenuItem->id() == item.id;
             });
             if (foundItem != menuItemsSource.end()) {
@@ -474,20 +468,20 @@ public:
 
         // build MenuStructure from presorted list
         for (auto item : qAsConst(menuItemsSortedAsConfigured)) {
-
             const auto registeredService = item->registeredService();
 
-            if ((registeredService && registeredService->isInstalled())
-                    || !registeredService) { // if a QAction was registered directly
+            if ((registeredService && registeredService->isInstalled()) || !registeredService) { // if a QAction was registered directly
                 auto confItem = configuredStructure.findInstalled(item->id());
                 if ((!confItem && item->defaultLocation() == KMoreTools::MenuSection_Main)
-                        || (confItem && confItem->menuSection == KMoreTools::MenuSection_Main)) {
+                    || (confItem && confItem->menuSection == KMoreTools::MenuSection_Main)) {
                     mstruct.mainItems.append(item);
                 } else if ((!confItem && item->defaultLocation() == KMoreTools::MenuSection_More)
                            || (confItem && confItem->menuSection == KMoreTools::MenuSection_More)) {
                     mstruct.moreItems.append(item);
                 } else {
-                    Q_ASSERT_X(false, "buildAndAppendToMenu", "invalid enum"); // todo/later: apart from static programming error, if the config garbage this might happen
+                    Q_ASSERT_X(false,
+                               "buildAndAppendToMenu",
+                               "invalid enum"); // todo/later: apart from static programming error, if the config garbage this might happen
                 }
             } else {
                 if (!mstruct.notInstalledServices.contains(item->registeredService())) {
@@ -502,7 +496,7 @@ public:
     /**
      * @param defaultStructure also contains the currently not-installed items
      */
-    void showConfigDialog(KmtMenuStructureDto defaultStructureDto, const QString& title = QString()) const
+    void showConfigDialog(KmtMenuStructureDto defaultStructureDto, const QString &title = QString()) const
     {
         // read from config
         auto currentStructure = createMenuStructure(CreateMenuStructure_MergeWithUserConfig);
@@ -533,9 +527,11 @@ public:
             parent->addSection(i18nc("@action:inmenu", "Not installed:"));
 
             for (auto registeredService : qAsConst(mstruct.notInstalledServices)) {
-
-                QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                                                    registeredService->formatString(QStringLiteral("$Name")), parent, registeredService->icon(), registeredService->homepageUrl(), registeredService->appstreamId());
+                QMenu *submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(registeredService->formatString(QStringLiteral("$Name")),
+                                                                                                     parent,
+                                                                                                     registeredService->icon(),
+                                                                                                     registeredService->homepageUrl(),
+                                                                                                     registeredService->appstreamId());
                 parent->addMenu(submenuForNotInstalled);
             }
         }
@@ -547,7 +543,7 @@ KMoreToolsMenuBuilder::KMoreToolsMenuBuilder()
     Q_ASSERT(false);
 }
 
-KMoreToolsMenuBuilder::KMoreToolsMenuBuilder(const QString& uniqueId, const QString& userConfigPostfix)
+KMoreToolsMenuBuilder::KMoreToolsMenuBuilder(const QString &uniqueId, const QString &userConfigPostfix)
     : d(new KMoreToolsMenuBuilderPrivate())
 {
     d->uniqueId = uniqueId;
@@ -560,12 +556,12 @@ KMoreToolsMenuBuilder::~KMoreToolsMenuBuilder()
     delete d;
 }
 
-void KMoreToolsMenuBuilder::setInitialItemTextTemplate(const QString& templateText)
+void KMoreToolsMenuBuilder::setInitialItemTextTemplate(const QString &templateText)
 {
     d->initialItemTextTemplate = templateText;
 }
 
-KMoreToolsMenuItem* KMoreToolsMenuBuilder::addMenuItem(KMoreToolsService* registeredService, KMoreTools::MenuSection defaultLocation)
+KMoreToolsMenuItem *KMoreToolsMenuBuilder::addMenuItem(KMoreToolsService *registeredService, KMoreTools::MenuSection defaultLocation)
 {
     auto kmtMenuItem = new KMoreToolsMenuItem(registeredService, defaultLocation, d->initialItemTextTemplate);
     kmtMenuItem->setId(d->menuItemIdGen.getId(registeredService->desktopEntryName()));
@@ -573,7 +569,7 @@ KMoreToolsMenuItem* KMoreToolsMenuBuilder::addMenuItem(KMoreToolsService* regist
     return kmtMenuItem;
 }
 
-KMoreToolsMenuItem* KMoreToolsMenuBuilder::addMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation)
+KMoreToolsMenuItem *KMoreToolsMenuBuilder::addMenuItem(QAction *action, const QString &itemId, KMoreTools::MenuSection defaultLocation)
 {
     auto kmtMenuItem = new KMoreToolsMenuItem(action, d->menuItemIdGen.getId(itemId), defaultLocation);
     d->menuItems.append(kmtMenuItem);
@@ -588,9 +584,8 @@ void KMoreToolsMenuBuilder::clear()
 
 QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) const
 {
-    KmtMenuStructure mstruct = d->createMenuStructure(mergeWithUserConfig ?
-                            KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig
-                            : KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
+    KmtMenuStructure mstruct = d->createMenuStructure(mergeWithUserConfig ? KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig
+                                                                          : KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default);
     QString s;
     s += QLatin1String("|main|:");
     for (auto item : qAsConst(mstruct.mainItems)) {
@@ -608,13 +603,14 @@ QString KMoreToolsMenuBuilder::menuStructureAsString(bool mergeWithUserConfig) c
 }
 
 // TMP / for unit test
-void KMoreToolsMenuBuilder::showConfigDialog(const QString& title)
+void KMoreToolsMenuBuilder::showConfigDialog(const QString &title)
 {
     d->showConfigDialog(d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_Default).toDto(), title);
 }
 
-void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
-        KMoreTools::ConfigureDialogAccessibleSetting configureDialogAccessibleSetting, QMenu** outMoreMenu)
+void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu *menu,
+                                                   KMoreTools::ConfigureDialogAccessibleSetting configureDialogAccessibleSetting,
+                                                   QMenu **outMoreMenu)
 {
     KmtMenuStructure mstruct = d->createMenuStructure(KMoreToolsMenuBuilderPrivate::CreateMenuStructure_MergeWithUserConfig);
 
@@ -626,10 +622,9 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
         menu->addAction(action);
     }
 
-    QMenu* moreMenu = new QMenu(i18nc("@action:inmenu", "More"), menu);
+    QMenu *moreMenu = new QMenu(i18nc("@action:inmenu", "More"), menu);
 
     if (!mstruct.moreItems.isEmpty() || !mstruct.notInstalledServices.isEmpty()) {
-
         if (mstruct.mainItems.isEmpty()) {
             d->createMoreMenu(mstruct, menu);
         } else {
@@ -649,11 +644,10 @@ void KMoreToolsMenuBuilder::buildByAppendingToMenu(QMenu* menu,
         }
     }
 
-    QMenu* baseMenu;
+    QMenu *baseMenu;
     // either the "Configure..." menu should be shown via setting or the Ctrl key is pressed
-    if (configureDialogAccessibleSetting == KMoreTools::ConfigureDialogAccessible_Always
-            || QApplication::keyboardModifiers() & Qt::ControlModifier
-            || (configureDialogAccessibleSetting == KMoreTools::ConfigureDialogAccessible_Defensive && !mstruct.notInstalledServices.empty())) {
+    if (configureDialogAccessibleSetting == KMoreTools::ConfigureDialogAccessible_Always || QApplication::keyboardModifiers() & Qt::ControlModifier
+        || (configureDialogAccessibleSetting == KMoreTools::ConfigureDialogAccessible_Defensive && !mstruct.notInstalledServices.empty())) {
         if (moreMenu->isEmpty()) { // "more" menu was not created...
             // ...then we add the configure menu to the main menu
             baseMenu = menu;
@@ -682,14 +676,14 @@ class KMoreToolsMenuItemPrivate
 {
 public:
     QString id;
-    KMoreToolsService* registeredService = nullptr;
+    KMoreToolsService *registeredService = nullptr;
     QString initialItemText;
-    QAction* action = nullptr;
+    QAction *action = nullptr;
     KMoreTools::MenuSection defaultLocation;
     bool actionAutoCreated = false; // action might stay nullptr even if actionCreated is true
 };
 
-KMoreToolsMenuItem::KMoreToolsMenuItem(KMoreToolsService* registeredService, KMoreTools::MenuSection defaultLocation, const QString& initialItemTextTemplate)
+KMoreToolsMenuItem::KMoreToolsMenuItem(KMoreToolsService *registeredService, KMoreTools::MenuSection defaultLocation, const QString &initialItemTextTemplate)
     : d(new KMoreToolsMenuItemPrivate())
 {
     d->registeredService = registeredService;
@@ -700,7 +694,7 @@ KMoreToolsMenuItem::KMoreToolsMenuItem(KMoreToolsService* registeredService, KMo
     d->initialItemText = registeredService->formatString(defaultName);
 }
 
-KMoreToolsMenuItem::KMoreToolsMenuItem(QAction* action, const QString& itemId, KMoreTools::MenuSection defaultLocation)
+KMoreToolsMenuItem::KMoreToolsMenuItem(QAction *action, const QString &itemId, KMoreTools::MenuSection defaultLocation)
     : d(new KMoreToolsMenuItemPrivate())
 {
     d->action = action;
@@ -724,12 +718,12 @@ QString KMoreToolsMenuItem::id() const
     return d->id;
 }
 
-void KMoreToolsMenuItem::setId(const QString& id)
+void KMoreToolsMenuItem::setId(const QString &id)
 {
     d->id = id;
 }
 
-KMoreToolsService* KMoreToolsMenuItem::registeredService() const
+KMoreToolsService *KMoreToolsMenuItem::registeredService() const
 {
     return d->registeredService;
 }
@@ -744,12 +738,12 @@ QString KMoreToolsMenuItem::initialItemText() const
     return d->initialItemText;
 }
 
-void KMoreToolsMenuItem::setInitialItemText(const QString& itemText)
+void KMoreToolsMenuItem::setInitialItemText(const QString &itemText)
 {
     d->initialItemText = itemText;
 }
 
-QAction* KMoreToolsMenuItem::action() const
+QAction *KMoreToolsMenuItem::action() const
 {
     // currently we assume if a registeredService is given we auto-create the QAction once
     if (d->registeredService && !d->actionAutoCreated) {
@@ -774,4 +768,3 @@ QAction* KMoreToolsMenuItem::action() const
 
     return d->action;
 }
-

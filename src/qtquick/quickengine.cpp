@@ -20,7 +20,8 @@ public:
     Private()
         : engine(nullptr)
         , categoriesModel(nullptr)
-    {}
+    {
+    }
     KNSCore::Engine *engine;
     bool isLoading{false};
     bool isValid{false};
@@ -28,11 +29,11 @@ public:
     QString configFile;
 
     KNSCore::EntryInternal::List changedEntries;
-    static KNSCore::EntryWrapper *getChangedEntry(QQmlListProperty<KNSCore::EntryWrapper>* property, int i)
+    static KNSCore::EntryWrapper *getChangedEntry(QQmlListProperty<KNSCore::EntryWrapper> *property, int i)
     {
         KNSCore::EntryWrapper *entry{nullptr};
         if (property) {
-            Private* d = static_cast<Engine::Private*>(property->data);
+            Private *d = static_cast<Engine::Private *>(property->data);
             if (d) {
                 if (i >= 0 && i < d->changedEntries.count()) {
                     // Lifetime management for these objects should be done by the consumer,
@@ -43,11 +44,11 @@ public:
         }
         return entry;
     }
-    static int getChangedEntriesCount(QQmlListProperty<KNSCore::EntryWrapper>* property)
+    static int getChangedEntriesCount(QQmlListProperty<KNSCore::EntryWrapper> *property)
     {
         int count{0};
         if (property) {
-            Private* d = static_cast<Engine::Private*>(property->data);
+            Private *d = static_cast<Engine::Private *>(property->data);
             if (d) {
                 count = d->changedEntries.count();
             }
@@ -88,7 +89,7 @@ void Engine::setConfigFile(const QString &newFile)
         if (allowedByKiosk()) {
             if (!d->engine) {
                 d->engine = new KNSCore::Engine(this);
-                connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=](){
+                connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=]() {
                     d->isLoading = false;
                     Q_EMIT isLoadingChanged();
                 });
@@ -100,18 +101,23 @@ void Engine::setConfigFile(const QString &newFile)
                         busyMessage(d->engine->busyMessage());
                     }
                 });
-                connect(d->engine, &KNSCore::Engine::signalErrorCode, this, [=](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &/*metadata*/) {
-                    if (errorCode == KNSCore::ProviderError) {
-                        // This means loading the providers file failed entirely and we cannot complete the
-                        // initialisation. It also means the engine is done loading, but that nothing will
-                        // work, and we need to inform the user of this.
-                        d->isLoading = false;
-                        Q_EMIT isLoadingChanged();
-                    }
-                    Q_EMIT errorMessage(message);
-                });
-                connect(d->engine, &KNSCore::Engine::signalEntryEvent,
-                        this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                connect(d->engine,
+                        &KNSCore::Engine::signalErrorCode,
+                        this,
+                        [=](const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant & /*metadata*/) {
+                            if (errorCode == KNSCore::ProviderError) {
+                                // This means loading the providers file failed entirely and we cannot complete the
+                                // initialisation. It also means the engine is done loading, but that nothing will
+                                // work, and we need to inform the user of this.
+                                d->isLoading = false;
+                                Q_EMIT isLoadingChanged();
+                            }
+                            Q_EMIT errorMessage(message);
+                        });
+                connect(d->engine,
+                        &KNSCore::Engine::signalEntryEvent,
+                        this,
+                        [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
                             if (event != KNSCore::EntryInternal::StatusChangedEvent) {
                                 return;
                             }
@@ -141,7 +147,9 @@ void Engine::setConfigFile(const QString &newFile)
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
             // nothing the user can do to fix it, and we just tell them so they're not wondering what's wrong)
-            Q_EMIT message(i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality", "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
+            Q_EMIT message(
+                i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality",
+                      "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
         }
     }
 }

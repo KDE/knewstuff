@@ -7,31 +7,38 @@
 
 #include "cache.h"
 
-#include <QFile>
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QFileSystemWatcher>
 #include <QPointer>
 #include <QTimer>
 #include <QXmlStreamReader>
-#include <qstandardpaths.h>
 #include <knewstuffcore_debug.h>
+#include <qstandardpaths.h>
 
-class KNSCore::CachePrivate {
+class KNSCore::CachePrivate
+{
 public:
-    CachePrivate(Cache* qq)
+    CachePrivate(Cache *qq)
         : q(qq)
-    {}
-    ~CachePrivate() {}
+    {
+    }
+    ~CachePrivate()
+    {
+    }
 
-    Cache* q;
+    Cache *q;
     QHash<QString, EntryInternal::List> requestCache;
 
     QPointer<QTimer> throttleTimer;
-    void throttleWrite() {
+    void throttleWrite()
+    {
         if (!throttleTimer) {
             throttleTimer = new QTimer(q);
-            QObject::connect(throttleTimer, &QTimer::timeout, q, [this](){ q->writeRegistry(); });
+            QObject::connect(throttleTimer, &QTimer::timeout, q, [this]() {
+                q->writeRegistry();
+            });
             throttleTimer->setSingleShot(true);
             throttleTimer->setInterval(1000);
         }
@@ -41,7 +48,7 @@ public:
 
 using namespace KNSCore;
 
-typedef QHash<QString, QWeakPointer<Cache> > CacheHash;
+typedef QHash<QString, QWeakPointer<Cache>> CacheHash;
 Q_GLOBAL_STATIC(CacheHash, s_caches)
 
 Cache::Cache(const QString &appName)
@@ -54,10 +61,10 @@ Cache::Cache(const QString &appName)
     QDir().mkpath(path);
     registryFile = path + appName + QStringLiteral(".knsregistry");
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << registryFile;
-    setProperty("dirty", false); //KF6 make normal variable
+    setProperty("dirty", false); // KF6 make normal variable
 
-    QFileSystemWatcher* watcher = new QFileSystemWatcher(QStringList{registryFile}, this);
-    std::function<void()> changeChecker = [this, &changeChecker](){
+    QFileSystemWatcher *watcher = new QFileSystemWatcher(QStringList{registryFile}, this);
+    std::function<void()> changeChecker = [this, &changeChecker]() {
         if (property("writingRegistry").toBool()) {
             QTimer::singleShot(0, this, changeChecker);
         } else {
@@ -77,7 +84,7 @@ Cache::Cache(const QString &appName)
             // Then run through the new cache and see if there's any that were not
             // in the old cache (at which point just emit those as having changed,
             // they're already the correct status)
-            for (const EntryInternal &entry: cache) {
+            for (const EntryInternal &entry : cache) {
                 auto iterator = oldCache.constFind(entry);
                 if (iterator == oldCache.constEnd()) {
                     Q_EMIT entryChanged(entry);
@@ -164,7 +171,8 @@ void Cache::readKns2MetaFiles()
 
     const auto realAppName = m_kns2ComponentName.splitRef(QLatin1Char(':'))[0];
 
-    const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
+    const QStringList dirs =
+        QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
     for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {
         qCDebug(KNEWSTUFFCORE) << QStringLiteral(" + Load from directory '") + (*it) + QStringLiteral("'.");
         QDir dir((*it));
@@ -246,7 +254,6 @@ void Cache::readKns2MetaFiles()
             } else {
                 qCDebug(KNEWSTUFFCORE) << "Migrated KNS2 entry to KNS3.";
             }
-
         }
     }
     setProperty("dirty", false);
@@ -300,7 +307,6 @@ void Cache::writeRegistry()
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
 {
-
     // If we have intermediate states, like updating or installing we do not want to write them
     if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
         return;
@@ -338,7 +344,7 @@ void KNSCore::Cache::removeDeletedEntries()
         const KNSCore::EntryInternal &entry = i.next();
         bool installedFileExists{false};
         const QStringList installedFiles = entry.installedFiles();
-        for (const auto &installedFile: installedFiles) {
+        for (const auto &installedFile : installedFiles) {
             // Handle the /* notation, BUG: 425704
             if (installedFile.endsWith(QLatin1String("/*"))) {
                 if (QDir(installedFile.left(installedFile.size() - 2)).exists()) {
@@ -358,9 +364,9 @@ void KNSCore::Cache::removeDeletedEntries()
     writeRegistry();
 }
 
-KNSCore::EntryInternal KNSCore::Cache::entryFromInstalledFile(const QString& installedFile) const
+KNSCore::EntryInternal KNSCore::Cache::entryFromInstalledFile(const QString &installedFile) const
 {
-    for (const EntryInternal& entry : cache) {
+    for (const EntryInternal &entry : cache) {
         if (entry.installedFiles().contains(installedFile)) {
             return entry;
         }

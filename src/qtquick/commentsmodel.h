@@ -7,8 +7,8 @@
 #ifndef KNSQUICK_COMMENTSMODEL_H
 #define KNSQUICK_COMMENTSMODEL_H
 
-#include <QSortFilterProxyModel>
 #include <QQmlParserStatus>
+#include <QSortFilterProxyModel>
 #include <entryinternal.h>
 
 namespace KNewStuffQuick
@@ -88,4 +88,4 @@ private:
 };
 }
 Q_DECLARE_METATYPE(KNewStuffQuick::CommentsModel::IncludedComments)
-#endif//KNSQUICK_COMMENTSMODEL_H
+#endif // KNSQUICK_COMMENTSMODEL_H

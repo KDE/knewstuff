@@ -13,14 +13,14 @@
 
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 80)
 
-#include <KSharedConfig>
-#include <KTitleWidget>
-#include <kwindowconfig.h>
-#include <QCoreApplication>
-#include <KStandardGuiItem>
-#include <KLocalizedString>
 #include <KAuthorized>
+#include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
+#include <KStandardGuiItem>
+#include <KTitleWidget>
+#include <QCoreApplication>
+#include <kwindowconfig.h>
 
 #include "downloadwidget.h"
 #include "downloadwidget_p.h"
@@ -83,10 +83,9 @@ void DownloadDialog::init(const QString &configFile)
         if (displayName.isEmpty()) {
             displayName = QCoreApplication::applicationName();
         }
-        d->downloadWidget->setTitle(i18nc("Program name followed by 'Add On Installer'",
-            "%1 Add-On Installer", displayName));
+        d->downloadWidget->setTitle(i18nc("Program name followed by 'Add On Installer'", "%1 Add-On Installer", displayName));
     }
-    //d->downloadWidget->d->ui.m_titleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
+    // d->downloadWidget->d->ui.m_titleWidget->setPixmap(QIcon::fromTheme(KGlobal::activeComponent().aboutData()->programIconName()));
     d->downloadWidget->d->ui.m_titleWidget->setVisible(true);
     d->downloadWidget->d->ui.closeButton->setVisible(true);
     KStandardGuiItem::assign(d->downloadWidget->d->ui.closeButton, KStandardGuiItem::Close);

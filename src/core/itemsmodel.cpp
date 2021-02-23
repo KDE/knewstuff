@@ -7,8 +7,8 @@
 
 #include "itemsmodel.h"
 
-#include <knewstuffcore_debug.h>
 #include <KLocalizedString>
+#include <knewstuffcore_debug.h>
 
 #include "engine.h"
 #include "imageloader_p.h"
@@ -114,4 +114,3 @@ bool ItemsModel::hasPreviewImages() const
 }
 
 } // end KNS namespace
-

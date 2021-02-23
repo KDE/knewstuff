@@ -19,7 +19,7 @@ namespace KNSCore
 {
 class Engine;
 
-class KNEWSTUFFCORE_EXPORT ItemsModel: public QAbstractListModel
+class KNEWSTUFFCORE_EXPORT ItemsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

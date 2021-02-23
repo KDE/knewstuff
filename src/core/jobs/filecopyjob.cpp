@@ -21,10 +21,10 @@ public:
     int permissions = -1;
     JobFlags flags = DefaultFlags;
 
-    FileCopyWorker* worker = nullptr;
+    FileCopyWorker *worker = nullptr;
 };
 
-FileCopyJob::FileCopyJob(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
+FileCopyJob::FileCopyJob(const QUrl &source, const QUrl &destination, int permissions, JobFlags flags, QObject *parent)
     : KJob(parent)
     , d(new Private)
 {
@@ -34,7 +34,7 @@ FileCopyJob::FileCopyJob(const QUrl& source, const QUrl& destination, int permis
     d->flags = flags;
 }
 
-FileCopyJob::FileCopyJob(QObject* parent)
+FileCopyJob::FileCopyJob(QObject *parent)
     : KJob(parent)
     , d(new Private)
 {
@@ -47,7 +47,7 @@ FileCopyJob::~FileCopyJob()
 
 void FileCopyJob::start()
 {
-    if(d->worker) {
+    if (d->worker) {
         // already started...
         return;
     }
@@ -67,14 +67,13 @@ QUrl FileCopyJob::srcUrl() const
     return d->source;
 }
 
-FileCopyJob* FileCopyJob::file_copy(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
+FileCopyJob *FileCopyJob::file_copy(const QUrl &source, const QUrl &destination, int permissions, JobFlags flags, QObject *parent)
 {
-    FileCopyJob* job = nullptr;
-    if(source.isLocalFile() && destination.isLocalFile()) {
+    FileCopyJob *job = nullptr;
+    if (source.isLocalFile() && destination.isLocalFile()) {
         qCDebug(KNEWSTUFFCORE) << "File copy job is local only";
         job = new FileCopyJob(source, destination, permissions, flags, parent);
-    }
-    else {
+    } else {
         qCDebug(KNEWSTUFFCORE) << "File copy job is from (or to) a remote URL";
         job = new DownloadJob(source, destination, permissions, flags, parent);
     }

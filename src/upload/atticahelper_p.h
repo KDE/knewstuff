@@ -9,8 +9,8 @@
 
 #include <QStringList>
 
-#include <attica/providermanager.h>
 #include <attica/provider.h>
+#include <attica/providermanager.h>
 
 #include <attica/category.h>
 #include <attica/content.h>

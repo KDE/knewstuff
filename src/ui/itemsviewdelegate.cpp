@@ -9,11 +9,11 @@
 
 #include "itemsviewdelegate_p.h"
 
-#include <QPainter>
 #include <QApplication>
-#include <QToolButton>
 #include <QMenu>
+#include <QPainter>
 #include <QProcess>
+#include <QToolButton>
 #include <knewstuff_debug.h>
 
 #include <KFormat>
@@ -27,7 +27,7 @@
 
 namespace KNS3
 {
-enum { DelegateLabel, DelegateInstallButton, DelegateDetailsButton,  DelegateRatingWidget };
+enum { DelegateLabel, DelegateInstallButton, DelegateDetailsButton, DelegateRatingWidget };
 
 ItemsViewDelegate::ItemsViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent)
     : ItemsViewBaseDelegate(itemView, engine, parent)
@@ -53,33 +53,29 @@ QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) 
     QToolButton *installButton = new QToolButton();
     installButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     list << installButton;
-    setBlockedEventTypes(installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+    setBlockedEventTypes(installButton, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
     connect(installButton, &QAbstractButton::clicked, this, &ItemsViewDelegate::slotInstallClicked);
     connect(installButton, &QToolButton::triggered, this, &ItemsViewDelegate::slotInstallActionTriggered);
 
     QToolButton *detailsButton = new QToolButton();
     detailsButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     list << detailsButton;
-    setBlockedEventTypes(detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
-    connect(detailsButton, &QToolButton::clicked,
-            this, static_cast<void(ItemsViewDelegate::*)()>(&ItemsViewDelegate::slotDetailsClicked));
+    setBlockedEventTypes(detailsButton, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+    connect(detailsButton, &QToolButton::clicked, this, static_cast<void (ItemsViewDelegate::*)()>(&ItemsViewDelegate::slotDetailsClicked));
 
     KRatingWidget *rating = new KRatingWidget();
     rating->setMaxRating(10);
     rating->setHalfStepsEnabled(true);
     list << rating;
     const KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
-    connect(rating, static_cast<void (KRatingWidget::*)(unsigned int)>(&KRatingWidget::ratingChanged),
-            this, [this, entry](unsigned int newRating){m_engine->vote(entry, newRating * 10);});
+    connect(rating, static_cast<void (KRatingWidget::*)(unsigned int)>(&KRatingWidget::ratingChanged), this, [this, entry](unsigned int newRating) {
+        m_engine->vote(entry, newRating * 10);
+    });
 
     return list;
 }
 
-void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
-        const QStyleOptionViewItem &option,
-        const QPersistentModelIndex &index) const
+void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
 {
     const KNSCore::ItemsModel *model = qobject_cast<const KNSCore::ItemsModel *>(index.model());
     if (!model) {
@@ -95,7 +91,6 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
     QToolButton *installButton = qobject_cast<QToolButton *>(widgets.at(DelegateInstallButton));
     if (installButton) {
-
         if (installButton->menu()) {
             QMenu *buttonMenu = installButton->menu();
             buttonMenu->clear();
@@ -160,7 +155,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             }
             installButton->setMenu(installMenu);
         } else if (entry.status() == Entry::Installed && m_engine->hasAdoptionCommand()) {
-            QMenu* m = new QMenu(installButton);
+            QMenu *m = new QMenu(installButton);
             // Add icon to use dropdown, see also BUG: 385858
             QAction *action = m->addAction(QIcon::fromTheme(QStringLiteral("checkmark")), m_engine->useLabel());
             connect(action, &QAction::triggered, m, [this, entry](bool) {
@@ -171,12 +166,12 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         }
         // Add uninstall option for updatable entries, BUG: 422047
         if (entry.status() == Entry::Updateable) {
-            QMenu* m = installButton->menu();
+            QMenu *m = installButton->menu();
             if (!m) {
                 m = new QMenu(installButton);
             }
             QAction *action = m->addAction(m_iconDelete, i18n("Uninstall"));
-            connect(action, &QAction::triggered, m, [this, entry](bool){
+            connect(action, &QAction::triggered, m, [this, entry](bool) {
                 m_engine->uninstall(entry);
             });
             installButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -192,10 +187,9 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
     if (installButton && detailsButton) {
         if (m_buttonSize.width() < installButton->sizeHint().width()) {
-            const_cast<QSize &>(m_buttonSize) = QSize(
-                                                    qMax(option.fontMetrics.height() * 7,
-                                                            qMax(installButton->sizeHint().width(), detailsButton->sizeHint().width())),
-                                                    installButton->sizeHint().height());
+            const_cast<QSize &>(m_buttonSize) =
+                QSize(qMax(option.fontMetrics.height() * 7, qMax(installButton->sizeHint().width(), detailsButton->sizeHint().width())),
+                      installButton->sizeHint().height());
         }
         installButton->resize(m_buttonSize);
         installButton->move(right - installButton->width() - margin, option.rect.height() / 2 - installButton->height() * 1.5);
@@ -216,9 +210,10 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
             infoLabel->resize(QSize(option.rect.width() - (margin * 4) - m_buttonSize.width(), option.fontMetrics.height() * 7));
         }
 
-        QString text = QStringLiteral("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                       "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; margin:0 0 0 0;}\n"
-                       "</style></head><body><p><b>");
+        QString text = QStringLiteral(
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; margin:0 0 0 0;}\n"
+            "</style></head><body><p><b>");
 
         QUrl link = qvariant_cast<QUrl>(entry.homepage());
         if (!link.isEmpty()) {
@@ -226,7 +221,7 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
         } else {
             text += entry.name();
         }
-        
+
         const auto downloadInfo = entry.downloadLinkInformationList();
         if (!downloadInfo.isEmpty() && downloadInfo.at(0).size > 0) {
             QString sizeString = KFormat().formatByteSize(downloadInfo.at(0).size * 1000);
@@ -241,16 +236,21 @@ void ItemsViewDelegate::updateItemWidgets(const QList<QWidget *> widgets,
 
         if (!authorName.isEmpty()) {
             if (!authorPage.isEmpty()) {
-                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", QLatin1String(" <a href=\"") + authorPage + QLatin1String("\">") + authorName + QLatin1String("</a>")) + QLatin1String("</p>\n");
+                text += QLatin1String("<p>")
+                    + i18nc("Show the author of this item in a list",
+                            "By <i>%1</i>",
+                            QLatin1String(" <a href=\"") + authorPage + QLatin1String("\">") + authorName + QLatin1String("</a>"))
+                    + QLatin1String("</p>\n");
             } else if (!email.isEmpty()) {
-                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String(" <a href=\"mailto:") + email + QLatin1String("\">") + email + QLatin1String("</a></p>\n");
+                text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String(" <a href=\"mailto:")
+                    + email + QLatin1String("\">") + email + QLatin1String("</a></p>\n");
             } else {
                 text += QLatin1String("<p>") + i18nc("Show the author of this item in a list", "By <i>%1</i>", authorName) + QLatin1String("</p>\n");
             }
         }
 
-        QString summary = QLatin1String("<p>") + option.fontMetrics.elidedText(entry.summary(),
-                          Qt::ElideRight, infoLabel->width() * 3) + QStringLiteral("</p>\n");
+        QString summary =
+            QLatin1String("<p>") + option.fontMetrics.elidedText(entry.summary(), Qt::ElideRight, infoLabel->width() * 3) + QStringLiteral("</p>\n");
         text += summary;
 
         unsigned int fans = entry.numberFans();
@@ -321,9 +321,9 @@ void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
         KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
         if (entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
             // paint the no preview icon
-            //point.setX((PreviewWidth - m_noImage.width())/2 + 5);
-            //point.setY(option.rect.top() + ((height - m_noImage.height()) / 2));
-            //painter->drawPixmap(point, m_noImage);
+            // point.setX((PreviewWidth - m_noImage.width())/2 + 5);
+            // point.setY(option.rect.top() + ((height - m_noImage.height()) / 2));
+            // painter->drawPixmap(point, m_noImage);
         } else {
             QImage image = entry.previewImage(KNSCore::EntryInternal::PreviewSmall1);
             if (!image.isNull()) {
@@ -342,7 +342,6 @@ void ItemsViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opt
                 painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, i18n("Loading Preview"));
             }
         }
-
     }
     painter->restore();
 }
@@ -360,4 +359,3 @@ QSize ItemsViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QMod
 }
 
 } // namespace
-

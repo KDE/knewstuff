@@ -7,12 +7,12 @@
 
 #include "button.h"
 
-#include <KLocalizedString>
-#include <KAuthorized>
-#include <KMessageBox>
-#include "qtquickdialogwrapper.h"
 #include "entry_p.h"
+#include "qtquickdialogwrapper.h"
 #include "ui/widgetquestionlistener.h"
+#include <KAuthorized>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QPointer>
 
@@ -25,11 +25,9 @@ public:
     QPointer<QtQuickDialogWrapper> dialog;
 };
 
-Button::Button(const QString &text,
-               const QString &configFile,
-               QWidget *parent)
-    : QPushButton(parent),
-      d(new ButtonPrivate)
+Button::Button(const QString &text, const QString &configFile, QWidget *parent)
+    : QPushButton(parent)
+    , d(new ButtonPrivate)
 {
     setText(text);
     d->configFile = configFile;
@@ -37,8 +35,8 @@ Button::Button(const QString &text,
 }
 
 Button::Button(QWidget *parent)
-    : QPushButton(parent),
-      d(new ButtonPrivate)
+    : QPushButton(parent)
+    , d(new ButtonPrivate)
 {
     setText(i18n("Download New Stuff..."));
     init();
@@ -83,7 +81,7 @@ void Button::showDialog()
     Q_EMIT aboutToShowDialog();
 
     if (!d->dialog) {
-       d->dialog = new QtQuickDialogWrapper(d->configFile, this);
+        d->dialog = new QtQuickDialogWrapper(d->configFile, this);
     }
     const auto changedInternalEntries = d->dialog->exec();
     QList<KNS3::Entry> changedEntries;
@@ -94,4 +92,3 @@ void Button::showDialog()
 }
 
 }
-

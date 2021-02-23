@@ -25,7 +25,7 @@ class Engine : public QObject
     Q_OBJECT
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
-    Q_PROPERTY(QObject* engine READ engine NOTIFY engineChanged)
+    Q_PROPERTY(QObject *engine READ engine NOTIFY engineChanged)
     /**
      * Whether or not the engine is performing its initial loading operations
      * @since 5.65
@@ -33,7 +33,7 @@ class Engine : public QObject
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY engineInitialized)
     Q_PROPERTY(QString name READ name NOTIFY engineInitialized)
-    Q_PROPERTY(QObject* categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(QObject *categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QStringList categoriesFilter READ categoriesFilter WRITE setCategoriesFilter RESET resetCategoriesFilter NOTIFY categoriesFilterChanged)
     Q_PROPERTY(int filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
@@ -107,4 +107,4 @@ private:
     Private *d;
 };
 
-#endif//ENGINE_H
+#endif // ENGINE_H

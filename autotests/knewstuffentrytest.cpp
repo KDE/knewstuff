@@ -7,35 +7,41 @@
 
 // unit test for entry
 
+#include <QString>
 #include <QTest>
 #include <QXmlStreamReader>
-#include <QString>
 
 #include "../src/entry.h"
 #include "../src/entry_p.h"
 
 #include <knewstuffcore_debug.h>
 
-const char *entryXML = "<stuff category=\"Category\"> "
-"<name>Name</name>"
-"<providerid>https://api.opendesktop.org/v1/</providerid>"
-"<author homepage=\"http://testhomepage\">testauthor</author>"
-"<homepage>https://testhomepage</homepage>"
-"<licence>3</licence>"   // krazy:exclude=spelling
-"<version>4.0</version>"
-"<rating>82</rating>"
-"<downloads>128891</downloads>"
-"<installedfile>/some/test/path.jpg</installedfile>"
-"<id>12345</id>"
-"<releasedate>2008-08-12<!--randomcomment--></releasedate>"
-"<summary>new version 3.0</summary>" "<!--randomcomment-->"
-"<changelog>Updated</changelog>"
-"<preview>https://testpreview</preview>"
-"<previewBig>https://testpreview</previewBig>"
-"<payload>http://testpayload</payload>"
-"<status>" "<!--randomcomment-->" "installed" "<!--randomcomment-->" "</status>"
-"<tags>ghns_excluded=1</tags>"
-"</stuff>";
+const char *entryXML =
+    "<stuff category=\"Category\"> "
+    "<name>Name</name>"
+    "<providerid>https://api.opendesktop.org/v1/</providerid>"
+    "<author homepage=\"http://testhomepage\">testauthor</author>"
+    "<homepage>https://testhomepage</homepage>"
+    "<licence>3</licence>" // krazy:exclude=spelling
+    "<version>4.0</version>"
+    "<rating>82</rating>"
+    "<downloads>128891</downloads>"
+    "<installedfile>/some/test/path.jpg</installedfile>"
+    "<id>12345</id>"
+    "<releasedate>2008-08-12<!--randomcomment--></releasedate>"
+    "<summary>new version 3.0</summary>"
+    "<!--randomcomment-->"
+    "<changelog>Updated</changelog>"
+    "<preview>https://testpreview</preview>"
+    "<previewBig>https://testpreview</previewBig>"
+    "<payload>http://testpayload</payload>"
+    "<status>"
+    "<!--randomcomment-->"
+    "installed"
+    "<!--randomcomment-->"
+    "</status>"
+    "<tags>ghns_excluded=1</tags>"
+    "</stuff>";
 
 const QString name = QStringLiteral("Name");
 const QString category = QStringLiteral("Category");
@@ -43,7 +49,7 @@ const QString summary = QStringLiteral("new version 3.0");
 const QString version = QStringLiteral("4.0");
 const QString license = QStringLiteral("3");
 
-class testEntry: public QObject
+class testEntry : public QObject
 {
     Q_OBJECT
 private:

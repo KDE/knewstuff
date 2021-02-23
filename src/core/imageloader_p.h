@@ -8,8 +8,8 @@
 #ifndef KNEWSTUFF3_IMAGELOADER_P_H
 #define KNEWSTUFF3_IMAGELOADER_P_H
 
-#include <QObject>
 #include <QByteArray>
+#include <QObject>
 
 #include "entryinternal.h"
 #include "jobs/httpjob.h"
@@ -18,7 +18,6 @@ class KJob;
 
 namespace KNSCore
 {
-
 /**
  * Convenience class for images with remote sources.
  *
@@ -59,4 +58,3 @@ private:
 };
 }
 #endif
-

@@ -15,12 +15,14 @@ using namespace KNSCore;
 class DownloadJob::Private
 {
 public:
-    Private() {}
+    Private()
+    {
+    }
     QUrl source;
     QUrl destination;
 };
 
-DownloadJob::DownloadJob(const QUrl& source, const QUrl& destination, int permissions, JobFlags flags, QObject* parent)
+DownloadJob::DownloadJob(const QUrl &source, const QUrl &destination, int permissions, JobFlags flags, QObject *parent)
     : FileCopyJob(source, destination, permissions, flags, parent)
     , d(new Private)
 {
@@ -28,7 +30,7 @@ DownloadJob::DownloadJob(const QUrl& source, const QUrl& destination, int permis
     d->destination = destination;
 }
 
-DownloadJob::DownloadJob(QObject* parent)
+DownloadJob::DownloadJob(QObject *parent)
     : FileCopyJob(parent)
     , d(new Private)
 {
@@ -42,7 +44,7 @@ DownloadJob::~DownloadJob()
 void DownloadJob::start()
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
-    HTTPWorker* worker = new HTTPWorker(d->source, d->destination, HTTPWorker::DownloadJob, this);
+    HTTPWorker *worker = new HTTPWorker(d->source, d->destination, HTTPWorker::DownloadJob, this);
     connect(worker, &HTTPWorker::completed, this, &DownloadJob::handleWorkerCompleted);
     connect(worker, &HTTPWorker::error, this, &DownloadJob::handleWorkerError);
     worker->startRequest();
@@ -53,7 +55,7 @@ void DownloadJob::handleWorkerCompleted()
     emitResult();
 }
 
-void KNSCore::DownloadJob::handleWorkerError(const QString& error)
+void KNSCore::DownloadJob::handleWorkerError(const QString &error)
 {
     setError(KJob::UserDefinedError);
     setErrorText(error);

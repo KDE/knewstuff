@@ -7,8 +7,8 @@
 #ifndef KNEWSTUFF3_UI_DownloadManager_H
 #define KNEWSTUFF3_UI_DownloadManager_H
 
-#include "knewstuff_export.h"
 #include "entry.h"
+#include "knewstuff_export.h"
 
 #if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 29)
 

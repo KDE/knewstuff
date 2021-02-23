@@ -8,9 +8,9 @@
 #include <../src/kmoretools/kmoretools_p.h>
 #include <../src/kmoretools/kmoretoolspresets.h>
 
-#include <QTest>
-#include <QRegularExpression>
 #include <QPushButton>
+#include <QRegularExpression>
+#include <QTest>
 
 class KMoreToolsTest : public QObject
 {
@@ -51,18 +51,17 @@ void KMoreToolsTest::initTestCase()
     const QString dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/1/";
     QVERIFY(QDir(dest).removeRecursively());
     QVERIFY(QDir().mkpath(dest));
-    for (const QString& fileName : {"a.desktop", "b.desktop", "c.desktop"}) {
+    for (const QString &fileName : {"a.desktop", "b.desktop", "c.desktop"}) {
         const QString srcFile = QFINDTESTDATA("1/" + fileName + ".notranslate");
         QVERIFY(!srcFile.isEmpty());
         QVERIFY(QFile::copy(srcFile, dest + fileName));
     }
 
-
     const QString dest2 = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/2/";
     QVERIFY(QDir(dest2).removeRecursively());
     QVERIFY(QDir().mkpath(dest2));
     auto fileNames = {"org.kde.kate.desktop", "org.kde.kate.png", "mynotinstalledapp.desktop", "mynotinstalledapp.png", "mynotinstapp2.desktop"};
-    for (const QString& fileName : fileNames) {
+    for (const QString &fileName : fileNames) {
         const QString origFile = fileName.endsWith(QLatin1String("desktop")) ? fileName + _(".notranslate") : fileName;
         const QString srcFile = QFINDTESTDATA("2/" + origFile);
         QVERIFY(!srcFile.isEmpty());
@@ -124,8 +123,8 @@ void KMoreToolsTest::testDetectByExecLineButNoFileProvided()
 void KMoreToolsTest::testRegisterServiceTwice()
 {
     KMoreTools kmt(_("unittest-kmoretools/1"));
-    /*auto eeeApp1 = */kmt.registerServiceByDesktopEntryName(_("eee"));
-    /*auto eeeApp2 = */kmt.registerServiceByDesktopEntryName(_("eee"));
+    /*auto eeeApp1 = */ kmt.registerServiceByDesktopEntryName(_("eee"));
+    /*auto eeeApp2 = */ kmt.registerServiceByDesktopEntryName(_("eee"));
     // todo: verify that there is only the last item in the internal service list
 }
 
@@ -173,11 +172,10 @@ void KMoreToolsTest::testUniqueItemIdForOwnActions()
     QCOMPARE(item2->id(), _("aaa1"));
 }
 
-bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
+bool menuAtLeastOneActionWithText(const QMenu *menu, const QString &text)
 {
     const auto lstActions = menu->actions();
-    for (auto a : lstActions)
-    {
+    for (auto a : lstActions) {
         if (a->text() == text) {
             return true;
         }
@@ -186,11 +184,10 @@ bool menuAtLeastOneActionWithText(const QMenu* menu, const QString& text)
     return false;
 }
 
-bool menuAtLeastNoActionWithText(const QMenu* menu, const QString& text)
+bool menuAtLeastNoActionWithText(const QMenu *menu, const QString &text)
 {
     const auto lstActions = menu->actions();
-    for (auto a : lstActions)
-    {
+    for (auto a : lstActions) {
         if (a->text() == text) {
             qDebug() << a->text();
             return false;
@@ -215,14 +212,16 @@ void KMoreToolsTest::test_buildMenu_PruneDuplicateNotInstalledService()
 void KMoreToolsTest::test_KMoreToolsPresets_registerServicesByGrouping()
 {
     KMoreTools kmt(_("unittest-kmoretools/3"));
-    auto list = KMoreToolsPresets::registerServicesByGroupingNames(&kmt, { _("screenshot-take") });
+    auto list = KMoreToolsPresets::registerServicesByGroupingNames(&kmt, {_("screenshot-take")});
 
-    if (std::find_if(list.begin(), list.end(), [](KMoreToolsService* s) {
-    return s->desktopEntryName() == _("org.kde.spectacle");
-    }) != list.end()) {
+    if (std::find_if(list.begin(),
+                     list.end(),
+                     [](KMoreToolsService *s) {
+                         return s->desktopEntryName() == _("org.kde.spectacle");
+                     })
+        != list.end()) {
         QVERIFY(true); // at least spectacle should currently be present
-    }
-    else {
+    } else {
         QVERIFY(false);
     }
 }
@@ -236,7 +235,8 @@ void KMoreToolsTest::testMenuItemIdGen()
     QCOMPARE(idGen.getId(_("a")), _("a2"));
 }
 
-QDebug operator<< (QDebug d, const KmtMenuItemDto &m) {
+QDebug operator<<(QDebug d, const KmtMenuItemDto &m)
+{
     d << "id:" << m.id << ", section:" << m.menuSection << ", isInstalled:" << m.isInstalled;
     return d;
 }
@@ -281,11 +281,10 @@ static void sortListBySection(int indexes[5])
     ma2.id = QStringLiteral("main2");
     ma2.menuSection = KMoreTools::MenuSection_Main;
 
-    KmtMenuItemDto* items[5] = { &ma1, &mo1, &ma3, &mo2, &ma2 };
+    KmtMenuItemDto *items[5] = {&ma1, &mo1, &ma3, &mo2, &ma2};
 
     mstruct.list.clear();
-    for (unsigned int i=0; i<5; ++i)
-    {
+    for (unsigned int i = 0; i < 5; ++i) {
         mstruct.list.append(*items[indexes[i]]);
     }
     mstruct.stableSortListBySection();
@@ -299,18 +298,17 @@ static void sortListBySection(int indexes[5])
 
 void KMoreToolsTest::test_MenuStructureDto_sortListBySection()
 {
-    int indexes_plain[5] = { 0, 1, 2, 3, 4 };  // In normal order
-    int indexes_presorted[5] = { 0, 4, 1, 3, 2 };
-    int indexes_interleave[5] = { 0, 1, 3, 4, 2 };
-    int indexes_morefirst[5] = { 1, 3, 0, 4, 2 };
-    int indexes_uninstalledfirst[5] = { 2, 1, 0, 4, 3 };
+    int indexes_plain[5] = {0, 1, 2, 3, 4}; // In normal order
+    int indexes_presorted[5] = {0, 4, 1, 3, 2};
+    int indexes_interleave[5] = {0, 1, 3, 4, 2};
+    int indexes_morefirst[5] = {1, 3, 0, 4, 2};
+    int indexes_uninstalledfirst[5] = {2, 1, 0, 4, 3};
     // Permutations of where the uninstalled item is inserted
-    int indexes_uninstalled_p0[5] = { 2, 0, 1, 3, 4 };
-    int indexes_uninstalled_p1[5] = { 0, 2, 1, 3, 4 };
-    int indexes_uninstalled_p2[5] = { 0, 1, 2, 3, 4 };
-    int indexes_uninstalled_p3[5] = { 0, 1, 3, 2, 4 };
-    int indexes_uninstalled_p4[5] = { 0, 1, 3, 4, 2 };
-
+    int indexes_uninstalled_p0[5] = {2, 0, 1, 3, 4};
+    int indexes_uninstalled_p1[5] = {0, 2, 1, 3, 4};
+    int indexes_uninstalled_p2[5] = {0, 1, 2, 3, 4};
+    int indexes_uninstalled_p3[5] = {0, 1, 3, 2, 4};
+    int indexes_uninstalled_p4[5] = {0, 1, 3, 4, 2};
 
     qDebug() << "Plain";
     sortListBySection(indexes_plain);
@@ -349,12 +347,16 @@ void KMoreToolsTest::test_MenuStructureDto_serialize()
     mstruct.list.append(mo1);
 
     QString json = mstruct.serialize();
-    QCOMPARE(json, QString(_("{\"menuitemlist\":[{\"id\":\"main1\",\"isInstalled\":true,\"menuSection\":\"main\"},{\"id\":\"more1\",\"isInstalled\":true,\"menuSection\":\"more\"}]}")));
+    QCOMPARE(json,
+             QString(_("{\"menuitemlist\":[{\"id\":\"main1\",\"isInstalled\":true,\"menuSection\":\"main\"},{\"id\":\"more1\",\"isInstalled\":true,"
+                       "\"menuSection\":\"more\"}]}")));
 }
 
 void KMoreToolsTest::test_MenuStructureDto_deserialize()
 {
-    QString jsonStr(_("{\"menuitemlist\":[{\"id\":\"main1\",\"isInstalled\":true,\"menuSection\":\"main\"},{\"id\":\"more1\",\"isInstalled\":true,\"menuSection\":\"more\"}]}"));
+    QString jsonStr(
+        _("{\"menuitemlist\":[{\"id\":\"main1\",\"isInstalled\":true,\"menuSection\":\"main\"},{\"id\":\"more1\",\"isInstalled\":true,\"menuSection\":\"more\"}"
+          "]}"));
     KmtMenuStructureDto mstruct;
     mstruct.deserialize(jsonStr);
     QCOMPARE(mstruct.list.count(), 2);
@@ -399,4 +401,3 @@ void KMoreToolsTest::test_KmtUrlUtil_localFileAbsoluteDir()
 QTEST_MAIN(KMoreToolsTest)
 
 #include "kmoretoolstest.moc"
-

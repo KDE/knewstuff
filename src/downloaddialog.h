@@ -14,8 +14,8 @@
 
 #include <QDialog>
 
-#include "knewstuff_export.h"
 #include "entry.h"
+#include "knewstuff_export.h"
 
 #if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 80)
 
@@ -160,7 +160,7 @@ public Q_SLOTS:
     // Override these slots so we can add KAuthorized checks to them.
     int exec() override;
     void open() override;
-    
+
 protected:
     void showEvent(QShowEvent *event) override;
 

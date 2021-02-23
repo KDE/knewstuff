@@ -16,17 +16,19 @@
 
 #include <memory>
 
-namespace KNewStuffQuick {
-
+namespace KNewStuffQuick
+{
 // This caching will want to eventually go into the Provider level (and be more generalised)
 typedef QHash<QString, std::shared_ptr<KNSCore::Author>> AllAuthorsHash;
 Q_GLOBAL_STATIC(AllAuthorsHash, allAuthors)
 
-class Author::Private {
+class Author::Private
+{
 public:
     Private(Author *qq)
         : q(qq)
-    {}
+    {
+    }
     Author *const q;
     bool componentCompleted{false};
     Engine *engine{nullptr};
@@ -34,7 +36,8 @@ public:
     QString username;
 
     QSharedPointer<KNSCore::Provider> provider;
-    void resetConnections() {
+    void resetConnections()
+    {
         if (!componentCompleted) {
             return;
         }
@@ -42,7 +45,7 @@ public:
             provider->disconnect(q);
         }
         if (engine && engine->engine()) {
-            KNSCore::Engine *coreEngine = qobject_cast<KNSCore::Engine*>(engine->engine());
+            KNSCore::Engine *coreEngine = qobject_cast<KNSCore::Engine *>(engine->engine());
             if (coreEngine) {
                 provider = coreEngine->provider(providerId);
             }
@@ -51,7 +54,7 @@ public:
             }
         }
         if (provider) {
-            connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr< KNSCore::Author > author){
+            connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr<KNSCore::Author> author) {
                 allAuthors()->insert(QStringLiteral("%1 %2").arg(provider->id(), author->id()), author);
                 Q_EMIT q->dataChanged();
             });
@@ -64,7 +67,7 @@ public:
         std::shared_ptr<KNSCore::Author> ret;
         if (provider && !username.isEmpty()) {
             ret = allAuthors()->value(QStringLiteral("%1 %2").arg(provider->id(), username));
-            if(!ret.get()) {
+            if (!ret.get()) {
                 Q_EMIT provider->loadPerson(username);
             }
         }
@@ -90,7 +93,8 @@ Author::~Author()
 }
 
 void Author::classBegin()
-{ }
+{
+}
 
 void Author::componentComplete()
 {
@@ -106,7 +110,7 @@ QObject *Author::engine() const
 void Author::setEngine(QObject *newEngine)
 {
     if (d->engine != newEngine) {
-        d->engine = qobject_cast<Engine*>(newEngine);
+        d->engine = qobject_cast<Engine *>(newEngine);
         d->resetConnections();
         Q_EMIT engineChanged();
     }

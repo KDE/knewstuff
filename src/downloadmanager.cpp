@@ -25,7 +25,8 @@ public:
     DownloadManagerPrivate(DownloadManager *q)
         : q(q)
         , engine(new KNSCore::Engine)
-    {}
+    {
+    }
     ~DownloadManagerPrivate()
     {
         delete engine;
@@ -185,11 +186,10 @@ void DownloadManager::setSearchTerm(const QString &searchTerm)
     d->engine->setSearchTerm(searchTerm);
 }
 
-void KNS3::DownloadManager::fetchEntryById(const QString& id)
+void KNS3::DownloadManager::fetchEntryById(const QString &id)
 {
     d->engine->fetchEntryById(id);
 }
 
 #include "moc_downloadmanager.cpp"
 #endif
-

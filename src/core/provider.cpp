@@ -16,9 +16,9 @@
 
 namespace KNSCore
 {
-
 // TODO KF6 BCI: Add a real d-pointer
-class ProviderPrivate {
+class ProviderPrivate
+{
 public:
     QStringList tagFilter;
     QStringList downloadTagFilter;
@@ -45,15 +45,13 @@ static void delete_d(const Provider *provider)
 
 QString Provider::SearchRequest::hashForRequest() const
 {
-    return QString(QString::number((int)sortMode) + QLatin1Char(',')
-                   + searchTerm + QLatin1Char(',')
-                   + categories.join(QLatin1Char('-')) + QLatin1Char(',')
-                   + QString::number(page) + QLatin1Char(',')
-                   + QString::number(pageSize));
+    return QString(QString::number((int)sortMode) + QLatin1Char(',') + searchTerm + QLatin1Char(',') + categories.join(QLatin1Char('-')) + QLatin1Char(',')
+                   + QString::number(page) + QLatin1Char(',') + QString::number(pageSize));
 }
 
 Provider::Provider()
-{}
+{
+}
 
 Provider::~Provider()
 {
@@ -90,7 +88,7 @@ QStringList Provider::downloadTagFilter() const
     return d(this)->downloadTagFilter;
 }
 
-QDebug operator<<(QDebug dbg, const Provider::SearchRequest & search)
+QDebug operator<<(QDebug dbg, const Provider::SearchRequest &search)
 {
     QDebugStateSaver saver(dbg);
     dbg.nospace();
@@ -105,4 +103,3 @@ QDebug operator<<(QDebug dbg, const Provider::SearchRequest & search)
 }
 
 }
-

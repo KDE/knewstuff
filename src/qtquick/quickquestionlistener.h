@@ -29,6 +29,7 @@ public:
     Q_SIGNAL void askYesNoQuestion(QString title, QString question);
 
     Q_SLOT void passResponse(bool responseIsContinue, QString input);
+
 private:
     QuickQuestionListener();
     class Private;
@@ -36,4 +37,4 @@ private:
 };
 }
 
-#endif//KNSQ_QUICKQUESTIONLISTENER_H
+#endif // KNSQ_QUICKQUESTIONLISTENER_H

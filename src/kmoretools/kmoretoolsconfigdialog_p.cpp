@@ -26,21 +26,21 @@ public:
      */
     KmtMenuStructureDto currentStructure;
 
-    Ui::KMoreToolsConfigWidget* configUi = nullptr;
+    Ui::KMoreToolsConfigWidget *configUi = nullptr;
 
-    QAction* moveUpAction = nullptr;
-    QAction* moveDownAction = nullptr;
-    QAction* moveToMoreSectionAction = nullptr;
-    QAction* moveToMainSectionAction = nullptr;
+    QAction *moveUpAction = nullptr;
+    QAction *moveDownAction = nullptr;
+    QAction *moveToMoreSectionAction = nullptr;
+    QAction *moveToMainSectionAction = nullptr;
 
 public:
-    QAction* createActionForButton(QAbstractButton* button, QObject* parent)
+    QAction *createActionForButton(QAbstractButton *button, QObject *parent)
     {
         auto action = new QAction(button->icon(), button->text(), parent);
         return action;
     }
 
-    QListWidgetItem* selectedItemMainSection()
+    QListWidgetItem *selectedItemMainSection()
     {
         auto items = configUi->listMainSection->selectedItems();
         if (items.isEmpty()) {
@@ -50,7 +50,7 @@ public:
         }
     }
 
-    QListWidgetItem* selectedItemMoreSection()
+    QListWidgetItem *selectedItemMoreSection()
     {
         auto items = configUi->listMoreSection->selectedItems();
         if (items.isEmpty()) {
@@ -106,8 +106,8 @@ public:
         configUi->listMoreSection->clear();
 
         // restore item selection
-        QListWidgetItem* mainSelItem = nullptr;
-        QListWidgetItem* moreSelItem = nullptr;
+        QListWidgetItem *mainSelItem = nullptr;
+        QListWidgetItem *moreSelItem = nullptr;
 
         for (const auto &item : qAsConst(currentStructure.list)) {
             QIcon icon = item.icon;
@@ -159,9 +159,7 @@ public:
 /**
  * for merging strategy see KMoreToolsMenuBuilderPrivate::createMenuStructure(mergeWithUserConfig=true)
  */
-KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaultStructure,
-        const KmtMenuStructureDto& currentStructure,
-        const QString& title)
+KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto &defaultStructure, const KmtMenuStructureDto &currentStructure, const QString &title)
     : d(new KMoreToolsConfigDialogPrivate())
 {
     d->defaultStructure = defaultStructure;
@@ -183,10 +181,12 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
     d->configUi->frameNotInstalledTools->setVisible(!notInstalledServices.empty());
     if (!notInstalledServices.empty()) {
         auto menu = new QMenu(this);
-        for (const KmtMenuItemDto& registeredService : notInstalledServices) {
-
-            QMenu* submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(
-                registeredService.text, menu, registeredService.icon, registeredService.homepageUrl, registeredService.appstreamId);
+        for (const KmtMenuItemDto &registeredService : notInstalledServices) {
+            QMenu *submenuForNotInstalled = KmtNotInstalledUtil::createSubmenuForNotInstalledApp(registeredService.text,
+                                                                                                 menu,
+                                                                                                 registeredService.icon,
+                                                                                                 registeredService.homepageUrl,
+                                                                                                 registeredService.appstreamId);
             menu->addMenu(submenuForNotInstalled);
         }
         d->configUi->buttonNotInstalledTools->setMenu(menu);
@@ -251,8 +251,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
         //
         // widgets enabled or not
         //
-        connect(configUi->listMainSection, &QListWidget::itemSelectionChanged, this,
-        [this]() {
+        connect(configUi->listMainSection, &QListWidget::itemSelectionChanged, this, [this]() {
             if (!d->selectedItemMainSection()) {
                 d->moveToMoreSectionAction->setEnabled(false);
                 d->moveUpAction->setEnabled(false);
@@ -265,8 +264,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
             d->updateMoveButtonsState();
         });
 
-        connect(configUi->listMainSection, &QListWidget::currentItemChanged, this,
-        [this, configUi](QListWidgetItem* current, QListWidgetItem* previous) {
+        connect(configUi->listMainSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current, QListWidgetItem *previous) {
             Q_UNUSED(previous)
             if (current && d->selectedItemMoreSection()) {
                 d->selectedItemMoreSection()->setSelected(false);
@@ -275,8 +273,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
             d->updateMoveButtonsState();
         });
 
-        connect(configUi->listMoreSection, &QListWidget::itemSelectionChanged, this,
-        [this]() {
+        connect(configUi->listMoreSection, &QListWidget::itemSelectionChanged, this, [this]() {
             if (!d->selectedItemMoreSection()) {
                 d->moveToMainSectionAction->setEnabled(false);
                 d->moveUpAction->setEnabled(false);
@@ -289,8 +286,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto& defaul
             d->updateMoveButtonsState();
         });
 
-        connect(configUi->listMoreSection, &QListWidget::currentItemChanged, this,
-        [this, configUi](QListWidgetItem* current, QListWidgetItem* previous) {
+        connect(configUi->listMoreSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current, QListWidgetItem *previous) {
             Q_UNUSED(previous)
             if (current && d->selectedItemMainSection()) {
                 d->selectedItemMainSection()->setSelected(false);

@@ -7,8 +7,8 @@
 
 // unit test for author
 
-#include <QTest>
 #include <QString>
+#include <QTest>
 
 #include "core/author.h"
 
@@ -17,7 +17,7 @@ const QString email = QStringLiteral("Email@nowhere.com");
 const QString jabber = QStringLiteral("something@kdetalk.net");
 const QString homepage = QStringLiteral("http://www.myhomepage.com");
 
-class testAuthor: public QObject
+class testAuthor : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:

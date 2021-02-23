@@ -8,8 +8,8 @@
 #define KMORETOOLSMENUFACTORY_H
 
 #include <QMenu>
-#include <QUrl>
 #include <QString>
+#include <QUrl>
 
 #include "knewstuff_export.h"
 
@@ -34,12 +34,12 @@ public:
      *
      * For more information about the parameter see KMoreTools::KMoreTools.
      */
-    KMoreToolsMenuFactory(const QString& uniqueId);
+    KMoreToolsMenuFactory(const QString &uniqueId);
 
     ~KMoreToolsMenuFactory();
 
     KMoreToolsMenuFactory(const KMoreToolsMenuFactory &) = delete;
-    KMoreToolsMenuFactory& operator=(const KMoreToolsMenuFactory &) = delete;
+    KMoreToolsMenuFactory &operator=(const KMoreToolsMenuFactory &) = delete;
 
     /**
      * For each grouping name menu items will be created an appended to a
@@ -73,8 +73,7 @@ public:
      * section and an item that starts configure dialog where the user can
      * configure the menu (see KMoreTools).
      */
-    QMenu* createMenuFromGroupingNames(const QStringList& groupingNames,
-                                       const QUrl& url = QUrl());
+    QMenu *createMenuFromGroupingNames(const QStringList &groupingNames, const QUrl &url = QUrl());
 
     /**
      * See createMenuFromGroupingNames except that the menu is not created
@@ -89,9 +88,7 @@ public:
      *
      * @since 5.11
      */
-    void fillMenuFromGroupingNames(QMenu* menu, const QStringList& groupingNames,
-                                   const QUrl& url = QUrl());
-
+    void fillMenuFromGroupingNames(QMenu *menu, const QStringList &groupingNames, const QUrl &url = QUrl());
 
     /**
      * Set @p widget as the parent widget of the QMenu that will be created
@@ -99,7 +96,7 @@ public:
      * @see createMenuFromGroupingNames()
      * @since 5.37
      */
-    void setParentWidget(QWidget* widget);
+    void setParentWidget(QWidget *widget);
 
 private:
     /*
@@ -107,9 +104,9 @@ private:
      * Preserves object size to counteract BIC introduced with
      * 3ecc3701f7e1aa83104b06fa90ea07eeca47f93d.
      */
-    KMoreTools* m_off = nullptr;
+    KMoreTools *m_off = nullptr;
 
-    KMoreToolsMenuFactoryPrivate* d;
+    KMoreToolsMenuFactoryPrivate *d;
 };
 
 #endif

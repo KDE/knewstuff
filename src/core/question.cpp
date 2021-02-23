@@ -13,12 +13,14 @@
 
 using namespace KNSCore;
 
-class Question::Private {
+class Question::Private
+{
 public:
     Private()
         : questionType(YesNoQuestion)
         , response(InvalidResponse)
-    {}
+    {
+    }
     QString question;
     QString title;
     QStringList list;
@@ -46,8 +48,7 @@ Question::Response Question::ask()
     d->questionActive = true;
 
     Q_EMIT QuestionManager::instance()->askQuestion(this);
-    while(d->questionActive)
-    {
+    while (d->questionActive) {
         qApp->processEvents();
     }
 

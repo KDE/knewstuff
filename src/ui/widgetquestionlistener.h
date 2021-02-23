@@ -17,13 +17,14 @@ class WidgetQuestionListener : public KNSCore::QuestionListener
     Q_OBJECT
     Q_DISABLE_COPY(WidgetQuestionListener)
 public:
-    static WidgetQuestionListener* instance();
+    static WidgetQuestionListener *instance();
     virtual ~WidgetQuestionListener();
 
-    Q_SLOT void askQuestion(KNSCore::Question* question) override;
+    Q_SLOT void askQuestion(KNSCore::Question *question) override;
+
 private:
     WidgetQuestionListener();
 };
 }
 
-#endif//KNS3_WIDGETQUESTIONLISTENER_H
+#endif // KNS3_WIDGETQUESTIONLISTENER_H

@@ -5,23 +5,22 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-
-#include <QTest>
-#include <QDir>
-#include <QtGlobal>
-#include <QSignalSpy>
 #include <KSharedConfig>
+#include <QDir>
+#include <QSignalSpy>
+#include <QTest>
+#include <QtGlobal>
 
+#include "core/entryinternal.h"
 #include "core/installation.h"
 #include "core/itemsmodel.h"
-#include "core/entryinternal.h"
 #include "core/questionmanager.h"
 
 using namespace KNSCore;
 
 class InstallationTest : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     Installation *installation = nullptr;
     const QString dataDir = QStringLiteral(DATA_DIR);
@@ -45,7 +44,7 @@ void InstallationTest::initTestCase()
     installation = new Installation();
     KConfigGroup grp = KSharedConfig::openConfig(dataDir + "installationtest.knsrc")->group("KNewStuff3");
     QVERIFY(installation->readConfig(grp));
-    connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, this, [](KNSCore::Question* q) {
+    connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, this, [](KNSCore::Question *q) {
         q->setResponse(KNSCore::Question::YesResponse);
     });
 }
@@ -143,7 +142,7 @@ void InstallationTest::testInstallCommandTopLevelFilesInArchive()
     QVERIFY(fileOnDisk.exists());
     QVERIFY(fileOnDisk.isDir());
     // The by checking the parent dir we can check if it is properly in a subdir uncompressed
-    QCOMPARE(fileOnDisk.absoluteDir().path(),  QStandardPaths::locate(QStandardPaths::GenericDataLocation, "demo", QStandardPaths::LocateDirectory));
+    QCOMPARE(fileOnDisk.absoluteDir().path(), QStandardPaths::locate(QStandardPaths::GenericDataLocation, "demo", QStandardPaths::LocateDirectory));
     // Check if the files that are in the archive exist
     const QStringList files = QDir(fileOnDisk.absoluteFilePath()).entryList(QDir::Filter::Files | QDir::Filter::NoDotAndDotDot);
     QCOMPARE(files, QStringList({"test1.txt", "test2.txt"}));

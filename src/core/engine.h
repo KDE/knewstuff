@@ -10,14 +10,14 @@
 #ifndef KNEWSTUFF3_ENGINE_P_H
 #define KNEWSTUFF3_ENGINE_P_H
 
-#include <QObject>
-#include <QString>
-#include <QSharedPointer>
 #include <QHash>
+#include <QObject>
+#include <QSharedPointer>
+#include <QString>
 
-#include "provider.h"
 #include "entryinternal.h"
 #include "errorcode.h"
+#include "provider.h"
 
 #include "knewstuffcore_export.h"
 
@@ -106,7 +106,7 @@ public:
      *
      * @param configfile KNewStuff2 configuration file (*.knsrc)
      * @return \b true if any valid configuration was found, \b false otherwise
-    * @see KNS3::DownloadDialog
+     * @see KNS3::DownloadDialog
      */
     bool init(const QString &configfile);
 
@@ -639,11 +639,11 @@ Q_SIGNALS:
     void signalError(const QString &);
 #endif
 #if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
-        KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
     void signalBusy(const QString &);
 #endif
 #if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
-        KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
     void signalIdle(const QString &);
 #endif
 
@@ -651,7 +651,8 @@ Q_SIGNALS:
      * Fires in the case of any critical or serious errors, such as network or API problems.
      * @param errorCode Represents the specific type of error which has occurred
      * @param message A human-readable message which can be shown to the end user
-     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the metadata details)
+     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the
+     * metadata details)
      * @see KNSCore::EntryInternal::ErrorCode
      * @since 5.53
      */
@@ -702,7 +703,7 @@ private:
 
     void doRequest();
 
-    //FIXME KF6: move all of this in EnginePrivate
+    // FIXME KF6: move all of this in EnginePrivate
     // handle installation of entries
     Installation *m_installation;
     // read/write cache of entries
@@ -713,14 +714,14 @@ private:
     // Categories from knsrc file
     QStringList m_categories;
 
-    QHash<QString, QSharedPointer<KNSCore::Provider> > m_providers;
+    QHash<QString, QSharedPointer<KNSCore::Provider>> m_providers;
 
     QString m_adoptionCommand;
 
     // the current request from providers
     Provider::SearchRequest m_currentRequest;
 
-    EnginePrivate * const d;
+    EnginePrivate *const d;
 
     // the page that is currently displayed, so it is not requested repeatedly
     int m_currentPage;

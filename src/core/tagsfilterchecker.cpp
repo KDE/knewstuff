@@ -12,11 +12,12 @@
 
 namespace KNSCore
 {
-
 class TagsFilterChecker::Private
 {
 public:
-    Private() {}
+    Private()
+    {
+    }
     ~Private()
     {
         qDeleteAll(validators);
@@ -24,7 +25,7 @@ public:
     class Validator;
     // If people start using a LOT of validators (>20ish), we can always change it, but
     // for now it seems reasonable that QMap is better than QHash here...
-    QMap<QString, Validator*> validators;
+    QMap<QString, Validator *> validators;
 
     class Validator
     {
@@ -36,8 +37,11 @@ public:
                 m_acceptedValues << value;
             }
         }
-        virtual ~Validator() {}
+        virtual ~Validator()
+        {
+        }
         virtual bool filterAccepts(const QString &tag, const QString &value) = 0;
+
     protected:
         friend class TagsFilterChecker::Private;
         QString m_tag;
@@ -50,8 +54,11 @@ public:
     public:
         EqualityValidator(const QString &tag, const QString &value)
             : Validator(tag, value)
-        {}
-        ~EqualityValidator() override {}
+        {
+        }
+        ~EqualityValidator() override
+        {
+        }
         bool filterAccepts(const QString &tag, const QString &value) override
         {
             bool result = true;
@@ -69,8 +76,11 @@ public:
     public:
         InequalityValidator(const QString &tag, const QString &value)
             : Validator(tag, value)
-        {}
-        ~InequalityValidator() override {}
+        {
+        }
+        ~InequalityValidator() override
+        {
+        }
         bool filterAccepts(const QString &tag, const QString &value) override
         {
             bool result = true;
@@ -106,7 +116,8 @@ public:
             val->m_acceptedValues << value;
             qCDebug(KNEWSTUFFCORE) << "Created InequalityValidator for tag" << tag << "with value" << value;
         } else {
-            qCDebug(KNEWSTUFFCORE) << "Critical error attempting to create tag filter validators. The filter is defined as" << filter << "which is not in the accepted formats key==value or key!=value";
+            qCDebug(KNEWSTUFFCORE) << "Critical error attempting to create tag filter validators. The filter is defined as" << filter
+                                   << "which is not in the accepted formats key==value or key!=value";
         }
     }
 };
@@ -136,13 +147,14 @@ bool TagsFilterChecker::filterAccepts(const QStringList &tags)
         }
         QStringList current = tag.split(QLatin1Char('='));
         if (current.length() > 2) {
-            qCDebug(KNEWSTUFFCORE) << "Critical error attempting to filter tags. Entry has tag defined as" << tag << "which is not in the format \"key=value\" or \"key\".";
+            qCDebug(KNEWSTUFFCORE) << "Critical error attempting to filter tags. Entry has tag defined as" << tag
+                                   << "which is not in the format \"key=value\" or \"key\".";
             return false;
         } else if (current.length() == 1) {
             // If the tag is defined simply as a key, we give it the value "1", just to make our filtering work simpler
             current << QStringLiteral("1");
         }
-        QMap<QString,TagsFilterChecker::Private::Validator*>::const_iterator i = d->validators.constBegin();
+        QMap<QString, TagsFilterChecker::Private::Validator *>::const_iterator i = d->validators.constBegin();
         while (i != d->validators.constEnd()) {
             if (!i.value()->filterAccepts(current.at(0), current.at(1))) {
                 return false;

@@ -6,21 +6,24 @@
 
 #include "entrywrapper.h"
 
-namespace KNSCore {
-    class EntryWrapper::Private {
-    public:
-        Private(const EntryInternal& entry
-        )
-            : entry(entry)
-        {}
-        const EntryInternal entry;
-    };
+namespace KNSCore
+{
+class EntryWrapper::Private
+{
+public:
+    Private(const EntryInternal &entry)
+        : entry(entry)
+    {
+    }
+    const EntryInternal entry;
+};
 }
 
-KNSCore::EntryWrapper::EntryWrapper(const KNSCore::EntryInternal& entry, QObject* parent)
+KNSCore::EntryWrapper::EntryWrapper(const KNSCore::EntryInternal &entry, QObject *parent)
     : QObject(parent)
     , d(new Private(entry))
-{}
+{
+}
 
 KNSCore::EntryWrapper::~EntryWrapper()
 {

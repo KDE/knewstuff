@@ -29,11 +29,11 @@ class KNEWSTUFFCORE_EXPORT QuestionListener : public QObject
 {
     Q_OBJECT
 public:
-    explicit QuestionListener(QObject* parent = nullptr);
+    explicit QuestionListener(QObject *parent = nullptr);
     virtual ~QuestionListener();
 
-    Q_SLOT virtual void askQuestion(Question* question);
+    Q_SLOT virtual void askQuestion(Question *question);
 };
 }
 
-#endif//KNS3_QUESTIONLISTENER_H
+#endif // KNS3_QUESTIONLISTENER_H

@@ -30,7 +30,7 @@ public:
     };
     Q_ENUMS(Roles)
 
-    QHash< int, QByteArray > roleNames() const override;
+    QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -41,10 +41,11 @@ public:
      * @return The display name (or the translated string "Unknown Category" for the requested category
      */
     Q_INVOKABLE QString idToDisplayName(const QString &id) const;
+
 private:
     class Private;
     // TODO KF6: Switch all the pimpls to const std::unique_ptr<Private> d;
     Private *d;
 };
 
-#endif//CATEGORIESMODEL_H
+#endif // CATEGORIESMODEL_H

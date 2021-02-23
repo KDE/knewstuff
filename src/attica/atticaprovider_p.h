@@ -7,12 +7,12 @@
 #ifndef KNEWSTUFF3_ATTICAPROVIDER_P_H
 #define KNEWSTUFF3_ATTICAPROVIDER_P_H
 
-#include <QSet>
 #include <QPointer>
+#include <QSet>
 
-#include <attica/providermanager.h>
-#include <attica/provider.h>
 #include <attica/content.h>
+#include <attica/provider.h>
+#include <attica/providermanager.h>
 
 #include "provider.h"
 
@@ -35,12 +35,12 @@ namespace KNSCore
  *
  * @internal
  */
-class AtticaProvider: public Provider
+class AtticaProvider : public Provider
 {
     Q_OBJECT
 public:
-    explicit AtticaProvider(const QStringList &categories, const QString& additionalAgentInformation);
-    AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString& additionalAgentInformation);
+    explicit AtticaProvider(const QStringList &categories, const QString &additionalAgentInformation);
+    AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString &additionalAgentInformation);
 
     QString id() const override;
 
@@ -112,7 +112,7 @@ private:
     // Associate job and entry, this is needed when fetching
     // download links or the account balance in order to continue
     // when the result is there.
-    QHash<Attica::BaseJob *, QPair<EntryInternal, int> > mDownloadLinkJobs;
+    QHash<Attica::BaseJob *, QPair<EntryInternal, int>> mDownloadLinkJobs;
 
     // keep track of the current request
     QPointer<Attica::BaseJob> mEntryJob;

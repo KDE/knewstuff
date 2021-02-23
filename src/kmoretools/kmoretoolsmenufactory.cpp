@@ -12,8 +12,8 @@
 #include <QDebug>
 
 #include <KDialogJobUiDelegate>
-#include <KLocalizedString>
 #include <KIO/ApplicationLauncherJob>
+#include <KLocalizedString>
 #include <KMountPoint>
 #include <KNS3/KMoreTools>
 #include <KNS3/KMoreToolsPresets>
@@ -23,35 +23,39 @@ class KMoreToolsMenuFactoryPrivate
 public:
     // Note that this object must live long enough in case the user opens
     // the "Configure..." dialog
-    KMoreTools* kmt = nullptr;
+    KMoreTools *kmt = nullptr;
 
-    QMenu* menu = nullptr;
-    QWidget* parentWidget = nullptr;
+    QMenu *menu = nullptr;
+    QWidget *parentWidget = nullptr;
 };
 
 class KMoreToolsLazyMenu : public QMenu
 {
 private Q_SLOTS:
-    void onAboutToShow() {
-        //qDebug() << "onAboutToShow";
+    void onAboutToShow()
+    {
+        // qDebug() << "onAboutToShow";
         clear();
         m_aboutToShowFunc(this);
     }
 
 public:
-    KMoreToolsLazyMenu(QWidget* parent = nullptr) : QMenu(parent) {
+    KMoreToolsLazyMenu(QWidget *parent = nullptr)
+        : QMenu(parent)
+    {
         connect(this, &QMenu::aboutToShow, this, &KMoreToolsLazyMenu::onAboutToShow);
     }
 
-    void setAboutToShowAction(std::function<void(QMenu*)> aboutToShowFunc) {
+    void setAboutToShowAction(std::function<void(QMenu *)> aboutToShowFunc)
+    {
         m_aboutToShowFunc = aboutToShowFunc;
     }
 
 private:
-    std::function<void(QMenu*)> m_aboutToShowFunc;
+    std::function<void(QMenu *)> m_aboutToShowFunc;
 };
 
-KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString& uniqueId)
+KMoreToolsMenuFactory::KMoreToolsMenuFactory(const QString &uniqueId)
     : d(new KMoreToolsMenuFactoryPrivate())
 {
     d->kmt = new KMoreTools(uniqueId);
@@ -78,15 +82,9 @@ static void runApplication(const KService::Ptr &service, const QList<QUrl> &urls
 }
 
 // "file static" => no symbol will be exported
-static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
-                                  QMenu* menu,
-                                  KMoreToolsService* kmtService,
-                                  const QUrl& url,
-                                  bool isMoreSection
-                                 )
+static void addItemFromKmtService(KMoreToolsMenuBuilder *menuBuilder, QMenu *menu, KMoreToolsService *kmtService, const QUrl &url, bool isMoreSection)
 {
-    auto menuItem = menuBuilder->addMenuItem(kmtService, isMoreSection ?
-                    KMoreTools::MenuSection_More : KMoreTools::MenuSection_Main);
+    auto menuItem = menuBuilder->addMenuItem(kmtService, isMoreSection ? KMoreTools::MenuSection_More : KMoreTools::MenuSection_Main);
 
     if (kmtService->isInstalled()) {
         auto kService = kmtService->installedService();
@@ -101,31 +99,29 @@ static void addItemFromKmtService(KMoreToolsMenuBuilder* menuBuilder,
         }
 
         if (!url.isEmpty() && kmtService->maxUrlArgCount() > 0) {
-            menu->connect(menuItem->action(), &QAction::triggered, menu,
-            [kService, url](bool) {
-                runApplication(kService, { url });
+            menu->connect(menuItem->action(), &QAction::triggered, menu, [kService, url](bool) {
+                runApplication(kService, {url});
             });
         } else {
-            menu->connect(menuItem->action(), &QAction::triggered, menu,
-            [kService](bool) {
-                runApplication(kService, { });
+            menu->connect(menuItem->action(), &QAction::triggered, menu, [kService](bool) {
+                runApplication(kService, {});
             });
         }
     }
 }
 
 // "file static" => no symbol will be exported
-static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
-                                       QMenu* menu,
-                                       const QList<KMoreToolsService*> &kmtServiceList,
-                                       const QUrl& url,
+static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder *menuBuilder,
+                                       QMenu *menu,
+                                       const QList<KMoreToolsService *> &kmtServiceList,
+                                       const QUrl &url,
                                        bool isMoreSection,
-                                       QString firstMoreSectionDesktopEntryName
-                                      )
+                                       QString firstMoreSectionDesktopEntryName)
 {
     for (auto kmtService : kmtServiceList) {
         // Check the pointer just in case a null pointer got in somewhere
-        if (!kmtService) continue;
+        if (!kmtService)
+            continue;
         if (kmtService->desktopEntryName() == firstMoreSectionDesktopEntryName) {
             // once we reach the potential first "more section desktop entry name"
             // all remaining services are added to the more section by default
@@ -136,19 +132,18 @@ static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder* menuBuilder,
 }
 
 /**
-* "file static" => no symbol will be exported
-* @param isMoreSection: true => all items will be added into the more section
-* @param firstMoreSectionDesktopEntryName: only valid when @p isMoreSection is false:
-*                                           see KMoreToolsPresets::registerServicesByGroupingNames
-*/
-static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* menuBuilder,
-                                    QMenu* menu,
-                                    QList<KMoreToolsService*> kmtServiceList,
-                                    const QString& groupingName,
-                                    const QUrl& url,
-                                    bool isMoreSection,
-                                    QString firstMoreSectionDesktopEntryName
-                                   )
+ * "file static" => no symbol will be exported
+ * @param isMoreSection: true => all items will be added into the more section
+ * @param firstMoreSectionDesktopEntryName: only valid when @p isMoreSection is false:
+ *                                           see KMoreToolsPresets::registerServicesByGroupingNames
+ */
+static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *menuBuilder,
+                                                       QMenu *menu,
+                                                       QList<KMoreToolsService *> kmtServiceList,
+                                                       const QString &groupingName,
+                                                       const QUrl &url,
+                                                       bool isMoreSection,
+                                                       QString firstMoreSectionDesktopEntryName)
 {
     //
     // special handlings
@@ -159,9 +154,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
         // for special handling
         //
 
-        auto filelightAppIter = std::find_if(kmtServiceList.begin(),
-                                             kmtServiceList.end(),
-        [](KMoreToolsService* s) {
+        auto filelightAppIter = std::find_if(kmtServiceList.begin(), kmtServiceList.end(), [](KMoreToolsService *s) {
             return s->desktopEntryName() == QLatin1String("org.kde.filelight");
         });
 
@@ -180,33 +173,29 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
                 if (filelightApp->isInstalled()) {
                     const auto filelightService = filelightApp->installedService();
 
-                    filelight1Item->action()->setText(filelightApp->formatString(
-                                                          i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current folder", QStringLiteral("$GenericName"))));
-                    menu->connect(filelight1Item->action(), &QAction::triggered, menu,
-                    [filelightService, url](bool) {
-                        runApplication(filelightService, { url });
+                    filelight1Item->action()->setText(
+                        filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current folder", QStringLiteral("$GenericName"))));
+                    menu->connect(filelight1Item->action(), &QAction::triggered, menu, [filelightService, url](bool) {
+                        runApplication(filelightService, {url});
                     });
 
                     const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
-                    filelight2Item->action()->setText(filelightApp->formatString(
-                                                          i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
-                    menu->connect(filelight2Item->action(), &QAction::triggered, menu,
-                    [filelightService, url](bool) {
-                        KMountPoint::Ptr mountPoint
-                            = KMountPoint::currentMountPoints().findByPath(url.toLocalFile());
-                        runApplication(filelightService, { QUrl::fromLocalFile(mountPoint->mountPoint()) });
+                    filelight2Item->action()->setText(
+                        filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
+                    menu->connect(filelight2Item->action(), &QAction::triggered, menu, [filelightService, url](bool) {
+                        KMountPoint::Ptr mountPoint = KMountPoint::currentMountPoints().findByPath(url.toLocalFile());
+                        runApplication(filelightService, {QUrl::fromLocalFile(mountPoint->mountPoint())});
                     });
                 }
             }
 
             auto filelight3Item = menuBuilder->addMenuItem(filelightApp, KMoreTools::MenuSection_More);
             if (filelightApp->isInstalled()) {
-                filelight3Item->action()->setText(filelightApp->formatString(
-                                                      i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - all devices", QStringLiteral("$GenericName"))));
+                filelight3Item->action()->setText(
+                    filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - all devices", QStringLiteral("$GenericName"))));
                 const auto filelightService = filelightApp->installedService();
-                menu->connect(filelight3Item->action(), &QAction::triggered, menu,
-                [filelightService](bool) {
-                    runApplication(filelightService, { });
+                menu->connect(filelight3Item->action(), &QAction::triggered, menu, [filelightService](bool) {
+                    runApplication(filelightService, {});
                 });
             }
         } else {
@@ -232,7 +221,8 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
 
         for (auto kmtService : qAsConst(kmtServiceList)) {
             // Check the pointer just in case a null pointer got in somewhere
-            if (!kmtService) continue;
+            if (!kmtService)
+                continue;
             QUrl argUrl = url;
 
             if (url.isLocalFile()) { // this can only be done for local files, remote urls probably won't work for git clients anyway
@@ -262,20 +252,20 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder* me
     menuBuilder->setInitialItemTextTemplate(QStringLiteral("$GenericName")); // set back to default
 }
 
-QMenu* KMoreToolsMenuFactory::createMenuFromGroupingNames(
-    const QStringList& groupingNames,
-    const QUrl& url)
+QMenu *KMoreToolsMenuFactory::createMenuFromGroupingNames(const QStringList &groupingNames, const QUrl &url)
 {
     delete d->menu;
 
     auto menu = new KMoreToolsLazyMenu(d->parentWidget);
-    menu->setAboutToShowAction([this, groupingNames, url](QMenu* m) { fillMenuFromGroupingNames(m, groupingNames, url); });
+    menu->setAboutToShowAction([this, groupingNames, url](QMenu *m) {
+        fillMenuFromGroupingNames(m, groupingNames, url);
+    });
     d->menu = menu;
 
     return d->menu;
 }
 
-void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QStringList& groupingNames, const QUrl& url)
+void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu *menu, const QStringList &groupingNames, const QUrl &url)
 {
     const auto menuBuilder = d->kmt->menuBuilder();
     menuBuilder->clear();
@@ -283,23 +273,15 @@ void KMoreToolsMenuFactory::fillMenuFromGroupingNames(QMenu* menu, const QString
     bool isMoreSection = false;
 
     for (const auto &groupingName : groupingNames) {
-
         if (groupingName == QLatin1String("more:")) {
             isMoreSection = true;
             continue;
         }
 
         QString firstMoreSectionDesktopEntryName;
-        auto kmtServiceList = KMoreToolsPresetsPrivate::registerServicesByGroupingNames(
-                                  &firstMoreSectionDesktopEntryName, d->kmt, { groupingName });
+        auto kmtServiceList = KMoreToolsPresetsPrivate::registerServicesByGroupingNames(&firstMoreSectionDesktopEntryName, d->kmt, {groupingName});
 
-        addItemsForGroupingNameWithSpecialHandling(menuBuilder,
-                                menu,
-                                kmtServiceList,
-                                groupingName,
-                                url,
-                                isMoreSection,
-                                firstMoreSectionDesktopEntryName);
+        addItemsForGroupingNameWithSpecialHandling(menuBuilder, menu, kmtServiceList, groupingName, url, isMoreSection, firstMoreSectionDesktopEntryName);
     }
 
     menuBuilder->buildByAppendingToMenu(menu);

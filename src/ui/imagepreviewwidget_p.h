@@ -7,12 +7,11 @@
 #ifndef KNEWSTUFF3_IMAGEPREVIEWWIDGET_P_H
 #define KNEWSTUFF3_IMAGEPREVIEWWIDGET_P_H
 
-#include <QWidget>
 #include <QImage>
+#include <QWidget>
 
 namespace KNS3
 {
-
 class ImagePreviewWidget : public QWidget
 {
     Q_OBJECT

@@ -12,14 +12,12 @@
 
 #include "xmlloader.h"
 
-#include <knewstuffcore_debug.h>
 #include <QTimer>
+#include <knewstuffcore_debug.h>
 #include <tagsfilterchecker.h>
-
 
 namespace KNSCore
 {
-
 StaticXmlProvider::StaticXmlProvider()
     : mInitialized(false)
 {
@@ -70,9 +68,9 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     for (n = xmldata.firstChild(); !n.isNull(); n = n.nextSibling()) {
         QDomElement e = n.toElement();
         if (e.tagName() == QLatin1String("title")) {
-            //QString lang = e.attribute("lang");
+            // QString lang = e.attribute("lang");
             mName = e.text().trimmed();
-            qCDebug(KNEWSTUFFCORE) << "add name for provider ("<< this << "): " << e.text();
+            qCDebug(KNEWSTUFFCORE) << "add name for provider (" << this << "): " << e.text();
         }
     }
 
@@ -198,11 +196,10 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
 
         int index = mCachedEntries.indexOf(entry);
         if (index >= 0) {
-
             EntryInternal cacheEntry = mCachedEntries.takeAt(index);
             // check if updateable
-            if ((cacheEntry.status() == KNS3::Entry::Installed) &&
-                    ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
+            if ((cacheEntry.status() == KNS3::Entry::Installed)
+                && ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
                 entry.setStatus(KNS3::Entry::Updateable);
                 entry.setUpdateVersion(entry.version());
                 entry.setVersion(cacheEntry.version());
@@ -229,23 +226,23 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                 mCachedEntries.append(entry);
 
                 if (searchIncludesEntry(entry)) {
-                    switch(filter) {
-                        case Installed:
-                            //This is dealth with in loadEntries separately
-                            Q_UNREACHABLE();
-                        case Updates:
-                            if (entry.status() == KNS3::Entry::Updateable) {
-                                entries << entry;
-                            }
-                            break;
-                        case ExactEntryId:
-                            if (entry.uniqueId() == searchTerm) {
-                                entries << entry;
-                            }
-                            break;
-                        case None:
+                    switch (filter) {
+                    case Installed:
+                        // This is dealth with in loadEntries separately
+                        Q_UNREACHABLE();
+                    case Updates:
+                        if (entry.status() == KNS3::Entry::Updateable) {
                             entries << entry;
-                            break;
+                        }
+                        break;
+                    case ExactEntryId:
+                        if (entry.uniqueId() == searchTerm) {
+                            entries << entry;
+                        }
+                        break;
+                    case None:
+                        entries << entry;
+                        break;
                     }
                 }
             } else {
@@ -275,10 +272,8 @@ bool StaticXmlProvider::searchIncludesEntry(const KNSCore::EntryInternal &entry)
         return true;
     }
     QString search = mCurrentRequest.searchTerm;
-    if (entry.name().contains(search, Qt::CaseInsensitive) ||
-            entry.summary().contains(search, Qt::CaseInsensitive) ||
-            entry.author().name().contains(search, Qt::CaseInsensitive)
-       ) {
+    if (entry.name().contains(search, Qt::CaseInsensitive) || entry.summary().contains(search, Qt::CaseInsensitive)
+        || entry.author().name().contains(search, Qt::CaseInsensitive)) {
         return true;
     }
     return false;
@@ -302,4 +297,3 @@ EntryInternal::List StaticXmlProvider::installedEntries() const
 }
 
 }
-

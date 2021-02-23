@@ -14,13 +14,15 @@
 
 #include <memory>
 
-namespace KNewStuffQuick {
-
-class CommentsModel::Private {
+namespace KNewStuffQuick
+{
+class CommentsModel::Private
+{
 public:
     Private(CommentsModel *qq)
         : q(qq)
-    {}
+    {
+    }
     CommentsModel *q;
     ItemsModel *itemsModel{nullptr};
     int entryIndex{-1};
@@ -28,13 +30,16 @@ public:
     CommentsModel::IncludedComments includedComments{CommentsModel::IncludeAllComments};
 
     QSharedPointer<KNSCore::Provider> provider;
-    void resetConnections() {
+    void resetConnections()
+    {
         if (componentCompleted && itemsModel) {
-            q->setSourceModel(qobject_cast<QAbstractListModel*>(itemsModel->data(itemsModel->index(entryIndex), ItemsModel::CommentsModelRole).value<QObject*>()));
+            q->setSourceModel(
+                qobject_cast<QAbstractListModel *>(itemsModel->data(itemsModel->index(entryIndex), ItemsModel::CommentsModelRole).value<QObject *>()));
         }
     }
 
-    bool hasReview(const QModelIndex& index, bool checkParents = false) {
+    bool hasReview(const QModelIndex &index, bool checkParents = false)
+    {
         bool result{false};
         if (q->sourceModel()) {
             if (q->sourceModel()->data(index, KNSCore::CommentsModel::ScoreRole).toInt() > 0) {
@@ -66,7 +71,8 @@ CommentsModel::~CommentsModel()
 }
 
 void KNewStuffQuick::CommentsModel::classBegin()
-{}
+{
+}
 
 void KNewStuffQuick::CommentsModel::componentComplete()
 {
@@ -82,7 +88,7 @@ QObject *CommentsModel::itemsModel() const
 void CommentsModel::setItemsModel(QObject *newItemsModel)
 {
     if (d->itemsModel != newItemsModel) {
-        d->itemsModel = qobject_cast<ItemsModel*>(newItemsModel);
+        d->itemsModel = qobject_cast<ItemsModel *>(newItemsModel);
         d->resetConnections();
         Q_EMIT itemsModelChanged();
     }
@@ -116,20 +122,20 @@ void KNewStuffQuick::CommentsModel::setIncludedComments(CommentsModel::IncludedC
     }
 }
 
-bool KNewStuffQuick::CommentsModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const
+bool KNewStuffQuick::CommentsModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     bool result{false};
     switch (d->includedComments) {
-        case IncludeOnlyReviews:
-            result = d->hasReview(sourceModel()->index(sourceRow, 0, sourceParent));
-            break;
-        case IncludeReviewsAndReplies:
-            result = d->hasReview(sourceModel()->index(sourceRow, 0, sourceParent), true);
-            break;
-        case IncludeAllComments:
-        default:
-            result = true;
-            break;
+    case IncludeOnlyReviews:
+        result = d->hasReview(sourceModel()->index(sourceRow, 0, sourceParent));
+        break;
+    case IncludeReviewsAndReplies:
+        result = d->hasReview(sourceModel()->index(sourceRow, 0, sourceParent), true);
+        break;
+    case IncludeAllComments:
+    default:
+        result = true;
+        break;
     }
     return result;
 }
