@@ -58,6 +58,7 @@ Kirigami.ApplicationItem {
     QtLayouts.Layout.preferredHeight: Kirigami.Units.gridUnit * 40
     pageStack.defaultColumnWidth: pageStack.width
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.Auto
+    pageStack.globalToolBar.canContainHandles: true
     pageStack.initialPage: NewStuff.Page {
         id: newStuffPage
         function showMessage(message) {
