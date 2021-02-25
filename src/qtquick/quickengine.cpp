@@ -118,7 +118,13 @@ void Engine::setConfigFile(const QString &newFile)
                         &KNSCore::Engine::signalEntryEvent,
                         this,
                         [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                            // It is not the event we are handling here
                             if (event != KNSCore::EntryInternal::StatusChangedEvent) {
+                                return;
+                            }
+                            // We do not want to emit the entries changed signal for intermediate changed
+                            // this would cause the KCMs to reload their view unnecessarely, BUG: 431568
+                            if (entry.status() == KNS3::Entry::Installing || entry.status() == KNS3::Entry::Updating) {
                                 return;
                             }
                             if (d->changedEntries.contains(entry)) {
@@ -279,8 +285,10 @@ int Engine::changedEntriesCount() const
 
 void Engine::resetChangedEntries()
 {
-    d->changedEntries.clear();
-    Q_EMIT changedEntriesChanged();
+    if (!d->changedEntries.isEmpty()) {
+        d->changedEntries.clear();
+        Q_EMIT changedEntriesChanged();
+    }
 }
 bool Engine::isValid()
 {
