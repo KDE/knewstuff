@@ -111,7 +111,6 @@ Private.GridTileDelegate {
                     anchors {
                         top: parent.top;
                         left: parent.left;
-                        margins: -Kirigami.Units.smallSpacing;
                     }
                     height: Kirigami.Units.iconSizes.medium;
                     width: height;
