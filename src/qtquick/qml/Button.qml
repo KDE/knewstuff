@@ -83,7 +83,7 @@ QtControls.Button {
      * @since 5.79
      */
     function showEntryDetails(providerId, entryId) {
-        newStuffPage.showEntryDetails(providerId, entryId);
+        ghnsDialog.showEntryDetails(providerId, entryId);
     }
 
     /**
