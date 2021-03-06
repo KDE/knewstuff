@@ -17,7 +17,7 @@ add_library(knewstuff_test_static STATIC
 target_link_libraries(knewstuff_test_static PUBLIC Qt5::Xml Qt5::Test Qt5::Gui KF5::KIOCore KF5::NewStuffCore KF5::NewStuff)
 macro(knewstuff_unit_tests)
     foreach(_testmain ${ARGN})
-       get_filename_component(_testname ${_testmain} NAME)
+       get_filename_component(_testname ${_testmain} NAME_WE)
        ecm_add_test(${_testmain}
                     TEST_NAME ${_testname}
                     NAME_PREFIX "knewstuff-")
