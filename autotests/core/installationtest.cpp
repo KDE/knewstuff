@@ -72,8 +72,8 @@ void InstallationTest::testInstallCommand()
     EntryInternal entry;
     entry.setUniqueId("0");
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/testfile.txt")).toString());
-    installation->install(entry);
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
+    installation->install(entry);
     QVERIFY(spy.wait());
     QCOMPARE(entry.status(), KNS3::Entry::Installed);
     QVERIFY(QFileInfo::exists("installed.txt"));
