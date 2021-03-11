@@ -92,6 +92,7 @@ class DownloadDialogPrivate;
  * \note Using KPackage support will automatically set the removal of dead entries option to true. You can override this if you
  * want to, by explicitly adding <em>RemoveDeadEntries=false</em> to your knsrc file
  * @since 4.4
+ * @deprecated Since 5.80, use the QML components or the KNS3::QtQuickDialogWrapper instead
  */
 class KNEWSTUFF_EXPORT DownloadDialog : public QDialog
 {
@@ -104,9 +105,9 @@ public:
      * Appname is the name of your application as provided in the about data->
      *
      * @param parent the parent of the dialog
-     * @deprecates Since 5.80, use the QML components or the QtQuickDialogWrapper instead
+     * @deprecated Since 5.80, use the QML components or the KNS3::QtQuickDialogWrapper instead
      */
-    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the QtQuickDialogWrapper instead")
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the KNS3::QtQuickDialogWrapper instead")
     explicit DownloadDialog(QWidget *parent = nullptr);
 
     /**
@@ -116,9 +117,9 @@ public:
      *
      * @param configFile the name of the configuration file
      * @param parent the parent of the dialog
-     * @deprecates Since 5.80, use the QML components or the QtQuickDialogWrapper instead
+     * @deprecated Since 5.80, use the QML components or the KNS3::QtQuickDialogWrapper instead
      */
-    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the QtQuickDialogWrapper instead")
+    KNEWSTUFF_DEPRECATED_VERSION(5, 80, "Use the QML components or the KNS3::QtQuickDialogWrapper instead")
     explicit DownloadDialog(const QString &configFile, QWidget *parent = nullptr);
 
     /**
