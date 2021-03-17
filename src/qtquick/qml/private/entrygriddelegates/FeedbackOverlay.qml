@@ -41,7 +41,7 @@ Item {
                 || status == NewStuff.ItemsModel.DeletedStatus) {
                     statusLabel.text = "";
                 } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                    statusLabel.text = i18ndc("knewstuff5", "Label for the busy indicator showing an item is being installed", "Installing...");
+                    statusLabel.text = i18ndc("knewstuff5", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working...");
                 } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
                     statusLabel.text = i18ndc("knewstuff5", "Label for the busy indicator showing an item is in the process of being updated", "Updating...");
                 } else {

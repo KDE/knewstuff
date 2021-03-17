@@ -729,10 +729,12 @@ void Installation::uninstall(EntryInternal entry)
 {
     // TODO Put this in pimpl or job
     const auto deleteFilesAndMarkAsUninstalled = [entry, this]() {
+        KNS3::Entry::Status newStatus{KNS3::Entry::Deleted};
         const auto lst = entry.installedFiles();
         for (const QString &file : lst) {
-            // This was used to delete the download location if there are no more entries
-            if (file.endsWith(QLatin1Char('/'))) {
+            // This is used to delete the download location if there are no more entries
+            QFileInfo info(file);
+            if (info.isDir()) {
                 QDir().rmdir(file);
             } else if (file.endsWith(QLatin1String("/*"))) {
                 QDir dir(file.left(file.size() - 2));
@@ -742,12 +744,15 @@ void Installation::uninstall(EntryInternal entry)
                     continue;
                 }
             } else {
-                QFileInfo info(file);
                 if (info.exists() || info.isSymLink()) {
                     bool worked = QFile::remove(file);
                     if (!worked) {
                         qWarning() << "unable to delete file " << file;
-                        return;
+                        Q_EMIT signalInstallationFailed(
+                            i18n("The removal of %1 failed, as the installed file %2 could not be automatically removed. You can attempt to manually delete this file, if you believe this is in error.", entry.name(), file));
+                        // Assume that the uninstallation has failed, and reset the entry to an installed state
+                        newStatus = KNS3::Entry::Installed;
+                        break;
                     }
                 } else {
                     qWarning() << "unable to delete file " << file << ". file does not exist.";
@@ -755,9 +760,11 @@ void Installation::uninstall(EntryInternal entry)
             }
         }
         EntryInternal newEntry = entry;
-        newEntry.setUnInstalledFiles(entry.installedFiles());
-        newEntry.setInstalledFiles(QStringList());
-        newEntry.setStatus(KNS3::Entry::Deleted);
+        if (newStatus == KNS3::Entry::Deleted) {
+            newEntry.setUnInstalledFiles(entry.installedFiles());
+            newEntry.setInstalledFiles(QStringList());
+        }
+        newEntry.setStatus(newStatus);
         Q_EMIT signalEntryChanged(newEntry);
     };
 

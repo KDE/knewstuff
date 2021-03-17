@@ -61,7 +61,7 @@ KCM.SimpleKCM {
              || status == NewStuff.ItemsModel.DeletedStatus) {
                 statusCard.message = "";
             } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                statusCard.message = i18ndc("knewstuff5", "Status message to be shown when the entry is in the process of being installed", "Currently installing the item %1 by %2. Please wait...", component.name, entryAuthor.name);
+                statusCard.message = i18ndc("knewstuff5", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
                 statusCard.message = i18ndc("knewstuff5", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
             } else {

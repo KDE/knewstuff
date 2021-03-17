@@ -101,7 +101,8 @@ Kirigami.SwipeListItem {
                         bottom: parent.bottom;
                         margins: Kirigami.Units.smallSpacing;
                     }
-                    text: (model.status == NewStuff.ItemsModel.InstallingStatus) ? "Installing" : ((model.status == NewStuff.ItemsModel.UpdatingStatus) ? "Updating" : "");
+                    // There is no distinction between installing and uninstalling as a status, so we have to word things accordingly
+                    text: (model.status == NewStuff.ItemsModel.InstallingStatus) ? "Working" : ((model.status == NewStuff.ItemsModel.UpdatingStatus) ? "Updating" : "");
                     width: paintedWidth;
                 }
             }

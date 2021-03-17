@@ -33,6 +33,7 @@ private Q_SLOTS:
     void testInstallCommandArchive();
     void testInstallCommandTopLevelFilesInArchive();
     void testUninstallCommand();
+    void testUninstallCommandDirectory();
 };
 
 void InstallationTest::initTestCase()
@@ -96,6 +97,29 @@ void InstallationTest::testUninstallCommand()
     QVERIFY(spy.wait());
     QCOMPARE(entry.status(), KNS3::Entry::Deleted);
     QVERIFY(!QFileInfo(file).exists());
+    QVERIFY(QFileInfo::exists("uninstalled.txt"));
+}
+
+void InstallationTest::testUninstallCommandDirectory()
+{
+    static const QLatin1String testDir{"testDirectory"};
+
+    // This will be left over from the previous test, so clean it up first
+    QFile::remove("uninstalled.txt");
+
+    EntryInternal entry;
+    entry.setUniqueId("0");
+    QDir().mkdir(testDir);
+    entry.setStatus(KNS3::Entry::Installed);
+    entry.setInstalledFiles(QStringList(testDir));
+    QVERIFY(QFileInfo(testDir).exists());
+    QVERIFY(!QFileInfo::exists("uninstalled.txt"));
+
+    installation->uninstall(entry);
+    QSignalSpy spy(installation, &Installation::signalEntryChanged);
+    QVERIFY(spy.wait());
+    QCOMPARE(entry.status(), KNS3::Entry::Deleted);
+    QVERIFY(!QFileInfo(testDir).exists());
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
 }
 
