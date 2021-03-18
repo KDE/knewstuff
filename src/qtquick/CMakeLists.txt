@@ -4,6 +4,7 @@ set(qmlplugin_SRCS
     quickengine.cpp
     quickitemsmodel.cpp
     quickquestionlistener.cpp
+    quicksettings.cpp
     author.cpp
     categoriesmodel.cpp
     commentsmodel.cpp
@@ -29,6 +30,17 @@ target_link_libraries (newstuffqmlplugin
     KF5::ConfigCore
     KF5::I18n
     KF5::NewStuffCore
+)
+
+# This is used only for the deprecation system - we don't export things from the QML plugin, that's not how they work
+ecm_generate_export_header(newstuffqmlplugin
+    EXPORT_FILE_NAME knewstuffquick_export.h
+    BASE_NAME KNewStuffQuick
+    GROUP_BASE_NAME KF
+    VERSION ${KF_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+    DEPRECATION_VERSIONS 5.81
 )
 
 install (TARGETS newstuffqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/newstuff)

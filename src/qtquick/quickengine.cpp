@@ -5,8 +5,11 @@
 */
 
 #include "quickengine.h"
+#include "quicksettings.h"
 
+#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
 #include <KAuthorized>
+#endif
 #include <KLocalizedString>
 
 #include "categoriesmodel.h"
@@ -68,10 +71,12 @@ Engine::~Engine()
     delete d;
 }
 
+#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
 bool Engine::allowedByKiosk() const
 {
     return KAuthorized::authorize(QStringLiteral("ghns"));
 }
+#endif
 
 QString Engine::configFile() const
 {
@@ -86,7 +91,7 @@ void Engine::setConfigFile(const QString &newFile)
         d->configFile = newFile;
         Q_EMIT configFileChanged();
 
-        if (allowedByKiosk()) {
+        if (KNewStuffQuick::Settings::instance()->allowedByKiosk()) {
             if (!d->engine) {
                 d->engine = new KNSCore::Engine(this);
                 connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=]() {
@@ -118,12 +123,14 @@ void Engine::setConfigFile(const QString &newFile)
                         &KNSCore::Engine::signalEntryEvent,
                         this,
                         [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
+                            KNSCore::EntryWrapper* wrappedEntry = new KNSCore::EntryWrapper(entry, this);
+                            Q_EMIT entryEvent(wrappedEntry, event);
                             // It is not the event we are handling here
                             if (event != KNSCore::EntryInternal::StatusChangedEvent) {
                                 return;
                             }
                             // We do not want to emit the entries changed signal for intermediate changed
-                            // this would cause the KCMs to reload their view unnecessarely, BUG: 431568
+                            // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
                             if (entry.status() == KNS3::Entry::Installing || entry.status() == KNS3::Entry::Updating) {
                                 return;
                             }

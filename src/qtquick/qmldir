@@ -9,3 +9,4 @@ DownloadItemsSheet 1.1 qml/DownloadItemsSheet.qml
 EntryDetails 1.1 qml/EntryDetails.qml
 Page 1.1 qml/Page.qml
 QuestionAsker 1.1 qml/QuestionAsker.qml
+Action 1.81 qml/Action.qml

@@ -11,6 +11,7 @@
 #include <QQmlListProperty>
 
 #include "entrywrapper.h"
+#include "knewstuffquick_export.h"
 
 /**
  * @short Encapsulates a KNSCore::Engine for use in Qt Quick
@@ -23,7 +24,10 @@
 class Engine : public QObject
 {
     Q_OBJECT
+#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
+    KNEWSTUFFQUICK_DEPRECATED_VERSION(5, 81, "Use NewStuff.Settings.allowedByKiosk instead")
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
+#endif
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
     Q_PROPERTY(QObject *engine READ engine NOTIFY engineChanged)
     /**
@@ -45,7 +49,10 @@ public:
     explicit Engine(QObject *parent = nullptr);
     virtual ~Engine();
 
+#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
+    KNEWSTUFFQUICK_DEPRECATED_VERSION(5, 81, "Use KNewStuffQuick::Settings::allowedByKiosk() instead")
     bool allowedByKiosk() const;
+#endif
 
     QString configFile() const;
     void setConfigFile(const QString &newFile);
@@ -102,6 +109,12 @@ Q_SIGNALS:
     void busyMessage(const QString &message);
     void errorMessage(const QString &message);
 
+    /**
+     * This is fired for any event related directly to a single EntryInternal instance
+     * @see EntryInternal::EntryEvent for details on which specific event is being notified
+     * @since 5.81
+     */
+    void entryEvent(KNSCore::EntryWrapper* entry, KNSCore::EntryInternal::EntryEvent event);
 private:
     class Private;
     Private *d;

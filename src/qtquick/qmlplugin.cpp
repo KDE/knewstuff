@@ -14,6 +14,7 @@
 #include "quickengine.h"
 #include "quickitemsmodel.h"
 #include "quickquestionlistener.h"
+#include "quicksettings.h"
 
 #include "provider.h"
 #include "question.h"
@@ -79,4 +80,16 @@ void QmlPlugins::registerTypes(const char *uri)
         67,
         "EntryWrapper",
         QStringLiteral("This should only be created by the Engine, and wraps EntryInternal objects for passing through Qt Quick"));
+
+    // Version 1.81
+    qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri,
+                                                       1,
+                                                       81,
+                                                       "Settings",
+                                                       [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+                                                           Q_UNUSED(scriptEngine)
+                                                           engine->setObjectOwnership(KNewStuffQuick::Settings::instance(),
+                                                                                      QQmlEngine::CppOwnership);
+                                                           return KNewStuffQuick::Settings::instance();
+                                                       });
 }

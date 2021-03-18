@@ -660,6 +660,11 @@ Q_SIGNALS:
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 
+    /**
+     * This is fired for any event related directly to a single EntryInternal instance
+     * @see EntryInternal::EntryEvent for details on which specific event is being notified
+     * @since 5.77
+     */
     void signalEntryEvent(const EntryInternal &entry, EntryInternal::EntryEvent event);
 
 private Q_SLOTS:

@@ -15,7 +15,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.11 as QtControls
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff 1.81 as NewStuff
 
 QtControls.Button {
     id: component
@@ -83,7 +83,7 @@ QtControls.Button {
      * @since 5.79
      */
     function showEntryDetails(providerId, entryId) {
-        ghnsDialog.showEntryDetails(providerId, entryId);
+        newStuffPage.showEntryDetails(providerId, entryId);
     }
 
     /**
@@ -98,7 +98,7 @@ QtControls.Button {
      * Show the dialog (same as clicking the button), if allowed by the Kiosk settings
      */
     function showDialog() {
-        if (ghnsDialog.engine.allowedByKiosk) {
+        if (NewStuff.Settings.allowedByKiosk) {
             ghnsDialog.engine.configFile = component.configFile
             component.aboutToShowDialog();
             ghnsDialog.open();
@@ -111,10 +111,10 @@ QtControls.Button {
 
     icon.name: "get-hot-new-stuff"
     visible: enabled || visibleWhenDisabled
-    enabled: ghnsDialog.engine.allowedByKiosk
+    enabled: NewStuff.Settings.allowedByKiosk
     onEnabledChanged: {
         // If the user resets this when kiosk has disallowed ghns, force enabled back to false
-        if (enabled === true && ghnsDialog.engine.allowedByKiosk === false) {
+        if (enabled === true && NewStuff.Settings.allowedByKiosk === false) {
             enabled = false;
         }
     }
