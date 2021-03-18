@@ -36,7 +36,7 @@ namespace KNSCore
  * Notice in particular the two data##mimetype entries. Use this
  * for when a tag may have multiple values.
  *
- * The value does not current suppport wildcards. The list should be considered
+ * The value does not current support wildcards. The list should be considered
  * a binary AND operation (that is, all filter entries must match for the data
  * entry to be included in the return data)
  * @since 5.51

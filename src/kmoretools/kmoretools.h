@@ -34,7 +34,7 @@ class KMoreToolsPrivate;
  *
  * Introduction
  * ------------
- * KMoreTools helps to to build user-configurable menus with tools which
+ * KMoreTools helps to build user-configurable menus with tools which
  * might not installed yet. These tools may also take URL arguments supplied
  * by the application.
  *
