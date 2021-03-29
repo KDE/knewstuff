@@ -54,6 +54,14 @@ public:
     bool allowedByKiosk() const;
 #endif
 
+    enum EntryEvent {
+        UnknownEvent = KNSCore::EntryInternal::UnknownEvent,
+        StatusChangedEvent = KNSCore::EntryInternal::StatusChangedEvent,
+        AdoptedEvent = KNSCore::EntryInternal::AdoptedEvent,
+        DetailsLoadedEvent = KNSCore::EntryInternal::DetailsLoadedEvent,
+    };
+    Q_ENUM(EntryEvent);
+
     QString configFile() const;
     void setConfigFile(const QString &newFile);
     Q_SIGNAL void configFileChanged();
@@ -114,7 +122,8 @@ Q_SIGNALS:
      * @see EntryInternal::EntryEvent for details on which specific event is being notified
      * @since 5.81
      */
-    void entryEvent(KNSCore::EntryWrapper* entry, KNSCore::EntryInternal::EntryEvent event);
+    void entryEvent(KNSCore::EntryWrapper *entry, EntryEvent event);
+
 private:
     class Private;
     Private *d;
