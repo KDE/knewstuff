@@ -118,7 +118,9 @@ Q_SIGNALS:
     void errorMessage(const QString &message);
 
     /**
-     * This is fired for any event related directly to a single EntryInternal instance
+     * This is fired for events related directly to a single EntryInternal instance
+     * The intermediate states Updating and Installing are not forwarded. In case you
+     * need those you have to listen to the signals of the KNSCore::Engine instance of the engine property.
      * @see EntryInternal::EntryEvent for details on which specific event is being notified
      * @since 5.81
      */
