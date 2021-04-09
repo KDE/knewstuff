@@ -88,7 +88,7 @@ QtDialogs.Dialog {
 
     contentItem: Rectangle {
         color: Kirigami.Theme.backgroundColor
-        implicitWidth: Math.min(Kirigami.Units.gridUnit * 40, Screen.width)
+        implicitWidth: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
         implicitHeight: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
         Keys.onEscapePressed: component.close()
         NewStuff.DialogContent {
