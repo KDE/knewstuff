@@ -79,6 +79,7 @@ QtControls.Button {
      * @note This is cleared when the dialog is shown, so the changed entries are those
      * changed since the dialog was opened most recently (rather than the lifetime
      * of the instance of the Button component)
+     * @deprecated Since 5.82, use entryEvent instead
      */
     property var changedEntries
     Binding {

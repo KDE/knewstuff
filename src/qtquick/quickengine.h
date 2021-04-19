@@ -42,8 +42,10 @@ class Engine : public QObject
     Q_PROPERTY(int filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
     Q_PROPERTY(QQmlListProperty<KNSCore::EntryWrapper> changedEntries READ changedEntries NOTIFY changedEntriesChanged)
     Q_PROPERTY(int changedEntriesCount READ changedEntriesCount NOTIFY changedEntriesChanged)
+#endif
     Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
 public:
     explicit Engine(QObject *parent = nullptr);
@@ -105,10 +107,12 @@ public:
     Q_INVOKABLE void resetSearchTerm();
     Q_SIGNAL void searchTermChanged();
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
     QQmlListProperty<KNSCore::EntryWrapper> changedEntries();
     Q_INVOKABLE void resetChangedEntries();
     Q_SIGNAL void changedEntriesChanged();
     int changedEntriesCount() const;
+#endif
 
     bool isValid();
 Q_SIGNALS:

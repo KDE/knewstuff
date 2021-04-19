@@ -31,6 +31,7 @@ public:
     CategoriesModel *categoriesModel;
     QString configFile;
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
     KNSCore::EntryInternal::List changedEntries;
     static KNSCore::EntryWrapper *getChangedEntry(QQmlListProperty<KNSCore::EntryWrapper> *property, int i)
     {
@@ -58,6 +59,7 @@ public:
         }
         return count;
     }
+#endif
 };
 
 Engine::Engine(QObject *parent)
@@ -136,11 +138,13 @@ void Engine::setConfigFile(const QString &newFile)
                                 return;
                             }
                             Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
                             if (d->changedEntries.contains(entry)) {
                                 d->changedEntries.removeAll(entry);
                             }
                             d->changedEntries << entry;
                             Q_EMIT changedEntriesChanged();
+#endif
                         });
                 Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();
@@ -282,6 +286,7 @@ void Engine::resetSearchTerm()
     setSearchTerm(QString{});
 }
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
 QQmlListProperty<KNSCore::EntryWrapper> Engine::changedEntries()
 {
     return QQmlListProperty<KNSCore::EntryWrapper>(this, d, &Private::getChangedEntriesCount, &Private::getChangedEntry);
@@ -299,6 +304,8 @@ void Engine::resetChangedEntries()
         Q_EMIT changedEntriesChanged();
     }
 }
+#endif
+
 bool Engine::isValid()
 {
     return d->isValid;

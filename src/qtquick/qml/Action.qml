@@ -81,6 +81,7 @@ Kirigami.Action {
      * @note This is cleared when the page is shown, so the changed entries are those
      * changed since the page was opened most recently (rather than the lifetime
      * of the instance of the Action component)
+     * @deprecated Since 5.82, use entryEvent instead
      */
     property var changedEntries
 
