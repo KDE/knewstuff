@@ -60,6 +60,19 @@ QtDialogs.Dialog {
     signal aboutToShowDialog();
 
     /**
+     * This forwards the entryEvent from the QtQuick engine
+     * @see Engine::entryEvent
+     * @since 5.82
+     */
+    signal entryEvent(QtObject entry, int event);
+    property Connections engineConnections: Connections {
+        target: engine
+        function onEntryEvent(entry, event) {
+            entryEvent(entry, event);
+        }
+    }
+
+    /**
      * Contains the entries which have been changed.
      * @note This is cleared when the dialog is shown, so the changed entries are those
      * changed since the dialog was opened most recently (rather than the lifetime
