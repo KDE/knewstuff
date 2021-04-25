@@ -42,7 +42,7 @@ void InstallationTest::initTestCase()
     cleanupTestCase();
     qRegisterMetaType<EntryInternal>();
     QStandardPaths::setTestModeEnabled(true);
-    installation = new Installation();
+    installation = new Installation(this);
     KConfigGroup grp = KSharedConfig::openConfig(dataDir + "installationtest.knsrc")->group("KNewStuff3");
     QVERIFY(installation->readConfig(grp));
     connect(KNSCore::QuestionManager::instance(), &KNSCore::QuestionManager::askQuestion, this, [](KNSCore::Question *q) {
