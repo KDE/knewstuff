@@ -757,7 +757,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
             } else {
                 // Next simplest option, filename is the same but in a different folder
                 qCDebug(KNEWSTUFFCORE) << "Next simplest option, filename is the same but in a different folder";
-                const QStringRef fileName = payloadToIdentify.splitRef(QChar::fromLatin1('/')).last();
+                const QString fileName = payloadToIdentify.split(QChar::fromLatin1('/')).last();
                 for (const QString &payload : payloads) {
                     if (payload.endsWith(fileName)) {
                         identifiedLink = payload;
@@ -786,7 +786,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
                     question->setQuestion(
                         i18n("Please pick the item from the list below which should be used to apply this update. We were unable to identify which item to "
                              "select, based on the original item, which was named %1",
-                             fileName.toString()));
+                             fileName));
                     question->setList(payloadNames);
                     if (question->ask() == Question::OKResponse) {
                         identifiedLink = payloads.value(payloadNames.indexOf(question->response()));

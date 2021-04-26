@@ -169,7 +169,7 @@ void Cache::readKns2MetaFiles()
 {
     qCDebug(KNEWSTUFFCORE) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
 
-    const auto realAppName = m_kns2ComponentName.splitRef(QLatin1Char(':'))[0];
+    const auto realAppName = m_kns2ComponentName.split(QLatin1Char(':'))[0];
 
     const QStringList dirs =
         QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);

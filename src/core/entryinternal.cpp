@@ -430,13 +430,13 @@ static QXmlStreamReader::TokenType readNextSkipComments(QXmlStreamReader *xml)
     return xml->tokenType();
 }
 
-static QStringRef readText(QXmlStreamReader *xml)
+static QString readText(QXmlStreamReader *xml)
 {
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
-    QStringRef ret;
+    QString ret;
     const auto token = readNextSkipComments(xml);
     if (token == QXmlStreamReader::Characters) {
-        ret = xml->text();
+        ret = xml->text().toString();
     }
     return ret;
 }
@@ -444,7 +444,7 @@ static QStringRef readText(QXmlStreamReader *xml)
 static QString readStringTrimmed(QXmlStreamReader *xml)
 {
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
-    QString ret = readText(xml).trimmed().toString();
+    QString ret = readText(xml).trimmed();
 
     if (xml->tokenType() == QXmlStreamReader::Characters)
         readNextSkipComments(xml);
