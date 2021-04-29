@@ -329,7 +329,6 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
                             EntryInternal newEntry = entry;
                             newEntry.setStatus(KNS3::Entry::Invalid);
                             Q_EMIT signalEntryChanged(newEntry);
-                            Q_EMIT signalInstallationFailed(i18n("Failed to execute install script"));
                         } else {
                             installationFinished();
                         }
@@ -708,11 +707,18 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
             Q_EMIT signalInstallationError(errorMessage);
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
-            Q_EMIT signalInstallationError(i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3",
-                                                exitcode,
-                                                command,
-                                                output));
-            qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
+            // 130 means Ctrl+C as an exit code this is interpreted by KNewStuff as cancel operation
+            // and no error will be displayed to the user, BUG: 436355
+            if (exitcode == 130) {
+                qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed was aborted by the user";
+            } else {
+                Q_EMIT signalInstallationError(
+                    i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3",
+                         exitcode,
+                         command,
+                         output));
+                qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
+            }
         }
         sender()->deleteLater();
     };
