@@ -80,7 +80,7 @@ target_link_libraries(KF5NewStuff
 )
 
 set_target_properties(KF5NewStuff PROPERTIES
-   VERSION ${KNEWSTUFF_VERSION_STRING}
+   VERSION ${KNEWSTUFF_VERSION}
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuff
 )
