@@ -33,7 +33,7 @@ namespace KNSCore
  * @internal
  * @deprecated
  */
-class KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use") KNEWSTUFFCORE_EXPORT Security : public QObject
+class KNEWSTUFFCORE_EXPORT KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use") Security : public QObject
 {
     Q_OBJECT
 public:
