@@ -10,6 +10,7 @@
 #include "questionmanager.h"
 
 #include <QCoreApplication>
+#include <QEventLoop>
 
 using namespace KNSCore;
 
@@ -25,7 +26,7 @@ public:
     QString title;
     QStringList list;
 
-    bool questionActive = false;
+    QEventLoop loop;
     Question::QuestionType questionType;
     Question::Response response;
     QString textResponse;
@@ -45,12 +46,8 @@ Question::~Question()
 
 Question::Response Question::ask()
 {
-    d->questionActive = true;
-
     Q_EMIT QuestionManager::instance()->askQuestion(this);
-    while (d->questionActive) {
-        qApp->processEvents();
-    }
+    d->loop.exec(); // Wait for the setResponse method to quit the event loop
 
     return d->response;
 }
@@ -98,7 +95,7 @@ QStringList Question::list() const
 void Question::setResponse(Response response)
 {
     d->response = response;
-    d->questionActive = false;
+    d->loop.quit();
 }
 
 void Question::setResponse(const QString &response)
