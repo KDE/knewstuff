@@ -3,7 +3,7 @@ set(knewstuff-dialog_SRCS
     knsrcmodel.cpp
 )
 
-qt5_add_resources(RESOURCES resources.qrc)
+qt_add_resources(RESOURCES resources.qrc)
 
 add_executable(knewstuff-dialog ${knewstuff-dialog_SRCS} ${RESOURCES})
 
