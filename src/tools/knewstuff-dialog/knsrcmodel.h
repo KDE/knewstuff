@@ -13,7 +13,6 @@
 class KNSRCModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QUrl folder READ folder WRITE setFolder NOTIFY folderChanged)
 public:
     explicit KNSRCModel(QObject *parent = nullptr);
     virtual ~KNSRCModel();
@@ -23,17 +22,17 @@ public:
         FilePathRole,
     };
 
+    struct Entry {
+        QString name;
+        QString filePath;
+    };
+
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QUrl folder() const;
-    void setFolder(const QUrl &folder);
-    Q_SIGNAL void folderChanged();
-
 private:
-    class Private;
-    Private *d;
+    QList<Entry *> m_entries;
 };
 
 #endif // KNSRCMODEL_H

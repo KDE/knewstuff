@@ -42,7 +42,6 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
     qmlRegisterType<KNSRCModel>("org.kde.newstuff.tools.dialog", 1, 0, "KNSRCModel");
-    appengine->rootContext()->setContextProperty(QStringLiteral("knsrcFilesLocation"), KNSCore::Engine::configSearchLocations().last());
 
     if (parser->optionNames().contains(QStringLiteral("url"))) {
         const QUrl url(parser->value(QStringLiteral("url")));

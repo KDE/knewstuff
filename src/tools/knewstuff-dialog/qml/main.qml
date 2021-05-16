@@ -24,7 +24,7 @@ Kirigami.ApplicationWindow {
         actions: []
         Instantiator {
             id: configsInstantiator
-            model: Myself.KNSRCModel { folder: "file://"+knsrcFilesLocation }
+            model: Myself.KNSRCModel {}
             Kirigami.Action {
                 text: model.name
                 icon.name: "get-hot-new-stuff"
