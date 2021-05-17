@@ -9,6 +9,7 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
+#include <memory>
 
 class KNSRCModel : public QAbstractListModel
 {
@@ -22,17 +23,12 @@ public:
         FilePathRole,
     };
 
-    struct Entry {
-        QString name;
-        QString filePath;
-    };
-
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 private:
-    QList<Entry *> m_entries;
+    std::unique_ptr<class Private> d;
 };
 
 #endif // KNSRCMODEL_H

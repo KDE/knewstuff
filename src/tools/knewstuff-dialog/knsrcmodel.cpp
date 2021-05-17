@@ -12,8 +12,20 @@
 #include <KConfigGroup>
 #include <QDir>
 
+struct Entry {
+    QString name;
+    QString filePath;
+};
+
+class Private
+{
+public:
+    QList<Entry *> m_entries;
+};
+
 KNSRCModel::KNSRCModel(QObject *parent)
     : QAbstractListModel(parent)
+    , d(new Private())
 {
     const QStringList files = KNSCore::Engine::availableConfigFiles();
     for (const auto &file : files) {
@@ -31,7 +43,7 @@ KNSRCModel::KNSRCModel(QObject *parent)
         Entry *entry = new Entry;
         entry->name = group.readEntry("Name", QFileInfo(file).fileName());
         entry->filePath = file;
-        m_entries << entry;
+        d->m_entries << entry;
     }
 }
 
@@ -48,14 +60,14 @@ int KNSRCModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return m_entries.count();
+    return d->m_entries.count();
 }
 
 QVariant KNSRCModel::data(const QModelIndex &index, int role) const
 {
     QVariant result;
     if (checkIndex(index)) {
-        Entry *entry = m_entries[index.row()];
+        Entry *entry = d->m_entries[index.row()];
         switch (role) {
         case NameRole:
             result.setValue(entry->name);
