@@ -514,6 +514,13 @@ public:
     void setConfigLocationFallback(bool enableFallback);
 
     /**
+     * List of all available config files. This list will contain no duplicated filenames.
+     * The returned file paths are absolute.
+     * @since 5.83
+     */
+    static QStringList availableConfigFiles();
+
+    /**
      * The Provider instance with the passed ID
      *
      * @param providerId The ID of the Provider to fetch

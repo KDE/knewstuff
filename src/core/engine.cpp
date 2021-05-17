@@ -25,6 +25,7 @@
 #include <memory>
 
 #include <QDir>
+#include <QDirIterator>
 #include <QProcess>
 #include <QThreadStorage>
 #include <QTimer>
@@ -989,6 +990,28 @@ QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations
 void KNSCore::Engine::setConfigLocationFallback(bool enableFallback)
 {
     d->configLocationFallback = enableFallback;
+}
+
+QStringList KNSCore::Engine::availableConfigFiles()
+{
+    QStringList configSearchLocations;
+    configSearchLocations << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, //
+                                                       QStringLiteral("knsrcfiles"),
+                                                       QStandardPaths::LocateDirectory);
+    configSearchLocations << QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
+    QSet<QString> configFileNames;
+    QStringList configFiles;
+    for (const QString &path : qAsConst(configSearchLocations)) {
+        QDirIterator dirIt(path, {QStringLiteral("*.knsrc")}, QDir::Files);
+        while (dirIt.hasNext()) {
+            dirIt.next();
+            if (!configFileNames.contains(dirIt.fileName())) {
+                configFiles << dirIt.filePath();
+                configFileNames << dirIt.fileName();
+            }
+        }
+    }
+    return configFiles;
 }
 
 QSharedPointer<KNSCore::Provider> KNSCore::Engine::provider(const QString &providerId) const
