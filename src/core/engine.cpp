@@ -124,7 +124,7 @@ public:
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
     QStringList tagFilter;
     QStringList downloadTagFilter;
-    bool configLocationFallback = true;
+    bool configLocationFallback = true; // TODO KF6 remove old location
     QString name;
     QMap<EntryInternal, CommentsModel *> commentsModels;
     bool shouldRemoveDeletedEntries = false;
@@ -974,6 +974,7 @@ void KNSCore::Engine::setPageSize(int pageSize)
     m_pageSize = pageSize;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 83)
 QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations)
 {
     QStringList ret;
@@ -986,11 +987,11 @@ QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations
     }
     return ret;
 }
-
 void KNSCore::Engine::setConfigLocationFallback(bool enableFallback)
 {
     d->configLocationFallback = enableFallback;
 }
+#endif
 
 QStringList KNSCore::Engine::availableConfigFiles()
 {

@@ -493,6 +493,7 @@ public:
      */
     void setPageSize(int pageSize);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 83)
     /**
      * Get a list of all the locations which will be used when searching for knsrc
      * files, in the order in which the search will occur.
@@ -500,8 +501,13 @@ public:
      * @param includeFallbackLocations Whether or not the deprecated search locations are included
      * @return The search list for knsrc files
      * @since 5.57
+     * @deprecated Since 5.83, use Engine::availableConfigFiles instead
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 83, "Use Engine::availableConfigFiles instead")
     static QStringList configSearchLocations(bool includeFallbackLocations = false);
+#endif
+
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 83)
     /**
      * Sets whether or not the config file location discovery fallback should be active.
      * If enabled (default), if the config file is not found in the knsrcfiles location,
@@ -510,8 +516,11 @@ public:
      *
      * @param enableFallback Whether or not the fallback discovery should be enabled
      * @since 5.57
+     * @deprecated Since 5.83, the engine includes the fallback paths by default
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 83, "The engine includes the fallback paths by default")
     void setConfigLocationFallback(bool enableFallback);
+#endif
 
     /**
      * List of all available config files. This list will contain no duplicated filenames.
