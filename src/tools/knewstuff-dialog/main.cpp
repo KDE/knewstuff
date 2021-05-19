@@ -29,8 +29,7 @@ int main(int argc, char **argv)
     parser->addHelpOption();
     parser->addPositionalArgument(QStringLiteral("knsrcfile"),
                                   i18n("The KNSRC file you want to show. If none is passed, you will be presented with a dialog which lets you switch between "
-                                       "all the config files installed into the systemwide knsrc file location, which on your system is: %1",
-                                       KNSCore::Engine::configSearchLocations().last()));
+                                       "all the config files installed into the systemwide knsrc file location"));
     parser->addOption(
         QCommandLineOption(QStringLiteral("url"),
                            i18n("A kns url to show information from. The format for a kns url is kns://knsrcfile/providerid/entryid\n'knsrcfile'\nis the name "
