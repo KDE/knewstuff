@@ -112,14 +112,14 @@ void InstallationTest::testUninstallCommandDirectory()
     QDir().mkdir(testDir);
     entry.setStatus(KNS3::Entry::Installed);
     entry.setInstalledFiles(QStringList(testDir));
-    QVERIFY(QFileInfo(testDir).exists());
+    QVERIFY(QFileInfo::exists(testDir));
     QVERIFY(!QFileInfo::exists("uninstalled.txt"));
 
     installation->uninstall(entry);
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     QVERIFY(spy.wait());
     QCOMPARE(entry.status(), KNS3::Entry::Deleted);
-    QVERIFY(!QFileInfo(testDir).exists());
+    QVERIFY(!QFileInfo::exists(testDir));
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
 }
 
