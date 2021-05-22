@@ -81,6 +81,7 @@ private Q_SLOTS:
 private:
     // Generate an opensearch string.
     QUrl getOpenSearchString(const KNSCore::Provider::SearchRequest &request);
+    QUrl fixRelativeUrl(QString urlPart);
 
     QString m_providerId;
     QString m_providerName;

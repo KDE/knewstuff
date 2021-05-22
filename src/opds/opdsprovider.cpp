@@ -101,16 +101,15 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
             }
         }
     } else {
-
-        if (request.filter == Provider::Group) {
-            qDebug() << "Getting a group" << request.searchTerm;
-            // Let's load the new feed.
+        if (request.searchTerm.startsWith(QStringLiteral("/"))) {
+            qDebug() << request.searchTerm << m_currentUrl;
+            m_currentUrl = fixRelativeUrl(request.searchTerm);
+        } else if (request.searchTerm.startsWith(QStringLiteral("http"))) {
             m_currentUrl = QUrl(request.searchTerm);
         } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
             m_currentUrl = getOpenSearchString(request);
-            qDebug() << "making a search";
         }
 
         //request: check if entries is above pagesize*index, otherwise load next page.
@@ -257,8 +256,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable.
 
         int downloads = 0;
+        int counterThumbnails = 0;
+        int counterImages = 0;
         for(int j=0; j<feedEntry.links().size(); j++) {
             Syndication::Atom::Link link = feedEntry.links().at(j);
+            qDebug() << link.rel() << link.type() << link.href();
 
             if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
                 KNSCore::EntryInternal::DownloadLinkInformation download;
@@ -272,15 +274,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     download.name = l.join(QStringLiteral(" "));
                 }
                 download.size = link.length();
-                download.descriptionLink = link.href();
+                download.descriptionLink = fixRelativeUrl(link.href()).toString();
                 download.distributionType = link.type();
                 entry.setStatus(KNS3::Entry::Invalid);
                 download.isDownloadtypeLink = false;
-
-                if (link.rel() == OPDS_REL_CRAWL || link.type() == OPDS_KIND_NAVIGATION) {
-                    entry.setEntryType(EntryInternal::GroupEntry);
-                    entry.setPayload(link.href());
-                }
+                qDebug() << link.href();
 
                 if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
                     download.isDownloadtypeLink = true;
@@ -293,15 +291,17 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     download.priceAmount = locale.toCurrencyString(el.text().toFloat(), el.attribute(ATTR_CURRENCY_CODE));
                 }
                 // There's an 'opds:indirectaquistition' element that gives extra metadata about bundles.
-                if (entry.entryType() != EntryInternal::GroupEntry) {
-                    entry.appendDownloadLinkInformation(download);
-                }
+                entry.appendDownloadLinkInformation(download);
+
             } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
                 if (link.rel() == OPDS_REL_THUMBNAIL) {
-                    entry.setPreviewUrl(link.href());
+                    entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterThumbnails));
+                    counterThumbnails +=1;
                 } else {
-                    entry.setPreviewUrl(link.href(), KNSCore::EntryInternal::PreviewBig1);
+                    entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterImages+3));
+                    counterImages +=1;
                 }
+
             } else {
                 // This could be anything from a more info link, to navigation links, to links to the outside world.
                 // Todo: think of using link rel's 'replies', 'payment'(donation) and 'version-history'.
@@ -311,15 +311,25 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 otherLink.id = downloads;
                 downloads +=1;
                 otherLink.distributionType = link.type();
-                otherLink.descriptionLink = link.href();
+                otherLink.descriptionLink = fixRelativeUrl(link.href()).toString();
                 otherLink.size = link.length();
                 QStringList tags;
                 tags.append(link.rel());
                 tags.append(link.hrefLanguage());
                 otherLink.tags = tags;
 
-                entry.appendDownloadLinkInformation(otherLink);
+                if (link.rel() == OPDS_REL_CRAWL || link.type().startsWith(OPDS_ATOM_MT)) {
+                    entry.setEntryType(EntryInternal::GroupEntry);
+                    entry.setPayload(link.href());
+                    entry.appendDownloadLinkInformation(otherLink);
+                } else {
+                    entry.appendDownloadLinkInformation(otherLink);
+                }
             }
+        }
+        if (entry.status() == KNS3::Entry::Downloadable) {
+            // Set this back to catalog entry when we can download a thing.
+            entry.setEntryType(EntryInternal::CatalogEntry);
         }
 
         entries.append(entry);
@@ -367,6 +377,7 @@ void OPDSProvider::parseExtraDetails(const QDomDocument &doc)
     //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable.
 
     int downloads = 0;
+    int counterImages = 0;
     for(int j=0; j<feedEntry.links().size(); j++) {
         Syndication::Atom::Link link = feedEntry.links().at(j);
 
@@ -404,11 +415,10 @@ void OPDSProvider::parseExtraDetails(const QDomDocument &doc)
             // There's an 'opds:indirectaquistition' element that gives extra metadata about bundles.
             entry.appendDownloadLinkInformation(download);
         } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
-            if (link.rel() ==  OPDS_REL_THUMBNAIL) {
-                entry.setPreviewUrl(link.href());
-            } else {
-                entry.setPreviewUrl(link.href(), KNSCore::EntryInternal::PreviewBig1);
+            if (counterImages < 6) {
+                entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterImages));
             }
+            counterImages +=1;
         } else {
             // This could be anything from a more info link, to navigation links, to links to the outside world.
             KNSCore::EntryInternal::DownloadLinkInformation otherLink;
@@ -471,6 +481,18 @@ QUrl OPDSProvider::getOpenSearchString(const Provider::SearchRequest &request)
     }
     searchUrl.setQuery(query);
     return searchUrl;
+}
+
+QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
+{
+    QUrl query = QUrl(urlPart);
+    if (query.isRelative()) {
+    QUrl host = m_currentUrl;
+    host.setPath(query.path());
+    host.setQuery(query.query());
+    return host;
+    }
+    return query;
 }
 }
 

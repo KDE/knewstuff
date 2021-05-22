@@ -40,6 +40,7 @@ KCM.SimpleKCM {
     property int downloadCount
     property var downloadLinks
     property string providerId
+    property int entryType
 
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet

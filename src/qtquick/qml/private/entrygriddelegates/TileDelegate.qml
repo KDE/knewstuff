@@ -20,6 +20,11 @@ Private.GridTileDelegate {
     property string useLabel
     property string uninstallLabel
     function showDetails() {
+
+        if (model.entryType == NewStuff.ItemsModel.GroupEntry) {
+            newStuffEngine.engine.storeSearch();
+            newStuffEngine.searchTerm = model.payload;
+        } else {
         pageStack.push(detailsPage, {
             newStuffModel: GridView.view.model,
             index: model.index,
@@ -37,6 +42,7 @@ Private.GridTileDelegate {
             downloadLinks: model.downloadLinks,
             providerId: model.providerId
         });
+        }
     }
     actions: [
         Kirigami.Action {
@@ -171,6 +177,7 @@ Private.GridTileDelegate {
             Private.Rating {
                 QtLayouts.Layout.fillWidth: true
                 rating: model.rating
+                visible: model.entryType == NewStuff.ItemsModel.CatalogEntry;
             }
             Kirigami.Heading {
                 QtLayouts.Layout.fillWidth: true
@@ -178,6 +185,7 @@ Private.GridTileDelegate {
                 level: 5
                 elide: Text.ElideRight
                 text: i18ndc("knewstuff5", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
+                visible: model.entryType == NewStuff.ItemsModel.CatalogEntry;
             }
         }
         FeedbackOverlay {

@@ -109,7 +109,7 @@ public:
     Q_ENUM(ItemStatus)
 
     enum EntryType {
-        CatalogEntry,
+        CatalogEntry = 0,
         GroupEntry
     };
     Q_ENUM(EntryType)

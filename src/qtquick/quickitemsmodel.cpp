@@ -151,7 +151,7 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {ProviderIdRole, "providerId"},
         {SourceRole, "source"},
         {StatusRole, "status"},
-        {EntryTypeRole, "entrytType"},
+        {EntryTypeRole, "entryType"},
     };
     // clang-format on
     return roles;
