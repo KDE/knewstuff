@@ -58,6 +58,7 @@ public:
         Installed,
         Updates,
         ExactEntryId,
+        Group
     };
     Q_ENUM(Filter)
 

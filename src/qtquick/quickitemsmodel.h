@@ -94,6 +94,7 @@ public:
         SourceRole,
         StatusRole,
         CommentsModelRole,
+        EntryTypeRole
     };
     Q_ENUM(Roles)
     enum ItemStatus {
@@ -106,6 +107,12 @@ public:
         UpdatingStatus,
     };
     Q_ENUM(ItemStatus)
+
+    enum EntryType {
+        CatalogEntry,
+        GroupEntry
+    };
+    Q_ENUM(EntryType)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
     // Consequently, this enum removes what would seem like magic numbers from the code, and
     // makes their meaning more explicit.

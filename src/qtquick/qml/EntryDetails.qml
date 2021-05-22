@@ -143,6 +143,7 @@ KCM.SimpleKCM {
         }
         Kirigami.Heading {
             id: shortSummaryItem
+            wrapMode: Text.Wrap
             QtLayouts.Layout.fillWidth: true
         }
         Kirigami.FormLayout {

@@ -89,6 +89,11 @@ public:
         DetailsLoadedEvent = 3,
     };
 
+    enum EntryType {
+        CatalogEntry = 0, // These are the main entries that KNewStuff can get the details about and download links for.
+        GroupEntry // these are entries whose payload is another feed. Currently only used by the OPDS provider.
+    };
+
     /**
      * Constructor.
      */
@@ -465,6 +470,12 @@ public:
       */
     void setSource(Source source);
     Source source() const;
+
+    /**
+     * The entry type is either catalog entry, or group entry.
+     */
+    void setEntryType(EntryType type);
+    EntryType entryType();
 
     /**
      * set the xml for the entry

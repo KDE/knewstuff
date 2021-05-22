@@ -91,24 +91,41 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
     m_currentRequest = request;
 
-    // We should check if there's an opensearch implementation, and see if we can funnel search
-    // requests to that.
-    if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
-        m_currentUrl = getOpenSearchString(request);
-    }
+    qDebug() << "Starting search";
 
-    //request: check if entries is above pagesize*index, otherwise load next page.
-
-    qDebug() << "loading...";
-    QUrl url = m_currentUrl;
-    if (!url.isEmpty()) {
-        qDebug() << "loading opds feed";
-        m_xmlLoader = new XmlLoader(this);
-        connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
-        //connect(m_xmlLoader, &XmlLoader::signalFailed, this, SIGNAL(loadingFailed()));
-        m_xmlLoader->load(url);
+    if (request.filter == Provider::ExactEntryId) {
+        qDebug() << "Getting a single file";
+        for (EntryInternal entry: m_cachedEntries) {
+            if (entry.uniqueId() == request.searchTerm) {
+                loadEntryDetails(entry);
+            }
+        }
     } else {
-        Q_EMIT loadingFailed(request);
+
+        if (request.filter == Provider::Group) {
+            qDebug() << "Getting a group" << request.searchTerm;
+            // Let's load the new feed.
+            m_currentUrl = QUrl(request.searchTerm);
+        } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
+            // We should check if there's an opensearch implementation, and see if we can funnel search
+            // requests to that.
+            m_currentUrl = getOpenSearchString(request);
+            qDebug() << "making a search";
+        }
+
+        //request: check if entries is above pagesize*index, otherwise load next page.
+
+        qDebug() << "loading...";
+        QUrl url = m_currentUrl;
+        if (!url.isEmpty()) {
+            qDebug() << "loading opds feed" << m_currentUrl;
+            m_xmlLoader = new XmlLoader(this);
+            connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
+            //connect(m_xmlLoader, &XmlLoader::signalFailed, this, SIGNAL(loadingFailed()));
+            m_xmlLoader->load(url);
+        } else {
+            Q_EMIT loadingFailed(request);
+        }
     }
 }
 
@@ -259,19 +276,26 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 download.distributionType = link.type();
                 entry.setStatus(KNS3::Entry::Invalid);
                 download.isDownloadtypeLink = false;
-                if (link.rel() == OPDS_REL_AC_OPEN_ACCESS || link.rel() == OPDS_REL_ACQUISITION) {
-                    download.isDownloadtypeLink = true;
-                    entry.setStatus(KNS3::Entry::Downloadable);
+
+                if (link.rel() == OPDS_REL_CRAWL || link.type() == OPDS_KIND_NAVIGATION) {
+                    entry.setEntryType(EntryInternal::GroupEntry);
+                    entry.setPayload(link.href());
                 }
 
-
+                if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
+                    download.isDownloadtypeLink = true;
+                    entry.setStatus(KNS3::Entry::Downloadable);
+                    entry.setEntryType(EntryInternal::CatalogEntry);
+                }
 
                 for (QDomElement el:feedEntry.elementsByTagName(OPDS_EL_PRICE)) {
                     QLocale locale;
                     download.priceAmount = locale.toCurrencyString(el.text().toFloat(), el.attribute(ATTR_CURRENCY_CODE));
                 }
                 // There's an 'opds:indirectaquistition' element that gives extra metadata about bundles.
-                entry.appendDownloadLinkInformation(download);
+                if (entry.entryType() != EntryInternal::GroupEntry) {
+                    entry.appendDownloadLinkInformation(download);
+                }
             } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
                 if (link.rel() == OPDS_REL_THUMBNAIL) {
                     entry.setPreviewUrl(link.href());
@@ -362,9 +386,15 @@ void OPDSProvider::parseExtraDetails(const QDomDocument &doc)
             download.distributionType = link.type();
             entry.setStatus(KNS3::Entry::Invalid);
             download.isDownloadtypeLink = false;
+
+            if (link.rel() == OPDS_REL_CRAWL || link.type() == OPDS_KIND_NAVIGATION) {
+                entry.setEntryType(EntryInternal::GroupEntry);
+            }
+
             if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
                 download.isDownloadtypeLink = true;
                 entry.setStatus(KNS3::Entry::Downloadable);
+                entry.setEntryType(EntryInternal::CatalogEntry);
             }
 
             for (QDomElement el : feedEntry.elementsByTagName(OPDS_EL_PRICE)) {

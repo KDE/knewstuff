@@ -71,12 +71,24 @@ KCM.GridViewKCM {
         _showEntryDetailsThrottle.providerId = providerId;
         _showEntryDetailsThrottle.entryId = entryId;
         newStuffEngine.engine.storeSearch();
-        newStuffEngine.engine.fetchEntryById(entryId);
+
+        //check if entry in question is perhaps a group, if so, load the new details.
+        var theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
+        var type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
+
+        if (type === NewStuff.ItemsModel.GroupEntry) {
+            newStuffEngine.filter = 4;
+            newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
+        } else {
+            newStuffEngine.engine.fetchEntryById(entryId);
+        }
+
         if (newStuffEngine.isLoading) {
             _showEntryDetailsThrottle.enabled = true;
         } else {
             _showEntryDetailsThrottle.onIsLoadingDataChanged();
         }
+
     }
     Connections {
         id: _showEntryDetailsThrottle;
@@ -85,7 +97,7 @@ KCM.GridViewKCM {
         property var entryId;
         property var providerId;
         function onIsLoadingDataChanged() {
-            if (newStuffModel.isLoadingData === false && root.view.count > 0) {
+            if (newStuffModel.isLoadingData === false && root.view.count == 1) {
                 _showEntryDetailsThrottle.enabled = false;
                 var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
                 if (theIndex > -1) {
@@ -111,6 +123,10 @@ KCM.GridViewKCM {
                     root.message(i18ndc("knewstuff5", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
                     newStuffEngine.engine.restoreSearch();
                 }
+            } else if (newStuffModel.isLoadingData === false && root.view.count > 1) {
+                // right now, this is only one level deep...
+                _showEntryDetailsThrottle.enabled = false;
+                _restoreSearchState.enabled = true;
             }
         }
     }

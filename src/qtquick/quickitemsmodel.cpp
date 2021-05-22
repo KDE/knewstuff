@@ -150,7 +150,8 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {DonationLinkRole, "donationLink"},
         {ProviderIdRole, "providerId"},
         {SourceRole, "source"},
-        {StatusRole, "status"}
+        {StatusRole, "status"},
+        {EntryTypeRole, "entrytType"},
     };
     // clang-format on
     return roles;
@@ -348,6 +349,15 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             }
             data.setValue<QObject *>(commentsModel);
         } break;
+        case EntryTypeRole: {
+            KNSCore::EntryInternal::EntryType type = entry.entryType();
+            if (type == KNSCore::EntryInternal::GroupEntry) {
+                data.setValue<ItemsModel::EntryType>(ItemsModel::GroupEntry);
+            } else {
+                data.setValue<ItemsModel::EntryType>(ItemsModel::CatalogEntry);
+            }
+        }
+            break;
         default:
             data.setValue<QString>(QStringLiteral("Unknown role"));
             break;

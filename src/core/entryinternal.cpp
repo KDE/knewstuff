@@ -30,6 +30,7 @@ public:
         , mNumberKnowledgebaseEntries(0)
         , mStatus(KNS3::Entry::Invalid)
         , mSource(EntryInternal::Online)
+        , mEntryType(EntryInternal::CatalogEntry)
     {
         qRegisterMetaType<KNSCore::EntryInternal::List>();
     }
@@ -72,6 +73,7 @@ public:
     QString mSignature;
     KNS3::Entry::Status mStatus;
     EntryInternal::Source mSource;
+    EntryInternal::EntryType mEntryType;
 
     QString mPreviewUrl[6];
     QImage mPreviewImage[6];
@@ -365,6 +367,16 @@ void EntryInternal::setKnowledgebaseLink(const QString &link)
 EntryInternal::Source EntryInternal::source() const
 {
     return d->mSource;
+}
+
+void EntryInternal::setEntryType(EntryInternal::EntryType type)
+{
+    d->mEntryType = type;
+}
+
+EntryInternal::EntryType EntryInternal::entryType()
+{
+    return d->mEntryType;
 }
 
 void EntryInternal::setSource(Source source)
