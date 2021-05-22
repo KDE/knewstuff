@@ -5,6 +5,7 @@
 */
 
 #include "downloadlinkinfo.h"
+#include <QMimeDatabase>
 
 class DownloadLinkInfo::Private
 {
@@ -23,6 +24,7 @@ public:
     int id;
     bool isDownloadtypeLink;
     quint64 size;
+    QString icon;
 };
 
 DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
@@ -45,6 +47,8 @@ void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInforma
     d->id = data.id;
     d->isDownloadtypeLink = data.isDownloadtypeLink;
     d->size = data.size;
+    QMimeDatabase db;
+    d->icon = db.mimeTypeForName(d->distributionType).iconName();
     Q_EMIT dataChanged();
 }
 
@@ -81,4 +85,9 @@ bool DownloadLinkInfo::isDownloadtypeLink() const
 quint64 DownloadLinkInfo::size() const
 {
     return d->size;
+}
+
+QString DownloadLinkInfo::icon() const
+{
+    return d->icon;
 }

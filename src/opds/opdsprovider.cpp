@@ -48,6 +48,8 @@ const QString REL_SUBSECTION = QStringLiteral("subsection");
 const QString REL_COLLECTION = QStringLiteral("collection");
 const QString REL_PREVIEW = QStringLiteral("preview");
 const QString REL_REPLIES = QStringLiteral("replies");
+const QString REL_RELATED = QStringLiteral("related");
+const QString REL_ALTERNATE = QStringLiteral("alternate");
 const QString ATTR_CURRENCY_CODE = QStringLiteral("currencycode");
 const QString FEED_COMPLETE = QStringLiteral("fh:complete");
 const QString THREAD_COUNT = QStringLiteral("count");
@@ -59,6 +61,8 @@ const QString OPENSEARCH_SEARCH_TERMS = QStringLiteral("searchTerms");
 const QString OPENSEARCH_COUNT = QStringLiteral("count");
 const QString OPENSEARCH_START_INDEX = QStringLiteral("startIndex");
 const QString OPENSEARCH_START_PAGE = QStringLiteral("startPage");
+
+const QString HTML_MT = QStringLiteral("text/html");
 
 
 OPDSProvider::OPDSProvider():
@@ -102,7 +106,6 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
         }
     } else {
         if (request.searchTerm.startsWith(QStringLiteral("/"))) {
-            qDebug() << request.searchTerm << m_currentUrl;
             m_currentUrl = fixRelativeUrl(request.searchTerm);
         } else if (request.searchTerm.startsWith(QStringLiteral("http"))) {
             m_currentUrl = QUrl(request.searchTerm);
@@ -264,7 +267,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
             if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
                 KNSCore::EntryInternal::DownloadLinkInformation download;
-                download.id = downloads;
+                download.id = entry.downloadLinkCount();
                 downloads +=1;
                 download.name = link.title();
                 if (link.title().isEmpty()) {
@@ -278,7 +281,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 download.distributionType = link.type();
                 entry.setStatus(KNS3::Entry::Invalid);
                 download.isDownloadtypeLink = false;
-                qDebug() << link.href();
 
                 if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
                     download.isDownloadtypeLink = true;
@@ -308,8 +310,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 KNSCore::EntryInternal::DownloadLinkInformation otherLink;
                 otherLink.isDownloadtypeLink = false;
                 otherLink.name = link.title();
-                otherLink.id = downloads;
-                downloads +=1;
+                otherLink.id = entry.downloadLinkCount();
+
                 otherLink.distributionType = link.type();
                 otherLink.descriptionLink = fixRelativeUrl(link.href()).toString();
                 otherLink.size = link.length();
@@ -322,6 +324,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     entry.setEntryType(EntryInternal::GroupEntry);
                     entry.setPayload(link.href());
                     entry.appendDownloadLinkInformation(otherLink);
+                } if (link.type() == HTML_MT) {
+                    entry.setHomepage(fixRelativeUrl(link.href()));
                 } else {
                     entry.appendDownloadLinkInformation(otherLink);
                 }
