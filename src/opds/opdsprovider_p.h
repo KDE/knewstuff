@@ -73,6 +73,7 @@ private Q_SLOTS:
     void parseFeedData(const QDomDocument &doc);
     void parseExtraDetails(const QDomDocument &doc);
     void slotEmitProviderInitialized();
+    EntryInternal::List installedEntries() const;
 
     // Parse the opensearch configuration document.
     // https://github.com/dewitt/opensearch

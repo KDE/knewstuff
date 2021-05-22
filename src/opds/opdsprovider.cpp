@@ -96,8 +96,10 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
     m_currentRequest = request;
 
     qDebug() << "Starting search";
-
-    if (request.filter == Provider::ExactEntryId) {
+    if (request.filter == Installed) {
+        Q_EMIT loadingFinished(request, installedEntries());
+        return;
+    } else if (request.filter == Provider::ExactEntryId) {
         qDebug() << "Getting a single file";
         for (EntryInternal entry: m_cachedEntries) {
             if (entry.uniqueId() == request.searchTerm) {
@@ -193,7 +195,7 @@ bool OPDSProvider::isInitialized() const
 
 void OPDSProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
 {
-    m_cachedEntries.append(cachedEntries);
+    m_cachedEntries = cachedEntries;
 }
 
 void OPDSProvider::parseFeedData(const QDomDocument &doc)
@@ -234,6 +236,15 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         entry.setProviderId(m_providerId);
         entry.setUniqueId(feedEntry.id());
 
+        entry.setStatus(KNS3::Entry::Invalid);
+        for (const EntryInternal &cachedEntry : qAsConst(m_cachedEntries)) {
+            if (entry.uniqueId() == cachedEntry.uniqueId()) {
+                entry = cachedEntry;
+                break;
+            }
+        }
+
+
         // This is a bit of a pickle: atom feeds can have multiple catagories.
         // but these catagories are not specifically tags...
         QStringList tags;
@@ -253,10 +264,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         entry.setLicense(feedEntry.rights());
         entry.setSummary(feedEntry.content().asString());
         entry.setShortSummary(feedEntry.summary());
-
-        QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.published());
-        entry.setReleaseDate(date.date());
-        //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable.
 
         int downloads = 0;
         int counterThumbnails = 0;
@@ -279,12 +286,14 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 download.size = link.length();
                 download.descriptionLink = fixRelativeUrl(link.href()).toString();
                 download.distributionType = link.type();
-                entry.setStatus(KNS3::Entry::Invalid);
                 download.isDownloadtypeLink = false;
 
                 if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
                     download.isDownloadtypeLink = true;
-                    entry.setStatus(KNS3::Entry::Downloadable);
+                    if (entry.status() != KNS3::Entry::Installed &&
+                            entry.status() != KNS3::Entry::Updateable) {
+                        entry.setStatus(KNS3::Entry::Downloadable);
+                    }
                     entry.setEntryType(EntryInternal::CatalogEntry);
                 }
 
@@ -331,9 +340,22 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 }
             }
         }
-        if (entry.status() == KNS3::Entry::Downloadable) {
+
+        QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.published());
+        entry.setReleaseDate(date.date());
+        date = QDateTime::fromSecsSinceEpoch(feedEntry.updated());
+
+        if (entry.status() != KNS3::Entry::Invalid) {
             // Set this back to catalog entry when we can download a thing.
             entry.setEntryType(EntryInternal::CatalogEntry);
+            //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable...
+            /*if (entry.updateReleaseDate() < date.date()) {
+                qDebug() << entry.updateReleaseDate() << date.date();
+                entry.setUpdateReleaseDate(date.date());
+                if (entry.status() == KNS3::Entry::Installed) {
+                    entry.setStatus(KNS3::Entry::Updateable);
+                }
+            }*/
         }
 
         entries.append(entry);
@@ -448,6 +470,17 @@ void OPDSProvider::slotEmitProviderInitialized()
 {
     m_initialized = true;
     Q_EMIT providerInitialized(this);
+}
+
+EntryInternal::List OPDSProvider::installedEntries() const
+{
+    EntryInternal::List entries;
+    for (const EntryInternal &entry : qAsConst(m_cachedEntries)) {
+        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
+            entries.append(entry);
+        }
+    }
+    return entries;
 }
 
 void OPDSProvider::parserOpenSearchDocument(const QDomDocument &doc)
