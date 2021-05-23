@@ -88,17 +88,6 @@ QtControls.Dialog {
             dialog.open();
         }
     }
-    Connections {
-        target: applicationWindow()
-        // Since dialogs in QML don't automatically reject when the application is closed,
-        // we just do that little job for it (and then we don't end up blocking everything
-        // when the application is shut without the question being answered)
-        onClosing: {
-            if (dialog.opened === true) {
-                passResponse(false);
-            }
-        }
-    }
     function passResponse(responseIsContinue) {
         var input = "";
         switch(dialog.questionType) {
