@@ -12,6 +12,7 @@
 #include <QTimer>
 #include <QUrlQuery>
 #include <QLocale>
+#include <QIcon>
 
 namespace KNSCore
 {
@@ -107,10 +108,8 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
             }
         }
     } else {
-        if (request.searchTerm.startsWith(QStringLiteral("/"))) {
+        if (QUrl(request.searchTerm).isValid()) {
             m_currentUrl = fixRelativeUrl(request.searchTerm);
-        } else if (request.searchTerm.startsWith(QStringLiteral("http"))) {
-            m_currentUrl = QUrl(request.searchTerm);
         } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
@@ -155,7 +154,7 @@ void OPDSProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int link
     qDebug() << linkNumber << entry.downloadLinkCount();
     for (auto downloadInfo: entry.downloadLinkInformationList()) {
         if (downloadInfo.id == linkNumber) {
-            copy.setPayload(downloadInfo.descriptionLink);
+            copy.setPayload(downloadInfo.url);
         }
     }
     Q_EMIT payloadLinkLoaded(copy);
@@ -211,8 +210,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         m_iconUrl = QUrl(feedDoc->icon());
     }
 
+    EntryInternal::List entries;
+
     QList<KNSCore::Provider::CategoryMetadata> categories;
     for (auto link: feedDoc->links()) {
+        qDebug() << "Feed header" << link.rel() << link.type() << link.href();
         // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
         if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
             m_xmlLoader = new XmlLoader(this);
@@ -224,10 +226,12 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             category.displayName = link.title();
             category.name = link.href();
             categories.append(category);
+        } else if (link.type().startsWith(OPDS_ATOM_MT)){
+            qDebug() << link.rel() << link.type();
         }
     }
 
-    EntryInternal::List entries;
+
     for(int i=0; i<feedDoc->entries().size(); i++) {
         Syndication::Atom::Entry feedEntry = feedDoc->entries().at(i);
 
@@ -270,7 +274,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         int counterImages = 0;
         for(int j=0; j<feedEntry.links().size(); j++) {
             Syndication::Atom::Link link = feedEntry.links().at(j);
-            qDebug() << link.rel() << link.type() << link.href();
 
             if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
                 KNSCore::EntryInternal::DownloadLinkInformation download;
@@ -284,8 +287,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     download.name = l.join(QStringLiteral(" "));
                 }
                 download.size = link.length();
-                download.descriptionLink = fixRelativeUrl(link.href()).toString();
-                download.distributionType = link.type();
+                download.url = fixRelativeUrl(link.href()).toString();
+                download.mimeType = link.type();
                 download.isDownloadtypeLink = false;
 
                 if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
@@ -321,8 +324,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 otherLink.name = link.title();
                 otherLink.id = entry.downloadLinkCount();
 
-                otherLink.distributionType = link.type();
-                otherLink.descriptionLink = fixRelativeUrl(link.href()).toString();
+                otherLink.mimeType = link.type();
+                otherLink.url = fixRelativeUrl(link.href()).toString();
                 otherLink.size = link.length();
                 QStringList tags;
                 tags.append(link.rel());
@@ -348,7 +351,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         if (entry.status() != KNS3::Entry::Invalid) {
             // Set this back to catalog entry when we can download a thing.
             entry.setEntryType(EntryInternal::CatalogEntry);
-            //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable...
+            //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable... maybe use DCTerms:modified instead?
             /*if (entry.updateReleaseDate() < date.date()) {
                 qDebug() << entry.updateReleaseDate() << date.date();
                 entry.setUpdateReleaseDate(date.date());

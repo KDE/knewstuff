@@ -24,6 +24,7 @@ public:
     int id;
     bool isDownloadtypeLink;
     quint64 size;
+    QString mimeType;
     QString icon;
 };
 
@@ -48,7 +49,14 @@ void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInforma
     d->isDownloadtypeLink = data.isDownloadtypeLink;
     d->size = data.size;
     QMimeDatabase db;
-    d->icon = db.mimeTypeForName(d->distributionType).iconName();
+    d->mimeType = data.mimeType;
+    d->icon = db.mimeTypeForName(d->mimeType).iconName();
+    if (d->icon.isEmpty()) {
+        d->icon = db.mimeTypeForName(d->mimeType).genericIconName();
+    }
+    if (d->icon.isEmpty()) {
+        d->icon = QStringLiteral("download");
+    }
     Q_EMIT dataChanged();
 }
 

@@ -74,8 +74,10 @@ public:
     struct DownloadLinkInformation {
         QString name;
         QString priceAmount;
-        QString distributionType;
-        QString descriptionLink;
+        QString distributionType; //OCS Distribution Type, this is for which OS the file is useful.
+        QString descriptionLink; //Link to intermediary description.
+        QString mimeType; //Mimetype
+        QString url; //The actual download link.
         int id;
         bool isDownloadtypeLink;
         quint64 size = 0;
