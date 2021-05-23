@@ -226,8 +226,26 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             category.displayName = link.title();
             category.name = link.href();
             categories.append(category);
-        } else if (link.type().startsWith(OPDS_ATOM_MT)){
-            qDebug() << link.rel() << link.type();
+        } else if (link.type().startsWith(OPDS_ATOM_MT) && link.rel() == REL_START){
+            EntryInternal entry;
+            entry.setName(link.rel());
+            entry.setPayload(fixRelativeUrl(link.href()).toString());
+            entry.setUniqueId(link.rel());
+            entry.setProviderId(m_providerId);
+            if (!feedDoc->authors().isEmpty()) {
+                Author author;
+                Syndication::Atom::Person person = feedDoc->authors().first();
+                author.setId(person.uri());
+                author.setName(person.name());
+                author.setEmail(person.email());
+                entry.setAuthor(author);
+            }
+            QString feedDescription = feedDoc->subtitle();
+            entry.setShortSummary(feedDescription);
+            entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
+            entry.setEntryType(EntryInternal::GroupEntry);
+            entries.append(entry);
+
         }
     }
 
@@ -359,6 +377,10 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     entry.setStatus(KNS3::Entry::Updateable);
                 }
             }*/
+        }
+        if (counterThumbnails == 0) {
+            //fallback.
+            entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
         }
 
         entries.append(entry);
