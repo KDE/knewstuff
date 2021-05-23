@@ -49,7 +49,7 @@ QtControls.Dialog {
 
     Connections {
         target: NewStuff.QuickQuestionListener
-        onAskListQuestion: {
+        function onAskListQuestion(title, question, list) {
             dialog.questionType = NewStuffCore.Question.SelectFromListQuestion;
             dialog.title = title;
             questionLabel.text = question;
@@ -60,20 +60,20 @@ QtControls.Dialog {
             listView.visible = true;
             dialog.open();
         }
-        onAskContinueCancelQuestion: {
+        function onAskContinueCancelQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.ContinueCancelQuestion;
             dialog.title = title;
             questionLabel.text = question;
             dialog.open();
         }
-        onAskTextInputQuestion: {
+        function onAskTextInputQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.InputTextQuestion;
             dialog.title = title;
             questionLabel.text = question;
             textInput.visible = true;
             dialog.open();
         }
-        onAskPasswordQuestion: {
+        function onAskPasswordQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.PasswordQuestion;
             dialog.title = title;
             questionLabel.text = question;
@@ -81,7 +81,7 @@ QtControls.Dialog {
             textInput.visible = true;
             dialog.open();
         }
-        onAskYesNoQuestion: {
+        function onAskYesNoQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.YesNoQuestion;
             dialog.title = title;
             questionLabel.text = question;

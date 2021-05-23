@@ -141,7 +141,7 @@ Kirigami.Action {
         property string entryId;
         property Connections showSpecificEntryConnection: Connections {
             target: component.engine
-            onInitialized: {
+            function onInitialized() {
                 pageItem.showEntryDetails(providerId, component._private.entryId);
             }
         }

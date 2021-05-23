@@ -13,7 +13,7 @@ MessageBoxSheet {
     property QtObject engine;
     property QtObject connection: Connections {
         target: engine
-        onErrorMessage: { component.showError(message); }
+        function onErrorMessage(message) { component.showError(message); }
     }
     property var errorsToShow: []
     function showError(errorMessage) {
