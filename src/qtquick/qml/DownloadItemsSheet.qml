@@ -49,7 +49,6 @@ Kirigami.OverlaySheet {
             QtControls.ToolButton {
                 text: i18nd("knewstuff5", "Install")
                 icon.name: "install"
-                enabled: modelData.isDownloadtypeLink
                 QtLayouts.Layout.alignment: Qt.AlignRight
                 onClicked: {
                     component.close();

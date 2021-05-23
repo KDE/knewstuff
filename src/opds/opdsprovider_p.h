@@ -23,10 +23,10 @@
  * - Loads a given feed, it's images, and loads it's download links.
  * - Opensearch for the search, if available.
  * - Should load full entries, if possible.
+ * - Navigation feed entries can be selected.
  *
  * TODO:
- * - Navigation links don't work.
- * - Navigation feed entries cannot be selected.
+ * - Navigation links don't work, only start is implemented.
  * - We need a better way to indicate the non-free items.
  * - entry navigation links are now mixed in with the download links.
  * - pagination support (together with the navigation links)
@@ -71,7 +71,6 @@ public:
 
 private Q_SLOTS:
     void parseFeedData(const QDomDocument &doc);
-    void parseExtraDetails(const QDomDocument &doc);
     void slotEmitProviderInitialized();
     EntryInternal::List installedEntries() const;
 
@@ -94,6 +93,8 @@ private:
      * tracks which atom feed to load.
      */
     QUrl m_currentUrl;
+    QDateTime m_currentTime;
+    bool m_loadingExtraDetails;
 
     XmlLoader *m_xmlLoader;
 

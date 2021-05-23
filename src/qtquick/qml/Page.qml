@@ -77,7 +77,6 @@ KCM.GridViewKCM {
         var type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
 
         if (type === NewStuff.ItemsModel.GroupEntry) {
-            newStuffEngine.filter = 4;
             newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
         } else {
             newStuffEngine.engine.fetchEntryById(entryId);

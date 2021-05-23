@@ -96,19 +96,17 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
     m_currentRequest = request;
 
-    qDebug() << "Starting search";
     if (request.filter == Installed) {
         Q_EMIT loadingFinished(request, installedEntries());
         return;
     } else if (request.filter == Provider::ExactEntryId) {
-        qDebug() << "Getting a single file";
         for (EntryInternal entry: m_cachedEntries) {
             if (entry.uniqueId() == request.searchTerm) {
                 loadEntryDetails(entry);
             }
         }
     } else {
-        if (QUrl(request.searchTerm).isValid()) {
+        if (request.searchTerm.startsWith(QStringLiteral("http")) || request.searchTerm.startsWith(QStringLiteral("/"))) {
             m_currentUrl = fixRelativeUrl(request.searchTerm);
         } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
@@ -118,11 +116,12 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 
         //request: check if entries is above pagesize*index, otherwise load next page.
 
-        qDebug() << "loading...";
         QUrl url = m_currentUrl;
         if (!url.isEmpty()) {
-            qDebug() << "loading opds feed" << m_currentUrl;
+            qDebug() << "requesting url" << url;
             m_xmlLoader = new XmlLoader(this);
+            m_currentTime = QDateTime::currentDateTime();
+            m_loadingExtraDetails = false;
             connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
             //connect(m_xmlLoader, &XmlLoader::signalFailed, this, SIGNAL(loadingFailed()));
             m_xmlLoader->load(url);
@@ -141,9 +140,10 @@ void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
         }
     }
     if (!url.isEmpty()) {
-        qDebug() << "loading bookdetails...";
         m_xmlLoader = new XmlLoader(this);
-        connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseExtraDetails);
+        m_currentTime = QDateTime::currentDateTime();
+        m_loadingExtraDetails = true;
+        connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
         m_xmlLoader->load(url);
     }
 }
@@ -151,7 +151,6 @@ void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
 void OPDSProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int linkNumber)
 {
     KNSCore::EntryInternal copy = entry;
-    qDebug() << linkNumber << entry.downloadLinkCount();
     for (auto downloadInfo: entry.downloadLinkInformationList()) {
         if (downloadInfo.id == linkNumber) {
             copy.setPayload(downloadInfo.url);
@@ -162,7 +161,6 @@ void OPDSProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int link
 
 bool OPDSProvider::setProviderXML(const QDomElement &xmldata)
 {
-    qDebug() << "initializing opds";
     if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
     }
@@ -214,7 +212,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
     QList<KNSCore::Provider::CategoryMetadata> categories;
     for (auto link: feedDoc->links()) {
-        qDebug() << "Feed header" << link.rel() << link.type() << link.href();
         // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
         if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
             m_xmlLoader = new XmlLoader(this);
@@ -284,7 +281,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             entry.setAuthor(author);
         }
         entry.setLicense(feedEntry.rights());
-        entry.setSummary(feedEntry.content().asString());
+        if (feedEntry.content().isEscapedHTML()) {
+            entry.setSummary(feedEntry.content().childNodesAsXML());
+        } else {
+            entry.setSummary(feedEntry.content().asString());
+        }
         entry.setShortSummary(feedEntry.summary());
 
         int downloads = 0;
@@ -369,126 +370,35 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         if (entry.status() != KNS3::Entry::Invalid) {
             // Set this back to catalog entry when we can download a thing.
             entry.setEntryType(EntryInternal::CatalogEntry);
-            //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable... maybe use DCTerms:modified instead?
-            /*if (entry.updateReleaseDate() < date.date()) {
-                qDebug() << entry.updateReleaseDate() << date.date();
-                entry.setUpdateReleaseDate(date.date());
-                if (entry.status() == KNS3::Entry::Installed) {
-                    entry.setStatus(KNS3::Entry::Updateable);
+            // Gutenberg doesn't do versioning in the opds, so it's update value is unreliable,
+            // even though openlib and standard do use it properly. We'll instead doublecheck that
+            // the new time is larger than 6min since we requested the feed.
+            if (date.secsTo(m_currentTime) > 360) {
+                if (entry.updateReleaseDate() < date.date()) {
+                    entry.setUpdateReleaseDate(date.date());
+                    if (entry.status() == KNS3::Entry::Installed) {
+                        entry.setStatus(KNS3::Entry::Updateable);
+                    }
                 }
-            }*/
+            }
         }
         if (counterThumbnails == 0) {
             //fallback.
-            entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
+            if (!feedDoc->icon().isEmpty()) {
+                entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
+            }
         }
 
         entries.append(entry);
     }
 
-    Q_EMIT loadingFinished(m_currentRequest, entries);
+    if (m_loadingExtraDetails) {
+        Q_EMIT entryDetailsLoaded(entries.first());
+        m_loadingExtraDetails = false;
+    } else {
+        Q_EMIT loadingFinished(m_currentRequest, entries);
+    }
     Q_EMIT categoriesMetadataLoded(categories);
-}
-
-void OPDSProvider::parseExtraDetails(const QDomDocument &doc)
-{
-    Syndication::DocumentSource source(doc.toByteArray(), m_currentUrl.toString());
-    Syndication::Atom::Parser parser;
-    Syndication::Atom::FeedDocumentPtr feedDoc = parser.parse(source).staticCast<Syndication::Atom::FeedDocument>();
-
-    Syndication::Atom::Entry feedEntry = feedDoc->entries().first();
-
-    EntryInternal entry;
-    entry.setName(feedEntry.title());
-    entry.setProviderId(m_providerId);
-    entry.setUniqueId(feedEntry.id());
-
-    // This is a bit of a pickle: atom feeds can have multiple catagories.
-    // but these catagories are not specifically tags...
-    QStringList tags;
-    for(int j=0; j<feedEntry.categories().size(); j++) {
-        tags.append(feedEntry.categories().at(j).term());
-    }
-    entry.setTags(tags);
-    // Same issue with author...
-    for(int j=0; j<feedEntry.authors().size(); j++) {
-        Author author;
-        Syndication::Atom::Person person = feedEntry.authors().at(j);
-        author.setId(person.uri());
-        author.setName(person.name());
-        author.setEmail(person.email());
-        entry.setAuthor(author);
-    }
-    entry.setLicense(feedEntry.rights());
-    entry.setSummary(feedEntry.content().asString());
-    entry.setShortSummary(feedEntry.summary());
-
-    QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.published());
-    entry.setReleaseDate(date.date());
-    //Gutenberg doesn't do versioning in the opds, so it's update value is unreliable.
-
-    int downloads = 0;
-    int counterImages = 0;
-    for(int j=0; j<feedEntry.links().size(); j++) {
-        Syndication::Atom::Link link = feedEntry.links().at(j);
-
-        if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
-            KNSCore::EntryInternal::DownloadLinkInformation download;
-            download.id = downloads;
-            downloads +=1;
-            download.name = link.title();
-            if (link.title().isEmpty()) {
-                QStringList l;
-                l.append(link.type());
-                l.append(QStringLiteral("(")+link.rel().split(QStringLiteral("/")).last()+ QStringLiteral(")"));
-                download.name = l.join(QStringLiteral(" "));
-            }
-            download.size = link.length();
-            download.descriptionLink = link.href();
-            download.distributionType = link.type();
-            entry.setStatus(KNS3::Entry::Invalid);
-            download.isDownloadtypeLink = false;
-
-            if (link.rel() == OPDS_REL_CRAWL || link.type() == OPDS_KIND_NAVIGATION) {
-                entry.setEntryType(EntryInternal::GroupEntry);
-            }
-
-            if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
-                download.isDownloadtypeLink = true;
-                entry.setStatus(KNS3::Entry::Downloadable);
-                entry.setEntryType(EntryInternal::CatalogEntry);
-            }
-
-            for (QDomElement el : feedEntry.elementsByTagName(OPDS_EL_PRICE)) {
-                QLocale locale;
-                download.priceAmount = locale.toCurrencyString(el.text().toFloat(), el.attribute(ATTR_CURRENCY_CODE));
-            }
-            // There's an 'opds:indirectaquistition' element that gives extra metadata about bundles.
-            entry.appendDownloadLinkInformation(download);
-        } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
-            if (counterImages < 6) {
-                entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterImages));
-            }
-            counterImages +=1;
-        } else {
-            // This could be anything from a more info link, to navigation links, to links to the outside world.
-            KNSCore::EntryInternal::DownloadLinkInformation otherLink;
-            otherLink.isDownloadtypeLink = false;
-            otherLink.name = link.title();
-            otherLink.id = downloads;
-            downloads +=1;
-            otherLink.distributionType = link.type();
-            otherLink.descriptionLink = link.href();
-            otherLink.size = link.length();
-            QStringList tags;
-            tags.append(link.rel());
-            tags.append(link.hrefLanguage());
-            otherLink.tags = tags;
-            entry.appendDownloadLinkInformation(otherLink);
-        }
-    }
-
-    Q_EMIT entryDetailsLoaded(entry);
 }
 
 void OPDSProvider::slotEmitProviderInitialized()
