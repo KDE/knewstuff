@@ -93,7 +93,9 @@ private:
      * tracks which atom feed to load.
      */
     QUrl m_currentUrl;
-    QList<QUrl> m_previousUrl;
+    // partial url identifying the self. This is necessary to resolve relative links.
+    QString m_selfUrl;
+
     QDateTime m_currentTime;
     bool m_loadingExtraDetails;
 

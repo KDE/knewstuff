@@ -223,6 +223,15 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     QList<SearchPreset> presets;
 
     QList<KNSCore::Provider::CategoryMetadata> categories;
+
+    // find the self link first!
+    m_selfUrl.clear();
+    for (auto link: feedDoc->links()) {
+        if (link.rel().contains(REL_SELF)) {
+            m_selfUrl = link.href();
+        }
+    }
+
     for (auto link: feedDoc->links()) {
         // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
         if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
@@ -507,10 +516,19 @@ QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
 {
     QUrl query = QUrl(urlPart);
     if (query.isRelative()) {
-        QUrl host = m_currentUrl;
-        host.setPath(query.path());
-        host.setQuery(query.query());
-        return host;
+        if (m_selfUrl.isEmpty()) {
+            qWarning() << "No link with the relation 'self' could be found! Trying with domain name.";
+            QUrl host = m_currentUrl;
+            host.setPath(query.path());
+            host.setQuery(query.query());
+            return host;
+        } else {
+            int length = m_selfUrl.size();
+            int index = m_currentUrl.toString().size()-length;
+            QString base  = m_currentUrl.toString().remove(index, length);
+            base += urlPart;
+            return QUrl(base);
+        }
     }
     return query;
 }
