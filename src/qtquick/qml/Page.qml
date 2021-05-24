@@ -341,7 +341,6 @@ KCM.GridViewKCM {
             Kirigami.Action {
                 text: i18nd("knewstuff5", "Go to...")
                 iconName: "system-search";
-                enabled: children.length() > 0;
                 id: searchModelActions;
             },
             Kirigami.Action {
@@ -363,15 +362,17 @@ KCM.GridViewKCM {
         model: newStuffEngine.searchPresetModel
         Kirigami.Action {
             text: model.display
-            icon.name: model.decoration
-            property int indexEntry: currentIndex;
+            iconName: model.decoration
+            property int indexEntry: index;
             onTriggered: {
-                var index = newStuffPage.engine.searchPresetModel.index(indexEntry, 0);
-                newStuffPage.engine.searchPresetModel.loadSearch(index);
+                var curIndex = newStuffPage.engine.searchPresetModel.index(indexEntry, 0);
+                newStuffPage.engine.searchPresetModel.loadSearch(curIndex);
             }
         }
         onObjectAdded: { searchModelActions.children.push(object); }
-        onObjectRemoved: { searchModelActions.children = []; }
+        // in theory we can remove the object from the children's list by using 'index', however,
+        // this doesn't seem to completely clear the list.
+        onObjectRemoved: { searchModelActions.children = [] }
     }
 
     // Only show this footer when there are multiple categories

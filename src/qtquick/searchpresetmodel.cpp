@@ -115,7 +115,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
             }
         }
 
-        result.setValue(preset.iconName);
+        result.setValue(name);
     }
     return result;
 }
