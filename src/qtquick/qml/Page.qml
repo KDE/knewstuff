@@ -339,6 +339,12 @@ KCM.GridViewKCM {
                 }
             },
             Kirigami.Action {
+                text: i18nd("knewstuff5", "Go to...")
+                iconName: "system-search";
+                enabled: children.length() > 0;
+                id: searchModelActions;
+            },
+            Kirigami.Action {
                 text: i18nd("knewstuff5", "Search...")
                 iconName: "system-search";
                 displayComponent: Kirigami.SearchField {
@@ -350,6 +356,22 @@ KCM.GridViewKCM {
                 }
             }
         ]
+    }
+
+    Instantiator {
+        id: searchPresetInstatiator
+        model: newStuffEngine.searchPresetModel
+        Kirigami.Action {
+            text: model.display
+            icon.name: model.decoration
+            property int indexEntry: currentIndex;
+            onTriggered: {
+                var index = newStuffPage.engine.searchPresetModel.index(indexEntry, 0);
+                newStuffPage.engine.searchPresetModel.loadSearch(index);
+            }
+        }
+        onObjectAdded: { searchModelActions.children.push(object); }
+        onObjectRemoved: { searchModelActions.children = []; }
     }
 
     // Only show this footer when there are multiple categories
