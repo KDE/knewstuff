@@ -128,7 +128,7 @@ public:
         QString displayName;
         QString iconName;
         SearchPresetTypes type;
-
+        QString providerId; // not all providers can handle all search requests.
     };
 
     /**

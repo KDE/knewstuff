@@ -50,7 +50,11 @@ void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInforma
     d->isDownloadtypeLink = data.isDownloadtypeLink;
     d->size = data.size;
     QMimeDatabase db;
-    d->mimeType = data.mimeType;
+    for (QString string: data.tags) {
+        if (string.startsWith(QStringLiteral("data##mimetype="))) {
+            d->mimeType = string.split(QStringLiteral("=")).last();
+        }
+    }
     d->icon = db.mimeTypeForName(d->mimeType).iconName();
     if (d->icon.isEmpty()) {
         d->icon = db.mimeTypeForName(d->mimeType).genericIconName();

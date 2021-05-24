@@ -69,8 +69,12 @@ const QString OPENSEARCH_COUNT = QStringLiteral("count");
 const QString OPENSEARCH_START_INDEX = QStringLiteral("startIndex");
 const QString OPENSEARCH_START_PAGE = QStringLiteral("startPage");
 
+
 const QString HTML_MT = QStringLiteral("text/html");
 
+const QString KEY_MIME_TYPE = QStringLiteral("data##mimetype=");
+const QString KEY_URL = QStringLiteral("data##url=");
+const QString KEY_LANGUAGE = QStringLiteral("data##language=");
 
 OPDSProvider::OPDSProvider():
     m_initialized(false)
@@ -159,7 +163,12 @@ void OPDSProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int link
     KNSCore::EntryInternal copy = entry;
     for (auto downloadInfo: entry.downloadLinkInformationList()) {
         if (downloadInfo.id == linkNumber) {
-            copy.setPayload(downloadInfo.url);
+            for (QString string: downloadInfo.tags) {
+                if (string.startsWith(KEY_URL)) {
+                    copy.setPayload(string.split(QStringLiteral("=")).last());
+                }
+            }
+
         }
     }
     Q_EMIT payloadLinkLoaded(copy);
@@ -224,6 +233,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
     {
         SearchPreset preset;
+        preset.providerId = m_providerId;
         SearchRequest request;
         request.searchTerm = m_providerId;
         request.filter = Group;
@@ -250,6 +260,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             m_xmlLoader->load(QUrl(link.href()));
         } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
             SearchPreset preset;
+            preset.providerId = m_providerId;
             preset.displayName = link.title();
             SearchRequest request;
             request.searchTerm = fixRelativeUrl(link.href()).toString();
@@ -281,34 +292,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             }
             presets.append(preset);
         }
-
-        /*if (link.rel() == OPDS_REL_FACET || link.rel() == OPDS_REL_FEATURED) {
-            KNSCore::Provider::CategoryMetadata category;
-            category.id = link.href();
-            category.displayName = link.title();
-            category.name = link.href();
-            categories.append(category);
-        } else if (link.type().startsWith(OPDS_ATOM_MT) && link.rel() == REL_START){
-            EntryInternal entry;
-            entry.setName(link.rel());
-            entry.setPayload(fixRelativeUrl(link.href()).toString());
-            entry.setUniqueId(link.rel());
-            entry.setProviderId(m_providerId);
-            if (!feedDoc->authors().isEmpty()) {
-                Author author;
-                Syndication::Atom::Person person = feedDoc->authors().first();
-                author.setId(person.uri());
-                author.setName(person.name());
-                author.setEmail(person.email());
-                entry.setAuthor(author);
-            }
-            QString feedDescription = feedDoc->subtitle();
-            entry.setShortSummary(feedDescription);
-            entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
-            entry.setEntryType(EntryInternal::GroupEntry);
-            entries.append(entry);
-
-        }*/
     }
 
     for(int i=0; i<feedDoc->entries().size(); i++) {
@@ -333,7 +316,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         // but these catagories are not specifically tags...
         QStringList tags;
         for(int j=0; j<feedEntry.categories().size(); j++) {
-            tags.append(feedEntry.categories().at(j).term());
+            QString tag = feedEntry.categories().at(j).label();
+            if (tag.isEmpty()) {
+                tag = feedEntry.categories().at(j).term();
+            }
+            tags.append(tag);
         }
         entry.setTags(tags);
         // Same issue with author...
@@ -372,9 +359,12 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     download.name = l.join(QStringLiteral(" "));
                 }
                 download.size = link.length()/1000;
-                download.url = fixRelativeUrl(link.href()).toString();
-                download.mimeType = link.type();
                 download.isDownloadtypeLink = false;
+                QStringList tags;
+                tags.append(KEY_MIME_TYPE+link.type());
+                if (!link.hrefLanguage().isEmpty()) { tags.append(KEY_LANGUAGE+link.hrefLanguage()); }
+                tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
+                download.tags = tags;
 
                 if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
                     download.isDownloadtypeLink = true;
@@ -408,16 +398,14 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 otherLink.isDownloadtypeLink = false;
                 otherLink.name = link.title();
                 otherLink.id = entry.downloadLinkCount();
-
-                otherLink.mimeType = link.type();
-                otherLink.url = fixRelativeUrl(link.href()).toString();
-                otherLink.size = link.length();
+                otherLink.size = link.length() / 1000;
                 QStringList tags;
-                tags.append(link.rel());
-                tags.append(link.hrefLanguage());
+                tags.append(KEY_MIME_TYPE+link.type());
+                if (!link.hrefLanguage().isEmpty()) { tags.append(KEY_LANGUAGE+link.hrefLanguage()); }
+                tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
                 otherLink.tags = tags;
 
-                if (link.rel() == OPDS_REL_CRAWL || link.type().startsWith(OPDS_ATOM_MT)) {
+                if (link.rel() == OPDS_REL_CRAWL || (link.rel().contains(REL_SUBSECTION) && link.type().startsWith(OPDS_ATOM_MT))) {
                     entry.setEntryType(EntryInternal::GroupEntry);
                     entry.setPayload(fixRelativeUrl(link.href()).toString());
                     entry.appendDownloadLinkInformation(otherLink);
@@ -429,9 +417,17 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             }
         }
 
-        QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.published());
-        entry.setReleaseDate(date.date());
-        date = QDateTime::fromSecsSinceEpoch(feedEntry.updated());
+        //Todo:
+        // feedEntry.elementsByTagName( dc:terms:issued ) is the official initial release date.
+        // published is the released date of the opds catalog item, updated for the opds catalog item update.
+        // maybe we should make sure to also check dc:terms:modified?
+        //QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.published());
+
+        QDateTime date = QDateTime::fromSecsSinceEpoch(feedEntry.updated());
+
+        if (entry.releaseDate().isNull()) {
+            entry.setReleaseDate(date.date());
+        }
 
         if (entry.status() != KNS3::Entry::Invalid) {
             // Set this back to catalog entry when we can download a thing.
@@ -440,7 +436,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             // even though openlib and standard do use it properly. We'll instead doublecheck that
             // the new time is larger than 6min since we requested the feed.
             if (date.secsTo(m_currentTime) > 360) {
-                if (entry.updateReleaseDate() < date.date()) {
+                if (entry.releaseDate() < date.date()) {
                     entry.setUpdateReleaseDate(date.date());
                     if (entry.status() == KNS3::Entry::Installed) {
                         entry.setStatus(KNS3::Entry::Updateable);
@@ -530,8 +526,7 @@ QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
 {
     QUrl query = QUrl(urlPart);
     if (query.isRelative()) {
-        if (m_selfUrl.isEmpty()) {
-            qWarning() << "No link with the relation 'self' could be found! Trying with domain name.";
+        if (m_selfUrl.isEmpty() || !QUrl(m_selfUrl).isRelative()) {
             QUrl host = m_currentUrl;
             host.setPath(query.path());
             host.setQuery(query.query());
