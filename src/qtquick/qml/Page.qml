@@ -371,6 +371,7 @@ KCM.GridViewKCM {
                 newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
             }
         }
+
     }
 
     view.model: NewStuff.ItemsModel {

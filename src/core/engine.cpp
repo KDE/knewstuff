@@ -123,6 +123,7 @@ public:
     }
 
     QList<Provider::CategoryMetadata> categoriesMetadata;
+    QList<Provider::SearchPreset> searchPresets;
     Attica::ProviderManager *m_atticaProviderManager = nullptr;
     QStringList tagFilter;
     QStringList downloadTagFilter;
@@ -310,6 +311,11 @@ QList<Provider::CategoryMetadata> Engine::categoriesMetadata()
     return d->categoriesMetadata;
 }
 
+QList<Provider::SearchPreset> Engine::searchPresets()
+{
+    return d->searchPresets;
+}
+
 void Engine::loadProviders()
 {
     if (m_providerFileUrl.isEmpty()) {
@@ -372,6 +378,10 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
             });
         } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")){
             provider.reset(new OPDSProvider);
+            connect(provider.data(), &Provider::searchPresetsLoaded, this, [this](const QList<Provider::SearchPreset> &presets) {
+                d->searchPresets = presets;
+                Q_EMIT signalSearchPresetsLoaded(presets);
+            });
         } else {
             provider.reset(new StaticXmlProvider);
         }

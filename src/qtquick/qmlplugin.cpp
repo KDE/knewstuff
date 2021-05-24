@@ -15,6 +15,7 @@
 #include "quickitemsmodel.h"
 #include "quickquestionlistener.h"
 #include "quicksettings.h"
+#include "searchpresetmodel.h"
 
 #include "provider.h"
 #include "question.h"
@@ -50,6 +51,12 @@ void QmlPlugins::registerTypes(const char *uri)
         0,
         "CategoriesModel",
         QStringLiteral("This should only be created by the Engine, and provides the categories available in that engine"));
+    qmlRegisterUncreatableType<SearchPresetModel>(
+        uri,
+        1,
+        0,
+        "SearchPresetModel",
+        QStringLiteral("This should only be created by the Engine, and provides the searchpresets available in that engine"));
     qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject,
                                      coreUri,
                                      1,

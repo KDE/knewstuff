@@ -111,19 +111,38 @@ QtDialogs.Dialog {
                 top: parent.top
                 left: parent.left
                 right: parent.right
-                bottom: buttonBox.top
+                bottom: footer.top
             }
             downloadNewWhat: component.downloadNewWhat
         }
-        QtControls.DialogButtonBox {
-            id: buttonBox
+        QtLayouts.RowLayout {
+            id: footer
             anchors {
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
-            standardButtons: QtControls.DialogButtonBox.Close
-            onRejected: component.close()
+            QtControls.ComboBox {
+                anchors {
+                    left: parent.left
+                }
+                id: searchPresetsDropdown
+                //textRole: "display"
+                model: newStuffPage.engine.searchPresetModel
+                enabled: count > 0;
+                textRole: "display"
+                onCurrentIndexChanged: { newStuffPage.engine.searchPresetModel.loadSearch(model.index(currentIndex, 0)); }
+            }
+            QtControls.DialogButtonBox {
+                id: buttonBox
+                anchors {
+                    left: searchPresetsDropdown.right
+                    right: parent.right
+                }
+                standardButtons: QtControls.DialogButtonBox.Close
+                onRejected: component.close()
+            }
         }
+
     }
 }

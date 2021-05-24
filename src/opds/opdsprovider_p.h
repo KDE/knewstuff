@@ -93,6 +93,7 @@ private:
      * tracks which atom feed to load.
      */
     QUrl m_currentUrl;
+    QList<QUrl> m_previousUrl;
     QDateTime m_currentTime;
     bool m_loadingExtraDetails;
 

@@ -101,6 +101,35 @@ public:
     };
 
     /**
+     * @brief The SearchPresetTypes enum
+     * the preset type enum is a helper to identify the kind of label and icon
+     * the search preset should have if none are found.
+     */
+    enum SearchPresetTypes {
+        NoPresetType = 0,
+        GoBack, //a search preset representing the previous search.
+        Root, //preset indicating a root
+        Start, //preset indicating the first entry
+        Popular, //preset indicating popular items
+        Featured, //preset for featured items
+        Shelf, //preset indicating previously acquired items.
+        New, //preset indicating new items.
+        FolderUp, //preset indicating going up in the search result hierarchy.
+        AllEntries, //preset indicating all possible entries, such as a crawlable list. Might be intense to load.
+    };
+    /**
+     * Describes a search request that may come from the provider.
+     * This is used by the OPDS provider to handle the different urls.
+     */
+    struct SearchPreset {
+        SearchRequest request;
+        QString displayName;
+        QString iconName;
+        SearchPresetTypes type;
+
+    };
+
+    /**
      * Constructor.
      */
     Provider();
@@ -244,6 +273,8 @@ Q_SIGNALS:
      * @since 5.63
      */
     void personLoaded(const std::shared_ptr<KNSCore::Author> author);
+
+    void searchPresetsLoaded(const QList<SearchPreset> &presets);
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;

@@ -14,6 +14,7 @@
 
 #include "categoriesmodel.h"
 #include "quickquestionlistener.h"
+#include "searchpresetmodel.h"
 
 #include "engine.h"
 
@@ -29,6 +30,7 @@ public:
     bool isLoading{false};
     bool isValid{false};
     CategoriesModel *categoriesModel;
+    SearchPresetModel *searchPresetModel;
     QString configFile;
 
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
@@ -150,6 +152,8 @@ void Engine::setConfigFile(const QString &newFile)
                 KNewStuffQuick::QuickQuestionListener::instance();
                 d->categoriesModel = new CategoriesModel(this);
                 Q_EMIT categoriesChanged();
+                d->searchPresetModel = new SearchPresetModel(this);
+                Q_EMIT searchPresetModelChanged();
                 // And finally, let's just make sure we don't miss out the various things here getting changed
                 // In other words, when we're asked to reset the view, actually do that
                 connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::categoriesFilterChanged);
@@ -279,6 +283,11 @@ void Engine::setSearchTerm(const QString &newSearchTerm)
         d->engine->setSearchTerm(newSearchTerm);
         Q_EMIT searchTermChanged();
     }
+}
+
+QObject* Engine::searchPresetModel() const
+{
+    return d->searchPresetModel;
 }
 
 void Engine::resetSearchTerm()

@@ -9,6 +9,7 @@ set(qmlplugin_SRCS
     categoriesmodel.cpp
     commentsmodel.cpp
     downloadlinkinfo.cpp
+    searchpresetmodel.cpp
 )
 
 ecm_qt_declare_logging_category(qmlplugin_SRCS

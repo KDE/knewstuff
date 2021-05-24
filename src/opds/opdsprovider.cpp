@@ -49,6 +49,12 @@ const QString REL_COLLECTION = QStringLiteral("collection");
 const QString REL_PREVIEW = QStringLiteral("preview");
 const QString REL_REPLIES = QStringLiteral("replies");
 const QString REL_RELATED = QStringLiteral("related");
+const QString REL_PREVIOUS = QStringLiteral("previous");
+const QString REL_NEXT = QStringLiteral("next");
+const QString REL_FIRST = QStringLiteral("first");
+const QString REL_LAST = QStringLiteral("last");
+const QString REL_UP = QStringLiteral("up");
+const QString REL_SELF = QStringLiteral("self");
 const QString REL_ALTERNATE = QStringLiteral("alternate");
 const QString ATTR_CURRENCY_CODE = QStringLiteral("currencycode");
 const QString FEED_COMPLETE = QStringLiteral("fh:complete");
@@ -214,6 +220,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     }
 
     EntryInternal::List entries;
+    QList<SearchPreset> presets;
 
     QList<KNSCore::Provider::CategoryMetadata> categories;
     for (auto link: feedDoc->links()) {
@@ -222,7 +229,37 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             m_xmlLoader = new XmlLoader(this);
             connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parserOpenSearchDocument);
             m_xmlLoader->load(QUrl(link.href()));
-        } else if (link.rel() == OPDS_REL_FACET || link.rel() == OPDS_REL_FEATURED) {
+        } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
+            SearchPreset preset;
+            preset.displayName = link.title();
+            SearchRequest request;
+            request.searchTerm = fixRelativeUrl(link.href()).toString();
+            request.filter = Group;
+            preset.request = request;
+            if (link.rel() == REL_START) {
+                preset.type = Provider::SearchPresetTypes::Root;
+            } else if (link.rel() == OPDS_REL_FEATURED) {
+                preset.type = Provider::SearchPresetTypes::Featured;
+            } else if (link.rel() == OPDS_REL_SHELF) {
+                preset.type = Provider::SearchPresetTypes::Shelf;
+            } else if (link.rel() == OPDS_REL_SORT_NEW) {
+                preset.type = Provider::SearchPresetTypes::New;
+            } else if (link.rel() == OPDS_REL_SORT_POPULAR) {
+                preset.type = Provider::SearchPresetTypes::Popular;
+            } else if (link.rel() == REL_UP) {
+                preset.type = Provider::SearchPresetTypes::FolderUp;
+            } else if (link.rel() == OPDS_REL_CRAWL) {
+                preset.type = Provider::SearchPresetTypes::AllEntries;
+            } else {
+                preset.type = Provider::SearchPresetTypes::NoPresetType;
+                if (preset.displayName.isEmpty()) {
+                    preset.displayName = link.rel();
+                }
+            }
+            presets.append(preset);
+        }
+
+        /*if (link.rel() == OPDS_REL_FACET || link.rel() == OPDS_REL_FEATURED) {
             KNSCore::Provider::CategoryMetadata category;
             category.id = link.href();
             category.displayName = link.title();
@@ -248,7 +285,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             entry.setEntryType(EntryInternal::GroupEntry);
             entries.append(entry);
 
-        }
+        }*/
     }
 
     for(int i=0; i<feedDoc->entries().size(); i++) {
@@ -405,6 +442,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         Q_EMIT loadingFinished(m_currentRequest, entries);
     }
     Q_EMIT categoriesMetadataLoded(categories);
+    Q_EMIT searchPresetsLoaded(presets);
 }
 
 void OPDSProvider::slotEmitProviderInitialized()

@@ -435,6 +435,8 @@ public:
      */
     QList<Provider::CategoryMetadata> categoriesMetadata();
 
+    QList<Provider::SearchPreset> searchPresets();
+
 #if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
     /**
      * The adoption command can be used to allow a user to make use of an entry's
@@ -676,6 +678,7 @@ Q_SIGNALS:
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 
+    void signalSearchPresetsLoaded(const QList<Provider::SearchPreset> &presets);
     /**
      * This is fired for any event related directly to a single EntryInternal instance
      * @see EntryInternal::EntryEvent for details on which specific event is being notified
