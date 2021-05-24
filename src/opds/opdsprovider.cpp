@@ -259,6 +259,10 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 preset.type = Provider::SearchPresetTypes::FolderUp;
             } else if (link.rel() == OPDS_REL_CRAWL) {
                 preset.type = Provider::SearchPresetTypes::AllEntries;
+            } else if (link.rel() == OPDS_REL_RECOMMENDED) {
+                preset.type = Provider::SearchPresetTypes::Recommended;
+            } else if (link.rel() == OPDS_REL_SUBSCRIPTIONS) {
+                preset.type = Provider::SearchPresetTypes::Subscription;
             } else {
                 preset.type = Provider::SearchPresetTypes::NoPresetType;
                 if (preset.displayName.isEmpty()) {

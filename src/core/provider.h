@@ -112,7 +112,9 @@ public:
         Start, //preset indicating the first entry
         Popular, //preset indicating popular items
         Featured, //preset for featured items
+        Recommended, //preset for recommended. Different in that it may be user-customized.
         Shelf, //preset indicating previously acquired items.
+        Subscription, //preset indicating items that the user is subscribed to.
         New, //preset indicating new items.
         FolderUp, //preset indicating going up in the search result hierarchy.
         AllEntries, //preset indicating all possible entries, such as a crawlable list. Might be intense to load.

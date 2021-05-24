@@ -77,6 +77,12 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
             case KNSCore::Provider::SearchPresetTypes::FolderUp:
                 name = i18nc("Knewstuff5", "Up");
                 break;
+            case KNSCore::Provider::SearchPresetTypes::Recommended:
+                name = i18nc("Knewstuff5", "Recommended");
+                break;
+            case KNSCore::Provider::SearchPresetTypes::Subscription:
+                name = i18nc("Knewstuff5", "Subscriptions");
+                break;
             case KNSCore::Provider::SearchPresetTypes::AllEntries:
                 name = i18nc("Knewstuff5", "All Entries");
                 break;
@@ -95,6 +101,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
                 break;
             case KNSCore::Provider::SearchPresetTypes::Popular:
             case KNSCore::Provider::SearchPresetTypes::Featured:
+            case KNSCore::Provider::SearchPresetTypes::Recommended:
                 name = QStringLiteral("rating");
                 break;
             case KNSCore::Provider::SearchPresetTypes::New:
@@ -105,6 +112,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
                 name = QStringLiteral("go-home");
                 break;
             case KNSCore::Provider::SearchPresetTypes::Shelf:
+            case KNSCore::Provider::SearchPresetTypes::Subscription:
                 name = QStringLiteral("bookmark");
                 break;
             case KNSCore::Provider::SearchPresetTypes::FolderUp:
