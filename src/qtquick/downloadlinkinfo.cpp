@@ -6,6 +6,7 @@
 
 #include "downloadlinkinfo.h"
 #include <QMimeDatabase>
+#include <KFormat>
 
 class DownloadLinkInfo::Private
 {
@@ -93,6 +94,14 @@ bool DownloadLinkInfo::isDownloadtypeLink() const
 quint64 DownloadLinkInfo::size() const
 {
     return d->size;
+}
+
+QString DownloadLinkInfo::sizeString() const
+{
+    if (d->size == 0) {
+        return QString();
+    }
+    return KFormat().formatByteSize(d->size * 1000);
 }
 
 QString DownloadLinkInfo::icon() const

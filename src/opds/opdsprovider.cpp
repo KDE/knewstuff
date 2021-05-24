@@ -348,7 +348,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     l.append(QStringLiteral("(")+link.rel().split(QStringLiteral("/")).last()+ QStringLiteral(")"));
                     download.name = l.join(QStringLiteral(" "));
                 }
-                download.size = link.length();
+                download.size = link.length()/1000;
                 download.url = fixRelativeUrl(link.href()).toString();
                 download.mimeType = link.type();
                 download.isDownloadtypeLink = false;

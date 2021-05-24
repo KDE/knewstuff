@@ -46,6 +46,11 @@ Kirigami.OverlaySheet {
         delegate: Kirigami.BasicListItem {
             text: modelData.name
             icon: modelData.icon
+            QtControls.Label {
+                QtLayouts.Layout.alignment: Qt.AlignRight
+                text: modelData.sizeString
+            }
+
             QtControls.ToolButton {
                 text: i18nd("knewstuff5", "Install")
                 icon.name: "install"

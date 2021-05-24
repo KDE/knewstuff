@@ -29,6 +29,7 @@ class DownloadLinkInfo : public QObject
     Q_PROPERTY(bool isDownloadtypeLink READ isDownloadtypeLink NOTIFY dataChanged)
     Q_PROPERTY(quint64 size READ size NOTIFY dataChanged)
     Q_PROPERTY(QString icon READ icon NOTIFY dataChanged)
+    Q_PROPERTY(QString sizeString READ sizeString NOTIFY dataChanged)
 public:
     explicit DownloadLinkInfo(QObject *parent = nullptr);
     virtual ~DownloadLinkInfo();
@@ -43,6 +44,7 @@ public:
     int id() const;
     bool isDownloadtypeLink() const;
     quint64 size() const;
+    QString sizeString() const;
     QString icon() const;
 
 private:
