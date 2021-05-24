@@ -222,6 +222,16 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     EntryInternal::List entries;
     QList<SearchPreset> presets;
 
+    {
+        SearchPreset preset;
+        SearchRequest request;
+        request.searchTerm = m_providerId;
+        request.filter = Group;
+        preset.request = request;
+        preset.type = Provider::SearchPresetTypes::Start;
+        presets.append(preset);
+    }
+
     QList<KNSCore::Provider::CategoryMetadata> categories;
 
     // find the self link first!

@@ -107,8 +107,10 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
             case KNSCore::Provider::SearchPresetTypes::New:
                 name = QStringLiteral("change-date-symbolic");
                 break;
-            case KNSCore::Provider::SearchPresetTypes::Root:
             case KNSCore::Provider::SearchPresetTypes::Start:
+                name = QStringLiteral("start-over");
+                break;
+            case KNSCore::Provider::SearchPresetTypes::Root:
                 name = QStringLiteral("go-home");
                 break;
             case KNSCore::Provider::SearchPresetTypes::Shelf:
