@@ -16,7 +16,6 @@
 
 namespace KNSCore
 {
-
 const QString OPDS_REL_ACQUISITION = QStringLiteral("http://opds-spec.org/acquisition");
 const QString OPDS_REL_AC_OPEN_ACCESS = QStringLiteral("http://opds-spec.org/acquisition/open-access");
 const QString OPDS_REL_AC_BORROW = QStringLiteral("http://opds-spec.org/acquisition/borrow");
@@ -55,6 +54,7 @@ const QString ATTR_CURRENCY_CODE = QStringLiteral("currencycode");
 const QString FEED_COMPLETE = QStringLiteral("fh:complete");
 const QString THREAD_COUNT = QStringLiteral("count");
 
+const QString OPENSEARCH_NS = QStringLiteral("http://a9.com/-/spec/opensearch/1.1/");
 const QString OPENSEARCH_MT = QStringLiteral("application/opensearchdescription+xml");
 const QString REL_SEARCH = QStringLiteral("search");
 
@@ -106,7 +106,7 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
             }
         }
     } else {
-        if (request.searchTerm.startsWith(QStringLiteral("http")) || request.searchTerm.startsWith(QStringLiteral("/"))) {
+        if (request.searchTerm.startsWith(QStringLiteral("http"))) {
             m_currentUrl = fixRelativeUrl(request.searchTerm);
         } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
@@ -201,11 +201,16 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     Syndication::Atom::Parser parser;
     Syndication::Atom::FeedDocumentPtr feedDoc = parser.parse(source).staticCast<Syndication::Atom::FeedDocument>();
 
+    if (!feedDoc->isValid()) {
+        qWarning() << "OPDS Feed not valid";
+        Q_EMIT loadingFailed(m_currentRequest);
+        return;
+    }
     if (!feedDoc->title().isEmpty()) {
         m_providerName = feedDoc->title();
     }
     if (!feedDoc->icon().isEmpty()) {
-        m_iconUrl = QUrl(feedDoc->icon());
+        m_iconUrl = QUrl(fixRelativeUrl(feedDoc->icon()));
     }
 
     EntryInternal::List entries;
@@ -246,9 +251,9 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
     }
 
-
     for(int i=0; i<feedDoc->entries().size(); i++) {
         Syndication::Atom::Entry feedEntry = feedDoc->entries().at(i);
+
 
         EntryInternal entry;
         entry.setName(feedEntry.title());
@@ -278,6 +283,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             author.setId(person.uri());
             author.setName(person.name());
             author.setEmail(person.email());
+            author.setHomepage(person.uri());
             entry.setAuthor(author);
         }
         entry.setLicense(feedEntry.rights());
@@ -353,7 +359,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
                 if (link.rel() == OPDS_REL_CRAWL || link.type().startsWith(OPDS_ATOM_MT)) {
                     entry.setEntryType(EntryInternal::GroupEntry);
-                    entry.setPayload(link.href());
+                    entry.setPayload(fixRelativeUrl(link.href()).toString());
                     entry.appendDownloadLinkInformation(otherLink);
                 } if (link.type() == HTML_MT) {
                     entry.setHomepage(fixRelativeUrl(link.href()));
@@ -421,6 +427,10 @@ EntryInternal::List OPDSProvider::installedEntries() const
 void OPDSProvider::parserOpenSearchDocument(const QDomDocument &doc)
 {
     m_openSearchTemplate = QString();
+    if (doc.documentElement().attribute(QStringLiteral("xmlns")) != OPENSEARCH_NS) {
+        qWarning() << "Opensearch link does not point at document with opensearch namespace";
+        return;
+    }
     QDomElement el = doc.documentElement().firstChildElement(QStringLiteral("Url"));
     while (!el.isNull()) {
         if (el.attribute(QStringLiteral("type")).contains(OPDS_ATOM_MT)) {
@@ -459,10 +469,10 @@ QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
 {
     QUrl query = QUrl(urlPart);
     if (query.isRelative()) {
-    QUrl host = m_currentUrl;
-    host.setPath(query.path());
-    host.setQuery(query.query());
-    return host;
+        QUrl host = m_currentUrl;
+        host.setPath(query.path());
+        host.setQuery(query.query());
+        return host;
     }
     return query;
 }
