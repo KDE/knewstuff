@@ -48,7 +48,7 @@ Kirigami.OverlaySheet {
             icon: modelData.icon
             QtControls.Label {
                 QtLayouts.Layout.alignment: Qt.AlignRight
-                text: modelData.sizeString
+                text: modelData.formattedSize
             }
 
             QtControls.ToolButton {

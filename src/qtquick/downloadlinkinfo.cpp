@@ -100,7 +100,7 @@ quint64 DownloadLinkInfo::size() const
     return d->size;
 }
 
-QString DownloadLinkInfo::sizeString() const
+QString DownloadLinkInfo::formattedSize() const
 {
     if (d->size == 0) {
         return QString();
