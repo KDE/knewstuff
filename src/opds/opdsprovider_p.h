@@ -18,6 +18,8 @@
  * https://specs.opds.io/opds-1.2
  *
  * These feeds are most common with online book providers, but the format itself is agnostic.
+ * For loading feeds, these, as with other providers, need to have a KNSRC file pointed
+ * at a Provider.xml, with the "type" element containing "opds" as text.
  *
  * Supports:
  * - Loads a given feed, it's images, and loads it's download links.
@@ -34,6 +36,8 @@
  * Would-be-nice, but requires a lot of rewiring in knewstuff:
  * - We could get authenticated feeds going by using basic http authentiation(in spec), or have bearer token uris (oauth bearcaps).
  * - Autodiscovery or protocol based discovery of opds catalogs, this does not gel with the provider xml system used by knewstuff.
+ *
+ * @since 5.83
  */
 
 namespace KNSCore
@@ -68,16 +72,19 @@ public:
 
 private Q_SLOTS:
     void parseFeedData(const QDomDocument &doc);
+    void slotLoadingFailed();
+
     void slotEmitProviderInitialized();
+
     EntryInternal::List installedEntries() const;
 
     // Parse the opensearch configuration document.
     // https://github.com/dewitt/opensearch
-    void parserOpenSearchDocument(const QDomDocument &doc);
+    void parseOpenSearchDocument(const QDomDocument &doc);
 
 private:
     // Generate an opensearch string.
-    QUrl getOpenSearchString(const KNSCore::Provider::SearchRequest &request);
+    QUrl openSearchStringForRequest(const KNSCore::Provider::SearchRequest &request);
     QUrl fixRelativeUrl(QString urlPart);
 
     QString m_providerId;
@@ -93,6 +100,7 @@ private:
     // partial url identifying the self. This is necessary to resolve relative links.
     QString m_selfUrl;
 
+
     QDateTime m_currentTime;
     bool m_loadingExtraDetails;
 
@@ -101,6 +109,7 @@ private:
     EntryInternal::List m_cachedEntries;
     Provider::SearchRequest m_currentRequest;
 
+    QUrl m_openSearchDocumentURL;
     QString m_openSearchTemplate;
 
     Q_DISABLE_COPY(OPDSProvider)

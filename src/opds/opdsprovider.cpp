@@ -20,65 +20,64 @@
 
 namespace KNSCore
 {
-static const QLatin1String OPDS_REL_ACQUISITION{"http://opds-spec.org/acquisition"};
-const QString OPDS_REL_AC_OPEN_ACCESS = QStringLiteral("http://opds-spec.org/acquisition/open-access");
-const QString OPDS_REL_AC_BORROW = QStringLiteral("http://opds-spec.org/acquisition/borrow");
-const QString OPDS_REL_AC_BUY = QStringLiteral("http://opds-spec.org/acquisition/buy");
-const QString OPDS_REL_AC_SUBSCRIBE = QStringLiteral("http://opds-spec.org/acquisition/subscribe");
-const QString OPDS_REL_AC_SAMPLE = QStringLiteral("http://opds-spec.org/acquisition/sample");
-const QString OPDS_REL_IMAGE = QStringLiteral("http://opds-spec.org/image");
-const QString OPDS_REL_THUMBNAIL = QStringLiteral("http://opds-spec.org/image/thumbnail");
-const QString OPDS_REL_CRAWL = QStringLiteral("http://opds-spec.org/crawlable");
-const QString OPDS_REL_FACET = QStringLiteral("http://opds-spec.org/facet");
-const QString OPDS_REL_SHELF = QStringLiteral("http://opds-spec.org/shelf");
-const QString OPDS_REL_SORT_NEW = QStringLiteral("http://opds-spec.org/sort/new");
-const QString OPDS_REL_SORT_POPULAR = QStringLiteral("http://opds-spec.org/sort/popular");
-const QString OPDS_REL_FEATURED = QStringLiteral("http://opds-spec.org/featured");
-const QString OPDS_REL_RECOMMENDED = QStringLiteral("http://opds-spec.org/recommended");
-const QString OPDS_REL_SUBSCRIPTIONS = QStringLiteral("http://opds-spec.org/subscriptions");
-const QString OPDS_EL_PRICE = QStringLiteral("opds:price");
-const QString OPDS_EL_INDIRECT = QStringLiteral("opds:indirectAcquisition");
-const QString OPDS_ATTR_FACET_GROUP = QStringLiteral("opds:facetGroup");
-const QString OPDS_ATTR_ACTIVE_FACET = QStringLiteral("opds:activeFacet");
+static const QLatin1String OPDS_REL_ACQUISITION {"http://opds-spec.org/acquisition"};
+static const QLatin1String OPDS_REL_AC_OPEN_ACCESS {"http://opds-spec.org/acquisition/open-access"};
+static const QLatin1String OPDS_REL_AC_BORROW {"http://opds-spec.org/acquisition/borrow"};
+static const QLatin1String OPDS_REL_AC_BUY {"http://opds-spec.org/acquisition/buy"};
+static const QLatin1String OPDS_REL_AC_SUBSCRIBE {"http://opds-spec.org/acquisition/subscribe"};
+static const QLatin1String OPDS_REL_AC_SAMPLE {"http://opds-spec.org/acquisition/sample"};
+static const QLatin1String OPDS_REL_IMAGE {"http://opds-spec.org/image"};
+static const QLatin1String OPDS_REL_THUMBNAIL {"http://opds-spec.org/image/thumbnail"};
+static const QLatin1String OPDS_REL_CRAWL {"http://opds-spec.org/crawlable"};
+static const QLatin1String OPDS_REL_FACET {"http://opds-spec.org/facet"};
+static const QLatin1String OPDS_REL_SHELF {"http://opds-spec.org/shelf"};
+static const QLatin1String OPDS_REL_SORT_NEW {"http://opds-spec.org/sort/new"};
+static const QLatin1String OPDS_REL_SORT_POPULAR {"http://opds-spec.org/sort/popular"};
+static const QLatin1String OPDS_REL_FEATURED {"http://opds-spec.org/featured"};
+static const QLatin1String OPDS_REL_RECOMMENDED {"http://opds-spec.org/recommended"};
+static const QLatin1String OPDS_REL_SUBSCRIPTIONS {"http://opds-spec.org/subscriptions"};
+static const QLatin1String OPDS_EL_PRICE {"opds:price"};
+static const QLatin1String OPDS_EL_INDIRECT {"opds:indirectAcquisition"};
+static const QLatin1String OPDS_ATTR_FACET_GROUP {"opds:facetGroup"};
+static const QLatin1String OPDS_ATTR_ACTIVE_FACET {"opds:activeFacet"};
 
-const QString OPDS_ATOM_MT = QStringLiteral("application/atom+xml");
-const QString OPDS_PROFILE = QStringLiteral("profile=opds-catalog");
-const QString OPDS_TYPE_ENTRY = QStringLiteral("type=entry");
-const QString OPDS_KIND_NAVIGATION = QStringLiteral("kind=navigation");
-const QString OPDS_KIND_ACQUISITION = QStringLiteral("kind=acquisition");
+static const QLatin1String OPDS_ATOM_MT {"application/atom+xml"};
+static const QLatin1String OPDS_PROFILE {"profile=opds-catalog"};
+static const QLatin1String OPDS_TYPE_ENTRY {"type=entry"};
+static const QLatin1String OPDS_KIND_NAVIGATION {"kind=navigation"};
+static const QLatin1String OPDS_KIND_ACQUISITION {"kind=acquisition"};
 
-const QString REL_START = QStringLiteral("start");
-const QString REL_SUBSECTION = QStringLiteral("subsection");
-const QString REL_COLLECTION = QStringLiteral("collection");
-const QString REL_PREVIEW = QStringLiteral("preview");
-const QString REL_REPLIES = QStringLiteral("replies");
-const QString REL_RELATED = QStringLiteral("related");
-const QString REL_PREVIOUS = QStringLiteral("previous");
-const QString REL_NEXT = QStringLiteral("next");
-const QString REL_FIRST = QStringLiteral("first");
-const QString REL_LAST = QStringLiteral("last");
-const QString REL_UP = QStringLiteral("up");
-const QString REL_SELF = QStringLiteral("self");
-const QString REL_ALTERNATE = QStringLiteral("alternate");
-const QString ATTR_CURRENCY_CODE = QStringLiteral("currencycode");
-const QString FEED_COMPLETE = QStringLiteral("fh:complete");
-const QString THREAD_COUNT = QStringLiteral("count");
+static const QLatin1String REL_START {"start"};
+static const QLatin1String REL_SUBSECTION {"subsection"};
+static const QLatin1String REL_COLLECTION {"collection"};
+static const QLatin1String REL_PREVIEW {"preview"};
+static const QLatin1String REL_REPLIES {"replies"};
+static const QLatin1String REL_RELATED {"related"};
+static const QLatin1String REL_PREVIOUS {"previous"};
+static const QLatin1String REL_NEXT {"next"};
+static const QLatin1String REL_FIRST {"first"};
+static const QLatin1String REL_LAST {"last"};
+static const QLatin1String REL_UP {"up"};
+static const QLatin1String REL_SELF {"self"};
+static const QLatin1String REL_ALTERNATE {"alternate"};
+static const QLatin1String ATTR_CURRENCY_CODE {"currencycode"};
+static const QLatin1String FEED_COMPLETE {"fh:complete"};
+static const QLatin1String THREAD_COUNT {"count"};
 
-const QString OPENSEARCH_NS = QStringLiteral("http://a9.com/-/spec/opensearch/1.1/");
-const QString OPENSEARCH_MT = QStringLiteral("application/opensearchdescription+xml");
-const QString REL_SEARCH = QStringLiteral("search");
+static const QLatin1String OPENSEARCH_NS {"http://a9.com/-/spec/opensearch/1.1/"};
+static const QLatin1String OPENSEARCH_MT {"application/opensearchdescription+xml"};
+static const QLatin1String REL_SEARCH {"search"};
 
-const QString OPENSEARCH_SEARCH_TERMS = QStringLiteral("searchTerms");
-const QString OPENSEARCH_COUNT = QStringLiteral("count");
-const QString OPENSEARCH_START_INDEX = QStringLiteral("startIndex");
-const QString OPENSEARCH_START_PAGE = QStringLiteral("startPage");
+static const QLatin1String OPENSEARCH_SEARCH_TERMS {"searchTerms"};
+static const QLatin1String OPENSEARCH_COUNT {"count"};
+static const QLatin1String OPENSEARCH_START_INDEX {"startIndex"};
+static const QLatin1String OPENSEARCH_START_PAGE {"startPage"};
 
+static const QLatin1String HTML_MT {"text/html"};
 
-const QString HTML_MT = QStringLiteral("text/html");
-
-const QString KEY_MIME_TYPE = QStringLiteral("data##mimetype=");
-const QString KEY_URL = QStringLiteral("data##url=");
-const QString KEY_LANGUAGE = QStringLiteral("data##language=");
+static const QLatin1String KEY_MIME_TYPE {"data##mimetype="};
+static const QLatin1String KEY_URL {"data##url="};
+static const QLatin1String KEY_LANGUAGE {"data##language="};
 
 OPDSProvider::OPDSProvider():
     m_initialized(false)
@@ -125,10 +124,10 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
         } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
-            m_currentUrl = getOpenSearchString(request);
+            m_currentUrl = openSearchStringForRequest(request);
         }
 
-        //request: check if entries is above pagesize*index, otherwise load next page.
+        //TODO request: check if entries is above pagesize*index, otherwise load next page.
 
         QUrl url = m_currentUrl;
         if (!url.isEmpty()) {
@@ -137,7 +136,7 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
             m_currentTime = QDateTime::currentDateTime();
             m_loadingExtraDetails = false;
             connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
-            //connect(m_xmlLoader, &XmlLoader::signalFailed, this, SIGNAL(loadingFailed()));
+            connect(m_xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
             m_xmlLoader->load(url);
         } else {
             Q_EMIT loadingFailed(request);
@@ -158,6 +157,7 @@ void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
         m_currentTime = QDateTime::currentDateTime();
         m_loadingExtraDetails = true;
         connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
+        connect(m_xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
         m_xmlLoader->load(url);
     }
 }
@@ -258,9 +258,13 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     for (auto link: feedDoc->links()) {
         // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
         if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
+            m_openSearchDocumentURL = fixRelativeUrl(link.href());
             m_xmlLoader = new XmlLoader(this);
-            connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parserOpenSearchDocument);
-            m_xmlLoader->load(QUrl(link.href()));
+            connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseOpenSearchDocument);
+            connect(m_xmlLoader, &XmlLoader::signalFailed, this, [this]() {
+                qCWarning(KNEWSTUFFCORE) << "OpenSearch XML Document Loading failed" << m_openSearchDocumentURL;
+            });
+            m_xmlLoader->load(m_openSearchDocumentURL);
         } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
             SearchPreset preset;
             preset.providerId = m_providerId;
@@ -328,6 +332,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
         if (entryTagChecker.filterAccepts(entryTags)) {
             entry.setTags(entryTags);
+        } else {
+            continue;
         }
         // Same issue with author...
         for(int j=0; j<feedEntry.authors().size(); j++) {
@@ -349,28 +355,33 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
         int counterThumbnails = 0;
         int counterImages = 0;
+        QString groupEntryUrl;
         for(int j=0; j<feedEntry.links().size(); j++) {
             Syndication::Atom::Link link = feedEntry.links().at(j);
+
+            KNSCore::EntryInternal::DownloadLinkInformation download;
+            download.id = entry.downloadLinkCount()+1;
             // Linkrelations can have multiple values, expressed as something like... rel="me nofollow alternate".
             QStringList linkRelation = link.rel().split(QStringLiteral(" "));
 
+            QStringList tags;
+            tags.append(KEY_MIME_TYPE+link.type());
+            if (!link.hrefLanguage().isEmpty()) { tags.append(KEY_LANGUAGE+link.hrefLanguage()); }
+            QString linkUrl = fixRelativeUrl(link.href()).toString();
+            tags.append(KEY_URL + linkUrl);
+            download.name = link.title();
+            download.size = link.length() / 1000;
+            download.tags = tags;
+            download.isDownloadtypeLink = false;
+
+
             if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
-                KNSCore::EntryInternal::DownloadLinkInformation download;
-                download.id = entry.downloadLinkCount()+1;
-                download.name = link.title();
                 if (link.title().isEmpty()) {
                     QStringList l;
                     l.append(link.type());
                     l.append(QStringLiteral("(")+link.rel().split(QStringLiteral("/")).last()+ QStringLiteral(")"));
                     download.name = l.join(QStringLiteral(" "));
                 }
-                download.size = link.length()/1000;
-                download.isDownloadtypeLink = false;
-                QStringList tags;
-                tags.append(KEY_MIME_TYPE+link.type());
-                if (!link.hrefLanguage().isEmpty()) { tags.append(KEY_LANGUAGE+link.hrefLanguage()); }
-                tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
-                download.tags = tags;
 
                 if (!downloadTagChecker.filterAccepts(download.tags)) {
 
@@ -379,15 +390,21 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
                 if (linkRelation.contains(OPDS_REL_AC_BORROW) || linkRelation.contains(OPDS_REL_AC_SUBSCRIBE)
                         || linkRelation.contains(OPDS_REL_AC_BUY)) {
+
                     // TODO we don't support borrow, buy and subscribe right now, requires authentication.
                     continue;
+
                 } else if (linkRelation.contains(OPDS_REL_ACQUISITION) || linkRelation.contains(OPDS_REL_AC_OPEN_ACCESS)) {
+
                     download.isDownloadtypeLink = true;
+
                     if (entry.status() != KNS3::Entry::Installed &&
                             entry.status() != KNS3::Entry::Updateable) {
                         entry.setStatus(KNS3::Entry::Downloadable);
                     }
+
                     entry.setEntryType(EntryInternal::CatalogEntry);
+
                 }
                 //TODO, support preview relation, but this requires we show that an entry is otherwise paid for in the UI.
 
@@ -400,34 +417,25 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
             } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
                 if (link.rel() == OPDS_REL_THUMBNAIL) {
-                    entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterThumbnails));
+                    entry.setPreviewUrl( linkUrl, KNSCore::EntryInternal::PreviewType(counterThumbnails));
                     counterThumbnails +=1;
                 } else {
-                    entry.setPreviewUrl(fixRelativeUrl(link.href()).toString(), KNSCore::EntryInternal::PreviewType(counterImages+3));
+                    entry.setPreviewUrl( linkUrl, KNSCore::EntryInternal::PreviewType(counterImages+3));
                     counterImages +=1;
                 }
 
             } else {
                 // This could be anything from a more info link, to navigation links, to links to the outside world.
                 // Todo: think of using link rel's 'replies', 'payment'(donation) and 'version-history'.
-                KNSCore::EntryInternal::DownloadLinkInformation otherLink;
-                otherLink.isDownloadtypeLink = false;
-                otherLink.name = link.title();
-                otherLink.id = entry.downloadLinkCount()+1;
-                otherLink.size = link.length() / 1000;
-                QStringList tags;
-                tags.append(KEY_MIME_TYPE+link.type());
-                if (!link.hrefLanguage().isEmpty()) { tags.append(KEY_LANGUAGE+link.hrefLanguage()); }
-                tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
-                otherLink.tags = tags;
 
-                if ( (linkRelation.contains(OPDS_REL_CRAWL) || linkRelation.contains(REL_SUBSECTION))
-                        && link.type().startsWith(OPDS_ATOM_MT) ) {
-                    entry.setPayload(fixRelativeUrl(link.href()).toString());
+                if (link.type().startsWith(OPDS_ATOM_MT) ) {
+                    groupEntryUrl = linkUrl;
+
                 } else  if (link.type() == HTML_MT && linkRelation.contains(REL_ALTERNATE)) {
-                    entry.setHomepage(fixRelativeUrl(link.href()));
-                } else if (downloadTagChecker.filterAccepts(otherLink.tags)) {
-                    entry.appendDownloadLinkInformation(otherLink);
+                    entry.setHomepage( QUrl(linkUrl) );
+
+                } else if (downloadTagChecker.filterAccepts(download.tags)) {
+                    entry.appendDownloadLinkInformation( download );
                 }
             }
         }
@@ -445,6 +453,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
 
         if (entry.status() != KNS3::Entry::Invalid) {
+            entry.setPayload(QString());
             // Gutenberg doesn't do versioning in the opds, so it's update value is unreliable,
             // even though openlib and standard do use it properly. We'll instead doublecheck that
             // the new time is larger than 6min since we requested the feed.
@@ -465,13 +474,13 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
 
         if (entry.downloadLinkCount() == 0) {
-            if (entry.payload().isEmpty()) {
+            if (groupEntryUrl.isEmpty()) {
                 continue;
             } else {
                 entry.setEntryType(EntryInternal::GroupEntry);
-            }
-        } else {
+                entry.setPayload(groupEntryUrl);
 
+            }
         }
 
         entries.append(entry);
@@ -485,6 +494,12 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     }
     Q_EMIT categoriesMetadataLoded(categories);
     Q_EMIT searchPresetsLoaded(presets);
+}
+
+void OPDSProvider::slotLoadingFailed()
+{
+    qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed" << m_currentUrl;
+    Q_EMIT loadingFailed(m_currentRequest);
 }
 
 void OPDSProvider::slotEmitProviderInitialized()
@@ -504,11 +519,11 @@ EntryInternal::List OPDSProvider::installedEntries() const
     return entries;
 }
 
-void OPDSProvider::parserOpenSearchDocument(const QDomDocument &doc)
+void OPDSProvider::parseOpenSearchDocument(const QDomDocument &doc)
 {
     m_openSearchTemplate = QString();
     if (doc.documentElement().attribute(QStringLiteral("xmlns")) != OPENSEARCH_NS) {
-        qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace";
+        qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace" << m_openSearchDocumentURL;
         return;
     }
     QDomElement el = doc.documentElement().firstChildElement(QStringLiteral("Url"));
@@ -523,7 +538,7 @@ void OPDSProvider::parserOpenSearchDocument(const QDomDocument &doc)
     }
 }
 
-QUrl OPDSProvider::getOpenSearchString(const Provider::SearchRequest &request)
+QUrl OPDSProvider::openSearchStringForRequest(const Provider::SearchRequest &request)
 {
     QUrl searchUrl = QUrl(m_openSearchTemplate);
 
