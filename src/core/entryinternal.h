@@ -76,7 +76,6 @@ public:
         QString priceAmount;
         QString distributionType; ///OCS Distribution Type, this is for which OS the file is useful.
         QString descriptionLink; ///Link to intermediary description.
-        QString url; ///?
         int id;
         bool isDownloadtypeLink;
         quint64 size = 0;
