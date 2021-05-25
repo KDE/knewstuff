@@ -14,6 +14,8 @@
 #include <QLocale>
 #include <QIcon>
 
+#include <knewstuffcore_debug.h>
+
 #include "tagsfilterchecker.h"
 
 namespace KNSCore
