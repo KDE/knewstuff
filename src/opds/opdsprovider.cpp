@@ -238,7 +238,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         preset.providerId = m_providerId;
         SearchRequest request;
         request.searchTerm = m_providerId;
-        request.filter = Group;
         preset.request = request;
         preset.type = Provider::SearchPresetTypes::Start;
         presets.append(preset);
@@ -266,7 +265,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             preset.displayName = link.title();
             SearchRequest request;
             request.searchTerm = fixRelativeUrl(link.href()).toString();
-            request.filter = Group;
             preset.request = request;
             if (link.rel() == REL_START) {
                 preset.type = Provider::SearchPresetTypes::Root;
@@ -372,7 +370,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
                 download.tags = tags;
 
-                qDebug() << download.tags;
                 if (!downloadTagChecker.filterAccepts(download.tags)) {
 
                     continue;
