@@ -26,13 +26,10 @@
  * - Navigation feed entries can be selected.
  *
  * TODO:
- * - Navigation links don't work, only start is implemented.
- * - We need a better way to indicate the non-free items.
- * - entry navigation links are now mixed in with the download links.
+ * - We need a better handling of non-free items (requires authentication).
+ * - entry navigation links are not supported.
  * - pagination support (together with the navigation links)
- * - lots of duplication between parseExtraDetails and parseFeed.
- * - Caching is half-implemented.
- * - hairyness regarding the way categories work???
+ * - No Sorting
  *
  * Would-be-nice, but requires a lot of rewiring in knewstuff:
  * - We could get authenticated feeds going by using basic http authentiation(in spec), or have bearer token uris (oauth bearcaps).
