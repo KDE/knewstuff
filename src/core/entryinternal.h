@@ -474,6 +474,7 @@ public:
 
     /**
      * The entry type is either catalog entry, or group entry.
+     * @since 5.83
      */
     void setEntryType(EntryType type);
     EntryType entryType();

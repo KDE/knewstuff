@@ -54,7 +54,7 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterUncreatableType<SearchPresetModel>(
         uri,
         1,
-        0,
+        83,
         "SearchPresetModel",
         QStringLiteral("This should only be created by the Engine, and provides the searchpresets available in that engine"));
     qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject,

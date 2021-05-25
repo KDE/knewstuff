@@ -18,7 +18,7 @@
 
 namespace KNSCore
 {
-const QString OPDS_REL_ACQUISITION = QStringLiteral("http://opds-spec.org/acquisition");
+static const QLatin1String OPDS_REL_ACQUISITION{"http://opds-spec.org/acquisition"};
 const QString OPDS_REL_AC_OPEN_ACCESS = QStringLiteral("http://opds-spec.org/acquisition/open-access");
 const QString OPDS_REL_AC_BORROW = QStringLiteral("http://opds-spec.org/acquisition/borrow");
 const QString OPDS_REL_AC_BUY = QStringLiteral("http://opds-spec.org/acquisition/buy");
@@ -130,7 +130,7 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 
         QUrl url = m_currentUrl;
         if (!url.isEmpty()) {
-            qDebug() << "requesting url" << url;
+            qCDebug(KNEWSTUFFCORE) << "requesting url" << url;
             m_xmlLoader = new XmlLoader(this);
             m_currentTime = QDateTime::currentDateTime();
             m_loadingExtraDetails = false;
@@ -219,7 +219,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     Syndication::Atom::FeedDocumentPtr feedDoc = parser.parse(source).staticCast<Syndication::Atom::FeedDocument>();
 
     if (!feedDoc->isValid()) {
-        qWarning() << "OPDS Feed not valid";
+        qCWarning(KNEWSTUFFCORE) << "OPDS Feed not valid";
         Q_EMIT loadingFailed(m_currentRequest);
         return;
     }
@@ -377,7 +377,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
                 if (linkRelation.contains(OPDS_REL_AC_BORROW) || linkRelation.contains(OPDS_REL_AC_SUBSCRIBE)
                         || linkRelation.contains(OPDS_REL_AC_BUY)) {
-                    // we don't support borrow, buy and subscribe right now, requires authentication.
+                    // TODO we don't support borrow, buy and subscribe right now, requires authentication.
                     continue;
                 } else if (linkRelation.contains(OPDS_REL_ACQUISITION) || linkRelation.contains(OPDS_REL_AC_OPEN_ACCESS)) {
                     download.isDownloadtypeLink = true;
@@ -506,7 +506,7 @@ void OPDSProvider::parserOpenSearchDocument(const QDomDocument &doc)
 {
     m_openSearchTemplate = QString();
     if (doc.documentElement().attribute(QStringLiteral("xmlns")) != OPENSEARCH_NS) {
-        qWarning() << "Opensearch link does not point at document with opensearch namespace";
+        qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace";
         return;
     }
     QDomElement el = doc.documentElement().firstChildElement(QStringLiteral("Url"));

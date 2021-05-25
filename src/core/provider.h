@@ -103,6 +103,7 @@ public:
      * @brief The SearchPresetTypes enum
      * the preset type enum is a helper to identify the kind of label and icon
      * the search preset should have if none are found.
+     * @since 5.83
      */
     enum SearchPresetTypes {
         NoPresetType = 0,
@@ -121,6 +122,7 @@ public:
     /**
      * Describes a search request that may come from the provider.
      * This is used by the OPDS provider to handle the different urls.
+     * @since 5.83
      */
     struct SearchPreset {
         SearchRequest request;

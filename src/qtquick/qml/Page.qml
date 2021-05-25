@@ -340,7 +340,7 @@ KCM.GridViewKCM {
             },
             Kirigami.Action {
                 text: i18nd("knewstuff5", "Go to...")
-                iconName: "system-search";
+                iconName: "go-next";
                 id: searchModelActions;
             },
             Kirigami.Action {
@@ -394,7 +394,6 @@ KCM.GridViewKCM {
                 newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
             }
         }
-
     }
 
     view.model: NewStuff.ItemsModel {
