@@ -51,12 +51,6 @@ void QmlPlugins::registerTypes(const char *uri)
         0,
         "CategoriesModel",
         QStringLiteral("This should only be created by the Engine, and provides the categories available in that engine"));
-    qmlRegisterUncreatableType<SearchPresetModel>(
-        uri,
-        1,
-        83,
-        "SearchPresetModel",
-        QStringLiteral("This should only be created by the Engine, and provides the searchpresets available in that engine"));
     qmlRegisterUncreatableMetaObject(KNSCore::Provider::staticMetaObject,
                                      coreUri,
                                      1,
@@ -99,4 +93,11 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                                       QQmlEngine::CppOwnership);
                                                            return KNewStuffQuick::Settings::instance();
                                                        });
+    // Version 1.83
+    qmlRegisterUncreatableType<SearchPresetModel>(
+        uri,
+        1,
+        83,
+        "SearchPresetModel",
+        QStringLiteral("This should only be created by the Engine, and provides the SearchPresets available in that engine"));
 }

@@ -122,10 +122,6 @@ QtDialogs.Dialog {
                 right: parent.right
                 bottom: parent.bottom
             }
-            anchors {
-                left: searchPresetsDropdown.right
-                right: parent.right
-            }
             standardButtons: QtControls.DialogButtonBox.Close
             onRejected: component.close()
         }

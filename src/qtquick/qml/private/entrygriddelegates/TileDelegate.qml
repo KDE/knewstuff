@@ -25,23 +25,23 @@ Private.GridTileDelegate {
             newStuffEngine.engine.storeSearch();
             newStuffEngine.searchTerm = model.payload;
         } else {
-        pageStack.push(detailsPage, {
-            newStuffModel: GridView.view.model,
-            index: model.index,
-            name: model.name,
-            author: model.author,
-            previews: model.previews,
-            shortSummary: model.shortSummary,
-            summary: model.summary,
-            homepage: model.homepage,
-            donationLink: model.donationLink,
-            status: model.status,
-            commentsCount: model.numberOfComments,
-            rating: model.rating,
-            downloadCount: model.downloadCount,
-            downloadLinks: model.downloadLinks,
-            providerId: model.providerId
-        });
+            pageStack.push(detailsPage, {
+                newStuffModel: GridView.view.model,
+                index: model.index,
+                name: model.name,
+                author: model.author,
+                previews: model.previews,
+                shortSummary: model.shortSummary,
+                summary: model.summary,
+                homepage: model.homepage,
+                donationLink: model.donationLink,
+                status: model.status,
+                commentsCount: model.numberOfComments,
+                rating: model.rating,
+                downloadCount: model.downloadCount,
+                downloadLinks: model.downloadLinks,
+                providerId: model.providerId
+            });
         }
     }
     actions: [

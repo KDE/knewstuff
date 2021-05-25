@@ -20,7 +20,7 @@ import QtGraphicalEffects 1.11 as QtEffects
 import org.kde.kcm 1.2 as KCM
 import org.kde.kirigami 2.12 as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff 1.83 as NewStuff
 
 import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
@@ -107,7 +107,7 @@ KCM.GridViewKCM {
                         author: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.AuthorRole),
                         previews: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PreviewsRole),
                         shortSummary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.ShortSummaryRole),
-                        summary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole),
+                        summary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.SummaryRole),
                         homepage: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.HomepageRole),
                         donationLink: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DonationLinkRole),
                         status: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.StatusRole),

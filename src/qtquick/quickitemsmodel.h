@@ -108,10 +108,16 @@ public:
     };
     Q_ENUM(ItemStatus)
 
+    /**
+     * Represents whether the current entry is an actual catalog entry,
+     * or an entry that represents a set of entries.
+     * @since 5.83
+     */
     enum EntryType {
         CatalogEntry = 0,
         GroupEntry
     };
+
     Q_ENUM(EntryType)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
     // Consequently, this enum removes what would seem like magic numbers from the code, and
