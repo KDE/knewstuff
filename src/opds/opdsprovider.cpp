@@ -14,6 +14,8 @@
 #include <QLocale>
 #include <QIcon>
 
+#include "tagsfilterchecker.h"
+
 namespace KNSCore
 {
 const QString OPDS_REL_ACQUISITION = QStringLiteral("http://opds-spec.org/acquisition");
@@ -293,6 +295,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             presets.append(preset);
         }
     }
+    TagsFilterChecker downloadTagChecker(downloadTagFilter());
+    TagsFilterChecker entryTagChecker(tagFilter());
 
     for(int i=0; i<feedDoc->entries().size(); i++) {
         Syndication::Atom::Entry feedEntry = feedDoc->entries().at(i);
@@ -314,15 +318,17 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
         // This is a bit of a pickle: atom feeds can have multiple catagories.
         // but these catagories are not specifically tags...
-        QStringList tags;
+        QStringList entryTags;
         for(int j=0; j<feedEntry.categories().size(); j++) {
             QString tag = feedEntry.categories().at(j).label();
             if (tag.isEmpty()) {
                 tag = feedEntry.categories().at(j).term();
             }
-            tags.append(tag);
+            entryTags.append(tag);
         }
-        entry.setTags(tags);
+        if (entryTagChecker.filterAccepts(entryTags)) {
+            entry.setTags(entryTags);
+        }
         // Same issue with author...
         for(int j=0; j<feedEntry.authors().size(); j++) {
             Author author;
@@ -341,16 +347,16 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
         entry.setShortSummary(feedEntry.summary());
 
-        int downloads = 0;
         int counterThumbnails = 0;
         int counterImages = 0;
         for(int j=0; j<feedEntry.links().size(); j++) {
             Syndication::Atom::Link link = feedEntry.links().at(j);
+            // Linkrelations can have multiple values, expressed as something like... rel="me nofollow alternate".
+            QStringList linkRelation = link.rel().split(QStringLiteral(" "));
 
             if (link.rel().startsWith(OPDS_REL_ACQUISITION)) {
                 KNSCore::EntryInternal::DownloadLinkInformation download;
-                download.id = entry.downloadLinkCount();
-                downloads +=1;
+                download.id = entry.downloadLinkCount()+1;
                 download.name = link.title();
                 if (link.title().isEmpty()) {
                     QStringList l;
@@ -366,7 +372,17 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
                 download.tags = tags;
 
-                if (link.rel() == OPDS_REL_ACQUISITION || link.rel() == OPDS_REL_AC_OPEN_ACCESS) {
+                qDebug() << download.tags;
+                if (!downloadTagChecker.filterAccepts(download.tags)) {
+
+                    continue;
+                }
+
+                if (linkRelation.contains(OPDS_REL_AC_BORROW) || linkRelation.contains(OPDS_REL_AC_SUBSCRIBE)
+                        || linkRelation.contains(OPDS_REL_AC_BUY)) {
+                    // we don't support borrow, buy and subscribe right now, requires authentication.
+                    continue;
+                } else if (linkRelation.contains(OPDS_REL_ACQUISITION) || linkRelation.contains(OPDS_REL_AC_OPEN_ACCESS)) {
                     download.isDownloadtypeLink = true;
                     if (entry.status() != KNS3::Entry::Installed &&
                             entry.status() != KNS3::Entry::Updateable) {
@@ -374,6 +390,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                     }
                     entry.setEntryType(EntryInternal::CatalogEntry);
                 }
+                //TODO, support preview relation, but this requires we show that an entry is otherwise paid for in the UI.
 
                 for (QDomElement el:feedEntry.elementsByTagName(OPDS_EL_PRICE)) {
                     QLocale locale;
@@ -397,7 +414,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 KNSCore::EntryInternal::DownloadLinkInformation otherLink;
                 otherLink.isDownloadtypeLink = false;
                 otherLink.name = link.title();
-                otherLink.id = entry.downloadLinkCount();
+                otherLink.id = entry.downloadLinkCount()+1;
                 otherLink.size = link.length() / 1000;
                 QStringList tags;
                 tags.append(KEY_MIME_TYPE+link.type());
@@ -405,13 +422,12 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 tags.append(KEY_URL+fixRelativeUrl(link.href()).toString());
                 otherLink.tags = tags;
 
-                if (link.rel() == OPDS_REL_CRAWL || (link.rel().contains(REL_SUBSECTION) && link.type().startsWith(OPDS_ATOM_MT))) {
-                    entry.setEntryType(EntryInternal::GroupEntry);
+                if ( (linkRelation.contains(OPDS_REL_CRAWL) || linkRelation.contains(REL_SUBSECTION))
+                        && link.type().startsWith(OPDS_ATOM_MT) ) {
                     entry.setPayload(fixRelativeUrl(link.href()).toString());
-                    entry.appendDownloadLinkInformation(otherLink);
-                } if (link.type() == HTML_MT) {
+                } else  if (link.type() == HTML_MT && linkRelation.contains(REL_ALTERNATE)) {
                     entry.setHomepage(fixRelativeUrl(link.href()));
-                } else {
+                } else if (downloadTagChecker.filterAccepts(otherLink.tags)) {
                     entry.appendDownloadLinkInformation(otherLink);
                 }
             }
@@ -430,8 +446,6 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         }
 
         if (entry.status() != KNS3::Entry::Invalid) {
-            // Set this back to catalog entry when we can download a thing.
-            entry.setEntryType(EntryInternal::CatalogEntry);
             // Gutenberg doesn't do versioning in the opds, so it's update value is unreliable,
             // even though openlib and standard do use it properly. We'll instead doublecheck that
             // the new time is larger than 6min since we requested the feed.
@@ -449,6 +463,16 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             if (!feedDoc->icon().isEmpty()) {
                 entry.setPreviewUrl(fixRelativeUrl(feedDoc->icon()).toString());
             }
+        }
+
+        if (entry.downloadLinkCount() == 0) {
+            if (entry.payload().isEmpty()) {
+                continue;
+            } else {
+                entry.setEntryType(EntryInternal::GroupEntry);
+            }
+        } else {
+
         }
 
         entries.append(entry);
