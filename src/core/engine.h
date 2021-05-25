@@ -678,6 +678,11 @@ Q_SIGNALS:
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 
+    /**
+     * Fires when the engine has loaded search presets. These represent interesting
+     * searches for the user, such as recommendations.
+     * @since 5.83
+     */
     void signalSearchPresetsLoaded(const QList<Provider::SearchPreset> &presets);
     /**
      * This is fired for any event related directly to a single EntryInternal instance

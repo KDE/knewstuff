@@ -74,9 +74,9 @@ public:
     struct DownloadLinkInformation {
         QString name;
         QString priceAmount;
-        QString distributionType; //OCS Distribution Type, this is for which OS the file is useful.
-        QString descriptionLink; //Link to intermediary description.
-        QString url; //The actual download link.
+        QString distributionType; ///OCS Distribution Type, this is for which OS the file is useful.
+        QString descriptionLink; ///Link to intermediary description.
+        QString url; ///?
         int id;
         bool isDownloadtypeLink;
         quint64 size = 0;
@@ -90,9 +90,14 @@ public:
         DetailsLoadedEvent = 3,
     };
 
+    /**
+     * Represents whether the current entry is an actual catalog entry,
+     * or an entry that represents a set of entries.
+     * @since 5.83
+     */
     enum EntryType {
-        CatalogEntry = 0, // These are the main entries that KNewStuff can get the details about and download links for.
-        GroupEntry // these are entries whose payload is another feed. Currently only used by the OPDS provider.
+        CatalogEntry = 0, /// These are the main entries that KNewStuff can get the details about and download links for.
+        GroupEntry        /// these are entries whose payload is another feed. Currently only used by the OPDS provider.
     };
 
     /**

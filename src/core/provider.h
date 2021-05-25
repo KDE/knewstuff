@@ -107,17 +107,17 @@ public:
      */
     enum SearchPresetTypes {
         NoPresetType = 0,
-        GoBack, //a search preset representing the previous search.
-        Root, //preset indicating a root
-        Start, //preset indicating the first entry
-        Popular, //preset indicating popular items
-        Featured, //preset for featured items
-        Recommended, //preset for recommended. Different in that it may be user-customized.
-        Shelf, //preset indicating previously acquired items.
-        Subscription, //preset indicating items that the user is subscribed to.
-        New, //preset indicating new items.
-        FolderUp, //preset indicating going up in the search result hierarchy.
-        AllEntries, //preset indicating all possible entries, such as a crawlable list. Might be intense to load.
+        GoBack,       ///preset representing the previous search.
+        Root,         ///preset indicating a root directory.
+        Start,        ///preset indicating the first entry.
+        Popular,      ///preset indicating popular items.
+        Featured,     ///preset for featured items.
+        Recommended,  ///preset for recommended. This may be customized by the server per user.
+        Shelf,        ///preset indicating previously acquired items.
+        Subscription, ///preset indicating items that the user is subscribed to.
+        New,          ///preset indicating new items.
+        FolderUp,     ///preset indicating going up in the search result hierarchy.
+        AllEntries,   ///preset indicating all possible entries, such as a crawlable list. Might be intense to load.
     };
     /**
      * Describes a search request that may come from the provider.
@@ -277,6 +277,11 @@ Q_SIGNALS:
      */
     void personLoaded(const std::shared_ptr<KNSCore::Author> author);
 
+    /**
+     * Fires when the provider has loaded search presets. These represent interesting
+     * searches for the user, such as recommendations.
+     * @since 5.83
+     */
     void searchPresetsLoaded(const QList<SearchPreset> &presets);
 
     void signalInformation(const QString &) const;
