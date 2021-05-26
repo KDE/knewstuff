@@ -23,6 +23,14 @@ public:
     explicit SearchPresetModel(Engine *parent = nullptr);
     ~SearchPresetModel();
 
+    enum Roles {
+        DisplayNameRole = Qt::UserRole + 1,
+        IconRole,
+    };
+    Q_ENUMS(Roles)
+
+    QHash<int, QByteArray> roleNames() const override;
+
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 

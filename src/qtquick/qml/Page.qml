@@ -361,8 +361,8 @@ KCM.GridViewKCM {
         id: searchPresetInstatiator
         model: newStuffEngine.searchPresetModel
         Kirigami.Action {
-            text: model.display
-            iconName: model.decoration
+            text: model.displayName
+            iconName: model.iconName
             property int indexEntry: index;
             onTriggered: {
                 var curIndex = newStuffPage.engine.searchPresetModel.index(indexEntry, 0);

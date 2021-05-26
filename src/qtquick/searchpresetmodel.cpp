@@ -35,6 +35,13 @@ SearchPresetModel::~SearchPresetModel()
     delete d;
 }
 
+QHash<int, QByteArray> SearchPresetModel::roleNames() const
+{
+    static const QHash<int, QByteArray> roles{{DisplayNameRole, "displayName"}
+                                              , {IconRole, "iconName"}};
+    return roles;
+}
+
 
 QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
 {
