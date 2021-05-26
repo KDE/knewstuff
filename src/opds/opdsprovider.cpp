@@ -68,10 +68,14 @@ static const QLatin1String OPENSEARCH_NS {"http://a9.com/-/spec/opensearch/1.1/"
 static const QLatin1String OPENSEARCH_MT {"application/opensearchdescription+xml"};
 static const QLatin1String REL_SEARCH {"search"};
 
+static const QLatin1String OPENSEARCH_EL_URL {"url"};
+static const QLatin1String OPENSEARCH_ATTR_TYPE {"type"};
+static const QLatin1String OPENSEARCH_ATTR_TEMPLATE {"template"};
 static const QLatin1String OPENSEARCH_SEARCH_TERMS {"searchTerms"};
 static const QLatin1String OPENSEARCH_COUNT {"count"};
 static const QLatin1String OPENSEARCH_START_INDEX {"startIndex"};
 static const QLatin1String OPENSEARCH_START_PAGE {"startPage"};
+
 
 static const QLatin1String HTML_MT {"text/html"};
 
@@ -571,15 +575,15 @@ void OPDSProvider::parseOpenSearchDocument(const QDomDocument &doc)
         qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace" << d->openSearchDocumentURL;
         return;
     }
-    QDomElement el = doc.documentElement().firstChildElement(QStringLiteral("Url"));
+    QDomElement el = doc.documentElement().firstChildElement(OPENSEARCH_EL_URL);
     while (!el.isNull()) {
-        if (el.attribute(QStringLiteral("type")).contains(OPDS_ATOM_MT)) {
-            if (d->openSearchTemplate.isEmpty() || el.attribute(QStringLiteral("type")).contains(OPDS_PROFILE)) {
-                d->openSearchTemplate = el.attribute(QStringLiteral("template"));
+        if (el.attribute(OPENSEARCH_ATTR_TYPE).contains(OPDS_ATOM_MT)) {
+            if (d->openSearchTemplate.isEmpty() || el.attribute(OPENSEARCH_ATTR_TYPE).contains(OPDS_PROFILE)) {
+                d->openSearchTemplate = el.attribute(OPENSEARCH_ATTR_TEMPLATE);
             }
         }
 
-        el = el.nextSiblingElement(QStringLiteral("Url"));
+        el = el.nextSiblingElement(OPENSEARCH_EL_URL);
     }
 }
 
