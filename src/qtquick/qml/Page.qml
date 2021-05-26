@@ -365,15 +365,18 @@ KCM.GridViewKCM {
             iconName: model.iconName
             property int indexEntry: index;
             onTriggered: {
-                var curIndex = newStuffPage.engine.searchPresetModel.index(indexEntry, 0);
-                newStuffPage.engine.searchPresetModel.loadSearch(curIndex);
+                var curIndex = newStuffEngine.searchPresetModel.index(indexEntry, 0);
+                newStuffEngine.searchPresetModel.loadSearch(curIndex);
             }
         }
         onObjectAdded: { searchModelActions.children.push(object); }
-        // in theory we can remove the object from the children's list by using 'index', however,
-        // this doesn't seem to completely clear the list.
-        onObjectRemoved: { searchModelActions.children = [] }
     }
+
+    Connections {
+        target: newStuffEngine.searchPresetModel
+        function onModelReset() { searchModelActions.children = []; }
+    }
+
 
     // Only show this footer when there are multiple categories
     // nb: This would be more sensibly done by just setting the footer item visibility,
