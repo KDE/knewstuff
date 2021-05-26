@@ -24,6 +24,7 @@ public:
     Private()
         : engine(nullptr)
         , categoriesModel(nullptr)
+        , searchPresetModel(nullptr)
     {
     }
     KNSCore::Engine *engine;
