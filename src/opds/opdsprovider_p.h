@@ -71,23 +71,6 @@ public:
     bool isInitialized() const override;
     void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
 
-private Q_SLOTS:
-    void parseFeedData(const QDomDocument &doc);
-    void slotLoadingFailed();
-
-    void slotEmitProviderInitialized();
-
-    EntryInternal::List installedEntries() const;
-
-    // Parse the opensearch configuration document.
-    // https://github.com/dewitt/opensearch
-    void parseOpenSearchDocument(const QDomDocument &doc);
-
-private:
-    // Generate an opensearch string.
-    QUrl openSearchStringForRequest(const KNSCore::Provider::SearchRequest &request);
-    QUrl fixRelativeUrl(QString urlPart);
-
     class Private;
     std::unique_ptr<Private> d;
 
