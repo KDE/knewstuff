@@ -47,7 +47,6 @@
 #include "../opds/opdsprovider_p.h"
 #include "cache.h"
 
-
 using namespace KNSCore;
 
 typedef QHash<QString, XmlLoader *> EngineProviderLoaderHash;
