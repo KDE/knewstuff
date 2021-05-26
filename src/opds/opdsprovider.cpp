@@ -79,8 +79,42 @@ static const QLatin1String KEY_MIME_TYPE {"data##mimetype="};
 static const QLatin1String KEY_URL {"data##url="};
 static const QLatin1String KEY_LANGUAGE {"data##language="};
 
+class OPDSProvider::Private
+{
+public:
+    Private()
+        : initialized(false)
+        , loadingExtraDetails(false)
+    {
+    }
+    QString providerId;
+    QString providerName;
+    QUrl iconUrl;
+    bool initialized;
+
+    /***
+     * OPDS catalogs consist of many small atom feeds. This variable
+     * tracks which atom feed to load.
+     */
+    QUrl currentUrl;
+    // partial url identifying the self. This is necessary to resolve relative links.
+    QString selfUrl;
+
+
+    QDateTime currentTime;
+    bool loadingExtraDetails;
+
+    XmlLoader *xmlLoader;
+
+    EntryInternal::List cachedEntries;
+    Provider::SearchRequest currentRequest;
+
+    QUrl openSearchDocumentURL;
+    QString openSearchTemplate;
+};
+
 OPDSProvider::OPDSProvider():
-    m_initialized(false)
+    d(new Private)
 {
 
 }
@@ -92,52 +126,52 @@ OPDSProvider::~OPDSProvider()
 
 QString OPDSProvider::id() const
 {
-    return m_providerId;
+    return d->providerId;
 }
 
 QString OPDSProvider::name() const
 {
-    return m_providerName;
+    return d->providerName;
 }
 
 QUrl OPDSProvider::icon() const
 {
-    return m_iconUrl;
+    return d->iconUrl;
 }
 
 void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
-    m_currentRequest = request;
+    d->currentRequest = request;
 
     if (request.filter == Installed) {
         Q_EMIT loadingFinished(request, installedEntries());
         return;
     } else if (request.filter == Provider::ExactEntryId) {
-        for (EntryInternal entry: m_cachedEntries) {
+        for (EntryInternal entry: d->cachedEntries) {
             if (entry.uniqueId() == request.searchTerm) {
                 loadEntryDetails(entry);
             }
         }
     } else {
         if (request.searchTerm.startsWith(QStringLiteral("http"))) {
-            m_currentUrl = fixRelativeUrl(request.searchTerm);
-        } else if (!m_openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
+            d->currentUrl = fixRelativeUrl(request.searchTerm);
+        } else if (!d->openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
-            m_currentUrl = openSearchStringForRequest(request);
+            d->currentUrl = openSearchStringForRequest(request);
         }
 
         //TODO request: check if entries is above pagesize*index, otherwise load next page.
 
-        QUrl url = m_currentUrl;
+        QUrl url = d->currentUrl;
         if (!url.isEmpty()) {
             qCDebug(KNEWSTUFFCORE) << "requesting url" << url;
-            m_xmlLoader = new XmlLoader(this);
-            m_currentTime = QDateTime::currentDateTime();
-            m_loadingExtraDetails = false;
-            connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
-            connect(m_xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
-            m_xmlLoader->load(url);
+            d->xmlLoader = new XmlLoader(this);
+            d->currentTime = QDateTime::currentDateTime();
+            d->loadingExtraDetails = false;
+            connect(d->xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
+            connect(d->xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
+            d->xmlLoader->load(url);
         } else {
             Q_EMIT loadingFailed(request);
         }
@@ -153,12 +187,12 @@ void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
         }
     }
     if (!url.isEmpty()) {
-        m_xmlLoader = new XmlLoader(this);
-        m_currentTime = QDateTime::currentDateTime();
-        m_loadingExtraDetails = true;
-        connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
-        connect(m_xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
-        m_xmlLoader->load(url);
+        d->xmlLoader = new XmlLoader(this);
+        d->currentTime = QDateTime::currentDateTime();
+        d->loadingExtraDetails = true;
+        connect(d->xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseFeedData);
+        connect(d->xmlLoader, &XmlLoader::signalFailed, this, &OPDSProvider::slotLoadingFailed);
+        d->xmlLoader->load(url);
     }
 }
 
@@ -183,53 +217,53 @@ bool OPDSProvider::setProviderXML(const QDomElement &xmldata)
     if (xmldata.tagName() != QLatin1String("provider")) {
         return false;
     }
-    m_providerId = xmldata.attribute(QStringLiteral("downloadurl"));
+    d->providerId = xmldata.attribute(QStringLiteral("downloadurl"));
 
     QUrl iconurl(xmldata.attribute(QStringLiteral("icon")));
     if (!iconurl.isValid()) {
         iconurl = QUrl::fromLocalFile(xmldata.attribute(QStringLiteral("icon")));
     }
-    m_iconUrl = iconurl;
+    d->iconUrl = iconurl;
 
     QDomNode n;
     for (n = xmldata.firstChild(); !n.isNull(); n = n.nextSibling()) {
         QDomElement e = n.toElement();
         if (e.tagName() == QLatin1String("title")) {
-            m_providerName = e.text().trimmed();
+            d->providerName = e.text().trimmed();
         }
     }
 
-    m_currentUrl = QUrl(m_providerId);
+    d->currentUrl = QUrl(d->providerId);
     QTimer::singleShot(0, this, &OPDSProvider::slotEmitProviderInitialized);
     return true;
 }
 
 bool OPDSProvider::isInitialized() const
 {
-    return m_initialized;
+    return d->initialized;
 }
 
 void OPDSProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
 {
-    m_cachedEntries = cachedEntries;
+    d->cachedEntries = cachedEntries;
 }
 
 void OPDSProvider::parseFeedData(const QDomDocument &doc)
 {
-    Syndication::DocumentSource source(doc.toByteArray(), m_currentUrl.toString());
+    Syndication::DocumentSource source(doc.toByteArray(), d->currentUrl.toString());
     Syndication::Atom::Parser parser;
     Syndication::Atom::FeedDocumentPtr feedDoc = parser.parse(source).staticCast<Syndication::Atom::FeedDocument>();
 
     if (!feedDoc->isValid()) {
         qCWarning(KNEWSTUFFCORE) << "OPDS Feed not valid";
-        Q_EMIT loadingFailed(m_currentRequest);
+        Q_EMIT loadingFailed(d->currentRequest);
         return;
     }
     if (!feedDoc->title().isEmpty()) {
-        m_providerName = feedDoc->title();
+        d->providerName = feedDoc->title();
     }
     if (!feedDoc->icon().isEmpty()) {
-        m_iconUrl = QUrl(fixRelativeUrl(feedDoc->icon()));
+        d->iconUrl = QUrl(fixRelativeUrl(feedDoc->icon()));
     }
 
     EntryInternal::List entries;
@@ -237,9 +271,9 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
     {
         SearchPreset preset;
-        preset.providerId = m_providerId;
+        preset.providerId = d->providerId;
         SearchRequest request;
-        request.searchTerm = m_providerId;
+        request.searchTerm = d->providerId;
         preset.request = request;
         preset.type = Provider::SearchPresetTypes::Start;
         presets.append(preset);
@@ -248,26 +282,26 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     QList<KNSCore::Provider::CategoryMetadata> categories;
 
     // find the self link first!
-    m_selfUrl.clear();
+    d->selfUrl.clear();
     for (auto link: feedDoc->links()) {
         if (link.rel().contains(REL_SELF)) {
-            m_selfUrl = link.href();
+            d->selfUrl = link.href();
         }
     }
 
     for (auto link: feedDoc->links()) {
         // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
         if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
-            m_openSearchDocumentURL = fixRelativeUrl(link.href());
-            m_xmlLoader = new XmlLoader(this);
-            connect(m_xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseOpenSearchDocument);
-            connect(m_xmlLoader, &XmlLoader::signalFailed, this, [this]() {
-                qCWarning(KNEWSTUFFCORE) << "OpenSearch XML Document Loading failed" << m_openSearchDocumentURL;
+            d->openSearchDocumentURL = fixRelativeUrl(link.href());
+            d->xmlLoader = new XmlLoader(this);
+            connect(d->xmlLoader, &XmlLoader::signalLoaded, this, &OPDSProvider::parseOpenSearchDocument);
+            connect(d->xmlLoader, &XmlLoader::signalFailed, this, [this]() {
+                qCWarning(KNEWSTUFFCORE) << "OpenSearch XML Document Loading failed" << d->openSearchDocumentURL;
             });
-            m_xmlLoader->load(m_openSearchDocumentURL);
+            d->xmlLoader->load(d->openSearchDocumentURL);
         } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
             SearchPreset preset;
-            preset.providerId = m_providerId;
+            preset.providerId = d->providerId;
             preset.displayName = link.title();
             SearchRequest request;
             request.searchTerm = fixRelativeUrl(link.href()).toString();
@@ -308,11 +342,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
         EntryInternal entry;
         entry.setName(feedEntry.title());
-        entry.setProviderId(m_providerId);
+        entry.setProviderId(d->providerId);
         entry.setUniqueId(feedEntry.id());
 
         entry.setStatus(KNS3::Entry::Invalid);
-        for (const EntryInternal &cachedEntry : qAsConst(m_cachedEntries)) {
+        for (const EntryInternal &cachedEntry : qAsConst(d->cachedEntries)) {
             if (entry.uniqueId() == cachedEntry.uniqueId()) {
                 entry = cachedEntry;
                 break;
@@ -457,7 +491,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
             // Gutenberg doesn't do versioning in the opds, so it's update value is unreliable,
             // even though openlib and standard do use it properly. We'll instead doublecheck that
             // the new time is larger than 6min since we requested the feed.
-            if (date.secsTo(m_currentTime) > 360) {
+            if (date.secsTo(d->currentTime) > 360) {
                 if (entry.releaseDate() < date.date()) {
                     entry.setUpdateReleaseDate(date.date());
                     if (entry.status() == KNS3::Entry::Installed) {
@@ -486,11 +520,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
         entries.append(entry);
     }
 
-    if (m_loadingExtraDetails) {
+    if (d->loadingExtraDetails) {
         Q_EMIT entryDetailsLoaded(entries.first());
-        m_loadingExtraDetails = false;
+        d->loadingExtraDetails = false;
     } else {
-        Q_EMIT loadingFinished(m_currentRequest, entries);
+        Q_EMIT loadingFinished(d->currentRequest, entries);
     }
     Q_EMIT categoriesMetadataLoded(categories);
     Q_EMIT searchPresetsLoaded(presets);
@@ -498,20 +532,20 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
 void OPDSProvider::slotLoadingFailed()
 {
-    qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed" << m_currentUrl;
-    Q_EMIT loadingFailed(m_currentRequest);
+    qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed" << d->currentUrl;
+    Q_EMIT loadingFailed(d->currentRequest);
 }
 
 void OPDSProvider::slotEmitProviderInitialized()
 {
-    m_initialized = true;
+    d->initialized = true;
     Q_EMIT providerInitialized(this);
 }
 
 EntryInternal::List OPDSProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    for (const EntryInternal &entry : qAsConst(m_cachedEntries)) {
+    for (const EntryInternal &entry : qAsConst(d->cachedEntries)) {
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }
@@ -521,16 +555,16 @@ EntryInternal::List OPDSProvider::installedEntries() const
 
 void OPDSProvider::parseOpenSearchDocument(const QDomDocument &doc)
 {
-    m_openSearchTemplate = QString();
+    d->openSearchTemplate = QString();
     if (doc.documentElement().attribute(QStringLiteral("xmlns")) != OPENSEARCH_NS) {
-        qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace" << m_openSearchDocumentURL;
+        qCWarning(KNEWSTUFFCORE) << "Opensearch link does not point at document with opensearch namespace" << d->openSearchDocumentURL;
         return;
     }
     QDomElement el = doc.documentElement().firstChildElement(QStringLiteral("Url"));
     while (!el.isNull()) {
         if (el.attribute(QStringLiteral("type")).contains(OPDS_ATOM_MT)) {
-            if (m_openSearchTemplate.isEmpty() || el.attribute(QStringLiteral("type")).contains(OPDS_PROFILE)) {
-                m_openSearchTemplate = el.attribute(QStringLiteral("template"));
+            if (d->openSearchTemplate.isEmpty() || el.attribute(QStringLiteral("type")).contains(OPDS_PROFILE)) {
+                d->openSearchTemplate = el.attribute(QStringLiteral("template"));
             }
         }
 
@@ -540,7 +574,7 @@ void OPDSProvider::parseOpenSearchDocument(const QDomDocument &doc)
 
 QUrl OPDSProvider::openSearchStringForRequest(const Provider::SearchRequest &request)
 {
-    QUrl searchUrl = QUrl(m_openSearchTemplate);
+    QUrl searchUrl = QUrl(d->openSearchTemplate);
 
     QUrlQuery templateQuery(searchUrl);
     QUrlQuery query;
@@ -564,20 +598,21 @@ QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
 {
     QUrl query = QUrl(urlPart);
     if (query.isRelative()) {
-        if (m_selfUrl.isEmpty() || !QUrl(m_selfUrl).isRelative()) {
-            QUrl host = m_currentUrl;
+        if (d->selfUrl.isEmpty() || !QUrl(d->selfUrl).isRelative()) {
+            QUrl host = d->currentUrl;
             host.setPath(query.path());
             host.setQuery(query.query());
             return host;
         } else {
-            int length = m_selfUrl.size();
-            int index = m_currentUrl.toString().size()-length;
-            QString base  = m_currentUrl.toString().remove(index, length);
+            int length = d->selfUrl.size();
+            int index = d->currentUrl.toString().size()-length;
+            QString base  = d->currentUrl.toString().remove(index, length);
             base += urlPart;
             return QUrl(base);
         }
     }
     return query;
 }
+
 }
 

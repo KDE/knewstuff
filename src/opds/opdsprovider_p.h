@@ -10,6 +10,7 @@
 #include "provider.h"
 #include <xmlloader.h>
 #include <QMap>
+#include <memory>
 
 /**
  * OPDS provider.
@@ -87,30 +88,9 @@ private:
     QUrl openSearchStringForRequest(const KNSCore::Provider::SearchRequest &request);
     QUrl fixRelativeUrl(QString urlPart);
 
-    QString m_providerId;
-    QString m_providerName;
-    QUrl m_iconUrl;
-    bool m_initialized;
+    class Private;
+    std::unique_ptr<Private> d;
 
-    /***
-     * OPDS catalogs consist of many small atom feeds. This variable
-     * tracks which atom feed to load.
-     */
-    QUrl m_currentUrl;
-    // partial url identifying the self. This is necessary to resolve relative links.
-    QString m_selfUrl;
-
-
-    QDateTime m_currentTime;
-    bool m_loadingExtraDetails;
-
-    XmlLoader *m_xmlLoader;
-
-    EntryInternal::List m_cachedEntries;
-    Provider::SearchRequest m_currentRequest;
-
-    QUrl m_openSearchDocumentURL;
-    QString m_openSearchTemplate;
 
     Q_DISABLE_COPY(OPDSProvider)
 
