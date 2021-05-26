@@ -157,8 +157,9 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
             }
         }
     } else {
-        if (request.searchTerm.startsWith(QStringLiteral("http"))) {
-            d->currentUrl = fixRelativeUrl(request.searchTerm);
+        if (QUrl(request.searchTerm).scheme().startsWith(QStringLiteral("http"))) {
+
+            d->currentUrl = QUrl(request.searchTerm);
         } else if (!d->openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
@@ -613,17 +614,11 @@ QUrl OPDSProvider::fixRelativeUrl(QString urlPart)
 {
     QUrl query = QUrl(urlPart);
     if (query.isRelative()) {
-        if (d->selfUrl.isEmpty() || !QUrl(d->selfUrl).isRelative()) {
+        if (d->selfUrl.isEmpty() || QUrl(d->selfUrl).isRelative()) {
             QUrl host = d->currentUrl;
-            host.setPath(query.path());
-            host.setQuery(query.query());
-            return host;
+            return d->currentUrl.resolved(query);
         } else {
-            int length = d->selfUrl.size();
-            int index = d->currentUrl.toString().size()-length;
-            QString base  = d->currentUrl.toString().remove(index, length);
-            base += urlPart;
-            return QUrl(base);
+            return QUrl(d->selfUrl).resolved(query);
         }
     }
     return query;
