@@ -8,14 +8,16 @@
 #include <QMimeDatabase>
 #include <KFormat>
 
+static const KFormat formatter;
+
 class DownloadLinkInfo::Private
 {
+
 public:
     Private()
         : id(0)
         , isDownloadtypeLink(true)
         , size(0)
-        , formatter(KFormat())
     {
     }
 
@@ -28,7 +30,6 @@ public:
     quint64 size;
     QString mimeType;
     QString icon;
-    KFormat formatter;
 };
 
 DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
@@ -107,7 +108,7 @@ QString DownloadLinkInfo::formattedSize() const
     if (d->size == 0) {
         return QString();
     }
-    return d->formatter.formatByteSize(d->size * 1000);
+    return formatter.formatByteSize(d->size * 1000);
 }
 
 QString DownloadLinkInfo::icon() const
