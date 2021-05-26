@@ -107,7 +107,7 @@ public:
      */
     enum SearchPresetTypes {
         NoPresetType = 0,
-        GoBack,       ///preset representing the previous search.
+        GoBack,       ///< preset representing the previous search.
         Root,         ///preset indicating a root directory.
         Start,        ///preset indicating the first entry.
         Popular,      ///preset indicating popular items.

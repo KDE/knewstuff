@@ -91,7 +91,6 @@ private:
     class Private;
     std::unique_ptr<Private> d;
 
-
     Q_DISABLE_COPY(OPDSProvider)
 
 };

@@ -120,12 +120,10 @@ public:
 OPDSProvider::OPDSProvider():
     d(new Private)
 {
-
 }
 
 OPDSProvider::~OPDSProvider()
 {
-
 }
 
 QString OPDSProvider::id() const
@@ -267,7 +265,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     QString fullEntryMimeType = QStringList({OPDS_ATOM_MT, OPDS_TYPE_ENTRY, OPDS_PROFILE}).join(QStringLiteral(";"));
 
     if (!feedDoc->isValid()) {
-        qCWarning(KNEWSTUFFCORE) << "OPDS Feed not valid";
+        qCWarning(KNEWSTUFFCORE) << "OPDS Feed at" << d->currentUrl << "not valid";
         Q_EMIT loadingFailed(d->currentRequest);
         return;
     }
@@ -548,7 +546,7 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
 
 void OPDSProvider::slotLoadingFailed()
 {
-    qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed" << d->currentUrl;
+    qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed for" << d->currentUrl;
     Q_EMIT loadingFailed(d->currentRequest);
 }
 

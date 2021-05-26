@@ -481,7 +481,7 @@ public:
      * @since 5.83
      */
     void setEntryType(EntryType type);
-    EntryType entryType();
+    EntryType entryType() const;
 
     /**
      * set the xml for the entry

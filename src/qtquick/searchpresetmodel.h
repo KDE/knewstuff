@@ -15,6 +15,7 @@
  * @brief The SearchPresetModel class
  *
  * this class handles search presets.
+ * @since 5.83
  */
 class SearchPresetModel : public QAbstractListModel
 {
