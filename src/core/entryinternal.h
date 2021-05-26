@@ -72,14 +72,14 @@ public:
     };
 
     struct DownloadLinkInformation {
-        QString name;
-        QString priceAmount;
-        QString distributionType; ///OCS Distribution Type, this is for which OS the file is useful.
-        QString descriptionLink; ///Link to intermediary description.
-        int id;
+        QString name;             // Displayed name.
+        QString priceAmount;      // Price formatted as a string.
+        QString distributionType; // OCS Distribution Type, this is for which OS the file is useful.
+        QString descriptionLink;  // Link to intermediary description.
+        int id;                   // Unique integer representing the download number in the list.
         bool isDownloadtypeLink;
-        quint64 size = 0;
-        QStringList tags;
+        quint64 size = 0;         // Size in kilobytes.
+        QStringList tags;         // variety of tags that can represent mimetype or url location.
     };
 
     enum EntryEvent {
@@ -95,8 +95,8 @@ public:
      * @since 5.83
      */
     enum EntryType {
-        CatalogEntry = 0, /// These are the main entries that KNewStuff can get the details about and download links for.
-        GroupEntry        /// these are entries whose payload is another feed. Currently only used by the OPDS provider.
+        CatalogEntry = 0, ///< These are the main entries that KNewStuff can get the details about and download links for.
+        GroupEntry        ///< these are entries whose payload is another feed. Currently only used by the OPDS provider.
     };
 
     /**
