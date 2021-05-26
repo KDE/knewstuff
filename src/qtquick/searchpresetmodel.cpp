@@ -5,8 +5,9 @@
 */
 
 #include "searchpresetmodel.h"
-
 #include "engine.h"
+
+#include "knewstuffquick_debug.h"
 
 #include <KLocalizedString>
 
@@ -55,7 +56,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
         return result;
     }
 
-    if (role == Qt::DisplayRole) {
+    if (role == DisplayNameRole) {
         QString name = preset.displayName;
 
         if (name.isEmpty()) {
@@ -98,7 +99,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
         }
 
         result.setValue(name);
-    } else if (role == Qt::DecorationRole) {
+    } else if (role == IconRole) {
         QString name = preset.iconName;
 
         if (name.isEmpty()) {
@@ -148,7 +149,7 @@ int SearchPresetModel::rowCount(const QModelIndex &parent) const
 void SearchPresetModel::loadSearch(const QModelIndex &index)
 {
     if (index.row()>=rowCount() || !index.isValid()) {
-        qWarning() << "index SearchPresetModel::loadSearch invalid" << index;
+        qCWarning(KNEWSTUFFQUICK) << "index SearchPresetModel::loadSearch invalid" << index;
         return;
     }
     const KNSCore::Provider::SearchPreset preset = d->engine->searchPresets().at(index.row());
