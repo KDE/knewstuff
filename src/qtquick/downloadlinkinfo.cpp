@@ -15,6 +15,7 @@ public:
         : id(0)
         , isDownloadtypeLink(true)
         , size(0)
+        , formatter(KFormat())
     {
     }
 
@@ -27,6 +28,7 @@ public:
     quint64 size;
     QString mimeType;
     QString icon;
+    KFormat formatter;
 };
 
 DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
@@ -105,7 +107,7 @@ QString DownloadLinkInfo::formattedSize() const
     if (d->size == 0) {
         return QString();
     }
-    return KFormat().formatByteSize(d->size * 1000);
+    return d->formatter.formatByteSize(d->size * 1000);
 }
 
 QString DownloadLinkInfo::icon() const
