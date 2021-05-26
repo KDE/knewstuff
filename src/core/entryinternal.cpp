@@ -374,7 +374,7 @@ void EntryInternal::setEntryType(EntryInternal::EntryType type)
     d->mEntryType = type;
 }
 
-EntryInternal::EntryType EntryInternal::entryType()
+EntryInternal::EntryType EntryInternal::entryType() const
 {
     return d->mEntryType;
 }
