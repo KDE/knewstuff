@@ -181,9 +181,14 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
 {
     QUrl url;
-    for (auto link : entry.downloadLinkInformationList()) {
-        if (link.distributionType.contains(OPDS_TYPE_ENTRY)) {
-            url = QUrl(link.descriptionLink);
+    QString entryMimeType = QStringList({OPDS_ATOM_MT, OPDS_TYPE_ENTRY, OPDS_PROFILE}).join(QStringLiteral(";"));
+    for (auto link : entry.downloadLinkInformationList() ) {
+        if ( link.tags.contains( KEY_MIME_TYPE+entryMimeType ) ) {
+            for (QString string: link.tags) {
+                if (string.startsWith(KEY_URL)) {
+                    url = QUrl(string.split(QStringLiteral("=")).last());
+                }
+            }
         }
     }
     if (!url.isEmpty()) {
@@ -253,6 +258,8 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
     Syndication::DocumentSource source(doc.toByteArray(), d->currentUrl.toString());
     Syndication::Atom::Parser parser;
     Syndication::Atom::FeedDocumentPtr feedDoc = parser.parse(source).staticCast<Syndication::Atom::FeedDocument>();
+
+    QString fullEntryMimeType = QStringList({OPDS_ATOM_MT, OPDS_TYPE_ENTRY, OPDS_PROFILE}).join(QStringLiteral(";"));
 
     if (!feedDoc->isValid()) {
         qCWarning(KNEWSTUFFCORE) << "OPDS Feed not valid";
@@ -463,7 +470,11 @@ void OPDSProvider::parseFeedData(const QDomDocument &doc)
                 // Todo: think of using link rel's 'replies', 'payment'(donation) and 'version-history'.
 
                 if (link.type().startsWith(OPDS_ATOM_MT) ) {
-                    groupEntryUrl = linkUrl;
+                    if (link.type() == fullEntryMimeType) {
+                        entry.appendDownloadLinkInformation( download );
+                    } else {
+                        groupEntryUrl = linkUrl;
+                    }
 
                 } else  if (link.type() == HTML_MT && linkRelation.contains(REL_ALTERNATE)) {
                     entry.setHomepage( QUrl(linkUrl) );
