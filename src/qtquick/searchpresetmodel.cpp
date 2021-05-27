@@ -47,93 +47,89 @@ QHash<int, QByteArray> SearchPresetModel::roleNames() const
 QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
 {
     QVariant result;
-    const QList<KNSCore::Provider::SearchPreset> presets = d->engine->searchPresets();
-    const KNSCore::Provider::SearchPreset preset = presets[index.row()];
-    if (!index.isValid()) {
-        return result;
-    }
-    if (index.row() >= presets.count()) {
-        return result;
-    }
+    if (index.isValid() && checkIndex(index)) {
+        const QList<KNSCore::Provider::SearchPreset> presets = d->engine->searchPresets();
+        const KNSCore::Provider::SearchPreset preset = presets[index.row()];
 
-    if (role == DisplayNameRole) {
-        QString name = preset.displayName;
+        if (role == DisplayNameRole) {
+            QString name = preset.displayName;
 
-        if (name.isEmpty()) {
-            switch (preset.type) {
-            case KNSCore::Provider::SearchPresetTypes::GoBack:
-                name = i18nc("Knewstuff5", "Back");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Popular:
-                name = i18nc("Knewstuff5", "Popular");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Featured:
-                name = i18nc("Knewstuff5", "Featured");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Start:
-                name = i18nc("Knewstuff5", "Restart");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::New:
-                name = i18nc("Knewstuff5", "New");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Root:
-                name = i18nc("Knewstuff5", "Home");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Shelf:
-                name = i18nc("Knewstuff5", "Shelf");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::FolderUp:
-                name = i18nc("Knewstuff5", "Up");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Recommended:
-                name = i18nc("Knewstuff5", "Recommended");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Subscription:
-                name = i18nc("Knewstuff5", "Subscriptions");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::AllEntries:
-                name = i18nc("Knewstuff5", "All Entries");
-                break;
+            if (name.isEmpty()) {
+                switch (preset.type) {
+                case KNSCore::Provider::SearchPresetTypes::GoBack:
+                    name = i18nc("Knewstuff5", "Back");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Popular:
+                    name = i18nc("Knewstuff5", "Popular");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Featured:
+                    name = i18nc("Knewstuff5", "Featured");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Start:
+                    name = i18nc("Knewstuff5", "Restart");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::New:
+                    name = i18nc("Knewstuff5", "New");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Root:
+                    name = i18nc("Knewstuff5", "Home");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Shelf:
+                    name = i18nc("Knewstuff5", "Shelf");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::FolderUp:
+                    name = i18nc("Knewstuff5", "Up");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Recommended:
+                    name = i18nc("Knewstuff5", "Recommended");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Subscription:
+                    name = i18nc("Knewstuff5", "Subscriptions");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::AllEntries:
+                    name = i18nc("Knewstuff5", "All Entries");
+                    break;
+                }
+
             }
 
-        }
+            result.setValue(name);
+        } else if (role == IconRole) {
+            QString name = preset.iconName;
 
-        result.setValue(name);
-    } else if (role == IconRole) {
-        QString name = preset.iconName;
-
-        if (name.isEmpty()) {
-            switch (preset.type) {
-            case KNSCore::Provider::SearchPresetTypes::GoBack:
-                name = QStringLiteral("arrow-left");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Popular:
-            case KNSCore::Provider::SearchPresetTypes::Featured:
-            case KNSCore::Provider::SearchPresetTypes::Recommended:
-                name = QStringLiteral("rating");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::New:
-                name = QStringLiteral("change-date-symbolic");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Start:
-                name = QStringLiteral("start-over");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Root:
-                name = QStringLiteral("go-home");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::Shelf:
-            case KNSCore::Provider::SearchPresetTypes::Subscription:
-                name = QStringLiteral("bookmark");
-                break;
-            case KNSCore::Provider::SearchPresetTypes::FolderUp:
-                name = QStringLiteral("arrow-up");
-                break;
-            default:
-                name = QStringLiteral("search");
+            if (name.isEmpty()) {
+                switch (preset.type) {
+                case KNSCore::Provider::SearchPresetTypes::GoBack:
+                    name = QStringLiteral("arrow-left");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Popular:
+                case KNSCore::Provider::SearchPresetTypes::Featured:
+                case KNSCore::Provider::SearchPresetTypes::Recommended:
+                    name = QStringLiteral("rating");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::New:
+                    name = QStringLiteral("change-date-symbolic");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Start:
+                    name = QStringLiteral("start-over");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Root:
+                    name = QStringLiteral("go-home");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::Shelf:
+                case KNSCore::Provider::SearchPresetTypes::Subscription:
+                    name = QStringLiteral("bookmark");
+                    break;
+                case KNSCore::Provider::SearchPresetTypes::FolderUp:
+                    name = QStringLiteral("arrow-up");
+                    break;
+                default:
+                    name = QStringLiteral("search");
+                }
             }
-        }
 
-        result.setValue(name);
+            result.setValue(name);
+        }
     }
     return result;
 }
