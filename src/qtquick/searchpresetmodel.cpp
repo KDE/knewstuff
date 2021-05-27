@@ -89,6 +89,8 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
                 case KNSCore::Provider::SearchPresetTypes::AllEntries:
                     name = i18nc("Knewstuff5", "All Entries");
                     break;
+                default:
+                    name = i18nc("Knewstuff5", "Search Preset: %1", preset.request.searchTerm);
                 }
 
             }
