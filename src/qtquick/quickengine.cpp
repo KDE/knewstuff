@@ -286,7 +286,7 @@ void Engine::setSearchTerm(const QString &newSearchTerm)
     }
 }
 
-QObject* Engine::searchPresetModel() const
+QObject *Engine::searchPresetModel() const
 {
     return d->searchPresetModel;
 }
