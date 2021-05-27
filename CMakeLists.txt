@@ -37,7 +37,6 @@ find_package(KF5Service ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF_DEP_VERSION} REQUIRED)
-find_package(KF5Syndication ${KF5_DEP_VERSION} REQUIRED)
 
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
@@ -58,6 +57,14 @@ set_package_properties(KF5Kirigami2 PROPERTIES
     URL "https://techbase.kde.org/Kirigami"
     PURPOSE "Required by KNewStuffQuick's qml components"
     TYPE RUNTIME)
+
+find_package(KF5Syndication ${KF5_DEP_VERSION})
+set_package_properties(KF5Syndication PROPERTIES
+    DESCRIPTION "KDE's RSS/Atom parser library"
+    PURPOSE "Used by the OPDS provider to handle most of the parsing."
+    TYPE OPTIONAL
+)
+
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")

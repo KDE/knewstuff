@@ -35,10 +35,16 @@ set(KNewStuffCore_SRCS
 
     ../attica/atticaprovider.cpp
     ../staticxml/staticxmlprovider.cpp
-    ../opds/opdsprovider.cpp
+
+
 
     ../upload/atticahelper.cpp
 )
+if(KF5Syndication_FOUND)
+    set(KNewStuffCore_syndication_SRCS
+        ../opds/opdsprovider.cpp
+        )
+endif()
 
 ecm_qt_declare_logging_category(KNewStuffCore_SRCS
     HEADER knewstuffcore_debug.h
@@ -49,7 +55,7 @@ ecm_qt_declare_logging_category(KNewStuffCore_SRCS
     EXPORT KNEWSTUFF
 )
 
-add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} )
+add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} ${KNewStuffCore_syndication_SRCS})
 add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
 
 ecm_generate_export_header(KF5NewStuffCore
@@ -86,8 +92,15 @@ target_link_libraries(KF5NewStuffCore
     KF5::ConfigCore
     KF5::Package
     Qt5::Gui                   # For QImage
-    KF5::Syndication #OPDS
 )
+
+if(KF5Syndication_FOUND)
+    target_compile_definitions(KF5NewStuffCore PRIVATE -DSYNDICATION_FOUND="${KF5Syndication_FOUND}")
+    target_link_libraries(KF5NewStuffCore
+        PRIVATE
+        KF5::Syndication #OPDS
+    )
+endif()
 
 set_target_properties(KF5NewStuffCore PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
