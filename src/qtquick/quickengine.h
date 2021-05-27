@@ -108,7 +108,7 @@ public:
     Q_INVOKABLE void resetSearchTerm();
     Q_SIGNAL void searchTermChanged();
 
-    QObject* searchPresetModel() const;
+    QObject *searchPresetModel() const;
     Q_SIGNAL void searchPresetModelChanged();
 
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)

@@ -169,7 +169,6 @@ public:
     };
 
 
-public Q_SLOTS:
 
     void slotLoadingFailed() {
         qCWarning(KNEWSTUFFCORE) << "OPDS Loading failed for" << currentUrl;
