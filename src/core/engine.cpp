@@ -44,7 +44,9 @@
 // own
 #include "../attica/atticaprovider_p.h"
 #include "../staticxml/staticxmlprovider_p.h"
+#ifdef SYNDICATION_FOUND
 #include "../opds/opdsprovider_p.h"
+#endif
 #include "cache.h"
 
 using namespace KNSCore;
@@ -375,12 +377,14 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
                 d->categoriesMetadata = categories;
                 Q_EMIT signalCategoriesMetadataLoded(categories);
             });
+#ifdef SYNDICATION_FOUND
         } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")){
             provider.reset(new OPDSProvider);
             connect(provider.data(), &Provider::searchPresetsLoaded, this, [this](const QList<Provider::SearchPreset> &presets) {
                 d->searchPresets = presets;
                 Q_EMIT signalSearchPresetsLoaded(presets);
             });
+#endif
         } else {
             provider.reset(new StaticXmlProvider);
         }
