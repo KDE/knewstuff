@@ -10,6 +10,7 @@
 #include "question.h"
 #include "tagsfilterchecker.h"
 
+#include <KFormat>
 #include <KLocalizedString>
 #include <QCollator>
 #include <knewstuffcore_debug.h>
@@ -521,9 +522,31 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     qCDebug(KNEWSTUFFCORE) << "job error: " << job->metadata().error() << " status code: " << job->metadata().statusCode() << job->metadata().message();
 
     if (job->metadata().error() == Attica::Metadata::NetworkError) {
-        Q_EMIT signalErrorCode(KNSCore::NetworkError,
-                               i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()),
-                               job->metadata().statusCode());
+        if (job->metadata().statusCode() == 503) {
+            QDateTime retryAfter;
+            static const QByteArray retryAfterKey{"Retry-After"};
+            for (const QNetworkReply::RawHeaderPair &headerPair : job->metadata().headers()) {
+                if (headerPair.first == retryAfterKey) {
+                    // Retry-After is not a known header, so we need to do a bit of running around to make that work
+                    // Also, the fromHttpDate function is in the private qnetworkrequest header, so we can't use that
+                    // So, simple workaround, just pass it through a dummy request and get a formatted date out (the
+                    // cost is sufficiently low here, given we've just done a bunch of i/o heavy things, so...)
+                    QNetworkRequest dummyRequest;
+                    dummyRequest.setRawHeader(QByteArray{"Last-Modified"}, headerPair.second);
+                    retryAfter = dummyRequest.header(QNetworkRequest::LastModifiedHeader).toDateTime();
+                    break;
+                }
+            }
+            static const KFormat formatter;
+            Q_EMIT signalErrorCode(KNSCore::TryAgainLaterError,
+                                   i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
+                                        formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
+                                   {retryAfter});
+        } else {
+            Q_EMIT signalErrorCode(KNSCore::NetworkError,
+                                   i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()),
+                                   job->metadata().statusCode());
+        }
     }
     if (job->metadata().error() == Attica::Metadata::OcsError) {
         if (job->metadata().statusCode() == 200) {

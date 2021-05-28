@@ -30,6 +30,9 @@ KNEWSTUFFCORE_EXPORT Q_NAMESPACE
         InstallationError, ///< Installation of a content item has failed. If known, the entry's unique ID will be the metadata
         ImageError, ///< Loading an image has failed. The entry name and preview type which failed will be held in the metadata as a QVariantList
         AdoptionError, ///< Adopting one entry has failed. The adoption command will be in the metadata as a QVariantList.
+        TryAgainLaterError, ///< Specific error condition for failed network calls which explicitly request an amount of time to wait before retrying (generally
+                            ///< interpreted as maintenance). The retry will be scheduled automatically, and this code can be used to show the user how long
+                            ///< they have to wait. The time after which the user can try again can be read as a QDateTime in the metadata.
     };
 Q_ENUM_NS(ErrorCode)
 }
