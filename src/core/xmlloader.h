@@ -11,6 +11,7 @@
 #ifndef KNEWSTUFF3_XMLLOADER_P_H
 #define KNEWSTUFF3_XMLLOADER_P_H
 
+#include <QNetworkReply>
 #include <QObject>
 #include <QString>
 #include <QUrl>
@@ -55,6 +56,13 @@ Q_SIGNALS:
      */
     void signalLoaded(const QDomDocument &);
     void signalFailed();
+    /**
+     * Fired in case there is a http error reported
+     * In some instances this is useful information for our users, and we want to make sure we report this centrally
+     * @param status The HTTP status code (fired in cases where it is perceived by QNetworkReply as an error)
+     * @param rawHeaders The raw HTTP headers for the errored-out network request
+     */
+    void signalHttpError(int status, QList<QNetworkReply::RawHeaderPair> rawHeaders);
 
     void jobStarted(KJob *);
 

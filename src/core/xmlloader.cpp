@@ -52,6 +52,7 @@ void XmlLoader::load(const QUrl &url)
             HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
             connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
             connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
+            connect(job, &HTTPJob::httpError, this, &XmlLoader::signalHttpError);
             Q_EMIT jobStarted(job);
         } else if (url.isLocalFile()) {
             QFile localProvider(url.toLocalFile());
