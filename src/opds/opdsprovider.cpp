@@ -5,14 +5,16 @@
 */
 #include "opdsprovider_p.h"
 
-#include <syndication/atom/atom.h>
-#include <syndication_export.h>
-#include <syndication/documentsource.h>
+#include <KFormat>
+#include <KLocalizedString>
 #include <QDate>
+#include <QIcon>
+#include <QLocale>
 #include <QTimer>
 #include <QUrlQuery>
-#include <QLocale>
-#include <QIcon>
+#include <syndication/atom/atom.h>
+#include <syndication/documentsource.h>
+#include <syndication_export.h>
 
 #include <knewstuffcore_debug.h>
 
@@ -246,19 +248,54 @@ public:
         for (auto link: feedDoc->links()) {
             // There will be a number of links toplevel, amongst which probably a lot of sortorder and navigation links.
             if (link.rel() == REL_SEARCH && link.type() == OPENSEARCH_MT) {
+                std::function<void(Syndication::Atom::Link)> osdUrlLoader;
+                osdUrlLoader = [this, &osdUrlLoader](Syndication::Atom::Link theLink) {
+                    openSearchDocumentURL = fixRelativeUrl(theLink.href());
+                    xmlLoader = new XmlLoader(q);
 
-                openSearchDocumentURL = fixRelativeUrl(link.href());
-                xmlLoader = new XmlLoader(q);
+                    connect(xmlLoader, &XmlLoader::signalLoaded, q, [this](const QDomDocument &doc) {
+                        q->d->parseOpenSearchDocument(doc);
+                    });
+                    connect(xmlLoader, &XmlLoader::signalFailed, q, [this]() {
+                        qCWarning(KNEWSTUFFCORE) << "OpenSearch XML Document Loading failed" << openSearchDocumentURL;
+                    });
+                    connect(xmlLoader,
+                            &XmlLoader::signalHttpError,
+                            q,
+                            [this, &osdUrlLoader, theLink](int status, QList<QNetworkReply::RawHeaderPair> rawHeaders) {
+                                if (status == 503) { // Temporarily Unavailable
+                                    QDateTime retryAfter;
+                                    static const QByteArray retryAfterKey{"Retry-After"};
+                                    for (const QNetworkReply::RawHeaderPair &headerPair : rawHeaders) {
+                                        if (headerPair.first == retryAfterKey) {
+                                            // Retry-After is not a known header, so we need to do a bit of running around to make that work
+                                            // Also, the fromHttpDate function is in the private qnetworkrequest header, so we can't use that
+                                            // So, simple workaround, just pass it through a dummy request and get a formatted date out (the
+                                            // cost is sufficiently low here, given we've just done a bunch of i/o heavy things, so...)
+                                            QNetworkRequest dummyRequest;
+                                            dummyRequest.setRawHeader(QByteArray{"Last-Modified"}, headerPair.second);
+                                            retryAfter = dummyRequest.header(QNetworkRequest::LastModifiedHeader).toDateTime();
+                                            break;
+                                        }
+                                    }
+                                    QTimer::singleShot(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch(), q, [&osdUrlLoader, theLink]() {
+                                        osdUrlLoader(theLink);
+                                    });
+                                    // if it's a matter of a human moment's worth of seconds, just reload
+                                    if (retryAfter.toSecsSinceEpoch() - QDateTime::currentSecsSinceEpoch() > 2) {
+                                        // more than that, spit out TryAgainLaterError to let the user know what we're doing with their time
+                                        static const KFormat formatter;
+                                        Q_EMIT q->signalErrorCode(
+                                            KNSCore::TryAgainLaterError,
+                                            i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
+                                                 formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
+                                            {retryAfter});
+                                    }
+                                }
+                            });
 
-                connect(xmlLoader, &XmlLoader::signalLoaded, q, [this](const QDomDocument &doc) {
-                    q->d->parseOpenSearchDocument(doc);
-                });
-                connect(xmlLoader, &XmlLoader::signalFailed, q, [this]() {
-                    qCWarning(KNEWSTUFFCORE) << "OpenSearch XML Document Loading failed" << openSearchDocumentURL;
-                });
-
-                xmlLoader->load(openSearchDocumentURL);
-
+                    xmlLoader->load(openSearchDocumentURL);
+                };
             } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
                 SearchPreset preset;
                 preset.providerId = providerId;
