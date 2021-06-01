@@ -18,6 +18,7 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <KFormat>
 #include <KLocalizedString>
 #include <KShell>
 #include <QDesktopServices>
@@ -345,6 +346,34 @@ void Engine::loadProviders()
             });
             connect(loader, &XmlLoader::signalFailed, this, [this]() {
                 s_engineProviderLoaders()->localData().remove(m_providerFileUrl);
+            });
+            connect(loader, &XmlLoader::signalHttpError, this, [this](int status, QList<QNetworkReply::RawHeaderPair> rawHeaders) {
+                if (status == 503) { // Temporarily Unavailable
+                    QDateTime retryAfter;
+                    static const QByteArray retryAfterKey{"Retry-After"};
+                    for (const QNetworkReply::RawHeaderPair &headerPair : rawHeaders) {
+                        if (headerPair.first == retryAfterKey) {
+                            // Retry-After is not a known header, so we need to do a bit of running around to make that work
+                            // Also, the fromHttpDate function is in the private qnetworkrequest header, so we can't use that
+                            // So, simple workaround, just pass it through a dummy request and get a formatted date out (the
+                            // cost is sufficiently low here, given we've just done a bunch of i/o heavy things, so...)
+                            QNetworkRequest dummyRequest;
+                            dummyRequest.setRawHeader(QByteArray{"Last-Modified"}, headerPair.second);
+                            retryAfter = dummyRequest.header(QNetworkRequest::LastModifiedHeader).toDateTime();
+                            break;
+                        }
+                    }
+                    QTimer::singleShot(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch(), this, &Engine::loadProviders);
+                    // if it's a matter of a human moment's worth of seconds, just reload
+                    if (retryAfter.toSecsSinceEpoch() - QDateTime::currentSecsSinceEpoch() > 2) {
+                        // more than that, spit out TryAgainLaterError to let the user know what we're doing with their time
+                        static const KFormat formatter;
+                        Q_EMIT signalErrorCode(KNSCore::TryAgainLaterError,
+                                               i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
+                                                    formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
+                                               {retryAfter});
+                    }
+                }
             });
             loader->load(QUrl(m_providerFileUrl));
         }
