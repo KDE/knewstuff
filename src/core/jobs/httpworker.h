@@ -7,7 +7,7 @@
 #ifndef HTTPWORKER_H
 #define HTTPWORKER_H
 
-#include <QThread>
+#include <QNetworkReply>
 #include <QUrl>
 
 class QNetworkReply;
@@ -33,6 +33,14 @@ public:
     Q_SIGNAL void progress(qlonglong current, qlonglong total);
     Q_SIGNAL void completed();
     Q_SIGNAL void data(const QByteArray &data);
+
+    /**
+     * Fired in case there is a http error reported
+     * In some instances this is useful information for our users, and we want to make sure we report this centrally
+     * @param status The HTTP status code (fired in cases where it is perceived by QNetworkReply as an error)
+     * @param rawHeaders The raw HTTP headers for the errored-out network request
+     */
+    Q_SIGNAL void httpError(int status, QList<QNetworkReply::RawHeaderPair> rawHeaders);
 
     Q_SLOT void handleReadyRead();
     Q_SLOT void handleFinished();

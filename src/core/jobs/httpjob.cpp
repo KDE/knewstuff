@@ -47,6 +47,7 @@ void HTTPJob::start()
     connect(worker, &HTTPWorker::data, this, &HTTPJob::handleWorkerData);
     connect(worker, &HTTPWorker::completed, this, &HTTPJob::handleWorkerCompleted);
     connect(worker, &HTTPWorker::error, this, &HTTPJob::handleWorkerError);
+    connect(worker, &HTTPWorker::httpError, this, &HTTPJob::httpError);
     worker->startRequest();
 }
 

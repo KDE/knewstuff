@@ -9,6 +9,7 @@
 
 #include "jobbase.h"
 
+#include <QNetworkReply>
 #include <QUrl>
 
 namespace KNSCore
@@ -36,6 +37,14 @@ Q_SIGNALS:
      * of an error), so you should rely on result() instead.
      */
     void data(KJob *job, const QByteArray &data);
+
+    /**
+     * Fired in case there is a http error reported
+     * In some instances this is useful information for our users, and we want to make sure we report this centrally
+     * @param status The HTTP status code (fired in cases where it is perceived by QNetworkReply as an error)
+     * @param rawHeaders The raw HTTP headers for the errored-out network request
+     */
+    void httpError(int status, QList<QNetworkReply::RawHeaderPair> rawHeaders);
 
 protected Q_SLOTS:
     void handleWorkerData(const QByteArray &data);

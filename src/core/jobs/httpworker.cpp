@@ -17,6 +17,7 @@
 #include <QNetworkRequest>
 #include <QStandardPaths>
 #include <QStorageInfo>
+#include <QThread>
 
 class HTTPWorkerNAM
 {
@@ -125,6 +126,10 @@ void HTTPWorker::handleFinished()
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
     if (d->reply->error() != QNetworkReply::NoError) {
         qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
+        if (d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() > 100) {
+            // In this case, we're being asked to wait a bit...
+            Q_EMIT httpError(d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt(), d->reply->rawHeaderPairs());
+        }
         Q_EMIT error(d->reply->errorString());
     }
 
