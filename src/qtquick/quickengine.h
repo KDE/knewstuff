@@ -11,6 +11,7 @@
 #include <QQmlListProperty>
 
 #include "entrywrapper.h"
+#include "errorcode.h"
 #include "knewstuffquick_export.h"
 
 /**
@@ -64,6 +65,24 @@ public:
         DetailsLoadedEvent = KNSCore::EntryInternal::DetailsLoadedEvent,
     };
     Q_ENUM(EntryEvent);
+
+    /**
+     * Registering the error codes from KNSCore to allow them to be used easily in QtQuick
+     * @see KNSCore::ErrorCode
+     * @since 5.84
+     */
+    enum ErrorCode {
+        UnknownError = KNSCore::ErrorCode::UnknownError,
+        NetworkError = KNSCore::ErrorCode::NetworkError,
+        OcsError = KNSCore::ErrorCode::OcsError,
+        ConfigFileError = KNSCore::ErrorCode::ConfigFileError,
+        ProviderError = KNSCore::ErrorCode::ProviderError,
+        InstallationError = KNSCore::ErrorCode::InstallationError,
+        ImageError = KNSCore::ErrorCode::ImageError,
+        AdoptionError = KNSCore::ErrorCode::AdoptionError,
+        TryAgainLaterError = KNSCore::ErrorCode::TryAgainLaterError,
+    };
+    Q_ENUM(ErrorCode)
 
     QString configFile() const;
     void setConfigFile(const QString &newFile);
