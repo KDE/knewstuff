@@ -342,6 +342,7 @@ KCM.GridViewKCM {
                 text: i18nd("knewstuff5", "Go to...")
                 iconName: "go-next";
                 id: searchModelActions;
+                visible: children.length > 0;
             },
             Kirigami.Action {
                 text: i18nd("knewstuff5", "Search...")
