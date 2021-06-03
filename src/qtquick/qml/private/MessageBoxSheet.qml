@@ -32,7 +32,7 @@ Kirigami.OverlaySheet {
         QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
         Kirigami.Icon {
             id: messageIcon
-            QtLayouts.Layout.alignment: Qt.AlignVCenter
+            QtLayouts.Layout.alignment: Qt.AlignTop
             visible: source !== ""
         }
         TextEdit {
