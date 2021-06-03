@@ -48,6 +48,13 @@ class DownloadDialogPrivate;
    Uncompress=archive
  * </pre>
  *
+ * To use a local providers file instead of a remote one (this is useful for example in cases where you wish to use
+ * an OPDS feed, which likely does not have a providers file, and you lack a server on which to host one of your
+ * own), you can set <em>UseLocalProvidersFile=true</em> instead of ProvidersUrl. This will make the engine attempt
+ * to load a file located next to your knsrc file, with the same name as that file, with .providers appended. For
+ * example, if your configuration file is called "appname.knsrc", then your providers file should be named
+ * "appname.providers"
+ *
  * Uncompress can be one of: always, never or archive:
  * <ol>
  * <li>always: assume all downloaded files are archives and need to be extracted</li>

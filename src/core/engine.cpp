@@ -241,12 +241,16 @@ bool Engine::init(const QString &configfile)
 
     d->name = group.readEntry("Name");
     m_categories = group.readEntry("Categories", QStringList());
+    qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_adoptionCommand = group.readEntry("AdoptionCommand");
     d->useLabel = group.readEntry("UseLabel", i18n("Use"));
     Q_EMIT useLabelChanged();
 
-    qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl");
+    if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
+        // The local providers file is called "appname.providers", to match "appname.knsrc"
+        m_providerFileUrl = QLatin1String("%1.providers").arg(configFileName.left(configFileName.length() - 6));
+    }
 
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());

@@ -16,9 +16,23 @@
 #include <KConfig>
 
 #include <QByteArray>
+#include <QFile>
 
 namespace KNSCore
 {
+void handleData(XmlLoader *q, const QByteArray &data)
+{
+    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-START--";
+    qCDebug(KNEWSTUFFCORE) << QString::fromUtf8(data);
+    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-END--";
+    QDomDocument doc;
+    if (doc.setContent(data)) {
+        Q_EMIT q->signalLoaded(doc);
+    } else {
+        Q_EMIT q->signalFailed();
+    }
+}
+
 XmlLoader::XmlLoader(QObject *parent)
     : QObject(parent)
 {
@@ -30,16 +44,30 @@ void XmlLoader::load(const QUrl &url)
 
     qCDebug(KNEWSTUFFCORE) << "XmlLoader::load(): url: " << url;
 
-    HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
-    connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
-    connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
-
-    Q_EMIT jobStarted(job);
+    static const QStringList remoteSchemeOptions{QLatin1String{"http"}, QLatin1String{"https"}, QLatin1String{"ftp"}};
+    if (remoteSchemeOptions.contains(url.scheme())) {
+        HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
+        connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
+        connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
+        Q_EMIT jobStarted(job);
+    } else if (url.isLocalFile()) {
+        QFile localProvider(url.toLocalFile());
+        if (localProvider.open(QFile::ReadOnly)) {
+            m_jobdata = localProvider.readAll();
+            handleData(this, m_jobdata);
+        } else {
+            Q_EMIT signalFailed();
+        }
+    } else {
+        // This is not supported
+        qCDebug(KNEWSTUFFCORE) << "Attempted to load data from unsupported URL:" << url;
+        Q_EMIT signalFailed();
+    }
 }
 
 void XmlLoader::slotJobData(KJob *, const QByteArray &data)
 {
-    qCDebug(KNEWSTUFFCORE) << "XmlLoader::slotJobData()";
+    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
 
     m_jobdata.append(data);
 }
@@ -49,17 +77,9 @@ void XmlLoader::slotJobResult(KJob *job)
     deleteLater();
     if (job->error()) {
         Q_EMIT signalFailed();
-        return;
+    } else {
+        handleData(this, m_jobdata);
     }
-    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-START--";
-    qCDebug(KNEWSTUFFCORE) << QString::fromUtf8(m_jobdata);
-    qCDebug(KNEWSTUFFCORE) << "--Xml Loader-END--";
-    QDomDocument doc;
-    if (!doc.setContent(m_jobdata)) {
-        Q_EMIT signalFailed();
-        return;
-    }
-    Q_EMIT signalLoaded(doc);
 }
 
 QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &tag, const QString &value)
