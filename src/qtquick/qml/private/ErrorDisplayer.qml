@@ -19,11 +19,6 @@ MessageBoxSheet {
             component.showError(errorCode, message, metadata);
         }
     }
-    Component.onCompleted: {
-        component.showError(NewStuff.Engine.TryAgainLaterError, "Something happen ohnoes!", 11234);
-        component.showError(NewStuff.Engine.TryAgainLaterError, "Something else happen ohnoes!", 11234);
-        component.showError(NewStuff.Engine.UnknownError, "Something else happen more ohnoes!", 11234);
-    }
 
     property var errorsToShow: []
     function showError(errorCode, errorMessage, errorMetadata) {
