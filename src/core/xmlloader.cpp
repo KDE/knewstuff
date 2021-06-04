@@ -17,6 +17,7 @@
 
 #include <QByteArray>
 #include <QFile>
+#include <QTimer>
 
 namespace KNSCore
 {
@@ -40,29 +41,32 @@ XmlLoader::XmlLoader(QObject *parent)
 
 void XmlLoader::load(const QUrl &url)
 {
-    m_jobdata.clear();
-
     qCDebug(KNEWSTUFFCORE) << "XmlLoader::load(): url: " << url;
-
-    static const QStringList remoteSchemeOptions{QLatin1String{"http"}, QLatin1String{"https"}, QLatin1String{"ftp"}};
-    if (remoteSchemeOptions.contains(url.scheme())) {
-        HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
-        connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
-        connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
-        Q_EMIT jobStarted(job);
-    } else if (url.isLocalFile()) {
-        QFile localProvider(url.toLocalFile());
-        if (localProvider.open(QFile::ReadOnly)) {
-            m_jobdata = localProvider.readAll();
-            handleData(this, m_jobdata);
+    // The load call is expected to be asynchronous (to allow for people to connect to signals
+    // after it is called), and so we need to postpone its implementation until the listeners
+    // are actually listening
+    QTimer::singleShot(0, this, [this, url]() {
+        m_jobdata.clear();
+        static const QStringList remoteSchemeOptions{QLatin1String{"http"}, QLatin1String{"https"}, QLatin1String{"ftp"}};
+        if (remoteSchemeOptions.contains(url.scheme())) {
+            HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
+            connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
+            connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
+            Q_EMIT jobStarted(job);
+        } else if (url.isLocalFile()) {
+            QFile localProvider(url.toLocalFile());
+            if (localProvider.open(QFile::ReadOnly)) {
+                m_jobdata = localProvider.readAll();
+                handleData(this, m_jobdata);
+            } else {
+                Q_EMIT signalFailed();
+            }
         } else {
+            // This is not supported
+            qCDebug(KNEWSTUFFCORE) << "Attempted to load data from unsupported URL:" << url;
             Q_EMIT signalFailed();
         }
-    } else {
-        // This is not supported
-        qCDebug(KNEWSTUFFCORE) << "Attempted to load data from unsupported URL:" << url;
-        Q_EMIT signalFailed();
-    }
+    });
 }
 
 void XmlLoader::slotJobData(KJob *, const QByteArray &data)
