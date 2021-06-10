@@ -83,10 +83,10 @@ public:
     };
 
     enum EntryEvent {
-        UnknownEvent = 0,
-        StatusChangedEvent = 1,
-        AdoptedEvent = 2,
-        DetailsLoadedEvent = 3,
+        UnknownEvent = 0, ///< A generic event, not generally used
+        StatusChangedEvent = 1, ///< Used when an event's status is set (use EntryInternal::status() to get the new status)
+        AdoptedEvent = 2, ///< Used when an entry has been successfully adopted (use this to determine whether a call to Engine::adoptEntry() succeeded)
+        DetailsLoadedEvent = 3, ///< Used when more details have been added to an existing entry (such as the full description), and the UI should be updated
     };
 
     /**

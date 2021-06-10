@@ -148,6 +148,18 @@ Q_SIGNALS:
      * This is fired for events related directly to a single EntryInternal instance
      * The intermediate states Updating and Installing are not forwarded. In case you
      * need those you have to listen to the signals of the KNSCore::Engine instance of the engine property.
+     *
+     * As an example, if you need to know when the status of an entry changes, you might write:
+     \code
+        function onEntryEvent(entry, event) {
+            if (event == NewStuff.Engine.StatusChangedEvent) {
+                myModel.ghnsEntryChanged(entry);
+            }
+        }
+     \endcode
+     *
+     * nb: The above example is also how one would port a handler for the old changedEntries signal
+     *
      * @see EntryInternal::EntryEvent for details on which specific event is being notified
      * @since 5.81
      */
