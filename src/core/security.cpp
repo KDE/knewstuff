@@ -23,7 +23,6 @@
 // kde includes
 #include <KLocalizedString>
 
-#include "knewstuffcore_export.h"
 
 using namespace KNSCore;
 

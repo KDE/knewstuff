@@ -13,7 +13,6 @@
 #include <QMutexLocker>
 #include <QNetworkAccessManager>
 #include <QNetworkDiskCache>
-#include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QStandardPaths>
 #include <QStorageInfo>
