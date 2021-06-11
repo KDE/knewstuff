@@ -40,11 +40,20 @@ KNSRCModel::KNSRCModel(QObject *parent)
             continue;
         }
 
+        QString constructedName{QFileInfo(file).fileName()};
+        constructedName = constructedName.left(constructedName.length() - 6);
+        constructedName.replace(QLatin1Char{'_'}, QLatin1Char{' '});
+        constructedName[0] = constructedName[0].toUpper();
+
         Entry *entry = new Entry;
-        entry->name = group.readEntry("Name", QFileInfo(file).fileName());
+        entry->name = group.readEntry("Name", constructedName);
         entry->filePath = file;
+
         d->m_entries << entry;
     }
+    std::sort(d->m_entries.begin(), d->m_entries.end(), [](const Entry *a, const Entry *b) -> bool {
+        return QString::localeAwareCompare(b->name, a->name) > 0;
+    });
 }
 
 KNSRCModel::~KNSRCModel() = default;
