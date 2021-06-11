@@ -113,10 +113,7 @@ public:
      * or an entry that represents a set of entries.
      * @since 5.83
      */
-    enum EntryType {
-        CatalogEntry = 0,
-        GroupEntry
-    };
+    enum EntryType { CatalogEntry = 0, GroupEntry };
 
     Q_ENUM(EntryType)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.

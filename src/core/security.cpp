@@ -23,7 +23,6 @@
 // kde includes
 #include <KLocalizedString>
 
-
 using namespace KNSCore;
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 31)

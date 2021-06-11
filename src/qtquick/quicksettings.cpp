@@ -29,13 +29,15 @@ public:
 };
 Q_GLOBAL_STATIC(QuickSettingsHelper, s_kns3_quickSettingsListener)
 
-
-class KNewStuffQuick::SettingsPrivate {
+class KNewStuffQuick::SettingsPrivate
+{
 public:
-    SettingsPrivate() {}
+    SettingsPrivate()
+    {
+    }
 };
 
-Settings * KNewStuffQuick::Settings::instance()
+Settings *KNewStuffQuick::Settings::instance()
 {
     if (!s_kns3_quickSettingsListener()->q) {
         new Settings;

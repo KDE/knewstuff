@@ -107,17 +107,17 @@ public:
      */
     enum SearchPresetTypes {
         NoPresetType = 0,
-        GoBack,       ///< preset representing the previous search.
-        Root,         ///< preset indicating a root directory.
-        Start,        ///< preset indicating the first entry.
-        Popular,      ///< preset indicating popular items.
-        Featured,     ///< preset for featured items.
-        Recommended,  ///< preset for recommended. This may be customized by the server per user.
-        Shelf,        ///< preset indicating previously acquired items.
+        GoBack, ///< preset representing the previous search.
+        Root, ///< preset indicating a root directory.
+        Start, ///< preset indicating the first entry.
+        Popular, ///< preset indicating popular items.
+        Featured, ///< preset for featured items.
+        Recommended, ///< preset for recommended. This may be customized by the server per user.
+        Shelf, ///< preset indicating previously acquired items.
         Subscription, ///< preset indicating items that the user is subscribed to.
-        New,          ///< preset indicating new items.
-        FolderUp,     ///< preset indicating going up in the search result hierarchy.
-        AllEntries,   ///< preset indicating all possible entries, such as a crawlable list. Might be intense to load.
+        New, ///< preset indicating new items.
+        FolderUp, ///< preset indicating going up in the search result hierarchy.
+        AllEntries, ///< preset indicating all possible entries, such as a crawlable list. Might be intense to load.
     };
     /**
      * Describes a search request that may come from the provider.

@@ -5,14 +5,13 @@
 */
 
 #include "downloadlinkinfo.h"
-#include <QMimeDatabase>
 #include <KFormat>
+#include <QMimeDatabase>
 
 static const KFormat formatter;
 
 class DownloadLinkInfo::Private
 {
-
 public:
     Private()
         : id(0)
@@ -53,7 +52,7 @@ void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInforma
     d->isDownloadtypeLink = data.isDownloadtypeLink;
     d->size = data.size;
     QMimeDatabase db;
-    for (QString string: data.tags) {
+    for (QString string : data.tags) {
         if (string.startsWith(QStringLiteral("data##mimetype="))) {
             d->mimeType = string.split(QStringLiteral("=")).last();
         }

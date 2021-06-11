@@ -128,7 +128,7 @@ void Engine::setConfigFile(const QString &newFile)
                         &KNSCore::Engine::signalEntryEvent,
                         this,
                         [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-                            KNSCore::EntryWrapper* wrappedEntry = new KNSCore::EntryWrapper(entry, this);
+                            KNSCore::EntryWrapper *wrappedEntry = new KNSCore::EntryWrapper(entry, this);
                             // Just forward the event but not do anything more
                             if (event != KNSCore::EntryInternal::StatusChangedEvent) {
                                 Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);

@@ -411,7 +411,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
                 Q_EMIT signalCategoriesMetadataLoded(categories);
             });
 #ifdef SYNDICATION_FOUND
-        } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")){
+        } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")) {
             provider.reset(new OPDSProvider);
             connect(provider.data(), &Provider::searchPresetsLoaded, this, [this](const QList<Provider::SearchPreset> &presets) {
                 d->searchPresets = presets;

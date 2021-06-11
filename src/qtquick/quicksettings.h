@@ -28,13 +28,14 @@ class Settings : public QObject
     Q_DISABLE_COPY(Settings)
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
 public:
-    static Settings* instance();
+    static Settings *instance();
     virtual ~Settings();
 
     bool allowedByKiosk() const;
+
 private:
     Settings();
     std::unique_ptr<SettingsPrivate> d;
 };
 }
-#endif//KNSQ_QUICKSETTINGS_H
+#endif // KNSQ_QUICKSETTINGS_H

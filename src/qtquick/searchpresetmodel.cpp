@@ -38,11 +38,9 @@ SearchPresetModel::~SearchPresetModel()
 
 QHash<int, QByteArray> SearchPresetModel::roleNames() const
 {
-    static const QHash<int, QByteArray> roles{{DisplayNameRole, "displayName"}
-                                              , {IconRole, "iconName"}};
+    static const QHash<int, QByteArray> roles{{DisplayNameRole, "displayName"}, {IconRole, "iconName"}};
     return roles;
 }
-
 
 QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
 {
@@ -92,7 +90,6 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
                 default:
                     name = i18nc("Knewstuff5", "Search Preset: %1", preset.request.searchTerm);
                 }
-
             }
 
             result.setValue(name);
@@ -146,7 +143,7 @@ int SearchPresetModel::rowCount(const QModelIndex &parent) const
 
 void SearchPresetModel::loadSearch(const QModelIndex &index)
 {
-    if (index.row()>=rowCount() || !index.isValid()) {
+    if (index.row() >= rowCount() || !index.isValid()) {
         qCWarning(KNEWSTUFFQUICK) << "index SearchPresetModel::loadSearch invalid" << index;
         return;
     }

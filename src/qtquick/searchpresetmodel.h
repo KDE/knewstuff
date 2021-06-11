@@ -7,9 +7,9 @@
 #ifndef SEARCHPRESETMODEL_H
 #define SEARCHPRESETMODEL_H
 
-#include <QAbstractListModel>
 #include "provider.h"
 #include "quickengine.h"
+#include <QAbstractListModel>
 
 /**
  * @brief The SearchPresetModel class
@@ -36,6 +36,7 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     Q_INVOKABLE void loadSearch(const QModelIndex &index);
+
 private:
     class Private;
     // TODO KF6: Switch all the pimpls to const std::unique_ptr<Private> d;

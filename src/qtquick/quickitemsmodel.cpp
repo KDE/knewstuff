@@ -356,8 +356,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             } else {
                 data.setValue<ItemsModel::EntryType>(ItemsModel::CatalogEntry);
             }
-        }
-            break;
+        } break;
         default:
             data.setValue<QString>(QStringLiteral("Unknown role"));
             break;

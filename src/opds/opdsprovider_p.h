@@ -8,9 +8,9 @@
 #define OPDSPROVIDER_H
 
 #include "provider.h"
-#include <xmlloader.h>
 #include <QMap>
 #include <memory>
+#include <xmlloader.h>
 
 /**
  * OPDS provider.
@@ -75,7 +75,6 @@ public:
     std::unique_ptr<Private> d;
 
     Q_DISABLE_COPY(OPDSProvider)
-
 };
 
 }

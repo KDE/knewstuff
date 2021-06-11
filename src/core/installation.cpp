@@ -755,7 +755,10 @@ void Installation::uninstall(EntryInternal entry)
                     if (!worked) {
                         qWarning() << "unable to delete file " << file;
                         Q_EMIT signalInstallationFailed(
-                            i18n("The removal of %1 failed, as the installed file %2 could not be automatically removed. You can attempt to manually delete this file, if you believe this is an error.", entry.name(), file));
+                            i18n("The removal of %1 failed, as the installed file %2 could not be automatically removed. You can attempt to manually delete "
+                                 "this file, if you believe this is an error.",
+                                 entry.name(),
+                                 file));
                         // Assume that the uninstallation has failed, and reset the entry to an installed state
                         newStatus = KNS3::Entry::Installed;
                         break;
