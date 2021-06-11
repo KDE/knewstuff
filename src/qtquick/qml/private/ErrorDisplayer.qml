@@ -14,8 +14,8 @@ MessageBoxSheet {
     property bool active: true;
     property QtObject engine;
     property QtObject connection: Connections {
-        target: typeof(engine.engine) === "undefined" ? engine : engine.engine
-        function onSignalErrorCode(errorCode, message, metadata) {
+        target: engine
+        function onErrorCode(errorCode, message, metadata) {
             component.showError(errorCode, message, metadata);
         }
     }

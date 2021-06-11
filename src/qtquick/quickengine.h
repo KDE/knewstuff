@@ -165,6 +165,19 @@ Q_SIGNALS:
      */
     void entryEvent(KNSCore::EntryWrapper *entry, EntryEvent event);
 
+    /**
+     * Fires in the case of any critical or serious errors, such as network or API problems.
+     * This forwards the signal from KNSCore::Engine::signalErrorCode, but with QML friendly
+     * enumerations.
+     * @param errorCode Represents the specific type of error which has occurred
+     * @param message A human-readable message which can be shown to the end user
+     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the
+     * metadata details)
+     * @see KNSCore::Engine::signalErrorCode
+     * @since 5.84
+     */
+    void errorCode(const Engine::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
+
 private:
     class Private;
     Private *d;
