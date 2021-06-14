@@ -15,7 +15,6 @@
 #include <KPixmapSequence>
 #include <QFrame>
 
-class QVBoxLayout;
 class QLabel;
 class QString;
 class KPixmapSequenceWidget;

@@ -14,7 +14,6 @@
 #include "knewstuff_export.h"
 
 class KMoreTools;
-class KMoreToolsService;
 class KMoreToolsMenuFactoryPrivate;
 
 /**

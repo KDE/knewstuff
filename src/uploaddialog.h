@@ -18,7 +18,6 @@
 namespace Attica
 {
 class BaseJob;
-class Provider;
 }
 
 // KDE5: this class should inherit from the wizard class - KAssistantDialog

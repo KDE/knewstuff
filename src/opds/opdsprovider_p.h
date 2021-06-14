@@ -43,7 +43,6 @@
 
 namespace KNSCore
 {
-class XmlLoader;
 
 class OPDSProvider : public Provider
 {

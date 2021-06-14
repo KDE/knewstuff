@@ -22,7 +22,6 @@
 
 #include "knewstuffcore_export.h"
 
-class KJob;
 
 namespace KNSCore
 {

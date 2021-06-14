@@ -27,7 +27,6 @@ class EnginePrivate;
 
 namespace Attica
 {
-class ProviderManager;
 class Provider;
 }
 
