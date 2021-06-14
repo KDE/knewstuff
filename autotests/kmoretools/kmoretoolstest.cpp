@@ -48,19 +48,23 @@ void KMoreToolsTest::initTestCase()
 {
     QStandardPaths::setTestModeEnabled(true);
 
-    const QString dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/1/";
+    const QString dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kf5/kmoretools/unittest-kmoretools/1/");
     QVERIFY(QDir(dest).removeRecursively());
     QVERIFY(QDir().mkpath(dest));
-    for (const QString &fileName : {"a.desktop", "b.desktop", "c.desktop"}) {
+    for (const QString &fileName : {QStringLiteral("a.desktop"), QStringLiteral("b.desktop"), QStringLiteral("c.desktop")}) {
         const QString srcFile = QFINDTESTDATA("1/" + fileName + ".notranslate");
         QVERIFY(!srcFile.isEmpty());
         QVERIFY(QFile::copy(srcFile, dest + fileName));
     }
 
-    const QString dest2 = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kf5/kmoretools/unittest-kmoretools/2/";
+    const QString dest2 = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kf5/kmoretools/unittest-kmoretools/2/");
     QVERIFY(QDir(dest2).removeRecursively());
     QVERIFY(QDir().mkpath(dest2));
-    auto fileNames = {"org.kde.kate.desktop", "org.kde.kate.png", "mynotinstalledapp.desktop", "mynotinstalledapp.png", "mynotinstapp2.desktop"};
+    const auto fileNames = {QStringLiteral("org.kde.kate.desktop"),
+                            QStringLiteral("org.kde.kate.png"),
+                            QStringLiteral("mynotinstalledapp.desktop"),
+                            QStringLiteral("mynotinstalledapp.png"),
+                            QStringLiteral("mynotinstapp2.desktop")};
     for (const QString &fileName : fileNames) {
         const QString origFile = fileName.endsWith(QLatin1String("desktop")) ? fileName + _(".notranslate") : fileName;
         const QString srcFile = QFINDTESTDATA("2/" + origFile);
