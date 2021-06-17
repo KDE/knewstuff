@@ -35,34 +35,6 @@ class DownloadWidgetPrivate;
  * for installation, updates and removal.
  * Preview images as well as other meta information can be seen.
  *
- * \section knsrc knsrc Files
- * The Dialog is configured by a .knsrc file containing the KHotNewStuff configuration.
- * Your application should install a file called: <em>$KDEDIR/share/config/appname.knsrc</em>
- *
- * The file could look like this for wallpapers:
- * <pre>
-   [KNewStuff3]
-   ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
-   Categories=KDE Wallpaper 1920x1200,KDE Wallpaper 1600x1200
-   StandardResource=wallpaper
-   Uncompress=archive
- * </pre>
- *
- * Uncompress can be one of: always, never or archive:
- * <ol>
- * <li>always: assume all downloaded files are archives and need to be extracted</li>
- * <li>never: never try to extract the file</li>
- * <li>archive: if the file is an archive, uncompress it, otherwise just pass it on</li>
- * <li>subdir: logic as archive, but decompress into a subdirectory named after the payload filename</li>
- * </ol>
- *
- * You have different options to set the target install directory:
- *   <ol><li>StandardResource: not available in KF5, use XdgTargetDir instead.</li>
- *       <li>TargetDir: since KF5, this is equivalent to XdgTargetDir.
- *       <li>XdgTargetDir: a directory in the $XDG_DATA_HOME directory such as <em>.local/share/wallpapers</em>.
- *           This is what QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + name will return.</li>
- *   </ol>
- *
  * @since 4.5
  */
 class KNEWSTUFF_EXPORT DownloadWidget : public QWidget

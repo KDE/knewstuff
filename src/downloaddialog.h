@@ -35,69 +35,6 @@ class DownloadDialogPrivate;
  * for installation, updates and removal.
  * Preview images as well as other meta information can be seen.
  *
- * \section knsrc knsrc Files
- * The Dialog is configured by a .knsrc file containing the KHotNewStuff configuration.
- * Your application should install a file into the XDG configuration location called: <em>/etc/xdg/appname.knsrc</em>
- *
- * The file could look like this for wallpapers:
- * <pre>
-   [KNewStuff3]
-   ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
-   Categories=KDE Wallpaper 1920x1200,KDE Wallpaper 1600x1200
-   XdgTargetDir=wallpapers
-   Uncompress=archive
- * </pre>
- *
- * To use a local providers file instead of a remote one (this is useful for example in cases where you wish to use
- * an OPDS feed, which likely does not have a providers file, and you lack a server on which to host one of your
- * own), you can set <em>UseLocalProvidersFile=true</em> instead of ProvidersUrl. This will make the engine attempt
- * to load a file located next to your knsrc file, with the same name as that file, with .providers appended. For
- * example, if your configuration file is called "appname.knsrc", then your providers file should be named
- * "appname.providers"
- *
- * Uncompress can be one of: always, never or archive:
- * <ol>
- * <li>always: assume all downloaded files are archives and need to be extracted</li>
- * <li>never: never try to extract the file</li>
- * <li>archive: if the file is an archive, uncompress it, otherwise just pass it on</li>
- * <li>subdir: logic as archive, but decompress into a subdirectory named after the payload filename</li>
- * <li>kpackage: require that the downloaded file is a kpackage, and use the kpackage framework for handling installation and removal (since 5.70)</li>
- * </ol>
- *
- * You have different options to set the target install directory:
- *   <ol><li>StandardResource: not available in KF5, use XdgTargetDir instead.</li>
- *       <li>TargetDir: since KF5, this is equivalent to XdgTargetDir.
- *       <li>XdgTargetDir: a directory in the $XDG_DATA_HOME directory such as <em>.local/share/wallpapers</em>.
- *           This is what QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + name will return.</li>
- *   </ol>
- *
- * \subsection Remove Dead Entries
- *
- * If you set <em>RemoveDeadEntries=true</em>, entries whose installed files have all been deleted without going through
- * KNewStuff will be removed from the cache. The removal will happen if, and only if, all listed files were removed, which
- * means that if, for example, an entry was installed from archive, which was decompressed to yield multiple installed files,
- * if even one of those files remains, the entry will remain marked as installed.
- *
- * \subsection KPackage Support
- *
- * To make use of the KPackage option described above, in addition to the Uncompress setting above, you should also specify
- * the type of archive expected by KPackage. While it is possible to deduce this from the package metadata in many situations,
- * it is not a requirement of the format that this information exists, and we need to have a fallback in the case it is not
- * available there. As such, you will want to add a KPackageType entry to your knsrc file. The following example shows how this
- * is done for Plasma themes:
- *
- * <pre>
-   ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
-   Categories=Plasma Theme
-   StandardResource=tmp
-   TagFilter=ghns_excluded!=1,plasma##version==5
-   DownloadTagFilter=plasma##version==5
-   Uncompress=kpackage
-   KPackageType=Plasma/Theme
- * </pre>
- *
- * \note Using KPackage support will automatically set the removal of dead entries option to true. You can override this if you
- * want to, by explicitly adding <em>RemoveDeadEntries=false</em> to your knsrc file
  * @since 4.4
  * @deprecated Since 5.80, use the QML components or the KNS3::QtQuickDialogWrapper instead
  */
