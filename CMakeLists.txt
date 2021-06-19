@@ -4,9 +4,6 @@ set(KF_VERSION "5.84.0") # handled by release scripts
 set(KF_DEP_VERSION "5.84.0") # handled by release scripts
 project(KNewStuff VERSION ${KF_VERSION})
 
-# Require at least C++14
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(FeatureSummary)
