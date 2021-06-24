@@ -10,11 +10,11 @@
 #include "kmoretoolspresets_p.h"
 #include "knewstuff_debug.h"
 #include <QDebug>
+#include <QStorageInfo>
 
 #include <KDialogJobUiDelegate>
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
-#include <KMountPoint>
 #include <KNS3/KMoreTools>
 #include <KNS3/KMoreToolsPresets>
 
@@ -183,8 +183,8 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *me
                     filelight2Item->action()->setText(
                         filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
                     menu->connect(filelight2Item->action(), &QAction::triggered, menu, [filelightService, url](bool) {
-                        KMountPoint::Ptr mountPoint = KMountPoint::currentMountPoints().findByPath(url.toLocalFile());
-                        runApplication(filelightService, {QUrl::fromLocalFile(mountPoint->mountPoint())});
+                        const QStorageInfo info(url.toLocalFile());
+                        runApplication(filelightService, {QUrl::fromLocalFile(info.rootPath())});
                     });
                 }
             }
