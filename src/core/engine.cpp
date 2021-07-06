@@ -717,42 +717,53 @@ void Engine::doRequest()
 
 void Engine::install(KNSCore::EntryInternal entry, int linkId)
 {
-    if (entry.status() == KNS3::Entry::Updateable) {
-        entry.setStatus(KNS3::Entry::Updating);
+    if (entry.downloadLinkCount() == 0 && entry.payload().isEmpty()) {
+        // Turns out this happens sometimes, so we should deal with that and spit out an error
+        qCDebug(KNEWSTUFFCORE) << "There were no downloadlinks defined in the entry we were just asked to update: " << entry.uniqueId() << "on provider"
+                               << entry.providerId();
+        Q_EMIT signalErrorCode(KNSCore::InstallationError,
+                               i18n("Could not perform an installation of the entry %1 as it does not have any downloadable items defined. Please contact the "
+                                    "author so they can fix this.",
+                                    entry.name()),
+                               entry.uniqueId());
     } else {
-        entry.setStatus(KNS3::Entry::Installing);
-    }
-    Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
-
-    qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
-    if (p) {
-        // If linkId is -1, assume that it's an update and that we don't know what to update
-        if (entry.status() == KNS3::Entry::Updating && linkId == -1) {
-            if (entry.downloadLinkCount() == 1) {
-                // If there is only one downloadable item, then we can fairly safely assume that's what we're wanting
-                // to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
-                qCDebug(KNEWSTUFFCORE) << "Just the one download link, so let's use that";
-                d->payloadToIdentify[entry] = QString{};
-                linkId = 1;
-            } else {
-                qCDebug(KNEWSTUFFCORE) << "Try and identify a download link to use from a total of" << entry.downloadLinkCount();
-                // While this seems silly, the payload gets reset when fetching the new download link information
-                d->payloadToIdentify[entry] = entry.payload();
-                // Drop a fresh list in place so we've got something to work with when we get the links
-                d->payloads[entry] = QStringList{};
-                linkId = 1;
-            }
+        if (entry.status() == KNS3::Entry::Updateable) {
+            entry.setStatus(KNS3::Entry::Updating);
         } else {
-            qCDebug(KNEWSTUFFCORE) << "Link ID already known" << linkId;
-            // If there is no payload to identify, we will assume the payload is already known and just use that
-            d->payloadToIdentify[entry] = QString{};
+            entry.setStatus(KNS3::Entry::Installing);
         }
+        Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
-        p->loadPayloadLink(entry, linkId);
+        qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
+        QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+        if (p) {
+            // If linkId is -1, assume that it's an update and that we don't know what to update
+            if (entry.status() == KNS3::Entry::Updating && linkId == -1) {
+                if (entry.downloadLinkCount() == 1 || !entry.payload().isEmpty()) {
+                    // If there is only one downloadable item (which also includes a predefined payload name), then we can fairly safely assume that's what
+                    // we're wanting to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
+                    qCDebug(KNEWSTUFFCORE) << "Just the one download link, so let's use that";
+                    d->payloadToIdentify[entry] = QString{};
+                    linkId = 1;
+                } else {
+                    qCDebug(KNEWSTUFFCORE) << "Try and identify a download link to use from a total of" << entry.downloadLinkCount();
+                    // While this seems silly, the payload gets reset when fetching the new download link information
+                    d->payloadToIdentify[entry] = entry.payload();
+                    // Drop a fresh list in place so we've got something to work with when we get the links
+                    d->payloads[entry] = QStringList{};
+                    linkId = 1;
+                }
+            } else {
+                qCDebug(KNEWSTUFFCORE) << "Link ID already known" << linkId;
+                // If there is no payload to identify, we will assume the payload is already known and just use that
+                d->payloadToIdentify[entry] = QString{};
+            }
 
-        ++m_numInstallJobs;
-        updateStatus();
+            p->loadPayloadLink(entry, linkId);
+
+            ++m_numInstallJobs;
+            updateStatus();
+        }
     }
 }
 
@@ -778,10 +789,11 @@ void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
 {
     if (entry.status() == KNS3::Entry::Updating) {
-        if (d->payloadToIdentify.isEmpty()) {
+        if (d->payloadToIdentify[entry].isEmpty()) {
             // If there's nothing to identify, and we've arrived here, then we know what the payload is
             qCDebug(KNEWSTUFFCORE) << "If there's nothing to identify, and we've arrived here, then we know what the payload is";
             m_installation->install(entry);
+            d->payloadToIdentify.remove(entry);
         } else if (d->payloads[entry].count() < entry.downloadLinkCount()) {
             // We've got more to get before we can attempt to identify anything, so fetch the next one...
             qCDebug(KNEWSTUFFCORE) << "We've got more to get before we can attempt to identify anything, so fetch the next one...";
