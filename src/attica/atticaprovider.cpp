@@ -98,6 +98,7 @@ void AtticaProvider::setCachedEntries(const KNSCore::EntryInternal::List &cached
 void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 {
     mName = provider.name();
+    mIcon = provider.icon();
     qCDebug(KNEWSTUFFCORE) << "Added provider: " << provider.name();
 
     m_provider = provider;
