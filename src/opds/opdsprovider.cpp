@@ -343,8 +343,8 @@ void parseFeedData(const QDomDocument &doc)
             }
         }
 
-        // This is a bit of a pickle: atom feeds can have multiple catagories.
-        // but these catagories are not specifically tags...
+        // This is a bit of a pickle: atom feeds can have multiple categories.
+        // but these categories are not specifically tags...
         QStringList entryTags;
         for (int j = 0; j < feedEntry.categories().size(); j++) {
             QString tag = feedEntry.categories().at(j).label();

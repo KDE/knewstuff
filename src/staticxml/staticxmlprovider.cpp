@@ -131,7 +131,7 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
     QUrl url = downloadUrl(request.sortMode);
     if (!url.isEmpty()) {
         // TODO first get the entries, then filter with searchString, finally emit the finished signal...
-        // FIXME: don't creat an endless number of xmlloaders!
+        // FIXME: don't create an endless number of xmlloaders!
         XmlLoader *loader = new XmlLoader(this);
         connect(loader, &XmlLoader::signalLoaded, this, &StaticXmlProvider::slotFeedFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &StaticXmlProvider::slotFeedFailed);

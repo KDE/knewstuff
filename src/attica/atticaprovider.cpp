@@ -65,7 +65,7 @@ QString AtticaProvider::id() const
 void AtticaProvider::authenticationCredentialsMissing(const KNSCore::Provider &)
 {
     qCDebug(KNEWSTUFFCORE) << "Authentication missing!";
-    // FIXME Show autentication dialog
+    // FIXME Show authentication dialog
 }
 
 bool AtticaProvider::setProviderXML(const QDomElement &xmldata)

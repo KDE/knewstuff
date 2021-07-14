@@ -52,7 +52,7 @@ by adding the following in your CMakeLists.txt sometime after the find statement
     set_package_properties(KF5NewStuffQuick PROPERTIES
         DESCRIPTION "Qt Quick components used for interacting with remote data services"
         URL "https://api.kde.org/frameworks/knewstuff/html/index.html"
-        PURPOSE "Required to Get Hot New Stuff for my applicaton"
+        PURPOSE "Required to Get Hot New Stuff for my application"
         TYPE RUNTIME)
 
 When installing your knsrc configuration file, you should install it into the location
