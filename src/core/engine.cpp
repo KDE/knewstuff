@@ -18,6 +18,7 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <KFileUtils>
 #include <KFormat>
 #include <KLocalizedString>
 #include <KShell>
@@ -1062,19 +1063,7 @@ QStringList KNSCore::Engine::availableConfigFiles()
                                                        QStringLiteral("knsrcfiles"),
                                                        QStandardPaths::LocateDirectory);
     configSearchLocations << QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
-    QSet<QString> configFileNames;
-    QStringList configFiles;
-    for (const QString &path : qAsConst(configSearchLocations)) {
-        QDirIterator dirIt(path, {QStringLiteral("*.knsrc")}, QDir::Files);
-        while (dirIt.hasNext()) {
-            dirIt.next();
-            if (!configFileNames.contains(dirIt.fileName())) {
-                configFiles << dirIt.filePath();
-                configFileNames << dirIt.fileName();
-            }
-        }
-    }
-    return configFiles;
+    return KFileUtils::findAllUniqueFiles(configSearchLocations, {QStringLiteral("*.knsrc")});
 }
 
 QSharedPointer<KNSCore::Provider> KNSCore::Engine::provider(const QString &providerId) const
