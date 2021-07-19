@@ -45,6 +45,7 @@ GenericName[x-test]=xxScreenshot Capture Utilityxx
 GenericName[zh_CN]=截图抓取工具
 GenericName[zh_TW]=畫面擷取工具
 Name=Spectacle
+Name[ar]=لاقط الشاشة
 Name[ast]=Spectacle
 Name[az]=Spectacle
 Name[ca]=Spectacle
@@ -226,6 +227,7 @@ Exec=spectacle -a
 
 [Desktop Action RectangularRegionScreenShot]
 Name=Capture Rectangular Region
+Name[ar]=التقط منطقة مستطيلة
 Name[az]=Ekranın düzbucaqlı sahəsinin çəkin
 Name[ca]=Captura una regió rectangular
 Name[ca@valencia]=Captura una regió rectangular

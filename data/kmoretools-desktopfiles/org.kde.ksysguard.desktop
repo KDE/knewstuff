@@ -89,6 +89,7 @@ GenericName[x-test]=xxSystem Monitorxx
 GenericName[zh_CN]=系统监视器
 GenericName[zh_TW]=系統監視器
 Comment=Monitor running processes and system performance
+Comment[ar]=راقِب العمليات الجارية وأداء النظام
 Comment[ast]=Supervisa los procesos n'execución y el rindimientu del sistema
 Comment[az]=İşləyən proseslərə və Sistemin işinə nəzarət
 Comment[ca]=Controlador de processos en execució i rendiment del sistema

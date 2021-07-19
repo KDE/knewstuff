@@ -40,6 +40,7 @@ Name[x-test]=xxCatfish File Searchxx
 Name[zh_CN]=Catfish 文件搜素
 Name[zh_TW]=Catfish 檔案搜尋
 GenericName=File search
+GenericName[ar]=بحث الملفّات
 GenericName[ast]=Busca de ficheros
 GenericName[az]=Fayl axtarışı
 GenericName[ca]=Cerca de fitxers

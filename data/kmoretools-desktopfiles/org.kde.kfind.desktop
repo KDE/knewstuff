@@ -46,6 +46,7 @@ Name[x-test]=xxKFindxx
 Name[zh_CN]=KFind
 Name[zh_TW]=KFind
 GenericName=Find Files/Folders
+GenericName[ar]=اعثر على ملفات/مجلدات
 GenericName[az]=Faylları/Qovluqları tap
 GenericName[ca]=Cerca de fitxers i carpetes
 GenericName[ca@valencia]=Cerca fitxers i carpetes
