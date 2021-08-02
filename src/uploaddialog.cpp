@@ -18,6 +18,7 @@
 #include <QQmlContext>
 #include <QQuickItem>
 #include <QQuickView>
+#include <QVBoxLayout>
 
 using namespace KNS3;
 

@@ -7,8 +7,6 @@
 #ifndef KNEWSTUFF3_UI_UPLOADDIALOG_P_H
 #define KNEWSTUFF3_UI_UPLOADDIALOG_P_H
 
-#include "ui_uploaddialog.h"
-
 #include <attica/category.h>
 #include <attica/content.h>
 #include <attica/license.h>
