@@ -18,6 +18,7 @@
 #include "searchpresetmodel.h"
 
 #include "provider.h"
+#include "providersmodel.h"
 #include "question.h"
 
 #include <QQmlEngine>
@@ -95,4 +96,7 @@ void QmlPlugins::registerTypes(const char *uri)
         83,
         "SearchPresetModel",
         QStringLiteral("This should only be created by the Engine, and provides the SearchPresets available in that engine"));
+
+    // Version 1.85
+    qmlRegisterType<KNSCore::ProvidersModel>(uri, 1, 85, "ProvidersModel");
 }

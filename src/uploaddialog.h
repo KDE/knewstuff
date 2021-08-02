@@ -4,16 +4,19 @@
     SPDX-FileCopyrightText: 2007 Josef Spillner <spillner@kde.org>
     SPDX-FileCopyrightText: 2009 Jeremy Whiting <jpwhiting@kde.org>
     SPDX-FileCopyrightText: 2009-2010 Frederik Gladhorn <gladhorn@kde.org>
+    SPDX-FileCopyrightText: 2021 Dan Leinir Turthra Jensen <admin@leinir.dk>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 #ifndef KNEWSTUFF3_UI_UPLOADDIALOG_H
 #define KNEWSTUFF3_UI_UPLOADDIALOG_H
 
+#include "knewstuff_export.h"
+
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 80)
+
 #include <QDialog>
 #include <QUrl>
-
-#include "knewstuff_export.h"
 
 namespace Attica
 {
@@ -28,12 +31,22 @@ class UploadDialogPrivate;
 /**
  * @short KNewStuff file upload dialog.
  *
- * Using this dialog, data can easily be uploaded to the Hotstuff servers.
+ * This dialog shows the user how to add new content to the remote service represented
+ * by the configuration file passed into it.
+ *
+ * @note This dialog originally allowed for performing direct uploads to an OCS service,
+ * however there is no such service available at this time, and it is unlikely we will
+ * have one any time soon (as we have an issue where such functionality is essentially
+ * just a vector for directly visible spam). As such, we have decided to let this dialog
+ * instead reflect reality, and just give information on how to manually perform those
+ * uploads through a remote service's web based upload system.
  *
  * \par Maintainer:
- * Jeremy Whiting (jpwhiting@kde.org)
+ * Dan Leinir Turthra Jensen (admin@leinir.dk)
  *
  * @since 4.4
+ * @deprecated  Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation. Use KNS3::QtQuickDialogWrapper which
+ * includes automatic integration for NewStuff.UploadPage
  */
 class KNEWSTUFF_EXPORT UploadDialog : public QDialog
 {
@@ -43,27 +56,35 @@ public:
       Create a new upload dialog.
 
       @param parent the parent window
+      @deprecated  Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation. Use KNS3::QtQuickDialogWrapper which
+      includes automatic integration for NewStuff.UploadPage. If the OCS backend supports upload, you can use KNSCore::AtticaHelper to do so, or implement it
+      manually.
     */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 85, "See API documentation")
     explicit UploadDialog(QWidget *parent = nullptr);
 
     /**
       Create a new upload dialog.
 
       @param parent the parent window
+      @deprecated  Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation. Use KNS3::QtQuickDialogWrapper which
+      includes automatic integration for NewStuff.UploadPage. If the OCS backend supports upload, you can use KNSCore::AtticaHelper to "
+        "do so, or implement it manually.
     */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 85, "See API documentation")
     explicit UploadDialog(const QString &configFile, QWidget *parent = nullptr);
 
     /**
       Destructor.
     */
     ~UploadDialog() override;
-
     /**
       Set the file to be uploaded.
       This has to be set for the dialog to work, before displaying the dialog.
 
       @param payloadFile the payload data file
-    */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setUploadFile(const QUrl &payloadFile);
 
     /**
@@ -72,28 +93,32 @@ public:
       The name field will be left empty if no title was set.
 
       @param name the suggested name for the upload
-    */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setUploadName(const QString &name);
 
     /**
       Set the suggested version displayed in the upload dialog.
       The user can still change this.
       @param version
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setVersion(const QString &version);
 
     /**
       Set the suggested description displayed in the upload dialog.
       The user can still change this.
       @param description
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setDescription(const QString &description);
 
     /**
       Set the suggested changelog displayed in the upload dialog.
       The user can still change this.
       @param version version
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setChangelog(const QString &changelog);
 
     /**
@@ -102,13 +127,15 @@ public:
       @param number The number of the preview image to set, either 1, 2, or 3.
       @param file A URL to the file to be used as preview image
       @since 4.6
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setPreviewImageFile(uint number, const QUrl &file);
 
     /**
      Enable the UI to let the user to set a price for the uploaded item.
      @param enabled enable the price option - it is enabled by default
      @since 4.5
+     @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
      */
     void setPriceEnabled(bool enabled);
 
@@ -116,14 +143,16 @@ public:
       Set the suggested price displayed in the upload dialog.
       The user can still change this.
       @param version version
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setPrice(double price);
 
     /**
       Set the suggested rationale why this item costs something to download.
       The user can still change this.
       @param version version
-      */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void setPriceReason(const QString &reason);
 
     /**
@@ -132,7 +161,8 @@ public:
       It does not add any new category to the list of available categories.
 
       @param category the suggested category for the upload
-    */
+      @deprecated Since 5.85, Upload functionality is no longer directly supported and needs complete reimplementation
+     */
     void selectCategory(const QString &category);
 
 public Q_SLOTS:
@@ -143,40 +173,11 @@ private:
 
     UploadDialogPrivate *const d;
 
-    Q_PRIVATE_SLOT(d, void _k_nextPage())
-    Q_PRIVATE_SLOT(d, void _k_backPage())
-    Q_PRIVATE_SLOT(d, void _k_updatePage())
-
-    Q_PRIVATE_SLOT(d, void _k_providerChanged(QString))
-    Q_PRIVATE_SLOT(d, void _k_checkCredentialsFinished(bool))
-    Q_PRIVATE_SLOT(d, void _k_contentByCurrentUserLoaded(Attica::Content::List))
-    Q_PRIVATE_SLOT(d, void _k_providersLoaded(QStringList))
-    Q_PRIVATE_SLOT(d, void _k_categoriesLoaded(Attica::Category::List))
-    Q_PRIVATE_SLOT(d, void _k_licensesLoaded(Attica::License::List))
-    Q_PRIVATE_SLOT(d, void _k_currencyLoaded(QString))
-    Q_PRIVATE_SLOT(d, void _k_previewLoaded(int, QImage))
-
-    Q_PRIVATE_SLOT(d, void _k_changePreview1())
-    Q_PRIVATE_SLOT(d, void _k_changePreview2())
-    Q_PRIVATE_SLOT(d, void _k_changePreview3())
-    Q_PRIVATE_SLOT(d, void _k_priceToggled(bool))
-    Q_PRIVATE_SLOT(d, void _k_updateContentsToggled(bool update))
-
-    Q_PRIVATE_SLOT(d, void _k_startUpload())
-    Q_PRIVATE_SLOT(d, void _k_contentAdded(Attica::BaseJob *))
-    Q_PRIVATE_SLOT(d, void _k_fileUploadFinished(Attica::BaseJob *))
-    Q_PRIVATE_SLOT(d, void _k_preview1UploadFinished(Attica::BaseJob *))
-    Q_PRIVATE_SLOT(d, void _k_preview2UploadFinished(Attica::BaseJob *))
-    Q_PRIVATE_SLOT(d, void _k_preview3UploadFinished(Attica::BaseJob *))
-
-    Q_PRIVATE_SLOT(d, void _k_updatedContentFetched(Attica::Content))
-    Q_PRIVATE_SLOT(d, void _k_detailsLinkLoaded(QUrl))
-
-    Q_PRIVATE_SLOT(d, void _k_openRegisterAccountWebpage(QString))
-
     Q_DISABLE_COPY(UploadDialog)
 };
 
 }
+
+#endif
 
 #endif

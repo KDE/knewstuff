@@ -30,6 +30,8 @@ list(APPEND KNewStuff_SRCS
         )
 endif()
 
+qt_add_resources(KNewStuff_RESOURCES uploaddialog.qrc)
+
 ecm_qt_declare_logging_category(KNewStuff_SRCS
     HEADER knewstuff_debug.h
     IDENTIFIER KNEWSTUFF
@@ -41,11 +43,10 @@ ecm_qt_declare_logging_category(KNewStuff_SRCS
 
 ki18n_wrap_ui(KNewStuff_SRCS
     downloadwidget.ui
-    uploaddialog.ui
     kmoretools/ui/kmoretoolsconfigwidget.ui
 )
 
-add_library(KF5NewStuff ${KNewStuff_SRCS} )
+add_library(KF5NewStuff ${KNewStuff_SRCS} ${KNewStuff_RESOURCES})
 add_library(KF5::NewStuff ALIAS KF5NewStuff)
 
 ecm_generate_export_header(KF5NewStuff
@@ -55,7 +56,7 @@ ecm_generate_export_header(KF5NewStuff
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
-    DEPRECATION_VERSIONS 5.29 5.76 5.77 5.78 5.79 5.80 5.82
+    DEPRECATION_VERSIONS 5.29 5.76 5.77 5.78 5.79 5.80 5.82 5.85
 )
 
 target_include_directories(KF5NewStuff
@@ -76,6 +77,7 @@ target_link_libraries(KF5NewStuff
     KF5::ItemViews             # For buttons on download dialog
     KF5::IconThemes           # For KIcon
     Qt5::Qml
+    Qt5::Quick
     KF5::TextWidgets          # For KTextEdit in upload dialog
 )
 

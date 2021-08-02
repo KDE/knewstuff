@@ -78,6 +78,18 @@ class KNEWSTUFFCORE_EXPORT Engine : public QObject
      */
     Q_PROPERTY(QString useLabel READ useLabel NOTIFY useLabelChanged)
 
+    /**
+     * Whether or not the configuration says that the providers are expected to support uploading.
+     * As it stands, this is used to determine whether or not to show the Upload... action where
+     * that is displayed (primarily NewStuff.Page).
+     * @since 5.85
+     */
+    Q_PROPERTY(bool uploadEnabled READ uploadEnabled NOTIFY uploadEnabledChanged)
+
+    /**
+     * @since 5.85
+     */
+    Q_PROPERTY(QStringList providerIDs READ providerIDs NOTIFY providersChanged)
 public:
     /**
      * Constructor.
@@ -547,6 +559,20 @@ public:
     QSharedPointer<Provider> defaultProvider() const;
 
     /**
+     * The IDs of all providers known by this engine. Use this in combination with
+     * provider(const QString&) to iterate over all providers.
+     * @return The string IDs of all known providers
+     * @since 5.85
+     */
+    QStringList providerIDs() const;
+
+    /**
+     * Fired whenever the list of providers changes
+     * @since 5.85
+     */
+    Q_SIGNAL void providersChanged();
+
+    /**
      * This function will return an instance of a model which contains comments for
      * the entry passed to it. The model may be empty (if there are no comments for
      * the entry, which also covers situations where the entry's provider does not
@@ -618,6 +644,19 @@ public:
      * @since 5.74
      */
     Q_INVOKABLE void revalidateCacheEntries();
+
+    /**
+     * Whether or not the configuration says that the providers are expected to support uploading.
+     * @return True if the providers are expected to support uploading
+     * @since 5.85
+     */
+    bool uploadEnabled() const;
+
+    /**
+     * Fired when the uploadEnabled property changes
+     * @since 5.85
+     */
+    Q_SIGNAL void uploadEnabledChanged();
 
 Q_SIGNALS:
     /**
@@ -738,6 +777,7 @@ private:
     QSharedPointer<Cache> m_cache;
     QTimer *m_searchTimer;
     // The url of the file containing information about content providers
+    /// TODO KF6 This really wants to be turned into a QUrl (which will have implications for our public API, so not doing it just now)
     QString m_providerFileUrl;
     // Categories from knsrc file
     QStringList m_categories;

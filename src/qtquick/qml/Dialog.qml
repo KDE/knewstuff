@@ -21,7 +21,7 @@ import QtQuick.Layouts 1.11 as QtLayouts
 import QtQuick.Dialogs 1.3 as QtDialogs
 
 import org.kde.kirigami 2.7 as Kirigami
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
 QtDialogs.Dialog {
     id: component
@@ -124,6 +124,23 @@ QtDialogs.Dialog {
             }
             standardButtons: QtControls.DialogButtonBox.Close
             onRejected: component.close()
+            QtControls.Button {
+                text: i18nd("knewstuff5", "Contribute your own...")
+                icon.name: "upload-media"
+                visible: newStuffPage.engine.engine.uploadEnabled
+                enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
+                onClicked: {
+                    newStuffPage.pageStack.push(uploadPage);
+                }
+                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
+            }
+        }
+    }
+    Component {
+        id: uploadPage
+        NewStuff.UploadPage {
+            objectName: "uploadPage"
+            engine: newStuffPage.engine
         }
     }
 }

@@ -10,6 +10,7 @@ set(KNewStuffCore_SRCS
     installation.cpp
     itemsmodel.cpp
     provider.cpp
+    providersmodel.cpp
     security.cpp
     tagsfilterchecker.cpp
     xmlloader.cpp
@@ -120,6 +121,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Installation
   ItemsModel
   Provider
+  ProvidersModel
   Question
   QuestionListener
   QuestionManager

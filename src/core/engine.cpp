@@ -143,6 +143,7 @@ public:
     Engine::BusyState busyState;
     QString busyMessage;
     QString useLabel;
+    bool uploadEnabled = false;
 };
 
 Engine::Engine(QObject *parent)
@@ -202,23 +203,35 @@ bool Engine::init(const QString &configfile)
     setBusy(BusyOperation::Initializing, i18n("Initializing"));
 
     QScopedPointer<KConfig> conf;
+    QFileInfo configFileInfo(configfile);
     // TODO KF6: This is fallback logic for an old location for the knsrc files. This is deprecated in KF5 and should be removed in KF6
-    bool isRelativeConfig = QFileInfo(configfile).isRelative();
+    bool isRelativeConfig = configFileInfo.isRelative();
     QString actualConfig;
     if (isRelativeConfig) {
-        // Don't do the expensive search unless the config is relative
-        actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
+        if (configfile.contains(QStringLiteral("/"))) {
+            // If this is the case, then we've been given an /actual/ relative path, not just the name of a knsrc file
+            actualConfig = configFileInfo.canonicalFilePath();
+        } else {
+            // Don't do the expensive search unless the config is relative
+            actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
+        }
     }
+    // We need to always have a full path in some cases, and the given config name in others, so let's just
+    // store this in a variable with a useful name
+    QString configFullPath = actualConfig.isEmpty() ? configfile : actualConfig;
     QString configFileName{configfile};
     if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
         conf.reset(new KConfig(configfile));
         qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile
                                  << " - please contact the author of the software which provides this file to get it updated to use the new location";
-    } else if (isRelativeConfig) {
+    } else if (isRelativeConfig && actualConfig.isEmpty()) {
         configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile))).baseName();
         conf.reset(new KConfig(QStringLiteral("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
+    } else if (isRelativeConfig) {
+        configFileName = configFileInfo.baseName();
+        conf.reset(new KConfig(actualConfig));
     } else {
-        configFileName = QFileInfo(configfile).baseName();
+        configFileName = configFileInfo.baseName();
         conf.reset(new KConfig(configfile));
     }
 
@@ -247,11 +260,13 @@ bool Engine::init(const QString &configfile)
     m_adoptionCommand = group.readEntry("AdoptionCommand");
     d->useLabel = group.readEntry("UseLabel", i18n("Use"));
     Q_EMIT useLabelChanged();
+    d->uploadEnabled = group.readEntry("UploadEnabled", true);
+    Q_EMIT uploadEnabledChanged();
 
     m_providerFileUrl = group.readEntry("ProvidersUrl");
     if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
         // The local providers file is called "appname.providers", to match "appname.knsrc"
-        m_providerFileUrl = QLatin1String("%1.providers").arg(configFileName.left(configFileName.length() - 6));
+        m_providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6))).toString();
     }
 
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
@@ -466,6 +481,8 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     connect(provider.data(), &Provider::signalInformation, this, [this](const QString &message) {
         Q_EMIT signalMessage(message);
     });
+    connect(provider.data(), &Provider::basicsLoaded, this, &Engine::providersChanged);
+    Q_EMIT providersChanged();
 }
 
 void Engine::providerJobStarted(KJob *job)
@@ -1078,6 +1095,11 @@ QSharedPointer<KNSCore::Provider> KNSCore::Engine::defaultProvider() const
     return nullptr;
 }
 
+QStringList Engine::providerIDs() const
+{
+    return m_providers.keys();
+}
+
 KNSCore::CommentsModel *KNSCore::Engine::commentsForEntry(const KNSCore::EntryInternal &entry)
 {
     CommentsModel *model = d->commentsModels[entry];
@@ -1198,4 +1220,9 @@ void Engine::adoptEntry(const EntryInternal &entry)
 QString Engine::useLabel() const
 {
     return d->useLabel;
+}
+
+bool KNSCore::Engine::uploadEnabled() const
+{
+    return d->uploadEnabled;
 }

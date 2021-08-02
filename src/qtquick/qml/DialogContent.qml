@@ -61,6 +61,7 @@ Kirigami.ApplicationItem {
     pageStack.globalToolBar.canContainHandles: true
     pageStack.initialPage: NewStuff.Page {
         id: newStuffPage
+        showUploadAction: false
         function showMessage(message) {
             // As the Page shows something nice and friendly while loading,
             // there's no reason to do the passive notification thing for those.

@@ -10,3 +10,4 @@ EntryDetails 1.1 qml/EntryDetails.qml
 Page 1.1 qml/Page.qml
 QuestionAsker 1.1 qml/QuestionAsker.qml
 Action 1.81 qml/Action.qml
+UploadPage 1.85 qml/UploadPage.qml

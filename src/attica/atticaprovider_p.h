@@ -65,6 +65,12 @@ public:
      * @see Provider::loadPerson(const QString &username)
      */
     Q_SLOT void loadPerson(const QString &username);
+    /**
+     * The slot which causes the provider's basic information to be fetched.
+     * For the Attica provider, this translates to an OCS Config call
+     * @see Provider::loadBasics()
+     */
+    Q_SLOT void loadBasics();
 
     bool userCanVote() override
     {
@@ -90,6 +96,7 @@ private Q_SLOTS:
     void detailsLoaded(Attica::BaseJob *job);
     void loadedComments(Attica::BaseJob *job);
     void loadedPerson(Attica::BaseJob *job);
+    void loadedConfig(Attica::BaseJob *job);
 
 private:
     void checkForUpdates();

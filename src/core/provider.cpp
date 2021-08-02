@@ -14,14 +14,42 @@
 
 #include <KLocalizedString>
 
+#include <QTimer>
+
 namespace KNSCore
 {
 // TODO KF6 BCI: Add a real d-pointer
 class ProviderPrivate
 {
 public:
+    Provider *q;
     QStringList tagFilter;
     QStringList downloadTagFilter;
+
+    QTimer *basicsThrottle{nullptr};
+    QString version;
+    QUrl website;
+    QUrl host;
+    QString contactEmail;
+    bool supportsSsl{false};
+    bool basicsGot{false};
+    void updateOnFirstBasicsGet()
+    {
+        if (!basicsGot) {
+            basicsGot = true;
+            QTimer::singleShot(0, q, &Provider::loadBasics);
+        }
+    };
+    void throttleBasics()
+    {
+        if (!basicsThrottle) {
+            basicsThrottle = new QTimer(q);
+            basicsThrottle->setInterval(0);
+            basicsThrottle->setSingleShot(true);
+            QObject::connect(basicsThrottle, &QTimer::timeout, q, &Provider::basicsLoaded);
+        }
+        basicsThrottle->start();
+    }
 };
 typedef QHash<const Provider *, ProviderPrivate *> ProviderPrivateHash;
 Q_GLOBAL_STATIC(ProviderPrivateHash, d_func)
@@ -51,6 +79,7 @@ QString Provider::SearchRequest::hashForRequest() const
 
 Provider::Provider()
 {
+    d(this)->q = this;
 }
 
 Provider::~Provider()
@@ -102,4 +131,73 @@ QDebug operator<<(QDebug dbg, const Provider::SearchRequest &search)
     return dbg;
 }
 
+QString Provider::version() const
+{
+    d(this)->updateOnFirstBasicsGet();
+    return d(this)->version;
+}
+
+void Provider::setVersion(const QString &version)
+{
+    if (d(this)->version != version) {
+        d(this)->version = version;
+        d(this)->throttleBasics();
+    }
+}
+
+QUrl Provider::website() const
+{
+    d(this)->updateOnFirstBasicsGet();
+    return d(this)->website;
+}
+
+void Provider::setWebsite(const QUrl &website)
+{
+    if (d(this)->website != website) {
+        d(this)->website = website;
+        d(this)->throttleBasics();
+    }
+}
+
+QUrl Provider::host() const
+{
+    d(this)->updateOnFirstBasicsGet();
+    return d(this)->host;
+}
+
+void Provider::setHost(const QUrl &host)
+{
+    if (d(this)->host != host) {
+        d(this)->host = host;
+        d(this)->throttleBasics();
+    }
+}
+
+QString Provider::contactEmail() const
+{
+    d(this)->updateOnFirstBasicsGet();
+    return d(this)->contactEmail;
+}
+
+void Provider::setContactEmail(const QString &contactEmail)
+{
+    if (d(this)->contactEmail != contactEmail) {
+        d(this)->contactEmail = contactEmail;
+        d(this)->throttleBasics();
+    }
+}
+
+bool Provider::supportsSsl() const
+{
+    d(this)->updateOnFirstBasicsGet();
+    return d(this)->supportsSsl;
+}
+
+void Provider::setSupportsSsl(bool supportsSsl)
+{
+    if (d(this)->supportsSsl != supportsSsl) {
+        d(this)->supportsSsl = supportsSsl;
+        d(this)->throttleBasics();
+    }
+}
 }

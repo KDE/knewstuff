@@ -3,6 +3,7 @@
     This file is part of KNewStuff2.
     SPDX-FileCopyrightText: 2009 Jeremy Whiting <jpwhiting@kde.org>
     SPDX-FileCopyrightText: 2009 Frederik Gladhorn <gladhorn@kde.org>
+    SPDX-FileCopyrightText: 2021 Dan Leinir Turthra Jensen <admin@leinir.dk>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
@@ -41,6 +42,11 @@ struct Comment;
 class KNEWSTUFFCORE_EXPORT Provider : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString version READ version WRITE setVersion NOTIFY basicsLoaded)
+    Q_PROPERTY(QUrl website READ website WRITE setWebsite NOTIFY basicsLoaded)
+    Q_PROPERTY(QUrl host READ host WRITE setHost NOTIFY basicsLoaded)
+    Q_PROPERTY(QString contactEmail READ contactEmail WRITE setContactEmail NOTIFY basicsLoaded)
+    Q_PROPERTY(bool supportsSsl READ supportsSsl WRITE setSupportsSsl NOTIFY basicsLoaded)
 public:
     typedef QList<Provider *> List;
 
@@ -206,6 +212,79 @@ public:
      * @since 5.63
      */
     Q_SIGNAL void loadPerson(const QString &username);
+    /**
+     * Request loading of the basic information for this provider. The engine listens
+     * to the basicsLoaded() signal for the result, which is also the signal the respective
+     * properties listen to.
+     *
+     * This is fired automatically on the first attempt to read one of the properties
+     * which contain this basic information, and you will not need to call it as a user
+     * of the class (just listen to the properties, which will update when the information
+     * has been fetched).
+     *
+     * @note Implementation detail: All subclasses should connect to this signal
+     * and point it at a slot which does the actual work, if they support fetching
+     * this basic information (if the information is set during construction, you will
+     * not need to worry about this).
+     *
+     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
+     * @see version()
+     * @see website()
+     * @see host();
+     * @see contactEmail()
+     * @see supportsSsl()
+     * @since 5.85
+     */
+    Q_SIGNAL void loadBasics();
+    /**
+     * @since 5.85
+     */
+    QString version() const;
+    /**
+     * @since 5.85
+     */
+    void setVersion(const QString &version);
+    /**
+     * @since 5.85
+     */
+    QUrl website() const;
+    /**
+     * @since 5.85
+     */
+    void setWebsite(const QUrl &website);
+    /**
+     * @since 5.85
+     */
+    QUrl host() const;
+    /**
+     * @param host The host used for this provider
+     * @since 5.85
+     */
+    void setHost(const QUrl &host);
+    /**
+     * The general contact email for this provider
+     * @return The general contact email for this provider
+     * @since 5.85
+     */
+    QString contactEmail() const;
+    /**
+     * Sets the general contact email address for this provider
+     * @param contactEmail The general contact email for this provider
+     * @since 5.85
+     */
+    void setContactEmail(const QString &contactEmail);
+    /**
+     * Whether or not the provider supports SSL connections
+     * @return True if the server supports SSL connections, false if not
+     * @since 5.85
+     */
+    bool supportsSsl() const;
+    /**
+     * Set whether or not the provider supports SSL connections
+     * @param supportsSsl True if the server supports SSL connections, false if not
+     * @since 5.85
+     */
+    void setSupportsSsl(bool supportsSsl);
 
     virtual bool userCanVote()
     {
@@ -275,6 +354,11 @@ Q_SIGNALS:
      * @since 5.63
      */
     void personLoaded(const std::shared_ptr<KNSCore::Author> author);
+    /**
+     * Fired when the provider's basic information has been fetched and updated
+     * @since 5.85
+     */
+    void basicsLoaded();
 
     /**
      * Fires when the provider has loaded search presets. These represent interesting

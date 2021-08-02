@@ -1,9 +1,6 @@
 [KNewStuff2]
 ProvidersUrl=file://@CMAKE_CURRENT_SOURCE_DIR@/testdata/provider.xml
 LocalRegistryDir=/tmp/knewstuff2.metafiles
-
 TargetDir=knewstuff2_test
 
-# For more *.knsrc configuration file options, see doc/tutorial.txt.
-# For a list of providers, see kstuff/hotstuff/providers in KStuff SVN.
-
+# For more *.knsrc configuration file options, see README.md

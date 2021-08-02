@@ -65,13 +65,35 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     mIcon = iconurl;
 
     QDomNode n;
+    QLocale::Language systemLanguage = QLocale::system().language();
+    QString firstName;
     for (n = xmldata.firstChild(); !n.isNull(); n = n.nextSibling()) {
         QDomElement e = n.toElement();
         if (e.tagName() == QLatin1String("title")) {
-            // QString lang = e.attribute("lang");
-            mName = e.text().trimmed();
-            qCDebug(KNEWSTUFFCORE) << "add name for provider (" << this << "): " << e.text();
+            const QString lang{e.attribute(QLatin1String("lang"))};
+            bool useThisTitle{false};
+            if (mName.isEmpty() && lang.isEmpty()) {
+                // If we have no title as yet, and we've also got no language defined, this is the default
+                // and name we need to set it, even if we might override it later
+                useThisTitle = true;
+            } else {
+                const QLocale locale(lang);
+                if (systemLanguage == locale.language()) {
+                    useThisTitle = true;
+                }
+            }
+            if (useThisTitle) {
+                mName = e.text().trimmed();
+                qCDebug(KNEWSTUFFCORE) << "add name for provider (" << this << "): " << e.text();
+            }
+            if (firstName.isEmpty()) {
+                firstName = e.text().trimmed();
+            }
         }
+    }
+    if (mName.isEmpty()) {
+        // Just a fallback, because those are quite nice to have...
+        mName = firstName;
     }
 
     // Validation
@@ -83,6 +105,12 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     if ((!mNoUploadUrl.isValid()) && (!mUploadUrl.isValid())) {
         qWarning() << "StaticXmlProvider: neither uploadurl nor nouploadurl given";
         return false;
+    }
+
+    if (mUploadUrl.isValid()) {
+        setWebsite(mUploadUrl);
+    } else {
+        setWebsite(mNoUploadUrl);
     }
 
     mId = mDownloadUrls[QString()].url();

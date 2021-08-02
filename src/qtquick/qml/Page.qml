@@ -18,9 +18,9 @@ import QtQuick.Layouts 1.11 as QtLayouts
 import QtGraphicalEffects 1.11 as QtEffects
 
 import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 
-import org.kde.newstuff 1.83 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
 import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
@@ -58,6 +58,16 @@ KCM.GridViewKCM {
      * @param message The message to be shown to the user
      */
     signal errorMessage(string message);
+
+    /**
+     * Whether or not to show the Upload... context action
+     * Usually this will be bound to the engine's property which usually defines
+     * this, but you can override it programmatically by setting it here.
+     * @since 5.85
+     * @see KNSCore::Engine::uploadEnabled
+     */
+    property alias showUploadAction: uploadAction.visible
+
 
     /**
      * Show the details page for a specific entry.
@@ -339,6 +349,16 @@ KCM.GridViewKCM {
                 }
             },
             Kirigami.Action {
+                id: uploadAction
+                text: i18nd("knewstuff5", "Upload...")
+                tooltip: i18nd("knewstuff5", "Learn how to add your own hot new stuff to this list")
+                iconName: "upload-media"
+                visible: root.showUploadAction && newStuffEngine.engine.uploadEnabled
+                onTriggered: {
+                    pageStack.push(uploadPage);
+                }
+            },
+            Kirigami.Action {
                 text: i18nd("knewstuff5", "Go to...")
                 iconName: "go-next";
                 id: searchModelActions;
@@ -347,6 +367,7 @@ KCM.GridViewKCM {
             Kirigami.Action {
                 text: i18nd("knewstuff5", "Search...")
                 iconName: "system-search";
+                displayHint: Kirigami.DisplayHint.KeepVisible
                 displayComponent: Kirigami.SearchField {
                     enabled: engine.isValid
                     id: searchField
@@ -437,6 +458,12 @@ KCM.GridViewKCM {
     Component {
         id: detailsPage;
         NewStuff.EntryDetails { }
+    }
+    Component {
+        id: uploadPage
+        NewStuff.UploadPage {
+            engine: newStuffEngine
+        }
     }
 
     Item {

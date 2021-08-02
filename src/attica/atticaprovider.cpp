@@ -16,6 +16,7 @@
 #include <knewstuffcore_debug.h>
 
 #include <attica/accountbalance.h>
+#include <attica/config.h>
 #include <attica/content.h>
 #include <attica/downloaditem.h>
 #include <attica/listjob.h>
@@ -43,6 +44,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories, const QString &add
     connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)), SLOT(authenticationCredentialsMissing(Provider)));
     connect(this, &Provider::loadComments, this, &AtticaProvider::loadComments);
     connect(this, &Provider::loadPerson, this, &AtticaProvider::loadPerson);
+    connect(this, &Provider::loadBasics, this, &AtticaProvider::loadBasics);
 }
 
 AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString &additionalAgentInformation)
@@ -421,6 +423,40 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
     author->setAvatarUrl(person.avatarUrl());
     author->setDescription(person.extendedAttribute(QStringLiteral("description")));
     Q_EMIT personLoaded(author);
+}
+
+void AtticaProvider::loadBasics()
+{
+    Attica::ItemJob<Attica::Config> *configJob = m_provider.requestConfig();
+    connect(configJob, &BaseJob::finished, this, &AtticaProvider::loadedConfig);
+    configJob->start();
+}
+
+void AtticaProvider::loadedConfig(Attica::BaseJob *baseJob)
+{
+    if (jobSuccess(baseJob)) {
+        auto *job = static_cast<ItemJob<Attica::Config> *>(baseJob);
+        Attica::Config config = job->result();
+        setVersion(config.version());
+        setSupportsSsl(config.ssl());
+        setContactEmail(config.contact());
+        QString protocol{QStringLiteral("http")};
+        if (config.ssl()) {
+            protocol = QStringLiteral("https");
+        }
+        // There is usually no protocol in the website and host, but in case
+        // there is, trust what's there
+        if (config.website().contains(QLatin1String("://"))) {
+            setWebsite(QUrl(config.website()));
+        } else {
+            setWebsite(QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.website())));
+        }
+        if (config.host().contains(QLatin1String("://"))) {
+            setHost(QUrl(config.host()));
+        } else {
+            setHost(QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.host())));
+        }
+    }
 }
 
 void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)

@@ -202,6 +202,17 @@ cases the word "Use" usually used as the label for the action which activates th
 To change this label, you can add an entry like the following to your knsrc file: `UseLabel=Read`, which in this case
 will show the word "Read" for that action instead of "Use".
 
+### Upload Assistance
+
+While KNewStuff does not currently handle content uploading, the UI will attempt to guide users in how to upload new entries
+on whatever provider their content is currently coming from. If you as an application developer want to explicitly not
+suggest that users should do this, add an `UploadEnabled=false` entry to your configuration file.
+
+Not adding this entry to your configuration will cause KNewStuff to add an entry to NewStuff.Page's contextual actions
+with the label "Upload...", which pushes a NewStuff.UploadPage to the stack. At this current time, this page simply
+gives instructions on how uploading can be done (with specific attention paid to identifying the KDE Store and giving
+more specific instructions for that).
+
 ### Installation Control
 
 The `InstallationCommand` and `UninstallCommand` entries can be used to handle items once they have been put into their
