@@ -13,7 +13,7 @@
 
 #include "knewstuff_export.h"
 
-#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 80)
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 85)
 
 #include <QDialog>
 #include <QUrl>
