@@ -59,8 +59,7 @@
         </property>
         <property name="icon">
          <iconset theme="arrow-down">
-          <normaloff/>
-         </iconset>
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -80,8 +79,7 @@
         </property>
         <property name="icon">
          <iconset theme="arrow-up">
-          <normaloff/>
-         </iconset>
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -101,8 +99,7 @@
         </property>
         <property name="icon">
          <iconset theme="arrow-left">
-          <normaloff/>
-         </iconset>
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -122,20 +119,19 @@
         </property>
         <property name="icon">
          <iconset theme="arrow-right">
-          <normaloff/>
-         </iconset>
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
         </property>
        </widget>
-       <widget class="QPushButton" name="buttonReset">
+       <widget class="QToolButton" name="buttonReset">
         <property name="geometry">
          <rect>
           <x>40</x>
           <y>280</y>
-          <width>80</width>
-          <height>21</height>
+          <width>81</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="text">
@@ -143,8 +139,10 @@
         </property>
         <property name="icon">
          <iconset theme="document-revert">
-          <normaloff/>
-         </iconset>
+          <normaloff>.</normaloff>.</iconset>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
         </property>
        </widget>
       </widget>
