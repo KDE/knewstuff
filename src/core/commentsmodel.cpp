@@ -177,24 +177,28 @@ QVariant KNSCore::CommentsModel::data(const QModelIndex &index, int role) const
 
 int KNSCore::CommentsModel::rowCount(const QModelIndex &parent) const
 {
-    if (parent.isValid())
+    if (parent.isValid()) {
         return 0;
+    }
     return d->comments.count();
 }
 
 bool KNSCore::CommentsModel::canFetchMore(const QModelIndex &parent) const
 {
-    if (parent.isValid())
+    if (parent.isValid()) {
         return false;
-    if (d->entry.numberOfComments() > d->comments.count())
+    }
+    if (d->entry.numberOfComments() > d->comments.count()) {
         return true;
+    }
     return false;
 }
 
 void KNSCore::CommentsModel::fetchMore(const QModelIndex &parent)
 {
-    if (parent.isValid())
+    if (parent.isValid()) {
         return;
+    }
     d->fetch();
 }
 

@@ -458,8 +458,9 @@ static QString readStringTrimmed(QXmlStreamReader *xml)
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::StartElement);
     QString ret = readText(xml).trimmed();
 
-    if (xml->tokenType() == QXmlStreamReader::Characters)
+    if (xml->tokenType() == QXmlStreamReader::Characters) {
         readNextSkipComments(xml);
+    }
     Q_ASSERT(xml->tokenType() == QXmlStreamReader::EndElement);
     return ret;
 }
@@ -485,10 +486,11 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
 
     while (!reader.atEnd()) {
         const auto token = readNextSkipComments(&reader);
-        if (token == QXmlStreamReader::EndElement)
+        if (token == QXmlStreamReader::EndElement) {
             break;
-        else if (token != QXmlStreamReader::StartElement)
+        } else if (token != QXmlStreamReader::StartElement) {
             continue;
+        }
 
         if (reader.name() == QLatin1String("name")) {
             // TODO maybe do something with the language attribute? QString lang = e.attribute("lang");
@@ -546,8 +548,9 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
             } else if (statusText == QLatin1String("updateable")) {
                 d->mStatus = KNS3::Entry::Updateable;
             }
-            if (reader.tokenType() == QXmlStreamReader::Characters)
+            if (reader.tokenType() == QXmlStreamReader::Characters) {
                 readNextSkipComments(&reader);
+            }
         }
         Q_ASSERT_X(reader.tokenType() == QXmlStreamReader::EndElement,
                    Q_FUNC_INFO,

@@ -87,8 +87,9 @@ QUrl KNS3::Entry::url() const
 
 static void appendIfValid(QList<QUrl> &list, const QUrl &value)
 {
-    if (value.isValid() && !value.isEmpty())
+    if (value.isValid() && !value.isEmpty()) {
         list << value;
+    }
 }
 
 QList<QUrl> KNS3::Entry::previewImages() const

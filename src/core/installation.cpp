@@ -607,8 +607,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                         } else {
                             installedFiles << archiveEntries(installpath, dir);
                         }
-                    } else
+                    } else {
                         qCWarning(KNEWSTUFFCORE) << "could not install" << entry.name() << "to" << installpath;
+                    }
 
                     archive->close();
                     QFile::remove(payloadfile);

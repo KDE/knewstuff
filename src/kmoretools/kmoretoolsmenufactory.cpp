@@ -120,8 +120,9 @@ static void addItemsFromKmtServiceList(KMoreToolsMenuBuilder *menuBuilder,
 {
     for (auto kmtService : kmtServiceList) {
         // Check the pointer just in case a null pointer got in somewhere
-        if (!kmtService)
+        if (!kmtService) {
             continue;
+        }
         if (kmtService->desktopEntryName() == firstMoreSectionDesktopEntryName) {
             // once we reach the potential first "more section desktop entry name"
             // all remaining services are added to the more section by default
@@ -221,8 +222,9 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *me
 
         for (auto kmtService : qAsConst(kmtServiceList)) {
             // Check the pointer just in case a null pointer got in somewhere
-            if (!kmtService)
+            if (!kmtService) {
                 continue;
+            }
             QUrl argUrl = url;
 
             if (url.isLocalFile()) { // this can only be done for local files, remote urls probably won't work for git clients anyway

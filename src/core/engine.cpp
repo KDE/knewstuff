@@ -62,8 +62,9 @@ public:
     QString getAdoptionCommand(const QString &command, const KNSCore::EntryInternal &entry, Installation *inst)
     {
         auto adoption = command;
-        if (adoption.isEmpty())
+        if (adoption.isEmpty()) {
             return {};
+        }
 
         const QLatin1String dirReplace("%d");
         if (adoption.contains(dirReplace)) {
@@ -1090,8 +1091,9 @@ QSharedPointer<KNSCore::Provider> KNSCore::Engine::provider(const QString &provi
 
 QSharedPointer<KNSCore::Provider> KNSCore::Engine::defaultProvider() const
 {
-    if (m_providers.count() > 0)
+    if (m_providers.count() > 0) {
         return m_providers.constBegin().value();
+    }
     return nullptr;
 }
 

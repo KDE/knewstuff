@@ -152,8 +152,9 @@ void Cache::readRegistry()
     }
 
     for (auto token = reader.readNext(); !reader.atEnd(); token = reader.readNext()) {
-        if (token != QXmlStreamReader::StartElement)
+        if (token != QXmlStreamReader::StartElement) {
             continue;
+        }
         EntryInternal e;
         e.setEntryXML(reader);
         e.setSource(EntryInternal::Cache);
@@ -273,8 +274,9 @@ EntryInternal::List Cache::registryForProvider(const QString &providerId)
 
 void Cache::writeRegistry()
 {
-    if (!property("dirty").toBool())
+    if (!property("dirty").toBool()) {
         return;
+    }
 
     qCDebug(KNEWSTUFFCORE) << "Write registry";
 

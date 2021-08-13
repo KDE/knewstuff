@@ -159,10 +159,12 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
 
 int ItemsModel::rowCount(const QModelIndex &parent) const
 {
-    if (parent.isValid())
+    if (parent.isValid()) {
         return 0;
-    if (d->initModel())
+    }
+    if (d->initModel()) {
         return d->model->rowCount(QModelIndex());
+    }
     return 0;
 }
 

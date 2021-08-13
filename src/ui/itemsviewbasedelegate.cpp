@@ -76,8 +76,9 @@ void ItemsViewBaseDelegate::slotInstallClicked()
 
 void ItemsViewBaseDelegate::slotInstallActionTriggered(QAction *action)
 {
-    if (action->data().isNull())
+    if (action->data().isNull()) {
         return;
+    }
 
     QPoint rowDownload = action->data().toPoint();
     int row = rowDownload.x();
