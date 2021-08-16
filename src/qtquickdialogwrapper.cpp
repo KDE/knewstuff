@@ -12,6 +12,8 @@
 #include <QQmlEngine>
 #include <QTimer>
 
+#include <KLocalizedContext>
+
 #include "core/engine.h"
 
 using namespace KNS3;
@@ -30,6 +32,9 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
     , d(new QtQuickDialogWrapperPrivate())
 {
     d->engine = new QQmlEngine(this);
+    auto *context = new KLocalizedContext(d->engine);
+    context->setTranslationDomain(QStringLiteral("knewstuff5"));
+    d->engine->rootContext()->setContextObject(context);
     QQmlComponent component(d->engine);
     d->engine->rootContext()->setContextProperty(QStringLiteral("knsrcfile"), configFile);
     component.setData(QByteArrayLiteral("import QtQuick 2.7\n"
