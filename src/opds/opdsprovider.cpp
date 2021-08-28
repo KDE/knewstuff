@@ -159,7 +159,7 @@ public:
     };
 
     EntryInternal::List installedEntries() const {{EntryInternal::List entries;
-    for (const EntryInternal &entry : qAsConst(cachedEntries)) {
+    for (const EntryInternal &entry : std::as_const(cachedEntries)) {
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }
@@ -336,7 +336,7 @@ void parseFeedData(const QDomDocument &doc)
         entry.setUniqueId(feedEntry.id());
 
         entry.setStatus(KNS3::Entry::Invalid);
-        for (const EntryInternal &cachedEntry : qAsConst(cachedEntries)) {
+        for (const EntryInternal &cachedEntry : std::as_const(cachedEntries)) {
             if (entry.uniqueId() == cachedEntry.uniqueId()) {
                 entry = cachedEntry;
                 break;

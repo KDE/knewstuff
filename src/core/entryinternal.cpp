@@ -716,7 +716,7 @@ QDomElement KNSCore::EntryInternal::entryXML() const
     if (!d->mChecksum.isEmpty()) {
         (void)addElement(doc, el, QStringLiteral("checksum"), d->mChecksum);
     }
-    for (const QString &file : qAsConst(d->mInstalledFiles)) {
+    for (const QString &file : std::as_const(d->mInstalledFiles)) {
         (void)addElement(doc, el, QStringLiteral("installedfile"), file);
     }
     if (!d->mUniqueId.isEmpty()) {

@@ -79,7 +79,7 @@ Entry::List DownloadWidget::changedEntries()
 {
     Entry::List entries;
     entries.reserve(d->changedEntries.count());
-    for (const KNSCore::EntryInternal &e : qAsConst(d->changedEntries)) {
+    for (const KNSCore::EntryInternal &e : std::as_const(d->changedEntries)) {
         entries.append(EntryPrivate::fromInternal(&e));
     }
     return entries;
@@ -88,7 +88,7 @@ Entry::List DownloadWidget::changedEntries()
 Entry::List DownloadWidget::installedEntries()
 {
     Entry::List entries;
-    for (const KNSCore::EntryInternal &e : qAsConst(d->changedEntries)) {
+    for (const KNSCore::EntryInternal &e : std::as_const(d->changedEntries)) {
         if (e.status() == Entry::Installed) {
             entries.append(EntryPrivate::fromInternal(&e));
         }

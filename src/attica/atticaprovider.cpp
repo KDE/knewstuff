@@ -210,7 +210,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
         categoriesToSearch = mCategoryMap.values();
     } else {
         categoriesToSearch.reserve(request.categories.size());
-        for (const QString &categoryName : qAsConst(request.categories)) {
+        for (const QString &categoryName : std::as_const(request.categories)) {
             categoriesToSearch.append(mCategoryMap.values(categoryName));
         }
     }
@@ -228,7 +228,7 @@ void AtticaProvider::checkForUpdates()
         Q_EMIT loadingFinished(mCurrentRequest, {});
     }
 
-    for (const EntryInternal &e : qAsConst(mCachedEntries)) {
+    for (const EntryInternal &e : std::as_const(mCachedEntries)) {
         ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         m_updateJobs.insert(job);
@@ -257,7 +257,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
     if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
         qCDebug(KNEWSTUFFCORE) << "check update finished.";
         QList<EntryInternal> updatable;
-        for (const EntryInternal &entry : qAsConst(mCachedEntries)) {
+        for (const EntryInternal &entry : std::as_const(mCachedEntries)) {
             if (entry.status() == KNS3::Entry::Updateable) {
                 updatable.append(entry);
             }
@@ -513,7 +513,7 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
 EntryInternal::List AtticaProvider::installedEntries() const
 {
     EntryInternal::List entries;
-    for (const EntryInternal &entry : qAsConst(mCachedEntries)) {
+    for (const EntryInternal &entry : std::as_const(mCachedEntries)) {
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             entries.append(entry);
         }

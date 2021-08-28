@@ -123,7 +123,7 @@ public: // should be private but we would like to unit test
     {
         QList<const KmtMenuItemDto *> r;
 
-        for (const auto &item : qAsConst(list)) {
+        for (const auto &item : std::as_const(list)) {
             if (item.menuSection == menuSection) {
                 r.append(&item);
             }
@@ -184,7 +184,7 @@ public:
     void jsonWrite(QJsonObject &json) const
     {
         QJsonArray jArr;
-        for (const auto &item : qAsConst(list)) {
+        for (const auto &item : std::as_const(list)) {
             QJsonObject jObj;
             item.jsonWrite(jObj);
             jArr.append(jObj);
@@ -317,7 +317,7 @@ public:
     {
         KmtMenuStructureDto result;
 
-        for (auto item : qAsConst(mainItems)) {
+        for (auto item : std::as_const(mainItems)) {
             const auto a = item->action();
             KmtMenuItemDto dto;
             dto.id = item->id();
@@ -328,7 +328,7 @@ public:
             result.list << dto;
         }
 
-        for (auto item : qAsConst(moreItems)) {
+        for (auto item : std::as_const(moreItems)) {
             const auto a = item->action();
             KmtMenuItemDto dto;
             dto.id = item->id();
@@ -339,7 +339,7 @@ public:
             result.list << dto;
         }
 
-        for (auto registeredService : qAsConst(notInstalledServices)) {
+        for (auto registeredService : std::as_const(notInstalledServices)) {
             KmtMenuItemDto dto;
             // dto.id = item->id(); // not used in this case
             dto.text = registeredService->formatString(_("$Name"));

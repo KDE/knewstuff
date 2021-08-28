@@ -61,7 +61,7 @@ public:
                     QList<std::shared_ptr<KNSCore::Comment>> actualNewComments;
                     for (const std::shared_ptr<KNSCore::Comment> &comment : newComments) {
                         bool commentIsKnown = false;
-                        for (const std::shared_ptr<KNSCore::Comment> &existingComment : qAsConst(comments)) {
+                        for (const std::shared_ptr<KNSCore::Comment> &existingComment : std::as_const(comments)) {
                             if (existingComment->id == comment->id) {
                                 commentIsKnown = true;
                                 break;

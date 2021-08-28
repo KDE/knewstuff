@@ -223,7 +223,7 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *me
 
         menuBuilder->setInitialItemTextTemplate(QStringLiteral("$Name")); // just use the application name
 
-        for (auto kmtService : qAsConst(kmtServiceList)) {
+        for (auto kmtService : std::as_const(kmtServiceList)) {
             // Check the pointer just in case a null pointer got in somewhere
             if (!kmtService) {
                 continue;

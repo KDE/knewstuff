@@ -165,7 +165,7 @@ KMoreToolsPresetsPrivate::registerServicesByGroupingNames(QString *firstMoreSect
     for (const QString &groupingName : groupingNames) {
         auto iter = dict.constFind(groupingName);
         if (iter != dict.constEnd()) {
-            for (const QString &desktopEntryName : qAsConst(*iter)) {
+            for (const QString &desktopEntryName : std::as_const(*iter)) {
                 if (!alreadyUsedDesktopEntryNames.contains(desktopEntryName)) {
                     if (desktopEntryName == _("more:")) {
                         nextIsMore = true;

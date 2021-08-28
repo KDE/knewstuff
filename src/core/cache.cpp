@@ -264,7 +264,7 @@ void Cache::readKns2MetaFiles()
 EntryInternal::List Cache::registryForProvider(const QString &providerId)
 {
     EntryInternal::List entries;
-    for (const EntryInternal &e : qAsConst(cache)) {
+    for (const EntryInternal &e : std::as_const(cache)) {
         if (e.providerId() == providerId) {
             entries.append(e);
         }
@@ -292,7 +292,7 @@ void Cache::writeRegistry()
     QDomElement root = doc.createElement(QStringLiteral("hotnewstuffregistry"));
     doc.appendChild(root);
 
-    for (const EntryInternal &entry : qAsConst(cache)) {
+    for (const EntryInternal &entry : std::as_const(cache)) {
         // Write the entry, unless the policy is CacheNever and the entry is not installed.
         if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
             QDomElement exml = entry.entryXML();
