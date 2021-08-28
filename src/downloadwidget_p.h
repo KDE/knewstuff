@@ -54,7 +54,7 @@ public:
     QString m_configFile;
     bool dialogMode;
 
-    explicit DownloadWidgetPrivate(DownloadWidget *q);
+    explicit DownloadWidgetPrivate(DownloadWidget *qq);
     ~DownloadWidgetPrivate();
 
     void init(const QString &configFile);

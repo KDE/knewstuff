@@ -23,8 +23,8 @@ public:
     DownloadManager *const q;
     Engine *const engine;
 
-    DownloadManagerPrivate(DownloadManager *q)
-        : q(q)
+    DownloadManagerPrivate(DownloadManager *qq)
+        : q(qq)
         , engine(new Engine)
     {
     }

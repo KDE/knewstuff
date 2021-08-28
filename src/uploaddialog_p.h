@@ -22,8 +22,8 @@ namespace KNS3
 class UploadDialogPrivate
 {
 public:
-    UploadDialogPrivate(UploadDialog *q)
-        : q(q)
+    UploadDialogPrivate(UploadDialog *qq)
+        : q(qq)
     {
     }
 

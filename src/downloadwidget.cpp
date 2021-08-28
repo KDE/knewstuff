@@ -96,7 +96,7 @@ Entry::List DownloadWidget::installedEntries()
     return entries;
 }
 
-DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *q)
+DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *qq)
     : q(q)
     , engine(new KNSCore::Engine)
     , model(new KNSCore::ItemsModel(engine))

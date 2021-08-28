@@ -22,8 +22,8 @@ public:
     DownloadManager *const q;
     KNSCore::Engine *const engine;
 
-    DownloadManagerPrivate(DownloadManager *q)
-        : q(q)
+    DownloadManagerPrivate(DownloadManager *qq)
+        : q(qq)
         , engine(new KNSCore::Engine)
     {
     }
