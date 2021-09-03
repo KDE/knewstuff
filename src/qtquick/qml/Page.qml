@@ -167,6 +167,19 @@ KCM.GridViewKCM {
     }
 
     title: newStuffEngine.name
+
+    view.header: Item {
+        implicitWidth: view.width - Kirigami.Units.gridUnit
+        implicitHeight: Kirigami.Units.gridUnit * 3
+        visible: !loadingOverlay.visible
+        Kirigami.InlineMessage {
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.smallSpacing
+            visible: true
+            text: i18n("The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
+        }
+    }
+
     NewStuff.Engine {
         id: newStuffEngine;
         property string statusMessage;
@@ -467,6 +480,7 @@ KCM.GridViewKCM {
     }
 
     Item {
+        id: loadingOverlay
         anchors.fill: parent
         opacity: (newStuffEngine.isLoading || newStuffModel.isLoadingData) ? 1 : 0
         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
