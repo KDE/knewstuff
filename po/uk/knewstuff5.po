@@ -1,0 +1,1650 @@
+# Translation of knewstuff5.po to Ukrainian
+# Copyright (C) 2018-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Eugene Onischenko <oneugene@ukr.net>, 2002, 2003, 2004, 2005, 2006.
+# Andriy Rysin <arysin@bcsii.com>, 2002, 2003, 2006, 2007.
+# Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2005, 2006, 2007, 2008.
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: knewstuff5\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-09-04 00:14+0000\n"
+"PO-Revision-Date: 2021-08-03 12:03+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: attica/atticaprovider.cpp:167
+#, kde-format
+msgid "All categories are missing"
+msgstr "Усі категорії пропущено"
+
+#: attica/atticaprovider.cpp:479
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Вартість позначеного складає %2 %1.\n"
+"Підтверджуєте купівлю?"
+
+#: attica/atticaprovider.cpp:493
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"На вашому рахунку занадто мало грошей:\n"
+"На рахунку: %1\n"
+"Ціна: %2"
+
+#: attica/atticaprovider.cpp:536
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Ваш голос враховано."
+
+#: attica/atticaprovider.cpp:551
+#, kde-format
+msgid "You are now a fan."
+msgstr "Вас додано до списку прихильників."
+
+#: attica/atticaprovider.cpp:579 core/engine.cpp:389 opds/opdsprovider.cpp:284
+#, kde-format
+msgid ""
+"The service is currently undergoing maintenance and is expected to be back "
+"in %1."
+msgstr ""
+"Зараз служба перебуває на обслуговуванні. Відновлення повноцінної роботи "
+"очікуємо за %1."
+
+#: attica/atticaprovider.cpp:584
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "Помилка мережі %1: %2"
+
+#: attica/atticaprovider.cpp:590
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Занадто багато запитів до сервера. Будь ласка, повторіть спробу за декілька "
+"хвилин."
+
+#: attica/atticaprovider.cpp:593
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+"У екземплярі Open Collaboration Services %1 не передбачено підтримки "
+"відповідної функції."
+
+#: attica/atticaprovider.cpp:597
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr ""
+"Невідома помилка програмного інтерфейсу служби Open Collaboration. (%1)"
+
+#: button.cpp:41
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Отримати нові матеріали..."
+
+#: core/commentsmodel.cpp:171
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr "Невідома роль CommentsModel"
+
+#: core/engine.cpp:169
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+"Під час встановлення сталася помилка:\n"
+"%1"
+
+#: core/engine.cpp:204
+#, kde-format
+msgid "Initializing"
+msgstr "Ініціалізація"
+
+#: core/engine.cpp:240
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "Файл налаштувань знайдено, але його не вдалося відкрити: «%1»"
+
+#: core/engine.cpp:253
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Некоректний файл налаштувань: «%1»"
+
+#: core/engine.cpp:262
+#, kde-format
+msgid "Use"
+msgstr "Використати"
+
+#: core/engine.cpp:279
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+"Не вдалося ініціалізувати обробник встановлення для %1\n"
+"Це критична помилка, про яку слід повідомити автору програми"
+
+#: core/engine.cpp:354
+#, kde-format
+msgid "Loading provider information"
+msgstr "Завантаження відомостей про надавача"
+
+#: core/engine.cpp:415
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
+
+#: core/engine.cpp:445
+#, kde-format
+msgid "Error initializing provider."
+msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
+
+#: core/engine.cpp:449 core/engine.cpp:1017
+#, kde-format
+msgid "Loading data"
+msgstr "Завантаження даних"
+
+#: core/engine.cpp:491
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Завантаження даних постачальника послуг"
+
+#: core/engine.cpp:496
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Завантаження параметрів надання з файла: помилка %1"
+
+#: core/engine.cpp:744
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Не вдалося виконати встановлення запису %1, оскільки для нього не визначено "
+"жодних придатних до отримання пунктів даних. Будь ласка, зв'яжіться із "
+"автором, щоб розв'язати цю проблему."
+
+#: core/engine.cpp:867
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Виберіть запис для оновлення"
+
+#: core/engine.cpp:869
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Будь ласка, виберіть той запис з наведеного нижче списку, яким слід "
+"скористатися для застосування цього оновлення. Нам не вдалося визначити, "
+"який із записів слід вибрати на основі початкового запису, який мав назву %1"
+
+#: core/engine.cpp:888
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Не вдалося визначити добре посилання для оновлення %1, тому оновлення є "
+"неможливим"
+
+#: core/engine.cpp:967
+#, kde-format
+msgid "Re: %1"
+msgstr "Відповідь: %1"
+
+#: core/engine.cpp:1009 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:117
+#, kde-format
+msgid "Installing"
+msgstr "Встановлення"
+
+#: core/engine.cpp:1013
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Завантаження %1 ескізу"
+msgstr[1] "Завантаження %1 ескізів"
+msgstr[2] "Завантаження %1 ескізів"
+msgstr[3] "Завантаження ескізу"
+
+#: core/engine.cpp:1216
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Не вдалося адаптувати «%1»\n"
+"%2"
+
+#: core/installation.cpp:211
+#, kde-format
+msgid "Invalid item."
+msgstr "Некоректний елемент."
+
+#: core/installation.cpp:218
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr ""
+"Спроба отримання елемента зазнала невдачі: для «%1» не вказано адреси "
+"отримання."
+
+#: core/installation.cpp:245
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Спроба отримання «%1» зазнала невдачі, помилка: %2"
+
+#: core/installation.cpp:257
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Отриманий файл є файлом у форматі HTML. Це означає, що отримано посилання на "
+"дані, а не самі дані. Бажаєте відкрити відповідну сторінку у переглядачі "
+"інтернету?"
+
+#: core/installation.cpp:259
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Ймовірно, помилкове посилання на отримання"
+
+#: core/installation.cpp:262
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Отримано файл HTML. Цей файл відкрито у переглядачі інтернету."
+
+#: core/installation.cpp:300
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Не вдалося встановити «%1»: файл не знайдено."
+
+#: core/installation.cpp:482
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr ""
+"Під час спроби встановити %1 не вдалося створити потрібний новий каталог %2"
+
+#: core/installation.cpp:505 core/installation.cpp:815
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "Не вдалося встановити %1: %2"
+
+#: core/installation.cpp:514
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+"Не вдалося встановити %1, оскільки ти служби %2 виявився неприйнятним для "
+"системи (чи не забули ви встановити додаток підтримки цього типу пакунків у "
+"KPackage?)"
+
+#: core/installation.cpp:524
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr ""
+"Не вдалося встановити %1, оскільки отриманий пакунок не містить належної "
+"структури KPackage."
+
+#: core/installation.cpp:530
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr ""
+"Не вдалося встановити %1, оскільки отриманий пакунок не містить даних щодо "
+"типу служби."
+
+#: core/installation.cpp:537
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"Не вдалося встановити %1, оскільки отриманий пакунок не містить корисних "
+"метаданих, отже не є коректним пакунком KPackage."
+
+#: core/installation.cpp:570
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr "Не вдалося визначити тип архіву для отриманого файла %1"
+
+#: core/installation.cpp:582
+#, kde-format
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "Не вдалося відкрити файл архіву %1. Повідомлення про помилку: %2"
+
+#: core/installation.cpp:665
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+"Цей файл вже зберігається на диску (ймовірно, внаслідок попередньої невдалої "
+"спроби отримання даних). Якщо ви накажете програмі продовжити виконання дії, "
+"файл буде перезаписано. Хочете перезаписати наявний файл?"
+
+#: core/installation.cpp:668
+#, kde-format
+msgid "Overwrite File"
+msgstr "Перезаписати файл"
+
+#: core/installation.cpp:684
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr "Не вдалося пересунути файл %1 до планованого призначення %2"
+
+#: core/installation.cpp:707
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+"Помилка встановлення під час спроби виконати команду:\n"
+"%1\n"
+"\n"
+"Повернуті повідомлення:\n"
+"%2"
+
+#: core/installation.cpp:717
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+"Помилка встановлення з кодом %1 під час спроби виконати команду:\n"
+"%2\n"
+"\n"
+"Повернуті повідомлення:\n"
+"%3"
+
+#: core/installation.cpp:759
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed file %2 could not be "
+"automatically removed. You can attempt to manually delete this file, if you "
+"believe this is an error."
+msgstr ""
+"Не вдалося вилучити %1, оскільки не вдалося автоматично вилучити "
+"встановлений файл %2. Ви можете спробувати вилучити цей файл автоматично, "
+"якщо вважаєте, що це помилка."
+
+#: core/installation.cpp:822
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr ""
+"Не вдалося вилучити %1, оскільки встановлений пакунок не містить належної "
+"структури KPackage."
+
+#: core/installation.cpp:827
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+"Не вдалося вилучити %1, оскільки встановлений пакунок не належить до "
+"підтримуваних (чи не забули ви встановити додаток підтримки цього типу "
+"пакунків у KPackage?)"
+
+#: core/installation.cpp:834
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+"Не вдалося вилучити %1, оскільки встановлений пакунок не містить корисних "
+"метаданих, отже не є коректним пакунком KPackage."
+
+#: core/installation.cpp:874
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr ""
+"Не вдалося вилучити %1, оскільки не вдалося автоматично вилучити отриманий "
+"файл %2."
+
+#: core/installation.cpp:879
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+"Не вдалося вилучити %1, оскільки встановлений файл не є пакунком KPackage. "
+"Маємо файл %2, який ви можете вилучити власноруч, якщо певні, що він є "
+"непотрібним."
+
+#: core/installation.cpp:887
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+"Не вдалося вилучити %1, оскільки, якимось чином, встановлено декілька "
+"екземплярів. Підтримки таких варіантів вилучення для записів на основі "
+"KPackage не передбачено."
+
+#: core/installation.cpp:920
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+"Процесу вилучення не вдалося успішно виконати команду %1\n"
+"%2\n"
+"Якщо ви вважаєте, що це не так, ви можете продовжити або скасувати процедуру "
+"вилучення"
+
+#: core/jobs/kpackagejob.cpp:114
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+"Не вдалося створити завдання для засобу керування пакунками. Звичною "
+"причиною цього є некоректність пакунка. Було зроблено спробу обробити "
+"пакунок %1"
+
+#: core/jobs/kpackagejob.cpp:121
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr ""
+"Не вдалося створити засіб встановлення пакунків для типу служби %1: засіб "
+"встановлення не має коректної структури"
+
+#: core/jobs/kpackagejob.cpp:125
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr "Тип служби %1 є неприйнятним для засобу встановлення KPackage"
+
+#: core/security.cpp:69
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і отримати наявні ключі. Перевірте чи "
+"встановлено <i>gpg</i>, інакше перевірка отриманих ресурсів буде неможливою."
+"</qt>"
+
+#: core/security.cpp:191
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Введіть фразу пароля для ключа <b>0x%1</b>, який належить <br /><i>%2&lt;"
+"%3&gt;</i><br />:</qt>"
+
+#: core/security.cpp:264
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і перевірити достовірність файла. "
+"Перевірте чи встановлено <i>gpg</i>, інакше перевірка отриманих ресурсів "
+"буде неможливою.</qt>"
+
+#: core/security.cpp:320
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Ключ для підписування:"
+
+#: core/security.cpp:321
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Вибір ключа підпису"
+
+#: core/security.cpp:348
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Не вдається запустити <i>gpg</i> і підписати файл. Перевірте чи "
+"встановлено <i>gpg</i>, інакше підписування ресурсів буде неможливим.</qt>"
+
+#: downloaddialog.cpp:69 downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Отримати нові матеріали"
+
+#: downloaddialog.cpp:86
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Додаткові матеріали для програми %1"
+
+#: downloadwidget.cpp:123
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Перевищено час очікування. Перевірте з’єднання з інтернетом."
+
+#: downloadwidget.cpp:186
+#, kde-format
+msgid "Server: %1"
+msgstr "Сервер: %1"
+
+#: downloadwidget.cpp:187
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Провайдер: %1"
+
+#: downloadwidget.cpp:188
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Версія: %1"
+
+#: downloadwidget.cpp:190
+#, kde-format
+msgid "Provider information"
+msgstr "Інформація про провайдера"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Could not install %1"
+msgstr "Не вдалося встановити «%1»"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Отримати нові матеріали!"
+
+#: downloadwidget.cpp:262
+#, kde-format
+msgid "Icons view mode"
+msgstr "Режим перегляду піктограм"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Details view mode"
+msgstr "Режим докладного перегляду"
+
+#: downloadwidget.cpp:279
+#, kde-format
+msgid "All Providers"
+msgstr "Всі надавачі послуг"
+
+#: downloadwidget.cpp:286
+#, kde-format
+msgid "All Categories"
+msgstr "Всі категорії"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54
+#, kde-format
+msgid "Provider:"
+msgstr "Надавач послуг:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 qtquick/qml/Page.qml:411
+#, kde-format
+msgid "Category:"
+msgstr "Категорія:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "Найбільше отримань"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "Датою"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110 qtquick/qml/Page.qml:299
+#, kde-format
+msgid "Rating"
+msgstr "Оцінкою"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117 qtquick/qml/Page.qml:248
+#, kde-format
+msgid "Installed"
+msgstr "Встановлено"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Впорядкувати за:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Пошук:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:217 qtquick/qml/Page.qml:368 qtquick/qml/Page.qml:375
+#, kde-format
+msgid "Search..."
+msgstr "Шукати…"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:371
+#, kde-format
+msgid "Author:"
+msgstr "Автор:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:396
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"https://opendesktop.org\">Домашня сторінка</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
+#: ui/itemsviewdelegate.cpp:112
+#, kde-format
+msgid "Update"
+msgstr "Оновити"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
+#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
+#, kde-format
+msgid "Uninstall"
+msgstr "Прибрати"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:589
+#, kde-format
+msgid "Become a Fan"
+msgstr "Долучитися до прихильників"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:55
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
+#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
+#, kde-format
+msgid "Install"
+msgstr "Встановити"
+
+#: kmoretools/kmoretools.cpp:527
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Не встановлено:"
+
+#: kmoretools/kmoretools.cpp:625
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Більше"
+
+#: kmoretools/kmoretools.cpp:661
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Налаштувати…"
+
+#: kmoretools/kmoretools_p.h:376
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Відвідати сайт"
+
+#: kmoretools/kmoretools_p.h:388
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Встановити"
+
+#: kmoretools/kmoretools_p.h:396
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr "Додаткова інформація недоступна."
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
+#, kde-format
+msgid "Configure menu"
+msgstr "Налаштувати меню"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Налаштовування меню – %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:178
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "%1 — поточна тека"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:185
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "%1 — поточний пристрій"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:199
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "%1 — усі пристрої"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Основний розділ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Нижче"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Вище"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "До основного розділу"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "До додаткового розділу"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Скинути"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Додатковий розділ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"У цьому меню передбачено декілька додаткових інструментів, які ще не "
+"встановлено:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Додаткові інструменти…"
+
+#: qtquick/categoriesmodel.cpp:66
+#, kde-format
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "All Categories"
+msgstr "Усі категорії"
+
+#: qtquick/categoriesmodel.cpp:95
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "Невідома категорія"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:43
+#, kde-format
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr "дані"
+
+#: qtquick/qml/Button.qml:44
+#, kde-format
+msgid "Download New %1..."
+msgstr "Отримати нові %1…"
+
+#: qtquick/qml/Dialog.qml:41
+#, kde-format
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "Отримання нових даних %1"
+
+#: qtquick/qml/Dialog.qml:41
+#, kde-format
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "Отримання нових матеріалів"
+
+#: qtquick/qml/Dialog.qml:127
+#, kde-format
+msgid "Contribute your own..."
+msgstr "Додати власну роботу…"
+
+#: qtquick/qml/DownloadItemsSheet.qml:31
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "Виберіть варіант встановлення"
+
+#: qtquick/qml/DownloadItemsSheet.qml:42
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+"Будь ласка, виберіть бажаний для вас варіант встановлення із наведеного "
+"нижче списку. Якщо ви не можете вирішити, який з варіантів слід вибрати, "
+"будь ласка, зв'яжіться із автором чи авторкою пакунка і попросіть точно "
+"вказати потрібний вам варіант, зазначивши список усіх варіантів, які було "
+"показано."
+
+#: qtquick/qml/EntryDetails.qml:49
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "Встановлюємо %1 з %2"
+
+#: qtquick/qml/EntryDetails.qml:65
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed OR uninstalled"
+msgid "Currently working on the item %1 by %2. Please wait..."
+msgstr "Зараз працюємо над записом %1, автор — %2. Будь ласка, зачекайте…"
+
+#: qtquick/qml/EntryDetails.qml:67
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr "Зараз оновлюємо %1, автор — %2. Будь ласка, зачекайте…"
+
+#: qtquick/qml/EntryDetails.qml:69
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+"Цей запис зараз перебуває у некоректному або невідомому стані. Будь ласка, "
+"повідомте про цю помилку спільноті KDE за допомогою <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">звіту щодо вади</a>."
+
+#: qtquick/qml/EntryDetails.qml:83
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1, автор — %2"
+
+#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Встановити"
+
+#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "Встановити…"
+
+#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Оновити"
+
+#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/Page.qml:154
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Прибрати"
+
+#: qtquick/qml/EntryDetails.qml:153
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "Коментарі та рецензії:"
+
+#: qtquick/qml/EntryDetails.qml:155
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "Рецензії і коментарі щодо %1"
+
+#: qtquick/qml/EntryDetails.qml:160
+#, kde-format
+msgid "Rating:"
+msgstr "Оцінка:"
+
+#: qtquick/qml/EntryDetails.qml:164
+#, kde-format
+msgid "Homepage:"
+msgstr "Домашня сторінка:"
+
+#: qtquick/qml/EntryDetails.qml:165
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr "Відкрити домашню сторінку %1"
+
+#: qtquick/qml/EntryDetails.qml:170
+#, kde-format
+msgid "How To Donate:"
+msgstr "Як підтримати фінансово:"
+
+#: qtquick/qml/EntryDetails.qml:171
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr "Дізнайтеся, як фінансово допомогти цьому проєкту"
+
+#: qtquick/qml/NewStuffItem.qml:22
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Встановити"
+
+#: qtquick/qml/NewStuffList.qml:68
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr "Показати усе"
+
+#: qtquick/qml/NewStuffList.qml:69
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "Лише встановлене"
+
+#: qtquick/qml/NewStuffList.qml:70
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr "Лише оновлюване"
+
+#: qtquick/qml/NewStuffList.qml:82
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "Найсвіжіші — першими"
+
+#: qtquick/qml/NewStuffList.qml:83
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr "Упорядкувати за абеткою"
+
+#: qtquick/qml/NewStuffList.qml:84
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "Найкращі — першими"
+
+#: qtquick/qml/NewStuffList.qml:85
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "Найпопулярніші — першими"
+
+#: qtquick/qml/Page.qml:132
+#, kde-format
+msgctxt ""
+"A message which is shown when the user attempts to display a specific entry "
+"from a specific provider, but that entry isn't found"
+msgid ""
+"The entry you attempted to display, identified by the unique ID %1, could "
+"not be found."
+msgstr ""
+"Запис, який ви хотіли переглянути, ідентифікований за унікальним "
+"ідентифікатором %1, не вдалося знайти."
+
+#: qtquick/qml/Page.qml:201
+#, kde-format
+msgid "Tiles"
+msgstr "Плитки"
+
+#: qtquick/qml/Page.qml:203
+#, kde-format
+msgid "Icons"
+msgstr "Піктограми"
+
+#: qtquick/qml/Page.qml:205
+#, kde-format
+msgid "Preview"
+msgstr "Перегляд"
+
+#: qtquick/qml/Page.qml:220
+#, kde-format
+msgid "Detailed Tiles View Mode"
+msgstr "Режим докладного перегляду з плитками"
+
+#: qtquick/qml/Page.qml:228
+#, kde-format
+msgid "Icons Only View Mode"
+msgstr "Режим перегляду піктограм"
+
+#: qtquick/qml/Page.qml:236
+#, kde-format
+msgid "Large Preview View Mode"
+msgstr "Режим попереднього перегляду великих зображень"
+
+#: qtquick/qml/Page.qml:246
+#, kde-format
+msgid "Everything"
+msgstr "Усе"
+
+#: qtquick/qml/Page.qml:250
+#, kde-format
+msgid "Updateable"
+msgstr "Оновлюване"
+
+#: qtquick/qml/Page.qml:269
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show All Entries"
+msgstr "Показати всі записи"
+
+#: qtquick/qml/Page.qml:277
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Show Only Installed Entries"
+msgstr "Показати лише встановлені"
+
+#: qtquick/qml/Page.qml:285
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Show Only Updateable Entries"
+msgstr "Показати лише придатні до оновлення"
+
+#: qtquick/qml/Page.qml:295
+#, kde-format
+msgid "Recent"
+msgstr "Нещодавні"
+
+#: qtquick/qml/Page.qml:297
+#, kde-format
+msgid "Alphabetical"
+msgstr "За абеткою"
+
+#: qtquick/qml/Page.qml:301
+#, kde-format
+msgid "Downloads"
+msgstr "Отримання"
+
+#: qtquick/qml/Page.qml:320
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show Most Recent First"
+msgstr "Найсвіжіші — першими"
+
+#: qtquick/qml/Page.qml:328
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort Alphabetically By Name"
+msgstr "Упорядкувати назви за абеткою"
+
+#: qtquick/qml/Page.qml:336
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show Highest Rated First"
+msgstr "Найкращі — першими"
+
+#: qtquick/qml/Page.qml:344
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show Most Downloaded First"
+msgstr "Найпопулярніші — першими"
+
+#: qtquick/qml/Page.qml:353
+#, kde-format
+msgid "Upload..."
+msgstr "Вивантажити…"
+
+#: qtquick/qml/Page.qml:354
+#, kde-format
+msgid "Learn how to add your own hot new stuff to this list"
+msgstr "Дізнайтеся про те, як додати результати вашої роботи до цього списку"
+
+#: qtquick/qml/Page.qml:362
+#, kde-format
+msgid "Go to..."
+msgstr "Перейти до…"
+
+#: qtquick/qml/Page.qml:496
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more..."
+msgstr "Завантажуємо додаткові дані…"
+
+#: qtquick/qml/Page.qml:507
+#, kde-format
+msgctxt ""
+"A message shown when there are no entries in the list, and when it is not "
+"trying to load anything"
+msgid "There is no hot new stuff to get here"
+msgstr "Тут немає ніяких корисних нових даних"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<i>(без назви)</i>"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:142
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr "%1 <i>(автор)</i>"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:26
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr "Коментарі та рецензії щодо %1"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:30
+#, kde-format
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "Показати усі коментарі"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:36
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr "Показати лише рецензії"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:42
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr "Показати рецензії і відповіді"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "%1 отримання"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "Автор — <i>%1</i>"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is being installed OR "
+"uninstalled"
+msgid "Working..."
+msgstr "Працюємо…"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "Оновлення…"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+"Некоректний або невідомий стан. Будь ласка, повідомте про цю помилку "
+"спільноті KDE за допомогою <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">звіту щодо вади</a>."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "Встановлення…"
+
+#: qtquick/qml/private/ErrorDisplayer.qml:13
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr "Сталася помилка"
+
+#: qtquick/qml/private/GridTileDelegate.qml:113
+#, kde-format
+msgid "None"
+msgstr "Немає"
+
+#: qtquick/qml/private/Rating.qml:80
+#, kde-format
+msgctxt ""
+"A text representation of the rating, shown as a fraction of the max value"
+msgid "(%1/%2)"
+msgstr "(%1 з %2)"
+
+#: qtquick/qml/UploadPage.qml:51
+#, kde-format
+msgctxt "@knewstuff5"
+msgid "Upload New Stuff: %1"
+msgstr "Вивантаження нових матеріалів: %1"
+
+#: qtquick/qml/UploadPage.qml:83
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Updating information..."
+msgstr "Оновлення відомостей…"
+
+#: qtquick/qml/UploadPage.qml:95
+#, kde-format
+msgctxt "The name of the KDE Store"
+msgid "KDE Store"
+msgstr "Крамниця KDE"
+
+#: qtquick/qml/UploadPage.qml:101
+#, kde-format
+msgctxt "An unnamed provider"
+msgid "Your Provider"
+msgstr "Ваш надавач послуг"
+
+#: qtquick/qml/UploadPage.qml:109
+#, kde-format
+msgctxt ""
+"Text for an action which causes the specified website to be opened using the "
+"user's system default browser"
+msgid "Open Website: %1"
+msgstr "Відкрити сайт: %1"
+
+#: qtquick/qml/UploadPage.qml:114
+#, kde-format
+msgctxt ""
+"Text for an action which will attempt to send an email using the user's "
+"system default email client"
+msgid "Send Email To: %1"
+msgstr "Надіслати повідомлення %1"
+
+#: qtquick/qml/UploadPage.qml:121
+#, kde-format
+msgctxt "A description of how to upload content to a generic provider"
+msgid ""
+"To upload new entries, or to add content to an existing entry on the KDE "
+"Store, please open the website and log in. Once you have done this, you will "
+"be able to find the My Products entry in the menu which pops up when you "
+"click your user icon. Click on this entry to go to the product management "
+"system, where you can work on your products ."
+msgstr ""
+"Щоб вивантажити нові записи або додати нові дані до наявного запису у "
+"Крамниці KDE, будь ласка, відкрийте сторінку сайта і увійдіть до облікового "
+"запису. Після цього ви зможете скористатися пунктом «My Products» у меню, "
+"яке відкривається натисканням вашої піктограми користувача. Натисніть цей "
+"пункт, щоб перейти до системи 4керування продуктами, де ви зможете "
+"попрацювати із нашою базою даних продуктів."
+
+#: qtquick/qml/UploadPage.qml:122
+#, kde-format
+msgctxt "A description of how to upload content to the KDE Store specifically"
+msgid ""
+"To upload new entries, or to add content to an existing entry, please open "
+"the provider's website and follow the instructions there. You will likely "
+"need to create a user and log in to a product management system, where you "
+"will need to follow the instructions for how to add. Alternatively, you "
+"might be required to contact the managers of the site directly to get new "
+"content added."
+msgstr ""
+"Щоб вивантажити нові записи або додати нові дані до наявного запису, будь "
+"ласка, відкрийте сторінку сайта надавача даних і скористайтеся наведеними "
+"там настановами. Ймовірно, вам доведеться створити обліковий запис "
+"користувача і увійти до системи керування продуктами, у якій вам доведеться "
+"виконати настанови щодо додавання даних. Крім того, можливо, вам доведеться "
+"зв'язатися із командою з керування сайтом безпосередньо для додавання нових "
+"даних."
+
+#: qtquick/quickengine.cpp:177
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+"Вас не уповноважено на використання засобу отримання нових даних. Якщо ви "
+"вважаєте, що це є помилкою, будь ласка, повідомте про неї особу, яка "
+"відповідає за права доступу у вашій системі."
+
+#: qtquick/searchpresetmodel.cpp:58
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Back"
+msgstr "Назад"
+
+#: qtquick/searchpresetmodel.cpp:61
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Popular"
+msgstr "Популярні"
+
+#: qtquick/searchpresetmodel.cpp:64
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Featured"
+msgstr "Рекомендовані"
+
+#: qtquick/searchpresetmodel.cpp:67
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Restart"
+msgstr "Перезапустити"
+
+#: qtquick/searchpresetmodel.cpp:70
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "New"
+msgstr "Нові"
+
+#: qtquick/searchpresetmodel.cpp:73
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Home"
+msgstr "Домівка"
+
+#: qtquick/searchpresetmodel.cpp:76
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Shelf"
+msgstr "Шафа"
+
+#: qtquick/searchpresetmodel.cpp:79
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Up"
+msgstr "Вище"
+
+#: qtquick/searchpresetmodel.cpp:82
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Recommended"
+msgstr "Рекомендовані"
+
+#: qtquick/searchpresetmodel.cpp:85
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Subscriptions"
+msgstr "Підписки"
+
+#: qtquick/searchpresetmodel.cpp:88
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "All Entries"
+msgstr "Усі пункти"
+
+#: qtquick/searchpresetmodel.cpp:91
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Search Preset: %1"
+msgstr "Шаблон пошуку: %1"
+
+#: tools/knewstuff-dialog/main.cpp:31
+#, kde-format
+msgid ""
+"The KNSRC file you want to show. If none is passed, you will be presented "
+"with a dialog which lets you switch between all the config files installed "
+"into the systemwide knsrc file location"
+msgstr ""
+"Файл KNSRC, який ви хочете переглянути. Якщо не буде передано жодного файла, "
+"програма покаже діалогове вікно, за допомогою якого ви зможете перемкнутися "
+"на один з усіх файлів налаштувань, які встановлено до загальносистемного "
+"каталогу із файлами knsrc."
+
+#: tools/knewstuff-dialog/main.cpp:35
+#, kde-format
+msgid ""
+"A kns url to show information from. The format for a kns url is kns://"
+"knsrcfile/providerid/entryid\n"
+"'knsrcfile'\n"
+"is the name of a knsrc file as might be passed directly through this tool's "
+"knsrcfile argument\n"
+"'providerid'\n"
+"is the hostname of the provider the entry should exist on\n"
+"'entryid'\n"
+"is the unique ID of an entry found in the provider specified by the knsrc "
+"file.\n"
+" An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+msgstr ""
+"Адреса kns, відомості з якої буде показано. Формат адрес kns є таким: kns://"
+"файл_knsrc/ід_надавача/ід_запису\n"
+"«файл_knsrc»\n"
+"— назва файла knsrc, яку може бути передано безпосередньо цій програмі за "
+"допомогою аргументу файл_knsrc\n"
+"«ід_надавача»\n"
+"— назва вузла надавача, де зберігається запис\n"
+"«ід_запису»\n"
+"— унікальний ідентифікатор запису у сховищі надавача, який визначається "
+"файлом knsrc.\n"
+" Приклад адреси: kns://peruse.knsrc/api.kde-look.org/1316714"
+
+#: ui/entrydetailsdialog.cpp:84
+#, kde-format
+msgid "Details for %1"
+msgstr "Подробиці щодо %1"
+
+#: ui/entrydetailsdialog.cpp:100
+#, kde-format
+msgid "Changelog:"
+msgstr "Журнал змін:"
+
+#: ui/entrydetailsdialog.cpp:106
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Домашня сторінка"
+
+#: ui/entrydetailsdialog.cpp:110
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Зробити пожертву"
+
+#: ui/entrydetailsdialog.cpp:115
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "База знань (%1 записів)"
+msgstr[1] "База знань (%1 записи)"
+msgstr[2] "База знань (%1 записів)"
+msgstr[3] "База знань (%1 записів)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Відкрити у вікні переглядача інтернету"
+
+#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Оцінка: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:123
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Розмір: %1"
+
+#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
+#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
+#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Автор — <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "%1 прихильник"
+msgstr[1] "%1 прихильники"
+msgstr[2] "%1 прихильників"
+msgstr[3] "1 прихильник"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "%1 отримання"
+msgstr[1] "%1 отримання"
+msgstr[2] "%1 отримань"
+msgstr[3] "1 отримання"
+
+#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
+#, kde-format
+msgid "Loading Preview"
+msgstr "Завантаження перегляду"
+
+#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
+#, kde-format
+msgid "Details"
+msgstr "Подробиці"
+
+#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Updating"
+msgstr "Оновлення"
+
+#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
+#, kde-format
+msgid "Install Again"
+msgstr "Повторне встановлення"
+
+#: ui/itemsviewdelegate.cpp:228
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>Розмір: %1</p>"
