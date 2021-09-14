@@ -34,6 +34,7 @@ public:
 protected Q_SLOTS:
     void handleProgressUpdate(qlonglong current, qlonglong total);
     void handleCompleted();
+    void handleError(const QString &errorMessage);
 
 private:
     class Private;

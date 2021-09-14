@@ -242,7 +242,9 @@ void Installation::slotPayloadResult(KJob *job)
         entry_jobs.remove(job);
 
         if (job->error()) {
-            Q_EMIT signalInstallationFailed(i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString()));
+            const QString errorMessage = i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString());
+            qCWarning(KNEWSTUFFCORE) << errorMessage;
+            Q_EMIT signalInstallationFailed(errorMessage);
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)

@@ -7,6 +7,7 @@
 
 #include <KSharedConfig>
 #include <QDir>
+#include <QRegularExpression>
 #include <QSignalSpy>
 #include <QTest>
 #include <QtGlobal>
@@ -34,6 +35,7 @@ private Q_SLOTS:
     void testInstallCommandTopLevelFilesInArchive();
     void testUninstallCommand();
     void testUninstallCommandDirectory();
+    void testCopyError();
 };
 
 void InstallationTest::initTestCase()
@@ -170,6 +172,20 @@ void InstallationTest::testInstallCommandTopLevelFilesInArchive()
     // Check if the files that are in the archive exist
     const QStringList files = QDir(fileOnDisk.absoluteFilePath()).entryList(QDir::Filter::Files | QDir::Filter::NoDotAndDotDot);
     QCOMPARE(files, QStringList({"test1.txt", "test2.txt"}));
+}
+
+void InstallationTest::testCopyError()
+{
+    EntryInternal entry;
+    entry.setUniqueId("0");
+    entry.setPayload(QUrl::fromLocalFile(QStringLiteral("data/does_not_exist.txt")).toString());
+    QSignalSpy spy(installation, &Installation::signalEntryChanged);
+    QSignalSpy errorSpy(installation, &Installation::signalInstallationFailed);
+    QTest::ignoreMessage(QtWarningMsg, QRegularExpression("Download of .* failed, error: Could not open data/does_not_exist.txt for reading"));
+    installation->install(entry);
+    QVERIFY(errorSpy.wait());
+    QCOMPARE(spy.count(), 0);
+    QCOMPARE(int(entry.status()), int(KNS3::Entry::Invalid));
 }
 
 QTEST_MAIN(InstallationTest)

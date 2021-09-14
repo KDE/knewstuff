@@ -22,6 +22,7 @@ public:
 
     Q_SIGNAL void progress(qlonglong current, qlonglong total);
     Q_SIGNAL void completed();
+    Q_SIGNAL void error(const QString &message);
 
 private:
     class Private;

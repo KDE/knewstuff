@@ -54,6 +54,7 @@ void FileCopyJob::start()
     d->worker = new FileCopyWorker(d->source, d->destination, this);
     connect(d->worker, &FileCopyWorker::progress, this, &FileCopyJob::handleProgressUpdate);
     connect(d->worker, &FileCopyWorker::completed, this, &FileCopyJob::handleCompleted);
+    connect(d->worker, &FileCopyWorker::error, this, &FileCopyJob::handleError);
     d->worker->start();
 }
 
@@ -92,5 +93,14 @@ void FileCopyJob::handleCompleted()
 {
     d->worker->deleteLater();
     d->worker = nullptr;
+    emitResult();
+}
+
+void FileCopyJob::handleError(const QString &errorMessage)
+{
+    d->worker->deleteLater();
+    d->worker = nullptr;
+    setError(UserDefinedError);
+    setErrorText(errorMessage);
     emitResult();
 }

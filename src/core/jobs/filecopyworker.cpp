@@ -6,6 +6,7 @@
 
 #include "filecopyworker.h"
 
+#include <KLocalizedString>
 #include <QFile>
 
 using namespace KNSCore;
@@ -35,16 +36,22 @@ FileCopyWorker::~FileCopyWorker()
 
 void FileCopyWorker::run()
 {
-    d->source.open(QIODevice::ReadOnly);
-    d->destination.open(QIODevice::WriteOnly);
-    qint64 totalSize = d->source.size();
+    if (d->source.open(QIODevice::ReadOnly)) {
+        if (d->destination.open(QIODevice::WriteOnly)) {
+            const qint64 totalSize = d->source.size();
 
-    for (qint64 i = 0; i < totalSize; i += 1024) {
-        d->destination.write(d->source.read(1024));
-        d->source.seek(i);
-        d->destination.seek(i);
+            for (qint64 i = 0; i < totalSize; i += 1024) {
+                d->destination.write(d->source.read(1024));
+                d->source.seek(i);
+                d->destination.seek(i);
 
-        Q_EMIT progress(i, totalSize / 1024);
+                Q_EMIT progress(i, totalSize / 1024);
+            }
+            Q_EMIT completed();
+        } else {
+            Q_EMIT error(i18n("Could not open %1 for writing").arg(d->destination.fileName()));
+        }
+    } else {
+        Q_EMIT error(i18n("Could not open %1 for reading").arg(d->source.fileName()));
     }
-    Q_EMIT completed();
 }
