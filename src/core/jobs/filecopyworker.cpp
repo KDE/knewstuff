@@ -49,9 +49,9 @@ void FileCopyWorker::run()
             }
             Q_EMIT completed();
         } else {
-            Q_EMIT error(i18n("Could not open %1 for writing").arg(d->destination.fileName()));
+            Q_EMIT error(i18n("Could not open %1 for writing", d->destination.fileName()));
         }
     } else {
-        Q_EMIT error(i18n("Could not open %1 for reading").arg(d->source.fileName()));
+        Q_EMIT error(i18n("Could not open %1 for reading", d->source.fileName()));
     }
 }
