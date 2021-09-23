@@ -1226,3 +1226,16 @@ bool KNSCore::Engine::uploadEnabled() const
 {
     return d->uploadEnabled;
 }
+
+QVector<Attica::Provider *> Engine::atticaProviders() const
+{
+    QVector<Attica::Provider *> ret;
+    ret.reserve(m_providers.size());
+    for (const auto &p : m_providers) {
+        const auto atticaProvider = p.dynamicCast<AtticaProvider>();
+        if (atticaProvider) {
+            ret += atticaProvider->provider();
+        }
+    }
+    return ret;
+}

@@ -84,6 +84,11 @@ public:
     }
     void becomeFan(const EntryInternal &entry) override;
 
+    Attica::Provider *provider()
+    {
+        return &m_provider;
+    }
+
 private Q_SLOTS:
     void providerLoaded(const Attica::Provider &provider);
     void listOfCategoriesLoaded(Attica::BaseJob *);

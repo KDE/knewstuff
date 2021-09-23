@@ -660,6 +660,12 @@ public:
      */
     Q_SIGNAL void uploadEnabledChanged();
 
+    /**
+     * @returns the list of attica (OCS) providers this engine is connected to
+     * @since 5.87
+     */
+    QVector<Attica::Provider *> atticaProviders() const;
+
 Q_SIGNALS:
     /**
      * Indicates a message to be added to the ui's log, or sent to a messagebox
