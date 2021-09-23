@@ -90,7 +90,7 @@ private Q_SLOTS:
     void categoryContentsLoaded(Attica::BaseJob *job);
     void downloadItemLoaded(Attica::BaseJob *job);
     void accountBalanceLoaded(Attica::BaseJob *job);
-    void authenticationCredentialsMissing(const Provider &);
+    void onAuthenticationCredentialsMissing(const Attica::Provider &);
     void votingFinished(Attica::BaseJob *);
     void becomeFanFinished(Attica::BaseJob *job);
     void detailsLoaded(Attica::BaseJob *job);

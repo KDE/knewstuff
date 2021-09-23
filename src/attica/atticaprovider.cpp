@@ -41,7 +41,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories, const QString &add
         providerLoaded(provider);
         m_provider.setAdditionalAgentInformation(additionalAgentInformation);
     });
-    connect(&m_providerManager, SIGNAL(authenticationCredentialsMissing(Provider)), SLOT(authenticationCredentialsMissing(Provider)));
+    connect(&m_providerManager, &ProviderManager::authenticationCredentialsMissing, this, &AtticaProvider::onAuthenticationCredentialsMissing);
     connect(this, &Provider::loadComments, this, &AtticaProvider::loadComments);
     connect(this, &Provider::loadPerson, this, &AtticaProvider::loadPerson);
     connect(this, &Provider::loadBasics, this, &AtticaProvider::loadBasics);
@@ -64,7 +64,7 @@ QString AtticaProvider::id() const
     return m_providerId;
 }
 
-void AtticaProvider::authenticationCredentialsMissing(const KNSCore::Provider &)
+void AtticaProvider::onAuthenticationCredentialsMissing(const Attica::Provider &)
 {
     qCDebug(KNEWSTUFFCORE) << "Authentication missing!";
     // FIXME Show authentication dialog
