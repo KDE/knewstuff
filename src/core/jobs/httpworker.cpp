@@ -7,7 +7,9 @@
 #include "httpworker.h"
 
 #include "knewstuffcore_debug.h"
+#include "knewstuffcore_version.h"
 
+#include <QCoreApplication>
 #include <QFile>
 #include <QMutex>
 #include <QMutexLocker>
@@ -93,6 +95,15 @@ void HTTPWorker::setUrl(const QUrl &url)
     d->source = url;
 }
 
+static void addUserAgent(QNetworkRequest &request)
+{
+    QString agentHeader = QStringLiteral("KNewStuff/%1").arg(QLatin1String(KNEWSTUFFCORE_VERSION_STRING));
+    if (QCoreApplication::instance()) {
+        agentHeader += QStringLiteral("-%1/%2").arg(QCoreApplication::instance()->applicationName(), QCoreApplication::instance()->applicationVersion());
+    }
+    request.setHeader(QNetworkRequest::UserAgentHeader, agentHeader);
+}
+
 void HTTPWorker::startRequest()
 {
     if (d->reply) {
@@ -101,6 +112,7 @@ void HTTPWorker::startRequest()
     }
 
     QNetworkRequest request(d->source);
+    addUserAgent(request);
     d->reply = s_httpWorkerNAM->get(request);
     connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
     connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
@@ -144,6 +156,7 @@ void HTTPWorker::handleFinished()
                                    << d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
             d->reply->deleteLater();
             QNetworkRequest request(d->redirectUrl);
+            addUserAgent(request);
             d->reply = s_httpWorkerNAM->get(request);
             connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
             connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
