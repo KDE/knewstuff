@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
 # Invoke the extractrc script on all .ui, .rc, and .kcfg files in the sources.
 # The results are stored in a pseudo .cpp file to be picked up by xgettext.
 lst=`find . -name \*.rc -o -name \*.ui -o -name \*.kcfg`
