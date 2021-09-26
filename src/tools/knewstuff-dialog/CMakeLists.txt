@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Dan Leinir Turthra Jensen <admin@leinir.dk>
+# SPDX-License-Identifier: BSD-2-Clause
+
 set(knewstuff-dialog_SRCS
     main.cpp
     knsrcmodel.cpp

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: KDE Contributors
+# SPDX-License-Identifier: BSD-2-Clause
+
 include(ECMMarkAsTest)
 include(ECMMarkNonGuiExecutable)
 include(ECMAddTests)

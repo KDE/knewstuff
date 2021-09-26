@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: KDE Contributors
+# SPDX-License-Identifier: BSD-2-Clause
+
 set(KNewStuffCore_SRCS
     author.cpp
     commentsmodel.cpp

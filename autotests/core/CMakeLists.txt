@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Alexander Lohnau <alexander.lohnau@gmx.de>
+# SPDX-License-Identifier: BSD-2-Clause
+
 if (WIN32)
 set(DATA_DIR "/${CMAKE_CURRENT_BINARY_DIR}/data/")
 else()

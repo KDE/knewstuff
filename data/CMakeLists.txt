@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: KDE Contributors
+# SPDX-License-Identifier: BSD-2-Clause
+
 # install .desktop files executable, otherwise they are not usable if not root owned
 install(DIRECTORY
     kmoretools-desktopfiles/
