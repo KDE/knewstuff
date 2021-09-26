@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
 [KNewStuff2]
 ProvidersUrl=file://@CMAKE_CURRENT_SOURCE_DIR@/testdata/provider.xml
 LocalRegistryDir=/tmp/knewstuff2.metafiles

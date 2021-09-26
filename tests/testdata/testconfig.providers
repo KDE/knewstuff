@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <knewstuffproviders>
+<!--
+SPDX-FileCopyrightText: none
+SPDX-License-Identifier: CC0-1.0
+-->
 <provider downloadurl="file:///home/leinir/projects/knewstuff/tests/testdata/entry.xml"
           downloadurl-latest="file:///home/leinir/projects/knewstuff/tests/testdata/entry.xml"
           downloadurl-score="file:///home/leinir/projects/knewstuff/tests/testdata/entry.xml"

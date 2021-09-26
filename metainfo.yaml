@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
 maintainer: leinir
 description: Support for downloading application assets from the network
 tier: 3
