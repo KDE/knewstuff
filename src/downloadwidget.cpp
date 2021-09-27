@@ -97,7 +97,7 @@ Entry::List DownloadWidget::installedEntries()
 }
 
 DownloadWidgetPrivate::DownloadWidgetPrivate(DownloadWidget *qq)
-    : q(q)
+    : q(qq)
     , engine(new KNSCore::Engine)
     , model(new KNSCore::ItemsModel(engine))
     , messageTimer(nullptr)
