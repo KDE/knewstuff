@@ -272,6 +272,15 @@ EntryInternal::List Cache::registryForProvider(const QString &providerId)
     return entries;
 }
 
+EntryInternal::List Cache::registry() const
+{
+    EntryInternal::List entries;
+    for (const EntryInternal &e : std::as_const(cache)) {
+        entries.append(e);
+    }
+    return entries;
+}
+
 void Cache::writeRegistry()
 {
     if (!property("dirty").toBool()) {

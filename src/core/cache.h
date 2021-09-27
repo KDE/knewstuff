@@ -42,6 +42,9 @@ public:
     /// All entries that have been installed by a certain provider
     EntryInternal::List registryForProvider(const QString &providerId);
 
+    /// All entries known by the cache (this corresponds with entries which are installed, regardless of status)
+    EntryInternal::List registry() const;
+
     /// Save the list of installed entries
     void writeRegistry();
 

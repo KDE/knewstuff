@@ -1030,12 +1030,11 @@ void Engine::checkForUpdates()
 
 void KNSCore::Engine::checkForInstalled()
 {
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
-        Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Installed);
-        request.page = 0;
-        request.pageSize = m_pageSize;
-        p->loadEntries(request);
-    }
+    EntryInternal::List entries = m_cache->registry();
+    std::remove_if(entries.begin(), entries.end(), [](const auto &entry) {
+        return entry.status() != KNS3::Entry::Installed && entry.status() != KNS3::Entry::Updateable;
+    });
+    Q_EMIT signalEntriesLoaded(entries);
 }
 
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
