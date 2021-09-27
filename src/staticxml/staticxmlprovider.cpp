@@ -152,7 +152,11 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
 
     if (request.filter == Installed) {
         qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
-        Q_EMIT loadingFinished(request, installedEntries());
+        if (request.page == 0) {
+            Q_EMIT loadingFinished(request, installedEntries());
+        } else {
+            Q_EMIT loadingFinished(request, EntryInternal::List());
+        }
         return;
     }
 
