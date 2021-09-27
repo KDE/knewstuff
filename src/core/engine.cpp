@@ -1060,6 +1060,11 @@ void KNSCore::Engine::setPageSize(int pageSize)
     m_pageSize = pageSize;
 }
 
+int KNSCore::Engine::pageSize() const
+{
+    return m_pageSize;
+}
+
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 83)
 QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations)
 {
