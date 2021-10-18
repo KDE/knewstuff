@@ -49,7 +49,7 @@ Button::~Button()
 
 void Button::init()
 {
-    const bool authorized = KAuthorized::authorize(QStringLiteral("ghns"));
+    const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
     if (!authorized) {
         setEnabled(false);
         setVisible(false);
@@ -74,7 +74,7 @@ void Button::setConfigFile(const QString &configFile)
 
 void Button::showDialog()
 {
-    if (!KAuthorized::authorize(QStringLiteral("ghns"))) {
+    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
         KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return;
     }

@@ -103,7 +103,7 @@ DownloadDialog::~DownloadDialog()
 
 int DownloadDialog::exec()
 {
-    if (!KAuthorized::authorize(QStringLiteral("ghns"))) {
+    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
         KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return QDialog::Rejected;
     }
@@ -112,7 +112,7 @@ int DownloadDialog::exec()
 
 void DownloadDialog::open()
 {
-    if (!KAuthorized::authorize(QStringLiteral("ghns"))) {
+    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
         KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return;
     }
@@ -121,7 +121,7 @@ void DownloadDialog::open()
 
 void DownloadDialog::showEvent(QShowEvent *event)
 {
-    if (!KAuthorized::authorize(QStringLiteral("ghns"))) {
+    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
         KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
         return;
     }

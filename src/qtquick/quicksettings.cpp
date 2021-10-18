@@ -56,5 +56,5 @@ Settings::~Settings() = default;
 
 bool KNewStuffQuick::Settings::allowedByKiosk() const
 {
-    return KAuthorized::authorize(QStringLiteral("ghns"));
+    return KAuthorized::authorize(KAuthorized::GHNS);
 }

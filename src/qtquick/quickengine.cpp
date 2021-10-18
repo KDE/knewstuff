@@ -79,7 +79,7 @@ Engine::~Engine()
 #if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
 bool Engine::allowedByKiosk() const
 {
-    return KAuthorized::authorize(QStringLiteral("ghns"));
+    return KAuthorized::authorize(KAuthorized::GHNS);
 }
 #endif
 
