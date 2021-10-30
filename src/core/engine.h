@@ -100,7 +100,7 @@ public:
      * Destructor. Frees up all the memory again which might be taken
      * by cached entries and providers.
      */
-    ~Engine();
+    ~Engine() override;
 
     enum class BusyOperation {
         Initializing,

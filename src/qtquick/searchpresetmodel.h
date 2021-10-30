@@ -22,7 +22,7 @@ class SearchPresetModel : public QAbstractListModel
     Q_OBJECT
 public:
     explicit SearchPresetModel(Engine *parent = nullptr);
-    ~SearchPresetModel();
+    ~SearchPresetModel() override;
 
     enum Roles {
         DisplayNameRole = Qt::UserRole + 1,

@@ -145,7 +145,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~Provider();
+    ~Provider() override;
 
     /**
      * A unique Id for this provider (the url in most cases)

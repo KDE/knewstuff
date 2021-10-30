@@ -21,7 +21,7 @@ class CategoriesModel : public QAbstractListModel
     Q_OBJECT
 public:
     explicit CategoriesModel(Engine *parent = nullptr);
-    virtual ~CategoriesModel();
+    ~CategoriesModel() override;
 
     enum Roles {
         NameRole = Qt::UserRole + 1,

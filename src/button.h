@@ -47,7 +47,7 @@ public:
      */
     explicit Button(QWidget *parent);
 
-    ~Button();
+    ~Button() override;
 
     /**
      * set the name of the .knsrc file to use

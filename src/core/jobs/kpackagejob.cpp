@@ -62,7 +62,7 @@ public:
         // As this has to be set before QThreadPool runs things, we need to do so here
         setAutoDelete(false);
     };
-    virtual ~KPackageTask()
+    ~KPackageTask() override
     {
     }
     void run() override

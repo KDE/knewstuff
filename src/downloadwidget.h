@@ -68,7 +68,7 @@ public:
     /**
      * destructor
      */
-    ~DownloadWidget();
+    ~DownloadWidget() override;
 
     /**
      * The list of entries with changed status (installed/uninstalled)

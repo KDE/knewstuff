@@ -30,7 +30,7 @@ class KNEWSTUFFCORE_EXPORT QuestionManager : public QObject
     Q_DISABLE_COPY(QuestionManager)
 public:
     static QuestionManager *instance();
-    virtual ~QuestionManager();
+    ~QuestionManager() override;
 
 Q_SIGNALS:
     void askQuestion(KNSCore::Question *question);

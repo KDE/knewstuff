@@ -23,7 +23,7 @@ public:
     };
     explicit HTTPWorker(const QUrl &url, JobType jobType = GetJob, QObject *parent = nullptr);
     explicit HTTPWorker(const QUrl &source, const QUrl &destination, JobType jobType = DownloadJob, QObject *parent = nullptr);
-    virtual ~HTTPWorker();
+    ~HTTPWorker() override;
 
     void startRequest();
 

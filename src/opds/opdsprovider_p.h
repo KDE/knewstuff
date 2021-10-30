@@ -51,7 +51,7 @@ public:
     typedef QList<Provider *> List;
 
     OPDSProvider();
-    ~OPDSProvider();
+    ~OPDSProvider() override;
 
     // Unique ID, url of the feed.
     QString id() const override;

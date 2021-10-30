@@ -16,7 +16,7 @@ class KNSRCModel : public QAbstractListModel
     Q_OBJECT
 public:
     explicit KNSRCModel(QObject *parent = nullptr);
-    virtual ~KNSRCModel();
+    ~KNSRCModel() override;
 
     enum Roles {
         NameRole = Qt::UserRole + 1,

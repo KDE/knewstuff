@@ -31,7 +31,7 @@ class KNEWSTUFF_EXPORT QtQuickDialogWrapper : public QObject
 
 public:
     QtQuickDialogWrapper(const QString &configFile, QObject *parent = nullptr);
-    ~QtQuickDialogWrapper();
+    ~QtQuickDialogWrapper() override;
 
     /**
      * Opens the dialog

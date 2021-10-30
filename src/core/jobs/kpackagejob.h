@@ -54,7 +54,7 @@ public:
      */
     static KPackageJob *uninstall(const QString &packageName, const QString &packageRoot, const QString &serviceType);
 
-    virtual ~KPackageJob();
+    ~KPackageJob() override;
 
     /**
      * Start the process asynchronously

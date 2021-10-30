@@ -19,7 +19,7 @@ class ItemsViewDelegate : public ItemsViewBaseDelegate
     Q_OBJECT
 public:
     explicit ItemsViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = nullptr);
-    ~ItemsViewDelegate();
+    ~ItemsViewDelegate() override;
 
     // paint the item at index with all its attributes shown
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;

@@ -29,7 +29,7 @@ class Settings : public QObject
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
 public:
     static Settings *instance();
-    virtual ~Settings();
+    ~Settings() override;
 
     bool allowedByKiosk() const;
 

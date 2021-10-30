@@ -44,7 +44,7 @@ class Author : public QObject, public QQmlParserStatus
     Q_PROPERTY(QUrl avatarUrl READ avatarUrl NOTIFY dataChanged)
 public:
     explicit Author(QObject *parent = nullptr);
-    virtual ~Author();
+    ~Author() override;
     void classBegin() override;
     void componentComplete() override;
 

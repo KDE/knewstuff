@@ -55,7 +55,7 @@ public:
     bool dialogMode;
 
     explicit DownloadWidgetPrivate(DownloadWidget *qq);
-    ~DownloadWidgetPrivate();
+    ~DownloadWidgetPrivate() override;
 
     void init(const QString &configFile);
     void slotShowMessage(const QString &msg);

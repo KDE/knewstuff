@@ -35,7 +35,7 @@ public:
      */
     static QSharedPointer<Cache> getCache(const QString &appName);
 
-    ~Cache();
+    ~Cache() override;
 
     /// Read the installed entries (on startup)
     void readRegistry();

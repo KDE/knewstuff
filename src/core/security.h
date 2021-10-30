@@ -45,7 +45,7 @@ public:
         }
         return m_ref;
     }
-    ~Security();
+    ~Security() override;
 
     /** Verifies the integrity and the signature of a tarball file.
      * @param fileName the file to be verified. It should be a tar.gz (.tgz) file. The directory where

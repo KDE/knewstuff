@@ -61,7 +61,7 @@ class ItemsModel : public QAbstractListModel
     Q_PROPERTY(bool isLoadingData READ isLoadingData NOTIFY isLoadingDataChanged)
 public:
     explicit ItemsModel(QObject *parent = nullptr);
-    virtual ~ItemsModel();
+    ~ItemsModel() override;
 
     enum Roles {
         NameRole = Qt::UserRole + 1,

@@ -37,7 +37,7 @@ class KNEWSTUFFCORE_EXPORT EntryWrapper : public QObject
     Q_OBJECT
 public:
     explicit EntryWrapper(const EntryInternal &entry, QObject *parent = nullptr);
-    virtual ~EntryWrapper();
+    ~EntryWrapper() override;
 
     /**
      * Get a copy of the wrapped-up entry

@@ -33,7 +33,7 @@ class DownloadLinkInfo : public QObject
 
 public:
     explicit DownloadLinkInfo(QObject *parent = nullptr);
-    virtual ~DownloadLinkInfo();
+    ~DownloadLinkInfo() override;
 
     void setData(const KNSCore::EntryInternal::DownloadLinkInformation &data);
     Q_SIGNAL void dataChanged();

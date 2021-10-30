@@ -23,7 +23,7 @@ public:
      */
     KMoreToolsConfigDialog(const KmtMenuStructureDto &defaultStructure, const KmtMenuStructureDto &currentStructure, const QString &title = QString());
 
-    ~KMoreToolsConfigDialog();
+    ~KMoreToolsConfigDialog() override;
 
     /**
      * result after ctor or after user used the dialog

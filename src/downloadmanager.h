@@ -59,7 +59,7 @@ public:
     /**
      * destructor
      */
-    ~DownloadManager();
+    ~DownloadManager() override;
 
     /**
       Search for a list of entries. searchResult will be emitted with the requested list.

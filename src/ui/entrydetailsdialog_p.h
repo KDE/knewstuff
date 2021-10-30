@@ -27,7 +27,7 @@ class EntryDetails : public QObject
 
 public:
     EntryDetails(KNSCore::Engine *engine, Ui::DownloadWidget *widget);
-    ~EntryDetails();
+    ~EntryDetails() override;
 
 public Q_SLOTS:
     void setEntry(const KNSCore::EntryInternal &entry);

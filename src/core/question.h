@@ -62,7 +62,7 @@ public:
     Q_ENUM(QuestionType)
 
     explicit Question(QuestionType = YesNoQuestion, QObject *parent = nullptr);
-    virtual ~Question();
+    ~Question() override;
 
     Response ask();
 

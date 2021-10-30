@@ -18,7 +18,7 @@ class QuickQuestionListener : public KNSCore::QuestionListener
     Q_DISABLE_COPY(QuickQuestionListener)
 public:
     static QuickQuestionListener *instance();
-    virtual ~QuickQuestionListener();
+    ~QuickQuestionListener() override;
 
     Q_SLOT void askQuestion(KNSCore::Question *question) override;
 

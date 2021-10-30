@@ -51,7 +51,7 @@ class Engine : public QObject
     Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
 public:
     explicit Engine(QObject *parent = nullptr);
-    virtual ~Engine();
+    ~Engine() override;
 
 #if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
     KNEWSTUFFQUICK_DEPRECATED_VERSION(5, 81, "Use KNewStuffQuick::Settings::allowedByKiosk() instead")

@@ -23,7 +23,7 @@ class ItemsGridViewDelegate : public ItemsViewBaseDelegate
     Q_OBJECT
 public:
     explicit ItemsGridViewDelegate(QAbstractItemView *itemView, KNSCore::Engine *engine, QObject *parent = nullptr);
-    ~ItemsGridViewDelegate();
+    ~ItemsGridViewDelegate() override;
 
     // paint the item at index with all its attributes shown
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
