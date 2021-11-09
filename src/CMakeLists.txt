@@ -5,6 +5,7 @@ add_subdirectory(core)
 
 set(KNewStuff_SRCS
     entry.cpp
+    action.cpp
     button.cpp
     knewstuffaction.cpp
     kmoretools/kmoretools.cpp
@@ -101,6 +102,7 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   UploadDialog
   Entry
   Button
+  Action
   QtQuickDialogWrapper
 
   REQUIRED_HEADERS KNewStuff_HEADERS
