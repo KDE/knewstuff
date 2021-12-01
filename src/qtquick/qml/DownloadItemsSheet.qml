@@ -27,37 +27,53 @@ Kirigami.OverlaySheet {
     signal itemPicked(string entryId, int downloadItemId, string downloadName)
 
     showCloseButton: true
-    header: Kirigami.Heading {
-        text: i18nd("knewstuff5", "Pick Your Installation Option")
-        elide: Text.ElideRight
-    }
-    contentItem: ListView {
-        id: itemsView
+    title: i18nd("knewstuff5", "Pick Your Installation Option")
 
-        header: QtControls.Label {
+    contentItem: QtLayouts.ColumnLayout {
+        QtControls.Label {
             leftPadding: Kirigami.Units.largeSpacing
             rightPadding: Kirigami.Units.largeSpacing
             bottomPadding: Kirigami.Units.smallSpacing
-            width: parent.width
+            QtLayouts.Layout.fillWidth: true
+            QtLayouts.Layout.maximumWidth: Math.round(component.parent.width * 0.75)
+
             text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
             wrapMode: Text.Wrap
         }
 
-        delegate: Kirigami.BasicListItem {
-            text: modelData.name
-            icon: modelData.icon
-            QtControls.Label {
-                QtLayouts.Layout.alignment: Qt.AlignRight
-                text: modelData.formattedSize
-            }
+        QtControls.ScrollView {
+            QtLayouts.Layout.fillWidth: true
+            QtLayouts.Layout.fillHeight: true
 
-            QtControls.ToolButton {
-                text: i18nd("knewstuff5", "Install")
-                icon.name: "install"
-                QtLayouts.Layout.alignment: Qt.AlignRight
-                onClicked: {
-                    component.close();
-                    component.itemPicked(component.entryId, modelData.id, modelData.name);
+            ListView {
+                id: itemsView
+
+                delegate: Kirigami.BasicListItem {
+                    implicitHeight: installButton.implicitHeight + Kirigami.Units.smallSpacing * 2
+
+                    text: modelData.name
+                    icon: modelData.icon
+
+                    // Don't need a highlight or hover effects
+                    hoverEnabled: false
+                    activeBackgroundColor: "transparent"
+                    activeTextColor: Kirigami.Theme.textColor
+
+                    trailing: QtLayouts.RowLayout {
+                        QtControls.Label {
+                            text: modelData.formattedSize
+                        }
+
+                        QtControls.ToolButton {
+                            id: installButton
+                            text: i18nd("knewstuff5", "Install")
+                            icon.name: "install"
+                            onClicked: {
+                                component.close();
+                                component.itemPicked(component.entryId, modelData.id, modelData.name);
+                            }
+                        }
+                    }
                 }
             }
         }
