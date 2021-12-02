@@ -53,7 +53,6 @@ void Action::init()
 
     setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
     connect(this, &QAction::triggered, this, &Action::showDialog);
-    WidgetQuestionListener::instance();
 }
 
 void Action::setConfigFile(const QString &configFile)
