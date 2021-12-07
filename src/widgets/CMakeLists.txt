@@ -13,10 +13,10 @@ target_link_libraries(KF5NewStuffWidgets
   PRIVATE
     KF5::I18n
 )
-target_include_directories(KF5NewStuffWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff/KNSWidgets>")
+target_include_directories(KF5NewStuffWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSWidgets>")
 target_include_directories(KF5NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff/KNSWidgets;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSWidgets;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore>")
 
 set_target_properties(KF5NewStuffWidgets PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
@@ -35,6 +35,6 @@ ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   PREFIX KNSWidgets
 )
 
-install(FILES ${KNewStuffWidgets_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff/KNSWidgets COMPONENT Devel)
-install(FILES ${KNewStuffWidgets_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff/knswidgets COMPONENT Devel)
+install(FILES ${KNewStuffWidgets_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSWidgets COMPONENT Devel)
+install(FILES ${KNewStuffWidgets_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knswidgets COMPONENT Devel)
 install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
