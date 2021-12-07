@@ -18,10 +18,10 @@ target_include_directories(KF5NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff/KNSWidgets;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore>")
 
-set_target_properties(KF5NewStuff PROPERTIES
+set_target_properties(KF5NewStuffWidgets PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
    SOVERSION ${KNEWSTUFF_SOVERSION}
-   EXPORT_NAME NewStuff
+   EXPORT_NAME NewStuffWidgets
 )
 
 set(KNewStuffWidgets_HEADERS
