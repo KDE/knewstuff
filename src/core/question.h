@@ -12,8 +12,11 @@
 
 #include "knewstuffcore_export.h"
 
+#include <memory>
+
 namespace KNSCore
 {
+class QuestionPrivate;
 /**
  * @short A way to ask a user a question from inside a GUI-less library (like KNewStuffCore)
  *
@@ -91,8 +94,7 @@ public:
     QString response() const;
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<QuestionPrivate> d;
 };
 }
 

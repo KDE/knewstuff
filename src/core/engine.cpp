@@ -194,7 +194,6 @@ Engine::~Engine()
     delete d->m_atticaProviderManager;
     delete m_searchTimer;
     delete m_installation;
-    delete d;
 }
 
 bool Engine::init(const QString &configfile)

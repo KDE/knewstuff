@@ -13,6 +13,7 @@
 class QNetworkReply;
 namespace KNSCore
 {
+class HTTPWorkerPrivate;
 class HTTPWorker : public QObject
 {
     Q_OBJECT
@@ -47,8 +48,7 @@ public:
     Q_SLOT void handleData(const QByteArray &data);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<HTTPWorkerPrivate> d;
 };
 
 }

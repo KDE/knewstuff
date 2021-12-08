@@ -29,10 +29,10 @@ enum Operation {
     UninstallOperation,
 };
 class KPackageTask;
-class KPackageJob::Private
+class KNSCore::KPackageJobPrivate
 {
 public:
-    Private()
+    KPackageJobPrivate()
     {
     }
 
@@ -139,14 +139,11 @@ private:
 
 KPackageJob::KPackageJob(QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new KPackageJobPrivate)
 {
 }
 
-KPackageJob::~KPackageJob()
-{
-    delete d;
-}
+KPackageJob::~KPackageJob() = default;
 
 void KPackageJob::start()
 {

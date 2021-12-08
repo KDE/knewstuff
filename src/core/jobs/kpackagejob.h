@@ -11,6 +11,7 @@
 
 namespace KNSCore
 {
+class KPackageJobPrivate;
 /**
  * @brief A job for performing basic actions on KPackage packages asynchronously
  *
@@ -64,8 +65,7 @@ public:
 
 private:
     explicit KPackageJob(QObject *parent = nullptr);
-    class Private;
-    Private *d;
+    const std::unique_ptr<KPackageJobPrivate> d;
 };
 
 }

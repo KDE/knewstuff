@@ -22,10 +22,10 @@ namespace KNewStuffQuick
 typedef QHash<QString, std::shared_ptr<KNSCore::Author>> AllAuthorsHash;
 Q_GLOBAL_STATIC(AllAuthorsHash, allAuthors)
 
-class Author::Private
+class AuthorPrivate
 {
 public:
-    Private(Author *qq)
+    AuthorPrivate(Author *qq)
         : q(qq)
     {
     }
@@ -54,7 +54,7 @@ public:
             }
         }
         if (provider) {
-            connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr<KNSCore::Author> author) {
+            QObject::connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr<KNSCore::Author> author) {
                 allAuthors()->insert(QStringLiteral("%1 %2").arg(provider->id(), author->id()), author);
                 Q_EMIT q->dataChanged();
             });
@@ -80,17 +80,14 @@ using namespace KNewStuffQuick;
 
 Author::Author(QObject *parent)
     : QObject(parent)
-    , d(new Private(this))
+    , d(new AuthorPrivate(this))
 {
     connect(this, &Author::engineChanged, &Author::dataChanged);
     connect(this, &Author::providerIdChanged, &Author::dataChanged);
     connect(this, &Author::usernameChanged, &Author::dataChanged);
 }
 
-Author::~Author()
-{
-    delete d;
-}
+Author::~Author() = default;
 
 void Author::classBegin()
 {

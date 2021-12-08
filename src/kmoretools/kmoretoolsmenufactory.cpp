@@ -69,8 +69,6 @@ KMoreToolsMenuFactory::~KMoreToolsMenuFactory()
     }
 
     delete d->kmt;
-
-    delete d;
 }
 
 static void runApplication(const KService::Ptr &service, const QList<QUrl> &urls)

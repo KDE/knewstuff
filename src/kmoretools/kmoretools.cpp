@@ -80,10 +80,7 @@ KMoreTools::KMoreTools(const QString &uniqueId)
 {
 }
 
-KMoreTools::~KMoreTools()
-{
-    delete d;
-}
+KMoreTools::~KMoreTools() = default;
 
 KMoreToolsService *KMoreTools::registerServiceByDesktopEntryName(const QString &desktopEntryName,
                                                                  const QString &kmtDesktopfileSubdir,
@@ -244,10 +241,7 @@ KMoreToolsService::KMoreToolsService(const QString &kmtDesktopfileSubdir,
     d->kmtDesktopfile = kmtDesktopfile;
 }
 
-KMoreToolsService::~KMoreToolsService()
-{
-    delete d;
-}
+KMoreToolsService::~KMoreToolsService() = default;
 
 QString KMoreToolsService::desktopEntryName() const
 {
@@ -553,7 +547,6 @@ KMoreToolsMenuBuilder::KMoreToolsMenuBuilder(const QString &uniqueId, const QStr
 KMoreToolsMenuBuilder::~KMoreToolsMenuBuilder()
 {
     d->deleteAndClearMenuItems();
-    delete d;
 }
 
 void KMoreToolsMenuBuilder::setInitialItemTextTemplate(const QString &templateText)
@@ -710,7 +703,6 @@ KMoreToolsMenuItem::~KMoreToolsMenuItem()
         // that was connected in action() to detect action deletion.
         d->action->disconnect(d->action);
     }
-    delete d;
 }
 
 QString KMoreToolsMenuItem::id() const

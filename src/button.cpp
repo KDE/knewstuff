@@ -42,10 +42,7 @@ Button::Button(QWidget *parent)
     init();
 }
 
-Button::~Button()
-{
-    delete d;
-}
+Button::~Button() = default;
 
 void Button::init()
 {

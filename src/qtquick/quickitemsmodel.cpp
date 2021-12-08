@@ -14,17 +14,14 @@
 #include <KShell>
 #include <QProcess>
 
-class ItemsModel::Private
+class ItemsModelPrivate
 {
 public:
-    Private(ItemsModel *qq)
+    ItemsModelPrivate(ItemsModel *qq)
         : q(qq)
         , model(nullptr)
         , engine(nullptr)
         , coreEngine(nullptr)
-    {
-    }
-    ~Private()
     {
     }
     ItemsModel *q;
@@ -107,14 +104,11 @@ public:
 
 ItemsModel::ItemsModel(QObject *parent)
     : QAbstractListModel(parent)
-    , d(new Private(this))
+    , d(new ItemsModelPrivate(this))
 {
 }
 
-ItemsModel::~ItemsModel()
-{
-    delete d;
-}
+ItemsModel::~ItemsModel() = default;
 
 QHash<int, QByteArray> ItemsModel::roleNames() const
 {

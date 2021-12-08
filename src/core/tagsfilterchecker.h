@@ -10,8 +10,11 @@
 #include "knewstuffcore_export.h"
 #include <QStringList>
 
+#include <memory>
+
 namespace KNSCore
 {
+class TagsFilterCheckerPrivate;
 /**
  * @brief Apply simple filtering logic to a list of tags
  *
@@ -67,8 +70,7 @@ public:
     bool filterAccepts(const QStringList &tags);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<TagsFilterCheckerPrivate> d;
 };
 
 }

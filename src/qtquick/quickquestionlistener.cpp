@@ -59,7 +59,6 @@ QuickQuestionListener::~QuickQuestionListener()
     if (d->question) {
         d->question->setResponse(KNSCore::Question::CancelResponse);
     }
-    delete d;
 }
 
 void QuickQuestionListener::askQuestion(KNSCore::Question *question)

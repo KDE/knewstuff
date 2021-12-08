@@ -49,15 +49,15 @@ Q_GLOBAL_STATIC(HTTPWorkerNAM, s_httpWorkerNAM)
 
 using namespace KNSCore;
 
-class HTTPWorker::Private
+class KNSCore::HTTPWorkerPrivate
 {
 public:
-    Private()
-        : jobType(GetJob)
+    HTTPWorkerPrivate()
+        : jobType(HTTPWorker::GetJob)
         , reply(nullptr)
     {
     }
-    JobType jobType;
+    HTTPWorker::JobType jobType;
     QUrl source;
     QUrl destination;
     QNetworkReply *reply;
@@ -68,7 +68,7 @@ public:
 
 HTTPWorker::HTTPWorker(const QUrl &url, JobType jobType, QObject *parent)
     : QObject(parent)
-    , d(new Private)
+    , d(new HTTPWorkerPrivate)
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
@@ -77,7 +77,7 @@ HTTPWorker::HTTPWorker(const QUrl &url, JobType jobType, QObject *parent)
 
 HTTPWorker::HTTPWorker(const QUrl &source, const QUrl &destination, KNSCore::HTTPWorker::JobType jobType, QObject *parent)
     : QObject(parent)
-    , d(new Private)
+    , d(new HTTPWorkerPrivate)
 {
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
@@ -85,10 +85,7 @@ HTTPWorker::HTTPWorker(const QUrl &source, const QUrl &destination, KNSCore::HTT
     d->destination = destination;
 }
 
-HTTPWorker::~HTTPWorker()
-{
-    delete d;
-}
+HTTPWorker::~HTTPWorker() = default;
 
 void HTTPWorker::setUrl(const QUrl &url)
 {

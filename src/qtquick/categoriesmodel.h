@@ -12,6 +12,8 @@
 #include "provider.h"
 #include "quickengine.h"
 
+class CategoriesModelPrivate;
+
 /**
  * @short A model which shows the categories found in an Engine
  * @since 5.63
@@ -43,9 +45,7 @@ public:
     Q_INVOKABLE QString idToDisplayName(const QString &id) const;
 
 private:
-    class Private;
-    // TODO KF6: Switch all the pimpls to const std::unique_ptr<Private> d;
-    Private *d;
+    const std::unique_ptr<CategoriesModelPrivate> d;
 };
 
 #endif // CATEGORIESMODEL_H

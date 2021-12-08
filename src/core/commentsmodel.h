@@ -14,6 +14,8 @@
 
 #include "knewstuffcore_export.h"
 
+#include <memory>
+
 namespace KNSCore
 {
 class EntryInternal;
@@ -28,6 +30,7 @@ struct Comment {
     int score = 0;
     std::shared_ptr<KNSCore::Comment> parent;
 };
+class CommentsModelPrivate;
 
 /**
  * @brief A model which takes care of the comments for a single EntryInternal
@@ -79,8 +82,8 @@ public:
     Q_SIGNAL void entryChanged();
 
 private:
-    class Private;
-    Private *d;
+    friend class CommentsModelPrivate;
+    const std::unique_ptr<CommentsModelPrivate> d;
 };
 }
 

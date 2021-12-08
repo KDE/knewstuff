@@ -11,6 +11,8 @@
 #include <QString>
 #include <QUrl>
 
+#include <memory>
+
 #include "knewstuff_export.h"
 
 class KMoreTools;
@@ -105,7 +107,7 @@ private:
      */
     KMoreTools *m_off = nullptr;
 
-    KMoreToolsMenuFactoryPrivate *d;
+    const std::unique_ptr<KMoreToolsMenuFactoryPrivate> d;
 };
 
 #endif

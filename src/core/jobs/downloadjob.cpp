@@ -12,19 +12,17 @@
 
 using namespace KNSCore;
 
-class DownloadJob::Private
+class KNSCore::DownloadJobPrivate
 {
 public:
-    Private()
-    {
-    }
+    DownloadJobPrivate() = default;
     QUrl source;
     QUrl destination;
 };
 
 DownloadJob::DownloadJob(const QUrl &source, const QUrl &destination, int permissions, JobFlags flags, QObject *parent)
     : FileCopyJob(source, destination, permissions, flags, parent)
-    , d(new Private)
+    , d(new DownloadJobPrivate)
 {
     d->source = source;
     d->destination = destination;
@@ -32,14 +30,11 @@ DownloadJob::DownloadJob(const QUrl &source, const QUrl &destination, int permis
 
 DownloadJob::DownloadJob(QObject *parent)
     : FileCopyJob(parent)
-    , d(new Private)
+    , d(new DownloadJobPrivate)
 {
 }
 
-DownloadJob::~DownloadJob()
-{
-    delete d;
-}
+DownloadJob::~DownloadJob() = default;
 
 void DownloadJob::start()
 {

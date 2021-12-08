@@ -43,7 +43,7 @@
 
 namespace KNSCore
 {
-
+class OPDSProviderPrivate;
 class OPDSProvider : public Provider
 {
     Q_OBJECT
@@ -70,8 +70,7 @@ public:
     bool isInitialized() const override;
     void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
 
-    class Private;
-    std::unique_ptr<Private> d;
+    const std::unique_ptr<OPDSProviderPrivate> d;
 
     Q_DISABLE_COPY(OPDSProvider)
 };

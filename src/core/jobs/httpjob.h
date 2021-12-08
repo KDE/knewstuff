@@ -12,8 +12,11 @@
 #include <QNetworkReply>
 #include <QUrl>
 
+#include <memory>
+
 namespace KNSCore
 {
+class HttpJobPrivate;
 class HTTPJob : public KJob
 {
     Q_OBJECT
@@ -52,8 +55,7 @@ protected Q_SLOTS:
     void handleWorkerError(const QString &error);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<HttpJobPrivate> d;
 };
 
 }

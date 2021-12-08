@@ -10,10 +10,10 @@
 
 static const KFormat formatter;
 
-class DownloadLinkInfo::Private
+class DownloadLinkInfoPrivate
 {
 public:
-    Private()
+    DownloadLinkInfoPrivate()
         : id(0)
         , isDownloadtypeLink(true)
         , size(0)
@@ -33,14 +33,11 @@ public:
 
 DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
     : QObject(parent)
-    , d(new Private)
+    , d(new DownloadLinkInfoPrivate)
 {
 }
 
-DownloadLinkInfo::~DownloadLinkInfo()
-{
-    delete d;
-}
+DownloadLinkInfo::~DownloadLinkInfo() = default;
 
 void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInformation &data)
 {

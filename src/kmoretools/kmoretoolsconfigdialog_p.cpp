@@ -299,10 +299,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto &defaul
     d->updateListViews();
 }
 
-KMoreToolsConfigDialog::~KMoreToolsConfigDialog()
-{
-    delete d;
-}
+KMoreToolsConfigDialog::~KMoreToolsConfigDialog() = default;
 
 KmtMenuStructureDto KMoreToolsConfigDialog::currentStructure()
 {

@@ -12,6 +12,7 @@
 
 namespace KNSCore
 {
+class FileCopyWorkerPrivate;
 class FileCopyWorker : public QThread
 {
     Q_OBJECT
@@ -25,8 +26,7 @@ public:
     Q_SIGNAL void error(const QString &message);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<FileCopyWorkerPrivate> d;
 };
 
 }

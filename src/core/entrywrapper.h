@@ -12,6 +12,8 @@
 #include "entryinternal.h"
 #include "knewstuffcore_export.h"
 
+#include <memory>
+
 namespace KNSCore
 {
 // This is for passing an entryinternal through qml, particularly useful for lists
@@ -21,6 +23,7 @@ namespace KNSCore
 // iteration assistance for use in places which would previously use the lists.
 /// TODO KF6 see above (in short, make this class irrelevant so it can be removed)
 
+class EntryWrapperPrivate;
 /**
  * @short Wraps a KNSCore::EntryInternal in a QObject for passing through Qt Quick
  *
@@ -46,8 +49,7 @@ public:
     EntryInternal entry() const;
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<EntryWrapperPrivate> d;
 };
 }
 Q_DECLARE_METATYPE(KNSCore::EntryWrapper *)

@@ -18,10 +18,10 @@
 
 #include "engine.h"
 
-class Engine::Private
+class EnginePrivate
 {
 public:
-    Private()
+    EnginePrivate()
         : engine(nullptr)
         , categoriesModel(nullptr)
         , searchPresetModel(nullptr)
@@ -40,7 +40,7 @@ public:
     {
         KNSCore::EntryWrapper *entry{nullptr};
         if (property) {
-            Private *d = static_cast<Engine::Private *>(property->data);
+            auto d = static_cast<EnginePrivate *>(property->data);
             if (d) {
                 if (i >= 0 && i < d->changedEntries.count()) {
                     // Lifetime management for these objects should be done by the consumer,
@@ -55,7 +55,7 @@ public:
     {
         int count{0};
         if (property) {
-            Private *d = static_cast<Engine::Private *>(property->data);
+            auto d = static_cast<EnginePrivate *>(property->data);
             if (d) {
                 count = d->changedEntries.count();
             }
@@ -67,14 +67,11 @@ public:
 
 Engine::Engine(QObject *parent)
     : QObject(parent)
-    , d(new Private)
+    , d(new EnginePrivate)
 {
 }
 
-Engine::~Engine()
-{
-    delete d;
-}
+Engine::~Engine() = default;
 
 #if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
 bool Engine::allowedByKiosk() const
@@ -300,7 +297,7 @@ void Engine::resetSearchTerm()
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
 QQmlListProperty<KNSCore::EntryWrapper> Engine::changedEntries()
 {
-    return QQmlListProperty<KNSCore::EntryWrapper>(this, d, &Private::getChangedEntriesCount, &Private::getChangedEntry);
+    return QQmlListProperty<KNSCore::EntryWrapper>(this, d.get(), &EnginePrivate::getChangedEntriesCount, &EnginePrivate::getChangedEntry);
 }
 
 int Engine::changedEntriesCount() const

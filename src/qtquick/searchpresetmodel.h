@@ -11,6 +11,10 @@
 #include "quickengine.h"
 #include <QAbstractListModel>
 
+#include <memory>
+
+class SearchPresetModelPrivate;
+
 /**
  * @brief The SearchPresetModel class
  *
@@ -38,9 +42,7 @@ public:
     Q_INVOKABLE void loadSearch(const QModelIndex &index);
 
 private:
-    class Private;
-    // TODO KF6: Switch all the pimpls to const std::unique_ptr<Private> d;
-    Private *d;
+    const std::unique_ptr<SearchPresetModelPrivate> d;
 };
 
 #endif // SEARCHPRESETMODEL_H

@@ -14,12 +14,12 @@
 
 using namespace KNSCore;
 
-class Question::Private
+class KNSCore::QuestionPrivate
 {
 public:
-    Private()
-        : questionType(YesNoQuestion)
-        , response(InvalidResponse)
+    QuestionPrivate()
+        : questionType(Question::YesNoQuestion)
+        , response(Question::InvalidResponse)
     {
     }
     QString question;
@@ -34,15 +34,12 @@ public:
 
 Question::Question(QuestionType questionType, QObject *parent)
     : QObject(parent)
-    , d(new Private)
+    , d(new QuestionPrivate)
 {
     d->questionType = questionType;
 }
 
-Question::~Question()
-{
-    delete d;
-}
+Question::~Question() = default;
 
 Question::Response Question::ask()
 {

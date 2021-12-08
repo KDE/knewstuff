@@ -9,6 +9,10 @@
 
 #include <QAbstractListModel>
 
+#include <memory>
+
+class ItemsModelPrivate;
+
 /**
  * @short A model which shows the contents found in an Engine
  *
@@ -210,8 +214,7 @@ public:
     Q_SIGNAL void entryChanged(int index);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<ItemsModelPrivate> d;
 };
 Q_DECLARE_METATYPE(ItemsModel::ItemStatus)
 

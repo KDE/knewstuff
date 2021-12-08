@@ -13,6 +13,8 @@
 
 #include <KService>
 
+#include <memory>
+
 #include "knewstuff_export.h"
 
 class KMoreToolsService;
@@ -337,7 +339,7 @@ public:
     KMoreToolsMenuBuilder *menuBuilder(const QString &userConfigPostfix = QString()) const;
 
 private:
-    KMoreToolsPrivate *d;
+    const std::unique_ptr<KMoreToolsPrivate> d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -511,7 +513,7 @@ private:
      */
     KMoreToolsService(const KMoreTools &);
 
-    KMoreToolsServicePrivate *d;
+    const std::unique_ptr<KMoreToolsServicePrivate> d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -641,7 +643,7 @@ private:
      */
     KMoreToolsMenuBuilder(const KMoreTools &);
 
-    KMoreToolsMenuBuilderPrivate *d;
+    const std::unique_ptr<KMoreToolsMenuBuilderPrivate> d;
 };
 
 // --------------------------------------------------------------------------------------
@@ -763,7 +765,7 @@ private: // internal usage
     ~KMoreToolsMenuItem();
 
 private:
-    KMoreToolsMenuItemPrivate *d;
+    const std::unique_ptr<KMoreToolsMenuItemPrivate> d;
 };
 
 #endif // KMORETOOLS_H

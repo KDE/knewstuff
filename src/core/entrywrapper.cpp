@@ -8,10 +8,10 @@
 
 namespace KNSCore
 {
-class EntryWrapper::Private
+class EntryWrapperPrivate
 {
 public:
-    Private(const EntryInternal &entry)
+    EntryWrapperPrivate(const EntryInternal &entry)
         : entry(entry)
     {
     }
@@ -21,14 +21,11 @@ public:
 
 KNSCore::EntryWrapper::EntryWrapper(const KNSCore::EntryInternal &entry, QObject *parent)
     : QObject(parent)
-    , d(new Private(entry))
+    , d(new EntryWrapperPrivate(entry))
 {
 }
 
-KNSCore::EntryWrapper::~EntryWrapper()
-{
-    delete d;
-}
+KNSCore::EntryWrapper::~EntryWrapper() = default;
 
 KNSCore::EntryInternal KNSCore::EntryWrapper::entry() const
 {

@@ -11,10 +11,10 @@
 
 #include <KLocalizedString>
 
-class SearchPresetModel::Private
+class SearchPresetModelPrivate
 {
 public:
-    Private()
+    SearchPresetModelPrivate()
     {
     }
     KNSCore::Engine *engine;
@@ -22,7 +22,7 @@ public:
 
 SearchPresetModel::SearchPresetModel(Engine *parent)
     : QAbstractListModel(parent)
-    , d(new Private)
+    , d(new SearchPresetModelPrivate)
 {
     d->engine = qobject_cast<KNSCore::Engine *>(parent->engine());
     connect(d->engine, &KNSCore::Engine::signalSearchPresetsLoaded, this, [this]() {
@@ -31,10 +31,7 @@ SearchPresetModel::SearchPresetModel(Engine *parent)
     });
 }
 
-SearchPresetModel::~SearchPresetModel()
-{
-    delete d;
-}
+SearchPresetModel::~SearchPresetModel() = default;
 
 QHash<int, QByteArray> SearchPresetModel::roleNames() const
 {

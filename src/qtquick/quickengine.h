@@ -14,6 +14,8 @@
 #include "errorcode.h"
 #include "knewstuffquick_export.h"
 
+class EnginePrivate;
+
 /**
  * @short Encapsulates a KNSCore::Engine for use in Qt Quick
  *
@@ -179,8 +181,7 @@ Q_SIGNALS:
     void errorCode(const Engine::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<EnginePrivate> d;
 };
 
 #endif // ENGINE_H

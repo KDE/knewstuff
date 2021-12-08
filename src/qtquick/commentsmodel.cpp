@@ -16,10 +16,10 @@
 
 namespace KNewStuffQuick
 {
-class CommentsModel::Private
+class CommentsModelPrivate
 {
 public:
-    Private(CommentsModel *qq)
+    CommentsModelPrivate(CommentsModel *qq)
         : q(qq)
     {
     }
@@ -61,14 +61,11 @@ using namespace KNewStuffQuick;
 
 CommentsModel::CommentsModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , d(new Private(this))
+    , d(new CommentsModelPrivate(this))
 {
 }
 
-CommentsModel::~CommentsModel()
-{
-    delete d;
-}
+CommentsModel::~CommentsModel() = default;
 
 void KNewStuffQuick::CommentsModel::classBegin()
 {

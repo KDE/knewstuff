@@ -13,6 +13,8 @@
 #include "entry.h"
 #include "knewstuff_export.h"
 
+#include <memory>
+
 namespace KNS3
 {
 class ButtonPrivate;
@@ -81,7 +83,7 @@ protected Q_SLOTS:
 private:
     void init();
 
-    ButtonPrivate *const d;
+    const std::unique_ptr<ButtonPrivate> d;
 };
 
 }

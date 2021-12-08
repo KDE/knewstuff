@@ -13,6 +13,7 @@
 
 namespace KNewStuffQuick
 {
+class AuthorPrivate;
 /**
  * @short Encapsulates a KNSCore::Author for use in Qt Quick
  *
@@ -68,8 +69,7 @@ public:
     Q_SIGNAL void dataChanged();
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<AuthorPrivate> d;
 };
 }
 

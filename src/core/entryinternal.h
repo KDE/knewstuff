@@ -24,12 +24,15 @@
 
 #include "knewstuffcore_export.h"
 
+#include <memory>
+
 class QXmlStreamReader;
 
 namespace KNSCore
 {
 static const int PreviewWidth = 96;
 static const int PreviewHeight = 72;
+class EntryInternalPrivate;
 
 /**
  function to remove bb code formatting that opendesktop sends
@@ -540,8 +543,7 @@ public:
     static KNSCore::EntryInternal fromEntry(const KNS3::Entry &entry);
 
 private:
-    class Private;
-    QExplicitlySharedDataPointer<Private> d;
+    QExplicitlySharedDataPointer<EntryInternalPrivate> d;
 };
 
 inline uint qHash(const KNSCore::EntryInternal &entry)

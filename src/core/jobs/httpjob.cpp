@@ -13,7 +13,7 @@
 
 using namespace KNSCore;
 
-class HTTPJob::Private
+class KNSCore::HttpJobPrivate
 {
 public:
     QUrl source;
@@ -23,7 +23,7 @@ public:
 
 HTTPJob::HTTPJob(const QUrl &source, LoadType loadType, JobFlags flags, QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new HttpJobPrivate)
 {
     d->source = source;
     d->loadType = loadType;
@@ -32,14 +32,11 @@ HTTPJob::HTTPJob(const QUrl &source, LoadType loadType, JobFlags flags, QObject 
 
 HTTPJob::HTTPJob(QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new HttpJobPrivate)
 {
 }
 
-HTTPJob::~HTTPJob()
-{
-    delete d;
-}
+HTTPJob::~HTTPJob() = default;
 
 void HTTPJob::start()
 {

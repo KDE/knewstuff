@@ -16,6 +16,7 @@
 
 namespace KNSCore
 {
+class QuestionManagerPrivate;
 /**
  * @short The central class handling Question redirection
  *
@@ -37,8 +38,7 @@ Q_SIGNALS:
 
 private:
     QuestionManager();
-    class Private;
-    Private *d;
+    const std::unique_ptr<QuestionManagerPrivate> d;
 };
 }
 

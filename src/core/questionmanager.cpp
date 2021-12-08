@@ -26,12 +26,10 @@ public:
 };
 Q_GLOBAL_STATIC(QuestionManagerHelper, s_kns3_questionManager)
 
-class QuestionManager::Private
+class KNSCore::QuestionManagerPrivate
 {
 public:
-    Private()
-    {
-    }
+    QuestionManagerPrivate() = default;
 };
 
 QuestionManager *QuestionManager::instance()
@@ -44,12 +42,9 @@ QuestionManager *QuestionManager::instance()
 
 QuestionManager::QuestionManager()
     : QObject(nullptr)
-    , d(new Private)
+    , d(new QuestionManagerPrivate)
 {
     s_kns3_questionManager()->q = this;
 }
 
-QuestionManager::~QuestionManager()
-{
-    delete d;
-}
+QuestionManager::~QuestionManager() = default;

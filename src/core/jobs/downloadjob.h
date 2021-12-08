@@ -9,8 +9,11 @@
 
 #include "filecopyjob.h"
 
+#include <memory>
+
 namespace KNSCore
 {
+class DownloadJobPrivate;
 class DownloadJob : public FileCopyJob
 {
     Q_OBJECT
@@ -26,8 +29,7 @@ protected Q_SLOTS:
     void handleWorkerError(const QString &error);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<DownloadJobPrivate> d;
 };
 
 }

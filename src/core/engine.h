@@ -21,6 +21,8 @@
 
 #include "knewstuffcore_export.h"
 
+#include <memory>
+
 class QTimer;
 class KJob;
 class EnginePrivate;
@@ -789,7 +791,7 @@ private:
     // the current request from providers
     Provider::SearchRequest m_currentRequest;
 
-    EnginePrivate *const d;
+    const std::unique_ptr<EnginePrivate> d;
 
     // the page that is currently displayed, so it is not requested repeatedly
     int m_currentPage;

@@ -10,10 +10,10 @@
 
 #include <KLocalizedString>
 
-class CategoriesModel::Private
+class CategoriesModelPrivate
 {
 public:
-    Private()
+    CategoriesModelPrivate()
     {
     }
     KNSCore::Engine *engine;
@@ -21,7 +21,7 @@ public:
 
 CategoriesModel::CategoriesModel(Engine *parent)
     : QAbstractListModel(parent)
-    , d(new Private)
+    , d(new CategoriesModelPrivate)
 {
     d->engine = qobject_cast<KNSCore::Engine *>(parent->engine());
     connect(d->engine, &KNSCore::Engine::signalCategoriesMetadataLoded, this, [this]() {
@@ -30,10 +30,7 @@ CategoriesModel::CategoriesModel(Engine *parent)
     });
 }
 
-CategoriesModel::~CategoriesModel()
-{
-    delete d;
-}
+CategoriesModel::~CategoriesModel() = default;
 
 QHash<int, QByteArray> CategoriesModel::roleNames() const
 {

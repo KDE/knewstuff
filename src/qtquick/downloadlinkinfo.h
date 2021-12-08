@@ -11,6 +11,9 @@
 
 #include "entryinternal.h"
 
+#include <memory>
+
+class DownloadLinkInfoPrivate;
 /**
  * @short One downloadable item as contained within one content item
  *
@@ -49,8 +52,7 @@ public:
     QString icon() const;
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<DownloadLinkInfoPrivate> d;
 };
 
 #endif // DOWNLOADLINKINFO_H

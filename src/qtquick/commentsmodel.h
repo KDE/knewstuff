@@ -11,8 +11,11 @@
 #include <QSortFilterProxyModel>
 #include <entryinternal.h>
 
+#include <memory>
+
 namespace KNewStuffQuick
 {
+class CommentsModelPrivate;
 /**
  * @short Encapsulates a KNSCore::CommentsModel for use in Qt Quick
  *
@@ -83,8 +86,7 @@ public:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<CommentsModelPrivate> d;
 };
 }
 Q_DECLARE_METATYPE(KNewStuffQuick::CommentsModel::IncludedComments)

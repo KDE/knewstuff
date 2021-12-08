@@ -12,13 +12,13 @@
 
 namespace KNSCore
 {
-class TagsFilterChecker::Private
+class TagsFilterCheckerPrivate
 {
 public:
-    Private()
+    TagsFilterCheckerPrivate()
     {
     }
-    ~Private()
+    ~TagsFilterCheckerPrivate()
     {
         qDeleteAll(validators);
     }
@@ -43,7 +43,7 @@ public:
         virtual bool filterAccepts(const QString &tag, const QString &value) = 0;
 
     protected:
-        friend class TagsFilterChecker::Private;
+        friend class TagsFilterCheckerPrivate;
         QString m_tag;
         QStringList m_acceptedValues;
     };
@@ -123,17 +123,14 @@ public:
 };
 
 TagsFilterChecker::TagsFilterChecker(const QStringList &tagFilter)
-    : d(new TagsFilterChecker::Private)
+    : d(new TagsFilterCheckerPrivate)
 {
     for (const QString &filter : tagFilter) {
         d->addValidator(filter);
     }
 }
 
-TagsFilterChecker::~TagsFilterChecker()
-{
-    delete d;
-}
+TagsFilterChecker::~TagsFilterChecker() = default;
 
 bool TagsFilterChecker::filterAccepts(const QStringList &tags)
 {
@@ -154,7 +151,7 @@ bool TagsFilterChecker::filterAccepts(const QStringList &tags)
             // If the tag is defined simply as a key, we give it the value "1", just to make our filtering work simpler
             current << QStringLiteral("1");
         }
-        QMap<QString, TagsFilterChecker::Private::Validator *>::const_iterator i = d->validators.constBegin();
+        QMap<QString, TagsFilterCheckerPrivate::Validator *>::const_iterator i = d->validators.constBegin();
         while (i != d->validators.constEnd()) {
             if (!i.value()->filterAccepts(current.at(0), current.at(1))) {
                 return false;

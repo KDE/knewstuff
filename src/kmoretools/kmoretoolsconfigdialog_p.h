@@ -11,6 +11,8 @@
 
 #include "kmoretools_p.h"
 
+#include <memory>
+
 class KMoreToolsConfigDialogPrivate;
 
 class KMoreToolsConfigDialog : public KPageDialog
@@ -31,7 +33,7 @@ public:
     KmtMenuStructureDto currentStructure();
 
 private:
-    KMoreToolsConfigDialogPrivate *d;
+    const std::unique_ptr<KMoreToolsConfigDialogPrivate> d;
 };
 
 #endif // KMORETOOLSCONFIGDIALOG_H

@@ -18,10 +18,10 @@
 
 using namespace KNSCore;
 
-class EntryInternal::Private : public QSharedData
+class KNSCore::EntryInternalPrivate : public QSharedData
 {
 public:
-    Private()
+    EntryInternalPrivate()
         : mReleaseDate(QDate::currentDate())
         , mRating(0)
         , mNumberOfComments(0)
@@ -35,7 +35,7 @@ public:
         qRegisterMetaType<KNSCore::EntryInternal::List>();
     }
 
-    bool operator==(const Private &other) const
+    bool operator==(const EntryInternalPrivate &other) const
     {
         return mUniqueId == other.mUniqueId && mProviderId == other.mProviderId;
     }
@@ -82,7 +82,7 @@ public:
 };
 
 EntryInternal::EntryInternal()
-    : d(new Private)
+    : d(new EntryInternalPrivate())
 {
 }
 

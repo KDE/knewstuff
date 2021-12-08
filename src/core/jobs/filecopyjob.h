@@ -11,8 +11,11 @@
 
 #include <QUrl>
 
+#include <memory>
+
 namespace KNSCore
 {
+class FileCopyJobPrivate;
 class FileCopyJob : public KJob
 {
     Q_OBJECT
@@ -37,8 +40,7 @@ protected Q_SLOTS:
     void handleError(const QString &errorMessage);
 
 private:
-    class Private;
-    Private *d;
+    const std::unique_ptr<FileCopyJobPrivate> d;
 };
 
 }

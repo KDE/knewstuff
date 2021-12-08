@@ -13,7 +13,7 @@
 
 using namespace KNSCore;
 
-class FileCopyJob::Private
+class KNSCore::FileCopyJobPrivate
 {
 public:
     QUrl source;
@@ -26,7 +26,7 @@ public:
 
 FileCopyJob::FileCopyJob(const QUrl &source, const QUrl &destination, int permissions, JobFlags flags, QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new FileCopyJobPrivate)
 {
     d->source = source;
     d->destination = destination;
@@ -36,14 +36,11 @@ FileCopyJob::FileCopyJob(const QUrl &source, const QUrl &destination, int permis
 
 FileCopyJob::FileCopyJob(QObject *parent)
     : KJob(parent)
-    , d(new Private)
+    , d(new FileCopyJobPrivate)
 {
 }
 
-FileCopyJob::~FileCopyJob()
-{
-    delete d;
-}
+FileCopyJob::~FileCopyJob() = default;
 
 void FileCopyJob::start()
 {

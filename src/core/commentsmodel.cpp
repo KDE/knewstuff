@@ -15,10 +15,10 @@
 
 namespace KNSCore
 {
-class CommentsModel::Private
+class CommentsModelPrivate
 {
 public:
-    Private(CommentsModel *qq)
+    CommentsModelPrivate(CommentsModel *qq)
         : q(qq)
     {
     }
@@ -93,15 +93,12 @@ public:
 
 KNSCore::CommentsModel::CommentsModel(Engine *parent)
     : QAbstractListModel(parent)
-    , d(new Private(this))
+    , d(new CommentsModelPrivate(this))
 {
     d->engine = parent;
 }
 
-KNSCore::CommentsModel::~CommentsModel()
-{
-    delete d;
-}
+KNSCore::CommentsModel::~CommentsModel() = default;
 
 QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
 {
@@ -210,6 +207,6 @@ const KNSCore::EntryInternal &KNSCore::CommentsModel::entry() const
 void KNSCore::CommentsModel::setEntry(const KNSCore::EntryInternal &newEntry)
 {
     d->entry = newEntry;
-    d->fetch(Private::ClearModel);
+    d->fetch(CommentsModelPrivate::ClearModel);
     Q_EMIT entryChanged();
 }
