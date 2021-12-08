@@ -19,7 +19,7 @@ class ActionPrivate;
  * Shows the KNS3::QtQuickDialogWrapper when the action is triggered.
  * If GHNS is disabled using KAuthorized, it is hidden.
  *
- * @since 5.89
+ * @since 5.90
  */
 class KNEWSTUFFWIDGETS_EXPORT Action : public QAction
 {
