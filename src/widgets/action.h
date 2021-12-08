@@ -10,7 +10,7 @@
 #include <QAction>
 
 #include "entry.h"
-#include "knewstuff_export.h"
+#include "knewstuffwidgets_export.h"
 
 namespace KNSWidgets
 {
@@ -21,7 +21,7 @@ class ActionPrivate;
  *
  * @since 5.89
  */
-class KNEWSTUFF_EXPORT Action : public QAction
+class KNEWSTUFFWIDGETS_EXPORT Action : public QAction
 {
     Q_OBJECT
 

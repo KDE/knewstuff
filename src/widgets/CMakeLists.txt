@@ -4,6 +4,15 @@
 add_library(KF5NewStuffWidgets)
 add_library(KF5::NewStuffWidgets ALIAS KF5NewStuffWidgets)
 
+ecm_generate_export_header(KF5NewStuffWidgets
+    EXPORT_FILE_NAME knewstuffwidgets_export.h
+    BASE_NAME KNewStuffWidgets
+    GROUP_BASE_NAME KF
+    VERSION ${KF_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+)
+
 target_sources(KF5NewStuffWidgets PRIVATE action.cpp)
 target_link_libraries(KF5NewStuffWidgets PUBLIC KF5::NewStuff)
 target_link_libraries(KF5NewStuffWidgets
@@ -37,4 +46,9 @@ ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
 
 install(FILES ${KNewStuffWidgets_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSWidgets COMPONENT Devel)
 install(FILES ${KNewStuffWidgets_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knswidgets COMPONENT Devel)
+
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knswidgets COMPONENT Devel
+)
 install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
