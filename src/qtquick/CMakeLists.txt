@@ -27,10 +27,10 @@ ecm_qt_declare_logging_category(qmlplugin_SRCS
 add_library (newstuffqmlplugin ${qmlplugin_SRCS})
 
 target_link_libraries (newstuffqmlplugin
-    Qt5::Core
-    Qt5::Qml
-    Qt5::Quick
-    Qt5::Xml
+    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Qml
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Xml
     KF5::ConfigCore
     KF5::I18n
     KF5::NewStuffCore
