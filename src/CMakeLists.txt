@@ -63,14 +63,14 @@ ecm_generate_export_header(KF5NewStuff
 
 target_include_directories(KF5NewStuff
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore>")
 
 target_link_libraries(KF5NewStuff
   PUBLIC
     KF5::NewStuffCore
     KF5::XmlGui                # For KActionCollection in knewstuffaction.h
     KF5::Service               # For KMoreTools
-    Qt5::Widgets
+    Qt${QT_MAJOR_VERSION}::Widgets
   PRIVATE
     KF5::KIOCore               # For network fetching operations
     KF5::KIOWidgets            # For KUrlRequester
@@ -78,8 +78,8 @@ target_link_libraries(KF5NewStuff
     KF5::I18n                  # For translations
     KF5::ItemViews             # For buttons on download dialog
     KF5::IconThemes           # For KIcon
-    Qt5::Qml
-    Qt5::Quick
+    Qt${QT_MAJOR_VERSION}::Qml
+    Qt${QT_MAJOR_VERSION}::Quick
     KF5::TextWidgets          # For KTextEdit in upload dialog
 )
 
@@ -118,18 +118,18 @@ ecm_generate_headers(KNewStuff_CamelCase_HEADERS_KMoreTools
   REQUIRED_HEADERS KNewStuff_HEADERS_KMoreTools
   PREFIX KNS3
 )
-install(FILES ${KNewStuff_CamelCase_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
-install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
+install(FILES ${KNewStuff_CamelCase_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3 COMPONENT Devel)
+install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
 )
 
-install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNS3 COMPONENT Devel)
+install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3 COMPONENT Devel)
 
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
   ${KNewStuff_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3 COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
 )
 
 add_subdirectory(widgets)
@@ -167,7 +167,7 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff)
+ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 add_subdirectory(qtquick)

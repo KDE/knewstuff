@@ -21,9 +21,11 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
 set(REQUIRED_QT_VERSION 5.15.2)
-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Gui Widgets Xml)
-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
-
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Gui Widgets Xml)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(Qt6Core5Compat)
+endif()
 find_package(KF5Archive ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5Completion ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5Config ${KF_DEP_VERSION} REQUIRED)
@@ -164,7 +166,7 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h
   ${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
 )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

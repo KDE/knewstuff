@@ -83,19 +83,19 @@ set(KNewStuffCore_BUILD_INCLUDE_DIRS
 
 target_include_directories(KF5NewStuffCore
     PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/kns3;${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore>")
 
 target_link_libraries(KF5NewStuffCore
   PUBLIC
     KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF5::CoreAddons
-    Qt5::Xml
+    Qt${QT_MAJOR_VERSION}::Xml
   PRIVATE
     KF5::Archive               # For decompressing archives
     KF5::I18n                  # For translations
     KF5::ConfigCore
     KF5::Package
-    Qt5::Gui                   # For QImage
+    Qt${QT_MAJOR_VERSION}::Gui                   # For QImage
 )
 
 if(KF5Syndication_FOUND)
@@ -137,11 +137,11 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
 )
 
 install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES ${KNewStuffCore_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/KNSCore COMPONENT Devel)
+install(FILES ${KNewStuffCore_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore COMPONENT Devel)
 install(FILES
     ${KNewStuffCore_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3/knscore COMPONENT Devel)
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore COMPONENT Devel)
 
 if(BUILD_QCH)
     ecm_add_qch(
@@ -168,6 +168,6 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KNewStuff3)
+ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3)
 install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
