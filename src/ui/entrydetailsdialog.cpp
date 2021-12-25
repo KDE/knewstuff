@@ -122,11 +122,11 @@ void EntryDetails::entryChanged(const KNSCore::EntryInternal &entry)
 
     if (m_entry.rating() > 0) {
         ui->ratingWidget->setVisible(true);
-        disconnect(ui->ratingWidget, static_cast<void (KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged), this, &EntryDetails::ratingChanged);
+        disconnect(ui->ratingWidget, &KRatingWidget::ratingChanged, this, &EntryDetails::ratingChanged);
         // Most of the voting is 20 - 80, so rate 20 as 0 stars and 80 as 5 stars
         int rating = qMax(0, qMin(10, (m_entry.rating() - 20) / 6));
         ui->ratingWidget->setRating(rating);
-        connect(ui->ratingWidget, static_cast<void (KRatingWidget::*)(uint)>(&KRatingWidget::ratingChanged), this, &EntryDetails::ratingChanged);
+        connect(ui->ratingWidget, &KRatingWidget::ratingChanged, this, &EntryDetails::ratingChanged);
     } else {
         ui->ratingWidget->setVisible(false);
     }
@@ -287,7 +287,7 @@ void EntryDetails::previewSelected(int current)
     ui->previewBig->setImage(m_currentPreview);
 }
 
-void EntryDetails::ratingChanged(uint rating)
+void EntryDetails::ratingChanged(int rating)
 {
     // engine expects values from 0..100
     qCDebug(KNEWSTUFF) << "rating: " << rating << " -> " << rating * 10;

@@ -439,9 +439,14 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
             serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
-            if (serviceType.isEmpty() && !package.metadata().serviceTypes().isEmpty()) {
-                serviceType = package.metadata().serviceTypes().first();
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
+            const auto serviceTypes =
+                package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
+            if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
+                serviceType = serviceTypes.first();
             }
+#endif
+
             if (serviceType.isEmpty()) {
                 serviceType = property("kpackageType").toString();
             }
@@ -790,9 +795,14 @@ void Installation::uninstall(EntryInternal entry)
                 package.setPath(installedFile);
                 if (package.isValid() && package.metadata().isValid()) {
                     QString serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
-                    if (serviceType.isEmpty() && !package.metadata().serviceTypes().isEmpty()) {
-                        serviceType = package.metadata().serviceTypes().first();
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
+                    const auto serviceTypes =
+                        package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
+                    if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
+                        serviceType = serviceTypes.first();
                     }
+#endif
+
                     if (serviceType.isEmpty()) {
                         serviceType = property("kpackageType").toString();
                     }

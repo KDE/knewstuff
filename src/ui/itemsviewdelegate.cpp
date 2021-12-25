@@ -68,7 +68,7 @@ QList<QWidget *> ItemsViewDelegate::createItemWidgets(const QModelIndex &index) 
     rating->setHalfStepsEnabled(true);
     list << rating;
     const KNSCore::EntryInternal entry = index.data(Qt::UserRole).value<KNSCore::EntryInternal>();
-    connect(rating, static_cast<void (KRatingWidget::*)(unsigned int)>(&KRatingWidget::ratingChanged), this, [this, entry](unsigned int newRating) {
+    connect(rating, &KRatingWidget::ratingChanged, this, [this, entry](int newRating) {
         m_engine->vote(entry, newRating * 10);
     });
 

@@ -38,7 +38,7 @@ private Q_SLOTS:
     void installAction(QAction *action);
     void uninstall();
 
-    void ratingChanged(uint rating);
+    void ratingChanged(int rating);
     void becomeFan();
     // more details loaded
     void entryChanged(const KNSCore::EntryInternal &entry);
