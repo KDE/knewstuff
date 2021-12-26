@@ -59,4 +59,6 @@ private:
 
 } // end KNS namespace
 
+Q_DECLARE_METATYPE(KNSCore::EntryInternal)
+
 #endif
