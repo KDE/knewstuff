@@ -59,6 +59,8 @@ private:
 
 } // end KNS namespace
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 Q_DECLARE_METATYPE(KNSCore::EntryInternal)
+#endif
 
 #endif
