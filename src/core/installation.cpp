@@ -422,7 +422,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         qCDebug(KNEWSTUFFCORE) << "Using KPackage for installation";
         KPackage::PackageStructure structure;
         KPackage::Package package(&structure);
-        QString serviceType;
         package.setPath(payloadfile);
         auto resetEntryStatus = [this, entry]() {
             KNSCore::EntryInternal changedEntry(entry);
@@ -435,18 +434,25 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         };
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-            serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
+            QString serviceType;
+            serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
             const auto serviceTypes =
                 package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
             if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
                 serviceType = serviceTypes.first();
             }
-#endif
-
             if (serviceType.isEmpty()) {
                 serviceType = property("kpackageType").toString();
+            } else if (serviceType != property("kpackageType").toString()) {
+                qCWarning(KNEWSTUFFCORE) << "The package" << package.metadata().fileName()
+                                         << "defines a different kpackage type than the one defined by the app."
+                                         << "Please report this to the author of the addon.";
             }
+#else
+            const QString serviceType = property("kpackageType").toString();
+#endif
+
             if (!serviceType.isEmpty()) {
                 qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << serviceType;
                 KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
@@ -791,18 +797,23 @@ void Installation::uninstall(EntryInternal entry)
                 KPackage::Package package(&structure);
                 package.setPath(installedFile);
                 if (package.isValid() && package.metadata().isValid()) {
-                    QString serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
+                    QString serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
                     const auto serviceTypes =
                         package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
                     if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
                         serviceType = serviceTypes.first();
                     }
-#endif
-
                     if (serviceType.isEmpty()) {
                         serviceType = property("kpackageType").toString();
+                    } else if (serviceType != property("kpackageType").toString()) {
+                        qCWarning(KNEWSTUFFCORE) << "The package" << package.metadata().fileName()
+                                                 << "defines a different kpackage type than the one defined by the app."
+                                                 << "Please report this to the author of the addon.";
                     }
+#else
+                    const QString serviceType = property("kpackageType").toString();
+#endif
                     if (!serviceType.isEmpty()) {
                         KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
                         if (structure) {
