@@ -231,7 +231,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             while (!previews.isEmpty() && previews.last().isEmpty()) {
                 previews.takeLast();
             }
-            data.setValue<QStringList>(previews);
+            data.setValue(previews);
         } break;
         case PreviewsRole: {
             QStringList previews;
@@ -241,13 +241,13 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             while (!previews.isEmpty() && previews.last().isEmpty()) {
                 previews.takeLast();
             }
-            data.setValue<QStringList>(previews);
+            data.setValue(previews);
         } break;
         case InstalledFilesRole:
-            data.setValue<QStringList>(entry.installedFiles());
+            data.setValue(entry.installedFiles());
             break;
         case UnInstalledFilesRole:
-            data.setValue<QStringList>(entry.uninstalledFiles());
+            data.setValue(entry.uninstalledFiles());
             break;
         case RatingRole:
             data.setValue<int>(entry.rating());
@@ -283,7 +283,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 info->setData(data);
                 list.append(info);
             }
-            data.setValue<QObjectList>(list);
+            data.setValue(list);
         } break;
         case DonationLinkRole:
             data.setValue<QString>(entry.donationLink());

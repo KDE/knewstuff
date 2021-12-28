@@ -10,6 +10,7 @@
 
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QStandardPaths>
 #include <QTest>
 
 class KMoreToolsTest : public QObject

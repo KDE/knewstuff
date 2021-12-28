@@ -27,10 +27,12 @@ int main(int argc, char **argv)
     QApplication::setApplicationDisplayName(i18n("KHotNewStuff"));
 
     if (i.arguments().count() > 1) {
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 85)
         QString configfile = QLatin1String(argv[1]);
         QPointer<KNS3::UploadDialog> dialog = new KNS3::UploadDialog(configfile);
         dialog->exec();
         delete dialog;
+#endif
     } else {
         std::cout << "Enter the knsrc file to use\n";
         return -1;
