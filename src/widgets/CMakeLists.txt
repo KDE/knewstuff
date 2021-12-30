@@ -14,7 +14,10 @@ ecm_generate_export_header(KF5NewStuffWidgets
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
-target_sources(KF5NewStuffWidgets PRIVATE action.cpp)
+target_sources(KF5NewStuffWidgets PRIVATE
+    action.cpp button.cpp
+    ../ui/widgetquestionlistener.cpp)
+
 target_link_libraries(KF5NewStuffWidgets PUBLIC KF5::NewStuff)
 target_link_libraries(KF5NewStuffWidgets
   PUBLIC
@@ -36,10 +39,12 @@ set_target_properties(KF5NewStuffWidgets PROPERTIES
 
 set(KNewStuffWidgets_HEADERS
   action.h
+  button.h
 )
 ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   HEADER_NAMES
   Action
+  Button
 
   REQUIRED_HEADERS KNewStuffWidgets_HEADERS
   PREFIX KNSWidgets
