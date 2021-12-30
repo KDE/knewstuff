@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2021 Oleg Solovyov <mcpain@altlinux.org>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
@@ -71,11 +72,14 @@ void Action::showDialog()
         d->dialog = new QtQuickDialogWrapper(d->configFile, this);
     }
     const auto changedInternalEntries = d->dialog->exec();
+#if KNEWSTUFFWIDGETS_BUILD_DEPRECATED_SINCE(5, 91)
     QList<KNS3::Entry> changedEntries;
     for (const KNSCore::EntryInternal &e : changedInternalEntries) {
         changedEntries << EntryPrivate::fromInternal(&e);
     }
     Q_EMIT dialogFinished(changedEntries);
+#endif
+    Q_EMIT dialogFinished(changedInternalEntries);
 }
 
 }

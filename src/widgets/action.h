@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2021 Oleg Solovyov <mcpain@altlinux.org>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
@@ -11,6 +12,11 @@
 
 #include "entry.h"
 #include "knewstuffwidgets_export.h"
+
+namespace KNSCore
+{
+using Entry = KNSCore::EntryInternal;
+}
 
 namespace KNSWidgets
 {
@@ -51,10 +57,15 @@ Q_SIGNALS:
      */
     void aboutToShowDialog();
 
-    /**
-     * emitted when the Hot New Stuff dialog has been closed
-     */
+#if KNEWSTUFFWIDGETS_ENABLE_DEPRECATED_SINCE(5, 90)
+    /// emitted when the Hot New Stuff dialog has been closed
     void dialogFinished(const KNS3::Entry::List &changedEntries);
+#endif
+    // Only show this overload when we hide deprecated methods or build the lib
+#if !KNEWSTUFFWIDGETS_ENABLE_DEPRECATED_SINCE(5, 90) || KF5NewStuffWidgets_EXPORTS
+    /// emitted when the Hot New Stuff dialog has been closed
+    void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
+#endif
 
 private Q_SLOTS:
     void showDialog();
