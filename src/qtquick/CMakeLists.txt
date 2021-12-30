@@ -36,6 +36,10 @@ target_link_libraries (newstuffqmlplugin
     KF5::NewStuffCore
 )
 
+if(WIN32 AND BUILD_SHARED_LIBS)
+    set_target_properties(newstuffqmlplugin PROPERTIES PREFIX "")
+endif()
+
 # This is used only for the deprecation system - we don't export things from the QML plugin, that's not how they work
 ecm_generate_export_header(newstuffqmlplugin
     EXPORT_FILE_NAME knewstuffquick_export.h
