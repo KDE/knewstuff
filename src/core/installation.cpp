@@ -323,7 +323,7 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
                 scriptArgPath = scriptArgPath.left(scriptArgPath.lastIndexOf(QLatin1Char('*')));
             }
             QProcess *p = runPostInstallationCommand(scriptArgPath);
-            connect(p, &QProcess::finished, this, [entry, installationFinished, this](int exitCode, QProcess::ExitStatus) {
+            connect(p, &QProcess::finished, this, [entry, installationFinished, this](int exitCode) {
                 if (exitCode) {
                     EntryInternal newEntry = entry;
                     newEntry.setStatus(KNS3::Entry::Invalid);

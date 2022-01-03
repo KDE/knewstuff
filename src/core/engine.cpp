@@ -1201,7 +1201,7 @@ void Engine::adoptEntry(const EntryInternal &entry)
 
     process->start();
 
-    connect(process, &QProcess::finished, this, [this, process, entry, command](int exitCode, QProcess::ExitStatus) {
+    connect(process, &QProcess::finished, this, [this, process, entry, command](int exitCode) {
         if (exitCode == 0) {
             Q_EMIT signalEntryEvent(entry, EntryInternal::EntryEvent::AdoptedEvent);
 
