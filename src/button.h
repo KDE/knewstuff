@@ -13,6 +13,8 @@
 #include "entry.h"
 #include "knewstuff_export.h"
 
+#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 91)
+
 #include <memory>
 
 namespace KNS3
@@ -24,6 +26,7 @@ class ButtonPrivate;
  * using KHotNewStuff in the button itself.
  *
  * @since 4.4
+ * @deprecated Since 5.91, use KNSWidgets::Button instead
  */
 class KNEWSTUFF_EXPORT Button : public QPushButton
 {
@@ -39,6 +42,7 @@ public:
      * @param configFile the name of the .knsrc file
      * @param parent the parent widget
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 91, "use KNSWidgets::Button instead")
     Button(const QString &text, const QString &configFile, QWidget *parent);
 
     /**
@@ -47,6 +51,7 @@ public:
      *
      * @param parent the parent widget
      */
+    KNEWSTUFF_DEPRECATED_VERSION(5, 91, "use KNSWidgets::Button instead")
     explicit Button(QWidget *parent);
 
     ~Button() override;
@@ -88,4 +93,5 @@ private:
 
 }
 
+#endif
 #endif // KNEWSTUFFBUTTON_H

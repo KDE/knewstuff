@@ -7,6 +7,8 @@
 
 #include "button.h"
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 91)
+
 #include "entry_p.h"
 #include "qtquickdialogwrapper.h"
 #include "ui/widgetquestionlistener.h"
@@ -89,3 +91,4 @@ void Button::showDialog()
 }
 
 }
+#endif
