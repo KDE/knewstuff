@@ -323,18 +323,15 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
                 scriptArgPath = scriptArgPath.left(scriptArgPath.lastIndexOf(QLatin1Char('*')));
             }
             QProcess *p = runPostInstallationCommand(scriptArgPath);
-            connect(p,
-                    qOverload<int, QProcess::ExitStatus>(&QProcess::finished),
-                    this,
-                    [entry, installationFinished, this](int exitCode, QProcess::ExitStatus) {
-                        if (exitCode) {
-                            EntryInternal newEntry = entry;
-                            newEntry.setStatus(KNS3::Entry::Invalid);
-                            Q_EMIT signalEntryChanged(newEntry);
-                        } else {
-                            installationFinished();
-                        }
-                    });
+            connect(p, &QProcess::finished, this, [entry, installationFinished, this](int exitCode, QProcess::ExitStatus) {
+                if (exitCode) {
+                    EntryInternal newEntry = entry;
+                    newEntry.setStatus(KNS3::Entry::Invalid);
+                    Q_EMIT signalEntryChanged(newEntry);
+                } else {
+                    installationFinished();
+                }
+            });
         } else {
             installationFinished();
         }
@@ -730,7 +727,7 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
         }
         sender()->deleteLater();
     };
-    connect(ret, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, onProcessFinished);
+    connect(ret, &QProcess::finished, this, onProcessFinished);
 
     QStringList args = KShell::splitArgs(command);
     ret->setProgram(args.takeFirst());
@@ -951,7 +948,7 @@ void Installation::uninstall(EntryInternal entry)
                         }
                         deleteFilesAndMarkAsUninstalled();
                     };
-                    connect(process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, onProcessFinished);
+                    connect(process, &QProcess::finished, this, onProcessFinished);
                 }
             }
             // If the entry got deleted, but the RemoveDeadEntries option was not selected this case can happen

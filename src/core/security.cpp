@@ -61,7 +61,7 @@ void Security::readKeys()
     m_process = new QProcess();
     QStringList arguments;
     arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--no-tty") << QStringLiteral("--with-colon") << QStringLiteral("--list-keys");
-    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::finished, this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
@@ -85,7 +85,7 @@ void Security::readSecretKeys()
     m_process = new QProcess();
     QStringList arguments;
     arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--no-tty") << QStringLiteral("--with-colon") << QStringLiteral("--list-secret-keys");
-    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::finished, this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (!m_process->waitForStarted()) {
@@ -254,7 +254,7 @@ void Security::slotCheckValidity()
     QStringList arguments;
     arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--status-fd=2") << QStringLiteral("--command-fd=0") << QStringLiteral("--verify")
               << f.path() + QStringLiteral("/signature") << m_fileName;
-    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::finished, this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_process->start(gpgExecutable(), arguments);
     if (m_process->waitForStarted()) {
@@ -337,7 +337,7 @@ void Security::slotSignFile()
     arguments << QStringLiteral("--no-secmem-warning") << QStringLiteral("--status-fd=2") << QStringLiteral("--command-fd=0") << QStringLiteral("--no-tty")
               << QStringLiteral("--detach-sign") << QStringLiteral("-u") << m_secretKey << QStringLiteral("-o") << f.path() + QStringLiteral("/signature")
               << m_fileName;
-    connect(m_process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this, &Security::slotFinished);
+    connect(m_process, &QProcess::finished, this, &Security::slotFinished);
     connect(m_process, &QProcess::readyReadStandardOutput, this, &Security::slotReadyReadStandardOutput);
     m_runMode = Sign;
     m_process->start(gpgExecutable(), arguments);
