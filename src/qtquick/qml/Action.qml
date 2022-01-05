@@ -20,7 +20,7 @@ NewStuff.Action {
     configFile: "wallpaper.knsrc"
     text: i18n("&Get New Wallpapers...")
     pageStack: applicationWindow().pageStack
-    function() onEntryEvent(entry, event) {
+    onEntryEvent: function(entry, event) {
         // do something depending on the type of event or the entry you are given
         // such as updating the item in your own model representing that entry,
         // or adding or removing the item. Try and avoid reloading full models.
