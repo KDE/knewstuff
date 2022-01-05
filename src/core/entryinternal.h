@@ -51,6 +51,7 @@ KNEWSTUFFCORE_EXPORT QString replaceBBCode(const QString &unformattedText);
  */
 class KNEWSTUFFCORE_EXPORT EntryInternal
 {
+    Q_GADGET
 public:
     typedef QList<EntryInternal> List;
 
@@ -91,6 +92,7 @@ public:
         AdoptedEvent = 2, ///< Used when an entry has been successfully adopted (use this to determine whether a call to Engine::adoptEntry() succeeded)
         DetailsLoadedEvent = 3, ///< Used when more details have been added to an existing entry (such as the full description), and the UI should be updated
     };
+    Q_ENUM(EntryEvent)
 
     /**
      * Represents whether the current entry is an actual catalog entry,

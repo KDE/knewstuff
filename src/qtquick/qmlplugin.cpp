@@ -74,6 +74,7 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                                                    QQmlEngine::CppOwnership);
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
                                                                     });
+    qmlRegisterUncreatableType<KNSCore::EntryInternal>(uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
 
     // Version 1.67
     qmlRegisterUncreatableType<KNSCore::EntryWrapper>(
