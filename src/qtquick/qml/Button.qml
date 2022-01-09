@@ -32,7 +32,7 @@ QtControls.Button {
     /**
      * The configuration file to use for this button
      */
-    property string configFile: ghnsDialog.configFile
+    property string configFile
 
     /**
      * Set the text that should appear on the button. Will be set as
@@ -48,7 +48,7 @@ QtControls.Button {
      * set using the NewStuff.Page.ViewMode enum
      * @see NewStuff.Page.ViewMode
      */
-    property alias viewMode: ghnsDialog.viewMode
+    property int viewMode: NewStuff.Page.ViewMode.Preview
 
     /**
      * emitted when the Hot New Stuff dialog is about to be shown, usually
@@ -59,7 +59,7 @@ QtControls.Button {
     /**
      * The engine which handles the content in this Button
      */
-    property alias engine: ghnsDialog.engine
+    readonly property QtObject engine: component._private? component._private.pageItem.engine : null
 
     /**
      * This forwards the entryEvent from the QtQuick engine
@@ -82,10 +82,10 @@ QtControls.Button {
      * @deprecated Since 5.82, use entryEvent instead
      */
     property var changedEntries
-    Binding {
+    property Binding changedEntriesBinding: Binding {
         target: component
         property: "changedEntries"
-        value: ghnsDialog.engine.changedEntries
+        value: component.engine ? component.engine.changedEntries : []
     }
 
     /**
@@ -113,7 +113,6 @@ QtControls.Button {
      */
     function showDialog() {
         if (NewStuff.Settings.allowedByKiosk) {
-            ghnsDialog.engine.configFile = component.configFile
             component.aboutToShowDialog();
             ghnsDialog.open();
         } else {
@@ -133,7 +132,28 @@ QtControls.Button {
         }
     }
 
-    NewStuff.Dialog {
-        id: ghnsDialog
+    property Item ghnsDialog : Loader {
+        // Use this function to open the dialog. It seems roundabout, but this ensures
+        // that the dialog is not constructed until we want it to be shown the first time,
+        // since it will initialise itself on the first load (which causes it to phone
+        // home) and we don't want that until the user explicitly asks for it.
+        function open() {
+            if (item) {
+                item.open();
+            } else {
+                active = true;
+            }
+        }
+        onLoaded: {
+            item.open();
+        }
+
+        active: false
+        asynchronous: true
+
+        sourceComponent: NewStuff.Dialog {
+            configFile: component.configFile
+            viewMode: component.viewMode
+        }
     }
 }
