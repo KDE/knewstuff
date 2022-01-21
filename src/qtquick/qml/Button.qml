@@ -59,7 +59,7 @@ QtControls.Button {
     /**
      * The engine which handles the content in this Button
      */
-    readonly property QtObject engine: component._private? component._private.pageItem.engine : null
+    property QtObject engine: null
 
     /**
      * This forwards the entryEvent from the QtQuick engine
@@ -146,6 +146,7 @@ QtControls.Button {
         }
         onLoaded: {
             item.open();
+            component.engine = item.engine
         }
 
         active: false
