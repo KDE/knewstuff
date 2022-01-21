@@ -67,12 +67,6 @@ QtControls.Button {
      * @since 5.82
      */
     signal entryEvent(QtObject entry, int event);
-    property Connections engineConnections: Connections {
-        target: component.engine
-        function onEntryEvent(entry, event) {
-            entryEvent(entry, event);
-        }
-    }
 
     /**
      * Contains the entries which have been changed.
@@ -146,6 +140,7 @@ QtControls.Button {
         }
         onLoaded: {
             item.open();
+            item.onEntryEvent.connect(component.entryEvent)
         }
 
         active: false
