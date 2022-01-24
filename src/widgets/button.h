@@ -29,7 +29,7 @@ class ButtonPrivate;
  *
  * @since 5.91
  */
-class KNEWSTUFF_EXPORT Button : public QPushButton
+class KNEWSTUFFWIDGETS_EXPORT Button : public QPushButton
 {
     Q_OBJECT
 
