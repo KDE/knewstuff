@@ -11,6 +11,7 @@
 #include <QAction>
 
 #include "entry.h"
+#include "entryinternal.h"
 #include "knewstuffwidgets_export.h"
 
 namespace KNSCore
