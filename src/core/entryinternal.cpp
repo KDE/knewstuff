@@ -496,13 +496,15 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
             // TODO maybe do something with the language attribute? QString lang = e.attribute("lang");
             d->mName = reader.readElementText(QXmlStreamReader::SkipChildElements);
         } else if (reader.name() == QLatin1String("author")) {
+            // ### careful, the following variables are string views that become invalid when we
+            // proceed with reading from reader, such as the readStringTrimmed call below does!
             const auto email = reader.attributes().value(QStringLiteral("email"));
             const auto jabber = reader.attributes().value(QStringLiteral("im"));
             const auto homepage = reader.attributes().value(QStringLiteral("homepage"));
-            d->mAuthor.setName(readStringTrimmed(&reader));
             d->mAuthor.setEmail(email.toString());
             d->mAuthor.setJabber(jabber.toString());
             d->mAuthor.setHomepage(homepage.toString());
+            d->mAuthor.setName(readStringTrimmed(&reader));
         } else if (reader.name() == QLatin1String("providerid")) {
             d->mProviderId = reader.readElementText(QXmlStreamReader::SkipChildElements);
         } else if (reader.name() == QLatin1String("homepage")) {
