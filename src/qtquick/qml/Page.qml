@@ -18,7 +18,7 @@ import QtQuick.Layouts 1.11 as QtLayouts
 import QtGraphicalEffects 1.11 as QtEffects
 
 import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.newstuff 1.85 as NewStuff
 
@@ -387,6 +387,9 @@ KCM.GridViewKCM {
                     focusSequence: "Ctrl+F"
                     placeholderText: i18nd("knewstuff5", "Search...")
                     onAccepted: { newStuffEngine.searchTerm = searchField.text; }
+                    Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
+                        forceActiveFocus();
+                    }
                 }
             }
         ]
