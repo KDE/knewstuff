@@ -662,7 +662,7 @@ public:
 
     /**
      * @returns the list of attica (OCS) providers this engine is connected to
-     * @since 5.87
+     * @since 5.92
      */
     QVector<Attica::Provider *> atticaProviders() const;
 
