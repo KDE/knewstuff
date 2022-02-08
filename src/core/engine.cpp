@@ -264,6 +264,10 @@ bool Engine::init(const QString &configfile)
     Q_EMIT uploadEnabledChanged();
 
     m_providerFileUrl = group.readEntry("ProvidersUrl");
+    if (m_providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
+        m_providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
+        qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
+    }
     if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
         // The local providers file is called "appname.providers", to match "appname.knsrc"
         m_providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6))).toString();
