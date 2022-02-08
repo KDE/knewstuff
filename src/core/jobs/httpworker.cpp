@@ -99,6 +99,8 @@ static void addUserAgent(QNetworkRequest &request)
         agentHeader += QStringLiteral("-%1/%2").arg(QCoreApplication::instance()->applicationName(), QCoreApplication::instance()->applicationVersion());
     }
     request.setHeader(QNetworkRequest::UserAgentHeader, agentHeader);
+    // If the remote supports HTTP/2, then we should definitely be using that
+    request.setAttribute(QNetworkRequest::Http2AllowedAttribute, true);
 }
 
 void HTTPWorker::startRequest()
