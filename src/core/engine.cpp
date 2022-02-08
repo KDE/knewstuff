@@ -237,7 +237,10 @@ bool Engine::init(const QString &configfile)
 
     qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
     m_providerFileUrl = group.readEntry("ProvidersUrl");
-
+    if (m_providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
+        m_providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
+        qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
+    }
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
