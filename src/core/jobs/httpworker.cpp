@@ -41,7 +41,6 @@ public:
         return nam.get(request);
     }
 
-private:
     QNetworkDiskCache cache;
 };
 
@@ -101,6 +100,17 @@ static void addUserAgent(QNetworkRequest &request)
     request.setHeader(QNetworkRequest::UserAgentHeader, agentHeader);
     // If the remote supports HTTP/2, then we should definitely be using that
     request.setAttribute(QNetworkRequest::Http2AllowedAttribute, true);
+
+    // Assume that no cache expiration time will be longer than a week, but otherwise prefer the cache
+    // This is mildly hacky, but if we don't do this, we end up with infinite cache expirations in some
+    // cases, which of course isn't really acceptable... See ed62ee20 for a situation where that happened.
+    QNetworkCacheMetaData cacheMeta{s_httpWorkerNAM->cache.metaData(request.url())};
+    if (cacheMeta.isValid()) {
+        const QDateTime nextWeek{QDateTime::currentDateTime().addDays(7)};
+        if (cacheMeta.expirationDate().isValid() && cacheMeta.expirationDate() < nextWeek) {
+            request.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::PreferCache);
+        }
+    }
 }
 
 void HTTPWorker::startRequest()
