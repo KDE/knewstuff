@@ -82,7 +82,7 @@ KMoreToolsService *KMoreToolsPresets::registerServiceByDesktopEntryName(KMoreToo
     ADD_ENTRY(QStringLiteral("org.kde.ktimer"),                     0, QStringLiteral("https://kde.org/applications/utilities/org.kde.ktimer/"), QStringLiteral("org.kde.ktimer"));
     ADD_ENTRY(QStringLiteral("org.kde.spectacle"),                  0, QStringLiteral("https://kde.org/applications/utilities/org.kde.spectacle"), QStringLiteral("org.kde.spectacle.desktop"));
     ADD_ENTRY(QStringLiteral("simplescreenrecorder"),               0, QStringLiteral("https://www.maartenbaert.be/simplescreenrecorder/"), QStringLiteral("simplescreenrecorder.desktop"));
-    ADD_ENTRY(QStringLiteral("com.obsproject.Studio"),              0, QStringLiteral("https://obsproject.com/"), QStringLiteral("com.obsproject.Studio.desktop"));
+    ADD_ENTRY(QStringLiteral("com.obsproject.Studio"),              0, QStringLiteral("https://obsproject.com/"), QStringLiteral("com.obsproject.Studio"));
     ADD_ENTRY(QStringLiteral("vokoscreenNG"),                       0, QStringLiteral("https://github.com/vkohaupt/vokoscreenNG"), QStringLiteral("vokoscreenNG.desktop")); // feature-rich screen recorder
     ADD_ENTRY(QStringLiteral("xfce4-taskmanager"),                  0, QStringLiteral("https://goodies.xfce.org/projects/applications/xfce4-taskmanager"), QStringLiteral("xfce4-taskmanager.desktop"));
     //
