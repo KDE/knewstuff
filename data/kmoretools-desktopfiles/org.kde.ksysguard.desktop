@@ -45,6 +45,7 @@ Name[x-test]=xxKSysGuardxx
 Name[zh_CN]=系统卫士
 Name[zh_TW]=KSysGuard
 GenericName=System Monitor
+GenericName[ar]=مراقب النظام
 GenericName[ast]=Supervisor del sistema
 GenericName[az]=Sistem İzləyicisi
 GenericName[ca]=Monitor del sistema
