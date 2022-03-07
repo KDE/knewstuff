@@ -566,6 +566,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 archive.reset(new KZip(payloadfile));
                 // clang-format off
             } else if (mimeType.inherits(QStringLiteral("application/tar"))
+                    || mimeType.inherits(QStringLiteral("application/x-tar")) // BUG 450662
                     || mimeType.inherits(QStringLiteral("application/x-gzip"))
                     || mimeType.inherits(QStringLiteral("application/x-bzip"))
                     || mimeType.inherits(QStringLiteral("application/x-lzma"))
