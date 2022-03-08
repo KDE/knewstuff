@@ -17,13 +17,14 @@
 import QtQuick 2.11
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.5 as QtControls
-import QtQuick.Dialogs 1.3 as QtDialogs
 
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.newstuff 1.85 as NewStuff
 
-QtDialogs.Dialog {
+Window {
     id: component
+    width: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
+    height: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
 
     /**
      * The configuration file to use for this button
@@ -92,6 +93,10 @@ QtDialogs.Dialog {
         newStuffPage.showEntryDetails(providerId, entryId);
     }
 
+    function open() {
+        component.visible = true;
+    }
+
     onVisibleChanged: {
         if (visible === true) {
             newStuffPage.engine.engine.revalidateCacheEntries();
@@ -99,10 +104,10 @@ QtDialogs.Dialog {
         }
     }
 
-    contentItem: Rectangle {
+    Rectangle {
         color: Kirigami.Theme.backgroundColor
-        implicitWidth: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
-        implicitHeight: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
+        width: component.width
+        height: component.height
         Keys.onEscapePressed: component.close()
         NewStuff.DialogContent {
             id: newStuffPage
