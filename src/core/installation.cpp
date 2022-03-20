@@ -247,6 +247,7 @@ void Installation::slotPayloadResult(KJob *job)
             Q_EMIT signalInstallationFailed(errorMessage);
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
+            qCDebug(KNEWSTUFFCORE) << "Copied to" << fcjob->destUrl();
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
             // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
             if (!acceptHtml) {
@@ -254,6 +255,7 @@ void Installation::slotPayloadResult(KJob *job)
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
+                    qCDebug(KNEWSTUFFCORE) << "Asking question about HTML";
                     Question question;
                     question.setQuestion(
                         i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open "
@@ -279,10 +281,11 @@ void Installation::slotPayloadResult(KJob *job)
 
 void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString &downloadedFile)
 {
-    qCDebug(KNEWSTUFFCORE) << "Install: " << entry.name() << " from " << downloadedFile;
+    qCDebug(KNEWSTUFFCORE) << "Install:" << entry.name() << "from" << downloadedFile;
+    Q_ASSERT(QFileInfo::exists(downloadedFile));
 
     if (entry.payload().isEmpty()) {
-        qCDebug(KNEWSTUFFCORE) << "No payload associated with: " << entry.name();
+        qCDebug(KNEWSTUFFCORE) << "No payload associated with:" << entry.name();
         return;
     }
 
@@ -628,7 +631,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             }
         }
 
-        qCDebug(KNEWSTUFFCORE) << "isarchive: " << isarchive;
+        qCDebug(KNEWSTUFFCORE) << "isarchive:" << isarchive;
 
         // some wallpapers are compressed, some aren't
         if ((!isarchive && standardResourceDirectory == QLatin1String("wallpaper"))
@@ -639,7 +642,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             /// @todo when using KIO::get the http header can be accessed and it contains a real file name.
             // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
             QUrl source = QUrl(entry.payload());
-            qCDebug(KNEWSTUFFCORE) << "installing non-archive from " << source.url();
+            qCDebug(KNEWSTUFFCORE) << "installing non-archive from" << source;
 #if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 79)
             QString installfile;
             QString ext = source.fileName().section(QLatin1Char('.'), -1);
@@ -660,7 +663,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             const QString installpath = QDir(installdir).filePath(source.fileName());
 #endif
 
-            qCDebug(KNEWSTUFFCORE) << "Install to file " << installpath;
+            qCDebug(KNEWSTUFFCORE) << "Install to file" << installpath;
             // FIXME: copy goes here (including overwrite checking)
             // FIXME: what must be done now is to update the cache *again*
             //        in order to set the new payload filename (on root tag only)
@@ -689,7 +692,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     file.remove(installpath);
                 }
                 success = file.rename(installpath);
-                qCDebug(KNEWSTUFFCORE) << "move: " << file.fileName() << " to " << installpath;
+                qCDebug(KNEWSTUFFCORE) << "move:" << file.fileName() << "to" << installpath;
             }
             if (!success) {
                 Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
@@ -709,7 +712,7 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
     QString fileArg(KShell::quoteArg(installPath));
     command.replace(QLatin1String("%f"), fileArg);
 
-    qCDebug(KNEWSTUFFCORE) << "Run command: " << command;
+    qCDebug(KNEWSTUFFCORE) << "Run command:" << command;
 
     QProcess *ret = new QProcess(this);
     auto onProcessFinished = [this, command, ret](int exitcode, QProcess::ExitStatus status) {
@@ -956,7 +959,7 @@ void Installation::uninstall(EntryInternal entry)
                                 return;
                             }
                         } else {
-                            qCDebug(KNEWSTUFFCORE) << "Command executed successfully: " << command;
+                            qCDebug(KNEWSTUFFCORE) << "Command executed successfully:" << command;
                         }
                         deleteFilesAndMarkAsUninstalled();
                     };
