@@ -263,7 +263,7 @@ bool Engine::init(const QString &configfile)
     d->uploadEnabled = group.readEntry("UploadEnabled", true);
     Q_EMIT uploadEnabledChanged();
 
-    m_providerFileUrl = group.readEntry("ProvidersUrl");
+    m_providerFileUrl = group.readEntry("ProvidersUrl", QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
     if (m_providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
         m_providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
         qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
