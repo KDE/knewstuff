@@ -694,6 +694,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 }
                 success = file.rename(installpath);
                 qCDebug(KNEWSTUFFCORE) << "move:" << file.fileName() << "to" << installpath;
+                if (!success) {
+                    qCWarning(KNEWSTUFFCORE) << file.errorString();
+                }
             }
             if (!success) {
                 Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
