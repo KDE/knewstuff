@@ -221,6 +221,7 @@ void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
 
     QString fileName(source.fileName());
     QTemporaryFile tempFile(QDir::tempPath() + QStringLiteral("/XXXXXX-") + fileName);
+    tempFile.setAutoRemove(false);
     if (!tempFile.open()) {
         return; // ERROR
     }
