@@ -227,6 +227,9 @@ void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
     }
     QUrl destination = QUrl::fromLocalFile(tempFile.fileName());
     qCDebug(KNEWSTUFFCORE) << "Downloading payload" << source << "to" << destination;
+#ifdef Q_OS_WIN // can't write to the file if it's open, on Windows
+    tempFile.close();
+#endif
 
     // FIXME: check for validity
     FileCopyJob *job = FileCopyJob::file_copy(source, destination, -1, JobFlag::Overwrite | JobFlag::HideProgressInfo);
@@ -690,7 +693,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (success) {
                 // remove in case it's already present and in a temporary directory, so we get to actually use the path again
                 if (installpath.startsWith(QDir::tempPath())) {
-                    file.remove(installpath);
+                    QFile::remove(installpath);
                 }
                 success = file.rename(installpath);
                 qCDebug(KNEWSTUFFCORE) << "move:" << file.fileName() << "to" << installpath;
