@@ -521,6 +521,7 @@ KCM.GridViewKCM {
 
          visible: newStuffEngine.isLoading === false && newStuffModel.isLoadingData === false && view.count === 0
 
+         icon.name: "temperature-cold"
          text: i18ndc("knewstuff5", "A message shown when there are no entries in the list, and when it is not trying to load anything", "There is no hot new stuff to get here")
      }
 }
