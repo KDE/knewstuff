@@ -119,31 +119,28 @@ Window {
             }
             downloadNewWhat: component.downloadNewWhat
         }
-        Kirigami.Separator {
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: buttonBox.top
-            }
-        }
-        QtControls.DialogButtonBox {
+        QtControls.ToolBar {
             id: buttonBox
             anchors {
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
-            standardButtons: QtControls.DialogButtonBox.Close
-            onRejected: component.close()
-            QtControls.Button {
-                text: i18nd("knewstuff5", "Contribute your own...")
-                icon.name: "upload-media"
-                visible: newStuffPage.engine.engine.uploadEnabled
-                enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
-                onClicked: {
-                    newStuffPage.pageStack.push(uploadPage);
+            position: QtControls.ToolBar.Footer
+            QtControls.DialogButtonBox {
+                anchors.fill: parent
+                standardButtons: QtControls.DialogButtonBox.Close
+                onRejected: component.close()
+                QtControls.Button {
+                    text: i18nd("knewstuff5", "Contribute your own...")
+                    icon.name: "upload-media"
+                    visible: newStuffPage.engine.engine.uploadEnabled
+                    enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
+                    onClicked: {
+                        newStuffPage.pageStack.push(uploadPage);
+                    }
+                    QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
                 }
-                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
             }
         }
     }
