@@ -119,6 +119,13 @@ Window {
             }
             downloadNewWhat: component.downloadNewWhat
         }
+        Kirigami.Separator {
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: buttonBox.top
+            }
+        }
         QtControls.DialogButtonBox {
             id: buttonBox
             anchors {
