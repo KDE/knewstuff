@@ -17,6 +17,7 @@
 import QtQuick 2.11
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.5 as QtControls
+import QtQuick.Layouts 1.13 as QtLayouts
 
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.newstuff 1.85 as NewStuff
@@ -104,39 +105,37 @@ Window {
         }
     }
 
-    NewStuff.DialogContent {
-        id: newStuffPage
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
-            bottom: buttonBox.top
-        }
-        downloadNewWhat: component.downloadNewWhat
+    QtLayouts.ColumnLayout {
+        anchors.fill: parent
+        spacing: 0
         Keys.onEscapePressed: component.close()
-    }
 
-    QtControls.ToolBar {
-        id: buttonBox
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
+        // Page content
+        NewStuff.DialogContent {
+            id: newStuffPage
+            QtLayouts.Layout.fillWidth: true
+            QtLayouts.Layout.fillHeight: true
+            downloadNewWhat: component.downloadNewWhat
         }
-        position: QtControls.ToolBar.Footer
-        QtControls.DialogButtonBox {
-            anchors.fill: parent
-            standardButtons: QtControls.DialogButtonBox.Close
-            onRejected: component.close()
-            QtControls.Button {
-                text: i18nd("knewstuff5", "Contribute your own...")
-                icon.name: "upload-media"
-                visible: newStuffPage.engine.engine.uploadEnabled
-                enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
-                onClicked: {
-                    newStuffPage.pageStack.push(uploadPage);
+
+        // Footer toolbar
+        QtControls.ToolBar {
+            QtLayouts.Layout.fillWidth: true
+            position: QtControls.ToolBar.Footer
+            QtControls.DialogButtonBox {
+                anchors.fill: parent
+                standardButtons: QtControls.DialogButtonBox.Close
+                onRejected: component.close()
+                QtControls.Button {
+                    text: i18nd("knewstuff5", "Contribute your own...")
+                    icon.name: "upload-media"
+                    visible: newStuffPage.engine.engine.uploadEnabled
+                    enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
+                    onClicked: {
+                        newStuffPage.pageStack.push(uploadPage);
+                    }
+                    QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
                 }
-                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
             }
         }
     }
