@@ -491,26 +491,10 @@ KCM.GridViewKCM {
         Rectangle {
             anchors.fill: parent
             color: Kirigami.Theme.backgroundColor
-            opacity: 0.7
         }
-        QtControls.BusyIndicator {
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-                bottom: parent.verticalCenter
-                bottomMargin: Kirigami.Units.largeSpacing
-            }
-            running: (newStuffEngine.isLoading || newStuffModel.isLoadingData)  && newStuffEngine.isValid
-        }
-        QtControls.Label {
-            anchors {
-                top: parent.verticalCenter
-                left: parent.left
-                right: parent.right
-                margins: Kirigami.Units.largeSpacing
-            }
-            horizontalAlignment: Text.AlignHCenter
-            text: newStuffEngine.isLoading ? newStuffEngine.statusMessage :
-            i18ndc("knewstuff5", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more...")
+        Kirigami.LoadingPlaceholder {
+            anchors.centerIn: parent
+            text: i18ndc("knewstuff5", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more…")
         }
     }
 }
