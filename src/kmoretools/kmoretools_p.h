@@ -14,6 +14,7 @@
 #include <QDir>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QRegularExpression>
 #include <QTextCodec>
 #include <QUrl>
