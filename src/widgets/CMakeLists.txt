@@ -26,10 +26,10 @@ target_link_libraries(KF5NewStuffWidgets
   PRIVATE
     KF5::I18n
 )
-target_include_directories(KF5NewStuffWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSWidgets>")
+
 target_include_directories(KF5NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSWidgets;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>")
 
 set_target_properties(KF5NewStuffWidgets PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
@@ -47,14 +47,27 @@ ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   Button
 
   REQUIRED_HEADERS KNewStuffWidgets_HEADERS
-  PREFIX KNSWidgets
+  OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSWidgets
 )
 
-install(FILES ${KNewStuffWidgets_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSWidgets COMPONENT Devel)
-install(FILES ${KNewStuffWidgets_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knswidgets COMPONENT Devel)
-
-install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knswidgets COMPONENT Devel
+install(
+    FILES
+        ${KNewStuffWidgets_CamelCase_HEADERS}
+        ${KNewStuffWidgets_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSWidgets
+    COMPONENT Devel
 )
+
+# Kept for backwards compatibility, in KF6 all headers will be installed in KNewStuff3/KNSWidgets only
+if(QT_MAJOR_VERSION STREQUAL "5")
+    install(
+        FILES
+            ${KNewStuffWidgets_HEADERS}
+            ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knswidgets
+        COMPONENT Devel
+    )
+endif()
+
 install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

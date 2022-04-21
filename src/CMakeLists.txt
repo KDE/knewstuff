@@ -63,7 +63,7 @@ ecm_generate_export_header(KF5NewStuff
 
 target_include_directories(KF5NewStuff
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>")
 
 target_link_libraries(KF5NewStuff
   PUBLIC
@@ -93,20 +93,6 @@ set(KNewStuff_HEADERS
   knewstuffaction.h
 )
 
-ecm_generate_headers(KNewStuff_CamelCase_HEADERS
-  HEADER_NAMES
-  DownloadDialog
-  DownloadWidget
-  DownloadManager
-  UploadDialog
-  Entry
-  Button
-  QtQuickDialogWrapper
-
-  REQUIRED_HEADERS KNewStuff_HEADERS
-  PREFIX KNS3
-)
-
 # For KMoreTools:
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS_KMoreTools
   HEADER_NAMES
@@ -122,15 +108,39 @@ install(FILES ${KNewStuff_CamelCase_HEADERS_KMoreTools} DESTINATION ${KDE_INSTAL
 install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
 )
 
-install(FILES ${KNewStuff_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3 COMPONENT Devel)
+ecm_generate_headers(KNewStuff_CamelCase_HEADERS
+  HEADER_NAMES
+  DownloadDialog
+  DownloadWidget
+  DownloadManager
+  UploadDialog
+  Entry
+  Button
+  QtQuickDialogWrapper
+
+  REQUIRED_HEADERS KNewStuff_HEADERS
+  OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNS3
+)
+
+install(
+    FILES
+        ${KNewStuff_CamelCase_HEADERS}
+        ${KNewStuff_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3
+    COMPONENT Devel
+)
 
 install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
-  ${KNewStuff_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
-)
+# Kept for backwards compatibility, in KF6 all headers will be in KNewStuff3/KNS3 only
+if(QT_MAJOR_VERSION STREQUAL "5")
+    install(FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
+        ${KNewStuff_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
+    )
+endif()
 
 add_subdirectory(widgets)
 

@@ -83,7 +83,8 @@ set(KNewStuffCore_BUILD_INCLUDE_DIRS
 
 target_include_directories(KF5NewStuffCore
     PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3;${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore>")
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>"
+)
 
 target_link_libraries(KF5NewStuffCore
   PUBLIC
@@ -133,15 +134,27 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   XmlLoader
 
   REQUIRED_HEADERS KNewStuffCore_HEADERS
-  PREFIX KNSCore
+  OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore
 )
 
 install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES ${KNewStuffCore_CamelCase_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore COMPONENT Devel)
-install(FILES
-    ${KNewStuffCore_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore COMPONENT Devel)
+
+install(
+    FILES
+        ${KNewStuffCore_CamelCase_HEADERS}
+        ${KNewStuffCore_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore
+    COMPONENT Devel
+)
+# Kept for backwards compatibility; in KF6 all headers are going to be in KNewStuff3/KNSCore
+if(${QT_MAJOR_VERSION} STREQUAL "5")
+    install(FILES
+        ${KNewStuffCore_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore COMPONENT Devel)
+endif()
 
 if(BUILD_QCH)
     ecm_add_qch(

@@ -168,10 +168,11 @@ install(EXPORT KF5NewStuffTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE 
 install(EXPORT KF5NewStuffCoreTargets DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}" FILE KF5NewStuffCoreTargets.cmake NAMESPACE KF5:: )
 
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h
-  ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h
-  ${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel
+    ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3
+  COMPONENT Devel
 )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
