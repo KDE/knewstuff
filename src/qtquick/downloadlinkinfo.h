@@ -9,7 +9,7 @@
 
 #include <QObject>
 
-#include "entryinternal.h"
+#include "KNSCore/EntryInternal"
 
 #include <memory>
 

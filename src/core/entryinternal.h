@@ -20,7 +20,7 @@
 #include "author.h"
 // This include only exists for the KNS3::Entry::Status enum
 // TODO Move the KNS3::Entry::Status enum to Core for KF6
-#include "entry.h"
+#include "KNS3/Entry"
 
 #include "knewstuffcore_export.h"
 

@@ -10,8 +10,8 @@
 
 #include <QAction>
 
-#include "entry.h"
-#include "entryinternal.h"
+#include "KNS3/Entry"
+#include "KNSCore/EntryInternal"
 #include "knewstuffwidgets_export.h"
 
 namespace KNSCore
