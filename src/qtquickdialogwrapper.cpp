@@ -50,6 +50,8 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
     d->item = component.create();
     // If there is an error on the QML side of things we get a nullptr
     if (d->item) {
+        d->item->setParent(this);
+
         QObject *qtquickEngine = d->item->property("engine").value<QObject *>();
         Q_ASSERT(qtquickEngine);
         d->coreEngine = qtquickEngine->property("engine").value<KNSCore::Engine *>();
