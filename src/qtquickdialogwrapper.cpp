@@ -96,6 +96,7 @@ QList<KNSCore::Entry> QtQuickDialogWrapper::changedEntries() const
     return d->changedEntries;
 }
 
+#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 94)
 QList<KNSCore::EntryInternal> QtQuickDialogWrapper::exec()
 {
     open();
@@ -104,3 +105,4 @@ QList<KNSCore::EntryInternal> QtQuickDialogWrapper::exec()
     loop.exec();
     return d->changedEntries;
 }
+#endif
