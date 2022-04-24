@@ -56,6 +56,12 @@ public:
      */
     KNSCore::Engine *engine();
 
+    /**
+     * Entries that were changed while the user interacted with the dialog
+     * @since 5.94
+     */
+    QList<KNSCore::Entry> changedEntries() const;
+
 private:
     std::unique_ptr<QtQuickDialogWrapperPrivate> d;
 

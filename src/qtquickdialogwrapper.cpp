@@ -91,6 +91,11 @@ KNSCore::Engine *QtQuickDialogWrapper::engine()
     return d->coreEngine;
 }
 
+QList<KNSCore::Entry> QtQuickDialogWrapper::changedEntries() const
+{
+    return d->changedEntries;
+}
+
 QList<KNSCore::EntryInternal> QtQuickDialogWrapper::exec()
 {
     open();

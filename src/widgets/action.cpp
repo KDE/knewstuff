@@ -70,16 +70,19 @@ void Action::showDialog()
 
     if (!d->dialog) {
         d->dialog = new QtQuickDialogWrapper(d->configFile, this);
-    }
-    const auto changedInternalEntries = d->dialog->exec();
+        connect(d->dialog.data(), &KNS3::QtQuickDialogWrapper::closed, this, [this]() {
+            const QList<KNSCore::EntryInternal> changedInternalEntries = d->dialog->changedEntries();
 #if KNEWSTUFFWIDGETS_BUILD_DEPRECATED_SINCE(5, 91)
-    QList<KNS3::Entry> changedEntries;
-    for (const KNSCore::EntryInternal &e : changedInternalEntries) {
-        changedEntries << EntryPrivate::fromInternal(&e);
-    }
-    Q_EMIT dialogFinished(changedEntries);
+            QList<KNS3::Entry> changedEntries;
+            for (const KNSCore::EntryInternal &e : changedInternalEntries) {
+                changedEntries << EntryPrivate::fromInternal(&e);
+            }
+            Q_EMIT dialogFinished(changedEntries);
 #endif
-    Q_EMIT dialogFinished(changedInternalEntries);
+            Q_EMIT dialogFinished(changedInternalEntries);
+        });
+    }
+    d->dialog->open();
 }
 
 }
