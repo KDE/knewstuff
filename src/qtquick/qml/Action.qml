@@ -77,7 +77,7 @@ Kirigami.Action {
      * The engine which handles the content in this Action
      * This will be null until the action has been triggered the first time
      */
-    readonly property QtObject engine: component._private.pageItem ? component._private.pageItem.engine : null
+    readonly property QtObject engine: component._private.engine
 
     /**
      * Contains the entries which have been changed.
