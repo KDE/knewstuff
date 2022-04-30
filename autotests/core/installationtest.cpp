@@ -12,10 +12,10 @@
 #include <QTest>
 #include <QtGlobal>
 
-#include "core/entryinternal.h"
-#include "core/installation.h"
-#include "core/itemsmodel.h"
-#include "core/questionmanager.h"
+#include "entryinternal.h"
+#include "installation.h"
+#include "itemsmodel.h"
+#include "questionmanager.h"
 
 using namespace KNSCore;
 
