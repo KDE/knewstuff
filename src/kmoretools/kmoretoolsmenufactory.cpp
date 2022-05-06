@@ -15,8 +15,9 @@
 #include <KDialogJobUiDelegate>
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
-#include <KNS3/KMoreTools>
-#include <KNS3/KMoreToolsPresets>
+
+#include "kmoretools.h"
+#include "kmoretoolspresets.h"
 
 class KMoreToolsMenuFactoryPrivate
 {

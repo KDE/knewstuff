@@ -9,7 +9,7 @@
 #include "knewstuff_debug.h"
 #include <QHash>
 
-#include <KNS3/KMoreTools>
+#include "kmoretools.h"
 
 #define _ QStringLiteral
 

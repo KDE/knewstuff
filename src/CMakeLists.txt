@@ -94,18 +94,54 @@ set(KNewStuff_HEADERS
 )
 
 # For KMoreTools:
-ecm_generate_headers(KNewStuff_CamelCase_HEADERS_KMoreTools
-  HEADER_NAMES
-  KMoreTools
-  KMoreToolsMenuFactory
-  KMoreToolsPresets
+if(QT_MAJOR_VERSION EQUAL 5)
+    ecm_generate_headers(KMoreTools_CamelCase_HEADERS
+        HEADER_NAMES
+        KMoreTools
+        KMoreToolsMenuFactory
+        KMoreToolsPresets
 
-  RELATIVE kmoretools
-  REQUIRED_HEADERS KNewStuff_HEADERS_KMoreTools
-  PREFIX KNS3
+        RELATIVE kmoretools
+        REQUIRED_HEADERS KMoreTools_HEADERS
+        OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNS3
+    )
+    install(
+        FILES ${KMoreTools_CamelCase_HEADERS}
+        FILES ${KMoreTools_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3
+        COMPONENT Devel
+    )
+    install(
+        FILES ${KMoreTools_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3
+        COMPONENT Devel
+    )
+endif()
+
+# In KF6 all KMoreTools headers will be only in ${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools
+ecm_generate_headers(KMoreTools_CamelCase_HEADERS
+    HEADER_NAMES
+    KMoreTools
+    KMoreToolsMenuFactory
+    KMoreToolsPresets
+
+    RELATIVE kmoretools
+    REQUIRED_HEADERS KMoreTools_HEADERS
 )
-install(FILES ${KNewStuff_CamelCase_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3 COMPONENT Devel)
-install(FILES ${KNewStuff_HEADERS_KMoreTools} DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
+install(
+    FILES
+        ${KMoreTools_CamelCase_HEADERS}
+        ${KMoreTools_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools
+    COMPONENT Devel
+)
+target_include_directories(KF5NewStuff
+    INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools>"
+)
+# So that '#include "KNS3/knewstuff_export.h"' works in KMoreTools headers during the build
+file(COPY ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
+    DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/KNS3
 )
 
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS
@@ -153,7 +189,7 @@ if(BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${KNewStuff_HEADERS}
-            ${KNewStuff_HEADERS_KMoreTools}
+            ${KMoreTools_HEADERS}
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
