@@ -50,6 +50,7 @@ using namespace KNSCore;
 
 typedef QHash<QString, QWeakPointer<Cache>> CacheHash;
 Q_GLOBAL_STATIC(CacheHash, s_caches)
+Q_GLOBAL_STATIC(QFileSystemWatcher, s_watcher)
 
 Cache::Cache(const QString &appName)
     : QObject(nullptr)
@@ -63,7 +64,8 @@ Cache::Cache(const QString &appName)
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << registryFile;
     setProperty("dirty", false); // KF6 make normal variable
 
-    QFileSystemWatcher *watcher = new QFileSystemWatcher(QStringList{registryFile}, this);
+    s_watcher->addPath(registryFile);
+
     std::function<void()> changeChecker = [this, &changeChecker]() {
         if (property("writingRegistry").toBool()) {
             QTimer::singleShot(0, this, changeChecker);
@@ -100,7 +102,11 @@ Cache::Cache(const QString &appName)
             setProperty("reloadingRegistry", false);
         }
     };
-    connect(watcher, &QFileSystemWatcher::fileChanged, this, changeChecker);
+    connect(&*s_watcher, &QFileSystemWatcher::fileChanged, this, [this, &changeChecker](const QString &file) {
+        if (file == registryFile) {
+            changeChecker();
+        }
+    });
 }
 
 QSharedPointer<Cache> Cache::getCache(const QString &appName)
@@ -123,6 +129,7 @@ QSharedPointer<Cache> Cache::getCache(const QString &appName)
 
 Cache::~Cache()
 {
+    s_watcher->removePath(registryFile);
 }
 
 void Cache::readRegistry()
