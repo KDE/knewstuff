@@ -176,7 +176,7 @@ KCM.GridViewKCM {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
             visible: true
-            text: i18n("The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
+            text: i18nd("knewstuff5", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
         }
     }
 
