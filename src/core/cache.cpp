@@ -102,7 +102,7 @@ Cache::Cache(const QString &appName)
             setProperty("reloadingRegistry", false);
         }
     };
-    connect(&*s_watcher, &QFileSystemWatcher::fileChanged, this, [this, &changeChecker](const QString &file) {
+    connect(&*s_watcher, &QFileSystemWatcher::fileChanged, this, [this, changeChecker](const QString &file) {
         if (file == registryFile) {
             changeChecker();
         }
