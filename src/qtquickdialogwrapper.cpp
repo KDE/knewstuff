@@ -7,10 +7,12 @@
 #include "qtquickdialogwrapper.h"
 
 #include <QEventLoop>
+#include <QGuiApplication>
 #include <QQmlComponent>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QTimer>
+#include <QWindow>
 
 #include <KLocalizedContext>
 
@@ -70,6 +72,11 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
 
         // Forward relevant signals
         connect(d->item, SIGNAL(closed()), this, SIGNAL(closed()));
+
+        // Otherwise, the dialog is not in front of other popups, BUG: 452593
+        auto window = qobject_cast<QWindow *>(d->item);
+        Q_ASSERT(window);
+        window->setTransientParent(QGuiApplication::focusWindow());
     }
 }
 
