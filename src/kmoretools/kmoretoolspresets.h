@@ -10,7 +10,7 @@
 #include <QString>
 #include <QUrl>
 
-#include "knewstuff_export.h"
+#include <KNS3/knewstuff_export.h>
 
 class KMoreTools;
 class KMoreToolsService;

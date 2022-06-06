@@ -15,7 +15,7 @@
 
 #include <memory>
 
-#include "knewstuff_export.h"
+#include <KNS3/knewstuff_export.h>
 
 class KMoreToolsService;
 class KMoreToolsMenuBuilder;
