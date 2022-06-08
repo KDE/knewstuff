@@ -76,7 +76,15 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
         // Otherwise, the dialog is not in front of other popups, BUG: 452593
         auto window = qobject_cast<QWindow *>(d->item);
         Q_ASSERT(window);
-        window->setTransientParent(QGuiApplication::focusWindow());
+        auto transientParent = QGuiApplication::focusWindow();
+
+        // TODO KF6: only use focusWindow as transientParent
+        while (transientParent && transientParent->objectName().contains(QStringLiteral("QMenu"))) {
+            // BUG 454895: If transientParent is a menu, don't use the menu
+            transientParent = transientParent->transientParent();
+        }
+
+        window->setTransientParent(transientParent);
     }
 }
 
