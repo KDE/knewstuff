@@ -1,0 +1,1534 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Lukáš Tinkl <lukas@kde.org>, 2010, 2011, 2012.
+# Vít Pelčák <vit@pelcak.org>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
+# Vit Pelcak <vpelcak@suse.cz>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-07 00:43+0000\n"
+"PO-Revision-Date: 2021-08-04 11:20+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.04.3\n"
+"X-Language: cs_CZ\n"
+"X-Source-Language: en_US\n"
+
+#: attica/atticaprovider.cpp:167
+#, kde-format
+msgid "All categories are missing"
+msgstr "Chybí všechny kategorie"
+
+#: attica/atticaprovider.cpp:479
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+"Tato položka stojí %1 %2.\n"
+"Přejete si ji zakoupit?"
+
+#: attica/atticaprovider.cpp:493
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"Stav vašeho konta je příliš nízký:\n"
+"Stav: %1\n"
+"Cena: %2"
+
+#: attica/atticaprovider.cpp:536
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr "Váš hlas byl zaznamenán."
+
+#: attica/atticaprovider.cpp:551
+#, kde-format
+msgid "You are now a fan."
+msgstr "Nyní jste fanoušek."
+
+#: attica/atticaprovider.cpp:579 core/engine.cpp:395 opds/opdsprovider.cpp:288
+#, kde-format
+msgid ""
+"The service is currently undergoing maintenance and is expected to be back "
+"in %1."
+msgstr ""
+
+#: attica/atticaprovider.cpp:584
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "Chyba sítě %1: %2"
+
+#: attica/atticaprovider.cpp:590
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr ""
+"Příliš mnoho požadavků na server. Prosím zkuste znovu za několik minut."
+
+#: attica/atticaprovider.cpp:593
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr ""
+
+#: attica/atticaprovider.cpp:597
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "Neznámá chyba OCS API. (%1)"
+
+#: button.cpp:43 widgets/action.cpp:35 widgets/button.cpp:58
+#, kde-format
+msgid "Download New Stuff..."
+msgstr "Stáhnout nový obsah..."
+
+#: core/commentsmodel.cpp:168
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr ""
+
+#: core/engine.cpp:170
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+
+#: core/engine.cpp:204
+#, kde-format
+msgid "Initializing"
+msgstr "Probíhá inicializace"
+
+#: core/engine.cpp:242
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "Konfigurační soubor nalezen, ale nelze otevřít: \"%1\""
+
+#: core/engine.cpp:255
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "Konfigurační soubor je neplatný: \"%1\""
+
+#: core/engine.cpp:264
+#, kde-format
+msgid "Use"
+msgstr "Použít"
+
+#: core/engine.cpp:285
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+
+#: core/engine.cpp:360
+#, kde-format
+msgid "Loading provider information"
+msgstr "Načítají se informace o poskytovateli"
+
+#: core/engine.cpp:421
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Nelze získat poskytovatele obsahu ze souboru: %1"
+
+#: core/engine.cpp:451
+#, kde-format
+msgid "Error initializing provider."
+msgstr "Chyba během inicializace poskytovatele."
+
+#: core/engine.cpp:455 core/engine.cpp:1023
+#, kde-format
+msgid "Loading data"
+msgstr "Načítají se data"
+
+#: core/engine.cpp:497
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Načítají se data od poskytovatele"
+
+#: core/engine.cpp:502
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "Načítání poskytovatelů ze souboru %1 selhalo"
+
+#: core/engine.cpp:750
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+
+#: core/engine.cpp:873
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/engine.cpp:875
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/engine.cpp:894
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+
+#: core/engine.cpp:973
+#, kde-format
+msgid "Re: %1"
+msgstr "Znovu: %1"
+
+#: core/engine.cpp:1015 ui/itemsgridviewdelegate.cpp:329
+#: ui/itemsviewdelegate.cpp:117
+#, kde-format
+msgid "Installing"
+msgstr "Instaluje se"
+
+#: core/engine.cpp:1019
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Načítá se náhled"
+msgstr[1] "Načítají se %1 náhledy"
+msgstr[2] "Načítá se %1 náhledů"
+
+#: core/engine.cpp:1226
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+
+#: core/installation.cpp:211
+#, kde-format
+msgid "Invalid item."
+msgstr "Neplatná položka."
+
+#: core/installation.cpp:218
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "Stažení položky selhalo: neexistuje URL pro stažení \"%1\"."
+
+#: core/installation.cpp:249
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "Stažení \"%1\" selhalo, chyba: %2"
+
+#: core/installation.cpp:265
+#, kde-format
+msgid ""
+"The downloaded file is a html file. This indicates a link to a website "
+"instead of the actual download. Would you like to open the site with a "
+"browser instead?"
+msgstr ""
+"Stáhnutý soubor je ve formátu html. To znamená, že odkaz vedl na webové "
+"stránky namísto na stáhnutí souboru. Přejete si stránku otevřít v prohlížeči?"
+
+#: core/installation.cpp:267
+#, kde-format
+msgid "Possibly bad download link"
+msgstr "Pravděpodobně chybný odkaz ke stažení"
+
+#: core/installation.cpp:270
+#, kde-format
+msgid "Downloaded file was a HTML file. Opened in browser."
+msgstr "Stažený soubor je HTML soubor. Otevřeno v prohlížeči."
+
+#: core/installation.cpp:309
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "Nelze nainstalovat \"%1\": soubor nenalezen."
+
+#: core/installation.cpp:499
+#, kde-format
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr ""
+
+#: core/installation.cpp:522 core/installation.cpp:846
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "Instalace %1 selhala: %2"
+
+#: core/installation.cpp:531
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the service type %2 was not accepted by "
+"the system (did you forget to install the KPackage support plugin for this "
+"type of package?)"
+msgstr ""
+
+#: core/installation.cpp:541
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:547
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not list a "
+"service type."
+msgstr ""
+
+#: core/installation.cpp:554
+#, kde-format
+msgid ""
+"The installation of %1 failed, as the downloaded package does not contain "
+"any useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:588
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr ""
+
+#: core/installation.cpp:600
+#, kde-format
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr ""
+
+#: core/installation.cpp:683
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+
+#: core/installation.cpp:686
+#, kde-format
+msgid "Overwrite File"
+msgstr "Přepsat soubor"
+
+#: core/installation.cpp:705
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr ""
+
+#: core/installation.cpp:728
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+
+#: core/installation.cpp:738
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+
+#: core/installation.cpp:780
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed file %2 could not be "
+"automatically removed. You can attempt to manually delete this file, if you "
+"believe this is an error."
+msgstr ""
+
+#: core/installation.cpp:853
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain a "
+"correct KPackage structure."
+msgstr ""
+
+#: core/installation.cpp:858
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package is not a supported type "
+"(did you forget to install the KPackage support plugin for this type of "
+"package?)"
+msgstr ""
+
+#: core/installation.cpp:865
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed package does not contain any "
+"useful meta information, which means it is not a valid KPackage."
+msgstr ""
+
+#: core/installation.cpp:905
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the downloaded file %2 could not be "
+"automatically removed."
+msgstr ""
+
+#: core/installation.cpp:910
+#, kde-format
+msgid ""
+"The removal of %1 failed, due to the installed file not being a KPackage. "
+"The file in question was %2, and you can attempt to delete it yourself, if "
+"you are certain that it is not needed."
+msgstr ""
+
+#: core/installation.cpp:918
+#, kde-format
+msgid ""
+"The removal of %1 failed, as there seems to somehow be more than one thing "
+"installed, which is not supposed to be possible for KPackage based entries."
+msgstr ""
+
+#: core/installation.cpp:951
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+
+#: core/jobs/filecopyworker.cpp:49
+#, kde-format
+msgid "Could not open %1 for writing"
+msgstr "Nelze otevřít '%1' pro zápis"
+
+#: core/jobs/filecopyworker.cpp:52
+#, kde-format
+msgid "Could not open %1 for reading"
+msgstr "Nelze pro čtení otevřít %1"
+
+#: core/jobs/kpackagejob.cpp:114
+#, kde-format
+msgid ""
+"Failed to create a job for the package management task. This is usually "
+"because the package is invalid. We attempted to operate on the package %1"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:121
+#, kde-format
+msgid ""
+"Could not create a package installer for the service type %1: The installer "
+"does not have a valid structure"
+msgstr ""
+
+#: core/jobs/kpackagejob.cpp:125
+#, kde-format
+msgid "The service type %1 was not understood by the KPackage installer"
+msgstr ""
+
+#: core/security.cpp:69
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
+"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
+"not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a získat dostupné klíče. Ujistěte se, že je "
+"<i>gpg</i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: core/security.cpp:191
+#, kde-format
+msgid ""
+"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+msgstr ""
+"<qt>Zadejte heslo ke klíči <b>0x%1</b>, patřící osobě<br /><i>%2&lt;%3&gt;</"
+"i><br />:</qt>"
+
+#: core/security.cpp:264
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
+"will not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a ověřit soubor. Ujistěte se, že je <i>gpg</i> "
+"nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: core/security.cpp:320
+#, kde-format
+msgid "Key used for signing:"
+msgstr "Klíč pro podepsání:"
+
+#: core/security.cpp:321
+#, kde-format
+msgid "Select Signing Key"
+msgstr "Vybrat klíč k podepsání"
+
+#: core/security.cpp:348
+#, kde-format
+msgid ""
+"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
+"installed, otherwise signing of the resources will not be possible.</qt>"
+msgstr ""
+"<qt>Nelze spustit <i>gpg</i> a podepsat soubor. Ujistěte se, že je <i>gpg</"
+"i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
+
+#: downloaddialog.cpp:69 downloadwidget.cpp:213
+#, kde-format
+msgid "Get Hot New Stuff"
+msgstr "Získat novinky"
+
+#: downloaddialog.cpp:86
+#, kde-format
+msgctxt "Program name followed by 'Add On Installer'"
+msgid "%1 Add-On Installer"
+msgstr "Instalátor doplňků '%1'"
+
+#: downloadwidget.cpp:123
+#, kde-format
+msgid "Timeout. Check Internet connection."
+msgstr "Čas vypršel, zkontrolujte připojení k internetu."
+
+#: downloadwidget.cpp:186
+#, kde-format
+msgid "Server: %1"
+msgstr "Server: %1"
+
+#: downloadwidget.cpp:187
+#, kde-format
+msgid "<br />Provider: %1"
+msgstr "<br />Poskytovatel: %1"
+
+#: downloadwidget.cpp:188
+#, kde-format
+msgid "<br />Version: %1"
+msgstr "<br />Verze: %1"
+
+#: downloadwidget.cpp:190
+#, kde-format
+msgid "Provider information"
+msgstr "Informace o poskytovateli"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Could not install %1"
+msgstr "Nelze nainstalovat %1"
+
+#: downloadwidget.cpp:203
+#, kde-format
+msgid "Get Hot New Stuff!"
+msgstr "Získat novinky!"
+
+#: downloadwidget.cpp:262
+#, kde-format
+msgid "Icons view mode"
+msgstr "Režim zobrazení ikon"
+
+#: downloadwidget.cpp:264
+#, kde-format
+msgid "Details view mode"
+msgstr "Režim zobrazení podrobností"
+
+#: downloadwidget.cpp:279
+#, kde-format
+msgid "All Providers"
+msgstr "Všichni poskytovatelé"
+
+#: downloadwidget.cpp:286
+#, kde-format
+msgid "All Categories"
+msgstr "Všechny kategorie"
+
+#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
+#: downloadwidget.ui:54
+#, kde-format
+msgid "Provider:"
+msgstr "Poskytovatel:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
+#: downloadwidget.ui:71 qtquick/qml/Page.qml:427
+#, kde-format
+msgid "Category:"
+msgstr "Kategorie:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
+#: downloadwidget.ui:90
+#, kde-format
+msgid "Most downloads"
+msgstr "Nejvíce stáhnutí"
+
+#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
+#: downloadwidget.ui:103
+#, kde-format
+msgid "Newest"
+msgstr "Nejnovější"
+
+#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
+#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "Hodnocení"
+
+#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
+#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "Nainstalováno"
+
+#. i18n: ectx: property (text), widget (QLabel, orderLabel)
+#: downloadwidget.ui:175
+#, kde-format
+msgid "Order by:"
+msgstr "Setřídit podle:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: downloadwidget.ui:185
+#, kde-format
+msgid "Search:"
+msgstr "Hledat:"
+
+#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
+#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, kde-format
+msgid "Search..."
+msgstr "Hledat..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: downloadwidget.ui:371
+#, kde-format
+msgid "Author:"
+msgstr "Autor:"
+
+#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
+#: downloadwidget.ui:396
+#, kde-format
+msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+msgstr "<a href=\"https://opendesktop.org\">Domovská stránka</a>"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
+#: ui/itemsviewdelegate.cpp:112
+#, kde-format
+msgid "Update"
+msgstr "Aktualizovat"
+
+#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
+#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
+#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
+#, kde-format
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
+#: downloadwidget.ui:589
+#, kde-format
+msgid "Become a Fan"
+msgstr "Staňte se fanouškem"
+
+#. i18n: ectx: property (text), widget (QPushButton, installButton)
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
+#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
+#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
+#, kde-format
+msgid "Install"
+msgstr "Instalovat"
+
+#: kmoretools/kmoretools.cpp:521
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Not installed:"
+msgstr "Nenainstalováno:"
+
+#: kmoretools/kmoretools.cpp:618
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "More"
+msgstr "Více"
+
+#: kmoretools/kmoretools.cpp:654
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Configure..."
+msgstr "Nastavit..."
+
+#: kmoretools/kmoretools_p.h:377
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Visit homepage"
+msgstr "Navštivte domovskou stránku"
+
+#: kmoretools/kmoretools_p.h:389
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Install"
+msgstr "Instalovat"
+
+#: kmoretools/kmoretools_p.h:397
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "No further information available."
+msgstr ""
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
+#, kde-format
+msgid "Configure menu"
+msgstr "Nastavit nabídku"
+
+#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
+#, kde-format
+msgid "Configure menu - %1"
+msgstr "Nastavit nabídku - %1"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:177
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current folder"
+msgstr "%1 - současná složka"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:184
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - current device"
+msgstr "%1 - současné zařízení"
+
+#: kmoretools/kmoretoolsmenufactory.cpp:198
+#, kde-format
+msgctxt "@action:inmenu %1=\"$GenericName\""
+msgid "%1 - all devices"
+msgstr "%1 - všechna zařízení"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Hlavní oddíl"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Posunout dolů"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Posunout nahoru"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Přesunout do hlavního oddílu"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Obnovit"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Více nástrojů..."
+
+#: qtquick/categoriesmodel.cpp:63
+#, kde-format
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "All Categories"
+msgstr "Všechny kategorie"
+
+#: qtquick/categoriesmodel.cpp:92
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr "Neznámá kategorie"
+
+#. i18nd("knewstuff5", "Download New %1...").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:43
+#, kde-format
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'...)"
+msgid "Stuff"
+msgstr ""
+
+#: qtquick/qml/Button.qml:44
+#, kde-format
+msgid "Download New %1..."
+msgstr "Stáhnout nový %1..."
+
+#: qtquick/qml/Dialog.qml:43
+#, kde-format
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr "Stáhnout nový %1"
+
+#: qtquick/qml/Dialog.qml:43
+#, kde-format
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr "Stáhnout nový obsah"
+
+#: qtquick/qml/Dialog.qml:130
+#, kde-format
+msgid "Contribute your own..."
+msgstr "Přispět vlastní..."
+
+#: qtquick/qml/DownloadItemsSheet.qml:30
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "Zvolte si možnost instalace"
+
+#: qtquick/qml/DownloadItemsSheet.qml:40
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:49
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr "Instaluje se %1 z %2"
+
+#: qtquick/qml/EntryDetails.qml:65
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed OR uninstalled"
+msgid "Currently working on the item %1 by %2. Please wait..."
+msgstr "Aktuálně pracuji na položce %1 z %2. Prosím, počkejte..."
+
+#: qtquick/qml/EntryDetails.qml:67
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait..."
+msgstr "Aktuálně aktualizuji %1 z %2. Prosím, počkejte..."
+
+#: qtquick/qml/EntryDetails.qml:69
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:83
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1 od %2"
+
+#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Instalovat"
+
+#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install..."
+msgstr "Instalovat..."
+
+#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/Page.qml:154
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+#: qtquick/qml/EntryDetails.qml:153
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "Komentáře a kontrola:"
+
+#: qtquick/qml/EntryDetails.qml:155
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr "%1 Hodnocení a komentáře"
+
+#: qtquick/qml/EntryDetails.qml:160
+#, kde-format
+msgid "Rating:"
+msgstr "Hodnocení:"
+
+#: qtquick/qml/EntryDetails.qml:164
+#, kde-format
+msgid "Homepage:"
+msgstr "Domácí stránka:"
+
+#: qtquick/qml/EntryDetails.qml:165
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr "Otevřít domovskou stránku pro %1"
+
+#: qtquick/qml/EntryDetails.qml:170
+#, kde-format
+msgid "How To Donate:"
+msgstr "Jak přispět:"
+
+#: qtquick/qml/EntryDetails.qml:171
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr "Jak přispět na tento projekt"
+
+#: qtquick/qml/NewStuffItem.qml:22
+#, kde-format
+msgctxt "Request installation of this item"
+msgid "Install"
+msgstr "Instalovat"
+
+#: qtquick/qml/NewStuffList.qml:68
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show Everything"
+msgstr "Zobrazit vše"
+
+#: qtquick/qml/NewStuffList.qml:69
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Installed Only"
+msgstr "Pouze nainstalováno"
+
+#: qtquick/qml/NewStuffList.qml:70
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Updateable Only"
+msgstr "Pouze aktualizovatelné"
+
+#: qtquick/qml/NewStuffList.qml:82
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show most recent first"
+msgstr "Nejdříve zobrazit nejnovější"
+
+#: qtquick/qml/NewStuffList.qml:83
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort alphabetically"
+msgstr "Seřadit podle abecedy"
+
+#: qtquick/qml/NewStuffList.qml:84
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show highest rated first"
+msgstr "Nejdříve zobrazit nejlépe hodnocené"
+
+#: qtquick/qml/NewStuffList.qml:85
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show most downloaded first"
+msgstr "Nejdříve zobrazit nejvíce stahované"
+
+#: qtquick/qml/Page.qml:132
+#, kde-format
+msgctxt ""
+"A message which is shown when the user attempts to display a specific entry "
+"from a specific provider, but that entry isn't found"
+msgid ""
+"The entry you attempted to display, identified by the unique ID %1, could "
+"not be found."
+msgstr ""
+
+#: qtquick/qml/Page.qml:179
+#, kde-format
+msgid ""
+"The content available here has been uploaded by users like you, and has not "
+"been reviewed by your distributor for functionality or stability."
+msgstr ""
+
+#: qtquick/qml/Page.qml:214
+#, kde-format
+msgid "Tiles"
+msgstr "Dlaždice"
+
+#: qtquick/qml/Page.qml:216
+#, kde-format
+msgid "Icons"
+msgstr "Ikony"
+
+#: qtquick/qml/Page.qml:218
+#, kde-format
+msgid "Preview"
+msgstr "Náhled"
+
+#: qtquick/qml/Page.qml:233
+#, kde-format
+msgid "Detailed Tiles View Mode"
+msgstr "Režim podrobného dlaždicového zobrazení"
+
+#: qtquick/qml/Page.qml:241
+#, kde-format
+msgid "Icons Only View Mode"
+msgstr "Režim zobrazení pouze s ikonami"
+
+#: qtquick/qml/Page.qml:249
+#, kde-format
+msgid "Large Preview View Mode"
+msgstr "Režim zobrazení velkého náhledu"
+
+#: qtquick/qml/Page.qml:259
+#, kde-format
+msgid "Everything"
+msgstr "Vše"
+
+#: qtquick/qml/Page.qml:263
+#, kde-format
+msgid "Updateable"
+msgstr "Aktualizovatelné"
+
+#: qtquick/qml/Page.qml:282
+#, kde-format
+msgctxt "List option which will set the filter to show everything"
+msgid "Show All Entries"
+msgstr "Zobrazit všechny položky"
+
+#: qtquick/qml/Page.qml:290
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items are shown"
+msgid "Show Only Installed Entries"
+msgstr "Zobrazit pouze nainstalované položky"
+
+#: qtquick/qml/Page.qml:298
+#, kde-format
+msgctxt ""
+"List option which will set the filter so only installed items with updates "
+"available are shown"
+msgid "Show Only Updateable Entries"
+msgstr "Zobrazit pouze aktualizovatelné položky"
+
+#: qtquick/qml/Page.qml:308
+#, kde-format
+msgid "Recent"
+msgstr "Nedávné"
+
+#: qtquick/qml/Page.qml:310
+#, kde-format
+msgid "Alphabetical"
+msgstr "Podle abecedy"
+
+#: qtquick/qml/Page.qml:314
+#, kde-format
+msgid "Downloads"
+msgstr "Stahování"
+
+#: qtquick/qml/Page.qml:333
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on when items were most "
+"recently updated"
+msgid "Show Most Recent First"
+msgstr "Nejdříve zobrazit nejnovější"
+
+#: qtquick/qml/Page.qml:341
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to be alphabetical based on the "
+"name"
+msgid "Sort Alphabetically By Name"
+msgstr "Seřadit abecedně podle jména"
+
+#: qtquick/qml/Page.qml:349
+#, kde-format
+msgctxt "List option which will set the sort order to based on user ratings"
+msgid "Show Highest Rated First"
+msgstr "Nejdříve zobrazit nejlépe hodnocené"
+
+#: qtquick/qml/Page.qml:357
+#, kde-format
+msgctxt ""
+"List option which will set the sort order to based on number of downloads"
+msgid "Show Most Downloaded First"
+msgstr "Nejdříve zobrazit nejvíce stahované"
+
+#: qtquick/qml/Page.qml:366
+#, kde-format
+msgid "Upload..."
+msgstr "Odeslat..."
+
+#: qtquick/qml/Page.qml:367
+#, kde-format
+msgid "Learn how to add your own hot new stuff to this list"
+msgstr ""
+
+#: qtquick/qml/Page.qml:375
+#, kde-format
+msgid "Go to..."
+msgstr "Přejít na..."
+
+#: qtquick/qml/Page.qml:497
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Loading more…"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr "<li>(bez názvu)</li>"
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:142
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr "%1 <i>(autor)</i>"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:26
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr "Komentáře a kontrola pro %1"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:30
+#, kde-format
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr "Zobrazit všechny komentáře"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:36
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr "Zobrazit pouze náhledy"
+
+#: qtquick/qml/private/EntryCommentsPage.qml:42
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr "Zobrazit náhledy a odpovědi"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr "%1 stažení"
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr "Od <i>%1</i>"
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is being installed OR "
+"uninstalled"
+msgid "Working..."
+msgstr "Pracuje..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating..."
+msgstr "Aktualizuji..."
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing..."
+msgstr "Instaluje se..."
+
+#: qtquick/qml/private/ErrorDisplayer.qml:13
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr "Nastala chyba"
+
+# žádné parametry funkce v inspektoru funkcí
+#: qtquick/qml/private/GridTileDelegate.qml:113
+#, kde-format
+msgid "None"
+msgstr "Nic"
+
+#: qtquick/qml/private/Rating.qml:80
+#, kde-format
+msgctxt ""
+"A text representation of the rating, shown as a fraction of the max value"
+msgid "(%1/%2)"
+msgstr "(%1/%2)"
+
+#: qtquick/qml/UploadPage.qml:51
+#, kde-format
+msgctxt "@knewstuff5"
+msgid "Upload New Stuff: %1"
+msgstr "Odeslat nový obsah: %1"
+
+#: qtquick/qml/UploadPage.qml:83
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Updating information..."
+msgstr "Aktualizuji informace..."
+
+#: qtquick/qml/UploadPage.qml:95
+#, kde-format
+msgctxt "The name of the KDE Store"
+msgid "KDE Store"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:101
+#, kde-format
+msgctxt "An unnamed provider"
+msgid "Your Provider"
+msgstr "Váš poskytovatel"
+
+#: qtquick/qml/UploadPage.qml:109
+#, kde-format
+msgctxt ""
+"Text for an action which causes the specified website to be opened using the "
+"user's system default browser"
+msgid "Open Website: %1"
+msgstr "Otevřít webovou stránku: %1"
+
+#: qtquick/qml/UploadPage.qml:114
+#, kde-format
+msgctxt ""
+"Text for an action which will attempt to send an email using the user's "
+"system default email client"
+msgid "Send Email To: %1"
+msgstr "Odeslat e-mail na: %1"
+
+#: qtquick/qml/UploadPage.qml:121
+#, kde-format
+msgctxt "A description of how to upload content to a generic provider"
+msgid ""
+"To upload new entries, or to add content to an existing entry on the KDE "
+"Store, please open the website and log in. Once you have done this, you will "
+"be able to find the My Products entry in the menu which pops up when you "
+"click your user icon. Click on this entry to go to the product management "
+"system, where you can work on your products ."
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:122
+#, kde-format
+msgctxt "A description of how to upload content to the KDE Store specifically"
+msgid ""
+"To upload new entries, or to add content to an existing entry, please open "
+"the provider's website and follow the instructions there. You will likely "
+"need to create a user and log in to a product management system, where you "
+"will need to follow the instructions for how to add. Alternatively, you "
+"might be required to contact the managers of the site directly to get new "
+"content added."
+msgstr ""
+
+#: qtquick/quickengine.cpp:174
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:55
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Back"
+msgstr "Zpět"
+
+#: qtquick/searchpresetmodel.cpp:58
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Popular"
+msgstr "Populární"
+
+#: qtquick/searchpresetmodel.cpp:61
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Featured"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:64
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Restart"
+msgstr "Restartovat"
+
+#: qtquick/searchpresetmodel.cpp:67
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "New"
+msgstr "Nový"
+
+#: qtquick/searchpresetmodel.cpp:70
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Home"
+msgstr "Domů"
+
+#: qtquick/searchpresetmodel.cpp:73
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Shelf"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:76
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Up"
+msgstr "Nahoru"
+
+#: qtquick/searchpresetmodel.cpp:79
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Recommended"
+msgstr "Doporučeno"
+
+#: qtquick/searchpresetmodel.cpp:82
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Subscriptions"
+msgstr "Přihlášení"
+
+#: qtquick/searchpresetmodel.cpp:85
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "All Entries"
+msgstr "Všechny položky"
+
+#: qtquick/searchpresetmodel.cpp:88
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Search Preset: %1"
+msgstr "Hledat předvolbu: %1"
+
+#: tools/knewstuff-dialog/main.cpp:31
+#, kde-format
+msgid ""
+"The KNSRC file you want to show. If none is passed, you will be presented "
+"with a dialog which lets you switch between all the config files installed "
+"into the systemwide knsrc file location"
+msgstr ""
+
+#: tools/knewstuff-dialog/main.cpp:35
+#, kde-format
+msgid ""
+"A kns url to show information from. The format for a kns url is kns://"
+"knsrcfile/providerid/entryid\n"
+"'knsrcfile'\n"
+"is the name of a knsrc file as might be passed directly through this tool's "
+"knsrcfile argument\n"
+"'providerid'\n"
+"is the hostname of the provider the entry should exist on\n"
+"'entryid'\n"
+"is the unique ID of an entry found in the provider specified by the knsrc "
+"file.\n"
+" An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+msgstr ""
+
+#: ui/entrydetailsdialog.cpp:84
+#, kde-format
+msgid "Details for %1"
+msgstr "Podrobnosti pro %1"
+
+#: ui/entrydetailsdialog.cpp:100
+#, kde-format
+msgid "Changelog:"
+msgstr "Seznam změn:"
+
+#: ui/entrydetailsdialog.cpp:106
+#, kde-format
+msgctxt "A link to the description of this Get Hot New Stuff item"
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: ui/entrydetailsdialog.cpp:110
+#, kde-format
+msgctxt ""
+"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
+msgid "Make a donation"
+msgstr "Sponzorovat"
+
+#: ui/entrydetailsdialog.cpp:115
+#, kde-format
+msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+msgid "Knowledgebase (no entries)"
+msgid_plural "Knowledgebase (%1 entries)"
+msgstr[0] "Báze znalostí (žádná položka)"
+msgstr[1] "Báze znalostí (%1 položky)"
+msgstr[2] "Báze znalostí (%1 položek)"
+
+#: ui/entrydetailsdialog.cpp:121
+#, kde-format
+msgctxt "Tooltip for a link in a dialog"
+msgid "Opens in a browser window"
+msgstr "Otevřít v okně prohlížeče"
+
+#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
+#, kde-format
+msgid "Rating: %1%"
+msgstr "Hodnocení: %1%"
+
+#: ui/itemsgridviewdelegate.cpp:123
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<br />Size: %1"
+msgstr "<br />Velikost: %1"
+
+#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
+#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
+#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
+#, kde-format
+msgctxt "Show the author of this item in a list"
+msgid "By <i>%1</i>"
+msgstr "Od <i>%1</i>"
+
+#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
+#, kde-format
+msgctxt "fan as in supporter"
+msgid "1 fan"
+msgid_plural "%1 fans"
+msgstr[0] "1 fanoušek"
+msgstr[1] "%1 fanoušci"
+msgstr[2] "%1 fanoušků"
+
+#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
+#, kde-format
+msgid "1 download"
+msgid_plural "%1 downloads"
+msgstr[0] "1 stažení"
+msgstr[1] "%1 stažení"
+msgstr[2] "%1 stažení"
+
+#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
+#, kde-format
+msgid "Loading Preview"
+msgstr "Načítá se náhled"
+
+#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
+#, kde-format
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
+#, kde-format
+msgid "Updating"
+msgstr "Aktualizuji"
+
+#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
+#, kde-format
+msgid "Install Again"
+msgstr "Znovu nainstalovat"
+
+#: ui/itemsviewdelegate.cpp:228
+#, kde-format
+msgctxt "Show the size of the file in a list"
+msgid "<p>Size: %1</p>"
+msgstr "<p>Velikost: %1</p>"
