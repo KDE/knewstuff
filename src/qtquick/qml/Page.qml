@@ -12,13 +12,13 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
-import QtGraphicalEffects 1.11 as QtEffects
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QtControls
+import QtQuick.Layouts 1.15 as QtLayouts
+import QtGraphicalEffects 1.15 as QtEffects
 
-import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kcm 1.6 as KCM
+import org.kde.kirigami 2.20 as Kirigami
 
 import org.kde.newstuff 1.85 as NewStuff
 
@@ -26,38 +26,42 @@ import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
 
 KCM.GridViewKCM {
-    id: root;
+    id: root
+
     /**
      * @brief The configuration file which describes the application (knsrc)
      *
      * The format and location of this file is found in the documentation for
      * KNS3::DownloadDialog
      */
-    property alias configFile: newStuffEngine.configFile;
-    readonly property alias engine: newStuffEngine;
+    property alias configFile: newStuffEngine.configFile
+    readonly property alias engine: newStuffEngine
 
     /**
      * Any generic message from the NewStuff.Engine
      * @param message The message to be shown to the user
      */
-    signal message(string message);
+    signal message(string message)
+
     /**
      * A message posted usually describing that whatever action a recent busy
      * message said was happening has been completed
      * @param message The message to be shown to the user
      */
-    signal idleMessage(string message);
+    signal idleMessage(string message)
+
     /**
      * A message posted when the engine is busy doing something long duration
      * (usually this will be when fetching installation data)
      * @param message The message to be shown to the user
      */
-    signal busyMessage(string message);
+    signal busyMessage(string message)
+
     /**
      * A message posted when something has gone wrong
      * @param message The message to be shown to the user
      */
-    signal errorMessage(string message);
+    signal errorMessage(string message)
 
     /**
      * Whether or not to show the Upload... context action
@@ -67,7 +71,6 @@ KCM.GridViewKCM {
      * @see KNSCore::Engine::uploadEnabled
      */
     property alias showUploadAction: uploadAction.visible
-
 
     /**
      * Show the details page for a specific entry.
@@ -83,11 +86,12 @@ KCM.GridViewKCM {
         newStuffEngine.engine.storeSearch();
 
         //check if entry in question is perhaps a group, if so, load the new details.
-        var theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
-        var type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
+        const row = newStuffModel.indexOfEntryId(providerId, entryId);
+        const index = newStuffModel.index(row, 0);
+        const type = newStuffModel.data(index, NewStuff.ItemsModel.EntryTypeRole);
 
         if (type === NewStuff.ItemsModel.GroupEntry) {
-            newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
+            newStuffEngine.searchTerm = newStuffModel.data(index, NewStuff.ItemsModel.PayloadRole);
         } else {
             newStuffEngine.engine.fetchEntryById(entryId);
         }
@@ -97,35 +101,37 @@ KCM.GridViewKCM {
         } else {
             _showEntryDetailsThrottle.onIsLoadingDataChanged();
         }
-
     }
+
     Connections {
-        id: _showEntryDetailsThrottle;
-        target: newStuffModel;
-        enabled: false;
-        property var entryId;
-        property var providerId;
+        id: _showEntryDetailsThrottle
+        target: newStuffModel
+        enabled: false
+        property var entryId
+        property var providerId
         function onIsLoadingDataChanged() {
-            if (newStuffModel.isLoadingData === false && root.view.count == 1) {
+            if (newStuffModel.isLoadingData === false && root.view.count === 1) {
                 _showEntryDetailsThrottle.enabled = false;
-                var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
-                if (theIndex > -1) {
+                const row = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
+                const index = newStuffModel.index(row, 0);
+                const get = role => newStuffModel.data(index, role);
+                if (row > -1) {
                     pageStack.push(detailsPage, {
-                        newStuffModel: newStuffModel,
-                        index: theIndex,
-                        name: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NameRole),
-                        author: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.AuthorRole),
-                        previews: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PreviewsRole),
-                        shortSummary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.ShortSummaryRole),
-                        summary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.SummaryRole),
-                        homepage: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.HomepageRole),
-                        donationLink: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DonationLinkRole),
-                        status: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.StatusRole),
-                        commentsCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NumberOfCommentsRole),
-                        rating: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.RatingRole),
-                        downloadCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadCountRole),
-                        downloadLinks: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
-                        providerId: _showEntryDetailsThrottle.providerId
+                        newStuffModel,
+                        index: row,
+                        name:          get(NewStuff.ItemsModel.NameRole),
+                        author:        get(NewStuff.ItemsModel.AuthorRole),
+                        previews:      get(NewStuff.ItemsModel.PreviewsRole),
+                        shortSummary:  get(NewStuff.ItemsModel.ShortSummaryRole),
+                        summary:       get(NewStuff.ItemsModel.SummaryRole),
+                        homepage:      get(NewStuff.ItemsModel.HomepageRole),
+                        donationLink:  get(NewStuff.ItemsModel.DonationLinkRole),
+                        status:        get(NewStuff.ItemsModel.StatusRole),
+                        commentsCount: get(NewStuff.ItemsModel.NumberOfCommentsRole),
+                        rating:        get(NewStuff.ItemsModel.RatingRole),
+                        downloadCount: get(NewStuff.ItemsModel.DownloadCountRole),
+                        downloadLinks: get(NewStuff.ItemsModel.DownloadLinksRole),
+                        providerId: _showEntryDetailsThrottle.providerId,
                     });
                     _restoreSearchState.enabled = true;
                 } else {
@@ -140,9 +146,9 @@ KCM.GridViewKCM {
         }
     }
     Connections {
-        id: _restoreSearchState;
-        target: pageStack;
-        enabled: false;
+        id: _restoreSearchState
+        target: pageStack
+        enabled: false
         function onCurrentIndexChanged() {
             if (pageStack.currentIndex === 0) {
                 newStuffEngine.engine.restoreSearch();
@@ -151,7 +157,7 @@ KCM.GridViewKCM {
         }
     }
 
-    property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
+    property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall")
     property string useLabel: engine.engine.useLabel
 
     property int viewMode: Page.ViewMode.Tiles
@@ -163,7 +169,7 @@ KCM.GridViewKCM {
 
     // Otherwise the first item will be focused, see BUG: 424894
     Component.onCompleted: {
-        view.currentIndex = -1
+        view.currentIndex = -1;
     }
 
     title: newStuffEngine.name
@@ -181,8 +187,8 @@ KCM.GridViewKCM {
     }
 
     NewStuff.Engine {
-        id: newStuffEngine;
-        property string statusMessage;
+        id: newStuffEngine
+        property string statusMessage
         onMessage: {
             root.message(message);
             statusMessage = message;
@@ -201,11 +207,15 @@ KCM.GridViewKCM {
         }
     }
     NewStuff.QuestionAsker {}
-    Private.ErrorDisplayer { engine: newStuffEngine; active: root.isCurrentPage; }
+    Private.ErrorDisplayer {
+        engine: newStuffEngine
+        active: root.isCurrentPage
+    }
 
     QtControls.ActionGroup { id: viewModeActionGroup }
     QtControls.ActionGroup { id: viewFilterActionGroup }
     QtControls.ActionGroup { id: viewSortingActionGroup }
+
     actions {
         contextualActions: [
             Kirigami.Action {
@@ -232,7 +242,7 @@ KCM.GridViewKCM {
                     icon.name: "view-list-details"
                     text: i18nd("knewstuff5", "Detailed Tiles View Mode")
                     onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
-                    checked: root.viewMode == Page.ViewMode.Tiles
+                    checked: root.viewMode === Page.ViewMode.Tiles
                     checkable: true
                     QtControls.ActionGroup.group: viewModeActionGroup
                 }
@@ -240,7 +250,7 @@ KCM.GridViewKCM {
                     icon.name: "view-list-icons"
                     text: i18nd("knewstuff5", "Icons Only View Mode")
                     onTriggered: { root.viewMode = Page.ViewMode.Icons; }
-                    checked: root.viewMode == Page.ViewMode.Icons
+                    checked: root.viewMode === Page.ViewMode.Icons
                     checkable: true
                     QtControls.ActionGroup.group: viewModeActionGroup
                 }
@@ -248,7 +258,7 @@ KCM.GridViewKCM {
                     icon.name: "view-preview"
                     text: i18nd("knewstuff5", "Large Preview View Mode")
                     onTriggered: { root.viewMode = Page.ViewMode.Preview; }
-                    checked: root.viewMode == Page.ViewMode.Preview
+                    checked: root.viewMode === Page.ViewMode.Preview
                     checkable: true
                     QtControls.ActionGroup.group: viewModeActionGroup
                 }
@@ -403,7 +413,7 @@ KCM.GridViewKCM {
             iconName: model.iconName
             property int indexEntry: index;
             onTriggered: {
-                var curIndex = newStuffEngine.searchPresetModel.index(indexEntry, 0);
+                const curIndex = newStuffEngine.searchPresetModel.index(indexEntry, 0);
                 newStuffEngine.searchPresetModel.loadSearch(curIndex);
             }
         }
@@ -412,9 +422,10 @@ KCM.GridViewKCM {
 
     Connections {
         target: newStuffEngine.searchPresetModel
-        function onModelReset() { searchModelActions.children = []; }
+        function onModelReset() {
+            searchModelActions.children = [];
+        }
     }
-
 
     // Only show this footer when there are multiple categories
     // nb: This would be more sensibly done by just setting the footer item visibility,
@@ -438,8 +449,8 @@ KCM.GridViewKCM {
     }
 
     view.model: NewStuff.ItemsModel {
-        id: newStuffModel;
-        engine: newStuffEngine;
+        id: newStuffModel
+        engine: newStuffEngine
     }
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
@@ -448,9 +459,9 @@ KCM.GridViewKCM {
         }
     }
 
-    view.implicitCellWidth: root.viewMode == Page.ViewMode.Tiles ? Kirigami.Units.gridUnit * 30 : (root.viewMode == Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Kirigami.Units.gridUnit * 10)
-    view.implicitCellHeight: root.viewMode == Page.ViewMode.Tiles ? Math.round(view.implicitCellWidth / 3) : (root.viewMode == Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit*2)
-    view.delegate: root.viewMode == Page.ViewMode.Tiles ? tileDelegate : (root.viewMode == Page.ViewMode.Preview ? bigPreviewDelegate : thumbDelegate)
+    view.implicitCellWidth: root.viewMode === Page.ViewMode.Tiles ? Kirigami.Units.gridUnit * 30 : (root.viewMode === Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Kirigami.Units.gridUnit * 10)
+    view.implicitCellHeight: root.viewMode === Page.ViewMode.Tiles ? Math.round(view.implicitCellWidth / 3) : (root.viewMode === Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit*2)
+    view.delegate: root.viewMode === Page.ViewMode.Tiles ? tileDelegate : (root.viewMode === Page.ViewMode.Preview ? bigPreviewDelegate : thumbDelegate)
 
     Component {
         id: bigPreviewDelegate

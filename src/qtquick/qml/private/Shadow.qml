@@ -4,24 +4,25 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.11
-import QtGraphicalEffects 1.11
+import QtQuick 2.15
+import QtGraphicalEffects 1.15
 
-import org.kde.kirigami 2.2
+import org.kde.kirigami 2.20 as Kirigami
 
 LinearGradient {
     id: shadow
+
     property int edge: Qt.LeftEdge
 
-    width: Units.gridUnit/2
-    height: Units.gridUnit/2
+    width: Kirigami.Units.gridUnit/2
+    height: Kirigami.Units.gridUnit/2
 
     start: Qt.point((edge !== Qt.RightEdge ? 0 : width), (edge !== Qt.BottomEdge ? 0 : height))
     end: Qt.point((edge !== Qt.LeftEdge ? 0 : width), (edge !== Qt.TopEdge ? 0 : height))
     gradient: Gradient {
         GradientStop {
             position: 0.0
-            color: Theme.backgroundColor
+            color: Kirigami.Theme.backgroundColor
         }
         GradientStop {
             position: 0.3

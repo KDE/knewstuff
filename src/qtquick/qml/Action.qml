@@ -14,7 +14,7 @@
  * shows how to make the action push a page to a pageStack rather than opening a dialog:
  *
 \code{.qml}
-import org.kde.newstuff 1.91 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
 NewStuff.Action {
     configFile: "wallpaper.knsrc"
@@ -35,11 +35,11 @@ NewStuff.Action {
  * @since 5.81
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import org.kde.kirigami 2.5 as Kirigami
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QtControls
+import org.kde.kirigami 2.20 as Kirigami
 
-import org.kde.newstuff 1.81 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
 Kirigami.Action {
     id: component

@@ -12,10 +12,10 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QtControls
 
-import org.kde.newstuff 1.81 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
 QtControls.Button {
     id: component
@@ -54,7 +54,7 @@ QtControls.Button {
      * emitted when the Hot New Stuff dialog is about to be shown, usually
      * as a result of the user having click on the button
      */
-    signal aboutToShowDialog();
+    signal aboutToShowDialog()
 
     /**
      * The engine which handles the content in this Button
@@ -66,7 +66,7 @@ QtControls.Button {
      * @see Engine::entryEvent
      * @since 5.82
      */
-    signal entryEvent(QtObject entry, int event);
+    signal entryEvent(QtObject entry, int event)
     property Connections engineConnections: Connections {
         target: component.engine
         function onEntryEvent(entry, event) {
@@ -132,7 +132,7 @@ QtControls.Button {
         }
     }
 
-    property Item ghnsDialog : Loader {
+    property Item ghnsDialog: Loader {
         // Use this function to open the dialog. It seems roundabout, but this ensures
         // that the dialog is not constructed until we want it to be shown the first time,
         // since it will initialise itself on the first load (which causes it to phone
@@ -146,7 +146,7 @@ QtControls.Button {
         }
         onLoaded: {
             item.open();
-            component.engine = item.engine
+            component.engine = item.engine;
         }
 
         active: false
