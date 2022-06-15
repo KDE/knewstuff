@@ -23,6 +23,8 @@ namespace KNSWidgets
 {
 class ActionPrivate;
 /**
+ * @class Action action.h <KNSWidgets/Action>
+ *
  * Shows the KNS3::QtQuickDialogWrapper when the action is triggered.
  * If GHNS is disabled using KAuthorized, it is hidden.
  *
