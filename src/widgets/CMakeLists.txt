@@ -71,3 +71,27 @@ if(QT_MAJOR_VERSION STREQUAL "5")
 endif()
 
 install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+
+if(BUILD_QCH)
+    ecm_add_qch(
+        KF5NewStuffWidgets_QCH
+        NAME KNewStuffWidgets
+        BASE_NAME KF5NewStuffWidgets
+        VERSION ${KF_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES ${KNewStuffWidgets_HEADERS}
+        LINK_QCHS
+            KF5NewStuffCore_QCH
+            KF5NewStuff_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+            ${KNewStuff_BINARY_DIR}
+        BLANK_MACROS
+            KNEWSTUFFWIDGETS_EXPORT
+            "KNEWSTUFFWIDGETS_DEPRECATED_VERSION(x, y, t)"
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+

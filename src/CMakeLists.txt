@@ -178,8 +178,6 @@ if(QT_MAJOR_VERSION STREQUAL "5")
     )
 endif()
 
-add_subdirectory(widgets)
-
 if(BUILD_QCH)
     ecm_add_qch(
         KF5NewStuff_QCH
@@ -211,6 +209,9 @@ if(BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+# after ecm_add_qch, due to KF5NewStuffWidgets_QCH dependency on KF5NewStuff_QCH being declared
+add_subdirectory(widgets)
 
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF5NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff)
