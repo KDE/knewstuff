@@ -24,7 +24,6 @@
 #include <KShell>
 #include <QDesktopServices>
 #include <knewstuffcore_debug.h>
-#include <memory>
 
 #include <QDir>
 #include <QDirIterator>

@@ -12,8 +12,6 @@
 
 #include "knewstuffquick_debug.h"
 
-#include <memory>
-
 namespace KNewStuffQuick
 {
 class CommentsModelPrivate
