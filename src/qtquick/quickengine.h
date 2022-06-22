@@ -66,7 +66,7 @@ public:
         AdoptedEvent = KNSCore::EntryInternal::AdoptedEvent,
         DetailsLoadedEvent = KNSCore::EntryInternal::DetailsLoadedEvent,
     };
-    Q_ENUM(EntryEvent);
+    Q_ENUM(EntryEvent)
 
     /**
      * Registering the error codes from KNSCore to allow them to be used easily in QtQuick
