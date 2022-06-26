@@ -14,8 +14,8 @@ LinearGradient {
 
     property int edge: Qt.LeftEdge
 
-    width: Kirigami.Units.gridUnit/2
-    height: Kirigami.Units.gridUnit/2
+    width: Kirigami.Units.largeSpacing
+    height: Kirigami.Units.largeSpacing
 
     start: Qt.point((edge !== Qt.RightEdge ? 0 : width), (edge !== Qt.BottomEdge ? 0 : height))
     end: Qt.point((edge !== Qt.LeftEdge ? 0 : width), (edge !== Qt.TopEdge ? 0 : height))

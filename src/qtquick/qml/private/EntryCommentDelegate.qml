@@ -8,26 +8,27 @@
  * @brief A card based delegate for showing a comment from a KNewStuffQuick::QuickCommentsModel
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts 1.15
 
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff 1.85 as NewStuff
 
-QtLayouts.RowLayout {
+RowLayout {
     id: component
 
     /**
      * The KNSQuick Engine object which handles all our content
      */
-    property QtObject engine
+    property NewStuff.Engine engine
 
     /**
      * The username of the author of whatever the comment is attached to
      */
     property string entryAuthorId
+
     /**
      * The provider ID as supplied by the entry the comment is attached to
      */
@@ -37,139 +38,129 @@ QtLayouts.RowLayout {
      * The username of the comment's author
      */
     property string author
+
     /**
      * The OCS score, an integer from 1 to 100. It will be interpreted
      * as a 5 star rating, with half star support (0-10)
      */
     property int score
+
     /**
      * The title or subject line for the comment
      */
     property string title
+
     /**
      * The actual text of the comment
      */
     property alias reviewText: reviewLabel.text
+
     /**
      * The depth of the comment (in essence, how many parents the comment has)
      */
     property int depth
 
-    spacing: 0
-
-    property QtObject commentAuthor: NewStuff.Author {
+    readonly property NewStuff.Author commentAuthor: NewStuff.Author {
+        id: commentAuthor
         engine: component.engine
         providerId: component.entryProviderId
         username: component.author
     }
 
-    anchors {
-        left: parent.left
-        right: parent.right
-        leftMargin: Kirigami.Units.largeSpacing
-        rightMargin: Kirigami.Units.largeSpacing
+    // prefer homepage, if any
+    readonly property string authorUrl: (commentAuthor.homepage !== "")
+        ? commentAuthor.homepage : commentAuthor.profilepage
+
+    readonly property string authorLabel: if (commentAuthor.name) {
+        if (author === entryAuthorId)  {
+            return i18ndc("knewstuff5", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", commentAuthor.name);
+        } else {
+            return commentAuthor.name;
+        }
+    } else {
+        // This should be done automatically by Author class. But due to defered initialization, it is not.
+        return component.author;
     }
+
+    spacing: 0
 
     Repeater {
         model: component.depth
         delegate: Rectangle {
-            QtLayouts.Layout.fillHeight: true
-            QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
+            Layout.fillHeight: true
+            Layout.preferredWidth: Kirigami.Units.largeSpacing
+            Layout.leftMargin: 1
             color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.8))
-            Rectangle {
-                anchors {
-                    top: parent.top
-                    bottom: parent.bottom
-                    left: parent.left
-                }
-                width: 1
-                color: Kirigami.Theme.backgroundColor
-            }
         }
     }
 
-    QtLayouts.ColumnLayout {
-        Item {
-            visible: component.depth === 0
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.minimumHeight: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumHeight: Kirigami.Units.largeSpacing
-        }
+    ColumnLayout {
+        spacing: Kirigami.Units.smallSpacing
 
         Kirigami.Separator {
-            QtLayouts.Layout.fillWidth: true
+            Layout.topMargin: (component.depth === 0) ? Kirigami.Units.largeSpacing : 0
+            Layout.fillWidth: true
         }
 
-        QtLayouts.RowLayout {
+        RowLayout {
             visible: (component.title !== "" || component.score !== 0)
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            spacing: Kirigami.Units.smallSpacing
+
             Kirigami.Heading {
-                id: titleLabel
-                text: ((component.title === "") ? i18ndc("knewstuff5", "Placeholder title for when a comment has no subject, but does have a rating", "<i>(no title)</i>") : component.title)
+                text: (component.title === "")
+                    ? i18ndc("knewstuff5", "Placeholder title for when a comment has no subject, but does have a rating", "<i>(no title)</i>")
+                    : component.title
                 level: 4
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
             }
+
             Rating {
-                id: ratingStars
                 rating: component.score
                 reverseLayout: true
             }
-            Item {
-                QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-                QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
-            }
         }
 
-        QtControls.Label {
+        Kirigami.SelectableLabel {
             id: reviewLabel
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            textFormat: TextEdit.RichText
             wrapMode: Text.Wrap
         }
 
-        QtLayouts.RowLayout {
-            QtLayouts.Layout.fillWidth: true
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: Kirigami.Units.smallSpacing
+
             Item {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
             }
             Kirigami.UrlButton {
-                id: authorLabel
-                visible: (url !== "")
-                url: (component.commentAuthor.homepage === "") ? component.commentAuthor.profilepage : component.commentAuthor.homepage
-                text: (component.author === component.entryAuthorId) ? i18ndc("knewstuff5", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name) : component.commentAuthor.name
+                visible: component.authorUrl !== ""
+                url: component.authorUrl
+                text: component.authorLabel
             }
-            QtControls.Label {
-                visible: !authorLabel.visible
-                text: authorLabel.text
+            QQC2.Label {
+                visible: component.authorUrl === ""
+                text: component.authorLabel
             }
-            Image {
+            Kirigami.Avatar {
                 id: authorIcon
-                QtLayouts.Layout.maximumWidth: height
-                QtLayouts.Layout.minimumWidth: height
-                QtLayouts.Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                fillMode: Image.PreserveAspectFit
-                source: component.commentAuthor.avatarUrl
-                Kirigami.Icon {
-                    anchors.fill: parent;
-                    source: "user"
-                    visible: opacity > 0
-                    opacity: authorIcon.status == Image.Ready ? 0 : 1
-                    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
-                }
-            }
-            Item {
-                QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-                QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
+
+                Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+
+                source: commentAuthor.avatarUrl
             }
         }
         Item {
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.minimumHeight: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumHeight: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.preferredHeight: Kirigami.Units.largeSpacing
         }
-
     }
 }
