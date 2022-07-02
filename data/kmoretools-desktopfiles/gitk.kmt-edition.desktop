@@ -5,6 +5,7 @@
 Name=gitk
 Name[ast]=gitk
 Name[az]=gitk
+Name[bg]=gitk
 Name[ca]=gitk
 Name[ca@valencia]=gitk
 Name[cs]=gitk
@@ -49,6 +50,7 @@ Name[zh_TW]=gitk
 GenericName=gitk
 GenericName[ast]=gitk
 GenericName[az]=gitk
+GenericName[bg]=gitk
 GenericName[ca]=gitk
 GenericName[ca@valencia]=gitk
 GenericName[cs]=gitk

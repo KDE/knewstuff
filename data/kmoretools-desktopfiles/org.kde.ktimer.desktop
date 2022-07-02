@@ -2,6 +2,7 @@
 GenericName=Countdown Launcher
 GenericName[ar]=مطلق العدّ التنازلى
 GenericName[az]=Gerisayım
+GenericName[bg]=Countdown Launcher
 GenericName[ca]=Llançador amb compte enrere
 GenericName[ca@valencia]=Iniciador amb compte enrere
 GenericName[cs]=Stopky
@@ -50,6 +51,7 @@ Terminal=false
 Name=KTimer
 Name[ast]=KTimer
 Name[az]=KTimer
+Name[bg]=KTimer
 Name[ca]=KTimer
 Name[ca@valencia]=KTimer
 Name[cs]=KTimer
