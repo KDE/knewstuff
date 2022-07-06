@@ -44,7 +44,15 @@ MessageBoxSheet {
     }
 
     property var currentError: null
-    text: currentError === null ? "" : currentError.message
+    text: {
+        if (currentError === null) {
+            return "";
+        } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
+            return currentError.message + i18n("\n\nPlease try again later.")
+        } else {
+            return currentError.message;
+        }
+    }
     icon: {
         if (currentError === null) {
             return "";
