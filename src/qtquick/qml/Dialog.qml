@@ -122,10 +122,10 @@ Window {
         QtControls.ToolBar {
             QtLayouts.Layout.fillWidth: true
             position: QtControls.ToolBar.Footer
+
             QtControls.DialogButtonBox {
                 anchors.fill: parent
-                standardButtons: QtControls.DialogButtonBox.Close
-                onRejected: component.close()
+
                 QtControls.Button {
                     text: i18nd("knewstuff5", "Contribute your own...")
                     icon.name: "upload-media"
@@ -134,6 +134,7 @@ Window {
                     onClicked: {
                         newStuffPage.pageStack.push(uploadPage);
                     }
+
                     QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
                 }
             }
