@@ -48,7 +48,7 @@ MessageBoxSheet {
         if (currentError === null) {
             return "";
         } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
-            return currentError.message + i18n("\n\nPlease try again later.")
+            return currentError.message + "\n\n" + i18n("Please try again later.")
         } else {
             return currentError.message;
         }
