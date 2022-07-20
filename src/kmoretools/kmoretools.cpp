@@ -116,7 +116,7 @@ KMoreToolsService *KMoreTools::registerServiceByDesktopEntryName(const QString &
     bool isInstalled = false;
     KService::Ptr installedService;
     if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_Default) { // == default behaviour: search for installed services
-        installedService = KService::serviceByDesktopName(desktopEntryName.toLower());
+        installedService = KService::serviceByDesktopName(desktopEntryName);
         isInstalled = installedService != nullptr;
     } else if (serviceLocatingMode == KMoreTools::ServiceLocatingMode_ByProvidedExecLine) { // only use provided kmt-desktopfile:
         if (!isKmtDesktopfileProvided) {
