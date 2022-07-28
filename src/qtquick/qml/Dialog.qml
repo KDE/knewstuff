@@ -105,6 +105,8 @@ Window {
         }
     }
 
+    color: Kirigami.Theme.backgroundColor
+
     QtLayouts.ColumnLayout {
         anchors.fill: parent
         spacing: 0
@@ -118,25 +120,20 @@ Window {
             downloadNewWhat: component.downloadNewWhat
         }
 
-        // Footer toolbar
-        QtControls.ToolBar {
+        // Footer buttons
+        QtControls.DialogButtonBox {
             QtLayouts.Layout.fillWidth: true
-            position: QtControls.ToolBar.Footer
 
-            QtControls.DialogButtonBox {
-                anchors.fill: parent
-
-                QtControls.Button {
-                    text: i18nd("knewstuff5", "Contribute your own...")
-                    icon.name: "upload-media"
-                    visible: newStuffPage.engine.engine.uploadEnabled
-                    enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
-                    onClicked: {
-                        newStuffPage.pageStack.push(uploadPage);
-                    }
-
-                    QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
+            QtControls.Button {
+                text: i18nd("knewstuff5", "Contribute your own...")
+                icon.name: "upload-media"
+                visible: newStuffPage.engine.engine.uploadEnabled
+                enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
+                onClicked: {
+                    newStuffPage.pageStack.push(uploadPage);
                 }
+
+                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
             }
         }
     }

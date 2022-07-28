@@ -415,17 +415,14 @@ KCM.GridViewKCM {
         function onModelReset() { searchModelActions.children = []; }
     }
 
+    extraFooterTopPadding: false
+    footer: QtLayouts.RowLayout {
+        visible: categoriesCombo.count > 2
 
-    // Only show this footer when there are multiple categories
-    // nb: This would be more sensibly done by just setting the footer item visibility,
-    // but that causes holes in the layout. This works, however, so we'll just deal with that.
-    footer: categoriesCombo.count > 2 ? categoriesFooter : null
-    readonly property Item categoriesFooter: QtLayouts.RowLayout {
-        width: parent ? parent.width - Kirigami.Units.smallSpacing * 2 : 0
-        x: Kirigami.Units.smallSpacing // Not super keen on this, but it's what the Page does for moving stuff around internally, so let's be consistent...
         QtControls.Label {
             text: i18nd("knewstuff5", "Category:")
         }
+
         QtControls.ComboBox {
             id: categoriesCombo
             QtLayouts.Layout.fillWidth: true
