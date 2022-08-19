@@ -41,7 +41,7 @@ Flickable {
             anchors.fill: parent
         }
 
-        // Do only animate the images in the detail view. In the overview it would be irritating and due to the small previews not useful
+        // Only animate the images in the detail view; in the overview it would be irritating and not useful anyway due to the small previews
         AnimatedImage {
             id: overlayImage
             anchors.fill: parent
