@@ -41,7 +41,8 @@ Flickable {
             anchors.fill: parent
         }
 
-        Image {
+        // Only animate the images in the detail view; in the overview it would be irritating and not useful anyway due to the small previews
+        AnimatedImage {
             id: overlayImage
             anchors.fill: parent
             source: root.currentItem ? root.currentItem.imageSource : ""
@@ -129,7 +130,7 @@ Flickable {
                     anchors.centerIn: parent
                 }
 
-                Image {
+                AnimatedImage {
                     id: thumbnail
                     source: modelData
                     height: parent.height
