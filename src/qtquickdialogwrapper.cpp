@@ -78,13 +78,10 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
         Q_ASSERT(window);
         auto transientParent = QGuiApplication::focusWindow();
 
-        // TODO KF6: only use focusWindow as transientParent
-        while (transientParent && transientParent->objectName().contains(QStringLiteral("QMenu"))) {
-            // BUG 454895: If transientParent is a menu, don't use the menu
-            transientParent = transientParent->transientParent();
+        // TODO KF6: explicitly specify transientParent
+        if (transientParent && transientParent->isModal()) {
+            window->setTransientParent(transientParent);
         }
-
-        window->setTransientParent(transientParent);
     }
 }
 
