@@ -164,10 +164,6 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *me
             // because we later add all remaining items
             kmtServiceList.removeOne(filelightApp);
 
-            if (url.isLocalFile()) { // 2015-01-12: Filelight can handle FTP connections
-                // but KIO/kioexec cannot (bug or feature?), so we
-                // don't offer it in this case
-
                 const auto filelight1Item = menuBuilder->addMenuItem(filelightApp);
 
                 if (filelightApp->isInstalled()) {
@@ -179,28 +175,30 @@ static void addItemsForGroupingNameWithSpecialHandling(KMoreToolsMenuBuilder *me
                         runApplication(filelightService, {url});
                     });
 
-                    const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
-                    filelight2Item->action()->setText(
-                        filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
-                    menu->connect(filelight2Item->action(), &QAction::triggered, menu, [filelightService, url](bool) {
-                        const QStorageInfo info(url.toLocalFile());
+                    // For remote URLs like FTP analyzing the device makes no sense
+                    if (url.isLocalFile()) {
+                        const auto filelight2Item = menuBuilder->addMenuItem(filelightApp);
+                        filelight2Item->action()->setText(
+                            filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - current device", QStringLiteral("$GenericName"))));
+                        menu->connect(filelight2Item->action(), &QAction::triggered, menu, [filelightService, url](bool) {
+                            const QStorageInfo info(url.toLocalFile());
 
-                        if (info.isValid() && info.isReady()) {
-                            runApplication(filelightService, {QUrl::fromLocalFile(info.rootPath())});
-                        }
-                    });
+                            if (info.isValid() && info.isReady()) {
+                                runApplication(filelightService, {QUrl::fromLocalFile(info.rootPath())});
+                            }
+                        });
+                    }
+
+                    auto filelight3Item = menuBuilder->addMenuItem(filelightApp, KMoreTools::MenuSection_More);
+                    if (filelightApp->isInstalled()) {
+                        filelight3Item->action()->setText(
+                            filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - all devices", QStringLiteral("$GenericName"))));
+                        const auto filelightService = filelightApp->installedService();
+                        menu->connect(filelight3Item->action(), &QAction::triggered, menu, [filelightService](bool) {
+                            runApplication(filelightService, {});
+                        });
+                    }
                 }
-            }
-
-            auto filelight3Item = menuBuilder->addMenuItem(filelightApp, KMoreTools::MenuSection_More);
-            if (filelightApp->isInstalled()) {
-                filelight3Item->action()->setText(
-                    filelightApp->formatString(i18nc("@action:inmenu %1=\"$GenericName\"", "%1 - all devices", QStringLiteral("$GenericName"))));
-                const auto filelightService = filelightApp->installedService();
-                menu->connect(filelight3Item->action(), &QAction::triggered, menu, [filelightService](bool) {
-                    runApplication(filelightService, {});
-                });
-            }
         } else {
             qWarning() << "org.kde.filelight should be present in KMoreTools but it is not!";
         }
