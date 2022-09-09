@@ -232,7 +232,7 @@ void Cache::readKns2MetaFiles()
 
             if (e.payload().startsWith(QLatin1String("http://download.kde.org/khotnewstuff"))) {
                 // This is 99% sure a opendesktop file, make it a real one.
-                e.setProviderId(QStringLiteral("https://api.opendesktop.org/v1/"));
+                e.setProviderId(QStringLiteral("https://api.kde-look.org/ocs/v1/"));
                 e.setHomepage(QUrl(QString(QLatin1String("http://opendesktop.org/content/show.php?content=") + e.uniqueId())));
 
             } else if (e.payload().startsWith(QLatin1String("http://edu.kde.org/contrib/kvtml/"))) {
