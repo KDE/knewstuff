@@ -366,7 +366,7 @@ KCM.GridViewKCM {
                 text: i18nd("knewstuff5", "Upload...")
                 tooltip: i18nd("knewstuff5", "Learn how to add your own hot new stuff to this list")
                 iconName: "upload-media"
-                visible: root.showUploadAction && newStuffEngine.engine.uploadEnabled
+                visible: newStuffEngine.engine.uploadEnabled
                 onTriggered: {
                     pageStack.push(uploadPage);
                 }
