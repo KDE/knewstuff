@@ -107,35 +107,11 @@ Window {
 
     color: Kirigami.Theme.backgroundColor
 
-    QtLayouts.ColumnLayout {
+    NewStuff.DialogContent {
         anchors.fill: parent
-        spacing: 0
+        id: newStuffPage
+        downloadNewWhat: component.downloadNewWhat
         Keys.onEscapePressed: component.close()
-
-        // Page content
-        NewStuff.DialogContent {
-            id: newStuffPage
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.fillHeight: true
-            downloadNewWhat: component.downloadNewWhat
-        }
-
-        // Footer buttons
-        QtControls.DialogButtonBox {
-            QtLayouts.Layout.fillWidth: true
-
-            QtControls.Button {
-                text: i18nd("knewstuff5", "Contribute your own...")
-                icon.name: "upload-media"
-                visible: newStuffPage.engine.engine.uploadEnabled
-                enabled: !(newStuffPage.pageStack.currentItem instanceof NewStuff.UploadPage)
-                onClicked: {
-                    newStuffPage.pageStack.push(uploadPage);
-                }
-
-                QtControls.DialogButtonBox.buttonRole: QtControls.DialogButtonBox.HelpRole
-            }
-        }
     }
 
     Component {

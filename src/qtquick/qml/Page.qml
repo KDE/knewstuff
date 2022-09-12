@@ -417,19 +417,32 @@ KCM.GridViewKCM {
 
     extraFooterTopPadding: false
     footer: QtLayouts.RowLayout {
-        visible: categoriesCombo.count > 2
+        visible: visibleChildren.length > 0
+        height: visible ? implicitHeight : 0
 
         QtControls.Label {
+            visible: categoriesCombo.count > 2
             text: i18nd("knewstuff5", "Category:")
         }
 
         QtControls.ComboBox {
             id: categoriesCombo
             QtLayouts.Layout.fillWidth: true
+            visible: count > 2
             model: newStuffEngine.categories
             textRole: "displayName"
             onCurrentIndexChanged: {
                 newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
+            }
+        }
+
+        QtControls.Button {
+            QtLayouts.Layout.alignment: Qt.AlignRight
+            text: i18nd("knewstuff5", "Contribute your own…")
+            icon.name: "upload-media"
+            visible: newStuffEngine.engine.uploadEnabled && !uploadAction.visible
+            onClicked: {
+                pageStack.push(uploadPage);
             }
         }
     }
