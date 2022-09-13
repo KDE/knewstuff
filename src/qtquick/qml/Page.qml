@@ -386,6 +386,7 @@ KCM.GridViewKCM {
                     id: searchField
                     focusSequence: "Ctrl+F"
                     placeholderText: i18nd("knewstuff5", "Search...")
+                    text: newStuffEngine.searchTerm
                     onAccepted: { newStuffEngine.searchTerm = searchField.text; }
                     Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
                         forceActiveFocus();
