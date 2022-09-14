@@ -65,7 +65,7 @@ Q_SIGNALS:
     void dialogFinished(const KNS3::Entry::List &changedEntries);
 #endif
     // Only show this overload when we hide deprecated methods or build the lib
-#if !KNEWSTUFFWIDGETS_ENABLE_DEPRECATED_SINCE(5, 90) || KF5NewStuffWidgets_EXPORTS
+#if !KNEWSTUFFWIDGETS_ENABLE_DEPRECATED_SINCE(5, 90) || defined(KF5NewStuffWidgets_EXPORTS)
     /// emitted when the Hot New Stuff dialog has been closed
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 #endif
