@@ -4,7 +4,11 @@
 add_library(KF5NewStuffWidgets)
 add_library(KF5::NewStuffWidgets ALIAS KF5NewStuffWidgets)
 
-# This makes sure we compile with an overlaoded signal that is only visible in deprecation-free builds
+# Flag to hint this is compilation of the library itself
+# Needed because the overloaded signal Action::dialogFinished(QList<KNSCore::Entry>) was only added in a later version,
+# but SC requirement needs to keep usages of plain &Action::dialogFinished working.
+# So the flag is used to add all signals to the library itself,
+# while consumers will only see one variant depending on KNEWSTUFFWIDGETS_DISABLE_DEPRECATED_BEFORE_AND_AT settings
 target_compile_definitions(KF5NewStuffWidgets PRIVATE -DKNEWSTUFFWIDGETS_PRIVATE_BUILDING)
 
 ecm_generate_export_header(KF5NewStuffWidgets

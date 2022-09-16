@@ -66,7 +66,26 @@ Q_SIGNALS:
 #endif
     // Only show this overload when we hide deprecated methods or build the lib
 #if !KNEWSTUFFWIDGETS_ENABLE_DEPRECATED_SINCE(5, 90) || defined(KNEWSTUFFWIDGETS_PRIVATE_BUILDING)
-    /// emitted when the Hot New Stuff dialog has been closed
+    /**
+     * Emitted when the Hot New Stuff dialog has been closed.
+     * This signal is only visible when hiding API deprecated in version 5.90 or newer
+     * (5.90, not 5.91, due to an unrevertable mistake).
+     * For that use @c KNEWSTUFFWIDGETS_DISABLE_DEPRECATED_BEFORE_AND_AT or @c KF_DISABLE_DEPRECATED_BEFORE_AND_AT
+     * with a version hex number of 5.90.0 or newer, e.g. by using the CMake module ECMDeprecationSettings with
+     * @code
+     * ecm_set_disabled_deprecation_versions(
+     *     KNEWSTUFFWIDGETS 5.90 # or newer
+     * )
+     * @endcode
+     * or
+     * @code
+     * ecm_set_disabled_deprecation_versions(
+     *     KF 5.90 # or newer
+     * )
+     * @endcode
+     *
+     * @since 5.91
+     */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 #endif
 
