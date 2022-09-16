@@ -137,7 +137,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore
 )
 
-install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     FILES

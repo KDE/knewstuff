@@ -70,7 +70,7 @@ if(QT_MAJOR_VERSION STREQUAL "5")
     )
 endif()
 
-install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_QCH)
     ecm_add_qch(

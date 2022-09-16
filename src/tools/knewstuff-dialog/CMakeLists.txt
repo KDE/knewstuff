@@ -21,4 +21,4 @@ target_link_libraries(knewstuff-dialog
     KF5::NewStuffCore
 )
 
-install(TARGETS knewstuff-dialog ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS knewstuff-dialog ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

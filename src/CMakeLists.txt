@@ -167,7 +167,7 @@ install(
     COMPONENT Devel
 )
 
-install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5NewStuff EXPORT KF5NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 # Kept for backwards compatibility, in KF6 all headers will be in KNewStuff3/KNS3 only
 if(QT_MAJOR_VERSION STREQUAL "5")
