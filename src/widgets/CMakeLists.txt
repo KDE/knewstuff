@@ -4,6 +4,9 @@
 add_library(KF5NewStuffWidgets)
 add_library(KF5::NewStuffWidgets ALIAS KF5NewStuffWidgets)
 
+# This makes sure we compile with an overlaoded signal that is only visible in deprecation-free builds
+target_compile_definitions(KF5NewStuffWidgets PRIVATE -DKNEWSTUFFWIDGETS_PRIVATE_BUILDING)
+
 ecm_generate_export_header(KF5NewStuffWidgets
     EXPORT_FILE_NAME knewstuffwidgets_export.h
     BASE_NAME KNewStuffWidgets
