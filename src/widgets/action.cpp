@@ -12,7 +12,6 @@
 #include "ui/widgetquestionlistener.h"
 #include <KAuthorized>
 #include <KLocalizedString>
-#include <KMessageBox>
 
 #include <QPointer>
 
