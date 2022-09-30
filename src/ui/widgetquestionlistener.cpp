@@ -9,6 +9,7 @@
 
 #include "core/question.h"
 
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <KPasswordDialog>
 #include <QInputDialog>
@@ -82,8 +83,12 @@ void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question *question)
     } break;
     case KNSCore::Question::YesNoQuestion:
     default: {
-        KMessageBox::ButtonCode response = KMessageBox::questionYesNo(nullptr, question->question(), question->title());
-        if (response == KMessageBox::Yes) {
+        KMessageBox::ButtonCode response = KMessageBox::questionTwoActions(nullptr,
+                                                                           question->question(),
+                                                                           question->title(),
+                                                                           KGuiItem(i18nc("@action:button", "Yes"), QStringLiteral("dialog-ok")),
+                                                                           KGuiItem(i18nc("@action:button", "No"), QStringLiteral("dialog-cancel")));
+        if (response == KMessageBox::PrimaryAction) {
             question->setResponse(KNSCore::Question::YesResponse);
         } else {
             question->setResponse(KNSCore::Question::NoResponse);
