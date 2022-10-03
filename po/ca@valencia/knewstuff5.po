@@ -941,7 +941,7 @@ msgid ""
 msgstr ""
 "Actualment, este element està en un estat no vàlid o desconegut. <a href="
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Informeu-"
-"ho a la comunitat KDE amb un informe d'error</a>."
+"ne a la comunitat KDE amb un informe d'error</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -1329,7 +1329,7 @@ msgid ""
 "bug report</a>."
 msgstr ""
 "Estat no vàlid o desconegut. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
-"product=frameworks-knewstuff\">Informeu-ho a la comunitat KDE amb un informe "
+"product=frameworks-knewstuff\">Informeu-ne a la comunitat KDE amb un informe "
 "d'error</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
@@ -1413,10 +1413,10 @@ msgid ""
 "system, where you can work on your products ."
 msgstr ""
 "Per a carregar entrades noves o per a afegir contingut a una entrada "
-"existent a la KDE Store, obriu el lloc web i accediu-hi. Una vegada fet açò, "
-"trobareu l'entrada «My Products» en el menú que apareixerà quan feu clic en "
-"la vostra icona d'usuari. Feu clic en esta entrada per anar al sistema de "
-"gestió de productes, on podreu treballar en els vostres productes."
+"existent en la KDE Store, obriu el lloc web i accediu-hi. Una vegada fet "
+"açò, trobareu l'entrada «My Products» en el menú que apareixerà quan feu "
+"clic en la vostra icona d'usuari. Feu clic en esta entrada per anar al "
+"sistema de gestió de productes, on podreu treballar en els vostres productes."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1530,7 +1530,7 @@ msgid ""
 msgstr ""
 "El fitxer KNSRC que voleu mostrar. Si no se'n passa cap, es presentarà un "
 "diàleg que permet canviar entre tots els fitxers de configuració instal·lats "
-"a la ubicació de fitxers «knsrc» global del sistema"
+"a dins de la ubicació de fitxers «knsrc» global del sistema"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
