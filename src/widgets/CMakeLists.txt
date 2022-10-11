@@ -72,6 +72,25 @@ endif()
 
 install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
+if (BUILD_DESIGNERPLUGIN)
+    include(ECMAddQtDesignerPlugin)
+    ecm_qtdesignerplugin_widget(KNSWidgets::Button
+        INCLUDE_FILE "KNSWidgets/Button"
+        TOOLTIP "KHotNewStuff push button that encapsulats most of the details involved in using KHotNewStuff in it."
+        GROUP "Buttons (KF5)"
+    )
+
+    ecm_add_qtdesignerplugin(knewstuffwidgets
+        NAME KNewStuffWidgets
+        WIDGETS
+            KNSWidgets::Button
+        LINK_LIBRARIES
+            KF5::NewStuffWidgets
+        INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
+        COMPONENT Devel
+    )
+endif()
+
 if(BUILD_QCH)
     ecm_add_qch(
         KF5NewStuffWidgets_QCH

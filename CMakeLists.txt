@@ -45,6 +45,7 @@ include(ECMAddQch)
 include(ECMDeprecationSettings)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(CMakeDependentOption)
 
 find_package(KF5Attica ${KF_DEP_VERSION} CONFIG REQUIRED)
 set_package_properties(KF5Attica PROPERTIES DESCRIPTION "A Qt library that implements the Open Collaboration Services API"
@@ -69,6 +70,9 @@ set_package_properties(KF5Syndication PROPERTIES
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
+
+cmake_dependent_option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON "NOT CMAKE_CROSSCOMPILING" OFF)
+add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
