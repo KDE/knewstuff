@@ -24,4 +24,4 @@ knewstuff_executable_tests(
 # KMoreTools:
 add_executable(kmoretoolstest_interactive kmoretools/kmoretoolstest_interactive.cpp ../src/knewstuff_debug.cpp)
 ecm_mark_as_test(kmoretoolstest_interactive)
-target_link_libraries(kmoretoolstest_interactive Qt${QT_MAJOR_VERSION}::Test KF5::NewStuff KF5::I18n Qt${QT_MAJOR_VERSION}::Widgets)
+target_link_libraries(kmoretoolstest_interactive Qt${QT_MAJOR_VERSION}::Test KF5::NewStuff KF5::I18n Qt${QT_MAJOR_VERSION}::Widgets KF5::KIOGui)

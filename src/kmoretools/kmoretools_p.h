@@ -10,7 +10,6 @@
 #include "kmoretools.h"
 
 #include <QDebug>
-#include <QDesktopServices>
 #include <QDir>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -18,6 +17,7 @@
 #include <QRegularExpression>
 #include <QUrl>
 
+#include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 
 #define _ QStringLiteral
@@ -375,7 +375,8 @@ public:
             auto url = homepageUrl;
             // todo/review: is it ok to have sender and receiver the same object?
             QObject::connect(websiteAction, &QAction::triggered, websiteAction, [url](bool) {
-                QDesktopServices::openUrl(url);
+                auto *job = new KIO::OpenUrlJob(url);
+                job->start();
             });
         }
 
@@ -385,7 +386,8 @@ public:
             auto installAction = submenuForNotInstalled->addAction(i18nc("@action:inmenu", "Install"));
             installAction->setIcon(QIcon::fromTheme(QStringLiteral("download")));
             QObject::connect(installAction, &QAction::triggered, installAction, [appstreamUrl](bool) {
-                QDesktopServices::openUrl(appstreamUrl);
+                auto *job = new KIO::OpenUrlJob(appstreamUrl);
+                job->start();
             });
         }
 

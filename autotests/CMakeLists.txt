@@ -35,7 +35,7 @@ knewstuff_unit_tests(
 
 # KMoreTools:
 ecm_add_test(kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp
-             LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n
+             LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n KF5::KIOGui
              TEST_NAME kmoretoolstest)
 
 # ===========
@@ -44,6 +44,6 @@ add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp ../src/knewstuff_d
 # The next line is commented out to prevent CI server to pick up those tests:
 # add_test(kmoretoolstest2 kmoretoolstest2) # uncomment to run tests locally
 ecm_mark_as_test(kmoretoolstest2)
-target_link_libraries(kmoretoolstest2 Qt${QT_MAJOR_VERSION}::Test KF5::NewStuff KF5::I18n)
+target_link_libraries(kmoretoolstest2 Qt${QT_MAJOR_VERSION}::Test KF5::NewStuff KF5::I18n KF5::KIOGui)
 
 add_subdirectory(core)
