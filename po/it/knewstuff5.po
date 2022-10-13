@@ -11,13 +11,14 @@
 # Federico Zenith <federico.zenith@member.fsf.org>, 2008, 2012, 2013, 2014, 2015.
 # Innocenzo Ventre <innocenzo.ventre@gmail.com>, 2012.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2015, 2018, 2019, 2020, 2021, 2022.
+# Paolo Zamponi <zapaolo@email.it>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
-"PO-Revision-Date: 2022-09-15 15:12+0200\n"
-"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"PO-Revision-Date: 2022-09-20 08:04+0200\n"
+"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -755,13 +756,13 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Visita la pagina web"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Installa"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
@@ -1116,7 +1117,7 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
-"Il contenuto disponibile qui è stata caricato da utenti come te, e non è "
+"Il contenuto disponibile qui è stato caricato da utenti come te, e non è "
 "stato esaminato dal tuo distributore per un verifica di funzionalità e "
 "stabilità."
 

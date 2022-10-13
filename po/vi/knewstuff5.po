@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
 "PO-Revision-Date: 2012-09-23 18:43+0800\n"
 "Last-Translator: Lê Hoàng Phương <herophuong93@gmail.com>\n"
 "Language-Team: American English <kde-i18n-vi@kde.org>\n"
@@ -688,14 +688,14 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Xem trang chủ của người đóng góp"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Cài đặt"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, fuzzy, kde-format
 #| msgid "There is no matching item available.\n"
 msgctxt "@action:inmenu"

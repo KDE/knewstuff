@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -687,14 +687,14 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Faqe Hyrëse"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Instalo"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, fuzzy, kde-format
 #| msgid "There is no matching item available.\n"
 msgctxt "@action:inmenu"

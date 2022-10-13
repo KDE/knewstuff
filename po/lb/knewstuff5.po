@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -709,14 +709,14 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Homepage"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Installéieren"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, fuzzy, kde-format
 #| msgid "No description available."
 msgctxt "@action:inmenu"

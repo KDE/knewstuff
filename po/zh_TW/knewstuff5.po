@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
 "PO-Revision-Date: 2020-05-14 23:33+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -719,13 +719,13 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "造訪首頁"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "安裝"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-30 00:40+0000\n"
+"POT-Creation-Date: 2022-10-13 00:42+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -680,13 +680,13 @@ msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Homepage"
 
-#: kmoretools/kmoretools_p.h:385
+#: kmoretools/kmoretools_p.h:386
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Imizekelo"
 
-#: kmoretools/kmoretools_p.h:393
+#: kmoretools/kmoretools_p.h:395
 #, fuzzy, kde-format
 #| msgid "No description available."
 msgctxt "@action:inmenu"
