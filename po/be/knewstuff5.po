@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2009-09-06 15:21+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1674,6 +1674,20 @@ msgstr "Устанавіць"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "Сцягванні:"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Так"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Не"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6781,14 +6795,8 @@ msgstr "Сцягванні:"
 #~ msgid "&Yes"
 #~ msgstr "&Так"
 
-#~ msgid "Yes"
-#~ msgstr "Так"
-
 #~ msgid "&No"
 #~ msgstr "&Не"
-
-#~ msgid "No"
-#~ msgstr "Не"
 
 #~ msgid "&Discard"
 #~ msgstr "Ад&хіліць"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -1667,6 +1667,20 @@ msgstr "安裝"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "下載"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "是"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "否"
 
 #, fuzzy
 #~ msgctxt "Opposite to Back"
@@ -6897,14 +6911,8 @@ msgstr "下載"
 #~ msgid "&Yes"
 #~ msgstr "是(&Y)"
 
-#~ msgid "Yes"
-#~ msgstr "是"
-
 #~ msgid "&No"
 #~ msgstr "否(&N)"
-
-#~ msgid "No"
-#~ msgstr "否"
 
 #~ msgid "&Discard"
 #~ msgstr "丟棄(&D)"

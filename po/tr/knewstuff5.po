@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
-"PO-Revision-Date: 2022-10-09 06:21+0300\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"PO-Revision-Date: 2022-10-15 12:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -158,7 +158,7 @@ msgstr "Sağlayıcı bilgileri yükleniyor"
 #: core/engine.cpp:420
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Yeni Ögeler Al özelliği sağlayıcıları dosyadan yüklenemedi: %1"
+msgstr "Dosyadan \"Yeni Çıkanlar\" alınamadı: %1"
 
 #: core/engine.cpp:450
 #, kde-format
@@ -1582,3 +1582,16 @@ msgstr "Yeniden Kur"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Boyut: %1</p>"
+
+#: ui/widgetquestionlistener.cpp:89
+#, kde-format
+msgctxt "@action:button"
+msgid "Yes"
+msgstr ""
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Hiçbiri"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -1632,6 +1632,20 @@ msgstr "قايتا ئورنات"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>چۈشۈرۈش: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "ھەئە"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "ياق"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6760,14 +6774,8 @@ msgstr "<p>چۈشۈرۈش: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "ھەئە(&Y)"
 
-#~ msgid "Yes"
-#~ msgstr "ھەئە"
-
 #~ msgid "&No"
 #~ msgstr "ياق(&N)"
-
-#~ msgid "No"
-#~ msgstr "ياق"
 
 #~ msgid "&Discard"
 #~ msgstr "تاشلىۋەت(&D)"

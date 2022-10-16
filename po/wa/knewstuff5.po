@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2012-07-04 17:33+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -1657,6 +1657,20 @@ msgstr "Rastaler"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Aberwetaedjes: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Oyi"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Neni"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6703,14 +6717,8 @@ msgstr "<p>Aberwetaedjes: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&Oyi"
 
-#~ msgid "Yes"
-#~ msgstr "Oyi"
-
 #~ msgid "&No"
 #~ msgstr "&Neni"
-
-#~ msgid "No"
-#~ msgstr "Neni"
 
 #~ msgid "&Discard"
 #~ msgstr "Taper å &diale"

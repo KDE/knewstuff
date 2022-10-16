@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2011-07-16 00:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1651,6 +1651,20 @@ msgstr "Pasang Lagi"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Muatturun: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Ya"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Tidak"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6856,14 +6870,8 @@ msgstr "<p>Muatturun: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&Ya"
 
-#~ msgid "Yes"
-#~ msgstr "Ya"
-
 #~ msgid "&No"
 #~ msgstr "T&idak"
-
-#~ msgid "No"
-#~ msgstr "Tidak"
 
 #~ msgid "&Discard"
 #~ msgstr "A&baikan"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1616,6 +1616,20 @@ msgstr "Ўрнатиш"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "Ёзиб олинган"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Ҳа"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Йўқ"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6104,14 +6118,8 @@ msgstr "Ёзиб олинган"
 #~ msgid "&Yes"
 #~ msgstr "&Ҳа"
 
-#~ msgid "Yes"
-#~ msgstr "Ҳа"
-
 #~ msgid "&No"
 #~ msgstr "&Йўқ"
-
-#~ msgid "No"
-#~ msgstr "Йўқ"
 
 #~ msgid "&Discard"
 #~ msgstr "&Воз кечиш"

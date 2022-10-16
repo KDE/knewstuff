@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2022-07-30 19:20+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1730,6 +1730,20 @@ msgstr "Wgraj ponownie"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Rozmiar: %1</p>"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Tak"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Nie"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "
@@ -6922,14 +6936,8 @@ msgstr "<p>Rozmiar: %1</p>"
 #~ msgid "&Yes"
 #~ msgstr "&Tak"
 
-#~ msgid "Yes"
-#~ msgstr "Tak"
-
 #~ msgid "&No"
 #~ msgstr "&Nie"
-
-#~ msgid "No"
-#~ msgstr "Nie"
 
 #~ msgid "&Discard"
 #~ msgstr "&Porzuć"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -1655,6 +1655,20 @@ msgstr "Installatioun"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "Downloads"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Jo"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Nee"
 
 #, fuzzy
 #~ msgctxt "Opposite to Back"
@@ -7006,14 +7020,8 @@ msgstr "Downloads"
 #~ msgid "&Yes"
 #~ msgstr "&Jo"
 
-#~ msgid "Yes"
-#~ msgstr "Jo"
-
 #~ msgid "&No"
 #~ msgstr "&Nee"
-
-#~ msgid "No"
-#~ msgstr "Nee"
 
 #~ msgid "&Discard"
 #~ msgstr "&Si loossen"

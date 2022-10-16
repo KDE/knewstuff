@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -1523,6 +1523,20 @@ msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr ""
 
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Ee"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "A'a"
+
 #~ msgid "Password:"
 #~ msgstr "Harrufan sirri:"
 
@@ -1824,14 +1838,8 @@ msgstr ""
 #~ msgid "&Yes"
 #~ msgstr "&Ee"
 
-#~ msgid "Yes"
-#~ msgstr "Ee"
-
 #~ msgid "&No"
 #~ msgstr "&A'a"
-
-#~ msgid "No"
-#~ msgstr "A'a"
 
 #~ msgid "Close the current window or document"
 #~ msgstr "Rufe wannan tagar"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2022-09-14 06:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1645,6 +1645,20 @@ msgstr "Berriz instalatu"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Neurria: %1</p>"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Bai"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Ez"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "
@@ -6840,14 +6854,8 @@ msgstr "<p>Neurria: %1</p>"
 #~ msgid "&Yes"
 #~ msgstr "&Bai"
 
-#~ msgid "Yes"
-#~ msgstr "Bai"
-
 #~ msgid "&No"
 #~ msgstr "&Ez"
-
-#~ msgid "No"
-#~ msgstr "Ez"
 
 #~ msgid "&Discard"
 #~ msgstr "&Baztertu"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -1642,6 +1642,20 @@ msgstr "Яңадан урнаштыру"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Кабул итү саны: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Әйе"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Юк"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6809,14 +6823,8 @@ msgstr "<p>Кабул итү саны: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&Әйе"
 
-#~ msgid "Yes"
-#~ msgstr "Әйе"
-
 #~ msgid "&No"
 #~ msgstr "&Юк"
-
-#~ msgid "No"
-#~ msgstr "Юк"
 
 #~ msgid "&Discard"
 #~ msgstr "Кире &кагу"

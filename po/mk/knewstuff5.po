@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2010-01-27 10:39+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1661,6 +1661,20 @@ msgstr "Инсталирај повторно"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Симнувања: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Да"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Не"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6841,14 +6855,8 @@ msgstr "<p>Симнувања: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&Да"
 
-#~ msgid "Yes"
-#~ msgstr "Да"
-
 #~ msgid "&No"
 #~ msgstr "&Не"
-
-#~ msgid "No"
-#~ msgstr "Не"
 
 #~ msgid "&Discard"
 #~ msgstr "От&фрли"

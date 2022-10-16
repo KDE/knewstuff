@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2014-03-16 23:21-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -1639,6 +1639,20 @@ msgstr "ਮੁੜ ਇੰਸਟਾਲ ਕਰੋ"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>ਡਾਊਨਲੋਡ: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "ਹਾਂ"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "ਨਹੀਂ"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6694,14 +6708,8 @@ msgstr "<p>ਡਾਊਨਲੋਡ: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "ਹਾਂ(&Y)"
 
-#~ msgid "Yes"
-#~ msgstr "ਹਾਂ"
-
 #~ msgid "&No"
 #~ msgstr "ਨਹੀਂ(&N)"
-
-#~ msgid "No"
-#~ msgstr "ਨਹੀਂ"
 
 #~ msgid "&Discard"
 #~ msgstr "ਅਣਡਿੱਠਾ(&D)"

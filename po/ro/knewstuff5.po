@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2022-05-05 12:43+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -1623,6 +1623,20 @@ msgstr "Instalează din nou"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Dimensiune: %1</p>"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Da"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Nu"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "
@@ -6880,14 +6894,8 @@ msgstr "<p>Dimensiune: %1</p>"
 #~ msgid "&Yes"
 #~ msgstr "&Da"
 
-#~ msgid "Yes"
-#~ msgstr "Da"
-
 #~ msgid "&No"
 #~ msgstr "&Nu"
-
-#~ msgid "No"
-#~ msgstr "Nu"
 
 #~ msgid "&Discard"
 #~ msgstr "&Elimină"

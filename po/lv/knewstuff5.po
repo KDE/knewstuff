@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2011-07-06 12:57+0300\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian\n"
@@ -1653,6 +1653,20 @@ msgstr "Instalēt vēlreiz"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Lejupielādes: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Jā"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Nē"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6897,14 +6911,8 @@ msgstr "<p>Lejupielādes: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&Jā"
 
-#~ msgid "Yes"
-#~ msgstr "Jā"
-
 #~ msgid "&No"
 #~ msgstr "&Nē"
-
-#~ msgid "No"
-#~ msgstr "Nē"
 
 #~ msgid "&Discard"
 #~ msgstr "&Izmest"

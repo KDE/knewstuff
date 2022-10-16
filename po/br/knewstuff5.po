@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -1635,6 +1635,20 @@ msgstr "Staliadur"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "Enkargañ"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Ya"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "N'eo ket"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -5926,14 +5940,8 @@ msgstr "Enkargañ"
 #~ msgid "&Yes"
 #~ msgstr "&Ya"
 
-#~ msgid "Yes"
-#~ msgstr "Ya"
-
 #~ msgid "&No"
 #~ msgstr "&N'eo ket"
-
-#~ msgid "No"
-#~ msgstr "N'eo ket"
 
 #~ msgid "&Discard"
 #~ msgstr "&Lemel"

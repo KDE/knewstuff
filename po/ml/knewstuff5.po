@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2010-12-29 15:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -1591,6 +1591,20 @@ msgstr "വീണ്ടും ഇന്‍സ്റ്റോള്‍ ചെയ�
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>ഡൌണ്‍ലോടുകള്‍: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "ശരി"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "വേണ്ട"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6116,14 +6130,8 @@ msgstr "<p>ഡൌണ്‍ലോടുകള്‍: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "&ശരി"
 
-#~ msgid "Yes"
-#~ msgstr "ശരി"
-
 #~ msgid "&No"
 #~ msgstr "&വേണ്ട"
-
-#~ msgid "No"
-#~ msgstr "വേണ്ട"
 
 #~ msgid "&Discard"
 #~ msgstr "&വേണ്ടെന്നു് വയ്ക്കുക"

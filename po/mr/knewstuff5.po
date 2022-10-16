@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2013-03-29 16:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1629,6 +1629,20 @@ msgstr "पुन्हा प्रतिष्ठापना करा"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>डाउनलोड्स: %1</p>\n"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "होय"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "नाही"
 
 #~ msgctxt "Opposite to Back"
 #~ msgid "Next"
@@ -6450,14 +6464,8 @@ msgstr "<p>डाउनलोड्स: %1</p>\n"
 #~ msgid "&Yes"
 #~ msgstr "होय (&Y)"
 
-#~ msgid "Yes"
-#~ msgstr "होय"
-
 #~ msgid "&No"
 #~ msgstr "नाही (&N)"
-
-#~ msgid "No"
-#~ msgstr "नाही"
 
 #~ msgid "&Discard"
 #~ msgstr "सोडून द्या (&D)"

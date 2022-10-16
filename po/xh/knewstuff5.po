@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1584,6 +1584,20 @@ msgstr "Ufakelo Lwesilawulo"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "Yehlela Ngezantsi"
+
+#: ui/widgetquestionlistener.cpp:89
+#, fuzzy, kde-format
+#| msgid "Yes"
+msgctxt "@action:button"
+msgid "Yes"
+msgstr "Ewe"
+
+#: ui/widgetquestionlistener.cpp:90
+#, fuzzy, kde-format
+#| msgid "No"
+msgctxt "@action:button"
+msgid "No"
+msgstr "Hayi"
 
 #, fuzzy
 #~ msgctxt "Opposite to Back"
@@ -6219,14 +6233,8 @@ msgstr "Yehlela Ngezantsi"
 #~ msgid "&Yes"
 #~ msgstr "&Ewe"
 
-#~ msgid "Yes"
-#~ msgstr "Ewe"
-
 #~ msgid "&No"
 #~ msgstr "&Hayi"
-
-#~ msgid "No"
-#~ msgstr "Hayi"
 
 #~ msgid "&Discard"
 #~ msgstr "&Lahla"
