@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-07-14 10:23+0400\n"
+"PO-Revision-Date: 2022-10-17 23:39+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -1209,10 +1209,9 @@ msgid "Go to..."
 msgstr "Keçmək..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Contribute your own..."
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Öz töhvənizi verin..."
+msgstr "Öz işinizi əlavə edin..."
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
@@ -1639,14 +1638,13 @@ msgstr "<p>Ölçü: %1</p>"
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr ""
+msgstr "Bəli"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
-msgstr "Heç biri"
+msgstr "Xeyr"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "
