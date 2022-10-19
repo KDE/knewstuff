@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-07-30 19:20+0200\n"
+"PO-Revision-Date: 2022-10-18 17:58+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -108,7 +108,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.08.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -1303,10 +1303,9 @@ msgid "Go to..."
 msgstr "Przejdź do..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Contribute your own..."
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Zacznij współtworzyć..."
+msgstr "Dodaj coś od siebie..."
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
@@ -1732,15 +1731,13 @@ msgid "<p>Size: %1</p>"
 msgstr "<p>Rozmiar: %1</p>"
 
 #: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes"
 msgstr "Tak"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
 msgstr "Nie"

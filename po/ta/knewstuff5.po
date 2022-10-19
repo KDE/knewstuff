@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-07-14 21:35+0530\n"
+"PO-Revision-Date: 2022-10-18 21:33+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -636,10 +636,9 @@ msgstr "தேடு:"
 
 #. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
 #: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgid "Search..."
-msgstr "தேடல்"
+msgstr "தேடு..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: downloadwidget.ui:371
@@ -649,10 +648,9 @@ msgstr "இயற்றியவர்:"
 
 #. i18n: ectx: property (text), widget (QLabel, homepageLabel)
 #: downloadwidget.ui:396
-#, fuzzy, kde-format
-#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+#, kde-format
 msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">முகப்பக்கம்</a>"
+msgstr "<a href=\"http://opendesktop.org\">முகப்புப்பக்கம்</a>"
 
 #. i18n: ectx: property (text), widget (QPushButton, updateButton)
 #: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
@@ -683,81 +681,68 @@ msgid "Install"
 msgstr "நிறுவு"
 
 #: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Not installed:"
-msgstr "நிறுவப்பட்டது"
+msgstr "நிறுவப்படாதவை:"
 
 #: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "More"
-msgstr "மேலும்..."
+msgstr "மேலும்"
 
 #: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure..."
-msgstr "வடி&வமைக்க..."
+msgstr "அமை..."
 
 #: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Visit contributor's homepage"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Visit homepage"
-msgstr "பங்களிப்பாளரது தொடக்கப்பக்கத்தை அணுகவும்"
+msgstr "முகப்புப்பக்கத்திற்கு செல்"
 
 #: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Install"
-msgstr "நிறுவுக"
+msgstr "நிறுவு"
 
 #: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "There is no matching item available.\n"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
-msgstr "பொருத்தமான உருப்படி எதுவுுமில்லை.\n"
+msgstr "மேலும் விவரங்கள் இல்லை."
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Configure menu"
-msgstr "வடிவமை"
+msgstr "பட்டியை அமைப்பது"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
+#, kde-format
 msgid "Configure menu - %1"
-msgstr "%1 &வடிவமை..."
+msgstr "பட்டியை அமைப்பது - %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
-#, fuzzy, kde-format
-#| msgid "%1 folder"
-#| msgid_plural "%1 folders"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
-msgstr "%1 அடைவு"
+msgstr "%1 - தற்போதைய அடைவு"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
-msgstr ""
+msgstr "%1 - தற்போதைய சாதனம்"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
-msgstr ""
+msgstr "%1 - அனைத்து சாதனங்கள்"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
