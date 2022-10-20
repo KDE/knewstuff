@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=Clocks
-Name[ast]=Relós
 Name[az]=Saatlar
 Name[bg]=Часовници
 Name[ca]=Rellotges
@@ -46,7 +45,6 @@ Name[x-test]=xxClocksxx
 Name[zh_CN]=时钟
 Name[zh_TW]=時鐘
 GenericName=Clocks
-GenericName[ast]=Relós
 GenericName[az]=Saatlar
 GenericName[bg]=Часовници
 GenericName[ca]=Rellotges
@@ -160,7 +158,6 @@ X-GNOME-FullName[zh_TW]=GNOME Clocks
 X-GNOME-FullName[ug]=گىنوم سائەتلىرى
 X-GNOME-FullName=GNOME Clocks
 Comment=Clocks for world times, plus alarms, stopwatch and a timer
-Comment[ast]=Relós mundiales amás d'alarmes, un cronómetru y un temporizador
 Comment[az]=Dünya vaxtı üçün saatlar, zəngçalar, saniyəölçən və vaxtölçən
 Comment[bg]=Часовници за световното време, аларми, хронометър и таймер
 Comment[ca]=Rellotges per a les hores del món, més alarmes, compte enrere i un temporitzador
@@ -204,7 +201,6 @@ Comment[zh_CN]=世界时间的时钟，外加闹钟，跑表，和计时器
 Comment[zh_TW]=世界時鐘，包含鬧鐘、計時器等
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=time;timer;alarm;world clock;stopwatch;time zone;
-Keywords[ast]=hora;tiempu;temporizador;temporizar;alarma;mundu;cronómetru;cronometraxe;fusu horariu;
 Keywords[az]=vaxt;taymer;zəngçalar;dünya vaxtı;vaxtölçən;saat qurşağı;
 Keywords[bg]=време;таймер;аларма;световен часовник;хронометър;часова зона;
 Keywords[ca]=hora;temporitzador;alarma;rellotge del món;compte enrere;zona horària;

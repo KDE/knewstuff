@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=HotShots
-Name[ast]=HotShots
 Name[az]=HotShots
 Name[bg]=HotShots
 Name[ca]=HotShots
@@ -46,7 +45,6 @@ Name[zh_CN]=HotShots
 Name[zh_TW]=HotShots
 Comment=Screenshot manager
 Comment[ar]=مدير للقطات الشّاشة
-Comment[ast]=Xestor de captures de pantalla
 Comment[az]=Ekran şəkli meneceri
 Comment[bg]=Мениджър на екранни снимки
 Comment[ca]=Gestor de captures de pantalla
@@ -93,7 +91,6 @@ Comment[zh_TW]=螢幕快照管理員
 Type=Application
 GenericName=Screenshot manager
 GenericName[ar]=مدير للقطات الشّاشة
-GenericName[ast]=Xestor de captures de pantalla
 GenericName[az]=Ekran şəkli meneceri
 GenericName[bg]=Мениджър на екранни снимки
 GenericName[ca]=Gestor de captures de pantalla

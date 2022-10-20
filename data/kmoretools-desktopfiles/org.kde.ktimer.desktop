@@ -50,7 +50,6 @@ Icon=ktimer
 Type=Application
 Terminal=false
 Name=KTimer
-Name[ast]=KTimer
 Name[az]=KTimer
 Name[bg]=KTimer
 Name[ca]=KTimer

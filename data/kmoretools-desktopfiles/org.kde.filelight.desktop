@@ -1,7 +1,6 @@
 # KDE Config File
 [Desktop Entry]
 Name=Filelight
-Name[ast]=Filelight
 Name[az]=Filelight
 Name[bg]=Filelight
 Name[ca]=Filelight
@@ -47,7 +46,6 @@ Name[zh_CN]=Filelight
 Name[zh_TW]=Filelight
 GenericName=Disk Usage Statistics
 GenericName[ar]=اعرض إحصائيّات القرص
-GenericName[ast]=Estadístiques del usu de los discos
 GenericName[az]=Diskin İstifadəsi Statistikası
 GenericName[bg]=Статистика на използване на диска
 GenericName[ca]=Estadístiques d'ús del disc
@@ -97,7 +95,6 @@ Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
 Comment[ar]=اعرض معلومات عن استخدام القرص
-Comment[ast]=Visualiza la información del usu de los discos
 Comment[az]=Diskdən istifadəsi məlumatlarına bax
 Comment[bg]=Преглед на използването на диска
 Comment[ca]=Veure la informació d'ús del disc

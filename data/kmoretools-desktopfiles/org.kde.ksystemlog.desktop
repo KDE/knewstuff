@@ -9,7 +9,6 @@ X-KDE-SubstituteUID=true
 
 Name=KSystemLog
 Name[ar]=سجلّات نظامك
-Name[ast]=KSystemLog
 Name[az]=KSystemLog
 Name[bg]=KSystemLog
 Name[ca]=KSystemLog
@@ -56,7 +55,6 @@ Name[zh_TW]=KSystemLog
 
 Comment=System log viewer tool
 Comment[ar]=أداة لعرض سجلّات النّظام
-Comment[ast]=Ferramienta visualizadora de rexistros del sistema
 Comment[az]=Sistem jurnalına baxış aləti
 Comment[bg]=Инструмент за преглед на системни дневници
 Comment[ca]=Eina de visualització dels registres del sistema
@@ -103,7 +101,6 @@ Comment[zh_TW]=系統紀錄檢視工具
 
 GenericName=System Log Viewer
 GenericName[ar]=عارض سجلّات النّظام
-GenericName[ast]=Visor de rexistros del sistema
 GenericName[az]=Sistem Jurnalına Baxış
 GenericName[bg]=System Log Viewer
 GenericName[ca]=Visualitzador dels registres del sistema

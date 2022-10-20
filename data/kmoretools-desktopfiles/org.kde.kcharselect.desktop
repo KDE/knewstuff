@@ -1,7 +1,6 @@
 [Desktop Entry]
 GenericName=Character Selector
 GenericName[ar]=منتقي المحارف
-GenericName[ast]=Seleutor de caráuteres
 GenericName[az]=Simvol Seç
 GenericName[bg]=Избор на символи
 GenericName[ca]=Selector de caràcters
@@ -52,7 +51,6 @@ Terminal=false
 X-DocPath=kcharselect/index.html
 Name=KCharSelect
 Name[ar]=منتقي محارفك
-Name[ast]=KCharSelect
 Name[az]=KCharSelect
 Name[bg]=KCharSelect
 Name[ca]=KCharSelect

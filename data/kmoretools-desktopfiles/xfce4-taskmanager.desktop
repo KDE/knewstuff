@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=Task Manager
 Name[ar]=مدير المهامّ
-Name[ast]=Xestor de xeres
 Name[az]=Tapşırıq meneceri (Xfce)
 Name[bg]=Диспечер на задачи
 Name[ca]=Gestor de tasques
@@ -48,7 +47,6 @@ Name[zh_CN]=任务管理器
 Name[zh_TW]=工作管理員
 Comment=Easy to use task manager
 Comment[ar]=مدير مهام سهل الاستخدام
-Comment[ast]=Un xestor de xeres cenciellu d'usar
 Comment[az]=Rahat Tapşırıq meneceri
 Comment[bg]=Лесен за използване мениджър на задачи
 Comment[ca]=Gestor de tasques d'ús fàcil
@@ -95,7 +93,6 @@ Comment[zh_CN]=简单易用的任务管理器
 Comment[zh_TW]=簡易的工作管理員
 GenericName=Task Manager
 GenericName[ar]=مدير مهامّ
-GenericName[ast]=Xestor de xeres
 GenericName[az]=Tapşırıq meneceri
 GenericName[bg]=Диспечер на задачи
 GenericName[ca]=Gestor de tasques

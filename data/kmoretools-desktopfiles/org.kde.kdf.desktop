@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=KDiskFree
 Name[ar]=KDiskFree
-Name[ast]=KDiskFree
 Name[az]=KDiskFree
 Name[bg]=KDiskFree
 Name[ca]=KDiskFree
@@ -50,7 +49,6 @@ Icon=kdf
 Type=Application
 GenericName=View Disk Usage
 GenericName[ar]=اعرض استخدام القرص
-GenericName[ast]=Visualización del usu en discu
 GenericName[az]=Diskin istifadəsinə bax
 GenericName[bg]=Преглед на използването на диска
 GenericName[ca]=Veure l'ús del disc

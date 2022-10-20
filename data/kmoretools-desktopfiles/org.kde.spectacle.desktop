@@ -1,7 +1,6 @@
 [Desktop Entry]
 GenericName=Screenshot Capture Utility
 GenericName[ar]=أداة لالتقاط الشّاشة
-GenericName[ast]=Utilidá pa capturar pantalles
 GenericName[az]=Ekran Şəklini Çəkmə Aləti
 GenericName[bg]=Помощна програма за заснемане на екранни снимки
 GenericName[ca]=Utilitat de captura de pantalla
@@ -48,7 +47,6 @@ GenericName[zh_CN]=截图抓取工具
 GenericName[zh_TW]=畫面擷取工具
 Name=Spectacle
 Name[ar]=لاقط الشاشة
-Name[ast]=Spectacle
 Name[az]=Spectacle
 Name[bg]=Spectacle
 Name[ca]=Spectacle

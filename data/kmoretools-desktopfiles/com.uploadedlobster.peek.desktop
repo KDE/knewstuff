@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=Peek
-Name[ast]=Peek
 Name[az]=Peek
 Name[bg]=Peek
 Name[ca]=Peek
@@ -43,7 +42,6 @@ Name[zh_CN]=Peek
 Name[zh_TW]=Peek
 Exec=peek
 GenericName=Animated GIF recorder
-GenericName[ast]=Grabador de GIFs animaos
 GenericName[az]=GİF animasiyasını yazmaq
 GenericName[bg]=Записващо устройство за анимиран GIF
 GenericName[ca]=Enregistrador de GIF animats

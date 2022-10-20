@@ -18,7 +18,6 @@ Icon=yast-disk
 Exec=xdg-su -c "/sbin/yast2 disk"
 
 Name=Partitioner
-Name[ast]=Particionador
 Name[az]=YaST: Diskin Bölünməsi
 Name[bg]=Partitioner
 Name[ca]=Partitioner
@@ -63,7 +62,6 @@ Name[x-test]=xxPartitionerxx
 Name[zh_CN]=分区管理
 Name[zh_TW]=Partitioner
 GenericName=Partition hard disks (a YaST module)
-GenericName[ast]=Particionáu de discos duros (un módulu de YaST)
 GenericName[az]=Sərt diskin bölünməsi (YaST modulu)
 GenericName[bg]=Разделяне на твърди дискове на дялове (модул на YaST)
 GenericName[ca]=Fa particions de discs durs (un mòdul del YaST)

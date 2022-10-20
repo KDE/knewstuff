@@ -1,7 +1,6 @@
 [Desktop Entry]
 Terminal=false
 Name=Kaption
-Name[ast]=Kaption
 Name[az]=Kaption
 Name[bg]=Kaption
 Name[ca]=Kaption
@@ -46,7 +45,6 @@ Name[x-test]=xxKaptionxx
 Name[zh_CN]=Kaption
 Name[zh_TW]=螢幕擷取_Kaption
 Comment=Screen capture and editor
-Comment[ast]=Captura de pantalla y editor
 Comment[az]=Ekranın şəklini yaratmaq və düzəliş etmək
 Comment[bg]=Заснемане на екрана и редактор
 Comment[ca]=Captura de pantalla i editor

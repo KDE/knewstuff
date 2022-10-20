@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=Catfish File Search
-Name[ast]=Busca de ficheros Catfish
 Name[az]=Catfish fayl axtarışı
 Name[bg]=Търсене на файлове Catfish
 Name[ca]=Cerca de fitxers de Catfish
@@ -43,7 +42,6 @@ Name[zh_CN]=Catfish 文件搜素
 Name[zh_TW]=Catfish 檔案搜尋
 GenericName=File search
 GenericName[ar]=بحث الملفّات
-GenericName[ast]=Busca de ficheros
 GenericName[az]=Fayl axtarışı
 GenericName[bg]=Търсене на файлове
 GenericName[ca]=Cerca de fitxers
@@ -86,7 +84,6 @@ GenericName[x-test]=xxFile searchxx
 GenericName[zh_CN]=文件搜索
 GenericName[zh_TW]=檔案搜尋
 Comment=Search the file system
-Comment[ast]=Busca nel sistema de ficheros
 Comment[az]=fayl sistemində axtarış
 Comment[bg]=Търсене във файловата система
 Comment[ca]=Cerca al sistema de fitxers

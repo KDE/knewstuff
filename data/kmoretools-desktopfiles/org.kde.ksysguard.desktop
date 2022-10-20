@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=KSysGuard
 Name[ar]=حارس نظامك
-Name[ast]=KSysGuard
 Name[az]=KSysGuard
 Name[bg]=KSysGuard
 Name[ca]=KSysGuard
@@ -48,7 +47,6 @@ Name[zh_CN]=系统卫士
 Name[zh_TW]=KSysGuard
 GenericName=System Monitor
 GenericName[ar]=مراقب النظام
-GenericName[ast]=Supervisor del sistema
 GenericName[az]=Sistem İzləyicisi
 GenericName[bg]=Мониториране на системата
 GenericName[ca]=Monitor del sistema
@@ -96,7 +94,6 @@ GenericName[zh_CN]=系统监视器
 GenericName[zh_TW]=系統監視器
 Comment=Monitor running processes and system performance
 Comment[ar]=راقِب العمليات الجارية وأداء النظام
-Comment[ast]=Supervisa los procesos n'execución y el rindimientu del sistema
 Comment[az]=İşləyən proseslərə və Sistemin işinə nəzarət
 Comment[bg]=Наблюдение на текущи процеси и производителност на системата
 Comment[ca]=Controlador de processos en execució i rendiment del sistema
