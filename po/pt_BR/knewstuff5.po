@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-07-12 16:26-0300\n"
+"PO-Revision-Date: 2022-10-19 15:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1227,10 +1227,9 @@ msgid "Go to..."
 msgstr "Ir para..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Contribute your own..."
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Contribua com o seu próprio..."
+msgstr "Contribua com o seu próprio…"
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
@@ -1645,14 +1644,13 @@ msgstr "<p>Tamanho: %1</p>"
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
-msgstr "Nenhum"
+msgstr "Não"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "
