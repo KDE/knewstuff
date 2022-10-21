@@ -203,8 +203,8 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 "Seleccioneu l'element de la llista següent que s'haurà d'utilitzar per a "
-"aplicar esta actualització. No es pot identificar l'element a seleccionar, "
-"basant-se en l'element original, el qual s'anomenava %1"
+"aplicar esta actualització. No es pot identificar l'element que se "
+"seleccionarà, basant-se en l'element original, el qual s'anomenava %1"
 
 #: core/engine.cpp:893
 #, kde-format
@@ -576,7 +576,7 @@ msgstr "Instal·lador de complements de %1"
 #: downloadwidget.cpp:123
 #, kde-format
 msgid "Timeout. Check Internet connection."
-msgstr "Temps límit excedit. Comproveu la connexió a Internet."
+msgstr "Temps límit excedit. Comproveu la connexió amb Internet."
 
 #: downloadwidget.cpp:186
 #, kde-format
