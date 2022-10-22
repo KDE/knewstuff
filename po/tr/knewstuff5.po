@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-10-15 12:23+0300\n"
+"PO-Revision-Date: 2022-10-21 12:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -46,7 +46,7 @@ msgid ""
 "This item costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
-"Bu ögenin fiyatı %2 %1.\n"
+"Bu ögenin fiyatı %1 %2.\n"
 "Satın almak istiyor musunuz?"
 
 #: attica/atticaprovider.cpp:493
@@ -76,7 +76,7 @@ msgstr "Hayranı oldunuz."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "Hizmet şu anda bakımda ve %1 içinde yeniden açılması bekleniyor."
 
 #: attica/atticaprovider.cpp:584
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "Ağ hatası %1: %2"
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
-"Sunucuya çok fazla istek gönderildi. Lütfen birkaç dakika sonra tekrar "
+"Sunucuya çok fazla istek gönderildi. Lütfen birkaç dakika sonra yeniden "
 "deneyin."
 
 #: attica/atticaprovider.cpp:593
@@ -95,33 +95,33 @@ msgstr ""
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
-msgstr ""
+msgstr "Açık İşbirliği Hizmetleri örneği %1, istenen işlevi desteklemiyor."
 
 #: attica/atticaprovider.cpp:597
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
-msgstr "Açık İşbirliği Servisi'nde bilinmeyen API hatası. (%1)"
+msgstr "Açık İşbirliği Hizmeti'nde bilinmeyen API hatası. (%1)"
 
 #: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
 #, kde-format
 msgid "Download New Stuff..."
-msgstr "Yeni Özellikler İndir..."
+msgstr "Yeni Şeyler İndir..."
 
 #: core/commentsmodel.cpp:168
-#, fuzzy, kde-format
-#| msgid "Unknown socket error"
+#, kde-format
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr "Bilinmeyen soket hatası"
+msgstr "Bilinmeyen CommentsModel rolü"
 
 #: core/engine.cpp:169
-#, fuzzy, kde-format
-#| msgid "An error occurred while accessing '%1'"
+#, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
-msgstr "'%1' konumuna erişilirken bir hata oluştu"
+msgstr ""
+"Kurulum süreci sırasında bir hata oluştu:\n"
+"%1"
 
 #: core/engine.cpp:203
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "Başlatılıyor"
 #: core/engine.cpp:241
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "Yapılandırma dosyası mevcut, ancak açılamıyor: \"%1\""
+msgstr "Yapılandırma dosyası var; ancak açılamıyor: \"%1\""
 
 #: core/engine.cpp:254
 #, kde-format
@@ -149,6 +149,8 @@ msgid ""
 "Could not initialise the installation handler for %1\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"%1 için kurulum tutacı ilklendirilemedi\n"
+"Bu, kritik bir hatadır ve uygulama geliştiricisine bildirilmesi gerekir"
 
 #: core/engine.cpp:359
 #, kde-format
@@ -168,12 +170,12 @@ msgstr "Sağlayıcı başlatılamadı."
 #: core/engine.cpp:454 core/engine.cpp:1022
 #, kde-format
 msgid "Loading data"
-msgstr "Veriler yükleniyor"
+msgstr "Veri yükleniyor"
 
 #: core/engine.cpp:496
 #, kde-format
 msgid "Loading data from provider"
-msgstr "Sağlayıcıdan veriler yükleniyor"
+msgstr "Sağlayıcıdan veri yükleniyor"
 
 #: core/engine.cpp:501
 #, kde-format
@@ -186,11 +188,14 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"İndirilebilir ögeleri tanımlanmadığından dolayı %1 girdisinin kurulumu "
+"gerçekleştirilemiyor. Lütfen uygulama yazarına bunu bildirin ki "
+"düzeltebilsinler."
 
 #: core/engine.cpp:872
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "Güncellenecek Ögeyi Seç"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -199,6 +204,8 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"Bu güncellemeyi uygulamak için kullanılacak ögeyi aşağıdaki listeden seçin. "
+"%1 adlı özgün ögeyi temel alarak hangi ögeyi seçeceğimizi belirleyemedik"
 
 #: core/engine.cpp:893
 #, kde-format
@@ -206,6 +213,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"%1 güncellemesi için düzgün bir bağlantı tanımlayamadık; bu yüzden "
+"güncellemeyi gerçekleştiremiyoruz"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -222,16 +231,17 @@ msgstr "Kuruluyor"
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
-msgstr[0] "Bir önizleme yükleniyor"
+msgstr[0] "1 önizleme yükleniyor"
 msgstr[1] "%1 önizleme yükleniyor"
 
 #: core/engine.cpp:1225
-#, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
+#, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
 "%2"
-msgstr "'%1' dosyası yüklenemedi"
+msgstr ""
+"'%1' ayarlanamadı\n"
+"%2"
 
 #: core/installation.cpp:211
 #, kde-format
@@ -277,13 +287,12 @@ msgstr "%1 yüklenemedi: Dosya bulunamadı."
 #: core/installation.cpp:499
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
+msgstr "%1 kurulumu, beklenen yeni %2 dizinini oluşturmayı başaramadı"
 
 #: core/installation.cpp:522 core/installation.cpp:846
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgid "Installation of %1 failed: %2"
-msgstr "Yükleniyor"
+msgstr "%1 kurulumu başarısız: %2"
 
 #: core/installation.cpp:531
 #, kde-format
@@ -292,6 +301,9 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
+"%1 kurulumu, %2 hizmet türünün sistem tarafından kabul edilmemesi "
+"dolayısıyla başarısız oldu (bu paket türü için KPackage destek eklentisini "
+"kurmayı unuttunuz mu?)"
 
 #: core/installation.cpp:541
 #, kde-format
@@ -299,6 +311,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"%1 kurulumu, indirilen paketin düzgün bir KPackage yapısı olmadığı için "
+"başarısız oldu."
 
 #: core/installation.cpp:547
 #, kde-format
@@ -306,6 +320,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr ""
+"%1 kurulumu, indirilen paket bir hizmet türü listelemediğinden dolayı "
+"başarısız oldu."
 
 #: core/installation.cpp:554
 #, kde-format
@@ -313,17 +329,18 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"%1 kurulumu, indirilen paket hiçbir kullanışlı üst bilgi içermediğinden, "
+"dolayısıyla geçerli bir KPackage olmadığından dolayı başarısız oldu."
 
 #: core/installation.cpp:588
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "İndirilen %1 dosyasının arşiv türü belirlenemedi"
 
 #: core/installation.cpp:600
-#, fuzzy, kde-format
-#| msgid "Unable to open temporary file. Error was: %1."
+#, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "Geçici dosya açılamadı. Hata: %1."
+msgstr "%1 arşiv dosyası açılamadı. Bildirilen hata şuydu: %2"
 
 #: core/installation.cpp:683
 #, kde-format
@@ -332,17 +349,19 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"Bu dosya, halihazırda diskte var (büyük olasılıkla daha önceki başarısız bir "
+"indirme denemesinden dolayı). Sürdürürseniz üzerine yazılacaktır. Bu "
+"dosyanın üzerine yazmak istiyor musunuz?"
 
 #: core/installation.cpp:686
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgid "Overwrite File"
-msgstr "Dosyanın üzerine yazılsın mı?"
+msgstr "Dosyanın Üzerine Yaz"
 
 #: core/installation.cpp:705
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "%1 dosyası, istenen %2 hedef konumuna taşınamıyor"
 
 #: core/installation.cpp:728
 #, kde-format
