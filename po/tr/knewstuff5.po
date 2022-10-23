@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-10-21 12:55+0300\n"
+"PO-Revision-Date: 2022-10-22 13:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -372,6 +372,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"Şu komutu çalıştırmaya çalışırken kurulum başarısız oldu:\n"
+"%1\n"
+"\n"
+"Döndürülen çıktı şuydu:\n"
+"%2"
 
 #: core/installation.cpp:738
 #, kde-format
@@ -382,6 +387,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"Şu komutu çalıştırmaya çalışırken kurulum %1 koduyla başarısız oldu:\n"
+"%2\n"
+"\n"
+"Döndürülen çıktı şuydu:\n"
+"%3"
 
 #: core/installation.cpp:780
 #, kde-format
@@ -390,6 +400,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"Kurulu %2 dosyası kendiliğinden kaldırılamadığından %1 ögesini kaldırma "
+"başarısız oldu. Bunun bir hata olduğunu düşünüyorsanız bu dosyayı kendiniz "
+"silmeyi deneyebilirsiniz."
 
 #: core/installation.cpp:853
 #, kde-format
@@ -397,6 +410,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"Kurulu paket düzgün bir KPackage yapısı içermediğinden %1 ögesini kaldırma "
+"başarısız oldu."
 
 #: core/installation.cpp:858
 #, kde-format
@@ -405,6 +420,8 @@ msgid ""
 "(did you forget to install the KPackage support plugin for this type of "
 "package?)"
 msgstr ""
+"Kurulu paket desteklenen bir tür olmadığından %1 ögesini kaldırma başarısız "
+"oldu (bu tür paketler için KPackage destek eklentisini kurmayı mı unuttunuz?)"
 
 #: core/installation.cpp:865
 #, kde-format
@@ -412,6 +429,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"Kurulu paket hiçbir kullanışlı üst bilgi içermediğinden; dolayısıyla geçerli "
+"bir KPackage olmadığından %1 ögesini kaldırma başarısız oldu."
 
 #: core/installation.cpp:905
 #, kde-format
@@ -419,6 +438,8 @@ msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
+"İndirilen %2 dosyası kendiliğinden kaldırılamadığından %1 ögesini kaldırma "
+"başarısız oldu."
 
 #: core/installation.cpp:910
 #, kde-format
@@ -427,6 +448,9 @@ msgid ""
 "The file in question was %2, and you can attempt to delete it yourself, if "
 "you are certain that it is not needed."
 msgstr ""
+"Kurulu dosya bir KPackage olmadığından %1 ögesini kaldırma başarısız oldu. "
+"Söz konusu dosya %2 idi ve bu dosyanın gerekli olmadığından eminseniz "
+"kendiniz silmeyi deneyebilirsiniz."
 
 #: core/installation.cpp:918
 #, kde-format
@@ -434,6 +458,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
+"Birden çok örneği kurulu olduğundan ve bu durum KPackage tabanlı girdiler "
+"için olanaklı olmadığından %1 ögesini kaldırma başarısız oldu."
 
 #: core/installation.cpp:951
 #, kde-format
@@ -444,18 +470,21 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"Kurulumu kaldırma işlemi, %1 komutunu başarıyla çalıştırmayı başaramadı\n"
+"Çıktı şuydu: \n"
+"%2\n"
+"Bunun yanlış olduğunu düşünüyorsanız kurulumu kaldırma işlemini sürdürebilir "
+"veya iptal edebilirsiniz"
 
 #: core/jobs/filecopyworker.cpp:49
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for writing"
-msgstr "%1 okumak için açılamadı"
+msgstr "%1, yazma için açılamadı"
 
 #: core/jobs/filecopyworker.cpp:52
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for reading"
-msgstr "%1 okumak için açılamadı"
+msgstr "%1, okuma için açılamadı"
 
 #: core/jobs/kpackagejob.cpp:114
 #, kde-format
@@ -463,6 +492,8 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
+"Paket yönetimi görevi için bir iş oluşturulamadı. Bu, genelde paket geçersiz "
+"olduğundan olur. %1 paketi üzerinde çalışmayı denedik"
 
 #: core/jobs/kpackagejob.cpp:121
 #, kde-format
@@ -470,11 +501,13 @@ msgid ""
 "Could not create a package installer for the service type %1: The installer "
 "does not have a valid structure"
 msgstr ""
+"%1 hizmet türü için bir paket kurucu oluşturulamadı: Kurucuda geçerli bir "
+"yapı yok"
 
 #: core/jobs/kpackagejob.cpp:125
 #, kde-format
 msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
+msgstr "%1 hizmet türü, KPackage kurucusu tarafından anlaşılamadı"
 
 #: core/security.cpp:69
 #, kde-format
@@ -484,8 +517,8 @@ msgid ""
 "not be possible.</qt>"
 msgstr ""
 "<qt> <i>gpg</i> başlatılamıyor ve uygun anahtarlara ulaşılamıyor.  <i>gpg</"
-"i> uygulamasının kurulu olduğuna emin misiniz? Değilse, indirilen "
-"kaynakların doğrulanması mümkün olmayacaktır.</qt>"
+"i> uygulamasının kurulu olduğuna emin misiniz? Değilse indirilen kaynakların "
+"doğrulanması olanaklı olmayacaktır.</qt>"
 
 #: core/security.cpp:191
 #, kde-format
@@ -504,7 +537,7 @@ msgid ""
 "will not be possible.</qt>"
 msgstr ""
 "<qt> <i>gpg</i> başlatılamıyor ve dosyanın geçerliliği denetlenemiyor.  "
-"<i>gpg</i> uygulamasının kurulu olduğuna emin misiniz? Değilse, indirilen "
+"<i>gpg</i> uygulamasının kurulu olduğuna emin misiniz? Değilse indirilen "
 "kaynakların doğrulanması mümkün olmayacaktır.</qt>"
 
 #: core/security.cpp:320
@@ -524,7 +557,7 @@ msgid ""
 "installed, otherwise signing of the resources will not be possible.</qt>"
 msgstr ""
 "<qt><i>gpg</i> başlatılamıyor ve dosya imzalanamıyor. <i>gpg</i>'nin kurulu "
-"olduğuna emin olun, aksi takdirde kaynağı imzalamak mümkün olmayacak.</qt>"
+"olduğuna emin olun, aksi takdirde kaynağı imzalamak olanaklı olmayacak.</qt>"
 
 #: downloaddialog.cpp:69 downloadwidget.cpp:213
 #, kde-format
@@ -535,12 +568,12 @@ msgstr "Yeni Çıkanlar"
 #, kde-format
 msgctxt "Program name followed by 'Add On Installer'"
 msgid "%1 Add-On Installer"
-msgstr "%1 Eklentileri Kurucu"
+msgstr "%1 Eklentisi Kurucu"
 
 #: downloadwidget.cpp:123
 #, kde-format
 msgid "Timeout. Check Internet connection."
-msgstr "Zaman aşımı. İnternet bağlantınızı kontrol edin."
+msgstr "Zaman aşımı. İnternet bağlantınızı denetleyin."
 
 #: downloadwidget.cpp:186
 #, kde-format
@@ -560,7 +593,7 @@ msgstr "<br />Sürüm: %1"
 #: downloadwidget.cpp:190
 #, kde-format
 msgid "Provider information"
-msgstr "Sağlayıcı bilgileri"
+msgstr "Sağlayıcı bilgisi"
 
 #: downloadwidget.cpp:203
 #, kde-format
@@ -620,7 +653,7 @@ msgstr "En Yeni"
 #: downloadwidget.ui:110 qtquick/qml/Page.qml:312
 #, kde-format
 msgid "Rating"
-msgstr "Beğeni"
+msgstr "Derecelendirme"
 
 #. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
 #: downloadwidget.ui:117 qtquick/qml/Page.qml:261
@@ -642,10 +675,9 @@ msgstr "Ara:"
 
 #. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
 #: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgid "Search..."
-msgstr "Ara"
+msgstr "Ara..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: downloadwidget.ui:371
@@ -655,10 +687,9 @@ msgstr "Yazar:"
 
 #. i18n: ectx: property (text), widget (QLabel, homepageLabel)
 #: downloadwidget.ui:396
-#, fuzzy, kde-format
-#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+#, kde-format
 msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">Ev Sayfası</a>"
+msgstr "<a href=\"http://opendesktop.org\">Ana Sayfa</a>"
 
 #. i18n: ectx: property (text), widget (QPushButton, updateButton)
 #: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
@@ -735,28 +766,22 @@ msgid "Configure menu - %1"
 msgstr "Menüyü yapılandır - %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - current folder"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
-msgstr "$GenericName - mevcut dizin"
+msgstr "%1 - geçerli klasör"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - current device"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
-msgstr "$GenericName - mevcut aygıt"
+msgstr "%1 - geçerli aygıt"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - all devices"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
-msgstr "$GenericName - tüm aygıtlar"
+msgstr "%1 - tüm aygıtlar"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
@@ -815,20 +840,18 @@ msgid "More tools..."
 msgstr "Daha fazla araç..."
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "Tüm Kategoriler"
 
 #: qtquick/categoriesmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Unknown error"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr "Bilinmeyen hata"
+msgstr "Bilinmeyen Kategori"
 
 #. i18nd("knewstuff5", "Download New %1...").
 #. *
@@ -840,34 +863,31 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr ""
+msgstr "Şeyler"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1..."
-msgstr "Yeni %1 İndir"
+msgstr "Yeni %1 İndir..."
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "Yeni %1 İndir"
+msgstr "Yeni %1 İndir..."
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "Yeni Özellikler İndir..."
+msgstr "Yeni Şeyler İndir"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
 msgid "Pick Your Installation Option"
-msgstr ""
+msgstr "Kurulum Seçeneğini Seç"
 
 #: qtquick/qml/DownloadItemsSheet.qml:40
 #, kde-format
@@ -877,6 +897,10 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+"Aşağıdaki indirilebilir ögeler listesinden kurmak istediğiniz seçeneği "
+"seçin. Kullanılabilir seçeneklerden hangisini seçmeniz gerektiği konusunda "
+"emin değilseniz bu ögenin yazarıyla iletişime geçin ve bunu ögenin "
+"adlandırması üzerinden açıklığa kavuşturun."
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
@@ -892,13 +916,14 @@ msgctxt ""
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
 msgstr ""
+"%2 tarafından yapılan %1 ögesi üzerinde çalışılıyor. Lütfen bekleyin..."
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "%2 tarafından yapılan %1 ögesi güncelleniyor. Lütfen bekleyin..."
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
@@ -910,6 +935,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"Bu öge şu anda geçersiz veya bilinmeyen bir durumda. <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Bunu lütfen KDE "
+"Topluluğu'na bir hata raporu ile birlikte bildirin</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -917,7 +945,7 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%2 tarafından yapılan %1"
 
 #: qtquick/qml/EntryDetails.qml:87
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
@@ -959,28 +987,25 @@ msgstr "Kaldır"
 #: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgid "Comments and Reviews:"
-msgstr ""
+msgstr "Yorumlar ve Gözden Geçirmeler"
 
 #: qtquick/qml/EntryDetails.qml:155
-#, fuzzy, kde-format
-#| msgid "View Comments"
+#, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr "Yorumları Görüntüle"
+msgstr "%1 Gözden Geçirmeleri ve Yorumları"
 
 #: qtquick/qml/EntryDetails.qml:160
-#, fuzzy, kde-format
-#| msgid "Rating: "
+#, kde-format
 msgid "Rating:"
-msgstr "Beğeni: "
+msgstr "Derecelendirme:"
 
 #: qtquick/qml/EntryDetails.qml:164
-#, fuzzy, kde-format
-#| msgid "Homepage"
+#, kde-format
 msgid "Homepage:"
-msgstr "Başlangıç Sayfası"
+msgstr "Ana sayfa:"
 
 #: qtquick/qml/EntryDetails.qml:165
 #, kde-format
@@ -989,12 +1014,12 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "%1 ana sayfasını açın"
 
 #: qtquick/qml/EntryDetails.qml:170
 #, kde-format
 msgid "How To Donate:"
-msgstr ""
+msgstr "Bağış Yapma Yolları"
 
 #: qtquick/qml/EntryDetails.qml:171
 #, kde-format
@@ -1002,7 +1027,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "Bu projeye nasıl bağış yapabileceğinizi öğrenin"
 
 #: qtquick/qml/NewStuffItem.qml:22
 #, kde-format
@@ -1014,7 +1039,7 @@ msgstr "Kur"
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
-msgstr ""
+msgstr "Her Şeyi Göster"
 
 #: qtquick/qml/NewStuffList.qml:69
 #, kde-format
@@ -1029,16 +1054,15 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Updateable Only"
-msgstr ""
+msgstr "Yalnızca Güncellenebilir"
 
 #: qtquick/qml/NewStuffList.qml:82
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show most recent first"
-msgstr "Önce dizinleri göster"
+msgstr "Önce son kullanılanları göster"
 
 #: qtquick/qml/NewStuffList.qml:83
 #, kde-format
@@ -1046,22 +1070,20 @@ msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort alphabetically"
-msgstr ""
+msgstr "Abecesel olarak sırala"
 
 #: qtquick/qml/NewStuffList.qml:84
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
-msgstr "Önce dizinleri göster"
+msgstr "Önce en yüksek derecelileri göster"
 
 #: qtquick/qml/NewStuffList.qml:85
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
-msgstr "En Çok İndirilen"
+msgstr "Önce en çok indirilenleri göster"
 
 #: qtquick/qml/Page.qml:132
 #, kde-format
@@ -1072,6 +1094,8 @@ msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
 msgstr ""
+"Göstermeye çalıştığınız ve benzersiz %1 kimliği ile tanımlanan girdi "
+"bulunamadı."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1079,13 +1103,13 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"Kullanılabilir içerik, sizin gibi kullanıcılar tarafından yüklenir ve "
+"işlevsellik veya kararlılık açısından gözden geçirilmemiştir."
 
 #: qtquick/qml/Page.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@option:check Do filter on type - show only files"
-#| msgid "Files"
+#, kde-format
 msgid "Tiles"
-msgstr "Dosyalar"
+msgstr "Karolar"
 
 #: qtquick/qml/Page.qml:216
 #, kde-format
@@ -1093,28 +1117,24 @@ msgid "Icons"
 msgstr "Simgeler"
 
 #: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-#| msgid "Previews"
+#, kde-format
 msgid "Preview"
-msgstr "Önizlemeler"
+msgstr "Önizleme"
 
 #: qtquick/qml/Page.qml:233
-#, fuzzy, kde-format
-#| msgid "Detailed View"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "Ayrıntılı Görünüm"
+msgstr "Ayrıntılı Karo Görünüm Kipi"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
-msgstr "Simge görünümü kipi"
+msgstr "Yalnızca Simgeler Görünümü Kipi"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "Ayrıntılı görünüm kipi"
+msgstr "Büyük Önizleme Görünümü Kipi"
 
 #: qtquick/qml/Page.qml:259
 #, kde-format
@@ -1168,7 +1188,7 @@ msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show Most Recent First"
-msgstr "En Son Kullanılan İlk Sırada"
+msgstr "Önce En Son Kullanılan"
 
 #: qtquick/qml/Page.qml:341
 #, kde-format
@@ -1182,14 +1202,14 @@ msgstr "Ada Göre Abecesel Sırala"
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
-msgstr "En Yüksek Dereceliler İlk Sırada"
+msgstr "Önce En Yüksek Dereceliler"
 
 #: qtquick/qml/Page.qml:357
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "En Çok İndirilen İlk Sırada"
+msgstr "Önce En Çok İndirilen"
 
 #: qtquick/qml/Page.qml:366
 #, kde-format
@@ -1199,7 +1219,7 @@ msgstr "Karşıya Yükle..."
 #: qtquick/qml/Page.qml:367
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "Bu listeye kendi yeni şeylerinizi nasıl ekleyeceğinizi öğrenin"
 
 #: qtquick/qml/Page.qml:375
 #, kde-format
@@ -1303,6 +1323,9 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"Geçersiz veya bilinmeyen durum.<a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Bunu lütfen KDE Topluluğu'na bir hata raporu "
+"ile birlikte bildirin</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1314,12 +1337,12 @@ msgstr "Kuruluyor..."
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "Bir Hata Oluştu"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
 #, kde-format
 msgid "Please try again later."
-msgstr ""
+msgstr "Lütfen daha sonra yeniden deneyin."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
@@ -1384,6 +1407,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"Yeni girdiler yüklemek için veya KDE Mağazası'ndaki var olan bir girdiye "
+"yeni içerik eklemek için önce web sayfasını açın ve giriş yapın. Bunu "
+"yaptıktan sonra, kullanıcı simgenize tıkladığınızda açılan menüden "
+"Ürünlerim'i bulun. Buraya tıklayıp ürünleriniz üzerinde çalışabileceğiniz "
+"ürün yönetimini açın."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1396,6 +1424,12 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"Yeni girdiler yüklemek veya var olan bir girdiye yeni içerik eklemek için "
+"sağlayıcının web sayfasını açın ve oradaki yönergeleri izleyin. Büyük "
+"olasılıkla bir kullanıcı oluşturmanız ve bir ürün yönetim sistemine giriş "
+"yapıp oradan ekleme yönergelerini bulmanız gerekecektir. Alternatif olarak, "
+"yeni içeriği ekletmek için doğrudan sitenin yöneticileri ile iletişime "
+"geçebilirsiniz."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1488,6 +1522,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"Göstermek istediğiniz KNSRC dosyası. Hiçbiri geçirilmemişse sistem geneli "
+"knsrc dosyası konumuna kurulu tüm yapılandırma dosyaları arasında geçiş "
+"yapmanıza olanak sağlayan bir pencere ile karşılaşacaksınız"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
@@ -1504,6 +1541,16 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"Bilgi göstermek için bir KNS URL'si. Bir KNS URL'sinin biçimi kns://"
+"knsrcdosyası/sağlayıcıkimliği/girdikimliği biçimindedir\n"
+"'knsrcdosyası'\n"
+"bu aracın doğrudan knsrc argümanına geçirilebilecek knsrc dosyasının adıdır\n"
+"'sağlayıcıkimliği'\n"
+"girdinin var olması gereken sağlayıcı makinesinin adıdır\n"
+"'girdikimliği'\n"
+"knsrc dosyasında belirtilen sağlayıcıda bulunan girdinin benzersiz "
+"kimliğidir.\n"
+"Örnek bir URL: kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: ui/entrydetailsdialog.cpp:84
 #, kde-format
@@ -1513,7 +1560,7 @@ msgstr "%1 Ayrıntıları"
 #: ui/entrydetailsdialog.cpp:100
 #, kde-format
 msgid "Changelog:"
-msgstr "Değişiklik günlüğü:"
+msgstr "Değişiklik Günlüğü:"
 
 #: ui/entrydetailsdialog.cpp:106
 #, kde-format
@@ -1606,11 +1653,10 @@ msgstr "<p>Boyut: %1</p>"
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
-msgstr "Hiçbiri"
+msgstr "Hayır"
