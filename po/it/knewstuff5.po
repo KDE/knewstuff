@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:42+0000\n"
-"PO-Revision-Date: 2022-09-20 08:04+0200\n"
-"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"PO-Revision-Date: 2022-10-18 09:43+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -1667,15 +1667,13 @@ msgid "<p>Size: %1</p>"
 msgstr "<p>Dimensione: %1</p>"
 
 #: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes"
 msgstr "Sì"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
 msgstr "No"
