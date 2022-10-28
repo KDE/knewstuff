@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-13 00:42+0000\n"
+"POT-Creation-Date: 2022-10-16 00:42+0000\n"
 "PO-Revision-Date: 2022-08-03 13:19+0200\n"
 "Last-Translator: Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail."
 "com>\n"
@@ -1634,3 +1634,15 @@ msgstr "Installer på nytt"
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
 msgstr "<p>Storleik: %1</p>"
+
+#: ui/widgetquestionlistener.cpp:89
+#, kde-format
+msgctxt "@action:button"
+msgid "Yes"
+msgstr ""
+
+#: ui/widgetquestionlistener.cpp:90
+#, kde-format
+msgctxt "@action:button"
+msgid "No"
+msgstr ""
