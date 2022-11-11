@@ -31,9 +31,9 @@ public:
 
 Q_SIGNALS:
     /**
-     * Data from the slave has arrived.
+     * Data from the worker has arrived.
      * @param job the job that emitted this signal
-     * @param data data received from the slave.
+     * @param data data received from the worker.
      *
      * End of data (EOD) has been reached if data.size() == 0, however, you
      * should not be certain of data.size() == 0 ever happening (e.g. in case
