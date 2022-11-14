@@ -54,10 +54,9 @@ Q_GLOBAL_STATIC(QFileSystemWatcher, s_watcher)
 
 Cache::Cache(const QString &appName)
     : QObject(nullptr)
+    , m_kns2ComponentName(appName)
     , d(new CachePrivate(this))
 {
-    m_kns2ComponentName = appName;
-
     const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/knewstuff3/");
     QDir().mkpath(path);
     registryFile = path + appName + QStringLiteral(".knsregistry");

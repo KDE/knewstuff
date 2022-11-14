@@ -31,8 +31,8 @@ public:
     {
     public:
         Validator(const QString &tag, const QString &value)
+            : m_tag(tag)
         {
-            m_tag = tag;
             if (!value.isNull()) {
                 m_acceptedValues << value;
             }
