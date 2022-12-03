@@ -261,6 +261,7 @@ void Installation::slotPayloadResult(KJob *job)
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
                     qCDebug(KNEWSTUFFCORE) << "Asking question about HTML";
                     Question question;
+                    question.setEntry(entry);
                     question.setQuestion(
                         i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open "
                              "the site with a browser instead?"));
@@ -680,6 +681,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
                     Question question(Question::YesNoQuestion);
+                    question.setEntry(entry);
                     question.setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means "
                                               "overwriting it. Do you wish to overwrite the existing file?")
                                          + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
@@ -956,6 +958,7 @@ void Installation::uninstall(EntryInternal entry)
                             Q_EMIT signalInstallationError(err);
                             // Ask the user if he wants to continue, even though the script failed
                             Question question(Question::ContinueCancelQuestion);
+                            question.setEntry(entry);
                             question.setQuestion(err);
                             Question::Response response = question.ask();
                             if (response == Question::CancelResponse) {

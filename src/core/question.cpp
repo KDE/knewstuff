@@ -7,10 +7,12 @@
 
 #include "question.h"
 
+#include "entryinternal.h"
 #include "questionmanager.h"
 
 #include <QCoreApplication>
 #include <QEventLoop>
+#include <optional>
 
 using namespace KNSCore;
 
@@ -25,10 +27,11 @@ public:
     QString question;
     QString title;
     QStringList list;
+    EntryInternal entry;
 
     QEventLoop loop;
     Question::QuestionType questionType;
-    Question::Response response;
+    std::optional<Question::Response> response;
     QString textResponse;
 };
 
@@ -44,9 +47,10 @@ Question::~Question() = default;
 Question::Response Question::ask()
 {
     Q_EMIT QuestionManager::instance()->askQuestion(this);
-    d->loop.exec(); // Wait for the setResponse method to quit the event loop
-
-    return d->response;
+    if (!d->response.has_value()) {
+        d->loop.exec(); // Wait for the setResponse method to quit the event loop
+    }
+    return *d->response;
 }
 
 Question::QuestionType Question::questionType() const
@@ -103,4 +107,14 @@ void Question::setResponse(const QString &response)
 QString Question::response() const
 {
     return d->textResponse;
+}
+
+void Question::setEntry(const EntryInternal &entry)
+{
+    d->entry = entry;
+}
+
+EntryInternal Question::entry() const
+{
+    return d->entry;
 }

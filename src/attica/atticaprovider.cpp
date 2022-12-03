@@ -475,6 +475,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
         qCDebug(KNEWSTUFFCORE) << "Your balance is greater than the price." << content.downloadUrlDescription(pair.second).priceAmount()
                                << " balance: " << item.balance();
         Question question;
+        question.setEntry(entry);
         question.setQuestion(i18nc("the price of a download item, parameter 1 is the currency, 2 is the price",
                                    "This item costs %1 %2.\nDo you want to buy it?",
                                    item.currency(),

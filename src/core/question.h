@@ -16,6 +16,7 @@
 
 namespace KNSCore
 {
+class EntryInternal;
 class QuestionPrivate;
 /**
  * @short A way to ask a user a question from inside a GUI-less library (like KNewStuffCore)
@@ -36,6 +37,7 @@ Question question(Question::SelectFromListQuestion);
 question.setTitle("Pick your option");
 question.setQuestion("Please select which option you would like");
 question.setList(choices);
+question.setEntry(entry);
 if(question.ask() == Question::OKResponse) {
     QString theChoice = question.response();
 }
@@ -78,6 +80,8 @@ public:
     QString title() const;
     void setList(const QStringList &newList);
     QStringList list() const;
+    void setEntry(const EntryInternal &entry);
+    EntryInternal entry() const;
 
     /**
      * When the user makes a choice on a question, that is a response. This is the return value in ask().
