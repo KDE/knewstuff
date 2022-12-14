@@ -45,6 +45,8 @@ Kirigami.OverlaySheet {
             color: Kirigami.Theme.textColor
             selectedTextColor: Kirigami.Theme.highlightedTextColor
             selectionColor: Kirigami.Theme.highlightColor
+            textFormat: TextEdit.AutoText
+            onLinkActivated: Qt.openUrlExternally(link)
         }
     }
     footer: QtLayouts.RowLayout {

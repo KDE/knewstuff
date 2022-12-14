@@ -259,20 +259,13 @@ void Installation::slotPayloadResult(KJob *job)
                 QMimeDatabase db;
                 QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
                 if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
-                    qCDebug(KNEWSTUFFCORE) << "Asking question about HTML";
-                    Question question;
-                    question.setEntry(entry);
-                    question.setQuestion(
-                        i18n("The downloaded file is a html file. This indicates a link to a website instead of the actual download. Would you like to open "
-                             "the site with a browser instead?"));
-                    question.setTitle(i18n("Possibly bad download link"));
-                    if (question.ask() == Question::YesResponse) {
-                        QDesktopServices::openUrl(fcjob->srcUrl());
-                        Q_EMIT signalInstallationFailed(i18n("Downloaded file was a HTML file. Opened in browser."));
-                        entry.setStatus(KNS3::Entry::Invalid);
-                        Q_EMIT signalEntryChanged(entry);
-                        return;
-                    }
+                    const auto error = i18n("Cannot install '%1' because it points to a web page. Click <a href='%2'>here</a> to finish the installation.",
+                                            entry.name(),
+                                            fcjob->srcUrl().toString());
+                    Q_EMIT signalInstallationFailed(error);
+                    entry.setStatus(KNS3::Entry::Invalid);
+                    Q_EMIT signalEntryChanged(entry);
+                    return;
                 }
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
             }
