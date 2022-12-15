@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2020-05-14 23:33+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -42,7 +42,7 @@ msgstr "遺失所有分類"
 # TRANSTR:
 # 這個項目要價 1 USD。\n
 # 確定購買？
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -53,7 +53,7 @@ msgstr ""
 "這個項目要價 %2 %1。\n"
 "確定購買？"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -64,42 +64,42 @@ msgstr ""
 "餘額：%1\n"
 "售價：%2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "已記錄投票。"
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "您已成為粉絲。"
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "網路錯誤 %1：%2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "太多要求到伺服器。請稍等幾分鐘後再嘗試。"
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "%1 開放協同服務實例不支援嘗試使用的功能。"
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "未知的開放協同服務 API 錯誤。(%1)"
@@ -252,42 +252,29 @@ msgstr "下載項目失敗：沒有 %1 的下載網址。"
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "下載 %1 失敗，錯誤：%2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"下載的檔案是一個 html 檔。它指向一個網站而不是實際上會下載內容。您要改成用瀏"
-"覽器開啟此網站嗎？"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "可能是錯誤的下載連結"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "下載的檔案是一個 HTML 檔。在瀏覽器內開啟。"
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "無法安裝 %1：找不到檔案。"
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr "%1 安裝程式無法建立應新增的目錄 %2"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 安裝失敗：%2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -297,21 +284,21 @@ msgstr ""
 "%1 安裝失敗，%2 服務類型系統不接受 (是否忘記安裝此類型軟體包的 KPackage 支援"
 "外掛程式？)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr "%1 安裝失敗，下載的軟體包未包含正確的 KPackage 結構。"
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr "%1 安裝失敗，下載的軟體包未列舉服務類型。"
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -319,17 +306,17 @@ msgid ""
 msgstr ""
 "%1 安裝失敗，下載的軟體包未包含任何有用的中繼資訊，即此非有效的 KPackage。"
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "無法確定下載的 %1 檔案的封存檔類型"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "無法開啟 %1 封存檔。回傳錯誤：%2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -339,17 +326,17 @@ msgstr ""
 "此檔案已在磁碟中（可能是因為稍早的下載嘗試失敗）。選擇繼續則會覆寫該檔案，確"
 "定覆寫？"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "覆寫檔案"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "無法移動 %1 檔案至預定的目的地 %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -364,7 +351,7 @@ msgstr ""
 "回傳輸出：\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -379,7 +366,7 @@ msgstr ""
 "回傳輸出：\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, fuzzy, kde-format
 #| msgid ""
 #| "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -393,14 +380,14 @@ msgstr ""
 "%1 移除失敗，安裝的檔案不是 KPackage。有問題的檔案為 %2，如您確定已用不到，則"
 "可嘗試自行刪除。"
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr "%1 移除失敗，安裝的軟體包未包含正確的 KPackage 結構。"
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -410,7 +397,7 @@ msgstr ""
 "%1 移除失敗，安裝的軟體包非支援的類型 (是否忘記安裝此類型軟體包的 KPackage 支"
 "援外掛程式？)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -418,14 +405,14 @@ msgid ""
 msgstr ""
 "%1 移除失敗，安裝的軟體包未包含任何有用的中繼資訊，即此非有效的 KPackage。"
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr "%1 移除失敗，下載的 %2 檔案無法自動移除。"
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -435,14 +422,14 @@ msgstr ""
 "%1 移除失敗，安裝的檔案不是 KPackage。有問題的檔案為 %2，如您確定已用不到，則"
 "可嘗試自行刪除。"
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1658,6 +1645,20 @@ msgstr ""
 msgctxt "@action:button"
 msgid "No"
 msgstr "無"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "下載的檔案是一個 html 檔。它指向一個網站而不是實際上會下載內容。您要改成用"
+#~ "瀏覽器開啟此網站嗎？"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "可能是錯誤的下載連結"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "下載的檔案是一個 HTML 檔。在瀏覽器內開啟。"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

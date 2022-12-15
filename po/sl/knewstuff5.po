@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2022-10-17 07:52+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Manjkajo vse kategorije"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -46,7 +46,7 @@ msgstr ""
 "Ta predmet stane %1 %2.\n"
 "Ali ga želite kupiti?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -57,18 +57,18 @@ msgstr ""
 "Stanje: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Vaš glas je bil zabeležen."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Sedaj ste postali oboževalec."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -76,24 +76,24 @@ msgid ""
 msgstr ""
 "Storitev je trenutno v vzdrževanju in bo predvidoma spet na voljo v %1."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Napaka omrežja %1: %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Strežnik je prejel preveč zahtev. Poskusite znova čez nekaj minut."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Primerek Open Collaboration Services %1 ne podpira te funkcije."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznana napaka programskega vmesnika Open Collaboration Service: (%1)"
@@ -256,43 +256,29 @@ msgstr "Prejemanje predmeta ni uspelo: za \"%1\" ni povezave za prejem."
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Prejemanje \"%1\" ni uspelo, napaka: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"Prejeta datoteka je v obliki HTML. To nakazuje povezavo na spletno stran "
-"namesto na dejansko datoteko za prenos. Ali želite odpreti sletno stran v "
-"brskalniku?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "Morebitna slaba povezava za prejem"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "Prejeta datoteka je v obliki HTML. Odprta v brskalniku."
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Ni bilo mogoče namestiti \"%1\": datoteka ni bila najdena."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr "Namestitev %1 ni uspela ustvariti pričakovanega novega direktorija %2"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Namestitev %1 ni uspela: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -302,7 +288,7 @@ msgstr ""
 "Namestitev %1 ni uspela, saj sistem ni sprejel vrste storitve %2 (ali ste "
 "pozabili namestiti vtičnik za podporo KPackage za tovrsto paketa?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -311,7 +297,7 @@ msgstr ""
 "Namestitev %1 ni uspela, saj preneseni paket ne vsebuje pravilne strukture "
 "KPackage."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
@@ -320,7 +306,7 @@ msgstr ""
 "Namestitev %1 ni uspela, saj preneseni paket ne vsebuje seznama vrste "
 "storitve."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -329,18 +315,18 @@ msgstr ""
 "Namestitev %1 ni uspela, saj preneseni paket ne vsebuje kakršnekoli koristne "
 "meta podatke, kar pomeni, da ni veljaven KPackage."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Ni mogoče določiti vrste arhiva prenesene datoteke %1"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Ni bilo mogoče odpreti arhivske datoteke %1. Sporočena napaka je bila: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -351,17 +337,17 @@ msgstr ""
 "prenosa). Nadaljevanje pomeni njeno prepisovanje. Ali želite prepisati "
 "obstoječo datoteko?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "Prepišem datoteko"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Ni bilo mogoče prenesti datoteke %1 v namenjeni cilj %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -376,7 +362,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -391,7 +377,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -402,7 +388,7 @@ msgstr ""
 "avtomatsko odstraniti. Lahko jo poskusite izbrisati sami, če ste prepričani, "
 "da je to napaka."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -411,7 +397,7 @@ msgstr ""
 "Odstranitev %1 ni uspela, ker nameščeni paket ne vsebuje pravilne strukture "
 "KPackage."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -421,7 +407,7 @@ msgstr ""
 "Odstranitev %1 ni uspela, saj nameščeni paket ni podprt (ali ste pozabili "
 "namestiti vtičnik za podporo KPackage za tovrsto paketa?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -430,7 +416,7 @@ msgstr ""
 "Odstranitev %1 ni uspela, saj nameščeni paket ne vsebuje kakršnekoli "
 "koristne meta podatke, kar pomeni, da ni veljaven KPackage."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -439,7 +425,7 @@ msgstr ""
 "Odstranjevanje %1 ni uspelo, saj prenesena datoteka %2 ni mogla biti "
 "samodejno odstranjena."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -450,7 +436,7 @@ msgstr ""
 "je bila %2, in jo lahko poskusite izbrisati sami, če ste prepričani, da ni "
 "potrebna."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -459,7 +445,7 @@ msgstr ""
 "Odstranjevanje %1 ni uspelo, saj se zdi, da obstaja nameščeno še nekaj, kar "
 "naj ne bi bilo mogoče za vnose paketov na podlagi KPackage."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1666,6 +1652,21 @@ msgstr "Da"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Ne"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "Prejeta datoteka je v obliki HTML. To nakazuje povezavo na spletno stran "
+#~ "namesto na dejansko datoteko za prenos. Ali želite odpreti sletno stran v "
+#~ "brskalniku?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "Morebitna slaba povezava za prejem"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "Prejeta datoteka je v obliki HTML. Odprta v brskalniku."
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

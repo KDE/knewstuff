@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Minden kategória hiányzik"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -33,7 +33,7 @@ msgstr ""
 "Az elem ára: %2 %1.\n"
 "Szeretné megvenni?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -44,18 +44,18 @@ msgstr ""
 "Egyenleg: %1\n"
 "Ár: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Rögzítettük a szavazatát."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Ön most már rajongó."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -63,17 +63,17 @@ msgid ""
 msgstr ""
 "A szolgáltatás jelenleg karbantartás alatt áll, működés várhatóan %1 múlva."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Hálózati hiba (%1): %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Túl sok kérés a szerverhez. Próbálkozzon újra néhány perc múlva."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -81,7 +81,7 @@ msgid ""
 msgstr ""
 "A(z) %1 Open Collaboration Services példány nem támogatja a kért funkciót."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Ismeretlen Open Collaboration Service API hiba. (%1)"
@@ -245,43 +245,30 @@ msgstr ""
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "„%1” letöltése meghiúsult, a hiba oka: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"A letöltött fájl egy HTML-fájl. Ez egy weboldalra mutató linket jelez a "
-"tényleges letöltés helyett. Szeretné megnyitni a weboldalt egy böngészővel?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "Valószínűleg hibás letöltési hivatkozás"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "A letöltött fájl egy HTML-fájl. Megnyitva webböngészőben."
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "„%1” nem telepíthető: a fájl nem található."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 "A(z) %1 telepítése sikertelen, a(z) %2 új mappa létrehozása nem sikerült"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "A(z) %1 telepítése sikertelen: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -292,7 +279,7 @@ msgstr ""
 "nem fogadta el (nem felejtette el telepíteni a KPackage bővítményt ehhez a "
 "csomagtípushoz?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -301,7 +288,7 @@ msgstr ""
 "A(z) %1 telepítése sikertelen, mert a letöltött csomag nem tartalmaz helyes "
 "KPackage struktúrát."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
@@ -310,7 +297,7 @@ msgstr ""
 "A(z) %1 telepítése sikertelen, mert a letöltött csomag nem listáz "
 "szolgáltatástípust."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -319,17 +306,17 @@ msgstr ""
 "A(z) %1 telepítése sikertelen, mert a letöltött csomag nem tartalmaz hasznos "
 "metaadatokat, ami azt jelenti, hogy érvénytelen KPackage."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nem sikerült meghatározni a(z) %1 letöltött fájl archívumtípusát"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nem sikerült megnyitni a(z) %1 archívumfájlt. A jelzett hiba: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -339,17 +326,17 @@ msgstr ""
 "A fájl már létezik (talán egy korábbi sikertelen letöltési kísérlet miatt). "
 "A folytatással felülírja. Szeretné felülírni a meglévő fájlt?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "Felülírás"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Nem lehet áthelyezni a(z) %1 fájlt a kívánt helyre: %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -364,7 +351,7 @@ msgstr ""
 "A kimenet az alábbi:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -379,7 +366,7 @@ msgstr ""
 "A kimenet az alábbi:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -390,7 +377,7 @@ msgstr ""
 "távolítható el automatikusan. Megpróbálhatja kézzel törölni ezt a fájlt, ha "
 "úgy gondolja, hogy ez egy hiba."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -399,7 +386,7 @@ msgstr ""
 "A(z) %1 eltávolítása sikertelen, mert a letöltött csomag nem tartalmaz "
 "helyes KPackage struktúrát."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -410,7 +397,7 @@ msgstr ""
 "támogatott (nem felejtette el telepíteni a KPackage bővítményt ehhez a "
 "csomagtípushoz?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -419,7 +406,7 @@ msgstr ""
 "A(z) %1 eltávolítása sikertelen, mert a telepített csomag nem tartalmaz "
 "hasznos metaadatokat, ami azt jelenti, hogy érvénytelen KPackage."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -428,7 +415,7 @@ msgstr ""
 "A(z) %1 eltávolítása sikertelen, mert a(z) %2 letöltött fájl nem távolítható "
 "el automatikusan."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -439,7 +426,7 @@ msgstr ""
 "kérdéses fájl %2 volt, megpróbálhatja kézzel törölni, ha biztos benne, hogy "
 "nincs rá szükség."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -448,7 +435,7 @@ msgstr ""
 "A(z) %1 eltávolítása sikertelen, mivel úgy tűnik, több dolog is telepített, "
 "ami nem lehetséges KPackage alapú bejegyzések esetén."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1656,6 +1643,21 @@ msgstr "Igen"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Nem"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "A letöltött fájl egy HTML-fájl. Ez egy weboldalra mutató linket jelez a "
+#~ "tényleges letöltés helyett. Szeretné megnyitni a weboldalt egy "
+#~ "böngészővel?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "Valószínűleg hibás letöltési hivatkozás"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "A letöltött fájl egy HTML-fájl. Megnyitva webböngészőben."
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

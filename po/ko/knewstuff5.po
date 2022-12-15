@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2022-10-03 15:51+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "모든 분류가 누락되었습니다"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -35,7 +35,7 @@ msgstr ""
 "이 항목의 가격은 %1 %2입니다.\n"
 "구매하시겠습니까?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -46,35 +46,35 @@ msgstr ""
 "계정 잔액: %1\n"
 "가격: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "투표가 기록되었습니다."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "팬으로 등록되었습니다."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr "서비스가 현재 유지 보수 중이며 %1에 정상화될 예정입니다."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "네트워크 오류 %1: %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "서버에 너무 많은 요청을 보냈습니다. 잠시 후 다시 시도하십시오."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "Open Collaboration Services 인스턴스 %1에서 시도한 기능을 지원하지 않습니다."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "알 수 없는 Open Collaboration Service API 오류. (%1)"
@@ -239,42 +239,29 @@ msgstr "항목 다운로드 실패: \"%1\"의 다운로드 URL이 없습니다."
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" 다운로드 실패. 오류: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"다운로드한 파일은 HTML 파일입니다. 이것은 실제 다운로드 대신 웹사이트에 대한 "
-"링크를 나타냅니다. 대신 브라우저를 사용하여 사이트를 열겠습니까?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "잘못된 다운로드 링크일 수 있음"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "다운로드한 파일은 HTML 파일입니다. 브라우저에서 열립니다."
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\"(을)를 설치할 수 없음: 파일을 찾을 수 없습니다."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr "%1 설치 실패. 필요한 새 디렉터리 %2을(를) 만들 수 없음"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 설치 실패: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -284,7 +271,7 @@ msgstr ""
 "%1 설치가 실패했습니다. 시스템에서 서비스 형식 %2을(를) 수락하지 않았습니다"
 "(이 패키지 형식에 대한 KPackage 지원이 설치되어 있습니까?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -292,7 +279,7 @@ msgid ""
 msgstr ""
 "%1 설치가 실패했습니다. 다운로드한 패키지에 올바른 KPackage 구조가 없습니다."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
@@ -300,7 +287,7 @@ msgid ""
 msgstr ""
 "%1 설치가 실패했습니다. 다운로드한 패키지에 서비스 형식 목록이 없습니다."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -309,17 +296,17 @@ msgstr ""
 "%1 설치가 실패했습니다. 다운로드한 패키지에 올바른 메타데이터 정보가 없습니"
 "다. 올바른 KPackage가 아닙니다."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "다운로드한 파일 %1의 압축 형식을 결정할 수 없음"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "압축 파일 %1을(를) 열 수 없습니다. 오류: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -329,17 +316,17 @@ msgstr ""
 "파일이 이미 디스크에 존재합니다(이전에 실패한 다운로드 시도 때문일 수 있음). "
 "계속 진행하면 덮어씁니다. 기존 파일을 덮어쓰시겠습니까?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "파일 덮어쓰기"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "파일 %1을(를) 대상 %2(으)로 이동할 수 없음"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -354,7 +341,7 @@ msgstr ""
 "출력은 다음과 같습니다:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -369,7 +356,7 @@ msgstr ""
 "출력은 다음과 같습니다:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -379,7 +366,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 설치한 파일 %2을(를) 자동으로 삭제할 수 없습니다. 오"
 "류가 발생한 것 같으면 직접 파일 삭제를 시도해 보십시오."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -387,7 +374,7 @@ msgid ""
 msgstr ""
 "%1 삭제가 실패했습니다. 설치한 패키지에 올바른 KPackage 구조가 없습니다."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -397,7 +384,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 설치한 패키지가 지원하는 형식이 아닙니다(이 패키지 형"
 "식에 대한 KPackage 지원이 설치되어 있습니까?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -406,7 +393,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 설치한 패키지에 올바른 메타데이터 정보가 없습니다. 올"
 "바른 KPackage가 아닙니다."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -414,7 +401,7 @@ msgid ""
 msgstr ""
 "%1 삭제가 실패했습니다. 다운로드한 파일 %2을(를) 자동으로 삭제할 수 없습니다."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -424,7 +411,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 설치한 파일이 KPackage가 아닙니다. 해당 파일은 %2이"
 "며, 필요하지 않다면 직접 삭제하십시오."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -433,7 +420,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 하나 이상이 설치되어 있는 것 같습니다. KPackage 기반 "
 "항목에서는 발생하면 안 됩니다."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1620,6 +1607,20 @@ msgstr ""
 msgctxt "@action:button"
 msgid "No"
 msgstr "없음"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "다운로드한 파일은 HTML 파일입니다. 이것은 실제 다운로드 대신 웹사이트에 대"
+#~ "한 링크를 나타냅니다. 대신 브라우저를 사용하여 사이트를 열겠습니까?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "잘못된 다운로드 링크일 수 있음"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "다운로드한 파일은 HTML 파일입니다. 브라우저에서 열립니다."
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

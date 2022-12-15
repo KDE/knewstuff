@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Trūksta visų kategorijų"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Šis elementas kainuoja %1 %2.\n"
 "Ar norite jį įsigyti?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,18 +51,18 @@ msgstr ""
 "Jūsų likutis: %1\n"
 "Kaina: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Jūsų balsas įskaičiuotas."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Dabar esate fanas."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -71,17 +71,17 @@ msgstr ""
 "Šiuo metu vyksta techninė paslaugos priežiūra. Tikimasi, kad paslauga pradės "
 "veikti po %1."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Tinklo klaida %1: %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Per daug užklausų į serverį. Po kelių minučių bandykite dar kartą."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -89,7 +89,7 @@ msgid ""
 msgstr ""
 "Open Collaboration Services egzempliorius %1 nepalaiko bandytos funkcijos."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nežinoma Open Collaboration Service API klaida. (%1)"
@@ -252,43 +252,29 @@ msgstr "Elemento atsisiuntimas nepavyko: „%1“ neturi atsiuntimo URL."
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "„%1“ atsiuntimas nepavyko, klaida: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"Atsisiųstas failas yra html failas. Vietoj faktinio atsiuntimo, jame "
-"nurodyta nuoroda į internetinę svetainę. Ar norite, vietoj to, atverti "
-"internetinę svetainę naudojant naršyklę?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "Tikriausiai, bloga atsisiuntimo nuoroda"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "Atsisiųstas failas buvo HTML failas. Jis atvertas naršyklėje."
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepavyko įdiegti „%1“: failas nerastas."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr "%1 diegimui nepavyko sukurti naujo katalogo, kurio buvo tikimasi %2"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 įdiegimas patyrė nesėkmę: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -298,7 +284,7 @@ msgstr ""
 "%1 diegimas patyrė nesėkmę, nes sistema nepriėmė %2 paslaugos tipo (ar "
 "pamiršote šio tipo paketui įdiegti KPackage palaikymo papildinį?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -307,7 +293,7 @@ msgstr ""
 "%1 diegimas patyrė nesėkmę, nes atsisiųstame pakete nėra teisingos KPackage "
 "struktūros."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
@@ -316,7 +302,7 @@ msgstr ""
 "%1 diegimas patyrė nesėkmę, nes atsisiųstame pakete neišvardytas paslaugos "
 "tipas."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -325,17 +311,17 @@ msgstr ""
 "%1 diegimas patyrė nesėkmę, nes atsisiųstame pakete nėra jokios naudingos "
 "metainformacijos, o tai reiškia, kad tai nėra tinkamas KPackage."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nepavyko nustatyti atsisiųsto failo %1 archyvo tipo"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nepavyko atverti archyvo failo %1. Pranešta klaida buvo: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -346,17 +332,17 @@ msgstr ""
 "atsisiųsti). Jei tęsite, failas bus perrašytas. Ar norite perrašyti esamą "
 "failą?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "Perrašyti failą"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Nepavyko perkelti failo %1 į numatomą paskirties vietą %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -371,7 +357,7 @@ msgstr ""
 "Grąžinta išvestis buvo:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -386,7 +372,7 @@ msgstr ""
 "Grąžinta išvestis buvo:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -397,7 +383,7 @@ msgstr ""
 "failo %2. Jei manote, kad tai klaida, galite pabandyti ištrinti šį failą "
 "rankiniu būdu."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -406,7 +392,7 @@ msgstr ""
 "%1 šalinimas patyrė nesėkmę, nes įdiegtame pakete nėra teisingos KPackage "
 "struktūros."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -416,7 +402,7 @@ msgstr ""
 "%1 šalinimas patyrė nesėkmę, nes įdiegtas paketas nėra palaikomo tipo (ar "
 "pamiršote šio tipo paketui įdiegti KPackage palaikymo papildinį?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -425,7 +411,7 @@ msgstr ""
 "%1 šalinimas patyrė nesėkmę, nes įdiegtame pakete nėra jokios naudingos "
 "metainformacijos, o tai reiškia, kad tai nėra tinkamas KPackage."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -434,7 +420,7 @@ msgstr ""
 "%1 šalinimas patyrė nesėkmę, nes nepavyko automatiškai pašalinti atsisiųsto "
 "failo %2."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -445,7 +431,7 @@ msgstr ""
 "Abejotinas failas buvo %2 ir galite bandyti ištrinti jį patys, jei esate "
 "tikri, kad jis yra nereikalingas."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -455,7 +441,7 @@ msgstr ""
 "daugiau nei vienas dalykas, o tai neturėtų būti įmanoma KPackage pagrįstiems "
 "įrašams."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1662,6 +1648,21 @@ msgstr "Taip"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Ne"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "Atsisiųstas failas yra html failas. Vietoj faktinio atsiuntimo, jame "
+#~ "nurodyta nuoroda į internetinę svetainę. Ar norite, vietoj to, atverti "
+#~ "internetinę svetainę naudojant naršyklę?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "Tikriausiai, bloga atsisiuntimo nuoroda"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "Atsisiųstas failas buvo HTML failas. Jis atvertas naršyklėje."
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

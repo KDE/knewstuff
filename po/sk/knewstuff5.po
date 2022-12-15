@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2022-04-09 20:08+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Všetky kategórie chýbajú"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Táto položka stojí %1 %2.\n"
 "Chcete ju kúpiť?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,18 +51,18 @@ msgstr ""
 "Zostatok: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Váš hlas bol zaznamenaný."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Teraz ste fanúšik."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -70,17 +70,17 @@ msgid ""
 msgstr ""
 "Služba v súčasnosti prechádza údržbou a očakáva sa, že bude obnovená v %1."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Chyba siete %1: %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Príliš veľa požiadaviek na server. Skúste to znovu za niekoľko minúť."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -89,7 +89,7 @@ msgstr ""
 "Inštancia Open Collaboration Services %1 nepodporuje akciu, ktorú chcete "
 "spraviť."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznáma chyba API služby otvorenej spolupráce. (%1)"
@@ -251,42 +251,29 @@ msgstr "Stiahnutie položky zlyhalo: neexistuje URL pre stiahnutie \"%1\"."
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Stiahnutie \"%1\" zlyhalo, chyba: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"Stiahnutý súbor je HTML súbor. To naznačuje odkaz na webovú stránku namiesto "
-"aktuálneho sťahovania. Chcete otvoriť túto stránku vo webovom prehliadači?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "Pravdepodobne zlý odkaz na stiahnutie"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "Stiahnutý súbor bol HTML súbor. Otvorené v prehliadači."
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepodarilo sa nainštalovať \"%1\": súbor nenájdený."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr "Inštalácia %1 zlyhala pri vytváraní očakávaného nového adresára %2"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Inštalácia %1 zlyhala: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -296,7 +283,7 @@ msgstr ""
 "Inštalácia %1 zlyhala, pretože systém neprijal typ služby %2 (zabudli ste "
 "nainštalovať doplnok podpory KPackage alebo tohto typu balíka?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -305,14 +292,14 @@ msgstr ""
 "Inštalácia %1 zlyhala, pretože stiahnutý balík neobsahuje správnu štruktúru "
 "KPackage."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr "Inštalácia %1 zlyhala, pretože stiahnutý balík neuvádza typ služby."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -321,17 +308,17 @@ msgstr ""
 "Inštalácia %1 zlyhala, pretože stiahnutý balík neobsahuje užitočné meta "
 "informácie, čo znamená, že nejde o platný balík KPackage."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nepodarilo sa určiť typ archívu stiahnutého súboru %1"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nepodarilo sa otvoriť archívny súbor %1. Nahlásená chyba bola: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -341,17 +328,17 @@ msgstr ""
 "Tento súbor už na disku existuje (možno z predtým nepodareného pokusu na "
 "stiahnutie). Pokračovaním sa prepíše. Želáte si prepísať existujúci súbor?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "Prepísať súbor"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Súbor %1 sa nedá presunúť na určený cieľ %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -366,7 +353,7 @@ msgstr ""
 "Vrátený výstup bol:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -381,7 +368,7 @@ msgstr ""
 "Vrátený výstup bol:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -392,7 +379,7 @@ msgstr ""
 "automaticky odstrániť. Tento súbor sa môžete pokúsiť odstrániť ručne, ak sa "
 "domnievate, že ide o chybu."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -401,7 +388,7 @@ msgstr ""
 "Odstránenie %1 zlyhalo, pretože nainštalovaný balík neobsahuje správnu "
 "štruktúru KPackage."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -412,7 +399,7 @@ msgstr ""
 "typom (zabudli ste nainštalovať doplnok podpory KPackage pre tento typ "
 "balíka?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -421,7 +408,7 @@ msgstr ""
 "Odstránenie %1 zlyhalo, pretože nainštalovaný balík neobsahuje žiadne "
 "užitočné meta informácie, čo znamená, že nejde o platný balík KPackage."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -430,7 +417,7 @@ msgstr ""
 "Odstránenie súboru %1 zlyhalo, pretože stiahnutý súbor %2 nebolo možné "
 "automaticky odstrániť."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -441,7 +428,7 @@ msgstr ""
 "Dotknutý súbor bol %2 a môžete sa ho pokúsiť odstrániť sami, ak ste si istí, "
 "že už nie je potrebný."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -450,7 +437,7 @@ msgstr ""
 "Odstránenie %1 zlyhalo, pretože sa zdá, že je nejako nainštalovaných viac "
 "vecí, čo by podľa odhadov nemalo byť možné pre položky založené na KPackage."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1660,6 +1647,21 @@ msgstr "Áno"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Nie"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "Stiahnutý súbor je HTML súbor. To naznačuje odkaz na webovú stránku "
+#~ "namiesto aktuálneho sťahovania. Chcete otvoriť túto stránku vo webovom "
+#~ "prehliadači?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "Pravdepodobne zlý odkaz na stiahnutie"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "Stiahnutý súbor bol HTML súbor. Otvorené v prehliadači."
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

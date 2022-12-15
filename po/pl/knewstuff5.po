@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2022-10-18 17:58+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Brakuje jakiejkolwiek kategorii"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -128,7 +128,7 @@ msgstr ""
 "Koszt tej pozycji wynosi %1 %2.\n"
 "Czy chcesz ją kupić?"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -139,35 +139,35 @@ msgstr ""
 "Twój bilans to: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Twój głos został zapisany."
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Teraz jesteś wielbicielem."
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr "Usługa obecnie przechodzi konserwację, ale ma zamiar powrócić %1."
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Błąd sieci %1: %2"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Zbyt wiele żądań do serwera. Proszę spróbować za kilka minut."
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -176,7 +176,7 @@ msgstr ""
 "Wystąpienie %1 Usługi Otwartej Współpracy nie obsługuje próby wykorzystania "
 "funkcji."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nieznany błąd API Usługi Otwartej Współpracy (%1)."
@@ -338,43 +338,30 @@ msgstr "Pobieranie elementu nie powiodło się: brak adresu dla \"%1\"."
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Pobieranie \"%1\" nie powiodło się, błąd: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"Pobrany plik jest plikiem HTML. Oznacza to odnośnik do strony WWW, a nie "
-"bezpośrednie pobieranie. Czy otworzyć stronę w przeglądarce?"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "Prawdopodobnie zły odnośnik"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "Pobrany plik to plik HTML. Otwarto w przeglądarce"
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nie można wgrać \"%1\": nie znaleziono pliku."
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 "Podczas wgrywania %1 nie udało się utworzyć oczekiwanego, nowego katalogu %2"
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Nie udało się wgrać %1: %2"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -384,7 +371,7 @@ msgstr ""
 "Nie udało się wgrać %1, bo system odrzucił rodzaj usługi %2 (zapomniałeś "
 "wgrać obsługi wtyczek KPackage dla tego rodzaju pakietu?)"
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -393,7 +380,7 @@ msgstr ""
 "Nie udało się wgrać %1, bo pobrany pakiet nie zawiera poprawnej struktury "
 "KPackage."
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
@@ -402,7 +389,7 @@ msgstr ""
 "Nie udało się wgrać %1, bo pobrany pakiet nie zawiera danych o rodzaju "
 "usługi."
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -411,17 +398,17 @@ msgstr ""
 "Nie udało się wgrać pakietu %1, bo pobrany pakiet nie zawiera żadnych "
 "użytecznych metadanych, co oznacza, że nie jest prawidłowym KPackage."
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nie można ustalić rodzaju archiwum dla pobranego pliku %1"
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nie można otworzyć pliku archiwum %1. Zgłoszony błąd to: %2"
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -432,17 +419,17 @@ msgstr ""
 "niepowodzenie przy pobieraniu). Kontynuowanie oznacza zastąpienie. Czy "
 "chcesz zastąpić istniejący plik?"
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, kde-format
 msgid "Overwrite File"
 msgstr "Zastąp plik"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Nie można przenieść pliku %1 do zamierzonego miejsca %2"
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -457,7 +444,7 @@ msgstr ""
 "Zwrócony wynik to:\n"
 "%2"
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -472,7 +459,7 @@ msgstr ""
 "Zwrócony wynik to:\n"
 "%3"
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -482,7 +469,7 @@ msgstr ""
 "Nie udało się usunąć %1, bo wgranego pliku %2 nie można samoczynnie usunąć. "
 "Możesz spróbować ręcznie go usunąć, jeśli masz pewność, że jest to błąd."
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -491,7 +478,7 @@ msgstr ""
 "Nie udało się usunąć %1, bo pobrany pakiet nie zawiera poprawnej struktury "
 "KPackage."
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -501,7 +488,7 @@ msgstr ""
 "Nie udało się usunąć %1, bo wgrany pakiet nie jest obsługiwanym rodzajem "
 "(zapomniałeś wgrać obsługi wtyczek KPackage dla tego rodzaju pakietu?)"
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -510,7 +497,7 @@ msgstr ""
 "Nie udało się usunąć pakietu %1, bo wgrany pakiet nie zawiera żadnych "
 "użytecznych metadanych, co oznacza, że nie jest prawidłowym KPackage."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -519,7 +506,7 @@ msgstr ""
 "Nie udało się usunąć %1, bo pobranego pakietu %2 nie można usunąć "
 "samoczynnie."
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -530,7 +517,7 @@ msgstr ""
 "Kłopotliwym plikiem jest %2 i możesz spróbować sam go usunąć, jeśli masz "
 "pewność, że nie jest potrzebny."
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -539,7 +526,7 @@ msgstr ""
 "Nie udało się usunąć %1, bo wygląda na to , że wgranych jest więcej niż "
 "jedna rzecz, co nie powinno mieć miejsca we wpisach opartych na KPackage."
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1741,6 +1728,20 @@ msgstr "Tak"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Nie"
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "Pobrany plik jest plikiem HTML. Oznacza to odnośnik do strony WWW, a nie "
+#~ "bezpośrednie pobieranie. Czy otworzyć stronę w przeglądarce?"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "Prawdopodobnie zły odnośnik"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr "Pobrany plik to plik HTML. Otwarto w przeglądarce"
 
 #~ msgctxt ""
 #~ "A message shown when there are no entries in the list, and when it is not "

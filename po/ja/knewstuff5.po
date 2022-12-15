@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:42+0000\n"
+"POT-Creation-Date: 2022-12-15 00:44+0000\n"
 "PO-Revision-Date: 2020-01-18 21:43-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "すべてのカテゴリ"
 
-#: attica/atticaprovider.cpp:479
+#: attica/atticaprovider.cpp:480
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -49,7 +49,7 @@ msgstr ""
 "このアイテムの価格は %1 %2 です。\n"
 "購入しますか？"
 
-#: attica/atticaprovider.cpp:493
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -60,43 +60,43 @@ msgstr ""
 "残高: %1\n"
 "価格: %2"
 
-#: attica/atticaprovider.cpp:536
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "投票に成功しました。"
 
-#: attica/atticaprovider.cpp:551
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "ファンに登録しました。"
 
-#: attica/atticaprovider.cpp:579 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:584
+#: attica/atticaprovider.cpp:585
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "ネットワークエラー。(%1)"
 
-#: attica/atticaprovider.cpp:590
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "サーバへの要求が多すぎます。数分待ってから再び試してみてください。"
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "未知の Open Collaboration Service API エラーです (%1)"
@@ -246,44 +246,30 @@ msgstr ""
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "「%1」のダウンロードに失敗しました。エラー: %2"
 
-#: core/installation.cpp:265
+#: core/installation.cpp:262
 #, kde-format
 msgid ""
-"The downloaded file is a html file. This indicates a link to a website "
-"instead of the actual download. Would you like to open the site with a "
-"browser instead?"
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
 msgstr ""
-"ダウンロードされたファイルは HTML ファイルです。リンクは、ダウンロードのため"
-"のものではなく、ウェブサイトへのリンクのようです。このサイトをブラウザで開き"
-"ますか？"
 
-#: core/installation.cpp:267
-#, kde-format
-msgid "Possibly bad download link"
-msgstr "ダウンロードリンクに問題があるかもしれません"
-
-#: core/installation.cpp:270
-#, kde-format
-msgid "Downloaded file was a HTML file. Opened in browser."
-msgstr "ダウンロードしたファイルは HTML ファイルでした。ブラウザで開きました。"
-
-#: core/installation.cpp:309
+#: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "%1 をインストールできませんでした: ファイルが見つかりません。"
 
-#: core/installation.cpp:499
+#: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 
-#: core/installation.cpp:522 core/installation.cpp:846
+#: core/installation.cpp:516 core/installation.cpp:841
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgid "Installation of %1 failed: %2"
 msgstr "インストール中"
 
-#: core/installation.cpp:531
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the service type %2 was not accepted by "
@@ -291,38 +277,38 @@ msgid ""
 "type of package?)"
 msgstr ""
 
-#: core/installation.cpp:541
+#: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:547
+#: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr ""
 
-#: core/installation.cpp:554
+#: core/installation.cpp:548
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:588
+#: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 
-#: core/installation.cpp:600
+#: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 
-#: core/installation.cpp:683
+#: core/installation.cpp:678
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -330,18 +316,18 @@ msgid ""
 "existing file?"
 msgstr ""
 
-#: core/installation.cpp:686
+#: core/installation.cpp:681
 #, fuzzy, kde-format
 #| msgid "Overwrite existing file?"
 msgid "Overwrite File"
 msgstr "既存のファイルを上書きしますか？"
 
-#: core/installation.cpp:705
+#: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr ""
 
-#: core/installation.cpp:728
+#: core/installation.cpp:723
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -351,7 +337,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:738
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -361,7 +347,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:780
+#: core/installation.cpp:775
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -369,14 +355,14 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:853
+#: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:858
+#: core/installation.cpp:853
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package is not a supported type "
@@ -384,21 +370,21 @@ msgid ""
 "package?)"
 msgstr ""
 
-#: core/installation.cpp:865
+#: core/installation.cpp:860
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:905
+#: core/installation.cpp:900
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
 
-#: core/installation.cpp:910
+#: core/installation.cpp:905
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -406,14 +392,14 @@ msgid ""
 "you are certain that it is not needed."
 msgstr ""
 
-#: core/installation.cpp:918
+#: core/installation.cpp:913
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
 
-#: core/installation.cpp:951
+#: core/installation.cpp:946
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1625,3 +1611,19 @@ msgstr ""
 msgctxt "@action:button"
 msgid "No"
 msgstr ""
+
+#~ msgid ""
+#~ "The downloaded file is a html file. This indicates a link to a website "
+#~ "instead of the actual download. Would you like to open the site with a "
+#~ "browser instead?"
+#~ msgstr ""
+#~ "ダウンロードされたファイルは HTML ファイルです。リンクは、ダウンロードのた"
+#~ "めのものではなく、ウェブサイトへのリンクのようです。このサイトをブラウザで"
+#~ "開きますか？"
+
+#~ msgid "Possibly bad download link"
+#~ msgstr "ダウンロードリンクに問題があるかもしれません"
+
+#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgstr ""
+#~ "ダウンロードしたファイルは HTML ファイルでした。ブラウザで開きました。"
