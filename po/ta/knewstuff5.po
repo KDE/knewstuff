@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-10-18 21:33+0530\n"
+"PO-Revision-Date: 2022-12-15 21:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -251,6 +251,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"'%1' ஓர் வலைப்பக்கத்தை மட்டும் குறிப்பதால் அதை நிறுவ முடியவில்லை. நிறுவலை தொடர <a "
+"href='%2'>இங்கு</a> கிளிக் செய்யுங்கள்."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -733,37 +735,33 @@ msgstr "%1 - அனைத்து சாதனங்கள்"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Main section"
-msgstr "பராமரிப்பாளர்"
+msgstr "பிரதான பிரிவு"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move &Down"
+#, kde-format
 msgid "Move down"
-msgstr "&கீழே நகர்த்துக"
+msgstr "கீழே நகர்த்து"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "Move &Up"
+#, kde-format
 msgid "Move up"
-msgstr "&மேலே நகர்த்துக"
+msgstr "மேலே நகர்த்து"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:98
 #, kde-format
 msgid "Move to Main section"
-msgstr ""
+msgstr "பிரதான பகுதிக்கு நகர்த்து"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "More Actions"
+#, kde-format
 msgid "Move to More section"
-msgstr "மேற்கொண்ட செயல்கள்"
+msgstr "மேம்பட்டவைக்கான பகுதிக்கு நகர்த்து"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:138
@@ -773,10 +771,9 @@ msgstr "மீட்டமை"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "More Actions"
+#, kde-format
 msgid "More section"
-msgstr "மேற்கொண்ட செயல்கள்"
+msgstr "மேம்பட்டவை"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:211
@@ -788,29 +785,23 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
+#, kde-format
 msgid "More tools..."
-msgstr "மேலும்..."
+msgstr "கூடுதல் நிரல்கள்..."
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
-msgstr "அனைத்து வகைகளும்"
+msgstr "அனைத்து பகுப்புகளும்"
 
 #: qtquick/categoriesmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Unknown error"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr "அறியப்படாத பிழை"
+msgstr "தெரியாத பகுப்பு"
 
 #. i18nd("knewstuff5", "Download New %1...").
 #. *
@@ -822,34 +813,31 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr ""
+msgstr "புதியவற்றை"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgid "Download New %1..."
-msgstr "புதியதை பதிவிறக்குக"
+msgstr "%1 பதிவிறக்கு..."
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "புதியதை பதிவிறக்குக"
+msgstr "%1 பதிவிறக்கு"
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "புதியதை பதிவிறக்குக"
+msgstr "புதியவற்றைப் பதிவிறக்கு"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
 msgid "Pick Your Installation Option"
-msgstr ""
+msgstr "நிறுவ வேண்டியதைத் தேர்ந்தெடுங்கள்"
 
 #: qtquick/qml/DownloadItemsSheet.qml:40
 #, kde-format
@@ -859,6 +847,8 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+"கீழுள்ள பட்டியிலிலிருந்து நிறுவ வேண்டியது எதுவென்பதைத் தேர்ந்தெடுங்கள். சந்தேகமாக "
+"இருந்தால், இதை இயற்றியவரை தொடர்புகொண்டு கீழுள்ளவற்றிற்கு பொருத்தமான பெயரை இட சொல்லுங்கள்."
 
 #: qtquick/qml/EntryDetails.qml:49
 #, fuzzy, kde-format

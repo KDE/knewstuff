@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-10-22 13:33+0300\n"
+"PO-Revision-Date: 2022-12-15 19:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -264,6 +264,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"'%1' kurulamıyor; çünkü bir web sayfasına işaret ediyor. Kurulumu tamamlamak "
+"için <a href='%2'>buraya</a> tıklayın."
 
 #: core/installation.cpp:303
 #, kde-format
