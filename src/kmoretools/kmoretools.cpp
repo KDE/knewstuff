@@ -126,7 +126,7 @@ KMoreToolsService *KMoreTools::registerServiceByDesktopEntryName(const QString &
             return nullptr;
         }
 
-        auto tryExecProp = kmtDesktopfile->property(QStringLiteral("TryExec"), QVariant::String);
+        auto tryExecProp = kmtDesktopfile->property(QStringLiteral("TryExec"), QMetaType::QString);
         isInstalled = (tryExecProp.isValid() && !QStandardPaths::findExecutable(tryExecProp.toString()).isEmpty())
             || !QStandardPaths::findExecutable(kmtDesktopfile->exec()).isEmpty();
     } else {
