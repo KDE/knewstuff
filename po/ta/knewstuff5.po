@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-12-15 21:54+0530\n"
+"PO-Revision-Date: 2022-12-20 19:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -848,15 +848,15 @@ msgid ""
 "this through the naming of the items."
 msgstr ""
 "கீழுள்ள பட்டியிலிலிருந்து நிறுவ வேண்டியது எதுவென்பதைத் தேர்ந்தெடுங்கள். சந்தேகமாக "
-"இருந்தால், இதை இயற்றியவரை தொடர்புகொண்டு கீழுள்ளவற்றிற்கு பொருத்தமான பெயரை இட சொல்லுங்கள்."
+"இருந்தால், இதை இயற்றியவரை தொடர்புகொண்டு கீழுள்ளவற்றிற்கு பொருத்தமான பெயரைகளை இட "
+"சொல்லுங்கள்."
 
 #: qtquick/qml/EntryDetails.qml:49
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr "நிறுவப்படுகிறது"
+msgstr "%2 வழங்கும் %1 நிறுவப்படுகிறது"
 
 #: qtquick/qml/EntryDetails.qml:65
 #, kde-format
@@ -890,74 +890,67 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%2 வழங்கும் %1"
 
 #: qtquick/qml/EntryDetails.qml:87
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
 "downloadable item"
 msgid "Install"
-msgstr "நிறுவுக"
+msgstr "நிறுவு"
 
 #: qtquick/qml/EntryDetails.qml:87
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install..."
-msgstr "நிறுவுக"
+msgstr "நிறுவு..."
 
 #: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
-msgstr "புதுப்பிக்கவும்"
+msgstr "புதுப்பி"
 
 #: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
-#, fuzzy, kde-format
-#| msgid "Uninstall"
+#, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
-msgstr "நீக்குக"
+msgstr "நிறுவல் நீக்கு"
 
 #: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgid "Comments and Reviews:"
-msgstr ""
+msgstr "விமர்சனங்களும் மதிப்பீடுகளும்:"
 
 #: qtquick/qml/EntryDetails.qml:155
-#, fuzzy, kde-format
-#| msgid "View Comments"
+#, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr "குறிப்புகளைக் காண்"
+msgstr "%1 விமர்சனங்களும் மதிப்பீடுகளும்:"
 
 #: qtquick/qml/EntryDetails.qml:160
-#, fuzzy, kde-format
-#| msgid "Rating: "
+#, kde-format
 msgid "Rating:"
-msgstr "தரவரிசை:"
+msgstr "மதிப்பீடு:"
 
 #: qtquick/qml/EntryDetails.qml:164
-#, fuzzy, kde-format
-#| msgid "Homepage"
+#, kde-format
 msgid "Homepage:"
-msgstr "தொடக்கப்பக்கம் "
+msgstr "முகப்புப்பக்கம்:"
 
 #: qtquick/qml/EntryDetails.qml:165
 #, kde-format
@@ -966,12 +959,12 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "%1-க்கான முகப்புப்பக்கத்தை திற"
 
 #: qtquick/qml/EntryDetails.qml:170
 #, kde-format
 msgid "How To Donate:"
-msgstr ""
+msgstr "நன்கொடை அளிப்பது:"
 
 #: qtquick/qml/EntryDetails.qml:171
 #, kde-format
