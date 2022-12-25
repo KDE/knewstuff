@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-11-26 11:20+0400\n"
+"PO-Revision-Date: 2022-12-24 18:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -246,6 +246,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"تعذر تثبيت  '%1' لأنها تشير إلى صفحة ويب. انقر  <a href='%2'>هنا</a> لتنهي "
+"التثبيت."
 
 #: core/installation.cpp:303
 #, kde-format
