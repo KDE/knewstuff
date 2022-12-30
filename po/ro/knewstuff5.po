@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-05-05 12:43+0100\n"
+"PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -1318,10 +1318,9 @@ msgid "An Error Occurred"
 msgstr "A intervenit o eroare"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
-#, fuzzy, kde-format
-#| msgid "Please put in a name."
+#, kde-format
 msgid "Please try again later."
-msgstr "Introduceți un nume."
+msgstr "Încercați mai târziu."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
