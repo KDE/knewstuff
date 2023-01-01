@@ -1067,7 +1067,8 @@ msgid "Tiles"
 msgstr "Ficheiros"
 
 #: qtquick/qml/Page.qml:216
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Icons"
 msgid "Icons"
 msgstr "Iconas"
 
