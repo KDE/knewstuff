@@ -91,7 +91,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
 ecm_set_disabled_deprecation_versions(
-    QT ${REQUIRED_QT_VERSION}
+    QT 5.15.2
     KF 5.95
 )
 
