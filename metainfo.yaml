@@ -15,8 +15,8 @@ deprecated: false
 release: true
 libraries:
  - qmake: KNewStuff
-   cmake: "KF5::NewStuff"
-cmakename: KF5NewStuff
+   cmake: "KF6::NewStuff"
+cmakename: KF6NewStuff
 
 public_lib: true
 group: Frameworks

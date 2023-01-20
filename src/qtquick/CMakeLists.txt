@@ -73,9 +73,9 @@ target_link_libraries (newstuffqmlplugin
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::Xml
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::NewStuffCore
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::NewStuffCore
 )
 
 # This is used only for the deprecation system - we don't export things from the QML plugin, that's not how they work

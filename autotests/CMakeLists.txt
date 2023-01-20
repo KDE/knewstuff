@@ -17,7 +17,7 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 add_library(knewstuff_test_static STATIC
         ${CMAKE_BINARY_DIR}/src/knewstuff_debug.cpp
         ${CMAKE_BINARY_DIR}/src/core/knewstuffcore_debug.cpp)
-target_link_libraries(knewstuff_test_static PUBLIC Qt${QT_MAJOR_VERSION}::Xml Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Gui KF5::KIOCore KF5::NewStuffCore KF5::NewStuff)
+target_link_libraries(knewstuff_test_static PUBLIC Qt${QT_MAJOR_VERSION}::Xml Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Gui KF6::KIOCore KF6::NewStuffCore KF6::NewStuff)
 macro(knewstuff_unit_tests)
     foreach(_testmain ${ARGN})
        get_filename_component(_testname ${_testmain} NAME_WE)
@@ -35,7 +35,7 @@ knewstuff_unit_tests(
 
 # KMoreTools:
 ecm_add_test(kmoretools/kmoretoolstest.cpp ../src/knewstuff_debug.cpp
-             LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Widgets KF5::NewStuffCore KF5::NewStuff KF5::I18n KF5::KIOGui
+             LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test Qt${QT_MAJOR_VERSION}::Widgets KF6::NewStuffCore KF6::NewStuff KF6::I18n KF6::KIOGui
              TEST_NAME kmoretoolstest)
 
 # ===========
@@ -44,6 +44,6 @@ add_executable(kmoretoolstest2 kmoretools/kmoretoolstest2.cpp ../src/knewstuff_d
 # The next line is commented out to prevent CI server to pick up those tests:
 # add_test(kmoretoolstest2 kmoretoolstest2) # uncomment to run tests locally
 ecm_mark_as_test(kmoretoolstest2)
-target_link_libraries(kmoretoolstest2 Qt${QT_MAJOR_VERSION}::Test KF5::NewStuff KF5::I18n KF5::KIOGui)
+target_link_libraries(kmoretoolstest2 Qt${QT_MAJOR_VERSION}::Test KF6::NewStuff KF6::I18n KF6::KIOGui)
 
 add_subdirectory(core)

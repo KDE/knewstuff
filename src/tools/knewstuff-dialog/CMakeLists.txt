@@ -16,9 +16,9 @@ target_link_libraries(knewstuff-dialog
     Qt${QT_MAJOR_VERSION}::Widgets
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::NewStuffCore
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::NewStuffCore
 )
 
 install(TARGETS knewstuff-dialog ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

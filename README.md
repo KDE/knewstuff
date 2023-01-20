@@ -31,16 +31,16 @@ the following in your CMakeLists.txt:
 Either use the more modern (and compact) component based method (only actually add the
 component you need, since both NewStuff and NewStuffQuick depend on NewStuffCore):
 
-    find_package(KF5 COMPONENTS NewStuffCore NewStuff NewStuffQuick)
+    find_package(KF6 COMPONENTS NewStuffCore NewStuff NewStuffQuick)
 
 Or use the old-fashioned syntax
 
-    find_package(KF5NewStuffCore CONFIG) # for the KNewStuffCore library only
-    find_package(KF5NewStuff CONFIG) # for the KNewStuff UI library, will pull in KNewStuffCore for you
-    find_package(KF5NewStuffQuick CONFIG) # for the KNewStuffQuick UI library, will pull in KNewStuffCore for you
+    find_package(KF6NewStuffCore CONFIG) # for the KNewStuffCore library only
+    find_package(KF6NewStuff CONFIG) # for the KNewStuff UI library, will pull in KNewStuffCore for you
+    find_package(KF6NewStuffQuick CONFIG) # for the KNewStuffQuick UI library, will pull in KNewStuffCore for you
 
-Also remember to link to the library you are using (either KF5::NewStuff or
-KF5::NewStuffCore), and for the Qt Quick NewStuffQuick module, add the following
+Also remember to link to the library you are using (either KF6::NewStuff or
+KF6::NewStuffCore), and for the Qt Quick NewStuffQuick module, add the following
 to the QML files where you wish to use the components:
 
     import org.kde.newstuff 1.0
@@ -49,7 +49,7 @@ Finally, because KNewStuffQuick is not a link time requirement, it would be good
 to mark it as a runtime requirement (and describing why you need them), which is done
 by adding the following in your CMakeLists.txt sometime after the find statement:
 
-    set_package_properties(KF5NewStuffQuick PROPERTIES
+    set_package_properties(KF6NewStuffQuick PROPERTIES
         DESCRIPTION "Qt Quick components used for interacting with remote data services"
         URL "https://api.kde.org/frameworks/knewstuff/html/index.html"
         PURPOSE "Required to Get Hot New Stuff for my application"
@@ -143,8 +143,8 @@ This is what `QStandardPaths::writableLocation(QStandardPaths::GenericDataLocati
 The two following options are deprecated and should not be used in new code (and are only listed here to allow you
 to understand older knsrc files should you come across them):
 
-* `StandardResource`: Not available in KF5, use XdgTargetDir instead.
-* `TargetDir`: Since KF5, this is equivalent to XdgTargetDir.
+* `StandardResource`: Not available in KF6, use XdgTargetDir instead.
+* `TargetDir`: Since KF6, this is equivalent to XdgTargetDir.
 
 #### InstallPath
 

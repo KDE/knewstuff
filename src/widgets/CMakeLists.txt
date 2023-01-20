@@ -1,17 +1,17 @@
 # SPDX-FileCopyrightText: Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(KF5NewStuffWidgets)
-add_library(KF5::NewStuffWidgets ALIAS KF5NewStuffWidgets)
+add_library(KF6NewStuffWidgets)
+add_library(KF6::NewStuffWidgets ALIAS KF6NewStuffWidgets)
 
 # Flag to hint this is compilation of the library itself
 # Needed because the overloaded signal Action::dialogFinished(QList<KNSCore::Entry>) was only added in a later version,
 # but SC requirement needs to keep usages of plain &Action::dialogFinished working.
 # So the flag is used to add all signals to the library itself,
 # while consumers will only see one variant depending on KNEWSTUFFWIDGETS_DISABLE_DEPRECATED_BEFORE_AND_AT settings
-target_compile_definitions(KF5NewStuffWidgets PRIVATE -DKNEWSTUFFWIDGETS_PRIVATE_BUILDING)
+target_compile_definitions(KF6NewStuffWidgets PRIVATE -DKNEWSTUFFWIDGETS_PRIVATE_BUILDING)
 
-ecm_generate_export_header(KF5NewStuffWidgets
+ecm_generate_export_header(KF6NewStuffWidgets
     EXPORT_FILE_NAME knewstuffwidgets_export.h
     BASE_NAME KNewStuffWidgets
     GROUP_BASE_NAME KF
@@ -21,24 +21,24 @@ ecm_generate_export_header(KF5NewStuffWidgets
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
-target_sources(KF5NewStuffWidgets PRIVATE
+target_sources(KF6NewStuffWidgets PRIVATE
     action.cpp button.cpp
     ../ui/widgetquestionlistener.cpp)
 
-target_link_libraries(KF5NewStuffWidgets PUBLIC KF5::NewStuff)
-target_link_libraries(KF5NewStuffWidgets
+target_link_libraries(KF6NewStuffWidgets PUBLIC KF6::NewStuff)
+target_link_libraries(KF6NewStuffWidgets
   PUBLIC
-    KF5::NewStuffCore
-    KF5::NewStuff
+    KF6::NewStuffCore
+    KF6::NewStuff
   PRIVATE
-    KF5::I18n
+    KF6::I18n
 )
 
-target_include_directories(KF5NewStuffWidgets
+target_include_directories(KF6NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>")
 
-set_target_properties(KF5NewStuffWidgets PROPERTIES
+set_target_properties(KF6NewStuffWidgets PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuffWidgets
@@ -77,14 +77,14 @@ if(QT_MAJOR_VERSION STREQUAL "5")
     )
 endif()
 
-install(TARGETS KF5NewStuffWidgets EXPORT KF5NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6NewStuffWidgets EXPORT KF6NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if (BUILD_DESIGNERPLUGIN)
     include(ECMAddQtDesignerPlugin)
     ecm_qtdesignerplugin_widget(KNSWidgets::Button
         INCLUDE_FILE "KNSWidgets/Button"
         TOOLTIP "KHotNewStuff push button that encapsulats most of the details involved in using KHotNewStuff in it."
-        GROUP "Buttons (KF5)"
+        GROUP "Buttons (KF6)"
     )
 
     ecm_add_qtdesignerplugin(knewstuffwidgets
@@ -92,7 +92,7 @@ if (BUILD_DESIGNERPLUGIN)
         WIDGETS
             KNSWidgets::Button
         LINK_LIBRARIES
-            KF5::NewStuffWidgets
+            KF6::NewStuffWidgets
         INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
         COMPONENT Devel
     )
@@ -100,15 +100,15 @@ endif()
 
 if(BUILD_QCH)
     ecm_add_qch(
-        KF5NewStuffWidgets_QCH
+        KF6NewStuffWidgets_QCH
         NAME KNewStuffWidgets
-        BASE_NAME KF5NewStuffWidgets
+        BASE_NAME KF6NewStuffWidgets
         VERSION ${KF_VERSION}
         ORG_DOMAIN org.kde
         SOURCES ${KNewStuffWidgets_HEADERS}
         LINK_QCHS
-            KF5NewStuffCore_QCH
-            KF5NewStuff_QCH
+            KF6NewStuffCore_QCH
+            KF6NewStuff_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
             ${KNewStuff_BINARY_DIR}

@@ -44,7 +44,7 @@ set(KNewStuffCore_SRCS
 
     ../upload/atticahelper.cpp
 )
-if(KF5Syndication_FOUND)
+if(KF6Syndication_FOUND)
     set(KNewStuffCore_syndication_SRCS
         ../opds/opdsprovider.cpp
         )
@@ -59,10 +59,10 @@ ecm_qt_declare_logging_category(KNewStuffCore_SRCS
     EXPORT KNEWSTUFF
 )
 
-add_library(KF5NewStuffCore ${KNewStuffCore_SRCS} ${KNewStuffCore_syndication_SRCS})
-add_library(KF5::NewStuffCore ALIAS KF5NewStuffCore )
+add_library(KF6NewStuffCore ${KNewStuffCore_SRCS} ${KNewStuffCore_syndication_SRCS})
+add_library(KF6::NewStuffCore ALIAS KF6NewStuffCore )
 
-ecm_generate_export_header(KF5NewStuffCore
+ecm_generate_export_header(KF6NewStuffCore
     EXPORT_FILE_NAME knewstuffcore_export.h
     BASE_NAME KNewStuffCore
     GROUP_BASE_NAME KF
@@ -81,33 +81,33 @@ set(KNewStuffCore_BUILD_INCLUDE_DIRS
     ${CMAKE_SOURCE_DIR}/src
 )
 
-target_include_directories(KF5NewStuffCore
+target_include_directories(KF6NewStuffCore
     PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>"
 )
 
-target_link_libraries(KF5NewStuffCore
+target_link_libraries(KF6NewStuffCore
   PUBLIC
-    KF5::Attica                # For interacting with ocs providers, public for uploaddialog slots
-    KF5::CoreAddons
+    KF6::Attica                # For interacting with ocs providers, public for uploaddialog slots
+    KF6::CoreAddons
     Qt${QT_MAJOR_VERSION}::Xml
   PRIVATE
-    KF5::Archive               # For decompressing archives
-    KF5::I18n                  # For translations
-    KF5::ConfigCore
-    KF5::Package
+    KF6::Archive               # For decompressing archives
+    KF6::I18n                  # For translations
+    KF6::ConfigCore
+    KF6::Package
     Qt${QT_MAJOR_VERSION}::Gui                   # For QImage
 )
 
-if(KF5Syndication_FOUND)
-    target_compile_definitions(KF5NewStuffCore PRIVATE -DSYNDICATION_FOUND="${KF5Syndication_FOUND}")
-    target_link_libraries(KF5NewStuffCore
+if(KF6Syndication_FOUND)
+    target_compile_definitions(KF6NewStuffCore PRIVATE -DSYNDICATION_FOUND="${KF6Syndication_FOUND}")
+    target_link_libraries(KF6NewStuffCore
         PRIVATE
-        KF5::Syndication #OPDS
+        KF6::Syndication #OPDS
     )
 endif()
 
-set_target_properties(KF5NewStuffCore PROPERTIES
+set_target_properties(KF6NewStuffCore PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuffCore
@@ -137,7 +137,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore
 )
 
-install(TARGETS KF5NewStuffCore EXPORT KF5NewStuffCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6NewStuffCore EXPORT KF6NewStuffCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     FILES
@@ -158,15 +158,15 @@ endif()
 
 if(BUILD_QCH)
     ecm_add_qch(
-        KF5NewStuffCore_QCH
+        KF6NewStuffCore_QCH
         NAME KNewStuffCore
-        BASE_NAME KF5NewStuffCore
+        BASE_NAME KF6NewStuffCore
         VERSION ${KF_VERSION}
         ORG_DOMAIN org.kde
         SOURCES ${KNewStuffCore_HEADERS}
         LINK_QCHS
-            KF5Attica_QCH
-            KF5CoreAddons_QCH
+            KF6Attica_QCH
+            KF6CoreAddons_QCH
         INCLUDE_DIRS
             ${KNewStuffCore_BUILD_INCLUDE_DIRS}
         BLANK_MACROS
@@ -181,6 +181,6 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF5NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3)
+ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF6NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3)
 install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
