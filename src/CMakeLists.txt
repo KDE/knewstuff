@@ -5,7 +5,6 @@ add_subdirectory(core)
 
 set(KNewStuff_SRCS
     entry.cpp
-    button.cpp
     knewstuffaction.cpp
     kmoretools/kmoretools.cpp
     kmoretools/kmoretoolsconfigdialog_p.cpp
@@ -15,22 +14,6 @@ set(KNewStuff_SRCS
     uploaddialog.cpp
     qtquickdialogwrapper.cpp
 )
-# Exclude deprecated classes from the build
-if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND
-        EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.80.0)
-list(APPEND KNewStuff_SRCS
-        downloaddialog.cpp
-        downloadwidget.cpp
-        downloadmanager.cpp
-        ui/entrydetailsdialog.cpp
-        ui/imagepreviewwidget.cpp
-        ui/itemsview.cpp
-        ui/itemsviewdelegate.cpp
-        ui/itemsgridviewdelegate.cpp
-        ui/itemsviewbasedelegate.cpp
-        ui/progressindicator.cpp
-        )
-endif()
 
 qt_add_resources(KNewStuff_RESOURCES uploaddialog.qrc)
 
@@ -146,12 +129,7 @@ file(COPY ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
 
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   HEADER_NAMES
-  DownloadDialog
-  DownloadWidget
-  DownloadManager
-  UploadDialog
   Entry
-  Button
   QtQuickDialogWrapper
 
   REQUIRED_HEADERS KNewStuff_HEADERS
