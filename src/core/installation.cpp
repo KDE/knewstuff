@@ -82,106 +82,6 @@ bool Installation::readConfig(const KConfigGroup &group)
     targetDirectory = group.readEntry("TargetDir");
     xdgTargetDirectory = group.readEntry("XdgTargetDir");
 
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-    // Provide some compatibility
-    if (standardResourceDirectory == QLatin1String("wallpaper")) {
-        xdgTargetDirectory = QStringLiteral("wallpapers");
-    }
-
-    // also, ensure wallpapers are decompressed into subdirectories
-    // this ensures that wallpapers with multiple resolutions continue to function
-    // as expected
-    if (xdgTargetDirectory == QLatin1String("wallpapers")) {
-        uncompression = QStringLiteral("subdir");
-    }
-
-    // A touch of special treatment for the various old kpackage based knsrc files, so they work
-    // with the new, internal stuff. The result unfortunately is that all entries marked as
-    // installed in knewstuff no longer will be, but since it never worked right anyway... we'll
-    // simply have to live with that.
-    // clang-format off
-    if (postInstallationCommand.startsWith(QLatin1String("kpackagetool5 -t")) &&
-            postInstallationCommand.endsWith(QLatin1String("-i %f")) &&
-            uninstallCommand.startsWith(QLatin1String("kpackagetool5 -t")) &&
-            uninstallCommand.endsWith(QLatin1String("-r %f"))) {
-        uncompression = QStringLiteral("kpackage");
-        postInstallationCommand = QLatin1String("");
-        // Not clearing uninstallCommand, as this is used for the fallback situation
-        setProperty("kpackageType", uninstallCommand.mid(17, uninstallCommand.length() - 17 - 6));
-        qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
-    } else if (postInstallationCommand.startsWith(QLatin1String("kpackagetool5 --type")) &&
-            postInstallationCommand.endsWith(QLatin1String("--install %f")) &&
-            uninstallCommand.startsWith(QLatin1String("kpackagetool5 --type")) &&
-            uninstallCommand.endsWith(QLatin1String("--remove %f"))) {
-        uncompression = QStringLiteral("kpackage");
-        postInstallationCommand = QLatin1String("");
-        // Not clearing uninstallCommand, as this is used for the fallback situation
-        setProperty("kpackageType", uninstallCommand.mid(21, uninstallCommand.length() - 21 - 12));
-        qCWarning(KNEWSTUFFCORE) << "Your configuration file uses an old version of the kpackage support, and should be converted. Please report this to the author of the software you are currently using. The package type, we assume, is" << property("kpackageType").toString();
-    }
-    // clang-format on
-#endif
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
-    customName = group.readEntry("CustomName", false);
-    if (customName) {
-        qWarning(KNEWSTUFFCORE) << "The CustomName property is deprecated and will be removed in KF6";
-    }
-    QString scopeString = group.readEntry("Scope");
-    if (!scopeString.isEmpty()) {
-        qWarning(KNEWSTUFFCORE) << "Setting the scope is deprecated, it will default to user";
-        if (scopeString == QLatin1String("user")) {
-            scope = ScopeUser;
-        } else if (scopeString == QLatin1String("system")) {
-            scope = ScopeSystem;
-        } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The scope '") + scopeString + QStringLiteral("' is unknown.");
-            return false;
-        }
-
-        if (scope == ScopeSystem) {
-            if (!installPath.isEmpty()) {
-                qCCritical(KNEWSTUFFCORE) << "System installation cannot be mixed with InstallPath.";
-                return false;
-            }
-        }
-    }
-
-    QString checksumpolicy = group.readEntry("ChecksumPolicy");
-    if (!checksumpolicy.isEmpty()) {
-        qWarning(KNEWSTUFFCORE) << "The ChecksumPolicy feature is defunct";
-        if (checksumpolicy == QLatin1String("never")) {
-            checksumPolicy = Installation::CheckNever;
-        } else if (checksumpolicy == QLatin1String("ifpossible")) {
-            checksumPolicy = Installation::CheckIfPossible;
-        } else if (checksumpolicy == QLatin1String("always")) {
-            checksumPolicy = Installation::CheckAlways;
-        } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The checksum policy '") + checksumpolicy + QStringLiteral("' is unknown.");
-            return false;
-        }
-    }
-
-    QString signaturepolicy = group.readEntry("SignaturePolicy");
-    if (!signaturepolicy.isEmpty()) {
-        qWarning(KNEWSTUFFCORE) << "The SignaturePolicy feature is defunct";
-        if (signaturepolicy == QLatin1String("never")) {
-            signaturePolicy = Installation::CheckNever;
-        } else if (signaturepolicy == QLatin1String("ifpossible")) {
-            signaturePolicy = Installation::CheckIfPossible;
-        } else if (signaturepolicy == QLatin1String("always")) {
-            signaturePolicy = Installation::CheckAlways;
-        } else {
-            qCCritical(KNEWSTUFFCORE) << QStringLiteral("The signature policy '") + signaturepolicy + QStringLiteral("' is unknown.");
-            return false;
-        }
-    }
-    acceptHtml = group.readEntry("AcceptHtmlDownloads", false);
-    if (acceptHtml) {
-        qWarning(KNEWSTUFFCORE) << "The AcceptHtmlDownload property is deprecated and will default to false. If there"
-                                   "is a HTML download link the user will be prompted if the installation should proceed";
-    }
-#endif
-
     installPath = group.readEntry("InstallPath");
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
 
@@ -192,13 +92,6 @@ bool Installation::readConfig(const KConfigGroup &group)
     }
     return true;
 }
-
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 71)
-bool Installation::isRemote() const
-{
-    return false;
-}
-#endif
 
 void Installation::install(const EntryInternal &entry)
 {
@@ -252,24 +145,17 @@ void Installation::slotPayloadResult(KJob *job)
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
             qCDebug(KNEWSTUFFCORE) << "Copied to" << fcjob->destUrl();
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
-            // check if the app likes html files - disabled by default as too many bad links have been submitted to opendesktop.org
-            if (!acceptHtml) {
-#endif
-                QMimeDatabase db;
-                QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
-                if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
-                    const auto error = i18n("Cannot install '%1' because it points to a web page. Click <a href='%2'>here</a> to finish the installation.",
-                                            entry.name(),
-                                            fcjob->srcUrl().toString());
-                    Q_EMIT signalInstallationFailed(error);
-                    entry.setStatus(KNS3::Entry::Invalid);
-                    Q_EMIT signalEntryChanged(entry);
-                    return;
-                }
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
+            QMimeDatabase db;
+            QMimeType mimeType = db.mimeTypeForFile(fcjob->destUrl().toLocalFile());
+            if (mimeType.inherits(QStringLiteral("text/html")) || mimeType.inherits(QStringLiteral("application/x-php"))) {
+                const auto error = i18n("Cannot install '%1' because it points to a web page. Click <a href='%2'>here</a> to finish the installation.",
+                                        entry.name(),
+                                        fcjob->srcUrl().toString());
+                Q_EMIT signalInstallationFailed(error);
+                entry.setStatus(KNS3::Entry::Invalid);
+                Q_EMIT signalEntryChanged(entry);
+                return;
             }
-#endif
 
             Q_EMIT signalPayloadLoaded(fcjob->destUrl());
             install(entry, fcjob->destUrl().toLocalFile());
@@ -344,11 +230,7 @@ QString Installation::targetInstallationPath() const
     // installdir is the target directory
     QString installdir;
 
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
-    const bool userScope = scope == ScopeUser;
-#else
     const bool userScope = true;
-#endif
     // installpath also contains the file name if it's a single file, otherwise equal to installdir
     int pathcounter = 0;
     // wallpaper is already managed in the case of !xdgTargetDirectory.isEmpty()
@@ -435,24 +317,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         };
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
-            QString serviceType;
-            serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
-            const auto serviceTypes =
-                package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
-            if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
-                serviceType = serviceTypes.first();
-            }
-            if (serviceType.isEmpty()) {
-                serviceType = property("kpackageType").toString();
-            } else if (serviceType != property("kpackageType").toString()) {
-                qCWarning(KNEWSTUFFCORE) << "The package" << package.metadata().fileName()
-                                         << "defines a different kpackage type than the one defined by the app."
-                                         << "Please report this to the author of the addon.";
-            }
-#else
             const QString serviceType = property("kpackageType").toString();
-#endif
 
             if (!serviceType.isEmpty()) {
                 qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << serviceType;
@@ -641,25 +506,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
             QUrl source = QUrl(entry.payload());
             qCDebug(KNEWSTUFFCORE) << "installing non-archive from" << source;
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 79)
-            QString installfile;
-            QString ext = source.fileName().section(QLatin1Char('.'), -1);
-            if (customName) {
-                // Otherwise name can be interpreted as path
-                installfile = entry.name().remove(QLatin1Char('/'));
-                if (!entry.version().isEmpty()) {
-                    installfile += QLatin1Char('-') + entry.version();
-                }
-                if (!ext.isEmpty()) {
-                    installfile += QLatin1Char('.') + ext;
-                }
-            } else {
-                installfile = source.fileName();
-            }
-            const QString installpath = QDir(installdir).filePath(installfile);
-#else
             const QString installpath = QDir(installdir).filePath(source.fileName());
-#endif
 
             qCDebug(KNEWSTUFFCORE) << "Install to file" << installpath;
             // FIXME: copy goes here (including overwrite checking)
@@ -803,23 +650,7 @@ void Installation::uninstall(EntryInternal entry)
                 KPackage::Package package(&structure);
                 package.setPath(installedFile);
                 if (package.isValid() && package.metadata().isValid()) {
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 90)
-                    QString serviceType = package.metadata().value(QStringLiteral("X-Plasma-ServiceType"));
-                    const auto serviceTypes =
-                        package.metadata().rawData().value(QLatin1String("KPlugin")).toObject().value(QLatin1String("ServiceTypes")).toVariant().toStringList();
-                    if (serviceType.isEmpty() && !serviceTypes.isEmpty()) {
-                        serviceType = serviceTypes.first();
-                    }
-                    if (serviceType.isEmpty()) {
-                        serviceType = property("kpackageType").toString();
-                    } else if (serviceType != property("kpackageType").toString()) {
-                        qCWarning(KNEWSTUFFCORE) << "The package" << package.metadata().fileName()
-                                                 << "defines a different kpackage type than the one defined by the app."
-                                                 << "Please report this to the author of the addon.";
-                    }
-#else
                     const QString serviceType = property("kpackageType").toString();
-#endif
                     if (!serviceType.isEmpty()) {
                         KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
                         if (structure) {
@@ -983,14 +814,6 @@ Installation::UncompressionOptions Installation::uncompressionSetting() const
 {
     return property("uncompressSetting").value<UncompressionOptions>();
 }
-
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 31)
-void Installation::slotInstallationVerification(int result)
-{
-    Q_UNUSED(result)
-    // Deprecated, was wired up to defunct Security class.
-}
-#endif
 
 QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)
 {

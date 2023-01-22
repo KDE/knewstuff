@@ -133,11 +133,6 @@ Cache::~Cache()
 
 void Cache::readRegistry()
 {
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-    // read KNS2 registry first to migrate it
-    readKns2MetaFiles();
-#endif
-
     QFile f(registryFile);
     if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) {
         if (QFileInfo::exists(registryFile)) {
@@ -170,102 +165,6 @@ void Cache::readRegistry()
 
     qCDebug(KNEWSTUFFCORE) << "Cache read... entries: " << cache.size();
 }
-
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-void Cache::readKns2MetaFiles()
-{
-    qCDebug(KNEWSTUFFCORE) << "Loading KNS2 registry of files for the component: " << m_kns2ComponentName;
-
-    const auto realAppName = m_kns2ComponentName.split(QLatin1Char(':'))[0];
-
-    const QStringList dirs =
-        QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("knewstuff2-entries.registry"), QStandardPaths::LocateDirectory);
-    for (QStringList::ConstIterator it = dirs.begin(); it != dirs.end(); ++it) {
-        qCDebug(KNEWSTUFFCORE) << QStringLiteral(" + Load from directory '") + (*it) + QStringLiteral("'.");
-        QDir dir((*it));
-        const QStringList files = dir.entryList(QDir::Files | QDir::Readable);
-        for (QStringList::const_iterator fit = files.begin(); fit != files.end(); ++fit) {
-            QString filepath = (*it) + QLatin1Char('/') + (*fit);
-
-            qCDebug(KNEWSTUFFCORE) << QStringLiteral(" Load from file '") + filepath + QStringLiteral("'.");
-
-            QFileInfo info(filepath);
-            QFile f(filepath);
-
-            // first see if this file is even for this app
-            // because the registry contains entries for all apps
-            // FIXMEE: should be able to do this with a filter on the entryList above probably
-            QString thisAppName = QString::fromUtf8(QByteArray::fromBase64(info.baseName().toUtf8()));
-
-            // NOTE: the ":" needs to always coincide with the separator character used in
-            // the id(Entry*) method
-            thisAppName = thisAppName.split(QLatin1Char(':'))[0];
-
-            if (thisAppName != realAppName) {
-                continue;
-            }
-
-            if (!f.open(QIODevice::ReadOnly)) {
-                qWarning() << "The file: " << filepath << " could not be opened.";
-                continue;
-            }
-
-            QDomDocument doc;
-            if (!doc.setContent(&f)) {
-                qWarning() << "The file could not be parsed.";
-                return;
-            }
-            qCDebug(KNEWSTUFFCORE) << "found entry: " << doc.toString();
-
-            QDomElement root = doc.documentElement();
-            if (root.tagName() != QLatin1String("ghnsinstall")) {
-                qWarning() << "The file doesn't seem to be of interest.";
-                return;
-            }
-
-            // The .meta files only contain one entry
-            QDomElement stuff = root.firstChildElement(QStringLiteral("stuff"));
-            EntryInternal e;
-            e.setEntryXML(stuff);
-            e.setSource(EntryInternal::Cache);
-
-            if (e.payload().startsWith(QLatin1String("http://download.kde.org/khotnewstuff"))) {
-                // This is 99% sure a opendesktop file, make it a real one.
-                e.setProviderId(QStringLiteral("https://api.opendesktop.org/v1/"));
-                e.setHomepage(QUrl(QString(QLatin1String("http://opendesktop.org/content/show.php?content=") + e.uniqueId())));
-
-            } else if (e.payload().startsWith(QLatin1String("http://edu.kde.org/contrib/kvtml/"))) {
-                // kvmtl-1
-                e.setProviderId(QStringLiteral("http://edu.kde.org/contrib/kvtml/kvtml.xml"));
-            } else if (e.payload().startsWith(QLatin1String("http://edu.kde.org/contrib/kvtml2/"))) {
-                // kvmtl-2
-                e.setProviderId(QStringLiteral("http://edu.kde.org/contrib/kvtml2/provider41.xml"));
-            } else {
-                // we failed, skip
-                qWarning() << "Could not load entry: " << filepath;
-                continue;
-            }
-
-            e.setStatus(KNS3::Entry::Installed);
-
-            cache.insert(e);
-            QDomDocument tmp(QStringLiteral("yay"));
-            tmp.appendChild(e.entryXML());
-            qCDebug(KNEWSTUFFCORE) << "new entry: " << tmp.toString();
-
-            f.close();
-
-            QDir dir;
-            if (!dir.remove(filepath)) {
-                qWarning() << "could not delete old kns2 .meta file: " << filepath;
-            } else {
-                qCDebug(KNEWSTUFFCORE) << "Migrated KNS2 entry to KNS3.";
-            }
-        }
-    }
-    setProperty("dirty", false);
-}
-#endif
 
 EntryInternal::List Cache::registryForProvider(const QString &providerId)
 {

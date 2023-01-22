@@ -27,10 +27,6 @@ class EnginePrivate;
 class Engine : public QObject
 {
     Q_OBJECT
-#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
-    KNEWSTUFFQUICK_DEPRECATED_VERSION(5, 81, "Use NewStuff.Settings.allowedByKiosk instead")
-    Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
-#endif
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
     Q_PROPERTY(QObject *engine READ engine NOTIFY engineChanged)
     /**
@@ -46,19 +42,10 @@ class Engine : public QObject
     Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(QObject *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
-    Q_PROPERTY(QQmlListProperty<KNSCore::EntryWrapper> changedEntries READ changedEntries NOTIFY changedEntriesChanged)
-    Q_PROPERTY(int changedEntriesCount READ changedEntriesCount NOTIFY changedEntriesChanged)
-#endif
     Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
 public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
-
-#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
-    KNEWSTUFFQUICK_DEPRECATED_VERSION(5, 81, "Use KNewStuffQuick::Settings::allowedByKiosk() instead")
-    bool allowedByKiosk() const;
-#endif
 
     enum EntryEvent {
         UnknownEvent = KNSCore::EntryInternal::UnknownEvent,
@@ -131,13 +118,6 @@ public:
 
     QObject *searchPresetModel() const;
     Q_SIGNAL void searchPresetModelChanged();
-
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
-    QQmlListProperty<KNSCore::EntryWrapper> changedEntries();
-    Q_INVOKABLE void resetChangedEntries();
-    Q_SIGNAL void changedEntriesChanged();
-    int changedEntriesCount() const;
-#endif
 
     bool isValid();
 Q_SIGNALS:

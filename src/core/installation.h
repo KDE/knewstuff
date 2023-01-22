@@ -42,19 +42,6 @@ public:
      * Constructor.
      */
     explicit Installation(QObject *parent = nullptr);
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
-    enum Policy {
-        CheckNever,
-        CheckIfPossible,
-        CheckAlways,
-    };
-
-    enum Scope {
-        ScopeUser,
-        ScopeSystem,
-    };
-#endif
-
     enum UncompressionOptions {
         NeverUncompress, ///@< Never attempt to decompress a file, whatever format it is. Matches "never" knsrc setting
         AlwaysUncompress, ///@< Assume all downloaded files are archives, and attempt to decompress them. Will cause failure if decompression fails. Matches
@@ -69,11 +56,6 @@ public:
     Q_ENUM(UncompressionOptions)
 
     bool readConfig(const KConfigGroup &group);
-
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 71)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 71, "No longer use, feature obsolete")
-    bool isRemote() const;
-#endif
 
 public Q_SLOTS:
     /**
@@ -131,12 +113,6 @@ public Q_SLOTS:
      */
     UncompressionOptions uncompressionSetting() const;
 
-    // TODO KF6: remove, was used with deprecated Security class.
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
-    void slotInstallationVerification(int result);
-#endif
-
     void slotPayloadResult(KJob *job);
 
     /**
@@ -158,14 +134,6 @@ Q_SIGNALS:
     void signalInstallationError(const QString &message);
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
-
-    // TODO KF6: remove, was used with deprecated Security class.
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 31)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
-    void signalInformation(const QString &) const;
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 31, "No longer use")
-    void signalError(const QString &) const;
-#endif
 
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
@@ -189,16 +157,6 @@ private:
     QString xdgTargetDirectory;
     QString installPath;
     QString absoluteInstallPath;
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 79)
-    // policies whether verification needs to be done
-    Policy checksumPolicy = CheckIfPossible;
-    Policy signaturePolicy = CheckIfPossible;
-    // scope: install into user or system dirs
-    Scope scope = ScopeUser;
-    // FIXME this throws together a file name from entry name and version - why would anyone want that?
-    bool customName = false;
-    bool acceptHtml = false;
-#endif
 
     QMap<KJob *, EntryInternal> entry_jobs;
 

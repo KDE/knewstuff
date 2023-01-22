@@ -5,15 +5,14 @@ add_subdirectory(core)
 
 set(KNewStuff_SRCS
     entry.cpp
-    knewstuffaction.cpp
     kmoretools/kmoretools.cpp
     kmoretools/kmoretoolsconfigdialog_p.cpp
     kmoretools/kmoretoolsmenufactory.cpp
     kmoretools/kmoretoolspresets.cpp
     ui/widgetquestionlistener.cpp
-    uploaddialog.cpp
     qtquickdialogwrapper.cpp
 )
+ki18n_wrap_ui(KNewStuff_SRCS kmoretools/ui/kmoretoolsconfigwidget.ui)
 
 qt_add_resources(KNewStuff_RESOURCES uploaddialog.qrc)
 
@@ -24,11 +23,6 @@ ecm_qt_declare_logging_category(KNewStuff_SRCS
     OLD_CATEGORY_NAMES org.kde.knewstuff
     DESCRIPTION "knewstuff (knewstuff)"
     EXPORT KNEWSTUFF
-)
-
-ki18n_wrap_ui(KNewStuff_SRCS
-    downloadwidget.ui
-    kmoretools/ui/kmoretoolsconfigwidget.ui
 )
 
 add_library(KF6NewStuff ${KNewStuff_SRCS} ${KNewStuff_RESOURCES})
@@ -51,7 +45,6 @@ target_include_directories(KF6NewStuff
 target_link_libraries(KF6NewStuff
   PUBLIC
     KF6::NewStuffCore
-    KF6::XmlGui                # For KActionCollection in knewstuffaction.h
     KF6::Service               # For KMoreTools
     Qt${QT_MAJOR_VERSION}::Widgets
   PRIVATE
@@ -61,6 +54,7 @@ target_link_libraries(KF6NewStuff
     KF6::I18n                  # For translations
     KF6::ItemViews             # For buttons on download dialog
     KF6::IconThemes           # For KIcon
+    KF6::ConfigCore # KAuthorized
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
     KF6::TextWidgets          # For KTextEdit in upload dialog
@@ -71,35 +65,6 @@ set_target_properties(KF6NewStuff PROPERTIES
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuff
 )
-
-set(KNewStuff_HEADERS
-  knewstuffaction.h
-)
-
-# For KMoreTools:
-if(QT_MAJOR_VERSION EQUAL 5)
-    ecm_generate_headers(KMoreTools_CamelCase_HEADERS
-        HEADER_NAMES
-        KMoreTools
-        KMoreToolsMenuFactory
-        KMoreToolsPresets
-
-        RELATIVE kmoretools
-        REQUIRED_HEADERS KMoreTools_HEADERS
-        OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNS3
-    )
-    install(
-        FILES ${KMoreTools_CamelCase_HEADERS}
-        FILES ${KMoreTools_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNS3
-        COMPONENT Devel
-    )
-    install(
-        FILES ${KMoreTools_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3
-        COMPONENT Devel
-    )
-endif()
 
 # In KF6 all KMoreTools headers will be only in ${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools
 ecm_generate_headers(KMoreTools_CamelCase_HEADERS
@@ -146,15 +111,6 @@ install(
 )
 
 install(TARGETS KF6NewStuff EXPORT KF6NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
-
-# Kept for backwards compatibility, in KF6 all headers will be in KNewStuff3/KNS3 only
-if(QT_MAJOR_VERSION STREQUAL "5")
-    install(FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
-        ${KNewStuff_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/kns3 COMPONENT Devel
-    )
-endif()
 
 if(BUILD_QCH)
     ecm_add_qch(

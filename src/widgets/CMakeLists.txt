@@ -4,20 +4,13 @@
 add_library(KF6NewStuffWidgets)
 add_library(KF6::NewStuffWidgets ALIAS KF6NewStuffWidgets)
 
-# Flag to hint this is compilation of the library itself
-# Needed because the overloaded signal Action::dialogFinished(QList<KNSCore::Entry>) was only added in a later version,
-# but SC requirement needs to keep usages of plain &Action::dialogFinished working.
-# So the flag is used to add all signals to the library itself,
-# while consumers will only see one variant depending on KNEWSTUFFWIDGETS_DISABLE_DEPRECATED_BEFORE_AND_AT settings
-target_compile_definitions(KF6NewStuffWidgets PRIVATE -DKNEWSTUFFWIDGETS_PRIVATE_BUILDING)
-
 ecm_generate_export_header(KF6NewStuffWidgets
     EXPORT_FILE_NAME knewstuffwidgets_export.h
     BASE_NAME KNewStuffWidgets
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
-    DEPRECATION_VERSIONS 5.91
+    DEPRECATION_VERSIONS
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
@@ -32,6 +25,8 @@ target_link_libraries(KF6NewStuffWidgets
     KF6::NewStuff
   PRIVATE
     KF6::I18n
+    KF6::ConfigCore
+    KF6::WidgetsAddons
 )
 
 target_include_directories(KF6NewStuffWidgets

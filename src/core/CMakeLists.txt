@@ -5,7 +5,6 @@ set(KNewStuffCore_SRCS
     author.cpp
     commentsmodel.cpp
     cache.cpp
-    downloadmanager.cpp
     engine.cpp
     entryinternal.cpp
     entrywrapper.cpp
@@ -14,7 +13,6 @@ set(KNewStuffCore_SRCS
     itemsmodel.cpp
     provider.cpp
     providersmodel.cpp
-    security.cpp
     tagsfilterchecker.cpp
     xmlloader.cpp
     errorcode.cpp
@@ -117,7 +115,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   HEADER_NAMES
   Author
   Cache
-  DownloadManager
   Engine
   EntryInternal
   EntryWrapper
@@ -129,7 +126,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Question
   QuestionListener
   QuestionManager
-  Security
   TagsFilterChecker
   XmlLoader
 

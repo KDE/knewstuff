@@ -7,9 +7,6 @@
 #include "quickengine.h"
 #include "quicksettings.h"
 
-#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
-#include <KAuthorized>
-#endif
 #include <KLocalizedString>
 
 #include "categoriesmodel.h"
@@ -33,36 +30,6 @@ public:
     CategoriesModel *categoriesModel;
     SearchPresetModel *searchPresetModel;
     QString configFile;
-
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
-    KNSCore::EntryInternal::List changedEntries;
-    static KNSCore::EntryWrapper *getChangedEntry(QQmlListProperty<KNSCore::EntryWrapper> *property, int i)
-    {
-        KNSCore::EntryWrapper *entry{nullptr};
-        if (property) {
-            auto d = static_cast<EnginePrivate *>(property->data);
-            if (d) {
-                if (i >= 0 && i < d->changedEntries.count()) {
-                    // Lifetime management for these objects should be done by the consumer,
-                    // but are also parented for auto-delete on application shutdown
-                    entry = new KNSCore::EntryWrapper(d->changedEntries[i], property->object);
-                }
-            }
-        }
-        return entry;
-    }
-    static int getChangedEntriesCount(QQmlListProperty<KNSCore::EntryWrapper> *property)
-    {
-        int count{0};
-        if (property) {
-            auto d = static_cast<EnginePrivate *>(property->data);
-            if (d) {
-                count = d->changedEntries.count();
-            }
-        }
-        return count;
-    }
-#endif
 };
 
 Engine::Engine(QObject *parent)
@@ -72,13 +39,6 @@ Engine::Engine(QObject *parent)
 }
 
 Engine::~Engine() = default;
-
-#if KNEWSTUFFQUICK_BUILD_DEPRECATED_SINCE(5, 81)
-bool Engine::allowedByKiosk() const
-{
-    return KAuthorized::authorize(KAuthorized::GHNS);
-}
-#endif
 
 QString Engine::configFile() const
 {
@@ -139,13 +99,6 @@ void Engine::setConfigFile(const QString &newFile)
                                 return;
                             }
                             Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
-                            if (d->changedEntries.contains(entry)) {
-                                d->changedEntries.removeAll(entry);
-                            }
-                            d->changedEntries << entry;
-                            Q_EMIT changedEntriesChanged();
-#endif
                         });
                 Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();
@@ -293,26 +246,6 @@ void Engine::resetSearchTerm()
 {
     setSearchTerm(QString{});
 }
-
-#if KNEWSTUFF_BUILD_DEPRECATED_SINCE(5, 82)
-QQmlListProperty<KNSCore::EntryWrapper> Engine::changedEntries()
-{
-    return QQmlListProperty<KNSCore::EntryWrapper>(this, d.get(), &EnginePrivate::getChangedEntriesCount, &EnginePrivate::getChangedEntry);
-}
-
-int Engine::changedEntriesCount() const
-{
-    return d->changedEntries.count();
-}
-
-void Engine::resetChangedEntries()
-{
-    if (!d->changedEntries.isEmpty()) {
-        d->changedEntries.clear();
-        Q_EMIT changedEntriesChanged();
-    }
-}
-#endif
 
 bool Engine::isValid()
 {

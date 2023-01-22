@@ -450,28 +450,6 @@ public:
 
     QList<Provider::SearchPreset> searchPresets();
 
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
-    /**
-     * The adoption command can be used to allow a user to make use of an entry's
-     * installed data. For example, this command might be used to ask the system to
-     * switch to a wallpaper or icon theme which was installed with KNS.
-     *
-     * The following is how this might look in a knsrc file. The example shows how
-     * an external tool is called on the directory containing the installed file
-     * represented by %d. If you wish to directly point to the installed file, the
-     * substitution variable is %f.
-     * <pre>
-       AdoptionCommand=/usr/lib64/libexec/plasma-changeicons %d
-     * </pre>
-     *
-     * @param entry The entry to return an adoption command for
-     * @return The command to run to adopt this entry's installed data
-     * @deprecated Since 5.77, use Engine::adoptEntry(const KNSCore::EntryInternal &entry) instead
-     */
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 77, "Use Engine::adoptEntry(const KNSCore::EntryInternal &entry) instead")
-    QString adoptionCommand(const KNSCore::EntryInternal &entry) const;
-#endif
-
     /**
      * Whether or not an adoption command exists for this engine
      *
@@ -515,35 +493,6 @@ public:
      * @since 5.95
      */
     int pageSize() const;
-
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 83)
-    /**
-     * Get a list of all the locations which will be used when searching for knsrc
-     * files, in the order in which the search will occur.
-     *
-     * @param includeFallbackLocations Whether or not the deprecated search locations are included
-     * @return The search list for knsrc files
-     * @since 5.57
-     * @deprecated Since 5.83, use Engine::availableConfigFiles instead
-     */
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 83, "Use Engine::availableConfigFiles instead")
-    static QStringList configSearchLocations(bool includeFallbackLocations = false);
-#endif
-
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 83)
-    /**
-     * Sets whether or not the config file location discovery fallback should be active.
-     * If enabled (default), if the config file is not found in the knsrcfiles location,
-     * then the engine will also look in the systemwide config location (usually /etc/xdg
-     * on linux). If disabled, this fallback location will not be searched.
-     *
-     * @param enableFallback Whether or not the fallback discovery should be enabled
-     * @since 5.57
-     * @deprecated Since 5.83, the engine includes the fallback paths by default
-     */
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 83, "The engine includes the fallback paths by default")
-    void setConfigLocationFallback(bool enableFallback);
-#endif
 
     /**
      * List of all available config files. This list will contain no duplicated filenames.
@@ -684,16 +633,6 @@ Q_SIGNALS:
     void signalEntriesLoaded(const KNSCore::EntryInternal::List &entries);
     void signalUpdateableEntriesLoaded(const KNSCore::EntryInternal::List &entries);
 
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 77, "Use Engine::signalEntryEvent instead")
-    void signalEntryChanged(const KNSCore::EntryInternal &entry);
-#endif
-
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 77)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 77, "Use Engine::signalEntryEvent instead")
-    void signalEntryDetailsLoaded(const KNSCore::EntryInternal &entry);
-#endif
-
     // a new search result is there, clear the list of items
     void signalResetView();
 
@@ -705,19 +644,6 @@ Q_SIGNALS:
 
     void signalDownloadDialogDone(KNSCore::EntryInternal::List);
     void jobStarted(KJob *, const QString &);
-
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 53)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 53, "Use Engine::signalErrorCode(const KNSCore::ErrorCode &, const QString &, const QVariant &)")
-    void signalError(const QString &);
-#endif
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
-    void signalBusy(const QString &);
-#endif
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 74)
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 74, "Use Engine::busyStateChanged() and Engine::busyMessageChanged() instead")
-    void signalIdle(const QString &);
-#endif
 
     /**
      * Fires in the case of any critical or serious errors, such as network or API problems.

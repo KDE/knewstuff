@@ -39,17 +39,6 @@ public:
      */
     void open();
 
-#if KNEWSTUFF_ENABLE_DEPRECATED_SINCE(5, 94)
-    /**
-     * Similar to QDialog::exec. Shows the dialog and blocks until the user closes it.
-     * @return changedEntries, useful if you want to refresh the UI after entries were changed
-     * @see open
-     * @deprecated Since 5.94, connect to closed signal instead or use KNSWidgets::Button/KNSWidgets::Action
-     */
-    KNEWSTUFF_DEPRECATED_VERSION(5, 78, "Connect to closed signal instead or use KNSWidgets::Button/KNSWidgets::Action")
-    QList<KNSCore::EntryInternal> exec();
-#endif
-
     /**
      * This signal gets emitted when the dialog is closed
      */

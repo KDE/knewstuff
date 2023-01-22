@@ -168,22 +168,6 @@ Engine::Engine(QObject *parent)
     connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message) {
         Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant());
     });
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 53)
-    // Pass along old error signal for compatibility
-    connect(this, &Engine::signalErrorCode, this, [this](const KNSCore::ErrorCode &, const QString &msg, const QVariant &) {
-        Q_EMIT signalError(msg);
-    });
-#endif
-
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-    connect(this, &Engine::signalEntryEvent, this, [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
-        if (event == EntryInternal::StatusChangedEvent) {
-            Q_EMIT signalEntryChanged(entry);
-        } else if (event == EntryInternal::DetailsLoadedEvent) {
-            Q_EMIT signalEntryDetailsLoaded(entry);
-        }
-    });
-#endif
 }
 
 Engine::~Engine()
@@ -1042,13 +1026,6 @@ void KNSCore::Engine::checkForInstalled()
     Q_EMIT signalEntriesLoaded(entries);
 }
 
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 77)
-QString Engine::adoptionCommand(const KNSCore::EntryInternal &entry) const
-{
-    return d->getAdoptionCommand(m_adoptionCommand, entry, m_installation);
-}
-#endif
-
 bool KNSCore::Engine::hasAdoptionCommand() const
 {
     return !m_adoptionCommand.isEmpty();
@@ -1063,25 +1040,6 @@ int KNSCore::Engine::pageSize() const
 {
     return m_pageSize;
 }
-
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 83)
-QStringList KNSCore::Engine::configSearchLocations(bool includeFallbackLocations)
-{
-    QStringList ret;
-    if (includeFallbackLocations) {
-        ret += QStandardPaths::standardLocations(QStandardPaths::GenericConfigLocation);
-    }
-    const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    for (const QString &path : paths) {
-        ret << QString::fromLocal8Bit("%1/knsrcfiles").arg(path);
-    }
-    return ret;
-}
-void KNSCore::Engine::setConfigLocationFallback(bool enableFallback)
-{
-    d->configLocationFallback = enableFallback;
-}
-#endif
 
 QStringList KNSCore::Engine::availableConfigFiles()
 {
@@ -1136,14 +1094,6 @@ void Engine::setBusyMessage(const QString &busyMessage)
         d->busyMessage = busyMessage;
         Q_EMIT busyMessageChanged();
     }
-#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(5, 74)
-    // Emit old signals for compatibility
-    if (busyMessage.isEmpty()) {
-        Q_EMIT signalIdle({});
-    } else {
-        Q_EMIT signalBusy(busyMessage);
-    }
-#endif
 }
 
 Engine::BusyState Engine::busyState() const

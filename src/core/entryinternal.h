@@ -513,7 +513,6 @@ public:
      *
      * @deprecated since 5.36, use setEntryXML(QXmlStreamReader&) instead
      */
-    KNEWSTUFFCORE_DEPRECATED_VERSION(5, 36, "Use EntryInternal::setEntryXML(QXmlStreamReader &)")
     bool setEntryXML(const QDomElement &xmldata);
     //#endif
 
