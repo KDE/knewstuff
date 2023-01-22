@@ -89,6 +89,7 @@ if (BUILD_DESIGNERPLUGIN)
 
     ecm_add_qtdesignerplugin(knewstuffwidgets
         NAME KNewStuffWidgets
+        OUTPUT_NAME knewstuff6widgets
         WIDGETS
             KNSWidgets::Button
         LINK_LIBRARIES
