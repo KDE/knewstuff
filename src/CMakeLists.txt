@@ -128,7 +128,7 @@ if(BUILD_QCH)
             KF6NewStuffCore_QCH
             KF6XmlGui_QCH
             KF6Service_QCH
-            Qt5Widgets_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
             ${KNewStuff_BINARY_DIR}
