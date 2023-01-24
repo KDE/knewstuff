@@ -22,3 +22,4 @@ target_link_libraries(knewstuff-dialog
 )
 
 install(TARGETS knewstuff-dialog ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES org.kde.knewstuff-dialog.desktop DESTINATION ${KDE_INSTALL_APPDIR})
