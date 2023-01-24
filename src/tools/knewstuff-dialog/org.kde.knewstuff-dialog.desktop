@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023 Nate Graham <nate@kde.org>
+[Desktop Entry]
+Categories=Qt;KDE;Utility;
+Comment=Showcase for KNewStuff add-on downloading functionality
+Exec=knewstuff-dialog
+Icon=get-hot-new-stuff
+Name=KNewStuff Dialog
+# This is more of an internal utility, so hide it from users
+NoDisplay=true
+SingleMainWindow=true
+Type=Application
