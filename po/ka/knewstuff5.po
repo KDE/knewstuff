@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2023-01-12 07:21+0100\n"
+"PO-Revision-Date: 2023-01-24 06:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -821,7 +821,7 @@ msgstr ""
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "ამჟამად მიმდინარეობს %2-ის %1 ელემენტის განახლება. მოითმინეთ..."
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
@@ -922,7 +922,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "გარკვევა, როგორ შევწიროთ ამ პროექტს"
 
 #: qtquick/qml/NewStuffItem.qml:22
 #, kde-format
@@ -989,6 +989,7 @@ msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
 msgstr ""
+"ჩანაწერი, რომლის ჩვენებაც გნებავდათ და რომლის უნიკალური ID %1-ა, ვერ ვიპოვე."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1015,17 +1016,17 @@ msgstr "გადახედვა"
 #: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr ""
+msgstr "დეტალური ფილების ხედის რეჟიმი"
 
 #: qtquick/qml/Page.qml:241
 #, kde-format
 msgid "Icons Only View Mode"
-msgstr ""
+msgstr "მხოლოდ ხატულების ხედის რეჟიმი"
 
 #: qtquick/qml/Page.qml:249
 #, kde-format
 msgid "Large Preview View Mode"
-msgstr ""
+msgstr "დიდი მინიატურების ხედის რეჟიმი"
 
 #: qtquick/qml/Page.qml:259
 #, kde-format
@@ -1056,7 +1057,7 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "მხოლოდ განახლებადი ჩანაწერების ჩვენება"
 
 #: qtquick/qml/Page.qml:308
 #, kde-format
@@ -1079,7 +1080,7 @@ msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show Most Recent First"
-msgstr ""
+msgstr "ჯერ უახლესები"
 
 #: qtquick/qml/Page.qml:341
 #, kde-format
@@ -1087,20 +1088,20 @@ msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort Alphabetically By Name"
-msgstr ""
+msgstr "სახელით, ანბანის მიხედვით დალაგება"
 
 #: qtquick/qml/Page.qml:349
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
-msgstr ""
+msgstr "რეიტინგის მიხედვით დალაგება"
 
 #: qtquick/qml/Page.qml:357
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr ""
+msgstr "ჯერ ხშირად გადმოწერილების ჩვენება"
 
 #: qtquick/qml/Page.qml:366
 #, kde-format
@@ -1110,7 +1111,7 @@ msgstr "ატვირთვა..."
 #: qtquick/qml/Page.qml:367
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "ისწავლეთ, როგორ დაამატოთ სიაში თქვენი საკუთარი რამები"
 
 #: qtquick/qml/Page.qml:375
 #, kde-format
