@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2023-01-24 06:44+0100\n"
+"PO-Revision-Date: 2023-01-25 06:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -71,7 +71,7 @@ msgstr "ქსელის შეცდომა %1: %2"
 #: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
-msgstr ""
+msgstr "სერვერის მეტისმეტად ბევრი მოთხოვნა. რამდენიმე წუთში თავიდან სცადეთ."
 
 #: attica/atticaprovider.cpp:594
 #, kde-format
@@ -83,7 +83,7 @@ msgstr ""
 #: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
-msgstr ""
+msgstr "ღია კოლაბორაციის სერვისის API-ის უცნობი შეცდომა. (%1)"
 
 #: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "ინიციალიზაცია"
 #: core/engine.cpp:241
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr ""
+msgstr "კონფიგურაციის ფაილი არსებობს, მაგრამ გახსნა შეუძლებელია: \"%1\""
 
 #: core/engine.cpp:254
 #, kde-format
