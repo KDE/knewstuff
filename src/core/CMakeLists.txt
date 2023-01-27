@@ -88,13 +88,13 @@ target_link_libraries(KF6NewStuffCore
   PUBLIC
     KF6::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF6::CoreAddons
-    Qt${QT_MAJOR_VERSION}::Xml
+    Qt6::Xml
   PRIVATE
     KF6::Archive               # For decompressing archives
     KF6::I18n                  # For translations
     KF6::ConfigCore
     KF6::Package
-    Qt${QT_MAJOR_VERSION}::Gui                   # For QImage
+    Qt6::Gui                   # For QImage
 )
 
 if(KF6Syndication_FOUND)
@@ -144,13 +144,6 @@ install(
         ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore
     COMPONENT Devel
 )
-# Kept for backwards compatibility; in KF6 all headers are going to be in KNewStuff3/KNSCore
-if(${QT_MAJOR_VERSION} STREQUAL "5")
-    install(FILES
-        ${KNewStuffCore_HEADERS}
-        ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knscore COMPONENT Devel)
-endif()
 
 if(BUILD_QCH)
     ecm_add_qch(

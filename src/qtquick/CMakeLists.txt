@@ -69,10 +69,10 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private/entrygriddelegates
 )
 
 target_link_libraries (newstuffqmlplugin
-    Qt${QT_MAJOR_VERSION}::Core
-    Qt${QT_MAJOR_VERSION}::Qml
-    Qt${QT_MAJOR_VERSION}::Quick
-    Qt${QT_MAJOR_VERSION}::Xml
+    Qt6::Core
+    Qt6::Qml
+    Qt6::Quick
+    Qt6::Xml
     KF6::ConfigCore
     KF6::I18n
     KF6::NewStuffCore

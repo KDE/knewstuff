@@ -266,7 +266,7 @@ QString Installation::targetInstallationPath() const
 #if defined(Q_OS_WIN)
         WCHAR wPath[MAX_PATH + 1];
         if (SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, wPath) == S_OK) {
-            installdir = QString::fromUtf16((const ushort *)wPath) + QLatin1Char('/') + installPath + QLatin1Char('/');
+            installdir = QString::fromUtf16((const char16_t *)wPath) + QLatin1Char('/') + installPath + QLatin1Char('/');
         } else {
             installdir = QDir::homePath() + QLatin1Char('/') + installPath + QLatin1Char('/');
         }

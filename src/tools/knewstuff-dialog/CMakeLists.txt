@@ -11,11 +11,11 @@ qt_add_resources(RESOURCES resources.qrc)
 add_executable(knewstuff-dialog ${knewstuff-dialog_SRCS} ${RESOURCES})
 
 target_link_libraries(knewstuff-dialog
-    Qt${QT_MAJOR_VERSION}::Core
-    Qt${QT_MAJOR_VERSION}::Gui
-    Qt${QT_MAJOR_VERSION}::Widgets
-    Qt${QT_MAJOR_VERSION}::Qml
-    Qt${QT_MAJOR_VERSION}::Quick
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Widgets
+    Qt6::Qml
+    Qt6::Quick
     KF6::ConfigCore
     KF6::I18n
     KF6::NewStuffCore

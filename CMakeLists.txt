@@ -22,8 +22,8 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
 set(REQUIRED_QT_VERSION 6.4.0)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Gui Widgets Xml)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
+find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Gui Widgets Xml)
+find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE COMPONENTS Qml Quick)
 find_package(KF6Archive ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Completion ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
@@ -91,8 +91,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.95
+    QT 6.4.0
+    KF 5.102
 )
 
 ki18n_install(po)

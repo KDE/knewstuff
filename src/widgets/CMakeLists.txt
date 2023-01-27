@@ -61,17 +61,6 @@ install(
     COMPONENT Devel
 )
 
-# Kept for backwards compatibility, in KF6 all headers will be installed in KNewStuff3/KNSWidgets only
-if(QT_MAJOR_VERSION STREQUAL "5")
-    install(
-        FILES
-            ${KNewStuffWidgets_HEADERS}
-            ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/knswidgets
-        COMPONENT Devel
-    )
-endif()
-
 install(TARGETS KF6NewStuffWidgets EXPORT KF6NewStuffTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if (BUILD_DESIGNERPLUGIN)

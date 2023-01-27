@@ -4,8 +4,8 @@
 @PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
-find_dependency(Qt@QT_MAJOR_VERSION@Widgets @REQUIRED_QT_VERSION@)
-find_dependency(Qt@QT_MAJOR_VERSION@Xml @REQUIRED_QT_VERSION@)
+find_dependency(Qt6Widgets @REQUIRED_QT_VERSION@)
+find_dependency(Qt6Xml @REQUIRED_QT_VERSION@)
 
 find_dependency(KF6XmlGui "@KF_DEP_VERSION@")
 find_dependency(KF6Service "@KF_DEP_VERSION@")
@@ -14,8 +14,8 @@ find_dependency(KF6NewStuffCore "@KF_VERSION@")
 find_dependency(KF6NewStuffQuick "@KF_VERSION@")
 
 if (NOT @BUILD_SHARED_LIBS@)
-    find_dependency(Qt@QT_MAJOR_VERSION@Qml @REQUIRED_QT_VERSION@)
-    find_dependency(Qt@QT_MAJOR_VERSION@Quick @REQUIRED_QT_VERSION@)
+    find_dependency(Qt6Qml @REQUIRED_QT_VERSION@)
+    find_dependency(Qt6Quick @REQUIRED_QT_VERSION@)
 
     find_dependency(KF6KIO "@KF_DEP_VERSION@")
     find_dependency(KF6Completion "@KF_DEP_VERSION@")

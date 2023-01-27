@@ -7,7 +7,7 @@ include(CMakeFindDependencyMacro)
 find_dependency(KF6Attica "@KF_DEP_VERSION@")
 
 if (NOT @BUILD_SHARED_LIBS@)
-    find_dependency(Qt@QT_MAJOR_VERSION@Gui @REQUIRED_QT_VERSION@)
+    find_dependency(Qt6Gui @REQUIRED_QT_VERSION@)
 
     find_dependency(KF6I18n "@KF_DEP_VERSION@")
     find_dependency(KF6Archive "@KF_DEP_VERSION@")

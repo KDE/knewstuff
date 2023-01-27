@@ -46,7 +46,7 @@ target_link_libraries(KF6NewStuff
   PUBLIC
     KF6::NewStuffCore
     KF6::Service               # For KMoreTools
-    Qt${QT_MAJOR_VERSION}::Widgets
+    Qt6::Widgets
   PRIVATE
     KF6::KIOCore               # For network fetching operations
     KF6::KIOWidgets            # For KUrlRequester
@@ -55,8 +55,8 @@ target_link_libraries(KF6NewStuff
     KF6::ItemViews             # For buttons on download dialog
     KF6::IconThemes           # For KIcon
     KF6::ConfigCore # KAuthorized
-    Qt${QT_MAJOR_VERSION}::Qml
-    Qt${QT_MAJOR_VERSION}::Quick
+    Qt6::Qml
+    Qt6::Quick
     KF6::TextWidgets          # For KTextEdit in upload dialog
 )
 
