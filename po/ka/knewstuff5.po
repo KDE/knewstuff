@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2023-01-25 06:26+0100\n"
+"PO-Revision-Date: 2023-01-27 09:15+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -291,7 +291,7 @@ msgstr ""
 #: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr ""
+msgstr "არქივის ფაილის (%1) გახსნა შეუძლებელია. შეცდომა: %2"
 
 #: core/installation.cpp:678
 #, kde-format
@@ -734,7 +734,7 @@ msgstr "დამატებითი სექცია"
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
 "installed:"
-msgstr ""
+msgstr "ამ მენიუსთვის საჭიროა მეტი პროგრამა, რომელიც ამჟამად დაყენებული არაა:"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:221

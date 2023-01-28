@@ -1643,18 +1643,3 @@ msgstr "Да"
 msgctxt "@action:button"
 msgid "No"
 msgstr "Не"
-
-#~ msgid ""
-#~ "The downloaded file is a html file. This indicates a link to a website "
-#~ "instead of the actual download. Would you like to open the site with a "
-#~ "browser instead?"
-#~ msgstr ""
-#~ "Изтегленият файл е html файл. Това показва връзка към уебсайт вместо "
-#~ "действителното изтегляне. Искате ли да отворите сайта с браузър вместо "
-#~ "това?"
-
-#~ msgid "Possibly bad download link"
-#~ msgstr "Вероятно препратката за изтегляне е неправилна."
-
-#~ msgid "Downloaded file was a HTML file. Opened in browser."
-#~ msgstr "Изтегленият файл е HTML. Зареден е в браузър."
