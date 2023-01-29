@@ -167,10 +167,16 @@ Q_SIGNALS:
     void signalError(const QString &) const;
 #endif
 
+    void installedFilesGenerated(KNSCore::EntryInternal entry, const QStringList &installedFile, const QString &installdir);
+
+private Q_SLOTS:
+    void slotPostInstall(KNSCore::EntryInternal entry, const QStringList &installedFiles, const QString &targetPath);
+    void slotOverwriteFile(KNSCore::EntryInternal entry, const QString &installdir, int response, const QString &installpath, const QString &payloadfile);
+
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
-    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
+    void installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
     QProcess *runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);

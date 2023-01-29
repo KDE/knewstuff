@@ -53,6 +53,11 @@ Question::Response Question::ask()
     return *d->response;
 }
 
+void Question::asyncAsk()
+{
+    Q_EMIT QuestionManager::instance()->askQuestion(this);
+}
+
 Question::QuestionType Question::questionType() const
 {
     return d->questionType;
@@ -96,7 +101,10 @@ QStringList Question::list() const
 void Question::setResponse(Response response)
 {
     d->response = response;
-    d->loop.quit();
+    Q_EMIT responseReceived(response);
+    if (d->loop.isRunning()) {
+        d->loop.quit();
+    }
 }
 
 void Question::setResponse(const QString &response)

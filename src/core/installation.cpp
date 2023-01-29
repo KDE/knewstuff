@@ -14,6 +14,7 @@
 #include <QProcess>
 #include <QTemporaryFile>
 #include <QUrlQuery>
+#include <QtConcurrent>
 
 #include "karchive.h"
 #include "qmimedatabase.h"
@@ -289,8 +290,17 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
 
     // TODO Add async checksum verification
 
-    QString targetPath = targetInstallationPath();
-    QStringList installedFiles = installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
+    connect(this, &KNSCore::Installation::installedFilesGenerated, this, &KNSCore::Installation::slotPostInstall);
+
+    QtConcurrent::run([this, entry, downloadedFile] {
+        QString targetPath = targetInstallationPath();
+        installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
+    });
+}
+
+void KNSCore::Installation::slotPostInstall(KNSCore::EntryInternal entry, const QStringList &installedFiles, const QString &targetPath)
+{
+    disconnect(this, &KNSCore::Installation::installedFilesGenerated, this, &KNSCore::Installation::slotPostInstall);
 
     if (uncompressionSetting() != UseKPackageUncompression) {
         if (installedFiles.isEmpty()) {
@@ -411,7 +421,7 @@ QString Installation::targetInstallationPath() const
     return installdir;
 }
 
-QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
+void Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
 {
     // Collect all files that were installed
     QStringList installedFiles;
@@ -580,7 +590,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompressionOpt == AlwaysUncompress) {
                     Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
-                    return QStringList();
+                    Q_EMIT installedFilesGenerated(entry, QStringList(), installdir);
+                    return;
                 }
                 isarchive = false;
             }
@@ -592,7 +603,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     if (uncompressionOpt == AlwaysUncompress) {
                         Q_EMIT signalInstallationError(
                             i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
-                        return QStringList();
+                        Q_EMIT installedFilesGenerated(entry, QStringList(), installdir);
+                        return;
                     }
                     // otherwise, just copy the file
                     isarchive = false;
@@ -667,45 +679,65 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             //        in order to set the new payload filename (on root tag only)
             //        - this might or might not need to take uncompression into account
             // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
-            QFile file(payloadfile);
-            bool success = true;
             const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
 
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
-                    Question question(Question::YesNoQuestion);
-                    question.setEntry(entry);
-                    question.setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means "
-                                              "overwriting it. Do you wish to overwrite the existing file?")
-                                         + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
-                    question.setTitle(i18n("Overwrite File"));
-                    if (question.ask() != Question::YesResponse) {
-                        return QStringList();
-                    }
-                }
-                success = QFile::remove(installpath);
-            }
-            if (success) {
-                // remove in case it's already present and in a temporary directory, so we get to actually use the path again
-                if (installpath.startsWith(QDir::tempPath())) {
-                    QFile::remove(installpath);
-                }
-                success = file.rename(installpath);
-                qCDebug(KNEWSTUFFCORE) << "move:" << file.fileName() << "to" << installpath;
-                if (!success) {
-                    qCWarning(KNEWSTUFFCORE) << file.errorString();
+                    Question *question = new Question(Question::YesNoQuestion);
+                    question->setEntry(entry);
+                    question->setQuestion(i18n("This file already exists on disk (possibly due to an earlier failed download attempt). Continuing means "
+                                               "overwriting it. Do you wish to overwrite the existing file?")
+                                          + QStringLiteral("\n'") + installpath + QLatin1Char('\''));
+                    question->setTitle(i18n("Overwrite File"));
+                    connect(question, &Question::responseReceived, this, [this, entry, installdir, installpath, payloadfile](Question::Response response) {
+                        slotOverwriteFile(entry, installdir, response, installpath, payloadfile);
+                        delete sender();
+                    });
+                    question->asyncAsk();
+                    return;
                 }
             }
-            if (!success) {
-                Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
-                qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '" << installpath << "'";
-                return QStringList();
-            }
-            installedFiles << installpath;
+
+            slotOverwriteFile(entry, installdir, Question::YesResponse, installpath, payloadfile);
+            return;
         }
     }
 
-    return installedFiles;
+    Q_EMIT installedFilesGenerated(entry, installedFiles, installdir);
+}
+
+void Installation::slotOverwriteFile(KNSCore::EntryInternal entry,
+                                     const QString &installdir,
+                                     int response,
+                                     const QString &installpath,
+                                     const QString &payloadfile)
+{
+    if (response != Question::YesResponse) {
+        Q_EMIT installedFilesGenerated(entry, QStringList(), installdir);
+        return;
+    }
+
+    bool success = QFile::remove(installpath);
+    if (success) {
+        // remove in case it's already present and in a temporary directory, so we get to actually use the path again
+        if (installpath.startsWith(QDir::tempPath())) {
+            QFile::remove(installpath);
+        }
+        QFile file(payloadfile);
+        success = file.rename(installpath);
+        qCDebug(KNEWSTUFFCORE) << "move:" << file.fileName() << "to" << installpath;
+        if (!success) {
+            qCWarning(KNEWSTUFFCORE) << file.errorString();
+        }
+    }
+    if (!success) {
+        Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
+        qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '" << installpath << "'";
+        Q_EMIT installedFilesGenerated(entry, QStringList(), installdir);
+        return;
+    }
+
+    Q_EMIT installedFilesGenerated(entry, {installpath}, installdir);
 }
 
 QProcess *Installation::runPostInstallationCommand(const QString &installPath)

@@ -70,6 +70,7 @@ public:
     ~Question() override;
 
     Response ask();
+    void asyncAsk();
 
     void setQuestionType(QuestionType newType = YesNoQuestion);
     QuestionType questionType() const;
@@ -96,6 +97,9 @@ public:
      */
     void setResponse(const QString &response);
     QString response() const;
+
+Q_SIGNALS:
+    void responseReceived(Response response);
 
 private:
     const std::unique_ptr<QuestionPrivate> d;

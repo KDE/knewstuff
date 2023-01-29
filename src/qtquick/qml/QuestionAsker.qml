@@ -6,7 +6,7 @@
 
 /**
  * @brief A component used to forward questions from KNewStuff's engine to the UI
- * 
+ *
  * This component is equivalent to the WidgetQuestionListener
  * @see KNewStuff::WidgetQuestionListener
  * @see KNewStuffCore::Question
