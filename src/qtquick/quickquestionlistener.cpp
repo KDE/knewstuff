@@ -84,7 +84,7 @@ void QuickQuestionListener::askQuestion(KNSCore::Question *question)
     }
 }
 
-void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue, QString input)
+void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue, const QString &input)
 {
     if (d->question) {
         if (responseIsContinue) {

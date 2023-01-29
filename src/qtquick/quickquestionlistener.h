@@ -28,7 +28,7 @@ public:
     Q_SIGNAL void askPasswordQuestion(QString title, QString question);
     Q_SIGNAL void askYesNoQuestion(QString title, QString question);
 
-    Q_SLOT void passResponse(bool responseIsContinue, QString input);
+    Q_SLOT void passResponse(bool responseIsContinue, const QString &input);
 
 private:
     QuickQuestionListener();
