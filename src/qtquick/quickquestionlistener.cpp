@@ -10,6 +10,7 @@
 #include "core/question.h"
 
 #include <QCoreApplication>
+#include <QPointer>
 
 using namespace KNewStuffQuick;
 
@@ -35,7 +36,7 @@ public:
     Private()
     {
     }
-    KNSCore::Question *question = nullptr;
+    QPointer<KNSCore::Question> question;
 };
 
 QuickQuestionListener *QuickQuestionListener::instance()
@@ -117,6 +118,6 @@ void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue
                 break;
             }
         }
-        d->question = nullptr;
+        d->question.clear();
     }
 }
