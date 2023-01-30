@@ -16,6 +16,7 @@ Comment[sl]=Vzorčna predstavitev funkcionalnosti prenosa dodatkov aplikacije kn
 Comment[tr]=KNewStuff eklenti indirme işlevi için örnek
 Comment[uk]=Демонстрація можливості отримання додатків у KNewStuff
 Comment[x-test]=xxShowcase for KNewStuff add-on downloading functionalityxx
+Comment[zh_TW]=KNewStuff 外掛程式下載功能的展示
 Exec=knewstuff-dialog
 Icon=get-hot-new-stuff
 Name=KNewStuff Dialog
@@ -32,6 +33,7 @@ Name[sl]=Dialog KNewStuff
 Name[tr]=KNewStuff İletişim Kutusu
 Name[uk]=Вікно KNewStuff
 Name[x-test]=xxKNewStuff Dialogxx
+Name[zh_TW]=KNewStuff 對話框
 # This is more of an internal utility, so hide it from users
 NoDisplay=true
 SingleMainWindow=true
