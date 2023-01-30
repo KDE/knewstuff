@@ -96,7 +96,6 @@ target_link_libraries(KF5NewStuffCore
     KF5::I18n                  # For translations
     KF5::ConfigCore
     KF5::Package
-    Qt${QT_MAJOR_VERSION}::Concurrent
     Qt${QT_MAJOR_VERSION}::Gui                   # For QImage
 )
 

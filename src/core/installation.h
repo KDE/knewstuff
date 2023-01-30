@@ -176,7 +176,8 @@ private Q_SLOTS:
 private:
     void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
 
-    void installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
+    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
+    void asyncInstallDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
     QProcess *runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);

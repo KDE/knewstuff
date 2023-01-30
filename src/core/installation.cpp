@@ -292,10 +292,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
 
     connect(this, &KNSCore::Installation::installedFilesGenerated, this, &KNSCore::Installation::slotPostInstall);
 
-    QtConcurrent::run([this, entry, downloadedFile] {
-        QString targetPath = targetInstallationPath();
-        installDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
-    });
+    QString targetPath = targetInstallationPath();
+    asyncInstallDownloadedFileAndUncompress(entry, downloadedFile, targetPath);
 }
 
 void KNSCore::Installation::slotPostInstall(KNSCore::EntryInternal entry, const QStringList &installedFiles, const QString &targetPath)
@@ -421,7 +419,12 @@ QString Installation::targetInstallationPath() const
     return installdir;
 }
 
-void Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
+QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
+{
+    return {};
+}
+
+void Installation::asyncInstallDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
 {
     // Collect all files that were installed
     QStringList installedFiles;
