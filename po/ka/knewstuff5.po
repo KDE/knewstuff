@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2023-01-27 09:15+0100\n"
+"PO-Revision-Date: 2023-01-30 10:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -420,7 +420,7 @@ msgstr ""
 #: core/jobs/kpackagejob.cpp:125
 #, kde-format
 msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
+msgstr "სერვისის ტიპი %1 KPackage-ის დამყენებლისთვის გაუგებარია"
 
 #: core/security.cpp:69
 #, kde-format
@@ -814,7 +814,7 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "ამჟამად ვმუშაობ ჩანაწერზე %1, რომელიც %2-მა გამოაგზავნა. მოითმინეთ..."
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
