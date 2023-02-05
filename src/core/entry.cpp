@@ -22,15 +22,6 @@ class KNSCore::EntryPrivate : public QSharedData
 {
 public:
     EntryPrivate()
-        : mReleaseDate(QDate::currentDate())
-        , mRating(0)
-        , mNumberOfComments(0)
-        , mDownloadCount(0)
-        , mNumberFans(0)
-        , mNumberKnowledgebaseEntries(0)
-        , mStatus(KNSCore::Entry::Invalid)
-        , mSource(Entry::Online)
-        , mEntryType(Entry::CatalogEntry)
     {
         qRegisterMetaType<KNSCore::Entry::List>();
     }
@@ -46,18 +37,18 @@ public:
     QString mCategory;
     QString mLicense;
     QString mVersion;
-    QDate mReleaseDate;
+    QDate mReleaseDate = QDate::currentDate();
 
     // Version and date if a newer version is found (updateable)
     QString mUpdateVersion;
     QDate mUpdateReleaseDate;
 
     Author mAuthor;
-    int mRating;
-    int mNumberOfComments;
-    int mDownloadCount;
-    int mNumberFans;
-    int mNumberKnowledgebaseEntries;
+    int mRating = 0;
+    int mNumberOfComments = 0;
+    int mDownloadCount = 0;
+    int mNumberFans = 0;
+    int mNumberKnowledgebaseEntries = 0;
     QString mKnowledgebaseLink;
     QString mSummary;
     QString mShortSummary;
@@ -71,9 +62,9 @@ public:
 
     QString mChecksum;
     QString mSignature;
-    KNSCore::Entry::Status mStatus;
-    Entry::Source mSource;
-    Entry::EntryType mEntryType;
+    KNSCore::Entry::Status mStatus = Entry::Invalid;
+    Entry::Source mSource = Entry::Online;
+    Entry::EntryType mEntryType = Entry::CatalogEntry;
 
     QString mPreviewUrl[6];
     QImage mPreviewImage[6];
