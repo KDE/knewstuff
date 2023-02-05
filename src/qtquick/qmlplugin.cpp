@@ -10,7 +10,6 @@
 #include "categoriesmodel.h"
 #include "commentsmodel.h"
 #include "downloadlinkinfo.h"
-#include "entrywrapper.h"
 #include "quickengine.h"
 #include "quickitemsmodel.h"
 #include "quickquestionlistener.h"
@@ -73,14 +72,6 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
                                                                     });
     qmlRegisterUncreatableType<KNSCore::Entry>(uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
-
-    // Version 1.67
-    qmlRegisterUncreatableType<KNSCore::EntryWrapper>(
-        coreUri,
-        1,
-        67,
-        "EntryWrapper",
-        QStringLiteral("This should only be created by the Engine, and wraps Entry objects for passing through Qt Quick"));
 
     // Version 1.81
     qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {

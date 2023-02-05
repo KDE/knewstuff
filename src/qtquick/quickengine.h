@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QQmlListProperty>
 
-#include "entrywrapper.h"
+#include "entry.h"
 #include "errorcode.h"
 #include "knewstuffquick_export.h"
 
@@ -143,9 +143,8 @@ Q_SIGNALS:
      * nb: The above example is also how one would port a handler for the old changedEntries signal
      *
      * @see Entry::EntryEvent for details on which specific event is being notified
-     * @since 5.81
      */
-    void entryEvent(KNSCore::EntryWrapper *entry, EntryEvent event);
+    void entryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
 
     /**
      * Fires in the case of any critical or serious errors, such as network or API problems.

@@ -83,10 +83,9 @@ void Engine::setConfigFile(const QString &newFile)
                             Q_EMIT errorMessage(message);
                         });
                 connect(d->engine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
-                    KNSCore::EntryWrapper *wrappedEntry = new KNSCore::EntryWrapper(entry, this);
                     // Just forward the event but not do anything more
                     if (event != KNSCore::Entry::StatusChangedEvent) {
-                        Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
+                        Q_EMIT entryEvent(entry, event);
                         return;
                     }
 
@@ -95,7 +94,7 @@ void Engine::setConfigFile(const QString &newFile)
                     if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
                         return;
                     }
-                    Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
+                    Q_EMIT entryEvent(entry, event);
                 });
                 Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();

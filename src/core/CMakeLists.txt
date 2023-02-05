@@ -7,7 +7,6 @@ set(KNewStuffCore_SRCS
     cache.cpp
     engine.cpp
     entry.cpp
-    entrywrapper.cpp
     imageloader.cpp
     installation.cpp
     itemsmodel.cpp
@@ -120,7 +119,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Cache
   Engine
   Entry
-  EntryWrapper
   ErrorCode
   ItemsModel
   Provider
