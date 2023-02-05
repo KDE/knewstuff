@@ -365,7 +365,7 @@ Q_SIGNALS:
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;
-    void signalErrorCode(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata) const;
+    void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata) const;
 
     void categoriesMetadataLoded(const QList<CategoryMetadata> &categories);
 

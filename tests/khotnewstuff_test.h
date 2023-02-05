@@ -40,7 +40,7 @@ public:
 
 public Q_SLOTS:
     void slotProvidersLoaded();
-    void slotEngineError(const KNSCore::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
+    void slotEngineError(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
     void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
     void slotInstallationFinished();
 

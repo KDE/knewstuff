@@ -313,7 +313,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     mEntryJob = nullptr;
 }
 
-Attica::Provider::SortMode AtticaProvider::atticaSortMode(const SortMode &sortMode)
+Attica::Provider::SortMode AtticaProvider::atticaSortMode(SortMode sortMode)
 {
     switch (sortMode) {
     case Newest:

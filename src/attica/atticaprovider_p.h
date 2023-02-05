@@ -108,7 +108,7 @@ private:
     EntryInternal::List installedEntries() const;
     bool jobSuccess(Attica::BaseJob *job) const;
 
-    Attica::Provider::SortMode atticaSortMode(const SortMode &sortMode);
+    Attica::Provider::SortMode atticaSortMode(SortMode sortMode);
 
     EntryInternal entryFromAtticaContent(const Attica::Content &);
 

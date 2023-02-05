@@ -155,7 +155,7 @@ void KNewStuff2Test::slotInstallationFinished()
     addMessage(QStringLiteral("SLOT: slotInstallationFinished"));
 }
 
-void KNewStuff2Test::slotEngineError(const KNSCore::ErrorCode &, const QString &message, const QVariant &)
+void KNewStuff2Test::slotEngineError(KNSCore::ErrorCode, const QString &message, const QVariant &)
 {
     addMessage(QStringLiteral("SLOT: slotEngineError %1").arg(message), QStringLiteral("msg_error"));
 }

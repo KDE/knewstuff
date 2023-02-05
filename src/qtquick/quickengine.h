@@ -158,7 +158,7 @@ Q_SIGNALS:
      * @see KNSCore::Engine::signalErrorCode
      * @since 5.84
      */
-    void errorCode(const Engine::ErrorCode &errorCode, const QString &message, const QVariant &metadata);
+    void errorCode(Engine::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
 private:
     const std::unique_ptr<EnginePrivate> d;
