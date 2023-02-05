@@ -38,6 +38,10 @@ public:
 
     QSet<EntryInternal> cache;
 
+    bool dirty = false;
+    bool writingRegistry = false;
+    bool reloadingRegistry = false;
+
     void throttleWrite()
     {
         if (!throttleTimer) {
@@ -66,15 +70,14 @@ Cache::Cache(const QString &appName)
     QDir().mkpath(path);
     d->registryFile = path + appName + QStringLiteral(".knsregistry");
     qCDebug(KNEWSTUFFCORE) << "Using registry file: " << d->registryFile;
-    setProperty("dirty", false); // KF6 make normal variable
 
     s_watcher->addPath(d->registryFile);
 
     std::function<void()> changeChecker = [this, &changeChecker]() {
-        if (property("writingRegistry").toBool()) {
+        if (d->writingRegistry) {
             QTimer::singleShot(0, this, changeChecker);
         } else {
-            setProperty("reloadingRegistry", true);
+            d->reloadingRegistry = true;
             const QSet<KNSCore::EntryInternal> oldCache = d->cache;
             d->cache.clear();
             readRegistry();
@@ -103,7 +106,7 @@ Cache::Cache(const QString &appName)
                     Q_EMIT entryChanged(entry);
                 }
             }
-            setProperty("reloadingRegistry", false);
+            d->reloadingRegistry = false;
         }
     };
     connect(&*s_watcher, &QFileSystemWatcher::fileChanged, this, [this, changeChecker](const QString &file) {
@@ -193,13 +196,13 @@ EntryInternal::List Cache::registry() const
 
 void Cache::writeRegistry()
 {
-    if (!property("dirty").toBool()) {
+    if (!d->dirty) {
         return;
     }
 
     qCDebug(KNEWSTUFFCORE) << "Write registry";
 
-    setProperty("writingRegistry", true);
+    d->writingRegistry = true;
     QFile f(d->registryFile);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning() << "Cannot write meta information to '" << d->registryFile << "'.";
@@ -222,8 +225,8 @@ void Cache::writeRegistry()
     QTextStream metastream(&f);
     metastream << doc.toByteArray();
 
-    setProperty("dirty", false);
-    setProperty("writingRegistry", false);
+    d->dirty = false;
+    d->writingRegistry = false;
 }
 
 void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
@@ -232,8 +235,8 @@ void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
     if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
         return;
     }
-    if (!property("reloadingRegistry").toBool()) {
-        setProperty("dirty", true);
+    if (!d->reloadingRegistry) {
+        d->dirty = true;
         d->cache.remove(entry); // If value already exists in the set, the set is left unchanged
         d->cache.insert(entry);
         d->throttleWrite();
@@ -279,7 +282,7 @@ void KNSCore::Cache::removeDeletedEntries()
         }
         if (!installedFileExists) {
             i.remove();
-            setProperty("dirty", true);
+            d->dirty = true;
         }
     }
     writeRegistry();

@@ -43,9 +43,6 @@ using namespace KNSCore;
 Installation::Installation(QObject *parent)
     : QObject(parent)
 {
-    // TODO KF6 Make these real properties, when we can refactor this and add a proper dptr
-    setProperty("kpackageType", QLatin1String(""));
-    setProperty("uncompressSetting", UncompressionOptions::NeverUncompress);
 }
 
 bool Installation::readConfig(const KConfigGroup &group)
@@ -53,29 +50,27 @@ bool Installation::readConfig(const KConfigGroup &group)
     // FIXME: add support for several categories later on
     // FIXME: read out only when actually installing as a performance improvement?
     uncompression = group.readEntry("Uncompress", QStringLiteral("never"));
-    UncompressionOptions opt;
     // support old value of true as equivalent of always
     if (uncompression == QLatin1String("true")) {
         uncompression = QStringLiteral("always");
     }
     if (uncompression == QLatin1String("always")) {
-        opt = AlwaysUncompress;
+        uncompressSetting = AlwaysUncompress;
     } else if (uncompression == QLatin1String("archive")) {
-        opt = UncompressIfArchive;
+        uncompressSetting = UncompressIfArchive;
     } else if (uncompression == QLatin1String("subdir")) {
-        opt = UncompressIntoSubdir;
+        uncompressSetting = UncompressIntoSubdir;
     } else if (uncompression == QLatin1String("kpackage")) {
-        opt = UseKPackageUncompression;
+        uncompressSetting = UseKPackageUncompression;
     } else if (uncompression == QLatin1String("subdir-archive")) {
-        opt = UncompressIntoSubdirIfArchive;
+        uncompressSetting = UncompressIntoSubdirIfArchive;
     } else if (uncompression == QLatin1String("never")) {
-        opt = NeverUncompress;
+        uncompressSetting = NeverUncompress;
     } else {
         qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, never, or kpackage";
         return false;
     }
-    setProperty("uncompressSetting", opt);
-    setProperty("kpackageType", group.readEntry("KPackageType"));
+    kpackageType = group.readEntry("KPackageType");
     postInstallationCommand = group.readEntry("InstallationCommand");
     uninstallCommand = group.readEntry("UninstallCommand");
     standardResourceDirectory = group.readEntry("StandardResource");
@@ -317,11 +312,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         };
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-            const QString serviceType = property("kpackageType").toString();
 
-            if (!serviceType.isEmpty()) {
-                qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << serviceType;
-                KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+            if (!kpackageType.isEmpty()) {
+                qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << kpackageType;
+                KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
                 if (structure) {
                     KPackage::Package installer = KPackage::Package(structure);
                     if (installer.hasValidStructure()) {
@@ -329,7 +323,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                             QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
                         qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
                         const QString expectedDir{packageRoot + package.metadata().pluginId()};
-                        KJob *installJob = KPackageJob::update(payloadfile, packageRoot, serviceType);
+                        KJob *installJob = KPackageJob::update(payloadfile, packageRoot, kpackageType);
                         // TODO KF6 Really, i would prefer to make more functions to handle this, but as this is
                         // an exported class, i'd rather not pollute the public namespace with internal functions,
                         // and we don't have a pimpl, so... we'll just have to deal with it for now
@@ -390,16 +384,16 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                             i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage "
                                  "support plugin for this type of package?)",
                                  payloadfile,
-                                 serviceType));
+                                 kpackageType));
                         resetEntryStatus();
-                        qCWarning(KNEWSTUFFCORE) << "Package serviceType" << serviceType << "not found";
+                        qCWarning(KNEWSTUFFCORE) << "Package kpackageType" << kpackageType << "not found";
                     }
                 } else {
                     // no package structure
                     Q_EMIT signalInstallationFailed(
                         i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
                     resetEntryStatus();
-                    qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << serviceType;
+                    qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << kpackageType;
                 }
             } else {
                 // no service type
@@ -650,17 +644,16 @@ void Installation::uninstall(EntryInternal entry)
                 KPackage::Package package(&structure);
                 package.setPath(installedFile);
                 if (package.isValid() && package.metadata().isValid()) {
-                    const QString serviceType = property("kpackageType").toString();
-                    if (!serviceType.isEmpty()) {
-                        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+                    if (!kpackageType.isEmpty()) {
+                        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
                         if (structure) {
                             KPackage::Package installer = KPackage::Package(structure);
                             if (!installer.hasValidStructure()) {
-                                qWarning() << "Package serviceType" << serviceType << "not found";
+                                qWarning() << "Package kpackageType" << kpackageType << "not found";
                             }
                             QString packageRoot =
                                 QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
-                            KJob *removalJob = KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, serviceType);
+                            KJob *removalJob = KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, kpackageType);
                             connect(removalJob, &KJob::result, this, [this, installedFile, installer, entry](KJob *job) {
                                 EntryInternal newEntry = entry;
                                 if (job->error() == KJob::NoError) {
@@ -703,11 +696,10 @@ void Installation::uninstall(EntryInternal entry)
                     // the native kpackage support being added, and we need to do some inspection-and-removal work...
                     KPackage::PackageStructure structure;
                     KPackage::Package package(&structure);
-                    const QString serviceType{property("kpackageType").toString()};
                     package.setPath(installedFile);
                     if (package.isValid() && package.metadata().isValid()) {
                         // try and load the kpackage and sniff the expected location of its installation, and ask KPackage to remove that thing, if it's there
-                        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(serviceType);
+                        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
                         if (structure) {
                             KPackage::Package installer = KPackage::Package(structure);
                             if (installer.hasValidStructure()) {
@@ -716,7 +708,7 @@ void Installation::uninstall(EntryInternal entry)
                                 qCDebug(KNEWSTUFFCORE) << "About to attempt to uninstall" << package.metadata().pluginId() << "from" << packageRoot;
                                 // Frankly, we don't care whether or not this next step succeeds, and it can just fizzle if it wants
                                 // to. This is a cleanup step, and if it fails, it's just not really important.
-                                KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, serviceType);
+                                KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, kpackageType);
                             }
                         }
                     }
@@ -812,7 +804,7 @@ void Installation::uninstall(EntryInternal entry)
 
 Installation::UncompressionOptions Installation::uncompressionSetting() const
 {
-    return property("uncompressSetting").value<UncompressionOptions>();
+    return uncompressSetting;
 }
 
 QStringList Installation::archiveEntries(const QString &path, const KArchiveDirectory *dir)

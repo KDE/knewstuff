@@ -167,8 +167,8 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
         XmlLoader *loader = new XmlLoader(this);
         connect(loader, &XmlLoader::signalLoaded, this, &StaticXmlProvider::slotFeedFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &StaticXmlProvider::slotFeedFailed);
-        loader->setProperty("filter", request.filter);
-        loader->setProperty("searchTerm", request.searchTerm);
+        loader->setFilter(request.filter);
+        loader->setSearchTerm(request.searchTerm);
 
         mFeedLoaders.insert(request.sortMode, loader);
 
@@ -213,8 +213,6 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
     // load all the entries from the domdocument given
     EntryInternal::List entries;
     QDomElement element;
-    const Provider::Filter filter = loader->property("filter").value<Provider::Filter>();
-    const QString searchTerm = loader->property("searchTerm").toString();
 
     TagsFilterChecker checker(tagFilter());
     TagsFilterChecker downloadschecker(downloadTagFilter());
@@ -258,7 +256,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                 mCachedEntries.append(entry);
 
                 if (searchIncludesEntry(entry)) {
-                    switch (filter) {
+                    switch (loader->filter()) {
                     case Installed:
                         // This is dealth with in loadEntries separately
                         Q_UNREACHABLE();
@@ -268,7 +266,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                         }
                         break;
                     case ExactEntryId:
-                        if (entry.uniqueId() == searchTerm) {
+                        if (entry.uniqueId() == loader->searchTerm()) {
                             entries << entry;
                         }
                         break;

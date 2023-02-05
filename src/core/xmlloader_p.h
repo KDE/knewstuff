@@ -11,6 +11,7 @@
 #ifndef KNEWSTUFF3_XMLLOADER_P_H
 #define KNEWSTUFF3_XMLLOADER_P_H
 
+#include "provider.h"
 #include <QNetworkReply>
 #include <QObject>
 #include <QString>
@@ -48,6 +49,25 @@ public:
      */
     void load(const QUrl &url);
 
+    void setFilter(Provider::Filter filter)
+    {
+        m_filter = filter;
+    }
+
+    void setSearchTerm(const QString &searchTerm)
+    {
+        m_searchTerm = searchTerm;
+    }
+
+    Provider::Filter filter() const
+    {
+        return m_filter;
+    }
+
+    QString searchTerm() const
+    {
+        return m_searchTerm;
+    }
 Q_SIGNALS:
     /**
      * Indicates that the list of providers has been successfully loaded.
@@ -70,6 +90,8 @@ protected Q_SLOTS:
 
 private:
     QByteArray m_jobdata;
+    Provider::Filter m_filter;
+    QString m_searchTerm;
 };
 
 }

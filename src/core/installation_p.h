@@ -158,6 +158,9 @@ private:
 
     QMap<KJob *, EntryInternal> entry_jobs;
 
+    QString kpackageType;
+    UncompressionOptions uncompressSetting = UncompressionOptions::NeverUncompress;
+
     Q_DISABLE_COPY(Installation)
 };
 
