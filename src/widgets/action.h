@@ -44,7 +44,7 @@ public:
      * @param configFile the name of the .knsrc file
      * @param parent the parent object
      */
-    Action(const QString &text, const QString &configFile, QObject *parent);
+    explicit Action(const QString &text, const QString &configFile, QObject *parent);
 
     ~Action();
 

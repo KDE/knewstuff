@@ -54,7 +54,7 @@ public:
      * @param tagFilter The list of tag filters
      * @since 5.51
      */
-    TagsFilterChecker(const QStringList &tagFilter);
+    explicit TagsFilterChecker(const QStringList &tagFilter);
     ~TagsFilterChecker();
 
     TagsFilterChecker(const TagsFilterChecker &) = delete;

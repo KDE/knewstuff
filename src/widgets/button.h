@@ -48,7 +48,7 @@ public:
      * @param configFile the name of the .knsrc file
      * @param parent the parent widget
      */
-    Button(const QString &text, const QString &configFile, QWidget *parent);
+    explicit Button(const QString &text, const QString &configFile, QWidget *parent);
 
     /**
      * Constructor used when the details of the KHotNewStuff

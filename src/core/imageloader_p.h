@@ -34,7 +34,7 @@ class ImageLoader : public QObject
 {
     Q_OBJECT
 public:
-    ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent);
+    explicit ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent);
     void start();
     /**
      * Get the job doing the image loading in the background (to have progress information available)
