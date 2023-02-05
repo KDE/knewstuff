@@ -7,6 +7,7 @@
 
 // unit test for entry
 
+#include <QDomDocument>
 #include <QString>
 #include <QTest>
 #include <QXmlStreamReader>

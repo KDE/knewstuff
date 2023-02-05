@@ -8,6 +8,7 @@
 #include "cache.h"
 
 #include <QDir>
+#include <QDomElement>
 #include <QFile>
 #include <QFileInfo>
 #include <QFileSystemWatcher>

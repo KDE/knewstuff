@@ -13,6 +13,7 @@
 #include <KFormat>
 #include <KLocalizedString>
 #include <QCollator>
+#include <QDomDocument>
 #include <knewstuffcore_debug.h>
 
 #include <attica/accountbalance.h>

@@ -25,6 +25,7 @@
 
 class KJob;
 class EnginePrivate;
+class QDomDocument;
 
 namespace Attica
 {

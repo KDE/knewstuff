@@ -12,7 +12,6 @@
 #define KNEWSTUFF3_ENTRY
 
 #include <QDate>
-#include <QDomElement>
 #include <QImage>
 #include <QString>
 #include <QUrl>
@@ -22,6 +21,8 @@
 
 #include <memory>
 
+class testEntry;
+class QDomElement;
 class QXmlStreamReader;
 
 namespace KNSCore
@@ -516,21 +517,6 @@ public:
      */
     bool setEntryXML(QXmlStreamReader &reader);
 
-    //#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 36) // TODO This is still internally used and has not been fully ported
-    /**
-     * set the xml for the entry
-     * parses the xml and sets the private members accordingly
-     * used to deserialize data loaded from provider
-     *
-     * @param xmldata string to load xml data from
-     *
-     * @returns whether or not setting the values was successful
-     *
-     * @deprecated since 5.36, use setEntryXML(QXmlStreamReader&) instead
-     */
-    bool setEntryXML(const QDomElement &xmldata);
-    //#endif
-
     /**
      * get the xml string for the entry
      */
@@ -557,6 +543,9 @@ public:
     KNSCore::Entry::Status status() const;
 
 private:
+    friend class StaticXmlProvider;
+    friend testEntry;
+    bool setEntryXML(const QDomElement &xmldata);
     QExplicitlySharedDataPointer<EntryPrivate> d;
 };
 

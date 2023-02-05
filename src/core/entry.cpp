@@ -9,6 +9,7 @@
 
 #include "entry.h"
 
+#include <QDomElement>
 #include <QStringList>
 #include <QXmlStreamReader>
 #include <knewstuffcore_debug.h>

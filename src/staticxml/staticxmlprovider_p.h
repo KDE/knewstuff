@@ -11,6 +11,7 @@
 #define KNEWSTUFF3_STATICXMLPROVIDER_P_H
 
 #include "provider.h"
+#include <QDomDocument>
 #include <QMap>
 
 namespace KNSCore
