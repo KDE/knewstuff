@@ -14,8 +14,6 @@ set(KNewStuff_SRCS
 )
 ki18n_wrap_ui(KNewStuff_SRCS kmoretools/ui/kmoretoolsconfigwidget.ui)
 
-qt_add_resources(KNewStuff_RESOURCES uploaddialog.qrc)
-
 ecm_qt_declare_logging_category(KNewStuff_SRCS
     HEADER knewstuff_debug.h
     IDENTIFIER KNEWSTUFF
@@ -25,7 +23,7 @@ ecm_qt_declare_logging_category(KNewStuff_SRCS
     EXPORT KNEWSTUFF
 )
 
-add_library(KF6NewStuff ${KNewStuff_SRCS} ${KNewStuff_RESOURCES})
+add_library(KF6NewStuff ${KNewStuff_SRCS})
 add_library(KF6::NewStuff ALIAS KF6NewStuff)
 
 ecm_generate_export_header(KF6NewStuff
