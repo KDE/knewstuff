@@ -10,137 +10,122 @@
 
 #include <QHash>
 
-// BCI: Add a real d-pointer
 namespace KNSCore
 {
-struct AuthorPrivate {
+class AuthorPrivate : public QSharedData
+{
 public:
     QString id;
     QString profilepage;
     QUrl avatarUrl;
     QString description;
+
+    QString name;
+    QString email;
+    QString jabber;
+    QString homepage;
 };
 }
 
 using namespace KNSCore;
 
-typedef QHash<const Author *, AuthorPrivate *> AuthorPrivateHash;
-Q_GLOBAL_STATIC(AuthorPrivateHash, d_func)
-
-static AuthorPrivate *d(const Author *author)
-{
-    AuthorPrivate *ret = d_func()->value(author);
-    if (!ret) {
-        ret = new AuthorPrivate;
-        d_func()->insert(author, ret);
-    }
-    return ret;
-}
-
-static void delete_d(const Author *author)
-{
-    if (auto d = d_func()) {
-        delete d->take(author);
-    }
-}
-
 Author::Author()
+    : d(new AuthorPrivate())
 {
 }
 
 KNSCore::Author::Author(const KNSCore::Author &other)
+    : d(other.d)
 {
-    this->setAvatarUrl(other.avatarUrl());
-    this->setDescription(other.description());
-    this->setEmail(other.email());
-    this->setHomepage(other.homepage());
-    this->setId(other.id());
-    this->setJabber(other.jabber());
-    this->setName(other.name());
-    this->setProfilepage(other.profilepage());
 }
 
-Author::~Author()
+Author &Author::operator=(const Author &rhs)
 {
-    delete_d(this);
+    if (&rhs != this) {
+        d = rhs.d;
+    }
+
+    return *this;
 }
+
+Author::~Author() = default;
 
 void KNSCore::Author::setId(const QString &id)
 {
-    d(this)->id = id;
+    d->id = id;
 }
 
 QString KNSCore::Author::id() const
 {
-    return d(this)->id;
+    return d->id;
 }
 
-void Author::setName(const QString &_name)
+void Author::setName(const QString &name)
 {
-    mName = _name;
+    d->name = name;
 }
 
 QString Author::name() const
 {
-    return mName;
+    return d->name;
 }
 
-void Author::setEmail(const QString &_email)
+void Author::setEmail(const QString &email)
 {
-    mEmail = _email;
+    d->email = email;
 }
 
 QString Author::email() const
 {
-    return mEmail;
+    return d->email;
 }
 
-void Author::setJabber(const QString &_jabber)
+void Author::setJabber(const QString &jabber)
 {
-    mJabber = _jabber;
+    d->jabber = jabber;
 }
 
 QString Author::jabber() const
 {
-    return mJabber;
+    return d->jabber;
 }
 
-void Author::setHomepage(const QString &_homepage)
+void Author::setHomepage(const QString &homepage)
 {
-    mHomepage = _homepage;
+    d->homepage = homepage;
 }
 
 QString Author::homepage() const
 {
-    return mHomepage;
+    return d->homepage;
 }
 
 void Author::setProfilepage(const QString &profilepage)
 {
-    d(this)->profilepage = profilepage;
+    d->profilepage = profilepage;
 }
 
 QString Author::profilepage() const
 {
-    return d(this)->profilepage;
+    return d->profilepage;
 }
 
 void Author::setAvatarUrl(const QUrl &avatarUrl)
 {
-    d(this)->avatarUrl = avatarUrl;
+    d->avatarUrl = avatarUrl;
 }
 
 QUrl Author::avatarUrl() const
 {
-    return d(this)->avatarUrl;
+    return d->avatarUrl;
 }
 
 void Author::setDescription(const QString &description)
 {
-    d(this)->description = description;
+    d->description = description;
 }
 
 QString Author::description() const
 {
-    return d(this)->description;
+    return d->description;
 }
