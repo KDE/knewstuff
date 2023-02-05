@@ -7,6 +7,8 @@
 
 #include "questionmanager.h"
 
+#include "question.h"
+
 using namespace KNSCore;
 
 class QuestionManagerHelper

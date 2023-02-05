@@ -11,11 +11,9 @@
 #include <QObject>
 
 #include "knewstuffcore_export.h"
-
-#include "question.h"
-
 namespace KNSCore
 {
+class Question;
 class QuestionManagerPrivate;
 /**
  * @short The central class handling Question redirection

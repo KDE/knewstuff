@@ -6,6 +6,7 @@
 */
 
 #include "questionlistener.h"
+#include "question.h"
 #include "questionmanager.h"
 
 using namespace KNSCore;
