@@ -80,15 +80,6 @@ Kirigami.Action {
     readonly property QtObject engine: component._private.engine
 
     /**
-     * Contains the entries which have been changed.
-     * @note This is cleared when the page is shown, so the changed entries are those
-     * changed since the page was opened most recently (rather than the lifetime
-     * of the instance of the Action component)
-     * @deprecated Since 5.82, use entryEvent instead
-     */
-    property var changedEntries
-
-    /**
      * This forwards the entry changed event from the QtQuick engine
      * @see Engine::entryEvent
      */
@@ -154,11 +145,6 @@ Kirigami.Action {
             function onEntryEvent(entry, event) {
                 component.entryEvent(entry, event);
             }
-        }
-        property Binding changedEntriesBinding: Binding {
-            target: component
-            property: "changedEntries"
-            value: component.engine ? component.engine.changedEntries : []
         }
         function showHotNewStuff() {
             if (NewStuff.Settings.allowedByKiosk) {

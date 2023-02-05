@@ -75,20 +75,6 @@ QtControls.Button {
     }
 
     /**
-     * Contains the entries which have been changed.
-     * @note This is cleared when the dialog is shown, so the changed entries are those
-     * changed since the dialog was opened most recently (rather than the lifetime
-     * of the instance of the Button component)
-     * @deprecated Since 5.82, use entryEvent instead
-     */
-    property var changedEntries
-    property Binding changedEntriesBinding: Binding {
-        target: component
-        property: "changedEntries"
-        value: component.engine ? component.engine.changedEntries : []
-    }
-
-    /**
      * Show the details page for a specific entry.
      * If you call this function before the engine initialisation has been completed,
      * the action itself will be postponed until that has happened.
