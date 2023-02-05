@@ -6,6 +6,8 @@
 
 #include "providersmodel.h"
 
+#include "engine.h"
+
 namespace KNSCore
 {
 class ProvidersModelPrivate

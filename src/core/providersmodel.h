@@ -9,7 +9,6 @@
 
 #include <QAbstractListModel>
 
-#include "engine.h"
 #include "knewstuffcore_export.h"
 
 #include <memory>

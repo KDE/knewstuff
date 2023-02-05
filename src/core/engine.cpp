@@ -26,13 +26,13 @@
 #include <QDesktopServices>
 #include <knewstuffcore_debug.h>
 
+#include <QDateTime>
 #include <QDir>
 #include <QDirIterator>
 #include <QProcess>
 #include <QThreadStorage>
 #include <QTimer>
 #include <QUrlQuery>
-#include <qdatetime.h>
 #include <qdom.h>
 
 #if defined(Q_OS_WIN)

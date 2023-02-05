@@ -23,7 +23,6 @@
 
 #include <memory>
 
-class QTimer;
 class KJob;
 class EnginePrivate;
 
@@ -49,7 +48,6 @@ namespace KNSCore
 {
 class Cache;
 class CommentsModel;
-class Installation;
 
 /**
  * KNewStuff engine.
