@@ -54,7 +54,7 @@
 
 using namespace KNSCore;
 
-typedef QHash<QString, XmlLoader *> EngineProviderLoaderHash;
+typedef QHash<QUrl, XmlLoader *> EngineProviderLoaderHash;
 Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
 class EnginePrivate
@@ -154,8 +154,7 @@ public:
     QSharedPointer<Cache> cache;
     QTimer *searchTimer = new QTimer();
     // The url of the file containing information about content providers
-    /// TODO KF6 This really wants to be turned into a QUrl (which will have implications for our public API, so not doing it just now)
-    QString providerFileUrl;
+    QUrl providerFileUrl;
     // Categories from knsrc file
     QStringList categories;
 
@@ -272,14 +271,14 @@ bool Engine::init(const QString &configfile)
     d->uploadEnabled = group.readEntry("UploadEnabled", true);
     Q_EMIT uploadEnabledChanged();
 
-    d->providerFileUrl = group.readEntry("ProvidersUrl", QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
-    if (d->providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
-        d->providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
+    d->providerFileUrl = group.readEntry("ProvidersUrl", QUrl(QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml")));
+    if (d->providerFileUrl.toString() == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
+        d->providerFileUrl = QUrl(QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
         qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
     }
     if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
         // The local providers file is called "appname.providers", to match "appname.knsrc"
-        d->providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6))).toString();
+        d->providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6)));
     }
 
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
@@ -404,7 +403,7 @@ void Engine::loadProviders()
                     }
                 }
             });
-            loader->load(QUrl(d->providerFileUrl));
+            loader->load(d->providerFileUrl);
         }
         connect(loader, &XmlLoader::signalLoaded, this, &Engine::slotProviderFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &Engine::slotProvidersFailed);
@@ -425,7 +424,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
         Q_EMIT signalErrorCode(KNSCore::ProviderError,
-                               i18n("Could not load get hot new stuff providers from file: %1", d->providerFileUrl),
+                               i18n("Could not load get hot new stuff providers from file: %1", d->providerFileUrl.toString()),
                                d->providerFileUrl);
         return;
     }
@@ -507,7 +506,7 @@ void Engine::providerJobStarted(KJob *job)
 
 void Engine::slotProvidersFailed()
 {
-    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", d->providerFileUrl), d->providerFileUrl);
+    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", d->providerFileUrl.toString()), d->providerFileUrl);
 }
 
 void Engine::providerInitialized(Provider *p)
