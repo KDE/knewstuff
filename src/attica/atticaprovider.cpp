@@ -357,7 +357,6 @@ void AtticaProvider::loadComments(const EntryInternal &entry, int commentsPerPag
     job->start();
 }
 
-/// TODO KF6 QList is discouraged, and we'll probably want to switch this (and the rest of the KNS library) to QVector instead
 QList<std::shared_ptr<KNSCore::Comment>> getCommentsList(const Attica::Comment::List &comments, std::shared_ptr<KNSCore::Comment> parent)
 {
     QList<std::shared_ptr<KNSCore::Comment>> knsComments;
