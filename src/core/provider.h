@@ -18,7 +18,7 @@
 
 #include <memory>
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "errorcode.h"
 
 #include "knewstuffcore_export.h"
@@ -159,7 +159,7 @@ public:
 
     virtual bool isInitialized() const = 0;
 
-    virtual void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) = 0;
+    virtual void setCachedEntries(const KNSCore::Entry::List &cachedEntries) = 0;
 
     /**
      * Retrieves the common name of the provider.
@@ -184,10 +184,10 @@ public:
      * Note: the engine connects to loadingFinished() signal to get the result
      */
     virtual void loadEntries(const KNSCore::Provider::SearchRequest &request) = 0;
-    virtual void loadEntryDetails(const KNSCore::EntryInternal &)
+    virtual void loadEntryDetails(const KNSCore::Entry &)
     {
     }
-    virtual void loadPayloadLink(const EntryInternal &entry, int linkId) = 0;
+    virtual void loadPayloadLink(const Entry &entry, int linkId) = 0;
     /**
      * Request a loading of comments from this provider. The engine listens to the
      * commentsLoaded() signal for the result
@@ -199,7 +199,7 @@ public:
      * @see commentsLoaded(const QList<shared_ptr<KNSCore::Comment>> comments)
      * @since 5.63
      */
-    Q_SIGNAL void loadComments(const EntryInternal &entry, int commentsPerPage, int page);
+    Q_SIGNAL void loadComments(const Entry &entry, int commentsPerPage, int page);
     /**
      * Request loading of the details for a specific person with the given username.
      * The engine listens to the personLoaded() for the result
@@ -289,7 +289,7 @@ public:
     {
         return false;
     }
-    virtual void vote(const EntryInternal & /*entry*/, uint /*rating*/)
+    virtual void vote(const Entry & /*entry*/, uint /*rating*/)
     {
     }
 
@@ -297,7 +297,7 @@ public:
     {
         return false;
     }
-    virtual void becomeFan(const EntryInternal & /*entry*/)
+    virtual void becomeFan(const Entry & /*entry*/)
     {
     }
 
@@ -333,11 +333,11 @@ public:
 Q_SIGNALS:
     void providerInitialized(KNSCore::Provider *);
 
-    void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::EntryInternal::List &) const;
+    void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &) const;
     void loadingFailed(const KNSCore::Provider::SearchRequest &);
 
-    void entryDetailsLoaded(const KNSCore::EntryInternal &);
-    void payloadLinkLoaded(const KNSCore::EntryInternal &);
+    void entryDetailsLoaded(const KNSCore::Entry &);
+    void payloadLinkLoaded(const KNSCore::Entry &);
     /**
      * Fired when new comments have been loaded
      * @param comments The list of newly loaded comments, in a depth-first order

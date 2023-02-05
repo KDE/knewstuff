@@ -9,7 +9,7 @@
 
 #include <QObject>
 #include <QQmlParserStatus>
-#include <entryinternal.h>
+#include <entry.h>
 
 namespace KNewStuffQuick
 {

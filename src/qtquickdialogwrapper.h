@@ -7,15 +7,16 @@
 #ifndef KNEWSTUFF_QTQUICKDIALOGWRAPPER_H
 #define KNEWSTUFF_QTQUICKDIALOGWRAPPER_H
 
-#include <KNSCore/EntryInternal>
+#include <KNSCore/Entry>
 #include <KNSCore/ErrorCode>
 #include <QObject>
+
+#include "knewstuff_export.h"
 
 namespace KNSCore
 {
 class Engine;
-using Entry = KNSCore::EntryInternal;
-}
+};
 
 namespace KNS3
 {

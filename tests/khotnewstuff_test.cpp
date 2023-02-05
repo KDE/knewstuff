@@ -55,7 +55,7 @@ void KNewStuff2Test::entryTest()
     }
 
     QXmlStreamReader reader(&f);
-    KNSCore::EntryInternal e;
+    KNSCore::Entry e;
     reader.readNextStartElement(); // Skip the first (the external OCS container)
     bool xmlResult = reader.readNextStartElement() && e.setEntryXML(reader);
     e.setProviderId(QStringLiteral("test-provider"));
@@ -131,17 +131,17 @@ void KNewStuff2Test::slotProvidersLoaded()
     m_engine->reloadEntries();
 }
 
-void KNewStuff2Test::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
+void KNewStuff2Test::slotEntriesLoaded(const KNSCore::Entry::List &entries)
 {
     addMessage(QStringLiteral("SLOT: slotEntriesLoaded. Number of entries %1").arg(entries.count()), QStringLiteral("msg_info"));
 
     if (m_testall) {
         addMessage(QStringLiteral("-- now, download the entries' previews and payload files"), QStringLiteral("msg_info"));
 
-        for (const KNSCore::EntryInternal &entry : entries) {
+        for (const KNSCore::Entry &entry : entries) {
             addMessage(QStringLiteral("-- entry: %1").arg(entry.name()), QStringLiteral("msg_info"));
-            if (!entry.previewUrl(KNSCore::EntryInternal::PreviewSmall1).isEmpty()) {
-                m_engine->loadPreview(entry, KNSCore::EntryInternal::PreviewSmall1);
+            if (!entry.previewUrl(KNSCore::Entry::PreviewSmall1).isEmpty()) {
+                m_engine->loadPreview(entry, KNSCore::Entry::PreviewSmall1);
             }
             if (!entry.payload().isEmpty()) {
                 m_engine->install(entry);

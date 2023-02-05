@@ -50,16 +50,16 @@ public:
     bool setProviderXML(const QDomElement &xmldata) override;
 
     bool isInitialized() const override;
-    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
+    void setCachedEntries(const KNSCore::Entry::List &cachedEntries) override;
 
     void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
-    void loadEntryDetails(const KNSCore::EntryInternal &entry) override;
-    void loadPayloadLink(const EntryInternal &entry, int linkId) override;
+    void loadEntryDetails(const KNSCore::Entry &entry) override;
+    void loadPayloadLink(const Entry &entry, int linkId) override;
     /**
      * The slot which causes loading of comments for the Attica provider
-     * @see Provider::loadComments(const EntryInternal &entry, int commentsPerPage, int page)
+     * @see Provider::loadComments(const Entry &entry, int commentsPerPage, int page)
      */
-    Q_SLOT void loadComments(const EntryInternal &entry, int commentsPerPage, int page);
+    Q_SLOT void loadComments(const Entry &entry, int commentsPerPage, int page);
     /**
      * The slot which causes loading of a person's details
      * @see Provider::loadPerson(const QString &username)
@@ -76,13 +76,13 @@ public:
     {
         return true;
     }
-    void vote(const EntryInternal &entry, uint rating) override;
+    void vote(const Entry &entry, uint rating) override;
 
     bool userCanBecomeFan() override
     {
         return true;
     }
-    void becomeFan(const EntryInternal &entry) override;
+    void becomeFan(const Entry &entry) override;
 
     Attica::Provider *provider()
     {
@@ -105,12 +105,12 @@ private Q_SLOTS:
 
 private:
     void checkForUpdates();
-    EntryInternal::List installedEntries() const;
+    Entry::List installedEntries() const;
     bool jobSuccess(Attica::BaseJob *job) const;
 
     Attica::Provider::SortMode atticaSortMode(SortMode sortMode);
 
-    EntryInternal entryFromAtticaContent(const Attica::Content &);
+    Entry entryFromAtticaContent(const Attica::Content &);
 
     // the attica categories we are interested in (e.g. Wallpaper, Application, Vocabulary File...)
     QMultiHash<QString, Attica::Category> mCategoryMap;
@@ -118,13 +118,13 @@ private:
     Attica::ProviderManager m_providerManager;
     Attica::Provider m_provider;
 
-    KNSCore::EntryInternal::List mCachedEntries;
+    KNSCore::Entry::List mCachedEntries;
     QHash<QString, Attica::Content> mCachedContent;
 
     // Associate job and entry, this is needed when fetching
     // download links or the account balance in order to continue
     // when the result is there.
-    QHash<Attica::BaseJob *, QPair<EntryInternal, int>> mDownloadLinkJobs;
+    QHash<Attica::BaseJob *, QPair<Entry, int>> mDownloadLinkJobs;
 
     // keep track of the current request
     QPointer<Attica::BaseJob> mEntryJob;

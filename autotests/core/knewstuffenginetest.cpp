@@ -10,7 +10,7 @@
 #include <QtGlobal>
 
 #include "engine.h"
-#include "entryinternal.h"
+#include "entry.h"
 
 using namespace KNSCore;
 
@@ -52,12 +52,12 @@ void EngineTest::testProviderFileLoading()
     QVERIFY(provider);
     QCOMPARE(engine->defaultProvider(), provider);
 
-    KNSCore::EntryInternal::List list;
+    KNSCore::Entry::List list;
     connect(
         engine,
         &Engine::signalEntriesLoaded,
         this,
-        [&list](const KNSCore::EntryInternal::List &loaded) {
+        [&list](const KNSCore::Entry::List &loaded) {
             list = loaded;
         },
         Qt::DirectConnection);

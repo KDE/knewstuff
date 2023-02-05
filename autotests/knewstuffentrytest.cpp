@@ -11,8 +11,7 @@
 #include <QTest>
 #include <QXmlStreamReader>
 
-#include "../src/entry.h"
-#include "../src/entry_p.h"
+#include "entry.h"
 
 #include <knewstuffcore_debug.h>
 
@@ -53,8 +52,8 @@ class testEntry : public QObject
 {
     Q_OBJECT
 private:
-    KNS3::Entry createEntryOld();
-    KNS3::Entry createEntry();
+    KNSCore::Entry createEntryOld();
+    KNSCore::Entry createEntry();
 private Q_SLOTS:
     void testProperties();
     void testCopy();
@@ -62,30 +61,30 @@ private Q_SLOTS:
     void testDomImplementation();
 };
 
-KNS3::Entry testEntry::createEntryOld()
+KNSCore::Entry testEntry::createEntryOld()
 {
     QDomDocument document;
     document.setContent(QString::fromLatin1(entryXML));
     QDomElement node = document.documentElement();
-    KNSCore::EntryInternal entryInternal;
-    bool xmlResult = entryInternal.setEntryXML(node);
+    KNSCore::Entry entry;
+    bool xmlResult = entry.setEntryXML(node);
     qCDebug(KNEWSTUFFCORE) << "Created entry from XML " << xmlResult;
-    return KNS3::EntryPrivate::fromInternal(&entryInternal);
+    return entry;
 }
 
-KNS3::Entry testEntry::createEntry()
+KNSCore::Entry testEntry::createEntry()
 {
     QXmlStreamReader reader;
     reader.addData(entryXML);
-    KNSCore::EntryInternal entryInternal;
-    bool xmlResult = reader.readNextStartElement() && entryInternal.setEntryXML(reader);
+    KNSCore::Entry entry;
+    bool xmlResult = reader.readNextStartElement() && entry.setEntryXML(reader);
     qCDebug(KNEWSTUFFCORE) << "Created entry from XML " << xmlResult;
-    return KNS3::EntryPrivate::fromInternal(&entryInternal);
+    return entry;
 }
 
 void testEntry::testProperties()
 {
-    KNS3::Entry entry = createEntry();
+    KNSCore::Entry entry = createEntry();
 
     QCOMPARE(entry.name(), name);
     QCOMPARE(entry.category(), category);
@@ -96,8 +95,8 @@ void testEntry::testProperties()
 
 void testEntry::testCopy()
 {
-    KNS3::Entry entry = createEntry();
-    KNS3::Entry entry2(entry);
+    KNSCore::Entry entry = createEntry();
+    KNSCore::Entry entry2(entry);
 
     QCOMPARE(entry.name(), entry2.name());
     QCOMPARE(entry.category(), entry2.category());
@@ -108,8 +107,8 @@ void testEntry::testCopy()
 
 void testEntry::testAssignment()
 {
-    KNS3::Entry entry = createEntry();
-    KNS3::Entry entry2 = entry;
+    KNSCore::Entry entry = createEntry();
+    KNSCore::Entry entry2 = entry;
 
     QCOMPARE(entry.name(), entry2.name());
     QCOMPARE(entry.category(), entry2.category());
@@ -120,8 +119,8 @@ void testEntry::testAssignment()
 
 void testEntry::testDomImplementation()
 {
-    KNS3::Entry entry = createEntry();
-    KNS3::Entry entry2 = createEntryOld();
+    KNSCore::Entry entry = createEntry();
+    KNSCore::Entry entry2 = createEntryOld();
 
     QCOMPARE(entry.name(), entry2.name());
     QCOMPARE(entry.category(), entry2.category());

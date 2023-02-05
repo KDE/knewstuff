@@ -4,7 +4,6 @@
 add_subdirectory(core)
 
 set(KNewStuff_SRCS
-    entry.cpp
     kmoretools/kmoretools.cpp
     kmoretools/kmoretoolsconfigdialog_p.cpp
     kmoretools/kmoretoolsmenufactory.cpp
@@ -92,7 +91,6 @@ file(COPY ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
 
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS
   HEADER_NAMES
-  Entry
   QtQuickDialogWrapper
 
   REQUIRED_HEADERS KNewStuff_HEADERS

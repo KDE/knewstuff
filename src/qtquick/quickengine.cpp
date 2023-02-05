@@ -82,24 +82,21 @@ void Engine::setConfigFile(const QString &newFile)
                             }
                             Q_EMIT errorMessage(message);
                         });
-                connect(d->engine,
-                        &KNSCore::Engine::signalEntryEvent,
-                        this,
-                        [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-                            KNSCore::EntryWrapper *wrappedEntry = new KNSCore::EntryWrapper(entry, this);
-                            // Just forward the event but not do anything more
-                            if (event != KNSCore::EntryInternal::StatusChangedEvent) {
-                                Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
-                                return;
-                            }
+                connect(d->engine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+                    KNSCore::EntryWrapper *wrappedEntry = new KNSCore::EntryWrapper(entry, this);
+                    // Just forward the event but not do anything more
+                    if (event != KNSCore::Entry::StatusChangedEvent) {
+                        Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
+                        return;
+                    }
 
-                            // We do not want to emit the entries changed signal for intermediate changed
-                            // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
-                            if (entry.status() == KNS3::Entry::Installing || entry.status() == KNS3::Entry::Updating) {
-                                return;
-                            }
-                            Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
-                        });
+                    // We do not want to emit the entries changed signal for intermediate changed
+                    // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
+                    if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
+                        return;
+                    }
+                    Q_EMIT entryEvent(wrappedEntry, (EntryEvent)event);
+                });
                 Q_EMIT engineChanged();
                 KNewStuffQuick::QuickQuestionListener::instance();
                 d->categoriesModel = new CategoriesModel(this);

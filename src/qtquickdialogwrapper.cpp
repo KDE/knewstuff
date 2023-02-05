@@ -26,7 +26,7 @@ public:
     QQmlEngine *engine = nullptr;
     QObject *item = nullptr;
     KNSCore::Engine *coreEngine = nullptr;
-    QList<KNSCore::EntryInternal> changedEntries;
+    QList<KNSCore::Entry> changedEntries;
 };
 
 QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *parent)
@@ -59,9 +59,9 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
         d->coreEngine = qtquickEngine->property("engine").value<KNSCore::Engine *>();
         Q_ASSERT(d->coreEngine);
 
-        connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::EntryEvent event) {
-            if (event == KNSCore::EntryInternal::StatusChangedEvent) {
-                if (entry.status() == KNS3::Entry::Installing || entry.status() == KNS3::Entry::Updating) {
+        connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+            if (event == KNSCore::Entry::StatusChangedEvent) {
+                if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
                     return; // We do not care about intermediate states
                 }
                 // To make sure we have no duplicates and always the latest entry

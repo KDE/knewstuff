@@ -11,7 +11,7 @@
 #include <QAbstractListModel>
 #include <memory>
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "knewstuffcore_export.h"
 
 class KJob;
@@ -35,10 +35,10 @@ public:
      * within the model.
      * @since 5.63
      */
-    int row(const EntryInternal &entry) const;
+    int row(const Entry &entry) const;
 
-    void addEntry(const EntryInternal &entry);
-    void removeEntry(const EntryInternal &entry);
+    void addEntry(const Entry &entry);
+    void removeEntry(const Entry &entry);
 
     bool hasPreviewImages() const;
     bool hasWebService() const;
@@ -47,10 +47,10 @@ Q_SIGNALS:
     void jobStarted(KJob *, const QString &label);
 
 public Q_SLOTS:
-    void slotEntryChanged(const KNSCore::EntryInternal &entry);
-    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void slotEntryChanged(const KNSCore::Entry &entry);
+    void slotEntriesLoaded(const KNSCore::Entry::List &entries);
     void clearEntries();
-    void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
+    void slotEntryPreviewLoaded(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
 
 private:
     const std::unique_ptr<ItemsModelPrivate> d;

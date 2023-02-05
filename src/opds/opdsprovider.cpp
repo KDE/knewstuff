@@ -112,7 +112,7 @@ public:
 
     XmlLoader *xmlLoader;
 
-    EntryInternal::List cachedEntries;
+    Entry::List cachedEntries;
     Provider::SearchRequest currentRequest;
 
     QUrl openSearchDocumentURL;
@@ -158,9 +158,9 @@ public:
         return query;
     };
 
-    EntryInternal::List installedEntries() const {{EntryInternal::List entries;
-    for (const EntryInternal &entry : std::as_const(cachedEntries)) {
-        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
+    Entry::List installedEntries() const {{Entry::List entries;
+    for (const Entry &entry : std::as_const(cachedEntries)) {
+        if (entry.status() == KNSCore::Entry::Installed || entry.status() == KNSCore::Entry::Updateable) {
             entries.append(entry);
         }
     }
@@ -221,7 +221,7 @@ void parseFeedData(const QDomDocument &doc)
         iconUrl = QUrl(fixRelativeUrl(feedDoc->icon()));
     }
 
-    EntryInternal::List entries;
+    Entry::List entries;
     QList<OPDSProvider::SearchPreset> presets;
 
     {
@@ -334,13 +334,13 @@ void parseFeedData(const QDomDocument &doc)
     for (int i = 0; i < feedDoc->entries().size(); i++) {
         Syndication::Atom::Entry feedEntry = feedDoc->entries().at(i);
 
-        EntryInternal entry;
+        Entry entry;
         entry.setName(feedEntry.title());
         entry.setProviderId(providerId);
         entry.setUniqueId(feedEntry.id());
 
-        entry.setStatus(KNS3::Entry::Invalid);
-        for (const EntryInternal &cachedEntry : std::as_const(cachedEntries)) {
+        entry.setStatus(KNSCore::Entry::Invalid);
+        for (const Entry &cachedEntry : std::as_const(cachedEntries)) {
             if (entry.uniqueId() == cachedEntry.uniqueId()) {
                 entry = cachedEntry;
                 break;
@@ -386,7 +386,7 @@ void parseFeedData(const QDomDocument &doc)
         for (int j = 0; j < feedEntry.links().size(); j++) {
             Syndication::Atom::Link link = feedEntry.links().at(j);
 
-            KNSCore::EntryInternal::DownloadLinkInformation download;
+            KNSCore::Entry::DownloadLinkInformation download;
             download.id = entry.downloadLinkCount() + 1;
             // Linkrelations can have multiple values, expressed as something like... rel="me nofollow alternate".
             QStringList linkRelation = link.rel().split(QStringLiteral(" "));
@@ -422,11 +422,11 @@ void parseFeedData(const QDomDocument &doc)
                 } else if (linkRelation.contains(OPDS_REL_ACQUISITION) || linkRelation.contains(OPDS_REL_AC_OPEN_ACCESS)) {
                     download.isDownloadtypeLink = true;
 
-                    if (entry.status() != KNS3::Entry::Installed && entry.status() != KNS3::Entry::Updateable) {
-                        entry.setStatus(KNS3::Entry::Downloadable);
+                    if (entry.status() != KNSCore::Entry::Installed && entry.status() != KNSCore::Entry::Updateable) {
+                        entry.setStatus(KNSCore::Entry::Downloadable);
                     }
 
-                    entry.setEntryType(EntryInternal::CatalogEntry);
+                    entry.setEntryType(Entry::CatalogEntry);
                 }
                 // TODO, support preview relation, but this requires we show that an entry is otherwise paid for in the UI.
 
@@ -439,10 +439,10 @@ void parseFeedData(const QDomDocument &doc)
 
             } else if (link.rel().startsWith(OPDS_REL_IMAGE)) {
                 if (link.rel() == OPDS_REL_THUMBNAIL) {
-                    entry.setPreviewUrl(linkUrl, KNSCore::EntryInternal::PreviewType(counterThumbnails));
+                    entry.setPreviewUrl(linkUrl, KNSCore::Entry::PreviewType(counterThumbnails));
                     counterThumbnails += 1;
                 } else {
-                    entry.setPreviewUrl(linkUrl, KNSCore::EntryInternal::PreviewType(counterImages + 3));
+                    entry.setPreviewUrl(linkUrl, KNSCore::Entry::PreviewType(counterImages + 3));
                     counterImages += 1;
                 }
 
@@ -478,7 +478,7 @@ void parseFeedData(const QDomDocument &doc)
             entry.setReleaseDate(date.date());
         }
 
-        if (entry.status() != KNS3::Entry::Invalid) {
+        if (entry.status() != KNSCore::Entry::Invalid) {
             entry.setPayload(QString());
             // Gutenberg doesn't do versioning in the opds, so it's update value is unreliable,
             // even though openlib and standard do use it properly. We'll instead doublecheck that
@@ -486,8 +486,8 @@ void parseFeedData(const QDomDocument &doc)
             if (date.secsTo(currentTime) > 360) {
                 if (entry.releaseDate() < date.date()) {
                     entry.setUpdateReleaseDate(date.date());
-                    if (entry.status() == KNS3::Entry::Installed) {
-                        entry.setStatus(KNS3::Entry::Updateable);
+                    if (entry.status() == KNSCore::Entry::Installed) {
+                        entry.setStatus(KNSCore::Entry::Updateable);
                     }
                 }
             }
@@ -503,7 +503,7 @@ void parseFeedData(const QDomDocument &doc)
             if (groupEntryUrl.isEmpty()) {
                 continue;
             } else {
-                entry.setEntryType(EntryInternal::GroupEntry);
+                entry.setEntryType(Entry::GroupEntry);
                 entry.setPayload(groupEntryUrl);
             }
         }
@@ -552,7 +552,7 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
         Q_EMIT loadingFinished(request, d->installedEntries());
         return;
     } else if (request.filter == Provider::ExactEntryId) {
-        for (EntryInternal entry : d->cachedEntries) {
+        for (Entry entry : d->cachedEntries) {
             if (entry.uniqueId() == request.searchTerm) {
                 loadEntryDetails(entry);
             }
@@ -587,7 +587,7 @@ void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
     }
 }
 
-void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
+void OPDSProvider::loadEntryDetails(const Entry &entry)
 {
     QUrl url;
     QString entryMimeType = QStringList({OPDS_ATOM_MT, OPDS_TYPE_ENTRY, OPDS_PROFILE}).join(QStringLiteral(";"));
@@ -614,9 +614,9 @@ void OPDSProvider::loadEntryDetails(const EntryInternal &entry)
     }
 }
 
-void OPDSProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int linkNumber)
+void OPDSProvider::loadPayloadLink(const KNSCore::Entry &entry, int linkNumber)
 {
-    KNSCore::EntryInternal copy = entry;
+    KNSCore::Entry copy = entry;
     for (auto downloadInfo : entry.downloadLinkInformationList()) {
         if (downloadInfo.id == linkNumber) {
             for (QString string : downloadInfo.tags) {
@@ -663,7 +663,7 @@ bool OPDSProvider::isInitialized() const
     return d->initialized;
 }
 
-void OPDSProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
+void OPDSProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
 {
     d->cachedEntries = cachedEntries;
 }

@@ -7,7 +7,6 @@
 
 #include "action.h"
 
-#include "entry_p.h"
 #include "qtquickdialogwrapper.h"
 #include "ui/widgetquestionlistener.h"
 #include <KAuthorized>
@@ -70,7 +69,7 @@ void Action::showDialog()
     if (!d->dialog) {
         d->dialog = new QtQuickDialogWrapper(d->configFile, this);
         connect(d->dialog.data(), &KNS3::QtQuickDialogWrapper::closed, this, [this]() {
-            const QList<KNSCore::EntryInternal> changedInternalEntries = d->dialog->changedEntries();
+            const QList<KNSCore::Entry> changedInternalEntries = d->dialog->changedEntries();
             Q_EMIT dialogFinished(changedInternalEntries);
         });
     }

@@ -72,7 +72,7 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                                                    QQmlEngine::CppOwnership);
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
                                                                     });
-    qmlRegisterUncreatableType<KNSCore::EntryInternal>(uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
+    qmlRegisterUncreatableType<KNSCore::Entry>(uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
 
     // Version 1.67
     qmlRegisterUncreatableType<KNSCore::EntryWrapper>(
@@ -80,7 +80,7 @@ void QmlPlugins::registerTypes(const char *uri)
         1,
         67,
         "EntryWrapper",
-        QStringLiteral("This should only be created by the Engine, and wraps EntryInternal objects for passing through Qt Quick"));
+        QStringLiteral("This should only be created by the Engine, and wraps Entry objects for passing through Qt Quick"));
 
     // Version 1.81
     qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {

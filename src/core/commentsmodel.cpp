@@ -6,7 +6,7 @@
 
 #include "commentsmodel.h"
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "knewstuffcore_debug.h"
 
 #include <KLocalizedString>
@@ -25,7 +25,7 @@ public:
     CommentsModel *const q;
     Engine *engine = nullptr;
 
-    EntryInternal entry;
+    Entry entry;
 
     QList<std::shared_ptr<KNSCore::Comment>> comments;
 
@@ -199,12 +199,12 @@ void KNSCore::CommentsModel::fetchMore(const QModelIndex &parent)
     d->fetch();
 }
 
-const KNSCore::EntryInternal &KNSCore::CommentsModel::entry() const
+const KNSCore::Entry &KNSCore::CommentsModel::entry() const
 {
     return d->entry;
 }
 
-void KNSCore::CommentsModel::setEntry(const KNSCore::EntryInternal &newEntry)
+void KNSCore::CommentsModel::setEntry(const KNSCore::Entry &newEntry)
 {
     d->entry = newEntry;
     d->fetch(CommentsModelPrivate::ClearModel);

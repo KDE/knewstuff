@@ -9,7 +9,7 @@
 
 using namespace KNSCore;
 
-ImageLoader::ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent)
+ImageLoader::ImageLoader(const Entry &entry, Entry::PreviewType type, QObject *parent)
     : QObject(parent)
     , m_entry(entry)
     , m_previewType(type)
@@ -50,7 +50,7 @@ void ImageLoader::slotDownload(KJob *job)
     QImage image;
     image.loadFromData(std::move(m_buffer));
 
-    if (m_previewType == EntryInternal::PreviewSmall1 || m_previewType == EntryInternal::PreviewSmall2 || m_previewType == EntryInternal::PreviewSmall3) {
+    if (m_previewType == Entry::PreviewSmall1 || m_previewType == Entry::PreviewSmall2 || m_previewType == Entry::PreviewSmall3) {
         if (image.width() > PreviewWidth || image.height() > PreviewHeight) {
             // if the preview is really big, first scale fast to a smaller size, then smooth to desired size
             if (image.width() > 4 * PreviewWidth || image.height() > 4 * PreviewHeight) {

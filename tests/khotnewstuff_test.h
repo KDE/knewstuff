@@ -9,7 +9,7 @@
 #ifndef KHOTNEWSTUFF_TEST_H
 #define KHOTNEWSTUFF_TEST_H
 
-#include <KNSCore/EntryInternal>
+#include <KNSCore/Entry>
 #include <KNSCore/Provider>
 
 #include <QObject>
@@ -41,7 +41,7 @@ public:
 public Q_SLOTS:
     void slotProvidersLoaded();
     void slotEngineError(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
-    void slotEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void slotEntriesLoaded(const KNSCore::Entry::List &entries);
     void slotInstallationFinished();
 
 private:

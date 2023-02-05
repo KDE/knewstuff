@@ -15,7 +15,7 @@
 #include <QSharedPointer>
 #include <QString>
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "errorcode.h"
 #include "provider.h"
 
@@ -138,7 +138,7 @@ public:
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(KNSCore::EntryInternal entry, int linkId = 1);
+    void install(KNSCore::Entry entry, int linkId = 1);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
@@ -146,7 +146,7 @@ public:
      *
      * @param entry The entry to deinstall
      */
-    void uninstall(KNSCore::EntryInternal entry);
+    void uninstall(KNSCore::Entry entry);
 
     /**
      * Attempt to load a specific preview for the specified entry.
@@ -154,18 +154,18 @@ public:
      * @param entry The entry to fetch a preview for
      * @param type The particular preview to fetch
      *
-     * @see signalEntryPreviewLoaded(KNSCore::EntryInternal, KNSCore::EntryInternal::PreviewType);
+     * @see signalEntryPreviewLoaded(KNSCore::Entry, KNSCore::Entry::PreviewType);
      * @see signalPreviewFailed();
      */
-    void loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type);
+    void loadPreview(const KNSCore::Entry &entry, Entry::PreviewType type);
     /**
      * Get the full details of a specific entry
      *
      * @param entry The entry to get full details for
      *
-     * @see Entry::signalEntryDetailsLoaded(KNSCore::EntryInternal)
+     * @see Entry::signalEntryDetailsLoaded(KNSCore::Entry)
      */
-    void loadDetails(const KNSCore::EntryInternal &entry);
+    void loadDetails(const KNSCore::Entry &entry);
 
     /**
      * Set the order the search results are returned in.
@@ -383,7 +383,7 @@ public:
     /**
      * Try to contact the author of the entry by email or showing their homepage.
      */
-    void contactAuthor(const EntryInternal &entry);
+    void contactAuthor(const Entry &entry);
 
     /**
      * Whether or not a user is able to vote on the passed entry.
@@ -391,14 +391,14 @@ public:
      * @param entry The entry to check votability on
      * @return True if the user is able to vote on the entry
      */
-    bool userCanVote(const EntryInternal &entry);
+    bool userCanVote(const Entry &entry);
     /**
      * Cast a vote on the passed entry.
      *
      * @param entry The entry to vote on
      * @param rating A number from 0 to 100, 50 being neutral, 0 being most negative and 100 being most positive.
      */
-    void vote(const EntryInternal &entry, uint rating);
+    void vote(const Entry &entry, uint rating);
 
     /**
      * Whether or not the user is allowed to become a fan of
@@ -408,13 +408,13 @@ public:
      * @param entry The entry the user might wish to be a fan of
      * @return Whether or not it is possible for the user to become a fan of that entry
      */
-    bool userCanBecomeFan(const EntryInternal &entry);
+    bool userCanBecomeFan(const Entry &entry);
     /**
      * This will mark the user who is currently authenticated as a fan
      * of the entry passed to the function.
      * @param entry The entry the user wants to be a fan of
      */
-    void becomeFan(const EntryInternal &entry);
+    void becomeFan(const Entry &entry);
     // FIXME There is currently no exposed API to remove the fan status
 
     /**
@@ -451,7 +451,7 @@ public:
     /**
      * Whether or not an adoption command exists for this engine
      *
-     * @see adoptionCommand(KNSCore::EntryInternal)
+     * @see adoptionCommand(KNSCore::Entry)
      * @return True if an adoption command exists
      */
     bool hasAdoptionCommand() const;
@@ -463,7 +463,7 @@ public:
      * @see signalEntryEvent
      * @since 5.77
      */
-    Q_INVOKABLE void adoptEntry(const KNSCore::EntryInternal &entry);
+    Q_INVOKABLE void adoptEntry(const KNSCore::Entry &entry);
 
     /**
      * Text that should be displayed for the adoption button, this defaults to i18n("Use")
@@ -539,7 +539,7 @@ public:
      * @return A model which contains the comments for the specified entry
      * @since 5.63
      */
-    CommentsModel *commentsForEntry(const KNSCore::EntryInternal &entry);
+    CommentsModel *commentsForEntry(const KNSCore::Entry &entry);
 
     /**
      * String representation of the engines busy state
@@ -628,28 +628,28 @@ Q_SIGNALS:
     void signalMessage(const QString &message);
 
     void signalProvidersLoaded();
-    void signalEntriesLoaded(const KNSCore::EntryInternal::List &entries);
-    void signalUpdateableEntriesLoaded(const KNSCore::EntryInternal::List &entries);
+    void signalEntriesLoaded(const KNSCore::Entry::List &entries);
+    void signalUpdateableEntriesLoaded(const KNSCore::Entry::List &entries);
 
     // a new search result is there, clear the list of items
     void signalResetView();
 
-    void signalEntryPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
+    void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
     void signalPreviewFailed();
 
     void signalEntryUploadFinished();
     void signalEntryUploadFailed();
 
-    void signalDownloadDialogDone(KNSCore::EntryInternal::List);
+    void signalDownloadDialogDone(KNSCore::Entry::List);
     void jobStarted(KJob *, const QString &);
 
     /**
      * Fires in the case of any critical or serious errors, such as network or API problems.
      * @param errorCode Represents the specific type of error which has occurred
      * @param message A human-readable message which can be shown to the end user
-     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the
+     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
      * metadata details)
-     * @see KNSCore::EntryInternal::ErrorCode
+     * @see KNSCore::Entry::ErrorCode
      * @since 5.53
      */
     void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
@@ -663,11 +663,11 @@ Q_SIGNALS:
      */
     void signalSearchPresetsLoaded(const QList<Provider::SearchPreset> &presets);
     /**
-     * This is fired for any event related directly to a single EntryInternal instance
-     * @see EntryInternal::EntryEvent for details on which specific event is being notified
+     * This is fired for any event related directly to a single Entry instance
+     * @see Entry::EntryEvent for details on which specific event is being notified
      * @since 5.77
      */
-    void signalEntryEvent(const EntryInternal &entry, EntryInternal::EntryEvent event);
+    void signalEntryEvent(const Entry &entry, Entry::EntryEvent event);
 
 private Q_SLOTS:
     // the .knsrc file was loaded
@@ -681,16 +681,16 @@ private Q_SLOTS:
     // called when a provider is ready to work
     void providerInitialized(KNSCore::Provider *);
 
-    void slotEntriesLoaded(const KNSCore::Provider::SearchRequest &, KNSCore::EntryInternal::List);
-    void slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry);
-    void slotPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
+    void slotEntriesLoaded(const KNSCore::Provider::SearchRequest &, KNSCore::Entry::List);
+    void slotEntryDetailsLoaded(const KNSCore::Entry &entry);
+    void slotPreviewLoaded(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
 
     void slotSearchTimerExpired();
 
-    void slotEntryChanged(const KNSCore::EntryInternal &entry);
+    void slotEntryChanged(const KNSCore::Entry &entry);
     void slotInstallationFinished();
     void slotInstallationFailed(const QString &message);
-    void downloadLinkLoaded(const KNSCore::EntryInternal &entry);
+    void downloadLinkLoaded(const KNSCore::Entry &entry);
 
     void providerJobStarted(KJob *);
 

@@ -9,7 +9,7 @@
 
 #include <QObject>
 
-#include "KNSCore/EntryInternal"
+#include "KNSCore/Entry"
 
 #include <memory>
 
@@ -17,7 +17,7 @@ class DownloadLinkInfoPrivate;
 /**
  * @short One downloadable item as contained within one content item
  *
- * A simple data container which wraps a KNSCore::EntryInternal::DownloadLinkInformation
+ * A simple data container which wraps a KNSCore::Entry::DownloadLinkInformation
  * instance and provides property accessors for each of the pieces of information stored
  * in it.
  */
@@ -38,7 +38,7 @@ public:
     explicit DownloadLinkInfo(QObject *parent = nullptr);
     ~DownloadLinkInfo() override;
 
-    void setData(const KNSCore::EntryInternal::DownloadLinkInformation &data);
+    void setData(const KNSCore::Entry::DownloadLinkInformation &data);
     Q_SIGNAL void dataChanged();
 
     QString name() const;

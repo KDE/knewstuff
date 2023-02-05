@@ -7,35 +7,34 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "entryinternal.h"
+#include "entry.h"
 
 #include <QStringList>
 #include <QXmlStreamReader>
 #include <knewstuffcore_debug.h>
 
-#include "../entry_p.h" // For Entry::Status ONLY!
 #include "xmlloader_p.h"
 
 using namespace KNSCore;
 
-class KNSCore::EntryInternalPrivate : public QSharedData
+class KNSCore::EntryPrivate : public QSharedData
 {
 public:
-    EntryInternalPrivate()
+    EntryPrivate()
         : mReleaseDate(QDate::currentDate())
         , mRating(0)
         , mNumberOfComments(0)
         , mDownloadCount(0)
         , mNumberFans(0)
         , mNumberKnowledgebaseEntries(0)
-        , mStatus(KNS3::Entry::Invalid)
-        , mSource(EntryInternal::Online)
-        , mEntryType(EntryInternal::CatalogEntry)
+        , mStatus(KNSCore::Entry::Invalid)
+        , mSource(Entry::Online)
+        , mEntryType(Entry::CatalogEntry)
     {
-        qRegisterMetaType<KNSCore::EntryInternal::List>();
+        qRegisterMetaType<KNSCore::Entry::List>();
     }
 
-    bool operator==(const EntryInternalPrivate &other) const
+    bool operator==(const EntryPrivate &other) const
     {
         return mUniqueId == other.mUniqueId && mProviderId == other.mProviderId;
     }
@@ -71,363 +70,363 @@ public:
 
     QString mChecksum;
     QString mSignature;
-    KNS3::Entry::Status mStatus;
-    EntryInternal::Source mSource;
-    EntryInternal::EntryType mEntryType;
+    KNSCore::Entry::Status mStatus;
+    Entry::Source mSource;
+    Entry::EntryType mEntryType;
 
     QString mPreviewUrl[6];
     QImage mPreviewImage[6];
 
-    QList<EntryInternal::DownloadLinkInformation> mDownloadLinkInformationList;
+    QList<Entry::DownloadLinkInformation> mDownloadLinkInformationList;
 };
 
-EntryInternal::EntryInternal()
-    : d(new EntryInternalPrivate())
+Entry::Entry()
+    : d(new EntryPrivate())
 {
 }
 
-EntryInternal::EntryInternal(const EntryInternal &other)
+Entry::Entry(const Entry &other)
     : d(other.d)
 {
 }
 
-EntryInternal &EntryInternal::operator=(const EntryInternal &other)
+Entry &Entry::operator=(const Entry &other)
 {
     d = other.d;
     return *this;
 }
 
-bool EntryInternal::operator<(const KNSCore::EntryInternal &other) const
+bool Entry::operator<(const KNSCore::Entry &other) const
 {
     return d->mUniqueId < other.d->mUniqueId;
 }
 
-bool EntryInternal::operator==(const KNSCore::EntryInternal &other) const
+bool Entry::operator==(const KNSCore::Entry &other) const
 {
     return d->mUniqueId == other.d->mUniqueId && d->mProviderId == other.d->mProviderId;
 }
 
-EntryInternal::~EntryInternal() = default;
+Entry::~Entry() = default;
 
-bool EntryInternal::isValid() const
+bool Entry::isValid() const
 {
     return !d->mUniqueId.isEmpty();
 }
 
-QString EntryInternal::name() const
+QString Entry::name() const
 {
     return d->mName;
 }
 
-void EntryInternal::setName(const QString &name)
+void Entry::setName(const QString &name)
 {
     d->mName = name;
 }
 
-QString EntryInternal::uniqueId() const
+QString Entry::uniqueId() const
 {
     return d->mUniqueId;
 }
 
-void EntryInternal::setUniqueId(const QString &id)
+void Entry::setUniqueId(const QString &id)
 {
     d->mUniqueId = id;
 }
 
-QString EntryInternal::providerId() const
+QString Entry::providerId() const
 {
     return d->mProviderId;
 }
 
-void EntryInternal::setProviderId(const QString &id)
+void Entry::setProviderId(const QString &id)
 {
     d->mProviderId = id;
 }
 
-QStringList KNSCore::EntryInternal::tags() const
+QStringList KNSCore::Entry::tags() const
 {
     return d->mTags;
 }
 
-void KNSCore::EntryInternal::setTags(const QStringList &tags)
+void KNSCore::Entry::setTags(const QStringList &tags)
 {
     d->mTags = tags;
 }
 
-QString EntryInternal::category() const
+QString Entry::category() const
 {
     return d->mCategory;
 }
 
-void EntryInternal::setCategory(const QString &category)
+void Entry::setCategory(const QString &category)
 {
     d->mCategory = category;
 }
 
-QUrl EntryInternal::homepage() const
+QUrl Entry::homepage() const
 {
     return d->mHomepage;
 }
 
-void EntryInternal::setHomepage(const QUrl &page)
+void Entry::setHomepage(const QUrl &page)
 {
     d->mHomepage = page;
 }
 
-Author EntryInternal::author() const
+Author Entry::author() const
 {
     return d->mAuthor;
 }
 
-void EntryInternal::setAuthor(const KNSCore::Author &author)
+void Entry::setAuthor(const KNSCore::Author &author)
 {
     d->mAuthor = author;
 }
 
-QString EntryInternal::license() const
+QString Entry::license() const
 {
     return d->mLicense;
 }
 
-void EntryInternal::setLicense(const QString &license)
+void Entry::setLicense(const QString &license)
 {
     d->mLicense = license;
 }
 
-QString EntryInternal::summary() const
+QString Entry::summary() const
 {
     return d->mSummary;
 }
 
-void EntryInternal::setSummary(const QString &summary)
+void Entry::setSummary(const QString &summary)
 {
     d->mSummary = summary;
 }
 
-QString EntryInternal::shortSummary() const
+QString Entry::shortSummary() const
 {
     return d->mShortSummary;
 }
 
-void EntryInternal::setShortSummary(const QString &summary)
+void Entry::setShortSummary(const QString &summary)
 {
     d->mShortSummary = summary;
 }
 
-void EntryInternal::setChangelog(const QString &changelog)
+void Entry::setChangelog(const QString &changelog)
 {
     d->mChangelog = changelog;
 }
 
-QString EntryInternal::changelog() const
+QString Entry::changelog() const
 {
     return d->mChangelog;
 }
 
-QString EntryInternal::version() const
+QString Entry::version() const
 {
     return d->mVersion;
 }
 
-void EntryInternal::setVersion(const QString &version)
+void Entry::setVersion(const QString &version)
 {
     d->mVersion = version;
 }
 
-QDate EntryInternal::releaseDate() const
+QDate Entry::releaseDate() const
 {
     return d->mReleaseDate;
 }
 
-void EntryInternal::setReleaseDate(const QDate &releasedate)
+void Entry::setReleaseDate(const QDate &releasedate)
 {
     d->mReleaseDate = releasedate;
 }
 
-QString EntryInternal::payload() const
+QString Entry::payload() const
 {
     return d->mPayload;
 }
 
-void EntryInternal::setPayload(const QString &url)
+void Entry::setPayload(const QString &url)
 {
     d->mPayload = url;
 }
 
-QDate EntryInternal::updateReleaseDate() const
+QDate Entry::updateReleaseDate() const
 {
     return d->mUpdateReleaseDate;
 }
 
-void EntryInternal::setUpdateReleaseDate(const QDate &releasedate)
+void Entry::setUpdateReleaseDate(const QDate &releasedate)
 {
     d->mUpdateReleaseDate = releasedate;
 }
 
-QString EntryInternal::updateVersion() const
+QString Entry::updateVersion() const
 {
     return d->mUpdateVersion;
 }
 
-void EntryInternal::setUpdateVersion(const QString &version)
+void Entry::setUpdateVersion(const QString &version)
 {
     d->mUpdateVersion = version;
 }
 
-QString EntryInternal::previewUrl(PreviewType type) const
+QString Entry::previewUrl(PreviewType type) const
 {
     return d->mPreviewUrl[type];
 }
 
-void EntryInternal::setPreviewUrl(const QString &url, PreviewType type)
+void Entry::setPreviewUrl(const QString &url, PreviewType type)
 {
     d->mPreviewUrl[type] = url;
 }
 
-QImage EntryInternal::previewImage(PreviewType type) const
+QImage Entry::previewImage(PreviewType type) const
 {
     return d->mPreviewImage[type];
 }
 
-void EntryInternal::setPreviewImage(const QImage &image, PreviewType type)
+void Entry::setPreviewImage(const QImage &image, PreviewType type)
 {
     d->mPreviewImage[type] = image;
 }
 
-int EntryInternal::rating() const
+int Entry::rating() const
 {
     return d->mRating;
 }
 
-void EntryInternal::setRating(int rating)
+void Entry::setRating(int rating)
 {
     d->mRating = rating;
 }
 
-int EntryInternal::numberOfComments() const
+int Entry::numberOfComments() const
 {
     return d->mNumberOfComments;
 }
 
-void EntryInternal::setNumberOfComments(int comments)
+void Entry::setNumberOfComments(int comments)
 {
     d->mNumberOfComments = comments;
 }
 
-int EntryInternal::downloadCount() const
+int Entry::downloadCount() const
 {
     return d->mDownloadCount;
 }
 
-void EntryInternal::setDownloadCount(int downloads)
+void Entry::setDownloadCount(int downloads)
 {
     d->mDownloadCount = downloads;
 }
 
-int EntryInternal::numberFans() const
+int Entry::numberFans() const
 {
     return d->mNumberFans;
 }
 
-void EntryInternal::setNumberFans(int fans)
+void Entry::setNumberFans(int fans)
 {
     d->mNumberFans = fans;
 }
 
-QString EntryInternal::donationLink() const
+QString Entry::donationLink() const
 {
     return d->mDonationLink;
 }
 
-void EntryInternal::setDonationLink(const QString &link)
+void Entry::setDonationLink(const QString &link)
 {
     d->mDonationLink = link;
 }
 
-int EntryInternal::numberKnowledgebaseEntries() const
+int Entry::numberKnowledgebaseEntries() const
 {
     return d->mNumberKnowledgebaseEntries;
 }
-void EntryInternal::setNumberKnowledgebaseEntries(int num)
+void Entry::setNumberKnowledgebaseEntries(int num)
 {
     d->mNumberKnowledgebaseEntries = num;
 }
 
-QString EntryInternal::knowledgebaseLink() const
+QString Entry::knowledgebaseLink() const
 {
     return d->mKnowledgebaseLink;
 }
-void EntryInternal::setKnowledgebaseLink(const QString &link)
+void Entry::setKnowledgebaseLink(const QString &link)
 {
     d->mKnowledgebaseLink = link;
 }
 
-EntryInternal::Source EntryInternal::source() const
+Entry::Source Entry::source() const
 {
     return d->mSource;
 }
 
-void EntryInternal::setEntryType(EntryInternal::EntryType type)
+void Entry::setEntryType(Entry::EntryType type)
 {
     d->mEntryType = type;
 }
 
-EntryInternal::EntryType EntryInternal::entryType() const
+Entry::EntryType Entry::entryType() const
 {
     return d->mEntryType;
 }
 
-void EntryInternal::setSource(Source source)
+void Entry::setSource(Source source)
 {
     d->mSource = source;
 }
 
-KNS3::Entry::Status EntryInternal::status() const
+KNSCore::Entry::Status Entry::status() const
 {
     return d->mStatus;
 }
 
-void EntryInternal::setStatus(KNS3::Entry::Status status)
+void Entry::setStatus(KNSCore::Entry::Status status)
 {
     d->mStatus = status;
 }
 
-void KNSCore::EntryInternal::setInstalledFiles(const QStringList &files)
+void KNSCore::Entry::setInstalledFiles(const QStringList &files)
 {
     d->mInstalledFiles = files;
 }
 
-QStringList KNSCore::EntryInternal::installedFiles() const
+QStringList KNSCore::Entry::installedFiles() const
 {
     return d->mInstalledFiles;
 }
 
-void KNSCore::EntryInternal::setUnInstalledFiles(const QStringList &files)
+void KNSCore::Entry::setUnInstalledFiles(const QStringList &files)
 {
     d->mUnInstalledFiles = files;
 }
 
-QStringList KNSCore::EntryInternal::uninstalledFiles() const
+QStringList KNSCore::Entry::uninstalledFiles() const
 {
     return d->mUnInstalledFiles;
 }
 
-int KNSCore::EntryInternal::downloadLinkCount() const
+int KNSCore::Entry::downloadLinkCount() const
 {
     return d->mDownloadLinkInformationList.size();
 }
 
-QList<KNSCore::EntryInternal::DownloadLinkInformation> KNSCore::EntryInternal::downloadLinkInformationList() const
+QList<KNSCore::Entry::DownloadLinkInformation> KNSCore::Entry::downloadLinkInformationList() const
 {
     return d->mDownloadLinkInformationList;
 }
 
-void KNSCore::EntryInternal::appendDownloadLinkInformation(const KNSCore::EntryInternal::DownloadLinkInformation &info)
+void KNSCore::Entry::appendDownloadLinkInformation(const KNSCore::Entry::DownloadLinkInformation &info)
 {
     d->mDownloadLinkInformationList.append(info);
 }
 
-void EntryInternal::clearDownloadLinkInformation()
+void Entry::clearDownloadLinkInformation()
 {
     d->mDownloadLinkInformationList.clear();
 }
@@ -473,7 +472,7 @@ static int readInt(QXmlStreamReader *xml)
     return ret;
 }
 
-bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
+bool KNSCore::Entry::setEntryXML(QXmlStreamReader &reader)
 {
     if (reader.name() != QLatin1String("stuff")) {
         qCWarning(KNEWSTUFFCORE) << "Parsing Entry from invalid XML. Reader tag name was expected to be \"stuff\", but was found as:" << reader.name();
@@ -544,9 +543,9 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
             const auto statusText = readText(&reader);
             if (statusText == QLatin1String("installed")) {
                 qCDebug(KNEWSTUFFCORE) << "Found an installed entry in registry";
-                d->mStatus = KNS3::Entry::Installed;
+                d->mStatus = KNSCore::Entry::Installed;
             } else if (statusText == QLatin1String("updateable")) {
-                d->mStatus = KNS3::Entry::Updateable;
+                d->mStatus = KNSCore::Entry::Updateable;
             }
             if (reader.tokenType() == QXmlStreamReader::Characters) {
                 readNextSkipComments(&reader);
@@ -578,7 +577,7 @@ bool KNSCore::EntryInternal::setEntryXML(QXmlStreamReader &reader)
     return true;
 }
 
-bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
+bool KNSCore::Entry::setEntryXML(const QDomElement &xmldata)
 {
     if (xmldata.tagName() != QLatin1String("stuff")) {
         qWarning() << "Parsing Entry from invalid XML";
@@ -644,9 +643,9 @@ bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
             QString statusText = e.text();
             if (statusText == QLatin1String("installed")) {
                 qCDebug(KNEWSTUFFCORE) << "Found an installed entry in registry";
-                d->mStatus = KNS3::Entry::Installed;
+                d->mStatus = KNSCore::Entry::Installed;
             } else if (statusText == QLatin1String("updateable")) {
-                d->mStatus = KNS3::Entry::Updateable;
+                d->mStatus = KNSCore::Entry::Updateable;
             }
         }
     }
@@ -675,7 +674,7 @@ bool KNSCore::EntryInternal::setEntryXML(const QDomElement &xmldata)
 /**
  * get the xml string for the entry
  */
-QDomElement KNSCore::EntryInternal::entryXML() const
+QDomElement KNSCore::Entry::entryXML() const
 {
     Q_ASSERT(!d->mUniqueId.isEmpty());
     Q_ASSERT(!d->mProviderId.isEmpty());
@@ -732,19 +731,14 @@ QDomElement KNSCore::EntryInternal::entryXML() const
     e = addElement(doc, el, QStringLiteral("payload"), d->mPayload);
     e = addElement(doc, el, QStringLiteral("tags"), d->mTags.join(QLatin1Char(',')));
 
-    if (d->mStatus == KNS3::Entry::Installed) {
+    if (d->mStatus == KNSCore::Entry::Installed) {
         (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("installed"));
     }
-    if (d->mStatus == KNS3::Entry::Updateable) {
+    if (d->mStatus == KNSCore::Entry::Updateable) {
         (void)addElement(doc, el, QStringLiteral("status"), QStringLiteral("updateable"));
     }
 
     return el;
-}
-
-KNSCore::EntryInternal EntryInternal::fromEntry(const KNS3::Entry &entry)
-{
-    return entry.d->e;
 }
 
 QString KNSCore::replaceBBCode(const QString &unformattedText)

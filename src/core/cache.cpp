@@ -29,14 +29,14 @@ public:
     }
 
     Cache *q;
-    QHash<QString, EntryInternal::List> requestCache;
+    QHash<QString, Entry::List> requestCache;
 
     QPointer<QTimer> throttleTimer;
 
     // The file that is used to keep track of downloaded entries
     QString registryFile;
 
-    QSet<EntryInternal> cache;
+    QSet<Entry> cache;
 
     bool dirty = false;
     bool writingRegistry = false;
@@ -78,22 +78,22 @@ Cache::Cache(const QString &appName)
             QTimer::singleShot(0, this, changeChecker);
         } else {
             d->reloadingRegistry = true;
-            const QSet<KNSCore::EntryInternal> oldCache = d->cache;
+            const QSet<KNSCore::Entry> oldCache = d->cache;
             d->cache.clear();
             readRegistry();
             // First run through the old cache and see if any have disappeared (at
             // which point we need to set them as available and emit that change)
-            for (const EntryInternal &entry : oldCache) {
+            for (const Entry &entry : oldCache) {
                 if (!d->cache.contains(entry)) {
-                    EntryInternal removedEntry(entry);
-                    removedEntry.setStatus(KNS3::Entry::Deleted);
+                    Entry removedEntry(entry);
+                    removedEntry.setStatus(KNSCore::Entry::Deleted);
                     Q_EMIT entryChanged(removedEntry);
                 }
             }
             // Then run through the new cache and see if there's any that were not
             // in the old cache (at which point just emit those as having changed,
             // they're already the correct status)
-            for (const EntryInternal &entry : d->cache) {
+            for (const Entry &entry : d->cache) {
                 auto iterator = oldCache.constFind(entry);
                 if (iterator == oldCache.constEnd()) {
                     Q_EMIT entryChanged(entry);
@@ -164,9 +164,9 @@ void Cache::readRegistry()
         if (token != QXmlStreamReader::StartElement) {
             continue;
         }
-        EntryInternal e;
+        Entry e;
         e.setEntryXML(reader);
-        e.setSource(EntryInternal::Cache);
+        e.setSource(Entry::Cache);
         d->cache.insert(e);
         Q_ASSERT(reader.tokenType() == QXmlStreamReader::EndElement);
     }
@@ -174,10 +174,10 @@ void Cache::readRegistry()
     qCDebug(KNEWSTUFFCORE) << "Cache read... entries: " << d->cache.size();
 }
 
-EntryInternal::List Cache::registryForProvider(const QString &providerId)
+Entry::List Cache::registryForProvider(const QString &providerId)
 {
-    EntryInternal::List entries;
-    for (const EntryInternal &e : std::as_const(d->cache)) {
+    Entry::List entries;
+    for (const Entry &e : std::as_const(d->cache)) {
         if (e.providerId() == providerId) {
             entries.append(e);
         }
@@ -185,10 +185,10 @@ EntryInternal::List Cache::registryForProvider(const QString &providerId)
     return entries;
 }
 
-EntryInternal::List Cache::registry() const
+Entry::List Cache::registry() const
 {
-    EntryInternal::List entries;
-    for (const EntryInternal &e : std::as_const(d->cache)) {
+    Entry::List entries;
+    for (const Entry &e : std::as_const(d->cache)) {
         entries.append(e);
     }
     return entries;
@@ -214,9 +214,9 @@ void Cache::writeRegistry()
     QDomElement root = doc.createElement(QStringLiteral("hotnewstuffregistry"));
     doc.appendChild(root);
 
-    for (const EntryInternal &entry : std::as_const(d->cache)) {
+    for (const Entry &entry : std::as_const(d->cache)) {
         // Write the entry, unless the policy is CacheNever and the entry is not installed.
-        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
+        if (entry.status() == KNSCore::Entry::Installed || entry.status() == KNSCore::Entry::Updateable) {
             QDomElement exml = entry.entryXML();
             root.appendChild(exml);
         }
@@ -229,10 +229,10 @@ void Cache::writeRegistry()
     d->writingRegistry = false;
 }
 
-void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
+void Cache::registerChangedEntry(const KNSCore::Entry &entry)
 {
     // If we have intermediate states, like updating or installing we do not want to write them
-    if (entry.status() == KNS3::Entry::Updating || entry.status() == KNS3::Entry::Installing) {
+    if (entry.status() == KNSCore::Entry::Updating || entry.status() == KNSCore::Entry::Installing) {
         return;
     }
     if (!d->reloadingRegistry) {
@@ -243,7 +243,7 @@ void Cache::registerChangedEntry(const KNSCore::EntryInternal &entry)
     }
 }
 
-void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::EntryInternal::List &entries)
+void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry::List &entries)
 {
     // append new entries
     auto &cacheList = d->requestCache[request.hashForRequest()];
@@ -255,7 +255,7 @@ void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const
     qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << d->requestCache.keys();
 }
 
-EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
+Entry::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
 {
     qCDebug(KNEWSTUFFCORE) << request.hashForRequest();
     return d->requestCache.value(request.hashForRequest());
@@ -263,9 +263,9 @@ EntryInternal::List Cache::requestFromCache(const KNSCore::Provider::SearchReque
 
 void KNSCore::Cache::removeDeletedEntries()
 {
-    QMutableSetIterator<KNSCore::EntryInternal> i(d->cache);
+    QMutableSetIterator<KNSCore::Entry> i(d->cache);
     while (i.hasNext()) {
-        const KNSCore::EntryInternal &entry = i.next();
+        const KNSCore::Entry &entry = i.next();
         bool installedFileExists{false};
         const QStringList installedFiles = entry.installedFiles();
         for (const auto &installedFile : installedFiles) {
@@ -288,12 +288,12 @@ void KNSCore::Cache::removeDeletedEntries()
     writeRegistry();
 }
 
-KNSCore::EntryInternal KNSCore::Cache::entryFromInstalledFile(const QString &installedFile) const
+KNSCore::Entry KNSCore::Cache::entryFromInstalledFile(const QString &installedFile) const
 {
-    for (const EntryInternal &entry : d->cache) {
+    for (const Entry &entry : d->cache) {
         if (entry.installedFiles().contains(installedFile)) {
             return entry;
         }
     }
-    return EntryInternal{};
+    return Entry{};
 }

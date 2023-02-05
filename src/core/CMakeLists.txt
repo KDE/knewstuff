@@ -6,7 +6,7 @@ set(KNewStuffCore_SRCS
     commentsmodel.cpp
     cache.cpp
     engine.cpp
-    entryinternal.cpp
+    entry.cpp
     entrywrapper.cpp
     imageloader.cpp
     installation.cpp
@@ -119,7 +119,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Author
   Cache
   Engine
-  EntryInternal
+  Entry
   EntryWrapper
   ErrorCode
   ItemsModel

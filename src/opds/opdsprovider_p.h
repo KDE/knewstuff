@@ -63,12 +63,12 @@ public:
     QUrl icon() const override;
 
     void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
-    void loadEntryDetails(const KNSCore::EntryInternal &entry) override;
-    void loadPayloadLink(const KNSCore::EntryInternal &entry, int linkNumber) override;
+    void loadEntryDetails(const KNSCore::Entry &entry) override;
+    void loadPayloadLink(const KNSCore::Entry &entry, int linkNumber) override;
 
     bool setProviderXML(const QDomElement &xmldata) override;
     bool isInitialized() const override;
-    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
+    void setCachedEntries(const KNSCore::Entry::List &cachedEntries) override;
 
     const std::unique_ptr<OPDSProviderPrivate> d;
 

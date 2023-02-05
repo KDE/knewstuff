@@ -48,10 +48,10 @@ public:
 
     bool isInitialized() const override;
 
-    void setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries) override;
+    void setCachedEntries(const KNSCore::Entry::List &cachedEntries) override;
 
     void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
-    void loadPayloadLink(const KNSCore::EntryInternal &entry, int) override;
+    void loadPayloadLink(const KNSCore::Entry &entry, int) override;
 
 private Q_SLOTS:
     void slotEmitProviderInitialized();
@@ -59,9 +59,9 @@ private Q_SLOTS:
     void slotFeedFailed();
 
 private:
-    bool searchIncludesEntry(const EntryInternal &entry) const;
+    bool searchIncludesEntry(const Entry &entry) const;
     QUrl downloadUrl(SortMode mode) const;
-    EntryInternal::List installedEntries() const;
+    Entry::List installedEntries() const;
 
     // map of download urls to their feed name
     QMap<QString, QUrl> mDownloadUrls;
@@ -69,7 +69,7 @@ private:
     QUrl mNoUploadUrl;
 
     // cache of all entries known from this provider so far, mapped by their id
-    EntryInternal::List mCachedEntries;
+    Entry::List mCachedEntries;
     QMap<Provider::SortMode, XmlLoader *> mFeedLoaders;
     Provider::SearchRequest mCurrentRequest;
     QString mId;

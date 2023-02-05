@@ -48,10 +48,10 @@ public:
     ~Engine() override;
 
     enum EntryEvent {
-        UnknownEvent = KNSCore::EntryInternal::UnknownEvent,
-        StatusChangedEvent = KNSCore::EntryInternal::StatusChangedEvent,
-        AdoptedEvent = KNSCore::EntryInternal::AdoptedEvent,
-        DetailsLoadedEvent = KNSCore::EntryInternal::DetailsLoadedEvent,
+        UnknownEvent = KNSCore::Entry::UnknownEvent,
+        StatusChangedEvent = KNSCore::Entry::StatusChangedEvent,
+        AdoptedEvent = KNSCore::Entry::AdoptedEvent,
+        DetailsLoadedEvent = KNSCore::Entry::DetailsLoadedEvent,
     };
     Q_ENUM(EntryEvent)
 
@@ -127,7 +127,7 @@ Q_SIGNALS:
     void errorMessage(const QString &message);
 
     /**
-     * This is fired for events related directly to a single EntryInternal instance
+     * This is fired for events related directly to a single Entry instance
      * The intermediate states Updating and Installing are not forwarded. In case you
      * need those you have to listen to the signals of the KNSCore::Engine instance of the engine property.
      *
@@ -142,7 +142,7 @@ Q_SIGNALS:
      *
      * nb: The above example is also how one would port a handler for the old changedEntries signal
      *
-     * @see EntryInternal::EntryEvent for details on which specific event is being notified
+     * @see Entry::EntryEvent for details on which specific event is being notified
      * @since 5.81
      */
     void entryEvent(KNSCore::EntryWrapper *entry, EntryEvent event);
@@ -153,7 +153,7 @@ Q_SIGNALS:
      * enumerations.
      * @param errorCode Represents the specific type of error which has occurred
      * @param message A human-readable message which can be shown to the end user
-     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::EntryInternal::ErrorCode for the
+     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
      * metadata details)
      * @see KNSCore::Engine::signalErrorCode
      * @since 5.84

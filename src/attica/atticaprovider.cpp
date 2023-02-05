@@ -92,7 +92,7 @@ bool AtticaProvider::setProviderXML(const QDomElement &xmldata)
     return true;
 }
 
-void AtticaProvider::setCachedEntries(const KNSCore::EntryInternal::List &cachedEntries)
+void AtticaProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
 {
     mCachedEntries = cachedEntries;
 }
@@ -194,7 +194,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
         if (request.page == 0) {
             Q_EMIT loadingFinished(request, installedEntries());
         } else {
-            Q_EMIT loadingFinished(request, EntryInternal::List());
+            Q_EMIT loadingFinished(request, Entry::List());
         }
         return;
     case Updates:
@@ -228,7 +228,7 @@ void AtticaProvider::checkForUpdates()
         Q_EMIT loadingFinished(mCurrentRequest, {});
     }
 
-    for (const EntryInternal &e : std::as_const(mCachedEntries)) {
+    for (const Entry &e : std::as_const(mCachedEntries)) {
         ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         m_updateJobs.insert(job);
@@ -237,7 +237,7 @@ void AtticaProvider::checkForUpdates()
     }
 }
 
-void AtticaProvider::loadEntryDetails(const KNSCore::EntryInternal &entry)
+void AtticaProvider::loadEntryDetails(const KNSCore::Entry &entry)
 {
     ItemJob<Content> *job = m_provider.requestContent(entry.uniqueId());
     connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
@@ -249,16 +249,16 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
     if (jobSuccess(job)) {
         auto *contentJob = static_cast<ItemJob<Content> *>(job);
         Content content = contentJob->result();
-        EntryInternal entry = entryFromAtticaContent(content);
+        Entry entry = entryFromAtticaContent(content);
         Q_EMIT entryDetailsLoaded(entry);
         qCDebug(KNEWSTUFFCORE) << "check update finished: " << entry.name();
     }
 
     if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
         qCDebug(KNEWSTUFFCORE) << "check update finished.";
-        QList<EntryInternal> updatable;
-        for (const EntryInternal &entry : std::as_const(mCachedEntries)) {
-            if (entry.status() == KNS3::Entry::Updateable) {
+        QList<Entry> updatable;
+        for (const Entry &entry : std::as_const(mCachedEntries)) {
+            if (entry.status() == KNSCore::Entry::Updateable) {
                 updatable.append(entry);
             }
         }
@@ -275,7 +275,7 @@ void AtticaProvider::categoryContentsLoaded(BaseJob *job)
     auto *listJob = static_cast<ListJob<Content> *>(job);
     const Content::List contents = listJob->itemList();
 
-    EntryInternal::List entries;
+    Entry::List entries;
     TagsFilterChecker checker(tagFilter());
     TagsFilterChecker downloadschecker(downloadTagFilter());
     for (const Content &content : contents) {
@@ -327,7 +327,7 @@ Attica::Provider::SortMode AtticaProvider::atticaSortMode(SortMode sortMode)
     }
 }
 
-void AtticaProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int linkId)
+void AtticaProvider::loadPayloadLink(const KNSCore::Entry &entry, int linkId)
 {
     Attica::Content content = mCachedContent.value(entry.uniqueId());
     const DownloadDescription desc = content.downloadUrlDescription(linkId);
@@ -350,7 +350,7 @@ void AtticaProvider::loadPayloadLink(const KNSCore::EntryInternal &entry, int li
     }
 }
 
-void AtticaProvider::loadComments(const EntryInternal &entry, int commentsPerPage, int page)
+void AtticaProvider::loadComments(const Entry &entry, int commentsPerPage, int page)
 {
     ListJob<Attica::Comment> *job = m_provider.requestComments(Attica::Comment::ContentComment, entry.uniqueId(), QStringLiteral("0"), page, commentsPerPage);
     connect(job, &BaseJob::finished, this, &AtticaProvider::loadedComments);
@@ -467,8 +467,8 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     auto *job = static_cast<ItemJob<AccountBalance> *>(baseJob);
     AccountBalance item = job->result();
 
-    QPair<EntryInternal, int> pair = mDownloadLinkJobs.take(job);
-    EntryInternal entry(pair.first);
+    QPair<Entry, int> pair = mDownloadLinkJobs.take(job);
+    Entry entry(pair.first);
     Content content = mCachedContent.value(entry.uniqueId());
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
         qCDebug(KNEWSTUFFCORE) << "Your balance is greater than the price." << content.downloadUrlDescription(pair.second).priceAmount()
@@ -505,23 +505,23 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
     auto *job = static_cast<ItemJob<DownloadItem> *>(baseJob);
     DownloadItem item = job->result();
 
-    EntryInternal entry = mDownloadLinkJobs.take(job).first;
+    Entry entry = mDownloadLinkJobs.take(job).first;
     entry.setPayload(QString(item.url().toString()));
     Q_EMIT payloadLinkLoaded(entry);
 }
 
-EntryInternal::List AtticaProvider::installedEntries() const
+Entry::List AtticaProvider::installedEntries() const
 {
-    EntryInternal::List entries;
-    for (const EntryInternal &entry : std::as_const(mCachedEntries)) {
-        if (entry.status() == KNS3::Entry::Installed || entry.status() == KNS3::Entry::Updateable) {
+    Entry::List entries;
+    for (const Entry &entry : std::as_const(mCachedEntries)) {
+        if (entry.status() == KNSCore::Entry::Installed || entry.status() == KNSCore::Entry::Updateable) {
             entries.append(entry);
         }
     }
     return entries;
 }
 
-void AtticaProvider::vote(const EntryInternal &entry, uint rating)
+void AtticaProvider::vote(const Entry &entry, uint rating)
 {
     PostJob *job = m_provider.voteForContent(entry.uniqueId(), rating);
     connect(job, &BaseJob::finished, this, &AtticaProvider::votingFinished);
@@ -536,7 +536,7 @@ void AtticaProvider::votingFinished(Attica::BaseJob *job)
     Q_EMIT signalInformation(i18nc("voting for an item (good/bad)", "Your vote was recorded."));
 }
 
-void AtticaProvider::becomeFan(const EntryInternal &entry)
+void AtticaProvider::becomeFan(const Entry &entry)
 {
     PostJob *job = m_provider.becomeFan(entry.uniqueId());
     connect(job, &BaseJob::finished, this, &AtticaProvider::becomeFanFinished);
@@ -601,24 +601,24 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
     return false;
 }
 
-EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
+Entry AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
 {
-    EntryInternal entry;
+    Entry entry;
 
     entry.setProviderId(id());
     entry.setUniqueId(content.id());
-    entry.setStatus(KNS3::Entry::Downloadable);
+    entry.setStatus(KNSCore::Entry::Downloadable);
     entry.setVersion(content.version());
     entry.setReleaseDate(content.updated().date());
     entry.setCategory(content.attribute(QStringLiteral("typeid")));
 
     int index = mCachedEntries.indexOf(entry);
     if (index >= 0) {
-        EntryInternal &cacheEntry = mCachedEntries[index];
+        Entry &cacheEntry = mCachedEntries[index];
         // check if updateable
-        if (((cacheEntry.status() == KNS3::Entry::Installed) || (cacheEntry.status() == KNS3::Entry::Updateable))
+        if (((cacheEntry.status() == KNSCore::Entry::Installed) || (cacheEntry.status() == KNSCore::Entry::Updateable))
             && ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
-            cacheEntry.setStatus(KNS3::Entry::Updateable);
+            cacheEntry.setStatus(KNSCore::Entry::Updateable);
             cacheEntry.setUpdateVersion(entry.version());
             cacheEntry.setUpdateReleaseDate(entry.releaseDate());
         }
@@ -638,13 +638,13 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.setNumberKnowledgebaseEntries(content.attribute(QStringLiteral("knowledgebaseentries")).toInt());
     entry.setHomepage(content.detailpage());
 
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("1")), EntryInternal::PreviewSmall1);
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("2")), EntryInternal::PreviewSmall2);
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("3")), EntryInternal::PreviewSmall3);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("1")), Entry::PreviewSmall1);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("2")), Entry::PreviewSmall2);
+    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("3")), Entry::PreviewSmall3);
 
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("1")), EntryInternal::PreviewBig1);
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("2")), EntryInternal::PreviewBig2);
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("3")), EntryInternal::PreviewBig3);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("1")), Entry::PreviewBig1);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("2")), Entry::PreviewBig2);
+    entry.setPreviewUrl(content.previewPicture(QStringLiteral("3")), Entry::PreviewBig3);
 
     entry.setLicense(content.license());
     Author author;
@@ -653,7 +653,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     author.setHomepage(content.attribute(QStringLiteral("profilepage")));
     entry.setAuthor(author);
 
-    entry.setSource(EntryInternal::Online);
+    entry.setSource(Entry::Online);
     entry.setSummary(content.description());
     entry.setShortSummary(content.summary());
     entry.setChangelog(content.changelog());
@@ -662,7 +662,7 @@ EntryInternal AtticaProvider::entryFromAtticaContent(const Attica::Content &cont
     entry.clearDownloadLinkInformation();
     const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
     for (const Attica::DownloadDescription &desc : descs) {
-        EntryInternal::DownloadLinkInformation info;
+        Entry::DownloadLinkInformation info;
         info.name = desc.name();
         info.priceAmount = desc.priceAmount();
         info.distributionType = desc.distributionType();

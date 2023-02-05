@@ -9,7 +9,7 @@
 
 #include <QQmlParserStatus>
 #include <QSortFilterProxyModel>
-#include <entryinternal.h>
+#include <entry.h>
 
 #include <memory>
 

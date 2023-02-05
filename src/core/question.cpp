@@ -7,7 +7,7 @@
 
 #include "question.h"
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "questionmanager.h"
 
 #include <QCoreApplication>
@@ -27,7 +27,7 @@ public:
     QString question;
     QString title;
     QStringList list;
-    EntryInternal entry;
+    Entry entry;
 
     QEventLoop loop;
     Question::QuestionType questionType;
@@ -109,12 +109,12 @@ QString Question::response() const
     return d->textResponse;
 }
 
-void Question::setEntry(const EntryInternal &entry)
+void Question::setEntry(const Entry &entry)
 {
     d->entry = entry;
 }
 
-EntryInternal Question::entry() const
+Entry Question::entry() const
 {
     return d->entry;
 }

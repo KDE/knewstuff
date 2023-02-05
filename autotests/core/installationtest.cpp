@@ -12,7 +12,7 @@
 #include <QTest>
 #include <QtGlobal>
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "installation_p.h"
 #include "itemsmodel.h"
 #include "question.h"
@@ -43,7 +43,7 @@ void InstallationTest::initTestCase()
 {
     // Just in case a previous test crashed
     cleanupTestCase();
-    qRegisterMetaType<EntryInternal>();
+    qRegisterMetaType<Entry>();
     QStandardPaths::setTestModeEnabled(true);
     installation = new Installation(this);
     KConfigGroup grp = KSharedConfig::openConfig(dataDir + "installationtest.knsrc")->group("KNewStuff3");
@@ -73,24 +73,24 @@ void InstallationTest::testConfigFileReading()
 
 void InstallationTest::testInstallCommand()
 {
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/testfile.txt")).toString());
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     installation->install(entry);
     QVERIFY(spy.wait());
-    QCOMPARE(entry.status(), KNS3::Entry::Installed);
+    QCOMPARE(entry.status(), KNSCore::Entry::Installed);
     QVERIFY(QFileInfo::exists("installed.txt"));
 }
 
 void InstallationTest::testUninstallCommand()
 {
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
     QFile file("testFile.txt");
     file.open(QIODevice::WriteOnly);
     file.close();
-    entry.setStatus(KNS3::Entry::Installed);
+    entry.setStatus(KNSCore::Entry::Installed);
     entry.setInstalledFiles(QStringList(file.fileName()));
     QVERIFY(QFileInfo(file).exists());
     QVERIFY(!QFileInfo::exists("uninstalled.txt"));
@@ -98,7 +98,7 @@ void InstallationTest::testUninstallCommand()
     installation->uninstall(entry);
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     QVERIFY(spy.wait());
-    QCOMPARE(entry.status(), KNS3::Entry::Deleted);
+    QCOMPARE(entry.status(), KNSCore::Entry::Deleted);
     QVERIFY(!QFileInfo(file).exists());
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
 }
@@ -110,10 +110,10 @@ void InstallationTest::testUninstallCommandDirectory()
     // This will be left over from the previous test, so clean it up first
     QFile::remove("uninstalled.txt");
 
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
     QDir().mkdir(testDir);
-    entry.setStatus(KNS3::Entry::Installed);
+    entry.setStatus(KNSCore::Entry::Installed);
     entry.setInstalledFiles(QStringList(testDir));
     QVERIFY(QFileInfo::exists(testDir));
     QVERIFY(!QFileInfo::exists("uninstalled.txt"));
@@ -121,16 +121,16 @@ void InstallationTest::testUninstallCommandDirectory()
     installation->uninstall(entry);
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     QVERIFY(spy.wait());
-    QCOMPARE(entry.status(), KNS3::Entry::Deleted);
+    QCOMPARE(entry.status(), KNSCore::Entry::Deleted);
     QVERIFY(!QFileInfo::exists(testDir));
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
 }
 
 void InstallationTest::testInstallCommandArchive()
 {
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
-    entry.setStatus(KNS3::Entry::Downloadable);
+    entry.setStatus(KNSCore::Entry::Downloadable);
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/archive_dir.tar.gz")).toString());
 
     installation->install(entry);
@@ -151,9 +151,9 @@ void InstallationTest::testInstallCommandArchive()
 
 void InstallationTest::testInstallCommandTopLevelFilesInArchive()
 {
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
-    entry.setStatus(KNS3::Entry::Downloadable);
+    entry.setStatus(KNSCore::Entry::Downloadable);
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/archive_toplevel_files.tar.gz")).toString());
 
     installation->install(entry);
@@ -177,7 +177,7 @@ void InstallationTest::testInstallCommandTopLevelFilesInArchive()
 
 void InstallationTest::testCopyError()
 {
-    EntryInternal entry;
+    Entry entry;
     entry.setUniqueId("0");
     entry.setPayload(QUrl::fromLocalFile(QStringLiteral("data/does_not_exist.txt")).toString());
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
@@ -186,7 +186,7 @@ void InstallationTest::testCopyError()
     installation->install(entry);
     QVERIFY(errorSpy.wait());
     QCOMPARE(spy.count(), 0);
-    QCOMPARE(int(entry.status()), int(KNS3::Entry::Invalid));
+    QCOMPARE(int(entry.status()), int(KNSCore::Entry::Invalid));
 }
 
 QTEST_MAIN(InstallationTest)

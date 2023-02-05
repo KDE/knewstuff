@@ -14,7 +14,7 @@
 
 #include <KConfigGroup>
 
-#include "entryinternal.h"
+#include "entry.h"
 
 class QProcess;
 class KArchiveDirectory;
@@ -67,7 +67,7 @@ public Q_SLOTS:
      * @see signalPayloadLoaded
      * @see signalPayloadFailed
      */
-    void downloadPayload(const KNSCore::EntryInternal &entry);
+    void downloadPayload(const KNSCore::Entry &entry);
 
     /**
      * Installs an entry's payload file. This includes verification, if
@@ -84,7 +84,7 @@ public Q_SLOTS:
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(const KNSCore::EntryInternal &entry);
+    void install(const KNSCore::Entry &entry);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
@@ -101,7 +101,7 @@ public Q_SLOTS:
      * @param entry The entry to deinstall
      *
      */
-    void uninstall(KNSCore::EntryInternal entry);
+    void uninstall(KNSCore::Entry entry);
 
     /**
      * Returns the uncompression setting, in a computer-readable format
@@ -121,7 +121,7 @@ public Q_SLOTS:
     QString targetInstallationPath() const;
 
 Q_SIGNALS:
-    void signalEntryChanged(const KNSCore::EntryInternal &entry);
+    void signalEntryChanged(const KNSCore::Entry &entry);
     void signalInstallationFinished();
     void signalInstallationFailed(const QString &message);
     /**
@@ -134,9 +134,9 @@ Q_SIGNALS:
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
 private:
-    void install(KNSCore::EntryInternal entry, const QString &downloadedFile);
+    void install(KNSCore::Entry entry, const QString &downloadedFile);
 
-    QStringList installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir);
+    QStringList installDownloadedFileAndUncompress(const KNSCore::Entry &entry, const QString &payloadfile, const QString installdir);
     QProcess *runPostInstallationCommand(const QString &installPath);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
@@ -156,7 +156,7 @@ private:
     QString installPath;
     QString absoluteInstallPath;
 
-    QMap<KJob *, EntryInternal> entry_jobs;
+    QMap<KJob *, Entry> entry_jobs;
 
     QString kpackageType;
     UncompressionOptions uncompressSetting = UncompressionOptions::NeverUncompress;

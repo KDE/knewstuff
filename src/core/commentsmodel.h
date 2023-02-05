@@ -18,7 +18,7 @@
 
 namespace KNSCore
 {
-class EntryInternal;
+class Entry;
 
 struct Comment {
     QString id;
@@ -33,13 +33,13 @@ struct Comment {
 class CommentsModelPrivate;
 
 /**
- * @brief A model which takes care of the comments for a single EntryInternal
+ * @brief A model which takes care of the comments for a single Entry
  *
  * This model should preferably be constructed by asking the Engine to give a model
  * instance to you for a specific entry using the commentsForEntry function. If you
  * insist, you can construct an instance yourself as well, but this is not recommended.
  *
- * @see Engine::commentsForEntry(KNSCore::EntryInternal)
+ * @see Engine::commentsForEntry(KNSCore::Entry)
  * @since 5.63
  */
 class KNEWSTUFFCORE_EXPORT CommentsModel : public QAbstractListModel
@@ -48,12 +48,12 @@ class KNEWSTUFFCORE_EXPORT CommentsModel : public QAbstractListModel
     /**
      * The Entry for which this model should handle comments
      */
-    Q_PROPERTY(KNSCore::EntryInternal entry READ entry WRITE setEntry NOTIFY entryChanged)
+    Q_PROPERTY(KNSCore::Entry entry READ entry WRITE setEntry NOTIFY entryChanged)
 public:
     /**
      * Construct a new CommentsModel instance.
      * @note The class is intended to be constructed using the Engine::commentsForEntry function
-     * @see Engine::commentsForEntry(KNSCore::EntryInternal)
+     * @see Engine::commentsForEntry(KNSCore::Entry)
      */
     explicit CommentsModel(Engine *parent = nullptr);
     ~CommentsModel() override;
@@ -77,8 +77,8 @@ public:
     bool canFetchMore(const QModelIndex &parent) const override;
     void fetchMore(const QModelIndex &parent) override;
 
-    const KNSCore::EntryInternal &entry() const;
-    void setEntry(const KNSCore::EntryInternal &newEntry);
+    const KNSCore::Entry &entry() const;
+    void setEntry(const KNSCore::Entry &newEntry);
     Q_SIGNAL void entryChanged();
 
 private:

@@ -16,7 +16,7 @@
 
 namespace KNSCore
 {
-class EntryInternal;
+class Entry;
 class QuestionPrivate;
 /**
  * @short A way to ask a user a question from inside a GUI-less library (like KNewStuffCore)
@@ -80,8 +80,8 @@ public:
     QString title() const;
     void setList(const QStringList &newList);
     QStringList list() const;
-    void setEntry(const EntryInternal &entry);
-    EntryInternal entry() const;
+    void setEntry(const Entry &entry);
+    Entry entry() const;
 
     /**
      * When the user makes a choice on a question, that is a response. This is the return value in ask().

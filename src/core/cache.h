@@ -12,7 +12,7 @@
 #include <QSet>
 
 #include "engine.h"
-#include "entryinternal.h"
+#include "entry.h"
 
 #include "knewstuffcore_export.h"
 
@@ -40,16 +40,16 @@ public:
     /// Read the installed entries (on startup)
     void readRegistry();
     /// All entries that have been installed by a certain provider
-    EntryInternal::List registryForProvider(const QString &providerId);
+    Entry::List registryForProvider(const QString &providerId);
 
     /// All entries known by the cache (this corresponds with entries which are installed, regardless of status)
-    EntryInternal::List registry() const;
+    Entry::List registry() const;
 
     /// Save the list of installed entries
     void writeRegistry();
 
-    void insertRequest(const KNSCore::Provider::SearchRequest &, const KNSCore::EntryInternal::List &entries);
-    EntryInternal::List requestFromCache(const KNSCore::Provider::SearchRequest &);
+    void insertRequest(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &entries);
+    Entry::List requestFromCache(const KNSCore::Provider::SearchRequest &);
 
     /**
      * This will run through all entries in the cache, and remove all entries
@@ -73,7 +73,7 @@ public:
      * @return An entry if one was found, or an invalid entry if no entry says it installed that file
      * since 5.74
      */
-    KNSCore::EntryInternal entryFromInstalledFile(const QString &installedFile) const;
+    KNSCore::Entry entryFromInstalledFile(const QString &installedFile) const;
 
     /**
      * Emitted when the cache has changed underneath us, and need users of the cache to know
@@ -81,10 +81,10 @@ public:
      * @param entry The entry which has changed
      * @since 5.75
      */
-    Q_SIGNAL void entryChanged(const KNSCore::EntryInternal &entry);
+    Q_SIGNAL void entryChanged(const KNSCore::Entry &entry);
 
 public Q_SLOTS:
-    void registerChangedEntry(const KNSCore::EntryInternal &entry);
+    void registerChangedEntry(const KNSCore::Entry &entry);
 
 private:
     Q_DISABLE_COPY(Cache)

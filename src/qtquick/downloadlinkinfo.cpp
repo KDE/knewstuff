@@ -39,7 +39,7 @@ DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
 
 DownloadLinkInfo::~DownloadLinkInfo() = default;
 
-void DownloadLinkInfo::setData(const KNSCore::EntryInternal::DownloadLinkInformation &data)
+void DownloadLinkInfo::setData(const KNSCore::Entry::DownloadLinkInformation &data)
 {
     d->name = data.name;
     d->priceAmount = data.priceAmount;

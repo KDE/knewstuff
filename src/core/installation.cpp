@@ -88,12 +88,12 @@ bool Installation::readConfig(const KConfigGroup &group)
     return true;
 }
 
-void Installation::install(const EntryInternal &entry)
+void Installation::install(const Entry &entry)
 {
     downloadPayload(entry);
 }
 
-void Installation::downloadPayload(const KNSCore::EntryInternal &entry)
+void Installation::downloadPayload(const KNSCore::Entry &entry)
 {
     if (!entry.isValid()) {
         Q_EMIT signalInstallationFailed(i18n("Invalid item."));
@@ -130,7 +130,7 @@ void Installation::slotPayloadResult(KJob *job)
 {
     // for some reason this slot is getting called 3 times on one job error
     if (entry_jobs.contains(job)) {
-        EntryInternal entry = entry_jobs[job];
+        Entry entry = entry_jobs[job];
         entry_jobs.remove(job);
 
         if (job->error()) {
@@ -147,7 +147,7 @@ void Installation::slotPayloadResult(KJob *job)
                                         entry.name(),
                                         fcjob->srcUrl().toString());
                 Q_EMIT signalInstallationFailed(error);
-                entry.setStatus(KNS3::Entry::Invalid);
+                entry.setStatus(KNSCore::Entry::Invalid);
                 Q_EMIT signalEntryChanged(entry);
                 return;
             }
@@ -158,7 +158,7 @@ void Installation::slotPayloadResult(KJob *job)
     }
 }
 
-void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString &downloadedFile)
+void KNSCore::Installation::install(KNSCore::Entry entry, const QString &downloadedFile)
 {
     qCDebug(KNEWSTUFFCORE) << "Install:" << entry.name() << "from" << downloadedFile;
     Q_ASSERT(QFileInfo::exists(downloadedFile));
@@ -175,10 +175,10 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
 
     if (uncompressionSetting() != UseKPackageUncompression) {
         if (installedFiles.isEmpty()) {
-            if (entry.status() == KNS3::Entry::Installing) {
-                entry.setStatus(KNS3::Entry::Downloadable);
-            } else if (entry.status() == KNS3::Entry::Updating) {
-                entry.setStatus(KNS3::Entry::Updateable);
+            if (entry.status() == KNSCore::Entry::Installing) {
+                entry.setStatus(KNSCore::Entry::Downloadable);
+            } else if (entry.status() == KNSCore::Entry::Updating) {
+                entry.setStatus(KNSCore::Entry::Updateable);
             }
             Q_EMIT signalEntryChanged(entry);
             Q_EMIT signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
@@ -188,14 +188,14 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
         entry.setInstalledFiles(installedFiles);
 
         auto installationFinished = [this, entry]() {
-            EntryInternal newentry = entry;
+            Entry newentry = entry;
             if (!newentry.updateVersion().isEmpty()) {
                 newentry.setVersion(newentry.updateVersion());
             }
             if (newentry.updateReleaseDate().isValid()) {
                 newentry.setReleaseDate(newentry.updateReleaseDate());
             }
-            newentry.setStatus(KNS3::Entry::Installed);
+            newentry.setStatus(KNSCore::Entry::Installed);
             Q_EMIT signalEntryChanged(newentry);
             Q_EMIT signalInstallationFinished();
         };
@@ -207,8 +207,8 @@ void KNSCore::Installation::install(KNSCore::EntryInternal entry, const QString 
             QProcess *p = runPostInstallationCommand(scriptArgPath);
             connect(p, &QProcess::finished, this, [entry, installationFinished, this](int exitCode) {
                 if (exitCode) {
-                    EntryInternal newEntry = entry;
-                    newEntry.setStatus(KNS3::Entry::Invalid);
+                    Entry newEntry = entry;
+                    newEntry.setStatus(KNSCore::Entry::Invalid);
                     Q_EMIT signalEntryChanged(newEntry);
                 } else {
                     installationFinished();
@@ -288,7 +288,7 @@ QString Installation::targetInstallationPath() const
     return installdir;
 }
 
-QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::EntryInternal &entry, const QString &payloadfile, const QString installdir)
+QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entry &entry, const QString &payloadfile, const QString installdir)
 {
     // Collect all files that were installed
     QStringList installedFiles;
@@ -302,11 +302,11 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         KPackage::Package package(&structure);
         package.setPath(payloadfile);
         auto resetEntryStatus = [this, entry]() {
-            KNSCore::EntryInternal changedEntry(entry);
-            if (changedEntry.status() == KNS3::Entry::Installing || changedEntry.status() == KNS3::Entry::Installed) {
-                changedEntry.setStatus(KNS3::Entry::Downloadable);
-            } else if (changedEntry.status() == KNS3::Entry::Updating) {
-                changedEntry.setStatus(KNS3::Entry::Updateable);
+            KNSCore::Entry changedEntry(entry);
+            if (changedEntry.status() == KNSCore::Entry::Installing || changedEntry.status() == KNSCore::Entry::Installed) {
+                changedEntry.setStatus(KNSCore::Entry::Downloadable);
+            } else if (changedEntry.status() == KNSCore::Entry::Updating) {
+                changedEntry.setStatus(KNSCore::Entry::Updateable);
             }
             Q_EMIT signalEntryChanged(changedEntry);
         };
@@ -330,10 +330,10 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                         connect(installJob, &KJob::result, this, [this, entry, payloadfile, expectedDir, resetEntryStatus](KJob *job) {
                             if (job->error() == KJob::NoError) {
                                 if (QFile::exists(expectedDir)) {
-                                    EntryInternal newentry = entry;
+                                    Entry newentry = entry;
                                     newentry.setInstalledFiles(QStringList{expectedDir});
                                     // update version and release date to the new ones
-                                    if (newentry.status() == KNS3::Entry::Updating) {
+                                    if (newentry.status() == KNSCore::Entry::Updating) {
                                         if (!newentry.updateVersion().isEmpty()) {
                                             newentry.setVersion(newentry.updateVersion());
                                         }
@@ -341,7 +341,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                             newentry.setReleaseDate(newentry.updateReleaseDate());
                                         }
                                     }
-                                    newentry.setStatus(KNS3::Entry::Installed);
+                                    newentry.setStatus(KNSCore::Entry::Installed);
                                     // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
                                     QFile::remove(payloadfile);
                                     Q_EMIT signalEntryChanged(newentry);
@@ -356,8 +356,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                 }
                             } else {
                                 if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
-                                    EntryInternal newentry = entry;
-                                    newentry.setStatus(KNS3::Entry::Installed);
+                                    Entry newentry = entry;
+                                    newentry.setStatus(KNSCore::Entry::Installed);
                                     newentry.setInstalledFiles(QStringList{expectedDir});
                                     // update version and release date to the new ones
                                     if (!newentry.updateVersion().isEmpty()) {
@@ -510,7 +510,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             // FIXME: for updates, we might need to force an overwrite (that is, deleting before)
             QFile file(payloadfile);
             bool success = true;
-            const bool update = ((entry.status() == KNS3::Entry::Updateable) || (entry.status() == KNS3::Entry::Updating));
+            const bool update = ((entry.status() == KNSCore::Entry::Updateable) || (entry.status() == KNSCore::Entry::Updating));
 
             if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
                 if (!update) {
@@ -589,11 +589,11 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
     return ret;
 }
 
-void Installation::uninstall(EntryInternal entry)
+void Installation::uninstall(Entry entry)
 {
     // TODO Put this in pimpl or job
     const auto deleteFilesAndMarkAsUninstalled = [entry, this]() {
-        KNS3::Entry::Status newStatus{KNS3::Entry::Deleted};
+        KNSCore::Entry::Status newStatus{KNSCore::Entry::Deleted};
         const auto lst = entry.installedFiles();
         for (const QString &file : lst) {
             // This is used to delete the download location if there are no more entries
@@ -618,7 +618,7 @@ void Installation::uninstall(EntryInternal entry)
                                  entry.name(),
                                  file));
                         // Assume that the uninstallation has failed, and reset the entry to an installed state
-                        newStatus = KNS3::Entry::Installed;
+                        newStatus = KNSCore::Entry::Installed;
                         break;
                     }
                 } else {
@@ -626,8 +626,8 @@ void Installation::uninstall(EntryInternal entry)
                 }
             }
         }
-        EntryInternal newEntry = entry;
-        if (newStatus == KNS3::Entry::Deleted) {
+        Entry newEntry = entry;
+        if (newStatus == KNSCore::Entry::Deleted) {
             newEntry.setUnInstalledFiles(entry.installedFiles());
             newEntry.setInstalledFiles(QStringList());
         }
@@ -655,9 +655,9 @@ void Installation::uninstall(EntryInternal entry)
                                 QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
                             KJob *removalJob = KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, kpackageType);
                             connect(removalJob, &KJob::result, this, [this, installedFile, installer, entry](KJob *job) {
-                                EntryInternal newEntry = entry;
+                                Entry newEntry = entry;
                                 if (job->error() == KJob::NoError) {
-                                    newEntry.setStatus(KNS3::Entry::Deleted);
+                                    newEntry.setStatus(KNSCore::Entry::Deleted);
                                     newEntry.setUnInstalledFiles(newEntry.installedFiles());
                                     newEntry.setInstalledFiles(QStringList());
                                     Q_EMIT signalEntryChanged(newEntry);
@@ -714,7 +714,7 @@ void Installation::uninstall(EntryInternal entry)
                     }
                     // Also get rid of the downloaded file, and tell everything they've gone
                     if (QFile::remove(installedFile)) {
-                        entry.setStatus(KNS3::Entry::Deleted);
+                        entry.setStatus(KNSCore::Entry::Deleted);
                         entry.setUnInstalledFiles(entry.installedFiles());
                         entry.setInstalledFiles(QStringList());
                         Q_EMIT signalEntryChanged(entry);
@@ -779,8 +779,8 @@ void Installation::uninstall(EntryInternal entry)
                             Question::Response response = question.ask();
                             if (response == Question::CancelResponse) {
                                 // Use can delete files manually
-                                EntryInternal newEntry = entry;
-                                newEntry.setStatus(KNS3::Entry::Installed);
+                                Entry newEntry = entry;
+                                newEntry.setStatus(KNSCore::Entry::Installed);
                                 Q_EMIT signalEntryChanged(newEntry);
                                 return;
                             }

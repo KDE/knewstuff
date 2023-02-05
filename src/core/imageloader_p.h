@@ -11,7 +11,7 @@
 #include <QByteArray>
 #include <QObject>
 
-#include "entryinternal.h"
+#include "entry.h"
 #include "jobs/httpjob.h"
 
 class KJob;
@@ -34,7 +34,7 @@ class ImageLoader : public QObject
 {
     Q_OBJECT
 public:
-    explicit ImageLoader(const EntryInternal &entry, EntryInternal::PreviewType type, QObject *parent);
+    explicit ImageLoader(const Entry &entry, Entry::PreviewType type, QObject *parent);
     void start();
     /**
      * Get the job doing the image loading in the background (to have progress information available)
@@ -43,16 +43,16 @@ public:
     KJob *job();
 
 Q_SIGNALS:
-    void signalPreviewLoaded(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType);
-    void signalError(const KNSCore::EntryInternal &, KNSCore::EntryInternal::PreviewType, const QString &);
+    void signalPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
+    void signalError(const KNSCore::Entry &, KNSCore::Entry::PreviewType, const QString &);
 
 private Q_SLOTS:
     void slotDownload(KJob *job);
     void slotData(KJob *job, const QByteArray &buf);
 
 private:
-    EntryInternal m_entry;
-    const EntryInternal::PreviewType m_previewType;
+    Entry m_entry;
+    const Entry::PreviewType m_previewType;
     QByteArray m_buffer;
     HTTPJob *m_job = nullptr;
 };

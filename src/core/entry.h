@@ -8,8 +8,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef KNEWSTUFF3_ENTRYINTERNAL_P_H
-#define KNEWSTUFF3_ENTRYINTERNAL_P_H
+#ifndef KNEWSTUFF3_ENTRY
+#define KNEWSTUFF3_ENTRY
 
 #include <QDate>
 #include <QDomElement>
@@ -18,10 +18,6 @@
 #include <QUrl>
 
 #include "author.h"
-// This include only exists for the KNS3::Entry::Status enum
-// TODO Move the KNS3::Entry::Status enum to Core for KF6
-#include "KNS3/Entry"
-
 #include "knewstuffcore_export.h"
 
 #include <memory>
@@ -32,7 +28,7 @@ namespace KNSCore
 {
 static const int PreviewWidth = 96;
 static const int PreviewHeight = 72;
-class EntryInternalPrivate;
+class EntryPrivate;
 
 /**
  function to remove bb code formatting that opendesktop sends
@@ -49,11 +45,30 @@ KNEWSTUFFCORE_EXPORT QString replaceBBCode(const QString &unformattedText);
  * \par Maintainer:
  * Jeremy Whiting (jpwhiting@kde.org)
  */
-class KNEWSTUFFCORE_EXPORT EntryInternal
+class KNEWSTUFFCORE_EXPORT Entry
 {
     Q_GADGET
 public:
-    typedef QList<EntryInternal> List;
+    typedef QList<Entry> List;
+
+    /**
+     * Status of the entry. An entry will be downloadable from the provider's
+     * site prior to the download. Once downloaded and installed, it will
+     * be either installed or updateable, implying an out-of-date
+     * installation. Finally, the entry can be deleted and hence show up as
+     * downloadable again.
+     * Entries not taking part in this cycle, for example those in upload,
+     * have an invalid status.
+     */
+    enum Status {
+        Invalid,
+        Downloadable,
+        Installed,
+        Updateable,
+        Deleted,
+        Installing,
+        Updating,
+    };
 
     /**
      * Source of the entry, A entry's data is coming from either cache, or an online provider
@@ -88,7 +103,7 @@ public:
 
     enum EntryEvent {
         UnknownEvent = 0, ///< A generic event, not generally used
-        StatusChangedEvent = 1, ///< Used when an event's status is set (use EntryInternal::status() to get the new status)
+        StatusChangedEvent = 1, ///< Used when an event's status is set (use Entry::status() to get the new status)
         AdoptedEvent = 2, ///< Used when an entry has been successfully adopted (use this to determine whether a call to Engine::adoptEntry() succeeded)
         DetailsLoadedEvent = 3, ///< Used when more details have been added to an existing entry (such as the full description), and the UI should be updated
     };
@@ -107,18 +122,18 @@ public:
     /**
      * Constructor.
      */
-    EntryInternal();
+    Entry();
 
-    EntryInternal(const EntryInternal &other);
-    EntryInternal &operator=(const EntryInternal &other);
+    Entry(const Entry &other);
+    Entry &operator=(const Entry &other);
 
-    bool operator==(const EntryInternal &other) const;
-    bool operator<(const EntryInternal &other) const;
+    bool operator==(const Entry &other) const;
+    bool operator<(const Entry &other) const;
 
     /**
      * Destructor.
      */
-    ~EntryInternal();
+    ~Entry();
 
     bool isValid() const;
 
@@ -384,7 +399,7 @@ public:
      * How many people have marked themselves as fans of this entry
      *
      * @return The number of fans this entry has
-     * @see KNSCore::Engine::becomeFan(const EntryInternal& entry)
+     * @see KNSCore::Engine::becomeFan(const Entry& entry)
      */
     int numberFans() const;
     /**
@@ -393,7 +408,7 @@ public:
      * KNSCore::Engine::becomeFan function.
      *
      * @param fans The number of fans this entry has
-     * @see KNSCore::Engine::becomeFan(const EntryInternal& entry)
+     * @see KNSCore::Engine::becomeFan(const Entry& entry)
      */
     void setNumberFans(int fans);
 
@@ -532,27 +547,25 @@ public:
      *
      * @param status New status of the entry
      */
-    void setStatus(KNS3::Entry::Status status);
+    void setStatus(KNSCore::Entry::Status status);
 
     /**
      * Retrieves the entry's status.
      *
      * @return Current status of the entry
      */
-    KNS3::Entry::Status status() const;
-
-    static KNSCore::EntryInternal fromEntry(const KNS3::Entry &entry);
+    KNSCore::Entry::Status status() const;
 
 private:
-    QExplicitlySharedDataPointer<EntryInternalPrivate> d;
+    QExplicitlySharedDataPointer<EntryPrivate> d;
 };
 
-inline uint qHash(const KNSCore::EntryInternal &entry)
+inline uint qHash(const KNSCore::Entry &entry)
 {
     return qHash(entry.uniqueId());
 }
 
 }
-Q_DECLARE_METATYPE(KNSCore::EntryInternal::List)
-Q_DECLARE_METATYPE(KNSCore::EntryInternal)
+Q_DECLARE_METATYPE(KNSCore::Entry::List)
+Q_DECLARE_METATYPE(KNSCore::Entry)
 #endif

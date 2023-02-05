@@ -11,13 +11,8 @@
 #include <QPushButton>
 #include <memory>
 
-#include "KNSCore/EntryInternal"
+#include "KNSCore/Entry"
 #include "knewstuffwidgets_export.h"
-
-namespace KNSCore
-{
-using Entry = KNSCore::EntryInternal;
-}
 
 namespace KNSWidgets
 {
