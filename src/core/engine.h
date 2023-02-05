@@ -712,38 +712,7 @@ private:
 
     void doRequest();
 
-    // FIXME KF6: move all of this in EnginePrivate
-    // handle installation of entries
-    Installation *m_installation;
-    // read/write cache of entries
-    QSharedPointer<Cache> m_cache;
-    QTimer *m_searchTimer;
-    // The url of the file containing information about content providers
-    /// TODO KF6 This really wants to be turned into a QUrl (which will have implications for our public API, so not doing it just now)
-    QString m_providerFileUrl;
-    // Categories from knsrc file
-    QStringList m_categories;
-
-    QHash<QString, QSharedPointer<KNSCore::Provider>> m_providers;
-
-    QString m_adoptionCommand;
-
-    // the current request from providers
-    Provider::SearchRequest m_currentRequest;
-
     const std::unique_ptr<EnginePrivate> d;
-
-    // the page that is currently displayed, so it is not requested repeatedly
-    int m_currentPage;
-
-    // when requesting entries from a provider, how many to ask for
-    int m_pageSize;
-
-    int m_numDataJobs;
-    int m_numPictureJobs;
-    int m_numInstallJobs;
-    // If the provider is ready to be used
-    bool m_initialized;
 
     Q_DISABLE_COPY(Engine)
 };

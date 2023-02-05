@@ -32,6 +32,7 @@
 #include <QThreadStorage>
 #include <QTimer>
 #include <QUrlQuery>
+#include <qdatetime.h>
 #include <qdom.h>
 
 #if defined(Q_OS_WIN)
@@ -128,7 +129,7 @@ public:
 
     QList<Provider::CategoryMetadata> categoriesMetadata;
     QList<Provider::SearchPreset> searchPresets;
-    Attica::ProviderManager *m_atticaProviderManager = nullptr;
+    Attica::ProviderManager *atticaProviderManager = nullptr;
     QStringList tagFilter;
     QStringList downloadTagFilter;
     bool configLocationFallback = true; // TODO KF6 remove old location
@@ -146,39 +147,60 @@ public:
     QString useLabel;
     bool uploadEnabled = false;
     QString configFileName;
+
+    // handle installation of entries
+    Installation *installation = new Installation();
+    // read/write cache of entries
+    QSharedPointer<Cache> cache;
+    QTimer *searchTimer = new QTimer();
+    // The url of the file containing information about content providers
+    /// TODO KF6 This really wants to be turned into a QUrl (which will have implications for our public API, so not doing it just now)
+    QString providerFileUrl;
+    // Categories from knsrc file
+    QStringList categories;
+
+    QHash<QString, QSharedPointer<KNSCore::Provider>> providers;
+
+    QString adoptionCommand;
+
+    // the current request from providers
+    Provider::SearchRequest currentRequest;
+
+    // the page that is currently displayed, so it is not requested repeatedly
+    int currentPage = -1;
+
+    // when requesting entries from a provider, how many to ask for
+    int pageSize = 20;
+
+    int numDataJobs = 0;
+    int numPictureJobs = 0;
+    int numInstallJobs = 0;
+    // If the provider is ready to be used
+    bool initialized = false;
 };
 
 Engine::Engine(QObject *parent)
     : QObject(parent)
-    , m_installation(new Installation)
-    , m_cache()
-    , m_searchTimer(new QTimer)
     , d(new EnginePrivate)
-    , m_currentPage(-1)
-    , m_pageSize(20)
-    , m_numDataJobs(0)
-    , m_numPictureJobs(0)
-    , m_numInstallJobs(0)
-    , m_initialized(false)
 {
-    m_searchTimer->setSingleShot(true);
-    m_searchTimer->setInterval(1000);
-    connect(m_searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
-    connect(m_installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
-    connect(m_installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
-    connect(m_installation, &Installation::signalInstallationError, this, [this](const QString &message) {
+    d->searchTimer->setSingleShot(true);
+    d->searchTimer->setInterval(1000);
+    connect(d->searchTimer, &QTimer::timeout, this, &Engine::slotSearchTimerExpired);
+    connect(d->installation, &Installation::signalInstallationFinished, this, &Engine::slotInstallationFinished);
+    connect(d->installation, &Installation::signalInstallationFailed, this, &Engine::slotInstallationFailed);
+    connect(d->installation, &Installation::signalInstallationError, this, [this](const QString &message) {
         Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant());
     });
 }
 
 Engine::~Engine()
 {
-    if (m_cache) {
-        m_cache->writeRegistry();
+    if (d->cache) {
+        d->cache->writeRegistry();
     }
-    delete d->m_atticaProviderManager;
-    delete m_searchTimer;
-    delete m_installation;
+    delete d->atticaProviderManager;
+    delete d->searchTimer;
+    delete d->installation;
 }
 
 bool Engine::init(const QString &configfile)
@@ -242,29 +264,29 @@ bool Engine::init(const QString &configfile)
     }
 
     d->name = group.readEntry("Name");
-    m_categories = group.readEntry("Categories", QStringList());
-    qCDebug(KNEWSTUFFCORE) << "Categories: " << m_categories;
-    m_adoptionCommand = group.readEntry("AdoptionCommand");
+    d->categories = group.readEntry("Categories", QStringList());
+    qCDebug(KNEWSTUFFCORE) << "Categories: " << d->categories;
+    d->adoptionCommand = group.readEntry("AdoptionCommand");
     d->useLabel = group.readEntry("UseLabel", i18n("Use"));
     Q_EMIT useLabelChanged();
     d->uploadEnabled = group.readEntry("UploadEnabled", true);
     Q_EMIT uploadEnabledChanged();
 
-    m_providerFileUrl = group.readEntry("ProvidersUrl", QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
-    if (m_providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
-        m_providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
+    d->providerFileUrl = group.readEntry("ProvidersUrl", QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
+    if (d->providerFileUrl == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
+        d->providerFileUrl = QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml");
         qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
     }
     if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
         // The local providers file is called "appname.providers", to match "appname.knsrc"
-        m_providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6))).toString();
+        d->providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6))).toString();
     }
 
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
     // Make sure that config is valid
-    if (!m_installation->readConfig(group)) {
+    if (!d->installation->readConfig(group)) {
         Q_EMIT signalErrorCode(ErrorCode::ConfigFileError,
                                i18n("Could not initialise the installation handler for %1\n"
                                     "This is a critical error and should be reported to the application author",
@@ -273,30 +295,30 @@ bool Engine::init(const QString &configfile)
         return false;
     }
 
-    connect(m_installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
+    connect(d->installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
 
-    m_cache = Cache::getCache(configFileName);
-    qCDebug(KNEWSTUFFCORE) << "Cache is" << m_cache << "for" << configFileName;
-    connect(this, &Engine::signalEntryEvent, m_cache.data(), [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
+    d->cache = Cache::getCache(configFileName);
+    qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileName;
+    connect(this, &Engine::signalEntryEvent, d->cache.data(), [this](const EntryInternal &entry, EntryInternal::EntryEvent event) {
         if (event == EntryInternal::StatusChangedEvent) {
-            m_cache->registerChangedEntry(entry);
+            d->cache->registerChangedEntry(entry);
         }
     });
-    connect(m_cache.data(), &Cache::entryChanged, this, &Engine::slotEntryChanged);
-    m_cache->readRegistry();
+    connect(d->cache.data(), &Cache::entryChanged, this, &Engine::slotEntryChanged);
+    d->cache->readRegistry();
 
     // Cache cleanup option, to help work around people deleting files from underneath KNewStuff (this
     // happens a lot with e.g. wallpapers and icons)
-    if (m_installation->uncompressionSetting() == Installation::UseKPackageUncompression) {
+    if (d->installation->uncompressionSetting() == Installation::UseKPackageUncompression) {
         d->shouldRemoveDeletedEntries = true;
     }
 
     d->shouldRemoveDeletedEntries = group.readEntry("RemoveDeadEntries", d->shouldRemoveDeletedEntries);
     if (d->shouldRemoveDeletedEntries) {
-        m_cache->removeDeletedEntries();
+        d->cache->removeDeletedEntries();
     }
 
-    m_initialized = true;
+    d->initialized = true;
 
     // load the providers
     loadProviders();
@@ -311,12 +333,12 @@ QString KNSCore::Engine::name() const
 
 QStringList Engine::categories() const
 {
-    return m_categories;
+    return d->categories;
 }
 
 QStringList Engine::categoriesFilter() const
 {
-    return m_currentRequest.categories;
+    return d->currentRequest.categories;
 }
 
 QList<Provider::CategoryMetadata> Engine::categoriesMetadata()
@@ -331,28 +353,28 @@ QList<Provider::SearchPreset> Engine::searchPresets()
 
 void Engine::loadProviders()
 {
-    if (m_providerFileUrl.isEmpty()) {
+    if (d->providerFileUrl.isEmpty()) {
         // it would be nicer to move the attica stuff into its own class
         qCDebug(KNEWSTUFFCORE) << "Using OCS default providers";
-        delete d->m_atticaProviderManager;
-        d->m_atticaProviderManager = new Attica::ProviderManager;
-        connect(d->m_atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
-        connect(d->m_atticaProviderManager, &Attica::ProviderManager::failedToLoad, this, &Engine::slotProvidersFailed);
-        d->m_atticaProviderManager->loadDefaultProviders();
+        delete d->atticaProviderManager;
+        d->atticaProviderManager = new Attica::ProviderManager;
+        connect(d->atticaProviderManager, &Attica::ProviderManager::providerAdded, this, &Engine::atticaProviderLoaded);
+        connect(d->atticaProviderManager, &Attica::ProviderManager::failedToLoad, this, &Engine::slotProvidersFailed);
+        d->atticaProviderManager->loadDefaultProviders();
     } else {
-        qCDebug(KNEWSTUFFCORE) << "loading providers from " << m_providerFileUrl;
+        qCDebug(KNEWSTUFFCORE) << "loading providers from " << d->providerFileUrl;
         setBusy(BusyOperation::LoadingData, i18n("Loading provider information"));
 
-        XmlLoader *loader = s_engineProviderLoaders()->localData().value(m_providerFileUrl);
+        XmlLoader *loader = s_engineProviderLoaders()->localData().value(d->providerFileUrl);
         if (!loader) {
-            qCDebug(KNEWSTUFFCORE) << "No xml loader for this url yet, so create one and temporarily store that" << m_providerFileUrl;
+            qCDebug(KNEWSTUFFCORE) << "No xml loader for this url yet, so create one and temporarily store that" << d->providerFileUrl;
             loader = new XmlLoader(this);
-            s_engineProviderLoaders()->localData().insert(m_providerFileUrl, loader);
+            s_engineProviderLoaders()->localData().insert(d->providerFileUrl, loader);
             connect(loader, &XmlLoader::signalLoaded, this, [this]() {
-                s_engineProviderLoaders()->localData().remove(m_providerFileUrl);
+                s_engineProviderLoaders()->localData().remove(d->providerFileUrl);
             });
             connect(loader, &XmlLoader::signalFailed, this, [this]() {
-                s_engineProviderLoaders()->localData().remove(m_providerFileUrl);
+                s_engineProviderLoaders()->localData().remove(d->providerFileUrl);
             });
             connect(loader, &XmlLoader::signalHttpError, this, [this](int status, QList<QNetworkReply::RawHeaderPair> rawHeaders) {
                 if (status == 503) { // Temporarily Unavailable
@@ -382,7 +404,7 @@ void Engine::loadProviders()
                     }
                 }
             });
-            loader->load(QUrl(m_providerFileUrl));
+            loader->load(QUrl(d->providerFileUrl));
         }
         connect(loader, &XmlLoader::signalLoaded, this, &Engine::slotProviderFileLoaded);
         connect(loader, &XmlLoader::signalFailed, this, &Engine::slotProvidersFailed);
@@ -402,7 +424,9 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         isAtticaProviderFile = true;
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
-        Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Could not load get hot new stuff providers from file: %1", m_providerFileUrl), m_providerFileUrl);
+        Q_EMIT signalErrorCode(KNSCore::ProviderError,
+                               i18n("Could not load get hot new stuff providers from file: %1", d->providerFileUrl),
+                               d->providerFileUrl);
         return;
     }
 
@@ -412,7 +436,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
 
         QSharedPointer<KNSCore::Provider> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider.reset(new AtticaProvider(m_categories, d->configFileName));
+            provider.reset(new AtticaProvider(d->categories, d->configFileName));
             connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
                 d->categoriesMetadata = categories;
                 Q_EMIT signalCategoriesMetadataLoded(categories);
@@ -432,7 +456,7 @@ void Engine::slotProviderFileLoaded(const QDomDocument &doc)
         if (provider->setProviderXML(n)) {
             addProvider(provider);
         } else {
-            Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), m_providerFileUrl);
+            Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), d->providerFileUrl);
         }
         n = n.nextSiblingElement();
     }
@@ -446,7 +470,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         qCDebug(KNEWSTUFFCORE) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
-    QSharedPointer<KNSCore::Provider> provider = QSharedPointer<KNSCore::Provider>(new AtticaProvider(atticaProvider, m_categories, d->configFileName));
+    QSharedPointer<KNSCore::Provider> provider = QSharedPointer<KNSCore::Provider>(new AtticaProvider(atticaProvider, d->categories, d->configFileName));
     connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
         d->categoriesMetadata = categories;
         Q_EMIT signalCategoriesMetadataLoded(categories);
@@ -457,7 +481,7 @@ void Engine::atticaProviderLoaded(const Attica::Provider &atticaProvider)
 void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
 {
     qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->id();
-    m_providers.insert(provider->id(), provider);
+    d->providers.insert(provider->id(), provider);
     provider->setTagFilter(d->tagFilter);
     provider->setDownloadTagFilter(d->downloadTagFilter);
     connect(provider.data(), &Provider::providerInitialized, this, &Engine::providerInitialized);
@@ -466,7 +490,7 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     connect(provider.data(), &Provider::payloadLinkLoaded, this, &Engine::downloadLinkLoaded);
 
     connect(provider.data(), &Provider::signalError, this, [this, provider](const QString &msg) {
-        Q_EMIT signalErrorCode(ErrorCode::ProviderError, msg, m_providerFileUrl);
+        Q_EMIT signalErrorCode(ErrorCode::ProviderError, msg, d->providerFileUrl);
     });
     connect(provider.data(), &Provider::signalErrorCode, this, &Engine::signalErrorCode);
     connect(provider.data(), &Provider::signalInformation, this, [this](const QString &message) {
@@ -483,16 +507,16 @@ void Engine::providerJobStarted(KJob *job)
 
 void Engine::slotProvidersFailed()
 {
-    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", m_providerFileUrl), m_providerFileUrl);
+    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", d->providerFileUrl), d->providerFileUrl);
 }
 
 void Engine::providerInitialized(Provider *p)
 {
     qCDebug(KNEWSTUFFCORE) << "providerInitialized" << p->name();
-    p->setCachedEntries(m_cache->registryForProvider(p->id()));
+    p->setCachedEntries(d->cache->registryForProvider(p->id()));
     updateStatus();
 
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         if (!p->isInitialized()) {
             return;
         }
@@ -502,58 +526,58 @@ void Engine::providerInitialized(Provider *p)
 
 void Engine::slotEntriesLoaded(const KNSCore::Provider::SearchRequest &request, KNSCore::EntryInternal::List entries)
 {
-    m_currentPage = qMax<int>(request.page, m_currentPage);
-    qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << m_currentPage << "count:" << entries.count();
+    d->currentPage = qMax<int>(request.page, d->currentPage);
+    qCDebug(KNEWSTUFFCORE) << "loaded page " << request.page << "current page" << d->currentPage << "count:" << entries.count();
 
     if (request.filter == Provider::Updates) {
         Q_EMIT signalUpdateableEntriesLoaded(entries);
     } else {
-        m_cache->insertRequest(request, entries);
+        d->cache->insertRequest(request, entries);
         Q_EMIT signalEntriesLoaded(entries);
     }
 
-    --m_numDataJobs;
+    --d->numDataJobs;
     updateStatus();
 }
 
 void Engine::reloadEntries()
 {
     Q_EMIT signalResetView();
-    m_currentPage = -1;
-    m_currentRequest.pageSize = m_pageSize;
-    m_currentRequest.page = 0;
-    m_numDataJobs = 0;
+    d->currentPage = -1;
+    d->currentRequest.pageSize = d->pageSize;
+    d->currentRequest.page = 0;
+    d->numDataJobs = 0;
 
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         if (p->isInitialized()) {
-            if (m_currentRequest.filter == Provider::Installed) {
+            if (d->currentRequest.filter == Provider::Installed) {
                 // when asking for installed entries, never use the cache
-                p->loadEntries(m_currentRequest);
+                p->loadEntries(d->currentRequest);
             } else {
                 // take entries from cache until there are no more
                 EntryInternal::List cache;
-                EntryInternal::List lastCache = m_cache->requestFromCache(m_currentRequest);
+                EntryInternal::List lastCache = d->cache->requestFromCache(d->currentRequest);
                 while (!lastCache.isEmpty()) {
                     qCDebug(KNEWSTUFFCORE) << "From cache";
                     cache << lastCache;
 
-                    m_currentPage = m_currentRequest.page;
-                    ++m_currentRequest.page;
-                    lastCache = m_cache->requestFromCache(m_currentRequest);
+                    d->currentPage = d->currentRequest.page;
+                    ++d->currentRequest.page;
+                    lastCache = d->cache->requestFromCache(d->currentRequest);
                 }
 
                 // Since the cache has no more pages, reset the request's page
-                if (m_currentPage >= 0) {
-                    m_currentRequest.page = m_currentPage;
+                if (d->currentPage >= 0) {
+                    d->currentRequest.page = d->currentPage;
                 }
 
                 if (!cache.isEmpty()) {
                     Q_EMIT signalEntriesLoaded(cache);
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "From provider";
-                    p->loadEntries(m_currentRequest);
+                    p->loadEntries(d->currentRequest);
 
-                    ++m_numDataJobs;
+                    ++d->numDataJobs;
                     updateStatus();
                 }
             }
@@ -563,62 +587,62 @@ void Engine::reloadEntries()
 
 void Engine::setCategoriesFilter(const QStringList &categories)
 {
-    m_currentRequest.categories = categories;
+    d->currentRequest.categories = categories;
     reloadEntries();
 }
 
 void Engine::setSortMode(Provider::SortMode mode)
 {
-    if (m_currentRequest.sortMode != mode) {
-        m_currentRequest.page = -1;
+    if (d->currentRequest.sortMode != mode) {
+        d->currentRequest.page = -1;
     }
-    m_currentRequest.sortMode = mode;
+    d->currentRequest.sortMode = mode;
     reloadEntries();
 }
 
 Provider::SortMode KNSCore::Engine::sortMode() const
 {
-    return m_currentRequest.sortMode;
+    return d->currentRequest.sortMode;
 }
 
 void KNSCore::Engine::setFilter(Provider::Filter filter)
 {
-    if (m_currentRequest.filter != filter) {
-        m_currentRequest.page = -1;
+    if (d->currentRequest.filter != filter) {
+        d->currentRequest.page = -1;
     }
-    m_currentRequest.filter = filter;
+    d->currentRequest.filter = filter;
     reloadEntries();
 }
 
 Provider::Filter KNSCore::Engine::filter() const
 {
-    return m_currentRequest.filter;
+    return d->currentRequest.filter;
 }
 
 void KNSCore::Engine::fetchEntryById(const QString &id)
 {
-    m_searchTimer->stop();
-    m_currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
-    m_currentRequest.pageSize = m_pageSize;
+    d->searchTimer->stop();
+    d->currentRequest = KNSCore::Provider::SearchRequest(KNSCore::Provider::Newest, KNSCore::Provider::ExactEntryId, id);
+    d->currentRequest.pageSize = d->pageSize;
 
-    EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
+    EntryInternal::List cache = d->cache->requestFromCache(d->currentRequest);
     if (!cache.isEmpty()) {
         reloadEntries();
     } else {
-        m_searchTimer->start();
+        d->searchTimer->start();
     }
 }
 
 void KNSCore::Engine::restoreSearch()
 {
-    m_searchTimer->stop();
-    m_currentRequest = d->storedRequest;
-    if (m_cache) {
-        EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
+    d->searchTimer->stop();
+    d->currentRequest = d->storedRequest;
+    if (d->cache) {
+        EntryInternal::List cache = d->cache->requestFromCache(d->currentRequest);
         if (!cache.isEmpty()) {
             reloadEntries();
         } else {
-            m_searchTimer->start();
+            d->searchTimer->start();
         }
     } else {
         qCWarning(KNEWSTUFFCORE) << "Attempted to call restoreSearch() without a correctly initialized engine. You will likely get unexpected behaviour.";
@@ -627,30 +651,30 @@ void KNSCore::Engine::restoreSearch()
 
 void KNSCore::Engine::storeSearch()
 {
-    d->storedRequest = m_currentRequest;
+    d->storedRequest = d->currentRequest;
 }
 
 void Engine::setSearchTerm(const QString &searchString)
 {
-    m_searchTimer->stop();
-    m_currentRequest.searchTerm = searchString;
-    EntryInternal::List cache = m_cache->requestFromCache(m_currentRequest);
+    d->searchTimer->stop();
+    d->currentRequest.searchTerm = searchString;
+    EntryInternal::List cache = d->cache->requestFromCache(d->currentRequest);
     if (!cache.isEmpty()) {
         reloadEntries();
     } else {
-        m_searchTimer->start();
+        d->searchTimer->start();
     }
 }
 
 QString KNSCore::Engine::searchTerm() const
 {
-    return m_currentRequest.searchTerm;
+    return d->currentRequest.searchTerm;
 }
 
 void Engine::setTagFilter(const QStringList &filter)
 {
     d->tagFilter = filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         p->setTagFilter(d->tagFilter);
     }
 }
@@ -663,7 +687,7 @@ QStringList Engine::tagFilter() const
 void KNSCore::Engine::addTagFilter(const QString &filter)
 {
     d->tagFilter << filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         p->setTagFilter(d->tagFilter);
     }
 }
@@ -671,7 +695,7 @@ void KNSCore::Engine::addTagFilter(const QString &filter)
 void Engine::setDownloadTagFilter(const QStringList &filter)
 {
     d->downloadTagFilter = filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         p->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
@@ -684,7 +708,7 @@ QStringList Engine::downloadTagFilter() const
 void Engine::addDownloadTagFilter(const QString &filter)
 {
     d->downloadTagFilter << filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         p->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
@@ -696,29 +720,29 @@ void Engine::slotSearchTimerExpired()
 
 void Engine::requestMoreData()
 {
-    qCDebug(KNEWSTUFFCORE) << "Get more data! current page: " << m_currentPage << " requested: " << m_currentRequest.page;
+    qCDebug(KNEWSTUFFCORE) << "Get more data! current page: " << d->currentPage << " requested: " << d->currentRequest.page;
 
-    if (m_currentPage < m_currentRequest.page) {
+    if (d->currentPage < d->currentRequest.page) {
         return;
     }
 
-    m_currentRequest.page++;
+    d->currentRequest.page++;
     doRequest();
 }
 
 void Engine::requestData(int page, int pageSize)
 {
-    m_currentRequest.page = page;
-    m_currentRequest.pageSize = pageSize;
+    d->currentRequest.page = page;
+    d->currentRequest.pageSize = pageSize;
     doRequest();
 }
 
 void Engine::doRequest()
 {
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         if (p->isInitialized()) {
-            p->loadEntries(m_currentRequest);
-            ++m_numDataJobs;
+            p->loadEntries(d->currentRequest);
+            ++d->numDataJobs;
             updateStatus();
         }
     }
@@ -744,7 +768,7 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
         Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
         qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
-        QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+        QSharedPointer<Provider> p = d->providers.value(entry.providerId());
         if (p) {
             // If linkId is -1, assume that it's an update and that we don't know what to update
             if (entry.status() == KNS3::Entry::Updating && linkId == -1) {
@@ -770,7 +794,7 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
 
             p->loadPayloadLink(entry, linkId);
 
-            ++m_numInstallJobs;
+            ++d->numInstallJobs;
             updateStatus();
         }
     }
@@ -778,19 +802,19 @@ void Engine::install(KNSCore::EntryInternal entry, int linkId)
 
 void Engine::slotInstallationFinished()
 {
-    --m_numInstallJobs;
+    --d->numInstallJobs;
     updateStatus();
 }
 
 void Engine::slotInstallationFailed(const QString &message)
 {
-    --m_numInstallJobs;
+    --d->numInstallJobs;
     Q_EMIT signalErrorCode(KNSCore::InstallationError, message, QVariant());
 }
 
 void Engine::slotEntryDetailsLoaded(const KNSCore::EntryInternal &entry)
 {
-    --m_numDataJobs;
+    --d->numDataJobs;
     updateStatus();
     Q_EMIT signalEntryEvent(entry, EntryInternal::DetailsLoadedEvent);
 }
@@ -801,7 +825,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
         if (d->payloadToIdentify[entry].isEmpty()) {
             // If there's nothing to identify, and we've arrived here, then we know what the payload is
             qCDebug(KNEWSTUFFCORE) << "If there's nothing to identify, and we've arrived here, then we know what the payload is";
-            m_installation->install(entry);
+            d->installation->install(entry);
             d->payloadToIdentify.remove(entry);
         } else if (d->payloads[entry].count() < entry.downloadLinkCount()) {
             // We've got more to get before we can attempt to identify anything, so fetch the next one...
@@ -809,7 +833,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
             QStringList payloads = d->payloads[entry];
             payloads << entry.payload();
             d->payloads[entry] = payloads;
-            QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+            QSharedPointer<Provider> p = d->providers.value(entry.providerId());
             if (p) {
                 // ok, so this should definitely always work, but... safety first, kids!
                 p->loadPayloadLink(entry, payloads.count());
@@ -868,7 +892,7 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
             if (!identifiedLink.isEmpty()) {
                 KNSCore::EntryInternal theEntry(entry);
                 theEntry.setPayload(identifiedLink);
-                m_installation->install(theEntry);
+                d->installation->install(theEntry);
             } else {
                 qCWarning(KNEWSTUFFCORE) << "We failed to identify a good link for updating" << entry.name() << "and are unable to perform the update";
                 KNSCore::EntryInternal theEntry(entry);
@@ -884,13 +908,13 @@ void Engine::downloadLinkLoaded(const KNSCore::EntryInternal &entry)
             d->payloadToIdentify.remove(entry);
         }
     } else {
-        m_installation->install(entry);
+        d->installation->install(entry);
     }
 }
 
 void Engine::uninstall(KNSCore::EntryInternal entry)
 {
-    const KNSCore::EntryInternal::List list = m_cache->registryForProvider(entry.providerId());
+    const KNSCore::EntryInternal::List list = d->cache->registryForProvider(entry.providerId());
     // we have to use the cached entry here, not the entry from the provider
     // since that does not contain the list of installed files
     KNSCore::EntryInternal actualEntryForUninstall;
@@ -910,7 +934,7 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
     Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
 
     qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
-    m_installation->uninstall(actualEntryForUninstall);
+    d->installation->uninstall(actualEntryForUninstall);
 
     entry.setStatus(actualEntryForUninstall.status());
     Q_EMIT signalEntryEvent(entry, EntryInternal::StatusChangedEvent);
@@ -918,7 +942,7 @@ void Engine::uninstall(KNSCore::EntryInternal entry)
 
 void Engine::loadDetails(const KNSCore::EntryInternal &entry)
 {
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
     p->loadEntryDetails(entry);
 }
 
@@ -930,11 +954,11 @@ void Engine::loadPreview(const KNSCore::EntryInternal &entry, EntryInternal::Pre
     connect(l, &ImageLoader::signalError, this, [this](const KNSCore::EntryInternal &entry, EntryInternal::PreviewType type, const QString &errorText) {
         Q_EMIT signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
         qCDebug(KNEWSTUFFCORE) << "ERROR preview: " << errorText << entry.name() << type;
-        --m_numPictureJobs;
+        --d->numPictureJobs;
         updateStatus();
     });
     l->start();
-    ++m_numPictureJobs;
+    ++d->numPictureJobs;
     updateStatus();
 }
 
@@ -942,7 +966,7 @@ void Engine::slotPreviewLoaded(const KNSCore::EntryInternal &entry, EntryInterna
 {
     qCDebug(KNEWSTUFFCORE) << "FINISH preview: " << entry.name() << type;
     Q_EMIT signalEntryPreviewLoaded(entry, type);
-    --m_numPictureJobs;
+    --d->numPictureJobs;
     updateStatus();
 }
 
@@ -969,25 +993,25 @@ void Engine::slotEntryChanged(const KNSCore::EntryInternal &entry)
 
 bool Engine::userCanVote(const EntryInternal &entry)
 {
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
     return p->userCanVote();
 }
 
 void Engine::vote(const EntryInternal &entry, uint rating)
 {
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
     p->vote(entry, rating);
 }
 
 bool Engine::userCanBecomeFan(const EntryInternal &entry)
 {
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
     return p->userCanBecomeFan();
 }
 
 void Engine::becomeFan(const EntryInternal &entry)
 {
-    QSharedPointer<Provider> p = m_providers.value(entry.providerId());
+    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
     p->becomeFan(entry);
 }
 
@@ -995,15 +1019,15 @@ void Engine::updateStatus()
 {
     BusyState state;
     QString busyMessage;
-    if (m_numInstallJobs > 0) {
+    if (d->numInstallJobs > 0) {
         busyMessage = i18n("Installing");
         state |= BusyOperation::InstallingEntry;
     }
-    if (m_numPictureJobs > 0) {
-        busyMessage = i18np("Loading one preview", "Loading %1 previews", m_numPictureJobs);
+    if (d->numPictureJobs > 0) {
+        busyMessage = i18np("Loading one preview", "Loading %1 previews", d->numPictureJobs);
         state |= BusyOperation::LoadingPreview;
     }
-    if (m_numDataJobs > 0) {
+    if (d->numDataJobs > 0) {
         busyMessage = i18n("Loading data");
         state |= BusyOperation::LoadingPreview;
     }
@@ -1012,7 +1036,7 @@ void Engine::updateStatus()
 
 void Engine::checkForUpdates()
 {
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(m_providers)) {
+    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         Provider::SearchRequest request(KNSCore::Provider::Newest, KNSCore::Provider::Updates);
         p->loadEntries(request);
     }
@@ -1020,7 +1044,7 @@ void Engine::checkForUpdates()
 
 void KNSCore::Engine::checkForInstalled()
 {
-    EntryInternal::List entries = m_cache->registry();
+    EntryInternal::List entries = d->cache->registry();
     std::remove_if(entries.begin(), entries.end(), [](const auto &entry) {
         return entry.status() != KNS3::Entry::Installed && entry.status() != KNS3::Entry::Updateable;
     });
@@ -1029,17 +1053,17 @@ void KNSCore::Engine::checkForInstalled()
 
 bool KNSCore::Engine::hasAdoptionCommand() const
 {
-    return !m_adoptionCommand.isEmpty();
+    return !d->adoptionCommand.isEmpty();
 }
 
 void KNSCore::Engine::setPageSize(int pageSize)
 {
-    m_pageSize = pageSize;
+    d->pageSize = pageSize;
 }
 
 int KNSCore::Engine::pageSize() const
 {
-    return m_pageSize;
+    return d->pageSize;
 }
 
 QStringList KNSCore::Engine::availableConfigFiles()
@@ -1054,20 +1078,20 @@ QStringList KNSCore::Engine::availableConfigFiles()
 
 QSharedPointer<KNSCore::Provider> KNSCore::Engine::provider(const QString &providerId) const
 {
-    return m_providers.value(providerId);
+    return d->providers.value(providerId);
 }
 
 QSharedPointer<KNSCore::Provider> KNSCore::Engine::defaultProvider() const
 {
-    if (m_providers.count() > 0) {
-        return m_providers.constBegin().value();
+    if (d->providers.count() > 0) {
+        return d->providers.constBegin().value();
     }
     return nullptr;
 }
 
 QStringList Engine::providerIDs() const
 {
-    return m_providers.keys();
+    return d->providers.keys();
 }
 
 KNSCore::CommentsModel *KNSCore::Engine::commentsForEntry(const KNSCore::EntryInternal &entry)
@@ -1118,19 +1142,19 @@ void Engine::setBusy(Engine::BusyState state, const QString &busyMessage)
 
 QSharedPointer<KNSCore::Cache> KNSCore::Engine::cache() const
 {
-    return m_cache;
+    return d->cache;
 }
 
 void KNSCore::Engine::revalidateCacheEntries()
 {
     // This gets called from QML, because in QtQuick we reuse the engine, BUG: 417985
     // We can't handle this in the cache, because it can't access the configuration of the engine
-    if (m_cache && d->shouldRemoveDeletedEntries) {
-        for (const auto &provider : std::as_const(m_providers)) {
+    if (d->cache && d->shouldRemoveDeletedEntries) {
+        for (const auto &provider : std::as_const(d->providers)) {
             if (provider && provider->isInitialized()) {
-                const EntryInternal::List cacheBefore = m_cache->registryForProvider(provider->id());
-                m_cache->removeDeletedEntries();
-                const EntryInternal::List cacheAfter = m_cache->registryForProvider(provider->id());
+                const EntryInternal::List cacheBefore = d->cache->registryForProvider(provider->id());
+                d->cache->removeDeletedEntries();
+                const EntryInternal::List cacheAfter = d->cache->registryForProvider(provider->id());
                 // If the user has deleted them in the background we have to update the state to deleted
                 for (const auto &oldCachedEntry : cacheBefore) {
                     if (!cacheAfter.contains(oldCachedEntry)) {
@@ -1150,7 +1174,7 @@ void Engine::adoptEntry(const EntryInternal &entry)
         qCWarning(KNEWSTUFFCORE) << "no adoption command specified";
         return;
     }
-    const QString command = d->getAdoptionCommand(m_adoptionCommand, entry, m_installation);
+    const QString command = d->getAdoptionCommand(d->adoptionCommand, entry, d->installation);
     QStringList split = KShell::splitArgs(command);
     QProcess *process = new QProcess(this);
     process->setProgram(split.takeFirst());
@@ -1192,8 +1216,8 @@ bool KNSCore::Engine::uploadEnabled() const
 QVector<Attica::Provider *> Engine::atticaProviders() const
 {
     QVector<Attica::Provider *> ret;
-    ret.reserve(m_providers.size());
-    for (const auto &p : m_providers) {
+    ret.reserve(d->providers.size());
+    for (const auto &p : d->providers) {
         const auto atticaProvider = p.dynamicCast<AtticaProvider>();
         if (atticaProvider) {
             ret += atticaProvider->provider();
