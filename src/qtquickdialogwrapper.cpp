@@ -89,10 +89,7 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
     }
 }
 
-QtQuickDialogWrapper::~QtQuickDialogWrapper()
-{
-    // Empty destructor needed for std::unique_ptr to incomplete class.
-}
+QtQuickDialogWrapper::~QtQuickDialogWrapper() = default;
 
 void QtQuickDialogWrapper::open()
 {

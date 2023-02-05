@@ -33,9 +33,7 @@ ItemsModel::ItemsModel(Engine *engine, QObject *parent)
 {
 }
 
-ItemsModel::~ItemsModel()
-{
-}
+ItemsModel::~ItemsModel() = default;
 
 int ItemsModel::rowCount(const QModelIndex & /*parent*/) const
 {

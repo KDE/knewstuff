@@ -26,9 +26,7 @@ Entry &Entry::operator=(const Entry &other)
     return *this;
 }
 
-Entry::~Entry()
-{
-}
+Entry::~Entry() = default;
 
 QString Entry::id() const
 {

@@ -17,9 +17,7 @@ QuestionListener::QuestionListener(QObject *parent)
     connect(QuestionManager::instance(), &QuestionManager::askQuestion, this, &QuestionListener::askQuestion);
 }
 
-QuestionListener::~QuestionListener()
-{
-}
+QuestionListener::~QuestionListener() = default;
 
 void QuestionListener::askQuestion(Question * /*question*/)
 {

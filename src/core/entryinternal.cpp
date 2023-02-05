@@ -107,9 +107,7 @@ bool EntryInternal::operator==(const KNSCore::EntryInternal &other) const
     return d->mUniqueId == other.d->mUniqueId && d->mProviderId == other.d->mProviderId;
 }
 
-EntryInternal::~EntryInternal()
-{
-}
+EntryInternal::~EntryInternal() = default;
 
 bool EntryInternal::isValid() const
 {
