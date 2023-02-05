@@ -21,7 +21,6 @@ QuestionListener::~QuestionListener()
 {
 }
 
-void QuestionListener::askQuestion(Question *question)
+void QuestionListener::askQuestion(Question * /*question*/)
 {
-    Q_UNUSED(question)
 }

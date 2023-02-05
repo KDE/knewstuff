@@ -34,9 +34,8 @@ KJob *ImageLoader::job()
     return m_job;
 }
 
-void ImageLoader::slotData(KJob *job, const QByteArray &buf)
+void ImageLoader::slotData(KJob * /*job*/, const QByteArray &buf)
 {
-    Q_UNUSED(job)
     m_buffer.append(buf);
 }
 

@@ -264,8 +264,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto &defaul
             d->updateMoveButtonsState();
         });
 
-        connect(configUi->listMainSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current, QListWidgetItem *previous) {
-            Q_UNUSED(previous)
+        connect(configUi->listMainSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current) {
             if (current && d->selectedItemMoreSection()) {
                 d->selectedItemMoreSection()->setSelected(false);
                 configUi->listMoreSection->setCurrentItem(nullptr);
@@ -286,8 +285,7 @@ KMoreToolsConfigDialog::KMoreToolsConfigDialog(const KmtMenuStructureDto &defaul
             d->updateMoveButtonsState();
         });
 
-        connect(configUi->listMoreSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current, QListWidgetItem *previous) {
-            Q_UNUSED(previous)
+        connect(configUi->listMoreSection, &QListWidget::currentItemChanged, this, [this, configUi](QListWidgetItem *current) {
             if (current && d->selectedItemMainSection()) {
                 d->selectedItemMainSection()->setSelected(false);
                 configUi->listMainSection->setCurrentItem(nullptr);

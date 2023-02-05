@@ -24,9 +24,8 @@
 #include <QQmlEngine>
 #include <qqml.h>
 
-void QmlPlugins::initializeEngine(QQmlEngine *engine, const char *)
+void QmlPlugins::initializeEngine(QQmlEngine * /*engine*/, const char *)
 {
-    Q_UNUSED(engine);
 }
 
 void QmlPlugins::registerTypes(const char *uri)
@@ -68,8 +67,7 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                     1,
                                                                     62,
                                                                     "QuickQuestionListener",
-                                                                    [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-                                                                        Q_UNUSED(scriptEngine)
+                                                                    [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {
                                                                         engine->setObjectOwnership(KNewStuffQuick::QuickQuestionListener::instance(),
                                                                                                    QQmlEngine::CppOwnership);
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
@@ -85,8 +83,7 @@ void QmlPlugins::registerTypes(const char *uri)
         QStringLiteral("This should only be created by the Engine, and wraps EntryInternal objects for passing through Qt Quick"));
 
     // Version 1.81
-    qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(scriptEngine)
+    qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {
         engine->setObjectOwnership(KNewStuffQuick::Settings::instance(), QQmlEngine::CppOwnership);
         return KNewStuffQuick::Settings::instance();
     });

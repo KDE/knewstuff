@@ -289,19 +289,16 @@ public:
     {
         return false;
     }
-    virtual void vote(const EntryInternal &entry, uint rating)
+    virtual void vote(const EntryInternal & /*entry*/, uint /*rating*/)
     {
-        Q_UNUSED(entry)
-        Q_UNUSED(rating)
     }
 
     virtual bool userCanBecomeFan()
     {
         return false;
     }
-    virtual void becomeFan(const EntryInternal &entry)
+    virtual void becomeFan(const EntryInternal & /*entry*/)
     {
-        Q_UNUSED(entry)
     }
 
     /**
