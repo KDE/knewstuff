@@ -37,10 +37,6 @@ set(KNewStuffCore_SRCS
 
     ../attica/atticaprovider.cpp
     ../staticxml/staticxmlprovider.cpp
-
-
-
-    ../upload/atticahelper.cpp
 )
 if(KF6Syndication_FOUND)
     set(KNewStuffCore_syndication_SRCS
