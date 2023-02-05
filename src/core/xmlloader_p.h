@@ -17,8 +17,6 @@
 #include <QUrl>
 #include <qdom.h>
 
-#include "knewstuffcore_export.h"
-
 class KJob;
 
 namespace KNSCore
@@ -33,7 +31,7 @@ QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &ta
  *
  * @internal
  */
-class KNEWSTUFFCORE_EXPORT XmlLoader : public QObject
+class XmlLoader : public QObject
 {
     Q_OBJECT
 public:

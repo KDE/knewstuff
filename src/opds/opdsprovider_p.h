@@ -8,9 +8,9 @@
 #define OPDSPROVIDER_H
 
 #include "provider.h"
+#include "xmlloader_p.h"
 #include <QMap>
 #include <memory>
-#include <xmlloader.h>
 
 /**
  * OPDS provider.

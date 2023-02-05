@@ -16,8 +16,6 @@
 
 #include "entryinternal.h"
 
-#include "knewstuffcore_export.h"
-
 class QProcess;
 class KArchiveDirectory;
 class KJob;
@@ -34,7 +32,7 @@ namespace KNSCore
  *
  * @internal
  */
-class KNEWSTUFFCORE_EXPORT Installation : public QObject
+class Installation : public QObject
 {
     Q_OBJECT
 public:

@@ -10,7 +10,7 @@
 
 #include "staticxmlprovider_p.h"
 
-#include "xmlloader.h"
+#include "xmlloader_p.h"
 
 #include <QTimer>
 #include <knewstuffcore_debug.h>

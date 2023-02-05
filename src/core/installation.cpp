@@ -6,7 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "installation.h"
+#include "installation_p.h"
 
 #include <QDesktopServices>
 #include <QDir>

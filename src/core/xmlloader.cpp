@@ -8,7 +8,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "xmlloader.h"
+#include "xmlloader_p.h"
 
 #include "jobs/httpjob.h"
 #include "knewstuffcore_debug.h"

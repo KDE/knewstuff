@@ -16,3 +16,6 @@ knewstuff_unit_tests(
         knewstuffenginetest.cpp
         installationtest.cpp
 )
+
+target_sources(installationtest PRIVATE ../../src/core/installation.cpp)
+target_sources(knewstuffauthortest PRIVATE ../../src/core/installation.cpp)

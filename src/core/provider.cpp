@@ -10,7 +10,7 @@
 
 #include "provider.h"
 
-#include "xmlloader.h"
+#include "xmlloader_p.h"
 
 #include <KLocalizedString>
 

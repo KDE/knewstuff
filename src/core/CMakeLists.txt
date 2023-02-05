@@ -23,6 +23,17 @@ set(KNewStuffCore_SRCS
     questionmanager.cpp
     questionlistener.cpp
 
+    ../attica/atticaprovider.cpp
+    ../staticxml/staticxmlprovider.cpp
+)
+if(KF6Syndication_FOUND)
+    set(KNewStuffCore_syndication_SRCS
+        ../opds/opdsprovider.cpp
+        )
+endif()
+
+add_library(knscore_jobs_static STATIC)
+target_sources(knscore_jobs_static PRIVATE
     # A set of minimal KJob based classes, designed to replace the
     # more powerful KIO based system in places where KIO is not available
     # for one reason or another.
@@ -34,17 +45,12 @@ set(KNewStuffCore_SRCS
 
     # A simple wrapper around KPackage operations, which allows for asynchronous interaction
     jobs/kpackagejob.cpp
-
-    ../attica/atticaprovider.cpp
-    ../staticxml/staticxmlprovider.cpp
 )
-if(KF6Syndication_FOUND)
-    set(KNewStuffCore_syndication_SRCS
-        ../opds/opdsprovider.cpp
-        )
-endif()
+target_link_libraries(knscore_jobs_static PUBLIC Qt6::Network KF6::I18n KF6::CoreAddons KF6::Package)
+# Needed to link this static lib to shared libs
+set_property(TARGET knscore_jobs_static PROPERTY POSITION_INDEPENDENT_CODE ON)
 
-ecm_qt_declare_logging_category(KNewStuffCore_SRCS
+ecm_qt_declare_logging_category(knscore_jobs_static
     HEADER knewstuffcore_debug.h
     IDENTIFIER KNEWSTUFFCORE
     CATEGORY_NAME kf.newstuff.core
@@ -91,6 +97,7 @@ target_link_libraries(KF6NewStuffCore
     KF6::ConfigCore
     KF6::Package
     Qt6::Gui                   # For QImage
+    knscore_jobs_static
 )
 
 if(KF6Syndication_FOUND)
@@ -115,7 +122,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   EntryInternal
   EntryWrapper
   ErrorCode
-  Installation
   ItemsModel
   Provider
   ProvidersModel
@@ -123,7 +129,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   QuestionListener
   QuestionManager
   TagsFilterChecker
-  XmlLoader
 
   REQUIRED_HEADERS KNewStuffCore_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore

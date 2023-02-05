@@ -12,9 +12,10 @@
 
 #include "commentsmodel.h"
 #include "imageloader_p.h"
-#include "installation.h"
 #include "question.h"
-#include "xmlloader.h"
+
+#include "installation_p.h"
+#include "xmlloader_p.h"
 
 #include <KConfig>
 #include <KConfigGroup>

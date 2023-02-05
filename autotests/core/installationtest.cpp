@@ -13,7 +13,7 @@
 #include <QtGlobal>
 
 #include "entryinternal.h"
-#include "installation.h"
+#include "installation_p.h"
 #include "itemsmodel.h"
 #include "questionmanager.h"
 

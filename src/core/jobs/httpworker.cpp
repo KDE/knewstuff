@@ -6,8 +6,8 @@
 
 #include "httpworker.h"
 
+#include "../../knewstuffcore_version.h"
 #include "knewstuffcore_debug.h"
-#include "knewstuffcore_version.h"
 
 #include <QCoreApplication>
 #include <QFile>
