@@ -82,7 +82,7 @@ public:
     Q_SIGNAL void entryChanged();
 
 private:
-    friend class CommentsModelPrivate;
+    friend class CommentsModelPrivate; // For beginResetModel and beginInsertRows method calls
     const std::unique_ptr<CommentsModelPrivate> d;
 };
 }

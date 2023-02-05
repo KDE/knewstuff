@@ -99,12 +99,12 @@ void AtticaProvider::setCachedEntries(const KNSCore::EntryInternal::List &cached
 
 void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 {
-    mName = provider.name();
-    mIcon = provider.icon();
+    setName(provider.name());
+    setIcon(provider.icon());
     qCDebug(KNEWSTUFFCORE) << "Added provider: " << provider.name();
 
     m_provider = provider;
-    m_provider.setAdditionalAgentInformation(mName);
+    m_provider.setAdditionalAgentInformation(name());
     m_providerId = provider.baseUrl().toString();
 
     Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();

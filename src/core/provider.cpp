@@ -18,11 +18,14 @@
 
 namespace KNSCore
 {
-// TODO KF6 BCI: Add a real d-pointer
 class ProviderPrivate
 {
 public:
-    Provider *q;
+    ProviderPrivate(Provider *qq)
+        : q(qq)
+    {
+    }
+    Provider *const q;
     QStringList tagFilter;
     QStringList downloadTagFilter;
 
@@ -31,8 +34,11 @@ public:
     QUrl website;
     QUrl host;
     QString contactEmail;
+    QString name;
+    QUrl icon;
     bool supportsSsl{false};
     bool basicsGot{false};
+
     void updateOnFirstBasicsGet()
     {
         if (!basicsGot) {
@@ -51,25 +57,6 @@ public:
         basicsThrottle->start();
     }
 };
-typedef QHash<const Provider *, ProviderPrivate *> ProviderPrivateHash;
-Q_GLOBAL_STATIC(ProviderPrivateHash, d_func)
-
-static ProviderPrivate *d(const Provider *provider)
-{
-    ProviderPrivate *ret = d_func()->value(provider);
-    if (!ret) {
-        ret = new ProviderPrivate;
-        d_func()->insert(provider, ret);
-    }
-    return ret;
-}
-
-static void delete_d(const Provider *provider)
-{
-    if (auto d = d_func()) {
-        delete d->take(provider);
-    }
-}
 
 QString Provider::SearchRequest::hashForRequest() const
 {
@@ -78,43 +65,40 @@ QString Provider::SearchRequest::hashForRequest() const
 }
 
 Provider::Provider()
+    : d(new ProviderPrivate(this))
 {
-    d(this)->q = this;
 }
 
-Provider::~Provider()
-{
-    delete_d(this);
-}
+Provider::~Provider() = default;
 
 QString Provider::name() const
 {
-    return mName;
+    return d->name;
 }
 
 QUrl Provider::icon() const
 {
-    return mIcon;
+    return d->icon;
 }
 
 void Provider::setTagFilter(const QStringList &tagFilter)
 {
-    d(this)->tagFilter = tagFilter;
+    d->tagFilter = tagFilter;
 }
 
 QStringList Provider::tagFilter() const
 {
-    return d(this)->tagFilter;
+    return d->tagFilter;
 }
 
 void Provider::setDownloadTagFilter(const QStringList &downloadTagFilter)
 {
-    d(this)->downloadTagFilter = downloadTagFilter;
+    d->downloadTagFilter = downloadTagFilter;
 }
 
 QStringList Provider::downloadTagFilter() const
 {
-    return d(this)->downloadTagFilter;
+    return d->downloadTagFilter;
 }
 
 QDebug operator<<(QDebug dbg, const Provider::SearchRequest &search)
@@ -133,71 +117,81 @@ QDebug operator<<(QDebug dbg, const Provider::SearchRequest &search)
 
 QString Provider::version() const
 {
-    d(this)->updateOnFirstBasicsGet();
-    return d(this)->version;
+    d->updateOnFirstBasicsGet();
+    return d->version;
 }
 
 void Provider::setVersion(const QString &version)
 {
-    if (d(this)->version != version) {
-        d(this)->version = version;
-        d(this)->throttleBasics();
+    if (d->version != version) {
+        d->version = version;
+        d->throttleBasics();
     }
 }
 
 QUrl Provider::website() const
 {
-    d(this)->updateOnFirstBasicsGet();
-    return d(this)->website;
+    d->updateOnFirstBasicsGet();
+    return d->website;
 }
 
 void Provider::setWebsite(const QUrl &website)
 {
-    if (d(this)->website != website) {
-        d(this)->website = website;
-        d(this)->throttleBasics();
+    if (d->website != website) {
+        d->website = website;
+        d->throttleBasics();
     }
 }
 
 QUrl Provider::host() const
 {
-    d(this)->updateOnFirstBasicsGet();
-    return d(this)->host;
+    d->updateOnFirstBasicsGet();
+    return d->host;
 }
 
 void Provider::setHost(const QUrl &host)
 {
-    if (d(this)->host != host) {
-        d(this)->host = host;
-        d(this)->throttleBasics();
+    if (d->host != host) {
+        d->host = host;
+        d->throttleBasics();
     }
 }
 
 QString Provider::contactEmail() const
 {
-    d(this)->updateOnFirstBasicsGet();
-    return d(this)->contactEmail;
+    d->updateOnFirstBasicsGet();
+    return d->contactEmail;
 }
 
 void Provider::setContactEmail(const QString &contactEmail)
 {
-    if (d(this)->contactEmail != contactEmail) {
-        d(this)->contactEmail = contactEmail;
-        d(this)->throttleBasics();
+    if (d->contactEmail != contactEmail) {
+        d->contactEmail = contactEmail;
+        d->throttleBasics();
     }
 }
 
 bool Provider::supportsSsl() const
 {
-    d(this)->updateOnFirstBasicsGet();
-    return d(this)->supportsSsl;
+    d->updateOnFirstBasicsGet();
+    return d->supportsSsl;
 }
 
 void Provider::setSupportsSsl(bool supportsSsl)
 {
-    if (d(this)->supportsSsl != supportsSsl) {
-        d(this)->supportsSsl = supportsSsl;
-        d(this)->throttleBasics();
+    if (d->supportsSsl != supportsSsl) {
+        d->supportsSsl = supportsSsl;
+        d->throttleBasics();
     }
+}
+
+void Provider::setName(const QString &name)
+{
+    d->name = name;
+}
+
+void Provider::setIcon(const QUrl &icon)
+{
+    d->icon = icon;
 }
 }

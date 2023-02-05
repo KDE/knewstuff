@@ -9,6 +9,7 @@
 #define KNEWSTUFF3_ITEMSMODEL_P_H
 
 #include <QAbstractListModel>
+#include <memory>
 
 #include "entryinternal.h"
 #include "knewstuffcore_export.h"
@@ -18,6 +19,7 @@ class KJob;
 namespace KNSCore
 {
 class Engine;
+class ItemsModelPrivate;
 
 class KNEWSTUFFCORE_EXPORT ItemsModel : public QAbstractListModel
 {
@@ -51,10 +53,7 @@ public Q_SLOTS:
     void slotEntryPreviewLoaded(const KNSCore::EntryInternal &entry, KNSCore::EntryInternal::PreviewType type);
 
 private:
-    Engine *const m_engine;
-    // the list of entries
-    QList<EntryInternal> m_entries;
-    bool m_hasPreviewImages = false;
+    const std::unique_ptr<ItemsModelPrivate> d;
 };
 
 } // end KNS namespace

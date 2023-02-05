@@ -26,6 +26,7 @@
 
 namespace KNSCore
 {
+class ProviderPrivate;
 struct Comment;
 /**
  * @short KNewStuff Base Provider class.
@@ -36,8 +37,6 @@ struct Comment;
  * static website providers.
  *
  * @author Jeremy Whiting <jpwhiting@kde.org>
- *
- * @internal
  */
 class KNEWSTUFFCORE_EXPORT Provider : public QObject
 {
@@ -374,10 +373,11 @@ Q_SIGNALS:
     void categoriesMetadataLoded(const QList<CategoryMetadata> &categories);
 
 protected:
-    QString mName;
-    QUrl mIcon;
+    void setName(const QString &name);
+    void setIcon(const QUrl &icon);
 
 private:
+    const std::unique_ptr<ProviderPrivate> d;
     Q_DISABLE_COPY(Provider)
 };
 

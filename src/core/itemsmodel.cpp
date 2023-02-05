@@ -15,9 +15,21 @@
 
 namespace KNSCore
 {
+class ItemsModelPrivate
+{
+public:
+    ItemsModelPrivate(Engine *e)
+        : engine(e)
+    {
+    }
+    Engine *const engine;
+    // the list of entries
+    QList<EntryInternal> entries;
+    bool hasPreviewImages = false;
+};
 ItemsModel::ItemsModel(Engine *engine, QObject *parent)
     : QAbstractListModel(parent)
-    , m_engine(engine)
+    , d(new ItemsModelPrivate(engine))
 {
 }
 
@@ -27,7 +39,7 @@ ItemsModel::~ItemsModel()
 
 int ItemsModel::rowCount(const QModelIndex & /*parent*/) const
 {
-    return m_entries.count();
+    return d->entries.count();
 }
 
 QVariant ItemsModel::data(const QModelIndex &index, int role) const
@@ -35,13 +47,13 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
     if (role != Qt::UserRole) {
         return QVariant();
     }
-    EntryInternal entry = m_entries[index.row()];
+    EntryInternal entry = d->entries[index.row()];
     return QVariant::fromValue(entry);
 }
 
 int ItemsModel::row(const EntryInternal &entry) const
 {
-    return m_entries.indexOf(entry);
+    return d->entries.indexOf(entry);
 }
 
 void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
@@ -54,22 +66,22 @@ void ItemsModel::slotEntriesLoaded(const KNSCore::EntryInternal::List &entries)
 void ItemsModel::addEntry(const EntryInternal &entry)
 {
     // This might be expensive, but it avoids duplicates, which is not awesome for the user
-    if (!m_entries.contains(entry)) {
+    if (!d->entries.contains(entry)) {
         QString preview = entry.previewUrl(EntryInternal::PreviewSmall1);
-        if (!m_hasPreviewImages && !preview.isEmpty()) {
-            m_hasPreviewImages = true;
+        if (!d->hasPreviewImages && !preview.isEmpty()) {
+            d->hasPreviewImages = true;
             if (rowCount() > 0) {
                 Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
             }
         }
 
         qCDebug(KNEWSTUFFCORE) << "adding entry " << entry.name() << " to the model";
-        beginInsertRows(QModelIndex(), m_entries.count(), m_entries.count());
-        m_entries.append(entry);
+        beginInsertRows(QModelIndex(), d->entries.count(), d->entries.count());
+        d->entries.append(entry);
         endInsertRows();
 
         if (!preview.isEmpty() && entry.previewImage(EntryInternal::PreviewSmall1).isNull()) {
-            m_engine->loadPreview(entry, EntryInternal::PreviewSmall1);
+            d->engine->loadPreview(entry, EntryInternal::PreviewSmall1);
         }
     }
 }
@@ -77,17 +89,17 @@ void ItemsModel::addEntry(const EntryInternal &entry)
 void ItemsModel::removeEntry(const EntryInternal &entry)
 {
     qCDebug(KNEWSTUFFCORE) << "removing entry " << entry.name() << " from the model";
-    int index = m_entries.indexOf(entry);
+    int index = d->entries.indexOf(entry);
     if (index > -1) {
         beginRemoveRows(QModelIndex(), index, index);
-        m_entries.removeAt(index);
+        d->entries.removeAt(index);
         endRemoveRows();
     }
 }
 
 void ItemsModel::slotEntryChanged(const EntryInternal &entry)
 {
-    int i = m_entries.indexOf(entry);
+    int i = d->entries.indexOf(entry);
     QModelIndex entryIndex = index(i, 0);
     Q_EMIT dataChanged(entryIndex, entryIndex);
 }
@@ -95,7 +107,7 @@ void ItemsModel::slotEntryChanged(const EntryInternal &entry)
 void ItemsModel::clearEntries()
 {
     beginResetModel();
-    m_entries.clear();
+    d->entries.clear();
     endResetModel();
 }
 
@@ -110,7 +122,7 @@ void ItemsModel::slotEntryPreviewLoaded(const EntryInternal &entry, EntryInterna
 
 bool ItemsModel::hasPreviewImages() const
 {
-    return m_hasPreviewImages;
+    return d->hasPreviewImages;
 }
 
 } // end KNS namespace

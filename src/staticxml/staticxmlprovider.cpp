@@ -62,7 +62,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     if (!iconurl.isValid()) {
         iconurl = QUrl::fromLocalFile(xmldata.attribute(QStringLiteral("icon")));
     }
-    mIcon = iconurl;
+    setIcon(iconurl);
 
     QDomNode n;
     QLocale::Language systemLanguage = QLocale::system().language();
@@ -72,7 +72,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         if (e.tagName() == QLatin1String("title")) {
             const QString lang{e.attribute(QLatin1String("lang"))};
             bool useThisTitle{false};
-            if (mName.isEmpty() && lang.isEmpty()) {
+            if (name().isEmpty() && lang.isEmpty()) {
                 // If we have no title as yet, and we've also got no language defined, this is the default
                 // and name we need to set it, even if we might override it later
                 useThisTitle = true;
@@ -83,7 +83,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
                 }
             }
             if (useThisTitle) {
-                mName = e.text().trimmed();
+                setName(e.text().trimmed());
                 qCDebug(KNEWSTUFFCORE) << "add name for provider (" << this << "): " << e.text();
             }
             if (firstName.isEmpty()) {
@@ -91,9 +91,9 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
             }
         }
     }
-    if (mName.isEmpty()) {
+    if (name().isEmpty()) {
         // Just a fallback, because those are quite nice to have...
-        mName = firstName;
+        setName(firstName);
     }
 
     // Validation
