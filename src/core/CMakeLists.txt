@@ -63,7 +63,7 @@ ecm_generate_export_header(KF6NewStuffCore
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
-    DEPRECATION_VERSIONS 5.31 5.36 5.53 5.71 5.74 5.77 5.83
+    DEPRECATION_VERSIONS
 )
 
 # The src/ dir is needed for the entry.h header. This only happens because some
