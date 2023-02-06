@@ -8,10 +8,10 @@
 #ifndef KNEWSTUFFWIDGETSBUTTON_H
 #define KNEWSTUFFWIDGETSBUTTON_H
 
+#include <KNSCore/Entry>
 #include <QPushButton>
 #include <memory>
 
-#include "KNSCore/Entry"
 #include "knewstuffwidgets_export.h"
 
 namespace KNSWidgets

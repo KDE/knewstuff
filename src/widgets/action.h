@@ -8,10 +8,9 @@
 #ifndef KNEWSTUFF3ACTION_H
 #define KNEWSTUFF3ACTION_H
 
+#include <KNSCore/Entry>
 #include <QAction>
 
-#include "KNS3/Entry"
-#include "KNSCore/Entry"
 #include "knewstuffwidgets_export.h"
 
 namespace KNSWidgets
