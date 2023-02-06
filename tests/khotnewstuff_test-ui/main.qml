@@ -61,7 +61,7 @@ Kirigami.ApplicationWindow {
 
                     reserveSpaceForIcon: true
                     label: model.display
-                    icon: model.whatsThis
+                    icon.name: model.whatsThis
 
                     Accessible.role: Accessible.MenuItem
                     onClicked: {}

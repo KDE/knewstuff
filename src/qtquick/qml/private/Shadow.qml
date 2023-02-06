@@ -5,7 +5,7 @@
 */
 
 import QtQuick 2.11
-import QtGraphicalEffects 1.11
+import Qt5Compat.GraphicalEffects 6.0
 
 import org.kde.kirigami 2.2
 

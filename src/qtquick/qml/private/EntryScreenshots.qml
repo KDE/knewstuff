@@ -8,7 +8,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.11
 import QtQuick.Layouts 1.11
-import QtGraphicalEffects 1.11
+import Qt5Compat.GraphicalEffects 6.0
 
 import org.kde.kirigami 2.12 as Kirigami
 
@@ -24,7 +24,7 @@ Flickable {
 
     Popup {
         id: overlay
-        parent: applicationWindow().overlay
+        parent: applicationWindow().Overlay.overlay
         modal: true
         clip: false
 

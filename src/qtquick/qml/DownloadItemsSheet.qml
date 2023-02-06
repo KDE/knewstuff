@@ -52,7 +52,7 @@ Kirigami.OverlaySheet {
                     implicitHeight: installButton.implicitHeight + Kirigami.Units.smallSpacing * 2
 
                     text: modelData.name
-                    icon: modelData.icon
+                    icon.name: modelData.icon
 
                     // Don't need a highlight or hover effects
                     hoverEnabled: false
