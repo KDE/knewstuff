@@ -8,7 +8,6 @@ set(KNewStuff_SRCS
     kmoretools/kmoretoolsconfigdialog_p.cpp
     kmoretools/kmoretoolsmenufactory.cpp
     kmoretools/kmoretoolspresets.cpp
-    ui/widgetquestionlistener.cpp
     qtquickdialogwrapper.cpp
 )
 ki18n_wrap_ui(KNewStuff_SRCS kmoretools/ui/kmoretoolsconfigwidget.ui)

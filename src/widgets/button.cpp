@@ -8,7 +8,6 @@
 #include "button.h"
 
 #include "qtquickdialogwrapper.h"
-#include "ui/widgetquestionlistener.h"
 #include <KAuthorized>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -38,7 +37,6 @@ public:
 
         q->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
         q->connect(q, &QAbstractButton::clicked, q, &Button::showDialog);
-        KNS3::WidgetQuestionListener::instance();
     }
 };
 

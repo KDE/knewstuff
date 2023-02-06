@@ -8,7 +8,6 @@
 #include "action.h"
 
 #include "qtquickdialogwrapper.h"
-#include "ui/widgetquestionlistener.h"
 #include <KAuthorized>
 #include <KLocalizedString>
 

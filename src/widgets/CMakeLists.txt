@@ -16,7 +16,7 @@ ecm_generate_export_header(KF6NewStuffWidgets
 
 target_sources(KF6NewStuffWidgets PRIVATE
     action.cpp button.cpp
-    ../ui/widgetquestionlistener.cpp)
+)
 
 target_link_libraries(KF6NewStuffWidgets PUBLIC KF6::NewStuff)
 target_link_libraries(KF6NewStuffWidgets
