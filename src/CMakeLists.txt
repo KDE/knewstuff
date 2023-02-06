@@ -49,11 +49,9 @@ target_link_libraries(KF6NewStuff
     KF6::Completion            # For KLineEdit in download dialog
     KF6::I18n                  # For translations
     KF6::ItemViews             # For buttons on download dialog
-    KF6::IconThemes           # For KIcon
     KF6::ConfigCore # KAuthorized
     Qt6::Qml
     Qt6::Quick
-    KF6::TextWidgets          # For KTextEdit in upload dialog
 )
 
 set_target_properties(KF6NewStuff PROPERTIES
@@ -121,7 +119,6 @@ if(BUILD_QCH)
         IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
             KF6NewStuffCore_QCH
-            KF6XmlGui_QCH
             KF6Service_QCH
             Qt6Widgets_QCH
         INCLUDE_DIRS
@@ -143,7 +140,7 @@ endif()
 add_subdirectory(widgets)
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF6NewStuff DEPS "widgets KXmlGui KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff)
+ecm_generate_pri_file(BASE_NAME KNewStuff LIB_NAME KF6NewStuff DEPS "widgets KNewStuffCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 add_subdirectory(qtquick)

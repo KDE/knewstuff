@@ -22,8 +22,8 @@ target_link_libraries(KF6NewStuffWidgets PUBLIC KF6::NewStuff)
 target_link_libraries(KF6NewStuffWidgets
   PUBLIC
     KF6::NewStuffCore
-    KF6::NewStuff
   PRIVATE
+    KF6::NewStuff
     KF6::I18n
     KF6::ConfigCore
     KF6::WidgetsAddons
