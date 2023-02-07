@@ -71,7 +71,7 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                                                    QQmlEngine::CppOwnership);
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
                                                                     });
-    qmlRegisterUncreatableType<KNSCore::Entry>(uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
+    qmlRegisterUncreatableMetaObject(KNSCore::Entry::staticMetaObject, uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
 
     // Version 1.81
     qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {
