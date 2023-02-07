@@ -183,19 +183,19 @@ KCM.GridViewKCM {
     NewStuff.Engine {
         id: newStuffEngine;
         property string statusMessage;
-        onMessage: {
+        onMessage: function (message) {
             root.message(message);
             statusMessage = message;
         }
-        onIdleMessage: {
+        onIdleMessage: function (message) {
             root.idleMessage(message);
             statusMessage = message;
         }
-        onBusyMessage: {
+        onBusyMessage: function (message) {
             root.busyMessage(message);
             statusMessage = message;
         }
-        onErrorMessage: {
+        onErrorMessage: function (message) {
             root.errorMessage(message);
             statusMessage = message;
         }

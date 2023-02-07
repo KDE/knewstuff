@@ -33,7 +33,7 @@ Kirigami.ApplicationWindow {
                     pageStack.push(mainPageComponent, { configFile: model.filePath });
                 }
             }
-            onObjectAdded: globalDrawer.actions.push(object);
+            onObjectAdded: (idx, object) => globalDrawer.actions.push(object);
         }
     }
     contextDrawer: Kirigami.ContextDrawer {
