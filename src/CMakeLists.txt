@@ -4,14 +4,8 @@
 add_subdirectory(core)
 
 set(KNewStuff_SRCS
-    kmoretools/kmoretools.cpp
-    kmoretools/kmoretoolsconfigdialog_p.cpp
-    kmoretools/kmoretoolsmenufactory.cpp
-    kmoretools/kmoretoolspresets.cpp
     qtquickdialogwrapper.cpp
 )
-ki18n_wrap_ui(KNewStuff_SRCS kmoretools/ui/kmoretoolsconfigwidget.ui)
-
 ecm_qt_declare_logging_category(KNewStuff_SRCS
     HEADER knewstuff_debug.h
     IDENTIFIER KNEWSTUFF
@@ -58,32 +52,6 @@ set_target_properties(KF6NewStuff PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
    SOVERSION ${KNEWSTUFF_SOVERSION}
    EXPORT_NAME NewStuff
-)
-
-# In KF6 all KMoreTools headers will be only in ${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools
-ecm_generate_headers(KMoreTools_CamelCase_HEADERS
-    HEADER_NAMES
-    KMoreTools
-    KMoreToolsMenuFactory
-    KMoreToolsPresets
-
-    RELATIVE kmoretools
-    REQUIRED_HEADERS KMoreTools_HEADERS
-)
-install(
-    FILES
-        ${KMoreTools_CamelCase_HEADERS}
-        ${KMoreTools_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools
-    COMPONENT Devel
-)
-target_include_directories(KF6NewStuff
-    INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KMoreTools>"
-)
-# So that '#include "KNS3/knewstuff_export.h"' works in KMoreTools headers during the build
-file(COPY ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_export.h
-    DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/KNS3
 )
 
 ecm_generate_headers(KNewStuff_CamelCase_HEADERS

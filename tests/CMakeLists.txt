@@ -3,7 +3,7 @@
 
 include(ECMMarkAsTest)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Test Widgets Gui Quick) # Widgets for KMoreTools and Quick for the interactive KNS test
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Test Widgets Gui Quick) # Widgets for Quick for the interactive KNS test
 
 configure_file(khotnewstuff_test.knsrc.in khotnewstuff_test.knsrc @ONLY)
 
@@ -21,7 +21,3 @@ knewstuff_executable_tests(
      khotnewstuff_test
 )
 
-# KMoreTools:
-add_executable(kmoretoolstest_interactive kmoretools/kmoretoolstest_interactive.cpp)
-ecm_mark_as_test(kmoretoolstest_interactive)
-target_link_libraries(kmoretoolstest_interactive Qt6::Test KF6::NewStuff KF6::I18n Qt6::Widgets KF6::KIOGui)

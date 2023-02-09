@@ -92,7 +92,6 @@ ecm_set_disabled_deprecation_versions(
 )
 
 ki18n_install(po)
-add_subdirectory(data)
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
