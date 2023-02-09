@@ -18,9 +18,9 @@
 
 #include "core/engine.h"
 
-using namespace KNS3;
+using namespace KNSWidgets;
 
-class KNS3::QtQuickDialogWrapperPrivate
+class KNSWidgets::QtQuickDialogWrapperPrivate
 {
 public:
     QQmlEngine *engine = nullptr;

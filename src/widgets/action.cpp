@@ -13,8 +13,6 @@
 
 #include <QPointer>
 
-using namespace KNS3;
-
 namespace KNSWidgets
 {
 class ActionPrivate
@@ -66,8 +64,8 @@ void Action::showDialog()
     Q_EMIT aboutToShowDialog();
 
     if (!d->dialog) {
-        d->dialog = new QtQuickDialogWrapper(d->configFile, this);
-        connect(d->dialog.data(), &KNS3::QtQuickDialogWrapper::closed, this, [this]() {
+        d->dialog = new KNSWidgets::QtQuickDialogWrapper(d->configFile, this);
+        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::closed, this, [this]() {
             const QList<KNSCore::Entry> changedInternalEntries = d->dialog->changedEntries();
             Q_EMIT dialogFinished(changedInternalEntries);
         });

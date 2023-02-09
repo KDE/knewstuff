@@ -11,14 +11,14 @@
 #include <KNSCore/ErrorCode>
 #include <QObject>
 
-#include "knewstuff_export.h"
+#include "knewstuffwidgets_export.h"
 
 namespace KNSCore
 {
 class Engine;
 };
 
-namespace KNS3
+namespace KNSWidgets
 {
 class QtQuickDialogWrapperPrivate;
 /**
@@ -27,7 +27,7 @@ class QtQuickDialogWrapperPrivate;
  * It is recommended to reuse an instance of this class if it is expected that the user reopens the dialog.
  * @since 5.78
  */
-class KNEWSTUFF_EXPORT QtQuickDialogWrapper : public QObject
+class KNEWSTUFFWIDGETS_EXPORT QtQuickDialogWrapper : public QObject
 {
     Q_OBJECT
 
@@ -58,7 +58,7 @@ public:
     QList<KNSCore::Entry> changedEntries() const;
 
 private:
-    std::unique_ptr<QtQuickDialogWrapperPrivate> d;
+    const std::unique_ptr<QtQuickDialogWrapperPrivate> d;
 
     Q_DISABLE_COPY(QtQuickDialogWrapper)
 };

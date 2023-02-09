@@ -26,7 +26,7 @@ public:
 
     Button *q;
     QString configFile;
-    QPointer<KNS3::QtQuickDialogWrapper> dialog;
+    QPointer<KNSWidgets::QtQuickDialogWrapper> dialog;
     void init()
     {
         const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
@@ -78,8 +78,8 @@ void Button::showDialog()
     Q_EMIT aboutToShowDialog();
 
     if (!d->dialog) {
-        d->dialog = new KNS3::QtQuickDialogWrapper(d->configFile, this);
-        connect(d->dialog.data(), &KNS3::QtQuickDialogWrapper::closed, this, [this]() {
+        d->dialog = new KNSWidgets::QtQuickDialogWrapper(d->configFile, this);
+        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::closed, this, [this]() {
             Q_EMIT dialogFinished(d->dialog->changedEntries());
         });
     }
