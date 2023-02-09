@@ -28,10 +28,7 @@ find_package(KF6Archive ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6I18n ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6KIO ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Package ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6Service ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 
 include(ECMGenerateExportHeader)
@@ -77,12 +74,10 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFF
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffConfigVersion.cmake"
                         SOVERSION 6)
 ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFCORE
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffCoreConfigVersion.cmake"
                         SOVERSION 6)
-ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffQuickConfigVersion.cmake"
+ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFWIDGETS
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffWidgetsConfigVersion.cmake"
                         SOVERSION 6)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
@@ -99,8 +94,7 @@ if (BUILD_TESTING)
 endif()
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6NewStuff")
-set(CMAKECONFIGCORE_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6NewStuffCore")
-set(CMAKECONFIGQUICK_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6NewStuffQuick")
+set(CMAKECONFIG_CORE_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6NewStuffCore")
 
 if (BUILD_QCH)
     ecm_install_qch_export(
@@ -113,7 +107,7 @@ if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6NewStuffCore_QCH
         FILE KF6NewStuffCoreQchTargets.cmake
-        DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}"
+        DESTINATION "${CMAKECONFIG_CORE_INSTALL_DIR}"
         COMPONENT Devel
     )
     set(PACKAGE_INCLUDE_CORE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6NewStuffCoreQchTargets.cmake\")")
@@ -131,13 +125,7 @@ configure_package_config_file(
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF6NewStuffCoreConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffCoreConfig.cmake"
-  INSTALL_DESTINATION ${CMAKECONFIGCORE_INSTALL_DIR}
-)
-
-configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KF6NewStuffQuickConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffQuickConfig.cmake"
-  INSTALL_DESTINATION ${CMAKECONFIGQUICK_INSTALL_DIR}
+  INSTALL_DESTINATION ${CMAKECONFIG_CORE_INSTALL_DIR}
 )
 
 install(FILES
@@ -149,27 +137,14 @@ install(FILES
 install(FILES
   "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffCoreConfig.cmake"
   "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffCoreConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}"
+  DESTINATION "${CMAKECONFIG_CORE_INSTALL_DIR}"
   COMPONENT Devel
 )
 
-install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffQuickConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffQuickConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIGQUICK_INSTALL_DIR}"
-  COMPONENT Devel
-)
+install(EXPORT KF6NewStuffTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6NewStuffTargets.cmake NAMESPACE KF6::)
+install(EXPORT KF6NewStuffCoreTargets DESTINATION "${CMAKECONFIG_CORE_INSTALL_DIR}" FILE KF6NewStuffCoreTargets.cmake NAMESPACE KF6::)
 
-install(EXPORT KF6NewStuffTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6NewStuffTargets.cmake NAMESPACE KF6:: )
-install(EXPORT KF6NewStuffCoreTargets DESTINATION "${CMAKECONFIGCORE_INSTALL_DIR}" FILE KF6NewStuffCoreTargets.cmake NAMESPACE KF6:: )
-
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h
-    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h
-    ${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3
-  COMPONENT Devel
-)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/knewstuff_version.h DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF} COMPONENT Devel)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

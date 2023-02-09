@@ -41,10 +41,6 @@ set_target_properties(KF6NewStuffWidgets PROPERTIES
    EXPORT_NAME NewStuffWidgets
 )
 
-set(KNewStuffWidgets_HEADERS
-  action.h
-  button.h
-)
 ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   HEADER_NAMES
   Action
@@ -60,7 +56,7 @@ install(
         ${KNewStuffWidgets_CamelCase_HEADERS}
         ${KNewStuffWidgets_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSWidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNSWidgets
     COMPONENT Devel
 )
 

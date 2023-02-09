@@ -43,6 +43,7 @@ target_sources(knscore_jobs_static PRIVATE
     jobs/httpworker.cpp
 )
 target_link_libraries(knscore_jobs_static PUBLIC Qt6::Network KF6::I18n KF6::CoreAddons KF6::Package)
+target_include_directories(knscore_jobs_static PRIVATE ${CMAKE_BINARY_DIR})
 # Needed to link this static lib to shared libs
 set_property(TARGET knscore_jobs_static PROPERTY POSITION_INDEPENDENT_CODE ON)
 
@@ -68,18 +69,15 @@ ecm_generate_export_header(KF6NewStuffCore
     DEPRECATION_VERSIONS
 )
 
-# The src/ dir is needed for the entry.h header. This only happens because some
-# code in Core uses an enum from KNS3::Entry
 set(KNewStuffCore_BUILD_INCLUDE_DIRS
     ${KNewStuff_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_BINARY_DIR}/src
     ${CMAKE_SOURCE_DIR}/src
 )
 
 target_include_directories(KF6NewStuffCore
     PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>"
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}>"
 )
 
 target_link_libraries(KF6NewStuffCore

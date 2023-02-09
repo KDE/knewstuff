@@ -17,7 +17,7 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 add_library(knewstuff_test_static STATIC
         ${CMAKE_BINARY_DIR}/src/knewstuff_debug.cpp
         ${CMAKE_BINARY_DIR}/src/core/knewstuffcore_debug.cpp)
-target_link_libraries(knewstuff_test_static PUBLIC Qt6::Xml Qt6::Test Qt6::Gui KF6::KIOCore KF6::I18n KF6::NewStuff KF6::NewStuffCore KF6::ConfigCore KF6::Archive KF6::Package knscore_jobs_static)
+target_link_libraries(knewstuff_test_static PUBLIC Qt6::Xml Qt6::Test Qt6::Gui KF6::I18n KF6::NewStuffCore KF6::ConfigCore KF6::Archive KF6::Package knscore_jobs_static)
 macro(knewstuff_unit_tests)
     foreach(_testmain ${ARGN})
        get_filename_component(_testname ${_testmain} NAME_WE)

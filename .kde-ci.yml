@@ -7,12 +7,12 @@ Dependencies:
     'frameworks/extra-cmake-modules': '@same'
     'frameworks/attica' : '@same'
     'frameworks/ki18n' : '@same'
-    'frameworks/kitemviews' : '@same'
+    'frameworks/kconfig' : '@same'
     'frameworks/karchive' : '@same'
-    'frameworks/kio' : '@same'
     'frameworks/kirigami' : '@same'
     'frameworks/kpackage' : '@same'
     'frameworks/syndication' : '@same'
+    'frameworks/kwidgetsaddons' : '@same'
 
 Options:
   test-before-installing: True

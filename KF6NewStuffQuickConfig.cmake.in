@@ -1,7 +1,0 @@
-# SPDX-FileCopyrightText: KDE Contributors
-# SPDX-License-Identifier: BSD-2-Clause
-
-@PACKAGE_INIT@
-
-include(CMakeFindDependencyMacro)
-find_dependency(KF6NewStuffCore "@KF_VERSION@")

@@ -10,7 +10,7 @@ configure_file(khotnewstuff_test.knsrc.in khotnewstuff_test.knsrc @ONLY)
 macro(knewstuff_executable_tests)
    foreach(_testname ${ARGN})
        add_executable(${_testname} ${_testname}.cpp  ../src/knewstuff_debug.cpp  ../src/core/knewstuffcore_debug.cpp ../src/staticxml/staticxmlprovider.cpp ../src/core/xmlloader.cpp ../src/core/jobs/httpjob.cpp  ../src/core/jobs/httpworker.cpp)
-       target_link_libraries(${_testname} KF6::NewStuffCore KF6::NewStuff KF6::I18n KF6::ConfigCore Qt6::Xml Qt6::Test Qt6::Quick Qt6::Gui)
+       target_link_libraries(${_testname} KF6::NewStuffCore KF6::I18n KF6::ConfigCore Qt6::Xml Qt6::Test Qt6::Quick Qt6::Gui Qt6::Widgets)
        target_compile_definitions(${_testname} PRIVATE
            KNSSRCDIR="${CMAKE_CURRENT_SOURCE_DIR}/"
            KNSBUILDDIR="${CMAKE_CURRENT_BINARY_DIR}")
