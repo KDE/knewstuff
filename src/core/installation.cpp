@@ -47,13 +47,8 @@ Installation::Installation(QObject *parent)
 bool Installation::readConfig(const KConfigGroup &group)
 {
     // FIXME: add support for several categories later on
-    // FIXME: read out only when actually installing as a performance improvement?
-    uncompression = group.readEntry("Uncompress", QStringLiteral("never"));
-    // support old value of true as equivalent of always
-    if (uncompression == QLatin1String("true")) {
-        uncompression = QStringLiteral("always");
-    }
-    if (uncompression == QLatin1String("always")) {
+    const QString uncompression = group.readEntry("Uncompress", QStringLiteral("never"));
+    if (uncompression == QLatin1String("always") || uncompression == QLatin1String("true")) {
         uncompressSetting = AlwaysUncompress;
     } else if (uncompression == QLatin1String("archive")) {
         uncompressSetting = UncompressIfArchive;

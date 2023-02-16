@@ -146,7 +146,6 @@ private:
     // a custom command to run for the uninstall
     QString uninstallCommand;
     // compression policy
-    QString uncompression;
 
     // only one of the five below can be set, that will be the target install path/file name
     // FIXME: check this when reading the config and make one path out of it if possible?
