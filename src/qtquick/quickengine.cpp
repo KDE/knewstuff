@@ -9,6 +9,7 @@
 #include "quicksettings.h"
 
 #include <KLocalizedString>
+#include <QTimer>
 
 #include "categoriesmodel.h"
 #include "quickquestionlistener.h"
@@ -81,7 +82,14 @@ void Engine::setConfigFile(const QString &newFile)
                                 d->isLoading = false;
                                 Q_EMIT isLoadingChanged();
                             }
-                            Q_EMIT errorMessage(message);
+
+                            // Emit the signal later, currently QML is not connected to the slot
+                            if (coreEngineError == KNSCore::ConfigFileError) {
+                                Q_EMIT errorMessage(message);
+                                QTimer::singleShot(0, [=]() {
+                                    Q_EMIT errorCode(static_cast<ErrorCode>(coreEngineError), message, metadata);
+                                });
+                            }
                         });
                 connect(d->engine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
                     // Just forward the event but not do anything more
