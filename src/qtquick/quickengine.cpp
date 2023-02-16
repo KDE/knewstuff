@@ -5,6 +5,7 @@
 */
 
 #include "quickengine.h"
+#include "errorcode.h"
 #include "quicksettings.h"
 
 #include <KLocalizedString>
@@ -73,8 +74,8 @@ void Engine::setConfigFile(const QString &newFile)
                         this,
                         [=](const KNSCore::ErrorCode &coreEngineError, const QString &message, const QVariant &metadata) {
                             Q_EMIT errorCode(static_cast<ErrorCode>(coreEngineError), message, metadata);
-                            if (coreEngineError == KNSCore::ProviderError) {
-                                // This means loading the providers file failed entirely and we cannot complete the
+                            if (coreEngineError == KNSCore::ProviderError || coreEngineError == KNSCore::ConfigFileError) {
+                                // This means loading the config or providers file failed entirely and we cannot complete the
                                 // initialisation. It also means the engine is done loading, but that nothing will
                                 // work, and we need to inform the user of this.
                                 d->isLoading = false;
