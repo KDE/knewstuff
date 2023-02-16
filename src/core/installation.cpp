@@ -65,6 +65,11 @@ bool Installation::readConfig(const KConfigGroup &group)
         return false;
     }
     kpackageType = group.readEntry("KPackageType");
+    if (uncompressSetting == UseKPackageUncompression && kpackageType.isEmpty()) {
+        qCCritical(KNEWSTUFFCORE) << "kpackage uncompress setting chosen, but no KPackageType specified";
+        return false;
+    }
+
     postInstallationCommand = group.readEntry("InstallationCommand");
     uninstallCommand = group.readEntry("UninstallCommand");
     standardResourceDirectory = group.readEntry("StandardResource");
@@ -312,13 +317,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
 
         KPackage::Package package(structure);
         package.setPath(payloadfile);
-        if (kpackageType.isEmpty()) {
-            // no service type
-            Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
-            resetEntryStatus();
-            qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
-            return {};
-        }
 
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
@@ -641,12 +639,6 @@ void Installation::uninstall(Entry entry)
                                 Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
                             }
                         });
-                    } else {
-                        // no service type
-                        Q_EMIT signalInstallationFailed(
-                            i18n("The removal of %1 failed, as the installed package is not a supported type (did you forget to install the KPackage support "
-                                 "plugin for this type of package?)",
-                                 installedFile));
                     }
                 } else {
                     // package or package metadata is invalid
