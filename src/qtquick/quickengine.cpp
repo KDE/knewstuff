@@ -71,9 +71,9 @@ void Engine::setConfigFile(const QString &newFile)
                 connect(d->engine,
                         &KNSCore::Engine::signalErrorCode,
                         this,
-                        [=](const KNSCore::ErrorCode &theErrorCode, const QString &message, const QVariant &metadata) {
-                            Q_EMIT errorCode(static_cast<ErrorCode>(theErrorCode), message, metadata);
-                            if (theErrorCode == KNSCore::ProviderError) {
+                        [=](const KNSCore::ErrorCode &coreEngineError, const QString &message, const QVariant &metadata) {
+                            Q_EMIT errorCode(static_cast<ErrorCode>(coreEngineError), message, metadata);
+                            if (coreEngineError == KNSCore::ProviderError) {
                                 // This means loading the providers file failed entirely and we cannot complete the
                                 // initialisation. It also means the engine is done loading, but that nothing will
                                 // work, and we need to inform the user of this.
