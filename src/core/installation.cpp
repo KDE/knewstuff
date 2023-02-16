@@ -22,7 +22,6 @@
 #include <KTar>
 #include <KZip>
 
-#include "jobs/kpackagejob.h"
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
 #include <KPackage/PackageStructure>
@@ -312,7 +311,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         };
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-
             if (!kpackageType.isEmpty()) {
                 qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << kpackageType;
                 KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
@@ -323,10 +321,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                             QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
                         qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
                         const QString expectedDir{packageRoot + package.metadata().pluginId()};
-                        KJob *installJob = KPackageJob::update(payloadfile, packageRoot, kpackageType);
-                        // TODO KF6 Really, i would prefer to make more functions to handle this, but as this is
-                        // an exported class, i'd rather not pollute the public namespace with internal functions,
-                        // and we don't have a pimpl, so... we'll just have to deal with it for now
+                        KJob *installJob = installer.install(payloadfile, packageRoot);
                         connect(installJob, &KJob::result, this, [this, entry, payloadfile, expectedDir, resetEntryStatus](KJob *job) {
                             if (job->error() == KJob::NoError) {
                                 if (QFile::exists(expectedDir)) {
@@ -378,7 +373,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                 }
                             }
                         });
-                        installJob->start();
                     } else {
                         Q_EMIT signalInstallationFailed(
                             i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage "
@@ -653,7 +647,7 @@ void Installation::uninstall(Entry entry)
                             }
                             QString packageRoot =
                                 QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
-                            KJob *removalJob = KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, kpackageType);
+                            KJob *removalJob = installer.uninstall(package.metadata().pluginId(), packageRoot);
                             connect(removalJob, &KJob::result, this, [this, installedFile, installer, entry](KJob *job) {
                                 Entry newEntry = entry;
                                 if (job->error() == KJob::NoError) {
@@ -665,7 +659,6 @@ void Installation::uninstall(Entry entry)
                                     Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
                                 }
                             });
-                            removalJob->start();
                         } else {
                             // no package structure
                             Q_EMIT signalInstallationFailed(
@@ -708,7 +701,7 @@ void Installation::uninstall(Entry entry)
                                 qCDebug(KNEWSTUFFCORE) << "About to attempt to uninstall" << package.metadata().pluginId() << "from" << packageRoot;
                                 // Frankly, we don't care whether or not this next step succeeds, and it can just fizzle if it wants
                                 // to. This is a cleanup step, and if it fails, it's just not really important.
-                                KPackageJob::uninstall(package.metadata().pluginId(), packageRoot, kpackageType);
+                                installer.uninstall(package.metadata().pluginId(), packageRoot);
                             }
                         }
                     }

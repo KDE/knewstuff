@@ -41,9 +41,6 @@ target_sources(knscore_jobs_static PRIVATE
     jobs/filecopyworker.cpp
     jobs/httpjob.cpp
     jobs/httpworker.cpp
-
-    # A simple wrapper around KPackage operations, which allows for asynchronous interaction
-    jobs/kpackagejob.cpp
 )
 target_link_libraries(knscore_jobs_static PUBLIC Qt6::Network KF6::I18n KF6::CoreAddons KF6::Package)
 # Needed to link this static lib to shared libs
