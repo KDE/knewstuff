@@ -297,9 +297,6 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
     // respect the uncompress flag in the knsrc
     if (uncompressionOpt == UseKPackageUncompression) {
         qCDebug(KNEWSTUFFCORE) << "Using KPackage for installation";
-        KPackage::PackageStructure structure;
-        KPackage::Package package(&structure);
-        package.setPath(payloadfile);
         auto resetEntryStatus = [this, entry]() {
             KNSCore::Entry changedEntry(entry);
             if (changedEntry.status() == KNSCore::Entry::Installing || changedEntry.status() == KNSCore::Entry::Installed) {
@@ -309,92 +306,82 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             }
             Q_EMIT signalEntryChanged(changedEntry);
         };
+
+        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
+        if (!structure) {
+            Q_EMIT signalInstallationFailed(
+                i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
+            resetEntryStatus();
+            qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << kpackageType;
+        }
+
+        KPackage::Package package(structure);
+        package.setPath(payloadfile);
+        if (kpackageType.isEmpty()) {
+            // no service type
+            Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
+            resetEntryStatus();
+            qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
+            return {};
+        }
+
         if (package.isValid() && package.metadata().isValid()) {
             qCDebug(KNEWSTUFFCORE) << "Package metadata is valid";
-            if (!kpackageType.isEmpty()) {
-                qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << kpackageType;
-                KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
-                if (structure) {
-                    KPackage::Package installer = KPackage::Package(structure);
-                    if (installer.hasValidStructure()) {
-                        QString packageRoot =
-                            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
-                        qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
-                        const QString expectedDir{packageRoot + package.metadata().pluginId()};
-                        KJob *installJob = installer.install(payloadfile, packageRoot);
-                        connect(installJob, &KJob::result, this, [this, entry, payloadfile, expectedDir, resetEntryStatus](KJob *job) {
-                            if (job->error() == KJob::NoError) {
-                                if (QFile::exists(expectedDir)) {
-                                    Entry newentry = entry;
-                                    newentry.setInstalledFiles(QStringList{expectedDir});
-                                    // update version and release date to the new ones
-                                    if (newentry.status() == KNSCore::Entry::Updating) {
-                                        if (!newentry.updateVersion().isEmpty()) {
-                                            newentry.setVersion(newentry.updateVersion());
-                                        }
-                                        if (newentry.updateReleaseDate().isValid()) {
-                                            newentry.setReleaseDate(newentry.updateReleaseDate());
-                                        }
-                                    }
-                                    newentry.setStatus(KNSCore::Entry::Installed);
-                                    // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
-                                    QFile::remove(payloadfile);
-                                    Q_EMIT signalEntryChanged(newentry);
-                                    Q_EMIT signalInstallationFinished();
-                                    qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
-                                } else {
-                                    Q_EMIT signalInstallationFailed(
-                                        i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile, expectedDir));
-                                    resetEntryStatus();
-                                    qCDebug(KNEWSTUFFCORE)
-                                        << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
-                                }
-                            } else {
-                                if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
-                                    Entry newentry = entry;
-                                    newentry.setStatus(KNSCore::Entry::Installed);
-                                    newentry.setInstalledFiles(QStringList{expectedDir});
-                                    // update version and release date to the new ones
-                                    if (!newentry.updateVersion().isEmpty()) {
-                                        newentry.setVersion(newentry.updateVersion());
-                                    }
-                                    if (newentry.updateReleaseDate().isValid()) {
-                                        newentry.setReleaseDate(newentry.updateReleaseDate());
-                                    }
-                                    Q_EMIT signalEntryChanged(newentry);
-                                    Q_EMIT signalInstallationFinished();
-                                    qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's "
-                                                              "just make a small fib and say we totally installed that, honest, and we now have files"
-                                                           << expectedDir;
-                                } else {
-                                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
-                                    resetEntryStatus();
-                                    qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
-                                }
+            qCDebug(KNEWSTUFFCORE) << "Service type discovered as" << kpackageType;
+            QString packageRoot = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + package.defaultPackageRoot();
+            qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << package.metadata().pluginId() << "into" << packageRoot;
+            const QString expectedDir{packageRoot + package.metadata().pluginId()};
+            KJob *installJob = package.install(payloadfile, packageRoot);
+            connect(installJob, &KJob::result, this, [this, entry, payloadfile, expectedDir, resetEntryStatus](KJob *job) {
+                if (job->error() == KJob::NoError) {
+                    if (QFile::exists(expectedDir)) {
+                        Entry newentry = entry;
+                        newentry.setInstalledFiles(QStringList{expectedDir});
+                        // update version and release date to the new ones
+                        if (newentry.status() == KNSCore::Entry::Updating) {
+                            if (!newentry.updateVersion().isEmpty()) {
+                                newentry.setVersion(newentry.updateVersion());
                             }
-                        });
+                            if (newentry.updateReleaseDate().isValid()) {
+                                newentry.setReleaseDate(newentry.updateReleaseDate());
+                            }
+                        }
+                        newentry.setStatus(KNSCore::Entry::Installed);
+                        // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
+                        QFile::remove(payloadfile);
+                        Q_EMIT signalEntryChanged(newentry);
+                        Q_EMIT signalInstallationFinished();
+                        qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << expectedDir;
                     } else {
                         Q_EMIT signalInstallationFailed(
-                            i18n("The installation of %1 failed, as the service type %2 was not accepted by the system (did you forget to install the KPackage "
-                                 "support plugin for this type of package?)",
-                                 payloadfile,
-                                 kpackageType));
+                            i18n("The installation of %1 failed to create the expected new directory %2").arg(payloadfile, expectedDir));
                         resetEntryStatus();
-                        qCWarning(KNEWSTUFFCORE) << "Package kpackageType" << kpackageType << "not found";
+                        qCDebug(KNEWSTUFFCORE) << "Install job finished with no error, but we do not have the expected new directory" << expectedDir;
                     }
                 } else {
-                    // no package structure
-                    Q_EMIT signalInstallationFailed(
-                        i18n("The installation of %1 failed, as the downloaded package does not contain a correct KPackage structure.", payloadfile));
-                    resetEntryStatus();
-                    qCWarning(KNEWSTUFFCORE) << "Could not load the package structure for KPackage service type" << kpackageType;
+                    if (job->error() == KPackage::Package::JobError::NewerVersionAlreadyInstalledError) {
+                        Entry newentry = entry;
+                        newentry.setStatus(KNSCore::Entry::Installed);
+                        newentry.setInstalledFiles(QStringList{expectedDir});
+                        // update version and release date to the new ones
+                        if (!newentry.updateVersion().isEmpty()) {
+                            newentry.setVersion(newentry.updateVersion());
+                        }
+                        if (newentry.updateReleaseDate().isValid()) {
+                            newentry.setReleaseDate(newentry.updateReleaseDate());
+                        }
+                        Q_EMIT signalEntryChanged(newentry);
+                        Q_EMIT signalInstallationFinished();
+                        qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's "
+                                                  "just make a small fib and say we totally installed that, honest, and we now have files"
+                                               << expectedDir;
+                    } else {
+                        Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
+                        resetEntryStatus();
+                        qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
+                    }
                 }
-            } else {
-                // no service type
-                Q_EMIT signalInstallationFailed(i18n("The installation of %1 failed, as the downloaded package does not list a service type.", payloadfile));
-                resetEntryStatus();
-                qCWarning(KNEWSTUFFCORE) << "No service type listed in" << payloadfile;
-            }
+            });
         } else {
             // package or package metadata is invalid
             Q_EMIT signalInstallationFailed(
@@ -634,36 +621,31 @@ void Installation::uninstall(Entry entry)
         if (lst.length() == 1) {
             const QString installedFile{lst.first()};
             if (QFileInfo(installedFile).isDir()) {
-                KPackage::PackageStructure structure;
-                KPackage::Package package(&structure);
+                KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
+                if (!structure) {
+                    qWarning() << "Package kpackageType" << kpackageType << "not found";
+                    Q_EMIT signalInstallationFailed(
+                        i18n("The removal of %1 failed, as the installed package does not contain a correct KPackage structure.", installedFile));
+                }
+
+                KPackage::Package package(structure);
                 package.setPath(installedFile);
                 if (package.isValid() && package.metadata().isValid()) {
                     if (!kpackageType.isEmpty()) {
-                        KPackage::PackageStructure *structure = KPackage::PackageLoader::self()->loadPackageStructure(kpackageType);
-                        if (structure) {
-                            KPackage::Package installer = KPackage::Package(structure);
-                            if (!installer.hasValidStructure()) {
-                                qWarning() << "Package kpackageType" << kpackageType << "not found";
+                        QString packageRoot =
+                            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + package.defaultPackageRoot();
+                        KJob *removalJob = package.uninstall(package.metadata().pluginId(), packageRoot);
+                        connect(removalJob, &KJob::result, this, [this, installedFile, entry](KJob *job) {
+                            Entry newEntry = entry;
+                            if (job->error() == KJob::NoError) {
+                                newEntry.setStatus(KNSCore::Entry::Deleted);
+                                newEntry.setUnInstalledFiles(newEntry.installedFiles());
+                                newEntry.setInstalledFiles(QStringList());
+                                Q_EMIT signalEntryChanged(newEntry);
+                            } else {
+                                Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
                             }
-                            QString packageRoot =
-                                QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + installer.defaultPackageRoot();
-                            KJob *removalJob = installer.uninstall(package.metadata().pluginId(), packageRoot);
-                            connect(removalJob, &KJob::result, this, [this, installedFile, installer, entry](KJob *job) {
-                                Entry newEntry = entry;
-                                if (job->error() == KJob::NoError) {
-                                    newEntry.setStatus(KNSCore::Entry::Deleted);
-                                    newEntry.setUnInstalledFiles(newEntry.installedFiles());
-                                    newEntry.setInstalledFiles(QStringList());
-                                    Q_EMIT signalEntryChanged(newEntry);
-                                } else {
-                                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
-                                }
-                            });
-                        } else {
-                            // no package structure
-                            Q_EMIT signalInstallationFailed(
-                                i18n("The removal of %1 failed, as the installed package does not contain a correct KPackage structure.", installedFile));
-                        }
+                        });
                     } else {
                         // no service type
                         Q_EMIT signalInstallationFailed(
