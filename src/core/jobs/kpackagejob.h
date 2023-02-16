@@ -26,15 +26,6 @@ class KPackageJob : public KJob
     Q_OBJECT
 public:
     /**
-     * Create a job for installing the given package into the package root, and treat it as the given service type.
-     *
-     * @param sourcePackage The full path name to the package you wish to install (e.g. /tmp/downloaded-archive.tar.xz)
-     * @param packageRoot The full path name to the location the package should be installed into (e.g. /home/username/.share/plasma/desktoptheme/)
-     * @param serviceType The name of the type of KPackage you intend to install (e.g. Plasma/Theme)
-     * @return A job which you can use to track the completion of the process (there will be useful details in error() and errorText() on failures)
-     */
-    static KPackageJob *install(const QString &sourcePackage, const QString &packageRoot, const QString &serviceType);
-    /**
      * Create a job for updating the given package, or installing it if it is not already, the given package into the
      * package root, and treat it as the given service type.
      *

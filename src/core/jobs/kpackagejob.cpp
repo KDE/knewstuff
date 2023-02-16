@@ -176,17 +176,6 @@ void KPackageJob::start()
     QThreadPool::globalInstance()->start(d->runnable);
 }
 
-KNSCore::KPackageJob *KNSCore::KPackageJob::install(const QString &sourcePackage, const QString &packageRoot, const QString &serviceType)
-{
-    KPackageJob *job = new KPackageJob();
-    job->d->package = sourcePackage;
-    job->d->packageRoot = packageRoot;
-    job->d->serviceType = serviceType;
-    job->d->operation = InstallOperation;
-    QTimer::singleShot(0, job, &KPackageJob::start);
-    return job;
-}
-
 KPackageJob *KPackageJob::update(const QString &sourcePackage, const QString &packageRoot, const QString &serviceType)
 {
     KPackageJob *job = new KPackageJob();
