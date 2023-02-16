@@ -53,7 +53,7 @@ public:
     };
     Q_ENUM(UncompressionOptions)
 
-    bool readConfig(const KConfigGroup &group);
+    bool readConfig(const KConfigGroup &group, QString &errorMessage);
 
 public Q_SLOTS:
     /**

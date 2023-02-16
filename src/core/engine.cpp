@@ -285,11 +285,13 @@ bool Engine::init(const QString &configfile)
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
     // Make sure that config is valid
-    if (!d->installation->readConfig(group)) {
+    QString error;
+    if (!d->installation->readConfig(group, error)) {
         Q_EMIT signalErrorCode(ErrorCode::ConfigFileError,
-                               i18n("Could not initialise the installation handler for %1\n"
+                               i18n("Could not initialise the installation handler for %1:\n%2\n"
                                     "This is a critical error and should be reported to the application author",
-                                    configfile),
+                                    configfile,
+                                    error),
                                configfile);
         return false;
     }

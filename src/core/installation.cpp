@@ -44,7 +44,7 @@ Installation::Installation(QObject *parent)
 {
 }
 
-bool Installation::readConfig(const KConfigGroup &group)
+bool Installation::readConfig(const KConfigGroup &group, QString &errorMessage)
 {
     // FIXME: add support for several categories later on
     const QString uncompression = group.readEntry("Uncompress", QStringLiteral("never"));
@@ -61,12 +61,14 @@ bool Installation::readConfig(const KConfigGroup &group)
     } else if (uncompression == QLatin1String("never")) {
         uncompressSetting = NeverUncompress;
     } else {
-        qCCritical(KNEWSTUFFCORE) << "invalid Uncompress setting chosen, must be one of: subdir, always, archive, never, or kpackage";
+        errorMessage = QStringLiteral("invalid Uncompress setting chosen, must be one of: subdir, always, archive, never, or kpackage");
+        qCCritical(KNEWSTUFFCORE) << errorMessage;
         return false;
     }
     kpackageType = group.readEntry("KPackageType");
     if (uncompressSetting == UseKPackageUncompression && kpackageType.isEmpty()) {
-        qCCritical(KNEWSTUFFCORE) << "kpackage uncompress setting chosen, but no KPackageType specified";
+        errorMessage = QStringLiteral("kpackage uncompress setting chosen, but no KPackageType specified");
+        qCCritical(KNEWSTUFFCORE) << errorMessage;
         return false;
     }
 
