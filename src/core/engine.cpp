@@ -132,7 +132,6 @@ public:
     Attica::ProviderManager *atticaProviderManager = nullptr;
     QStringList tagFilter;
     QStringList downloadTagFilter;
-    bool configLocationFallback = true; // TODO KF6 remove old location
     QString name;
     QMap<Entry, CommentsModel *> commentsModels;
     bool shouldRemoveDeletedEntries = false;
@@ -208,62 +207,30 @@ bool Engine::init(const QString &configfile)
 
     setBusy(BusyOperation::Initializing, i18n("Initializing"));
 
-    QScopedPointer<KConfig> conf;
-    QFileInfo configFileInfo(configfile);
-    // TODO KF6: This is fallback logic for an old location for the knsrc files. This is deprecated in KF5 and should be removed in KF6
-    bool isRelativeConfig = configFileInfo.isRelative();
-    QString actualConfig;
-    if (isRelativeConfig) {
-        if (configfile.contains(QStringLiteral("/"))) {
-            // If this is the case, then we've been given an /actual/ relative path, not just the name of a knsrc file
-            actualConfig = configFileInfo.canonicalFilePath();
-        } else {
-            // Don't do the expensive search unless the config is relative
-            actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
-        }
+    QString resolvedConfigFilePath;
+    if (QFileInfo(configfile).isAbsolute()) {
+        resolvedConfigFilePath = configfile; // It is an absolute path
+    } else {
+        // Don't do the expensive search unless the config is relative
+        resolvedConfigFilePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
     }
 
-    if (!QFileInfo::exists(actualConfig)) {
+    if (!QFileInfo::exists(resolvedConfigFilePath)) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file does not exist: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file" << configfile << "does not exist";
         return false;
     }
 
-    // We need to always have a full path in some cases, and the given config name in others, so let's just
-    // store this in a variable with a useful name
-    QString configFullPath = actualConfig.isEmpty() ? configfile : actualConfig;
-    QString configFileName{configfile};
-    if (isRelativeConfig && d->configLocationFallback && actualConfig.isEmpty()) {
-        conf.reset(new KConfig(configfile));
-        qCWarning(KNEWSTUFFCORE) << "Using a deprecated location for the knsrc file" << configfile
-                                 << " - please contact the author of the software which provides this file to get it updated to use the new location";
-        configFileName = QFileInfo(configfile).baseName();
-    } else if (isRelativeConfig && actualConfig.isEmpty()) {
-        configFileName = QFileInfo(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile))).baseName();
-        conf.reset(new KConfig(QStringLiteral("knsrcfiles/%1").arg(configfile), KConfig::FullConfig, QStandardPaths::GenericDataLocation));
-    } else if (isRelativeConfig) {
-        configFileName = configFileInfo.baseName();
-        conf.reset(new KConfig(actualConfig));
-    } else {
-        configFileName = configFileInfo.baseName();
-        conf.reset(new KConfig(configfile));
-    }
-    d->configFileName = configFileName;
+    const KConfig conf(resolvedConfigFilePath);
 
-    if (conf->accessMode() == KConfig::NoAccess) {
+    if (conf.accessMode() == KConfig::NoAccess) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
         return false;
     }
 
-    KConfigGroup group;
-    if (conf->hasGroup("KNewStuff3")) {
-        qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff3 config: " << configfile;
-        group = conf->group("KNewStuff3");
-    } else if (conf->hasGroup("KNewStuff2")) {
-        qCDebug(KNEWSTUFFCORE) << "Loading KNewStuff2 config: " << configfile;
-        group = conf->group("KNewStuff2");
-    } else {
+    const KConfigGroup group = conf.group("KNewStuff3");
+    if (!group.exists()) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
         return false;
@@ -279,13 +246,9 @@ bool Engine::init(const QString &configfile)
     Q_EMIT uploadEnabledChanged();
 
     d->providerFileUrl = group.readEntry("ProvidersUrl", QUrl(QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml")));
-    if (d->providerFileUrl.toString() == QLatin1String("https://download.kde.org/ocs/providers.xml")) {
-        d->providerFileUrl = QUrl(QStringLiteral("https://autoconfig.kde.org/ocs/providers.xml"));
-        qCWarning(KNEWSTUFFCORE) << "Please make sure" << configfile << "has ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml";
-    }
-    if (group.readEntry("UseLocalProvidersFile", "false").toLower() == QLatin1String{"true"}) {
+    if (group.readEntry("UseLocalProvidersFile", false)) {
         // The local providers file is called "appname.providers", to match "appname.knsrc"
-        d->providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configFullPath.left(configFullPath.length() - 6)));
+        d->providerFileUrl = QUrl::fromLocalFile(QLatin1String("%1.providers").arg(configfile.left(configfile.length() - 6)));
     }
 
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
@@ -305,8 +268,9 @@ bool Engine::init(const QString &configfile)
 
     connect(d->installation, &Installation::signalEntryChanged, this, &Engine::slotEntryChanged);
 
-    d->cache = Cache::getCache(configFileName);
-    qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileName;
+    const QString configFileBasename = QFileInfo(resolvedConfigFilePath).completeBaseName();
+    d->cache = Cache::getCache(configFileBasename);
+    qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileBasename;
     connect(this, &Engine::signalEntryEvent, d->cache.data(), [this](const Entry &entry, Entry::EntryEvent event) {
         if (event == Entry::StatusChangedEvent) {
             d->cache->registerChangedEntry(entry);
