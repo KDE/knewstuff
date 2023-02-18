@@ -222,6 +222,13 @@ bool Engine::init(const QString &configfile)
             actualConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/%1").arg(configfile));
         }
     }
+
+    if (!QFileInfo::exists(actualConfig)) {
+        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file does not exist: \"%1\"", configfile), configfile);
+        qCCritical(KNEWSTUFFCORE) << "The knsrc file" << configfile << "does not exist";
+        return false;
+    }
+
     // We need to always have a full path in some cases, and the given config name in others, so let's just
     // store this in a variable with a useful name
     QString configFullPath = actualConfig.isEmpty() ? configfile : actualConfig;
