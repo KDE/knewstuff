@@ -22,6 +22,7 @@
 #include <memory>
 
 class testEntry;
+class KNewStuff2Test;
 class QDomElement;
 class QXmlStreamReader;
 
@@ -518,11 +519,6 @@ public:
     bool setEntryXML(QXmlStreamReader &reader);
 
     /**
-     * get the xml string for the entry
-     */
-    QDomElement entryXML() const;
-
-    /**
      * Sets the entry's status. If no status is set, the default will be
      * \ref Invalid.
      *
@@ -544,7 +540,10 @@ public:
 
 private:
     friend class StaticXmlProvider;
+    friend class Cache;
+    friend KNewStuff2Test;
     friend testEntry;
+    QDomElement entryXML() const;
     bool setEntryXML(const QDomElement &xmldata);
     QExplicitlySharedDataPointer<EntryPrivate> d;
 };
