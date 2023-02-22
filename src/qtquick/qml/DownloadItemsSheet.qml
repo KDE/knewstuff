@@ -29,50 +29,41 @@ Kirigami.OverlaySheet {
     showCloseButton: true
     title: i18nd("knewstuff5", "Pick Your Installation Option")
 
-    contentItem: QtLayouts.ColumnLayout {
-        QtControls.Label {
-            leftPadding: Kirigami.Units.largeSpacing
-            rightPadding: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.smallSpacing
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.maximumWidth: Math.round(component.parent.width * 0.75)
+    ListView {
+        id: itemsView
+
+        headerPositioning: ListView.InlineHeader
+        header: QtControls.Label {
+            width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+            padding: Kirigami.Units.largeSpacing
 
             text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
             wrapMode: Text.Wrap
         }
 
-        QtControls.ScrollView {
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.fillHeight: true
+        delegate: Kirigami.BasicListItem {
+            implicitHeight: installButton.implicitHeight + Kirigami.Units.smallSpacing * 2
 
-            ListView {
-                id: itemsView
+            text: modelData.name
+            icon.name: modelData.icon
 
-                delegate: Kirigami.BasicListItem {
-                    implicitHeight: installButton.implicitHeight + Kirigami.Units.smallSpacing * 2
+            // Don't need a highlight or hover effects
+            hoverEnabled: false
+            activeBackgroundColor: "transparent"
+            activeTextColor: Kirigami.Theme.textColor
 
-                    text: modelData.name
-                    icon.name: modelData.icon
+            trailing: QtLayouts.RowLayout {
+                QtControls.Label {
+                    text: modelData.formattedSize
+                }
 
-                    // Don't need a highlight or hover effects
-                    hoverEnabled: false
-                    activeBackgroundColor: "transparent"
-                    activeTextColor: Kirigami.Theme.textColor
-
-                    trailing: QtLayouts.RowLayout {
-                        QtControls.Label {
-                            text: modelData.formattedSize
-                        }
-
-                        QtControls.ToolButton {
-                            id: installButton
-                            text: i18nd("knewstuff5", "Install")
-                            icon.name: "install"
-                            onClicked: {
-                                component.close();
-                                component.itemPicked(component.entryId, modelData.id, modelData.name);
-                            }
-                        }
+                QtControls.ToolButton {
+                    id: installButton
+                    text: i18nd("knewstuff5", "Install")
+                    icon.name: "install"
+                    onClicked: {
+                        component.close();
+                        component.itemPicked(component.entryId, modelData.id, modelData.name);
                     }
                 }
             }
