@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
+"POT-Creation-Date: 2023-02-24 00:55+0000\n"
 "PO-Revision-Date: 2022-02-26 11:47+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -628,7 +628,7 @@ msgid "Become a Fan"
 msgstr "चहेते बनें"
 
 #. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:62
 #: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
 #: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
 #, kde-format

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
+"POT-Creation-Date: 2023-02-24 00:55+0000\n"
 "PO-Revision-Date: 2016-12-08 10:14+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -649,7 +649,7 @@ msgid "Become a Fan"
 msgstr "Γίνε υποστηρικτής"
 
 #. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
+#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:62
 #: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
 #: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
 #, kde-format
