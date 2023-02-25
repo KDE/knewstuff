@@ -9,19 +9,21 @@
 # Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Rolf Eike Beer <kde@opensource.sf-tec.de>, 2012.
+# Jannick Kuhr <opensource@kuhr.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2021-07-16 06:06+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2023-02-21 20:55+0100\n"
+"Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -260,6 +262,7 @@ msgstr "„%1“ kann nicht installiert werden: Datei nicht gefunden."
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
+"Die Installation von %1 hat nicht das erwartete Verzeichnis %2 erstellt"
 
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
@@ -273,6 +276,8 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
+"Die Installation von %1 ist fehlgeschlagen. Das System akzeptiert den Typ %2 "
+"nicht. Ist das entsprechende KPackage-Unterstützungsmodul installiert?"
 
 #: core/installation.cpp:535
 #, kde-format
@@ -280,6 +285,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"Die Installation von %1 ist fehlgeschlagen. Das heruntergeladene Paket "
+"enthält nicht die korrekte KPackage-Struktur."
 
 #: core/installation.cpp:541
 #, kde-format
@@ -299,6 +306,7 @@ msgstr ""
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
+"Der Archivtyp der heruntergeladenen Datei %1 konnte nicht festgestellt werden"
 
 #: core/installation.cpp:594
 #, kde-format
@@ -321,7 +329,7 @@ msgstr "Datei überschreiben"
 #: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "Die Datei %1 konnte nicht nach %2 verschoben werden"
 
 #: core/installation.cpp:723
 #, kde-format
@@ -1016,7 +1024,7 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr ""
+msgstr "Der gewünschte Eintrag mit der ID %1 konnte nicht gefunden werden."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
