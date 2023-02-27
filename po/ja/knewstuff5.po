@@ -9,14 +9,15 @@
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008, 2009, 2010.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2006, 2007, 2008, 2010, 2011, 2019, 2020.
+# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2020-01-18 21:43-0800\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2023-02-23 14:22+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -25,21 +26,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 19.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: attica/atticaprovider.cpp:167
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgid "All categories are missing"
-msgstr "すべてのカテゴリ"
+msgstr "すべてのカテゴリがありません"
 
 #: attica/atticaprovider.cpp:480
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "the price of a download item, parameter 1 is the currency, 2 is the price"
-#| msgid ""
-#| "This items costs %1 %2.\n"
-#| "Do you want to buy it?"
+#, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
 msgid ""
@@ -79,10 +74,9 @@ msgid ""
 msgstr ""
 
 #: attica/atticaprovider.cpp:585
-#, fuzzy, kde-format
-#| msgid "Network error. (%1)"
+#, kde-format
 msgid "Network error %1: %2"
-msgstr "ネットワークエラー。(%1)"
+msgstr "ネットワークエラー %1: %2"
 
 #: attica/atticaprovider.cpp:591
 #, kde-format
@@ -119,6 +113,8 @@ msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"インストール中にエラーが発生しました:\n"
+"%1"
 
 #: core/engine.cpp:203
 #, kde-format
@@ -126,10 +122,9 @@ msgid "Initializing"
 msgstr "初期化中"
 
 #: core/engine.cpp:241
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "設定ファイルが見つかりませんでした: %1"
+msgstr "設定ファイルは存在しますが、開けませんでした: \"%1\""
 
 #: core/engine.cpp:254
 #, kde-format
@@ -139,7 +134,7 @@ msgstr "無効な設定ファイルです: \"%1\""
 #: core/engine.cpp:263
 #, kde-format
 msgid "Use"
-msgstr ""
+msgstr "使用する"
 
 #: core/engine.cpp:284
 #, kde-format
@@ -208,7 +203,7 @@ msgstr ""
 #: core/engine.cpp:972
 #, kde-format
 msgid "Re: %1"
-msgstr "%1 について"
+msgstr "Re: %1"
 
 #: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
 #: ui/itemsviewdelegate.cpp:117
@@ -264,10 +259,9 @@ msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 
 #: core/installation.cpp:516 core/installation.cpp:841
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgid "Installation of %1 failed: %2"
-msgstr "インストール中"
+msgstr "%1 のインストールに失敗しました: %2"
 
 #: core/installation.cpp:525
 #, kde-format
@@ -317,10 +311,9 @@ msgid ""
 msgstr ""
 
 #: core/installation.cpp:681
-#, fuzzy, kde-format
-#| msgid "Overwrite existing file?"
+#, kde-format
 msgid "Overwrite File"
-msgstr "既存のファイルを上書きしますか？"
+msgstr "ファイルを上書き"
 
 #: core/installation.cpp:700
 #, kde-format
@@ -617,10 +610,9 @@ msgstr "作者:"
 
 #. i18n: ectx: property (text), widget (QLabel, homepageLabel)
 #: downloadwidget.ui:396
-#, fuzzy, kde-format
-#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+#, kde-format
 msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">ホームページ</a>"
+msgstr "<a href=\"https://opendesktop.org\">ホームページ</a>"
 
 #. i18n: ectx: property (text), widget (QPushButton, updateButton)
 #: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
@@ -684,7 +676,7 @@ msgstr "インストール"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
-msgstr ""
+msgstr "さらなる情報はありません。"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
 #, kde-format
@@ -700,19 +692,19 @@ msgstr "メニューを設定 - %1"
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
-msgstr ""
+msgstr "%1 - 現在のフォルダ"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
-msgstr ""
+msgstr "%1 - 現在のデバイス"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
-msgstr ""
+msgstr "%1 - すべてのデバイス"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
@@ -773,20 +765,18 @@ msgid "More tools..."
 msgstr "その他のツール..."
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "すべてのカテゴリ"
 
 #: qtquick/categoriesmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Category:"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr "カテゴリ:"
+msgstr "不明なカテゴリ"
 
 #. i18nd("knewstuff5", "Download New %1...").
 #. *
@@ -798,7 +788,7 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr ""
+msgstr "もの"
 
 #: qtquick/qml/Button.qml:44
 #, kde-format
@@ -812,13 +802,12 @@ msgid "Download New %1"
 msgstr "新しい %1 をダウンロード"
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "新しいものをダウンロード..."
+msgstr "新しいものをダウンロード"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
@@ -838,12 +827,11 @@ msgstr ""
 "テムを明確にするためにわかりやすい名前付けをするよう尋ねてみてください。"
 
 #: qtquick/qml/EntryDetails.qml:49
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr "インストール中"
+msgstr "%2 から %1 をインストール中"
 
 #: qtquick/qml/EntryDetails.qml:65
 #, kde-format
@@ -877,14 +865,13 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%1 作者: %2"
 
 #: qtquick/qml/EntryDetails.qml:87
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
 "downloadable item"
@@ -905,8 +892,7 @@ msgstr "インストール..."
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "アップデート"
@@ -929,7 +915,7 @@ msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr ""
+msgstr "%1 個のレビューとコメント"
 
 #: qtquick/qml/EntryDetails.qml:160
 #, kde-format
@@ -948,7 +934,7 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "%1 のホームページを開く"
 
 #: qtquick/qml/EntryDetails.qml:170
 #, kde-format
@@ -961,7 +947,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "このプロジェクトに寄付する方法を調べる"
 
 #: qtquick/qml/NewStuffItem.qml:22
 #, kde-format
@@ -1039,61 +1025,48 @@ msgstr ""
 #: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Tiles"
-msgstr ""
+msgstr "タイトル"
 
 #: qtquick/qml/Page.qml:216
 #, kde-format
 msgid "Icons"
-msgstr ""
+msgstr "アイコン"
 
 #: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-#| msgid "Preview Images"
+#, kde-format
 msgid "Preview"
-msgstr "プレビュー画像"
+msgstr "プレビュー"
 
 #: qtquick/qml/Page.qml:233
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "詳細表示モード"
+msgstr "詳細タイル表示モード"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
 msgstr "アイコン表示モード"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "詳細表示モード"
+msgstr "大きなプレビュー表示モード"
 
 #: qtquick/qml/Page.qml:259
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the filter to show everything"
-#| msgid "Show Everything"
+#, kde-format
 msgid "Everything"
-msgstr "すべて表示"
+msgstr "すべて"
 
 #: qtquick/qml/Page.qml:263
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the filter so only installed items with "
-#| "updates available are shown"
-#| msgid "Updateable Only"
+#, kde-format
 msgid "Updateable"
-msgstr "更新できるもののみ"
+msgstr "更新できるもの"
 
 #: qtquick/qml/Page.qml:282
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
-msgstr "すべてのカテゴリを表示"
+msgstr "すべてのエントリを表示"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
@@ -1113,30 +1086,20 @@ msgstr ""
 #: qtquick/qml/Page.qml:308
 #, kde-format
 msgid "Recent"
-msgstr ""
+msgstr "最近更新"
 
 #: qtquick/qml/Page.qml:310
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgid "Alphabetical"
-msgstr "アルファベット順にソート"
+msgstr "アルファベット順"
 
 #: qtquick/qml/Page.qml:314
-#, fuzzy, kde-format
-#| msgctxt "The number of times the item has been downloaded"
-#| msgid "%1 downloads"
+#, kde-format
 msgid "Downloads"
-msgstr "%1 回のダウンロード"
+msgstr "ダウンロード"
 
 #: qtquick/qml/Page.qml:333
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on when items were "
-#| "most recently updated"
-#| msgid "Show most recent first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
@@ -1144,11 +1107,7 @@ msgid "Show Most Recent First"
 msgstr "最新のもの順に表示"
 
 #: qtquick/qml/Page.qml:341
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
@@ -1156,28 +1115,22 @@ msgid "Sort Alphabetically By Name"
 msgstr "アルファベット順にソート"
 
 #: qtquick/qml/Page.qml:349
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the sort order to based on user ratings"
-#| msgid "Show highest rated first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "高評価順に表示"
 
 #: qtquick/qml/Page.qml:357
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on number of downloads"
-#| msgid "Show most downloaded first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "ダウンロード数が多い順に表示"
 
 #: qtquick/qml/Page.qml:366
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload..."
-msgstr "新しいアップロード"
+msgstr "アップロード..."
 
 #: qtquick/qml/Page.qml:367
 #, kde-format
@@ -1195,12 +1148,11 @@ msgid "Contribute your own…"
 msgstr ""
 
 #: qtquick/qml/Page.qml:508
-#, fuzzy, kde-format
-#| msgid "Loading Preview"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Loading more…"
-msgstr "プレビューを読み込み中"
+msgstr "読み込み中..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -1224,11 +1176,10 @@ msgid "Comments and Reviews for %1"
 msgstr "%1 のコメントとレビュー"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:30
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr "すべてのカテゴリ"
+msgstr "すべてのコメントを表示"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:36
 #, kde-format
@@ -1255,14 +1206,12 @@ msgstr "%1 回のダウンロード"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Show the author of this item in a list"
-#| msgid "By <i>%1</i>"
+#, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
 msgid "By <i>%1</i>"
-msgstr "作者: %1"
+msgstr "作者: <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
 #, kde-format
@@ -1270,16 +1219,15 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr ""
+msgstr "進行中..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating..."
-msgstr "アップデート中"
+msgstr "アップデート中..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -1293,27 +1241,26 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing..."
-msgstr "インストール中"
+msgstr "インストール中..."
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "エラーが発生しました"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
 #, kde-format
 msgid "Please try again later."
-msgstr ""
+msgstr "しばらくたってからやり直してください。"
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "なし"
 
 #: qtquick/qml/private/Rating.qml:80
 #, kde-format
@@ -1323,32 +1270,29 @@ msgid "(%1/%2)"
 msgstr ""
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "@knewstuff5"
 msgid "Upload New Stuff: %1"
-msgstr "新しいものをダウンロード..."
+msgstr "新しいものをアップロード: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Fetching provider information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "プロバイダ情報を取得中..."
+msgstr "情報を更新中..."
 
 #: qtquick/qml/UploadPage.qml:95
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr ""
+msgstr "KDE Store"
 
 #: qtquick/qml/UploadPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "プロバイダ:"
+msgstr "プロバイダ"
 
 #: qtquick/qml/UploadPage.qml:109
 #, kde-format
@@ -1356,7 +1300,7 @@ msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr ""
+msgstr "ウェブサイトを開く: %1"
 
 #: qtquick/qml/UploadPage.qml:114
 #, kde-format
@@ -1364,7 +1308,7 @@ msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr ""
+msgstr "メールを送信する: %1"
 
 #: qtquick/qml/UploadPage.qml:121
 #, kde-format
@@ -1403,40 +1347,37 @@ msgstr ""
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "人気"
 
 #: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "おすすめ"
 
 #: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
-msgstr ""
+msgstr "再起動"
 
 #: qtquick/searchpresetmodel.cpp:67
-#, fuzzy, kde-format
-#| msgid "Newest"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "最新"
 
 #: qtquick/searchpresetmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "A link to the description of this Get Hot New Stuff item"
-#| msgid "Homepage"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr "ホームページ"
+msgstr "ホーム"
 
 #: qtquick/searchpresetmodel.cpp:73
 #, kde-format
@@ -1454,23 +1395,19 @@ msgstr ""
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr ""
+msgstr "おすすめ"
 
 #: qtquick/searchpresetmodel.cpp:82
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "説明:"
+msgstr "サブスクリプション"
 
 #: qtquick/searchpresetmodel.cpp:85
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr "すべてのカテゴリを表示"
+msgstr "すべてのエントリ"
 
 #: qtquick/searchpresetmodel.cpp:88
 #, kde-format
@@ -1523,7 +1460,7 @@ msgstr "ホームページ"
 msgctxt ""
 "A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
 msgid "Make a donation"
-msgstr "募金する"
+msgstr "寄付する"
 
 #: ui/entrydetailsdialog.cpp:115
 #, kde-format
@@ -1545,11 +1482,10 @@ msgid "Rating: %1%"
 msgstr "評価: %1%"
 
 #: ui/itemsgridviewdelegate.cpp:123
-#, fuzzy, kde-format
-#| msgid "<br />Provider: %1"
+#, kde-format
 msgctxt "Show the size of the file in a list"
 msgid "<br />Size: %1"
-msgstr "<br/>プロバイダ: %1"
+msgstr "<br/>サイズ: %1"
 
 #: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
 #: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
@@ -1598,32 +1534,16 @@ msgstr "再インストール"
 #, kde-format
 msgctxt "Show the size of the file in a list"
 msgid "<p>Size: %1</p>"
-msgstr ""
+msgstr "<p>サイズ: %1</p>"
 
 #: ui/widgetquestionlistener.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr ""
+msgstr "はい"
 
 #: ui/widgetquestionlistener.cpp:90
 #, kde-format
 msgctxt "@action:button"
 msgid "No"
-msgstr ""
-
-#~ msgid ""
-#~ "The downloaded file is a html file. This indicates a link to a website "
-#~ "instead of the actual download. Would you like to open the site with a "
-#~ "browser instead?"
-#~ msgstr ""
-#~ "ダウンロードされたファイルは HTML ファイルです。リンクは、ダウンロードのた"
-#~ "めのものではなく、ウェブサイトへのリンクのようです。このサイトをブラウザで"
-#~ "開きますか？"
-
-#~ msgid "Possibly bad download link"
-#~ msgstr "ダウンロードリンクに問題があるかもしれません"
-
-#~ msgid "Downloaded file was a HTML file. Opened in browser."
-#~ msgstr ""
-#~ "ダウンロードしたファイルは HTML ファイルでした。ブラウザで開きました。"
+msgstr "いいえ"
