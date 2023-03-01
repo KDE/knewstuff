@@ -31,13 +31,13 @@ MessageBoxSheet {
             showNextError();
         }
     }
-    onSheetOpenChanged: displayThrottle.start()
+    onVisibleChanged: displayThrottle.start()
     property QtObject displayThrottle: Timer {
         interval: Kirigami.Units.shortDuration
         onTriggered: showNextError();
     }
     function showNextError() {
-        if (sheetOpen === false && errorsToShow.length > 0) {
+        if (visible === false && errorsToShow.length > 0) {
             currentError = errorsToShow.shift();
             open();
         }
