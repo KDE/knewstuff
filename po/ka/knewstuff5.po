@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-01-30 10:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -444,6 +444,62 @@ msgstr "%1 - მიმდინარე მოწყობილობა"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - ყველა მოწყობილობა"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "მთავარი სექცია"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "ქვემოთ ჩამოწევა"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "აწევა"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "მთავარ სექციაში"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "დამატებით სექციაში"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "თავიდან ჩართვა"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "დამატებითი სექცია"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "ამ მენიუსთვის საჭიროა მეტი პროგრამა, რომელიც ამჟამად დაყენებული არაა:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "მეტი ხელსაწყო..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1226,36 +1282,6 @@ msgstr "ახალი რამერუმეების მიღება.
 
 #~ msgid "Become a Fan"
 #~ msgstr "გახდი გულშემატკივარი"
-
-#~ msgid "Main section"
-#~ msgstr "მთავარი სექცია"
-
-#~ msgid "Move down"
-#~ msgstr "ქვემოთ ჩამოწევა"
-
-#~ msgid "Move up"
-#~ msgstr "აწევა"
-
-#~ msgid "Move to Main section"
-#~ msgstr "მთავარ სექციაში"
-
-#~ msgid "Move to More section"
-#~ msgstr "დამატებით სექციაში"
-
-#~ msgid "Reset"
-#~ msgstr "თავიდან ჩართვა"
-
-#~ msgid "More section"
-#~ msgstr "დამატებითი სექცია"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "ამ მენიუსთვის საჭიროა მეტი პროგრამა, რომელიც ამჟამად დაყენებული არაა:"
-
-#~ msgid "More tools..."
-#~ msgstr "მეტი ხელსაწყო..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1-ის დეტალები"

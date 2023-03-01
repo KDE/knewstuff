@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -496,6 +496,62 @@ msgstr "%1 - jelenlegi eszköz"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - minden eszköz"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Fő szekció"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Le"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Fel"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Áthelyezés a fő szekcióba"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Áthelyezés az Egyéb szekcióba"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Alapállapot"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Egyéb szekció"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "Ehhez a menühöz elérhetők további ajánlott, nem telepített eszközök:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "További eszközök…"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1397,36 +1453,6 @@ msgstr "Új kiegészítők letöltése…"
 
 #~ msgid "Become a Fan"
 #~ msgstr "Rajongó vagyok"
-
-#~ msgid "Main section"
-#~ msgstr "Fő szekció"
-
-#~ msgid "Move down"
-#~ msgstr "Le"
-
-#~ msgid "Move up"
-#~ msgstr "Fel"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Áthelyezés a fő szekcióba"
-
-#~ msgid "Move to More section"
-#~ msgstr "Áthelyezés az Egyéb szekcióba"
-
-#~ msgid "Reset"
-#~ msgstr "Alapállapot"
-
-#~ msgid "More section"
-#~ msgstr "Egyéb szekció"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Ehhez a menühöz elérhetők további ajánlott, nem telepített eszközök:"
-
-#~ msgid "More tools..."
-#~ msgstr "További eszközök…"
 
 #~ msgid "Details for %1"
 #~ msgstr "Részletek: %1"

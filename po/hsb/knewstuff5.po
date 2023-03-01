@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -466,6 +466,69 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "Hłownewokno"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "&Dele sunyć"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "&Horje sunyć"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to Main section"
+msgstr "Dalše akcije"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "Dalše akcije"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Stary staw"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "Dalše akcije"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "Wubrać..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1354,39 +1417,6 @@ msgstr "Nowe wěcy wobstarać"
 
 #~ msgid "Uninstall"
 #~ msgstr "Deinstalować"
-
-#, fuzzy
-#~| msgid "MainWindow"
-#~ msgid "Main section"
-#~ msgstr "Hłownewokno"
-
-#, fuzzy
-#~| msgid "Move &Down"
-#~ msgid "Move down"
-#~ msgstr "&Dele sunyć"
-
-#, fuzzy
-#~| msgid "Move &Up"
-#~ msgid "Move up"
-#~ msgstr "&Horje sunyć"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "Move to More section"
-#~ msgstr "Dalše akcije"
-
-#~ msgid "Reset"
-#~ msgstr "Stary staw"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "More section"
-#~ msgstr "Dalše akcije"
-
-#, fuzzy
-#~| msgid "Choose..."
-#~ msgid "More tools..."
-#~ msgstr "Wubrać..."
 
 #, fuzzy
 #~| msgid "Suggestions"

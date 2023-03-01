@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-02-24 16:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -510,6 +510,64 @@ msgstr "%1 - dispositivo atual"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - todos os dispositivos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Seção Principal"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Mover para baixo"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Mover para cima"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Mover para a seção Principal"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Mover para a seção Mais"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Reiniciar"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Seção Mais"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Existem mais ferramentas sugeridas para este menu, que, no momento, não "
+"estão instaladas:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Mais ferramentas..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1396,37 +1454,6 @@ msgstr "Baixar coisas novas..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Tornar-se um fã"
-
-#~ msgid "Main section"
-#~ msgstr "Seção Principal"
-
-#~ msgid "Move down"
-#~ msgstr "Mover para baixo"
-
-#~ msgid "Move up"
-#~ msgstr "Mover para cima"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Mover para a seção Principal"
-
-#~ msgid "Move to More section"
-#~ msgstr "Mover para a seção Mais"
-
-#~ msgid "Reset"
-#~ msgstr "Reiniciar"
-
-#~ msgid "More section"
-#~ msgstr "Seção Mais"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Existem mais ferramentas sugeridas para este menu, que, no momento, não "
-#~ "estão instaladas:"
-
-#~ msgid "More tools..."
-#~ msgstr "Mais ferramentas..."
 
 # Detalhes de <nome do papel de parede>
 #~ msgid "Details for %1"

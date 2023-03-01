@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -480,6 +480,62 @@ msgstr "%1 - தற்போதைய சாதனம்"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - அனைத்து சாதனங்கள்"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "பிரதான பிரிவு"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "கீழே நகர்த்து"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "மேலே நகர்த்து"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "பிரதான பகுதிக்கு நகர்த்து"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "மேம்பட்டவைக்கான பகுதிக்கு நகர்த்து"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "மீட்டமை"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "மேம்பட்டவை"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "கூடுதல் நிரல்கள்..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1339,30 +1395,6 @@ msgstr "புதியவற்றை பதிவிறக்கு..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "ரசிகராகு"
-
-#~ msgid "Main section"
-#~ msgstr "பிரதான பிரிவு"
-
-#~ msgid "Move down"
-#~ msgstr "கீழே நகர்த்து"
-
-#~ msgid "Move up"
-#~ msgstr "மேலே நகர்த்து"
-
-#~ msgid "Move to Main section"
-#~ msgstr "பிரதான பகுதிக்கு நகர்த்து"
-
-#~ msgid "Move to More section"
-#~ msgstr "மேம்பட்டவைக்கான பகுதிக்கு நகர்த்து"
-
-#~ msgid "Reset"
-#~ msgstr "மீட்டமை"
-
-#~ msgid "More section"
-#~ msgstr "மேம்பட்டவை"
-
-#~ msgid "More tools..."
-#~ msgstr "கூடுதல் நிரல்கள்..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1 என்பதன் விவரங்கள்"

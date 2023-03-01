@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -469,6 +469,72 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "ผู้ดูแล"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "ย้าย&ลง"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "ย้าย&ขึ้น"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to Main section"
+msgstr "การกระทำเพิ่มเติม"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "การกระทำเพิ่มเติม"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "ปรับกลับค่าเดิม"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "การกระทำเพิ่มเติม"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@option:check An item in a list of resources that allows to query for "
+#| "more resources to put in the list"
+#| msgid "More..."
+msgid "More tools..."
+msgstr "เพิ่มเติม..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1353,42 +1419,6 @@ msgstr "ดาวน์โหลดสิ่งใหม่ ๆ ..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "ขอเป็นแฟนคลับ"
-
-#, fuzzy
-#~| msgid "Maintainer"
-#~ msgid "Main section"
-#~ msgstr "ผู้ดูแล"
-
-#, fuzzy
-#~| msgid "Move &Down"
-#~ msgid "Move down"
-#~ msgstr "ย้าย&ลง"
-
-#, fuzzy
-#~| msgid "Move &Up"
-#~ msgid "Move up"
-#~ msgstr "ย้าย&ขึ้น"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "Move to More section"
-#~ msgstr "การกระทำเพิ่มเติม"
-
-#~ msgid "Reset"
-#~ msgstr "ปรับกลับค่าเดิม"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "More section"
-#~ msgstr "การกระทำเพิ่มเติม"
-
-#, fuzzy
-#~| msgctxt ""
-#~| "@option:check An item in a list of resources that allows to query for "
-#~| "more resources to put in the list"
-#~| msgid "More..."
-#~ msgid "More tools..."
-#~ msgstr "เพิ่มเติม..."
 
 #~ msgid "Details for %1"
 #~ msgstr "รายละเอียดของ %1"

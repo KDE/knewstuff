@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2017-05-16 06:50-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -458,6 +458,62 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+msgid "Main section"
+msgstr "מתחזק"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+msgid "Move down"
+msgstr "&הורד"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+msgid "Move up"
+msgstr "הזז מ&עלה"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+msgid "Move to Main section"
+msgstr "פעולות נוספות"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+msgid "Move to More section"
+msgstr "פעולות נוספות"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "אפס"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+msgid "More section"
+msgstr "פעולות נוספות"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+msgid "More tools..."
+msgstr "יותר..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1311,33 +1367,6 @@ msgstr "מוריד חומר חדש..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "הפוך לאוהד"
-
-#, fuzzy
-#~ msgid "Main section"
-#~ msgstr "מתחזק"
-
-#, fuzzy
-#~ msgid "Move down"
-#~ msgstr "&הורד"
-
-#, fuzzy
-#~ msgid "Move up"
-#~ msgstr "הזז מ&עלה"
-
-#, fuzzy
-#~ msgid "Move to More section"
-#~ msgstr "פעולות נוספות"
-
-#~ msgid "Reset"
-#~ msgstr "אפס"
-
-#, fuzzy
-#~ msgid "More section"
-#~ msgstr "פעולות נוספות"
-
-#, fuzzy
-#~ msgid "More tools..."
-#~ msgstr "יותר..."
 
 #~ msgid "Details for %1"
 #~ msgstr "פרטים עבור %1"

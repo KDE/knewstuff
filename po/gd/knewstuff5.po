@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2015-11-04 15:13+0000\n"
 "Last-Translator: Michael Bauer <fios@akerbeltz.org>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -461,6 +461,64 @@ msgstr "$GenericName - an t-uidheam làithreach"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "$GenericName - a h-uile uidheam"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Prìomh-earrann"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Gluais sìos"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Gluais suas"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Gluais dhan phrìomh-earrann"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Gluais dhan earrann le barrachd innealan"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Ath-shuidhich"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Earrann le barrachd innealan"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Mholamaid barrachd innealan airson a' chlàir-thaice seo nach eil air an "
+"stàladh aig an àm seo:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Barrachd innealan..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1322,37 +1380,6 @@ msgstr "Luchdaich a-nuas stuth ùr..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Lean air"
-
-#~ msgid "Main section"
-#~ msgstr "Prìomh-earrann"
-
-#~ msgid "Move down"
-#~ msgstr "Gluais sìos"
-
-#~ msgid "Move up"
-#~ msgstr "Gluais suas"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Gluais dhan phrìomh-earrann"
-
-#~ msgid "Move to More section"
-#~ msgstr "Gluais dhan earrann le barrachd innealan"
-
-#~ msgid "Reset"
-#~ msgstr "Ath-shuidhich"
-
-#~ msgid "More section"
-#~ msgstr "Earrann le barrachd innealan"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Mholamaid barrachd innealan airson a' chlàir-thaice seo nach eil air an "
-#~ "stàladh aig an àm seo:"
-
-#~ msgid "More tools..."
-#~ msgstr "Barrachd innealan..."
 
 #~ msgid "Details for %1"
 #~ msgstr "Fiosrachadh air %1"

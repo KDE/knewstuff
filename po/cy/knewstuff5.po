@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -476,6 +476,66 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+msgid "Main section"
+msgstr "Ffenest"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+msgid "Move down"
+msgstr "Symu&d i lawr"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+msgid "Move up"
+msgstr "Sym&ud i fyny"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to Main section"
+msgstr "Gweithrediad"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Gweithrediad"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Ail-osod"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "More section"
+msgstr "Gweithrediad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Mwy..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1337,36 +1397,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~| msgid "Home Fax"
 #~ msgid "Become a Fan"
 #~ msgstr "Facs Cartref"
-
-#, fuzzy
-#~ msgid "Main section"
-#~ msgstr "Ffenest"
-
-#, fuzzy
-#~ msgid "Move down"
-#~ msgstr "Symu&d i lawr"
-
-#, fuzzy
-#~ msgid "Move up"
-#~ msgstr "Sym&ud i fyny"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "Move to More section"
-#~ msgstr "Gweithrediad"
-
-#~ msgid "Reset"
-#~ msgstr "Ail-osod"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "More section"
-#~ msgstr "Gweithrediad"
-
-#, fuzzy
-#~| msgid "More..."
-#~ msgid "More tools..."
-#~ msgstr "Mwy..."
 
 #, fuzzy
 #~| msgid "Suggestion List"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -461,6 +461,69 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "মূখ্য সংযোগক্ষেত্ৰ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "তলত স্থানান্তৰ (&D)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "ওপৰত স্থানান্তৰ (&U)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to Main section"
+msgstr "অতিৰিক্ত কাৰ্য্য"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "অতিৰিক্ত কাৰ্য্য"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "ৰি-সেট কৰক"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "অতিৰিক্ত কাৰ্য্য"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "নিৰ্ব্বাচন কৰক..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1350,39 +1413,6 @@ msgstr "নতুন বস্তু ডাউনলোড কৰক"
 
 #~ msgid "Uninstall"
 #~ msgstr "গুচাওক"
-
-#, fuzzy
-#~| msgid "MainWindow"
-#~ msgid "Main section"
-#~ msgstr "মূখ্য সংযোগক্ষেত্ৰ"
-
-#, fuzzy
-#~| msgid "Move &Down"
-#~ msgid "Move down"
-#~ msgstr "তলত স্থানান্তৰ (&D)"
-
-#, fuzzy
-#~| msgid "Move &Up"
-#~ msgid "Move up"
-#~ msgstr "ওপৰত স্থানান্তৰ (&U)"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "Move to More section"
-#~ msgstr "অতিৰিক্ত কাৰ্য্য"
-
-#~ msgid "Reset"
-#~ msgstr "ৰি-সেট কৰক"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "More section"
-#~ msgstr "অতিৰিক্ত কাৰ্য্য"
-
-#, fuzzy
-#~| msgid "Choose..."
-#~ msgid "More tools..."
-#~ msgstr "নিৰ্ব্বাচন কৰক..."
 
 #, fuzzy
 #~| msgid "Suggestions"

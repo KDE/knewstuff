@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -466,6 +466,69 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "Prenestr gentañ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "move down"
+msgid "Move down"
+msgstr "diskennit"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "move up"
+msgid "Move up"
+msgstr "pignit"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgid "Move to Main section"
+msgstr "Fiñval d'ar pod-lastez"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Gwezhiad"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Adkorañ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "More section"
+msgstr "Gwezhiad"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Mui ..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1313,44 +1376,6 @@ msgstr ""
 #~| msgid "Home Fax"
 #~ msgid "Become a Fan"
 #~ msgstr "Fax ar ger"
-
-#, fuzzy
-#~| msgid "MainWindow"
-#~ msgid "Main section"
-#~ msgstr "Prenestr gentañ"
-
-#, fuzzy
-#~| msgid "move down"
-#~ msgid "Move down"
-#~ msgstr "diskennit"
-
-#, fuzzy
-#~| msgid "move up"
-#~ msgid "Move up"
-#~ msgstr "pignit"
-
-#, fuzzy
-#~| msgid "Move to Trash"
-#~ msgid "Move to Main section"
-#~ msgstr "Fiñval d'ar pod-lastez"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "Move to More section"
-#~ msgstr "Gwezhiad"
-
-#~ msgid "Reset"
-#~ msgstr "Adkorañ"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "More section"
-#~ msgstr "Gwezhiad"
-
-#, fuzzy
-#~| msgid "More..."
-#~ msgid "More tools..."
-#~ msgstr "Mui ..."
 
 #, fuzzy
 #~| msgid "Suggestion List"

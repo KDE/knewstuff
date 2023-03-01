@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-02-23 14:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -453,6 +453,64 @@ msgstr "%1 - 現在のデバイス"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - すべてのデバイス"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "メインセクション "
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "下へ移動"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "上へ移動"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "メインセクションへ移動"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "その他セクションへ移動"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "リセット"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "その他セクション"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"このメニューでは、いくつかの現在インストールされていないツールが提案されてい"
+"ます:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "その他のツール..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1268,37 +1326,6 @@ msgstr "新しいものをダウンロード..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "ファンに登録する"
-
-#~ msgid "Main section"
-#~ msgstr "メインセクション "
-
-#~ msgid "Move down"
-#~ msgstr "下へ移動"
-
-#~ msgid "Move up"
-#~ msgstr "上へ移動"
-
-#~ msgid "Move to Main section"
-#~ msgstr "メインセクションへ移動"
-
-#~ msgid "Move to More section"
-#~ msgstr "その他セクションへ移動"
-
-#~ msgid "Reset"
-#~ msgstr "リセット"
-
-#~ msgid "More section"
-#~ msgstr "その他セクション"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "このメニューでは、いくつかの現在インストールされていないツールが提案されて"
-#~ "います:"
-
-#~ msgid "More tools..."
-#~ msgstr "その他のツール..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1 の詳細"

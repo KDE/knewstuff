@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -504,6 +504,62 @@ msgstr "%1 - esamas įrenginys"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - visi įrenginiai"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Pagrindinė sekcija"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Nuleisti"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Pakelti"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Į pagrindinę sekciją"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Į papildomą sekciją"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Atstatyti"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Papildoma sekcija"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "Šiame meniu yra daugiau siūlomų įrankių, kurie šiuo metu nėra įdiegti:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Daugiau įrankių..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1399,36 +1455,6 @@ msgstr "Atsisiųsti naujus elementus.."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Tapti fanu"
-
-#~ msgid "Main section"
-#~ msgstr "Pagrindinė sekcija"
-
-#~ msgid "Move down"
-#~ msgstr "Nuleisti"
-
-#~ msgid "Move up"
-#~ msgstr "Pakelti"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Į pagrindinę sekciją"
-
-#~ msgid "Move to More section"
-#~ msgstr "Į papildomą sekciją"
-
-#~ msgid "Reset"
-#~ msgstr "Atstatyti"
-
-#~ msgid "More section"
-#~ msgstr "Papildoma sekcija"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Šiame meniu yra daugiau siūlomų įrankių, kurie šiuo metu nėra įdiegti:"
-
-#~ msgid "More tools..."
-#~ msgstr "Daugiau įrankių..."
 
 #~ msgid "Details for %1"
 #~ msgstr "Išsamiau apie %1"

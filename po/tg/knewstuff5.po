@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2021-09-05 11:57-0700\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik Language Support\n"
@@ -459,6 +459,64 @@ msgstr "$GenericName - дастгоҳи ҷорӣ"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "$GenericName - ҳамаи дастгоҳҳо"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Интихоби асосӣ"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Ба поён ҳаракат кардан"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Ба боло ҳаракат кардан"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Ба интихоби асосӣ ҳаракат кардан"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Ба интихоби бештар ҳаракат кардан"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Бозсозӣ кардан"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Интихоби бештар"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Барои ин феҳрист баъзеи абзорҳое пешниҳод карда шудаанд, ки то ҳол насб "
+"карда нашудаанд:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Абзорҳои бештар..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1337,37 +1395,6 @@ msgstr "Боргирӣ кардани маводҳои нав..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Дӯстдор шудан"
-
-#~ msgid "Main section"
-#~ msgstr "Интихоби асосӣ"
-
-#~ msgid "Move down"
-#~ msgstr "Ба поён ҳаракат кардан"
-
-#~ msgid "Move up"
-#~ msgstr "Ба боло ҳаракат кардан"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Ба интихоби асосӣ ҳаракат кардан"
-
-#~ msgid "Move to More section"
-#~ msgstr "Ба интихоби бештар ҳаракат кардан"
-
-#~ msgid "Reset"
-#~ msgstr "Бозсозӣ кардан"
-
-#~ msgid "More section"
-#~ msgstr "Интихоби бештар"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Барои ин феҳрист баъзеи абзорҳое пешниҳод карда шудаанд, ки то ҳол насб "
-#~ "карда нашудаанд:"
-
-#~ msgid "More tools..."
-#~ msgstr "Абзорҳои бештар..."
 
 #~ msgid "Details for %1"
 #~ msgstr "Тафсилот барои %1"

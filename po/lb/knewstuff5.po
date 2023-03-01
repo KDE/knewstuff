@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -465,6 +465,66 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+msgid "Main section"
+msgstr "Fënster"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+msgid "Move down"
+msgstr "&Erofréckelen"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+msgid "Move up"
+msgstr "Er&opréckelen"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to Main section"
+msgstr "Aktioun"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Aktioun"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Zerécksetzen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "More section"
+msgstr "Aktioun"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Méi..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1368,36 +1428,6 @@ msgstr "Nei Saachen eroflueden"
 #~| msgid "Home Fax"
 #~ msgid "Become a Fan"
 #~ msgstr "Fax Doheem"
-
-#, fuzzy
-#~ msgid "Main section"
-#~ msgstr "Fënster"
-
-#, fuzzy
-#~ msgid "Move down"
-#~ msgstr "&Erofréckelen"
-
-#, fuzzy
-#~ msgid "Move up"
-#~ msgstr "Er&opréckelen"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "Move to More section"
-#~ msgstr "Aktioun"
-
-#~ msgid "Reset"
-#~ msgstr "Zerécksetzen"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "More section"
-#~ msgstr "Aktioun"
-
-#, fuzzy
-#~| msgid "More..."
-#~ msgid "More tools..."
-#~ msgstr "Méi..."
 
 #, fuzzy
 #~| msgid "Suggestion List"

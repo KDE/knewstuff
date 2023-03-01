@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -462,6 +462,69 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Main section"
+msgstr "Mirëmbajtësi"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "Lëviz &Poshtë"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "Lëviz &Sipër"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to Main section"
+msgstr "Më Tepër Veprime"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "Më Tepër Veprime"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Rivendos"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "Më Tepër Veprime"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "Zgjidhni..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1338,39 +1401,6 @@ msgstr ""
 
 #~ msgid "Become a Fan"
 #~ msgstr "Bëhu një Fan"
-
-#, fuzzy
-#~| msgid "Maintainer"
-#~ msgid "Main section"
-#~ msgstr "Mirëmbajtësi"
-
-#, fuzzy
-#~| msgid "Move &Down"
-#~ msgid "Move down"
-#~ msgstr "Lëviz &Poshtë"
-
-#, fuzzy
-#~| msgid "Move &Up"
-#~ msgid "Move up"
-#~ msgstr "Lëviz &Sipër"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "Move to More section"
-#~ msgstr "Më Tepër Veprime"
-
-#~ msgid "Reset"
-#~ msgstr "Rivendos"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "More section"
-#~ msgstr "Më Tepër Veprime"
-
-#, fuzzy
-#~| msgid "Choose..."
-#~ msgid "More tools..."
-#~ msgstr "Zgjidhni..."
 
 #, fuzzy
 #~| msgid "Details"

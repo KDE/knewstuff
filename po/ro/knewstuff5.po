@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -496,6 +496,64 @@ msgstr "%1 - dispozitiv actual"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - toate dispozitivele"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Secțiunea principală"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Mută în jos"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Mută în sus"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Mută la secțiunea principală"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Mută la secțiunea „Suplimentar”"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Restabilește"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Secțiunea „Suplimentar”"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
+"momentan:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Mai multe unelte..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1371,37 +1429,6 @@ msgstr "Descărcare lucruri noi..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Devin fan"
-
-#~ msgid "Main section"
-#~ msgstr "Secțiunea principală"
-
-#~ msgid "Move down"
-#~ msgstr "Mută în jos"
-
-#~ msgid "Move up"
-#~ msgstr "Mută în sus"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Mută la secțiunea principală"
-
-#~ msgid "Move to More section"
-#~ msgstr "Mută la secțiunea „Suplimentar”"
-
-#~ msgid "Reset"
-#~ msgstr "Restabilește"
-
-#~ msgid "More section"
-#~ msgstr "Secțiunea „Suplimentar”"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
-#~ "momentan:"
-
-#~ msgid "More tools..."
-#~ msgstr "Mai multe unelte..."
 
 #~ msgid "Details for %1"
 #~ msgstr "Detalii pentru %1"

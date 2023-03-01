@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-12-15 07:07+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -505,6 +505,64 @@ msgstr "%1 - uneko gailua"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - gailu guztiak"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Sail nagusia"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Eraman behera"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Eraman gora"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Eraman sail nagusira"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Eraman «Gehiago» sailera"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Berrasieratu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Gehiago saila"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Menu honetarako badaude gomendatutako tresna gehiago oraindik instalatu gabe "
+"daudenak:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Tresna gehiago..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1401,37 +1459,6 @@ msgstr "Zama-jaitsi gauza berriak..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Bihurtu zale"
-
-#~ msgid "Main section"
-#~ msgstr "Sail nagusia"
-
-#~ msgid "Move down"
-#~ msgstr "Eraman behera"
-
-#~ msgid "Move up"
-#~ msgstr "Eraman gora"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Eraman sail nagusira"
-
-#~ msgid "Move to More section"
-#~ msgstr "Eraman «Gehiago» sailera"
-
-#~ msgid "Reset"
-#~ msgstr "Berrasieratu"
-
-#~ msgid "More section"
-#~ msgstr "Gehiago saila"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Menu honetarako badaude gomendatutako tresna gehiago oraindik instalatu "
-#~ "gabe daudenak:"
-
-#~ msgid "More tools..."
-#~ msgstr "Tresna gehiago..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1-ren xehetasunak"

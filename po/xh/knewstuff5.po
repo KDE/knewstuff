@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -457,6 +457,66 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+msgid "Main section"
+msgstr "&Window Entsha"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+msgid "Move down"
+msgstr "Yehlela &Ezantsi"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+msgid "Move up"
+msgstr "Nyukela &Ngasentla"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to Main section"
+msgstr "Intshukumo"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "Move to More section"
+msgstr "Intshukumo"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Cwangcisa kwakhona"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "Action"
+msgid "More section"
+msgstr "Intshukumo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "More..."
+msgid "More tools..."
+msgstr "Nangaphezulu..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1271,36 +1331,6 @@ msgstr ""
 #~| msgid "Home Fax"
 #~ msgid "Become a Fan"
 #~ msgstr "Ifax Yasekhaya"
-
-#, fuzzy
-#~ msgid "Main section"
-#~ msgstr "&Window Entsha"
-
-#, fuzzy
-#~ msgid "Move down"
-#~ msgstr "Yehlela &Ezantsi"
-
-#, fuzzy
-#~ msgid "Move up"
-#~ msgstr "Nyukela &Ngasentla"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "Move to More section"
-#~ msgstr "Intshukumo"
-
-#~ msgid "Reset"
-#~ msgstr "Cwangcisa kwakhona"
-
-#, fuzzy
-#~| msgid "Action"
-#~ msgid "More section"
-#~ msgstr "Intshukumo"
-
-#, fuzzy
-#~| msgid "More..."
-#~ msgid "More tools..."
-#~ msgstr "Nangaphezulu..."
 
 #, fuzzy
 #~ msgid "Details for %1"

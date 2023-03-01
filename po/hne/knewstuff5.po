@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -463,6 +463,69 @@ msgstr ""
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, fuzzy, kde-format
+#| msgid "MainWindow"
+msgid "Main section"
+msgstr "मुख्यविंडो:"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, fuzzy, kde-format
+#| msgid "Move &Down"
+msgid "Move down"
+msgstr "नीचे जाव (&D)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, fuzzy, kde-format
+#| msgid "Move &Up"
+msgid "Move up"
+msgstr "ऊपर जाव (&U)"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgid "Move to Main section"
+msgstr "घुरुवा मं ले जाव"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "Move to More section"
+msgstr "अउ काम"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "रीसेट"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, fuzzy, kde-format
+#| msgid "More Actions"
+msgid "More section"
+msgstr "अउ काम"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, fuzzy, kde-format
+#| msgid "Choose..."
+msgid "More tools..."
+msgstr "चुनव..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1330,44 +1393,6 @@ msgstr "ताजा सामान डाउनलोड करव"
 
 #~ msgid "Uninstall"
 #~ msgstr "अनइंस्टाल"
-
-#, fuzzy
-#~| msgid "MainWindow"
-#~ msgid "Main section"
-#~ msgstr "मुख्यविंडो:"
-
-#, fuzzy
-#~| msgid "Move &Down"
-#~ msgid "Move down"
-#~ msgstr "नीचे जाव (&D)"
-
-#, fuzzy
-#~| msgid "Move &Up"
-#~ msgid "Move up"
-#~ msgstr "ऊपर जाव (&U)"
-
-#, fuzzy
-#~| msgid "Move to Trash"
-#~ msgid "Move to Main section"
-#~ msgstr "घुरुवा मं ले जाव"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "Move to More section"
-#~ msgstr "अउ काम"
-
-#~ msgid "Reset"
-#~ msgstr "रीसेट"
-
-#, fuzzy
-#~| msgid "More Actions"
-#~ msgid "More section"
-#~ msgstr "अउ काम"
-
-#, fuzzy
-#~| msgid "Choose..."
-#~ msgid "More tools..."
-#~ msgstr "चुनव..."
 
 #, fuzzy
 #~ msgid "Details for %1"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-03-01 01:59+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -485,6 +485,62 @@ msgstr "%1 - 현재 장치"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - 모든 장치"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "주 보기"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "아래로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "위로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "주 보기로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "추가 보기로 이동"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "초기화"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "추가 보기"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "이 메뉴에 현재 설치되지 않은 도구 제안:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "더 많은 도구..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1366,35 +1422,6 @@ msgstr "새로운 항목 다운로드..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "너무 좋아요"
-
-#~ msgid "Main section"
-#~ msgstr "주 보기"
-
-#~ msgid "Move down"
-#~ msgstr "아래로 이동"
-
-#~ msgid "Move up"
-#~ msgstr "위로 이동"
-
-#~ msgid "Move to Main section"
-#~ msgstr "주 보기로 이동"
-
-#~ msgid "Move to More section"
-#~ msgstr "추가 보기로 이동"
-
-#~ msgid "Reset"
-#~ msgstr "초기화"
-
-#~ msgid "More section"
-#~ msgstr "추가 보기"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr "이 메뉴에 현재 설치되지 않은 도구 제안:"
-
-#~ msgid "More tools..."
-#~ msgstr "더 많은 도구..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1의 자세한 정보"

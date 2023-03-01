@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -460,6 +460,64 @@ msgstr "$GenericName — tekući uređaj"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "$GenericName — svi uređaji"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Glavni odeljak"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Pomjeri nadolje"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Pomjeri nagore"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Premesti u glavni odeljak"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Premesti u dodatni odeljak"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Resetuj"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Dodatni odeljak"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Za ovaj meni ima još nekih alatki koje su predložene ali trenutno nisu "
+"instalirane:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Više alatki..."
 
 # >> @item:inlistbox
 #: qtquick/categoriesmodel.cpp:63
@@ -1328,37 +1386,6 @@ msgstr "Preuzmi novotarije..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Ljubitelj sam ovoga"
-
-#~ msgid "Main section"
-#~ msgstr "Glavni odeljak"
-
-#~ msgid "Move down"
-#~ msgstr "Pomjeri nadolje"
-
-#~ msgid "Move up"
-#~ msgstr "Pomjeri nagore"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Premesti u glavni odeljak"
-
-#~ msgid "Move to More section"
-#~ msgstr "Premesti u dodatni odeljak"
-
-#~ msgid "Reset"
-#~ msgstr "Resetuj"
-
-#~ msgid "More section"
-#~ msgstr "Dodatni odeljak"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Za ovaj meni ima još nekih alatki koje su predložene ali trenutno nisu "
-#~ "instalirane:"
-
-#~ msgid "More tools..."
-#~ msgstr "Više alatki..."
 
 #, fuzzy
 #~| msgid "Use"

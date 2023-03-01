@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-09-24 16:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -505,6 +505,64 @@ msgstr "%1 - aktuell enhet"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - alla enheter"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Huvudavdelning"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Flytta ner"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Flytta upp"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Flytta till Huvudavdelningen"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Flytta till Meravdelningen"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Återställ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Meravdelning"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr ""
+"Det finns ett antal ytterligare föreslagna verktyg som för närvarande inte "
+"är installerade för den här menyn:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Mer verktyg..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1400,37 +1458,6 @@ msgstr "Ladda ner nyheter..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Bli en beundrare"
-
-#~ msgid "Main section"
-#~ msgstr "Huvudavdelning"
-
-#~ msgid "Move down"
-#~ msgstr "Flytta ner"
-
-#~ msgid "Move up"
-#~ msgstr "Flytta upp"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Flytta till Huvudavdelningen"
-
-#~ msgid "Move to More section"
-#~ msgstr "Flytta till Meravdelningen"
-
-#~ msgid "Reset"
-#~ msgstr "Återställ"
-
-#~ msgid "More section"
-#~ msgstr "Meravdelning"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Det finns ett antal ytterligare föreslagna verktyg som för närvarande "
-#~ "inte är installerade för den här menyn:"
-
-#~ msgid "More tools..."
-#~ msgstr "Mer verktyg..."
 
 #~ msgid "Details for %1"
 #~ msgstr "Detaljinformation om %1"

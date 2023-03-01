@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-01-14 23:42+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -494,6 +494,62 @@ msgstr "%1 - cari qurğu"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - bütün qurğular"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
+#, kde-format
+msgid "Main section"
+msgstr "Əsas bölmə"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
+#, kde-format
+msgid "Move down"
+msgstr "Aşağı köçür"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#, kde-format
+msgid "Move up"
+msgstr "Yuxarı köçür"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#, kde-format
+msgid "Move to Main section"
+msgstr "Əsas bolməyə köçür"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#, kde-format
+msgid "Move to More section"
+msgstr "Əlavə bölməyə köçür"
+
+#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#, kde-format
+msgid "Reset"
+msgstr "Sıfırla"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#, kde-format
+msgid "More section"
+msgstr "Əlavə bölmə"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#, kde-format
+msgid ""
+"For this menu there are some more tools suggested which are currently not "
+"installed:"
+msgstr "Bu menyu üçün hazırda quraşdırılmamış daha bir neçə vasitə var:"
+
+#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#, kde-format
+msgid "More tools..."
+msgstr "Əlavə vasitələr..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1390,35 +1446,6 @@ msgstr "Yeni materialı yüklə..."
 
 #~ msgid "Become a Fan"
 #~ msgstr "Pərəstişkarı olun"
-
-#~ msgid "Main section"
-#~ msgstr "Əsas bölmə"
-
-#~ msgid "Move down"
-#~ msgstr "Aşağı köçür"
-
-#~ msgid "Move up"
-#~ msgstr "Yuxarı köçür"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Əsas bolməyə köçür"
-
-#~ msgid "Move to More section"
-#~ msgstr "Əlavə bölməyə köçür"
-
-#~ msgid "Reset"
-#~ msgstr "Sıfırla"
-
-#~ msgid "More section"
-#~ msgstr "Əlavə bölmə"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr "Bu menyu üçün hazırda quraşdırılmamış daha bir neçə vasitə var:"
-
-#~ msgid "More tools..."
-#~ msgstr "Əlavə vasitələr..."
 
 #~ msgid "Details for %1"
 #~ msgstr "%1 təfərrüatları"
