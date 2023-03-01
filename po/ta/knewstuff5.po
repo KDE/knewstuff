@@ -4,13 +4,13 @@
 # Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
 # Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
 # ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012.
-# Kishore G <kishore96@gmail.com>, 2022.
+# Kishore G <kishore96@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2022-12-20 19:25+0530\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
-#: attica/atticaprovider.cpp:167
+#: attica/atticaprovider.cpp:168
 #, kde-format
 msgid "All categories are missing"
 msgstr "பகுப்புகளை காணவில்லை"
@@ -58,7 +58,7 @@ msgstr "உங்கள் வாக்கு பதிவு செய்யப
 msgid "You are now a fan."
 msgstr "நீங்கள் ரசிகராகிவிட்டீர்கள்."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -92,11 +92,6 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "தெரியாத Open Colloboration Service API சிக்கல். (%1)"
 
-#: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "புதியவற்றை பதிவிறக்கு..."
-
 #: core/commentsmodel.cpp:168
 #, kde-format
 msgctxt ""
@@ -104,7 +99,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr ""
 
-#: core/engine.cpp:169
+#: core/engine.cpp:190
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -113,66 +108,76 @@ msgstr ""
 "நிறுவும்போது ஓர் சிக்கல் ஏற்பட்டது:\n"
 "%1"
 
-#: core/engine.cpp:203
+#: core/engine.cpp:208
 #, kde-format
 msgid "Initializing"
 msgstr "தொடங்கப்படுகிறது"
 
-#: core/engine.cpp:241
+#: core/engine.cpp:219
+#, fuzzy, kde-format
+#| msgid "Configuration file not found: \"%1\""
+msgid "Configuration file does not exist: \"%1\""
+msgstr "வடிவமைப்புக் கோப்புகள் கிடைக்கப்பெறவில்லை: \"%1\""
+
+#: core/engine.cpp:227
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "அமைப்புக்கோப்பு உள்ளது, ஆனால் அதைத் திறக்க முடியவில்லை: \"%1\""
 
-#: core/engine.cpp:254
+#: core/engine.cpp:234
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "அமைப்புக் கோப்பு செல்லுபடியாகாத: \"%1\""
 
-#: core/engine.cpp:263
+#: core/engine.cpp:243
 #, kde-format
 msgid "Use"
 msgstr "பயன்படுத்து"
 
-#: core/engine.cpp:284
-#, kde-format
+#: core/engine.cpp:261
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not initialise the installation handler for %1\n"
+#| "This is a critical error and should be reported to the application author"
 msgid ""
-"Could not initialise the installation handler for %1\n"
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "%1 என்பதற்கான நிறுவல் கையாளியை துவக்க முடியவில்லை\n"
 "இச்சிக்கல், செயலியை இயற்றியவரிடம் தெரிவிக்கப்பட வேண்டும்"
 
-#: core/engine.cpp:359
+#: core/engine.cpp:338
 #, kde-format
 msgid "Loading provider information"
 msgstr "வழங்கியிலிருந்து விவரங்கள் ஏற்றப்படுகின்றன"
 
-#: core/engine.cpp:420
+#: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "%1 எனும் கோப்பிலிருந்து வழங்கிகளைப் பற்றிய விவரங்களை ஏற்ற முடியவில்லை"
 
-#: core/engine.cpp:450
+#: core/engine.cpp:431
 #, kde-format
 msgid "Error initializing provider."
 msgstr "வழங்கியை தொடங்குவதில் சிக்கல்."
 
-#: core/engine.cpp:454 core/engine.cpp:1022
+#: core/engine.cpp:435 core/engine.cpp:1003
 #, kde-format
 msgid "Loading data"
 msgstr "தரவு ஏற்றப்படுகிறது"
 
-#: core/engine.cpp:496
+#: core/engine.cpp:477
 #, kde-format
 msgid "Loading data from provider"
 msgstr "வழங்கியிலிருந்து தரவு ஏற்றப்படுகிறது."
 
-#: core/engine.cpp:501
+#: core/engine.cpp:482
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "%1 எனும் கோப்பிலிருந்து வழங்கிகளை ஏற்றுவது தோல்வியடைந்த‍து"
 
-#: core/engine.cpp:749
+#: core/engine.cpp:730
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -181,12 +186,12 @@ msgstr ""
 "%1 எனும் பதிவில் பதிவிறக்கக்கூடியவை ஏதும் இல்லாத‍தால் அதை நிறுவ முடியவில்லை. அதை "
 "இயற்றியவரிடம் இச்சிக்கலைத் தெரிவியுங்கள்."
 
-#: core/engine.cpp:872
+#: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
 msgstr "புதுப்பிப்புக்கான உருப்படியைத் தேர்ந்தெடுத்தல்"
 
-#: core/engine.cpp:874
+#: core/engine.cpp:855
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -196,7 +201,7 @@ msgstr ""
 "புதுப்பிப்புக்கு பயன்படுத்த வேண்டியதை கீழுள்ள பட்டியலிலிருந்து தேர்ந்தெடுங்கள். முந்தையதன் "
 "பெயர் %1 ஆகும், ஆனால் அப்பெயரின் அடிப்படையில் புதியதைத் தேர்ந்தெடுக்க முடியவில்லை."
 
-#: core/engine.cpp:893
+#: core/engine.cpp:874
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -205,47 +210,46 @@ msgstr ""
 "%1 என்பதை புதுப்பிப்பதற்கான முகவரியைக் கண்டறிய முடியாத‍தால் அதைப் புதுப்பிக்க முடியவில்லை"
 
 # This seems to be a template to mail the author of a plugin, so better to leave it untranslated.
-#: core/engine.cpp:972
+#: core/engine.cpp:953
 #, kde-format
 msgid "Re: %1"
 msgstr "Re: %1"
 
-#: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
-#: ui/itemsviewdelegate.cpp:117
+#: core/engine.cpp:995
 #, kde-format
 msgid "Installing"
 msgstr "நிறுவப்படுகிறது"
 
-#: core/engine.cpp:1018
+#: core/engine.cpp:999
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
 msgstr[0] "ஒரு முன்தோற்றம் ஏற்றப்படுகிறது"
 msgstr[1] "%1 முன்தோற்றங்கள் ஏற்றப்படுகின்றன"
 
-#: core/engine.cpp:1225
+#: core/engine.cpp:1172
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
 
-#: core/installation.cpp:211
+#: core/installation.cpp:100
 #, kde-format
 msgid "Invalid item."
 msgstr "செல்லுபடியாகாத உருப்படி."
 
-#: core/installation.cpp:218
+#: core/installation.cpp:107
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "ஒன்றன் பதிவிறக்கம் தோல்வியடைந்த‍து: \"%1\" என்பதற்கான முகவரி இல்லை."
 
-#: core/installation.cpp:249
+#: core/installation.cpp:138
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" என்பதன் பதிவிறக்கம் தோல்வியடைந்தது; சிக்கல்: %2"
 
-#: core/installation.cpp:262
+#: core/installation.cpp:147
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -254,33 +258,12 @@ msgstr ""
 "'%1' ஓர் வலைப்பக்கத்தை மட்டும் குறிப்பதால் அதை நிறுவ முடியவில்லை. நிறுவலை தொடர <a "
 "href='%2'>இங்கு</a> கிளிக் செய்யுங்கள்."
 
-#: core/installation.cpp:303
+#: core/installation.cpp:185
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "'%1' என்பதை நிறுவ முடியவில்லை: கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
-#: core/installation.cpp:493
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
-"%1 என்பதை நிறுவும்போது உருவாக்கப்பட்டிருக்க வேண்டிய %2 என்ற அடைவு உருவாக்கப்படவில்லை"
-
-#: core/installation.cpp:516 core/installation.cpp:841
-#, kde-format
-msgid "Installation of %1 failed: %2"
-msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
-
-#: core/installation.cpp:525
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the service type %2 was not accepted by "
-"the system (did you forget to install the KPackage support plugin for this "
-"type of package?)"
-msgstr ""
-"%2 வகையான சேவை கணினியால் ஏற்கப்படாத‍தால், %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து (இவ்வகையான "
-"தொகுப்புகளுக்கான KPackage ஆதரவு செருகுநிரலை நிறுவ மறந்துள்ளீர்களா?)"
-
-#: core/installation.cpp:535
+#: core/installation.cpp:315
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -288,16 +271,18 @@ msgid ""
 msgstr ""
 "பதிவிறக்கப்பட்ட தொகுப்பில் முறையான KPackage இல்லாத‍தால் %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து."
 
-#: core/installation.cpp:541
+#: core/installation.cpp:352
 #, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not list a "
-"service type."
+msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
-"பதிவுறக்கப்பட்ட தொகுப்பில் சேவையின் வகை குறிப்பிடப்படாத‍தால், %1 என்பதன் நிறுவல் "
-"தோல்வியடைந்த‍து."
+"%1 என்பதை நிறுவும்போது உருவாக்கப்பட்டிருக்க வேண்டிய %2 என்ற அடைவு உருவாக்கப்படவில்லை"
 
-#: core/installation.cpp:548
+#: core/installation.cpp:374 core/installation.cpp:641
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
+
+#: core/installation.cpp:383
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -306,17 +291,17 @@ msgstr ""
 "பதிவிறக்கப்பட்ட தொகுப்பில் மேனிலைத் தரவு (metadata) இல்லாத‍தால் (அதாவது அது ஓர் "
 "முறையான KPackage-ஆய் இல்லாத‍தால்) %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து."
 
-#: core/installation.cpp:582
+#: core/installation.cpp:417
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "பதிவிறக்கபட்ட %1 எனும் கோப்பு எவ்வகையான காப்பகம் என்பதைக் கண்டறிய முடியவில்லை"
 
-#: core/installation.cpp:594
+#: core/installation.cpp:429
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 எனும் காப்பக‍க் கோப்பைத் திறக்க முடியவில்லை. தெரிவிக்கப்பட்ட சிக்கல்: %2"
 
-#: core/installation.cpp:678
+#: core/installation.cpp:495
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -326,17 +311,17 @@ msgstr ""
 "இக்கோப்பு வட்டில் ஏற்கனவே உள்ளது (தோல்வியடைந்த முந்தைய நிறுவலின் விளைவாக இருக்கலாம்). "
 "தொடர்ந்தால் அது மேலெழுதப்படும். ஏற்கனவே உள்ளதை மேலெழுத விருப்பமா?"
 
-#: core/installation.cpp:681
+#: core/installation.cpp:498
 #, kde-format
 msgid "Overwrite File"
 msgstr "கோப்பை மேலெழுது"
 
-#: core/installation.cpp:700
+#: core/installation.cpp:517
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 எனும் கோப்பை %2 என்ற இடத்திற்கு நகர்த்த முடியவில்லை"
 
-#: core/installation.cpp:723
+#: core/installation.cpp:540
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -351,7 +336,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%2"
 
-#: core/installation.cpp:733
+#: core/installation.cpp:550
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -366,7 +351,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%3"
 
-#: core/installation.cpp:775
+#: core/installation.cpp:592
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -376,36 +361,28 @@ msgstr ""
 "நிறுவப்பட்டுள்ள %2 எனும் கோப்பைத் தானாக நீக்க முடியாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍"
 "து. அக்கோப்பு தேவையில்லாத பட்சத்தில், அதை கைமுறையாக நீங்கள் நீக்க முயற்சிக்கலாம்."
 
-#: core/installation.cpp:848
+#: core/installation.cpp:623
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr "முறையான KPackage-ஆக இல்லாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍து."
 
-#: core/installation.cpp:853
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package is not a supported type "
-"(did you forget to install the KPackage support plugin for this type of "
-"package?)"
-msgstr ""
-
-#: core/installation.cpp:860
+#: core/installation.cpp:648
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:900
+#: core/installation.cpp:687
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
 
-#: core/installation.cpp:905
+#: core/installation.cpp:692
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -413,14 +390,14 @@ msgid ""
 "you are certain that it is not needed."
 msgstr ""
 
-#: core/installation.cpp:913
+#: core/installation.cpp:700
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
 
-#: core/installation.cpp:946
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -439,235 +416,6 @@ msgstr "%1 தனை எழுதுவதற்கு திறக்க மு
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "%1 என்பதை படிப்பதற்கு திறக்க முடியவில்லை"
-
-#: core/jobs/kpackagejob.cpp:114
-#, kde-format
-msgid ""
-"Failed to create a job for the package management task. This is usually "
-"because the package is invalid. We attempted to operate on the package %1"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:121
-#, kde-format
-msgid ""
-"Could not create a package installer for the service type %1: The installer "
-"does not have a valid structure"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:125
-#, kde-format
-msgid "The service type %1 was not understood by the KPackage installer"
-msgstr "KPackage நிறுவியால் %1 எனும் சேவை வகையை புரிந்துகொள்ள முடியவில்லை"
-
-#: core/security.cpp:69
-#, fuzzy, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
-"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
-"not be possible.</qt>"
-msgstr ""
-"<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூடியத் துருப்புக்களை கொணர இயலவில்லை. <i>GPG</"
-"i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப்பட்ட "
-"வளங்களைச்சரிப்பார்த்தலியலாது.</qt>"
-
-#: core/security.cpp:191
-#, fuzzy, kde-format
-msgid ""
-"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-msgstr ""
-"<qt><br /><i>%2&lt;%3&gt;</i><br />, ற்குரிய துருப்பு <b>0x%1</b> க்கான "
-"கடவுச்சொல்லிடுக:</qt>"
-
-#: core/security.cpp:264
-#, fuzzy, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
-"will not be possible.</qt>"
-msgstr ""
-"<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூக்கூடியத் துருப்புக்களை கொணர இயலவில்லை. "
-"<i>GPG</i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப் வளங்களைச் சரி "
-"பார்த்தலியலாது.</qt>"
-
-#: core/security.cpp:320
-#, kde-format
-msgid "Key used for signing:"
-msgstr "கையொப்பமிட பயன்படுத்தவேண்டிய சாவி:"
-
-#: core/security.cpp:321
-#, kde-format
-msgid "Select Signing Key"
-msgstr "கையொப்ப சாவியைத் தேர்வுசெய்தல்"
-
-#: core/security.cpp:348
-#, fuzzy, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
-"installed, otherwise signing of the resources will not be possible.</qt>"
-msgstr ""
-"<qt><i>GPG</i>யைத் துவக்கி கோப்பினை ஒப்பமிட இயலவில்லை. <i>GPG</i> நிறுவப்பட்டுள்ளதை "
-"உறுதிச் செய்யவும். இல்லையெனில் ஒப்பமிட இயலாது.</qt>"
-
-#: downloaddialog.cpp:69 downloadwidget.cpp:213
-#, kde-format
-msgid "Get Hot New Stuff"
-msgstr "புதியவற்றைப் பெறு"
-
-#: downloaddialog.cpp:86
-#, kde-format
-msgctxt "Program name followed by 'Add On Installer'"
-msgid "%1 Add-On Installer"
-msgstr "%1 துணைநிரல் நிறுவி"
-
-#: downloadwidget.cpp:123
-#, kde-format
-msgid "Timeout. Check Internet connection."
-msgstr "காலாவதியாகியுள்ளது. இணைய இணைப்பை சரிபாருங்கள்."
-
-#: downloadwidget.cpp:186
-#, kde-format
-msgid "Server: %1"
-msgstr "சேவையகம்: %1"
-
-#: downloadwidget.cpp:187
-#, kde-format
-msgid "<br />Provider: %1"
-msgstr "<br />வழங்கி: %1"
-
-#: downloadwidget.cpp:188
-#, kde-format
-msgid "<br />Version: %1"
-msgstr "<br />பதிப்பு: %1"
-
-#: downloadwidget.cpp:190
-#, kde-format
-msgid "Provider information"
-msgstr "வழங்கியின் விவரங்கள்"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Could not install %1"
-msgstr "'%1' என்பதை நிறுவ முடியவில்லை"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Get Hot New Stuff!"
-msgstr "புதியவற்றைப் பெறுங்கள்!"
-
-#: downloadwidget.cpp:262
-#, kde-format
-msgid "Icons view mode"
-msgstr "சின்னங்களைக் காட்டும் முறை"
-
-#: downloadwidget.cpp:264
-#, kde-format
-msgid "Details view mode"
-msgstr "விவரங்கள் காட்டப்படும் காட்சி"
-
-#: downloadwidget.cpp:279
-#, kde-format
-msgid "All Providers"
-msgstr "அனைத்து வழங்கிகளும்"
-
-#: downloadwidget.cpp:286
-#, kde-format
-msgid "All Categories"
-msgstr "அனைத்து பகுப்புகளும்"
-
-#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
-#: downloadwidget.ui:54
-#, kde-format
-msgid "Provider:"
-msgstr "வழங்கி:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
-#: downloadwidget.ui:71 qtquick/qml/Page.qml:426
-#, kde-format
-msgid "Category:"
-msgstr "பகுப்பு:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
-#: downloadwidget.ui:90
-#, kde-format
-msgid "Most downloads"
-msgstr "அதிகமாக பதிவிறக்கப்பட்டவை"
-
-#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
-#: downloadwidget.ui:103
-#, kde-format
-msgid "Newest"
-msgstr "புத்தம்புதியவை"
-
-#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
-#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
-#, kde-format
-msgid "Rating"
-msgstr "மதிப்பீடு"
-
-#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
-#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
-#, kde-format
-msgid "Installed"
-msgstr "நிறுவப்பட்டுள்ளவை"
-
-#. i18n: ectx: property (text), widget (QLabel, orderLabel)
-#: downloadwidget.ui:175
-#, kde-format
-msgid "Order by:"
-msgstr "வரிசை முறை:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: downloadwidget.ui:185
-#, kde-format
-msgid "Search:"
-msgstr "தேடு:"
-
-#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
-#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, kde-format
-msgid "Search..."
-msgstr "தேடு..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: downloadwidget.ui:371
-#, kde-format
-msgid "Author:"
-msgstr "இயற்றியவர்:"
-
-#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
-#: downloadwidget.ui:396
-#, kde-format
-msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">முகப்புப்பக்கம்</a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, updateButton)
-#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
-#: ui/itemsviewdelegate.cpp:112
-#, kde-format
-msgid "Update"
-msgstr "புதுப்பி"
-
-#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
-#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
-#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
-#, kde-format
-msgid "Uninstall"
-msgstr "நீக்கு"
-
-#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
-#: downloadwidget.ui:589
-#, kde-format
-msgid "Become a Fan"
-msgstr "ரசிகராகு"
-
-#. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
-#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
-#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
-#, kde-format
-msgid "Install"
-msgstr "நிறுவு"
 
 #: kmoretools/kmoretools.cpp:521
 #, kde-format
@@ -715,79 +463,23 @@ msgstr "பட்டியை அமைப்பது"
 msgid "Configure menu - %1"
 msgstr "பட்டியை அமைப்பது - %1"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:173
+#: kmoretools/kmoretoolsmenufactory.cpp:172
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 - தற்போதைய அடைவு"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:182
+#: kmoretools/kmoretoolsmenufactory.cpp:181
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr "%1 - தற்போதைய சாதனம்"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:195
+#: kmoretools/kmoretoolsmenufactory.cpp:194
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - அனைத்து சாதனங்கள்"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "பிரதான பிரிவு"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "கீழே நகர்த்து"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "மேலே நகர்த்து"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "பிரதான பகுதிக்கு நகர்த்து"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "மேம்பட்டவைக்கான பகுதிக்கு நகர்த்து"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "மீட்டமை"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "மேம்பட்டவை"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "கூடுதல் நிரல்கள்..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -850,6 +542,11 @@ msgstr ""
 "கீழுள்ள பட்டியிலிலிருந்து நிறுவ வேண்டியது எதுவென்பதைத் தேர்ந்தெடுங்கள். சந்தேகமாக "
 "இருந்தால், இதை இயற்றியவரை தொடர்புகொண்டு கீழுள்ளவற்றிற்கு பொருத்தமான பெயரைகளை இட "
 "சொல்லுங்கள்."
+
+#: qtquick/qml/DownloadItemsSheet.qml:62
+#, kde-format
+msgid "Install"
+msgstr "நிறுவு"
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
@@ -972,28 +669,26 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "இதற்கு எப்படி நன்கொடை அளிப்பது என தெரிந்துகொள்ளுங்கள்"
 
 #: qtquick/qml/NewStuffItem.qml:22
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "Request installation of this item"
 msgid "Install"
-msgstr "நிறுவுக"
+msgstr "நிறுவு"
 
 #: qtquick/qml/NewStuffList.qml:68
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
-msgstr ""
+msgstr "அனைத்தையும் காட்டு"
 
 #: qtquick/qml/NewStuffList.qml:69
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Installed Only"
-msgstr "நிறுவப்பட்டது"
+msgstr "நிறுவப்பட்டுள்ளவற்றை காட்டு"
 
 #: qtquick/qml/NewStuffList.qml:70
 #, kde-format
@@ -1001,16 +696,15 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Updateable Only"
-msgstr ""
+msgstr "புதுப்பிக்கத்தக்கவற்றை காட்டு"
 
 #: qtquick/qml/NewStuffList.qml:82
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show most recent first"
-msgstr "அடைவுகளை முதலில் காட்டுக"
+msgstr "மிகப்புதியவை முதலில்"
 
 #: qtquick/qml/NewStuffList.qml:83
 #, kde-format
@@ -1018,22 +712,20 @@ msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort alphabetically"
-msgstr ""
+msgstr "அகரவரிசையாக காட்டு"
 
 #: qtquick/qml/NewStuffList.qml:84
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
-msgstr "அடைவுகளை முதலில் காட்டுக"
+msgstr "உயர்வாக மதிப்பிடப்பட்டுள்ளதை முதலில் காட்டு"
 
 #: qtquick/qml/NewStuffList.qml:85
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
-msgstr "அதிகமாக பதிவிறக்கப்பட்டவை"
+msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:132
 #, kde-format
@@ -1043,7 +735,7 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr ""
+msgstr "நீங்கள் கோரிய %1 எனும் அடையாளங்கொண்ட உருப்படியைக் கண்டுபிடிக்க முடியவில்லை."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1051,6 +743,8 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"இங்கு உள்ளவற்றை உங்களைப் போன்ற பயனர்கள் பதிவேற்றியுள்ளனர்.இவை சரியாக வேலை செய்யுமா என்பதை "
+"உங்கள் இயங்குதள பராமரிப்பாளர்கள் சரிபார்த்திருக்க மாட்டார்கள். "
 
 #: qtquick/qml/Page.qml:214
 #, fuzzy, kde-format
@@ -1065,10 +759,9 @@ msgid "Icons"
 msgstr "சின்னங்கள்"
 
 #: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-#| msgid "Preview URL:"
+#, kde-format
 msgid "Preview"
-msgstr "முன்தோற்ற URL:"
+msgstr "முன்னோட்டம்"
 
 #: qtquick/qml/Page.qml:233
 #, fuzzy, kde-format
@@ -1077,41 +770,42 @@ msgid "Detailed Tiles View Mode"
 msgstr "விவரங்கள் காட்டப்படும் காட்சி"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
-msgstr "முகவுருக்கள் காட்டும் முறை"
+msgstr "சின்னங்களை மட்டும் காட்டும் காட்சிமுறை"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "விவரங்கள் காட்டப்படும் காட்சி"
+msgstr "பெரிய முன்னோட்டங்களை காட்டும் காட்சிமுறை"
 
 #: qtquick/qml/Page.qml:259
 #, kde-format
 msgid "Everything"
-msgstr ""
+msgstr "அனைத்தும்"
+
+#: qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "நிறுவப்பட்டுள்ளவை"
 
 #: qtquick/qml/Page.qml:263
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Updateable"
-msgstr "புதுப்பிக்கவும்"
+msgstr "புதுப்பிக்கத்தக்கவை"
 
 #: qtquick/qml/Page.qml:282
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
-msgstr "அனைத்து வகைகளும்"
+msgstr "அனைத்து பதிவுகளையும் காட்டு"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
-msgstr ""
+msgstr "நிறுவப்பட்டுள்ளவற்றை மட்டும் காட்டு"
 
 #: qtquick/qml/Page.qml:298
 #, kde-format
@@ -1119,34 +813,35 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "புதுப்பிக்கத்தக்கவற்றை மட்டும் காட்டு"
 
 #: qtquick/qml/Page.qml:308
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Recent"
+#, kde-format
 msgid "Recent"
-msgstr "அண்மையதைத் திறக்க"
+msgstr "சமீபமானவை"
 
 #: qtquick/qml/Page.qml:310
 #, kde-format
 msgid "Alphabetical"
-msgstr ""
+msgstr "அகரவரிசை"
+
+#: qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "மதிப்பீடு"
 
 #: qtquick/qml/Page.qml:314
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgid "Downloads"
-msgstr "பதிவிறக்குக"
+msgstr "பதிவிறக்கங்கள்"
 
 #: qtquick/qml/Page.qml:333
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show Most Recent First"
-msgstr "அடைவுகளை முதலில் காட்டுக"
+msgstr "மிகப்புதியவற்றை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:341
 #, kde-format
@@ -1154,62 +849,64 @@ msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort Alphabetically By Name"
-msgstr ""
+msgstr "பெயரின்படி அகரவரிசையாக வரிசைப்படுத்து"
 
 #: qtquick/qml/Page.qml:349
-#, fuzzy, kde-format
-#| msgid "Show directories first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
-msgstr "அடைவுகளை முதலில் காட்டுக"
+msgstr "உயர்வாக மதிப்பிடப்பட்டுள்ளதை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:357
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "அதிகமாக பதிவிறக்கப்பட்டவை"
+msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:366
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload..."
-msgstr "புதியேற்றம்"
+msgstr "பதிவேற்று…"
 
 #: qtquick/qml/Page.qml:367
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
 #: qtquick/qml/Page.qml:375
-#, fuzzy, kde-format
-#| msgid "&Go To..."
+#, kde-format
 msgid "Go to..."
-msgstr "&கு சல வேண்டிய இடம்ெல்..."
+msgstr "செல்..."
+
+#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, kde-format
+msgid "Search..."
+msgstr "தேடு..."
+
+#: qtquick/qml/Page.qml:426
+#, kde-format
+msgid "Category:"
+msgstr "பகுப்பு:"
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Continue operation"
+#, kde-format
 msgid "Contribute your own…"
-msgstr "செயலைத் தொடரவும்"
+msgstr "உங்களுடையதை பதிவேற்றுங்கள்…"
 
 #: qtquick/qml/Page.qml:508
-#, fuzzy, kde-format
-#| msgid "Loading Preview"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Loading more…"
-msgstr "முன்தோற்றம் ஏற்றப்படுகிறது"
+msgstr "இன்னும் ஏற்றப்படுகின்றன…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@note/rich"
-#| msgid "<i>Note</i>: %1"
+#, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
-msgstr "<i>குறிப்பு</i>: %1"
+msgstr "<i>(தலைப்பில்லை)</i>"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:142
 #, kde-format
@@ -1217,20 +914,19 @@ msgctxt ""
 "The author label in case the comment was written by the author of the "
 "content entry the comment is attached to"
 msgid "%1 <i>(author)</i>"
-msgstr ""
+msgstr "%1 <i>(நிரலாளர்)</i>"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:26
 #, kde-format
 msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
-msgstr ""
+msgstr "%1 என்பதற்கான விமர்சனங்களும் மதிப்பீடுகளும்"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:30
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr "அனைத்து வகைகளும்"
+msgstr "அனைத்து கருத்துகளையும் காட்டு"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:36
 #, kde-format
@@ -1238,7 +934,7 @@ msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
 "should be shown"
 msgid "Show Reviews Only"
-msgstr ""
+msgstr "விமர்சனங்களை மட்டும் காட்டு"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:42
 #, kde-format
@@ -1246,27 +942,23 @@ msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
 "their children should be shown"
 msgid "Show Reviews and Replies"
-msgstr ""
+msgstr "விமர்சனங்களையும் பதில்களையும் காட்டு"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
-#, fuzzy, kde-format
-#| msgid "1 download"
-#| msgid_plural "%1 downloads"
+#, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
-msgstr "1 பதிவிறக்கம்"
+msgstr "%1 பதிவிறக்கங்கள்"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Show the author of this item in a list"
-#| msgid "By <i>%1</i>"
+#, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
 msgid "By <i>%1</i>"
-msgstr "By <i>%1</i>"
+msgstr "இயற்றியவர் <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
 #, kde-format
@@ -1274,16 +966,15 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr ""
+msgstr "வேலை செய்கிறது..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating..."
-msgstr "புதுப்பிக்கப்படுகிறது"
+msgstr "புதுப்பிக்கப்படுகிறது..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -1295,88 +986,79 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"தெரியாத அல்லது செல்லுபடியாகாத நிலை. <a href=\"https://bugs.kde.org/enter_bug."
+"cgi?product=frameworks-knewstuff\">இதை ஓர் பிழையாக கே.டீ.யீ.யிடம் தெரிவியுங்கள்</"
+"a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing..."
-msgstr "நிறுவப்படுகிறது"
+msgstr "நிறுவப்படுகிறது..."
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "சிக்கல் ஏற்பட்டது"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
-#, fuzzy, kde-format
-#| msgid "Please put in a name."
+#, kde-format
 msgid "Please try again later."
-msgstr "தயவுசெய்து பெயரொன்றை இடவும்."
+msgstr "தயவுசெய்து பின்னர் முயற்சிக்கவும்."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
-#, fuzzy, kde-format
-#| msgctxt "No border line"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "ஏதுமில்லை "
 
 #: qtquick/qml/private/Rating.qml:80
-#, fuzzy, kde-format
-#| msgid "(%1/s)"
+#, kde-format
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr "(%1/s)"
+msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "@knewstuff5"
 msgid "Upload New Stuff: %1"
-msgstr "புதியதை பதிவிறக்குக"
+msgstr "புதியதை பதிவேற்று: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Billing information:"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "இரசீது விவரம்:"
+msgstr "விவரங்கள் புதுப்பிக்கப்படுகின்றன..."
 
 #: qtquick/qml/UploadPage.qml:95
-#, fuzzy, kde-format
-#| msgid "&Store"
+#, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr "&சேமிக்க"
+msgstr "கே.டீ.யீ. களஞ்சியம்"
 
 #: qtquick/qml/UploadPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "வழங்குவோர்:"
+msgstr "உங்கள் வழங்குநர்"
 
 #: qtquick/qml/UploadPage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "&Open with %1"
+#, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr "%1 கொண்டு &திறக்க"
+msgstr "இணையதளத்தை திற: %1"
 
 #: qtquick/qml/UploadPage.qml:114
-#, fuzzy, kde-format
-#| msgid "&Send Email"
+#, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr "மின்னஞ்சலை &அனுப்புக"
+msgstr "இவருக்கு மின்னஞ்சல் அனுப்பு: %1"
 
 #: qtquick/qml/UploadPage.qml:121
 #, kde-format
@@ -1401,7 +1083,7 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:174
+#: qtquick/quickengine.cpp:132
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -1522,118 +1204,245 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: ui/entrydetailsdialog.cpp:84
+#: widgets/action.cpp:32 widgets/button.cpp:56
 #, kde-format
-msgid "Details for %1"
-msgstr "%1 என்பதன் விவரங்கள்"
+msgid "Download New Stuff..."
+msgstr "புதியவற்றை பதிவிறக்கு..."
 
-#: ui/entrydetailsdialog.cpp:100
-#, kde-format
-msgid "Changelog:"
-msgstr "மாற்றப்பதிவுகள்:"
+#~ msgid ""
+#~ "The installation of %1 failed, as the service type %2 was not accepted by "
+#~ "the system (did you forget to install the KPackage support plugin for "
+#~ "this type of package?)"
+#~ msgstr ""
+#~ "%2 வகையான சேவை கணினியால் ஏற்கப்படாத‍தால், %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து "
+#~ "(இவ்வகையான தொகுப்புகளுக்கான KPackage ஆதரவு செருகுநிரலை நிறுவ மறந்துள்ளீர்களா?)"
 
-#: ui/entrydetailsdialog.cpp:106
-#, kde-format
-msgctxt "A link to the description of this Get Hot New Stuff item"
-msgid "Homepage"
-msgstr "முகப்புப்பக்கம்"
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not list a "
+#~ "service type."
+#~ msgstr ""
+#~ "பதிவுறக்கப்பட்ட தொகுப்பில் சேவையின் வகை குறிப்பிடப்படாத‍தால், %1 என்பதன் நிறுவல் "
+#~ "தோல்வியடைந்த‍து."
 
-#: ui/entrydetailsdialog.cpp:110
-#, kde-format
-msgctxt ""
-"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
-msgid "Make a donation"
-msgstr "நன்கொடை அளியுங்கள்"
+#~ msgid "The service type %1 was not understood by the KPackage installer"
+#~ msgstr "KPackage நிறுவியால் %1 எனும் சேவை வகையை புரிந்துகொள்ள முடியவில்லை"
 
-#: ui/entrydetailsdialog.cpp:115
-#, kde-format
-msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-msgid "Knowledgebase (no entries)"
-msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "அறிவுக்களஞ்சியம் (பதிவேதும் இல்லை)"
-msgstr[1] "அறிவுக்களஞ்சியம் (%1 பதிவுகள்)"
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூடியத் துருப்புக்களை கொணர இயலவில்லை. "
+#~ "<i>GPG</i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப்பட்ட "
+#~ "வளங்களைச்சரிப்பார்த்தலியலாது.</qt>"
 
-#: ui/entrydetailsdialog.cpp:121
-#, kde-format
-msgctxt "Tooltip for a link in a dialog"
-msgid "Opens in a browser window"
-msgstr "இணைய உலாவியில் திறக்கும்"
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
+#~ msgstr ""
+#~ "<qt><br /><i>%2&lt;%3&gt;</i><br />, ற்குரிய துருப்பு <b>0x%1</b> க்கான "
+#~ "கடவுச்சொல்லிடுக:</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
-#, kde-format
-msgid "Rating: %1%"
-msgstr "மதிப்பீடு: %1%"
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt><i>GPG</i>யைத் துவக்கி கிடைக்கக் கூக்கூடியத் துருப்புக்களை கொணர இயலவில்லை. "
+#~ "<i>GPG</i> நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் பதிவிறக்கப் வளங்களைச் சரி "
+#~ "பார்த்தலியலாது.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:123
-#, fuzzy, kde-format
-#| msgid "<br />Provider: %1"
-msgctxt "Show the size of the file in a list"
-msgid "<br />Size: %1"
-msgstr "<br />வழங்குவோர்: %1"
+#~ msgid "Key used for signing:"
+#~ msgstr "கையொப்பமிட பயன்படுத்தவேண்டிய சாவி:"
 
-#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
-#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
-#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
-#, kde-format
-msgctxt "Show the author of this item in a list"
-msgid "By <i>%1</i>"
-msgstr "இயற்றியவர் <i>%1</i>"
+#~ msgid "Select Signing Key"
+#~ msgstr "கையொப்ப சாவியைத் தேர்வுசெய்தல்"
 
-#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
-msgctxt "fan as in supporter"
-msgid "1 fan"
-msgid_plural "%1 fans"
-msgstr[0] "1 ரசிகர்"
-msgstr[1] "%1 ரசிகர்கள்"
+#, fuzzy
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
+#~ "is installed, otherwise signing of the resources will not be possible.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt><i>GPG</i>யைத் துவக்கி கோப்பினை ஒப்பமிட இயலவில்லை. <i>GPG</i> "
+#~ "நிறுவப்பட்டுள்ளதை உறுதிச் செய்யவும். இல்லையெனில் ஒப்பமிட இயலாது.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
-#, kde-format
-msgid "1 download"
-msgid_plural "%1 downloads"
-msgstr[0] "1 பதிவிறக்கம்"
-msgstr[1] "%1 பதிவிறக்கங்கள்"
+#~ msgid "Get Hot New Stuff"
+#~ msgstr "புதியவற்றைப் பெறு"
 
-#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
-#, kde-format
-msgid "Loading Preview"
-msgstr "முன்தோற்றம் ஏற்றப்படுகிறது"
+#~ msgctxt "Program name followed by 'Add On Installer'"
+#~ msgid "%1 Add-On Installer"
+#~ msgstr "%1 துணைநிரல் நிறுவி"
 
-#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
-#, kde-format
-msgid "Details"
-msgstr "விவரங்கள்"
+#~ msgid "Timeout. Check Internet connection."
+#~ msgstr "காலாவதியாகியுள்ளது. இணைய இணைப்பை சரிபாருங்கள்."
 
-#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
-#, kde-format
-msgid "Updating"
-msgstr "புதுப்பிக்கப்படுகிறது"
+#~ msgid "Server: %1"
+#~ msgstr "சேவையகம்: %1"
 
-#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
-#, kde-format
-msgid "Install Again"
-msgstr "மீண்டும் நிறுவு"
+#~ msgid "<br />Provider: %1"
+#~ msgstr "<br />வழங்கி: %1"
 
-#: ui/itemsviewdelegate.cpp:228
-#, fuzzy, kde-format
-#| msgid "<p>Downloads: %1</p>\n"
-msgctxt "Show the size of the file in a list"
-msgid "<p>Size: %1</p>"
-msgstr "<p>பதிவிறக்கங்கள்: %1</p>\n"
+#~ msgid "<br />Version: %1"
+#~ msgstr "<br />பதிப்பு: %1"
 
-#: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@action:button"
-msgid "Yes"
-msgstr "ஆம்"
+#~ msgid "Provider information"
+#~ msgstr "வழங்கியின் விவரங்கள்"
 
-#: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@action:button"
-msgid "No"
-msgstr "இல்லை"
+#~ msgid "Could not install %1"
+#~ msgstr "'%1' என்பதை நிறுவ முடியவில்லை"
+
+#~ msgid "Get Hot New Stuff!"
+#~ msgstr "புதியவற்றைப் பெறுங்கள்!"
+
+#~ msgid "Icons view mode"
+#~ msgstr "சின்னங்களைக் காட்டும் முறை"
+
+#~ msgid "Details view mode"
+#~ msgstr "விவரங்கள் காட்டப்படும் காட்சி"
+
+#~ msgid "All Providers"
+#~ msgstr "அனைத்து வழங்கிகளும்"
+
+#~ msgid "All Categories"
+#~ msgstr "அனைத்து பகுப்புகளும்"
+
+#~ msgid "Provider:"
+#~ msgstr "வழங்கி:"
+
+#~ msgid "Most downloads"
+#~ msgstr "அதிகமாக பதிவிறக்கப்பட்டவை"
+
+#~ msgid "Newest"
+#~ msgstr "புத்தம்புதியவை"
+
+#~ msgid "Order by:"
+#~ msgstr "வரிசை முறை:"
+
+#~ msgid "Search:"
+#~ msgstr "தேடு:"
+
+#~ msgid "Author:"
+#~ msgstr "இயற்றியவர்:"
+
+#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+#~ msgstr "<a href=\"http://opendesktop.org\">முகப்புப்பக்கம்</a>"
+
+#~ msgid "Update"
+#~ msgstr "புதுப்பி"
+
+#~ msgid "Uninstall"
+#~ msgstr "நீக்கு"
+
+#~ msgid "Become a Fan"
+#~ msgstr "ரசிகராகு"
+
+#~ msgid "Main section"
+#~ msgstr "பிரதான பிரிவு"
+
+#~ msgid "Move down"
+#~ msgstr "கீழே நகர்த்து"
+
+#~ msgid "Move up"
+#~ msgstr "மேலே நகர்த்து"
+
+#~ msgid "Move to Main section"
+#~ msgstr "பிரதான பகுதிக்கு நகர்த்து"
+
+#~ msgid "Move to More section"
+#~ msgstr "மேம்பட்டவைக்கான பகுதிக்கு நகர்த்து"
+
+#~ msgid "Reset"
+#~ msgstr "மீட்டமை"
+
+#~ msgid "More section"
+#~ msgstr "மேம்பட்டவை"
+
+#~ msgid "More tools..."
+#~ msgstr "கூடுதல் நிரல்கள்..."
+
+#~ msgid "Details for %1"
+#~ msgstr "%1 என்பதன் விவரங்கள்"
+
+#~ msgid "Changelog:"
+#~ msgstr "மாற்றப்பதிவுகள்:"
+
+#~ msgctxt "A link to the description of this Get Hot New Stuff item"
+#~ msgid "Homepage"
+#~ msgstr "முகப்புப்பக்கம்"
+
+#~ msgctxt ""
+#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
+#~ "browser)"
+#~ msgid "Make a donation"
+#~ msgstr "நன்கொடை அளியுங்கள்"
+
+#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+#~ msgid "Knowledgebase (no entries)"
+#~ msgid_plural "Knowledgebase (%1 entries)"
+#~ msgstr[0] "அறிவுக்களஞ்சியம் (பதிவேதும் இல்லை)"
+#~ msgstr[1] "அறிவுக்களஞ்சியம் (%1 பதிவுகள்)"
+
+#~ msgctxt "Tooltip for a link in a dialog"
+#~ msgid "Opens in a browser window"
+#~ msgstr "இணைய உலாவியில் திறக்கும்"
+
+#~ msgid "Rating: %1%"
+#~ msgstr "மதிப்பீடு: %1%"
+
+#, fuzzy
+#~| msgid "<br />Provider: %1"
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<br />Size: %1"
+#~ msgstr "<br />வழங்குவோர்: %1"
+
+#~ msgctxt "Show the author of this item in a list"
+#~ msgid "By <i>%1</i>"
+#~ msgstr "இயற்றியவர் <i>%1</i>"
+
+#~ msgctxt "fan as in supporter"
+#~ msgid "1 fan"
+#~ msgid_plural "%1 fans"
+#~ msgstr[0] "1 ரசிகர்"
+#~ msgstr[1] "%1 ரசிகர்கள்"
+
+#~ msgid "1 download"
+#~ msgid_plural "%1 downloads"
+#~ msgstr[0] "1 பதிவிறக்கம்"
+#~ msgstr[1] "%1 பதிவிறக்கங்கள்"
+
+#~ msgid "Loading Preview"
+#~ msgstr "முன்தோற்றம் ஏற்றப்படுகிறது"
+
+#~ msgid "Details"
+#~ msgstr "விவரங்கள்"
+
+#~ msgid "Updating"
+#~ msgstr "புதுப்பிக்கப்படுகிறது"
+
+#~ msgid "Install Again"
+#~ msgstr "மீண்டும் நிறுவு"
+
+#, fuzzy
+#~| msgid "<p>Downloads: %1</p>\n"
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<p>Size: %1</p>"
+#~ msgstr "<p>பதிவிறக்கங்கள்: %1</p>\n"
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "@action:button"
+#~ msgid "Yes"
+#~ msgstr "ஆம்"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgctxt "@action:button"
+#~ msgid "No"
+#~ msgstr "இல்லை"
 
 #~ msgid ""
 #~ "The downloaded file is a html file. This indicates a link to a website "
@@ -1906,9 +1715,6 @@ msgstr "இல்லை"
 #~| msgid "Download File:"
 #~ msgid "Download File"
 #~ msgstr "கோப்பை பதிவிறக்குக:"
-
-#~ msgid "Configuration file not found: \"%1\""
-#~ msgstr "வடிவமைப்புக் கோப்புகள் கிடைக்கப்பெறவில்லை: \"%1\""
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

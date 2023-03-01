@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-12-20 19:32+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: attica/atticaprovider.cpp:167
+#: attica/atticaprovider.cpp:168
 #, kde-format
 msgid "All categories are missing"
 msgstr "Всички категории липсват"
@@ -57,7 +57,7 @@ msgstr "Гласът ви е приет."
 msgid "You are now a fan."
 msgstr "Вече сте почитател."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -90,11 +90,6 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Неизвестна грешка в API на услугата за отворено сътрудничество. (%1)"
 
-#: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "Изтегляне на нови неща..."
-
 #: core/commentsmodel.cpp:168
 #, kde-format
 msgctxt ""
@@ -102,7 +97,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Неизвестна CommentsModel роля"
 
-#: core/engine.cpp:169
+#: core/engine.cpp:190
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -111,67 +106,77 @@ msgstr ""
 "Възникна грешка по време на инсталационния процес:\n"
 "%1"
 
-#: core/engine.cpp:203
+#: core/engine.cpp:208
 #, kde-format
 msgid "Initializing"
 msgstr "Инициализиране"
 
-#: core/engine.cpp:241
+#: core/engine.cpp:219
+#, fuzzy, kde-format
+#| msgid "Configuration file is invalid: \"%1\""
+msgid "Configuration file does not exist: \"%1\""
+msgstr "Файлът с настройки е невалиден: \"%1\""
+
+#: core/engine.cpp:227
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Конфигурационен файл съществува, но не може да бъде отворен:\"%1\""
 
-#: core/engine.cpp:254
+#: core/engine.cpp:234
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Файлът с настройки е невалиден: \"%1\""
 
-#: core/engine.cpp:263
+#: core/engine.cpp:243
 #, kde-format
 msgid "Use"
 msgstr "Използване"
 
-#: core/engine.cpp:284
-#, kde-format
+#: core/engine.cpp:261
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not initialise the installation handler for %1\n"
+#| "This is a critical error and should be reported to the application author"
 msgid ""
-"Could not initialise the installation handler for %1\n"
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "Неуспешно инициализиране на манипулатора на инсталацията за %1\n"
 "Това е критична грешка и трябва да се докладва на автора на приложението"
 
-#: core/engine.cpp:359
+#: core/engine.cpp:338
 #, kde-format
 msgid "Loading provider information"
 msgstr "Зареждане данни за доставчика"
 
-#: core/engine.cpp:420
+#: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 "Неуспешно зареждане на списък с доставчици на нови разширения от файл: %1"
 
-#: core/engine.cpp:450
+#: core/engine.cpp:431
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Грешка при зареждане на доставчика."
 
-#: core/engine.cpp:454 core/engine.cpp:1022
+#: core/engine.cpp:435 core/engine.cpp:1003
 #, kde-format
 msgid "Loading data"
 msgstr "Зареждане на данни"
 
-#: core/engine.cpp:496
+#: core/engine.cpp:477
 #, kde-format
 msgid "Loading data from provider"
 msgstr "Зареждане на данни от доставчик"
 
-#: core/engine.cpp:501
+#: core/engine.cpp:482
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Зареждането на доставчици от файл: %1 е неуспешно"
 
-#: core/engine.cpp:749
+#: core/engine.cpp:730
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -180,12 +185,12 @@ msgstr ""
 "Не може да извърши инсталация на запис %1, тъй като няма дефинирани елементи "
 "за изтегляне. Моля, свържете се с автора, за да могат да поправят това."
 
-#: core/engine.cpp:872
+#: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Изберете елемент за актуализация"
 
-#: core/engine.cpp:874
+#: core/engine.cpp:855
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -196,7 +201,7 @@ msgstr ""
 "прилагане на тази актуализация. Не успяхме да определим кой елемент да "
 "изберем въз основа на оригинален елемент, който беше наречен %1"
 
-#: core/engine.cpp:893
+#: core/engine.cpp:874
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -205,25 +210,24 @@ msgstr ""
 "Не успяхме да идентифицираме добра връзка за актуализиране на %1 и не можем "
 "да изпълним актуализацията"
 
-#: core/engine.cpp:972
+#: core/engine.cpp:953
 #, kde-format
 msgid "Re: %1"
 msgstr "Възстановяване: %1"
 
-#: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
-#: ui/itemsviewdelegate.cpp:117
+#: core/engine.cpp:995
 #, kde-format
 msgid "Installing"
 msgstr "Инсталиране"
 
-#: core/engine.cpp:1018
+#: core/engine.cpp:999
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
 msgstr[0] "Зареждане на един преглед"
 msgstr[1] "Зареждане на %1 прегледа"
 
-#: core/engine.cpp:1225
+#: core/engine.cpp:1172
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -232,22 +236,22 @@ msgstr ""
 "Неуспешно приемане на \"%1\"\n"
 "%2"
 
-#: core/installation.cpp:211
+#: core/installation.cpp:100
 #, kde-format
 msgid "Invalid item."
 msgstr "Неправилен запис."
 
-#: core/installation.cpp:218
+#: core/installation.cpp:107
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Изтеглянето на елемента е неуспешно: няма URL за изтегляне за \"%1\"."
 
-#: core/installation.cpp:249
+#: core/installation.cpp:138
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Грешка при изтеглянето на \"%1\": %2"
 
-#: core/installation.cpp:262
+#: core/installation.cpp:147
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -256,33 +260,12 @@ msgstr ""
 "Не може да се инсталира \"%1\", защото сочи към уеб страница. Натиснете <a "
 "href='%2'>тук</a> за да завършите инсталацията."
 
-#: core/installation.cpp:303
+#: core/installation.cpp:185
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\" не може да бъде инсталиран: файлът не е намерен."
 
-#: core/installation.cpp:493
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Инсталацията на %1 не успя да създаде очакваната нова директория %2"
-
-#: core/installation.cpp:516 core/installation.cpp:841
-#, kde-format
-msgid "Installation of %1 failed: %2"
-msgstr "Неуспешно инсталиране на %1: %2"
-
-#: core/installation.cpp:525
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the service type %2 was not accepted by "
-"the system (did you forget to install the KPackage support plugin for this "
-"type of package?)"
-msgstr ""
-"Инсталирането на %1 е неуспешно, тъй като услугата %2 не беше приета от "
-"системата (забравихте ли да инсталирате приставката за поддръжка на KPackage "
-"за този вид пакет?)"
-
-#: core/installation.cpp:535
+#: core/installation.cpp:315
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -291,16 +274,17 @@ msgstr ""
 "Инсталирането на %1 е неуспешно, тъй като изтегленият пакет не съдържа "
 "правилна структура на KPackage."
 
-#: core/installation.cpp:541
+#: core/installation.cpp:352
 #, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not list a "
-"service type."
-msgstr ""
-"Инсталацията на %1 е неуспешна, тъй като изтегленият пакет не съдържа типа "
-"на услугата."
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr "Инсталацията на %1 не успя да създаде очакваната нова директория %2"
 
-#: core/installation.cpp:548
+#: core/installation.cpp:374 core/installation.cpp:641
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "Неуспешно инсталиране на %1: %2"
+
+#: core/installation.cpp:383
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -309,17 +293,17 @@ msgstr ""
 "Инсталирането на %1 е неуспешно, тъй като изтегленият пакет не съдържа "
 "полезна мета информация, което означава, че не е валиден KPackage."
 
-#: core/installation.cpp:582
+#: core/installation.cpp:417
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Неуспешно определяне на вида на архива на изтегления файл %1"
 
-#: core/installation.cpp:594
+#: core/installation.cpp:429
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Неуспешно отваряне на архивния файл %1. Отчетената грешка беше: %2"
 
-#: core/installation.cpp:678
+#: core/installation.cpp:495
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -330,17 +314,17 @@ msgstr ""
 "за изтегляне). Продължаването означава презаписване. Искате ли да "
 "презапишете съществуващ файл?"
 
-#: core/installation.cpp:681
+#: core/installation.cpp:498
 #, kde-format
 msgid "Overwrite File"
 msgstr "Презапис на файл"
 
-#: core/installation.cpp:700
+#: core/installation.cpp:517
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Не може да се премести файлът %1 към предвиденото местоназначение %2"
 
-#: core/installation.cpp:723
+#: core/installation.cpp:540
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -355,7 +339,7 @@ msgstr ""
 "Върнатият изход беше:\n"
 "%2"
 
-#: core/installation.cpp:733
+#: core/installation.cpp:550
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -370,7 +354,7 @@ msgstr ""
 "Върнатият изход беше:\n"
 "%3"
 
-#: core/installation.cpp:775
+#: core/installation.cpp:592
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -381,7 +365,7 @@ msgstr ""
 "бъде премахнат автоматично. Можете да се опитате ръчно да изтриете този "
 "файл, ако смятате, че това е грешка."
 
-#: core/installation.cpp:848
+#: core/installation.cpp:623
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -390,18 +374,7 @@ msgstr ""
 "Премахването на %1 е неуспешно, тъй като инсталираният пакет не съдържа "
 "правилна структура на KPackage."
 
-#: core/installation.cpp:853
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package is not a supported type "
-"(did you forget to install the KPackage support plugin for this type of "
-"package?)"
-msgstr ""
-"Премахването на %1 е неуспешно, тъй като инсталираният пакет не се "
-"поддържа(забравихте ли да инсталирате приставката за поддръжка на KPackage "
-"за този тип пакет?)"
-
-#: core/installation.cpp:860
+#: core/installation.cpp:648
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -410,7 +383,7 @@ msgstr ""
 "Премахването на %1 е неуспешно, тъй като инсталираният пакет не съдържа "
 "полезна мета информация, което означава, че не е валиден KPackage."
 
-#: core/installation.cpp:900
+#: core/installation.cpp:687
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -419,7 +392,7 @@ msgstr ""
 "Премахването на %1 е неуспешно, тъй като изтегленият файл %2 не може да бъде "
 "автоматично премахнат."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:692
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -430,7 +403,7 @@ msgstr ""
 "Въпросният файл беше %2 и можете да опитате да го изтриете сами, ако сте "
 "сигурни, че не необходим."
 
-#: core/installation.cpp:913
+#: core/installation.cpp:700
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -440,7 +413,7 @@ msgstr ""
 "повече от едно нещо инсталирано, което не би трябвало да е възможно за "
 "записи, базирани на KPackage."
 
-#: core/installation.cpp:946
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -464,240 +437,6 @@ msgstr "Не можа да се отвори %1 за запис"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Не можа да се отвори %1 за четене"
-
-#: core/jobs/kpackagejob.cpp:114
-#, kde-format
-msgid ""
-"Failed to create a job for the package management task. This is usually "
-"because the package is invalid. We attempted to operate on the package %1"
-msgstr ""
-"Неуспешно създаване на задачата за управление на пакети. Това обикновено е "
-"така, защото пакетът е невалиден. Опитахме се да обработим пакета %1"
-
-#: core/jobs/kpackagejob.cpp:121
-#, kde-format
-msgid ""
-"Could not create a package installer for the service type %1: The installer "
-"does not have a valid structure"
-msgstr ""
-"Неуспешно създаване на инсталатор на пакет за типа услуга %1: Инсталаторът "
-"няма валидна структура"
-
-#: core/jobs/kpackagejob.cpp:125
-#, kde-format
-msgid "The service type %1 was not understood by the KPackage installer"
-msgstr "Типът услуга %1 не беше разбран от инсталатора на KPackage"
-
-#: core/security.cpp:69
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
-"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
-"not be possible.</qt>"
-msgstr ""
-"<qt>Грешка при стартиране на <i>gpg</i> и изтегляне на наличните ключове. "
-"Моля, проверете дали програмата <i>gpg</i> е инсталирана и настроена на "
-"вашата система.</qt>"
-
-#: core/security.cpp:191
-#, kde-format
-msgid ""
-"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-msgstr ""
-"<qt>Въведете паролата за ключа <b>0x%1</b>, принадлежащ на <br /><i>%2&lt;"
-"%3&gt;</i><br />:</qt>"
-
-#: core/security.cpp:264
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
-"will not be possible.</qt>"
-msgstr ""
-"<qt>Грешка при стартиране на <i>gpg</i> и проверката целостта на файла. "
-"Моля, проверете дали програмата <i>gpg</i> е инсталирана и настроена на "
-"вашата система.</qt>"
-
-#: core/security.cpp:320
-#, kde-format
-msgid "Key used for signing:"
-msgstr "Ключове, използвани за подписване:"
-
-#: core/security.cpp:321
-#, kde-format
-msgid "Select Signing Key"
-msgstr "Избор на ключ за подписване"
-
-#: core/security.cpp:348
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
-"installed, otherwise signing of the resources will not be possible.</qt>"
-msgstr ""
-"<qt>Грешка при стартиране на <i>gpg</i> и подписването на файла. Моля, "
-"проверете дали програмата <i>gpg</i> е инсталирана и настроена на вашата "
-"система.</qt>"
-
-#: downloaddialog.cpp:69 downloadwidget.cpp:213
-#, kde-format
-msgid "Get Hot New Stuff"
-msgstr "Изтегляне на нови неща"
-
-#: downloaddialog.cpp:86
-#, kde-format
-msgctxt "Program name followed by 'Add On Installer'"
-msgid "%1 Add-On Installer"
-msgstr "Инсталиране на добавки за %1"
-
-#: downloadwidget.cpp:123
-#, kde-format
-msgid "Timeout. Check Internet connection."
-msgstr "Просрочено време. Проврете връзката си с Интернет!"
-
-#: downloadwidget.cpp:186
-#, kde-format
-msgid "Server: %1"
-msgstr "Сървър: %1"
-
-#: downloadwidget.cpp:187
-#, kde-format
-msgid "<br />Provider: %1"
-msgstr "<br />Доставчик: %1"
-
-#: downloadwidget.cpp:188
-#, kde-format
-msgid "<br />Version: %1"
-msgstr "<br />Версия: %1"
-
-#: downloadwidget.cpp:190
-#, kde-format
-msgid "Provider information"
-msgstr "Информация за доставчика"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Could not install %1"
-msgstr "\"%1\" не може да бъде инсталиран"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Get Hot New Stuff!"
-msgstr "Изтегляне на нови неща!"
-
-#: downloadwidget.cpp:262
-#, kde-format
-msgid "Icons view mode"
-msgstr "Преглед с икони"
-
-#: downloadwidget.cpp:264
-#, kde-format
-msgid "Details view mode"
-msgstr "Преглед с подробности"
-
-#: downloadwidget.cpp:279
-#, kde-format
-msgid "All Providers"
-msgstr "Всички доставчици"
-
-#: downloadwidget.cpp:286
-#, kde-format
-msgid "All Categories"
-msgstr "Всички категории"
-
-#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
-#: downloadwidget.ui:54
-#, kde-format
-msgid "Provider:"
-msgstr "Доставчик:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
-#: downloadwidget.ui:71 qtquick/qml/Page.qml:426
-#, kde-format
-msgid "Category:"
-msgstr "Категория:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
-#: downloadwidget.ui:90
-#, kde-format
-msgid "Most downloads"
-msgstr "Най-изтегляни"
-
-#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
-#: downloadwidget.ui:103
-#, kde-format
-msgid "Newest"
-msgstr "Най-нови"
-
-#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
-#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
-#, kde-format
-msgid "Rating"
-msgstr "Оценка"
-
-#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
-#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
-#, kde-format
-msgid "Installed"
-msgstr "Инсталирани"
-
-#. i18n: ectx: property (text), widget (QLabel, orderLabel)
-#: downloadwidget.ui:175
-#, kde-format
-msgid "Order by:"
-msgstr "Подреждане по:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: downloadwidget.ui:185
-#, kde-format
-msgid "Search:"
-msgstr "Търсене:"
-
-#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
-#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, kde-format
-msgid "Search..."
-msgstr "Търсене..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: downloadwidget.ui:371
-#, kde-format
-msgid "Author:"
-msgstr "Автор:"
-
-#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
-#: downloadwidget.ui:396
-#, kde-format
-msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"https://opendesktop.org\"> Начална страница </a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, updateButton)
-#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
-#: ui/itemsviewdelegate.cpp:112
-#, kde-format
-msgid "Update"
-msgstr "Обновяване"
-
-#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
-#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
-#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
-#, kde-format
-msgid "Uninstall"
-msgstr "Премахване"
-
-#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
-#: downloadwidget.ui:589
-#, kde-format
-msgid "Become a Fan"
-msgstr "Станете фен"
-
-#. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
-#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
-#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
-#, kde-format
-msgid "Install"
-msgstr "Инсталиране"
 
 #: kmoretools/kmoretools.cpp:521
 #, kde-format
@@ -745,81 +484,23 @@ msgstr "Меню за конфигуриране"
 msgid "Configure menu - %1"
 msgstr "Меню за конфигуриране - %1"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:173
+#: kmoretools/kmoretoolsmenufactory.cpp:172
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 - текуща папка"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:182
+#: kmoretools/kmoretoolsmenufactory.cpp:181
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr "%1 - текущо устройство"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:195
+#: kmoretools/kmoretoolsmenufactory.cpp:194
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - всички устройства"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Раздел Основни"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Преместване надолу"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Преместване нагоре"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Преместване в раздел Основни"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Преместване в раздел Допълнителни"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Анулиране"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Раздел Допълнителни"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"За това меню има предложени още някои инструменти, които в момента не са "
-"инсталирани:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Още инструменти..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -883,6 +564,11 @@ msgstr ""
 "на елементи по-долу. Ако не знаете, кое трябва да изберете от наличните "
 "опции, моля, свържете се с автора на този елемент и ги помолете да изяснят "
 "това чрез именуване на елементите."
+
+#: qtquick/qml/DownloadItemsSheet.qml:62
+#, kde-format
+msgid "Install"
+msgstr "Инсталиране"
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
@@ -1122,6 +808,11 @@ msgstr "Режим на предварителен преглед"
 msgid "Everything"
 msgstr "Всичко"
 
+#: qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "Инсталирани"
+
 #: qtquick/qml/Page.qml:263
 #, kde-format
 msgid "Updateable"
@@ -1157,6 +848,11 @@ msgstr "Най-нови"
 #, kde-format
 msgid "Alphabetical"
 msgstr "Азбучно"
+
+#: qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "Оценка"
 
 #: qtquick/qml/Page.qml:314
 #, kde-format
@@ -1206,6 +902,16 @@ msgstr "Научете се как да качвате нови разширен
 #, kde-format
 msgid "Go to..."
 msgstr "Отиване на..."
+
+#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, kde-format
+msgid "Search..."
+msgstr "Търсене..."
+
+#: qtquick/qml/Page.qml:426
+#, kde-format
+msgid "Category:"
+msgstr "Категория:"
 
 #: qtquick/qml/Page.qml:442
 #, kde-format
@@ -1413,7 +1119,7 @@ msgstr ""
 "алтернатива може да се наложи да се свържете директно с мениджърите на "
 "сайта, за да качите ново съдържание."
 
-#: qtquick/quickengine.cpp:174
+#: qtquick/quickengine.cpp:132
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -1535,126 +1241,262 @@ msgstr ""
 "е уникален идентификационен номер в knsrc файла.\n"
 "Пример за такъв адрес е  kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: ui/entrydetailsdialog.cpp:84
+#: widgets/action.cpp:32 widgets/button.cpp:56
 #, kde-format
-msgid "Details for %1"
-msgstr "Подробности за %1"
-
-#: ui/entrydetailsdialog.cpp:100
-#, kde-format
-msgid "Changelog:"
-msgstr "Списък с промените:"
-
-#: ui/entrydetailsdialog.cpp:106
-#, kde-format
-msgctxt "A link to the description of this Get Hot New Stuff item"
-msgid "Homepage"
-msgstr "Домашна страница"
-
-#: ui/entrydetailsdialog.cpp:110
-#, kde-format
-msgctxt ""
-"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
-msgid "Make a donation"
-msgstr "Направете дарение"
-
-#: ui/entrydetailsdialog.cpp:115
-#, kde-format
-msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-msgid "Knowledgebase (no entries)"
-msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "База знания (без записи)"
-msgstr[1] "База знания (%1 записа)"
-
-#: ui/entrydetailsdialog.cpp:121
-#, kde-format
-msgctxt "Tooltip for a link in a dialog"
-msgid "Opens in a browser window"
-msgstr "Отваряне в браузър"
-
-#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
-#, kde-format
-msgid "Rating: %1%"
-msgstr "Рейтинг: %1%"
-
-#: ui/itemsgridviewdelegate.cpp:123
-#, kde-format
-msgctxt "Show the size of the file in a list"
-msgid "<br />Size: %1"
-msgstr "<br /> Размер: %1"
-
-#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
-#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
-#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
-#, kde-format
-msgctxt "Show the author of this item in a list"
-msgid "By <i>%1</i>"
-msgstr "От <i>%1</i>"
-
-#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
-msgctxt "fan as in supporter"
-msgid "1 fan"
-msgid_plural "%1 fans"
-msgstr[0] "1 почитател"
-msgstr[1] "%1 почитателя"
-
-#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
-#, kde-format
-msgid "1 download"
-msgid_plural "%1 downloads"
-msgstr[0] "1 изтегляне"
-msgstr[1] "%1 изтегляния"
-
-#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
-#, kde-format
-msgid "Loading Preview"
-msgstr "Зареждане на предварителен преглед"
-
-#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
-#, kde-format
-msgid "Details"
-msgstr "Подробности"
-
-#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
-#, kde-format
-msgid "Updating"
-msgstr "Обновяване"
-
-#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
-#, kde-format
-msgid "Install Again"
-msgstr "Инсталиране отново"
-
-#: ui/itemsviewdelegate.cpp:228
-#, kde-format
-msgctxt "Show the size of the file in a list"
-msgid "<p>Size: %1</p>"
-msgstr "<p> Размер: %1 </p>"
-
-#: ui/widgetquestionlistener.cpp:89
-#, kde-format
-msgctxt "@action:button"
-msgid "Yes"
-msgstr "Да"
-
-#: ui/widgetquestionlistener.cpp:90
-#, kde-format
-msgctxt "@action:button"
-msgid "No"
-msgstr "Не"
+msgid "Download New Stuff..."
+msgstr "Изтегляне на нови неща..."
 
 #~ msgid ""
-#~ "The downloaded file is a html file. This indicates a link to a website "
-#~ "instead of the actual download. Would you like to open the site with a "
-#~ "browser instead?"
+#~ "The installation of %1 failed, as the service type %2 was not accepted by "
+#~ "the system (did you forget to install the KPackage support plugin for "
+#~ "this type of package?)"
 #~ msgstr ""
-#~ "Изтегленият файл е html файл. Това показва връзка към уебсайт вместо "
-#~ "действителното изтегляне. Искате ли да отворите сайта с браузър вместо "
-#~ "това?"
+#~ "Инсталирането на %1 е неуспешно, тъй като услугата %2 не беше приета от "
+#~ "системата (забравихте ли да инсталирате приставката за поддръжка на "
+#~ "KPackage за този вид пакет?)"
 
-#~ msgid "Possibly bad download link"
-#~ msgstr "Вероятно препратката за изтегляне е неправилна."
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not list a "
+#~ "service type."
+#~ msgstr ""
+#~ "Инсталацията на %1 е неуспешна, тъй като изтегленият пакет не съдържа "
+#~ "типа на услугата."
 
-#~ msgid "Downloaded file was a HTML file. Opened in browser."
-#~ msgstr "Изтегленият файл е HTML. Зареден е в браузър."
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package is not a supported "
+#~ "type (did you forget to install the KPackage support plugin for this type "
+#~ "of package?)"
+#~ msgstr ""
+#~ "Премахването на %1 е неуспешно, тъй като инсталираният пакет не се "
+#~ "поддържа(забравихте ли да инсталирате приставката за поддръжка на "
+#~ "KPackage за този тип пакет?)"
+
+#~ msgid ""
+#~ "Failed to create a job for the package management task. This is usually "
+#~ "because the package is invalid. We attempted to operate on the package %1"
+#~ msgstr ""
+#~ "Неуспешно създаване на задачата за управление на пакети. Това обикновено "
+#~ "е така, защото пакетът е невалиден. Опитахме се да обработим пакета %1"
+
+#~ msgid ""
+#~ "Could not create a package installer for the service type %1: The "
+#~ "installer does not have a valid structure"
+#~ msgstr ""
+#~ "Неуспешно създаване на инсталатор на пакет за типа услуга %1: "
+#~ "Инсталаторът няма валидна структура"
+
+#~ msgid "The service type %1 was not understood by the KPackage installer"
+#~ msgstr "Типът услуга %1 не беше разбран от инсталатора на KPackage"
+
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Грешка при стартиране на <i>gpg</i> и изтегляне на наличните ключове. "
+#~ "Моля, проверете дали програмата <i>gpg</i> е инсталирана и настроена на "
+#~ "вашата система.</qt>"
+
+#~ msgid ""
+#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
+#~ msgstr ""
+#~ "<qt>Въведете паролата за ключа <b>0x%1</b>, принадлежащ на <br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
+
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Грешка при стартиране на <i>gpg</i> и проверката целостта на файла. "
+#~ "Моля, проверете дали програмата <i>gpg</i> е инсталирана и настроена на "
+#~ "вашата система.</qt>"
+
+#~ msgid "Key used for signing:"
+#~ msgstr "Ключове, използвани за подписване:"
+
+#~ msgid "Select Signing Key"
+#~ msgstr "Избор на ключ за подписване"
+
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
+#~ "is installed, otherwise signing of the resources will not be possible.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt>Грешка при стартиране на <i>gpg</i> и подписването на файла. Моля, "
+#~ "проверете дали програмата <i>gpg</i> е инсталирана и настроена на вашата "
+#~ "система.</qt>"
+
+#~ msgid "Get Hot New Stuff"
+#~ msgstr "Изтегляне на нови неща"
+
+#~ msgctxt "Program name followed by 'Add On Installer'"
+#~ msgid "%1 Add-On Installer"
+#~ msgstr "Инсталиране на добавки за %1"
+
+#~ msgid "Timeout. Check Internet connection."
+#~ msgstr "Просрочено време. Проврете връзката си с Интернет!"
+
+#~ msgid "Server: %1"
+#~ msgstr "Сървър: %1"
+
+#~ msgid "<br />Provider: %1"
+#~ msgstr "<br />Доставчик: %1"
+
+#~ msgid "<br />Version: %1"
+#~ msgstr "<br />Версия: %1"
+
+#~ msgid "Provider information"
+#~ msgstr "Информация за доставчика"
+
+#~ msgid "Could not install %1"
+#~ msgstr "\"%1\" не може да бъде инсталиран"
+
+#~ msgid "Get Hot New Stuff!"
+#~ msgstr "Изтегляне на нови неща!"
+
+#~ msgid "Icons view mode"
+#~ msgstr "Преглед с икони"
+
+#~ msgid "Details view mode"
+#~ msgstr "Преглед с подробности"
+
+#~ msgid "All Providers"
+#~ msgstr "Всички доставчици"
+
+#~ msgid "All Categories"
+#~ msgstr "Всички категории"
+
+#~ msgid "Provider:"
+#~ msgstr "Доставчик:"
+
+#~ msgid "Most downloads"
+#~ msgstr "Най-изтегляни"
+
+#~ msgid "Newest"
+#~ msgstr "Най-нови"
+
+#~ msgid "Order by:"
+#~ msgstr "Подреждане по:"
+
+#~ msgid "Search:"
+#~ msgstr "Търсене:"
+
+#~ msgid "Author:"
+#~ msgstr "Автор:"
+
+#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+#~ msgstr "<a href=\"https://opendesktop.org\"> Начална страница </a>"
+
+#~ msgid "Update"
+#~ msgstr "Обновяване"
+
+#~ msgid "Uninstall"
+#~ msgstr "Премахване"
+
+#~ msgid "Become a Fan"
+#~ msgstr "Станете фен"
+
+#~ msgid "Main section"
+#~ msgstr "Раздел Основни"
+
+#~ msgid "Move down"
+#~ msgstr "Преместване надолу"
+
+#~ msgid "Move up"
+#~ msgstr "Преместване нагоре"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Преместване в раздел Основни"
+
+#~ msgid "Move to More section"
+#~ msgstr "Преместване в раздел Допълнителни"
+
+#~ msgid "Reset"
+#~ msgstr "Анулиране"
+
+#~ msgid "More section"
+#~ msgstr "Раздел Допълнителни"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "За това меню има предложени още някои инструменти, които в момента не са "
+#~ "инсталирани:"
+
+#~ msgid "More tools..."
+#~ msgstr "Още инструменти..."
+
+#~ msgid "Details for %1"
+#~ msgstr "Подробности за %1"
+
+#~ msgid "Changelog:"
+#~ msgstr "Списък с промените:"
+
+#~ msgctxt "A link to the description of this Get Hot New Stuff item"
+#~ msgid "Homepage"
+#~ msgstr "Домашна страница"
+
+#~ msgctxt ""
+#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
+#~ "browser)"
+#~ msgid "Make a donation"
+#~ msgstr "Направете дарение"
+
+#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+#~ msgid "Knowledgebase (no entries)"
+#~ msgid_plural "Knowledgebase (%1 entries)"
+#~ msgstr[0] "База знания (без записи)"
+#~ msgstr[1] "База знания (%1 записа)"
+
+#~ msgctxt "Tooltip for a link in a dialog"
+#~ msgid "Opens in a browser window"
+#~ msgstr "Отваряне в браузър"
+
+#~ msgid "Rating: %1%"
+#~ msgstr "Рейтинг: %1%"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<br />Size: %1"
+#~ msgstr "<br /> Размер: %1"
+
+#~ msgctxt "Show the author of this item in a list"
+#~ msgid "By <i>%1</i>"
+#~ msgstr "От <i>%1</i>"
+
+#~ msgctxt "fan as in supporter"
+#~ msgid "1 fan"
+#~ msgid_plural "%1 fans"
+#~ msgstr[0] "1 почитател"
+#~ msgstr[1] "%1 почитателя"
+
+#~ msgid "1 download"
+#~ msgid_plural "%1 downloads"
+#~ msgstr[0] "1 изтегляне"
+#~ msgstr[1] "%1 изтегляния"
+
+#~ msgid "Loading Preview"
+#~ msgstr "Зареждане на предварителен преглед"
+
+#~ msgid "Details"
+#~ msgstr "Подробности"
+
+#~ msgid "Updating"
+#~ msgstr "Обновяване"
+
+#~ msgid "Install Again"
+#~ msgstr "Инсталиране отново"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<p>Size: %1</p>"
+#~ msgstr "<p> Размер: %1 </p>"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgctxt "@action:button"
+#~ msgid "No"
+#~ msgstr "Не"

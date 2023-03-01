@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: attica/atticaprovider.cpp:167
+#: attica/atticaprovider.cpp:168
 #, kde-format
 msgid "All categories are missing"
 msgstr "Lipsesc toate categoriile"
@@ -57,7 +57,7 @@ msgstr "Votul a fost înregistrat."
 msgid "You are now a fan."
 msgstr "Sunteți fan acum."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -86,11 +86,6 @@ msgstr "Instanța „Open Collaboration Services” %1nu susține funcția înce
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Eroare de API de servicu de colaborare deschisă necunoscută. (%1)"
 
-#: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "Descărcare lucruri noi..."
-
 #: core/commentsmodel.cpp:168
 #, kde-format
 msgctxt ""
@@ -98,7 +93,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Rol CommentsModel necunoscut"
 
-#: core/engine.cpp:169
+#: core/engine.cpp:190
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -107,66 +102,76 @@ msgstr ""
 "S-a produs o eroare în procesul de instalare:\n"
 "%1"
 
-#: core/engine.cpp:203
+#: core/engine.cpp:208
 #, kde-format
 msgid "Initializing"
 msgstr "Inițializare"
 
-#: core/engine.cpp:241
+#: core/engine.cpp:219
+#, fuzzy, kde-format
+#| msgid "Configuration file not found: \"%1\""
+msgid "Configuration file does not exist: \"%1\""
+msgstr "Nu am găsit fișierul de configurare: \"%1\""
+
+#: core/engine.cpp:227
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Fișierul de configurare există, dar nu poate fi deschis: „%1”"
 
-#: core/engine.cpp:254
+#: core/engine.cpp:234
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Fișierul de configurare nu e valid: „%1”"
 
-#: core/engine.cpp:263
+#: core/engine.cpp:243
 #, kde-format
 msgid "Use"
 msgstr "Folosește"
 
-#: core/engine.cpp:284
-#, kde-format
+#: core/engine.cpp:261
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not initialise the installation handler for %1\n"
+#| "This is a critical error and should be reported to the application author"
 msgid ""
-"Could not initialise the installation handler for %1\n"
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "Nu s-a putut inițializa gestionarul de instalare pentru %1\n"
 "Această eroare e critică și trebuie raportată autorului aplicației"
 
-#: core/engine.cpp:359
+#: core/engine.cpp:338
 #, kde-format
 msgid "Loading provider information"
 msgstr "Se încarcă informații despre furnizor"
 
-#: core/engine.cpp:420
+#: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nu s-au putut obține furnizori de lucruri noi din fișier: %1"
 
-#: core/engine.cpp:450
+#: core/engine.cpp:431
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Eroare la inițializarea furnizorului."
 
-#: core/engine.cpp:454 core/engine.cpp:1022
+#: core/engine.cpp:435 core/engine.cpp:1003
 #, kde-format
 msgid "Loading data"
 msgstr "Se încarcă date"
 
-#: core/engine.cpp:496
+#: core/engine.cpp:477
 #, kde-format
 msgid "Loading data from provider"
 msgstr "Se încarcă date de la furnizor"
 
-#: core/engine.cpp:501
+#: core/engine.cpp:482
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Încărcarea furnizorilor din fișier: %1 a eșuat"
 
-#: core/engine.cpp:749
+#: core/engine.cpp:730
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -175,12 +180,12 @@ msgstr ""
 "Instalarea înregistrării %1 nu a putut fi efectuată deoarece nu are niciun "
 "element descărcabil definit. Contactați autorul ca să poată repara aceasta."
 
-#: core/engine.cpp:872
+#: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Alegeți elementul de actualizat"
 
-#: core/engine.cpp:874
+#: core/engine.cpp:855
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -191,7 +196,7 @@ msgstr ""
 "actualizării. Nu am putut identifica elementul de ales în baza elementului "
 "original, care se numea %1"
 
-#: core/engine.cpp:893
+#: core/engine.cpp:874
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -200,18 +205,17 @@ msgstr ""
 "Nu s-a putut identifica o legătură bună pentru actualizarea %1 și nu se "
 "poate efectua actualizarea"
 
-#: core/engine.cpp:972
+#: core/engine.cpp:953
 #, kde-format
 msgid "Re: %1"
 msgstr "Re: %1"
 
-#: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
-#: ui/itemsviewdelegate.cpp:117
+#: core/engine.cpp:995
 #, kde-format
 msgid "Installing"
 msgstr "Se instalează"
 
-#: core/engine.cpp:1018
+#: core/engine.cpp:999
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
@@ -219,7 +223,7 @@ msgstr[0] "Se încarcă o previzualizare"
 msgstr[1] "Se încarcă %1 previzualizări"
 msgstr[2] "Se încarcă %1 de previzualizări"
 
-#: core/engine.cpp:1225
+#: core/engine.cpp:1172
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -228,56 +232,35 @@ msgstr ""
 "Adoptarea „%1” a eșuat\n"
 "%2"
 
-#: core/installation.cpp:211
+#: core/installation.cpp:100
 #, kde-format
 msgid "Invalid item."
 msgstr "Element nevalid."
 
-#: core/installation.cpp:218
+#: core/installation.cpp:107
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "Descărcarea elementului a eșuat: nicio adresă URL pentru descărcarea „%1”."
 
-#: core/installation.cpp:249
+#: core/installation.cpp:138
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Descărcarea „%1” a eșuat, eroare: %2"
 
-#: core/installation.cpp:262
+#: core/installation.cpp:147
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:303
+#: core/installation.cpp:185
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nu s-a putut instala „%1”: fișierul nu a fost găsit."
 
-#: core/installation.cpp:493
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Instalarea %1 a eșuat să creeze dosarul nou așteptat %2"
-
-#: core/installation.cpp:516 core/installation.cpp:841
-#, kde-format
-msgid "Installation of %1 failed: %2"
-msgstr "Instalarea %1 a eșuat: %2"
-
-#: core/installation.cpp:525
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the service type %2 was not accepted by "
-"the system (did you forget to install the KPackage support plugin for this "
-"type of package?)"
-msgstr ""
-"A eșuat instalarea %1, întrucât tipul de servicii %2 nu a fost acceptat de "
-"sistem. Ați uitat să instalați extensia KPackage ce oferă suport pentru "
-"acest tip de pachet?"
-
-#: core/installation.cpp:535
+#: core/installation.cpp:315
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
@@ -286,16 +269,17 @@ msgstr ""
 "A eșuat instalarea %1, întrucât pachetul descărcat nu conține o structură "
 "KPackage corectă."
 
-#: core/installation.cpp:541
+#: core/installation.cpp:352
 #, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not list a "
-"service type."
-msgstr ""
-"A eșuat instalarea %1, întrucât pachetul descărcat nu specifică un tip de "
-"serviciu."
+msgid "The installation of %1 failed to create the expected new directory %2"
+msgstr "Instalarea %1 a eșuat să creeze dosarul nou așteptat %2"
 
-#: core/installation.cpp:548
+#: core/installation.cpp:374 core/installation.cpp:641
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "Instalarea %1 a eșuat: %2"
+
+#: core/installation.cpp:383
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
@@ -304,17 +288,17 @@ msgstr ""
 "A eșuat instalarea %1, întrucât pachetul descărcat nu conține metainformații "
 "utile, ceea ce înseamnă că nu e un KPackage valid."
 
-#: core/installation.cpp:582
+#: core/installation.cpp:417
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nu s-a putut determina tipul de arhivă al fișierului descărcat %1"
 
-#: core/installation.cpp:594
+#: core/installation.cpp:429
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nu s-a putut deschide fișierul de arhivă %1. Eroarea raportată: %2"
 
-#: core/installation.cpp:678
+#: core/installation.cpp:495
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -325,17 +309,17 @@ msgstr ""
 "anterioare de descărcare. A continua înseamnă a-l suprascrie. Doriți să "
 "suprascrieți fișierul existent?"
 
-#: core/installation.cpp:681
+#: core/installation.cpp:498
 #, kde-format
 msgid "Overwrite File"
 msgstr "Suprascrie fișierul"
 
-#: core/installation.cpp:700
+#: core/installation.cpp:517
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Nu se poate muta fișierul %1 la destinația %2"
 
-#: core/installation.cpp:723
+#: core/installation.cpp:540
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -350,7 +334,7 @@ msgstr ""
 "Rezultatul întors a fost:\n"
 "%2"
 
-#: core/installation.cpp:733
+#: core/installation.cpp:550
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -365,7 +349,7 @@ msgstr ""
 "Rezultatul întors a fost:\n"
 "%3"
 
-#: core/installation.cpp:775
+#: core/installation.cpp:592
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -376,7 +360,7 @@ msgstr ""
 "eliminat automat. Puteți încerca să ștergeți manual acest fișier dacă "
 "credeți că aceasta e o greșeală."
 
-#: core/installation.cpp:848
+#: core/installation.cpp:623
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
@@ -385,18 +369,7 @@ msgstr ""
 "A eșuat eliminarea %1, întrucât pachetul instalat nu conține o structură "
 "KPackage corectă."
 
-#: core/installation.cpp:853
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package is not a supported type "
-"(did you forget to install the KPackage support plugin for this type of "
-"package?)"
-msgstr ""
-"A eșuat eliminarea %1, întrucât pachetul instalat nu are un tip susținut. "
-"Ați uitat să instalați extensia KPackage ce oferă suport pentru acest tip de "
-"pachet?"
-
-#: core/installation.cpp:860
+#: core/installation.cpp:648
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
@@ -405,7 +378,7 @@ msgstr ""
 "A eșuat eliminarea %1, întrucât pachetul instalat nu conține metainformații "
 "utile, ceea ce înseamnă că nu e un KPackage valid."
 
-#: core/installation.cpp:900
+#: core/installation.cpp:687
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
@@ -414,7 +387,7 @@ msgstr ""
 "Eliminarea %1 a eșuat, întrucât fișierul descărcat %2 nu a  putut fi "
 "eliminat automat."
 
-#: core/installation.cpp:905
+#: core/installation.cpp:692
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -425,7 +398,7 @@ msgstr ""
 "Fișierul în cauză era %2, puteți încerca să-l ștergeți dacă aveți "
 "certitudinea că nu mai e necesar."
 
-#: core/installation.cpp:913
+#: core/installation.cpp:700
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
@@ -435,7 +408,7 @@ msgstr ""
 "instalat, ceea ce nu ar trebui să fie posibil pentru înregistrări bazate pe "
 "KPackage."
 
-#: core/installation.cpp:946
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -459,240 +432,6 @@ msgstr "Nu s-a putut deschide %1 pentru scriere"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Nu s-a putut deschide %1 pentru citire"
-
-#: core/jobs/kpackagejob.cpp:114
-#, kde-format
-msgid ""
-"Failed to create a job for the package management task. This is usually "
-"because the package is invalid. We attempted to operate on the package %1"
-msgstr ""
-"Nu s-a putut crea o lucrare pentru sarcina de gestiune a pachetelor. De "
-"obicei, aceasta înseamnă că pachetul nu e valid. S-a încercat operarea pe "
-"pachetul %1"
-
-#: core/jobs/kpackagejob.cpp:121
-#, kde-format
-msgid ""
-"Could not create a package installer for the service type %1: The installer "
-"does not have a valid structure"
-msgstr ""
-"Nu s-a putut crea un instalator de pachete pentru tipul de servicii %1: "
-"instalatorul nu are o structură validă"
-
-#: core/jobs/kpackagejob.cpp:125
-#, kde-format
-msgid "The service type %1 was not understood by the KPackage installer"
-msgstr "Tipul de servicii %1 nu a fost înțeles de instalatorul KPackage"
-
-#: core/security.cpp:69
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
-"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
-"not be possible.</qt>"
-msgstr ""
-"<qt>Nu se poate porni <i>gpg</i> și obține cheile disponibile. Verificați că "
-"<i>gpg</i> e instalat, altfel nu va fi posibilă verificarea resurselor "
-"descărcate.</qt>"
-
-#: core/security.cpp:191
-#, kde-format
-msgid ""
-"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-msgstr ""
-"<qt>Introduceți fraza de acces pentru cheia <b>0x%1</b>, ce aparține lui "
-"<br /><i>%2&lt;%3&gt;</i><br />:</qt>"
-
-#: core/security.cpp:264
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
-"will not be possible.</qt>"
-msgstr ""
-"<qt>Nu se poate porni <i>gpg</i> și verifica validitatea fișierului. "
-"Verificați că <i>gpg</i> este instalat, altfel nu va fi posibilă verificarea "
-"resurselor descărcate.</qt>"
-
-#: core/security.cpp:320
-#, kde-format
-msgid "Key used for signing:"
-msgstr "Cheia utilizată pentru semnare:"
-
-#: core/security.cpp:321
-#, kde-format
-msgid "Select Signing Key"
-msgstr "Alegeți cheia de semnare"
-
-#: core/security.cpp:348
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
-"installed, otherwise signing of the resources will not be possible.</qt>"
-msgstr ""
-"<qt>Nu se poate porni <i>gpg</i> și semna fișierul. Verificați că <i>gpg</i> "
-"este instalat, altfel nu va fi posibilă semnarea resurselor.</qt>"
-
-#: downloaddialog.cpp:69 downloadwidget.cpp:213
-#, kde-format
-msgid "Get Hot New Stuff"
-msgstr "Preia lucruri noi"
-
-#: downloaddialog.cpp:86
-#, kde-format
-msgctxt "Program name followed by 'Add On Installer'"
-msgid "%1 Add-On Installer"
-msgstr "Instalator de suplimente %1"
-
-#: downloadwidget.cpp:123
-#, kde-format
-msgid "Timeout. Check Internet connection."
-msgstr "Temporizare expirată. Verificați conexiunea la Internet."
-
-#: downloadwidget.cpp:186
-#, kde-format
-msgid "Server: %1"
-msgstr "Server :%1"
-
-#: downloadwidget.cpp:187
-#, kde-format
-msgid "<br />Provider: %1"
-msgstr "<br />Furnizor: %1"
-
-#: downloadwidget.cpp:188
-#, kde-format
-msgid "<br />Version: %1"
-msgstr "<br />Versiune: %1"
-
-#: downloadwidget.cpp:190
-#, kde-format
-msgid "Provider information"
-msgstr "Informații despre furnizor"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Could not install %1"
-msgstr "Nu am putut instala %1"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Get Hot New Stuff!"
-msgstr "Preia lucruri noi!"
-
-#: downloadwidget.cpp:262
-#, kde-format
-msgid "Icons view mode"
-msgstr "Regim vizualizare pictograme"
-
-#: downloadwidget.cpp:264
-#, kde-format
-msgid "Details view mode"
-msgstr "Regim vizualizare detalii"
-
-#: downloadwidget.cpp:279
-#, kde-format
-msgid "All Providers"
-msgstr "Toți furnizorii"
-
-#: downloadwidget.cpp:286
-#, kde-format
-msgid "All Categories"
-msgstr "Toate categoriile"
-
-#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
-#: downloadwidget.ui:54
-#, kde-format
-msgid "Provider:"
-msgstr "Furnizor:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
-#: downloadwidget.ui:71 qtquick/qml/Page.qml:426
-#, kde-format
-msgid "Category:"
-msgstr "Categorie:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
-#: downloadwidget.ui:90
-#, kde-format
-msgid "Most downloads"
-msgstr "Cele mai descărcate"
-
-#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
-#: downloadwidget.ui:103
-#, kde-format
-msgid "Newest"
-msgstr "Cele mai noi"
-
-#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
-#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
-#, kde-format
-msgid "Rating"
-msgstr "Evaluare"
-
-#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
-#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
-#, kde-format
-msgid "Installed"
-msgstr "Instalat"
-
-#. i18n: ectx: property (text), widget (QLabel, orderLabel)
-#: downloadwidget.ui:175
-#, kde-format
-msgid "Order by:"
-msgstr "Ordonează după:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: downloadwidget.ui:185
-#, kde-format
-msgid "Search:"
-msgstr "Caută:"
-
-#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
-#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, kde-format
-msgid "Search..."
-msgstr "Căutare..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: downloadwidget.ui:371
-#, kde-format
-msgid "Author:"
-msgstr "Autor:"
-
-#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
-#: downloadwidget.ui:396
-#, kde-format
-msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"https://opendesktop.org\">Pagina de pornire</a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, updateButton)
-#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
-#: ui/itemsviewdelegate.cpp:112
-#, kde-format
-msgid "Update"
-msgstr "Actualizează"
-
-#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
-#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
-#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
-#, kde-format
-msgid "Uninstall"
-msgstr "Dezinstalează"
-
-#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
-#: downloadwidget.ui:589
-#, kde-format
-msgid "Become a Fan"
-msgstr "Devin fan"
-
-#. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
-#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
-#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
-#, kde-format
-msgid "Install"
-msgstr "Instalează"
 
 #: kmoretools/kmoretools.cpp:521
 #, kde-format
@@ -740,81 +479,23 @@ msgstr "Configurează meniul"
 msgid "Configure menu - %1"
 msgstr "Configurează meniul - %1"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:173
+#: kmoretools/kmoretoolsmenufactory.cpp:172
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 - dosarul actual"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:182
+#: kmoretools/kmoretoolsmenufactory.cpp:181
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr "%1 - dispozitiv actual"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:195
+#: kmoretools/kmoretoolsmenufactory.cpp:194
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - toate dispozitivele"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Secțiunea principală"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Mută în jos"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Mută în sus"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Mută la secțiunea principală"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Mută la secțiunea „Suplimentar”"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Restabilește"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Secțiunea „Suplimentar”"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
-"momentan:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Mai multe unelte..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -878,6 +559,11 @@ msgstr ""
 "descărcabile de mai jos. Dacă nu vă e clar ce opțiune să alegeți din cele "
 "disponibile, contactați autorul acestui element și rugați-l să clarifice "
 "aceasta prin denumirile elementelor."
+
+#: qtquick/qml/DownloadItemsSheet.qml:62
+#, kde-format
+msgid "Install"
+msgstr "Instalează"
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
@@ -1118,6 +804,11 @@ msgstr "Regim de vizualizare cu previzualizare mare"
 msgid "Everything"
 msgstr "Tot"
 
+#: qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "Instalat"
+
 #: qtquick/qml/Page.qml:263
 #, kde-format
 msgid "Updateable"
@@ -1153,6 +844,11 @@ msgstr "Recente"
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetic"
+
+#: qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "Evaluare"
 
 #: qtquick/qml/Page.qml:314
 #, kde-format
@@ -1202,6 +898,16 @@ msgstr "Învățați cum să vă adăugați propriile lucruri noi la această li
 #, kde-format
 msgid "Go to..."
 msgstr "Mergi la…"
+
+#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, kde-format
+msgid "Search..."
+msgstr "Căutare..."
+
+#: qtquick/qml/Page.qml:426
+#, kde-format
+msgid "Category:"
+msgstr "Categorie:"
 
 #: qtquick/qml/Page.qml:442
 #, fuzzy, kde-format
@@ -1398,7 +1104,7 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:174
+#: qtquick/quickengine.cpp:132
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -1509,119 +1215,272 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: ui/entrydetailsdialog.cpp:84
+#: widgets/action.cpp:32 widgets/button.cpp:56
 #, kde-format
-msgid "Details for %1"
-msgstr "Detalii pentru %1"
+msgid "Download New Stuff..."
+msgstr "Descărcare lucruri noi..."
 
-#: ui/entrydetailsdialog.cpp:100
-#, kde-format
-msgid "Changelog:"
-msgstr "Jurnal modificări:"
+#~ msgid ""
+#~ "The installation of %1 failed, as the service type %2 was not accepted by "
+#~ "the system (did you forget to install the KPackage support plugin for "
+#~ "this type of package?)"
+#~ msgstr ""
+#~ "A eșuat instalarea %1, întrucât tipul de servicii %2 nu a fost acceptat "
+#~ "de sistem. Ați uitat să instalați extensia KPackage ce oferă suport "
+#~ "pentru acest tip de pachet?"
 
-#: ui/entrydetailsdialog.cpp:106
-#, kde-format
-msgctxt "A link to the description of this Get Hot New Stuff item"
-msgid "Homepage"
-msgstr "Pagină web"
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not list a "
+#~ "service type."
+#~ msgstr ""
+#~ "A eșuat instalarea %1, întrucât pachetul descărcat nu specifică un tip de "
+#~ "serviciu."
 
-#: ui/entrydetailsdialog.cpp:110
-#, kde-format
-msgctxt ""
-"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
-msgid "Make a donation"
-msgstr "Faceți o donație"
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package is not a supported "
+#~ "type (did you forget to install the KPackage support plugin for this type "
+#~ "of package?)"
+#~ msgstr ""
+#~ "A eșuat eliminarea %1, întrucât pachetul instalat nu are un tip susținut. "
+#~ "Ați uitat să instalați extensia KPackage ce oferă suport pentru acest tip "
+#~ "de pachet?"
 
-#: ui/entrydetailsdialog.cpp:115
-#, kde-format
-msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-msgid "Knowledgebase (no entries)"
-msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "Bază de cunoștințe (nicio intrare)"
-msgstr[1] "Bază de cunoștințe (%1 intrări)"
-msgstr[2] "Bază de cunoștințe (%1 de intrări)"
+#~ msgid ""
+#~ "Failed to create a job for the package management task. This is usually "
+#~ "because the package is invalid. We attempted to operate on the package %1"
+#~ msgstr ""
+#~ "Nu s-a putut crea o lucrare pentru sarcina de gestiune a pachetelor. De "
+#~ "obicei, aceasta înseamnă că pachetul nu e valid. S-a încercat operarea pe "
+#~ "pachetul %1"
 
-#: ui/entrydetailsdialog.cpp:121
-#, kde-format
-msgctxt "Tooltip for a link in a dialog"
-msgid "Opens in a browser window"
-msgstr "Deschide într-o fereastră de navigator"
+#~ msgid ""
+#~ "Could not create a package installer for the service type %1: The "
+#~ "installer does not have a valid structure"
+#~ msgstr ""
+#~ "Nu s-a putut crea un instalator de pachete pentru tipul de servicii %1: "
+#~ "instalatorul nu are o structură validă"
 
-#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
-#, kde-format
-msgid "Rating: %1%"
-msgstr "Evaluare: %1%"
+#~ msgid "The service type %1 was not understood by the KPackage installer"
+#~ msgstr "Tipul de servicii %1 nu a fost înțeles de instalatorul KPackage"
 
-#: ui/itemsgridviewdelegate.cpp:123
-#, kde-format
-msgctxt "Show the size of the file in a list"
-msgid "<br />Size: %1"
-msgstr "<br />Dimensiune: %1"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Nu se poate porni <i>gpg</i> și obține cheile disponibile. Verificați "
+#~ "că <i>gpg</i> e instalat, altfel nu va fi posibilă verificarea resurselor "
+#~ "descărcate.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
-#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
-#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
-#, kde-format
-msgctxt "Show the author of this item in a list"
-msgid "By <i>%1</i>"
-msgstr "De <i>%1</i>"
+#~ msgid ""
+#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
+#~ msgstr ""
+#~ "<qt>Introduceți fraza de acces pentru cheia <b>0x%1</b>, ce aparține lui "
+#~ "<br /><i>%2&lt;%3&gt;</i><br />:</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
-msgctxt "fan as in supporter"
-msgid "1 fan"
-msgid_plural "%1 fans"
-msgstr[0] "1 fan"
-msgstr[1] "%1 fani"
-msgstr[2] "%1 de fani"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Nu se poate porni <i>gpg</i> și verifica validitatea fișierului. "
+#~ "Verificați că <i>gpg</i> este instalat, altfel nu va fi posibilă "
+#~ "verificarea resurselor descărcate.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
-#, kde-format
-msgid "1 download"
-msgid_plural "%1 downloads"
-msgstr[0] "1 descărcare"
-msgstr[1] "%1 descărcări"
-msgstr[2] "%1 de descărcări"
+#~ msgid "Key used for signing:"
+#~ msgstr "Cheia utilizată pentru semnare:"
 
-#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
-#, kde-format
-msgid "Loading Preview"
-msgstr "Încarc previzualizare"
+#~ msgid "Select Signing Key"
+#~ msgstr "Alegeți cheia de semnare"
 
-#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
-#, kde-format
-msgid "Details"
-msgstr "Detalii"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
+#~ "is installed, otherwise signing of the resources will not be possible.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt>Nu se poate porni <i>gpg</i> și semna fișierul. Verificați că <i>gpg</"
+#~ "i> este instalat, altfel nu va fi posibilă semnarea resurselor.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
-#, kde-format
-msgid "Updating"
-msgstr "Se actualizează"
+#~ msgid "Get Hot New Stuff"
+#~ msgstr "Preia lucruri noi"
 
-#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
-#, kde-format
-msgid "Install Again"
-msgstr "Instalează din nou"
+#~ msgctxt "Program name followed by 'Add On Installer'"
+#~ msgid "%1 Add-On Installer"
+#~ msgstr "Instalator de suplimente %1"
 
-#: ui/itemsviewdelegate.cpp:228
-#, kde-format
-msgctxt "Show the size of the file in a list"
-msgid "<p>Size: %1</p>"
-msgstr "<p>Dimensiune: %1</p>"
+#~ msgid "Timeout. Check Internet connection."
+#~ msgstr "Temporizare expirată. Verificați conexiunea la Internet."
 
-#: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@action:button"
-msgid "Yes"
-msgstr "Da"
+#~ msgid "Server: %1"
+#~ msgstr "Server :%1"
 
-#: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@action:button"
-msgid "No"
-msgstr "Nu"
+#~ msgid "<br />Provider: %1"
+#~ msgstr "<br />Furnizor: %1"
+
+#~ msgid "<br />Version: %1"
+#~ msgstr "<br />Versiune: %1"
+
+#~ msgid "Provider information"
+#~ msgstr "Informații despre furnizor"
+
+#~ msgid "Could not install %1"
+#~ msgstr "Nu am putut instala %1"
+
+#~ msgid "Get Hot New Stuff!"
+#~ msgstr "Preia lucruri noi!"
+
+#~ msgid "Icons view mode"
+#~ msgstr "Regim vizualizare pictograme"
+
+#~ msgid "Details view mode"
+#~ msgstr "Regim vizualizare detalii"
+
+#~ msgid "All Providers"
+#~ msgstr "Toți furnizorii"
+
+#~ msgid "All Categories"
+#~ msgstr "Toate categoriile"
+
+#~ msgid "Provider:"
+#~ msgstr "Furnizor:"
+
+#~ msgid "Most downloads"
+#~ msgstr "Cele mai descărcate"
+
+#~ msgid "Newest"
+#~ msgstr "Cele mai noi"
+
+#~ msgid "Order by:"
+#~ msgstr "Ordonează după:"
+
+#~ msgid "Search:"
+#~ msgstr "Caută:"
+
+#~ msgid "Author:"
+#~ msgstr "Autor:"
+
+#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+#~ msgstr "<a href=\"https://opendesktop.org\">Pagina de pornire</a>"
+
+#~ msgid "Update"
+#~ msgstr "Actualizează"
+
+#~ msgid "Uninstall"
+#~ msgstr "Dezinstalează"
+
+#~ msgid "Become a Fan"
+#~ msgstr "Devin fan"
+
+#~ msgid "Main section"
+#~ msgstr "Secțiunea principală"
+
+#~ msgid "Move down"
+#~ msgstr "Mută în jos"
+
+#~ msgid "Move up"
+#~ msgstr "Mută în sus"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Mută la secțiunea principală"
+
+#~ msgid "Move to More section"
+#~ msgstr "Mută la secțiunea „Suplimentar”"
+
+#~ msgid "Reset"
+#~ msgstr "Restabilește"
+
+#~ msgid "More section"
+#~ msgstr "Secțiunea „Suplimentar”"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
+#~ "momentan:"
+
+#~ msgid "More tools..."
+#~ msgstr "Mai multe unelte..."
+
+#~ msgid "Details for %1"
+#~ msgstr "Detalii pentru %1"
+
+#~ msgid "Changelog:"
+#~ msgstr "Jurnal modificări:"
+
+#~ msgctxt "A link to the description of this Get Hot New Stuff item"
+#~ msgid "Homepage"
+#~ msgstr "Pagină web"
+
+#~ msgctxt ""
+#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
+#~ "browser)"
+#~ msgid "Make a donation"
+#~ msgstr "Faceți o donație"
+
+#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+#~ msgid "Knowledgebase (no entries)"
+#~ msgid_plural "Knowledgebase (%1 entries)"
+#~ msgstr[0] "Bază de cunoștințe (nicio intrare)"
+#~ msgstr[1] "Bază de cunoștințe (%1 intrări)"
+#~ msgstr[2] "Bază de cunoștințe (%1 de intrări)"
+
+#~ msgctxt "Tooltip for a link in a dialog"
+#~ msgid "Opens in a browser window"
+#~ msgstr "Deschide într-o fereastră de navigator"
+
+#~ msgid "Rating: %1%"
+#~ msgstr "Evaluare: %1%"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<br />Size: %1"
+#~ msgstr "<br />Dimensiune: %1"
+
+#~ msgctxt "Show the author of this item in a list"
+#~ msgid "By <i>%1</i>"
+#~ msgstr "De <i>%1</i>"
+
+#~ msgctxt "fan as in supporter"
+#~ msgid "1 fan"
+#~ msgid_plural "%1 fans"
+#~ msgstr[0] "1 fan"
+#~ msgstr[1] "%1 fani"
+#~ msgstr[2] "%1 de fani"
+
+#~ msgid "1 download"
+#~ msgid_plural "%1 downloads"
+#~ msgstr[0] "1 descărcare"
+#~ msgstr[1] "%1 descărcări"
+#~ msgstr[2] "%1 de descărcări"
+
+#~ msgid "Loading Preview"
+#~ msgstr "Încarc previzualizare"
+
+#~ msgid "Details"
+#~ msgstr "Detalii"
+
+#~ msgid "Updating"
+#~ msgstr "Se actualizează"
+
+#~ msgid "Install Again"
+#~ msgstr "Instalează din nou"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<p>Size: %1</p>"
+#~ msgstr "<p>Dimensiune: %1</p>"
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "@action:button"
+#~ msgid "Yes"
+#~ msgstr "Da"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgctxt "@action:button"
+#~ msgid "No"
+#~ msgstr "Nu"
 
 #~ msgid ""
 #~ "The downloaded file is a html file. This indicates a link to a website "
@@ -1920,9 +1779,6 @@ msgstr "Nu"
 
 #~ msgid "Download File"
 #~ msgstr "Descarcă fișierul"
-
-#~ msgid "Configuration file not found: \"%1\""
-#~ msgstr "Nu am găsit fișierul de configurare: \"%1\""
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: attica/atticaprovider.cpp:167
+#: attica/atticaprovider.cpp:168
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgid "All categories are missing"
@@ -73,7 +73,7 @@ msgstr "Vaš glas je zabilježen."
 msgid "You are now a fan."
 msgstr "Sad ste obožavatelj/ica."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -105,11 +105,6 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nepoznata pogreška API-ja Open Collaboration Servicea. (%1)"
 
-#: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "Preuzmite nove sadržaje…"
-
 #: core/commentsmodel.cpp:168
 #, fuzzy, kde-format
 #| msgid "Unknown socket error"
@@ -118,84 +113,91 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Nepoznata pogreška utičnice"
 
-#: core/engine.cpp:169
+#: core/engine.cpp:190
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
 
-#: core/engine.cpp:203
+#: core/engine.cpp:208
 #, kde-format
 msgid "Initializing"
 msgstr "Inicijaliziram"
 
-#: core/engine.cpp:241
+#: core/engine.cpp:219
+#, fuzzy, kde-format
+#| msgid "Configuration file not found: \"%1\""
+msgid "Configuration file does not exist: \"%1\""
+msgstr "Nije pronađena konfiguracijska datoteka: \"%1\""
+
+#: core/engine.cpp:227
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Nije pronađena konfiguracijska datoteka: \"%1\""
 
-#: core/engine.cpp:254
+#: core/engine.cpp:234
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Konfiguracijska datoteka je neispravna: \"%1\""
 
-#: core/engine.cpp:263
+#: core/engine.cpp:243
 #, kde-format
 msgid "Use"
 msgstr ""
 
-#: core/engine.cpp:284
+#: core/engine.cpp:261
 #, kde-format
 msgid ""
-"Could not initialise the installation handler for %1\n"
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/engine.cpp:359
+#: core/engine.cpp:338
 #, kde-format
 msgid "Loading provider information"
 msgstr "Učitavam informacije o pružatelju"
 
-#: core/engine.cpp:420
+#: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nije moguće učitati pružatelje Nabavi nove sadržaje iz datoteke: %1"
 
-#: core/engine.cpp:450
+#: core/engine.cpp:431
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Pogreška pri inicijalizaciji pružatelja."
 
-#: core/engine.cpp:454 core/engine.cpp:1022
+#: core/engine.cpp:435 core/engine.cpp:1003
 #, kde-format
 msgid "Loading data"
 msgstr "Učitavam podatke"
 
-#: core/engine.cpp:496
+#: core/engine.cpp:477
 #, kde-format
 msgid "Loading data from provider"
 msgstr "Učitavanje podataka s pružatelja usluge"
 
-#: core/engine.cpp:501
+#: core/engine.cpp:482
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Učitavanje pružatelja usluge iz datoteke: %1 nije uspjelo"
 
-#: core/engine.cpp:749
+#: core/engine.cpp:730
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/engine.cpp:872
+#: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/engine.cpp:874
+#: core/engine.cpp:855
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -203,25 +205,24 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/engine.cpp:893
+#: core/engine.cpp:874
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/engine.cpp:972
+#: core/engine.cpp:953
 #, kde-format
 msgid "Re: %1"
 msgstr "Odgovori: %1"
 
-#: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
-#: ui/itemsviewdelegate.cpp:117
+#: core/engine.cpp:995
 #, kde-format
 msgid "Installing"
 msgstr "Instaliranje"
 
-#: core/engine.cpp:1018
+#: core/engine.cpp:999
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
@@ -229,7 +230,7 @@ msgstr[0] "Učitavam %1 pregled"
 msgstr[1] "Učitavam %1 pregleda"
 msgstr[2] "Učitavam %1 pregleda"
 
-#: core/engine.cpp:1225
+#: core/engine.cpp:1172
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -237,84 +238,69 @@ msgid ""
 "%2"
 msgstr "Neuspjelo učitavanje datoteke '%1'"
 
-#: core/installation.cpp:211
+#: core/installation.cpp:100
 #, kde-format
 msgid "Invalid item."
 msgstr "Neispravna stavka."
 
-#: core/installation.cpp:218
+#: core/installation.cpp:107
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Neuspjelo preuzimanje stavke: nema URL-a preuzimanja za \"%1\"."
 
-#: core/installation.cpp:249
+#: core/installation.cpp:138
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Neuspjelo preuzimanje za \"%1\", pogreška: %2"
 
-#: core/installation.cpp:262
+#: core/installation.cpp:147
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:303
+#: core/installation.cpp:185
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nije moguće instalirati \"%1\": datoteka nije pronađena."
 
-#: core/installation.cpp:493
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
-
-#: core/installation.cpp:516 core/installation.cpp:841
-#, fuzzy, kde-format
-#| msgid "Installing"
-msgid "Installation of %1 failed: %2"
-msgstr "Instaliranje"
-
-#: core/installation.cpp:525
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the service type %2 was not accepted by "
-"the system (did you forget to install the KPackage support plugin for this "
-"type of package?)"
-msgstr ""
-
-#: core/installation.cpp:535
+#: core/installation.cpp:315
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:541
+#: core/installation.cpp:352
 #, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not list a "
-"service type."
+msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 
-#: core/installation.cpp:548
+#: core/installation.cpp:374 core/installation.cpp:641
+#, fuzzy, kde-format
+#| msgid "Installing"
+msgid "Installation of %1 failed: %2"
+msgstr "Instaliranje"
+
+#: core/installation.cpp:383
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:582
+#: core/installation.cpp:417
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 
-#: core/installation.cpp:594
+#: core/installation.cpp:429
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 
-#: core/installation.cpp:678
+#: core/installation.cpp:495
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -322,18 +308,18 @@ msgid ""
 "existing file?"
 msgstr ""
 
-#: core/installation.cpp:681
+#: core/installation.cpp:498
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgid "Overwrite File"
 msgstr "Prepisati datoteku?"
 
-#: core/installation.cpp:700
+#: core/installation.cpp:517
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr ""
 
-#: core/installation.cpp:723
+#: core/installation.cpp:540
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -343,7 +329,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:733
+#: core/installation.cpp:550
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -353,7 +339,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:775
+#: core/installation.cpp:592
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -361,36 +347,28 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:848
+#: core/installation.cpp:623
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:853
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package is not a supported type "
-"(did you forget to install the KPackage support plugin for this type of "
-"package?)"
-msgstr ""
-
-#: core/installation.cpp:860
+#: core/installation.cpp:648
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:900
+#: core/installation.cpp:687
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
 
-#: core/installation.cpp:905
+#: core/installation.cpp:692
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -398,14 +376,14 @@ msgid ""
 "you are certain that it is not needed."
 msgstr ""
 
-#: core/installation.cpp:913
+#: core/installation.cpp:700
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
 
-#: core/installation.cpp:946
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -426,238 +404,6 @@ msgstr "Nije moguće otvoriti %1 za čitanje"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "Nije moguće otvoriti %1 za čitanje"
-
-#: core/jobs/kpackagejob.cpp:114
-#, kde-format
-msgid ""
-"Failed to create a job for the package management task. This is usually "
-"because the package is invalid. We attempted to operate on the package %1"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:121
-#, kde-format
-msgid ""
-"Could not create a package installer for the service type %1: The installer "
-"does not have a valid structure"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:125
-#, kde-format
-msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
-
-#: core/security.cpp:69
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
-"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
-"not be possible.</qt>"
-msgstr ""
-"<qt>Ne mogu pokrenuti <i>gpg</i> i dobaviti dostupne ključeve . Provjerite "
-"da li je <i>gpg</i> instaliran, u protivnom provjera preuzetih podataka neće "
-"biti moguća.</qt>"
-
-#: core/security.cpp:191
-#, kde-format
-msgid ""
-"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-msgstr ""
-"<qt>Unesi frazu zaporke za ključ <b>0x%1</b>, pripada<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-
-#: core/security.cpp:264
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
-"will not be possible.</qt>"
-msgstr ""
-"<qt>Ne mogu pokrenuti <i>gpg</i> i provjeriti valjanost datoteke. Provjerite "
-"da li je <i>gpg</i> instaliran, u protivnom provjera preuzetih podataka neće "
-"biti moguća.</qt>"
-
-#: core/security.cpp:320
-#, kde-format
-msgid "Key used for signing:"
-msgstr "Ključ za potpisivanje:"
-
-#: core/security.cpp:321
-#, kde-format
-msgid "Select Signing Key"
-msgstr "Izaberite ključ za potpis"
-
-#: core/security.cpp:348
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
-"installed, otherwise signing of the resources will not be possible.</qt>"
-msgstr ""
-"<qt>Ne mogu pokrenuti <i>gpg</i> i potpisati datoteku. Provjrite da li je "
-"<i>gpg</i> instaliran, u protivnom neću biti u mogućnosti potpisati podatke."
-"</qt>"
-
-#: downloaddialog.cpp:69 downloadwidget.cpp:213
-#, kde-format
-msgid "Get Hot New Stuff"
-msgstr "Nabavi nove sadržaje"
-
-#: downloaddialog.cpp:86
-#, kde-format
-msgctxt "Program name followed by 'Add On Installer'"
-msgid "%1 Add-On Installer"
-msgstr "Instalacijska rutina za dodatke za %1"
-
-#: downloadwidget.cpp:123
-#, kde-format
-msgid "Timeout. Check Internet connection."
-msgstr "Vrijeme isteklo. Provjerite vezu na internet."
-
-#: downloadwidget.cpp:186
-#, kde-format
-msgid "Server: %1"
-msgstr "Poslužitelj: %1"
-
-#: downloadwidget.cpp:187
-#, kde-format
-msgid "<br />Provider: %1"
-msgstr "<br />Pružatelj usluge: %1"
-
-#: downloadwidget.cpp:188
-#, kde-format
-msgid "<br />Version: %1"
-msgstr "<br />Verzija: %1"
-
-#: downloadwidget.cpp:190
-#, kde-format
-msgid "Provider information"
-msgstr "Informacije o pružatelju usluge"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Could not install %1"
-msgstr "Nije moguće instalirati %1"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Get Hot New Stuff!"
-msgstr "Nabavi nove sadržaje!"
-
-#: downloadwidget.cpp:262
-#, kde-format
-msgid "Icons view mode"
-msgstr "Način prikaza s ikonama"
-
-#: downloadwidget.cpp:264
-#, kde-format
-msgid "Details view mode"
-msgstr "Način detaljnog prikaza"
-
-#: downloadwidget.cpp:279
-#, kde-format
-msgid "All Providers"
-msgstr "Svi pružatelji"
-
-#: downloadwidget.cpp:286
-#, kde-format
-msgid "All Categories"
-msgstr "Sve kategorije"
-
-#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
-#: downloadwidget.ui:54
-#, kde-format
-msgid "Provider:"
-msgstr "Pružatelj usluge:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
-#: downloadwidget.ui:71 qtquick/qml/Page.qml:426
-#, kde-format
-msgid "Category:"
-msgstr "Kategorija:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
-#: downloadwidget.ui:90
-#, kde-format
-msgid "Most downloads"
-msgstr "Najviše preuzimanja"
-
-#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
-#: downloadwidget.ui:103
-#, kde-format
-msgid "Newest"
-msgstr "Najnovije"
-
-#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
-#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
-#, kde-format
-msgid "Rating"
-msgstr "Ocjena"
-
-#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
-#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
-#, kde-format
-msgid "Installed"
-msgstr "Instalirano"
-
-#. i18n: ectx: property (text), widget (QLabel, orderLabel)
-#: downloadwidget.ui:175
-#, kde-format
-msgid "Order by:"
-msgstr "Poredaj po:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: downloadwidget.ui:185
-#, kde-format
-msgid "Search:"
-msgstr "Pretraga:"
-
-#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
-#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Traži"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: downloadwidget.ui:371
-#, kde-format
-msgid "Author:"
-msgstr "Autor:"
-
-#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
-#: downloadwidget.ui:396
-#, fuzzy, kde-format
-#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
-msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">Osobna stranica</a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, updateButton)
-#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
-#: ui/itemsviewdelegate.cpp:112
-#, kde-format
-msgid "Update"
-msgstr "Ažuriraj"
-
-#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
-#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
-#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
-#, kde-format
-msgid "Uninstall"
-msgstr "Odinstaliraj"
-
-#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
-#: downloadwidget.ui:589
-#, kde-format
-msgid "Become a Fan"
-msgstr "Postanite obožavatelj/ica"
-
-#. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
-#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
-#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
-#, kde-format
-msgid "Install"
-msgstr "Instaliraj"
 
 #: kmoretools/kmoretools.cpp:521
 #, fuzzy, kde-format
@@ -716,7 +462,7 @@ msgstr "Konfiguriranje"
 msgid "Configure menu - %1"
 msgstr "&Podešavanje %1… |/| &Podešavanje $[gen %1]"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:173
+#: kmoretools/kmoretoolsmenufactory.cpp:172
 #, fuzzy, kde-format
 #| msgid "%1 folder"
 #| msgid_plural "%1 folders"
@@ -724,82 +470,17 @@ msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 mapa"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:182
+#: kmoretools/kmoretoolsmenufactory.cpp:181
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr ""
 
-#: kmoretools/kmoretoolsmenufactory.cpp:195
+#: kmoretools/kmoretoolsmenufactory.cpp:194
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Maintainer"
-msgid "Main section"
-msgstr "Održavač"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move &Down"
-msgid "Move down"
-msgstr "Prema &dnu"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "Move &Up"
-msgid "Move up"
-msgstr "Prema &vrhu"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to More section"
-msgstr "Više akcija"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Vrati izvorno"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "More section"
-msgstr "Više akcija"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
-msgid "More tools..."
-msgstr "Više…"
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -864,6 +545,11 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+
+#: qtquick/qml/DownloadItemsSheet.qml:62
+#, kde-format
+msgid "Install"
+msgstr "Instaliraj"
 
 #: qtquick/qml/EntryDetails.qml:49
 #, fuzzy, kde-format
@@ -1115,6 +801,11 @@ msgstr "Način detaljnog prikaza"
 msgid "Everything"
 msgstr ""
 
+#: qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "Instalirano"
+
 #: qtquick/qml/Page.qml:263
 #, fuzzy, kde-format
 #| msgid "Update"
@@ -1154,6 +845,11 @@ msgstr "Otvori &nedavno"
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
+
+#: qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "Ocjena"
 
 #: qtquick/qml/Page.qml:314
 #, fuzzy, kde-format
@@ -1209,6 +905,17 @@ msgstr ""
 #| msgid "&Go To..."
 msgid "Go to..."
 msgstr "&Idi na…"
+
+#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "Traži"
+
+#: qtquick/qml/Page.qml:426
+#, kde-format
+msgid "Category:"
+msgstr "Kategorija:"
 
 #: qtquick/qml/Page.qml:442
 #, fuzzy, kde-format
@@ -1423,7 +1130,7 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:174
+#: qtquick/quickengine.cpp:132
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -1544,121 +1251,241 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: ui/entrydetailsdialog.cpp:84
+#: widgets/action.cpp:32 widgets/button.cpp:56
 #, kde-format
-msgid "Details for %1"
-msgstr "Detalji za %1"
+msgid "Download New Stuff..."
+msgstr "Preuzmite nove sadržaje…"
 
-#: ui/entrydetailsdialog.cpp:100
-#, kde-format
-msgid "Changelog:"
-msgstr "Dnevnik promjena:"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Ne mogu pokrenuti <i>gpg</i> i dobaviti dostupne ključeve . "
+#~ "Provjerite da li je <i>gpg</i> instaliran, u protivnom provjera preuzetih "
+#~ "podataka neće biti moguća.</qt>"
 
-#: ui/entrydetailsdialog.cpp:106
-#, kde-format
-msgctxt "A link to the description of this Get Hot New Stuff item"
-msgid "Homepage"
-msgstr "Osobna stranica"
+#~ msgid ""
+#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
+#~ msgstr ""
+#~ "<qt>Unesi frazu zaporke za ključ <b>0x%1</b>, pripada<br /><i>%2&lt;%3&gt;"
+#~ "</i><br />:</qt>"
 
-#: ui/entrydetailsdialog.cpp:110
-#, kde-format
-msgctxt ""
-"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
-msgid "Make a donation"
-msgstr "Donirajte"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt>Ne mogu pokrenuti <i>gpg</i> i provjeriti valjanost datoteke. "
+#~ "Provjerite da li je <i>gpg</i> instaliran, u protivnom provjera preuzetih "
+#~ "podataka neće biti moguća.</qt>"
 
-#: ui/entrydetailsdialog.cpp:115
-#, kde-format
-msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-msgid "Knowledgebase (no entries)"
-msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "Baza znanja (nema unosa (%1 zapisa))"
-msgstr[1] "Baza znanja (zapisa: %1)"
-msgstr[2] "Baza znanja (zapisa: %1)"
+#~ msgid "Key used for signing:"
+#~ msgstr "Ključ za potpisivanje:"
 
-#: ui/entrydetailsdialog.cpp:121
-#, kde-format
-msgctxt "Tooltip for a link in a dialog"
-msgid "Opens in a browser window"
-msgstr "Otvora u prozoru pretraživača"
+#~ msgid "Select Signing Key"
+#~ msgstr "Izaberite ključ za potpis"
 
-#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
-#, kde-format
-msgid "Rating: %1%"
-msgstr "Ocjena: %1%"
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
+#~ "is installed, otherwise signing of the resources will not be possible.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt>Ne mogu pokrenuti <i>gpg</i> i potpisati datoteku. Provjrite da li je "
+#~ "<i>gpg</i> instaliran, u protivnom neću biti u mogućnosti potpisati "
+#~ "podatke.</qt>"
 
-#: ui/itemsgridviewdelegate.cpp:123
-#, fuzzy, kde-format
-#| msgid "<br />Provider: %1"
-msgctxt "Show the size of the file in a list"
-msgid "<br />Size: %1"
-msgstr "<br />Pružatelj usluge: %1"
+#~ msgid "Get Hot New Stuff"
+#~ msgstr "Nabavi nove sadržaje"
 
-#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
-#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
-#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
-#, kde-format
-msgctxt "Show the author of this item in a list"
-msgid "By <i>%1</i>"
-msgstr "Od <i>%1</i>"
+#~ msgctxt "Program name followed by 'Add On Installer'"
+#~ msgid "%1 Add-On Installer"
+#~ msgstr "Instalacijska rutina za dodatke za %1"
 
-#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
-msgctxt "fan as in supporter"
-msgid "1 fan"
-msgid_plural "%1 fans"
-msgstr[0] "%1 fan"
-msgstr[1] "%1 fana"
-msgstr[2] "%1 fanova"
+#~ msgid "Timeout. Check Internet connection."
+#~ msgstr "Vrijeme isteklo. Provjerite vezu na internet."
 
-#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
-#, kde-format
-msgid "1 download"
-msgid_plural "%1 downloads"
-msgstr[0] "%1 preuzimanje"
-msgstr[1] "%1 preuzimanja"
-msgstr[2] "%1 preuzimanja"
+#~ msgid "Server: %1"
+#~ msgstr "Poslužitelj: %1"
 
-#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
-#, kde-format
-msgid "Loading Preview"
-msgstr "Učitavam pregled"
+#~ msgid "<br />Provider: %1"
+#~ msgstr "<br />Pružatelj usluge: %1"
 
-#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
-#, kde-format
-msgid "Details"
-msgstr "Detalji"
+#~ msgid "<br />Version: %1"
+#~ msgstr "<br />Verzija: %1"
 
-#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
-#, kde-format
-msgid "Updating"
-msgstr "Ažuriranje"
+#~ msgid "Provider information"
+#~ msgstr "Informacije o pružatelju usluge"
 
-#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
-#, kde-format
-msgid "Install Again"
-msgstr "Ponovno instaliraj"
+#~ msgid "Could not install %1"
+#~ msgstr "Nije moguće instalirati %1"
 
-#: ui/itemsviewdelegate.cpp:228
-#, fuzzy, kde-format
-#| msgid "<p>Downloads: %1</p>\n"
-msgctxt "Show the size of the file in a list"
-msgid "<p>Size: %1</p>"
-msgstr "<p>Preuzimanja: %1</p>\n"
+#~ msgid "Get Hot New Stuff!"
+#~ msgstr "Nabavi nove sadržaje!"
 
-#: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
-msgctxt "@action:button"
-msgid "Yes"
-msgstr "Da"
+#~ msgid "Icons view mode"
+#~ msgstr "Način prikaza s ikonama"
 
-#: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
-msgctxt "@action:button"
-msgid "No"
-msgstr "Ne"
+#~ msgid "Details view mode"
+#~ msgstr "Način detaljnog prikaza"
+
+#~ msgid "All Providers"
+#~ msgstr "Svi pružatelji"
+
+#~ msgid "All Categories"
+#~ msgstr "Sve kategorije"
+
+#~ msgid "Provider:"
+#~ msgstr "Pružatelj usluge:"
+
+#~ msgid "Most downloads"
+#~ msgstr "Najviše preuzimanja"
+
+#~ msgid "Newest"
+#~ msgstr "Najnovije"
+
+#~ msgid "Order by:"
+#~ msgstr "Poredaj po:"
+
+#~ msgid "Search:"
+#~ msgstr "Pretraga:"
+
+#~ msgid "Author:"
+#~ msgstr "Autor:"
+
+#, fuzzy
+#~| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
+#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+#~ msgstr "<a href=\"http://opendesktop.org\">Osobna stranica</a>"
+
+#~ msgid "Update"
+#~ msgstr "Ažuriraj"
+
+#~ msgid "Uninstall"
+#~ msgstr "Odinstaliraj"
+
+#~ msgid "Become a Fan"
+#~ msgstr "Postanite obožavatelj/ica"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Main section"
+#~ msgstr "Održavač"
+
+#, fuzzy
+#~| msgid "Move &Down"
+#~ msgid "Move down"
+#~ msgstr "Prema &dnu"
+
+#, fuzzy
+#~| msgid "Move &Up"
+#~ msgid "Move up"
+#~ msgstr "Prema &vrhu"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to More section"
+#~ msgstr "Više akcija"
+
+#~ msgid "Reset"
+#~ msgstr "Vrati izvorno"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "More section"
+#~ msgstr "Više akcija"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "@option:check An item in a list of resources that allows to query for "
+#~| "more resources to put in the list"
+#~| msgid "More..."
+#~ msgid "More tools..."
+#~ msgstr "Više…"
+
+#~ msgid "Details for %1"
+#~ msgstr "Detalji za %1"
+
+#~ msgid "Changelog:"
+#~ msgstr "Dnevnik promjena:"
+
+#~ msgctxt "A link to the description of this Get Hot New Stuff item"
+#~ msgid "Homepage"
+#~ msgstr "Osobna stranica"
+
+#~ msgctxt ""
+#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
+#~ "browser)"
+#~ msgid "Make a donation"
+#~ msgstr "Donirajte"
+
+#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+#~ msgid "Knowledgebase (no entries)"
+#~ msgid_plural "Knowledgebase (%1 entries)"
+#~ msgstr[0] "Baza znanja (nema unosa (%1 zapisa))"
+#~ msgstr[1] "Baza znanja (zapisa: %1)"
+#~ msgstr[2] "Baza znanja (zapisa: %1)"
+
+#~ msgctxt "Tooltip for a link in a dialog"
+#~ msgid "Opens in a browser window"
+#~ msgstr "Otvora u prozoru pretraživača"
+
+#~ msgid "Rating: %1%"
+#~ msgstr "Ocjena: %1%"
+
+#, fuzzy
+#~| msgid "<br />Provider: %1"
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<br />Size: %1"
+#~ msgstr "<br />Pružatelj usluge: %1"
+
+#~ msgctxt "Show the author of this item in a list"
+#~ msgid "By <i>%1</i>"
+#~ msgstr "Od <i>%1</i>"
+
+#~ msgctxt "fan as in supporter"
+#~ msgid "1 fan"
+#~ msgid_plural "%1 fans"
+#~ msgstr[0] "%1 fan"
+#~ msgstr[1] "%1 fana"
+#~ msgstr[2] "%1 fanova"
+
+#~ msgid "1 download"
+#~ msgid_plural "%1 downloads"
+#~ msgstr[0] "%1 preuzimanje"
+#~ msgstr[1] "%1 preuzimanja"
+#~ msgstr[2] "%1 preuzimanja"
+
+#~ msgid "Loading Preview"
+#~ msgstr "Učitavam pregled"
+
+#~ msgid "Details"
+#~ msgstr "Detalji"
+
+#~ msgid "Updating"
+#~ msgstr "Ažuriranje"
+
+#~ msgid "Install Again"
+#~ msgstr "Ponovno instaliraj"
+
+#, fuzzy
+#~| msgid "<p>Downloads: %1</p>\n"
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<p>Size: %1</p>"
+#~ msgstr "<p>Preuzimanja: %1</p>\n"
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "@action:button"
+#~ msgid "Yes"
+#~ msgstr "Da"
+
+#, fuzzy
+#~| msgid "No"
+#~ msgctxt "@action:button"
+#~ msgid "No"
+#~ msgstr "Ne"
 
 #~ msgid ""
 #~ "The downloaded file is a html file. This indicates a link to a website "
@@ -1938,9 +1765,6 @@ msgstr "Ne"
 #~| msgid "Download File:"
 #~ msgid "Download File"
 #~ msgstr "Preuzmite datoteku:"
-
-#~ msgid "Configuration file not found: \"%1\""
-#~ msgstr "Nije pronađena konfiguracijska datoteka: \"%1\""
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

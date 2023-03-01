@@ -9,14 +9,15 @@
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008, 2009, 2010.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2006, 2007, 2008, 2010, 2011, 2019, 2020.
+# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:44+0000\n"
-"PO-Revision-Date: 2020-01-18 21:43-0800\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-02-23 14:22+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -25,21 +26,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 19.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
-#: attica/atticaprovider.cpp:167
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#: attica/atticaprovider.cpp:168
+#, kde-format
 msgid "All categories are missing"
-msgstr "すべてのカテゴリ"
+msgstr "すべてのカテゴリがありません"
 
 #: attica/atticaprovider.cpp:480
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "the price of a download item, parameter 1 is the currency, 2 is the price"
-#| msgid ""
-#| "This items costs %1 %2.\n"
-#| "Do you want to buy it?"
+#, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
 msgid ""
@@ -71,7 +66,7 @@ msgstr "投票に成功しました。"
 msgid "You are now a fan."
 msgstr "ファンに登録しました。"
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -79,10 +74,9 @@ msgid ""
 msgstr ""
 
 #: attica/atticaprovider.cpp:585
-#, fuzzy, kde-format
-#| msgid "Network error. (%1)"
+#, kde-format
 msgid "Network error %1: %2"
-msgstr "ネットワークエラー。(%1)"
+msgstr "ネットワークエラー %1: %2"
 
 #: attica/atticaprovider.cpp:591
 #, kde-format
@@ -101,11 +95,6 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "未知の Open Collaboration Service API エラーです (%1)"
 
-#: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "新しいものをダウンロード..."
-
 #: core/commentsmodel.cpp:168
 #, kde-format
 msgctxt ""
@@ -113,84 +102,92 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr ""
 
-#: core/engine.cpp:169
+#: core/engine.cpp:190
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"インストール中にエラーが発生しました:\n"
+"%1"
 
-#: core/engine.cpp:203
+#: core/engine.cpp:208
 #, kde-format
 msgid "Initializing"
 msgstr "初期化中"
 
-#: core/engine.cpp:241
+#: core/engine.cpp:219
 #, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
-msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "設定ファイルが見つかりませんでした: %1"
+#| msgid "Configuration file is invalid: \"%1\""
+msgid "Configuration file does not exist: \"%1\""
+msgstr "無効な設定ファイルです: \"%1\""
 
-#: core/engine.cpp:254
+#: core/engine.cpp:227
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "設定ファイルは存在しますが、開けませんでした: \"%1\""
+
+#: core/engine.cpp:234
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "無効な設定ファイルです: \"%1\""
 
-#: core/engine.cpp:263
+#: core/engine.cpp:243
 #, kde-format
 msgid "Use"
-msgstr ""
+msgstr "使用する"
 
-#: core/engine.cpp:284
+#: core/engine.cpp:261
 #, kde-format
 msgid ""
-"Could not initialise the installation handler for %1\n"
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/engine.cpp:359
+#: core/engine.cpp:338
 #, kde-format
 msgid "Loading provider information"
 msgstr "プロバイダ情報を読み込み中"
 
-#: core/engine.cpp:420
+#: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "ファイル ‘%1’ からホットな新しいもののプロバイダを読み込めませんでした"
 
-#: core/engine.cpp:450
+#: core/engine.cpp:431
 #, kde-format
 msgid "Error initializing provider."
 msgstr "プロバイダの初期化に失敗。"
 
-#: core/engine.cpp:454 core/engine.cpp:1022
+#: core/engine.cpp:435 core/engine.cpp:1003
 #, kde-format
 msgid "Loading data"
 msgstr "データをロード中"
 
-#: core/engine.cpp:496
+#: core/engine.cpp:477
 #, kde-format
 msgid "Loading data from provider"
 msgstr "プロバイダからデータをロード中"
 
-#: core/engine.cpp:501
+#: core/engine.cpp:482
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "ファイル ‘%1’ からプロバイダを読み込めませんでした"
 
-#: core/engine.cpp:749
+#: core/engine.cpp:730
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/engine.cpp:872
+#: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/engine.cpp:874
+#: core/engine.cpp:855
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -198,117 +195,100 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/engine.cpp:893
+#: core/engine.cpp:874
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/engine.cpp:972
+#: core/engine.cpp:953
 #, kde-format
 msgid "Re: %1"
-msgstr "%1 について"
+msgstr "Re: %1"
 
-#: core/engine.cpp:1014 ui/itemsgridviewdelegate.cpp:329
-#: ui/itemsviewdelegate.cpp:117
+#: core/engine.cpp:995
 #, kde-format
 msgid "Installing"
 msgstr "インストール中"
 
-#: core/engine.cpp:1018
+#: core/engine.cpp:999
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
 msgstr[0] "プレビューを 1 つ読み込み中"
 msgstr[1] "プレビューを %1 つ読み込み中"
 
-#: core/engine.cpp:1225
+#: core/engine.cpp:1172
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
 
-#: core/installation.cpp:211
+#: core/installation.cpp:100
 #, kde-format
 msgid "Invalid item."
 msgstr "無効なアイテム。"
 
-#: core/installation.cpp:218
+#: core/installation.cpp:107
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "アイテムのダウンロードに失敗しました: 「%1」のダウンロード URL がありません。"
 
-#: core/installation.cpp:249
+#: core/installation.cpp:138
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "「%1」のダウンロードに失敗しました。エラー: %2"
 
-#: core/installation.cpp:262
+#: core/installation.cpp:147
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:303
+#: core/installation.cpp:185
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "%1 をインストールできませんでした: ファイルが見つかりません。"
 
-#: core/installation.cpp:493
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
-
-#: core/installation.cpp:516 core/installation.cpp:841
-#, fuzzy, kde-format
-#| msgid "Installing"
-msgid "Installation of %1 failed: %2"
-msgstr "インストール中"
-
-#: core/installation.cpp:525
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the service type %2 was not accepted by "
-"the system (did you forget to install the KPackage support plugin for this "
-"type of package?)"
-msgstr ""
-
-#: core/installation.cpp:535
+#: core/installation.cpp:315
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:541
+#: core/installation.cpp:352
 #, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not list a "
-"service type."
+msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
 
-#: core/installation.cpp:548
+#: core/installation.cpp:374 core/installation.cpp:641
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "%1 のインストールに失敗しました: %2"
+
+#: core/installation.cpp:383
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:582
+#: core/installation.cpp:417
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 
-#: core/installation.cpp:594
+#: core/installation.cpp:429
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 
-#: core/installation.cpp:678
+#: core/installation.cpp:495
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -316,18 +296,17 @@ msgid ""
 "existing file?"
 msgstr ""
 
-#: core/installation.cpp:681
-#, fuzzy, kde-format
-#| msgid "Overwrite existing file?"
+#: core/installation.cpp:498
+#, kde-format
 msgid "Overwrite File"
-msgstr "既存のファイルを上書きしますか？"
+msgstr "ファイルを上書き"
 
-#: core/installation.cpp:700
+#: core/installation.cpp:517
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr ""
 
-#: core/installation.cpp:723
+#: core/installation.cpp:540
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -337,7 +316,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:733
+#: core/installation.cpp:550
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -347,7 +326,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:775
+#: core/installation.cpp:592
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -355,36 +334,28 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:848
+#: core/installation.cpp:623
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
 
-#: core/installation.cpp:853
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package is not a supported type "
-"(did you forget to install the KPackage support plugin for this type of "
-"package?)"
-msgstr ""
-
-#: core/installation.cpp:860
+#: core/installation.cpp:648
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
 
-#: core/installation.cpp:900
+#: core/installation.cpp:687
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
 
-#: core/installation.cpp:905
+#: core/installation.cpp:692
 #, kde-format
 msgid ""
 "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -392,14 +363,14 @@ msgid ""
 "you are certain that it is not needed."
 msgstr ""
 
-#: core/installation.cpp:913
+#: core/installation.cpp:700
 #, kde-format
 msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
 
-#: core/installation.cpp:946
+#: core/installation.cpp:733
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -418,237 +389,6 @@ msgstr ""
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr ""
-
-#: core/jobs/kpackagejob.cpp:114
-#, kde-format
-msgid ""
-"Failed to create a job for the package management task. This is usually "
-"because the package is invalid. We attempted to operate on the package %1"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:121
-#, kde-format
-msgid ""
-"Could not create a package installer for the service type %1: The installer "
-"does not have a valid structure"
-msgstr ""
-
-#: core/jobs/kpackagejob.cpp:125
-#, kde-format
-msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
-
-#: core/security.cpp:69
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure that "
-"<i>gpg</i> is installed, otherwise verification of downloaded resources will "
-"not be possible.</qt>"
-msgstr ""
-"<qt><tt>gpg</tt> を起動して有効な鍵を読み出すことができません。<tt>gpg</tt> "
-"がインストールされているか確認してください。インストールされていないと、ダウ"
-"ンロードしたリソースの検証はできません。</qt>"
-
-#: core/security.cpp:191
-#, kde-format
-msgid ""
-"<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;%3&gt;</"
-"i><br />:</qt>"
-msgstr ""
-"<qt>%2&lt;%3&gt; が所有する<br />鍵 <b>0x%1</b><br /> のパスフレーズを入力し"
-"てください<br />:</qt>"
-
-#: core/security.cpp:264
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-"that <i>gpg</i> is installed, otherwise verification of downloaded resources "
-"will not be possible.</qt>"
-msgstr ""
-"<qt><tt>gpg</tt> を起動してファイルの有効性をチェックすることができません。"
-"<tt>gpg</tt> がインストールされているか確認してください。インストールされてい"
-"ないと、ダウンロードしたリソースの検証はできません。</qt>"
-
-#: core/security.cpp:320
-#, kde-format
-msgid "Key used for signing:"
-msgstr "署名に使う鍵:"
-
-#: core/security.cpp:321
-#, kde-format
-msgid "Select Signing Key"
-msgstr "署名鍵を選択"
-
-#: core/security.cpp:348
-#, kde-format
-msgid ""
-"<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
-"installed, otherwise signing of the resources will not be possible.</qt>"
-msgstr ""
-"<qt><tt>gpg</tt> を起動してファイルに署名できません。<tt>gpg</tt> がインス"
-"トールされていることを確認してください。インストールされていないと、リソース"
-"に署名できません。</qt>"
-
-#: downloaddialog.cpp:69 downloadwidget.cpp:213
-#, kde-format
-msgid "Get Hot New Stuff"
-msgstr "ホットな新しいものを取得"
-
-#: downloaddialog.cpp:86
-#, kde-format
-msgctxt "Program name followed by 'Add On Installer'"
-msgid "%1 Add-On Installer"
-msgstr "%1 のアドオンインストーラ"
-
-#: downloadwidget.cpp:123
-#, kde-format
-msgid "Timeout. Check Internet connection."
-msgstr "タイムアウト。インターネット接続を確認してください。"
-
-#: downloadwidget.cpp:186
-#, kde-format
-msgid "Server: %1"
-msgstr "サーバ: %1"
-
-#: downloadwidget.cpp:187
-#, kde-format
-msgid "<br />Provider: %1"
-msgstr "<br/>プロバイダ: %1"
-
-#: downloadwidget.cpp:188
-#, kde-format
-msgid "<br />Version: %1"
-msgstr "<br/>バージョン: %1"
-
-#: downloadwidget.cpp:190
-#, kde-format
-msgid "Provider information"
-msgstr "プロバイダ情報"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Could not install %1"
-msgstr "%1 をインストールできませんでした"
-
-#: downloadwidget.cpp:203
-#, kde-format
-msgid "Get Hot New Stuff!"
-msgstr "ホットな新しいものを取得!"
-
-#: downloadwidget.cpp:262
-#, kde-format
-msgid "Icons view mode"
-msgstr "アイコン表示モード"
-
-#: downloadwidget.cpp:264
-#, kde-format
-msgid "Details view mode"
-msgstr "詳細表示モード"
-
-#: downloadwidget.cpp:279
-#, kde-format
-msgid "All Providers"
-msgstr "すべてのプロバイダ"
-
-#: downloadwidget.cpp:286
-#, kde-format
-msgid "All Categories"
-msgstr "すべてのカテゴリ"
-
-#. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
-#: downloadwidget.ui:54
-#, kde-format
-msgid "Provider:"
-msgstr "プロバイダ:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
-#: downloadwidget.ui:71 qtquick/qml/Page.qml:426
-#, kde-format
-msgid "Category:"
-msgstr "カテゴリ:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
-#: downloadwidget.ui:90
-#, kde-format
-msgid "Most downloads"
-msgstr "最もダウンロード数が多い"
-
-#. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
-#: downloadwidget.ui:103
-#, kde-format
-msgid "Newest"
-msgstr "最新"
-
-#. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
-#: downloadwidget.ui:110 qtquick/qml/Page.qml:312
-#, kde-format
-msgid "Rating"
-msgstr "評価"
-
-#. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
-#: downloadwidget.ui:117 qtquick/qml/Page.qml:261
-#, kde-format
-msgid "Installed"
-msgstr "インストール済み"
-
-#. i18n: ectx: property (text), widget (QLabel, orderLabel)
-#: downloadwidget.ui:175
-#, kde-format
-msgid "Order by:"
-msgstr "ソート基準:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: downloadwidget.ui:185
-#, kde-format
-msgid "Search:"
-msgstr "検索:"
-
-#. i18n: ectx: property (placeholderText), widget (KLineEdit, m_searchEdit)
-#: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
-#, kde-format
-msgid "Search..."
-msgstr "検索..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: downloadwidget.ui:371
-#, kde-format
-msgid "Author:"
-msgstr "作者:"
-
-#. i18n: ectx: property (text), widget (QLabel, homepageLabel)
-#: downloadwidget.ui:396
-#, fuzzy, kde-format
-#| msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
-msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-msgstr "<a href=\"http://opendesktop.org\">ホームページ</a>"
-
-#. i18n: ectx: property (text), widget (QPushButton, updateButton)
-#: downloadwidget.ui:572 ui/itemsgridviewdelegate.cpp:324
-#: ui/itemsviewdelegate.cpp:112
-#, kde-format
-msgid "Update"
-msgstr "アップデート"
-
-#. i18n: ectx: property (text), widget (QPushButton, uninstallButton)
-#: downloadwidget.ui:582 ui/itemsgridviewdelegate.cpp:320
-#: ui/itemsviewdelegate.cpp:108 ui/itemsviewdelegate.cpp:173
-#, kde-format
-msgid "Uninstall"
-msgstr "アンインストール"
-
-#. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
-#: downloadwidget.ui:589
-#, kde-format
-msgid "Become a Fan"
-msgstr "ファンに登録する"
-
-#. i18n: ectx: property (text), widget (QPushButton, installButton)
-#: downloadwidget.ui:596 qtquick/qml/DownloadItemsSheet.qml:69
-#: ui/itemsgridviewdelegate.cpp:339 ui/itemsgridviewdelegate.cpp:349
-#: ui/itemsviewdelegate.cpp:127 ui/itemsviewdelegate.cpp:137
-#, kde-format
-msgid "Install"
-msgstr "インストール"
 
 #: kmoretools/kmoretools.cpp:521
 #, kde-format
@@ -684,7 +424,7 @@ msgstr "インストール"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
-msgstr ""
+msgstr "さらなる情報はありません。"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
 #, kde-format
@@ -696,97 +436,37 @@ msgstr "メニューを設定"
 msgid "Configure menu - %1"
 msgstr "メニューを設定 - %1"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:173
+#: kmoretools/kmoretoolsmenufactory.cpp:172
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
-msgstr ""
+msgstr "%1 - 現在のフォルダ"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:182
+#: kmoretools/kmoretoolsmenufactory.cpp:181
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
-msgstr ""
+msgstr "%1 - 現在のデバイス"
 
-#: kmoretools/kmoretoolsmenufactory.cpp:195
+#: kmoretools/kmoretoolsmenufactory.cpp:194
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "メインセクション "
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "下へ移動"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "上へ移動"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "メインセクションへ移動"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "その他セクションへ移動"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "リセット"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "その他セクション"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"このメニューでは、いくつかの現在インストールされていないツールが提案されてい"
-"ます:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "その他のツール..."
+msgstr "%1 - すべてのデバイス"
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "すべてのカテゴリ"
 
 #: qtquick/categoriesmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Category:"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr "カテゴリ:"
+msgstr "不明なカテゴリ"
 
 #. i18nd("knewstuff5", "Download New %1...").
 #. *
@@ -798,7 +478,7 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr ""
+msgstr "もの"
 
 #: qtquick/qml/Button.qml:44
 #, kde-format
@@ -812,13 +492,12 @@ msgid "Download New %1"
 msgstr "新しい %1 をダウンロード"
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "新しいものをダウンロード..."
+msgstr "新しいものをダウンロード"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
@@ -837,13 +516,17 @@ msgstr ""
 "ください。どれを選択すべきか分からない場合、このアイテムの作者に連絡し、アイ"
 "テムを明確にするためにわかりやすい名前付けをするよう尋ねてみてください。"
 
+#: qtquick/qml/DownloadItemsSheet.qml:62
+#, kde-format
+msgid "Install"
+msgstr "インストール"
+
 #: qtquick/qml/EntryDetails.qml:49
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr "インストール中"
+msgstr "%2 から %1 をインストール中"
 
 #: qtquick/qml/EntryDetails.qml:65
 #, kde-format
@@ -877,14 +560,13 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%1 作者: %2"
 
 #: qtquick/qml/EntryDetails.qml:87
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
 "downloadable item"
@@ -905,8 +587,7 @@ msgstr "インストール..."
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "アップデート"
@@ -929,7 +610,7 @@ msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr ""
+msgstr "%1 個のレビューとコメント"
 
 #: qtquick/qml/EntryDetails.qml:160
 #, kde-format
@@ -948,7 +629,7 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "%1 のホームページを開く"
 
 #: qtquick/qml/EntryDetails.qml:170
 #, kde-format
@@ -961,7 +642,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "このプロジェクトに寄付する方法を調べる"
 
 #: qtquick/qml/NewStuffItem.qml:22
 #, kde-format
@@ -1039,61 +720,53 @@ msgstr ""
 #: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Tiles"
-msgstr ""
+msgstr "タイトル"
 
 #: qtquick/qml/Page.qml:216
 #, kde-format
 msgid "Icons"
-msgstr ""
+msgstr "アイコン"
 
 #: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-#| msgid "Preview Images"
+#, kde-format
 msgid "Preview"
-msgstr "プレビュー画像"
+msgstr "プレビュー"
 
 #: qtquick/qml/Page.qml:233
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "詳細表示モード"
+msgstr "詳細タイル表示モード"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
 msgstr "アイコン表示モード"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "詳細表示モード"
+msgstr "大きなプレビュー表示モード"
 
 #: qtquick/qml/Page.qml:259
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the filter to show everything"
-#| msgid "Show Everything"
+#, kde-format
 msgid "Everything"
-msgstr "すべて表示"
+msgstr "すべて"
+
+#: qtquick/qml/Page.qml:261
+#, kde-format
+msgid "Installed"
+msgstr "インストール済み"
 
 #: qtquick/qml/Page.qml:263
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the filter so only installed items with "
-#| "updates available are shown"
-#| msgid "Updateable Only"
+#, kde-format
 msgid "Updateable"
-msgstr "更新できるもののみ"
+msgstr "更新できるもの"
 
 #: qtquick/qml/Page.qml:282
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
-msgstr "すべてのカテゴリを表示"
+msgstr "すべてのエントリを表示"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
@@ -1113,30 +786,25 @@ msgstr ""
 #: qtquick/qml/Page.qml:308
 #, kde-format
 msgid "Recent"
-msgstr ""
+msgstr "最近更新"
 
 #: qtquick/qml/Page.qml:310
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgid "Alphabetical"
-msgstr "アルファベット順にソート"
+msgstr "アルファベット順"
+
+#: qtquick/qml/Page.qml:312
+#, kde-format
+msgid "Rating"
+msgstr "評価"
 
 #: qtquick/qml/Page.qml:314
-#, fuzzy, kde-format
-#| msgctxt "The number of times the item has been downloaded"
-#| msgid "%1 downloads"
+#, kde-format
 msgid "Downloads"
-msgstr "%1 回のダウンロード"
+msgstr "ダウンロード"
 
 #: qtquick/qml/Page.qml:333
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on when items were "
-#| "most recently updated"
-#| msgid "Show most recent first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
@@ -1144,11 +812,7 @@ msgid "Show Most Recent First"
 msgstr "最新のもの順に表示"
 
 #: qtquick/qml/Page.qml:341
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
@@ -1156,28 +820,22 @@ msgid "Sort Alphabetically By Name"
 msgstr "アルファベット順にソート"
 
 #: qtquick/qml/Page.qml:349
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the sort order to based on user ratings"
-#| msgid "Show highest rated first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "高評価順に表示"
 
 #: qtquick/qml/Page.qml:357
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on number of downloads"
-#| msgid "Show most downloaded first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "ダウンロード数が多い順に表示"
 
 #: qtquick/qml/Page.qml:366
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload..."
-msgstr "新しいアップロード"
+msgstr "アップロード..."
 
 #: qtquick/qml/Page.qml:367
 #, kde-format
@@ -1189,18 +847,27 @@ msgstr ""
 msgid "Go to..."
 msgstr ""
 
+#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#, kde-format
+msgid "Search..."
+msgstr "検索..."
+
+#: qtquick/qml/Page.qml:426
+#, kde-format
+msgid "Category:"
+msgstr "カテゴリ:"
+
 #: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
 msgstr ""
 
 #: qtquick/qml/Page.qml:508
-#, fuzzy, kde-format
-#| msgid "Loading Preview"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Loading more…"
-msgstr "プレビューを読み込み中"
+msgstr "読み込み中..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -1224,11 +891,10 @@ msgid "Comments and Reviews for %1"
 msgstr "%1 のコメントとレビュー"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:30
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr "すべてのカテゴリ"
+msgstr "すべてのコメントを表示"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:36
 #, kde-format
@@ -1255,14 +921,12 @@ msgstr "%1 回のダウンロード"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Show the author of this item in a list"
-#| msgid "By <i>%1</i>"
+#, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
 msgid "By <i>%1</i>"
-msgstr "作者: %1"
+msgstr "作者: <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
 #, kde-format
@@ -1270,16 +934,15 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr ""
+msgstr "進行中..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating..."
-msgstr "アップデート中"
+msgstr "アップデート中..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -1293,27 +956,26 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing..."
-msgstr "インストール中"
+msgstr "インストール中..."
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "エラーが発生しました"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
 #, kde-format
 msgid "Please try again later."
-msgstr ""
+msgstr "しばらくたってからやり直してください。"
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "なし"
 
 #: qtquick/qml/private/Rating.qml:80
 #, kde-format
@@ -1323,32 +985,29 @@ msgid "(%1/%2)"
 msgstr ""
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "@knewstuff5"
 msgid "Upload New Stuff: %1"
-msgstr "新しいものをダウンロード..."
+msgstr "新しいものをアップロード: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Fetching provider information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "プロバイダ情報を取得中..."
+msgstr "情報を更新中..."
 
 #: qtquick/qml/UploadPage.qml:95
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr ""
+msgstr "KDE Store"
 
 #: qtquick/qml/UploadPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "プロバイダ:"
+msgstr "プロバイダ"
 
 #: qtquick/qml/UploadPage.qml:109
 #, kde-format
@@ -1356,7 +1015,7 @@ msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr ""
+msgstr "ウェブサイトを開く: %1"
 
 #: qtquick/qml/UploadPage.qml:114
 #, kde-format
@@ -1364,7 +1023,7 @@ msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr ""
+msgstr "メールを送信する: %1"
 
 #: qtquick/qml/UploadPage.qml:121
 #, kde-format
@@ -1389,7 +1048,7 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:174
+#: qtquick/quickengine.cpp:132
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -1403,40 +1062,37 @@ msgstr ""
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "人気"
 
 #: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "おすすめ"
 
 #: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
-msgstr ""
+msgstr "再起動"
 
 #: qtquick/searchpresetmodel.cpp:67
-#, fuzzy, kde-format
-#| msgid "Newest"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "最新"
 
 #: qtquick/searchpresetmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "A link to the description of this Get Hot New Stuff item"
-#| msgid "Homepage"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr "ホームページ"
+msgstr "ホーム"
 
 #: qtquick/searchpresetmodel.cpp:73
 #, kde-format
@@ -1454,23 +1110,19 @@ msgstr ""
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr ""
+msgstr "おすすめ"
 
 #: qtquick/searchpresetmodel.cpp:82
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "説明:"
+msgstr "サブスクリプション"
 
 #: qtquick/searchpresetmodel.cpp:85
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr "すべてのカテゴリを表示"
+msgstr "すべてのエントリ"
 
 #: qtquick/searchpresetmodel.cpp:88
 #, kde-format
@@ -1502,128 +1154,220 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: ui/entrydetailsdialog.cpp:84
+#: widgets/action.cpp:32 widgets/button.cpp:56
 #, kde-format
-msgid "Details for %1"
-msgstr "%1 の詳細"
-
-#: ui/entrydetailsdialog.cpp:100
-#, kde-format
-msgid "Changelog:"
-msgstr "更新履歴:"
-
-#: ui/entrydetailsdialog.cpp:106
-#, kde-format
-msgctxt "A link to the description of this Get Hot New Stuff item"
-msgid "Homepage"
-msgstr "ホームページ"
-
-#: ui/entrydetailsdialog.cpp:110
-#, kde-format
-msgctxt ""
-"A link to make a donation for a Get Hot New Stuff item (opens a web browser)"
-msgid "Make a donation"
-msgstr "募金する"
-
-#: ui/entrydetailsdialog.cpp:115
-#, kde-format
-msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-msgid "Knowledgebase (no entries)"
-msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "知識データベース (0 項目)"
-msgstr[1] "知識データベース (%1 項目)"
-
-#: ui/entrydetailsdialog.cpp:121
-#, kde-format
-msgctxt "Tooltip for a link in a dialog"
-msgid "Opens in a browser window"
-msgstr "新しいブラウザウィンドウで開く"
-
-#: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
-#, kde-format
-msgid "Rating: %1%"
-msgstr "評価: %1%"
-
-#: ui/itemsgridviewdelegate.cpp:123
-#, fuzzy, kde-format
-#| msgid "<br />Provider: %1"
-msgctxt "Show the size of the file in a list"
-msgid "<br />Size: %1"
-msgstr "<br/>プロバイダ: %1"
-
-#: ui/itemsgridviewdelegate.cpp:146 ui/itemsgridviewdelegate.cpp:150
-#: ui/itemsgridviewdelegate.cpp:153 ui/itemsviewdelegate.cpp:241
-#: ui/itemsviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:248
-#, kde-format
-msgctxt "Show the author of this item in a list"
-msgid "By <i>%1</i>"
-msgstr "作者: %1"
-
-#: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
-msgctxt "fan as in supporter"
-msgid "1 fan"
-msgid_plural "%1 fans"
-msgstr[0] "1 人のファン"
-msgstr[1] "%1 人のファン"
-
-#: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
-#, kde-format
-msgid "1 download"
-msgid_plural "%1 downloads"
-msgstr[0] "1 回のダウンロード"
-msgstr[1] "%1 回のダウンロード"
-
-#: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
-#, kde-format
-msgid "Loading Preview"
-msgstr "プレビューを読み込み中"
-
-#: ui/itemsgridviewdelegate.cpp:272 ui/itemsviewdelegate.cpp:184
-#, kde-format
-msgid "Details"
-msgstr "詳細"
-
-#: ui/itemsgridviewdelegate.cpp:334 ui/itemsviewdelegate.cpp:122
-#, kde-format
-msgid "Updating"
-msgstr "アップデート中"
-
-#: ui/itemsgridviewdelegate.cpp:344 ui/itemsviewdelegate.cpp:132
-#, kde-format
-msgid "Install Again"
-msgstr "再インストール"
-
-#: ui/itemsviewdelegate.cpp:228
-#, kde-format
-msgctxt "Show the size of the file in a list"
-msgid "<p>Size: %1</p>"
-msgstr ""
-
-#: ui/widgetquestionlistener.cpp:89
-#, kde-format
-msgctxt "@action:button"
-msgid "Yes"
-msgstr ""
-
-#: ui/widgetquestionlistener.cpp:90
-#, kde-format
-msgctxt "@action:button"
-msgid "No"
-msgstr ""
+msgid "Download New Stuff..."
+msgstr "新しいものをダウンロード..."
 
 #~ msgid ""
-#~ "The downloaded file is a html file. This indicates a link to a website "
-#~ "instead of the actual download. Would you like to open the site with a "
-#~ "browser instead?"
+#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
 #~ msgstr ""
-#~ "ダウンロードされたファイルは HTML ファイルです。リンクは、ダウンロードのた"
-#~ "めのものではなく、ウェブサイトへのリンクのようです。このサイトをブラウザで"
-#~ "開きますか？"
+#~ "<qt><tt>gpg</tt> を起動して有効な鍵を読み出すことができません。<tt>gpg</"
+#~ "tt> がインストールされているか確認してください。インストールされていない"
+#~ "と、ダウンロードしたリソースの検証はできません。</qt>"
 
-#~ msgid "Possibly bad download link"
-#~ msgstr "ダウンロードリンクに問題があるかもしれません"
-
-#~ msgid "Downloaded file was a HTML file. Opened in browser."
+#~ msgid ""
+#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
+#~ "%3&gt;</i><br />:</qt>"
 #~ msgstr ""
-#~ "ダウンロードしたファイルは HTML ファイルでした。ブラウザで開きました。"
+#~ "<qt>%2&lt;%3&gt; が所有する<br />鍵 <b>0x%1</b><br /> のパスフレーズを入力"
+#~ "してください<br />:</qt>"
+
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
+#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
+#~ "resources will not be possible.</qt>"
+#~ msgstr ""
+#~ "<qt><tt>gpg</tt> を起動してファイルの有効性をチェックすることができませ"
+#~ "ん。<tt>gpg</tt> がインストールされているか確認してください。インストール"
+#~ "されていないと、ダウンロードしたリソースの検証はできません。</qt>"
+
+#~ msgid "Key used for signing:"
+#~ msgstr "署名に使う鍵:"
+
+#~ msgid "Select Signing Key"
+#~ msgstr "署名鍵を選択"
+
+#~ msgid ""
+#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
+#~ "is installed, otherwise signing of the resources will not be possible.</"
+#~ "qt>"
+#~ msgstr ""
+#~ "<qt><tt>gpg</tt> を起動してファイルに署名できません。<tt>gpg</tt> がインス"
+#~ "トールされていることを確認してください。インストールされていないと、リソー"
+#~ "スに署名できません。</qt>"
+
+#~ msgid "Get Hot New Stuff"
+#~ msgstr "ホットな新しいものを取得"
+
+#~ msgctxt "Program name followed by 'Add On Installer'"
+#~ msgid "%1 Add-On Installer"
+#~ msgstr "%1 のアドオンインストーラ"
+
+#~ msgid "Timeout. Check Internet connection."
+#~ msgstr "タイムアウト。インターネット接続を確認してください。"
+
+#~ msgid "Server: %1"
+#~ msgstr "サーバ: %1"
+
+#~ msgid "<br />Provider: %1"
+#~ msgstr "<br/>プロバイダ: %1"
+
+#~ msgid "<br />Version: %1"
+#~ msgstr "<br/>バージョン: %1"
+
+#~ msgid "Provider information"
+#~ msgstr "プロバイダ情報"
+
+#~ msgid "Could not install %1"
+#~ msgstr "%1 をインストールできませんでした"
+
+#~ msgid "Get Hot New Stuff!"
+#~ msgstr "ホットな新しいものを取得!"
+
+#~ msgid "Icons view mode"
+#~ msgstr "アイコン表示モード"
+
+#~ msgid "Details view mode"
+#~ msgstr "詳細表示モード"
+
+#~ msgid "All Providers"
+#~ msgstr "すべてのプロバイダ"
+
+#~ msgid "All Categories"
+#~ msgstr "すべてのカテゴリ"
+
+#~ msgid "Provider:"
+#~ msgstr "プロバイダ:"
+
+#~ msgid "Most downloads"
+#~ msgstr "最もダウンロード数が多い"
+
+#~ msgid "Newest"
+#~ msgstr "最新"
+
+#~ msgid "Order by:"
+#~ msgstr "ソート基準:"
+
+#~ msgid "Search:"
+#~ msgstr "検索:"
+
+#~ msgid "Author:"
+#~ msgstr "作者:"
+
+#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
+#~ msgstr "<a href=\"https://opendesktop.org\">ホームページ</a>"
+
+#~ msgid "Update"
+#~ msgstr "アップデート"
+
+#~ msgid "Uninstall"
+#~ msgstr "アンインストール"
+
+#~ msgid "Become a Fan"
+#~ msgstr "ファンに登録する"
+
+#~ msgid "Main section"
+#~ msgstr "メインセクション "
+
+#~ msgid "Move down"
+#~ msgstr "下へ移動"
+
+#~ msgid "Move up"
+#~ msgstr "上へ移動"
+
+#~ msgid "Move to Main section"
+#~ msgstr "メインセクションへ移動"
+
+#~ msgid "Move to More section"
+#~ msgstr "その他セクションへ移動"
+
+#~ msgid "Reset"
+#~ msgstr "リセット"
+
+#~ msgid "More section"
+#~ msgstr "その他セクション"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "このメニューでは、いくつかの現在インストールされていないツールが提案されて"
+#~ "います:"
+
+#~ msgid "More tools..."
+#~ msgstr "その他のツール..."
+
+#~ msgid "Details for %1"
+#~ msgstr "%1 の詳細"
+
+#~ msgid "Changelog:"
+#~ msgstr "更新履歴:"
+
+#~ msgctxt "A link to the description of this Get Hot New Stuff item"
+#~ msgid "Homepage"
+#~ msgstr "ホームページ"
+
+#~ msgctxt ""
+#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
+#~ "browser)"
+#~ msgid "Make a donation"
+#~ msgstr "寄付する"
+
+#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
+#~ msgid "Knowledgebase (no entries)"
+#~ msgid_plural "Knowledgebase (%1 entries)"
+#~ msgstr[0] "知識データベース (0 項目)"
+#~ msgstr[1] "知識データベース (%1 項目)"
+
+#~ msgctxt "Tooltip for a link in a dialog"
+#~ msgid "Opens in a browser window"
+#~ msgstr "新しいブラウザウィンドウで開く"
+
+#~ msgid "Rating: %1%"
+#~ msgstr "評価: %1%"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<br />Size: %1"
+#~ msgstr "<br/>サイズ: %1"
+
+#~ msgctxt "Show the author of this item in a list"
+#~ msgid "By <i>%1</i>"
+#~ msgstr "作者: %1"
+
+#~ msgctxt "fan as in supporter"
+#~ msgid "1 fan"
+#~ msgid_plural "%1 fans"
+#~ msgstr[0] "1 人のファン"
+#~ msgstr[1] "%1 人のファン"
+
+#~ msgid "1 download"
+#~ msgid_plural "%1 downloads"
+#~ msgstr[0] "1 回のダウンロード"
+#~ msgstr[1] "%1 回のダウンロード"
+
+#~ msgid "Loading Preview"
+#~ msgstr "プレビューを読み込み中"
+
+#~ msgid "Details"
+#~ msgstr "詳細"
+
+#~ msgid "Updating"
+#~ msgstr "アップデート中"
+
+#~ msgid "Install Again"
+#~ msgstr "再インストール"
+
+#~ msgctxt "Show the size of the file in a list"
+#~ msgid "<p>Size: %1</p>"
+#~ msgstr "<p>サイズ: %1</p>"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes"
+#~ msgstr "はい"
+
+#~ msgctxt "@action:button"
+#~ msgid "No"
+#~ msgstr "いいえ"
