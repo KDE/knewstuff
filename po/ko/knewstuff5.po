@@ -1,7 +1,7 @@
 # Korean messages for kdelibs.
 # Copyright (C) Free Software Foundation, Inc.
 # Cho Sung Jae <cho.sungjae@gmail.com>, 2007.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # JungHee Lee (이정희) <daemul72@gmail.com>, 2019, 2020.
 #
 msgid ""
@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2022-10-03 15:51+0200\n"
+"PO-Revision-Date: 2023-03-01 01:59+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-i18n-doc@kde.org>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -245,6 +245,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"웹 페이지로 가리키기 때문에 '%1'을(를) 설치할 수 없습니다. 설치를 마치려면<a "
+"href='%2'>여기</a>를 클릭하십시오."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -1341,7 +1343,7 @@ msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr "웹 사이트 열기: %1"
+msgstr "웹사이트 열기: %1"
 
 #: qtquick/qml/UploadPage.qml:114
 #, kde-format
@@ -1361,10 +1363,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
-"KDE 스토어에 새 항목을 업로드하거나 기존 항목에 내용을 추가하려면 웹 사이트"
-"를 열고 로그인하십시오. 로그인 후 사용자 아이콘을 클릭했을 때 나타나는 메뉴에"
-"서 \"My Products\" 항목을 클릭하십시오. 제품 관리 시스템에서 내 제품을 관리"
-"할 수 있습니다."
+"KDE 스토어에 새 항목을 업로드하거나 기존 항목에 내용을 추가하려면 웹사이트를 "
+"열고 로그인하십시오. 로그인 후 사용자 아이콘을 클릭했을 때 나타나는 메뉴에서 "
+"\"My Products\" 항목을 클릭하십시오. 제품 관리 시스템에서 내 제품을 관리할 "
+"수 있습니다."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1377,10 +1379,9 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
-"새 항목을 업로드하거나 기존 항목에 내용을 추가하려면 공급자 웹 사이트를 여십"
-"시오. 사이트에 따라서 제품 관리 시스템에 계정을 만들고 로그인해야 할 수도 있"
-"습니다. 새 제품을 추가할 때 스토어 관리자에게 직접 연락하여야 할 수도 있습니"
-"다."
+"새 항목을 업로드하거나 기존 항목에 내용을 추가하려면 공급자 웹사이트를 여십시"
+"오. 사이트에 따라서 제품 관리 시스템에 계정을 만들고 로그인해야 할 수도 있습"
+"니다. 새 제품을 추가할 때 스토어 관리자에게 직접 연락하여야 할 수도 있습니다."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1599,14 +1600,13 @@ msgstr "<p>크기: %1</p>"
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr ""
+msgstr "예"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
-msgstr "없음"
+msgstr "아니요"
 
 #~ msgid ""
 #~ "The downloaded file is a html file. This indicates a link to a website "
