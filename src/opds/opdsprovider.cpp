@@ -14,7 +14,6 @@
 #include <QUrlQuery>
 #include <syndication/atom/atom.h>
 #include <syndication/documentsource.h>
-#include <syndication_export.h>
 
 #include <knewstuffcore_debug.h>
 
