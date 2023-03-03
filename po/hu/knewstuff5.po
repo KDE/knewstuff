@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 22:21+0000\n"
+"POT-Creation-Date: 2023-03-03 02:17+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -55,7 +55,7 @@ msgstr "Rögzítettük a szavazatát."
 msgid "You are now a fan."
 msgstr "Ön most már rajongó."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "

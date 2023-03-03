@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 22:21+0000\n"
+"POT-Creation-Date: 2023-03-03 02:17+0000\n"
 "PO-Revision-Date: 2023-01-30 10:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -56,7 +56,7 @@ msgstr "თქვენი ხმა ჩაწერილია."
 msgid "You are now a fan."
 msgstr "ახლა ფანი ხარ."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:288
+#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
