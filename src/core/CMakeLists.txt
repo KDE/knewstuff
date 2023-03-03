@@ -135,7 +135,7 @@ install(
         ${KNewStuffCore_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
     DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3/KNSCore
+        ${KDE_INSTALL_INCLUDEDIR_KF}/KNSCore
     COMPONENT Devel
 )
 
