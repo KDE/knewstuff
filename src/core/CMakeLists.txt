@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: KDE Contributors
 # SPDX-License-Identifier: BSD-2-Clause
 
+set(KNEWSTUFFCORE_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuffCore")
+
 set(KNewStuffCore_SRCS
     author.cpp
     commentsmodel.cpp
@@ -77,7 +79,9 @@ set(KNewStuffCore_BUILD_INCLUDE_DIRS
 
 target_include_directories(KF6NewStuffCore
     PUBLIC "$<BUILD_INTERFACE:${KNewStuffCore_BUILD_INCLUDE_DIRS}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}>"
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KNEWSTUFFCORE_INSTALL_INCLUDEDIR}>"
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff>" # module version header
 )
 
 target_link_libraries(KF6NewStuffCore
@@ -135,7 +139,7 @@ install(
         ${KNewStuffCore_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_export.h
     DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/KNSCore
+        ${KNEWSTUFFCORE_INSTALL_INCLUDEDIR}/KNSCore
     COMPONENT Devel
 )
 
@@ -164,6 +168,13 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KNewStuffCore LIB_NAME KF6NewStuffCore DEPS "Attica" FILENAME_VAR COREPRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3)
+ecm_generate_pri_file(
+    BASE_NAME KNewStuffCore
+    LIB_NAME KF6NewStuffCore
+    DEPS "Attica KCoreAddons"
+    FILENAME_VAR COREPRI_FILENAME
+    INCLUDE_INSTALL_DIRS
+        ${KNEWSTUFFCORE_INSTALL_INCLUDEDIR}
+        ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff # module version header
+)
 install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-

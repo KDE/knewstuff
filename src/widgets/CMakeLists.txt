@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-2-Clause
 
+set(KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuffWidgets")
+
 add_library(KF6NewStuffWidgets)
 add_library(KF6::NewStuffWidgets ALIAS KF6NewStuffWidgets)
 
@@ -33,7 +35,10 @@ target_link_libraries(KF6NewStuffWidgets
 
 target_include_directories(KF6NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff3>")
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR}>"
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff>" # module version header
+)
 
 set_target_properties(KF6NewStuffWidgets PROPERTIES
    VERSION ${KNEWSTUFF_VERSION}
@@ -56,7 +61,7 @@ install(
         ${KNewStuffWidgets_CamelCase_HEADERS}
         ${KNewStuffWidgets_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/knewstuffwidgets_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KNSWidgets
+    DESTINATION ${KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR}/KNSWidgets
     COMPONENT Devel
 )
 
