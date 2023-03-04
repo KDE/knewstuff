@@ -5,7 +5,6 @@
 
 include(CMakeFindDependencyMacro)
 find_dependency(Qt@QT_MAJOR_VERSION@Widgets @REQUIRED_QT_VERSION@)
-find_dependency(Qt@QT_MAJOR_VERSION@Xml @REQUIRED_QT_VERSION@)
 
 find_dependency(KF5XmlGui "@KF_DEP_VERSION@")
 find_dependency(KF5Service "@KF_DEP_VERSION@")
