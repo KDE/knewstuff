@@ -1,0 +1,26 @@
+/*
+    SPDX-FileCopyrightText: 2023 Friedrich W. H. Kossebau <kossebau@kde.org>
+
+    SPDX-License-Identifier: LGPL-2.1-or-later
+*/
+
+#include <knscore/knewstuffcore_export.h>
+
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(5, 29)
+#if KNEWSTUFFCORE_DEPRECATED_WARNINGS_SINCE >= 0x051d00
+#pragma message("Deprecated header. Since 5.29, use #include <knewstuff_version.h> & KNEWSTUFF_VERSION instead")
+#endif
+#else
+#error "Include of deprecated header is disabled"
+#endif
+
+#ifndef KNEWSTUFFCORE_VERSION_H
+#define KNEWSTUFFCORE_VERSION_H
+
+#define KNEWSTUFFCORE_VERSION_STRING "@KNEWSTUFFCORE_VERSION@"
+#define KNEWSTUFFCORE_VERSION_MAJOR @KNEWSTUFFCORE_VERSION_MAJOR@
+#define KNEWSTUFFCORE_VERSION_MINOR @KNEWSTUFFCORE_VERSION_MINOR@
+#define KNEWSTUFFCORE_VERSION_PATCH @KNEWSTUFFCORE_VERSION_PATCH@
+#define KNEWSTUFFCORE_VERSION ((@KNEWSTUFFCORE_VERSION_MAJOR@<<16)|(@KNEWSTUFFCORE_VERSION_MINOR@<<8)|(@KNEWSTUFFCORE_VERSION_PATCH@))
+
+#endif

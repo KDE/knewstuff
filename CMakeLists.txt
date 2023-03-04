@@ -81,13 +81,13 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFF
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffConfigVersion.cmake"
                         SOVERSION 5)
 ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFCORE
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffCoreConfigVersion.cmake"
                         SOVERSION 5)
 ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFQUICK
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5NewStuffQuickConfigVersion.cmake"
                         SOVERSION 5)
+configure_file(knewstuffcore_version.h.in "${CMAKE_CURRENT_BINARY_DIR}/knewstuffcore_version.h")
+configure_file(knewstuffquick_version.h.in "${CMAKE_CURRENT_BINARY_DIR}/knewstuffquick_version.h")
 
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
 ecm_set_disabled_deprecation_versions(
