@@ -6,6 +6,7 @@
 include(CMakeFindDependencyMacro)
 
 find_dependency(KF6NewStuffCore "@KF_VERSION@")
+find_dependency(Qt6Widgets @REQUIRED_QT_VERSION@)
 
 if (NOT @BUILD_SHARED_LIBS@)
     find_dependency(Qt6Qml @REQUIRED_QT_VERSION@)
