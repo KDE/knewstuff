@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -392,139 +392,6 @@ msgid "Could not open %1 for reading"
 msgstr ""
 "Konnt d'Bibliothéik '%1' net opmaachen.\n"
 "%2"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Installéieren"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgid "More..."
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Méi..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Confi&guréieren..."
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Homepage"
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Homepage"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Installéieren"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "No description available."
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Keng Beschreiwung do."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure menu"
-msgstr "Configuréieren"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
-msgid "Configure menu - %1"
-msgstr "%1 &configuréieren..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "Print header"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "Header drécken"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-msgid "Main section"
-msgstr "Fënster"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-msgid "Move down"
-msgstr "&Erofréckelen"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-msgid "Move up"
-msgstr "Er&opréckelen"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-#| msgid "Action"
-msgid "Move to Main section"
-msgstr "Aktioun"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "Action"
-msgid "Move to More section"
-msgstr "Aktioun"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Zerécksetzen"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "Action"
-msgid "More section"
-msgstr "Aktioun"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgid "More..."
-msgid "More tools..."
-msgstr "Méi..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1289,11 +1156,98 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
 msgstr "Nei Saachen eroflueden"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Installéieren"
+
+#, fuzzy
+#~| msgid "More..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Méi..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Confi&guréieren..."
+
+#, fuzzy
+#~| msgid "Homepage"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Homepage"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Installéieren"
+
+#, fuzzy
+#~| msgid "No description available."
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Keng Beschreiwung do."
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure menu"
+#~ msgstr "Configuréieren"
+
+#, fuzzy
+#~| msgid "&Configure %1..."
+#~ msgid "Configure menu - %1"
+#~ msgstr "%1 &configuréieren..."
+
+#, fuzzy
+#~| msgid "Print header"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "Header drécken"
+
+#, fuzzy
+#~ msgid "Main section"
+#~ msgstr "Fënster"
+
+#, fuzzy
+#~ msgid "Move down"
+#~ msgstr "&Erofréckelen"
+
+#, fuzzy
+#~ msgid "Move up"
+#~ msgstr "Er&opréckelen"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "Move to Main section"
+#~ msgstr "Aktioun"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "Move to More section"
+#~ msgstr "Aktioun"
+
+#~ msgid "Reset"
+#~ msgstr "Zerécksetzen"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "More section"
+#~ msgstr "Aktioun"
+
+#, fuzzy
+#~| msgid "More..."
+#~ msgid "More tools..."
+#~ msgstr "Méi..."
 
 #~ msgid ""
 #~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "

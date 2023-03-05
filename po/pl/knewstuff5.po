@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2022-12-29 10:57+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -526,127 +526,6 @@ msgstr "Nie można otworzyć pliku %1 do zapisu"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Nie można otworzyć %1 do odczytu"
-
-#: kmoretools/kmoretools.cpp:521
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Niewgrane:"
-
-#: kmoretools/kmoretools.cpp:618
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Więcej"
-
-#: kmoretools/kmoretools.cpp:654
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Ustawienia..."
-
-#: kmoretools/kmoretools_p.h:373
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Odwiedź stronę domową"
-
-#: kmoretools/kmoretools_p.h:386
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Wgraj"
-
-#: kmoretools/kmoretools_p.h:395
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Brak dodatkowych danych."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, kde-format
-msgid "Configure menu"
-msgstr "Menu ustawień"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, kde-format
-msgid "Configure menu - %1"
-msgstr "Menu ustawień - %1"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "%1 - bieżący katalog"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr "%1 - bieżące urządzenie"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr "%1 - wszystkie urządzenia"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Obszar główny"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Przesuń w dół"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Przesuń w górę"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Przenieś do obszaru głównego"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Przenieś do obszaru rozszerzonego"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Wyzeruj"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Obszar rozszerzony"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"Dla tego menu zalecanych jest więcej narzędzi, które obecnie nie są wgrane:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Więcej narzędzi..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1384,10 +1263,83 @@ msgstr ""
 " Przykładem takiego adresu URL jest kns://peruse.knsrc/api.kde-look."
 "org/1316714"
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Pobierz nowe rzeczy..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Niewgrane:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Więcej"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Ustawienia..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Odwiedź stronę domową"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Wgraj"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Brak dodatkowych danych."
+
+#~ msgid "Configure menu"
+#~ msgstr "Menu ustawień"
+
+#~ msgid "Configure menu - %1"
+#~ msgstr "Menu ustawień - %1"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "%1 - bieżący katalog"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current device"
+#~ msgstr "%1 - bieżące urządzenie"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - all devices"
+#~ msgstr "%1 - wszystkie urządzenia"
+
+#~ msgid "Main section"
+#~ msgstr "Obszar główny"
+
+#~ msgid "Move down"
+#~ msgstr "Przesuń w dół"
+
+#~ msgid "Move up"
+#~ msgstr "Przesuń w górę"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Przenieś do obszaru głównego"
+
+#~ msgid "Move to More section"
+#~ msgstr "Przenieś do obszaru rozszerzonego"
+
+#~ msgid "Reset"
+#~ msgstr "Wyzeruj"
+
+#~ msgid "More section"
+#~ msgstr "Obszar rozszerzony"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "Dla tego menu zalecanych jest więcej narzędzi, które obecnie nie są "
+#~ "wgrane:"
+
+#~ msgid "More tools..."
+#~ msgstr "Więcej narzędzi..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the service type %2 was not accepted by "

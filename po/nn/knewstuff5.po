@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
-"PO-Revision-Date: 2023-01-23 20:54+0100\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"PO-Revision-Date: 2023-03-04 16:16+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -114,10 +114,9 @@ msgid "Initializing"
 msgstr "Førebur"
 
 #: core/engine.cpp:219
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Oppsettfila er ugyldig: «%1»"
+msgstr "Oppsettfila finst ikkje: «%1»"
 
 #: core/engine.cpp:227
 #, kde-format
@@ -135,16 +134,14 @@ msgid "Use"
 msgstr "Bruk"
 
 #: core/engine.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "Klarte ikkje gjera klar installasjonshandterar for %1.\n"
+"%2\n"
 "Dette er ein kritisk feil, som du bør melda frå om til utviklaren av "
 "programmet."
 
@@ -259,6 +256,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Kan ikkje installera «%1», då denne viser til ei nettside. <a "
+"href='%2'>Trykk her</a> for å fullføra innstalleringa."
 
 #: core/installation.cpp:185
 #, kde-format
@@ -438,129 +437,6 @@ msgstr "Klarte ikkje opna %1 for skriving"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Klarte ikkje opna %1 for lesing"
-
-#: kmoretools/kmoretools.cpp:521
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Ikkje installert:"
-
-# «Fleire» passar betre enn «Meir» her. For eksempel brukt under «Verktøy»-menyen i Spectacle.
-#: kmoretools/kmoretools.cpp:618
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Fleire"
-
-#: kmoretools/kmoretools.cpp:654
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Set opp …"
-
-#: kmoretools/kmoretools_p.h:373
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Besøk heimesida"
-
-#: kmoretools/kmoretools_p.h:386
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Installer"
-
-#: kmoretools/kmoretools_p.h:395
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Ingen tilleggsinformasjon tilgjengeleg."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, kde-format
-msgid "Configure menu"
-msgstr "Set opp meny"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, kde-format
-msgid "Configure menu - %1"
-msgstr "Set opp meny – %1"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "%1 – gjeldande mappe"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr "%1 – gjeldande eining"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr "%1 – alle einingar"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Hovuddel"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Flytt ned"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Flytt opp"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Flytt til hovuddelen"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Flytt til fleire-delen"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Nullstill"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Fleire-del"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"Det er føreslått nokre fleire verktøy for denne menyen som ikkje er "
-"installerte:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Fleire verktøy …"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1290,7 +1166,81 @@ msgstr ""
 "Her er eit eksempel på ei gyldig kns-adresse: kns://peruse.knsrc/api.kde-"
 "look.org/1316714"
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Last ned nye saker …"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Ikkje installert:"
+
+# «Fleire» passar betre enn «Meir» her. For eksempel brukt under «Verktøy»-menyen i Spectacle.
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Fleire"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Set opp …"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Besøk heimesida"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Installer"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Ingen tilleggsinformasjon tilgjengeleg."
+
+#~ msgid "Configure menu"
+#~ msgstr "Set opp meny"
+
+#~ msgid "Configure menu - %1"
+#~ msgstr "Set opp meny – %1"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "%1 – gjeldande mappe"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current device"
+#~ msgstr "%1 – gjeldande eining"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - all devices"
+#~ msgstr "%1 – alle einingar"
+
+#~ msgid "Main section"
+#~ msgstr "Hovuddel"
+
+#~ msgid "Move down"
+#~ msgstr "Flytt ned"
+
+#~ msgid "Move up"
+#~ msgstr "Flytt opp"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Flytt til hovuddelen"
+
+#~ msgid "Move to More section"
+#~ msgstr "Flytt til fleire-delen"
+
+#~ msgid "Reset"
+#~ msgstr "Nullstill"
+
+#~ msgid "More section"
+#~ msgstr "Fleire-del"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "Det er føreslått nokre fleire verktøy for denne menyen som ikkje er "
+#~ "installerte:"
+
+#~ msgid "More tools..."
+#~ msgstr "Fleire verktøy …"

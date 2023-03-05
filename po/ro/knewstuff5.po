@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -432,128 +432,6 @@ msgstr "Nu s-a putut deschide %1 pentru scriere"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Nu s-a putut deschide %1 pentru citire"
-
-#: kmoretools/kmoretools.cpp:521
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Neinstalate:"
-
-#: kmoretools/kmoretools.cpp:618
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Mai multe"
-
-#: kmoretools/kmoretools.cpp:654
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Configurare..."
-
-#: kmoretools/kmoretools_p.h:373
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Vizitează pagina"
-
-#: kmoretools/kmoretools_p.h:386
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Instalează"
-
-#: kmoretools/kmoretools_p.h:395
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Nu sunt disponibile informații suplimentare."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, kde-format
-msgid "Configure menu"
-msgstr "Configurează meniul"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, kde-format
-msgid "Configure menu - %1"
-msgstr "Configurează meniul - %1"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "%1 - dosarul actual"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr "%1 - dispozitiv actual"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr "%1 - toate dispozitivele"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Secțiunea principală"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Mută în jos"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Mută în sus"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Mută la secțiunea principală"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Mută la secțiunea „Suplimentar”"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Restabilește"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Secțiunea „Suplimentar”"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
-"momentan:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Mai multe unelte..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -1273,10 +1151,83 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Descărcare lucruri noi..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Neinstalate:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Mai multe"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Configurare..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Vizitează pagina"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Instalează"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Nu sunt disponibile informații suplimentare."
+
+#~ msgid "Configure menu"
+#~ msgstr "Configurează meniul"
+
+#~ msgid "Configure menu - %1"
+#~ msgstr "Configurează meniul - %1"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "%1 - dosarul actual"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current device"
+#~ msgstr "%1 - dispozitiv actual"
+
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - all devices"
+#~ msgstr "%1 - toate dispozitivele"
+
+#~ msgid "Main section"
+#~ msgstr "Secțiunea principală"
+
+#~ msgid "Move down"
+#~ msgstr "Mută în jos"
+
+#~ msgid "Move up"
+#~ msgstr "Mută în sus"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Mută la secțiunea principală"
+
+#~ msgid "Move to More section"
+#~ msgstr "Mută la secțiunea „Suplimentar”"
+
+#~ msgid "Reset"
+#~ msgstr "Restabilește"
+
+#~ msgid "More section"
+#~ msgstr "Secțiunea „Suplimentar”"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "Pentru acest meniu sunt mai multe unelte sugerate care nu sunt instalate "
+#~ "momentan:"
+
+#~ msgid "More tools..."
+#~ msgstr "Mai multe unelte..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the service type %2 was not accepted by "

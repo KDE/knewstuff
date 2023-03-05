@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -396,142 +396,6 @@ msgstr "ಓದಲು %1 ಅನ್ನು ತೆರೆಯಲಾಗಿಲ್ಲ"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "ಓದಲು %1 ಅನ್ನು ತೆರೆಯಲಾಗಿಲ್ಲ"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Installed"
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "ಅನುಸ್ಥಾಪಿಸಲಾದ"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgid "Choose..."
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "ಆರಿಸಿ..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "ಸಂರಚನೆ(&g)..."
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Homepage"
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "ನೆಲೆಪುಟ (ಹೋಮ್ ಪೇಜ್)"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "ಅನುಸ್ಥಾಪಿಸು"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "There is no matching item available.\n"
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "ಹೊಂದುವಂತಹ ಅಂಶ ಲಭ್ಯವಿಲ್ಲ.\n"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure menu"
-msgstr "ಸಂರಚಿಸು"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
-msgid "Configure menu - %1"
-msgstr "'%1'ನ್ನು ಸಂರಚಿಸು(&C)..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "Path to documents folder"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "ದಸ್ತಾವೇಜು (documents) ಕಡತಕೋಶಕ್ಕೆ ಮಾರ್ಗ"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Maintainer"
-msgid "Main section"
-msgstr "ಪಾಲಕ"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move &Down"
-msgid "Move down"
-msgstr "ಕೆಳಕ್ಕೆ ಚಲಿಸು(&D)"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "Move &Up"
-msgid "Move up"
-msgstr "ಮೇಲಕ್ಕೆ ಚಲಿಸು(&U)"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to Main section"
-msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to More section"
-msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "ಮರುಸಿದ್ಧಗೊಳಿಸು (ರಿಸೆಟ್)"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "More section"
-msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgid "Choose..."
-msgid "More tools..."
-msgstr "ಆರಿಸಿ..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1302,10 +1166,100 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "ಹೊಸ ಪದಾರ್ಥವನ್ನು ನಕಲಿಳಿಸಿ..."
+
+#, fuzzy
+#~| msgid "Installed"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "ಅನುಸ್ಥಾಪಿಸಲಾದ"
+
+#, fuzzy
+#~| msgid "Choose..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "ಆರಿಸಿ..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "ಸಂರಚನೆ(&g)..."
+
+#, fuzzy
+#~| msgid "Homepage"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "ನೆಲೆಪುಟ (ಹೋಮ್ ಪೇಜ್)"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "ಅನುಸ್ಥಾಪಿಸು"
+
+#, fuzzy
+#~| msgid "There is no matching item available.\n"
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "ಹೊಂದುವಂತಹ ಅಂಶ ಲಭ್ಯವಿಲ್ಲ.\n"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure menu"
+#~ msgstr "ಸಂರಚಿಸು"
+
+#, fuzzy
+#~| msgid "&Configure %1..."
+#~ msgid "Configure menu - %1"
+#~ msgstr "'%1'ನ್ನು ಸಂರಚಿಸು(&C)..."
+
+#, fuzzy
+#~| msgid "Path to documents folder"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "ದಸ್ತಾವೇಜು (documents) ಕಡತಕೋಶಕ್ಕೆ ಮಾರ್ಗ"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Main section"
+#~ msgstr "ಪಾಲಕ"
+
+#, fuzzy
+#~| msgid "Move &Down"
+#~ msgid "Move down"
+#~ msgstr "ಕೆಳಕ್ಕೆ ಚಲಿಸು(&D)"
+
+#, fuzzy
+#~| msgid "Move &Up"
+#~ msgid "Move up"
+#~ msgstr "ಮೇಲಕ್ಕೆ ಚಲಿಸು(&U)"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to Main section"
+#~ msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to More section"
+#~ msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
+
+#~ msgid "Reset"
+#~ msgstr "ಮರುಸಿದ್ಧಗೊಳಿಸು (ರಿಸೆಟ್)"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "More section"
+#~ msgstr "ಇನ್ನಷ್ಟು ಕ್ರಿಯೆಗಳು"
+
+#, fuzzy
+#~| msgid "Choose..."
+#~ msgid "More tools..."
+#~ msgstr "ಆರಿಸಿ..."
 
 #~ msgid ""
 #~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "

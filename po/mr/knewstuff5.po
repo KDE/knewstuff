@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2013-03-29 16:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -387,148 +387,6 @@ msgstr "वाचण करिता %1 उघडू शकत नाही"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "वाचण करिता %1 उघडू शकत नाही"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Installed"
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "प्रतिष्ठापन झालेले"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "अजून..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "संयोजीत करा (&G)..."
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Visit contributor's homepage"
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "सहायकाच्या मुख्यपानास भेट द्या"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "प्रतिष्ठापन"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "There is no matching item available.\n"
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "जुळवणीनुरूप घटक उपलब्ध नाही.\n"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure menu"
-msgstr "संयोजीत करा"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
-msgid "Configure menu - %1"
-msgstr "%1 संयोजीत करा (&C)..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "Path to documents folder"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "दस्तऐवज संचयीका करीता मार्ग"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Maintainer"
-msgid "Main section"
-msgstr "व्यवस्थापक"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move &Down"
-msgid "Move down"
-msgstr "खाली हलवा (&D)"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "Move &Up"
-msgid "Move up"
-msgstr "वर हलवा (&U)"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to Main section"
-msgstr "अधिक कृती"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to More section"
-msgstr "अधिक कृती"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "पुन्हस्थापित"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "More section"
-msgstr "अधिक कृती"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
-msgid "More tools..."
-msgstr "अजून..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1300,10 +1158,106 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "नवीन वस्तु डाउनलोड करा ..."
+
+#, fuzzy
+#~| msgid "Installed"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "प्रतिष्ठापन झालेले"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "@option:check An item in a list of resources that allows to query for "
+#~| "more resources to put in the list"
+#~| msgid "More..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "अजून..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "संयोजीत करा (&G)..."
+
+#, fuzzy
+#~| msgid "Visit contributor's homepage"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "सहायकाच्या मुख्यपानास भेट द्या"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "प्रतिष्ठापन"
+
+#, fuzzy
+#~| msgid "There is no matching item available.\n"
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "जुळवणीनुरूप घटक उपलब्ध नाही.\n"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure menu"
+#~ msgstr "संयोजीत करा"
+
+#, fuzzy
+#~| msgid "&Configure %1..."
+#~ msgid "Configure menu - %1"
+#~ msgstr "%1 संयोजीत करा (&C)..."
+
+#, fuzzy
+#~| msgid "Path to documents folder"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "दस्तऐवज संचयीका करीता मार्ग"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Main section"
+#~ msgstr "व्यवस्थापक"
+
+#, fuzzy
+#~| msgid "Move &Down"
+#~ msgid "Move down"
+#~ msgstr "खाली हलवा (&D)"
+
+#, fuzzy
+#~| msgid "Move &Up"
+#~ msgid "Move up"
+#~ msgstr "वर हलवा (&U)"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to Main section"
+#~ msgstr "अधिक कृती"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to More section"
+#~ msgstr "अधिक कृती"
+
+#~ msgid "Reset"
+#~ msgstr "पुन्हस्थापित"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "More section"
+#~ msgstr "अधिक कृती"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "@option:check An item in a list of resources that allows to query for "
+#~| "more resources to put in the list"
+#~| msgid "More..."
+#~ msgid "More tools..."
+#~ msgstr "अजून..."
 
 #~ msgid ""
 #~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"

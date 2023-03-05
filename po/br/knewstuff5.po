@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -393,142 +393,6 @@ msgstr "N'hellan ket digeriñ ar restr '%1'"
 #| msgid "Could not open file '%1'"
 msgid "Could not open %1 for reading"
 msgstr "N'hellan ket digeriñ ar restr '%1'"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Staliañ"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgid "More..."
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Mui ..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Kefluniañ ..."
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Homepage"
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Pajenn Er-Gêr"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Staliañ"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "No description available."
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "N'eus deskrivadur ebet da gaout."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure menu"
-msgstr "Kefluniañ"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
-msgid "Configure menu - %1"
-msgstr "&Kefluniañ %1 ..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "Path to documents folder"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "Hent renkell an teulioù"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "MainWindow"
-msgid "Main section"
-msgstr "Prenestr gentañ"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "move down"
-msgid "Move down"
-msgstr "diskennit"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "move up"
-msgid "Move up"
-msgstr "pignit"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
-msgid "Move to Main section"
-msgstr "Fiñval d'ar pod-lastez"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "Action"
-msgid "Move to More section"
-msgstr "Gwezhiad"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Adkorañ"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "Action"
-msgid "More section"
-msgstr "Gwezhiad"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgid "More..."
-msgid "More tools..."
-msgstr "Mui ..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1287,10 +1151,100 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Staliañ"
+
+#, fuzzy
+#~| msgid "More..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Mui ..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Kefluniañ ..."
+
+#, fuzzy
+#~| msgid "Homepage"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Pajenn Er-Gêr"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Staliañ"
+
+#, fuzzy
+#~| msgid "No description available."
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "N'eus deskrivadur ebet da gaout."
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure menu"
+#~ msgstr "Kefluniañ"
+
+#, fuzzy
+#~| msgid "&Configure %1..."
+#~ msgid "Configure menu - %1"
+#~ msgstr "&Kefluniañ %1 ..."
+
+#, fuzzy
+#~| msgid "Path to documents folder"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "Hent renkell an teulioù"
+
+#, fuzzy
+#~| msgid "MainWindow"
+#~ msgid "Main section"
+#~ msgstr "Prenestr gentañ"
+
+#, fuzzy
+#~| msgid "move down"
+#~ msgid "Move down"
+#~ msgstr "diskennit"
+
+#, fuzzy
+#~| msgid "move up"
+#~ msgid "Move up"
+#~ msgstr "pignit"
+
+#, fuzzy
+#~| msgid "Move to Trash"
+#~ msgid "Move to Main section"
+#~ msgstr "Fiñval d'ar pod-lastez"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "Move to More section"
+#~ msgstr "Gwezhiad"
+
+#~ msgid "Reset"
+#~ msgstr "Adkorañ"
+
+#, fuzzy
+#~| msgid "Action"
+#~ msgid "More section"
+#~ msgstr "Gwezhiad"
+
+#, fuzzy
+#~| msgid "More..."
+#~ msgid "More tools..."
+#~ msgstr "Mui ..."
 
 #~ msgid "Key used for signing:"
 #~ msgstr "Alc'hwez implij evit sinañ :"

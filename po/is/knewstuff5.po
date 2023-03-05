@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2013-05-13 22:40+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -399,149 +399,6 @@ msgstr "Tókst ekki að opna %1 til lestrar"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "Tókst ekki að opna %1 til lestrar"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgid "Installed"
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Uppsett"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Meira..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "&Stilla..."
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgid "Visit contributor's homepage"
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Fara á heimasíðu þáttakandans"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Setja inn"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgid "There is no matching item available.\n"
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Það er ekki hægt að klára þetta.\n"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure menu"
-msgstr "Stilla"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "&Configure %1..."
-msgid "Configure menu - %1"
-msgstr "&Stilla %1..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "%1 folder"
-#| msgid_plural "%1 folders"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "%1 mappa"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Maintainer"
-msgid "Main section"
-msgstr "Umsjónarmaður"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move &Down"
-msgid "Move down"
-msgstr "Færa &niður"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-#| msgid "Move &Up"
-msgid "Move up"
-msgstr "Færa &upp"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to Main section"
-msgstr "Fleiri aðgerðir"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "Move to More section"
-msgstr "Fleiri aðgerðir"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Endurstilla"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "More Actions"
-msgid "More section"
-msgstr "Fleiri aðgerðir"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@option:check An item in a list of resources that allows to query for "
-#| "more resources to put in the list"
-#| msgid "More..."
-msgid "More tools..."
-msgstr "Meira..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1312,10 +1169,107 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Sækja nýtt dót..."
+
+#, fuzzy
+#~| msgid "Installed"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Uppsett"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "@option:check An item in a list of resources that allows to query for "
+#~| "more resources to put in the list"
+#~| msgid "More..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Meira..."
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "&Stilla..."
+
+#, fuzzy
+#~| msgid "Visit contributor's homepage"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Fara á heimasíðu þáttakandans"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Setja inn"
+
+#, fuzzy
+#~| msgid "There is no matching item available.\n"
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Það er ekki hægt að klára þetta.\n"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure menu"
+#~ msgstr "Stilla"
+
+#, fuzzy
+#~| msgid "&Configure %1..."
+#~ msgid "Configure menu - %1"
+#~ msgstr "&Stilla %1..."
+
+#, fuzzy
+#~| msgid "%1 folder"
+#~| msgid_plural "%1 folders"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "%1 mappa"
+
+#, fuzzy
+#~| msgid "Maintainer"
+#~ msgid "Main section"
+#~ msgstr "Umsjónarmaður"
+
+#, fuzzy
+#~| msgid "Move &Down"
+#~ msgid "Move down"
+#~ msgstr "Færa &niður"
+
+#, fuzzy
+#~| msgid "Move &Up"
+#~ msgid "Move up"
+#~ msgstr "Færa &upp"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to Main section"
+#~ msgstr "Fleiri aðgerðir"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "Move to More section"
+#~ msgstr "Fleiri aðgerðir"
+
+#~ msgid "Reset"
+#~ msgstr "Endurstilla"
+
+#, fuzzy
+#~| msgid "More Actions"
+#~ msgid "More section"
+#~ msgstr "Fleiri aðgerðir"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "@option:check An item in a list of resources that allows to query for "
+#~| "more resources to put in the list"
+#~| msgid "More..."
+#~ msgid "More tools..."
+#~ msgstr "Meira..."
 
 #~ msgid ""
 #~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "

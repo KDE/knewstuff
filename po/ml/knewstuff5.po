@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2010-12-29 15:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -380,128 +380,6 @@ msgstr "%1 ലഭ്യമാക്കുവാന്‍ സാധ്യമല�
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "%1 ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
-
-#: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തതു്"
-
-#: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "കൂടുതല്‍..."
-
-#: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "ക്രമീകരിയ്ക്കുക... &g"
-
-#: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "സംഭാവന ചെയ്തവരുടെ ആസ്ഥാന താള്‍ സന്ദര്‍ശിയ്ക്കുക"
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
-
-#: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "പൊരുത്തമുള്ള ഇനമൊന്നും ലഭ്യമല്ല.\n"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-msgid "Configure menu"
-msgstr "ക്രമീകരിയ്ക്കുക"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-msgid "Configure menu - %1"
-msgstr "%1 ക്രമീകരിയ്ക്കുക &c..."
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgid "%1 folder"
-#| msgid_plural "%1 folders"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "%1 ഫോള്‍ഡര്‍"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr ""
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, kde-format
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-msgid "Main section"
-msgstr "പരിപാലകന്‍"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-msgid "Move down"
-msgstr "&താഴേയ്ക്കു് നീക്കുക"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, fuzzy, kde-format
-msgid "Move up"
-msgstr "&മുകളിലേയ്ക്കു് നീക്കുക"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, fuzzy, kde-format
-msgid "Move to Main section"
-msgstr "കൂടുതല്‍ നടപടികള്‍"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, fuzzy, kde-format
-msgid "Move to More section"
-msgstr "കൂടുതല്‍ നടപടികള്‍"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "വീണ്ടും സജ്ജമാക്കുക"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, fuzzy, kde-format
-msgid "More section"
-msgstr "കൂടുതല്‍ നടപടികള്‍"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, fuzzy, kde-format
-msgid "More tools..."
-msgstr "കൂടുതല്‍..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1268,10 +1146,86 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "പുതിയവ ഇറക്കുക..."
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തതു്"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "കൂടുതല്‍..."
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "ക്രമീകരിയ്ക്കുക... &g"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "സംഭാവന ചെയ്തവരുടെ ആസ്ഥാന താള്‍ സന്ദര്‍ശിയ്ക്കുക"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
+
+#, fuzzy
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "പൊരുത്തമുള്ള ഇനമൊന്നും ലഭ്യമല്ല.\n"
+
+#, fuzzy
+#~ msgid "Configure menu"
+#~ msgstr "ക്രമീകരിയ്ക്കുക"
+
+#, fuzzy
+#~ msgid "Configure menu - %1"
+#~ msgstr "%1 ക്രമീകരിയ്ക്കുക &c..."
+
+#, fuzzy
+#~| msgid "%1 folder"
+#~| msgid_plural "%1 folders"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "%1 ഫോള്‍ഡര്‍"
+
+#, fuzzy
+#~ msgid "Main section"
+#~ msgstr "പരിപാലകന്‍"
+
+#, fuzzy
+#~ msgid "Move down"
+#~ msgstr "&താഴേയ്ക്കു് നീക്കുക"
+
+#, fuzzy
+#~ msgid "Move up"
+#~ msgstr "&മുകളിലേയ്ക്കു് നീക്കുക"
+
+#, fuzzy
+#~ msgid "Move to Main section"
+#~ msgstr "കൂടുതല്‍ നടപടികള്‍"
+
+#, fuzzy
+#~ msgid "Move to More section"
+#~ msgstr "കൂടുതല്‍ നടപടികള്‍"
+
+#~ msgid "Reset"
+#~ msgstr "വീണ്ടും സജ്ജമാക്കുക"
+
+#, fuzzy
+#~ msgid "More section"
+#~ msgstr "കൂടുതല്‍ നടപടികള്‍"
+
+#, fuzzy
+#~ msgid "More tools..."
+#~ msgstr "കൂടുതല്‍..."
 
 #~ msgid "Key used for signing:"
 #~ msgstr "ഒപ്പുവയ്ക്കാനുപയോഗിയ്ക്കുന്ന കീ:"

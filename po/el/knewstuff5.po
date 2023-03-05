@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-03 02:17+0000\n"
+"POT-Creation-Date: 2023-03-05 03:08+0000\n"
 "PO-Revision-Date: 2016-12-08 10:14+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -401,135 +401,6 @@ msgstr "Αδυναμία ανοίγματος του %1 για ανάγνωση"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "Αδυναμία ανοίγματος του %1 για ανάγνωση"
-
-#: kmoretools/kmoretools.cpp:521
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Not installed:"
-msgstr "Μη εγκατεστημένο:"
-
-#: kmoretools/kmoretools.cpp:618
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "More"
-msgstr "Περισσότερα"
-
-#: kmoretools/kmoretools.cpp:654
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Configure..."
-msgstr "Διαμόρφωση..."
-
-#: kmoretools/kmoretools_p.h:373
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Visit homepage"
-msgstr "Επισκεφθείτε την προσωπική ιστοσελίδα "
-
-#: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "@action:inmenu"
-msgid "Install"
-msgstr "Εγκατάσταση"
-
-#: kmoretools/kmoretools_p.h:395
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "No further information available."
-msgstr "Δεν υπάρχει διαθέσιμη επιπλέον πληροφορία."
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, kde-format
-msgid "Configure menu"
-msgstr "Διαμόρφωση μενού"
-
-#: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, kde-format
-msgid "Configure menu - %1"
-msgstr "Διαμόρφωση μενού - %1"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - current folder"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current folder"
-msgstr "$GenericName - τρέχων φάκελος"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - current device"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - current device"
-msgstr "$GenericName - τρέχουσα συσκευή"
-
-#: kmoretools/kmoretoolsmenufactory.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "$GenericName - all devices"
-msgctxt "@action:inmenu %1=\"$GenericName\""
-msgid "%1 - all devices"
-msgstr "$GenericName - όλες οι συσκευές"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
-msgid "Main section"
-msgstr "Κύριο τμήμα"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
-msgid "Move down"
-msgstr "Μετακίνηση κάτω"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
-#, kde-format
-msgid "Move up"
-msgstr "Μετακίνηση πάνω"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
-#, kde-format
-msgid "Move to Main section"
-msgstr "Μετακίνηση στο κύριο τμήμα"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
-#, kde-format
-msgid "Move to More section"
-msgstr "Μετακίνηση στο τμήμα 'Περισσότερα'"
-
-#. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
-#, kde-format
-msgid "Reset"
-msgstr "Επαναφορά"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
-#, kde-format
-msgid "More section"
-msgstr "Τμήμα 'Περισσότερα'"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
-#, kde-format
-msgid ""
-"For this menu there are some more tools suggested which are currently not "
-"installed:"
-msgstr ""
-"Για αυτό το μενού υπάρχουν ορισμένα ακόμα προτεινόμενα εργαλεία που δεν "
-"είναι εγκατεστημένα αυτήν τη στιγμή:"
-
-#. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
-#, kde-format
-msgid "More tools..."
-msgstr "Περισσότερα εργαλεία..."
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
@@ -1299,10 +1170,94 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:32 widgets/button.cpp:56
+#: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Λήψη νέου υλικού..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Not installed:"
+#~ msgstr "Μη εγκατεστημένο:"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "More"
+#~ msgstr "Περισσότερα"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Configure..."
+#~ msgstr "Διαμόρφωση..."
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Visit homepage"
+#~ msgstr "Επισκεφθείτε την προσωπική ιστοσελίδα "
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Install"
+#~ msgstr "Εγκατάσταση"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "No further information available."
+#~ msgstr "Δεν υπάρχει διαθέσιμη επιπλέον πληροφορία."
+
+#~ msgid "Configure menu"
+#~ msgstr "Διαμόρφωση μενού"
+
+#~ msgid "Configure menu - %1"
+#~ msgstr "Διαμόρφωση μενού - %1"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "$GenericName - current folder"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current folder"
+#~ msgstr "$GenericName - τρέχων φάκελος"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "$GenericName - current device"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - current device"
+#~ msgstr "$GenericName - τρέχουσα συσκευή"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "$GenericName - all devices"
+#~ msgctxt "@action:inmenu %1=\"$GenericName\""
+#~ msgid "%1 - all devices"
+#~ msgstr "$GenericName - όλες οι συσκευές"
+
+#~ msgid "Main section"
+#~ msgstr "Κύριο τμήμα"
+
+#~ msgid "Move down"
+#~ msgstr "Μετακίνηση κάτω"
+
+#~ msgid "Move up"
+#~ msgstr "Μετακίνηση πάνω"
+
+#~ msgid "Move to Main section"
+#~ msgstr "Μετακίνηση στο κύριο τμήμα"
+
+#~ msgid "Move to More section"
+#~ msgstr "Μετακίνηση στο τμήμα 'Περισσότερα'"
+
+#~ msgid "Reset"
+#~ msgstr "Επαναφορά"
+
+#~ msgid "More section"
+#~ msgstr "Τμήμα 'Περισσότερα'"
+
+#~ msgid ""
+#~ "For this menu there are some more tools suggested which are currently not "
+#~ "installed:"
+#~ msgstr ""
+#~ "Για αυτό το μενού υπάρχουν ορισμένα ακόμα προτεινόμενα εργαλεία που δεν "
+#~ "είναι εγκατεστημένα αυτήν τη στιγμή:"
+
+#~ msgid "More tools..."
+#~ msgstr "Περισσότερα εργαλεία..."
 
 #~ msgid ""
 #~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
