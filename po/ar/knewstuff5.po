@@ -890,7 +890,7 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 "هذا العنصر غير صالح أو في حالة مجهولة حاليا. <a href=\"https://bugs.kde.org/"
-"enter_bug.cgi?product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كدي في "
+"enter_bug.cgi?product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كِيدِي في "
 "تقرير علة</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
@@ -1277,7 +1277,7 @@ msgid ""
 "bug report</a>."
 msgstr ""
 "غير صالح أو في حالة مجهولة . <a href=\"https://bugs.kde.org/enter_bug.cgi?"
-"product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كدي في تقرير علة</a>."
+"product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كِيدِي في تقرير علة</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1325,7 +1325,7 @@ msgstr "يحدث المعلومات..."
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr "متجر كدي"
+msgstr "متجر كِيدِي"
 
 #: qtquick/qml/UploadPage.qml:101
 #, kde-format
@@ -1359,7 +1359,7 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
-"لتحميل إدخالات جديدة ، أو لإضافة محتوى إلى إدخال موجود في متجر كدي ، يرجى "
+"لتحميل إدخالات جديدة ، أو لإضافة محتوى إلى إدخال موجود في متجر كِيدِي ، يرجى "
 "فتح موقع الويب وتسجيل الدخول. بمجرد القيام بذلك ، ستتمكن من العثور على إدخال "
 "\"منتجاتي\" في القائمة التي تنبثق عندما انقر فوق رمز المستخدم الخاص بك. انقر "
 "فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج ، حيث يمكنك العمل على "
