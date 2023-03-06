@@ -8,9 +8,9 @@ set(knewstuff-dialog_SRCS
 
 qt_add_resources(RESOURCES resources.qrc)
 
-add_executable(knewstuff-dialog ${knewstuff-dialog_SRCS} ${RESOURCES})
+add_executable(knewstuff-dialog6 ${knewstuff-dialog_SRCS} ${RESOURCES})
 
-target_link_libraries(knewstuff-dialog
+target_link_libraries(knewstuff-dialog6
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
@@ -21,5 +21,5 @@ target_link_libraries(knewstuff-dialog
     KF6::NewStuffCore
 )
 
-install(TARGETS knewstuff-dialog ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.knewstuff-dialog.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(TARGETS knewstuff-dialog6 ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES org.kde.knewstuff-dialog6.desktop DESTINATION ${KDE_INSTALL_APPDIR})
