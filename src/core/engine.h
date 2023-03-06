@@ -620,7 +620,7 @@ public:
      * @returns the list of attica (OCS) providers this engine is connected to
      * @since 5.92
      */
-    QVector<Attica::Provider *> atticaProviders() const;
+    QList<Attica::Provider *> atticaProviders() const;
 
 Q_SIGNALS:
     /**
