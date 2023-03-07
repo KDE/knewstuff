@@ -1,12 +1,12 @@
 # Translation of knewstuff5.po to Catalan (Valencian)
-# Copyright (C) 1998-2022 This_file_is_part_of_KDE
+# Copyright (C) 1998-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2006, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020, 2021, 2022.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2007.
-# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Robert Millan <rmh@aybabtu.com>, 2009.
 # Orestes Mas <orestes@tsc.upc.edu>, 2010.
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:08+0000\n"
-"PO-Revision-Date: 2022-12-15 14:13+0100\n"
+"PO-Revision-Date: 2023-03-05 12:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -122,10 +122,9 @@ msgid "Initializing"
 msgstr "S'està inicialitzant"
 
 #: core/engine.cpp:219
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "El fitxer de configuració no és vàlid: «%1»"
+msgstr "El fitxer de configuració no existix: «%1»"
 
 #: core/engine.cpp:227
 #, kde-format
@@ -143,16 +142,14 @@ msgid "Use"
 msgstr "Utilitza"
 
 #: core/engine.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"No s'ha pogut restablir el gestor d'instal·lació per a %1\n"
+"No s'ha pogut restablir el gestor d'instal·lació per a %1:\n"
+"%2\n"
 "Este és un error crític i s'hauria d'informar a l'autor de l'aplicació"
 
 #: core/engine.cpp:338
@@ -1194,301 +1191,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Baixa les novetats..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Not installed:"
-#~ msgstr "No instal·lat:"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "More"
-#~ msgstr "Més"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Configure..."
-#~ msgstr "Configura..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Visit homepage"
-#~ msgstr "Visita la pàgina web"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Install"
-#~ msgstr "Instal·la"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "No further information available."
-#~ msgstr "No hi ha més informació disponible."
-
-#~ msgid "Configure menu"
-#~ msgstr "Configura el menú"
-
-#~ msgid "Configure menu - %1"
-#~ msgstr "Configura el menú - %1"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current folder"
-#~ msgstr "%1 - Carpeta actual"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current device"
-#~ msgstr "%1 - Dispositiu actual"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - all devices"
-#~ msgstr "%1 - Tots els dispositius"
-
-#~ msgid "Main section"
-#~ msgstr "Secció principal"
-
-#~ msgid "Move down"
-#~ msgstr "Mou avall"
-
-#~ msgid "Move up"
-#~ msgstr "Mou amunt"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Mou a la secció Principal"
-
-#~ msgid "Move to More section"
-#~ msgstr "Mou a la secció Més"
-
-#~ msgid "Reset"
-#~ msgstr "Restablix"
-
-#~ msgid "More section"
-#~ msgstr "Secció Més"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr ""
-#~ "Per a este menú hi ha altres eines suggerides que actualment no estan "
-#~ "instal·lades:"
-
-#~ msgid "More tools..."
-#~ msgstr "Més eines..."
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the service type %2 was not accepted by "
-#~ "the system (did you forget to install the KPackage support plugin for "
-#~ "this type of package?)"
-#~ msgstr ""
-#~ "Ha fallat la instal·lació de %1, ja que el sistema no ha acceptat el "
-#~ "tipus de servei %2 (heu oblidat instal·lar el connector de suport de "
-#~ "KPackage per a este tipus de paquet?)"
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not list a "
-#~ "service type."
-#~ msgstr ""
-#~ "Ha fallat la instal·lació de %1, ja que el paquet baixat no mostra cap "
-#~ "tipus de servei."
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package is not a supported "
-#~ "type (did you forget to install the KPackage support plugin for this type "
-#~ "of package?)"
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, ja que el paquet instal·lat és d'un "
-#~ "tipus no admés (heu oblidat instal·lar el connector de suport de KPackage "
-#~ "per a este tipus de paquet?)"
-
-#~ msgid ""
-#~ "Failed to create a job for the package management task. This is usually "
-#~ "because the package is invalid. We attempted to operate on the package %1"
-#~ msgstr ""
-#~ "No s'ha pogut crear un treball per a la tasca de gestió de paquets. "
-#~ "Normalment, açò és perquè el paquet no és vàlid. S'intentarà operar amb "
-#~ "el paquet %1"
-
-#~ msgid ""
-#~ "Could not create a package installer for the service type %1: The "
-#~ "installer does not have a valid structure"
-#~ msgstr ""
-#~ "No s'ha pogut crear un instal·lador de paquets per al tipus de servei %1: "
-#~ "l'instal·lador no té una estructura vàlida"
-
-#~ msgid "The service type %1 was not understood by the KPackage installer"
-#~ msgstr "L'instal·lador de KPackage no ha entés el tipus de servei %1"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>No s'ha pogut iniciar <i>gpg</i> ni recuperar les claus disponibles. "
-#~ "Assegureu-vos que <i>gpg</i> està instal·lat, altrament la verificació "
-#~ "dels recursos baixats no serà possible.</qt>"
-
-#~ msgid ""
-#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
-#~ "%3&gt;</i><br />:</qt>"
-#~ msgstr ""
-#~ "<qt>Introduïu la frase de pas per a la clau <b>0x%1</b>, la qual pertany "
-#~ "a <br /><i>%2&lt;%3&gt;</i><br />:</qt>"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>No s'ha pogut iniciar <i>gpg</i> ni comprovar la validesa del fitxer. "
-#~ "Assegureu-vos que <i>gpg</i> està instal·lat, altrament la verificació "
-#~ "dels recursos baixats no serà possible.</qt>"
-
-#~ msgid "Key used for signing:"
-#~ msgstr "Clau utilitzada per a signar:"
-
-#~ msgid "Select Signing Key"
-#~ msgstr "Seleccioneu la clau de signatura"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
-#~ "is installed, otherwise signing of the resources will not be possible.</"
-#~ "qt>"
-#~ msgstr ""
-#~ "<qt>No s'ha pogut iniciar <i>gpg</i> ni signar el fitxer. Assegureu-vos "
-#~ "que <i>gpg</i> està instal·lat, altrament no serà possible signar els "
-#~ "recursos.</qt>"
-
-#~ msgid "Get Hot New Stuff"
-#~ msgstr "Obtín les novetats candents"
-
-#~ msgctxt "Program name followed by 'Add On Installer'"
-#~ msgid "%1 Add-On Installer"
-#~ msgstr "Instal·lador de complements de %1"
-
-#~ msgid "Timeout. Check Internet connection."
-#~ msgstr "Temps límit excedit. Comproveu la connexió amb Internet."
-
-#~ msgid "Server: %1"
-#~ msgstr "Servidor: %1"
-
-#~ msgid "<br />Provider: %1"
-#~ msgstr "<br />Proveïdor: %1"
-
-#~ msgid "<br />Version: %1"
-#~ msgstr "<br />Versió: %1"
-
-#~ msgid "Provider information"
-#~ msgstr "Informació del proveïdor"
-
-#~ msgid "Could not install %1"
-#~ msgstr "No s'ha pogut instal·lar %1"
-
-#~ msgid "Get Hot New Stuff!"
-#~ msgstr "Obtín les novetats candents."
-
-#~ msgid "Icons view mode"
-#~ msgstr "Mode de vista d'icones"
-
-#~ msgid "Details view mode"
-#~ msgstr "Mode de vista de detalls"
-
-#~ msgid "All Providers"
-#~ msgstr "Tots els proveïdors"
-
-#~ msgid "All Categories"
-#~ msgstr "Totes les categories"
-
-#~ msgid "Provider:"
-#~ msgstr "Proveïdor:"
-
-#~ msgid "Most downloads"
-#~ msgstr "Els més baixats"
-
-#~ msgid "Newest"
-#~ msgstr "Els més recents"
-
-#~ msgid "Order by:"
-#~ msgstr "Ordena per:"
-
-#~ msgid "Search:"
-#~ msgstr "Busca:"
-
-#~ msgid "Author:"
-#~ msgstr "Autoria:"
-
-#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-#~ msgstr "<a href=\"https://opendesktop.org\">Pàgina web</a>"
-
-#~ msgid "Update"
-#~ msgstr "Actualitza"
-
-#~ msgid "Uninstall"
-#~ msgstr "Desinstal·la"
-
-#~ msgid "Become a Fan"
-#~ msgstr "Feu-vos fan"
-
-#~ msgid "Details for %1"
-#~ msgstr "Detalls de %1"
-
-#~ msgid "Changelog:"
-#~ msgstr "Registre de canvis:"
-
-#~ msgctxt "A link to the description of this Get Hot New Stuff item"
-#~ msgid "Homepage"
-#~ msgstr "Pàgina web"
-
-#~ msgctxt ""
-#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
-#~ "browser)"
-#~ msgid "Make a donation"
-#~ msgstr "Feu una donació"
-
-#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-#~ msgid "Knowledgebase (no entries)"
-#~ msgid_plural "Knowledgebase (%1 entries)"
-#~ msgstr[0] "Base de coneixements (sense entrades)"
-#~ msgstr[1] "Base de coneixements (%1 entrades)"
-
-#~ msgctxt "Tooltip for a link in a dialog"
-#~ msgid "Opens in a browser window"
-#~ msgstr "S'obri en una finestra del navegador"
-
-#~ msgid "Rating: %1%"
-#~ msgstr "Puntuació: %1%"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<br />Size: %1"
-#~ msgstr "<br />Mida: %1"
-
-#~ msgctxt "Show the author of this item in a list"
-#~ msgid "By <i>%1</i>"
-#~ msgstr "Per <i>%1</i>"
-
-#~ msgctxt "fan as in supporter"
-#~ msgid "1 fan"
-#~ msgid_plural "%1 fans"
-#~ msgstr[0] "1 admirador"
-#~ msgstr[1] "%1 admiradors"
-
-#~ msgid "1 download"
-#~ msgid_plural "%1 downloads"
-#~ msgstr[0] "1 baixada"
-#~ msgstr[1] "%1 baixades"
-
-#~ msgid "Loading Preview"
-#~ msgstr "S'està carregant la vista prèvia"
-
-#~ msgid "Details"
-#~ msgstr "Detalls"
-
-#~ msgid "Updating"
-#~ msgstr "S'està actualitzant"
-
-#~ msgid "Install Again"
-#~ msgstr "Instal·la una altra vegada"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<p>Size: %1</p>"
-#~ msgstr "<p>Mida: %1</p>"
-
-#~ msgctxt "@action:button"
-#~ msgid "Yes"
-#~ msgstr "Sí"
-
-#~ msgctxt "@action:button"
-#~ msgid "No"
-#~ msgstr "No"
