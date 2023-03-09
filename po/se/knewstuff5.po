@@ -1079,16 +1079,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Viečča ođđa, somás tiŋggaid …"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "More"
-#~ msgstr "Eanet"
-
-#~ msgid "Move down"
-#~ msgstr "Sirdde vulos"
-
-#~ msgid "Move up"
-#~ msgstr "Sirdde bajás"
-
-#~ msgid "Reset"
-#~ msgstr "Máhcat"
