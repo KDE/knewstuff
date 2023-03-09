@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2022-12-12 21:24+0200\n"
+"PO-Revision-Date: 2023-03-08 23:03+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -258,6 +258,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Nepavyksta įdiegti „%1“, nes jis nurodo į puslapį internete. Spustelėkite <a "
+"href='%2'>čia</a>, norėdami užbaigti diegimą."
 
 #: core/installation.cpp:303
 #, kde-format
