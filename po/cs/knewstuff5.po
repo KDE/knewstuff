@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:08+0000\n"
-"PO-Revision-Date: 2023-01-25 09:11+0100\n"
+"PO-Revision-Date: 2023-03-02 18:29+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -110,10 +110,9 @@ msgid "Initializing"
 msgstr "Probíhá inicializace"
 
 #: core/engine.cpp:219
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Konfigurační soubor je neplatný: \"%1\""
+msgstr "Konfigurační soubor neexistuje: \"%1\""
 
 #: core/engine.cpp:227
 #, kde-format
@@ -1087,253 +1086,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Stáhnout nový obsah..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Not installed:"
-#~ msgstr "Nenainstalováno:"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "More"
-#~ msgstr "Více"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Configure..."
-#~ msgstr "Nastavit..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Visit homepage"
-#~ msgstr "Navštivte domovskou stránku"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Install"
-#~ msgstr "Instalovat"
-
-#~ msgid "Configure menu"
-#~ msgstr "Nastavit nabídku"
-
-#~ msgid "Configure menu - %1"
-#~ msgstr "Nastavit nabídku - %1"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current folder"
-#~ msgstr "%1 - současná složka"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current device"
-#~ msgstr "%1 - současné zařízení"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - all devices"
-#~ msgstr "%1 - všechna zařízení"
-
-#~ msgid "Main section"
-#~ msgstr "Hlavní oddíl"
-
-#~ msgid "Move down"
-#~ msgstr "Posunout dolů"
-
-#~ msgid "Move up"
-#~ msgstr "Posunout nahoru"
-
-#~ msgid "Move to Main section"
-#~ msgstr "Přesunout do hlavního oddílu"
-
-#, fuzzy
-#~| msgid "Move to Main section"
-#~ msgid "Move to More section"
-#~ msgstr "Přesunout do hlavního oddílu"
-
-#~ msgid "Reset"
-#~ msgstr "Obnovit"
-
-#, fuzzy
-#~| msgid "Main section"
-#~ msgid "More section"
-#~ msgstr "Hlavní oddíl"
-
-#~ msgid "More tools..."
-#~ msgstr "Více nástrojů..."
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>Nelze spustit <i>gpg</i> a získat dostupné klíče. Ujistěte se, že je "
-#~ "<i>gpg</i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</"
-#~ "qt>"
-
-#~ msgid ""
-#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
-#~ "%3&gt;</i><br />:</qt>"
-#~ msgstr ""
-#~ "<qt>Zadejte heslo ke klíči <b>0x%1</b>, patřící osobě<br /><i>%2&lt;%3&gt;"
-#~ "</i><br />:</qt>"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>Nelze spustit <i>gpg</i> a ověřit soubor. Ujistěte se, že je <i>gpg</"
-#~ "i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</qt>"
-
-#~ msgid "Key used for signing:"
-#~ msgstr "Klíč pro podepsání:"
-
-#~ msgid "Select Signing Key"
-#~ msgstr "Vybrat klíč k podepsání"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
-#~ "is installed, otherwise signing of the resources will not be possible.</"
-#~ "qt>"
-#~ msgstr ""
-#~ "<qt>Nelze spustit <i>gpg</i> a podepsat soubor. Ujistěte se, že je "
-#~ "<i>gpg</i> nainstalováno, jinak nebude ověřování stažených zdrojů možné.</"
-#~ "qt>"
-
-#~ msgid "Get Hot New Stuff"
-#~ msgstr "Získat novinky"
-
-#~ msgctxt "Program name followed by 'Add On Installer'"
-#~ msgid "%1 Add-On Installer"
-#~ msgstr "Instalátor doplňků '%1'"
-
-#~ msgid "Timeout. Check Internet connection."
-#~ msgstr "Čas vypršel, zkontrolujte připojení k internetu."
-
-#~ msgid "Server: %1"
-#~ msgstr "Server: %1"
-
-#~ msgid "<br />Provider: %1"
-#~ msgstr "<br />Poskytovatel: %1"
-
-#~ msgid "<br />Version: %1"
-#~ msgstr "<br />Verze: %1"
-
-#~ msgid "Provider information"
-#~ msgstr "Informace o poskytovateli"
-
-#~ msgid "Could not install %1"
-#~ msgstr "Nelze nainstalovat %1"
-
-#~ msgid "Get Hot New Stuff!"
-#~ msgstr "Získat novinky!"
-
-#~ msgid "Icons view mode"
-#~ msgstr "Režim zobrazení ikon"
-
-#~ msgid "Details view mode"
-#~ msgstr "Režim zobrazení podrobností"
-
-#~ msgid "All Providers"
-#~ msgstr "Všichni poskytovatelé"
-
-#~ msgid "All Categories"
-#~ msgstr "Všechny kategorie"
-
-#~ msgid "Provider:"
-#~ msgstr "Poskytovatel:"
-
-#~ msgid "Most downloads"
-#~ msgstr "Nejvíce stáhnutí"
-
-#~ msgid "Newest"
-#~ msgstr "Nejnovější"
-
-#~ msgid "Order by:"
-#~ msgstr "Setřídit podle:"
-
-#~ msgid "Search:"
-#~ msgstr "Hledat:"
-
-#~ msgid "Author:"
-#~ msgstr "Autor:"
-
-#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-#~ msgstr "<a href=\"https://opendesktop.org\">Domovská stránka</a>"
-
-#~ msgid "Update"
-#~ msgstr "Aktualizovat"
-
-#~ msgid "Uninstall"
-#~ msgstr "Odinstalovat"
-
-#~ msgid "Become a Fan"
-#~ msgstr "Staňte se fanouškem"
-
-#~ msgid "Details for %1"
-#~ msgstr "Podrobnosti pro %1"
-
-#~ msgid "Changelog:"
-#~ msgstr "Seznam změn:"
-
-#~ msgctxt "A link to the description of this Get Hot New Stuff item"
-#~ msgid "Homepage"
-#~ msgstr "Domovská stránka"
-
-#~ msgctxt ""
-#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
-#~ "browser)"
-#~ msgid "Make a donation"
-#~ msgstr "Sponzorovat"
-
-#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-#~ msgid "Knowledgebase (no entries)"
-#~ msgid_plural "Knowledgebase (%1 entries)"
-#~ msgstr[0] "Báze znalostí (žádná položka)"
-#~ msgstr[1] "Báze znalostí (%1 položky)"
-#~ msgstr[2] "Báze znalostí (%1 položek)"
-
-#~ msgctxt "Tooltip for a link in a dialog"
-#~ msgid "Opens in a browser window"
-#~ msgstr "Otevřít v okně prohlížeče"
-
-#~ msgid "Rating: %1%"
-#~ msgstr "Hodnocení: %1%"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<br />Size: %1"
-#~ msgstr "<br />Velikost: %1"
-
-#~ msgctxt "Show the author of this item in a list"
-#~ msgid "By <i>%1</i>"
-#~ msgstr "Od <i>%1</i>"
-
-#~ msgctxt "fan as in supporter"
-#~ msgid "1 fan"
-#~ msgid_plural "%1 fans"
-#~ msgstr[0] "1 fanoušek"
-#~ msgstr[1] "%1 fanoušci"
-#~ msgstr[2] "%1 fanoušků"
-
-#~ msgid "1 download"
-#~ msgid_plural "%1 downloads"
-#~ msgstr[0] "1 stažení"
-#~ msgstr[1] "%1 stažení"
-#~ msgstr[2] "%1 stažení"
-
-#~ msgid "Loading Preview"
-#~ msgstr "Načítá se náhled"
-
-#~ msgid "Details"
-#~ msgstr "Podrobnosti"
-
-#~ msgid "Updating"
-#~ msgstr "Aktualizuji"
-
-#~ msgid "Install Again"
-#~ msgstr "Znovu nainstalovat"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<p>Size: %1</p>"
-#~ msgstr "<p>Velikost: %1</p>"
-
-#~ msgctxt "@action:button"
-#~ msgid "Yes"
-#~ msgstr "Ano"
-
-#~ msgctxt "@action:button"
-#~ msgid "No"
-#~ msgstr "Ne"
