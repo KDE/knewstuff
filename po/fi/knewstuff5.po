@@ -11,7 +11,7 @@
 # Joonas Niilola <juippis@roskakori.org>, 2006.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Teemu Rytilahti <tpr@d5k.net>, 2008.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2017, 2018, 2019, 2020, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2006, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 #
@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2022-07-20 21:53+0300\n"
+"PO-Revision-Date: 2023-03-05 18:15+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
 
 #: attica/atticaprovider.cpp:167
@@ -267,6 +267,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Kohdetta ”%1” ei voi asentaa, koska se viittaa verkkosivuun. Viimeistele "
+"asennus napsauttamalla <a href='%2'>tästä</a>."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -1220,8 +1222,7 @@ msgid "Go to..."
 msgstr "Siirry…"
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Contribute your own..."
+#, kde-format
 msgid "Contribute your own…"
 msgstr "Lahjoita omasi…"
 
@@ -1642,15 +1643,13 @@ msgid "<p>Size: %1</p>"
 msgstr "<p>Koko: %1</p>"
 
 #: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes"
-msgstr "Kyllä"
+msgstr "Yes"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
 msgstr "Ei"
