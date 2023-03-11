@@ -81,39 +81,37 @@ KCM.SimpleKCM {
         username: author.name
     }
     title: i18ndc("knewstuff5", "Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2", component.name, entryAuthor.name)
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                text: component.downloadLinks.length == 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
-                icon.name: "install"
-                onTriggered: {
-                    if (component.downloadLinks.length == 1) {
-                        newStuffModel.installItem(component.index, NewStuff.ItemsModel.FirstLinkId);
-                    } else {
-                        downloadItemsSheet.downloadLinks = component.downloadLinks;
-                        downloadItemsSheet.entryId = component.index;
-                        downloadItemsSheet.open();
-                    }
+    actions: [
+        Kirigami.Action {
+            text: component.downloadLinks.length == 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
+            icon.name: "install"
+            onTriggered: {
+                if (component.downloadLinks.length == 1) {
+                    newStuffModel.installItem(component.index, NewStuff.ItemsModel.FirstLinkId);
+                } else {
+                    downloadItemsSheet.downloadLinks = component.downloadLinks;
+                    downloadItemsSheet.entryId = component.index;
+                    downloadItemsSheet.open();
                 }
-                enabled: component.status == NewStuff.ItemsModel.DownloadableStatus || component.status == NewStuff.ItemsModel.DeletedStatus;
-                visible: enabled;
-            },
-            Kirigami.Action {
-                text: i18ndc("knewstuff5", "Request updating of this item", "Update");
-                icon.name: "update-none"
-                onTriggered: { newStuffModel.updateItem(component.index); }
-                enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
-                visible: enabled;
-            },
-            Kirigami.Action {
-                text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
-                icon.name: "edit-delete"
-                onTriggered: { newStuffModel.uninstallItem(component.index); }
-                enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
-                visible: enabled;
             }
-        ]
-    }
+            enabled: component.status == NewStuff.ItemsModel.DownloadableStatus || component.status == NewStuff.ItemsModel.DeletedStatus;
+            visible: enabled;
+        },
+        Kirigami.Action {
+            text: i18ndc("knewstuff5", "Request updating of this item", "Update");
+            icon.name: "update-none"
+            onTriggered: { newStuffModel.updateItem(component.index); }
+            enabled: component.status == NewStuff.ItemsModel.UpdateableStatus;
+            visible: enabled;
+        },
+        Kirigami.Action {
+            text: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
+            icon.name: "edit-delete"
+            onTriggered: { newStuffModel.uninstallItem(component.index); }
+            enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
+            visible: enabled;
+        }
+    ]
     QtLayouts.ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
         Kirigami.AbstractCard {

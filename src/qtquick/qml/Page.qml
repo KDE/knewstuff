@@ -206,195 +206,193 @@ KCM.GridViewKCM {
     QtControls.ActionGroup { id: viewModeActionGroup }
     QtControls.ActionGroup { id: viewFilterActionGroup }
     QtControls.ActionGroup { id: viewSortingActionGroup }
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                text: {
-                    if (root.viewMode == Page.ViewMode.Tiles) {
-                        return i18nd("knewstuff5", "Tiles");
-                    } else if (root.viewMode == Page.ViewMode.Icons) {
-                        return i18nd("knewstuff5", "Icons");
-                    } else {
-                        return i18nd("knewstuff5", "Preview");
-                    }
-                }
-                checkable: false
-                icon.name: {
-                    if (root.viewMode == Page.ViewMode.Tiles) {
-                        return "view-list-details";
-                    } else if (root.viewMode == Page.ViewMode.Icons) {
-                        return "view-list-icons";
-                    } else {
-                        return "view-preview";
-                    }
-                }
-                Kirigami.Action {
-                    icon.name: "view-list-details"
-                    text: i18nd("knewstuff5", "Detailed Tiles View Mode")
-                    onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
-                    checked: root.viewMode == Page.ViewMode.Tiles
-                    checkable: true
-                    QtControls.ActionGroup.group: viewModeActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "view-list-icons"
-                    text: i18nd("knewstuff5", "Icons Only View Mode")
-                    onTriggered: { root.viewMode = Page.ViewMode.Icons; }
-                    checked: root.viewMode == Page.ViewMode.Icons
-                    checkable: true
-                    QtControls.ActionGroup.group: viewModeActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "view-preview"
-                    text: i18nd("knewstuff5", "Large Preview View Mode")
-                    onTriggered: { root.viewMode = Page.ViewMode.Preview; }
-                    checked: root.viewMode == Page.ViewMode.Preview
-                    checkable: true
-                    QtControls.ActionGroup.group: viewModeActionGroup
-                }
-            },
-            Kirigami.Action {
-                text: {
-                    if (newStuffEngine.filter === 0) {
-                        return i18nd("knewstuff5", "Everything");
-                    } else if (newStuffEngine.filter === 1) {
-                        return i18nd("knewstuff5", "Installed");
-                    } else if (newStuffEngine.filter === 2) {
-                        return i18nd("knewstuff5", "Updateable");
-                    } else {
-                        // then it's ExactEntryId and we want to probably just ignore that
-                    }
-                }
-                checkable: false
-                icon.name: {
-                    if (newStuffEngine.filter === 0) {
-                        return "package-available"
-                    } else if (newStuffEngine.filter === 1) {
-                        return "package-installed-updated"
-                    } else if (newStuffEngine.filter === 2) {
-                        return "package-installed-outdated"
-                    } else {
-                        // then it's ExactEntryId and we want to probably just ignore that
-                    }
-                }
-                Kirigami.Action {
-                    icon.name: "package-available"
-                    text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show All Entries")
-                    checkable: true
-                    checked: newStuffEngine.filter === 0
-                    onTriggered: { newStuffEngine.filter = 0; }
-                    QtControls.ActionGroup.group: viewFilterActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "package-installed-updated"
-                    text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
-                    checkable: true
-                    checked: newStuffEngine.filter === 1
-                    onTriggered: { newStuffEngine.filter = 1; }
-                    QtControls.ActionGroup.group: viewFilterActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "package-installed-outdated"
-                    text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
-                    checkable: true
-                    checked: newStuffEngine.filter === 2
-                    onTriggered: { newStuffEngine.filter = 2; }
-                    QtControls.ActionGroup.group: viewFilterActionGroup
-                }
-            },
-            Kirigami.Action {
-                text: {
-                    if (newStuffEngine.sortOrder === 0) {
-                        return i18nd("knewstuff5", "Recent");
-                    } else if (newStuffEngine.sortOrder === 1) {
-                        return i18nd("knewstuff5", "Alphabetical");
-                    } else if (newStuffEngine.sortOrder === 2) {
-                        return i18nd("knewstuff5", "Rating");
-                    } else if (newStuffEngine.sortOrder === 3) {
-                        return i18nd("knewstuff5", "Downloads");
-                    } else {
-                    }
-                }
-                checkable: false
-                icon.name: {
-                    if (newStuffEngine.sortOrder === 0) {
-                        return "change-date-symbolic";
-                    } else if (newStuffEngine.sortOrder === 1) {
-                        return "sort-name";
-                    } else if (newStuffEngine.sortOrder === 2) {
-                        return "rating";
-                    } else if (newStuffEngine.sortOrder === 3) {
-                        return "download";
-                    } else {
-                    }
-                }
-                Kirigami.Action {
-                    icon.name: "change-date-symbolic"
-                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
-                    checkable: true
-                    checked: newStuffEngine.sortOrder === 0
-                    onTriggered: { newStuffEngine.sortOrder = 0; }
-                    QtControls.ActionGroup.group: viewSortingActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "sort-name"
-                    text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
-                    checkable: true
-                    checked: newStuffEngine.sortOrder === 1
-                    onTriggered: { newStuffEngine.sortOrder = 1; }
-                    QtControls.ActionGroup.group: viewSortingActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "rating"
-                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
-                    checkable: true
-                    checked: newStuffEngine.sortOrder === 2
-                    onTriggered: { newStuffEngine.sortOrder = 2; }
-                    QtControls.ActionGroup.group: viewSortingActionGroup
-                }
-                Kirigami.Action {
-                    icon.name: "download"
-                    text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
-                    checkable: true
-                    checked: newStuffEngine.sortOrder === 3
-                    onTriggered: { newStuffEngine.sortOrder = 3; }
-                    QtControls.ActionGroup.group: viewSortingActionGroup
-                }
-            },
-            Kirigami.Action {
-                id: uploadAction
-                text: i18nd("knewstuff5", "Upload...")
-                tooltip: i18nd("knewstuff5", "Learn how to add your own hot new stuff to this list")
-                iconName: "upload-media"
-                visible: newStuffEngine.engine.uploadEnabled
-                onTriggered: {
-                    pageStack.push(uploadPage);
-                }
-            },
-            Kirigami.Action {
-                text: i18nd("knewstuff5", "Go to...")
-                iconName: "go-next";
-                id: searchModelActions;
-                visible: children.length > 0;
-            },
-            Kirigami.Action {
-                text: i18nd("knewstuff5", "Search...")
-                iconName: "system-search";
-                displayHint: Kirigami.DisplayHint.KeepVisible
-                displayComponent: Kirigami.SearchField {
-                    enabled: engine.isValid
-                    id: searchField
-                    focusSequence: "Ctrl+F"
-                    placeholderText: i18nd("knewstuff5", "Search...")
-                    text: newStuffEngine.searchTerm
-                    onAccepted: { newStuffEngine.searchTerm = searchField.text; }
-                    Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
-                        forceActiveFocus();
-                    }
+    actions: [
+        Kirigami.Action {
+            text: {
+                if (root.viewMode == Page.ViewMode.Tiles) {
+                    return i18nd("knewstuff5", "Tiles");
+                } else if (root.viewMode == Page.ViewMode.Icons) {
+                    return i18nd("knewstuff5", "Icons");
+                } else {
+                    return i18nd("knewstuff5", "Preview");
                 }
             }
-        ]
-    }
+            checkable: false
+            icon.name: {
+                if (root.viewMode == Page.ViewMode.Tiles) {
+                    return "view-list-details";
+                } else if (root.viewMode == Page.ViewMode.Icons) {
+                    return "view-list-icons";
+                } else {
+                    return "view-preview";
+                }
+            }
+            Kirigami.Action {
+                icon.name: "view-list-details"
+                text: i18nd("knewstuff5", "Detailed Tiles View Mode")
+                onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
+                checked: root.viewMode == Page.ViewMode.Tiles
+                checkable: true
+                QtControls.ActionGroup.group: viewModeActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "view-list-icons"
+                text: i18nd("knewstuff5", "Icons Only View Mode")
+                onTriggered: { root.viewMode = Page.ViewMode.Icons; }
+                checked: root.viewMode == Page.ViewMode.Icons
+                checkable: true
+                QtControls.ActionGroup.group: viewModeActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "view-preview"
+                text: i18nd("knewstuff5", "Large Preview View Mode")
+                onTriggered: { root.viewMode = Page.ViewMode.Preview; }
+                checked: root.viewMode == Page.ViewMode.Preview
+                checkable: true
+                QtControls.ActionGroup.group: viewModeActionGroup
+            }
+        },
+        Kirigami.Action {
+            text: {
+                if (newStuffEngine.filter === 0) {
+                    return i18nd("knewstuff5", "Everything");
+                } else if (newStuffEngine.filter === 1) {
+                    return i18nd("knewstuff5", "Installed");
+                } else if (newStuffEngine.filter === 2) {
+                    return i18nd("knewstuff5", "Updateable");
+                } else {
+                    // then it's ExactEntryId and we want to probably just ignore that
+                }
+            }
+            checkable: false
+            icon.name: {
+                if (newStuffEngine.filter === 0) {
+                    return "package-available"
+                } else if (newStuffEngine.filter === 1) {
+                    return "package-installed-updated"
+                } else if (newStuffEngine.filter === 2) {
+                    return "package-installed-outdated"
+                } else {
+                    // then it's ExactEntryId and we want to probably just ignore that
+                }
+            }
+            Kirigami.Action {
+                icon.name: "package-available"
+                text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show All Entries")
+                checkable: true
+                checked: newStuffEngine.filter === 0
+                onTriggered: { newStuffEngine.filter = 0; }
+                QtControls.ActionGroup.group: viewFilterActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "package-installed-updated"
+                text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
+                checkable: true
+                checked: newStuffEngine.filter === 1
+                onTriggered: { newStuffEngine.filter = 1; }
+                QtControls.ActionGroup.group: viewFilterActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "package-installed-outdated"
+                text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
+                checkable: true
+                checked: newStuffEngine.filter === 2
+                onTriggered: { newStuffEngine.filter = 2; }
+                QtControls.ActionGroup.group: viewFilterActionGroup
+            }
+        },
+        Kirigami.Action {
+            text: {
+                if (newStuffEngine.sortOrder === 0) {
+                    return i18nd("knewstuff5", "Recent");
+                } else if (newStuffEngine.sortOrder === 1) {
+                    return i18nd("knewstuff5", "Alphabetical");
+                } else if (newStuffEngine.sortOrder === 2) {
+                    return i18nd("knewstuff5", "Rating");
+                } else if (newStuffEngine.sortOrder === 3) {
+                    return i18nd("knewstuff5", "Downloads");
+                } else {
+                }
+            }
+            checkable: false
+            icon.name: {
+                if (newStuffEngine.sortOrder === 0) {
+                    return "change-date-symbolic";
+                } else if (newStuffEngine.sortOrder === 1) {
+                    return "sort-name";
+                } else if (newStuffEngine.sortOrder === 2) {
+                    return "rating";
+                } else if (newStuffEngine.sortOrder === 3) {
+                    return "download";
+                } else {
+                }
+            }
+            Kirigami.Action {
+                icon.name: "change-date-symbolic"
+                text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
+                checkable: true
+                checked: newStuffEngine.sortOrder === 0
+                onTriggered: { newStuffEngine.sortOrder = 0; }
+                QtControls.ActionGroup.group: viewSortingActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "sort-name"
+                text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
+                checkable: true
+                checked: newStuffEngine.sortOrder === 1
+                onTriggered: { newStuffEngine.sortOrder = 1; }
+                QtControls.ActionGroup.group: viewSortingActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "rating"
+                text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
+                checkable: true
+                checked: newStuffEngine.sortOrder === 2
+                onTriggered: { newStuffEngine.sortOrder = 2; }
+                QtControls.ActionGroup.group: viewSortingActionGroup
+            }
+            Kirigami.Action {
+                icon.name: "download"
+                text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
+                checkable: true
+                checked: newStuffEngine.sortOrder === 3
+                onTriggered: { newStuffEngine.sortOrder = 3; }
+                QtControls.ActionGroup.group: viewSortingActionGroup
+            }
+        },
+        Kirigami.Action {
+            id: uploadAction
+            text: i18nd("knewstuff5", "Upload...")
+            tooltip: i18nd("knewstuff5", "Learn how to add your own hot new stuff to this list")
+            iconName: "upload-media"
+            visible: newStuffEngine.engine.uploadEnabled
+            onTriggered: {
+                pageStack.push(uploadPage);
+            }
+        },
+        Kirigami.Action {
+            text: i18nd("knewstuff5", "Go to...")
+            iconName: "go-next";
+            id: searchModelActions;
+            visible: children.length > 0;
+        },
+        Kirigami.Action {
+            text: i18nd("knewstuff5", "Search...")
+            iconName: "system-search";
+            displayHint: Kirigami.DisplayHint.KeepVisible
+            displayComponent: Kirigami.SearchField {
+                enabled: engine.isValid
+                id: searchField
+                focusSequence: "Ctrl+F"
+                placeholderText: i18nd("knewstuff5", "Search...")
+                text: newStuffEngine.searchTerm
+                onAccepted: { newStuffEngine.searchTerm = searchField.text; }
+                Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
+                    forceActiveFocus();
+                }
+            }
+        }
+    ]
 
     Instantiator {
         id: searchPresetInstatiator
