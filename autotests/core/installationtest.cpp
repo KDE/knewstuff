@@ -76,6 +76,7 @@ void InstallationTest::testInstallCommand()
 {
     Entry entry;
     entry.setUniqueId("0");
+    entry.setName("testInstallCommand");
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/testfile.txt")).toString());
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     installation->install(entry);
