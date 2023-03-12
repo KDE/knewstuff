@@ -66,7 +66,7 @@ QtControls.Button {
      * @see Engine::entryEvent
      * @since 5.82
      */
-    signal entryEvent(QtObject entry, int event);
+    signal entryEvent(var entry, int event);
     property Connections engineConnections: Connections {
         target: component.engine
         function onEntryEvent(entry, event) {

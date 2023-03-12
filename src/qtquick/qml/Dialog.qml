@@ -20,7 +20,7 @@ import QtQuick.Controls 2.5 as QtControls
 import QtQuick.Layouts 1.13 as QtLayouts
 
 import org.kde.kirigami 2.7 as Kirigami
-import org.kde.newstuff 1.85 as NewStuff
+import org.kde.newstuff 1.91 as NewStuff
 
 Window {
     id: component
@@ -65,7 +65,7 @@ Window {
      * @see Engine::entryEvent
      * @since 5.82
      */
-    signal entryEvent(QtObject entry, int event);
+    signal entryEvent(var entry, int event);
     property Connections engineConnections: Connections {
         target: engine
         function onEntryEvent(entry, event) {

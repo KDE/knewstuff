@@ -83,7 +83,7 @@ Kirigami.Action {
      * This forwards the entry changed event from the QtQuick engine
      * @see Engine::entryEvent
      */
-    signal entryEvent(QtObject entry, int event);
+    signal entryEvent(var entry, int event);
 
     /**
      * Show the details page for a specific entry.
