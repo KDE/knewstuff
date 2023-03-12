@@ -69,8 +69,8 @@ Kirigami.ApplicationItem {
                 component.showPassiveNotification(message);
             }
         }
-        onMessage: component.showPassiveNotification(message);
-        onIdleMessage: component.showPassiveNotification(message);
+        onMessage: (message) => component.showPassiveNotification(message);
+        onIdleMessage: (message) => component.showPassiveNotification(message);
     }
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
