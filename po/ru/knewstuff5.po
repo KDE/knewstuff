@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"POT-Creation-Date: 2023-03-13 02:33+0000\n"
 "PO-Revision-Date: 2023-02-17 11:04+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -557,7 +557,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 от %2"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -568,7 +568,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Установить"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -578,7 +578,7 @@ msgctxt ""
 msgid "Install..."
 msgstr "Установить..."
 
-#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -587,20 +587,20 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Обновить"
 
-#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Удалить"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Комментарии и отзывы:"
 
 # BUGME: add plurals please --ayavorsky 20191130
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -608,17 +608,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 отзывов и комментариев"
 
-#: qtquick/qml/EntryDetails.qml:160
+#: qtquick/qml/EntryDetails.qml:158
 #, kde-format
 msgid "Rating:"
 msgstr "Оценка:"
 
-#: qtquick/qml/EntryDetails.qml:164
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgid "Homepage:"
 msgstr "Веб-сайт:"
 
-#: qtquick/qml/EntryDetails.qml:165
+#: qtquick/qml/EntryDetails.qml:163
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -627,12 +627,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Открыть домашнюю страницу %1"
 
-#: qtquick/qml/EntryDetails.qml:170
+#: qtquick/qml/EntryDetails.qml:168
 #, kde-format
 msgid "How To Donate:"
 msgstr "Как сделать пожертвование:"
 
-#: qtquick/qml/EntryDetails.qml:171
+#: qtquick/qml/EntryDetails.qml:169
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -716,65 +716,65 @@ msgstr ""
 "Доступное здесь содержимое было загружено обычными пользователями и не "
 "проверялось разработчиками на функциональность и стабильность."
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Tiles"
 msgstr "Плитки"
 
-#: qtquick/qml/Page.qml:216
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Icons"
 msgstr "Значки"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Preview"
 msgstr "Режим просмотра"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Список"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:240
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Значки"
 
-#: qtquick/qml/Page.qml:249
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Крупные миниатюры"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgid "Everything"
 msgstr "Показать все"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgid "Installed"
 msgstr "Установленные"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgid "Updateable"
 msgstr "Только обновляемые"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Показать все категории"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Показать только установленные"
 
-#: qtquick/qml/Page.qml:298
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -782,27 +782,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Показать только обновляемые"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:307
 #, kde-format
 msgid "Recent"
 msgstr "Последние"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Alphabetical"
 msgstr "Сортировать по алфавиту"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:311
 #, kde-format
 msgid "Rating"
 msgstr "Высоко оценённые"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgid "Downloads"
 msgstr "Загрузки"
 
-#: qtquick/qml/Page.qml:333
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -810,7 +810,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Сначала самые новые"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -818,50 +818,50 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Сортировать по алфавиту по имени"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Сначала с наивысшей оценкой"
 
-#: qtquick/qml/Page.qml:357
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Сначала самые популярные"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Upload..."
 msgstr "Загрузить..."
 
-#: qtquick/qml/Page.qml:367
+#: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Узнайте, как добавить свои материалы в этот список"
 
-#: qtquick/qml/Page.qml:375
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgid "Go to..."
 msgstr "Перейти..."
 
-#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, kde-format
 msgid "Search..."
 msgstr "Поиск..."
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:424
 #, kde-format
 msgid "Category:"
 msgstr "Категория:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:440
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Загрузить свои материалы…"
 
-#: qtquick/qml/Page.qml:508
+#: qtquick/qml/Page.qml:506
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -889,13 +889,13 @@ msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "Комментарии и отзывы о %1"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:30
+#: qtquick/qml/private/EntryCommentsPage.qml:29
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Показывать все комментарии"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:36
+#: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -903,7 +903,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Показывать только отзывы"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:42
+#: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "

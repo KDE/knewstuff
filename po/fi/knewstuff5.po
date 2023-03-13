@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"POT-Creation-Date: 2023-03-13 02:33+0000\n"
 "PO-Revision-Date: 2023-03-05 18:15+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -564,7 +564,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1/%2"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -575,7 +575,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Asenna"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -585,7 +585,7 @@ msgctxt ""
 msgid "Install..."
 msgstr "Asenna…"
 
-#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -594,19 +594,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Päivitä"
 
-#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Kommentit ja arvostelut:"
 
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -614,17 +614,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 arvostelua ja kommenttia"
 
-#: qtquick/qml/EntryDetails.qml:160
+#: qtquick/qml/EntryDetails.qml:158
 #, kde-format
 msgid "Rating:"
 msgstr "Arvostelu:"
 
-#: qtquick/qml/EntryDetails.qml:164
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgid "Homepage:"
 msgstr "Kotisivu:"
 
-#: qtquick/qml/EntryDetails.qml:165
+#: qtquick/qml/EntryDetails.qml:163
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -633,12 +633,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Avaa sivusto – %1"
 
-#: qtquick/qml/EntryDetails.qml:170
+#: qtquick/qml/EntryDetails.qml:168
 #, kde-format
 msgid "How To Donate:"
 msgstr "Lahjoittaminen:"
 
-#: qtquick/qml/EntryDetails.qml:171
+#: qtquick/qml/EntryDetails.qml:169
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -722,66 +722,66 @@ msgstr ""
 "Tässä saatavilla olevan sisällön tarjoavat kaltaisesti käyttäjät, eikä "
 "jakelusi ole tarkistanut sen toimivuutta tai vakautta."
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Tiles"
 msgstr "Ruudukko"
 
-#: qtquick/qml/Page.qml:216
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Icons"
 msgstr "Kuvakkeet"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Preview"
 msgstr "Esikatselu"
 
 # Ruudukko-sanavalinta tulee Facebookin vastaavanoloisesta näkymästä
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Yksityiskohtainen ruudukkonäkymä"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:240
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Vain kuvakkeet -näkymä"
 
-#: qtquick/qml/Page.qml:249
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Suuri esikatselunäkymä"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgid "Everything"
 msgstr "Kaikki"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgid "Installed"
 msgstr "Asennetut"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgid "Updateable"
 msgstr "Päivitettävissä"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Näytä kaikki kohteet"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Näytä vain asennetut kohteet"
 
-#: qtquick/qml/Page.qml:298
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -789,27 +789,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Näytä vain päivitettävissä olevat kohteet"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:307
 #, kde-format
 msgid "Recent"
 msgstr "Uusimmat"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:311
 #, kde-format
 msgid "Rating"
 msgstr "Arvostelu"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgid "Downloads"
 msgstr "Lataukset"
 
-#: qtquick/qml/Page.qml:333
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -817,7 +817,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Näytä ensin uusimmat"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -825,50 +825,50 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Aakkosta nimen mukaan"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Näytä ensin parhaiksi arvioidut"
 
-#: qtquick/qml/Page.qml:357
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Näytä ensin ladatuimmat"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Upload..."
 msgstr "Lähetä…"
 
-#: qtquick/qml/Page.qml:367
+#: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Lisätietoa siitä, miten lisätä luetteloon omia uutuuksiasi"
 
-#: qtquick/qml/Page.qml:375
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgid "Go to..."
 msgstr "Siirry…"
 
-#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, kde-format
 msgid "Search..."
 msgstr "Etsi…"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:424
 #, kde-format
 msgid "Category:"
 msgstr "Luokka:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:440
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Lahjoita omasi…"
 
-#: qtquick/qml/Page.qml:508
+#: qtquick/qml/Page.qml:506
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -896,13 +896,13 @@ msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "%1 – kommentit ja arvostelut"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:30
+#: qtquick/qml/private/EntryCommentsPage.qml:29
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Näytä kaikki kommentit"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:36
+#: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -910,7 +910,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Näytä vain arvostelut"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:42
+#: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "

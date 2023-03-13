@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"POT-Creation-Date: 2023-03-13 02:33+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -544,7 +544,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1, szerző: %2"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -555,7 +555,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Telepítés"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -565,7 +565,7 @@ msgctxt ""
 msgid "Install..."
 msgstr "Telepítés…"
 
-#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -574,19 +574,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Frissítés"
 
-#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Eltávolítás"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Megjegyzések és értékelések:"
 
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -594,17 +594,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 értékelés és megjegyzés"
 
-#: qtquick/qml/EntryDetails.qml:160
+#: qtquick/qml/EntryDetails.qml:158
 #, kde-format
 msgid "Rating:"
 msgstr "Értékelés:"
 
-#: qtquick/qml/EntryDetails.qml:164
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgid "Homepage:"
 msgstr "Honlap:"
 
-#: qtquick/qml/EntryDetails.qml:165
+#: qtquick/qml/EntryDetails.qml:163
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -613,12 +613,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "A(z) %1 honlapjának megnyitása"
 
-#: qtquick/qml/EntryDetails.qml:170
+#: qtquick/qml/EntryDetails.qml:168
 #, kde-format
 msgid "How To Donate:"
 msgstr "Hogyan támogassa:"
 
-#: qtquick/qml/EntryDetails.qml:171
+#: qtquick/qml/EntryDetails.qml:169
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -702,65 +702,65 @@ msgstr ""
 "disztribúciója készítője nem ellenőrizte azokat funkcionalitás vagy "
 "stabilitás szempontjából."
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Tiles"
 msgstr "Csempék"
 
-#: qtquick/qml/Page.qml:216
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Icons"
 msgstr "Ikonok"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Preview"
 msgstr "Előnézet"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Részletes csempenézet mód"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:240
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Ikonos nézetmód"
 
-#: qtquick/qml/Page.qml:249
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Nagy előnézeti nézetmód"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgid "Everything"
 msgstr "Minden"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgid "Installed"
 msgstr "Telepítve"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgid "Updateable"
 msgstr "Frissíthető"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Minden bejegyzés"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Csak telepített bejegyzések"
 
-#: qtquick/qml/Page.qml:298
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -768,27 +768,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Csak frissíthető bejegyzések"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:307
 #, kde-format
 msgid "Recent"
 msgstr "Legutóbbiak"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Alphabetical"
 msgstr "Betűrendben"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:311
 #, kde-format
 msgid "Rating"
 msgstr "Pontszám"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgid "Downloads"
 msgstr "Letöltések"
 
-#: qtquick/qml/Page.qml:333
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -796,7 +796,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Legújabbak előre"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -804,51 +804,51 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Rendezés betűrendben név szerint"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Legjobbra értékeltek előre"
 
-#: qtquick/qml/Page.qml:357
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Legtöbbször letöltöttek előre"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Upload..."
 msgstr "Feltöltés…"
 
-#: qtquick/qml/Page.qml:367
+#: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ismerje meg, hogyan addhatja hozzá saját munkáját ehhez a listához"
 
-#: qtquick/qml/Page.qml:375
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgid "Go to..."
 msgstr "Ugrás ide…"
 
-#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, kde-format
 msgid "Search..."
 msgstr "Keresés…"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:424
 #, kde-format
 msgid "Category:"
 msgstr "Kategória:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:440
 #, fuzzy, kde-format
 #| msgid "Contribute your own..."
 msgid "Contribute your own…"
 msgstr "Tegye közzé sajátját…"
 
-#: qtquick/qml/Page.qml:508
+#: qtquick/qml/Page.qml:506
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -879,13 +879,13 @@ msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "%1 megjegyzései és értékelései"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:30
+#: qtquick/qml/private/EntryCommentsPage.qml:29
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Minden megjegyzés megjelenítése"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:36
+#: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -893,7 +893,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Csak értékelések megjelenítése"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:42
+#: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "

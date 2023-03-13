@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"POT-Creation-Date: 2023-03-13 02:33+0000\n"
 "PO-Revision-Date: 2023-03-05 12:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -558,7 +558,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 per %2"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -569,7 +569,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Instal·la"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -579,7 +579,7 @@ msgctxt ""
 msgid "Install..."
 msgstr "Instal·la..."
 
-#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -588,19 +588,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Actualitza"
 
-#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Comentaris i ressenyes:"
 
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -608,17 +608,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 ressenyes i comentaris"
 
-#: qtquick/qml/EntryDetails.qml:160
+#: qtquick/qml/EntryDetails.qml:158
 #, kde-format
 msgid "Rating:"
 msgstr "Puntuació:"
 
-#: qtquick/qml/EntryDetails.qml:164
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgid "Homepage:"
 msgstr "Pàgina web:"
 
-#: qtquick/qml/EntryDetails.qml:165
+#: qtquick/qml/EntryDetails.qml:163
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -627,12 +627,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Obri la pàgina web de %1"
 
-#: qtquick/qml/EntryDetails.qml:170
+#: qtquick/qml/EntryDetails.qml:168
 #, kde-format
 msgid "How To Donate:"
 msgstr "Com fer un donatiu:"
 
-#: qtquick/qml/EntryDetails.qml:171
+#: qtquick/qml/EntryDetails.qml:169
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -717,65 +717,65 @@ msgstr ""
 "El contingut disponible ací ha sigut carregat per usuaris com vosaltres i no "
 "ha sigut revisat pel vostre distribuïdor de funcionalitat o estabilitat."
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Tiles"
 msgstr "Mosaics"
 
-#: qtquick/qml/Page.qml:216
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Icons"
 msgstr "Icones"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Mode de vista de mosaic en detall"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:240
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Mode de vista només icones"
 
-#: qtquick/qml/Page.qml:249
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Mode de vista prèvia gran"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgid "Everything"
 msgstr "Tot"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgid "Updateable"
 msgstr "Actualitzable"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Mostra totes les entrades"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Mostra només les entrades instal·lades"
 
-#: qtquick/qml/Page.qml:298
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -783,27 +783,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Mostra només les entrades actualitzables"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:307
 #, kde-format
 msgid "Recent"
 msgstr "Recents"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabèticament"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:311
 #, kde-format
 msgid "Rating"
 msgstr "Puntuació"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgid "Downloads"
 msgstr "Baixades"
 
-#: qtquick/qml/Page.qml:333
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -811,7 +811,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Primer mostra la més recent"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -819,51 +819,51 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordena alfabèticament per nom"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Primer mostra la que té millor puntuació"
 
-#: qtquick/qml/Page.qml:357
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Primer mostra la més baixada"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Upload..."
 msgstr "Puja..."
 
-#: qtquick/qml/Page.qml:367
+#: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 "Apreneu com afegir les vostres pròpies coses noves i calentes a esta llista"
 
-#: qtquick/qml/Page.qml:375
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgid "Go to..."
 msgstr "Ves a..."
 
-#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, kde-format
 msgid "Search..."
 msgstr "Busca..."
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:424
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:440
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Col·laboreu-hi amb…"
 
-#: qtquick/qml/Page.qml:508
+#: qtquick/qml/Page.qml:506
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -891,13 +891,13 @@ msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "Comentaris i ressenyes de %1"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:30
+#: qtquick/qml/private/EntryCommentsPage.qml:29
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Mostra tots els comentaris"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:36
+#: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -905,7 +905,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Mostra només les ressenyes"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:42
+#: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:08+0000\n"
+"POT-Creation-Date: 2023-03-13 02:33+0000\n"
 "PO-Revision-Date: 2023-03-11 18:21+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -550,7 +550,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 od %2"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -561,7 +561,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Inštalovať"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:86
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -571,7 +571,7 @@ msgctxt ""
 msgid "Install..."
 msgstr "Inštalovať..."
 
-#: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -580,19 +580,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: qtquick/qml/EntryDetails.qml:109 qtquick/qml/NewStuffItem.qml:36
+#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
 #: qtquick/qml/Page.qml:154
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Odinštalovať"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Komentáre a recenzie:"
 
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -600,17 +600,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 Hodnotení a komentárov"
 
-#: qtquick/qml/EntryDetails.qml:160
+#: qtquick/qml/EntryDetails.qml:158
 #, kde-format
 msgid "Rating:"
 msgstr "Hodnotenie: "
 
-#: qtquick/qml/EntryDetails.qml:164
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgid "Homepage:"
 msgstr "Domovská stránka:"
 
-#: qtquick/qml/EntryDetails.qml:165
+#: qtquick/qml/EntryDetails.qml:163
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -619,12 +619,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Otvoriť domovskú stránku pre %1"
 
-#: qtquick/qml/EntryDetails.qml:170
+#: qtquick/qml/EntryDetails.qml:168
 #, kde-format
 msgid "How To Donate:"
 msgstr "Ako prispieť:"
 
-#: qtquick/qml/EntryDetails.qml:171
+#: qtquick/qml/EntryDetails.qml:169
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -709,65 +709,65 @@ msgstr ""
 "Obsah, ktorý je tu k dispozícii, nahrali používatelia, ako ste vy, a nebol "
 "skontrolovaný distribútorom z hľadiska funkčnosti alebo stability."
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Tiles"
 msgstr "Dlaždice"
 
-#: qtquick/qml/Page.qml:216
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Icons"
 msgstr "Ikony"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Preview"
 msgstr "Náhľad"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Režim zobrazenia podrobných dlaždíc"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:240
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Režim zobrazenia iba ikony"
 
-#: qtquick/qml/Page.qml:249
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Režim zobrazenia veľkých ukážok"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgid "Everything"
 msgstr "Všetko"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgid "Installed"
 msgstr "Nainštalované"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgid "Updateable"
 msgstr "Aktualizovateľné"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Zobraziť všetky položky"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Zobraziť iba inštalované položky"
 
-#: qtquick/qml/Page.qml:298
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -775,27 +775,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Zobraziť iba aktualizovateľné položky"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:307
 #, kde-format
 msgid "Recent"
 msgstr "Nedávne"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Alphabetical"
 msgstr "Abecedne"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:311
 #, kde-format
 msgid "Rating"
 msgstr "Hodnotenie"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgid "Downloads"
 msgstr "Preberania"
 
-#: qtquick/qml/Page.qml:333
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -803,7 +803,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Zobraziť najnovšie ako prvé"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -811,50 +811,50 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Zoradiť abecedne podľa názvu"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Zobraziť najlepšie ako prvé"
 
-#: qtquick/qml/Page.qml:357
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Zobraziť najsťahovanejšie ako prvé"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Upload..."
 msgstr "Odosielanie..."
 
-#: qtquick/qml/Page.qml:367
+#: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Naučiť sa, ako do tohto zoznamu pridať vlastné horúce novinky"
 
-#: qtquick/qml/Page.qml:375
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgid "Go to..."
 msgstr "Prejsť na..."
 
-#: qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
+#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, kde-format
 msgid "Search..."
 msgstr "Hľadať..."
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:424
 #, kde-format
 msgid "Category:"
 msgstr "Kategória:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:440
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Pridajte svoje vlastné..."
 
-#: qtquick/qml/Page.qml:508
+#: qtquick/qml/Page.qml:506
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -882,13 +882,13 @@ msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "Komentáre a recenzie pre %1"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:30
+#: qtquick/qml/private/EntryCommentsPage.qml:29
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Zobraziť všetky komentáre"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:36
+#: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -896,7 +896,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Zobraziť iba hodnotenia"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:42
+#: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
