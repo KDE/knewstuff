@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-03-05 15:13+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -236,22 +236,22 @@ msgstr ""
 "«%1»  bereganatzea huts egin du\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Elementu baliogabea."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Elementuaren jaitsierak huts egin du: ez dago \"%1\" jaisteko URL."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\"(e)n jaitsierak huts egin du, errorea: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -260,51 +260,28 @@ msgstr ""
 "Ezin da '%1' instalatu web-orri batera bideratzen duelako. Egin klik <a "
 "href='%2'>hemen</a> instalazioa amaitzeko."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Ezin \"%1\" instalatu: fitxategia ez da aurkitu."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"%1 instalatzea huts egin du, zama-jaitsitako paketeak ez daukalako KPackage-"
-"n egitura zuzena."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "%1 instalatzea huts egin du %2 direktorio berria sortzean"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 instalatzea huts egin du: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 instalazioa huts egin du, zama-jaitsitako paketeak ez daukalako meta-"
-"informazio erabilgarririk, eta beraz, ez delako KPackage pakete balioduna."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Ezin izan da zehaztu zama-jaitsitako %1 fitxategiaren fitxategi-mota"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Huts egin du %1 artxibo fitxategi irekitzea. Jakinarazi den errorea: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -315,17 +292,17 @@ msgstr ""
 "jaisteko egin den saiakera bategatik). Jarraituz gero hura gainidatziko da. "
 "Dagoen fitxategia gainidatzi nahi duzu?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Gainidatzi fitxategia"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Ezin izan da %1 fitxategia nahi zen %2 jomugara eraman"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -340,7 +317,7 @@ msgstr ""
 "Itzuli den irteerakoa hau izan da:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -355,7 +332,7 @@ msgstr ""
 "Itzuli den irteerakoa hau izan da:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -366,55 +343,7 @@ msgstr ""
 "automatikoki kendu. Fitxategi hori eskuz ezabatzen saia zaitezke, honakoa "
 "errore bat dela uste baduzu."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"%1 kentzea huts egin du, instalatutako paketeak ez daukalako KPackate "
-"egitura zuzena."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 kentzea huts egin du, instalatutako paketeak ez daukalako meta-informazio "
-"erabilgarririk, eta beraz, ez da KPackage pakete balioduna."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"%1 kentzea huts egin du, zama-jaitsitako %2 fitxategia ezin izan delako "
-"automatikoki kendu."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"%1 kentzea huts egin du, instalatutako paketea ez delako KPackage bat. "
-"Fitxategia hori %2 da, eta zu zeu saia zaitezke hura ezabatzen, beharrezkoa "
-"ez dela ziur bazaude."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"%1 kentzea huts egin du, izan ere, dirudienez, nolabait, gauza bat baino "
-"gehiago instalatuta dagoelako, KPackage oinarri duten sarrerekin ordea "
-"halakorik ez litzateke gertatu behar."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1182,6 +1111,63 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Zama-jaitsi gauza berriak..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "%1 instalatzea huts egin du, zama-jaitsitako paketeak ez daukalako "
+#~ "KPackage-n egitura zuzena."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "%1 instalatzea huts egin du %2 direktorio berria sortzean"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 instalazioa huts egin du, zama-jaitsitako paketeak ez daukalako meta-"
+#~ "informazio erabilgarririk, eta beraz, ez delako KPackage pakete balioduna."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "%1 kentzea huts egin du, instalatutako paketeak ez daukalako KPackate "
+#~ "egitura zuzena."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 kentzea huts egin du, instalatutako paketeak ez daukalako meta-"
+#~ "informazio erabilgarririk, eta beraz, ez da KPackage pakete balioduna."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "%1 kentzea huts egin du, zama-jaitsitako %2 fitxategia ezin izan delako "
+#~ "automatikoki kendu."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "%1 kentzea huts egin du, instalatutako paketea ez delako KPackage bat. "
+#~ "Fitxategia hori %2 da, eta zu zeu saia zaitezke hura ezabatzen, "
+#~ "beharrezkoa ez dela ziur bazaude."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "%1 kentzea huts egin du, izan ere, dirudienez, nolabait, gauza bat baino "
+#~ "gehiago instalatuta dagoelako, KPackage oinarri duten sarrerekin ordea "
+#~ "halakorik ez litzateke gertatu behar."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-03-04 00:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -242,22 +242,22 @@ msgstr ""
 "La adopción de «%1» ha fallado\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Elemento no válido."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Ha fallado la descarga del elemento: no hay URL de descarga para «%1»."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "La descarga de «%1» ha fallado. Error: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -266,52 +266,27 @@ msgstr ""
 "No se puede instalar «%1» porque apunta a una página web. Pulse <a "
 "href='%2'>aquí</a> para terminar la instalación."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "No se puede instalar «%1»: archivo no encontrado."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"La instalación de %1 ha fallado debido a que el paquete descargado no "
-"contiene una estructura de KPackage correcta."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
-"No se ha podido crear el nuevo directorio %2 durante la instalación de %1"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "La instalación de %1 ha fallado: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"La instalación de %1 ha fallado debido a que el paquete descargado no "
-"contiene ninguna metainformación útil, lo que significa que no es un "
-"KPackage válido."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "No se ha podido determinar el tipo del archivo descargado %1"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "No se ha podido abrir el archivo %1. El error notificado ha sido: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -322,17 +297,17 @@ msgstr ""
 "descarga fallido anterior). Si continúa se sobrescribirá. ¿Desea "
 "sobrescribir el archivo existente?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Sobrescribir archivo"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "No se ha podido mover el archivo %1 al destino previsto %2"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -347,7 +322,7 @@ msgstr ""
 "La salida devuelta ha sido:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -362,7 +337,7 @@ msgstr ""
 "La salida devuelta ha sido:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -373,56 +348,7 @@ msgstr ""
 "eliminar automáticamente. Si cree que esto es un error, puede intentar "
 "borrar este archivo de forma manual."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"La eliminación de %1 ha fallado debido a que el paquete instalado no "
-"contiene una estructura de KPackage correcta."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"La eliminación de %1 ha fallado debido a que el paquete instalado no "
-"contiene ninguna metainformación útil, lo que significa que no es un "
-"KPackage válido."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"La eliminación de %1 ha fallado debido a que el archivo descargado %2 no se "
-"puede eliminar de forma automática."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"La eliminación de %1 ha fallado debido a que el archivo instalado no es un "
-"KPackage. El archivo en cuestión es %2, y puede intentar borrarlo de forma "
-"manual si tiene la certeza de que no es necesario."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"La eliminación de %1 ha fallado debido a que parece que de algún modo hay "
-"más cosas instaladas, lo que se supone que no es posible para las entradas "
-"basadas en KPackage."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1190,6 +1116,66 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Descargar novedades..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "La instalación de %1 ha fallado debido a que el paquete descargado no "
+#~ "contiene una estructura de KPackage correcta."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr ""
+#~ "No se ha podido crear el nuevo directorio %2 durante la instalación de %1"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "La instalación de %1 ha fallado debido a que el paquete descargado no "
+#~ "contiene ninguna metainformación útil, lo que significa que no es un "
+#~ "KPackage válido."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "La eliminación de %1 ha fallado debido a que el paquete instalado no "
+#~ "contiene una estructura de KPackage correcta."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "La eliminación de %1 ha fallado debido a que el paquete instalado no "
+#~ "contiene ninguna metainformación útil, lo que significa que no es un "
+#~ "KPackage válido."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "La eliminación de %1 ha fallado debido a que el archivo descargado %2 no "
+#~ "se puede eliminar de forma automática."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "La eliminación de %1 ha fallado debido a que el archivo instalado no es "
+#~ "un KPackage. El archivo en cuestión es %2, y puede intentar borrarlo de "
+#~ "forma manual si tiene la certeza de que no es necesario."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "La eliminación de %1 ha fallado debido a que parece que de algún modo hay "
+#~ "más cosas instaladas, lo que se supone que no es posible para las "
+#~ "entradas basadas en KPackage."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

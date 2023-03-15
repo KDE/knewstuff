@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2022-09-27 17:54+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -238,72 +238,49 @@ msgstr ""
 "Gagal mengadopsi '%1'\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Item tidak absah."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Pengunduhan item gagal: tidak ada URL unduhan untuk \"%1\"."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Pengunduhan \"%1\" gagal, kesalahan: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Tidak dapat menginstal \"%1\": file tidak ditemukan."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Instalasi %1 gagal, karena paket yang terunduh tidak berisi sebuah struktur "
-"KPackage yang benar."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Instalasi %1 gagal membuat direktori %2 yang diduga"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Instalasi %1 gagal: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Instalasi %1 gagal, karena paket yang terunduh tidak memiliki informasi meta "
-"yang berguna, yang berarti bukan KPackage yang absah."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Tidak bisa mengetahui tipe arsip file %1 yang terunduh"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Gagal membuka arsip file %1. Galat yang dilaporkan adalah: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -314,17 +291,17 @@ msgstr ""
 "mulanya). Meneruskan mungkin akan menimpanya. Apakah Anda ingin menimpa file "
 "yang ada?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Timpa File"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Tidak bisa memindah file %1 ke tujuan %2 yang dimaksudkan"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -339,7 +316,7 @@ msgstr ""
 "Output yang dikembalikan adalah:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -355,7 +332,7 @@ msgstr ""
 "Output yang dikembalikan adalah:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -366,54 +343,7 @@ msgstr ""
 "secara otomatis. Anda dapat menghapus file ini, jika Anda percaya bahwa ini "
 "sebuah kesalahan."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Penghapusan %1 gagal, karena paket yang terinstal tidak berisi struktur "
-"KPackage yang benar."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Penghapusan %1 gagal, karena paket yang terinstal tidak berisi informasi "
-"meta yang berguna, yang berarti bukan KPackage yang absah."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"Penghapusan %1 gagal, karena file %2 yang terunduh tidak dapat dihapus "
-"secara otomatis."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"Penghapusan %1 gagal, karena file yang terinstal bukan sebuah KPackage. "
-"Filenya adalah %2, dan Anda dapat coba menghapus filenya, jika Anda yakin "
-"itu tidak dibutuhkan."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"Penghapusan %1 gagal, karena ada lebih dari satu hal yang terinstal, yang "
-"seharusnya tidak mungkin untuk entri berbasis KPackage."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1183,6 +1113,62 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Unduh Hal-Hal Baru..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "Instalasi %1 gagal, karena paket yang terunduh tidak berisi sebuah "
+#~ "struktur KPackage yang benar."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "Instalasi %1 gagal membuat direktori %2 yang diduga"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Instalasi %1 gagal, karena paket yang terunduh tidak memiliki informasi "
+#~ "meta yang berguna, yang berarti bukan KPackage yang absah."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "Penghapusan %1 gagal, karena paket yang terinstal tidak berisi struktur "
+#~ "KPackage yang benar."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Penghapusan %1 gagal, karena paket yang terinstal tidak berisi informasi "
+#~ "meta yang berguna, yang berarti bukan KPackage yang absah."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "Penghapusan %1 gagal, karena file %2 yang terunduh tidak dapat dihapus "
+#~ "secara otomatis."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "Penghapusan %1 gagal, karena file yang terinstal bukan sebuah KPackage. "
+#~ "Filenya adalah %2, dan Anda dapat coba menghapus filenya, jika Anda yakin "
+#~ "itu tidak dibutuhkan."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "Penghapusan %1 gagal, karena ada lebih dari satu hal yang terinstal, yang "
+#~ "seharusnya tidak mungkin untuk entri berbasis KPackage."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

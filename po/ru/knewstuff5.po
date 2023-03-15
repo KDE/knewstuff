@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-02-17 11:04+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -251,22 +251,22 @@ msgstr ""
 "Не удалось обработать «%1»\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Неподдерживаемый элемент."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Ошибка загрузки: не указан адрес URL для «%1»."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Ошибка загрузки «%1»: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -275,49 +275,27 @@ msgstr ""
 "Ошибка установки «%1»: ссылка ведёт на web-страницу. Нажмите <a "
 "href='%2'>здесь</a> для завершения установки."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Не удалось установить «%1»: файл не найден"
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Ошибка установки %1: полученный пакет не содержит верной структуры KPackage."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Ошибка установки %1:не удалось создать новый каталог «%2»"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Ошибка установки %1: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Ошибка установки %1: полученный пакет не содержит пригодных к использованию "
-"метаданных и не является пакетом KPackage."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Не удалось определить тип архива загруженного файла «%1»"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Не удалось открыть файл архива «%1». Произошла ошибка: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -327,17 +305,17 @@ msgstr ""
 "Файл уже существует (вероятно, из-за прошлой неудачной попытки загрузки). "
 "Если продолжить, файл будет заменён. Заменить существующий файл?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Замена файла"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Не удалось переместить файл «%1» в место назначения «%2»"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -350,7 +328,7 @@ msgstr ""
 "%1Сообщение об ошибке:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -363,7 +341,7 @@ msgstr ""
 "%2Сообщение об ошибке:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -374,52 +352,7 @@ msgstr ""
 "автоматически. Вы можете удалить этот файл вручную, если считаете, что это "
 "ошибка."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Ошибка удаления %1: полученный пакет не содержит верной структуры KPackage."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Ошибка удаления %1: пакет не содержит пригодных к использованию метаданных и "
-"не является пакетом KPackage."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"Ошибка удаления %1: не удалось удалить полученный файл «%2» автоматически."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"Ошибка удаления %1: установленный файл «%2» не был установлен из пакета "
-"формата KPackage. Вы можете удалить этот файл вручную, если он более не "
-"требуется."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"Ошибка удаления %1: вероятно, установлено более одного компонента, что не "
-"поддерживается форматом KPackage."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1189,6 +1122,61 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Загрузить материалы..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "Ошибка установки %1: полученный пакет не содержит верной структуры "
+#~ "KPackage."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "Ошибка установки %1:не удалось создать новый каталог «%2»"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Ошибка установки %1: полученный пакет не содержит пригодных к "
+#~ "использованию метаданных и не является пакетом KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "Ошибка удаления %1: полученный пакет не содержит верной структуры "
+#~ "KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Ошибка удаления %1: пакет не содержит пригодных к использованию "
+#~ "метаданных и не является пакетом KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "Ошибка удаления %1: не удалось удалить полученный файл «%2» автоматически."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "Ошибка удаления %1: установленный файл «%2» не был установлен из пакета "
+#~ "формата KPackage. Вы можете удалить этот файл вручную, если он более не "
+#~ "требуется."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "Ошибка удаления %1: вероятно, установлено более одного компонента, что не "
+#~ "поддерживается форматом KPackage."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

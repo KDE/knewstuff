@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2020-10-07 21:04+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -228,72 +228,49 @@ msgid ""
 "%2"
 msgstr "Faili '%1' laadimine nurjus"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Vigased element"
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Allalaadimine nurjus: \"%1\" allalaadimise URL puudus."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" allalaadimine nurjus, viga: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\" paigaldamine nurjus: faili ei leitud."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"%1 paigaldamine nurjus, sest alla laaditud pakett ei sisalda korralikku "
-"KPackage'i struktuuri."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "%1 paigaldamisel ei suudetud looda eeldatud uut kataloogi %2"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 paigaldamine nurjus: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 paigaldamine nurjus, sest alla laaditud pakett ei sisalda üldse kasulikku "
-"metateavet, mis tähendab, et see ei ole korralik KPackage."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Allalaaditud faili %1 arhiivitüübi tuvastamine nurjus"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Arhiivifaili %1 avamine nurjus. Tõrge oli: %2."
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -304,17 +281,17 @@ msgstr ""
 "allalaadimiskatse tulemusel). Jätkates kirjutatakse see üle. Kas tõesti "
 "kirjutada olemasolev fail üle?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Faili ülekirjutamine"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Faili %1 liigutamine ettenähtud sihtkohta %2 nurjus"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -328,7 +305,7 @@ msgstr ""
 "Tagastati väljund:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -343,7 +320,7 @@ msgstr ""
 "Tagastati väljund:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, fuzzy, kde-format
 #| msgid ""
 #| "The removal of %1 failed, due to the installed file not being a KPackage. "
@@ -358,54 +335,7 @@ msgstr ""
 "hoopis %2 ja sa võid proovida seda ise kustutada, kui arvad, et sul pole "
 "seda tarvis."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"%1 eemaldamine nurjus, sest paigaldatud pakett ei sisalda korralikku "
-"KPackage'i struktuuri."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 eemaldamine nurjus, sest paigaldatud pakett ei sisalda üldse kasulikku "
-"metateavet, mis tähendab, et see ei ole korralik KPackage."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"%1 eemaldamine nurjus, sest alla laaditud faili %2 ei saa automaatselt "
-"eemaldada."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"%1 eemaldamine nurjus, sest paigaldatud fail ei ole KPackage. See fail on "
-"hoopis %2 ja sa võid proovida seda ise kustutada, kui arvad, et sul pole "
-"seda tarvis."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"%1 eemaldamine nurjus, sest tundub, nagu oleks paigaldatud rohkem kui üks "
-"asi, mis ei tohiks KPackage'i-põhiste kirjete puhul olla võimalik."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1223,6 +1153,62 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Laadi alla uut kraami..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "%1 paigaldamine nurjus, sest alla laaditud pakett ei sisalda korralikku "
+#~ "KPackage'i struktuuri."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "%1 paigaldamisel ei suudetud looda eeldatud uut kataloogi %2"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 paigaldamine nurjus, sest alla laaditud pakett ei sisalda üldse "
+#~ "kasulikku metateavet, mis tähendab, et see ei ole korralik KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "%1 eemaldamine nurjus, sest paigaldatud pakett ei sisalda korralikku "
+#~ "KPackage'i struktuuri."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 eemaldamine nurjus, sest paigaldatud pakett ei sisalda üldse kasulikku "
+#~ "metateavet, mis tähendab, et see ei ole korralik KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "%1 eemaldamine nurjus, sest alla laaditud faili %2 ei saa automaatselt "
+#~ "eemaldada."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "%1 eemaldamine nurjus, sest paigaldatud fail ei ole KPackage. See fail on "
+#~ "hoopis %2 ja sa võid proovida seda ise kustutada, kui arvad, et sul pole "
+#~ "seda tarvis."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "%1 eemaldamine nurjus, sest tundub, nagu oleks paigaldatud rohkem kui üks "
+#~ "asi, mis ei tohiks KPackage'i-põhiste kirjete puhul olla võimalik."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

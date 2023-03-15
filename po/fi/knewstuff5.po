@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-03-05 18:15+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -247,22 +247,22 @@ msgstr ""
 "Käyttöönotto epäonnistui: ”%1”\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Virheellinen tietue"
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Lataus epäonnistui: kohteelta ”%1” puuttuu latausosoite."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Kohteen ”%1” lataus epäonnistui, virhe: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -271,50 +271,27 @@ msgstr ""
 "Kohdetta ”%1” ei voi asentaa, koska se viittaa verkkosivuun. Viimeistele "
 "asennus napsauttamalla <a href='%2'>tästä</a>."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Kohdetta ”%1” ei voitu asentaa: tiedostoa ei löydy."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Kohteen %1 asennus epäonnistui, koska ladattu paketti ei sisällä kelvollista "
-"KPackage-rakennetta"
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Kohteen %1 asennus ei onnistunut luomaan odotettua uutta kansiota %2"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Kohteen %1 asennus epäonnistui: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Kohteen %1 asennus epäonnistui, koska ladattu paketti ei sisällä "
-"käyttökelpoista metatietoa, minkä vuoksi se ei ole kelvollinen KPackage."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Ladatun tiedoston %1 arkiston tyyppiä ei voitu määrittää"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Arkistotiedoston %1 avaus epäonnistui. Ilmoitettu virhe oli: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -327,17 +304,17 @@ msgstr ""
 "latauksen takia). Jatkettaessa se korvataan. Haluatko korvata olemassa "
 "olevan tiedoston?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Korvaa tiedosto"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Tiedostoa %1 ei voitu siirtää aiottuun kohteeseen %2"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -352,7 +329,7 @@ msgstr ""
 "Palautettu tuloste oli:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -367,7 +344,7 @@ msgstr ""
 "Palautettu tuloste oli:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -378,55 +355,7 @@ msgstr ""
 "automaattisesti poistaa. Voit yrittää poistaa sen itse, jos olet varma, että "
 "tämä on virhe."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Kohteen %1 poistaminen epäonnistui, koska asennettu paketti ei sisällä "
-"kelvollista KPackage-rakennetta."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Kohteen %1 poistaminen epäonnistui, koska asennettu paketti ei sisällä "
-"käyttökelpoista metatietoa, minkä vuoksi se ei ole kelvollinen KPackage."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"Kohteen %1 poistaminen epäonnistui, koska ladattua tiedostoa %2 ei voitu "
-"automaattisesti poistaa."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"Kohteen %1 poistaminen epäonnistui, koska asennettu tiedosto ei ole KPackage "
-"vaan %2. Voit yrittää poistaa sen itse, jos olet varma siitä, että se on "
-"tarpeen."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"Kohteen %1 poistaminen epäonnistui, koska jostakin syystä asennettuna tuntuu "
-"olevan useampia kohteita, minkä ei KPackagen tapauksessa pitäisi olla "
-"mahdollista."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1191,6 +1120,64 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Lataa uutuuksia…"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "Kohteen %1 asennus epäonnistui, koska ladattu paketti ei sisällä "
+#~ "kelvollista KPackage-rakennetta"
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr ""
+#~ "Kohteen %1 asennus ei onnistunut luomaan odotettua uutta kansiota %2"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Kohteen %1 asennus epäonnistui, koska ladattu paketti ei sisällä "
+#~ "käyttökelpoista metatietoa, minkä vuoksi se ei ole kelvollinen KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "Kohteen %1 poistaminen epäonnistui, koska asennettu paketti ei sisällä "
+#~ "kelvollista KPackage-rakennetta."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Kohteen %1 poistaminen epäonnistui, koska asennettu paketti ei sisällä "
+#~ "käyttökelpoista metatietoa, minkä vuoksi se ei ole kelvollinen KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "Kohteen %1 poistaminen epäonnistui, koska ladattua tiedostoa %2 ei voitu "
+#~ "automaattisesti poistaa."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "Kohteen %1 poistaminen epäonnistui, koska asennettu tiedosto ei ole "
+#~ "KPackage vaan %2. Voit yrittää poistaa sen itse, jos olet varma siitä, "
+#~ "että se on tarpeen."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "Kohteen %1 poistaminen epäonnistui, koska jostakin syystä asennettuna "
+#~ "tuntuu olevan useampia kohteita, minkä ei KPackagen tapauksessa pitäisi "
+#~ "olla mahdollista."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

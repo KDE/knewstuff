@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -225,22 +225,22 @@ msgstr ""
 "无法使用“%1”\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "无效项目。"
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "下载项目失败：“%1”无下载 URL。"
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "下载“%1”时失败，错误：%2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -248,48 +248,27 @@ msgid ""
 msgstr ""
 "无法安装“%1”，因为它指向的是一个网页。请点击<a href='%2'>这里</a>完成安装。"
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "无法安装“%1”：未找到文件。"
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr "%1 安装失败，因为下载的软件包不是 KPackage 架构的软件包。"
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "%1 的安装程序无法创建新文件夹 %2"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "安装 %1 时失败：%2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 安装失败，因为下载的软件包中不含任何有用的元数据，即该软件包不是有效的 "
-"KPackage。"
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "无法确定下载文件 %1 的压缩包类型"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "无法打开压缩包文件 %1。错误为：%2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -299,17 +278,17 @@ msgstr ""
 "文件已存在于硬盘中 (可能是因为之前的下载没有成功)。继续下载会直接覆盖此文件，"
 "您想要覆盖现有文件吗？"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "覆盖文件"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "无法将文件 %1 移动到指定目标 %2"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -324,7 +303,7 @@ msgstr ""
 "返回的输出为：\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -339,7 +318,7 @@ msgstr ""
 "返回的输出为：\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -349,47 +328,7 @@ msgstr ""
 "%1 卸载失败，因为无法自动删除已安装的文件 %2。如果您认为这是安装程序的问题，"
 "可以尝试手动删除这个文件。"
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr "%1 卸载失败，因为已安装的软件包不是 KPackage 架构。"
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 卸载失败，因为已安装的软件包中不含任何有用的元数据信息，即不为有效的 "
-"KPackage。"
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr "%1 卸载失败，无法自动删除已下载的文件 %2。"
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"%1 卸载失败，因为已安装的文件不属于 KPackage。有问题的文件为 %2，如果您确定无"
-"需此文件，可以尝试将它删除。"
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr "%1 卸载失败，因为已安装了多个不属于 KPackage 的项目。"
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1137,6 +1076,53 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr "%1 安装失败，因为下载的软件包不是 KPackage 架构的软件包。"
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "%1 的安装程序无法创建新文件夹 %2"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 安装失败，因为下载的软件包中不含任何有用的元数据，即该软件包不是有效的 "
+#~ "KPackage。"
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr "%1 卸载失败，因为已安装的软件包不是 KPackage 架构。"
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 卸载失败，因为已安装的软件包中不含任何有用的元数据信息，即不为有效的 "
+#~ "KPackage。"
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr "%1 卸载失败，无法自动删除已下载的文件 %2。"
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "%1 卸载失败，因为已安装的文件不属于 KPackage。有问题的文件为 %2，如果您确"
+#~ "定无需此文件，可以尝试将它删除。"
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr "%1 卸载失败，因为已安装了多个不属于 KPackage 的项目。"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

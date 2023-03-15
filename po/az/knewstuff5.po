@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-01-14 23:42+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -234,22 +234,22 @@ msgstr ""
 "\"%1\" qəbul edilə bilmədi.\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Yararsız element."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Elementin yüklənməsi alınmadı: \"%1\" üçün URL ünvanı göstərilməyib."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" yüklənməsi alınmadı, xəta: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -258,50 +258,27 @@ msgstr ""
 "\"%1\" quraşdırıla bilməz. çünki o bir veb-səhifəyə işarə edir. Quraşdırmanı "
 "tamamlamaq üçün <a href='%2'>buraya</a> vurun."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\" quraşdırıla bilmədi: fayl tapılmadı."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Yüklənmiş paketdə düzgün KPackage quruluşu olmadığı üçün %1-in "
-"quraşdırılması uğursuz oldu."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "%1, quraşdırması gözlənilən %2 qovluğunu yarada bilmədi"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 quraşdırılması alınmadı: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1-in quraşdırılması uğursuz oldu, çünki yüklənmiş paketdə heç bir faydalı "
-"meta məlumatı yoxdur, yəni etibarlı KPackage deyildir."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Yüklənmiş %1 arxivinin növünü təyin etmək mümkün olmadı"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 arxiv faylının açılması mümkün olmadı. Xəta hesabatı: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -312,17 +289,17 @@ msgstr ""
 "edildiyinə görə). Davam etmək mövcud faylı əvəzləyəcək. Siz mövcud olan "
 "faylın üzərinə yazmaq istəyirsinizmi?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Faylın üzərinə yazın"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 faylını %2 təyinat yerinə daşımaq mümkün olmadı"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -337,7 +314,7 @@ msgstr ""
 "Göstərilən nəticə:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -352,7 +329,7 @@ msgstr ""
 "Göstərilən nəticə:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -362,51 +339,7 @@ msgstr ""
 "Qurulmuş %2 faylı avtomatik silinə bilmədiyi üçün %1 silinməsi baş tutmadı. "
 "Əgər hesab edirsinizsə ki, bu düzgün deyil o zaman əl ilə silməyə cəhd edin."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"%1 silinə bilmədi, çünki quraşdırılmış paketin KPackage quruluşu səhvdir."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"%1 silinə bilmədi, çünki quraşdırılmış paketdə heç bir faydalı meta məlumatı "
-"yoxdur, yəni KPackage etibarlı deyil."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr "%1 silinə bilmədi, çünki yüklənmiş %2 faylı avtomatik silinə bilmədi."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"Quraşdırılmış fayl bir KPackage olmadığı üçün %1 silinə bilmədi. Sözü gedən "
-"fayl %2 idi və ona ehtiyac olmadığına əminsinizsə, özünüz silməyə cəhd edə "
-"bilərsiniz."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"%1 silinə bilmədi, çünki bu şəkildə birdən çox belə paketin quraşdırıldığı "
-"görünür, bu da KPackage əsaslı girişlər üçün nəzərdə tutulmayıb."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1176,6 +1109,61 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Yeni materialı yüklə..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "Yüklənmiş paketdə düzgün KPackage quruluşu olmadığı üçün %1-in "
+#~ "quraşdırılması uğursuz oldu."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "%1, quraşdırması gözlənilən %2 qovluğunu yarada bilmədi"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1-in quraşdırılması uğursuz oldu, çünki yüklənmiş paketdə heç bir "
+#~ "faydalı meta məlumatı yoxdur, yəni etibarlı KPackage deyildir."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "%1 silinə bilmədi, çünki quraşdırılmış paketin KPackage quruluşu səhvdir."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "%1 silinə bilmədi, çünki quraşdırılmış paketdə heç bir faydalı meta "
+#~ "məlumatı yoxdur, yəni KPackage etibarlı deyil."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "%1 silinə bilmədi, çünki yüklənmiş %2 faylı avtomatik silinə bilmədi."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "Quraşdırılmış fayl bir KPackage olmadığı üçün %1 silinə bilmədi. Sözü "
+#~ "gedən fayl %2 idi və ona ehtiyac olmadığına əminsinizsə, özünüz silməyə "
+#~ "cəhd edə bilərsiniz."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "%1 silinə bilmədi, çünki bu şəkildə birdən çox belə paketin "
+#~ "quraşdırıldığı görünür, bu da KPackage əsaslı girişlər üçün nəzərdə "
+#~ "tutulmayıb."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

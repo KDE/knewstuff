@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2022-12-24 18:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -229,22 +229,22 @@ msgstr ""
 "فشل في الاعتماد  '%1'\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "عنصر غير صالح."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "تحميل العنصر فشل: لا عنوان URL لـ\"%1\"."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "فشل تحميل \"%1\"، الخطأ: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -253,48 +253,27 @@ msgstr ""
 "تعذر تثبيت  '%1' لأنها تشير إلى صفحة ويب. انقر  <a href='%2'>هنا</a> لتنهي "
 "التثبيت."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "تعذّر تثبيب \"%1\": لم يُعثر على الملف."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "فشل تثبيت %1 في إنشاء الدليل  %2 المتوقع"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "فشل تثبيت %1: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
-"أنها حزمKPackage غير صالحة."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "غير قادر على تحديد نوع الأرشيف للملف المحمل %1"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "فشل فتح ملفّ الأرشيف %1. الخطأ هو: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -304,17 +283,17 @@ msgstr ""
 "هذا الملف موجود بالفعل على القرص (ربما يرجع ذلك إلى محاولة تنزيل سابقة "
 "فاشلة). الاستمرار يعني الكتابة فوقه. هل ترغب في الكتابة فوق الملف الموجود؟"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "اكتب على الملف"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "تعذر نقل الملف%1 إلى الوجهة المقصودة %2"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -328,7 +307,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -343,7 +322,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -353,49 +332,7 @@ msgstr ""
 "فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 تلقائيًا. يمكنك محاولة حذف هذا "
 "الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr "فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
-"أنها حزمKPackage غير صالحة."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr "فشلت إزالة %1، حيث تعذر إزالة الملف المنزل %2 تلقائيًا."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"فشلت إزالة %1 نظرًا لأن الملف المثبت ليس حزمة KPackage.الملف المعني هو %2 ، "
-"ويمكنك محاولة حذفه بنفسك ، إذا كنت متأكدًا من عدم الحاجة إليه."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"فشلت إزالة %1 ، حيث يبدو أن هناك أكثر من شيء مثبت بطريقة ما ، وهو أمر لا "
-"يُفترض أن يكون ممكنًا للإدخالات القائمة على KPackage."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1148,6 +1085,57 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "نزِل أشياء جديدة..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr "فشل تثبيت %1 في إنشاء الدليل  %2 المتوقع"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما "
+#~ "يعني أنها حزمKPackage غير صالحة."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما "
+#~ "يعني أنها حزمKPackage غير صالحة."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr "فشلت إزالة %1، حيث تعذر إزالة الملف المنزل %2 تلقائيًا."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "فشلت إزالة %1 نظرًا لأن الملف المثبت ليس حزمة KPackage.الملف المعني هو "
+#~ "%2 ، ويمكنك محاولة حذفه بنفسك ، إذا كنت متأكدًا من عدم الحاجة إليه."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "فشلت إزالة %1 ، حيث يبدو أن هناك أكثر من شيء مثبت بطريقة ما ، وهو أمر لا "
+#~ "يُفترض أن يكون ممكنًا للإدخالات القائمة على KPackage."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

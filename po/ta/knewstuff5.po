@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -234,22 +234,22 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "செல்லுபடியாகாத உருப்படி."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "ஒன்றன் பதிவிறக்கம் தோல்வியடைந்த‍து: \"%1\" என்பதற்கான முகவரி இல்லை."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" என்பதன் பதிவிறக்கம் தோல்வியடைந்தது; சிக்கல்: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -258,50 +258,27 @@ msgstr ""
 "'%1' ஓர் வலைப்பக்கத்தை மட்டும் குறிப்பதால் அதை நிறுவ முடியவில்லை. நிறுவலை தொடர <a "
 "href='%2'>இங்கு</a> கிளிக் செய்யுங்கள்."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "'%1' என்பதை நிறுவ முடியவில்லை: கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"பதிவிறக்கப்பட்ட தொகுப்பில் முறையான KPackage இல்லாத‍தால் %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
-"%1 என்பதை நிறுவும்போது உருவாக்கப்பட்டிருக்க வேண்டிய %2 என்ற அடைவு உருவாக்கப்படவில்லை"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"பதிவிறக்கப்பட்ட தொகுப்பில் மேனிலைத் தரவு (metadata) இல்லாத‍தால் (அதாவது அது ஓர் "
-"முறையான KPackage-ஆய் இல்லாத‍தால்) %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "பதிவிறக்கபட்ட %1 எனும் கோப்பு எவ்வகையான காப்பகம் என்பதைக் கண்டறிய முடியவில்லை"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 எனும் காப்பக‍க் கோப்பைத் திறக்க முடியவில்லை. தெரிவிக்கப்பட்ட சிக்கல்: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -311,17 +288,17 @@ msgstr ""
 "இக்கோப்பு வட்டில் ஏற்கனவே உள்ளது (தோல்வியடைந்த முந்தைய நிறுவலின் விளைவாக இருக்கலாம்). "
 "தொடர்ந்தால் அது மேலெழுதப்படும். ஏற்கனவே உள்ளதை மேலெழுத விருப்பமா?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "கோப்பை மேலெழுது"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 எனும் கோப்பை %2 என்ற இடத்திற்கு நகர்த்த முடியவில்லை"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -336,7 +313,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -351,7 +328,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -361,43 +338,7 @@ msgstr ""
 "நிறுவப்பட்டுள்ள %2 எனும் கோப்பைத் தானாக நீக்க முடியாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍"
 "து. அக்கோப்பு தேவையில்லாத பட்சத்தில், அதை கைமுறையாக நீங்கள் நீக்க முயற்சிக்கலாம்."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr "முறையான KPackage-ஆக இல்லாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍து."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1144,6 +1085,30 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "புதியவற்றை பதிவிறக்கு..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "பதிவிறக்கப்பட்ட தொகுப்பில் முறையான KPackage இல்லாத‍தால் %1 என்பதன் நிறுவல் தோல்வியடைந்த‍"
+#~ "து."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr ""
+#~ "%1 என்பதை நிறுவும்போது உருவாக்கப்பட்டிருக்க வேண்டிய %2 என்ற அடைவு உருவாக்கப்படவில்லை"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "பதிவிறக்கப்பட்ட தொகுப்பில் மேனிலைத் தரவு (metadata) இல்லாத‍தால் (அதாவது அது ஓர் "
+#~ "முறையான KPackage-ஆய் இல்லாத‍தால்) %1 என்பதன் நிறுவல் தோல்வியடைந்த‍து."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr "முறையான KPackage-ஆக இல்லாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍து."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"

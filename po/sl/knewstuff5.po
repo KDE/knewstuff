@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 02:33+0000\n"
+"POT-Creation-Date: 2023-03-15 02:11+0000\n"
 "PO-Revision-Date: 2023-03-12 15:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -242,22 +242,22 @@ msgstr ""
 "Ni bilo mogoče sprejeti '%1'\n"
 "%2"
 
-#: core/installation.cpp:100
+#: core/installation.cpp:99
 #, kde-format
 msgid "Invalid item."
 msgstr "Neveljaven predmet."
 
-#: core/installation.cpp:107
+#: core/installation.cpp:106
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Prejemanje predmeta ni uspelo: za \"%1\" ni povezave za prejem."
 
-#: core/installation.cpp:138
+#: core/installation.cpp:137
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Prejemanje \"%1\" ni uspelo, napaka: %2"
 
-#: core/installation.cpp:147
+#: core/installation.cpp:146
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -266,51 +266,28 @@ msgstr ""
 "Ni mogoče namestiti '%1', ker kaže na spletno stran. Kliknite <a "
 "href='%2'>sem</a>, da dokončate namestitev."
 
-#: core/installation.cpp:185
+#: core/installation.cpp:184
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Ni bilo mogoče namestiti \"%1\": datoteka ni bila najdena."
 
-#: core/installation.cpp:315
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Namestitev %1 ni uspela, saj preneseni paket ne vsebuje pravilne strukture "
-"KPackage."
-
-#: core/installation.cpp:352
-#, kde-format
-msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "Namestitev %1 ni uspela ustvariti pričakovanega novega direktorija %2"
-
-#: core/installation.cpp:374 core/installation.cpp:641
+#: core/installation.cpp:350 core/installation.cpp:595
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Namestitev %1 ni uspela: %2"
 
-#: core/installation.cpp:383
-#, kde-format
-msgid ""
-"The installation of %1 failed, as the downloaded package does not contain "
-"any useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Namestitev %1 ni uspela, saj preneseni paket ne vsebuje kakršnekoli koristne "
-"meta podatke, kar pomeni, da ni veljaven KPackage."
-
-#: core/installation.cpp:417
+#: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Ni mogoče določiti vrste arhiva prenesene datoteke %1"
 
-#: core/installation.cpp:429
+#: core/installation.cpp:396
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Ni bilo mogoče odpreti arhivske datoteke %1. Sporočena napaka je bila: %2"
 
-#: core/installation.cpp:495
+#: core/installation.cpp:462
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -321,17 +298,17 @@ msgstr ""
 "prenosa). Nadaljevanje pomeni njeno prepisovanje. Ali želite prepisati "
 "obstoječo datoteko?"
 
-#: core/installation.cpp:498
+#: core/installation.cpp:465
 #, kde-format
 msgid "Overwrite File"
 msgstr "Prepišem datoteko"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Ni bilo mogoče prenesti datoteke %1 v namenjeni cilj %2"
 
-#: core/installation.cpp:540
+#: core/installation.cpp:507
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -346,7 +323,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%2"
 
-#: core/installation.cpp:550
+#: core/installation.cpp:517
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -361,7 +338,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%3"
 
-#: core/installation.cpp:592
+#: core/installation.cpp:559
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -372,54 +349,7 @@ msgstr ""
 "avtomatsko odstraniti. Lahko jo poskusite izbrisati sami, če ste prepričani, "
 "da je to napaka."
 
-#: core/installation.cpp:623
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain a "
-"correct KPackage structure."
-msgstr ""
-"Odstranitev %1 ni uspela, ker nameščeni paket ne vsebuje pravilne strukture "
-"KPackage."
-
-#: core/installation.cpp:648
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the installed package does not contain any "
-"useful meta information, which means it is not a valid KPackage."
-msgstr ""
-"Odstranitev %1 ni uspela, saj nameščeni paket ne vsebuje kakršnekoli "
-"koristne meta podatke, kar pomeni, da ni veljaven KPackage."
-
-#: core/installation.cpp:687
-#, kde-format
-msgid ""
-"The removal of %1 failed, as the downloaded file %2 could not be "
-"automatically removed."
-msgstr ""
-"Odstranjevanje %1 ni uspelo, saj prenesena datoteka %2 ni mogla biti "
-"samodejno odstranjena."
-
-#: core/installation.cpp:692
-#, kde-format
-msgid ""
-"The removal of %1 failed, due to the installed file not being a KPackage. "
-"The file in question was %2, and you can attempt to delete it yourself, if "
-"you are certain that it is not needed."
-msgstr ""
-"Odstranjevanje %1 ni uspelo, ker nameščena datoteka ni KPackage. Ta datoteka "
-"je bila %2, in jo lahko poskusite izbrisati sami, če ste prepričani, da ni "
-"potrebna."
-
-#: core/installation.cpp:700
-#, kde-format
-msgid ""
-"The removal of %1 failed, as there seems to somehow be more than one thing "
-"installed, which is not supposed to be possible for KPackage based entries."
-msgstr ""
-"Odstranjevanje %1 ni uspelo, saj se zdi, da obstaja nameščeno še nekaj, kar "
-"naj ne bi bilo mogoče za vnose paketov na podlagi KPackage."
-
-#: core/installation.cpp:733
+#: core/installation.cpp:628
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -1186,6 +1116,63 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Prejmi vroče novosti ..."
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "a correct KPackage structure."
+#~ msgstr ""
+#~ "Namestitev %1 ni uspela, saj preneseni paket ne vsebuje pravilne "
+#~ "strukture KPackage."
+
+#~ msgid ""
+#~ "The installation of %1 failed to create the expected new directory %2"
+#~ msgstr ""
+#~ "Namestitev %1 ni uspela ustvariti pričakovanega novega direktorija %2"
+
+#~ msgid ""
+#~ "The installation of %1 failed, as the downloaded package does not contain "
+#~ "any useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Namestitev %1 ni uspela, saj preneseni paket ne vsebuje kakršnekoli "
+#~ "koristne meta podatke, kar pomeni, da ni veljaven KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain a "
+#~ "correct KPackage structure."
+#~ msgstr ""
+#~ "Odstranitev %1 ni uspela, ker nameščeni paket ne vsebuje pravilne "
+#~ "strukture KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the installed package does not contain any "
+#~ "useful meta information, which means it is not a valid KPackage."
+#~ msgstr ""
+#~ "Odstranitev %1 ni uspela, saj nameščeni paket ne vsebuje kakršnekoli "
+#~ "koristne meta podatke, kar pomeni, da ni veljaven KPackage."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as the downloaded file %2 could not be "
+#~ "automatically removed."
+#~ msgstr ""
+#~ "Odstranjevanje %1 ni uspelo, saj prenesena datoteka %2 ni mogla biti "
+#~ "samodejno odstranjena."
+
+#~ msgid ""
+#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
+#~ "The file in question was %2, and you can attempt to delete it yourself, "
+#~ "if you are certain that it is not needed."
+#~ msgstr ""
+#~ "Odstranjevanje %1 ni uspelo, ker nameščena datoteka ni KPackage. Ta "
+#~ "datoteka je bila %2, in jo lahko poskusite izbrisati sami, če ste "
+#~ "prepričani, da ni potrebna."
+
+#~ msgid ""
+#~ "The removal of %1 failed, as there seems to somehow be more than one "
+#~ "thing installed, which is not supposed to be possible for KPackage based "
+#~ "entries."
+#~ msgstr ""
+#~ "Odstranjevanje %1 ni uspelo, saj se zdi, da obstaja nameščeno še nekaj, "
+#~ "kar naj ne bi bilo mogoče za vnose paketov na podlagi KPackage."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
