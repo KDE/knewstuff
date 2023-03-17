@@ -1,10 +1,10 @@
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 02:11+0000\n"
-"PO-Revision-Date: 2022-12-24 18:32+0400\n"
+"PO-Revision-Date: 2023-03-16 11:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -104,10 +104,9 @@ msgid "Initializing"
 msgstr "يهيّئ"
 
 #: core/engine.cpp:219
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "ملف الضبط غير صالح: \"%1\""
+msgstr "ملف الضبط غير موجود: \"%1\""
 
 #: core/engine.cpp:227
 #, kde-format
@@ -125,16 +124,14 @@ msgid "Use"
 msgstr "استخدم"
 
 #: core/engine.cpp:261
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "تعذر تهيئة معالج التثبيت لـ %1\n"
+"%2\n"
 "هذا خطأ فادح ويجب إبلاغ مؤلف التطبيق"
 
 #: core/engine.cpp:338
