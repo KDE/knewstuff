@@ -3,6 +3,7 @@
 [Desktop Entry]
 Categories=Qt;KDE;Utility;
 Comment=Showcase for KNewStuff add-on downloading functionality
+Comment[ar]=عرض لوظيفة التنزيل الإضافية لـ Knowstuff
 Comment[az]=KNewStuff əlavəsinin endirmə imkanının nümayişi
 Comment[bg]=Показване на функционалността за изтегляне на добавката за KNewStuff
 Comment[ca]=Presentació de la funcionalitat de baixada de complements per al KNewStuff
@@ -30,6 +31,7 @@ Comment[zh_TW]=KNewStuff 外掛程式下載功能的展示
 Exec=knewstuff-dialog
 Icon=get-hot-new-stuff
 Name=KNewStuff Dialog
+Name[ar]=حواريّ KNewStuff
 Name[az]=KNewStuff dialoqu
 Name[bg]=Диалогов прозорец на KNewStuff
 Name[ca]=Diàleg del KNewStuff
@@ -39,6 +41,7 @@ Name[es]=Diálogo de KNewStuff
 Name[eu]=«KNewStuff» elkarrizketa-koadroa
 Name[fi]=KNewStuff-kyselyikkuna
 Name[fr]=Boîte de dialogue de KNewStuff
+Name[ia]=Dialogo de KNewStuff
 Name[it]=Finestra di KNewStuff
 Name[ka]=KNewStuff -ის ფანჯარა
 Name[ko]=KNewStuff 대화 상자
