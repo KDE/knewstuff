@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
     qmlRegisterType<KNSRCModel>("org.kde.newstuff.tools.dialog", 1, 0, "KNSRCModel");
     auto *context = new KLocalizedContext(appengine);
-    context->setTranslationDomain(QStringLiteral("knewstuff5"));
+    context->setTranslationDomain(QStringLiteral("knewstuff6"));
     appengine->rootContext()->setContextObject(context);
 
     if (parser->optionNames().contains(QStringLiteral("url"))) {

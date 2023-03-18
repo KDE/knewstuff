@@ -35,7 +35,7 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
 {
     d->engine = new QQmlEngine(this);
     auto *context = new KLocalizedContext(d->engine);
-    context->setTranslationDomain(QStringLiteral("knewstuff5"));
+    context->setTranslationDomain(QStringLiteral("knewstuff6"));
     d->engine->rootContext()->setContextObject(context);
     QQmlComponent component(d->engine);
     d->engine->rootContext()->setContextProperty(QStringLiteral("knsrcfile"), configFile);

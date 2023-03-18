@@ -27,7 +27,7 @@ Kirigami.OverlaySheet {
     signal itemPicked(string entryId, int downloadItemId, string downloadName)
 
     showCloseButton: true
-    title: i18nd("knewstuff5", "Pick Your Installation Option")
+    title: i18nd("knewstuff6", "Pick Your Installation Option")
 
     ListView {
         id: itemsView
@@ -37,7 +37,7 @@ Kirigami.OverlaySheet {
             width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
             padding: Kirigami.Units.largeSpacing
 
-            text: i18nd("knewstuff5", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
+            text: i18nd("knewstuff6", "Please select the option you wish to install from the list of downloadable items below. If it is unclear which you should chose out of the available options, please contact the author of this item and ask that they clarify this through the naming of the items.")
             wrapMode: Text.Wrap
         }
 
@@ -59,7 +59,7 @@ Kirigami.OverlaySheet {
 
                 QtControls.ToolButton {
                     id: installButton
-                    text: i18nd("knewstuff5", "Install")
+                    text: i18nd("knewstuff6", "Install")
                     icon.name: "install"
                     onClicked: {
                         component.close();

@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
      */
     required property QtObject engine
 
-    title: i18nc("@knewstuff5", "Upload New Stuff: %1", component.engine.name);
+    title: i18nc("@knewstuff6", "Upload New Stuff: %1", component.engine.name);
     NewStuff.QuestionAsker {}
     Private.ErrorDisplayer { engine: component.engine; active: component.isCurrentPage; }
 
@@ -80,7 +80,7 @@ Kirigami.ScrollablePage {
                     margins: Kirigami.Units.largeSpacing
                 }
                 horizontalAlignment: Text.AlignHCenter
-                text: i18ndc("knewstuff5", "A text shown beside a busy indicator suggesting that data is being fetched", "Updating information...")
+                text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Updating information...")
             }
         }
         Repeater {
@@ -92,13 +92,13 @@ Kirigami.ScrollablePage {
                 banner {
                     title: {
                         if (model.name === "api.kde-look.org") {
-                            return  i18ndc("knewstuff5", "The name of the KDE Store", "KDE Store");
+                            return  i18ndc("knewstuff6", "The name of the KDE Store", "KDE Store");
                         } else if (model.name !== "") {
                             return model.name;
                         } else if (component.engine.name !== "") {
                             return component.engine.name;
                         } else {
-                            return i18ndc("knewstuff5", "An unnamed provider", "Your Provider");
+                            return i18ndc("knewstuff6", "An unnamed provider", "Your Provider");
                         }
                     }
                     titleIcon: model.icon == "" ? "get-hot-new-stuff" : model.icon;
@@ -106,20 +106,20 @@ Kirigami.ScrollablePage {
                 actions: [
                     Kirigami.Action {
                         visible: model.website != ""
-                        text: i18ndc("knewstuff5", "Text for an action which causes the specified website to be opened using the user's system default browser", "Open Website: %1", model.website)
+                        text: i18ndc("knewstuff6", "Text for an action which causes the specified website to be opened using the user's system default browser", "Open Website: %1", model.website)
                         onTriggered: Qt.openUrlExternally(model.website);
                     },
                     Kirigami.Action {
                         visible: model.contactEmail != "" && model.name != "api.kde-look.org"
-                        text: i18ndc("knewstuff5", "Text for an action which will attempt to send an email using the user's system default email client", "Send Email To: %1", model.contactEmail)
+                        text: i18ndc("knewstuff6", "Text for an action which will attempt to send an email using the user's system default email client", "Send Email To: %1", model.contactEmail)
                         onTriggered: Qt.openUrlExternally("mailto:" + model.contactEmail);
                     }
                 ]
                 contentItem: QtControls.Label {
                     wrapMode: Text.Wrap;
                     text: model.name === "api.kde-look.org"
-                        ? i18ndc("knewstuff5", "A description of how to upload content to a generic provider", "To upload new entries, or to add content to an existing entry on the KDE Store, please open the website and log in. Once you have done this, you will be able to find the My Products entry in the menu which pops up when you click your user icon. Click on this entry to go to the product management system, where you can work on your products .")
-                        : i18ndc("knewstuff5", "A description of how to upload content to the KDE Store specifically", "To upload new entries, or to add content to an existing entry, please open the provider's website and follow the instructions there. You will likely need to create a user and log in to a product management system, where you will need to follow the instructions for how to add. Alternatively, you might be required to contact the managers of the site directly to get new content added.")
+                        ? i18ndc("knewstuff6", "A description of how to upload content to a generic provider", "To upload new entries, or to add content to an existing entry on the KDE Store, please open the website and log in. Once you have done this, you will be able to find the My Products entry in the menu which pops up when you click your user icon. Click on this entry to go to the product management system, where you can work on your products .")
+                        : i18ndc("knewstuff6", "A description of how to upload content to the KDE Store specifically", "To upload new entries, or to add content to an existing entry, please open the provider's website and follow the instructions there. You will likely need to create a user and log in to a product management system, where you will need to follow the instructions for how to add. Alternatively, you might be required to contact the managers of the site directly to get new content added.")
                 }
             }
         }

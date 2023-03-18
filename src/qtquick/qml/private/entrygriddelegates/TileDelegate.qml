@@ -53,7 +53,7 @@ Private.GridTileDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
+            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install...");
             iconName: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
@@ -68,7 +68,7 @@ Private.GridTileDelegate {
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18ndc("knewstuff5", "Request updating of this item", "Update");
+            text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             iconName: "update-none"
             onTriggered: { newStuffModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
@@ -163,7 +163,7 @@ Private.GridTileDelegate {
                     elide: Text.ElideRight
                     level: 4
                     textFormat: Text.StyledText
-                    text: i18ndc("knewstuff5", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
+                    text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
                 }
                 QtControls.Label {
                     QtLayouts.Layout.fillWidth: true
@@ -184,7 +184,7 @@ Private.GridTileDelegate {
                 horizontalAlignment: Text.AlignRight
                 level: 5
                 elide: Text.ElideRight
-                text: i18ndc("knewstuff5", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
+                text: i18ndc("knewstuff6", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
                 visible: model.entryType == NewStuff.ItemsModel.CatalogEntry;
             }
         }

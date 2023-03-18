@@ -77,6 +77,6 @@ RowLayout
         Layout.minimumWidth: view.starSize
         Layout.minimumHeight: view.starSize
         visible: !view.reverseLayout
-        text: i18ndc("knewstuff5", "A text representation of the rating, shown as a fraction of the max value", "(%1/%2)", view.rating / 10, view.max / 10)
+        text: i18ndc("knewstuff6", "A text representation of the rating, shown as a fraction of the max value", "(%1/%2)", view.rating / 10, view.max / 10)
     }
 }

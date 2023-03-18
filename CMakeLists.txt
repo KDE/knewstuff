@@ -80,7 +80,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFWIDGETS
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6NewStuffWidgetsConfigVersion.cmake"
                         SOVERSION 6)
 
-add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff5\")
+add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff6\")
 ecm_set_disabled_deprecation_versions(
     QT 6.4.0
     KF 5.102

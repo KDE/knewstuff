@@ -39,7 +39,7 @@ KCM.GridDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff5", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff5", "Show installation options, where there is more than one downloadable item", "Install...");
+            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install...");
             iconName: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
@@ -54,7 +54,7 @@ KCM.GridDelegate {
             visible: enabled;
         },
         Kirigami.Action {
-            text: i18ndc("knewstuff5", "Request updating of this item", "Update");
+            text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             iconName: "update-none"
             onTriggered: { newStuffModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;

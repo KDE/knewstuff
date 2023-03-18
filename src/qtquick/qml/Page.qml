@@ -129,7 +129,7 @@ KCM.GridViewKCM {
                     });
                     _restoreSearchState.enabled = true;
                 } else {
-                    root.message(i18ndc("knewstuff5", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
+                    root.message(i18ndc("knewstuff6", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
                     newStuffEngine.engine.restoreSearch();
                 }
             } else if (newStuffModel.isLoadingData === false && root.view.count > 1) {
@@ -151,7 +151,7 @@ KCM.GridViewKCM {
         }
     }
 
-    property string uninstallLabel: i18ndc("knewstuff5", "Request uninstallation of this item", "Uninstall");
+    property string uninstallLabel: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall");
     property string useLabel: engine.engine.useLabel
 
     property int viewMode: Page.ViewMode.Tiles
@@ -176,7 +176,7 @@ KCM.GridViewKCM {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
             visible: true
-            text: i18nd("knewstuff5", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
+            text: i18nd("knewstuff6", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
         }
     }
 
@@ -210,11 +210,11 @@ KCM.GridViewKCM {
         Kirigami.Action {
             text: {
                 if (root.viewMode == Page.ViewMode.Tiles) {
-                    return i18nd("knewstuff5", "Tiles");
+                    return i18nd("knewstuff6", "Tiles");
                 } else if (root.viewMode == Page.ViewMode.Icons) {
-                    return i18nd("knewstuff5", "Icons");
+                    return i18nd("knewstuff6", "Icons");
                 } else {
-                    return i18nd("knewstuff5", "Preview");
+                    return i18nd("knewstuff6", "Preview");
                 }
             }
             checkable: false
@@ -229,7 +229,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "view-list-details"
-                text: i18nd("knewstuff5", "Detailed Tiles View Mode")
+                text: i18nd("knewstuff6", "Detailed Tiles View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
                 checked: root.viewMode == Page.ViewMode.Tiles
                 checkable: true
@@ -237,7 +237,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "view-list-icons"
-                text: i18nd("knewstuff5", "Icons Only View Mode")
+                text: i18nd("knewstuff6", "Icons Only View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Icons; }
                 checked: root.viewMode == Page.ViewMode.Icons
                 checkable: true
@@ -245,7 +245,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "view-preview"
-                text: i18nd("knewstuff5", "Large Preview View Mode")
+                text: i18nd("knewstuff6", "Large Preview View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Preview; }
                 checked: root.viewMode == Page.ViewMode.Preview
                 checkable: true
@@ -255,11 +255,11 @@ KCM.GridViewKCM {
         Kirigami.Action {
             text: {
                 if (newStuffEngine.filter === 0) {
-                    return i18nd("knewstuff5", "Everything");
+                    return i18nd("knewstuff6", "Everything");
                 } else if (newStuffEngine.filter === 1) {
-                    return i18nd("knewstuff5", "Installed");
+                    return i18nd("knewstuff6", "Installed");
                 } else if (newStuffEngine.filter === 2) {
-                    return i18nd("knewstuff5", "Updateable");
+                    return i18nd("knewstuff6", "Updateable");
                 } else {
                     // then it's ExactEntryId and we want to probably just ignore that
                 }
@@ -278,7 +278,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "package-available"
-                text: i18ndc("knewstuff5", "List option which will set the filter to show everything", "Show All Entries")
+                text: i18ndc("knewstuff6", "List option which will set the filter to show everything", "Show All Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 0
                 onTriggered: { newStuffEngine.filter = 0; }
@@ -286,7 +286,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "package-installed-updated"
-                text: i18ndc("knewstuff5", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
+                text: i18ndc("knewstuff6", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 1
                 onTriggered: { newStuffEngine.filter = 1; }
@@ -294,7 +294,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "package-installed-outdated"
-                text: i18ndc("knewstuff5", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
+                text: i18ndc("knewstuff6", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 2
                 onTriggered: { newStuffEngine.filter = 2; }
@@ -304,13 +304,13 @@ KCM.GridViewKCM {
         Kirigami.Action {
             text: {
                 if (newStuffEngine.sortOrder === 0) {
-                    return i18nd("knewstuff5", "Recent");
+                    return i18nd("knewstuff6", "Recent");
                 } else if (newStuffEngine.sortOrder === 1) {
-                    return i18nd("knewstuff5", "Alphabetical");
+                    return i18nd("knewstuff6", "Alphabetical");
                 } else if (newStuffEngine.sortOrder === 2) {
-                    return i18nd("knewstuff5", "Rating");
+                    return i18nd("knewstuff6", "Rating");
                 } else if (newStuffEngine.sortOrder === 3) {
-                    return i18nd("knewstuff5", "Downloads");
+                    return i18nd("knewstuff6", "Downloads");
                 } else {
                 }
             }
@@ -329,7 +329,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "change-date-symbolic"
-                text: i18ndc("knewstuff5", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
+                text: i18ndc("knewstuff6", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 0
                 onTriggered: { newStuffEngine.sortOrder = 0; }
@@ -337,7 +337,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "sort-name"
-                text: i18ndc("knewstuff5", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
+                text: i18ndc("knewstuff6", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 1
                 onTriggered: { newStuffEngine.sortOrder = 1; }
@@ -345,7 +345,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "rating"
-                text: i18ndc("knewstuff5", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
+                text: i18ndc("knewstuff6", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 2
                 onTriggered: { newStuffEngine.sortOrder = 2; }
@@ -353,7 +353,7 @@ KCM.GridViewKCM {
             }
             Kirigami.Action {
                 icon.name: "download"
-                text: i18ndc("knewstuff5", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
+                text: i18ndc("knewstuff6", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 3
                 onTriggered: { newStuffEngine.sortOrder = 3; }
@@ -362,8 +362,8 @@ KCM.GridViewKCM {
         },
         Kirigami.Action {
             id: uploadAction
-            text: i18nd("knewstuff5", "Upload...")
-            tooltip: i18nd("knewstuff5", "Learn how to add your own hot new stuff to this list")
+            text: i18nd("knewstuff6", "Upload...")
+            tooltip: i18nd("knewstuff6", "Learn how to add your own hot new stuff to this list")
             iconName: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled
             onTriggered: {
@@ -371,20 +371,20 @@ KCM.GridViewKCM {
             }
         },
         Kirigami.Action {
-            text: i18nd("knewstuff5", "Go to...")
+            text: i18nd("knewstuff6", "Go to...")
             iconName: "go-next";
             id: searchModelActions;
             visible: children.length > 0;
         },
         Kirigami.Action {
-            text: i18nd("knewstuff5", "Search...")
+            text: i18nd("knewstuff6", "Search...")
             iconName: "system-search";
             displayHint: Kirigami.DisplayHint.KeepVisible
             displayComponent: Kirigami.SearchField {
                 enabled: engine.isValid
                 id: searchField
                 focusSequence: "Ctrl+F"
-                placeholderText: i18nd("knewstuff5", "Search...")
+                placeholderText: i18nd("knewstuff6", "Search...")
                 text: newStuffEngine.searchTerm
                 onAccepted: { newStuffEngine.searchTerm = searchField.text; }
                 Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
@@ -421,7 +421,7 @@ KCM.GridViewKCM {
 
         QtControls.Label {
             visible: categoriesCombo.count > 2
-            text: i18nd("knewstuff5", "Category:")
+            text: i18nd("knewstuff6", "Category:")
         }
 
         QtControls.ComboBox {
@@ -437,7 +437,7 @@ KCM.GridViewKCM {
 
         QtControls.Button {
             QtLayouts.Layout.alignment: Qt.AlignRight
-            text: i18nd("knewstuff5", "Contribute your own…")
+            text: i18nd("knewstuff6", "Contribute your own…")
             icon.name: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled && !uploadAction.visible
             onClicked: {
@@ -503,7 +503,7 @@ KCM.GridViewKCM {
         }
         Kirigami.LoadingPlaceholder {
             anchors.centerIn: parent
-            text: i18ndc("knewstuff5", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more…")
+            text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more…")
         }
     }
 }

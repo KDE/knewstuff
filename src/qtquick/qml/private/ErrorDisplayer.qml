@@ -10,7 +10,7 @@ import org.kde.newstuff 1.83 as NewStuff
 
 MessageBoxSheet {
     id: component
-    title: i18ndc("knewstuff5", "Title for a dialog box which shows error messages", "An Error Occurred");
+    title: i18ndc("knewstuff6", "Title for a dialog box which shows error messages", "An Error Occurred");
     property bool active: true;
     property QtObject engine;
     property QtObject connection: Connections {
