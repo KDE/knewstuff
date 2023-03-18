@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 02:11+0000\n"
-"PO-Revision-Date: 2023-03-16 09:15+0100\n"
+"PO-Revision-Date: 2023-03-17 14:56+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -179,7 +179,7 @@ msgstr ""
 #: core/engine.cpp:853
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "Collige elemento de actualisar"
 
 #: core/engine.cpp:855
 #, kde-format
@@ -285,7 +285,7 @@ msgstr "Super scribe file"
 #: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "Incapace a mover le file %! al destination intendite %2"
 
 #: core/installation.cpp:507
 #, kde-format
@@ -660,7 +660,7 @@ msgstr "Monstra omne entratas"
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
-msgstr ""
+msgstr "Monstra solmente entratas installate"
 
 #: qtquick/qml/Page.qml:297
 #, kde-format
@@ -668,7 +668,7 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "Monstra solmente entratas actualisabile"
 
 #: qtquick/qml/Page.qml:307
 #, kde-format
@@ -727,7 +727,7 @@ msgstr "Il carga ..."
 #: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "Apprende como adder tu proprie cosas nove (hot new stuff) a iste lista"
 
 #: qtquick/qml/Page.qml:374
 #, kde-format
@@ -990,7 +990,7 @@ msgstr "Domo o initio"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "Planca"
 
 #: qtquick/searchpresetmodel.cpp:76
 #, kde-format
@@ -1020,7 +1020,7 @@ msgstr "Omne entratas"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "Cerca prefixate: %1"
 
 #: tools/knewstuff-dialog/main.cpp:31
 #, kde-format
