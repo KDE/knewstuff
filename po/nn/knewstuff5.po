@@ -1,4 +1,4 @@
-# Translation of knewstuff5 to Norwegian Nynorsk
+# Translation of knewstuff6 to Norwegian Nynorsk
 #
 # Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 2003, 2004, 2005, 2006.
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2003, 2005.
