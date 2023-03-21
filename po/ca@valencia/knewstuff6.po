@@ -1,4 +1,4 @@
-# Translation of knewstuff5.po to Catalan (Valencian)
+# Translation of knewstuff6.po to Catalan (Valencian)
 # Copyright (C) 1998-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2023-03-05 12:51+0100\n"
+"PO-Revision-Date: 2023-03-19 08:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -918,9 +918,7 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Puja les novetats: %1"
@@ -1122,62 +1120,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Baixa les novetats..."
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not contain "
-#~ "a correct KPackage structure."
-#~ msgstr ""
-#~ "Ha fallat la instal·lació de %1, ja que el paquet baixat no conté cap "
-#~ "estructura correcta de KPackage."
-
-#~ msgid ""
-#~ "The installation of %1 failed to create the expected new directory %2"
-#~ msgstr ""
-#~ "La instal·lació de %1 ha fallat en crear el directori nou esperat %2"
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not contain "
-#~ "any useful meta information, which means it is not a valid KPackage."
-#~ msgstr ""
-#~ "Ha fallat la instal·lació de %1, ja que el paquet baixat no conté cap "
-#~ "metainformació útil, el qual vol dir que no és un KPackage vàlid."
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package does not contain a "
-#~ "correct KPackage structure."
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, ja que el paquet instal·lat no "
-#~ "conté cap estructura correcta de KPackage."
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package does not contain any "
-#~ "useful meta information, which means it is not a valid KPackage."
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, ja que el paquet instal·lat no "
-#~ "conté cap metainformació útil, el qual vol dir que no és un KPackage "
-#~ "vàlid."
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the downloaded file %2 could not be "
-#~ "automatically removed."
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, ja que el fitxer baixat %2 no es "
-#~ "pot eliminar automàticament."
-
-#~ msgid ""
-#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
-#~ "The file in question was %2, and you can attempt to delete it yourself, "
-#~ "if you are certain that it is not needed."
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, perquè el fitxer instal·lat no és "
-#~ "un KPackage. El fitxer en qüestió era %2, i el podeu intentar suprimir "
-#~ "vós mateix, si segur que ja no és necessari."
-
-#~ msgid ""
-#~ "The removal of %1 failed, as there seems to somehow be more than one "
-#~ "thing installed, which is not supposed to be possible for KPackage based "
-#~ "entries."
-#~ msgstr ""
-#~ "No s'ha pogut fer l'eliminació de %1, perquè pareix que d'alguna manera "
-#~ "hi ha instal·lat més d'un objecte, el qual se suposa que no és possible "
-#~ "per a les entrades basades en KPackage."
