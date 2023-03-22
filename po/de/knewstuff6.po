@@ -5,7 +5,7 @@
 # Georg Schuster <gschuster@utanet.at>, 2005.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008, 2009.
 # Burkhard Lück <lueck@hube-lueck.de>, 2006, 2007, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2020.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2020, 2023.
 # Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Rolf Eike Beer <kde@opensource.sf-tec.de>, 2012.
@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2023-02-21 20:55+0100\n"
-"Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
+"PO-Revision-Date: 2023-03-21 19:57+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: attica/atticaprovider.cpp:168
 #, kde-format
@@ -332,16 +332,14 @@ msgid ""
 msgstr ""
 
 #: core/jobs/filecopyworker.cpp:49
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for writing"
-msgstr "%1 kann nicht zum Lesen geöffnet werden"
+msgstr "%1 lässt sich nicht zum Schreiben öffnen"
 
 #: core/jobs/filecopyworker.cpp:52
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for reading"
-msgstr "%1 kann nicht zum Lesen geöffnet werden"
+msgstr "%1 lässt sich nicht zum Lesen öffnen"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -604,11 +602,9 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@option:check Do filter on type - show only files"
-#| msgid "Files"
+#, kde-format
 msgid "Tiles"
-msgstr "Dateien"
+msgstr "Kacheln"
 
 #: qtquick/qml/Page.qml:215
 #, kde-format
@@ -621,22 +617,19 @@ msgid "Preview"
 msgstr "Vorschau"
 
 #: qtquick/qml/Page.qml:232
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "Detailansicht"
+msgstr "Detailierte Kachelansicht"
 
 #: qtquick/qml/Page.qml:240
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
 msgstr "Symbolansicht"
 
 #: qtquick/qml/Page.qml:248
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "Detailansicht"
+msgstr "Große Vorschauansicht"
 
 #: qtquick/qml/Page.qml:258
 #, kde-format
@@ -724,10 +717,9 @@ msgid "Show Most Downloaded First"
 msgstr "Am meistern heruntergeladene zuerst anzeigen"
 
 #: qtquick/qml/Page.qml:365
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload..."
-msgstr "Neu Hochladen"
+msgstr "Hochladen ..."
 
 #: qtquick/qml/Page.qml:366
 #, kde-format
@@ -756,14 +748,11 @@ msgid "Contribute your own…"
 msgstr "Vorgang fortsetzen"
 
 #: qtquick/qml/Page.qml:506
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Loading more..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Loading more…"
-msgstr "Mehr laden ..."
+msgstr "Weitere werden geladen ..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -830,7 +819,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr ""
+msgstr "In Arbeit ..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, kde-format
@@ -864,10 +853,9 @@ msgid "An Error Occurred"
 msgstr "Es ist ein Fehler aufgetreten"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
-#, fuzzy, kde-format
-#| msgid "Please put in a name."
+#, kde-format
 msgid "Please try again later."
-msgstr "Bitte geben Sie einen Namen ein."
+msgstr "Bitte versuchen Sie es später erneut."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
@@ -892,45 +880,39 @@ msgid "Upload New Stuff: %1"
 msgstr "Erweiterungen herunterladen"
 
 #: qtquick/qml/UploadPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Billing information:"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "Abrechnungsinformationen:"
+msgstr "Informationen werden aktualisiert ..."
 
 #: qtquick/qml/UploadPage.qml:95
-#, fuzzy, kde-format
-#| msgid "&Store"
+#, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr "&Speichern"
+msgstr "KDE Store"
 
 #: qtquick/qml/UploadPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "Anbieter:"
+msgstr "Ihr Anbieter"
 
 #: qtquick/qml/UploadPage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "&Open with %1"
+#, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr "&Mit %1 öffnen"
+msgstr "Webseite öffnen: %1"
 
 #: qtquick/qml/UploadPage.qml:114
-#, fuzzy, kde-format
-#| msgid "&Send Email"
+#, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr "E-&Mail versenden"
+msgstr "E-Mail senden an: %1"
 
 #: qtquick/qml/UploadPage.qml:121
 #, kde-format
@@ -996,12 +978,10 @@ msgid "New"
 msgstr "Neu"
 
 #: qtquick/searchpresetmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Home"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr "Pos 1"
+msgstr "Startseite"
 
 #: qtquick/searchpresetmodel.cpp:73
 #, kde-format
@@ -1024,12 +1004,10 @@ msgid "Recommended"
 msgstr "Empfohlen"
 
 #: qtquick/searchpresetmodel.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Subscript"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "Tiefgestellt"
+msgstr "Abonnements"
 
 #: qtquick/searchpresetmodel.cpp:85
 #, kde-format

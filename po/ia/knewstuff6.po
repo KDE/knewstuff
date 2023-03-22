@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2023-03-19 21:09+0100\n"
+"PO-Revision-Date: 2023-03-21 15:04+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: attica/atticaprovider.cpp:168
 #, kde-format
@@ -138,6 +138,9 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"Non poteva initialisar le maneator del installation per %1:\n"
+"%2\n"
+"Isto es un error critic e deberea esser reportate al autor del application"
 
 #: core/engine.cpp:338
 #, kde-format
@@ -175,6 +178,9 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"Non poteva executar un installation del entrata %1 proque il non ha ulle "
+"elementos discaricabile definite. Pro favor tu contacta le autores assi que "
+"illos pote corriger isto."
 
 #: core/engine.cpp:853
 #, kde-format
@@ -188,6 +194,9 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"Pro favor collige le elemento ab le lista a basso que deberea esser  usate "
+"per applicar iste actualisation. Noi esseva incapace a identificar qual "
+"elemento a seliger, basate sur le elementooriginal, que esseva appellate %1"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -195,6 +204,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"Noi falleva a identificar un bon ligamoine pro actualisar %1, e es incapace "
+"a executar le actualisation"
 
 #: core/engine.cpp:953
 #, kde-format
@@ -245,6 +256,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Non pote installar '%1' perque illo puncta a un pagin web. Clicca <a "
+"href='%2'>hic</a> pro terminar le installation."
 
 #: core/installation.cpp:184
 #, kde-format
@@ -296,6 +309,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"Le installation falleva durante que on essayava a axecutar le commando:\n"
+"%1\n"
+"\n"
+"Le exito retornate esseva:\n"
+"%2"
 
 #: core/installation.cpp:517
 #, kde-format
@@ -306,6 +324,12 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"Le installation falleva con dodice %1 durante que on essayava a axecutar le "
+"commando:\n"
+"%2\n"
+"\n"
+"Le exito retornate esseva:\n"
+"%3"
 
 #: core/installation.cpp:559
 #, kde-format
@@ -314,6 +338,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"Le elimination d %1 falleva, proque le file %2 nonpoteve esser eliminate "
+"automaticamente. Tu pote essayar a deler manualmente iste file, si tu crede "
+"que isto es un error."
 
 #: core/installation.cpp:628
 #, kde-format
@@ -324,6 +351,11 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"Le processo de deinstallation falleva a executar con successo le commando "
+"%1\n"
+"Le exito esseva:\n"
+"%2 Si tu crede que isto es incorrecte, tu pote continuar o cancellar le "
+"processo de deinstallation"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
@@ -516,7 +548,7 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr "Apei le pagina de initio per %1"
+msgstr "Aperi le pagina de initio per %1"
 
 #: qtquick/qml/EntryDetails.qml:168
 #, kde-format
@@ -596,6 +628,8 @@ msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
 msgstr ""
+"Le entrata que tu essayava a monstrar, identificate per le ID unic %1, non "
+"poteva esser trovate."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -603,6 +637,8 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"Le contento ci disponibile ha essite incargate per usatores como te, e non "
+"ha essite controlate per tu distributor per functionalitate o stabilitate."
 
 #: qtquick/qml/Page.qml:213
 #, kde-format
@@ -925,6 +961,12 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"Pro incargar nove entratas, o pro adder contento a un entrata existente in "
+"le KDE Store, pro favor aperi le sito web e eccede. Un vice que tu ha facite "
+"isto, tu essere capace a trovar le entrata de My Producots (mi productos) in "
+"le menu que emerge quando tu pulsa tu icona de usator. Clicca sur iste "
+"entrata per vader al systema de gestion de producto, ubi tu pote laborar sur "
+"tu productos."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -937,6 +979,12 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"Pro incargar nove entratas, o adder contento a un entrata existente, pro "
+"favor aperi le sito web del fornitor e seque le instructiones illac. Tu "
+"probabilemente necessitara crear un usator e acceder a un systema de gestion "
+"de producto, ubi tu necessitera sequer le instructiones  per como adder. "
+"Alternativemente, tu poterea esser rquirite a contactar le gerentes del sito "
+"directemente pro obtener que lenove conteno es addite."
 
 #: qtquick/quickengine.cpp:132
 #, kde-format
@@ -1029,6 +1077,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"Le file KNSRC que tu vole montrar. Si nulle es passate, te essera presentate "
+"un dialogo que te permitte commutar inter omne le files de config installate "
+"in le location de file knsrc per toto le systema"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
@@ -1045,6 +1096,17 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"Un url de kns ex le qual monstrar information. le formato per un url de kns "
+"es: kns://filedeknsrc/iddefornitor/iddeentrata\n"
+"'filedeknsrc'\n"
+"es le nomine de un file knsrc como poterea esser passate directemente trans "
+"iste arguento filedeknsrc del instrumento\n"
+"'iddefornitor'\n"
+"es le nomine de hospite del fornitor ubi le entrata deberea exister\n"
+"'iddeentrata'\n"
+"es le ID unic de un entrata trovate in le fornitor specificate per le file "
+"knsrc.\n"
+"Un exemplo de tal url es: kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
