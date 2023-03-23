@@ -8,6 +8,7 @@ set(KNewStuffCore_SRCS
     commentsmodel.cpp
     cache.cpp
     engine.cpp
+    enginebase.cpp
     entry.cpp
     imageloader.cpp
     installation.cpp
@@ -17,6 +18,8 @@ set(KNewStuffCore_SRCS
     tagsfilterchecker.cpp
     xmlloader.cpp
     errorcode.cpp
+    resultsstream.cpp
+    transaction.cpp
 
     # A system by which queries can be passed to the user, and responses
     # gathered, depending on implementation. See question.h for details.
@@ -119,6 +122,7 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Author
   Cache
   Engine
+  EngineBase
   Entry
   ErrorCode
   ItemsModel
@@ -127,7 +131,9 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   Question
   QuestionListener
   QuestionManager
+  ResultsStream
   TagsFilterChecker
+  Transaction
 
   REQUIRED_HEADERS KNewStuffCore_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore

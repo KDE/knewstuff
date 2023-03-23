@@ -92,6 +92,11 @@ public:
         }
 
         QString hashForRequest() const;
+        bool operator==(const SearchRequest &other) const
+        {
+            return sortMode == other.sortMode && filter == other.filter && searchTerm == other.searchTerm && categories == other.categories
+                && page == other.page && pageSize == other.pageSize;
+        }
     };
 
     /**
