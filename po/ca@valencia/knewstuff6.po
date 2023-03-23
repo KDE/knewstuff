@@ -97,8 +97,8 @@ msgstr ""
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
-"S'ha produït un error desconegut de la API dels serveis «Open "
-"Collaboration». (%1)"
+"S'ha produït un error desconegut de l'API dels serveis «Open Collaboration». "
+"(%1)"
 
 #: core/commentsmodel.cpp:168
 #, kde-format
