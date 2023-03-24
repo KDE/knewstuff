@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2023-03-16 11:35+0400\n"
+"PO-Revision-Date: 2023-03-23 10:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -894,9 +894,7 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "يرفع: %1"
@@ -1079,6 +1077,15 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"عنوان kns يظهر معلومات رابط الأشياء الجديدة . تنسيق هذا العنوان كالتالي "
+"kns://knsrcfile/providerid/entryid\n"
+"'knsrcfile'\n"
+"هذا اسم ملفknsrc والذي يمكن تمريره كمعامل لهذه الأداة \n"
+"'providerid'\n"
+"هذا اسم المضيف حيث توجد هذه المدخلة\n"
+"'entryid'\n"
+"هذا رقم تعريفي فريد للمدخلة الموجودة على المضيف وهي محددة في ملف knsrc .\n"
+"مثال على هذا العنوان: kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: widgets/action.cpp:30 widgets/button.cpp:56
 #, kde-format
