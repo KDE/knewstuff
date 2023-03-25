@@ -235,13 +235,12 @@ available there. As such, you will want to add a `KPackageType` entry to your kn
 is done for Plasma themes:
 
     [KNewStuff3]
-    ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
     Categories=Plasma Theme
     StandardResource=tmp
     TagFilter=ghns_excluded!=1,plasma##version==5
     DownloadTagFilter=plasma##version==5
     Uncompress=kpackage
-    KPackageType=Plasma/Theme
+    KPackageStructure=Plasma/Theme
 
 Using KPackage support will automatically enable the removal of dead entries option. You can override this if you
 want to, by explicitly adding `RemoveDeadEntries=false` to your knsrc file, though this would likely result in your

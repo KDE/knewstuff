@@ -16,6 +16,7 @@
 #include <QUrlQuery>
 
 #include "karchive.h"
+#include "knewstuff_version.h"
 #include "qmimedatabase.h"
 #include <KRandom>
 #include <KShell>
@@ -64,9 +65,15 @@ bool Installation::readConfig(const KConfigGroup &group, QString &errorMessage)
         qCCritical(KNEWSTUFFCORE) << errorMessage;
         return false;
     }
-    kpackageType = group.readEntry("KPackageType");
+
+    kpackageType = group.readEntry("KPackageStructure");
+#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    if (kpackageType.isEmpty()) {
+        kpackageType = group.readEntry("KPackageType");
+    }
+#endif
     if (uncompressSetting == UseKPackageUncompression && kpackageType.isEmpty()) {
-        errorMessage = QStringLiteral("kpackage uncompress setting chosen, but no KPackageType specified");
+        errorMessage = QStringLiteral("kpackage uncompress setting chosen, but no KPackageStructure specified");
         qCCritical(KNEWSTUFFCORE) << errorMessage;
         return false;
     }
