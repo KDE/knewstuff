@@ -17,6 +17,7 @@
 #include <KLocalizedContext>
 
 #include "core/engine.h"
+#include "knewstuffwidgets_debug.h"
 
 using namespace KNSWidgets;
 
@@ -86,6 +87,8 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QObject *p
         }
 
         window->setTransientParent(transientParent);
+    } else {
+        qWarning(KNEWSTUFFWIDGETS) << "Error creating QtQuickDialogWrapper component:" << component.errors();
     }
 }
 

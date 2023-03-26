@@ -6,6 +6,15 @@ set(KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuffW
 add_library(KF6NewStuffWidgets)
 add_library(KF6::NewStuffWidgets ALIAS KF6NewStuffWidgets)
 
+ecm_qt_declare_logging_category(KF6NewStuffWidgets
+    HEADER knewstuffwidgets_debug.h
+    IDENTIFIER KNEWSTUFFWIDGETS
+    CATEGORY_NAME kf.newstuff.widgets
+    DESCRIPTION "knewstuff (Widgets Lib)"
+    EXPORT KNEWSTUFF
+)
+
+
 ecm_generate_export_header(KF6NewStuffWidgets
     EXPORT_FILE_NAME knewstuffwidgets_export.h
     BASE_NAME KNewStuffWidgets
