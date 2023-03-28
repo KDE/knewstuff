@@ -7,7 +7,7 @@
 #ifndef KPACKAGEJOB_H
 #define KPACKAGEJOB_H
 
-#include <KCoreAddons/KJob>
+#include <KJob>
 
 namespace KNSCore
 {

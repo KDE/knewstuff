@@ -7,7 +7,7 @@
 #ifndef JOBBASE_H
 #define JOBBASE_H
 
-#include <KCoreAddons/kjob.h>
+#include <KJob>
 
 namespace KNSCore
 {
