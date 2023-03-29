@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-19 02:06+0000\n"
-"PO-Revision-Date: 2023-03-21 00:45+0100\n"
+"PO-Revision-Date: 2023-03-28 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -61,7 +61,7 @@ msgstr "ახლა ფანი ხარ."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "სერვისი ამჟამად რემონტის რეჟიმშია. ჩართვის დროა %1."
 
 #: attica/atticaprovider.cpp:585
 #, kde-format
@@ -79,6 +79,8 @@ msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
+"Open Collaboration Services-ის გაშვებულ ასლს %1 მოთხოვნილი ფუნქციის "
+"მხარდაჭერა არ გააჩნია."
 
 #: attica/atticaprovider.cpp:598
 #, kde-format
@@ -90,7 +92,7 @@ msgstr "ღია კოლაბორაციის სერვისის 
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr ""
+msgstr "უცნობი CommentsModel როლი"
 
 #: core/engine.cpp:190
 #, kde-format
@@ -133,6 +135,9 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"%1-სთვის დაყენების დამმუშავებლის ინიციალიზაცია შეუძლებელია:\n"
+"%2\n"
+"ეს კრიტიკული შეცდომაა. აცნობეთ ავტორს მის შესახებ"
 
 #: core/engine.cpp:338
 #, kde-format
@@ -142,7 +147,7 @@ msgstr "მომწოდებლის ინფორმაციის ჩ�
 #: core/engine.cpp:400
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr ""
+msgstr "ფაილიდან სიახლეების მომწოდებლების სიის წაკითხვა შეუძლებელია: %1"
 
 #: core/engine.cpp:431
 #, kde-format
@@ -170,6 +175,8 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"ჩანაწერის %1 დაყენება შეუძლებელია, რადგან მასში გადმოსაწერი ელემენტები "
+"მითითებული არაა. დაუკავშირდით ავტორს, რომელსაც შეუძლია, გაასწორონ ეს."
 
 #: core/engine.cpp:853
 #, kde-format
@@ -183,6 +190,8 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"ქვედა სიიდან აირჩიეთ ჩანაწერი, რომელზეც გნებავთ, ეს განახლება გადაატაროთ. "
+"ელემენტი, რომლის სახელიც იყო %1, აღმოჩენილი არაა"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -190,6 +199,7 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"%1-ის განახლებისთვის კარგი ბმული ვერ ვიპოვე, ამიტომ განახლება შეუძლებელია"
 
 #: core/engine.cpp:953
 #, kde-format
@@ -226,6 +236,7 @@ msgstr "არასწორი ელემენტი."
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
+"ჩანაწერის გადმოწერის შეცდომა: \"%1\"-სთვის გადმოწერის ბმული მითითებული არაა."
 
 #: core/installation.cpp:137
 #, kde-format
@@ -238,6 +249,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"'%1'-ის დაყენება შეუძლებელია, რადგან ის ვებგვერდზე მიუთითებს. დაყენების "
+"დასასრულებლად დააწკაპუნეთ <a href='%2'>აქ</a>."
 
 #: core/installation.cpp:184
 #, kde-format
@@ -252,7 +265,7 @@ msgstr "%1-ის დაყენების შეცდომა: %2"
 #: core/installation.cpp:384
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "გადმოწერილი ფაილის (%1) არქივის ტიპის დადგენა შეუძლებელია"
 
 #: core/installation.cpp:396
 #, kde-format
@@ -266,6 +279,9 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"ფაილი დისკზე უკვე არსებობს (შესაძლოა, ეს გადმოწერის წინა მცდელობისას მოხდა). "
+"გაგრძელება ნიშნავს, რომ მას თავზე გადავაწერთ. გნებავთ არსებული ფაილის თავზე "
+"გადაწერა?"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -275,7 +291,7 @@ msgstr "ფაილის ჩანაცვლება"
 #: core/installation.cpp:484
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "ფაილის (%1) საჭირო სამიზნეზე (%2) გადატანის შეცდომა"
 
 #: core/installation.cpp:507
 #, kde-format
@@ -286,6 +302,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"დაყენების შეცდომა შემდეგი ბრძანების გაშვების მცდელობისას:\n"
+"%1\n"
+"\n"
+"ბრძანებამ დააბრუნა:\n"
+"%2"
 
 #: core/installation.cpp:517
 #, kde-format
@@ -296,6 +317,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"დაყენება დასრულდა კოდით %1 შემდეგი ბრძანების გაშვების მცდელობისას:\n"
+"%2\n"
+"\n"
+"ბრძანებამ დააბრუნა:\n"
+"%3"
 
 #: core/installation.cpp:559
 #, kde-format
@@ -304,6 +330,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"%1-ის წაშლა შეუძლებელია, რადგან დაყენებული ფაილის %2 ავტომატურად წაშლა "
+"შეუძლებელია. თუ გჯერათ, რომ ეს არასწორია, შეგიძლიათ ფაილის წაშლა ხელით "
+"სცადოთ."
 
 #: core/installation.cpp:628
 #, kde-format
@@ -314,6 +343,11 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"წაშლის პროცესისას ბრძანების (%1) გაშვების შეცდომა\n"
+"პროგრამამ გამოიტანა:\n"
+"%2\n"
+"თუ ფიქრობთ, რომ ეს არასწორია, წაშლის პროცესი შეგიძლიათ გააგრძელოთ, ან "
+"გააუქმოთ"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
@@ -421,6 +455,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"ელემენტი ამჟამად არასწორია ან უცნობ მდგომარეობაშია. <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">მოგვწერეთ ამ შეცდომის "
+"შესახებ</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -585,6 +622,8 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"აქ არსებული შიგთავსი ატვირთულია მომხმარებლების მიერ, რომელიც თქვენგან "
+"არაფრით განსხვავდება და ისინი ფუნქციონალზე და სტაბილურობაზე შემოწმებული არაა."
 
 #: qtquick/qml/Page.qml:213
 #, kde-format
@@ -823,6 +862,8 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"არასწორი ან უცნობი მდგომარეობა. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">მოგვწერეთ ამ შეცდომის შესახებ</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -926,6 +967,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"უკანასკნელი სიახლეების მისაღებად ავტორიზაცია არ გაგივლიათ. თუ ფიქრობთ, რომ "
+"ეს შეცდომაა, დაუკავშირდით პირს, რომელიც თქვენს წვდომებს მართავს."
 
 #: qtquick/searchpresetmodel.cpp:55
 #, kde-format
