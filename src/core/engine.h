@@ -672,28 +672,28 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     // the .knsrc file was loaded
-    void slotProviderFileLoaded(const QDomDocument &doc);
+    KNEWSTUFFCORE_NO_EXPORT void slotProviderFileLoaded(const QDomDocument &doc);
     // instead of getting providers from knsrc, use what was configured in ocs systemsettings
-    void atticaProviderLoaded(const Attica::Provider &provider);
+    KNEWSTUFFCORE_NO_EXPORT void atticaProviderLoaded(const Attica::Provider &provider);
 
     // loading the .knsrc file failed
-    void slotProvidersFailed();
+    KNEWSTUFFCORE_NO_EXPORT void slotProvidersFailed();
 
     // called when a provider is ready to work
-    void providerInitialized(KNSCore::Provider *);
+    KNEWSTUFFCORE_NO_EXPORT void providerInitialized(KNSCore::Provider *);
 
-    void slotEntriesLoaded(const KNSCore::Provider::SearchRequest &, KNSCore::Entry::List);
-    void slotEntryDetailsLoaded(const KNSCore::Entry &entry);
-    void slotPreviewLoaded(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
+    KNEWSTUFFCORE_NO_EXPORT void slotEntriesLoaded(const KNSCore::Provider::SearchRequest &, KNSCore::Entry::List);
+    KNEWSTUFFCORE_NO_EXPORT void slotEntryDetailsLoaded(const KNSCore::Entry &entry);
+    KNEWSTUFFCORE_NO_EXPORT void slotPreviewLoaded(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
 
-    void slotSearchTimerExpired();
+    KNEWSTUFFCORE_NO_EXPORT void slotSearchTimerExpired();
 
-    void slotEntryChanged(const KNSCore::Entry &entry);
-    void slotInstallationFinished();
-    void slotInstallationFailed(const QString &message);
-    void downloadLinkLoaded(const KNSCore::Entry &entry);
+    KNEWSTUFFCORE_NO_EXPORT void slotEntryChanged(const KNSCore::Entry &entry);
+    KNEWSTUFFCORE_NO_EXPORT void slotInstallationFinished();
+    KNEWSTUFFCORE_NO_EXPORT void slotInstallationFailed(const QString &message);
+    KNEWSTUFFCORE_NO_EXPORT void downloadLinkLoaded(const KNSCore::Entry &entry);
 
-    void providerJobStarted(KJob *);
+    KNEWSTUFFCORE_NO_EXPORT void providerJobStarted(KJob *);
 
 private:
     /**

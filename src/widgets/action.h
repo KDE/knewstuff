@@ -60,7 +60,7 @@ Q_SIGNALS:
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 
 private Q_SLOTS:
-    void showDialog();
+    KNEWSTUFFWIDGETS_NO_EXPORT void showDialog();
 
 private:
     void init();
