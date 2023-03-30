@@ -90,7 +90,7 @@ Q_SIGNALS:
 #endif
 
 private Q_SLOTS:
-    void showDialog();
+    KNEWSTUFFWIDGETS_NO_EXPORT void showDialog();
 
 private:
     void init();
