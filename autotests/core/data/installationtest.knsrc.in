@@ -1,4 +1,4 @@
-[KNewStuff3]
+[KNewStuff]
 Name=InstallCommands
 ProvidersUrl=file://@DATA_DIR@provider.xml
 Categories=KDE Wallpaper 1920x1200,KDE Wallpaper 1600x1200

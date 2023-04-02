@@ -33,10 +33,10 @@ KNSRCModel::KNSRCModel(QObject *parent)
         KConfigGroup group;
         if (conf.hasGroup("KNewStuff3")) {
             group = conf.group("KNewStuff3");
-        } else if (conf.hasGroup("KNewStuff2")) {
-            group = conf.group("KNewStuff2");
+        } else if (conf.hasGroup("KNewStuff")) {
+            group = conf.group("KNewStuff");
         } else {
-            qWarning() << file << " doesn't contain a KNewStuff3 (or KNewStuff2) section.";
+            qWarning() << file << " doesn't contain a KNewStuff (or KNewStuff3) section.";
             continue;
         }
 
