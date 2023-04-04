@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:06+0000\n"
+"POT-Creation-Date: 2023-04-04 02:22+0000\n"
 "PO-Revision-Date: 2015-11-04 15:13+0000\n"
 "Last-Translator: Michael Bauer <fios@akerbeltz.org>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -224,52 +224,52 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:99
+#: core/installation.cpp:106
 #, kde-format
 msgid "Invalid item."
 msgstr "Nì mì-dhligheach."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:113
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "Cha deach leinn an nì a luchdadh: chan eil URL luchdaidh a-nuas airson "
 "\"%1\" ann."
 
-#: core/installation.cpp:137
+#: core/installation.cpp:144
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Cha deach leinn \"%1\" a luchdadh a-nuas, mearachd: %2"
 
-#: core/installation.cpp:146
+#: core/installation.cpp:153
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:184
+#: core/installation.cpp:191
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Cha b' urrainn dhuinn \"%1\" a stàladh: cha deach am faidhle a lorg."
 
-#: core/installation.cpp:350 core/installation.cpp:595
+#: core/installation.cpp:357 core/installation.cpp:602
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgid "Installation of %1 failed: %2"
 msgstr "'Ga stàladh"
 
-#: core/installation.cpp:384
+#: core/installation.cpp:391
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 
-#: core/installation.cpp:396
+#: core/installation.cpp:403
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 
-#: core/installation.cpp:462
+#: core/installation.cpp:469
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -277,18 +277,18 @@ msgid ""
 "existing file?"
 msgstr ""
 
-#: core/installation.cpp:465
+#: core/installation.cpp:472
 #, fuzzy, kde-format
 #| msgid "Overwrite existing file?"
 msgid "Overwrite File"
 msgstr "A bheil thu airson sgrìobhadh thairis air an fhaidhle a tha ann?"
 
-#: core/installation.cpp:484
+#: core/installation.cpp:491
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr ""
 
-#: core/installation.cpp:507
+#: core/installation.cpp:514
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -298,7 +298,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:517
+#: core/installation.cpp:524
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -308,7 +308,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:559
+#: core/installation.cpp:566
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -316,7 +316,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:628
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:06+0000\n"
+"POT-Creation-Date: 2023-04-04 02:22+0000\n"
 "PO-Revision-Date: 2023-04-02 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -227,23 +227,23 @@ msgstr ""
 "'%1'-ის დამუშავების შეცდომა\n"
 "%2"
 
-#: core/installation.cpp:99
+#: core/installation.cpp:106
 #, kde-format
 msgid "Invalid item."
 msgstr "არასწორი ელემენტი."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:113
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "ჩანაწერის გადმოწერის შეცდომა: \"%1\"-სთვის გადმოწერის ბმული მითითებული არაა."
 
-#: core/installation.cpp:137
+#: core/installation.cpp:144
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\"-ის გადმოწერა შეუძლებელია. შეცდომა: %2"
 
-#: core/installation.cpp:146
+#: core/installation.cpp:153
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -252,27 +252,27 @@ msgstr ""
 "'%1'-ის დაყენება შეუძლებელია, რადგან ის ვებგვერდზე მიუთითებს. დაყენების "
 "დასასრულებლად დააწკაპუნეთ <a href='%2'>აქ</a>."
 
-#: core/installation.cpp:184
+#: core/installation.cpp:191
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\"-ის დაყენების შეცდომა: ფაილი ვერ ვიპოვე;."
 
-#: core/installation.cpp:350 core/installation.cpp:595
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1-ის დაყენების შეცდომა: %2"
 
-#: core/installation.cpp:384
+#: core/installation.cpp:391
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "გადმოწერილი ფაილის (%1) არქივის ტიპის დადგენა შეუძლებელია"
 
-#: core/installation.cpp:396
+#: core/installation.cpp:403
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "არქივის ფაილის (%1) გახსნა შეუძლებელია. შეცდომა: %2"
 
-#: core/installation.cpp:462
+#: core/installation.cpp:469
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -283,17 +283,17 @@ msgstr ""
 "გაგრძელება ნიშნავს, რომ მას თავზე გადავაწერთ. გნებავთ არსებული ფაილის თავზე "
 "გადაწერა?"
 
-#: core/installation.cpp:465
+#: core/installation.cpp:472
 #, kde-format
 msgid "Overwrite File"
 msgstr "ფაილის ჩანაცვლება"
 
-#: core/installation.cpp:484
+#: core/installation.cpp:491
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "ფაილის (%1) საჭირო სამიზნეზე (%2) გადატანის შეცდომა"
 
-#: core/installation.cpp:507
+#: core/installation.cpp:514
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -308,7 +308,7 @@ msgstr ""
 "ბრძანებამ დააბრუნა:\n"
 "%2"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:524
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -323,7 +323,7 @@ msgstr ""
 "ბრძანებამ დააბრუნა:\n"
 "%3"
 
-#: core/installation.cpp:559
+#: core/installation.cpp:566
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -334,7 +334,7 @@ msgstr ""
 "შეუძლებელია. თუ გჯერათ, რომ ეს არასწორია, შეგიძლიათ ფაილის წაშლა ხელით "
 "სცადოთ."
 
-#: core/installation.cpp:628
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

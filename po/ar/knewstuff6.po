@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:06+0000\n"
+"POT-Creation-Date: 2023-04-04 02:22+0000\n"
 "PO-Revision-Date: 2023-03-23 10:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -226,22 +226,22 @@ msgstr ""
 "فشل في الاعتماد  '%1'\n"
 "%2"
 
-#: core/installation.cpp:99
+#: core/installation.cpp:106
 #, kde-format
 msgid "Invalid item."
 msgstr "عنصر غير صالح."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:113
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "تحميل العنصر فشل: لا عنوان URL لـ\"%1\"."
 
-#: core/installation.cpp:137
+#: core/installation.cpp:144
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "فشل تحميل \"%1\"، الخطأ: %2"
 
-#: core/installation.cpp:146
+#: core/installation.cpp:153
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -250,27 +250,27 @@ msgstr ""
 "تعذر تثبيت  '%1' لأنها تشير إلى صفحة ويب. انقر  <a href='%2'>هنا</a> لتنهي "
 "التثبيت."
 
-#: core/installation.cpp:184
+#: core/installation.cpp:191
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "تعذّر تثبيب \"%1\": لم يُعثر على الملف."
 
-#: core/installation.cpp:350 core/installation.cpp:595
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "فشل تثبيت %1: %2"
 
-#: core/installation.cpp:384
+#: core/installation.cpp:391
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "غير قادر على تحديد نوع الأرشيف للملف المحمل %1"
 
-#: core/installation.cpp:396
+#: core/installation.cpp:403
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "فشل فتح ملفّ الأرشيف %1. الخطأ هو: %2"
 
-#: core/installation.cpp:462
+#: core/installation.cpp:469
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -280,17 +280,17 @@ msgstr ""
 "هذا الملف موجود بالفعل على القرص (ربما يرجع ذلك إلى محاولة تنزيل سابقة "
 "فاشلة). الاستمرار يعني الكتابة فوقه. هل ترغب في الكتابة فوق الملف الموجود؟"
 
-#: core/installation.cpp:465
+#: core/installation.cpp:472
 #, kde-format
 msgid "Overwrite File"
 msgstr "اكتب على الملف"
 
-#: core/installation.cpp:484
+#: core/installation.cpp:491
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "تعذر نقل الملف%1 إلى الوجهة المقصودة %2"
 
-#: core/installation.cpp:507
+#: core/installation.cpp:514
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -304,7 +304,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%2"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:524
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -319,7 +319,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%3"
 
-#: core/installation.cpp:559
+#: core/installation.cpp:566
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -329,7 +329,7 @@ msgstr ""
 "فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 تلقائيًا. يمكنك محاولة حذف هذا "
 "الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
 
-#: core/installation.cpp:628
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

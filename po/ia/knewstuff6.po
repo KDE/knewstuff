@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-19 02:06+0000\n"
+"POT-Creation-Date: 2023-04-04 02:22+0000\n"
 "PO-Revision-Date: 2023-03-21 15:04+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -233,24 +233,24 @@ msgstr ""
 "Il falleva a adoptar '%1'\n"
 "%2"
 
-#: core/installation.cpp:99
+#: core/installation.cpp:106
 #, kde-format
 msgid "Invalid item."
 msgstr "Elemento invalide."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:113
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "Il falleva le discargamento del articulo: nulle URL de discargamento pro "
 "\"%1\"."
 
-#: core/installation.cpp:137
+#: core/installation.cpp:144
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Il falleva le discargamento de \"%1\", error: %2"
 
-#: core/installation.cpp:146
+#: core/installation.cpp:153
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -259,27 +259,27 @@ msgstr ""
 "Non pote installar '%1' perque illo puncta a un pagin web. Clicca <a "
 "href='%2'>hic</a> pro terminar le installation."
 
-#: core/installation.cpp:184
+#: core/installation.cpp:191
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Il non pote installar \"%1\": file non trovate."
 
-#: core/installation.cpp:350 core/installation.cpp:595
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Installation de %1 falleva: %2"
 
-#: core/installation.cpp:384
+#: core/installation.cpp:391
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Nonpote determinar le typo de archivo del file discargate %1"
 
-#: core/installation.cpp:396
+#: core/installation.cpp:403
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Inhabile a aperir file de archivo %1. Le error repotate esseva: %2."
 
-#: core/installation.cpp:462
+#: core/installation.cpp:469
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -290,17 +290,17 @@ msgstr ""
 "tentativa fallite de discargar). Continuar significa superscriber lo. Tu "
 "vole superscriber le file existente?"
 
-#: core/installation.cpp:465
+#: core/installation.cpp:472
 #, kde-format
 msgid "Overwrite File"
 msgstr "Super scribe file"
 
-#: core/installation.cpp:484
+#: core/installation.cpp:491
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Incapace a mover le file %! al destination intendite %2"
 
-#: core/installation.cpp:507
+#: core/installation.cpp:514
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -315,7 +315,7 @@ msgstr ""
 "Le exito retornate esseva:\n"
 "%2"
 
-#: core/installation.cpp:517
+#: core/installation.cpp:524
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -331,7 +331,7 @@ msgstr ""
 "Le exito retornate esseva:\n"
 "%3"
 
-#: core/installation.cpp:559
+#: core/installation.cpp:566
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -342,7 +342,7 @@ msgstr ""
 "automaticamente. Tu pote essayar a deler manualmente iste file, si tu crede "
 "que isto es un error."
 
-#: core/installation.cpp:628
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
