@@ -73,14 +73,14 @@ target_link_libraries(KF5NewStuff
     Qt${QT_MAJOR_VERSION}::Widgets
   PRIVATE
     KF5::KIOCore               # For network fetching operations
-    KF5::KIOWidgets            # For KUrlRequester
+    KF5::KIOGui                # For KIO::OpenUrlJob
+    KF5::JobWidgets            # For KDialogJobUiDelegate
     KF5::Completion            # For KLineEdit in download dialog
     KF5::I18n                  # For translations
     KF5::ItemViews             # For buttons on download dialog
     KF5::IconThemes           # For KIcon
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
-    KF5::TextWidgets          # For KTextEdit in upload dialog
 )
 
 set_target_properties(KF5NewStuff PROPERTIES

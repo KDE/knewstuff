@@ -10,7 +10,6 @@ Dependencies:
     'frameworks/kitemviews' : '@same'
     'frameworks/karchive' : '@same'
     'frameworks/kiconthemes' : '@same'
-    'frameworks/ktextwidgets' : '@same'
     'frameworks/kxmlgui' : '@same'
     'frameworks/solid' : '@same'
     'frameworks/kbookmarks' : '@same'
