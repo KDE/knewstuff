@@ -61,6 +61,12 @@ ecm_qt_declare_logging_category(knscore_jobs_static
 add_library(KF6NewStuffCore ${KNewStuffCore_SRCS} ${KNewStuffCore_syndication_SRCS})
 add_library(KF6::NewStuffCore ALIAS KF6NewStuffCore )
 
+set_target_properties(KF6NewStuffCore PROPERTIES
+   VERSION     ${KNEWSTUFF_VERSION}
+   SOVERSION   ${KNEWSTUFF_SOVERSION}
+   EXPORT_NAME NewStuffCore
+)
+
 ecm_generate_export_header(KF6NewStuffCore
     EXPORT_FILE_NAME knewstuffcore_export.h
     BASE_NAME KNewStuffCore
@@ -105,12 +111,6 @@ if(KF6Syndication_FOUND)
         KF6::Syndication #OPDS
     )
 endif()
-
-set_target_properties(KF6NewStuffCore PROPERTIES
-   VERSION ${KNEWSTUFF_VERSION}
-   SOVERSION ${KNEWSTUFF_SOVERSION}
-   EXPORT_NAME NewStuffCore
-)
 
 ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   HEADER_NAMES

@@ -6,6 +6,12 @@ set(KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuffW
 add_library(KF6NewStuffWidgets)
 add_library(KF6::NewStuffWidgets ALIAS KF6NewStuffWidgets)
 
+set_target_properties(KF6NewStuffWidgets PROPERTIES
+   VERSION     ${KNEWSTUFF_VERSION}
+   SOVERSION   ${KNEWSTUFF_SOVERSION}
+   EXPORT_NAME NewStuffWidgets
+)
+
 ecm_qt_declare_logging_category(KF6NewStuffWidgets
     HEADER knewstuffwidgets_debug.h
     IDENTIFIER KNEWSTUFFWIDGETS
@@ -47,12 +53,6 @@ target_include_directories(KF6NewStuffWidgets
     INTERFACE
         "$<INSTALL_INTERFACE:${KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR}>"
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff>" # module version header
-)
-
-set_target_properties(KF6NewStuffWidgets PROPERTIES
-   VERSION ${KNEWSTUFF_VERSION}
-   SOVERSION ${KNEWSTUFF_SOVERSION}
-   EXPORT_NAME NewStuffWidgets
 )
 
 ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
