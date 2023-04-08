@@ -59,12 +59,7 @@ Q_SIGNALS:
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 
-private Q_SLOTS:
-    KNEWSTUFFWIDGETS_NO_EXPORT void showDialog();
-
 private:
-    void init();
-
     std::unique_ptr<ActionPrivate> d;
 };
 

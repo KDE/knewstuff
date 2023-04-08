@@ -22,13 +22,6 @@ public:
     explicit ButtonPrivate(Button *qq)
         : q(qq)
     {
-    }
-
-    Button *q;
-    QString configFile;
-    QPointer<KNSWidgets::QtQuickDialogWrapper> dialog;
-    void init()
-    {
         const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
         if (!authorized) {
             q->setEnabled(false);
@@ -36,8 +29,32 @@ public:
         }
 
         q->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
-        q->connect(q, &QAbstractButton::clicked, q, &Button::showDialog);
+        q->connect(q, &QAbstractButton::clicked, q, [this]() {
+            showDialog();
+        });
     }
+
+    void showDialog()
+    {
+        if (!KAuthorized::authorize(KAuthorized::GHNS)) {
+            KMessageBox::information(q, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
+            return;
+        }
+        Q_ASSERT_X(!configFile.isEmpty(), Q_FUNC_INFO, "The configFile for the KNSWidgets::Button must be explicitly set");
+        Q_EMIT q->aboutToShowDialog();
+
+        if (!dialog) {
+            dialog.reset(new KNSWidgets::QtQuickDialogWrapper(configFile, q));
+            QObject::connect(dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, q, [this]() {
+                Q_EMIT q->dialogFinished(dialog->changedEntries());
+            });
+        }
+        dialog->show();
+    }
+
+    Button *q;
+    QString configFile;
+    std::unique_ptr<KNSWidgets::QtQuickDialogWrapper> dialog;
 };
 
 Button::Button(const QString &text, const QString &configFile, QWidget *parent)
@@ -46,7 +63,6 @@ Button::Button(const QString &text, const QString &configFile, QWidget *parent)
 {
     setText(text);
     d->configFile = configFile;
-    d->init();
 }
 
 Button::Button(QWidget *parent)
@@ -54,7 +70,6 @@ Button::Button(QWidget *parent)
     , d(new ButtonPrivate(this))
 {
     setText(i18n("Download New Stuff..."));
-    d->init();
 }
 
 Button::~Button() = default;
@@ -67,23 +82,4 @@ QString Button::configFile()
 {
     return d->configFile;
 }
-
-void Button::showDialog()
-{
-    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
-        KMessageBox::information(this, QStringLiteral("Get Hot New Stuff is disabled by the administrator"), QStringLiteral("Get Hot New Stuff disabled"));
-        return;
-    }
-    Q_ASSERT_X(!d->configFile.isEmpty(), Q_FUNC_INFO, "The configFile for the KNSWidgets::Button must be explicitly set");
-    Q_EMIT aboutToShowDialog();
-
-    if (!d->dialog) {
-        d->dialog = new KNSWidgets::QtQuickDialogWrapper(d->configFile, this);
-        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
-            Q_EMIT dialogFinished(d->dialog->changedEntries());
-        });
-    }
-    d->dialog->show();
-}
-
 }

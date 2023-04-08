@@ -30,13 +30,7 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
         setText(text);
     }
     d->configFile = configFile;
-    init();
-}
 
-Action::~Action() = default;
-
-void Action::init()
-{
     const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
     if (!authorized) {
         setEnabled(false);
@@ -44,28 +38,26 @@ void Action::init()
     }
 
     setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
-    connect(this, &QAction::triggered, this, &Action::showDialog);
+    connect(this, &QAction::triggered, this, [this]() {
+        if (!KAuthorized::authorize(KAuthorized::GHNS)) {
+            return;
+        }
+        Q_EMIT aboutToShowDialog();
+
+        if (!d->dialog) {
+            d->dialog.reset(new KNSWidgets::QtQuickDialogWrapper(d->configFile));
+            connect(d->dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
+                Q_EMIT dialogFinished(d->dialog->changedEntries());
+            });
+        }
+        d->dialog->show();
+    });
 }
+
+Action::~Action() = default;
 
 void Action::setConfigFile(const QString &configFile)
 {
     d->configFile = configFile;
 }
-
-void Action::showDialog()
-{
-    if (!KAuthorized::authorize(KAuthorized::GHNS)) {
-        return;
-    }
-    Q_EMIT aboutToShowDialog();
-
-    if (!d->dialog) {
-        d->dialog.reset(new KNSWidgets::QtQuickDialogWrapper(d->configFile));
-        connect(d->dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
-            Q_EMIT dialogFinished(d->dialog->changedEntries());
-        });
-    }
-    d->dialog->show();
-}
-
 }

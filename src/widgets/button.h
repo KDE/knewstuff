@@ -75,8 +75,6 @@ Q_SIGNALS:
 
 private:
     QString configFile();
-    Q_SLOT void showDialog();
-    friend class ButtonPrivate;
     const std::unique_ptr<ButtonPrivate> d;
 };
 
