@@ -79,11 +79,11 @@ void Button::showDialog()
 
     if (!d->dialog) {
         d->dialog = new KNSWidgets::QtQuickDialogWrapper(d->configFile, this);
-        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::closed, this, [this]() {
+        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
             Q_EMIT dialogFinished(d->dialog->changedEntries());
         });
     }
-    d->dialog->open();
+    d->dialog->show();
 }
 
 }

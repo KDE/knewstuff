@@ -34,7 +34,7 @@ ecm_generate_export_header(KF6NewStuffWidgets
 )
 
 target_sources(KF6NewStuffWidgets PRIVATE
-    action.cpp button.cpp qtquickdialogwrapper.cpp
+    action.cpp button.cpp qtquickdialogwrapper.cpp resources.qrc
 )
 
 target_link_libraries(KF6NewStuffWidgets
@@ -48,6 +48,7 @@ target_link_libraries(KF6NewStuffWidgets
     # QtQuickDialogWrapper
     Qt6::Qml
     Qt6::Quick
+    Qt6::QuickWidgets
 )
 
 target_include_directories(KF6NewStuffWidgets

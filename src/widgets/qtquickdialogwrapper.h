@@ -9,7 +9,7 @@
 
 #include <KNSCore/Entry>
 #include <KNSCore/ErrorCode>
-#include <QObject>
+#include <QDialog>
 
 #include "knewstuffwidgets_export.h"
 
@@ -22,28 +22,17 @@ namespace KNSWidgets
 {
 class QtQuickDialogWrapperPrivate;
 /**
- * This class is a wrapper around the QtQuick QML dialog. This dialog is loaded using the QQmlEngine.
- * The constructor will create the QML component, to show the dialog the show() method must be called.
+ * This class is a wrapper around the QtQuick QML dialog. This dialog content is loaded QQuickWidget.
  * It is recommended to reuse an instance of this class if it is expected that the user reopens the dialog.
- * @since 5.78
+ * @since 6.0
  */
-class KNEWSTUFFWIDGETS_EXPORT QtQuickDialogWrapper : public QObject
+class KNEWSTUFFWIDGETS_EXPORT QtQuickDialogWrapper : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit QtQuickDialogWrapper(const QString &configFile, QObject *parent = nullptr);
+    explicit QtQuickDialogWrapper(const QString &configFile, QWidget *parent = nullptr);
     ~QtQuickDialogWrapper() override;
-
-    /**
-     * Opens the dialog
-     */
-    void open();
-
-    /**
-     * This signal gets emitted when the dialog is closed
-     */
-    Q_SIGNAL void closed();
 
     /**
      * Engine that is used by the dialog, might be null if the engine failed to initialize.

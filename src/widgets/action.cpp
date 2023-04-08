@@ -11,15 +11,13 @@
 #include <KAuthorized>
 #include <KLocalizedString>
 
-#include <QPointer>
-
 namespace KNSWidgets
 {
 class ActionPrivate
 {
 public:
     QString configFile;
-    QPointer<QtQuickDialogWrapper> dialog;
+    std::unique_ptr<QtQuickDialogWrapper> dialog;
 };
 
 Action::Action(const QString &text, const QString &configFile, QObject *parent)
@@ -35,9 +33,7 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
     init();
 }
 
-Action::~Action()
-{
-}
+Action::~Action() = default;
 
 void Action::init()
 {
@@ -64,13 +60,12 @@ void Action::showDialog()
     Q_EMIT aboutToShowDialog();
 
     if (!d->dialog) {
-        d->dialog = new KNSWidgets::QtQuickDialogWrapper(d->configFile, this);
-        connect(d->dialog.data(), &KNSWidgets::QtQuickDialogWrapper::closed, this, [this]() {
-            const QList<KNSCore::Entry> changedInternalEntries = d->dialog->changedEntries();
-            Q_EMIT dialogFinished(changedInternalEntries);
+        d->dialog.reset(new KNSWidgets::QtQuickDialogWrapper(d->configFile));
+        connect(d->dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
+            Q_EMIT dialogFinished(d->dialog->changedEntries());
         });
     }
-    d->dialog->open();
+    d->dialog->show();
 }
 
 }
