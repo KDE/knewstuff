@@ -46,6 +46,8 @@ public:
      */
     QList<KNSCore::Entry> changedEntries() const;
 
+    void open() override;
+
 private:
     const std::unique_ptr<QtQuickDialogWrapperPrivate> d;
 

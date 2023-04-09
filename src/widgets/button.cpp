@@ -38,7 +38,7 @@ public:
                 Q_EMIT q->dialogFinished(dialog->changedEntries());
             });
         }
-        dialog->show();
+        dialog->open();
     }
 
     Button *q;

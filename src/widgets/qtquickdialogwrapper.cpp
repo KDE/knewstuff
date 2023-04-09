@@ -95,3 +95,9 @@ QList<KNSCore::Entry> QtQuickDialogWrapper::changedEntries() const
 {
     return d->changedEntries;
 }
+
+void QtQuickDialogWrapper::open()
+{
+    QDialog::open();
+    d->changedEntries.clear();
+}

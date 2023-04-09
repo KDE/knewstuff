@@ -19,7 +19,7 @@ class ActionPrivate;
 /**
  * @class Action action.h <KNSWidgets/Action>
  *
- * Shows the KNS3::QtQuickDialogWrapper when the action is triggered.
+ * Action that encapsulates the logic for showing the KNS dialog.
  * If GHNS is disabled using KAuthorized, it is hidden.
  *
  * @since 5.90
@@ -30,8 +30,7 @@ class KNEWSTUFFWIDGETS_EXPORT Action : public QAction
 
 public:
     /**
-     * Constructor used when the details of the KHotNewStuff
-     * download is known when the action is created.
+     * Constrcuts a KNSWidgets::Action instance
      *
      * @param text describing what is being downloaded.
      *        It should be a text beginning with "Download New ..." for consistency

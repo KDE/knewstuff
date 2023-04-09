@@ -21,6 +21,8 @@ class ButtonPrivate;
  * @class Button button.h <KNSWidgets/Button>
  *
  * Push button that encapsulates the logic for showing the KNS dialog.
+ * If GHNS is disabled using KAuthorized, it is hidden.
+ *
  * @since 5.91
  */
 class KNEWSTUFFWIDGETS_EXPORT Button : public QPushButton

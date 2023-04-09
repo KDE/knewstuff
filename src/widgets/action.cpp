@@ -49,7 +49,7 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
                 Q_EMIT dialogFinished(d->dialog->changedEntries());
             });
         }
-        d->dialog->show();
+        d->dialog->open();
     });
 }
 
