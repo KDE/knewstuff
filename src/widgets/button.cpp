@@ -7,7 +7,7 @@
 
 #include "button.h"
 
-#include "qtquickdialogwrapper.h"
+#include "dialog.h"
 #include <KAuthorized>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -33,8 +33,8 @@ public:
         Q_ASSERT_X(!configFile.isEmpty(), Q_FUNC_INFO, "The configFile for the KNSWidgets::Button must be explicitly set");
 
         if (!dialog) {
-            dialog.reset(new KNSWidgets::QtQuickDialogWrapper(configFile, q));
-            QObject::connect(dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, q, [this]() {
+            dialog.reset(new KNSWidgets::Dialog(configFile, q));
+            QObject::connect(dialog.get(), &KNSWidgets::Dialog::finished, q, [this]() {
                 Q_EMIT q->dialogFinished(dialog->changedEntries());
             });
         }
@@ -43,7 +43,7 @@ public:
 
     Button *q;
     QString configFile;
-    std::unique_ptr<KNSWidgets::QtQuickDialogWrapper> dialog;
+    std::unique_ptr<KNSWidgets::Dialog> dialog;
 };
 
 Button::Button(const QString &text, const QString &configFile, QWidget *parent)

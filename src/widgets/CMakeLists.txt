@@ -34,7 +34,7 @@ ecm_generate_export_header(KF6NewStuffWidgets
 )
 
 target_sources(KF6NewStuffWidgets PRIVATE
-    action.cpp button.cpp qtquickdialogwrapper.cpp resources.qrc
+    action.cpp button.cpp dialog.cpp resources.qrc
 )
 
 target_link_libraries(KF6NewStuffWidgets
@@ -62,7 +62,7 @@ ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   HEADER_NAMES
   Action
   Button
-  QtQuickDialogWrapper
+  Dialog
 
   REQUIRED_HEADERS KNewStuffWidgets_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSWidgets

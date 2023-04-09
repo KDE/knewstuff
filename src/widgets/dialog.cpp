@@ -1,10 +1,10 @@
 /*
-    SPDX-FileCopyrightText: 2020 Alexander Lohnau <alexander.lohnau@gmx.de>
+    SPDX-FileCopyrightText: 2020-2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "qtquickdialogwrapper.h"
+#include "dialog.h"
 
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -20,7 +20,7 @@
 
 using namespace KNSWidgets;
 
-class KNSWidgets::QtQuickDialogWrapperPrivate
+class KNSWidgets::DialogPrivate
 {
 public:
     QObject *item = nullptr;
@@ -44,9 +44,9 @@ protected:
     }
 };
 
-QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QWidget *parent)
+Dialog::Dialog(const QString &configFile, QWidget *parent)
     : QDialog(parent)
-    , d(new QtQuickDialogWrapperPrivate())
+    , d(new DialogPrivate())
 {
     auto engine = new QQmlEngine(this);
     auto context = new KLocalizedContext(engine);
@@ -84,19 +84,19 @@ QtQuickDialogWrapper::QtQuickDialogWrapper(const QString &configFile, QWidget *p
     }
 }
 
-QtQuickDialogWrapper::~QtQuickDialogWrapper() = default;
+Dialog::~Dialog() = default;
 
-KNSCore::Engine *QtQuickDialogWrapper::engine()
+KNSCore::Engine *Dialog::engine()
 {
     return d->coreEngine;
 }
 
-QList<KNSCore::Entry> QtQuickDialogWrapper::changedEntries() const
+QList<KNSCore::Entry> Dialog::changedEntries() const
 {
     return d->changedEntries;
 }
 
-void QtQuickDialogWrapper::open()
+void Dialog::open()
 {
     QDialog::open();
     d->changedEntries.clear();

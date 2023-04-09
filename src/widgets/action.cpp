@@ -7,7 +7,7 @@
 
 #include "action.h"
 
-#include "qtquickdialogwrapper.h"
+#include "dialog.h"
 #include <KAuthorized>
 #include <KLocalizedString>
 
@@ -17,7 +17,7 @@ class ActionPrivate
 {
 public:
     QString configFile;
-    std::unique_ptr<QtQuickDialogWrapper> dialog;
+    std::unique_ptr<Dialog> dialog;
 };
 
 Action::Action(const QString &text, const QString &configFile, QObject *parent)
@@ -44,8 +44,8 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
         }
 
         if (!d->dialog) {
-            d->dialog.reset(new KNSWidgets::QtQuickDialogWrapper(d->configFile));
-            connect(d->dialog.get(), &KNSWidgets::QtQuickDialogWrapper::finished, this, [this]() {
+            d->dialog.reset(new KNSWidgets::Dialog(d->configFile));
+            connect(d->dialog.get(), &KNSWidgets::Dialog::finished, this, [this]() {
                 Q_EMIT dialogFinished(d->dialog->changedEntries());
             });
         }
