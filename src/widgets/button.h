@@ -20,8 +20,9 @@ class ButtonPrivate;
 /**
  * @class Button button.h <KNSWidgets/Button>
  *
- * Push button that encapsulates the logic for showing the KNS dialog.
- * If GHNS is disabled using KAuthorized, it is hidden.
+ * QPushButton subclass that encapsulates the logic for showing the KNewStuff dialog.
+ * If KNewStuff is disabled using KAuthorized, the button is hidden.
+ * @see KAuthorized::GenericRestriction::GHNS
  *
  * @since 5.91
  */
@@ -45,8 +46,7 @@ public:
     explicit Button(const QString &text, const QString &configFile, QWidget *parent);
 
     /**
-     * Constructor used when the details of the KHotNewStuff
-     * download is not known in advance of the button being created.
+     * Constructor used when the code is generated from a .ui file
      *
      * @param parent the parent widget
      * @note When this constructor is used, the @p configFile property has to be set
@@ -57,7 +57,7 @@ public:
 
 Q_SIGNALS:
     /**
-     * emitted when the Hot New Stuff dialog has been closed
+     * emitted when the dialog has been closed
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 

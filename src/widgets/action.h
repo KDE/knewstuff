@@ -19,8 +19,9 @@ class ActionPrivate;
 /**
  * @class Action action.h <KNSWidgets/Action>
  *
- * Action that encapsulates the logic for showing the KNS dialog.
- * If GHNS is disabled using KAuthorized, it is hidden.
+ * QAction subclass that encapsulates the logic for showing the KNewStuff dialog.
+ * If KNewStuff is disabled using KAuthorized, the action is hidden.
+ * @see KAuthorized::GenericRestriction::GHNS
  *
  * @since 5.90
  */
@@ -43,7 +44,7 @@ public:
 
 Q_SIGNALS:
     /**
-     * Emitted when the Hot New Stuff dialog has been closed.
+     * Emitted when the dialog has been closed.
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 
