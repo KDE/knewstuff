@@ -761,8 +761,8 @@ QDebug KNSCore::operator<<(QDebug debug, const KNSCore::Entry &entry)
     const static QMetaEnum metaEnum = QMetaEnum::fromType<KNSCore::Entry::Status>();
     bool deleted = entry.status() == Entry::Status::Deleted;
 
-    debug.nospace() << "KNSCore::Entry(uniqueId:" << entry.uniqueId() << ", status: " << metaEnum.valueToKey(entry.status())
-                    << (deleted ? " deleted files: " : " installed files") //
+    debug.nospace() << "KNSCore::Entry(uniqueId: " << entry.uniqueId() << ", status: " << metaEnum.valueToKey(entry.status()) << ", "
+                    << (deleted ? "uninstalled" : "installed") << "Files: " // When the entry is installed, it can not have uninstalledFiles
                     << (deleted ? entry.uninstalledFiles() : entry.installedFiles()) << ')';
     return debug;
 }
