@@ -30,9 +30,6 @@ class KNEWSTUFFWIDGETS_EXPORT Button : public QPushButton
 {
     Q_OBJECT
 
-    // This way the configFile can be set as a property with QtCreator.
-    Q_PROPERTY(QString configFile WRITE setConfigFile READ configFile)
-
 public:
     /**
      * Constructor used when the details of the KHotNewStuff
@@ -47,13 +44,16 @@ public:
 
     /**
      * Constructor used when the code is generated from a .ui file
-     *
-     * @param parent the parent widget
-     * @note When this constructor is used, the @p configFile property has to be set
+     * After the UI is set up, you must call setConfigFile(QString)
      */
     explicit Button(QWidget *parent);
 
     ~Button() override;
+
+    /**
+     * @note This should only be used when crating the button from a UI-file
+     */
+    void setConfigFile(const QString &configFile);
 
 Q_SIGNALS:
     /**
@@ -62,12 +62,6 @@ Q_SIGNALS:
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 
 private:
-    // Only used by property that is set when generating C++ code from UI files
-    void setConfigFile(const QString &configFile);
-    QString configFile() const
-    {
-        return QString();
-    }
     const std::unique_ptr<ButtonPrivate> d;
 };
 
