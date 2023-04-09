@@ -34,6 +34,7 @@ public:
 
         if (!dialog) {
             dialog.reset(new KNSWidgets::Dialog(configFile, q));
+            dialog->setWindowTitle(q->text().remove(QLatin1Char('&')));
             QObject::connect(dialog.get(), &KNSWidgets::Dialog::finished, q, [this]() {
                 Q_EMIT q->dialogFinished(dialog->changedEntries());
             });

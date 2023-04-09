@@ -45,6 +45,7 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
 
         if (!d->dialog) {
             d->dialog.reset(new KNSWidgets::Dialog(d->configFile));
+            d->dialog->setWindowTitle(this->text().remove(QLatin1Char('&')));
             connect(d->dialog.get(), &KNSWidgets::Dialog::finished, this, [this]() {
                 Q_EMIT dialogFinished(d->dialog->changedEntries());
             });
