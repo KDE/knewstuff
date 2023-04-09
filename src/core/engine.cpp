@@ -486,7 +486,7 @@ void KNSCore::Engine::revalidateCacheEntries()
                 for (const auto &oldCachedEntry : cacheBefore) {
                     if (!cacheAfter.contains(oldCachedEntry)) {
                         Entry removedEntry = oldCachedEntry;
-                        removedEntry.setStatus(KNSCore::Entry::Deleted);
+                        removedEntry.setEntryDeleted();
                         Q_EMIT signalEntryEvent(removedEntry, Entry::StatusChangedEvent);
                     }
                 }

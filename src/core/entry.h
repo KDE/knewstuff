@@ -343,13 +343,6 @@ public:
     QStringList installedFiles() const;
 
     /**
-     * Set the files that have been uninstalled by the uninstall command.
-     * @param files local file names
-     * @since 4.1
-     */
-    void setUnInstalledFiles(const QStringList &files);
-
-    /**
      * Retrieve the locally uninstalled files.
      * @return file names
      * @since 4.1
@@ -542,8 +535,11 @@ public:
 private:
     friend class StaticXmlProvider;
     friend class Cache;
+    friend class Engine;
+    friend class Installation;
     friend KNewStuff2Test;
     friend testEntry;
+    void setEntryDeleted();
     QDomElement entryXML() const;
     bool setEntryXML(const QDomElement &xmldata);
     QExplicitlySharedDataPointer<EntryPrivate> d;

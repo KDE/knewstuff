@@ -87,7 +87,7 @@ Cache::Cache(const QString &appName)
             for (const Entry &entry : oldCache) {
                 if (!d->cache.contains(entry)) {
                     Entry removedEntry(entry);
-                    removedEntry.setStatus(KNSCore::Entry::Deleted);
+                    removedEntry.setEntryDeleted();
                     Q_EMIT entryChanged(removedEntry);
                 }
             }

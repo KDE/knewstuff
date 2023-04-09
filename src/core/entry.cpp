@@ -10,6 +10,7 @@
 #include "entry.h"
 
 #include <QDomElement>
+#include <QMetaEnum>
 #include <QStringList>
 #include <QXmlStreamReader>
 #include <knewstuffcore_debug.h>
@@ -393,11 +394,6 @@ QStringList KNSCore::Entry::installedFiles() const
     return d->mInstalledFiles;
 }
 
-void KNSCore::Entry::setUnInstalledFiles(const QStringList &files)
-{
-    d->mUnInstalledFiles = files;
-}
-
 QStringList KNSCore::Entry::uninstalledFiles() const
 {
     return d->mUnInstalledFiles;
@@ -731,6 +727,13 @@ QDomElement KNSCore::Entry::entryXML() const
     }
 
     return el;
+}
+
+void KNSCore::Entry::setEntryDeleted()
+{
+    setStatus(Entry::Deleted);
+    d->mUnInstalledFiles = installedFiles();
+    setInstalledFiles(QStringList());
 }
 
 QString KNSCore::replaceBBCode(const QString &unformattedText)

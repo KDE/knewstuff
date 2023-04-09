@@ -541,9 +541,8 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
 
 void Installation::uninstall(Entry entry)
 {
-    // TODO Put this in pimpl or job
     const auto deleteFilesAndMarkAsUninstalled = [entry, this]() {
-        KNSCore::Entry::Status newStatus{KNSCore::Entry::Deleted};
+        bool deletionSuccessful = true;
         const auto lst = entry.installedFiles();
         for (const QString &file : lst) {
             // This is used to delete the download location if there are no more entries
@@ -568,7 +567,7 @@ void Installation::uninstall(Entry entry)
                                  entry.name(),
                                  file));
                         // Assume that the uninstallation has failed, and reset the entry to an installed state
-                        newStatus = KNSCore::Entry::Installed;
+                        deletionSuccessful = false;
                         break;
                     }
                 } else {
@@ -577,11 +576,12 @@ void Installation::uninstall(Entry entry)
             }
         }
         Entry newEntry = entry;
-        if (newStatus == KNSCore::Entry::Deleted) {
-            newEntry.setUnInstalledFiles(entry.installedFiles());
-            newEntry.setInstalledFiles(QStringList());
+        if (deletionSuccessful) {
+            newEntry.setEntryDeleted();
+        } else {
+            newEntry.setStatus(KNSCore::Entry::Installed);
         }
-        newEntry.setStatus(newStatus);
+
         Q_EMIT signalEntryChanged(newEntry);
     };
 
@@ -594,9 +594,7 @@ void Installation::uninstall(Entry entry)
             connect(job, &KJob::result, this, [this, installedFile, entry, job]() {
                 Entry newEntry = entry;
                 if (job->error() == KJob::NoError) {
-                    newEntry.setStatus(KNSCore::Entry::Deleted);
-                    newEntry.setUnInstalledFiles(newEntry.installedFiles());
-                    newEntry.setInstalledFiles(QStringList());
+                    newEntry.setEntryDeleted();
                     Q_EMIT signalEntryChanged(newEntry);
                 } else {
                     Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
