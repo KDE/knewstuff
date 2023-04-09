@@ -23,7 +23,6 @@ using namespace KNSWidgets;
 class KNSWidgets::DialogPrivate
 {
 public:
-    QObject *item = nullptr;
     KNSCore::Engine *coreEngine = nullptr;
     QList<KNSCore::Entry> changedEntries;
 };
