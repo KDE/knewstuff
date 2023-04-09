@@ -42,7 +42,6 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
         if (!KAuthorized::authorize(KAuthorized::GHNS)) {
             return;
         }
-        Q_EMIT aboutToShowDialog();
 
         if (!d->dialog) {
             d->dialog.reset(new KNSWidgets::QtQuickDialogWrapper(d->configFile));
@@ -55,9 +54,4 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
 }
 
 Action::~Action() = default;
-
-void Action::setConfigFile(const QString &configFile)
-{
-    d->configFile = configFile;
-}
 }

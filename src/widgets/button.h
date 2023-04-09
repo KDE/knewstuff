@@ -20,10 +20,7 @@ class ButtonPrivate;
 /**
  * @class Button button.h <KNSWidgets/Button>
  *
- * KHotNewStuff push button that makes using KHNS in an application
- * more convenient by encapsulating most of the details involved in
- * using KHotNewStuff in the button itself.
- *
+ * Push button that encapsulates the logic for showing the KNS dialog.
  * @since 5.91
  */
 class KNEWSTUFFWIDGETS_EXPORT Button : public QPushButton
@@ -56,25 +53,19 @@ public:
 
     ~Button() override;
 
-    /**
-     * set the name of the .knsrc file to use
-     */
-    void setConfigFile(const QString &configFile);
-
 Q_SIGNALS:
-    /**
-     * emitted when the Hot New Stuff dialog is about to be shown, usually
-     * as a result of the user having click on the button
-     */
-    void aboutToShowDialog();
-
     /**
      * emitted when the Hot New Stuff dialog has been closed
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 
 private:
-    QString configFile();
+    // Only used by property that is set when generating C++ code from UI files
+    void setConfigFile(const QString &configFile);
+    QString configFile() const
+    {
+        return QString();
+    }
     const std::unique_ptr<ButtonPrivate> d;
 };
 

@@ -22,16 +22,6 @@ public:
     explicit ButtonPrivate(Button *qq)
         : q(qq)
     {
-        const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
-        if (!authorized) {
-            q->setEnabled(false);
-            q->setVisible(false);
-        }
-
-        q->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
-        q->connect(q, &QAbstractButton::clicked, q, [this]() {
-            showDialog();
-        });
     }
 
     void showDialog()
@@ -41,7 +31,6 @@ public:
             return;
         }
         Q_ASSERT_X(!configFile.isEmpty(), Q_FUNC_INFO, "The configFile for the KNSWidgets::Button must be explicitly set");
-        Q_EMIT q->aboutToShowDialog();
 
         if (!dialog) {
             dialog.reset(new KNSWidgets::QtQuickDialogWrapper(configFile, q));
@@ -63,23 +52,29 @@ Button::Button(const QString &text, const QString &configFile, QWidget *parent)
 {
     setText(text);
     d->configFile = configFile;
+
+    const bool authorized = KAuthorized::authorize(KAuthorized::GHNS);
+    if (!authorized) {
+        setEnabled(false);
+        setVisible(false);
+    }
+
+    setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
+    connect(this, &QAbstractButton::clicked, this, [this]() {
+        d->showDialog();
+    });
 }
 
 Button::Button(QWidget *parent)
-    : QPushButton(parent)
-    , d(new ButtonPrivate(this))
+    : Button(i18n("Download New Stuff..."), QString(), parent)
 {
-    setText(i18n("Download New Stuff..."));
 }
 
 Button::~Button() = default;
 
 void Button::setConfigFile(const QString &configFile)
 {
+    Q_ASSERT_X(!d->dialog, Q_FUNC_INFO, "the configFile property must be set before the dialog is first shown");
     d->configFile = configFile;
-}
-QString Button::configFile()
-{
-    return d->configFile;
 }
 }

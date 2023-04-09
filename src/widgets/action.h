@@ -42,18 +42,7 @@ public:
 
     ~Action();
 
-    /**
-     * set the name of the .knsrc file to use
-     */
-    void setConfigFile(const QString &configFile);
-
 Q_SIGNALS:
-    /**
-     * emitted when the Hot New Stuff dialog is about to be shown, usually
-     * as a result of the user having click on the action
-     */
-    void aboutToShowDialog();
-
     /**
      * Emitted when the Hot New Stuff dialog has been closed.
      */
