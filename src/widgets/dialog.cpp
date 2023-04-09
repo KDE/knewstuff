@@ -24,6 +24,7 @@ class KNSWidgets::DialogPrivate
 {
 public:
     KNSCore::Engine *coreEngine = nullptr;
+    QQuickItem *item = nullptr;
     QList<KNSCore::Entry> changedEntries;
 };
 
@@ -63,6 +64,7 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
     layout->addWidget(page);
 
     if (QQuickItem *root = page->rootObject()) {
+        d->item = root;
         QObject *qtquickEngine = root->property("engine").value<QObject *>();
         Q_ASSERT(qtquickEngine);
         d->coreEngine = qtquickEngine->property("engine").value<KNSCore::Engine *>();
@@ -83,7 +85,10 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
     }
 }
 
-Dialog::~Dialog() = default;
+Dialog::~Dialog()
+{
+    delete d->item;
+}
 
 KNSCore::Engine *Dialog::engine()
 {
