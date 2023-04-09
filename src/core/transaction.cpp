@@ -305,11 +305,10 @@ Transaction *Transaction::uninstall(EngineBase *engine, const KNSCore::Entry &_e
         actualEntryForUninstall2.setStatus(KNSCore::Entry::Installing);
         Q_EMIT ret->signalEntryEvent(entry, Entry::StatusChangedEvent);
 
+        // We connect to/forward the relevant signals
         qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
         ret->d->m_engine->d->installation->uninstall(actualEntryForUninstall2);
 
-        entry.setStatus(actualEntryForUninstall2.status());
-        Q_EMIT ret->signalEntryEvent(entry, Entry::StatusChangedEvent);
         ret->d->finish();
     });
     return ret;
