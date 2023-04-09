@@ -750,3 +750,16 @@ QString KNSCore::replaceBBCode(const QString &unformattedText)
     text.remove(QStringLiteral("[/url]"));
     return text;
 }
+
+QDebug KNSCore::operator<<(QDebug debug, const KNSCore::Entry &entry)
+{
+    QDebugStateSaver saver(debug);
+
+    const static QMetaEnum metaEnum = QMetaEnum::fromType<KNSCore::Entry::Status>();
+    bool deleted = entry.status() == Entry::Status::Deleted;
+
+    debug.nospace() << "KNSCore::Entry(uniqueId:" << entry.uniqueId() << ", status: " << metaEnum.valueToKey(entry.status())
+                    << (deleted ? " deleted files: " : " installed files") //
+                    << (deleted ? entry.uninstalledFiles() : entry.installedFiles()) << ')';
+    return debug;
+}

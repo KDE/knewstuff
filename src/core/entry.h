@@ -71,6 +71,7 @@ public:
         Installing,
         Updating,
     };
+    Q_ENUM(Status)
 
     /**
      * Source of the entry, A entry's data is coming from either cache, or an online provider
@@ -553,6 +554,7 @@ inline uint qHash(const KNSCore::Entry &entry)
     return qHash(entry.uniqueId());
 }
 
+KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug debug, const KNSCore::Entry &entry);
 }
 Q_DECLARE_METATYPE(KNSCore::Entry::List)
 Q_DECLARE_METATYPE(KNSCore::Entry)
