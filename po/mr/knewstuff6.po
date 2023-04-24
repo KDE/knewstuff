@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2013-03-29 16:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,8 @@ msgstr "तुमचे मत नोंदविलेले आहे."
 msgid "You are now a fan."
 msgstr "तुम्ही आता प्रशंसक बनला आहात."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -96,41 +97,73 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "अपरिचीत त्रुटी"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "सुरु करत आहे"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "पुरविठाकर्ताविषयी माहिती दाखल करत आहे"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "पुरविठाकर्ता कडुन मिळालेली माहिती दाखल करत आहे"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "प्रतिष्ठापन"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "एक पूर्वावलोकन लोड होत आहे"
+msgstr[1] "%1 पूर्वावलोकन लोड होत आहेत"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "डेटा दाखल करत आहे"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "सुरु करत आहे"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "संयोजना फाईल सापडली नाही: \"%1\""
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "संयोजना फाईल सापडली नाही: \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "संयोजना फाईल चुकीची आहे: \"%1\""
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr ""
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -138,87 +171,20 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "पुरविठाकर्ताविषयी माहिती दाखल करत आहे"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "%1 या फाईलमधून पुरवठाकर्ते लोड करताना अपयश"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "पुरवठाकर्ता सुरु करताना त्रुटी"
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "डेटा दाखल करत आहे"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "पुरविठाकर्ता कडुन मिळालेली माहिती दाखल करत आहे"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "%1 या फाईलमधून पुरवठाकर्ते लोड करताना अपयश"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "%1 या फाईलमधून पुरवठाकर्ते लोड करताना अपयश"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr ""
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Re: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "प्रतिष्ठापन"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "एक पूर्वावलोकन लोड होत आहे"
-msgstr[1] "%1 पूर्वावलोकन लोड होत आहेत"
-
-#: core/engine.cpp:1172
-#, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr "फाईल '%1' दाखल करण्यास अपयशी"
+msgid "Error initializing provider."
+msgstr "पुरवठाकर्ता सुरु करताना त्रुटी"
 
 #: core/installation.cpp:106
 #, kde-format
@@ -332,6 +298,41 @@ msgstr "वाचण करिता %1 उघडू शकत नाही"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "वाचण करिता %1 उघडू शकत नाही"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+
+#: core/transaction.cpp:351
+#, fuzzy, kde-format
+#| msgid "Failed to load file '%1'"
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr "फाईल '%1' दाखल करण्यास अपयशी"
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format

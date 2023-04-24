@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -62,7 +62,8 @@ msgstr "Jūsų balsas įskaičiuotas."
 msgid "You are now a fan."
 msgstr "Dabar esate fanas."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -101,7 +102,46 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Nežinomas CommentsModel vaidmuo"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Inicijuojama"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Įkeliama tiekėjo informacija"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Įkeliami duomenys iš tiekėjo"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Ats: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Įdiegiama"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Įkeliama viena peržiūra"
+msgstr[1] "Įkeliamos %1 peržiūros"
+msgstr[2] "Įkeliama %1 peržiūrų"
+msgstr[3] "Įkeliama %1 peržiūra"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Įkeliami duomenys"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -110,33 +150,28 @@ msgstr ""
 "Įdiegimo metu įvyko klaida:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Inicijuojama"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Konfigūravimo failas nerastas: „%1“"
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Konfigūracijos failas yra, tačiau jo nepavyko atverti: \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Konfigūracijos failas yra neteisingas: „%1“"
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Naudoti"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, fuzzy, kde-format
 #| msgid ""
 #| "Could not initialise the installation handler for %1\n"
@@ -149,97 +184,20 @@ msgstr ""
 "Nepavyko inicijuoti diegimo doroklės, skirtos %1\n"
 "Tai yra kritinė klaida ir apie ją turėtų būti pranešta programos autoriui"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Įkeliama tiekėjo informacija"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Nepavyko įkelti karštų naujų elementų gavimo tiekėjų iš failo: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Klaida inicijuojant tiekėją."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Įkeliami duomenys"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Įkeliami duomenys iš tiekėjo"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Tiekėjų įkėlimas iš failo: %1 nepavyko"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
-"apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Nepavyko įkelti karštų naujų elementų gavimo tiekėjų iš failo: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Pasirinkti atnaujinimo elementą"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Pasirinkite iš sąrašo žemiau elementą, kuris turėtų būti naudojamas šio "
-"atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
-"%1, nepavyko nustatyti pradinio elemento"
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
-"atlikti atnaujinimo"
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Ats: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Įdiegiama"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Įkeliama viena peržiūra"
-msgstr[1] "Įkeliamos %1 peržiūros"
-msgstr[2] "Įkeliama %1 peržiūrų"
-msgstr[3] "Įkeliama %1 peržiūra"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Nepavyko priimti „%1“\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Klaida inicijuojant tiekėją."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -369,6 +327,49 @@ msgstr "Nepavyko atverti %1 įrašymui"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Nepavyko atverti %1 skaitymui"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
+"apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Pasirinkti atnaujinimo elementą"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Pasirinkite iš sąrašo žemiau elementą, kuris turėtų būti naudojamas šio "
+"atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
+"%1, nepavyko nustatyti pradinio elemento"
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
+"atlikti atnaujinimo"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Nepavyko priimti „%1“\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

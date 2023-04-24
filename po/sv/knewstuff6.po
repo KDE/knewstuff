@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2022-09-24 16:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -63,7 +63,8 @@ msgstr "Din röst har registrerats."
 msgid "You are now a fan."
 msgstr "Du är nu en beundrare."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -102,7 +103,44 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Okänd CommentsModel-roll"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Initierar"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Laddar leverantörsinformation"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Läser in data från leverantör"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "SV: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Installerar"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Laddar en förhandsgranskning"
+msgstr[1] "Laddar %1 förhandsgranskningar"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Laddar data"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -111,33 +149,28 @@ msgstr ""
 "Ett fel uppstod under installationsprocessen:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Initierar"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Inställningsfil hittades inte: \"%1\""
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Inställningsfil finns, men kan inte öppnas: \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Inställningsfil är ogiltig: \"%1\""
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Använd"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, fuzzy, kde-format
 #| msgid ""
 #| "Could not initialise the installation handler for %1\n"
@@ -150,95 +183,20 @@ msgstr ""
 "Kunde inte installera installationshanteraren för %1\n"
 "Det är ett kritiskt fel och ska rapporteras till programupphovsmannen"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Laddar leverantörsinformation"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Kunde inte ladda ner leverantörer av heta nyheter från fil: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Fel vid initiering av leverantör."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Laddar data"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Läser in data från leverantör"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Inläsning av leverantörer från filen %1 misslyckades"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Kunde inte installera posten %1 eftersom den inte har några nerladdningsbara "
-"objekt definierade. Kontakta upphovsmannen så att de kan rätta det."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Kunde inte ladda ner leverantörer av heta nyheter från fil: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Välj objekt att uppdatera"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Välj objektet som ska användas för att verkställa uppdateringen från listan "
-"nedan. Vi kunde inte identifiera vilket objekt att välja, baserad på den "
-"ursprungliga objektet, vid namn %1."
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Misslyckades identifiera en fungerande länk för att uppdatera %1, och kan "
-"inte utföra uppdateringen"
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "SV: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Installerar"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Laddar en förhandsgranskning"
-msgstr[1] "Laddar %1 förhandsgranskningar"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Misslyckades införa '%1'\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Fel vid initiering av leverantör."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -368,6 +326,49 @@ msgstr "Kunde inte öppna %1 för skrivning"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Kunde inte öppna %1 för läsning"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Kunde inte installera posten %1 eftersom den inte har några nerladdningsbara "
+"objekt definierade. Kontakta upphovsmannen så att de kan rätta det."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Välj objekt att uppdatera"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Välj objektet som ska användas för att verkställa uppdateringen från listan "
+"nedan. Vi kunde inte identifiera vilket objekt att välja, baserad på den "
+"ursprungliga objektet, vid namn %1."
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Misslyckades identifiera en fungerande länk för att uppdatera %1, och kan "
+"inte utföra uppdateringen"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Misslyckades införa '%1'\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

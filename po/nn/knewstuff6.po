@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2023-03-19 14:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -61,7 +61,8 @@ msgstr "Stemmen din er registrert."
 msgid "You are now a fan."
 msgstr "Du er no ein tilhengjar."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -99,7 +100,44 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Ukjend «CommentsModel»-rolle"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Førebur"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Hentar leverandørinformasjon"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Hentar data frå leverandør"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Installerer"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Lastar éi førehandsvising"
+msgstr[1] "Lastar %1 førehandsvisingar"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Hentar data"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -108,32 +146,27 @@ msgstr ""
 "Det oppstod ein feil ved installeringa:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Førebur"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Oppsettfila finst ikkje: «%1»"
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Oppsettfila finst, men kunne ikkje opnast: «%1»"
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Oppsettfila er ugyldig: «%1»"
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Bruk"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -145,95 +178,20 @@ msgstr ""
 "Dette er ein kritisk feil, som du bør melda frå om til utviklaren av "
 "programmet."
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Hentar leverandørinformasjon"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Klarte ikkje henta nye godsaker frå fila: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Feil ved klargjering av leverandør."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Hentar data"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Hentar data frå leverandør"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Klarte ikkje henta leverandørinfo frå fila: %1 mislukka"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Klarte ikkje installera oppføringa «%1» då ho ikkje inneheld filer som kan "
-"lastast ned. Kontakt utviklaren slik at dette kan rettast opp i."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Klarte ikkje henta nye godsaker frå fila: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Vel oppdateringselement"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Vel nedanfor kva element som skal brukast for denne oppdateringa. Me klarte "
-"ikkje automatisk velja rett element basert på namnet på det opphavlege "
-"elementet, %1."
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Fann ikkje ei fungerande lenkje for oppdatering av %1, og kan derfor ikkje "
-"utføra oppdateringa."
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Re: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Installerer"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Lastar éi førehandsvising"
-msgstr[1] "Lastar %1 førehandsvisingar"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Klarte ikkje ta i bruk «%1»\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Feil ved klargjering av leverandør."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -366,6 +324,49 @@ msgstr "Klarte ikkje opna %1 for skriving"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Klarte ikkje opna %1 for lesing"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Klarte ikkje installera oppføringa «%1» då ho ikkje inneheld filer som kan "
+"lastast ned. Kontakt utviklaren slik at dette kan rettast opp i."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Vel oppdateringselement"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Vel nedanfor kva element som skal brukast for denne oppdateringa. Me klarte "
+"ikkje automatisk velja rett element basert på namnet på det opphavlege "
+"elementet, %1."
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Fann ikkje ei fungerande lenkje for oppdatering av %1, og kan derfor ikkje "
+"utføra oppdateringa."
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Klarte ikkje ta i bruk «%1»\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

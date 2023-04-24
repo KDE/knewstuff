@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2023-03-19 08:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -61,7 +61,8 @@ msgstr "Ваш голос враховано."
 msgid "You are now a fan."
 msgstr "Вас додано до списку прихильників."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -104,7 +105,46 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Невідома роль CommentsModel"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Ініціалізація"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Завантаження відомостей про надавача"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Завантаження даних постачальника послуг"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Відповідь: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Встановлення"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Завантаження %1 ескізу"
+msgstr[1] "Завантаження %1 ескізів"
+msgstr[2] "Завантаження %1 ескізів"
+msgstr[3] "Завантаження ескізу"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Завантаження даних"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -113,32 +153,27 @@ msgstr ""
 "Під час встановлення сталася помилка:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Ініціалізація"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Файла налаштувань не існує: «%1»"
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Файл налаштувань знайдено, але його не вдалося відкрити: «%1»"
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Некоректний файл налаштувань: «%1»"
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Використати"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -149,98 +184,20 @@ msgstr ""
 "%2\n"
 "Це критична помилка, про яку слід повідомити автору програми"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Завантаження відомостей про надавача"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Завантаження даних"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Завантаження даних постачальника послуг"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Завантаження параметрів надання з файла: помилка %1"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Не вдалося виконати встановлення запису %1, оскільки для нього не визначено "
-"жодних придатних до отримання пунктів даних. Будь ласка, зв'яжіться із "
-"автором, щоб розв'язати цю проблему."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Виберіть запис для оновлення"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Будь ласка, виберіть той запис з наведеного нижче списку, яким слід "
-"скористатися для застосування цього оновлення. Нам не вдалося визначити, "
-"який із записів слід вибрати на основі початкового запису, який мав назву %1"
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Не вдалося визначити добре посилання для оновлення %1, тому оновлення є "
-"неможливим"
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Відповідь: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Встановлення"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Завантаження %1 ескізу"
-msgstr[1] "Завантаження %1 ескізів"
-msgstr[2] "Завантаження %1 ескізів"
-msgstr[3] "Завантаження ескізу"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Не вдалося адаптувати «%1»\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -373,6 +330,50 @@ msgstr "Не вдалося відкрити «%1» для запису"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Не вдалося відкрити %1 для читання"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Не вдалося виконати встановлення запису %1, оскільки для нього не визначено "
+"жодних придатних до отримання пунктів даних. Будь ласка, зв'яжіться із "
+"автором, щоб розв'язати цю проблему."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Виберіть запис для оновлення"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Будь ласка, виберіть той запис з наведеного нижче списку, яким слід "
+"скористатися для застосування цього оновлення. Нам не вдалося визначити, "
+"який із записів слід вибрати на основі початкового запису, який мав назву %1"
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Не вдалося визначити добре посилання для оновлення %1, тому оновлення є "
+"неможливим"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Не вдалося адаптувати «%1»\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

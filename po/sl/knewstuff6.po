@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2023-04-05 08:50+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -68,7 +68,8 @@ msgstr "Vaš glas je bil zabeležen."
 msgid "You are now a fan."
 msgstr "Sedaj ste postali oboževalec."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -105,7 +106,46 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Neznana vloga CommentsModel"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Začenjanje"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Nalaganje podatkov o ponudniku"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Nalaganje podatkov od ponudnika"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Odg: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Nameščanje"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Nalaganje %1 ogleda"
+msgstr[1] "Nalaganje %1 ogledov"
+msgstr[2] "Nalaganje %1 ogledov"
+msgstr[3] "Nalaganje %1 ogledov"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Nalaganje podatkov"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -114,32 +154,27 @@ msgstr ""
 "Pri postopku nameščanja je prišlo do napake:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Začenjanje"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Datoteka konfiguracije ne obstaja: \"%1\""
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Nastavitvena datoteka obstaja, ampak je ni mogoče odpreti: \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Nastavitvena datoteka ni veljavna: \"%1\""
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Uporabi"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -150,97 +185,20 @@ msgstr ""
 "%2\n"
 "To je kritična napaka in bi jo bilo treba sporočiti avtorju programa"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Nalaganje podatkov o ponudniku"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Iz datoteke ni bilo mogoče naložiti ponudnikov vročih novosti: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Napaka pri inicializaciji ponudnika."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Nalaganje podatkov"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Nalaganje podatkov od ponudnika"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Nalaganje ponudnikov iz datoteke: %1 ni uspel"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Ni bilo mogoče namestiti vnosa %1, ker nima določenih nobenih predmetov za "
-"prenos. Prosimo, da stopite v stik z avtorjem, da to popravi."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Iz datoteke ni bilo mogoče naložiti ponudnikov vročih novosti: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Poberi predmet posodobitve"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Izberite predmet s spodnjega seznama, ki ga želite uporabiti za uporabo te "
-"posodobitve. Na podlagi prvotnega predmeta, poimenovanega %1, ni mogoče "
-"določiti, kateri predmet naj bi izbrali"
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Identifikacije dobre povezave za posodobitev %1 nismo pridobili, zato "
-"posodobitve ne moremo izvesti"
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Odg: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Nameščanje"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Nalaganje %1 ogleda"
-msgstr[1] "Nalaganje %1 ogledov"
-msgstr[2] "Nalaganje %1 ogledov"
-msgstr[3] "Nalaganje %1 ogledov"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Ni bilo mogoče sprejeti '%1'\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Napaka pri inicializaciji ponudnika."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -373,6 +331,49 @@ msgstr "Ni bilo mogoče odpreti %1 za pisanje"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Ni bilo mogoče odpreti %1 za branje"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Ni bilo mogoče namestiti vnosa %1, ker nima določenih nobenih predmetov za "
+"prenos. Prosimo, da stopite v stik z avtorjem, da to popravi."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Poberi predmet posodobitve"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Izberite predmet s spodnjega seznama, ki ga želite uporabiti za uporabo te "
+"posodobitve. Na podlagi prvotnega predmeta, poimenovanega %1, ni mogoče "
+"določiti, kateri predmet naj bi izbrali"
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Identifikacije dobre povezave za posodobitev %1 nismo pridobili, zato "
+"posodobitve ne moremo izvesti"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Ni bilo mogoče sprejeti '%1'\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

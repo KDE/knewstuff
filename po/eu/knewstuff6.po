@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2023-04-09 20:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -61,7 +61,8 @@ msgstr "Zure bozka erregistratu da."
 msgid "You are now a fan."
 msgstr "Orain fan bat zara."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -100,7 +101,44 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "«CommentsModel» rol ezezaguna"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Hasieratzen"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Hornitzailearen informazioa kargatzen"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Hornitzailearengandik datuak kargatzen"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Berregin: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Instalatzen"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Aurreikuspen bat kargatzen"
+msgstr[1] "%1 aurreikuspen kargatzen"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Datuak kargatzen"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -109,32 +147,27 @@ msgstr ""
 "Errore bat gertatu da instalatzeko prozesuan:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Hasieratzen"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Konfiguratzeko fitxategia ez da existitzen: \"%1\""
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Konfiguratzeko fitxategia badago, baino ezin da ireki: \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Konfiguratzeko fitxategia baliogabea da: \"%1\""
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Erabili"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -145,96 +178,20 @@ msgstr ""
 "%2\n"
 "Hau errore larria da eta aplikazio egileari jakinarazi beharko litzaioke"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Hornitzailearen informazioa kargatzen"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Ezin dira zamatu berrikuntza hornitzaileak fitxategitik: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Errorea hornitzailea hasieratzen."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Datuak kargatzen"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Hornitzailearengandik datuak kargatzen"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Fitxategiko hornitzaileak kargatzen: %1 huts egin du"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Ezin izan da %1 sarreraren instalazioa egin, ez baitu zama-jaitsi daitekeen "
-"elementurik definituta. Jar zaitez harremanetan egilearekin, hori konpon "
-"dezaten."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Ezin dira zamatu berrikuntza hornitzaileak fitxategitik: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Aukeratu eguneratze elementua"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Aukeratu beheko zerrendan eguneratze hau ezartzeko erabili behar den "
-"elementua. Ezin izan da identifikatu zein elementu aukeratu behar den "
-"jatorrizko elementua oinarri hartuta, haren izena %1 zen"
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Ez dugu %1 eguneratzeko esteka onik identifikatzerik izan, eta ezin dugu "
-"eguneratu"
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Berregin: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Instalatzen"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Aurreikuspen bat kargatzen"
-msgstr[1] "%1 aurreikuspen kargatzen"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"«%1»  bereganatzea huts egin du\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Errorea hornitzailea hasieratzen."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -367,6 +324,50 @@ msgstr "Ezin izan du %1 idazteko ireki"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Ezin du %1 irakurtzeko ireki"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Ezin izan da %1 sarreraren instalazioa egin, ez baitu zama-jaitsi daitekeen "
+"elementurik definituta. Jar zaitez harremanetan egilearekin, hori konpon "
+"dezaten."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Aukeratu eguneratze elementua"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Aukeratu beheko zerrendan eguneratze hau ezartzeko erabili behar den "
+"elementua. Ezin izan da identifikatu zein elementu aukeratu behar den "
+"jatorrizko elementua oinarri hartuta, haren izena %1 zen"
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Ez dugu %1 eguneratzeko esteka onik identifikatzerik izan, eta ezin dugu "
+"eguneratu"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"«%1»  bereganatzea huts egin du\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

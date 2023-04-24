@@ -11,12 +11,12 @@
 # Federico Zenith <federico.zenith@member.fsf.org>, 2008, 2012, 2013, 2014, 2015.
 # Innocenzo Ventre <innocenzo.ventre@gmail.com>, 2012.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
-# Paolo Zamponi <zapaolo@email.it>, 2022.
+# Paolo Zamponi <feus73@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2023-03-20 09:50+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -65,7 +65,8 @@ msgstr "Il tuo voto è stato registrato."
 msgid "You are now a fan."
 msgstr "Adesso sei un fan."
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -105,7 +106,47 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Ruolo CommentsModel sconosciuto"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "Inizializzazione"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "Caricamento delle informazioni sul fornitore"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "Caricamento dei dati dal fornitore"
+
+# È il soggetto di un'email. Usiamo l'intestazione internazionale
+# «Re:», non quelle della Microsoft («SV:», «AW:» e così via; no,
+# non mi ricordo com'era in italiano).
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Re: %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "Installazione"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "Caricamento di un'anteprima"
+msgstr[1] "Caricamento di %1 anteprime"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "Caricamento dei dati"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -114,32 +155,27 @@ msgstr ""
 "Si è verificato un errore durante il processo di installazione:\n"
 "%1"
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "Inizializzazione"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Il file di configurazione non esiste: «%1»"
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Il file di configurazione esiste, ma non può essere aperto: «%1»"
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "File di configurazione non valido: «%1»"
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr "Utilizza"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -150,99 +186,20 @@ msgstr ""
 "%2\n"
 "Questo è un errore grave e deve essere segnalato all'autore dell'applicazione"
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "Caricamento delle informazioni sul fornitore"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Impossibile caricare i fornitori delle Novità dal file: %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "Errore nell'inizializzazione del fornitore."
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "Caricamento dei dati"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Caricamento dei dati dal fornitore"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Caricamento dei fornitori dal file: %1 non riuscito"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-"Impossibile eseguire un'installazione della voce %1 in quanto non dispone di "
-"elementi scaricabili definiti. Contatta gli autori in modo che possano "
-"risolvere il problema."
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "Impossibile caricare i fornitori delle Novità dal file: %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr "Scegli elemento di aggiornamento"
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-"Scegli l'elemento dall'elenco seguente che dovrebbe essere utilizzato per "
-"applicare questo aggiornamento. Non è stato possibile identificare quale "
-"elemento selezionare, sulla base dell'elemento originale, il cui nome era %1"
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-"Non siamo riusciti a identificare un buon collegamento per l'aggiornamento "
-"di %1 e non siamo in grado di eseguire l'aggiornamento"
-
-# È il soggetto di un'email. Usiamo l'intestazione internazionale
-# «Re:», non quelle della Microsoft («SV:», «AW:» e così via; no,
-# non mi ricordo com'era in italiano).
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Re: %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "Installazione"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Caricamento di un'anteprima"
-msgstr[1] "Caricamento di %1 anteprime"
-
-#: core/engine.cpp:1172
-#, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr ""
-"Adozione di «%1» non riuscita\n"
-"%2"
+msgid "Error initializing provider."
+msgstr "Errore nell'inizializzazione del fornitore."
 
 #: core/installation.cpp:106
 #, kde-format
@@ -379,6 +336,50 @@ msgstr "Impossibile aprire %1 in scrittura"
 #, kde-format
 msgid "Could not open %1 for reading"
 msgstr "Impossibile aprire %1 in lettura"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"Impossibile eseguire un'installazione della voce %1 in quanto non dispone di "
+"elementi scaricabili definiti. Contatta gli autori in modo che possano "
+"risolvere il problema."
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Scegli elemento di aggiornamento"
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"Scegli l'elemento dall'elenco seguente che dovrebbe essere utilizzato per "
+"applicare questo aggiornamento. Non è stato possibile identificare quale "
+"elemento selezionare, sulla base dell'elemento originale, il cui nome era %1"
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"Non siamo riusciti a identificare un buon collegamento per l'aggiornamento "
+"di %1 e non siamo in grado di eseguire l'aggiornamento"
+
+#: core/transaction.cpp:351
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"Adozione di «%1» non riuscita\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format

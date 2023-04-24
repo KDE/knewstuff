@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -53,7 +53,8 @@ msgstr "কোনো লিপি প্ৰতিস্থাপন কৰা �
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -90,121 +91,35 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "অজ্ঞাত ত্ৰুটি"
 
-#: core/engine.cpp:190
-#, kde-format
-msgid ""
-"An error occurred during the installation process:\n"
-"%1"
-msgstr ""
-
-#: core/engine.cpp:208
+#: core/engine.cpp:89
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Initializing"
 msgstr "সংস্থাপন কৰক"
 
-#: core/engine.cpp:219
-#, fuzzy, kde-format
-#| msgid "Configuration files"
-msgid "Configuration file does not exist: \"%1\""
-msgstr "বিন্যাস নথিপত্ৰ"
-
-#: core/engine.cpp:227
-#, fuzzy, kde-format
-#| msgid "Configuration files"
-msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "বিন্যাস নথিপত্ৰ"
-
-#: core/engine.cpp:234
-#, fuzzy, kde-format
-#| msgid "Configuration files"
-msgid "Configuration file is invalid: \"%1\""
-msgstr "বিন্যাস নথিপত্ৰ"
-
-#: core/engine.cpp:243
-#, kde-format
-msgid "Use"
-msgstr ""
-
-#: core/engine.cpp:261
-#, kde-format
-msgid ""
-"Could not initialise the installation handler for %1:\n"
-"%2\n"
-"This is a critical error and should be reported to the application author"
-msgstr ""
-
-#: core/engine.cpp:338
+#: core/engine.cpp:99
 #, fuzzy, kde-format
 #| msgid "View Frame Information"
 msgid "Loading provider information"
 msgstr "ফ্ৰেমৰ তথ্য চাওক"
 
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr ""
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr ""
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, fuzzy, kde-format
-#| msgid "Loading Applet"
-msgid "Loading data"
-msgstr "এপ্লেট তুলি লোৱা হৈছে"
-
-#: core/engine.cpp:477
+#: core/engine.cpp:112
 #, kde-format
 msgid "Loading data from provider"
 msgstr ""
 
-#: core/engine.cpp:482
-#, kde-format
-msgid "Loading of providers from file: %1 failed"
-msgstr ""
-
-#: core/engine.cpp:730
-#, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
-
-#: core/engine.cpp:853
-#, kde-format
-msgid "Pick Update Item"
-msgstr ""
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-
-#: core/engine.cpp:953
+#: core/engine.cpp:355
 #, kde-format
 msgid "Re: %1"
 msgstr "পুনৰাবৃত্তি: %1"
 
-#: core/engine.cpp:995
+#: core/engine.cpp:388
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installing"
 msgstr "সংস্থাপন কৰক"
 
-#: core/engine.cpp:999
+#: core/engine.cpp:392
 #, fuzzy, kde-format
 #| msgid "Loading Preview"
 msgid "Loading one preview"
@@ -212,13 +127,64 @@ msgid_plural "Loading %1 previews"
 msgstr[0] "পূৰ্বপ্ৰদৰ্শন তুলি লোৱা হৈছে"
 msgstr[1] "পূৰ্বপ্ৰদৰ্শন তুলি লোৱা হৈছে"
 
-#: core/engine.cpp:1172
+#: core/engine.cpp:396
 #, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "এপ্লেট তুলি লোৱা হৈছে"
+
+#: core/enginebase.cpp:43
+#, kde-format
 msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr "নথিপত্ৰ '%1' লোড কৰিবলৈ ব্যৰ্থ"
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+
+#: core/enginebase.cpp:79
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file does not exist: \"%1\""
+msgstr "বিন্যাস নথিপত্ৰ"
+
+#: core/enginebase.cpp:87
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "বিন্যাস নথিপত্ৰ"
+
+#: core/enginebase.cpp:94
+#, fuzzy, kde-format
+#| msgid "Configuration files"
+msgid "Configuration file is invalid: \"%1\""
+msgstr "বিন্যাস নথিপত্ৰ"
+
+#: core/enginebase.cpp:103
+#, kde-format
+msgid "Use"
+msgstr ""
+
+#: core/enginebase.cpp:121
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+
+#: core/enginebase.cpp:274
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr ""
+
+#: core/enginebase.cpp:291
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr ""
+
+#: core/enginebase.cpp:322
+#, kde-format
+msgid "Error initializing provider."
+msgstr ""
 
 #: core/installation.cpp:106
 #, kde-format
@@ -333,6 +299,41 @@ msgstr "পঢ়াৰ উদ্দেশ্যে %1 খোলা নাযায়
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "পঢ়াৰ উদ্দেশ্যে %1 খোলা নাযায়"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+
+#: core/transaction.cpp:351
+#, fuzzy, kde-format
+#| msgid "Failed to load file '%1'"
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr "নথিপত্ৰ '%1' লোড কৰিবলৈ ব্যৰ্থ"
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format

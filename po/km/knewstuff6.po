@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2012-06-27 10:04+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -55,7 +55,8 @@ msgstr "ការ​បោះឆ្នោត​របស់​អ្នកត្
 msgid "You are now a fan."
 msgstr "ឥឡូវ​អ្នក​រីករាយ​ហើយ ។"
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -93,41 +94,72 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "មិនស្គាល់​កំហុស​រន្ធ​"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, kde-format
+msgid "Initializing"
+msgstr "ចាប់ផ្ដើម"
+
+#: core/engine.cpp:99
+#, kde-format
+msgid "Loading provider information"
+msgstr "ផ្ទុក​ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr "ផ្ទុក​ទិន្នន័យ​ពី​ក្រុមហ៊ុន​ផ្ដល់"
+
+#: core/engine.cpp:355
+#, kde-format
+msgid "Re: %1"
+msgstr "Re ៖ %1"
+
+#: core/engine.cpp:388
+#, kde-format
+msgid "Installing"
+msgstr "ដំឡើង"
+
+#: core/engine.cpp:392
+#, kde-format
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "ផ្ទុក​ការ​មើលជា​មុន %1"
+
+#: core/engine.cpp:396
+#, kde-format
+msgid "Loading data"
+msgstr "ផ្ទុក​ទិន្នន័យ"
+
+#: core/enginebase.cpp:43
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
 
-#: core/engine.cpp:208
-#, kde-format
-msgid "Initializing"
-msgstr "ចាប់ផ្ដើម"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "រក​មិនឃើញ​ឯកសារ​កំណត់​រចនាសម្ព័ន្ធ ៖ \"%1\""
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "រក​មិនឃើញ​ឯកសារ​កំណត់​រចនាសម្ព័ន្ធ ៖ \"%1\""
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "ឯកសារ​កំណត់​រចនាសម្ព័ន្ធ​មិន​ត្រឹមត្រូវ ៖ \"%1\""
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
 msgstr ""
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -135,86 +167,20 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/engine.cpp:338
-#, kde-format
-msgid "Loading provider information"
-msgstr "ផ្ទុក​ព័ត៌មាន​ក្រុមហ៊ុន​ផ្ដល់"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "មិន​អាច​ផ្ទុក​​កម្មវិធី​ផ្ដល់​ធាតុ​ថ្មីបំផុត​ពី​ឯកសារ​បានទេ ៖ %1"
-
-#: core/engine.cpp:431
-#, kde-format
-msgid "Error initializing provider."
-msgstr "កំហុស​ក្នុងការ​ចាប់ផ្ដើម​ក្រុមហ៊ុន​ផ្ដល់ ។"
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, kde-format
-msgid "Loading data"
-msgstr "ផ្ទុក​ទិន្នន័យ"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr "ផ្ទុក​ទិន្នន័យ​ពី​ក្រុមហ៊ុន​ផ្ដល់"
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "បាន​បរាជ័យ​ក្នុងការ​ផ្ទុក​ក្រុមហ៊ុន​ផ្ដល់​ពី​ឯកសារ ៖ %1"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
-msgstr ""
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "មិន​អាច​ផ្ទុក​​កម្មវិធី​ផ្ដល់​ធាតុ​ថ្មីបំផុត​ពី​ឯកសារ​បានទេ ៖ %1"
 
-#: core/engine.cpp:853
+#: core/enginebase.cpp:322
 #, kde-format
-msgid "Pick Update Item"
-msgstr ""
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-
-#: core/engine.cpp:953
-#, kde-format
-msgid "Re: %1"
-msgstr "Re ៖ %1"
-
-#: core/engine.cpp:995
-#, kde-format
-msgid "Installing"
-msgstr "ដំឡើង"
-
-#: core/engine.cpp:999
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "ផ្ទុក​ការ​មើលជា​មុន %1"
-
-#: core/engine.cpp:1172
-#, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr "បរាជ័យ​ក្នុងការ​ផ្ទុក​​ឯកសារ '%1'"
+msgid "Error initializing provider."
+msgstr "កំហុស​ក្នុងការ​ចាប់ផ្ដើម​ក្រុមហ៊ុន​ផ្ដល់ ។"
 
 #: core/installation.cpp:106
 #, kde-format
@@ -328,6 +294,41 @@ msgstr "មិនអាច​បើក %1 អាន​បានទេ"
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
 msgstr "មិនអាច​បើក %1 អាន​បានទេ"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+
+#: core/transaction.cpp:351
+#, fuzzy, kde-format
+#| msgid "Failed to load file '%1'"
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr "បរាជ័យ​ក្នុងការ​ផ្ទុក​​ឯកសារ '%1'"
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format

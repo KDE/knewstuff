@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-04 02:22+0000\n"
+"POT-Creation-Date: 2023-04-24 02:39+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -70,7 +70,8 @@ msgstr "沒有替換任何文字。"
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:580 core/engine.cpp:373 opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -108,7 +109,49 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "不明的錯誤"
 
-#: core/engine.cpp:190
+#: core/engine.cpp:89
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Initializing"
+msgstr "安裝"
+
+#: core/engine.cpp:99
+#, fuzzy, kde-format
+#| msgid "View Frame Information"
+msgid "Loading provider information"
+msgstr "檢視框架資訊"
+
+#: core/engine.cpp:112
+#, kde-format
+msgid "Loading data from provider"
+msgstr ""
+
+#: core/engine.cpp:355
+#, fuzzy, kde-format
+#| msgid "Redo: %1"
+msgid "Re: %1"
+msgstr "重做：%1"
+
+#: core/engine.cpp:388
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installing"
+msgstr "安裝"
+
+#: core/engine.cpp:392
+#, fuzzy, kde-format
+#| msgid "Print Previe&w..."
+msgid "Loading one preview"
+msgid_plural "Loading %1 previews"
+msgstr[0] "預覽列印(&W)..."
+
+#: core/engine.cpp:396
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "載入 Applet"
+
+#: core/enginebase.cpp:43
 #, fuzzy, kde-format
 #| msgid "An error occurred while loading <B>%1</B>:"
 msgid ""
@@ -116,37 +159,31 @@ msgid ""
 "%1"
 msgstr "載入 <B>%1</B> 時發生錯誤："
 
-#: core/engine.cpp:208
-#, fuzzy, kde-format
-#| msgid "Install"
-msgid "Initializing"
-msgstr "安裝"
-
-#: core/engine.cpp:219
+#: core/enginebase.cpp:79
 #, fuzzy, kde-format
 #| msgid "Configuration files"
 msgid "Configuration file does not exist: \"%1\""
 msgstr "組態設定檔案"
 
-#: core/engine.cpp:227
+#: core/enginebase.cpp:87
 #, fuzzy, kde-format
 #| msgid "Configuration files"
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "組態設定檔案"
 
-#: core/engine.cpp:234
+#: core/enginebase.cpp:94
 #, fuzzy, kde-format
 #| msgid "Configuration files"
 msgid "Configuration file is invalid: \"%1\""
 msgstr "組態設定檔案"
 
-#: core/engine.cpp:243
+#: core/enginebase.cpp:103
 #, fuzzy, kde-format
 #| msgid "Unshade"
 msgid "Use"
 msgstr "展開"
 
-#: core/engine.cpp:261
+#: core/enginebase.cpp:121
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -154,92 +191,22 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/engine.cpp:338
-#, fuzzy, kde-format
-#| msgid "View Frame Information"
-msgid "Loading provider information"
-msgstr "檢視框架資訊"
-
-#: core/engine.cpp:400
-#, kde-format
-msgid "Could not load get hot new stuff providers from file: %1"
-msgstr ""
-
-#: core/engine.cpp:431
-#, fuzzy, kde-format
-#| msgid "Error parsing providers list."
-msgid "Error initializing provider."
-msgstr "供應者列表有語法錯誤。"
-
-#: core/engine.cpp:435 core/engine.cpp:1003
-#, fuzzy, kde-format
-#| msgid "Loading Applet"
-msgid "Loading data"
-msgstr "載入 Applet"
-
-#: core/engine.cpp:477
-#, kde-format
-msgid "Loading data from provider"
-msgstr ""
-
-#: core/engine.cpp:482
+#: core/enginebase.cpp:274
 #, fuzzy, kde-format
 #| msgid "Loading resource '%1' failed!"
 msgid "Loading of providers from file: %1 failed"
 msgstr "載入資源 '%1' 時發生錯誤！"
 
-#: core/engine.cpp:730
+#: core/enginebase.cpp:291
 #, kde-format
-msgid ""
-"Could not perform an installation of the entry %1 as it does not have any "
-"downloadable items defined. Please contact the author so they can fix this."
+msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 
-#: core/engine.cpp:853
-#, kde-format
-msgid "Pick Update Item"
-msgstr ""
-
-#: core/engine.cpp:855
-#, kde-format
-msgid ""
-"Please pick the item from the list below which should be used to apply this "
-"update. We were unable to identify which item to select, based on the "
-"original item, which was named %1"
-msgstr ""
-
-#: core/engine.cpp:874
-#, kde-format
-msgid ""
-"We failed to identify a good link for updating %1, and are unable to perform "
-"the update"
-msgstr ""
-
-#: core/engine.cpp:953
+#: core/enginebase.cpp:322
 #, fuzzy, kde-format
-#| msgid "Redo: %1"
-msgid "Re: %1"
-msgstr "重做：%1"
-
-#: core/engine.cpp:995
-#, fuzzy, kde-format
-#| msgid "Install"
-msgid "Installing"
-msgstr "安裝"
-
-#: core/engine.cpp:999
-#, fuzzy, kde-format
-#| msgid "Print Previe&w..."
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "預覽列印(&W)..."
-
-#: core/engine.cpp:1172
-#, fuzzy, kde-format
-msgid ""
-"Failed to adopt '%1'\n"
-"%2"
-msgstr "無法讀入資源 '%1'"
+#| msgid "Error parsing providers list."
+msgid "Error initializing provider."
+msgstr "供應者列表有語法錯誤。"
 
 #: core/installation.cpp:106
 #, fuzzy, kde-format
@@ -355,6 +322,40 @@ msgid "Could not open %1 for reading"
 msgstr ""
 "無法開啟程式庫‘%1’。\n"
 "%2"
+
+#: core/transaction.cpp:137
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+
+#: core/transaction.cpp:246
+#, kde-format
+msgid "Pick Update Item"
+msgstr ""
+
+#: core/transaction.cpp:248
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+
+#: core/transaction.cpp:267
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+
+#: core/transaction.cpp:351
+#, fuzzy, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr "無法讀入資源 '%1'"
 
 #: qtquick/categoriesmodel.cpp:63
 #, fuzzy, kde-format
