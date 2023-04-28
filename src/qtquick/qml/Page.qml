@@ -364,7 +364,7 @@ KCM.GridViewKCM {
             id: uploadAction
             text: i18nd("knewstuff6", "Upload...")
             tooltip: i18nd("knewstuff6", "Learn how to add your own hot new stuff to this list")
-            iconName: "upload-media"
+            icon.name: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled
             onTriggered: {
                 pageStack.push(uploadPage);
@@ -372,13 +372,13 @@ KCM.GridViewKCM {
         },
         Kirigami.Action {
             text: i18nd("knewstuff6", "Go to...")
-            iconName: "go-next";
+            icon.name: "go-next";
             id: searchModelActions;
             visible: children.length > 0;
         },
         Kirigami.Action {
             text: i18nd("knewstuff6", "Search...")
-            iconName: "system-search";
+            icon.name: "system-search";
             displayHint: Kirigami.DisplayHint.KeepVisible
             displayComponent: Kirigami.SearchField {
                 enabled: engine.isValid
@@ -399,7 +399,7 @@ KCM.GridViewKCM {
         model: newStuffEngine.searchPresetModel
         Kirigami.Action {
             text: model.displayName
-            iconName: model.iconName
+            icon.name: model.iconName
             property int indexEntry: index;
             onTriggered: {
                 var curIndex = newStuffEngine.searchPresetModel.index(indexEntry, 0);

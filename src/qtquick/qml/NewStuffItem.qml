@@ -20,21 +20,21 @@ Kirigami.SwipeListItem {
     actions: [
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request installation of this item", "Install");
-            iconName: "list-add"
+            icon.name: "list-add"
             onTriggered: { listModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId); }
             enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
-            iconName: "refresh"
+            icon.name: "refresh"
             onTriggered: { listModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall");
-            iconName: "list-remove"
+            icon.name: "list-remove"
             onTriggered: { listModel.uninstallItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled;

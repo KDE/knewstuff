@@ -47,14 +47,14 @@ Private.GridTileDelegate {
     actions: [
         Kirigami.Action {
             text: component.useLabel
-            iconName: "dialog-ok-apply"
+            icon.name: "dialog-ok-apply"
             onTriggered: { newStuffModel.adoptItem(model.index); }
             enabled: (model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
             text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install...");
-            iconName: "install"
+            icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
                     newStuffModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId);
@@ -69,14 +69,14 @@ Private.GridTileDelegate {
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
-            iconName: "update-none"
+            icon.name: "update-none"
             onTriggered: { newStuffModel.updateItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: component.uninstallLabel
-            iconName: "edit-delete"
+            icon.name: "edit-delete"
             onTriggered: { newStuffModel.uninstallItem(model.index); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled && hovered;
