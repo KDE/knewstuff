@@ -31,8 +31,8 @@ public:
 class PeriodicIncubationController : public QObject, public QQmlIncubationController
 {
 public:
-    explicit PeriodicIncubationController(QObject *parent)
-        : QObject(parent)
+    explicit PeriodicIncubationController()
+        : QObject()
     {
         startTimer(16);
     }
@@ -50,8 +50,9 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
 {
     auto engine = new QQmlEngine(this);
     auto context = new KLocalizedContext(engine);
-    engine->setIncubationController(new PeriodicIncubationController(nullptr));
+    engine->setIncubationController(new PeriodicIncubationController());
 
+    resize(600, 400);
     context->setTranslationDomain(QStringLiteral("knewstuff6"));
     engine->rootContext()->setContextObject(context);
     engine->rootContext()->setContextProperty(QStringLiteral("knsrcfile"), configFile);
