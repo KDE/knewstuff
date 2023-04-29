@@ -85,7 +85,7 @@ Cache::Cache(const QString &appName)
             // First run through the old cache and see if any have disappeared (at
             // which point we need to set them as available and emit that change)
             for (const Entry &entry : oldCache) {
-                if (!d->cache.contains(entry)) {
+                if (!d->cache.contains(entry) && entry.status() != KNSCore::Entry::Deleted) {
                     Entry removedEntry(entry);
                     removedEntry.setEntryDeleted();
                     Q_EMIT entryChanged(removedEntry);
