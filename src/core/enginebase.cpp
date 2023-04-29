@@ -89,10 +89,10 @@ bool EngineBase::init(const QString &configfile)
         return false;
     }
 
-    const KConfigGroup group = conf.group("KNewStuff3");
+    const KConfigGroup group = conf.hasGroup("KNewStuff") ? conf.group("KNewStuff") : conf.group("KNewStuff3");
     if (!group.exists()) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
-        qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff3 section.";
+        qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff or KNewStuff3 section.";
         return false;
     }
 
