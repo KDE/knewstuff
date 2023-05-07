@@ -34,7 +34,6 @@ find_package(KF5KIO ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5Package ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5Service ${KF_DEP_VERSION} REQUIRED)
-find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF_DEP_VERSION} REQUIRED)
 
