@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-04-22 00:35+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\"(을)를 설치할 수 없음: 파일을 찾을 수 없습니다."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 설치 실패: %2"
@@ -281,7 +281,7 @@ msgstr ""
 "출력은 다음과 같습니다:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -291,7 +291,7 @@ msgstr ""
 "%1 삭제가 실패했습니다. 설치한 파일 %2을(를) 자동으로 삭제할 수 없습니다. 오"
 "류가 발생한 것 같으면 직접 파일 삭제를 시도해 보십시오."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -346,7 +346,7 @@ msgid ""
 "the update"
 msgstr "%1을(를) 업데이트할 수 있는 링크를 찾지 못해서 업데이트할 수 없음"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1082,7 +1082,7 @@ msgstr ""
 "knsrc 파일에서 공급자가 지정한 항목의 고유 ID입니다.\n"
 " URL 예제: kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "새로운 항목 다운로드..."

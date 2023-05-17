@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-02-17 11:04+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -240,7 +240,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Не удалось установить «%1»: файл не найден"
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Ошибка установки %1: %2"
@@ -301,7 +301,7 @@ msgstr ""
 "%2Сообщение об ошибке:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -312,7 +312,7 @@ msgstr ""
 "автоматически. Вы можете удалить этот файл вручную, если считаете, что это "
 "ошибка."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -368,7 +368,7 @@ msgid ""
 msgstr ""
 "Обновление невозможно, не удалось распознать ссылку для обновления «%1»"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1121,7 +1121,7 @@ msgstr ""
 "файле knsrc.\n"
 " Пример такого URL-адреса: kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Загрузить материалы..."

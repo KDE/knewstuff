@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "无法安装“%1”：未找到文件。"
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "安装 %1 时失败：%2"
@@ -279,7 +279,7 @@ msgstr ""
 "返回的输出为：\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -289,7 +289,7 @@ msgstr ""
 "%1 卸载失败，因为无法自动删除已安装的文件 %2。如果您认为这是安装程序的问题，"
 "可以尝试手动删除这个文件。"
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -344,7 +344,7 @@ msgid ""
 "the update"
 msgstr "我们无法识别更新 %1 的链接，故无法进行更新"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1075,7 +1075,7 @@ msgstr ""
 "即内容提供者提供的 knsrc 文件中，项目的唯一 ID。\n"
 " URL 示例：kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."

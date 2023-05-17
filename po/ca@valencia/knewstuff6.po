@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-03-19 08:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "No s'ha pogut instal·lar «%1»: no s'ha trobat el fitxer."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "La instal·lació de %1 ha fallat: %2"
@@ -296,7 +296,7 @@ msgstr ""
 "L'eixida retornada ha sigut:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -307,7 +307,7 @@ msgstr ""
 "pogut eliminar automàticament. Si creu que es tracta d'un error, podeu "
 "intentar eliminant manualment este fitxer."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -367,7 +367,7 @@ msgstr ""
 "S'ha fallat en identificar un bon enllaç per a actualitzar %1 i no es pot "
 "realitzar l'actualització"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1117,7 +1117,7 @@ msgstr ""
 "fitxer knsrc.\n"
 " Un exemple d'este tipus d'URL és kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Baixa les novetats..."

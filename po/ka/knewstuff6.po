@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-04-02 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "\"%1\"-ის დაყენების შეცდომა: ფაილი ვერ ვიპოვე;."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1-ის დაყენების შეცდომა: %2"
@@ -283,7 +283,7 @@ msgstr ""
 "ბრძანებამ დააბრუნა:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -294,7 +294,7 @@ msgstr ""
 "შეუძლებელია. თუ გჯერათ, რომ ეს არასწორია, შეგიძლიათ ფაილის წაშლა ხელით "
 "სცადოთ."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -351,7 +351,7 @@ msgid ""
 msgstr ""
 "%1-ის განახლებისთვის კარგი ბმული ვერ ვიპოვე, ამიტომ განახლება შეუძლებელია"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1095,7 +1095,7 @@ msgstr ""
 "ID.\n"
 " ასეთი url- ის მაგალითია kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "ახალი რამერუმეების მიღება..."

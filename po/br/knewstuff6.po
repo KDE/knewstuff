@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ne m'eus ket gallet kavout ar servij '%1'."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installation of %1 failed: %2"
@@ -275,7 +275,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -283,7 +283,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -332,7 +332,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -1097,7 +1097,7 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr ""

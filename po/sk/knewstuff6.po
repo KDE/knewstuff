@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-03-11 18:21+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepodarilo sa nainštalovať \"%1\": súbor nenájdený."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Inštalácia %1 zlyhala: %2"
@@ -290,7 +290,7 @@ msgstr ""
 "Vrátený výstup bol:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -301,7 +301,7 @@ msgstr ""
 "automaticky odstrániť. Tento súbor sa môžete pokúsiť odstrániť ručne, ak sa "
 "domnievate, že ide o chybu."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -360,7 +360,7 @@ msgstr ""
 "Nepodarilo sa identifikovať dobrý odkaz na aktualizáciu %1 a nie je možné "
 "vykonať aktualizáciu"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1108,7 +1108,7 @@ msgstr ""
 "je jedinečné ID položky v providerovi určenom súborom knsrc.\n"
 "Príklad takého URL je kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Stiahnuť nové veci..."

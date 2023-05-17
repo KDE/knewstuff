@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "'%1' என்பதை நிறுவ முடியவில்லை: கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
@@ -290,7 +290,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -300,7 +300,7 @@ msgstr ""
 "நிறுவப்பட்டுள்ள %2 எனும் கோப்பைத் தானாக நீக்க முடியாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍"
 "து. அக்கோப்பு தேவையில்லாத பட்சத்தில், அதை கைமுறையாக நீங்கள் நீக்க முயற்சிக்கலாம்."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -352,7 +352,7 @@ msgid ""
 msgstr ""
 "%1 என்பதை புதுப்பிப்பதற்கான முகவரியைக் கண்டறிய முடியாத‍தால் அதைப் புதுப்பிக்க முடியவில்லை"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1084,7 +1084,7 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "புதியவற்றை பதிவிறக்கு..."

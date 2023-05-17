@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepavyko įdiegti „%1“: failas nerastas."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 įdiegimas patyrė nesėkmę: %2"
@@ -292,7 +292,7 @@ msgstr ""
 "Grąžinta išvestis buvo:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -303,7 +303,7 @@ msgstr ""
 "failo %2. Jei manote, kad tai klaida, galite pabandyti ištrinti šį failą "
 "rankiniu būdu."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -362,7 +362,7 @@ msgstr ""
 "Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
 "atlikti atnaujinimo"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1112,7 +1112,7 @@ msgstr ""
 "yra unikalus įrašo ID, kurį galima rasti knsrc failo nurodytame tiekėjuje.\n"
 " Tokio url pavyzdys yra kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Atsisiųsti naujus elementus.."

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-01-29 23:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -234,7 +234,7 @@ msgstr "無法安裝 %1，因為它指向一個網頁。點擊<a href='%2'>這�
 msgid "Could not install \"%1\": file not found."
 msgstr "無法安裝 %1：找不到檔案。"
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 安裝失敗：%2"
@@ -299,7 +299,7 @@ msgstr ""
 "回傳輸出：\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -309,7 +309,7 @@ msgstr ""
 "%1 移除失敗，安裝的檔案 %2 無法被自動移除。如果您相信這是錯的，您可嘗試自行刪"
 "除這個檔案。"
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -364,7 +364,7 @@ msgid ""
 "the update"
 msgstr "我們無法辨識可用以更新 %1 用的連結，因此無法進行更新"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1077,7 +1077,7 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下載熱門玩意..."

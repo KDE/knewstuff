@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2023-04-09 20:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ezin \"%1\" instalatu: fitxategia ez da aurkitu."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 instalatzea huts egin du: %2"
@@ -289,7 +289,7 @@ msgstr ""
 "Itzuli den irteerakoa hau izan da:\n"
 "%3"
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -300,7 +300,7 @@ msgstr ""
 "automatikoki kendu. Fitxategi hori eskuz ezabatzen saia zaitezke, honakoa "
 "errore bat dela uste baduzu."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -360,7 +360,7 @@ msgstr ""
 "Ez dugu %1 eguneratzeko esteka onik identifikatzerik izan, eta ezin dugu "
 "eguneratu"
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1108,7 +1108,7 @@ msgstr ""
 "bakarra da.\n"
 "Halako URL baten adibidea da kns://peruse.knsrc/api.kde-look.org/1316714"
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Zama-jaitsi gauza berriak..."

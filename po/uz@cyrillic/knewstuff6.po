@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 02:39+0000\n"
+"POT-Creation-Date: 2023-05-17 02:04+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Хизмат (%1) топилмади."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:600
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installation of %1 failed: %2"
@@ -267,7 +267,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:566
+#: core/installation.cpp:565
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -275,7 +275,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:635
+#: core/installation.cpp:633
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -326,7 +326,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:351
+#: core/transaction.cpp:350
 #, fuzzy, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -1082,7 +1082,7 @@ msgid ""
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
 
-#: widgets/action.cpp:30 widgets/button.cpp:56
+#: widgets/action.cpp:28 widgets/button.cpp:70
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
