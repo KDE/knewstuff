@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-17 02:04+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/knewstuff/knewstuff5.pot\n"
-"X-Crowdin-File-ID: 5537\n"
+"X-Crowdin-File: /kf6-trunk/messages/knewstuff/knewstuff6.pot\n"
+"X-Crowdin-File-ID: 42625\n"
 
 #: attica/atticaprovider.cpp:168
 #, kde-format
@@ -138,10 +138,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "配置文件无效：“%1”"
+msgstr "配置文件不存在：“%1”"
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -159,17 +158,15 @@ msgid "Use"
 msgstr "使用"
 
 #: core/enginebase.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"无法初始化 %1 的安装处理程序\n"
-"这是一个严重的错误，请报告给应用程序的作者"
+"无法初始化 %1 的安装处理程序：\n"
+"%2\n"
+"这是一个严重的错误，请向应用程序的作者报告"
 
 #: core/enginebase.cpp:274
 #, kde-format
@@ -889,9 +886,7 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "上传新资源：%1"
@@ -1079,332 +1074,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not contain "
-#~ "a correct KPackage structure."
-#~ msgstr "%1 安装失败，因为下载的软件包不是 KPackage 架构的软件包。"
-
-#~ msgid ""
-#~ "The installation of %1 failed to create the expected new directory %2"
-#~ msgstr "%1 的安装程序无法创建新文件夹 %2"
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not contain "
-#~ "any useful meta information, which means it is not a valid KPackage."
-#~ msgstr ""
-#~ "%1 安装失败，因为下载的软件包中不含任何有用的元数据，即该软件包不是有效的 "
-#~ "KPackage。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package does not contain a "
-#~ "correct KPackage structure."
-#~ msgstr "%1 卸载失败，因为已安装的软件包不是 KPackage 架构。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package does not contain any "
-#~ "useful meta information, which means it is not a valid KPackage."
-#~ msgstr ""
-#~ "%1 卸载失败，因为已安装的软件包中不含任何有用的元数据信息，即不为有效的 "
-#~ "KPackage。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the downloaded file %2 could not be "
-#~ "automatically removed."
-#~ msgstr "%1 卸载失败，无法自动删除已下载的文件 %2。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, due to the installed file not being a KPackage. "
-#~ "The file in question was %2, and you can attempt to delete it yourself, "
-#~ "if you are certain that it is not needed."
-#~ msgstr ""
-#~ "%1 卸载失败，因为已安装的文件不属于 KPackage。有问题的文件为 %2，如果您确"
-#~ "定无需此文件，可以尝试将它删除。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, as there seems to somehow be more than one "
-#~ "thing installed, which is not supposed to be possible for KPackage based "
-#~ "entries."
-#~ msgstr "%1 卸载失败，因为已安装了多个不属于 KPackage 的项目。"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Not installed:"
-#~ msgstr "尚未安装的组件："
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "More"
-#~ msgstr "更多"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Configure..."
-#~ msgstr "配置..."
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Visit homepage"
-#~ msgstr "访问主页"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Install"
-#~ msgstr "安装"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "No further information available."
-#~ msgstr "无更多可用信息。"
-
-#~ msgid "Configure menu"
-#~ msgstr "配置菜单"
-
-#~ msgid "Configure menu - %1"
-#~ msgstr "配置菜单 - %1"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current folder"
-#~ msgstr "%1 - 当前文件夹"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - current device"
-#~ msgstr "%1 - 当前设备"
-
-#~ msgctxt "@action:inmenu %1=\"$GenericName\""
-#~ msgid "%1 - all devices"
-#~ msgstr "%1 - 全部设备"
-
-#~ msgid "Main section"
-#~ msgstr "主要区域"
-
-#~ msgid "Move down"
-#~ msgstr "下移"
-
-#~ msgid "Move up"
-#~ msgstr "上移"
-
-#~ msgid "Move to Main section"
-#~ msgstr "移动到主要区域"
-
-#~ msgid "Move to More section"
-#~ msgstr "移动到更多区域"
-
-#~ msgid "Reset"
-#~ msgstr "重置"
-
-#~ msgid "More section"
-#~ msgstr "更多区域"
-
-#~ msgid ""
-#~ "For this menu there are some more tools suggested which are currently not "
-#~ "installed:"
-#~ msgstr "此菜单建议您安装以下工具："
-
-#~ msgid "More tools..."
-#~ msgstr "更多工具..."
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the service type %2 was not accepted by "
-#~ "the system (did you forget to install the KPackage support plugin for "
-#~ "this type of package?)"
-#~ msgstr ""
-#~ "%1 安装失败，因为系统不接受服务类型 %2 (您是否忘记为此类软件包安装 "
-#~ "KPackage 支持插件了？)"
-
-#~ msgid ""
-#~ "The installation of %1 failed, as the downloaded package does not list a "
-#~ "service type."
-#~ msgstr "%1 安装失败，因为下载的软件包并未列出服务类型。"
-
-#~ msgid ""
-#~ "The removal of %1 failed, as the installed package is not a supported "
-#~ "type (did you forget to install the KPackage support plugin for this type "
-#~ "of package?)"
-#~ msgstr ""
-#~ "%1 卸载失败，因为安装程序不支持此类已安装的软件包 (您是否忘记为此类软件包"
-#~ "安装 KPackage 支持插件了？)"
-
-#~ msgid ""
-#~ "Failed to create a job for the package management task. This is usually "
-#~ "because the package is invalid. We attempted to operate on the package %1"
-#~ msgstr ""
-#~ "无法创建软件包管理任务，通常是因为软件包已损坏。此处处理的软件包为 %1"
-
-#~ msgid ""
-#~ "Could not create a package installer for the service type %1: The "
-#~ "installer does not have a valid structure"
-#~ msgstr "无法为服务类型 %1 创建软件包安装程序：此安装程序不含有效的架构"
-
-#~ msgid "The service type %1 was not understood by the KPackage installer"
-#~ msgstr "KPackage 安装程序不支持服务类型 %1"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and retrieve the available keys. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>无法启动 <i>gpg</i> 并获取可用密钥。请确保 <i>gpg</i> 已安装，否则将无"
-#~ "法校验已下载的资源。</qt>"
-
-#~ msgid ""
-#~ "<qt>Enter passphrase for key <b>0x%1</b>, belonging to<br /><i>%2&lt;"
-#~ "%3&gt;</i><br />:</qt>"
-#~ msgstr ""
-#~ "<qt>输入密钥 <b>0x%1</b> 的密码句，该密钥属于 <br /><i>%2&lt;%3&gt;</"
-#~ "i><br />：</qt>"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
-#~ "that <i>gpg</i> is installed, otherwise verification of downloaded "
-#~ "resources will not be possible.</qt>"
-#~ msgstr ""
-#~ "<qt>无法启动 <i>gpg</i> 来检查文件的有效性。请确保 <i>gpg</i> 已安装，否则"
-#~ "将无法校验已下载的资源。</qt>"
-
-#~ msgid "Key used for signing:"
-#~ msgstr "用于签名的密钥："
-
-#~ msgid "Select Signing Key"
-#~ msgstr "选择签名密钥"
-
-#~ msgid ""
-#~ "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> "
-#~ "is installed, otherwise signing of the resources will not be possible.</"
-#~ "qt>"
-#~ msgstr ""
-#~ "<qt>无法启动 <i>gpg</i> 并签名文件。请确保 <i>gpg</i> 已安装，否则将无法对"
-#~ "资源进行签名。</qt>"
-
-#~ msgid "Get Hot New Stuff"
-#~ msgstr "获取资源"
-
-#~ msgctxt "Program name followed by 'Add On Installer'"
-#~ msgid "%1 Add-On Installer"
-#~ msgstr "%1 的附加组件安装器"
-
-#~ msgid "Timeout. Check Internet connection."
-#~ msgstr "请求超时，请检查互联网连接。"
-
-#~ msgid "Server: %1"
-#~ msgstr "服务器：%1"
-
-#~ msgid "<br />Provider: %1"
-#~ msgstr "<br />内容提供者：%1"
-
-#~ msgid "<br />Version: %1"
-#~ msgstr "<br />版本：%1"
-
-#~ msgid "Provider information"
-#~ msgstr "内容提供者信息"
-
-#~ msgid "Could not install %1"
-#~ msgstr "无法安装 %1"
-
-#~ msgid "Get Hot New Stuff!"
-#~ msgstr "获取资源！"
-
-#~ msgid "Icons view mode"
-#~ msgstr "图标视图模式"
-
-#~ msgid "Details view mode"
-#~ msgstr "详情视图模式"
-
-#~ msgid "All Providers"
-#~ msgstr "所有内容提供者"
-
-#~ msgid "All Categories"
-#~ msgstr "所有类别"
-
-#~ msgid "Provider:"
-#~ msgstr "内容提供者："
-
-#~ msgid "Most downloads"
-#~ msgstr "最多下载"
-
-#~ msgid "Newest"
-#~ msgstr "最新"
-
-#~ msgid "Order by:"
-#~ msgstr "排序方式："
-
-#~ msgid "Search:"
-#~ msgstr "搜索："
-
-#~ msgid "Author:"
-#~ msgstr "作者："
-
-#~ msgid "<a href=\"https://opendesktop.org\">Homepage</a>"
-#~ msgstr "<a href=\"https://opendesktop.org\">主页</a>"
-
-#~ msgid "Update"
-#~ msgstr "更新"
-
-#~ msgid "Uninstall"
-#~ msgstr "卸载"
-
-#~ msgid "Become a Fan"
-#~ msgstr "成为粉丝"
-
-#~ msgid "Details for %1"
-#~ msgstr "%1 的详情"
-
-#~ msgid "Changelog:"
-#~ msgstr "更新日志："
-
-#~ msgctxt "A link to the description of this Get Hot New Stuff item"
-#~ msgid "Homepage"
-#~ msgstr "主页"
-
-#~ msgctxt ""
-#~ "A link to make a donation for a Get Hot New Stuff item (opens a web "
-#~ "browser)"
-#~ msgid "Make a donation"
-#~ msgstr "捐赠"
-
-#~ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
-#~ msgid "Knowledgebase (no entries)"
-#~ msgid_plural "Knowledgebase (%1 entries)"
-#~ msgstr[0] "知识库 (%1 个条目)"
-
-#~ msgctxt "Tooltip for a link in a dialog"
-#~ msgid "Opens in a browser window"
-#~ msgstr "在浏览器窗口中打开"
-
-#~ msgid "Rating: %1%"
-#~ msgstr "评分：%1%"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<br />Size: %1"
-#~ msgstr "<br />大小：%1"
-
-#~ msgctxt "Show the author of this item in a list"
-#~ msgid "By <i>%1</i>"
-#~ msgstr "作者 <i>%1</i>"
-
-#~ msgctxt "fan as in supporter"
-#~ msgid "1 fan"
-#~ msgid_plural "%1 fans"
-#~ msgstr[0] "%1 位粉丝"
-
-#~ msgid "1 download"
-#~ msgid_plural "%1 downloads"
-#~ msgstr[0] "%1 次下载"
-
-#~ msgid "Loading Preview"
-#~ msgstr "正在加载预览"
-
-#~ msgid "Details"
-#~ msgstr "详情"
-
-#~ msgid "Updating"
-#~ msgstr "正在更新"
-
-#~ msgid "Install Again"
-#~ msgstr "再次安装"
-
-#~ msgctxt "Show the size of the file in a list"
-#~ msgid "<p>Size: %1</p>"
-#~ msgstr "<p>大小：%1</p>"
-
-#~ msgctxt "@action:button"
-#~ msgid "Yes"
-#~ msgstr "是"
-
-#~ msgctxt "@action:button"
-#~ msgid "No"
-#~ msgstr "否"
