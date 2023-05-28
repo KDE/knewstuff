@@ -255,8 +255,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
-"Kan ikkje installera «%1», då denne viser til ei nettside. <a href='"
-"%2'>Trykk her</a> for å fullføra innstalleringa."
+"Kan ikkje installera «%1», då denne viser til ei nettside. <a "
+"href='%2'>Trykk her</a> for å fullføra innstalleringa."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -1408,8 +1408,8 @@ msgid ""
 msgstr ""
 "For å lasta opp eller redigera innhald kan du opna nettsida til leverandøren "
 "og følgja instruksjonane der. Du må truleg registrera deg og logga inn før "
-"du kan leggja til innhald. Det kan òg vera du må kontakta system­ansvarleg "
-"på nettstaden direkte for å få lagt inn nytt innhald."
+"du kan leggja til innhald. Det kan òg vera du må kontakta system­ansvarleg på "
+"nettstaden direkte for å få lagt inn nytt innhald."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
