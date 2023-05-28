@@ -140,7 +140,6 @@ msgstr ""
 
 #: core/enginebase.cpp:79
 #, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Heivehusfiila ii gusto: «%1»"
 
@@ -853,7 +852,6 @@ msgstr ""
 
 #: qtquick/qml/UploadPage.qml:51
 #, fuzzy, kde-format
-#| msgid "Download New Stuff..."
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Viečča ođđa, somás tiŋggaid …"
