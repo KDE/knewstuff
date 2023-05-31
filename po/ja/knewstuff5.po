@@ -23,7 +23,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 22.12.2\n"
@@ -215,8 +215,7 @@ msgstr "インストール中"
 #, kde-format
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
-msgstr[0] "プレビューを 1 つ読み込み中"
-msgstr[1] "プレビューを %1 つ読み込み中"
+msgstr[0] "プレビューを %1 つ読み込み中"
 
 #: core/engine.cpp:1225
 #, kde-format
@@ -1467,8 +1466,7 @@ msgstr "寄付する"
 msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
 msgid "Knowledgebase (no entries)"
 msgid_plural "Knowledgebase (%1 entries)"
-msgstr[0] "知識データベース (0 項目)"
-msgstr[1] "知識データベース (%1 項目)"
+msgstr[0] "知識データベース (%1 項目)"
 
 #: ui/entrydetailsdialog.cpp:121
 #, kde-format
@@ -1500,15 +1498,13 @@ msgstr "作者: %1"
 msgctxt "fan as in supporter"
 msgid "1 fan"
 msgid_plural "%1 fans"
-msgstr[0] "1 人のファン"
-msgstr[1] "%1 人のファン"
+msgstr[0] "%1 人のファン"
 
 #: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
 #, kde-format
 msgid "1 download"
 msgid_plural "%1 downloads"
-msgstr[0] "1 回のダウンロード"
-msgstr[1] "%1 回のダウンロード"
+msgstr[0] "%1 回のダウンロード"
 
 #: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
 #, kde-format
