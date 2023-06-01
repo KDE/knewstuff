@@ -124,6 +124,11 @@ Transaction::~Transaction() = default;
 Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_entry, int _linkId)
 {
     auto ret = new Transaction(engine);
+    connect(engine->d->installation, &Installation::signalInstallationError, ret, [ret, _entry](const QString &msg, const KNSCore::Entry &entry) {
+        if (_entry.uniqueId() == entry.uniqueId()) {
+            ret->signalErrorCode(KNSCore::InstallationError, msg, {});
+        }
+    });
 
     QTimer::singleShot(0, ret, [_entry, ret, _linkId, engine] {
         int linkId = _linkId;

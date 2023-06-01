@@ -129,7 +129,7 @@ Q_SIGNALS:
      * @param message The description of the error (a message intended to be human readable)
      * @since 5.69
      */
-    void signalInstallationError(const QString &message);
+    void signalInstallationError(const QString &message, const KNSCore::Entry &entry);
 
     void signalPayloadLoaded(QUrl payload); // FIXME: return Entry
 
@@ -137,7 +137,7 @@ private:
     void install(KNSCore::Entry entry, const QString &downloadedFile);
 
     QStringList installDownloadedFileAndUncompress(const KNSCore::Entry &entry, const QString &payloadfile, const QString installdir);
-    QProcess *runPostInstallationCommand(const QString &installPath);
+    QProcess *runPostInstallationCommand(const QString &installPath, const KNSCore::Entry &entry);
 
     static QStringList archiveEntries(const QString &path, const KArchiveDirectory *dir);
 

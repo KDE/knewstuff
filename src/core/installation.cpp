@@ -211,7 +211,7 @@ void KNSCore::Installation::install(KNSCore::Entry entry, const QString &downloa
             if (scriptArgPath.endsWith(QLatin1Char('*'))) {
                 scriptArgPath = scriptArgPath.left(scriptArgPath.lastIndexOf(QLatin1Char('*')));
             }
-            QProcess *p = runPostInstallationCommand(scriptArgPath);
+            QProcess *p = runPostInstallationCommand(scriptArgPath, entry);
             connect(p, &QProcess::finished, this, [entry, installationFinished, this](int exitCode) {
                 if (exitCode) {
                     Entry newEntry = entry;
@@ -388,7 +388,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             } else {
                 qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
                 if (uncompressionOpt == AlwaysUncompress) {
-                    Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile));
+                    Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile), entry);
                     return QStringList();
                 }
                 isarchive = false;
@@ -400,7 +400,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
                     if (uncompressionOpt == AlwaysUncompress) {
                         Q_EMIT signalInstallationError(
-                            i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()));
+                            i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()),
+                            entry);
                         return QStringList();
                     }
                     // otherwise, just copy the file
@@ -488,7 +489,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 }
             }
             if (!success) {
-                Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath));
+                Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath), entry);
                 qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '" << installpath << "'";
                 return QStringList();
             }
@@ -499,7 +500,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
     return installedFiles;
 }
 
-QProcess *Installation::runPostInstallationCommand(const QString &installPath)
+QProcess *Installation::runPostInstallationCommand(const QString &installPath, const KNSCore::Entry &entry)
 {
     QString command(postInstallationCommand);
     QString fileArg(KShell::quoteArg(installPath));
@@ -508,11 +509,11 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
     qCDebug(KNEWSTUFFCORE) << "Run command:" << command;
 
     QProcess *ret = new QProcess(this);
-    auto onProcessFinished = [this, command, ret](int exitcode, QProcess::ExitStatus status) {
+    auto onProcessFinished = [this, command, ret, entry](int exitcode, QProcess::ExitStatus status) {
         const QString output{QString::fromLocal8Bit(ret->readAllStandardError())};
         if (status == QProcess::CrashExit) {
             QString errorMessage = i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output);
-            Q_EMIT signalInstallationError(errorMessage);
+            Q_EMIT signalInstallationError(errorMessage, entry);
             qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
         } else if (exitcode) {
             // 130 means Ctrl+C as an exit code this is interpreted by KNewStuff as cancel operation
@@ -524,7 +525,8 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath)
                     i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3",
                          exitcode,
                          command,
-                         output));
+                         output),
+                    entry);
                 qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
             }
         }
@@ -635,7 +637,7 @@ void Installation::uninstall(Entry entry)
                                 "If you think this is incorrect, you can continue or cancel the uninstallation process",
                                 KShell::quoteArg(command),
                                 processOutput);
-                            Q_EMIT signalInstallationError(err);
+                            Q_EMIT signalInstallationError(err, entry);
                             // Ask the user if he wants to continue, even though the script failed
                             Question question(Question::ContinueCancelQuestion);
                             question.setEntry(entry);
