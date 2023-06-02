@@ -55,6 +55,11 @@ void ResultsStream::fetch()
     for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         if (p->isInitialized()) {
             p->loadEntries(d->request);
+        } else {
+            connect(p.get(), &KNSCore::Provider::providerInitialized, this, [this, p] {
+                disconnect(p.get(), &KNSCore::Provider::providerInitialized, this, nullptr);
+                p->loadEntries(d->request);
+            });
         }
     }
 }
