@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2023-01-29 23:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -234,7 +234,7 @@ msgstr "無法安裝 %1，因為它指向一個網頁。點擊<a href='%2'>這�
 msgid "Could not install \"%1\": file not found."
 msgstr "無法安裝 %1：找不到檔案。"
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 安裝失敗：%2"
@@ -249,7 +249,7 @@ msgstr "無法確定下載的 %1 檔案的封存檔類型"
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "無法開啟 %1 封存檔。回傳錯誤：%2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -259,17 +259,17 @@ msgstr ""
 "此檔案已在磁碟中（可能是因為稍早的下載嘗試失敗）。選擇繼續則會覆寫該檔案，確"
 "定覆寫？"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "覆寫檔案"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "無法移動 %1 檔案至預定的目的地 %2"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -284,7 +284,7 @@ msgstr ""
 "回傳輸出：\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -299,7 +299,7 @@ msgstr ""
 "回傳輸出：\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -309,7 +309,7 @@ msgstr ""
 "%1 移除失敗，安裝的檔案 %2 無法被自動移除。如果您相信這是錯的，您可嘗試自行刪"
 "除這個檔案。"
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -333,7 +333,7 @@ msgstr "無法開啟 %1 供寫入"
 msgid "Could not open %1 for reading"
 msgstr "無法開啟 %1 供讀取"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -342,12 +342,12 @@ msgstr ""
 "由於條目 %1 沒有定義任何可下載的項目，因此無法進行安裝。請與作者聯絡好修正這"
 "個問題。"
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "選擇更新項目"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -357,14 +357,14 @@ msgstr ""
 "請從下方列表選擇要套用此更新的項目。我們無法基於名稱為 %1 的原始項目來識別要"
 "選擇的項目。"
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr "我們無法辨識可用以更新 %1 用的連結，因此無法進行更新"
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

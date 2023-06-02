@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepavyko įdiegti „%1“: failas nerastas."
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 įdiegimas patyrė nesėkmę: %2"
@@ -241,7 +241,7 @@ msgstr "Nepavyko nustatyti atsisiųsto failo %1 archyvo tipo"
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Nepavyko atverti archyvo failo %1. Pranešta klaida buvo: %2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -252,17 +252,17 @@ msgstr ""
 "atsisiųsti). Jei tęsite, failas bus perrašytas. Ar norite perrašyti esamą "
 "failą?"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "Perrašyti failą"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Nepavyko perkelti failo %1 į numatomą paskirties vietą %2"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -277,7 +277,7 @@ msgstr ""
 "Grąžinta išvestis buvo:\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -292,7 +292,7 @@ msgstr ""
 "Grąžinta išvestis buvo:\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -303,7 +303,7 @@ msgstr ""
 "failo %2. Jei manote, kad tai klaida, galite pabandyti ištrinti šį failą "
 "rankiniu būdu."
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -328,7 +328,7 @@ msgstr "Nepavyko atverti %1 įrašymui"
 msgid "Could not open %1 for reading"
 msgstr "Nepavyko atverti %1 skaitymui"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -337,12 +337,12 @@ msgstr ""
 "Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
 "apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Pasirinkti atnaujinimo elementą"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -353,7 +353,7 @@ msgstr ""
 "atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
 "%1, nepavyko nustatyti pradinio elemento"
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -362,7 +362,7 @@ msgstr ""
 "Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
 "atlikti atnaujinimo"
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

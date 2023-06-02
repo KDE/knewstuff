@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "'%1' என்பதை நிறுவ முடியவில்லை: கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
@@ -240,7 +240,7 @@ msgstr "பதிவிறக்கபட்ட %1 எனும் கோப்�
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 எனும் காப்பக‍க் கோப்பைத் திறக்க முடியவில்லை. தெரிவிக்கப்பட்ட சிக்கல்: %2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -250,17 +250,17 @@ msgstr ""
 "இக்கோப்பு வட்டில் ஏற்கனவே உள்ளது (தோல்வியடைந்த முந்தைய நிறுவலின் விளைவாக இருக்கலாம்). "
 "தொடர்ந்தால் அது மேலெழுதப்படும். ஏற்கனவே உள்ளதை மேலெழுத விருப்பமா?"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "கோப்பை மேலெழுது"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 எனும் கோப்பை %2 என்ற இடத்திற்கு நகர்த்த முடியவில்லை"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -275,7 +275,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -290,7 +290,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -300,7 +300,7 @@ msgstr ""
 "நிறுவப்பட்டுள்ள %2 எனும் கோப்பைத் தானாக நீக்க முடியாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍"
 "து. அக்கோப்பு தேவையில்லாத பட்சத்தில், அதை கைமுறையாக நீங்கள் நீக்க முயற்சிக்கலாம்."
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -320,7 +320,7 @@ msgstr "%1 தனை எழுதுவதற்கு திறக்க மு
 msgid "Could not open %1 for reading"
 msgstr "%1 என்பதை படிப்பதற்கு திறக்க முடியவில்லை"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -329,12 +329,12 @@ msgstr ""
 "%1 எனும் பதிவில் பதிவிறக்கக்கூடியவை ஏதும் இல்லாத‍தால் அதை நிறுவ முடியவில்லை. அதை "
 "இயற்றியவரிடம் இச்சிக்கலைத் தெரிவியுங்கள்."
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "புதுப்பிப்புக்கான உருப்படியைத் தேர்ந்தெடுத்தல்"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -344,7 +344,7 @@ msgstr ""
 "புதுப்பிப்புக்கு பயன்படுத்த வேண்டியதை கீழுள்ள பட்டியலிலிருந்து தேர்ந்தெடுங்கள். முந்தையதன் "
 "பெயர் %1 ஆகும், ஆனால் அப்பெயரின் அடிப்படையில் புதியதைத் தேர்ந்தெடுக்க முடியவில்லை."
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -352,7 +352,7 @@ msgid ""
 msgstr ""
 "%1 என்பதை புதுப்பிப்பதற்கான முகவரியைக் கண்டறிய முடியாத‍தால் அதைப் புதுப்பிக்க முடியவில்லை"
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

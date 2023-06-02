@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2021-09-09 21:26+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Kunne ikke installere \"%1\": Fil ikke fundet."
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Installation af %1 mislykkedes: %2"
@@ -233,7 +233,7 @@ msgstr "Kunne ikke bestemme arkivtype for den downloadede fil %1"
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Kunne ikke åbne arkivfilen %1. Den rapporterede fejl var: %2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -244,17 +244,17 @@ msgstr ""
 "download-forsøg). Hvis du fortsætter vil du overskrive den. Vil du "
 "overskrive den eksisterende fil?"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "Overskriv fil"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Kan ikke flytte filen %1 til den tiltænkte destination %2"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -269,7 +269,7 @@ msgstr ""
 "Det output der kom retur var:\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -284,7 +284,7 @@ msgstr ""
 "Det output der kom retur var:\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -295,7 +295,7 @@ msgstr ""
 "automatisk. Du kan forsøge at slette denne fil manuelt, hvis du tror dette "
 "er en fejl."
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -322,7 +322,7 @@ msgstr "Kan ikke åbne %1 til læsning"
 msgid "Could not open %1 for reading"
 msgstr "Kan ikke åbne %1 til læsning"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -332,12 +332,12 @@ msgstr ""
 "elementer defineret som kan downloades. Kontakt ophavsmanden så de kan rette "
 "det."
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Vælg opdateringselement"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -348,7 +348,7 @@ msgstr ""
 "opdatering. Vi kunne ikke identificere hvilket element der skal vælges, "
 "baseres på det oprindelige element som hed %1"
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -357,7 +357,7 @@ msgstr ""
 "Vi kunne ikke identificere et godt link til opdatering af %1, og kan derfor "
 "ikke udføre opdateringen."
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2023-04-24 09:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ni bilo mogoče namestiti \"%1\": datoteka ni bila najdena."
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Namestitev %1 ni uspela: %2"
@@ -245,7 +245,7 @@ msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Ni bilo mogoče odpreti arhivske datoteke %1. Sporočena napaka je bila: %2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -256,17 +256,17 @@ msgstr ""
 "prenosa). Nadaljevanje pomeni njeno prepisovanje. Ali želite prepisati "
 "obstoječo datoteko?"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "Prepišem datoteko"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Ni bilo mogoče prenesti datoteke %1 v namenjeni cilj %2"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -281,7 +281,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -296,7 +296,7 @@ msgstr ""
 "Vrnjeni izhod je bil:\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -307,7 +307,7 @@ msgstr ""
 "avtomatsko odstraniti. Lahko jo poskusite izbrisati sami, če ste prepričani, "
 "da je to napaka."
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -332,7 +332,7 @@ msgstr "Ni bilo mogoče odpreti %1 za pisanje"
 msgid "Could not open %1 for reading"
 msgstr "Ni bilo mogoče odpreti %1 za branje"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -341,12 +341,12 @@ msgstr ""
 "Ni bilo mogoče namestiti vnosa %1, ker nima določenih nobenih predmetov za "
 "prenos. Prosimo, da stopite v stik z avtorjem, da to popravi."
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Poberi predmet posodobitve"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -357,7 +357,7 @@ msgstr ""
 "posodobitve. Na podlagi prvotnega predmeta, poimenovanega %1, ni mogoče "
 "določiti, kateri predmet naj bi izbrali"
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -366,7 +366,7 @@ msgstr ""
 "Identifikacije dobre povezave za posodobitev %1 nismo pridobili, zato "
 "posodobitve ne moremo izvesti"
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 02:04+0000\n"
+"POT-Creation-Date: 2023-06-02 02:04+0000\n"
 "PO-Revision-Date: 2023-03-20 19:28+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Il est impossible d'installer « %1 » : fichier introuvable."
 
-#: core/installation.cpp:357 core/installation.cpp:600
+#: core/installation.cpp:357 core/installation.cpp:602
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Échec de l'installation de %1 : %2"
@@ -263,7 +263,7 @@ msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Impossible d'ouvrir le fichier d'archive « %1 ». L'erreur signalée est : %2"
 
-#: core/installation.cpp:469
+#: core/installation.cpp:470
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -274,17 +274,17 @@ msgstr ""
 "téléchargement antérieure). Voulez-vous continuer et écraser le fichier "
 "existant ?"
 
-#: core/installation.cpp:472
+#: core/installation.cpp:473
 #, kde-format
 msgid "Overwrite File"
 msgstr "Écraser le fichier"
 
-#: core/installation.cpp:491
+#: core/installation.cpp:492
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Impossible de déplacer le fichier %1 vers l'emplacement souhaité %2"
 
-#: core/installation.cpp:514
+#: core/installation.cpp:515
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -299,7 +299,7 @@ msgstr ""
 "La sortie de la commande était :\n"
 "%2"
 
-#: core/installation.cpp:524
+#: core/installation.cpp:525
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -315,7 +315,7 @@ msgstr ""
 "La sortie de la commande était :\n"
 "%3"
 
-#: core/installation.cpp:565
+#: core/installation.cpp:567
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -326,7 +326,7 @@ msgstr ""
 "automatiquement supprimé. Vous pouvez tenter de le supprimer vous même, si "
 "vous pensez qu'il s'agit d'une erreur."
 
-#: core/installation.cpp:633
+#: core/installation.cpp:635
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -352,7 +352,7 @@ msgstr "Impossible d'ouvrir %1 en écriture"
 msgid "Could not open %1 for reading"
 msgstr "Impossible d'ouvrir %1 en lecture"
 
-#: core/transaction.cpp:137
+#: core/transaction.cpp:142
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -362,12 +362,12 @@ msgstr ""
 "téléchargeable n'a été défini. Veuillez contacter l'auteur afin qu'il puisse "
 "corriger ce problème."
 
-#: core/transaction.cpp:246
+#: core/transaction.cpp:251
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Choisir l'élément à mettre à jour"
 
-#: core/transaction.cpp:248
+#: core/transaction.cpp:253
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -378,7 +378,7 @@ msgstr ""
 "à jour. À partir de l'élément d'origine, qui s'appelait « %1 », nous ne "
 "sommes pas parvenus à identifier quel élément sélectionner."
 
-#: core/transaction.cpp:267
+#: core/transaction.cpp:272
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -387,7 +387,7 @@ msgstr ""
 "Impossible d'identifier un lien correct pour mettre à jour %1 et de réaliser "
 "la mise à jour."
 
-#: core/transaction.cpp:350
+#: core/transaction.cpp:355
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
