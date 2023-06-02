@@ -117,6 +117,10 @@ Transaction::Transaction(EngineBase *engine)
     : QObject(engine)
     , d(new TransactionPrivate(engine, this))
 {
+    connect(d->m_engine->d->installation, &Installation::signalEntryChanged, this, [this](const KNSCore::Entry &changedEntry) {
+        Q_EMIT signalEntryEvent(changedEntry, Entry::StatusChangedEvent);
+        d->m_engine->cache()->registerChangedEntry(changedEntry);
+    });
 }
 
 Transaction::~Transaction() = default;
@@ -263,6 +267,11 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
                 KNSCore::Entry theEntry(entry);
                 theEntry.setPayload(identifiedLink);
                 d->m_engine->d->installation->install(theEntry);
+                connect(d->m_engine->d->installation, &Installation::signalInstallationFinished, this, [this, entry](const KNSCore::Entry &finishedEntry) {
+                    if (entry.uniqueId() == finishedEntry.uniqueId()) {
+                        d->finish();
+                    }
+                });
             } else {
                 qCWarning(KNEWSTUFFCORE) << "We failed to identify a good link for updating" << entry.name() << "and are unable to perform the update";
                 KNSCore::Entry theEntry(entry);
@@ -280,7 +289,11 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
         }
     } else {
         d->m_engine->d->installation->install(entry);
-        d->finish();
+        connect(d->m_engine->d->installation, &Installation::signalInstallationFinished, this, [this, entry](const KNSCore::Entry &finishedEntry) {
+            if (entry.uniqueId() == finishedEntry.uniqueId()) {
+                d->finish();
+            }
+        });
     }
 }
 

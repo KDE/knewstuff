@@ -204,7 +204,7 @@ void KNSCore::Installation::install(KNSCore::Entry entry, const QString &downloa
             }
             newentry.setStatus(KNSCore::Entry::Installed);
             Q_EMIT signalEntryChanged(newentry);
-            Q_EMIT signalInstallationFinished();
+            Q_EMIT signalInstallationFinished(newentry);
         };
         if (!postInstallationCommand.isEmpty()) {
             QString scriptArgPath = !installedFiles.isEmpty() ? installedFiles.first() : targetPath;
@@ -334,7 +334,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 // We can remove the downloaded file, because we don't save its location and don't need it to uninstall the entry
                 QFile::remove(payloadfile);
                 Q_EMIT signalEntryChanged(newentry);
-                Q_EMIT signalInstallationFinished();
+                Q_EMIT signalInstallationFinished(newentry);
                 qCDebug(KNEWSTUFFCORE) << "Install job finished with no error and we now have files" << job->package().path();
             } else {
                 if (job->error() == KPackage::PackageJob::JobError::NewerVersionAlreadyInstalledError) {
@@ -349,7 +349,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                         newentry.setReleaseDate(newentry.updateReleaseDate());
                     }
                     Q_EMIT signalEntryChanged(newentry);
-                    Q_EMIT signalInstallationFinished();
+                    Q_EMIT signalInstallationFinished(newentry);
                     qCDebug(KNEWSTUFFCORE) << "Install job finished telling us this item was already installed with this version, so... let's "
                                               "just make a small fib and say we totally installed that, honest, and we now have files"
                                            << job->package().path();

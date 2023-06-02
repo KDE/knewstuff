@@ -122,7 +122,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void signalEntryChanged(const KNSCore::Entry &entry);
-    void signalInstallationFinished();
+    void signalInstallationFinished(const KNSCore::Entry &entry);
     void signalInstallationFailed(const QString &message);
     /**
      * An informational signal fired when a serious error occurs during the installation.
