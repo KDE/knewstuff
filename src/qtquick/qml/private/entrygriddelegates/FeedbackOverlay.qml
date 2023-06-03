@@ -41,9 +41,9 @@ Item {
                 || status == NewStuff.ItemsModel.DeletedStatus) {
                     statusLabel.text = "";
                 } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                    statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working...");
+                    statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working…");
                 } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
-                    statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is in the process of being updated", "Updating...");
+                    statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is in the process of being updated", "Updating…");
                 } else {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator which should only be shown when the entry has been given some unknown or invalid status.", "Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
                 }
@@ -58,6 +58,6 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         // TODO: This is where we'd want to put the download progress and cancel button as well
-        text: i18ndc("knewstuff6", "Label for the busy indicator showing an item is installing", "Installing...");
+        text: i18ndc("knewstuff6", "Label for the busy indicator showing an item is installing", "Installing…");
     }
 }

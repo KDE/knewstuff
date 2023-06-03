@@ -62,9 +62,9 @@ KCM.SimpleKCM {
              || status == NewStuff.ItemsModel.DeletedStatus) {
                 statusCard.message = "";
             } else if (status == NewStuff.ItemsModel.InstallingStatus) {
-                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait...", component.name, entryAuthor.name);
+                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait…", component.name, entryAuthor.name);
             } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
-                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait...", component.name, entryAuthor.name);
+                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait…", component.name, entryAuthor.name);
             } else {
                 statusCard.message = i18ndc("knewstuff6", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
             }
@@ -83,7 +83,7 @@ KCM.SimpleKCM {
     title: i18ndc("knewstuff6", "Combined title for the entry details page made of the name of the entry, and the author's name", "%1 by %2", component.name, entryAuthor.name)
     actions: [
         Kirigami.Action {
-            text: component.downloadLinks.length == 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install...");
+            text: component.downloadLinks.length == 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
             icon.name: "install"
             onTriggered: {
                 if (component.downloadLinks.length == 1) {

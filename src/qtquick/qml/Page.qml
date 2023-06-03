@@ -362,7 +362,7 @@ KCM.GridViewKCM {
         },
         Kirigami.Action {
             id: uploadAction
-            text: i18nd("knewstuff6", "Upload...")
+            text: i18nd("knewstuff6", "Upload…")
             tooltip: i18nd("knewstuff6", "Learn how to add your own hot new stuff to this list")
             icon.name: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled
@@ -371,20 +371,20 @@ KCM.GridViewKCM {
             }
         },
         Kirigami.Action {
-            text: i18nd("knewstuff6", "Go to...")
+            text: i18nd("knewstuff6", "Go to…")
             icon.name: "go-next";
             id: searchModelActions;
             visible: children.length > 0;
         },
         Kirigami.Action {
-            text: i18nd("knewstuff6", "Search...")
+            text: i18nd("knewstuff6", "Search…")
             icon.name: "system-search";
             displayHint: Kirigami.DisplayHint.KeepVisible
             displayComponent: Kirigami.SearchField {
                 enabled: engine.isValid
                 id: searchField
                 focusSequence: "Ctrl+F"
-                placeholderText: i18nd("knewstuff6", "Search...")
+                placeholderText: i18nd("knewstuff6", "Search…")
                 text: newStuffEngine.searchTerm
                 onAccepted: { newStuffEngine.searchTerm = searchField.text; }
                 Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {

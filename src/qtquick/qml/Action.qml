@@ -18,7 +18,7 @@ import org.kde.newstuff 1.91 as NewStuff
 
 NewStuff.Action {
     configFile: "wallpaper.knsrc"
-    text: i18n("&Get New Wallpapers...")
+    text: i18n("&Get New Wallpapers…")
     pageStack: applicationWindow().pageStack
     onEntryEvent: function(entry, event) {
         if (event === NewStuff.Entry.StatusChangedEvent) {

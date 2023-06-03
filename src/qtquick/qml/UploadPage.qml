@@ -80,7 +80,7 @@ Kirigami.ScrollablePage {
                     margins: Kirigami.Units.largeSpacing
                 }
                 horizontalAlignment: Text.AlignHCenter
-                text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Updating information...")
+                text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Updating information…")
             }
         }
         Repeater {
