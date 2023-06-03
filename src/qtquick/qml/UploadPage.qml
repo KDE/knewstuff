@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -20,19 +21,18 @@
  * @since 5.85
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
-
-import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.12 as Kirigami
-
-import org.kde.newstuff 1.85 as NewStuff
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kcm as KCM
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 import "private" as Private
 
 Kirigami.ScrollablePage {
-    id: component;
+    id: component
+
     /**
      * The NewStuffQuick Engine instance used to display content for this item.
      * You can either pass in one that has already been set up (such as from a
@@ -48,22 +48,47 @@ Kirigami.ScrollablePage {
      */
     required property QtObject engine
 
-    title: i18nc("@knewstuff6", "Upload New Stuff: %1", component.engine.name);
-    NewStuff.QuestionAsker {}
-    Private.ErrorDisplayer { engine: component.engine; active: component.isCurrentPage; }
+    title: i18nc("@knewstuff6", "Upload New Stuff: %1", component.engine.name)
 
-    QtLayouts.ColumnLayout {
-        QtLayouts.Layout.fillWidth: true;
+    NewStuff.QuestionAsker { }
+
+    Private.ErrorDisplayer {
+        engine: component.engine
+        active: component.isCurrentPage
+    }
+
+    ColumnLayout {
+        Layout.fillWidth: true
+        spacing: Kirigami.Units.smallSpacing
+
         Item {
-            QtLayouts.Layout.fillWidth: true;
-            opacity: implicitHeight > 0 ? 1 : 0
-            Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad; } }
-            visible: opacity > 0
-            implicitHeight: uploaderBusy.running ? uploaderBusy.height + uploaderBusyInfo.height + Kirigami.Units.largeSpacing * 4 : 0;
-            QtLayouts.Layout.preferredHeight: implicitHeight;
-            Behavior on QtLayouts.Layout.preferredHeight { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad; } }
-            QtControls.BusyIndicator {
+            Layout.fillWidth: true
+            Layout.preferredHeight: implicitHeight
+
+            Behavior on Layout.preferredHeight {
+                NumberAnimation {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
+            }
+
+            implicitHeight: uploaderBusy.running
+                ? uploaderBusy.height + uploaderBusyInfo.height + Kirigami.Units.largeSpacing * 4
+                : 0
+
+            visible: uploaderBusy.running
+            opacity: uploaderBusy.running ? 1 : 0
+
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
+            }
+
+            QQC2.BusyIndicator {
                 id: uploaderBusy
+
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     bottom: parent.verticalCenter
@@ -71,8 +96,10 @@ Kirigami.ScrollablePage {
                 }
                 running: component.engine.isLoading && component.engine.isValid
             }
-            QtControls.Label {
+
+            QQC2.Label {
                 id: uploaderBusyInfo
+
                 anchors {
                     top: parent.verticalCenter
                     left: parent.left
@@ -83,12 +110,15 @@ Kirigami.ScrollablePage {
                 text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Updating information…")
             }
         }
+
         Repeater {
             model: NewStuff.ProvidersModel {
-                engine: component.engine.engine;
+                engine: component.engine.engine
             }
+
             Kirigami.Card {
                 enabled: !uploaderBusy.running
+
                 banner {
                     title: {
                         if (model.name === "api.kde-look.org") {
@@ -101,22 +131,25 @@ Kirigami.ScrollablePage {
                             return i18ndc("knewstuff6", "An unnamed provider", "Your Provider");
                         }
                     }
-                    titleIcon: model.icon == "" ? "get-hot-new-stuff" : model.icon;
+                    titleIcon: model.icon == "" ? "get-hot-new-stuff" : model.icon
                 }
+
                 actions: [
                     Kirigami.Action {
                         visible: model.website != ""
                         text: i18ndc("knewstuff6", "Text for an action which causes the specified website to be opened using the user's system default browser", "Open Website: %1", model.website)
-                        onTriggered: Qt.openUrlExternally(model.website);
+                        onTriggered: Qt.openUrlExternally(model.website)
                     },
+
                     Kirigami.Action {
                         visible: model.contactEmail != "" && model.name != "api.kde-look.org"
                         text: i18ndc("knewstuff6", "Text for an action which will attempt to send an email using the user's system default email client", "Send Email To: %1", model.contactEmail)
-                        onTriggered: Qt.openUrlExternally("mailto:" + model.contactEmail);
+                        onTriggered: Qt.openUrlExternally("mailto:" + model.contactEmail)
                     }
                 ]
-                contentItem: QtControls.Label {
-                    wrapMode: Text.Wrap;
+
+                contentItem: QQC2.Label {
+                    wrapMode: Text.Wrap
                     text: model.name === "api.kde-look.org"
                         ? i18ndc("knewstuff6", "A description of how to upload content to a generic provider", "To upload new entries, or to add content to an existing entry on the KDE Store, please open the website and log in. Once you have done this, you will be able to find the My Products entry in the menu which pops up when you click your user icon. Click on this entry to go to the product management system, where you can work on your products .")
                         : i18ndc("knewstuff6", "A description of how to upload content to the KDE Store specifically", "To upload new entries, or to add content to an existing entry, please open the provider's website and follow the instructions there. You will likely need to create a user and log in to a product management system, where you will need to follow the instructions for how to add. Alternatively, you might be required to contact the managers of the site directly to get new content added.")

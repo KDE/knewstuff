@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -14,12 +15,10 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Layouts 1.11 as QtLayouts
-
-import org.kde.kirigami 2.7 as Kirigami
-
-import org.kde.newstuff 1.62 as NewStuff
+import QtQuick
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 Kirigami.ApplicationItem {
     id: component
@@ -54,14 +53,17 @@ Kirigami.ApplicationItem {
         newStuffPage.showEntryDetails(providerId, entryId);
     }
 
-    QtLayouts.Layout.preferredWidth: Kirigami.Units.gridUnit * 50
-    QtLayouts.Layout.preferredHeight: Kirigami.Units.gridUnit * 40
+    Layout.preferredWidth: Kirigami.Units.gridUnit * 50
+    Layout.preferredHeight: Kirigami.Units.gridUnit * 40
+
     pageStack.defaultColumnWidth: pageStack.width
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.Auto
     pageStack.globalToolBar.canContainHandles: true
     pageStack.initialPage: NewStuff.Page {
         id: newStuffPage
+
         showUploadAction: false
+
         function showMessage(message) {
             // As the Page shows something nice and friendly while loading,
             // there's no reason to do the passive notification thing for those.
@@ -69,9 +71,11 @@ Kirigami.ApplicationItem {
                 component.showPassiveNotification(message);
             }
         }
-        onMessage: (message) => component.showPassiveNotification(message);
-        onIdleMessage: (message) => component.showPassiveNotification(message);
+
+        onMessage: message => component.showPassiveNotification(message)
+        onIdleMessage: message => component.showPassiveNotification(message)
     }
+
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
     }

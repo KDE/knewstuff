@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -12,52 +13,52 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
-import Qt5Compat.GraphicalEffects 6.0 as QtEffects
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 
-import org.kde.kcm 1.2 as KCM
-import org.kde.kirigami 2.19 as Kirigami
-
-import org.kde.newstuff 1.85 as NewStuff
+import org.kde.kcm as KCM
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
 
 KCM.GridViewKCM {
-    id: root;
+    id: root
+
     /**
      * @brief The configuration file which describes the application (knsrc)
      *
      * The format and location of this file is found in the documentation for
      * KNS3::DownloadDialog
      */
-    property alias configFile: newStuffEngine.configFile;
-    readonly property alias engine: newStuffEngine;
+    property alias configFile: newStuffEngine.configFile
+
+    readonly property alias engine: newStuffEngine
 
     /**
      * Any generic message from the NewStuff.Engine
      * @param message The message to be shown to the user
      */
-    signal message(string message);
+    signal message(string message)
     /**
      * A message posted usually describing that whatever action a recent busy
      * message said was happening has been completed
      * @param message The message to be shown to the user
      */
-    signal idleMessage(string message);
+    signal idleMessage(string message)
     /**
      * A message posted when the engine is busy doing something long duration
      * (usually this will be when fetching installation data)
      * @param message The message to be shown to the user
      */
-    signal busyMessage(string message);
+    signal busyMessage(string message)
     /**
      * A message posted when something has gone wrong
      * @param message The message to be shown to the user
      */
-    signal errorMessage(string message);
+    signal errorMessage(string message)
 
     /**
      * Whether or not to show the Upload... context action
@@ -67,7 +68,6 @@ KCM.GridViewKCM {
      * @see KNSCore::Engine::uploadEnabled
      */
     property alias showUploadAction: uploadAction.visible
-
 
     /**
      * Show the details page for a specific entry.
@@ -83,8 +83,8 @@ KCM.GridViewKCM {
         newStuffEngine.engine.storeSearch();
 
         //check if entry in question is perhaps a group, if so, load the new details.
-        var theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
-        var type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
+        const theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
+        const type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
 
         if (type === NewStuff.ItemsModel.GroupEntry) {
             newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
@@ -97,14 +97,17 @@ KCM.GridViewKCM {
         } else {
             _showEntryDetailsThrottle.onIsLoadingDataChanged();
         }
-
     }
+
     Connections {
-        id: _showEntryDetailsThrottle;
-        target: newStuffModel;
-        enabled: false;
-        property var entryId;
-        property var providerId;
+        id: _showEntryDetailsThrottle
+
+        property var entryId
+        property var providerId
+
+        target: newStuffModel
+        enabled: false
+
         function onIsLoadingDataChanged() {
             if (newStuffModel.isLoadingData === false && root.view.count == 1) {
                 _showEntryDetailsThrottle.enabled = false;
@@ -139,10 +142,13 @@ KCM.GridViewKCM {
             }
         }
     }
+
     Connections {
-        id: _restoreSearchState;
-        target: pageStack;
-        enabled: false;
+        id: _restoreSearchState
+
+        target: pageStack
+        enabled: false
+
         function onCurrentIndexChanged() {
             if (pageStack.currentIndex === 0) {
                 newStuffEngine.engine.restoreSearch();
@@ -151,10 +157,11 @@ KCM.GridViewKCM {
         }
     }
 
-    property string uninstallLabel: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall");
+    property string uninstallLabel: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
     property string useLabel: engine.engine.useLabel
 
     property int viewMode: Page.ViewMode.Tiles
+
     enum ViewMode {
         Tiles,
         Icons,
@@ -163,7 +170,7 @@ KCM.GridViewKCM {
 
     // Otherwise the first item will be focused, see BUG: 424894
     Component.onCompleted: {
-        view.currentIndex = -1
+        view.currentIndex = -1;
     }
 
     title: newStuffEngine.name
@@ -172,6 +179,7 @@ KCM.GridViewKCM {
         implicitWidth: view.width - Kirigami.Units.gridUnit
         implicitHeight: Kirigami.Units.gridUnit * 3
         visible: !loadingOverlay.visible
+
         Kirigami.InlineMessage {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
@@ -181,37 +189,44 @@ KCM.GridViewKCM {
     }
 
     NewStuff.Engine {
-        id: newStuffEngine;
-        property string statusMessage;
-        onMessage: function (message) {
+        id: newStuffEngine
+
+        property string statusMessage
+
+        onMessage: message => {
             root.message(message);
             statusMessage = message;
         }
-        onIdleMessage: function (message) {
+        onIdleMessage: message => {
             root.idleMessage(message);
             statusMessage = message;
         }
-        onBusyMessage: function (message) {
+        onBusyMessage: message => {
             root.busyMessage(message);
             statusMessage = message;
         }
-        onErrorMessage: function (message) {
+        onErrorMessage: message => {
             root.errorMessage(message);
             statusMessage = message;
         }
     }
-    NewStuff.QuestionAsker {}
-    Private.ErrorDisplayer { engine: newStuffEngine; active: root.isCurrentPage; }
 
-    QtControls.ActionGroup { id: viewModeActionGroup }
-    QtControls.ActionGroup { id: viewFilterActionGroup }
-    QtControls.ActionGroup { id: viewSortingActionGroup }
+    NewStuff.QuestionAsker {}
+    Private.ErrorDisplayer {
+        engine: newStuffEngine
+        active: root.isCurrentPage
+    }
+
+    QQC2.ActionGroup { id: viewModeActionGroup }
+    QQC2.ActionGroup { id: viewFilterActionGroup }
+    QQC2.ActionGroup { id: viewSortingActionGroup }
+
     actions: [
         Kirigami.Action {
             text: {
-                if (root.viewMode == Page.ViewMode.Tiles) {
+                if (root.viewMode === Page.ViewMode.Tiles) {
                     return i18nd("knewstuff6", "Tiles");
-                } else if (root.viewMode == Page.ViewMode.Icons) {
+                } else if (root.viewMode === Page.ViewMode.Icons) {
                     return i18nd("knewstuff6", "Icons");
                 } else {
                     return i18nd("knewstuff6", "Preview");
@@ -219,39 +234,43 @@ KCM.GridViewKCM {
             }
             checkable: false
             icon.name: {
-                if (root.viewMode == Page.ViewMode.Tiles) {
+                if (root.viewMode === Page.ViewMode.Tiles) {
                     return "view-list-details";
-                } else if (root.viewMode == Page.ViewMode.Icons) {
+                } else if (root.viewMode === Page.ViewMode.Icons) {
                     return "view-list-icons";
                 } else {
                     return "view-preview";
                 }
             }
+
             Kirigami.Action {
                 icon.name: "view-list-details"
                 text: i18nd("knewstuff6", "Detailed Tiles View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
-                checked: root.viewMode == Page.ViewMode.Tiles
+                checked: root.viewMode === Page.ViewMode.Tiles
                 checkable: true
-                QtControls.ActionGroup.group: viewModeActionGroup
+                QQC2.ActionGroup.group: viewModeActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "view-list-icons"
                 text: i18nd("knewstuff6", "Icons Only View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Icons; }
-                checked: root.viewMode == Page.ViewMode.Icons
+                checked: root.viewMode === Page.ViewMode.Icons
                 checkable: true
-                QtControls.ActionGroup.group: viewModeActionGroup
+                QQC2.ActionGroup.group: viewModeActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "view-preview"
                 text: i18nd("knewstuff6", "Large Preview View Mode")
                 onTriggered: { root.viewMode = Page.ViewMode.Preview; }
-                checked: root.viewMode == Page.ViewMode.Preview
+                checked: root.viewMode === Page.ViewMode.Preview
                 checkable: true
-                QtControls.ActionGroup.group: viewModeActionGroup
+                QQC2.ActionGroup.group: viewModeActionGroup
             }
         },
+
         Kirigami.Action {
             text: {
                 if (newStuffEngine.filter === 0) {
@@ -276,31 +295,35 @@ KCM.GridViewKCM {
                     // then it's ExactEntryId and we want to probably just ignore that
                 }
             }
+
             Kirigami.Action {
                 icon.name: "package-available"
                 text: i18ndc("knewstuff6", "List option which will set the filter to show everything", "Show All Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 0
                 onTriggered: { newStuffEngine.filter = 0; }
-                QtControls.ActionGroup.group: viewFilterActionGroup
+                QQC2.ActionGroup.group: viewFilterActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "package-installed-updated"
                 text: i18ndc("knewstuff6", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 1
                 onTriggered: { newStuffEngine.filter = 1; }
-                QtControls.ActionGroup.group: viewFilterActionGroup
+                QQC2.ActionGroup.group: viewFilterActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "package-installed-outdated"
                 text: i18ndc("knewstuff6", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 2
                 onTriggered: { newStuffEngine.filter = 2; }
-                QtControls.ActionGroup.group: viewFilterActionGroup
+                QQC2.ActionGroup.group: viewFilterActionGroup
             }
         },
+
         Kirigami.Action {
             text: {
                 if (newStuffEngine.sortOrder === 0) {
@@ -327,68 +350,85 @@ KCM.GridViewKCM {
                 } else {
                 }
             }
+
             Kirigami.Action {
                 icon.name: "change-date-symbolic"
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 0
                 onTriggered: { newStuffEngine.sortOrder = 0; }
-                QtControls.ActionGroup.group: viewSortingActionGroup
+                QQC2.ActionGroup.group: viewSortingActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "sort-name"
                 text: i18ndc("knewstuff6", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 1
                 onTriggered: { newStuffEngine.sortOrder = 1; }
-                QtControls.ActionGroup.group: viewSortingActionGroup
+                QQC2.ActionGroup.group: viewSortingActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "rating"
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 2
                 onTriggered: { newStuffEngine.sortOrder = 2; }
-                QtControls.ActionGroup.group: viewSortingActionGroup
+                QQC2.ActionGroup.group: viewSortingActionGroup
             }
+
             Kirigami.Action {
                 icon.name: "download"
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 3
                 onTriggered: { newStuffEngine.sortOrder = 3; }
-                QtControls.ActionGroup.group: viewSortingActionGroup
+                QQC2.ActionGroup.group: viewSortingActionGroup
             }
         },
+
         Kirigami.Action {
             id: uploadAction
+
             text: i18nd("knewstuff6", "Upload…")
             tooltip: i18nd("knewstuff6", "Learn how to add your own hot new stuff to this list")
             icon.name: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled
+
             onTriggered: {
                 pageStack.push(uploadPage);
             }
         },
+
         Kirigami.Action {
             text: i18nd("knewstuff6", "Go to…")
-            icon.name: "go-next";
-            id: searchModelActions;
-            visible: children.length > 0;
+            icon.name: "go-next"
+            id: searchModelActions
+            visible: children.length > 0
         },
+
         Kirigami.Action {
             text: i18nd("knewstuff6", "Search…")
-            icon.name: "system-search";
+            icon.name: "system-search"
             displayHint: Kirigami.DisplayHint.KeepVisible
+
             displayComponent: Kirigami.SearchField {
-                enabled: engine.isValid
                 id: searchField
+
+                enabled: engine.isValid
                 focusSequence: "Ctrl+F"
                 placeholderText: i18nd("knewstuff6", "Search…")
                 text: newStuffEngine.searchTerm
-                onAccepted: { newStuffEngine.searchTerm = searchField.text; }
-                Component.onCompleted: if (!Kirigami.InputMethod.willShowOnActive) {
-                    forceActiveFocus();
+
+                onAccepted: {
+                    newStuffEngine.searchTerm = searchField.text;
+                }
+
+                Component.onCompleted: {
+                    if (!Kirigami.InputMethod.willShowOnActive) {
+                        forceActiveFocus();
+                    }
                 }
             }
         }
@@ -396,50 +436,68 @@ KCM.GridViewKCM {
 
     Instantiator {
         id: searchPresetInstatiator
+
         model: newStuffEngine.searchPresetModel
+
         Kirigami.Action {
+            required property int index
+
             text: model.displayName
             icon.name: model.iconName
-            property int indexEntry: index;
+
             onTriggered: {
-                var curIndex = newStuffEngine.searchPresetModel.index(indexEntry, 0);
+                const curIndex = newStuffEngine.searchPresetModel.index(index, 0);
                 newStuffEngine.searchPresetModel.loadSearch(curIndex);
             }
         }
-        onObjectAdded: { searchModelActions.children.push(object); }
+
+        onObjectAdded: (index, object) => {
+            searchModelActions.children.push(object);
+        }
     }
 
     Connections {
         target: newStuffEngine.searchPresetModel
-        function onModelReset() { searchModelActions.children = []; }
+
+        function onModelReset() {
+            searchModelActions.children = [];
+        }
     }
 
     extraFooterTopPadding: false
-    footer: QtLayouts.RowLayout {
+
+    footer: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
         visible: visibleChildren.length > 0
         height: visible ? implicitHeight : 0
 
-        QtControls.Label {
+        QQC2.Label {
             visible: categoriesCombo.count > 2
             text: i18nd("knewstuff6", "Category:")
         }
 
-        QtControls.ComboBox {
+        QQC2.ComboBox {
             id: categoriesCombo
-            QtLayouts.Layout.fillWidth: true
+
+            Layout.fillWidth: true
+
             visible: count > 2
             model: newStuffEngine.categories
             textRole: "displayName"
+
             onCurrentIndexChanged: {
                 newStuffEngine.categoriesFilter = model.data(model.index(currentIndex, 0), NewStuff.CategoriesModel.NameRole);
             }
         }
 
-        QtControls.Button {
-            QtLayouts.Layout.alignment: Qt.AlignRight
+        QQC2.Button {
+            Layout.alignment: Qt.AlignRight
+
             text: i18nd("knewstuff6", "Contribute your own…")
             icon.name: "upload-media"
             visible: newStuffEngine.engine.uploadEnabled && !uploadAction.visible
+
             onClicked: {
                 pageStack.push(uploadPage);
             }
@@ -447,33 +505,73 @@ KCM.GridViewKCM {
     }
 
     view.model: NewStuff.ItemsModel {
-        id: newStuffModel;
-        engine: newStuffEngine;
+        id: newStuffModel
+
+        engine: newStuffEngine
     }
+
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
+
         onItemPicked: {
             newStuffModel.installItem(entryId, downloadItemId);
         }
     }
 
-    view.implicitCellWidth: root.viewMode == Page.ViewMode.Tiles ? Kirigami.Units.gridUnit * 30 : (root.viewMode == Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Kirigami.Units.gridUnit * 10)
-    view.implicitCellHeight: root.viewMode == Page.ViewMode.Tiles ? Math.round(view.implicitCellWidth / 3) : (root.viewMode == Page.ViewMode.Preview ? Kirigami.Units.gridUnit * 25 : Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit*2)
-    view.delegate: root.viewMode == Page.ViewMode.Tiles ? tileDelegate : (root.viewMode == Page.ViewMode.Preview ? bigPreviewDelegate : thumbDelegate)
+    view.implicitCellWidth: switch (root.viewMode) {
+        case Page.ViewMode.Tiles:
+            return Kirigami.Units.gridUnit * 30;
+
+        case Page.ViewMode.Preview:
+            return Kirigami.Units.gridUnit * 25;
+
+        case Page.ViewMode.Icons:
+        default:
+            return Kirigami.Units.gridUnit * 10;
+    }
+
+    view.implicitCellHeight: switch (root.viewMode) {
+        case Page.ViewMode.Tiles:
+            return Math.round(view.implicitCellWidth / 3);
+
+        case Page.ViewMode.Preview:
+            return Kirigami.Units.gridUnit * 25;
+
+        case Page.ViewMode.Icons:
+        default:
+            return Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit * 2;
+    }
+
+    view.delegate: switch (root.viewMode) {
+        case Page.ViewMode.Tiles:
+            return tileDelegate;
+
+        case Page.ViewMode.Preview:
+            return bigPreviewDelegate;
+
+        case Page.ViewMode.Icons:
+        default:
+            return thumbDelegate;
+    }
 
     Component {
         id: bigPreviewDelegate
+
         EntryGridDelegates.BigPreviewDelegate { }
     }
+
     Component {
         id: tileDelegate
+
         EntryGridDelegates.TileDelegate  {
             useLabel: root.useLabel
             uninstallLabel: root.uninstallLabel
         }
     }
+
     Component {
         id: thumbDelegate
+
         EntryGridDelegates.ThumbDelegate {
             useLabel: root.useLabel
             uninstallLabel: root.uninstallLabel
@@ -481,11 +579,14 @@ KCM.GridViewKCM {
     }
 
     Component {
-        id: detailsPage;
+        id: detailsPage
+
         NewStuff.EntryDetails { }
     }
+
     Component {
         id: uploadPage
+
         NewStuff.UploadPage {
             engine: newStuffEngine
         }
@@ -493,14 +594,23 @@ KCM.GridViewKCM {
 
     Item {
         id: loadingOverlay
+
         anchors.fill: parent
+
         opacity: (newStuffEngine.isLoading || newStuffModel.isLoadingData) ? 1 : 0
-        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+            }
+        }
+
         visible: opacity > 0
+
         Rectangle {
             anchors.fill: parent
             color: Kirigami.Theme.backgroundColor
         }
+
         Kirigami.LoadingPlaceholder {
             anchors.centerIn: parent
             text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more…")

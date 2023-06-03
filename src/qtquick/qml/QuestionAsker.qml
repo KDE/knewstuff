@@ -1,54 +1,57 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
 /**
  * @brief A component used to forward questions from KNewStuff's engine to the UI
- * 
+ *
  * This component is equivalent to the WidgetQuestionListener
  * @see KNewStuff::WidgetQuestionListener
  * @see KNewStuffCore::Question
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
+import org.kde.newstuff.core as NewStuffCore
 
-import org.kde.kirigami 2.7 as Kirigami
-
-import org.kde.newstuff.core 1.62 as NewStuffCore
-import org.kde.newstuff 1.62 as NewStuff
-
-QtControls.Dialog {
+QQC2.Dialog {
     id: dialog
+
+    property int questionType
+
+    anchors.centerIn: QQC2.Overlay.overlay
+
     modal: true
     focus: true
-    property int questionType
-    anchors.centerIn: QtControls.Overlay.overlay
+
     margins: Kirigami.Units.largeSpacing
     padding: Kirigami.Units.largeSpacing
+
     standardButtons: {
         switch (questionType) {
             case NewStuffCore.Question.SelectFromListQuestion:
             case NewStuffCore.Question.InputTextQuestion:
             case NewStuffCore.Question.PasswordQuestion:
             case NewStuffCore.Question.ContinueCancelQuestion:
-                // QtControls Dialog standardButtons does not have a Continue button...
-                return QtControls.Dialog.Ok | QtControls.Dialog.Cancel;
-                break;
+                // QQC2 Dialog standardButtons does not have a Continue button...
+                return QQC2.Dialog.Ok | QQC2.Dialog.Cancel;
             case NewStuffCore.Question.YesNoQuestion:
-                return QtControls.Dialog.Yes | QtControls.Dialog.No;
-                break;
+                return QQC2.Dialog.Yes | QQC2.Dialog.No;
             default:
-                break;
+                return QQC2.Dialog.NoButton;
         }
     }
 
     Connections {
         target: NewStuff.QuickQuestionListener
+
         function onAskListQuestion(title, question, list) {
             dialog.questionType = NewStuffCore.Question.SelectFromListQuestion;
             dialog.title = title;
@@ -60,12 +63,14 @@ QtControls.Dialog {
             listView.visible = true;
             dialog.open();
         }
+
         function onAskContinueCancelQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.ContinueCancelQuestion;
             dialog.title = title;
             questionLabel.text = question;
             dialog.open();
         }
+
         function onAskTextInputQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.InputTextQuestion;
             dialog.title = title;
@@ -73,14 +78,16 @@ QtControls.Dialog {
             textInput.visible = true;
             dialog.open();
         }
+
         function onAskPasswordQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.PasswordQuestion;
             dialog.title = title;
             questionLabel.text = question;
-            textInput.echoMode = QtControls.TextInput.PasswordEchoOnEdit;
+            textInput.echoMode = QQC2.TextInput.PasswordEchoOnEdit;
             textInput.visible = true;
             dialog.open();
         }
+
         function onAskYesNoQuestion(title, question) {
             dialog.questionType = NewStuffCore.Question.YesNoQuestion;
             dialog.title = title;
@@ -88,8 +95,9 @@ QtControls.Dialog {
             dialog.open();
         }
     }
+
     function passResponse(responseIsContinue) {
-        var input = "";
+        let input = "";
         switch(dialog.questionType) {
         case NewStuffCore.Question.SelectFromListQuestion:
             input = listView.currentItem.text;
@@ -105,7 +113,7 @@ QtControls.Dialog {
             input = textInput.text;
             textInput.text = "";
             textInput.visible = false;
-            textInput.echoMode = QtControls.TextInput.Normal;
+            textInput.echoMode = QQC2.TextInput.Normal;
             break;
         case NewStuffCore.Question.ContinueCancelQuestion:
         case NewStuffCore.Question.YesNoQuestion:
@@ -116,36 +124,51 @@ QtControls.Dialog {
         NewStuff.QuickQuestionListener.passResponse(responseIsContinue, input);
     }
 
-    QtLayouts.ColumnLayout {
-        anchors.fill: parent
+    ColumnLayout {
+        id: layout
+
         property int maxWidth: applicationWindow().width - (dialog.leftPadding + dialog.leftMargin + dialog.rightMargin + dialog.rightPadding)
-        QtControls.Label {
+
+        anchors.fill: parent
+        spacing: Kirigami.Units.smallSpacing
+
+        QQC2.Label {
             id: questionLabel
-            QtLayouts.Layout.maximumWidth: parent.maxWidth
+            Layout.maximumWidth: layout.maxWidth
             wrapMode: Text.Wrap
         }
+
         ListView {
             id: listView
+
+            Layout.maximumWidth: layout.maxWidth
+            Layout.fillWidth: true
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 6
+
             visible: false
-            QtLayouts.Layout.maximumWidth: parent.maxWidth
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.minimumHeight: Kirigami.Units.gridUnit * 6
+
             model: ListModel { }
+
             delegate: Kirigami.BasicListItem {
                 reserveSpaceForIcon: false
                 text: model.text
             }
         }
-        QtControls.TextField {
+
+        QQC2.TextField {
             id: textInput
+
+            Layout.maximumWidth: layout.maxWidth
+            Layout.fillWidth: true
+
             visible: false
-            QtLayouts.Layout.maximumWidth: parent.maxWidth
-            QtLayouts.Layout.fillWidth: true
         }
     }
+
     onAccepted: {
         passResponse(true);
     }
+
     onRejected: {
         passResponse(false);
     }

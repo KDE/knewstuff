@@ -1,16 +1,15 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
-
-import org.kde.kirigami 2.7 as Kirigami
-
-import org.kde.newstuff 1.62 as NewStuff
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 /**
  * @brief An overlay sheet for showing a list of download options for one entry
@@ -18,12 +17,13 @@ import org.kde.newstuff 1.62 as NewStuff
  * This is used by the NewStuff.Page component
  * @since 5.63
  */
-
 Kirigami.OverlaySheet {
     id: component
 
     property string entryId
+
     property alias downloadLinks: itemsView.model
+
     signal itemPicked(string entryId, int downloadItemId, string downloadName)
 
     showCloseButton: true
@@ -33,7 +33,7 @@ Kirigami.OverlaySheet {
         id: itemsView
 
         headerPositioning: ListView.InlineHeader
-        header: QtControls.Label {
+        header: QQC2.Label {
             width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
             padding: Kirigami.Units.largeSpacing
 
@@ -52,15 +52,17 @@ Kirigami.OverlaySheet {
             activeBackgroundColor: "transparent"
             activeTextColor: Kirigami.Theme.textColor
 
-            trailing: QtLayouts.RowLayout {
-                QtControls.Label {
+            trailing: RowLayout {
+                QQC2.Label {
                     text: modelData.formattedSize
                 }
 
-                QtControls.ToolButton {
+                QQC2.ToolButton {
                     id: installButton
+
                     text: i18nd("knewstuff6", "Install")
                     icon.name: "install"
+
                     onClicked: {
                         component.close();
                         component.itemPicked(component.entryId, modelData.id, modelData.name);

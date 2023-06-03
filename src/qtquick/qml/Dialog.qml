@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -14,16 +15,14 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.5 as QtControls
-import QtQuick.Layouts 1.13 as QtLayouts
-
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.newstuff 1.91 as NewStuff
+import QtQuick
+import QtQuick.Window
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 Window {
     id: component
+
     width: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
     height: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
 
@@ -58,18 +57,20 @@ Window {
      * emitted when the Hot New Stuff dialog is about to be shown, usually
      * as a result of the user having click on the button
      */
-    signal aboutToShowDialog();
+    signal aboutToShowDialog()
 
     /**
      * This forwards the entryEvent from the QtQuick engine
      * @see Engine::entryEvent
      * @since 5.82
      */
-    signal entryEvent(var entry, int event);
+    signal entryEvent(var entry, int event)
+
     property Connections engineConnections: Connections {
-        target: engine
+        target: component.engine
+
         function onEntryEvent(entry, event) {
-            entryEvent(entry, event);
+            component.entryEvent(entry, event);
         }
     }
 
@@ -90,7 +91,7 @@ Window {
     }
 
     onVisibleChanged: {
-        if (visible === true) {
+        if (visible) {
             newStuffPage.engine.engine.revalidateCacheEntries();
         }
     }
@@ -98,8 +99,8 @@ Window {
     color: Kirigami.Theme.backgroundColor
 
     NewStuff.DialogContent {
-        anchors.fill: parent
         id: newStuffPage
+        anchors.fill: parent
         downloadNewWhat: component.downloadNewWhat
         Keys.onEscapePressed: component.close()
     }

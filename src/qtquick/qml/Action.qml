@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2021 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -14,7 +15,7 @@
  * shows how to make the action push a page to a pageStack rather than opening a dialog:
  *
 \code{.qml}
-import org.kde.newstuff 1.91 as NewStuff
+import org.kde.newstuff as NewStuff
 
 NewStuff.Action {
     configFile: "wallpaper.knsrc"
@@ -35,11 +36,9 @@ NewStuff.Action {
  * @since 5.81
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import org.kde.kirigami 2.5 as Kirigami
-
-import org.kde.newstuff 1.81 as NewStuff
+import QtQuick
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 Kirigami.Action {
     id: component
@@ -114,14 +113,14 @@ Kirigami.Action {
         component._private.showHotNewStuff();
     }
 
-    onTriggered: { component._private.showHotNewStuff(); }
+    onTriggered: showHotNewStuff()
 
     icon.name: "get-hot-new-stuff"
     visible: enabled || visibleWhenDisabled
     enabled: NewStuff.Settings.allowedByKiosk
     onEnabledChanged: {
         // If the user resets this when kiosk has disallowed ghns, force enabled back to false
-        if (enabled === true && NewStuff.Settings.allowedByKiosk === false) {
+        if (enabled && !NewStuff.Settings.allowedByKiosk) {
             enabled = false;
         }
     }
@@ -129,23 +128,27 @@ Kirigami.Action {
     readonly property QtObject _private: QtObject {
         property QtObject engine: pageItem ? pageItem.engine : null
         // Probably wants to be deleted and cleared if the "mode" changes at runtime...
-        property QtObject pageItem;
+        property QtObject pageItem
 
-        property string providerId;
-        property string entryId;
-        property Connections showSpecificEntryConnection: Connections {
+        property string providerId
+        property string entryId
+
+        readonly property Connections showSpecificEntryConnection: Connections {
             target: component.engine
+
             function onInitialized() {
                 pageItem.showEntryDetails(providerId, component._private.entryId);
             }
         }
 
-        property Connections engineConnections: Connections {
+        readonly property Connections engineConnections: Connections {
             target: component.engine
+
             function onEntryEvent(entry, event) {
                 component.entryEvent(entry, event);
             }
         }
+
         function showHotNewStuff() {
             if (NewStuff.Settings.allowedByKiosk) {
                 if (component.pageStack !== null) {
@@ -166,12 +169,14 @@ Kirigami.Action {
                 // make some noise, because silently doing nothing is a bit annoying
             }
         }
+
         property Component newStuffPage: Component {
             NewStuff.Page {
                 configFile: component.configFile
                 viewMode: component.viewMode
             }
         }
+
         property Item newStuffDialog: Loader {
             // Use this function to open the dialog. It seems roundabout, but this ensures
             // that the dialog is not constructed until we want it to be shown the first time,
@@ -184,6 +189,7 @@ Kirigami.Action {
                     active = true;
                 }
             }
+
             onLoaded: {
                 component._private.pageItem = item;
                 item.open();

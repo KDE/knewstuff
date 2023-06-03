@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -12,12 +13,11 @@
  * @since 5.63
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.newstuff as NewStuff
 
-import org.kde.newstuff 1.81 as NewStuff
-
-QtControls.Button {
+QQC2.Button {
     id: component
 
     /*
@@ -66,11 +66,12 @@ QtControls.Button {
      * @see Engine::entryEvent
      * @since 5.82
      */
-    signal entryEvent(var entry, int event);
+    signal entryEvent(var entry, int event)
+
     property Connections engineConnections: Connections {
         target: component.engine
         function onEntryEvent(entry, event) {
-            entryEvent(entry, event);
+            component.entryEvent(entry, event);
         }
     }
 
@@ -106,14 +107,14 @@ QtControls.Button {
         }
     }
 
-    onClicked: { showDialog(); }
+    onClicked: showDialog()
 
     icon.name: "get-hot-new-stuff"
     visible: enabled || visibleWhenDisabled
     enabled: NewStuff.Settings.allowedByKiosk
     onEnabledChanged: {
         // If the user resets this when kiosk has disallowed ghns, force enabled back to false
-        if (enabled === true && NewStuff.Settings.allowedByKiosk === false) {
+        if (enabled && !NewStuff.Settings.allowedByKiosk) {
             enabled = false;
         }
     }
@@ -132,7 +133,7 @@ QtControls.Button {
         }
         onLoaded: {
             item.open();
-            component.engine = item.engine
+            component.engine = item.engine;
         }
 
         active: false

@@ -1,134 +1,183 @@
 /*
     SPDX-FileCopyrightText: 2015 Dan Leinir Turthra Jensen <admin@leinir.dk>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
-
-import org.kde.kirigami 2.1 as Kirigami
-
-import org.kde.newstuff 1.62 as NewStuff
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import org.kde.newstuff as NewStuff
 
 Kirigami.SwipeListItem {
-    id: listItem;
-    height: Math.max(Kirigami.Units.iconSizes.huge + Kirigami.Units.smallSpacing * 2, nameText.height + descriptionText.height + Kirigami.Units.smallSpacing * 5);
-    property QtObject listModel;
-    enabled: true;
+    id: listItem
+
+    property QtObject listModel
+
+    height: Math.max(Kirigami.Units.iconSizes.huge + Kirigami.Units.smallSpacing * 2,
+                     nameText.height + descriptionText.height + Kirigami.Units.smallSpacing * 5)
+    enabled: true
+
     actions: [
         Kirigami.Action {
-            text: i18ndc("knewstuff6", "Request installation of this item", "Install");
+            text: i18ndc("knewstuff6", "Request installation of this item", "Install")
             icon.name: "list-add"
             onTriggered: { listModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId); }
-            enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
-            visible: enabled;
+            enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus
+            visible: enabled
         },
         Kirigami.Action {
-            text: i18ndc("knewstuff6", "Request updating of this item", "Update");
+            text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "refresh"
-            onTriggered: { listModel.updateItem(model.index); }
-            enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
-            visible: enabled;
+            onTriggered: listModel.updateItem(model.index)
+            enabled: model.status == NewStuff.ItemsModel.UpdateableStatus
+            visible: enabled
         },
         Kirigami.Action {
-            text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall");
+            text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
             icon.name: "list-remove"
-            onTriggered: { listModel.uninstallItem(model.index); }
+            onTriggered: listModel.uninstallItem(model.index)
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
-            visible: enabled;
+            visible: enabled
         }
     ]
-    QtLayouts.RowLayout {
+
+    RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
         Item {
-            id: previewContainer;
-            QtLayouts.Layout.preferredHeight: listItem.height - Kirigami.Units.smallSpacing * 2;
-            QtLayouts.Layout.minimumWidth: Kirigami.Units.iconSizes.huge;
-            QtLayouts.Layout.maximumWidth: Kirigami.Units.iconSizes.huge;
+            id: previewContainer
+
+            Layout.preferredHeight: listItem.height - Kirigami.Units.smallSpacing * 2
+            Layout.minimumWidth: Kirigami.Units.iconSizes.huge
+            Layout.maximumWidth: Kirigami.Units.iconSizes.huge
+
             Image {
-                id: previewImage;
+                id: previewImage
+
                 anchors {
-                    fill: parent;
-                    margins: Kirigami.Units.smallSpacing;
-                    leftMargin: -Kirigami.Units.smallSpacing;
+                    fill: parent
+                    margins: Kirigami.Units.smallSpacing
+                    leftMargin: -Kirigami.Units.smallSpacing
                 }
-                asynchronous: true;
-                fillMode: Image.PreserveAspectFit;
-                source: model.previewsSmall.length > 0 ? model.previewsSmall[0] : "";
+                asynchronous: true
+                fillMode: Image.PreserveAspectFit
+                source: model.previewsSmall.length > 0 ? model.previewsSmall[0] : ""
+
                 Kirigami.Icon {
-                    id: updateAvailableBadge;
-                    opacity: (model.status == NewStuff.ItemsModel.UpdateableStatus) ? 1 : 0;
-                    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
-                    anchors {
-                        bottom: parent.bottom;
-                        right: parent.right;
-                        margins: -Kirigami.Units.smallSpacing;
+                    id: updateAvailableBadge
+
+                    opacity: (model.status == NewStuff.ItemsModel.UpdateableStatus) ? 1 : 0
+                    Behavior on opacity {
+                        NumberAnimation {
+                            duration: Kirigami.Units.shortDuration
+                        }
                     }
-                    height: Kirigami.Units.iconSizes.smallMedium;
-                    width: height;
-                    source: "vcs-update-required";
+
+                    anchors {
+                        bottom: parent.bottom
+                        right: parent.right
+                        margins: -Kirigami.Units.smallSpacing
+                    }
+                    height: Kirigami.Units.iconSizes.smallMedium
+                    width: height
+                    source: "vcs-update-required"
                 }
+
                 Kirigami.Icon {
-                    id: installedBadge;
-                    opacity: (model.status == NewStuff.ItemsModel.InstalledStatus) ? 1 : 0;
-                    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
-                    anchors {
-                        bottom: parent.bottom;
-                        right: parent.right;
-                        margins: -Kirigami.Units.smallSpacing;
+                    id: installedBadge
+
+                    opacity: (model.status == NewStuff.ItemsModel.InstalledStatus) ? 1 : 0
+                    Behavior on opacity {
+                        NumberAnimation {
+                            duration: Kirigami.Units.shortDuration
+                        }
                     }
-                    height: Kirigami.Units.iconSizes.smallMedium;
-                    width: height;
-                    source: "vcs-normal";
+
+                    anchors {
+                        bottom: parent.bottom
+                        right: parent.right
+                        margins: -Kirigami.Units.smallSpacing
+                    }
+                    height: Kirigami.Units.iconSizes.smallMedium
+                    width: height
+                    source: "vcs-normal"
                 }
             }
+
             Rectangle {
                 anchors.fill: parent
+
                 opacity: installIndicator.opacity > 0 ? 0.7 : 0
-                Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+                Behavior on opacity {
+                    NumberAnimation {
+                        duration: Kirigami.Units.shortDuration
+                    }
+                }
+
                 visible: opacity > 0
             }
-            QtControls.BusyIndicator {
+
+            QQC2.BusyIndicator {
                 id: installIndicator
-                anchors.centerIn: parent;
-                opacity: (model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus) ? 1 : 0;
-                Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
-                running: opacity > 0;
-                QtControls.Label {
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter;
-                        bottom: parent.bottom;
-                        margins: Kirigami.Units.smallSpacing;
+
+                anchors.centerIn: parent
+
+                opacity: (model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus) ? 1 : 0
+                Behavior on opacity {
+                    NumberAnimation {
+                        duration: Kirigami.Units.shortDuration
                     }
+                }
+
+                running: opacity > 0
+
+                QQC2.Label {
+                    anchors {
+                        horizontalCenter: parent.horizontalCenter
+                        bottom: parent.bottom
+                        margins: Kirigami.Units.smallSpacing
+                    }
+
                     // There is no distinction between installing and uninstalling as a status, so we have to word things accordingly
-                    text: (model.status == NewStuff.ItemsModel.InstallingStatus) ? "Working" : ((model.status == NewStuff.ItemsModel.UpdatingStatus) ? "Updating" : "");
-                    width: paintedWidth;
+                    text: (model.status == NewStuff.ItemsModel.InstallingStatus) ? "Working" : ((model.status == NewStuff.ItemsModel.UpdatingStatus) ? "Updating" : "")
+                    width: paintedWidth
                 }
             }
         }
-        QtLayouts.ColumnLayout {
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.fillHeight: true
+
+        ColumnLayout {
+            spacing: Kirigami.Units.smallSpacing
+            opacity: 1 - installIndicator.opacity
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
             Kirigami.Heading {
                 id: nameText
-                QtLayouts.Layout.fillWidth: true
+
+                Layout.fillWidth: true
+
                 level: 3
                 text: model.name
-                opacity: 1 - installIndicator.opacity
             }
-            QtControls.Label {
+
+            QQC2.Label {
                 id: descriptionText
-                QtLayouts.Layout.fillWidth: true
-                text: model.summary.split("\n")[0];
+
+                Layout.fillWidth: true
+
+                text: model.summary.split("\n")[0]
                 elide: Text.ElideRight
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
-                opacity: 1 - installIndicator.opacity
             }
+
             Item {
-                QtLayouts.Layout.fillWidth: true
-                QtLayouts.Layout.fillHeight: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
             }
         }
     }
