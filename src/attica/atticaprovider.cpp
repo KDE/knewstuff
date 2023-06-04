@@ -217,6 +217,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
     }
 
     ListJob<Content> *job = m_provider.searchContents(categoriesToSearch, request.searchTerm, sorting, request.page, request.pageSize);
+    job->setProperty("searchRequest", QVariant::fromValue(request));
     connect(job, &BaseJob::finished, this, &AtticaProvider::categoryContentsLoaded);
 
     mEntryJob = job;
@@ -598,6 +599,11 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
                                    i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()),
                                    job->metadata().statusCode());
         }
+    }
+
+    if (auto searchRequestVar = job->property("searchRequest"); searchRequestVar.isValid()) {
+        SearchRequest req = searchRequestVar.value<SearchRequest>();
+        Q_EMIT loadingFailed(req);
     }
     return false;
 }

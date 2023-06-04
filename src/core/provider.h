@@ -339,7 +339,7 @@ Q_SIGNALS:
     void providerInitialized(KNSCore::Provider *);
 
     void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &) const;
-    void loadingFailed(const KNSCore::Provider::SearchRequest &);
+    void loadingFailed(const KNSCore::Provider::SearchRequest &) const;
 
     void entryDetailsLoaded(const KNSCore::Entry &);
     void payloadLinkLoaded(const KNSCore::Entry &);

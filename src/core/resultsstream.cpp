@@ -24,7 +24,7 @@ ResultsStream::ResultsStream(const Provider::SearchRequest &request, EngineBase 
     d->engine = base;
     d->request = request;
     d->providers = base->d->providers.values();
-    auto f = [this](const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry::List &entries) {
+    auto finished = [this](const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry::List &entries) {
         d->providers.removeAll(static_cast<Provider *>(sender()));
         if (entries.isEmpty() && d->providers.isEmpty()) {
             finish();
@@ -34,8 +34,14 @@ ResultsStream::ResultsStream(const Provider::SearchRequest &request, EngineBase 
             Q_EMIT entriesFound(entries);
         }
     };
+    auto failed = [this](const KNSCore::Provider::SearchRequest &request) {
+        if (request == d->request) {
+            finish();
+        }
+    };
     for (const auto &provider : d->providers) {
-        connect(provider.data(), &Provider::loadingFinished, this, f);
+        connect(provider.data(), &Provider::loadingFinished, this, finished);
+        connect(provider.data(), &Provider::loadingFailed, this, failed);
     }
 }
 
