@@ -454,7 +454,5 @@ void EngineBase::updateStatus()
 
 ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
-    auto ret = new ResultsStream(request, this);
-    QTimer::singleShot(0, ret, &ResultsStream::fetch);
-    return ret;
+    return new ResultsStream(request, this);
 }

@@ -35,6 +35,9 @@ class KNEWSTUFFCORE_EXPORT ResultsStream : public QObject
 public:
     ~ResultsStream() override;
 
+    /// Issues the search, make sure all signals are connected before calling
+    void fetch();
+
     /// Increments the requested page and issues another search
     void fetchMore();
 
@@ -47,7 +50,6 @@ private:
     ResultsStream(const Provider::SearchRequest &request, EngineBase *base);
     void finish();
 
-    void fetch();
     std::unique_ptr<ResultsStreamPrivate> d;
 };
 
