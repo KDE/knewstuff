@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2023-02-23 14:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -349,22 +349,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "不明なカテゴリ"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "もの"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "新しい %1 をダウンロード..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "新しい %1 をダウンロード"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -414,14 +421,14 @@ msgstr "%2 から %1 をインストール中"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -458,11 +465,12 @@ msgstr "インストール"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "インストール..."
+msgid "Install…"
+msgstr "インストール"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -714,8 +722,9 @@ msgid "Show Most Downloaded First"
 msgstr "ダウンロード数が多い順に表示"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "アップロード..."
 
 #: qtquick/qml/Page.qml:366
@@ -725,13 +734,14 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:374
 #, kde-format
-msgid "Go to..."
+msgid "Go to…"
 msgstr ""
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "検索..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "検索:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -810,20 +820,25 @@ msgid "By <i>%1</i>"
 msgstr "作者: <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "進行中..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "アップデート中..."
+msgid "Updating…"
+msgstr "アップデート中"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -837,10 +852,11 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "インストール中..."
+msgid "Installing…"
+msgstr "インストール中"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -874,10 +890,13 @@ msgid "Upload New Stuff: %1"
 msgstr "新しいものをアップロード: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "情報を更新中..."
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1041,6 +1060,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "新しいものをダウンロード..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "新しい %1 をダウンロード..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "インストール..."
+
+#~ msgid "Search..."
+#~ msgstr "検索..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "アップデート中..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "インストール中..."
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
@@ -1207,9 +1247,6 @@ msgstr "新しいものをダウンロード..."
 #~ msgid "Order by:"
 #~ msgstr "ソート基準:"
 
-#~ msgid "Search:"
-#~ msgstr "検索:"
-
 #~ msgid "Author:"
 #~ msgstr "作者:"
 
@@ -1275,9 +1312,6 @@ msgstr "新しいものをダウンロード..."
 
 #~ msgid "Details"
 #~ msgstr "詳細"
-
-#~ msgid "Updating"
-#~ msgstr "アップデート中"
 
 #~ msgid "Install Again"
 #~ msgstr "再インストール"

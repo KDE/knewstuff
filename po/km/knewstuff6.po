@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2012-06-27 10:04+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -346,7 +346,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "មិន​ស្គាល់​កំហុស​"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -354,14 +354,14 @@ msgstr "មិន​ស្គាល់​កំហុស​"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "ទាញយក​ធាតុ​ថ្មី..."
 
 #: qtquick/qml/Dialog.qml:43
@@ -412,14 +412,14 @@ msgstr "ដំឡើង"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -461,7 +461,7 @@ msgstr "ដំឡើង"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "ដំឡើង"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -740,7 +740,7 @@ msgstr "ទាញយក​ច្រើន​បំផុត"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "New Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "ផ្ទុក​ឡើង​ថ្មី"
 
 #: qtquick/qml/Page.qml:366
@@ -751,14 +751,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "ទៅកាន់..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ស្វែង​រក"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ស្វែងរក ៖"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -850,7 +850,7 @@ msgstr "ដោយ <i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -859,7 +859,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "ធ្វើបច្ចុប្បន្នភាព"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -877,7 +877,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "ដំឡើង"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -919,7 +919,7 @@ msgstr "ទាញយក​ធាតុ​ថ្មី..."
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "ព័ត៌មាន​វិក្ក័យបត្រ ៖"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1103,6 +1103,37 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "ទាញយក​ធាតុ​ថ្មី..."
+
+#, fuzzy
+#~| msgid "Download New Stuff..."
+#~ msgid "Download New %1..."
+#~ msgstr "ទាញយក​ធាតុ​ថ្មី..."
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "ដំឡើង"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ស្វែង​រក"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "ធ្វើបច្ចុប្បន្នភាព"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "ដំឡើង"
 
 #, fuzzy
 #~| msgid "Installed"
@@ -1292,9 +1323,6 @@ msgstr "ទាញយក​ធាតុ​ថ្មី..."
 #~ msgid "Order by:"
 #~ msgstr "តម្រៀប​តាម ៖"
 
-#~ msgid "Search:"
-#~ msgstr "ស្វែងរក ៖"
-
 #~ msgid "Author:"
 #~ msgstr "អ្នក​និពន្ធ ៖"
 
@@ -1364,9 +1392,6 @@ msgstr "ទាញយក​ធាតុ​ថ្មី..."
 
 #~ msgid "Details"
 #~ msgstr "សេចក្ដី​លម្អិត"
-
-#~ msgid "Updating"
-#~ msgstr "ធ្វើបច្ចុប្បន្នភាព"
 
 #~ msgid "Install Again"
 #~ msgstr "ដំឡើង​ម្ដង​ទៀត"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -377,22 +377,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Categorie necunoscută"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "Chestii"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "Descarcă noi %1..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "Descarcă noi %1"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -439,18 +446,26 @@ msgid "Installing %1 from %2"
 msgstr "Se instalează %1 din %2"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Se lucrează asupra elementului %1 de %2. Așteptați…"
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Se actualizează elementul %1 de %2. Așteptați…"
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -490,11 +505,12 @@ msgstr "Instalează"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Instalare..."
+msgid "Install…"
+msgstr "Instalează"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -751,8 +767,9 @@ msgid "Show Most Downloaded First"
 msgstr "Arată întâi pe cele mai descărcate"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Încarcă…"
 
 #: qtquick/qml/Page.qml:366
@@ -761,14 +778,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Învățați cum să vă adăugați propriile lucruri noi la această listă"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "Mergi la…"
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Căutare..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Caută:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -848,20 +867,25 @@ msgid "By <i>%1</i>"
 msgstr "De <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "Se lucrează…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "Se actualizează…"
+msgid "Updating…"
+msgstr "Se actualizează"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -878,10 +902,11 @@ msgstr ""
 "raport de eroare</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Se instalează..."
+msgid "Installing…"
+msgstr "Se instalează"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -915,10 +940,13 @@ msgid "Upload New Stuff: %1"
 msgstr "Încarcă lucruri noi: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Se actualizează informațiile…"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1087,6 +1115,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Descărcare lucruri noi..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "Descarcă noi %1..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Instalare..."
+
+#~ msgid "Search..."
+#~ msgstr "Căutare..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Se actualizează…"
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Se instalează..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1352,9 +1401,6 @@ msgstr "Descărcare lucruri noi..."
 #~ msgid "Order by:"
 #~ msgstr "Ordonează după:"
 
-#~ msgid "Search:"
-#~ msgstr "Caută:"
-
 #~ msgid "Author:"
 #~ msgstr "Autor:"
 
@@ -1426,9 +1472,6 @@ msgstr "Descărcare lucruri noi..."
 
 #~ msgid "Details"
 #~ msgstr "Detalii"
-
-#~ msgid "Updating"
-#~ msgstr "Se actualizează"
 
 #~ msgid "Install Again"
 #~ msgstr "Instalează din nou"

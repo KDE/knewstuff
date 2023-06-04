@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -374,7 +374,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "不明的錯誤"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -382,14 +382,14 @@ msgstr "不明的錯誤"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New %1"
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "下載新的 %1"
 
 #: qtquick/qml/Dialog.qml:43
@@ -441,14 +441,14 @@ msgstr "安裝"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -490,7 +490,7 @@ msgstr "安裝"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "安裝"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -770,7 +770,7 @@ msgstr "最多下載次數"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "&Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "上傳(&U)"
 
 #: qtquick/qml/Page.qml:366
@@ -781,15 +781,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "移至(&G)..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "搜尋"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "搜尋(&S)："
 
 #: qtquick/qml/Page.qml:424
 #, fuzzy, kde-format
@@ -878,7 +877,7 @@ msgstr "<b>錯誤</b>：%1：%2<br>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -887,7 +886,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "更新"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -905,7 +904,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "安裝"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -948,7 +947,7 @@ msgstr "下載熱門禮品"
 #| msgid "Information"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "資料"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1125,6 +1124,38 @@ msgstr ""
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
 msgstr "下載熱門禮品"
+
+#, fuzzy
+#~| msgid "Download New %1"
+#~ msgid "Download New %1..."
+#~ msgstr "下載新的 %1"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "安裝"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "搜尋"
+
+#, fuzzy
+#~| msgid "Update"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "更新"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "安裝"
 
 #, fuzzy
 #~| msgid "Install"
@@ -1323,11 +1354,6 @@ msgstr "下載熱門禮品"
 #~ msgid "Newest"
 #~ msgstr "新清單"
 
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "搜尋(&S)："
-
 #~ msgid "Author:"
 #~ msgstr "作者："
 
@@ -1404,11 +1430,6 @@ msgstr "下載熱門禮品"
 
 #~ msgid "Details"
 #~ msgstr "詳細資料"
-
-#, fuzzy
-#~| msgid "Update"
-#~ msgid "Updating"
-#~ msgstr "更新"
 
 #, fuzzy
 #~| msgid "Installation"

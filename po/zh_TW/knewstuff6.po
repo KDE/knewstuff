@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2023-01-29 23:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -385,22 +385,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "未知分類"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "玩意"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "下載新%1…"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "下載新%1"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -445,18 +452,26 @@ msgid "Installing %1 from %2"
 msgstr "從 %2 安裝 %1"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "目前正在處理 %2 的項目 %1。請稍候..."
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "正在使用 %2 更新 %1 項目。請稍候..."
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -495,11 +510,12 @@ msgstr "安裝"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "安裝…"
+msgid "Install…"
+msgstr "安裝"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -751,8 +767,9 @@ msgid "Show Most Downloaded First"
 msgstr "先顯示下載數最多的項目"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "上傳…"
 
 #: qtquick/qml/Page.qml:366
@@ -761,14 +778,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何將您自己的新玩意加到這個列表裡"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "跳到…"
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "搜尋…"
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "搜尋："
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -847,20 +866,25 @@ msgid "By <i>%1</i>"
 msgstr "由 <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "處理中…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "更新中..."
+msgid "Updating…"
+msgstr "更新中"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -876,9 +900,10 @@ msgstr ""
 "product=frameworks-knewstuff\">請在臭蟲報告中回報此問題至 KDE 社群</a>。"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "安裝中"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -913,10 +938,13 @@ msgid "Upload New Stuff: %1"
 msgstr "上傳好玩意：%1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "更新資訊中…"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1081,6 +1109,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下載熱門玩意..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "下載新%1…"
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "安裝…"
+
+#~ msgid "Search..."
+#~ msgstr "搜尋…"
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "更新中..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "安裝中"
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1317,9 +1366,6 @@ msgstr "下載熱門玩意..."
 #~ msgid "Order by:"
 #~ msgstr "排序依據："
 
-#~ msgid "Search:"
-#~ msgstr "搜尋："
-
 #~ msgid "Author:"
 #~ msgstr "作者："
 
@@ -1385,9 +1431,6 @@ msgstr "下載熱門玩意..."
 
 #~ msgid "Details"
 #~ msgstr "詳細資料"
-
-#~ msgid "Updating"
-#~ msgstr "更新中"
 
 #~ msgid "Install Again"
 #~ msgstr "再次安裝"

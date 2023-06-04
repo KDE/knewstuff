@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -356,7 +356,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Earráid anaithnid"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -364,14 +364,14 @@ msgstr "Earráid anaithnid"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New %1"
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "Íosluchtaigh %1 Nua"
 
 #: qtquick/qml/Dialog.qml:43
@@ -423,14 +423,14 @@ msgstr "Á Shuiteáil"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -472,7 +472,7 @@ msgstr "Suiteáil"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "Suiteáil"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -750,8 +750,9 @@ msgid "Show Most Downloaded First"
 msgstr "An líon is mó íosluchtuithe"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Uasluchtaigh..."
 
 #: qtquick/qml/Page.qml:366
@@ -762,14 +763,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "&Téigh go..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Cuardaigh"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Cuardaigh:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -862,7 +863,7 @@ msgstr "Le <i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -871,7 +872,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "Á Nuashonrú"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -889,7 +890,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "Á Shuiteáil"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -933,7 +934,7 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Faisnéis bhilleála:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1127,6 +1128,37 @@ msgid "Download New Stuff..."
 msgstr "Íosluchtaigh Stuif Nua..."
 
 #, fuzzy
+#~| msgid "Download New %1"
+#~ msgid "Download New %1..."
+#~ msgstr "Íosluchtaigh %1 Nua"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Suiteáil"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Cuardaigh"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Á Nuashonrú"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Á Shuiteáil"
+
+#, fuzzy
 #~| msgid "Installed"
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
@@ -1314,9 +1346,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #~ msgid "Order by:"
 #~ msgstr "Ord de réir:"
 
-#~ msgid "Search:"
-#~ msgstr "Cuardaigh:"
-
 #~ msgid "Author:"
 #~ msgstr "Údar:"
 
@@ -1399,9 +1428,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 
 #~ msgid "Details"
 #~ msgstr "Mionsonraí"
-
-#~ msgid "Updating"
-#~ msgstr "Á Nuashonrú"
 
 #~ msgid "Install Again"
 #~ msgstr "Suiteáil Arís"

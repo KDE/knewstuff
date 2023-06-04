@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -377,22 +377,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Ismeretlen kategória"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "cuccok"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "Új %1 letöltése…"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "Új %1 letöltése"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -438,18 +445,26 @@ msgid "Installing %1 from %2"
 msgstr "%1 telepítése innen: %2"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "A(z) %1 (szerző: %2) elem feldolgozása folyamatban. Kis türelmet…"
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "A(z) %1 (szerző: %2) elem frissítése folyamatban. Kis türelmet…"
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -489,11 +504,12 @@ msgstr "Telepítés"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Telepítés…"
+msgid "Install…"
+msgstr "Telepítés"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -748,8 +764,9 @@ msgid "Show Most Downloaded First"
 msgstr "Legtöbbször letöltöttek előre"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Feltöltés…"
 
 #: qtquick/qml/Page.qml:366
@@ -758,14 +775,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ismerje meg, hogyan addhatja hozzá saját munkáját ehhez a listához"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "Ugrás ide…"
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Keresés…"
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Keresés:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -848,20 +867,25 @@ msgid "By <i>%1</i>"
 msgstr "<i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "Folyamatban…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "Frissítés…"
+msgid "Updating…"
+msgstr "Frissítés"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -878,10 +902,11 @@ msgstr ""
 "Communitynek</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Telepítés…"
+msgid "Installing…"
+msgstr "Telepítés"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -916,10 +941,13 @@ msgid "Upload New Stuff: %1"
 msgstr "Új dolog feltöltése: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Adatok frissítése…"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1113,6 +1141,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Új kiegészítők letöltése…"
+
+#~ msgid "Download New %1..."
+#~ msgstr "Új %1 letöltése…"
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Telepítés…"
+
+#~ msgid "Search..."
+#~ msgstr "Keresés…"
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Frissítés…"
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Telepítés…"
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1377,9 +1426,6 @@ msgstr "Új kiegészítők letöltése…"
 #~ msgid "Order by:"
 #~ msgstr "Rendezés:"
 
-#~ msgid "Search:"
-#~ msgstr "Keresés:"
-
 #~ msgid "Author:"
 #~ msgstr "Szerző:"
 
@@ -1448,9 +1494,6 @@ msgstr "Új kiegészítők letöltése…"
 
 #~ msgid "Details"
 #~ msgstr "Részletek"
-
-#~ msgid "Updating"
-#~ msgstr "Frissítés"
 
 #~ msgid "Install Again"
 #~ msgstr "Új telepítési kísérlet"

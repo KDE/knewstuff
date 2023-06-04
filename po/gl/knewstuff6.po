@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2019-11-26 23:31+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -361,7 +361,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Categoría descoñecida"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -373,14 +373,14 @@ msgstr "Categoría descoñecida"
 #| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "Cousas"
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New %1"
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "Descargar novidades de %1"
 
 #: qtquick/qml/Dialog.qml:43
@@ -438,14 +438,18 @@ msgstr "Instalando %1 de %2"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Actualizando o elemento %1 de %2. Agarde…"
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Actualizando o elemento %1 de %2. Agarde…"
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -490,11 +494,12 @@ msgstr "Instalar"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Instalar…"
+msgid "Install…"
+msgstr "Instalar"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -790,7 +795,7 @@ msgstr "Mostrar primeiro o máis descargado"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "New Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "Envío novo"
 
 #: qtquick/qml/Page.qml:366
@@ -801,13 +806,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "&Ir a..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Buscar…"
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Buscar:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -897,16 +903,17 @@ msgstr "Por <i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "Actualizando…"
+msgid "Updating…"
+msgstr "Actualizando"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, fuzzy, kde-format
@@ -928,10 +935,11 @@ msgstr ""
 "informe de fallo."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Instalando…"
+msgid "Installing…"
+msgstr "Instalando"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -970,7 +978,7 @@ msgstr "Descargar novidades…"
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Información de contabilidade:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1159,6 +1167,29 @@ msgstr ""
 msgid "Download New Stuff..."
 msgstr "Descargar novidades…"
 
+#, fuzzy
+#~| msgid "Download New %1"
+#~ msgid "Download New %1..."
+#~ msgstr "Descargar novidades de %1"
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Instalar…"
+
+#~ msgid "Search..."
+#~ msgstr "Buscar…"
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Actualizando…"
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Instalando…"
+
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
 #~ msgstr "Non instalado:"
@@ -1324,9 +1355,6 @@ msgstr "Descargar novidades…"
 #~ msgid "Order by:"
 #~ msgstr "Ordenar segundo:"
 
-#~ msgid "Search:"
-#~ msgstr "Buscar:"
-
 #~ msgid "Author:"
 #~ msgstr "Autor:"
 
@@ -1395,9 +1423,6 @@ msgstr "Descargar novidades…"
 
 #~ msgid "Details"
 #~ msgstr "Detalles"
-
-#~ msgid "Updating"
-#~ msgstr "Actualizando"
 
 #~ msgid "Install Again"
 #~ msgstr "Instalar de novo"

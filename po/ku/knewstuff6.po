@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -362,7 +362,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Çewtiya nenas"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -370,14 +370,14 @@ msgstr "Çewtiya nenas"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New %1"
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "%1 Daxistina Nû"
 
 #: qtquick/qml/Dialog.qml:43
@@ -428,14 +428,14 @@ msgstr "Saz dike"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -477,7 +477,7 @@ msgstr "Saz Bike"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "Saz Bike"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -753,8 +753,9 @@ msgid "Show Most Downloaded First"
 msgstr "Yên Herî Zêde Hatine Daxistin"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "&Biguherîne..."
 
 #: qtquick/qml/Page.qml:366
@@ -765,14 +766,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "&Biçe..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Lêgerîn"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Lê Bigere:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -864,7 +865,7 @@ msgstr "Bi <i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -873,7 +874,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "Tê Rojanekirin"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -891,7 +892,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "Saz dike"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -933,7 +934,7 @@ msgstr "Taybetiyên Nû Daxe"
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Agahiya hesabkirinê:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1120,6 +1121,37 @@ msgid "Download New Stuff..."
 msgstr "Taybetiyên Nû Daxe..."
 
 #, fuzzy
+#~| msgid "Download New %1"
+#~ msgid "Download New %1..."
+#~ msgstr "%1 Daxistina Nû"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Saz Bike"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Lêgerîn"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Tê Rojanekirin"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Saz dike"
+
+#, fuzzy
 #~| msgid "Installed"
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
@@ -1302,9 +1334,6 @@ msgstr "Taybetiyên Nû Daxe..."
 #~ msgid "Order by:"
 #~ msgstr "Rêz bike li gorî:"
 
-#~ msgid "Search:"
-#~ msgstr "Lê Bigere:"
-
 #~ msgid "Author:"
 #~ msgstr "Nivîskarê Wê:"
 
@@ -1377,9 +1406,6 @@ msgstr "Taybetiyên Nû Daxe..."
 
 #~ msgid "Details"
 #~ msgstr "Kitekit"
-
-#~ msgid "Updating"
-#~ msgstr "Tê Rojanekirin"
 
 #~ msgid "Install Again"
 #~ msgstr "Cardin Saz Bike"

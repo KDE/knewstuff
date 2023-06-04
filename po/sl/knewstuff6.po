@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2023-04-24 09:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -389,22 +389,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Neznana kategorija"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "Stvari"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "Prejmi novosti %1..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "Prejmi novosti %1"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -451,18 +458,26 @@ msgid "Installing %1 from %2"
 msgstr "Nameščam %1 od %2"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Trenutno delam na postavki %1 za %2. Prosimo počakajte..."
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Trenutno posodabljam %1 za %2. Prosimo počakajte..."
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -502,11 +517,12 @@ msgstr "Namesti"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Namesti..."
+msgid "Install…"
+msgstr "Namesti"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -763,8 +779,9 @@ msgid "Show Most Downloaded First"
 msgstr "Pokaži najprej največkrat prenesene"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Pošlji..."
 
 #: qtquick/qml/Page.qml:366
@@ -773,14 +790,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Naučite se dodati lastno vroče blago v ta seznam"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "Pojd&i na..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Poišči..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Išči:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -859,20 +878,25 @@ msgid "By <i>%1</i>"
 msgstr "Avtor <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "Delam..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "Posodabljam..."
+msgid "Updating…"
+msgstr "Posodabljanje"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -889,10 +913,11 @@ msgstr ""
 "napaki</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Nameščam..."
+msgid "Installing…"
+msgstr "Nameščanje"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -924,10 +949,13 @@ msgid "Upload New Stuff: %1"
 msgstr "Prenesi tja novosti: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Osvežujem informacije..."
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1117,6 +1145,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Prejmi vroče novosti ..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "Prejmi novosti %1..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Namesti..."
+
+#~ msgid "Search..."
+#~ msgstr "Poišči..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Posodabljam..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Nameščam..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1379,9 +1428,6 @@ msgstr "Prejmi vroče novosti ..."
 #~ msgid "Order by:"
 #~ msgstr "Razvrsti po:"
 
-#~ msgid "Search:"
-#~ msgstr "Išči:"
-
 #~ msgid "Author:"
 #~ msgstr "Avtor:"
 
@@ -1456,9 +1502,6 @@ msgstr "Prejmi vroče novosti ..."
 
 #~ msgid "Details"
 #~ msgstr "Podrobnosti"
-
-#~ msgid "Updating"
-#~ msgstr "Posodabljanje"
 
 #~ msgid "Install Again"
 #~ msgstr "Znova namesti"

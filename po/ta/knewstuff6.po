@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2023-02-02 19:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -373,22 +373,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "தெரியாத பகுப்பு"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "புதியவற்றை"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "%1 பதிவிறக்கு..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "%1 பதிவிறக்கு"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -438,14 +445,14 @@ msgstr "%2 வழங்கும் %1 நிறுவப்படுகிற�
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -482,11 +489,12 @@ msgstr "நிறுவு"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "நிறுவு..."
+msgid "Install…"
+msgstr "நிறுவு"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -743,8 +751,9 @@ msgid "Show Most Downloaded First"
 msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "பதிவேற்று…"
 
 #: qtquick/qml/Page.qml:366
@@ -753,14 +762,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "செல்..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "தேடு..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "தேடு:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -839,20 +850,25 @@ msgid "By <i>%1</i>"
 msgstr "இயற்றியவர் <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "வேலை செய்கிறது..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "புதுப்பிக்கப்படுகிறது..."
+msgid "Updating…"
+msgstr "புதுப்பிக்கப்படுகிறது"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -869,10 +885,11 @@ msgstr ""
 "a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "நிறுவப்படுகிறது..."
+msgid "Installing…"
+msgstr "நிறுவப்படுகிறது"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -906,10 +923,13 @@ msgid "Upload New Stuff: %1"
 msgstr "புதியதை பதிவேற்று: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "விவரங்கள் புதுப்பிக்கப்படுகின்றன..."
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1088,6 +1108,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "புதியவற்றை பதிவிறக்கு..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "%1 பதிவிறக்கு..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "நிறுவு..."
+
+#~ msgid "Search..."
+#~ msgstr "தேடு..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "புதுப்பிக்கப்படுகிறது..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "நிறுவப்படுகிறது..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1292,9 +1333,6 @@ msgstr "புதியவற்றை பதிவிறக்கு..."
 #~ msgid "Order by:"
 #~ msgstr "வரிசை முறை:"
 
-#~ msgid "Search:"
-#~ msgstr "தேடு:"
-
 #~ msgid "Author:"
 #~ msgstr "இயற்றியவர்:"
 
@@ -1365,9 +1403,6 @@ msgstr "புதியவற்றை பதிவிறக்கு..."
 
 #~ msgid "Details"
 #~ msgstr "விவரங்கள்"
-
-#~ msgid "Updating"
-#~ msgstr "புதுப்பிக்கப்படுகிறது"
 
 #~ msgid "Install Again"
 #~ msgstr "மீண்டும் நிறுவு"

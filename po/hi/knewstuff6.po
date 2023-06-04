@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2022-02-26 11:47+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -352,7 +352,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "अज्ञात त्रुटि"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -360,14 +360,14 @@ msgstr "अज्ञात त्रुटि"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "ताज़ा सामग्री डाउनलोड करें"
 
 #: qtquick/qml/Dialog.qml:43
@@ -418,14 +418,14 @@ msgstr "संस्थापित हो रहा"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -467,7 +467,7 @@ msgstr "संस्थापित करें"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "संस्थापित करें"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -747,7 +747,7 @@ msgstr "अधिकतम डाउनलोड्स"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "New Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "नया अपलोड"
 
 #: qtquick/qml/Page.qml:366
@@ -758,14 +758,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "यहाँ जाएं... (&G)"
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ढूंढें"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ढूंढें:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -857,7 +857,7 @@ msgstr "<i>%1</i>से"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -866,7 +866,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "अद्यतन हो रहा"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -884,7 +884,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "संस्थापित हो रहा"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -926,7 +926,7 @@ msgstr "ताज़ा सामग्री डाउनलोड करें
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "बिलिंग जानकारी"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1112,6 +1112,37 @@ msgid "Download New Stuff..."
 msgstr "ताज़ा सामग्री डाउनलोड करें"
 
 #, fuzzy
+#~| msgid "Download New Stuff..."
+#~ msgid "Download New %1..."
+#~ msgstr "ताज़ा सामग्री डाउनलोड करें"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "संस्थापित करें"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ढूंढें"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "अद्यतन हो रहा"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "संस्थापित हो रहा"
+
+#, fuzzy
 #~| msgid "Installed"
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
@@ -1273,9 +1304,6 @@ msgstr "ताज़ा सामग्री डाउनलोड करें
 #~ msgid "Order by:"
 #~ msgstr "ऐसे जमाएँ"
 
-#~ msgid "Search:"
-#~ msgstr "ढूंढें:"
-
 #~ msgid "Author:"
 #~ msgstr "लेखकः"
 
@@ -1348,9 +1376,6 @@ msgstr "ताज़ा सामग्री डाउनलोड करें
 
 #~ msgid "Details"
 #~ msgstr "विवरण"
-
-#~ msgid "Updating"
-#~ msgstr "अद्यतन हो रहा"
 
 #~ msgid "Install Again"
 #~ msgstr "फिर स्थापित करें"

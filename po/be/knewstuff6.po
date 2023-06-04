@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2009-09-06 15:21+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -362,7 +362,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Невядомая памылка"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -370,14 +370,14 @@ msgstr "Невядомая памылка"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New %1"
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "Сцягнуць новую %1"
 
 #: qtquick/qml/Dialog.qml:43
@@ -428,14 +428,14 @@ msgstr "Устанавіць"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -477,7 +477,7 @@ msgstr "Устанавіць"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "Устанавіць"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -758,7 +758,7 @@ msgstr "Больш спампоўванняў"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "&Replace..."
-msgid "Upload..."
+msgid "Upload…"
 msgstr "&Замяніць..."
 
 #: qtquick/qml/Page.qml:366
@@ -769,14 +769,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "&Ісці да..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Пошук"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Шукаць:"
 
 #: qtquick/qml/Page.qml:424
 #, fuzzy, kde-format
@@ -869,7 +869,7 @@ msgstr "<i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -878,7 +878,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "Абнавіць"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -896,7 +896,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "Устанавіць"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -937,7 +937,7 @@ msgstr "Сцягнцуь новыя файлы"
 #| msgid "Show license information"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Паказаць звесткі пра ліцэнзію"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1120,6 +1120,37 @@ msgstr ""
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
 msgstr "Сцягнцуь новыя файлы"
+
+#, fuzzy
+#~| msgid "Download New %1"
+#~ msgid "Download New %1..."
+#~ msgstr "Сцягнуць новую %1"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Устанавіць"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Пошук"
+
+#, fuzzy
+#~| msgid "Update"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Абнавіць"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Устанавіць"
 
 #, fuzzy
 #~| msgid "Install"
@@ -1330,9 +1361,6 @@ msgstr "Сцягнцуь новыя файлы"
 #~ msgid "Order by:"
 #~ msgstr "Упарадкаваць па:"
 
-#~ msgid "Search:"
-#~ msgstr "Шукаць:"
-
 #~ msgid "Author:"
 #~ msgstr "Аўтар:"
 
@@ -1405,11 +1433,6 @@ msgstr "Сцягнцуь новыя файлы"
 
 #~ msgid "Details"
 #~ msgstr "Падрабязнасці"
-
-#, fuzzy
-#~| msgid "Update"
-#~ msgid "Updating"
-#~ msgstr "Абнавіць"
 
 #, fuzzy
 #~| msgid "Install"

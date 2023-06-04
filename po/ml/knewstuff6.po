@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2010-12-29 15:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -343,7 +343,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "അപരിചിതമായ പിശകു്"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -351,14 +351,14 @@ msgstr "അപരിചിതമായ പിശകു്"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "പുതിയവ ഇറക്കുക..."
 
 #: qtquick/qml/Dialog.qml:43
@@ -409,14 +409,14 @@ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തുകൊണ്�
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -458,7 +458,7 @@ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -733,7 +733,7 @@ msgstr "ഏറ്റവുമധികം ഇറക്കിയത്"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "New Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "പുതുതായി കയറ്റുക"
 
 #: qtquick/qml/Page.qml:366
@@ -744,14 +744,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "പോകുക &g..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "തെരയുക"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "തെരയുക:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -843,7 +843,7 @@ msgstr "<i>%1</i> അണിയിച്ചൊരുക്കിയതു്"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -852,7 +852,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "പുതുക്കിക്കൊണ്ടിരിയ്ക്കുന്നു"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -870,7 +870,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തുകൊണ്ടിരിയ്ക്കുന്നു"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -912,7 +912,7 @@ msgstr "പുതിയവ ഇറക്കുക..."
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "ബില്ലിങ് വിവരങ്ങള്‍:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1098,6 +1098,37 @@ msgid "Download New Stuff..."
 msgstr "പുതിയവ ഇറക്കുക..."
 
 #, fuzzy
+#~| msgid "Download New Stuff..."
+#~ msgid "Download New %1..."
+#~ msgstr "പുതിയവ ഇറക്കുക..."
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "തെരയുക"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "പുതുക്കിക്കൊണ്ടിരിയ്ക്കുന്നു"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തുകൊണ്ടിരിയ്ക്കുന്നു"
+
+#, fuzzy
 #~ msgctxt "@action:inmenu"
 #~ msgid "Not installed:"
 #~ msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്തതു്"
@@ -1225,9 +1256,6 @@ msgstr "പുതിയവ ഇറക്കുക..."
 #~ msgid "Order by:"
 #~ msgstr "ക്രമത്തിലാക്കേണ്ടതു്:"
 
-#~ msgid "Search:"
-#~ msgstr "തെരയുക:"
-
 #~ msgid "Author:"
 #~ msgstr "രചയിതാവ്:"
 
@@ -1286,9 +1314,6 @@ msgstr "പുതിയവ ഇറക്കുക..."
 
 #~ msgid "Details"
 #~ msgstr "വിശദാംശങ്ങള്‍"
-
-#~ msgid "Updating"
-#~ msgstr "പുതുക്കിക്കൊണ്ടിരിയ്ക്കുന്നു"
 
 #~ msgid "Install Again"
 #~ msgstr "വീണ്ടും ഇന്‍സ്റ്റോള്‍ ചെയ്യുക"

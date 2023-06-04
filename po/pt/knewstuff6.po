@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2022-12-15 09:31+0000\n"
 "Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -480,22 +480,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Categoria Desconhecida"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "Coisas"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "Obter %1 Novas..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "Obter %1 Novos/as"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -542,18 +549,26 @@ msgid "Installing %1 from %2"
 msgstr "A Instalar %1 de %2"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "A tratar de momento o item %1 de %2. Espere por favor..."
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "A actualizar de momento o item %1 de %2. Espere por favor..."
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -593,11 +608,12 @@ msgstr "Instalar"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Instalar..."
+msgid "Install…"
+msgstr "Instalar"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -854,8 +870,9 @@ msgid "Show Most Downloaded First"
 msgstr "Mostrar os Mais Transferidos Primeiro"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Enviar..."
 
 #: qtquick/qml/Page.qml:366
@@ -864,14 +881,16 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Aprenda como adicionar os seus itens novos a esta lista"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "Ir para..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Procurar..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Procurar:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -950,20 +969,25 @@ msgid "By <i>%1</i>"
 msgstr "De <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "Em curso..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "A actualizar..."
+msgid "Updating…"
+msgstr "A Actualizar"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -980,10 +1004,11 @@ msgstr ""
 "do KDE num relatório de erros</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "A instalar..."
+msgid "Installing…"
+msgstr "A Instalar"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -1017,10 +1042,13 @@ msgid "Upload New Stuff: %1"
 msgstr "Enviar Coisas Novas: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "A actualizar as informações..."
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1211,6 +1239,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Obter Coisas Novas..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "Obter %1 Novas..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Instalar..."
+
+#~ msgid "Search..."
+#~ msgstr "Procurar..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "A actualizar..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "A instalar..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1480,9 +1529,6 @@ msgstr "Obter Coisas Novas..."
 #~ msgid "Order by:"
 #~ msgstr "Ordenar por:"
 
-#~ msgid "Search:"
-#~ msgstr "Procurar:"
-
 #~ msgid "Author:"
 #~ msgstr "Autor:"
 
@@ -1551,9 +1597,6 @@ msgstr "Obter Coisas Novas..."
 
 #~ msgid "Details"
 #~ msgstr "Detalhes"
-
-#~ msgid "Updating"
-#~ msgstr "A Actualizar"
 
 #~ msgid "Install Again"
 #~ msgstr "Instalar de Novo"

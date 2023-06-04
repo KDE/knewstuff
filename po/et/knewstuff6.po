@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2020-10-07 21:04+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -377,22 +377,29 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Tundmatu kategooria"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "kraami"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
-msgstr "Laadi alla uut %1 ..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
+msgstr "Uue kraami tõmbamine: %1"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -447,14 +454,18 @@ msgstr "%1 paigaldamine asukohast %2"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Praegu uuendatakse komponenti %1, mille autor on %2. Palun oota ..."
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Praegu uuendatakse komponenti %1, mille autor on %2. Palun oota ..."
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -494,11 +505,12 @@ msgstr "Paigalda"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Paigalda ..."
+msgid "Install…"
+msgstr "Paigalda"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -784,8 +796,9 @@ msgid "Show Most Downloaded First"
 msgstr "Kõige enam alla laaditute näitamine esimesena"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Üleslaadimine..."
 
 #: qtquick/qml/Page.qml:366
@@ -796,13 +809,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "&Mine..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
-msgstr "Otsi ..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Otsing:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -889,16 +903,17 @@ msgstr "Autor: <i>%1</i>"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updating"
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
-msgstr "Uuendamine ..."
+msgid "Updating…"
+msgstr "Uuendamine"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -915,10 +930,11 @@ msgstr ""
 "veateatega</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Paigaldamine ..."
+msgid "Installing…"
+msgstr "Paigaldamine"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -960,7 +976,7 @@ msgstr "Uue kraami tõmbamine"
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Arvestusinfo:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1154,6 +1170,27 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Laadi alla uut kraami..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "Laadi alla uut %1 ..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Paigalda ..."
+
+#~ msgid "Search..."
+#~ msgstr "Otsi ..."
+
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "Uuendamine ..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Paigaldamine ..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
@@ -1417,9 +1454,6 @@ msgstr "Laadi alla uut kraami..."
 #~ msgid "Order by:"
 #~ msgstr "Järjekorra alus:"
 
-#~ msgid "Search:"
-#~ msgstr "Otsing:"
-
 #~ msgid "Author:"
 #~ msgstr "Autor:"
 
@@ -1488,9 +1522,6 @@ msgstr "Laadi alla uut kraami..."
 
 #~ msgid "Details"
 #~ msgstr "Üksikasjad"
-
-#~ msgid "Updating"
-#~ msgstr "Uuendamine"
 
 #~ msgid "Install Again"
 #~ msgstr "Paigalda uuesti"

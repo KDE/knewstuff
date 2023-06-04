@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -348,7 +348,7 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "نامەلۇم خاتالىق"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
@@ -356,14 +356,14 @@ msgstr "نامەلۇم خاتالىق"
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
-msgid "Download New %1..."
+msgid "Download New %1…"
 msgstr "يېڭى قورال چۈشۈر…"
 
 #: qtquick/qml/Dialog.qml:43
@@ -414,14 +414,14 @@ msgstr "ئورنىتىۋاتىدۇ"
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -463,7 +463,7 @@ msgstr "ئورنات"
 #| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
+msgid "Install…"
 msgstr "ئورنات"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
@@ -742,7 +742,7 @@ msgstr "ئەڭ كۆپ چۈشۈرۈلمە"
 #: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "New Upload"
-msgid "Upload..."
+msgid "Upload…"
 msgstr "يېڭى يۈك"
 
 #: qtquick/qml/Page.qml:366
@@ -753,14 +753,14 @@ msgstr ""
 #: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "&Go To..."
-msgid "Go to..."
+msgid "Go to…"
 msgstr "يۆتكەل(&G)…"
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ئىزدە"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ئىزدە:"
 
 #: qtquick/qml/Page.qml:424
 #, kde-format
@@ -852,7 +852,7 @@ msgstr "<i>%1</i> غا ئاساسەن"
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
@@ -861,7 +861,7 @@ msgstr ""
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "يېڭىلاۋاتىدۇ"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -879,7 +879,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
+msgid "Installing…"
 msgstr "ئورنىتىۋاتىدۇ"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
@@ -921,7 +921,7 @@ msgstr "يېڭى قورال چۈشۈر…"
 #| msgid "Billing information:"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "تەرتىپ ئۇچۇرى:"
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1105,6 +1105,37 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "يېڭى قورال چۈشۈر…"
+
+#, fuzzy
+#~| msgid "Download New Stuff..."
+#~ msgid "Download New %1..."
+#~ msgstr "يېڭى قورال چۈشۈر…"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "ئورنات"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ئىزدە"
+
+#, fuzzy
+#~| msgid "Updating"
+#~ msgctxt ""
+#~ "Label for the busy indicator showing an item is in the process of being "
+#~ "updated"
+#~ msgid "Updating..."
+#~ msgstr "يېڭىلاۋاتىدۇ"
+
+#, fuzzy
+#~| msgid "Installing"
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "ئورنىتىۋاتىدۇ"
 
 #, fuzzy
 #~| msgid "Installed"
@@ -1294,9 +1325,6 @@ msgstr "يېڭى قورال چۈشۈر…"
 #~ msgid "Order by:"
 #~ msgstr "تەرتىپى:"
 
-#~ msgid "Search:"
-#~ msgstr "ئىزدە:"
-
 #~ msgid "Author:"
 #~ msgstr "ئاپتور:"
 
@@ -1366,9 +1394,6 @@ msgstr "يېڭى قورال چۈشۈر…"
 
 #~ msgid "Details"
 #~ msgstr "تەپسىلاتلار"
-
-#~ msgid "Updating"
-#~ msgstr "يېڭىلاۋاتىدۇ"
 
 #~ msgid "Install Again"
 #~ msgstr "قايتا ئورنات"

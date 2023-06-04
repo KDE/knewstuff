@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 02:04+0000\n"
+"POT-Creation-Date: 2023-06-04 02:16+0000\n"
 "PO-Revision-Date: 2023-04-04 00:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -390,21 +390,28 @@ msgctxt ""
 msgid "Unknown Category"
 msgstr "Bilinmeyen Kategori"
 
-#. i18nd("knewstuff6", "Download New %1...").
+#. i18nd("knewstuff6", "Download New %1…").
 #. *
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Used to construct the button's label (which will become Download New "
+#| "'this value'...)"
+#| msgid "Stuff"
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
-"value'...)"
+"value'…)"
 msgid "Stuff"
 msgstr "Şeyler"
 
 #: qtquick/qml/Button.qml:44
-#, kde-format
-msgid "Download New %1..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The dialog title when we know which type of stuff is being requested"
+#| msgid "Download New %1"
+msgid "Download New %1…"
 msgstr "Yeni %1 İndir..."
 
 #: qtquick/qml/Dialog.qml:43
@@ -452,19 +459,27 @@ msgid "Installing %1 from %2"
 msgstr "%1, %2 konumundan kuruluyor"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "installed OR uninstalled"
+#| msgid "Currently working on the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
-msgid "Currently working on the item %1 by %2. Please wait..."
+msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 "%2 tarafından yapılan %1 ögesi üzerinde çalışılıyor. Lütfen bekleyin..."
 
 #: qtquick/qml/EntryDetails.qml:67
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Status message to be shown when the entry is in the process of being "
+#| "updated"
+#| msgid "Currently updating the item %1 by %2. Please wait..."
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
-msgid "Currently updating the item %1 by %2. Please wait..."
+msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "%2 tarafından yapılan %1 ögesi güncelleniyor. Lütfen bekleyin..."
 
 #: qtquick/qml/EntryDetails.qml:69
@@ -504,11 +519,12 @@ msgstr "Kur"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
-msgid "Install..."
-msgstr "Kur..."
+msgid "Install…"
+msgstr "Kur"
 
 #: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -764,8 +780,9 @@ msgid "Show Most Downloaded First"
 msgstr "Önce En Çok İndirilen"
 
 #: qtquick/qml/Page.qml:365
-#, kde-format
-msgid "Upload..."
+#, fuzzy, kde-format
+#| msgid "Upload..."
+msgid "Upload…"
 msgstr "Karşıya Yükle..."
 
 #: qtquick/qml/Page.qml:366
@@ -774,13 +791,15 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Bu listeye kendi yeni şeylerinizi nasıl ekleyeceğinizi öğrenin"
 
 #: qtquick/qml/Page.qml:374
-#, kde-format
-msgid "Go to..."
+#, fuzzy, kde-format
+#| msgid "Go to..."
+msgid "Go to…"
 msgstr "Git..."
 
 #: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Ara..."
 
 #: qtquick/qml/Page.qml:424
@@ -860,19 +879,27 @@ msgid "By <i>%1</i>"
 msgstr "<i>%1</i> tarafından"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is being installed OR "
+#| "uninstalled"
+#| msgid "Working..."
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
-msgid "Working..."
+msgid "Working…"
 msgstr "Çalışıyor..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Label for the busy indicator showing an item is in the process of being "
+#| "updated"
+#| msgid "Updating..."
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
-msgid "Updating..."
+msgid "Updating…"
 msgstr "Güncelleniyor..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
@@ -890,10 +917,11 @@ msgstr ""
 "ile birlikte bildirin</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
-msgid "Installing..."
-msgstr "Kuruluyor..."
+msgid "Installing…"
+msgstr "Kuruluyor"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -925,10 +953,13 @@ msgid "Upload New Stuff: %1"
 msgstr "Yeni Şeyler Karşıya Yükle: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A text shown beside a busy indicator suggesting that data is being fetched"
+#| msgid "Updating information..."
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Updating information..."
+msgid "Updating information…"
 msgstr "Bilgi güncelleniyor..."
 
 #: qtquick/qml/UploadPage.qml:95
@@ -1118,6 +1149,18 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Yeni Şeyler İndir..."
+
+#~ msgid "Download New %1..."
+#~ msgstr "Yeni %1 İndir..."
+
+#~ msgctxt ""
+#~ "Show installation options, where there is more than one downloadable item"
+#~ msgid "Install..."
+#~ msgstr "Kur..."
+
+#~ msgctxt "Label for the busy indicator showing an item is installing"
+#~ msgid "Installing..."
+#~ msgstr "Kuruluyor..."
 
 #~ msgid ""
 #~ "The installation of %1 failed, as the downloaded package does not contain "
