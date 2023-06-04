@@ -103,14 +103,14 @@ void Installation::install(const Entry &entry)
 void Installation::downloadPayload(const KNSCore::Entry &entry)
 {
     if (!entry.isValid()) {
-        Q_EMIT signalInstallationFailed(i18n("Invalid item."));
+        Q_EMIT signalInstallationFailed(i18n("Invalid item."), entry);
         return;
     }
     QUrl source = QUrl(entry.payload());
 
     if (!source.isValid()) {
         qCCritical(KNEWSTUFFCORE) << "The entry doesn't have a payload.";
-        Q_EMIT signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()));
+        Q_EMIT signalInstallationFailed(i18n("Download of item failed: no download URL for \"%1\".", entry.name()), entry);
         return;
     }
 
@@ -143,7 +143,7 @@ void Installation::slotPayloadResult(KJob *job)
         if (job->error()) {
             const QString errorMessage = i18n("Download of \"%1\" failed, error: %2", entry.name(), job->errorString());
             qCWarning(KNEWSTUFFCORE) << errorMessage;
-            Q_EMIT signalInstallationFailed(errorMessage);
+            Q_EMIT signalInstallationFailed(errorMessage, entry);
         } else {
             FileCopyJob *fcjob = static_cast<FileCopyJob *>(job);
             qCDebug(KNEWSTUFFCORE) << "Copied to" << fcjob->destUrl();
@@ -153,7 +153,7 @@ void Installation::slotPayloadResult(KJob *job)
                 const auto error = i18n("Cannot install '%1' because it points to a web page. Click <a href='%2'>here</a> to finish the installation.",
                                         entry.name(),
                                         fcjob->srcUrl().toString());
-                Q_EMIT signalInstallationFailed(error);
+                Q_EMIT signalInstallationFailed(error, entry);
                 entry.setStatus(KNSCore::Entry::Invalid);
                 Q_EMIT signalEntryChanged(entry);
                 return;
@@ -188,7 +188,7 @@ void KNSCore::Installation::install(KNSCore::Entry entry, const QString &downloa
                 entry.setStatus(KNSCore::Entry::Updateable);
             }
             Q_EMIT signalEntryChanged(entry);
-            Q_EMIT signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()));
+            Q_EMIT signalInstallationFailed(i18n("Could not install \"%1\": file not found.", entry.name()), entry);
             return;
         }
 
@@ -354,7 +354,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                                               "just make a small fib and say we totally installed that, honest, and we now have files"
                                            << job->package().path();
                 } else {
-                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()));
+                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", payloadfile, job->errorText()), entry);
                     resetEntryStatus();
                     qCDebug(KNEWSTUFFCORE) << "Install job finished with error state" << job->error() << "and description" << job->error();
                 }
@@ -567,7 +567,8 @@ void Installation::uninstall(Entry entry)
                             i18n("The removal of %1 failed, as the installed file %2 could not be automatically removed. You can attempt to manually delete "
                                  "this file, if you believe this is an error.",
                                  entry.name(),
-                                 file));
+                                 file),
+                            entry);
                         // Assume that the uninstallation has failed, and reset the entry to an installed state
                         deletionSuccessful = false;
                         break;
@@ -599,7 +600,7 @@ void Installation::uninstall(Entry entry)
                     newEntry.setEntryDeleted();
                     Q_EMIT signalEntryChanged(newEntry);
                 } else {
-                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()));
+                    Q_EMIT signalInstallationFailed(i18n("Installation of %1 failed: %2", installedFile, job->errorText()), entry);
                 }
             });
         }

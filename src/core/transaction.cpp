@@ -23,9 +23,10 @@ using namespace KNSCore;
 class KNSCore::TransactionPrivate
 {
 public:
-    TransactionPrivate(EngineBase *engine, Transaction *q)
+    TransactionPrivate(const KNSCore::Entry &entry, EngineBase *engine, Transaction *q)
         : m_engine(engine)
         , q(q)
+        , subject(entry)
     {
     }
 
@@ -43,6 +44,7 @@ public:
     // TODO KF6: Installed state needs to move onto a per-downloadlink basis rather than per-entry
     QMap<Entry, QStringList> payloads;
     QMap<Entry, QString> payloadToIdentify;
+    const Entry subject;
 };
 
 /**
@@ -113,13 +115,19 @@ static QString getAdoptionCommand(const QString &command, const KNSCore::Entry &
     return adoption;
 }
 
-Transaction::Transaction(EngineBase *engine)
+Transaction::Transaction(const KNSCore::Entry &entry, EngineBase *engine)
     : QObject(engine)
-    , d(new TransactionPrivate(engine, this))
+    , d(new TransactionPrivate(entry, engine, this))
 {
     connect(d->m_engine->d->installation, &Installation::signalEntryChanged, this, [this](const KNSCore::Entry &changedEntry) {
         Q_EMIT signalEntryEvent(changedEntry, Entry::StatusChangedEvent);
         d->m_engine->cache()->registerChangedEntry(changedEntry);
+    });
+    connect(d->m_engine->d->installation, &Installation::signalInstallationFailed, this, [this](const QString &message, const KNSCore::Entry &entry) {
+        if (entry == d->subject) {
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::InstallationError, message, {});
+            d->finish();
+        }
     });
 }
 
@@ -127,7 +135,7 @@ Transaction::~Transaction() = default;
 
 Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_entry, int _linkId)
 {
-    auto ret = new Transaction(engine);
+    auto ret = new Transaction(_entry, engine);
     connect(engine->d->installation, &Installation::signalInstallationError, ret, [ret, _entry](const QString &msg, const KNSCore::Entry &entry) {
         if (_entry.uniqueId() == entry.uniqueId()) {
             ret->signalErrorCode(KNSCore::InstallationError, msg, {});
@@ -299,7 +307,7 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
 
 Transaction *Transaction::uninstall(EngineBase *engine, const KNSCore::Entry &_entry)
 {
-    auto ret = new Transaction(engine);
+    auto ret = new Transaction(_entry, engine);
     const KNSCore::Entry::List list = ret->d->m_engine->cache()->registryForProvider(_entry.providerId());
     // we have to use the cached entry here, not the entry from the provider
     // since that does not contain the list of installed files
@@ -339,7 +347,7 @@ Transaction *Transaction::adopt(EngineBase *engine, const Entry &entry)
         return nullptr;
     }
 
-    auto ret = new Transaction(engine);
+    auto ret = new Transaction(entry, engine);
     const QString command = getAdoptionCommand(engine->d->adoptionCommand, entry, engine->d->installation);
 
     QTimer::singleShot(0, ret, [command, entry, ret] {

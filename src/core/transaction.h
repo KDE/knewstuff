@@ -96,7 +96,7 @@ Q_SIGNALS:
     void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
 private:
-    Transaction(EngineBase *engine);
+    Transaction(const KNSCore::Entry &entry, EngineBase *engine);
     void downloadLinkLoaded(const KNSCore::Entry &entry);
 
     std::unique_ptr<TransactionPrivate> d;
