@@ -1138,15 +1138,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Last ned nye saker …"
-
-#~ msgid "Download New %1..."
-#~ msgstr "Last ned nye %1 …"
-
-#~ msgctxt ""
-#~ "Show installation options, where there is more than one downloadable item"
-#~ msgid "Install..."
-#~ msgstr "Installer …"
-
-#~ msgctxt "Label for the busy indicator showing an item is installing"
-#~ msgid "Installing..."
-#~ msgstr "Installerer …"
