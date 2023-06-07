@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-04 02:16+0000\n"
+"POT-Creation-Date: 2023-06-07 02:18+0000\n"
 "PO-Revision-Date: 2023-06-04 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Manquen totes les categories"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -42,7 +42,7 @@ msgstr ""
 "Aquest element val %1 %2.\n"
 "El voleu comprar?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -53,18 +53,18 @@ msgstr ""
 "Saldo: %1\n"
 "Preu: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "El vostre vot s'ha enregistrat."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Ara sou un fan."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -74,18 +74,18 @@ msgstr ""
 "El servei es troba actualment en manteniment i s'espera que torni a "
 "funcionar el %1."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Error de la xarxa %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Hi ha massa peticions al servidor. Torneu-ho a provar en uns quants minuts."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:595
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -94,7 +94,7 @@ msgstr ""
 "La instància %1 dels Open Collaboration Services no permet la funció que "
 "s'ha intentat."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:599
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Error desconegut de l'API dels serveis «Open Collaboration». (%1)"
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "No s'ha pogut instal·lar «%1»: no s'ha trobat el fitxer."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:603
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "La instal·lació de %1 ha fallat: %2"
@@ -305,7 +305,7 @@ msgstr ""
 "eliminar automàticament. Si creu que es tracta d'un error, podeu provar "
 "eliminant manualment aquest fitxer."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:636
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -330,7 +330,7 @@ msgstr "No s'ha pogut obrir %1 per a escriptura"
 msgid "Could not open %1 for reading"
 msgstr "No s'ha pogut obrir %1 per a lectura"
 
-#: core/transaction.cpp:142
+#: core/transaction.cpp:154
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -340,12 +340,12 @@ msgstr ""
 "definit cap element descarregable. Contacteu amb l'autor perquè puguin "
 "solucionar aquest problema."
 
-#: core/transaction.cpp:251
+#: core/transaction.cpp:263
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Trieu l'element d'actualització"
 
-#: core/transaction.cpp:253
+#: core/transaction.cpp:265
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -356,7 +356,7 @@ msgstr ""
 "aquesta actualització. No es pot identificar l'element a seleccionar, basant-"
 "se en l'element original, el qual s'anomenava %1"
 
-#: core/transaction.cpp:272
+#: core/transaction.cpp:289
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -365,7 +365,7 @@ msgstr ""
 "S'ha fallat en identificar un bon enllaç per a actualitzar %1 i no es pot "
 "realitzar l'actualització"
 
-#: core/transaction.cpp:355
+#: core/transaction.cpp:376
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -405,13 +405,13 @@ msgstr "novetats"
 msgid "Download New %1…"
 msgstr "Baixa %1…"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "Baixa %1"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -437,19 +437,19 @@ msgstr ""
 "opcions disponibles, contacteu amb els autors d'aquest element i demaneu que "
 "ho aclareixin reanomenant els elements."
 
-#: qtquick/qml/DownloadItemsSheet.qml:62
+#: qtquick/qml/DownloadItemsSheet.qml:63
 #, kde-format
 msgid "Install"
 msgstr "Instal·la"
 
-#: qtquick/qml/EntryDetails.qml:49
+#: qtquick/qml/EntryDetails.qml:51
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "S'està instal·lant %1 des de %2"
 
-#: qtquick/qml/EntryDetails.qml:65
+#: qtquick/qml/EntryDetails.qml:74
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -457,14 +457,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Actualment, s'està treballant sobre l'element %1 per a %2. Espereu…"
 
-#: qtquick/qml/EntryDetails.qml:67
+#: qtquick/qml/EntryDetails.qml:77
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Actualment, s'està actualitzant l'element %1 per a %2. Espereu…"
 
-#: qtquick/qml/EntryDetails.qml:69
+#: qtquick/qml/EntryDetails.qml:80
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -478,7 +478,7 @@ msgstr ""
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Informeu-"
 "ho a la comunitat KDE amb un informe d'error</a>."
 
-#: qtquick/qml/EntryDetails.qml:83
+#: qtquick/qml/EntryDetails.qml:94
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -486,7 +486,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 per %2"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -497,7 +497,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Instal·la"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -507,7 +507,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instal·la…"
 
-#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -516,19 +516,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Actualitza"
 
-#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
-#: qtquick/qml/Page.qml:154
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
+#: qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: qtquick/qml/EntryDetails.qml:151
+#: qtquick/qml/EntryDetails.qml:185
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Comentaris i ressenyes:"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:187
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -536,17 +536,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 ressenyes i comentaris"
 
-#: qtquick/qml/EntryDetails.qml:158
+#: qtquick/qml/EntryDetails.qml:193
 #, kde-format
 msgid "Rating:"
 msgstr "Puntuació:"
 
-#: qtquick/qml/EntryDetails.qml:162
+#: qtquick/qml/EntryDetails.qml:198
 #, kde-format
 msgid "Homepage:"
 msgstr "Pàgina web:"
 
-#: qtquick/qml/EntryDetails.qml:163
+#: qtquick/qml/EntryDetails.qml:199
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -555,12 +555,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Obre la pàgina web de %1"
 
-#: qtquick/qml/EntryDetails.qml:168
+#: qtquick/qml/EntryDetails.qml:205
 #, kde-format
 msgid "How To Donate:"
 msgstr "Com fer un donatiu:"
 
-#: qtquick/qml/EntryDetails.qml:169
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -568,26 +568,26 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Trobeu com fer una donació al projecte"
 
-#: qtquick/qml/NewStuffItem.qml:22
+#: qtquick/qml/NewStuffItem.qml:25
 #, kde-format
 msgctxt "Request installation of this item"
 msgid "Install"
 msgstr "Instal·la"
 
-#: qtquick/qml/NewStuffList.qml:68
+#: qtquick/qml/NewStuffList.qml:81
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
 msgstr "Mostra-ho tot"
 
-#: qtquick/qml/NewStuffList.qml:69
+#: qtquick/qml/NewStuffList.qml:82
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Installed Only"
 msgstr "Només els instal·lats"
 
-#: qtquick/qml/NewStuffList.qml:70
+#: qtquick/qml/NewStuffList.qml:83
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -595,7 +595,7 @@ msgctxt ""
 msgid "Updateable Only"
 msgstr "Només els actualitzables"
 
-#: qtquick/qml/NewStuffList.qml:82
+#: qtquick/qml/NewStuffList.qml:100
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -603,7 +603,7 @@ msgctxt ""
 msgid "Show most recent first"
 msgstr "Primer mostra el més recent"
 
-#: qtquick/qml/NewStuffList.qml:83
+#: qtquick/qml/NewStuffList.qml:101
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -611,20 +611,20 @@ msgctxt ""
 msgid "Sort alphabetically"
 msgstr "Ordena alfabèticament"
 
-#: qtquick/qml/NewStuffList.qml:84
+#: qtquick/qml/NewStuffList.qml:102
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
 msgstr "Primer mostra el que té millor puntuació"
 
-#: qtquick/qml/NewStuffList.qml:85
+#: qtquick/qml/NewStuffList.qml:103
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
 msgstr "Primer mostra el més baixat"
 
-#: qtquick/qml/Page.qml:132
+#: qtquick/qml/Page.qml:135
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -636,7 +636,7 @@ msgstr ""
 "No s'ha pogut trobar l'entrada que heu intentat mostrar, identificada per "
 "l'ID únic %1."
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -645,65 +645,65 @@ msgstr ""
 "El contingut disponible aquí ha estat carregat per usuaris com vosaltres i "
 "no ha estat revisat pel vostre distribuïdor de funcionalitat o estabilitat."
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Tiles"
 msgstr "Mosaics"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgid "Icons"
 msgstr "Icones"
 
-#: qtquick/qml/Page.qml:217
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Mode de vista de mosaic en detall"
 
-#: qtquick/qml/Page.qml:240
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Mode de vista només icones"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:266
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Mode de vista prèvia gran"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Everything"
 msgstr "Tot"
 
-#: qtquick/qml/Page.qml:260
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Updateable"
 msgstr "Actualitzable"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:301
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Mostra totes les entrades"
 
-#: qtquick/qml/Page.qml:289
+#: qtquick/qml/Page.qml:310
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Mostra només les entrades instal·lades"
 
-#: qtquick/qml/Page.qml:297
+#: qtquick/qml/Page.qml:319
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -711,27 +711,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Mostra només les entrades actualitzables"
 
-#: qtquick/qml/Page.qml:307
+#: qtquick/qml/Page.qml:330
 #, kde-format
 msgid "Recent"
 msgstr "Recents"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabèticament"
 
-#: qtquick/qml/Page.qml:311
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgid "Rating"
 msgstr "Puntuació"
 
-#: qtquick/qml/Page.qml:313
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Downloads"
 msgstr "Baixades"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -739,7 +739,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Primer mostra la més recent"
 
-#: qtquick/qml/Page.qml:340
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -747,52 +747,52 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordena alfabèticament per nom"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Primer mostra la que té millor puntuació"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:383
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Primer mostra la més baixada"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:394
 #, kde-format
 msgid "Upload…"
 msgstr "Puja…"
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:395
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 "Apreneu com afegir les vostres pròpies coses noves i calentes a aquesta "
 "llista"
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:405
 #, kde-format
 msgid "Go to…"
 msgstr "Ves a…"
 
-#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
+#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
 #, kde-format
 msgid "Search…"
 msgstr "Cerca…"
 
-#: qtquick/qml/Page.qml:424
+#: qtquick/qml/Page.qml:477
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: qtquick/qml/Page.qml:440
+#: qtquick/qml/Page.qml:497
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Col·laboreu-hi amb…"
 
-#: qtquick/qml/Page.qml:506
+#: qtquick/qml/Page.qml:616
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -923,26 +923,26 @@ msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Puja les novetats: %1"
 
-#: qtquick/qml/UploadPage.qml:83
+#: qtquick/qml/UploadPage.qml:110
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
 msgstr "S'està actualitzant la informació…"
 
-#: qtquick/qml/UploadPage.qml:95
+#: qtquick/qml/UploadPage.qml:125
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "KDE Store"
 
-#: qtquick/qml/UploadPage.qml:101
+#: qtquick/qml/UploadPage.qml:131
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "El vostre proveïdor"
 
-#: qtquick/qml/UploadPage.qml:109
+#: qtquick/qml/UploadPage.qml:140
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -950,7 +950,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "Obre el lloc web: %1"
 
-#: qtquick/qml/UploadPage.qml:114
+#: qtquick/qml/UploadPage.qml:146
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -958,7 +958,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "Envia un correu a: %1"
 
-#: qtquick/qml/UploadPage.qml:121
+#: qtquick/qml/UploadPage.qml:154
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -974,7 +974,7 @@ msgstr ""
 "clic a la vostra icona d'usuari. Feu clic en aquesta entrada per anar al "
 "sistema de gestió de productes, on podreu treballar en els vostres productes."
 
-#: qtquick/qml/UploadPage.qml:122
+#: qtquick/qml/UploadPage.qml:155
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-04 02:16+0000\n"
+"POT-Creation-Date: 2023-06-07 02:18+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "หมวดหมู่ทั้งหมด"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -43,7 +43,7 @@ msgstr ""
 "รายการนี้มีราคา %1 %2\n"
 "คุณต้องการจะซื้อมันหรือไม่ ?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -54,18 +54,18 @@ msgstr ""
 "เงินคงเหลือ: %1\n"
 "ราคา: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "การโหวตของคุณถูกบันทึกเรียบร้อยแล้ว"
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "คุณเป็นแฟนคลับแล้วในตอนนี้"
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -73,25 +73,25 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "เครือข่ายผิดพลาด (%1)"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "มีการร้องขอเข้ามายังเซิร์ฟเวอร์เป็นจำนวนมาก โปรดลองใหม่อีกครั้งในภายหลัง"
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:595
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:599
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "มีข้อผิดพลาด API ของบริการร่วมมือแบบเปิดที่ไม่รู้จัก (%1)"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "ไม่สามารถติดตั้ง %1 ได้: เนื่องจากไม่พบแฟ้ม"
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:603
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgid "Installation of %1 failed: %2"
@@ -283,7 +283,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:635
+#: core/installation.cpp:636
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -305,19 +305,19 @@ msgstr "ไม่สามารถเปิด %1 เพื่อทำกา�
 msgid "Could not open %1 for reading"
 msgstr "ไม่สามารถเปิด %1 เพื่อทำการอ่านได้"
 
-#: core/transaction.cpp:142
+#: core/transaction.cpp:154
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:251
+#: core/transaction.cpp:263
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:253
+#: core/transaction.cpp:265
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -325,14 +325,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:272
+#: core/transaction.cpp:289
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:355
+#: core/transaction.cpp:376
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -374,14 +374,14 @@ msgstr ""
 msgid "Download New %1…"
 msgstr "ดาวน์โหลด %1 ตัวใหม่"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, fuzzy, kde-format
 #| msgid "Download New %1"
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "ดาวน์โหลด %1 ตัวใหม่"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
 msgctxt ""
@@ -404,12 +404,12 @@ msgid ""
 "this through the naming of the items."
 msgstr ""
 
-#: qtquick/qml/DownloadItemsSheet.qml:62
+#: qtquick/qml/DownloadItemsSheet.qml:63
 #, kde-format
 msgid "Install"
 msgstr "ติดตั้ง"
 
-#: qtquick/qml/EntryDetails.qml:49
+#: qtquick/qml/EntryDetails.qml:51
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt ""
@@ -417,7 +417,7 @@ msgctxt ""
 msgid "Installing %1 from %2"
 msgstr "ทำการติดตั้ง"
 
-#: qtquick/qml/EntryDetails.qml:65
+#: qtquick/qml/EntryDetails.qml:74
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -425,14 +425,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:67
+#: qtquick/qml/EntryDetails.qml:77
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:69
+#: qtquick/qml/EntryDetails.qml:80
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -443,7 +443,7 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:83
+#: qtquick/qml/EntryDetails.qml:94
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -451,7 +451,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -463,7 +463,7 @@ msgctxt ""
 msgid "Install"
 msgstr "ติดตั้ง"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -474,7 +474,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "ติดตั้ง"
 
-#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -484,20 +484,20 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "ปรับรุ่น"
 
-#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
-#: qtquick/qml/Page.qml:154
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
+#: qtquick/qml/Page.qml:160
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "ถอนการติดตั้ง"
 
-#: qtquick/qml/EntryDetails.qml:151
+#: qtquick/qml/EntryDetails.qml:185
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:187
 #, fuzzy, kde-format
 #| msgid "View Comments"
 msgctxt ""
@@ -506,19 +506,19 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "แสดงความคิดเห็น"
 
-#: qtquick/qml/EntryDetails.qml:158
+#: qtquick/qml/EntryDetails.qml:193
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating:"
 msgstr "อันดับที่: "
 
-#: qtquick/qml/EntryDetails.qml:162
+#: qtquick/qml/EntryDetails.qml:198
 #, fuzzy, kde-format
 #| msgid "Homepage"
 msgid "Homepage:"
 msgstr "หน้าเว็บ"
 
-#: qtquick/qml/EntryDetails.qml:163
+#: qtquick/qml/EntryDetails.qml:199
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -527,12 +527,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:168
+#: qtquick/qml/EntryDetails.qml:205
 #, kde-format
 msgid "How To Donate:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:169
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -540,20 +540,20 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/NewStuffItem.qml:22
+#: qtquick/qml/NewStuffItem.qml:25
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "Request installation of this item"
 msgid "Install"
 msgstr "ติดตั้ง"
 
-#: qtquick/qml/NewStuffList.qml:68
+#: qtquick/qml/NewStuffList.qml:81
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
 msgstr ""
 
-#: qtquick/qml/NewStuffList.qml:69
+#: qtquick/qml/NewStuffList.qml:82
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -561,7 +561,7 @@ msgctxt ""
 msgid "Installed Only"
 msgstr "ติดตั้ง"
 
-#: qtquick/qml/NewStuffList.qml:70
+#: qtquick/qml/NewStuffList.qml:83
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -569,7 +569,7 @@ msgctxt ""
 msgid "Updateable Only"
 msgstr ""
 
-#: qtquick/qml/NewStuffList.qml:82
+#: qtquick/qml/NewStuffList.qml:100
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -578,7 +578,7 @@ msgctxt ""
 msgid "Show most recent first"
 msgstr "แสดงไดเรกทอรีก่อน"
 
-#: qtquick/qml/NewStuffList.qml:83
+#: qtquick/qml/NewStuffList.qml:101
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -586,14 +586,14 @@ msgctxt ""
 msgid "Sort alphabetically"
 msgstr ""
 
-#: qtquick/qml/NewStuffList.qml:84
+#: qtquick/qml/NewStuffList.qml:102
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
 msgstr "แสดงไดเรกทอรีก่อน"
 
-#: qtquick/qml/NewStuffList.qml:85
+#: qtquick/qml/NewStuffList.qml:103
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -601,7 +601,7 @@ msgctxt ""
 msgid "Show most downloaded first"
 msgstr "ถูกดาวน์โหลดมากที่สุด"
 
-#: qtquick/qml/Page.qml:132
+#: qtquick/qml/Page.qml:135
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -611,79 +611,79 @@ msgid ""
 "not be found."
 msgstr ""
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:228
 #, fuzzy, kde-format
 #| msgctxt "@option:check Do filter on type - show only files"
 #| msgid "Files"
 msgid "Tiles"
 msgstr "แฟ้ม"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgid "Icons"
 msgstr "ไอคอน"
 
-#: qtquick/qml/Page.qml:217
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Preview"
 msgstr "แสดงตัวอย่าง"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:248
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Detailed Tiles View Mode"
 msgstr "โหมดมุมมองรายละเอียด"
 
-#: qtquick/qml/Page.qml:240
+#: qtquick/qml/Page.qml:257
 #, fuzzy, kde-format
 #| msgid "Icons view mode"
 msgid "Icons Only View Mode"
 msgstr "โหมดมุมมองไอคอน"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:266
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Large Preview View Mode"
 msgstr "โหมดมุมมองรายละเอียด"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:260
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Installed"
 msgstr "ติดตั้งแล้ว"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:281
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "ปรับรุ่น"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:301
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "หมวดหมู่ทั้งหมด"
 
-#: qtquick/qml/Page.qml:289
+#: qtquick/qml/Page.qml:310
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:297
+#: qtquick/qml/Page.qml:319
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -691,30 +691,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:307
+#: qtquick/qml/Page.qml:330
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Open Recent"
 msgid "Recent"
 msgstr "เปิดที่เคยเรียกใช้"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:311
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgid "Rating"
 msgstr "การจัดอันดับ"
 
-#: qtquick/qml/Page.qml:313
+#: qtquick/qml/Page.qml:336
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "ดาวน์โหลด"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:356
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -723,7 +723,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "แสดงไดเรกทอรีก่อน"
 
-#: qtquick/qml/Page.qml:340
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -731,14 +731,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:374
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "แสดงไดเรกทอรีก่อน"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -746,41 +746,41 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "ถูกดาวน์โหลดมากที่สุด"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:394
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "อัปโหลด..."
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:395
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:405
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "ไป&ยัง..."
 
-#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
+#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "ค้นหา:"
 
-#: qtquick/qml/Page.qml:424
+#: qtquick/qml/Page.qml:477
 #, kde-format
 msgid "Category:"
 msgstr "หมวดหมู่:"
 
-#: qtquick/qml/Page.qml:440
+#: qtquick/qml/Page.qml:497
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
 msgstr "ดำเนินการต่อไป"
 
-#: qtquick/qml/Page.qml:506
+#: qtquick/qml/Page.qml:616
 #, fuzzy, kde-format
 #| msgid "Loading preview..."
 msgctxt ""
@@ -923,7 +923,7 @@ msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็นที่นิยม"
 
-#: qtquick/qml/UploadPage.qml:83
+#: qtquick/qml/UploadPage.qml:110
 #, fuzzy, kde-format
 #| msgid "Billing information:"
 msgctxt ""
@@ -931,21 +931,21 @@ msgctxt ""
 msgid "Updating information…"
 msgstr "ข้อมูลค่าใช้จ่าย:"
 
-#: qtquick/qml/UploadPage.qml:95
+#: qtquick/qml/UploadPage.qml:125
 #, fuzzy, kde-format
 #| msgid "&Store"
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "&จัดเก็บ"
 
-#: qtquick/qml/UploadPage.qml:101
+#: qtquick/qml/UploadPage.qml:131
 #, fuzzy, kde-format
 #| msgid "Provider:"
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "ผู้จัดทำ:"
 
-#: qtquick/qml/UploadPage.qml:109
+#: qtquick/qml/UploadPage.qml:140
 #, fuzzy, kde-format
 #| msgctxt "@label:button"
 #| msgid "&Open with %1"
@@ -955,7 +955,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "เปิ&ดด้วย %1"
 
-#: qtquick/qml/UploadPage.qml:114
+#: qtquick/qml/UploadPage.qml:146
 #, fuzzy, kde-format
 #| msgid "&Send Email"
 msgctxt ""
@@ -964,7 +964,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "&ส่งอีเมล"
 
-#: qtquick/qml/UploadPage.qml:121
+#: qtquick/qml/UploadPage.qml:154
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -975,7 +975,7 @@ msgid ""
 "system, where you can work on your products ."
 msgstr ""
 
-#: qtquick/qml/UploadPage.qml:122
+#: qtquick/qml/UploadPage.qml:155
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""

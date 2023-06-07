@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-04 02:16+0000\n"
+"POT-Creation-Date: 2023-06-07 02:18+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Trūksta visų kategorijų"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Šis elementas kainuoja %1 %2.\n"
 "Ar norite jį įsigyti?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,18 +51,18 @@ msgstr ""
 "Jūsų likutis: %1\n"
 "Kaina: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Jūsų balsas įskaičiuotas."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Dabar esate fanas."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -72,17 +72,17 @@ msgstr ""
 "Šiuo metu vyksta techninė paslaugos priežiūra. Tikimasi, kad paslauga pradės "
 "veikti po %1."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Tinklo klaida %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Per daug užklausų į serverį. Po kelių minučių bandykite dar kartą."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:595
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 "Open Collaboration Services egzempliorius %1 nepalaiko bandytos funkcijos."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:599
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nežinoma Open Collaboration Service API klaida. (%1)"
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Nepavyko įdiegti „%1“: failas nerastas."
 
-#: core/installation.cpp:357 core/installation.cpp:602
+#: core/installation.cpp:357 core/installation.cpp:603
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 įdiegimas patyrė nesėkmę: %2"
@@ -303,7 +303,7 @@ msgstr ""
 "failo %2. Jei manote, kad tai klaida, galite pabandyti ištrinti šį failą "
 "rankiniu būdu."
 
-#: core/installation.cpp:635
+#: core/installation.cpp:636
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
@@ -328,7 +328,7 @@ msgstr "Nepavyko atverti %1 įrašymui"
 msgid "Could not open %1 for reading"
 msgstr "Nepavyko atverti %1 skaitymui"
 
-#: core/transaction.cpp:142
+#: core/transaction.cpp:154
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -337,12 +337,12 @@ msgstr ""
 "Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
 "apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
 
-#: core/transaction.cpp:251
+#: core/transaction.cpp:263
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Pasirinkti atnaujinimo elementą"
 
-#: core/transaction.cpp:253
+#: core/transaction.cpp:265
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -353,7 +353,7 @@ msgstr ""
 "atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
 "%1, nepavyko nustatyti pradinio elemento"
 
-#: core/transaction.cpp:272
+#: core/transaction.cpp:289
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -362,7 +362,7 @@ msgstr ""
 "Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
 "atlikti atnaujinimo"
 
-#: core/transaction.cpp:355
+#: core/transaction.cpp:376
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -409,13 +409,13 @@ msgstr "elementą"
 msgid "Download New %1…"
 msgstr "Atsisiųsti naują %1"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "Atsisiųsti naują %1"
 
-#: qtquick/qml/Dialog.qml:43
+#: qtquick/qml/Dialog.qml:42
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -441,19 +441,19 @@ msgstr ""
 "įdiegti, susisiekite su šio elemento autoriumi ir paprašykite, kad jis tai "
 "patikslintų savo elemento pavadinime."
 
-#: qtquick/qml/DownloadItemsSheet.qml:62
+#: qtquick/qml/DownloadItemsSheet.qml:63
 #, kde-format
 msgid "Install"
 msgstr "Įdiegti"
 
-#: qtquick/qml/EntryDetails.qml:49
+#: qtquick/qml/EntryDetails.qml:51
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "Įdiegiama %1 iš %2"
 
-#: qtquick/qml/EntryDetails.qml:65
+#: qtquick/qml/EntryDetails.qml:74
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Status message to be shown when the entry is in the process of being "
@@ -465,7 +465,7 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Šiuo metu dirbama su elementu %1 pagal %2. Palaukite..."
 
-#: qtquick/qml/EntryDetails.qml:67
+#: qtquick/qml/EntryDetails.qml:77
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Status message to be shown when the entry is in the process of being "
@@ -476,7 +476,7 @@ msgctxt ""
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Šiuo metu atnaujinamas elementas %1 pagal %2. Palaukite..."
 
-#: qtquick/qml/EntryDetails.qml:69
+#: qtquick/qml/EntryDetails.qml:80
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -490,7 +490,7 @@ msgstr ""
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Prašome "
 "pranešti apie tai KDE bendruomenei pranešime apie klaidą</a>."
 
-#: qtquick/qml/EntryDetails.qml:83
+#: qtquick/qml/EntryDetails.qml:94
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -498,7 +498,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 pagal %2"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -509,7 +509,7 @@ msgctxt ""
 msgid "Install"
 msgstr "Įdiegti"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:98
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
@@ -520,7 +520,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Įdiegti"
 
-#: qtquick/qml/EntryDetails.qml:101 qtquick/qml/NewStuffItem.qml:29
+#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -529,19 +529,19 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Atnaujinti"
 
-#: qtquick/qml/EntryDetails.qml:108 qtquick/qml/NewStuffItem.qml:36
-#: qtquick/qml/Page.qml:154
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
+#: qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Pašalinti"
 
-#: qtquick/qml/EntryDetails.qml:151
+#: qtquick/qml/EntryDetails.qml:185
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Komentarai ir apžvalgos:"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:187
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -549,17 +549,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 apžvalgos ir komentarai"
 
-#: qtquick/qml/EntryDetails.qml:158
+#: qtquick/qml/EntryDetails.qml:193
 #, kde-format
 msgid "Rating:"
 msgstr "Įvertinimas:"
 
-#: qtquick/qml/EntryDetails.qml:162
+#: qtquick/qml/EntryDetails.qml:198
 #, kde-format
 msgid "Homepage:"
 msgstr "Pagrindinis puslapis:"
 
-#: qtquick/qml/EntryDetails.qml:163
+#: qtquick/qml/EntryDetails.qml:199
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -568,12 +568,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Atverti %1 pagrindinį puslapį"
 
-#: qtquick/qml/EntryDetails.qml:168
+#: qtquick/qml/EntryDetails.qml:205
 #, kde-format
 msgid "How To Donate:"
 msgstr "Kaip paremti:"
 
-#: qtquick/qml/EntryDetails.qml:169
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -581,26 +581,26 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
 
-#: qtquick/qml/NewStuffItem.qml:22
+#: qtquick/qml/NewStuffItem.qml:25
 #, kde-format
 msgctxt "Request installation of this item"
 msgid "Install"
 msgstr "Įdiegti"
 
-#: qtquick/qml/NewStuffList.qml:68
+#: qtquick/qml/NewStuffList.qml:81
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
 msgstr "Rodyti viską"
 
-#: qtquick/qml/NewStuffList.qml:69
+#: qtquick/qml/NewStuffList.qml:82
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Installed Only"
 msgstr "Tik įdiegti"
 
-#: qtquick/qml/NewStuffList.qml:70
+#: qtquick/qml/NewStuffList.qml:83
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -608,7 +608,7 @@ msgctxt ""
 msgid "Updateable Only"
 msgstr "Tik galimi atnaujinti"
 
-#: qtquick/qml/NewStuffList.qml:82
+#: qtquick/qml/NewStuffList.qml:100
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -616,7 +616,7 @@ msgctxt ""
 msgid "Show most recent first"
 msgstr "Iš pradžių, rodyti paskiausius"
 
-#: qtquick/qml/NewStuffList.qml:83
+#: qtquick/qml/NewStuffList.qml:101
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -624,20 +624,20 @@ msgctxt ""
 msgid "Sort alphabetically"
 msgstr "Rikiuoti pagal abėcėlę"
 
-#: qtquick/qml/NewStuffList.qml:84
+#: qtquick/qml/NewStuffList.qml:102
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
 msgstr "Iš pradžių, su aukščiausiu įvertinimu"
 
-#: qtquick/qml/NewStuffList.qml:85
+#: qtquick/qml/NewStuffList.qml:103
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
 msgstr "Iš pradžių, rodyti daugiausiai atsisiųstus"
 
-#: qtquick/qml/Page.qml:132
+#: qtquick/qml/Page.qml:135
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -649,7 +649,7 @@ msgstr ""
 "Nepavyko rasti įrašo, kurį bandėte atvaizduoti, identifikuojamo pagal "
 "unikalų ID %1."
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -659,65 +659,65 @@ msgstr ""
 "jūsų platinamojo paketo platintojas nepatikrino kaip šis turinys veikia "
 "funkcionalumo ar stabilumo atžvilgiu."
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Tiles"
 msgstr "Plytelės"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgid "Icons"
 msgstr "Piktogramos"
 
-#: qtquick/qml/Page.qml:217
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgid "Preview"
 msgstr "Peržiūra"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Išsamių plytelių rodinio veiksena"
 
-#: qtquick/qml/Page.qml:240
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Tik piktogramų rodinio veiksena"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:266
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Didelės peržiūros rodinio veiksena"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Everything"
 msgstr "Visi"
 
-#: qtquick/qml/Page.qml:260
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Installed"
 msgstr "Įdiegti"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Updateable"
 msgstr "Galimi atnaujinti"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:301
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Rodyti visus įrašus"
 
-#: qtquick/qml/Page.qml:289
+#: qtquick/qml/Page.qml:310
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Rodyti tik įdiegtus įrašus"
 
-#: qtquick/qml/Page.qml:297
+#: qtquick/qml/Page.qml:319
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -725,27 +725,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Rodyti tik galimus atnaujinti įrašus"
 
-#: qtquick/qml/Page.qml:307
+#: qtquick/qml/Page.qml:330
 #, kde-format
 msgid "Recent"
 msgstr "Paskiausi"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgid "Alphabetical"
 msgstr "Pagal abėcėlę"
 
-#: qtquick/qml/Page.qml:311
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgid "Rating"
 msgstr "Įvertinimas"
 
-#: qtquick/qml/Page.qml:313
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Downloads"
 msgstr "Atsiuntimai"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:356
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -753,7 +753,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Pirmiausia, rodyti paskiausius"
 
-#: qtquick/qml/Page.qml:340
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -761,53 +761,53 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Rikiuoti pavadinimus pagal abėcėlę"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:374
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Pirmiausia, su aukščiausiu įvertinimu"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:383
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Pirmiausia, rodyti daugiausiai atsisiųstus"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:394
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Išsiųsti..."
 
-#: qtquick/qml/Page.qml:366
+#: qtquick/qml/Page.qml:395
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Sužinokite kaip pridėti į šį sąrašą savo asmeninius naujus elementus"
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:405
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Pereiti į..."
 
-#: qtquick/qml/Page.qml:380 qtquick/qml/Page.qml:387
+#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Ieškoti:"
 
-#: qtquick/qml/Page.qml:424
+#: qtquick/qml/Page.qml:477
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: qtquick/qml/Page.qml:440
+#: qtquick/qml/Page.qml:497
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Paskelbti viešai savo asmeninį…"
 
-#: qtquick/qml/Page.qml:506
+#: qtquick/qml/Page.qml:616
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -946,7 +946,7 @@ msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Išsiųsti naują elementą: %1"
 
-#: qtquick/qml/UploadPage.qml:83
+#: qtquick/qml/UploadPage.qml:110
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -956,19 +956,19 @@ msgctxt ""
 msgid "Updating information…"
 msgstr "Atnaujinama informacija..."
 
-#: qtquick/qml/UploadPage.qml:95
+#: qtquick/qml/UploadPage.qml:125
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "KDE parduotuvė"
 
-#: qtquick/qml/UploadPage.qml:101
+#: qtquick/qml/UploadPage.qml:131
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "Jūsų tiekėjas"
 
-#: qtquick/qml/UploadPage.qml:109
+#: qtquick/qml/UploadPage.qml:140
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -976,7 +976,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "Atverti internetinę svetainę: %1"
 
-#: qtquick/qml/UploadPage.qml:114
+#: qtquick/qml/UploadPage.qml:146
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -984,7 +984,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "Siųsti el. laišką: %1"
 
-#: qtquick/qml/UploadPage.qml:121
+#: qtquick/qml/UploadPage.qml:154
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -1001,7 +1001,7 @@ msgstr ""
 "pereitumėte į produktų tvarkymo sistemą, kurioje galėsite dirbti su savo "
 "produktais."
 
-#: qtquick/qml/UploadPage.qml:122
+#: qtquick/qml/UploadPage.qml:155
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""
