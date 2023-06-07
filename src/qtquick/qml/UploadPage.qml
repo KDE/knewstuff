@@ -24,7 +24,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kcm as KCM
+import org.kde.kcmutils as KCM
 import org.kde.kirigami 2 as Kirigami
 import org.kde.newstuff as NewStuff
 

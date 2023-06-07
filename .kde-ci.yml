@@ -14,6 +14,9 @@ Dependencies:
     'frameworks/syndication' : '@same'
     'frameworks/kwidgetsaddons' : '@same'
 
+runtime-dependencies:
+  'frameworks/kcmutils' : '@same'
+
 Options:
   test-before-installing: True
   require-passing-tests-on: [ 'Linux', 'FreeBSD' ]

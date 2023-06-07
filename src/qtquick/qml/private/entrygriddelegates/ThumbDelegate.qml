@@ -9,7 +9,7 @@ import QtQuick.Controls 2.11 as QtControls
 import QtQuick.Layouts 1.11 as QtLayouts
 import Qt5Compat.GraphicalEffects 6.0 as QtEffects
 
-import org.kde.kcm 1.2 as KCM
+import org.kde.kcmutils as KCM
 import org.kde.kirigami 2.7 as Kirigami
 
 import org.kde.newstuff 1.62 as NewStuff
