@@ -785,13 +785,13 @@ msgstr "Secció principal"
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:58
 #, kde-format
 msgid "Move down"
-msgstr "Mou avall"
+msgstr "Mou cap avall"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:78
 #, kde-format
 msgid "Move up"
-msgstr "Mou amunt"
+msgstr "Mou cap amunt"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:98
