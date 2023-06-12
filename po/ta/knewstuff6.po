@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-07 02:18+0000\n"
-"PO-Revision-Date: 2023-02-02 19:54+0530\n"
+"PO-Revision-Date: 2023-06-11 18:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: attica/atticaprovider.cpp:168
 #, kde-format
@@ -148,10 +148,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "வடிவமைப்புக் கோப்புகள் கிடைக்கப்பெறவில்லை: \"%1\""
+msgstr "வடிவமைப்புக் கோப்பு கிடைக்கவில்லை: \"%1\""
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -169,16 +168,14 @@ msgid "Use"
 msgstr "பயன்படுத்து"
 
 #: core/enginebase.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"%1 என்பதற்கான நிறுவல் கையாளியை துவக்க முடியவில்லை\n"
+"%1 என்பதற்கான நிறுவல் கையாளியை துவக்க முடியவில்லை:\n"
+"%2\n"
 "இச்சிக்கல், செயலியை இயற்றியவரிடம் தெரிவிக்கப்பட வேண்டும்"
 
 #: core/enginebase.cpp:274
@@ -378,11 +375,7 @@ msgstr "தெரியாத பகுப்பு"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
@@ -390,12 +383,9 @@ msgid "Stuff"
 msgstr "புதியவற்றை"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "%1 பதிவிறக்கு"
+msgstr "%1 பதிவிறக்கு…"
 
 #: qtquick/qml/Dialog.qml:42
 #, kde-format
@@ -446,14 +436,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "%2 வழங்கும் %1 கையாளப்படுகிறது. காத்திருக்கவும்…"
 
 #: qtquick/qml/EntryDetails.qml:77
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "%2 வழங்கும் %1 புதுப்பிக்கப்படுகிறது. காத்திருக்கவும்…"
 
 #: qtquick/qml/EntryDetails.qml:80
 #, kde-format
@@ -465,6 +455,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"இவ்வுருப்படி செல்லுபடியாகாத அல்லது தெரியாத நிலையில் உள்ளது. <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">இதை ஓர் பிழையறிக்கை மூலம் "
+"கே.டீ.யீ. சமூகத்திற்குத் தெரிவிக்கவும்</a>."
 
 #: qtquick/qml/EntryDetails.qml:94
 #, kde-format
@@ -489,12 +482,11 @@ msgstr "நிறுவு"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "நிறுவு"
+msgstr "நிறுவு…"
 
 #: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -751,8 +743,7 @@ msgid "Show Most Downloaded First"
 msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
 #: qtquick/qml/Page.qml:394
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
 msgstr "பதிவேற்று…"
 
@@ -762,16 +753,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
 #: qtquick/qml/Page.qml:405
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
 msgstr "செல்..."
 
 #: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "தேடு:"
+msgstr "தேடு…"
 
 #: qtquick/qml/Page.qml:477
 #, kde-format
@@ -850,25 +839,20 @@ msgid "By <i>%1</i>"
 msgstr "இயற்றியவர் <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "வேலை செய்கிறது..."
+msgstr "வேலை செய்கிறது…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "புதுப்பிக்கப்படுகிறது"
+msgstr "புதுப்பிக்கிறது…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -885,11 +869,10 @@ msgstr ""
 "a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "நிறுவப்படுகிறது"
+msgstr "நிறுவுகிறது…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -915,22 +898,17 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "புதியதை பதிவேற்று: %1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "விவரங்கள் புதுப்பிக்கப்படுகின்றன..."
+msgstr "விவரங்கள் புதுப்பிக்கப்படுகின்றன…"
 
 #: qtquick/qml/UploadPage.qml:125
 #, kde-format
@@ -994,48 +972,40 @@ msgid ""
 msgstr ""
 
 #: qtquick/searchpresetmodel.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Back"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
-msgstr "பின்"
+msgstr "பின்னே"
 
 #: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "மக்கள் விரும்புபவை"
 
 #: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "சிறப்பானவை"
 
 #: qtquick/searchpresetmodel.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Restart find & replace"
-#| msgid "Restart"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
-msgstr "மீட்டமை"
+msgstr "மீள்துவக்கு"
 
 #: qtquick/searchpresetmodel.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
-msgstr "புதிய"
+msgstr "புதியவை"
 
 #: qtquick/searchpresetmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Home"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr "Home"
+msgstr "முகப்பு"
 
 #: qtquick/searchpresetmodel.cpp:73
 #, kde-format
@@ -1044,20 +1014,16 @@ msgid "Shelf"
 msgstr ""
 
 #: qtquick/searchpresetmodel.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Up"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr "Up"
+msgstr "மேலே"
 
 #: qtquick/searchpresetmodel.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "dictionary variant"
-#| msgid "extended"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr "விரிவுபடுத்தப்பட்ட"
+msgstr "பரிந்துரைக்கப்படுபவை"
 
 #: qtquick/searchpresetmodel.cpp:82
 #, fuzzy, kde-format
@@ -1065,20 +1031,19 @@ msgstr "விரிவுபடுத்தப்பட்ட"
 #| msgid "Subscript"
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "அடியெழுத்து"
+msgstr "சந்தா செலுத்தியவை"
 
 #: qtquick/searchpresetmodel.cpp:85
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr "அனைத்து வகைகளும்"
+msgstr "அனைத்தும்"
 
 #: qtquick/searchpresetmodel.cpp:88
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "தேடல் முன்னமைப்பு: %1"
 
 #: tools/knewstuff-dialog/main.cpp:31
 #, kde-format
