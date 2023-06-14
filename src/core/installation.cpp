@@ -67,11 +67,6 @@ bool Installation::readConfig(const KConfigGroup &group, QString &errorMessage)
     }
 
     kpackageType = group.readEntry("KPackageStructure");
-#if KNEWSTUFF_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (kpackageType.isEmpty()) {
-        kpackageType = group.readEntry("KPackageType");
-    }
-#endif
     if (uncompressSetting == UseKPackageUncompression && kpackageType.isEmpty()) {
         errorMessage = QStringLiteral("kpackage uncompress setting chosen, but no KPackageStructure specified");
         qCCritical(KNEWSTUFFCORE) << errorMessage;
