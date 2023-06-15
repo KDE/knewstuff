@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2022-12-15 09:31+0000\n"
 "Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -287,24 +287,24 @@ msgstr ""
 msgid "Error initializing provider."
 msgstr "Ocorreu um erro ao inicializar o fornecedor."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "O item é inválido."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "A transferência do item foi mal-sucedida: não existe o URL de transferência "
 "para o \"%1\"."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "A transferência do \"%1\" foi mal-sucedida, erro: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -313,29 +313,29 @@ msgstr ""
 "Não é possível instalar o '%1', porque aponta para uma página Web. Carregue "
 "<a href='%2'>aqui</a> para terminar a instalação."
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Não foi possível instalar o \"%1\": o ficheiro não foi encontrado."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Não foi possível a instalação do %1: %2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 "Não foi possível determinar o tipo de pacote do ficheiro transferido %1"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 "Não foi possível aceder ao ficheiro do pacote %1. O erro devolvido foi: %2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -346,17 +346,17 @@ msgstr ""
 "transferência falhada anteriormente). Se continuar, irá substituí-lo. Deseja "
 "substituir o ficheiro existente?"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "Sobrepor o Ficheiro"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Não foi possível mover o ficheiro %1 para o destino pretendido %2"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -371,7 +371,7 @@ msgstr ""
 "O resultado devolvido foi:\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -386,7 +386,7 @@ msgstr ""
 "O resultado devolvido foi:\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -397,7 +397,7 @@ msgstr ""
 "ser removido automaticamente. Poderá tentar removê-lo você mesmo, caso tenha "
 "a certeza que isto é um erro."
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

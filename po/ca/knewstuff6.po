@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2023-06-04 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -198,23 +198,23 @@ msgstr "No s'ha pogut carregar cap proveïdor de novetats des del fitxer: %1"
 msgid "Error initializing provider."
 msgstr "Error en inicialitzar el proveïdor."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "Element no vàlid."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "La baixada de l'element ha fallat: no hi ha cap URL de baixada per a «%1»."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "La baixada de «%1» ha fallat. Error: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -223,27 +223,27 @@ msgstr ""
 "No s'ha pogut instal·lar «%1» perquè apunta a una pàgina web. Feu clic <a "
 "href='%2'>aquí</a> per a finalitzar la instal·lació."
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "No s'ha pogut instal·lar «%1»: no s'ha trobat el fitxer."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "La instal·lació de %1 ha fallat: %2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "No s'ha pogut determinar el tipus d'arxiu del fitxer baixat %1"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Ha fallat en crear l'arxiu %1. L'error informat ha estat: %2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -254,17 +254,17 @@ msgstr ""
 "fallit de descàrrega). En continuar se sobreescriurà. Voleu sobreescriure el "
 "fitxer existent?"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "Sobreescriu el fitxer"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "No s'ha pogut moure el fitxer %1 a la destinació prevista %2"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -279,7 +279,7 @@ msgstr ""
 "La sortida retornada ha estat:\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -294,7 +294,7 @@ msgstr ""
 "La sortida retornada ha estat:\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -305,7 +305,7 @@ msgstr ""
 "eliminar automàticament. Si creu que es tracta d'un error, podeu provar "
 "eliminant manualment aquest fitxer."
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

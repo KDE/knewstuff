@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -183,22 +183,22 @@ msgstr "无法从文件 %1 中加载资源提供者的信息"
 msgid "Error initializing provider."
 msgstr "初始化内容提供者时出错。"
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "无效项目。"
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "下载项目失败：“%1”无下载 URL。"
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "下载“%1”时失败，错误：%2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -206,27 +206,27 @@ msgid ""
 msgstr ""
 "无法安装“%1”，因为它指向的是一个网页。请点击<a href='%2'>这里</a>完成安装。"
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "无法安装“%1”：未找到文件。"
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "安装 %1 时失败：%2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "无法确定下载文件 %1 的压缩包类型"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "无法打开压缩包文件 %1。错误为：%2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -236,17 +236,17 @@ msgstr ""
 "文件已存在于硬盘中 (可能是因为之前的下载没有成功)。继续下载会直接覆盖此文件，"
 "您想要覆盖现有文件吗？"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "覆盖文件"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "无法将文件 %1 移动到指定目标 %2"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -261,7 +261,7 @@ msgstr ""
 "返回的输出为：\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -276,7 +276,7 @@ msgstr ""
 "返回的输出为：\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -286,7 +286,7 @@ msgstr ""
 "%1 卸载失败，因为无法自动删除已安装的文件 %2。如果您认为这是安装程序的问题，"
 "可以尝试手动删除这个文件。"
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

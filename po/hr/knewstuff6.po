@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -204,50 +204,50 @@ msgstr "Nije moguće učitati pružatelje Nabavi nove sadržaje iz datoteke: %1"
 msgid "Error initializing provider."
 msgstr "Pogreška pri inicijalizaciji pružatelja."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "Neispravna stavka."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Neuspjelo preuzimanje stavke: nema URL-a preuzimanja za \"%1\"."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Neuspjelo preuzimanje za \"%1\", pogreška: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Nije moguće instalirati \"%1\": datoteka nije pronađena."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgid "Installation of %1 failed: %2"
 msgstr "Instaliranje"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr ""
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr ""
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -255,18 +255,18 @@ msgid ""
 "existing file?"
 msgstr ""
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgid "Overwrite File"
 msgstr "Prepisati datoteku?"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr ""
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -276,7 +276,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -286,7 +286,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -294,7 +294,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

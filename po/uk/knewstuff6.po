@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2023-06-04 19:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -199,24 +199,24 @@ msgstr "Не вдалося завантажити параметри надан
 msgid "Error initializing provider."
 msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "Некоректний елемент."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr ""
 "Спроба отримання елемента зазнала невдачі: для «%1» не вказано адреси "
 "отримання."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "Спроба отримання «%1» зазнала невдачі, помилка: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -225,27 +225,27 @@ msgstr ""
 "Не вдалося встановити «%1», оскільки його адреса вказує на сторінку "
 "інтернету. Натисніть <a href='%2'>тут</a>, щоб завершити встановлення."
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "Не вдалося встановити «%1»: файл не знайдено."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Не вдалося встановити %1: %2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "Не вдалося визначити тип архіву для отриманого файла %1"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "Не вдалося відкрити файл архіву %1. Повідомлення про помилку: %2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -256,17 +256,17 @@ msgstr ""
 "спроби отримання даних). Якщо ви накажете програмі продовжити виконання дії, "
 "файл буде перезаписано. Хочете перезаписати наявний файл?"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "Перезаписати файл"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Не вдалося пересунути файл %1 до планованого призначення %2"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -281,7 +281,7 @@ msgstr ""
 "Повернуті повідомлення:\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -296,7 +296,7 @@ msgstr ""
 "Повернуті повідомлення:\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -307,7 +307,7 @@ msgstr ""
 "встановлений файл %2. Ви можете спробувати вилучити цей файл автоматично, "
 "якщо вважаєте, що це помилка."
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

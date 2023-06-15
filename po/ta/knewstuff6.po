@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2023-06-11 18:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -193,22 +193,22 @@ msgstr "%1 எனும் கோப்பிலிருந்து வழங�
 msgid "Error initializing provider."
 msgstr "வழங்கியை தொடங்குவதில் சிக்கல்."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "செல்லுபடியாகாத உருப்படி."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "ஒன்றன் பதிவிறக்கம் தோல்வியடைந்த‍து: \"%1\" என்பதற்கான முகவரி இல்லை."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" என்பதன் பதிவிறக்கம் தோல்வியடைந்தது; சிக்கல்: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -217,27 +217,27 @@ msgstr ""
 "'%1' ஓர் வலைப்பக்கத்தை மட்டும் குறிப்பதால் அதை நிறுவ முடியவில்லை. நிறுவலை தொடர <a "
 "href='%2'>இங்கு</a> கிளிக் செய்யுங்கள்."
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "'%1' என்பதை நிறுவ முடியவில்லை: கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 என்பதன் நிறுவல் தோல்வியடைந்தது: %2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "பதிவிறக்கபட்ட %1 எனும் கோப்பு எவ்வகையான காப்பகம் என்பதைக் கண்டறிய முடியவில்லை"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 எனும் காப்பக‍க் கோப்பைத் திறக்க முடியவில்லை. தெரிவிக்கப்பட்ட சிக்கல்: %2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -247,17 +247,17 @@ msgstr ""
 "இக்கோப்பு வட்டில் ஏற்கனவே உள்ளது (தோல்வியடைந்த முந்தைய நிறுவலின் விளைவாக இருக்கலாம்). "
 "தொடர்ந்தால் அது மேலெழுதப்படும். ஏற்கனவே உள்ளதை மேலெழுத விருப்பமா?"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "கோப்பை மேலெழுது"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 எனும் கோப்பை %2 என்ற இடத்திற்கு நகர்த்த முடியவில்லை"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -272,7 +272,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -287,7 +287,7 @@ msgstr ""
 "திரும்பவந்த வெளியீடு:\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -297,7 +297,7 @@ msgstr ""
 "நிறுவப்பட்டுள்ள %2 எனும் கோப்பைத் தானாக நீக்க முடியாத‍தால் %1 என்பதை நீக்குவது தோல்வியடைந்த‍"
 "து. அக்கோப்பு தேவையில்லாத பட்சத்தில், அதை கைமுறையாக நீங்கள் நீக்க முயற்சிக்கலாம்."
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

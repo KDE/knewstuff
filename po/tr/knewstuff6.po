@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 02:18+0000\n"
+"POT-Creation-Date: 2023-06-15 02:12+0000\n"
 "PO-Revision-Date: 2023-06-04 12:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -202,22 +202,22 @@ msgstr "Dosyadan \"Yeni Çıkanlar\" alınamadı: %1"
 msgid "Error initializing provider."
 msgstr "Sağlayıcı başlatılamadı."
 
-#: core/installation.cpp:106
+#: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
 msgstr "Geçersiz öge."
 
-#: core/installation.cpp:113
+#: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
 msgstr "Öge indirilemedi: \"%1\" için indirme URL'si yok."
 
-#: core/installation.cpp:144
+#: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
 msgstr "\"%1\" indirilemedi, hata: %2"
 
-#: core/installation.cpp:153
+#: core/installation.cpp:148
 #, kde-format
 msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
@@ -226,27 +226,27 @@ msgstr ""
 "'%1' kurulamıyor; çünkü bir web sayfasına işaret ediyor. Kurulumu tamamlamak "
 "için <a href='%2'>buraya</a> tıklayın."
 
-#: core/installation.cpp:191
+#: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
 msgstr "%1 kurulamadı: Dosya bulunamadı."
 
-#: core/installation.cpp:357 core/installation.cpp:603
+#: core/installation.cpp:352 core/installation.cpp:598
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 kurulumu başarısız: %2"
 
-#: core/installation.cpp:391
+#: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
 msgstr "İndirilen %1 dosyasının arşiv türü belirlenemedi"
 
-#: core/installation.cpp:403
+#: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
 msgstr "%1 arşiv dosyası açılamadı. Bildirilen hata şuydu: %2"
 
-#: core/installation.cpp:470
+#: core/installation.cpp:465
 #, kde-format
 msgid ""
 "This file already exists on disk (possibly due to an earlier failed download "
@@ -257,17 +257,17 @@ msgstr ""
 "indirme denemesinden dolayı). Sürdürürseniz üzerine yazılacaktır. Bu "
 "dosyanın üzerine yazmak istiyor musunuz?"
 
-#: core/installation.cpp:473
+#: core/installation.cpp:468
 #, kde-format
 msgid "Overwrite File"
 msgstr "Dosyanın Üzerine Yaz"
 
-#: core/installation.cpp:492
+#: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "%1 dosyası, istenen %2 hedef konumuna taşınamıyor"
 
-#: core/installation.cpp:515
+#: core/installation.cpp:510
 #, kde-format
 msgid ""
 "The installation failed while attempting to run the command:\n"
@@ -282,7 +282,7 @@ msgstr ""
 "Döndürülen çıktı şuydu:\n"
 "%2"
 
-#: core/installation.cpp:525
+#: core/installation.cpp:520
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -297,7 +297,7 @@ msgstr ""
 "Döndürülen çıktı şuydu:\n"
 "%3"
 
-#: core/installation.cpp:567
+#: core/installation.cpp:562
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -308,7 +308,7 @@ msgstr ""
 "başarısız oldu. Bunun bir hata olduğunu düşünüyorsanız bu dosyayı kendiniz "
 "silmeyi deneyebilirsiniz."
 
-#: core/installation.cpp:636
+#: core/installation.cpp:631
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
