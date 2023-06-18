@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-15 02:12+0000\n"
-"PO-Revision-Date: 2023-05-22 13:58\n"
+"PO-Revision-Date: 2023-06-17 04:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -219,12 +219,12 @@ msgstr "安装 %1 时失败：%2"
 #: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr "无法确定下载文件 %1 的压缩包类型"
+msgstr "无法确定下载文件 %1 的压缩文件类型"
 
 #: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "无法打开压缩包文件 %1。错误为：%2"
+msgstr "无法打开压缩文件 %1。错误为：%2"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -369,11 +369,7 @@ msgstr "未知分类"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
@@ -381,12 +377,9 @@ msgid "Stuff"
 msgstr "资源"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "下载新%1"
+msgstr "下载新%1…"
 
 #: qtquick/qml/Dialog.qml:42
 #, kde-format
@@ -431,27 +424,19 @@ msgid "Installing %1 from %2"
 msgstr "正在从 %2 安装 %1"
 
 #: qtquick/qml/EntryDetails.qml:74
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "installed OR uninstalled"
-#| msgid "Currently working on the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "正在处理 %2 的 %1，请稍后..."
+msgstr "正在处理 %2 的项目 %1，请稍候…"
 
 #: qtquick/qml/EntryDetails.qml:77
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "正在更新 %2 的 %1。请稍后..."
+msgstr "正在更新 %2 的项目 %1。请稍候…"
 
 #: qtquick/qml/EntryDetails.qml:80
 #, kde-format
@@ -489,12 +474,11 @@ msgstr "安装"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "安装"
+msgstr "安装…"
 
 #: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -748,10 +732,9 @@ msgid "Show Most Downloaded First"
 msgstr "最多下载在前"
 
 #: qtquick/qml/Page.qml:394
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
-msgstr "上传..."
+msgstr "上传…"
 
 #: qtquick/qml/Page.qml:395
 #, kde-format
@@ -759,16 +742,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何向此列表添加您自己的资源"
 
 #: qtquick/qml/Page.qml:405
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
-msgstr "转到..."
+msgstr "转到…"
 
 #: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "搜索..."
+msgstr "搜索…"
 
 #: qtquick/qml/Page.qml:477
 #, kde-format
@@ -847,28 +828,20 @@ msgid "By <i>%1</i>"
 msgstr "作者 <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "正在处理..."
+msgstr "正在处理…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is in the process of being "
-#| "updated"
-#| msgid "Updating..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "正在更新..."
+msgstr "正在更新…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -884,11 +857,10 @@ msgstr ""
 "product=frameworks-knewstuff\">请向 KDE 社区报告错误</a>。"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "正在安装"
+msgstr "正在安装…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -920,14 +892,11 @@ msgid "Upload New Stuff: %1"
 msgstr "上传新资源：%1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "正在更新信息..."
+msgstr "正在更新信息…"
 
 #: qtquick/qml/UploadPage.qml:125
 #, kde-format
@@ -1105,15 +1074,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."
-
-#~ msgid "Download New %1..."
-#~ msgstr "下载新%1..."
-
-#~ msgctxt ""
-#~ "Show installation options, where there is more than one downloadable item"
-#~ msgid "Install..."
-#~ msgstr "安装..."
-
-#~ msgctxt "Label for the busy indicator showing an item is installing"
-#~ msgid "Installing..."
-#~ msgstr "正在安装..."
