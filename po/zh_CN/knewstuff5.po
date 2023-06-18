@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:55+0000\n"
-"PO-Revision-Date: 2023-05-22 14:00\n"
+"PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -295,12 +295,12 @@ msgstr ""
 #: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr "无法确定下载文件 %1 的压缩包类型"
+msgstr "无法确定已下载文件 %1 的压缩文件类型"
 
 #: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "无法打开压缩包文件 %1。错误为：%2"
+msgstr "无法打开压缩文件 %1。错误为：%2"
 
 #: core/installation.cpp:678
 #, kde-format
@@ -857,14 +857,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr "正在处理 %2 的 %1，请稍后..."
+msgstr "正在处理 %2 的项目 %1，请稍候..."
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr "正在更新 %2 的 %1。请稍后..."
+msgstr "正在更新 %2 的项目 %1。请稍候..."
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
