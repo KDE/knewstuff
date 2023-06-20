@@ -996,7 +996,7 @@ msgstr "Instalar"
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show Everything"
-msgstr "Mostralo todo"
+msgstr "Amosalo todo"
 
 #: qtquick/qml/NewStuffList.qml:69
 #, kde-format
@@ -1019,7 +1019,7 @@ msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show most recent first"
-msgstr "Mostrar primeiro o máis recente"
+msgstr "Amosar primeiro o máis recente"
 
 #: qtquick/qml/NewStuffList.qml:83
 #, kde-format
@@ -1033,14 +1033,14 @@ msgstr "Ordenar alfabeticamente"
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show highest rated first"
-msgstr "Mostrar primeiro o de mellor cualificación"
+msgstr "Amosar primeiro o de mellor cualificación"
 
 #: qtquick/qml/NewStuffList.qml:85
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
-msgstr "Mostrar primeiro o máis descargado"
+msgstr "Amosar primeiro o máis descargado"
 
 #: qtquick/qml/Page.qml:132
 #, kde-format
