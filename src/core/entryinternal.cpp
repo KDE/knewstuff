@@ -767,6 +767,4 @@ QString KNSCore::replaceBBCode(const QString &unformattedText)
     return text;
 }
 
-#include "moc_entry.cpp"
-
 #include "moc_entryinternal.cpp"
