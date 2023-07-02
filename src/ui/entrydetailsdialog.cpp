@@ -303,3 +303,5 @@ void EntryDetails::installAction(QAction *action)
 {
     m_engine->install(m_entry, action->data().toInt());
 }
+
+#include "moc_entrydetailsdialog_p.cpp"

@@ -89,3 +89,5 @@ void Button::showDialog()
 }
 
 }
+
+#include "moc_button.cpp"

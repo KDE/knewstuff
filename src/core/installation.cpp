@@ -1008,3 +1008,5 @@ QStringList Installation::archiveEntries(const QString &path, const KArchiveDire
     }
     return files;
 }
+
+#include "moc_installation.cpp"

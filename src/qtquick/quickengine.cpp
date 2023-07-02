@@ -318,3 +318,5 @@ bool Engine::isValid()
 {
     return d->isValid;
 }
+
+#include "moc_quickengine.cpp"

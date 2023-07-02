@@ -352,4 +352,7 @@ void Security::slotSignFile()
         m_process = nullptr;
     }
 }
+
+#include "moc_security.cpp"
+
 #endif

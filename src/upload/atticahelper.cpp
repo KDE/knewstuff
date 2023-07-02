@@ -251,3 +251,5 @@ void AtticaHelper::slotPreviewDownload(KJob *job)
 
     Q_EMIT previewLoaded(previewNum, image);
 }
+
+#include "moc_atticahelper_p.cpp"

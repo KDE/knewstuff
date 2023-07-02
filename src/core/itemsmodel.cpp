@@ -114,3 +114,5 @@ bool ItemsModel::hasPreviewImages() const
 }
 
 } // end KNS namespace
+
+#include "moc_itemsmodel.cpp"

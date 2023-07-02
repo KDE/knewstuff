@@ -359,3 +359,5 @@ QSize ItemsViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QMod
 }
 
 } // namespace
+
+#include "moc_itemsviewdelegate_p.cpp"

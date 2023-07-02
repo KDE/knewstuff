@@ -70,3 +70,5 @@ HTTPJob *HTTPJob::get(const QUrl &source, LoadType loadType, JobFlags flags, QOb
     QTimer::singleShot(0, job, &HTTPJob::start);
     return job;
 }
+
+#include "moc_httpjob.cpp"

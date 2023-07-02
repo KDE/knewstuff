@@ -329,3 +329,5 @@ EntryInternal::List StaticXmlProvider::installedEntries() const
 }
 
 }
+
+#include "moc_staticxmlprovider_p.cpp"

@@ -766,3 +766,7 @@ QString KNSCore::replaceBBCode(const QString &unformattedText)
     text.remove(QStringLiteral("[/url]"));
     return text;
 }
+
+#include "moc_entry.cpp"
+
+#include "moc_entryinternal.cpp"

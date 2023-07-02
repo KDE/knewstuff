@@ -210,3 +210,5 @@ void KNSCore::CommentsModel::setEntry(const KNSCore::EntryInternal &newEntry)
     d->fetch(CommentsModelPrivate::ClearModel);
     Q_EMIT entryChanged();
 }
+
+#include "moc_commentsmodel.cpp"

@@ -107,3 +107,5 @@ void ItemsViewBaseDelegate::slotDetailsClicked(const QModelIndex &index)
     }
 }
 }
+
+#include "moc_itemsviewbasedelegate_p.cpp"

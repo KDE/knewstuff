@@ -167,4 +167,7 @@ void DownloadManager::fetchEntryById(const QString &id)
 {
     d->engine->fetchEntryById(id);
 }
+
+#include "moc_downloadmanager.cpp"
+
 #endif

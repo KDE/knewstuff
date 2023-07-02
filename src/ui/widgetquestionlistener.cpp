@@ -96,3 +96,5 @@ void KNS3::WidgetQuestionListener::askQuestion(KNSCore::Question *question)
     } break;
     }
 }
+
+#include "moc_widgetquestionlistener.cpp"

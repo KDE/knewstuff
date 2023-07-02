@@ -153,4 +153,6 @@ Entry::List DownloadDialog::installedEntries()
     return d->downloadWidget->installedEntries();
 }
 
+#include "moc_downloaddialog.cpp"
+
 #endif

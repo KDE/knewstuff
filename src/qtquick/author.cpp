@@ -185,3 +185,5 @@ QUrl Author::avatarUrl() const
     }
     return QUrl{};
 }
+
+#include "moc_author.cpp"

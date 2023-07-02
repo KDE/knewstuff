@@ -1250,3 +1250,5 @@ QVector<Attica::Provider *> Engine::atticaProviders() const
     }
     return ret;
 }
+
+#include "moc_engine.cpp"

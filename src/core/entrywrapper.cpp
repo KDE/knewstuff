@@ -31,3 +31,5 @@ KNSCore::EntryInternal KNSCore::EntryWrapper::entry() const
 {
     return d->entry;
 }
+
+#include "moc_entrywrapper.cpp"

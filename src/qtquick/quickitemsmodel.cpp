@@ -456,3 +456,5 @@ void ItemsModel::adoptItem(int index)
         }
     }
 }
+
+#include "moc_quickitemsmodel.cpp"

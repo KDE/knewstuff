@@ -125,3 +125,5 @@ QList<KNSCore::EntryInternal> QtQuickDialogWrapper::exec()
     return d->changedEntries;
 }
 #endif
+
+#include "moc_qtquickdialogwrapper.cpp"

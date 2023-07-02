@@ -204,3 +204,5 @@ void HTTPWorker::handleData(const QByteArray &data)
     }
     qCDebug(KNEWSTUFFCORE) << "Wrote" << written << "bytes. File is now size" << d->dataFile.size();
 }
+
+#include "moc_httpworker.cpp"

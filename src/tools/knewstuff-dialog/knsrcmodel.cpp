@@ -90,3 +90,5 @@ QVariant KNSRCModel::data(const QModelIndex &index, int role) const
     }
     return result;
 }
+
+#include "moc_knsrcmodel.cpp"

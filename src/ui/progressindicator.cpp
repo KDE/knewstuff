@@ -63,3 +63,5 @@ void ProgressIndicator::idle(const QString &message)
     m_statusLabel->setText(message);
     busyWidget->setVisible(false);
 }
+
+#include "moc_progressindicator_p.cpp"

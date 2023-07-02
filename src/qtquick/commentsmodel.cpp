@@ -134,3 +134,5 @@ bool KNewStuffQuick::CommentsModel::filterAcceptsRow(int sourceRow, const QModel
     }
     return result;
 }
+
+#include "moc_commentsmodel.cpp"

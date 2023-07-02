@@ -210,3 +210,4 @@ KPackageJob *KPackageJob::uninstall(const QString &packageName, const QString &p
 }
 
 #include "kpackagejob.moc"
+#include "moc_kpackagejob.cpp"

@@ -201,3 +201,5 @@ void Provider::setSupportsSsl(bool supportsSsl)
     }
 }
 }
+
+#include "moc_provider.cpp"

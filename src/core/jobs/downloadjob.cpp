@@ -55,3 +55,5 @@ void KNSCore::DownloadJob::handleWorkerError(const QString &error)
     setError(KJob::UserDefinedError);
     setErrorText(error);
 }
+
+#include "moc_downloadjob.cpp"

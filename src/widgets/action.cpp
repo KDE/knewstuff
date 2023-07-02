@@ -85,3 +85,5 @@ void Action::showDialog()
 }
 
 }
+
+#include "moc_action.cpp"

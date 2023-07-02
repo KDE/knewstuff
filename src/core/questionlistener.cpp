@@ -24,3 +24,5 @@ void QuestionListener::askQuestion(Question *question)
 {
     Q_UNUSED(question)
 }
+
+#include "moc_questionlistener.cpp"

@@ -78,3 +78,5 @@ QSize ImagePreviewWidget::sizeHint() const
     sh.scale(maximumSize(), Qt::KeepAspectRatio);
     return sh;
 }
+
+#include "moc_imagepreviewwidget_p.cpp"
