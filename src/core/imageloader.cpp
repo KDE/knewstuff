@@ -67,3 +67,5 @@ void ImageLoader::slotDownload(KJob *job)
     Q_EMIT signalPreviewLoaded(m_entry, m_previewType);
     deleteLater();
 }
+
+#include "moc_imageloader_p.cpp"

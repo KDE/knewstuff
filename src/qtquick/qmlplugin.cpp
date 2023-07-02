@@ -89,3 +89,5 @@ void QmlPlugins::registerTypes(const char *uri)
     // Version 1.85
     qmlRegisterType<KNSCore::ProvidersModel>(uri, 1, 85, "ProvidersModel");
 }
+
+#include "moc_qmlplugin.cpp"

@@ -111,3 +111,5 @@ QString DownloadLinkInfo::icon() const
 {
     return d->icon;
 }
+
+#include "moc_downloadlinkinfo.cpp"

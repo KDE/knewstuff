@@ -106,3 +106,5 @@ void Dialog::open()
     QDialog::open();
     d->changedEntries.clear();
 }
+
+#include "moc_dialog.cpp"

@@ -386,3 +386,5 @@ bool Transaction::isFinished() const
 {
     return d->m_finished;
 }
+
+#include "moc_transaction.cpp"

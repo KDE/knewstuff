@@ -667,3 +667,5 @@ void OPDSProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
     d->cachedEntries = cachedEntries;
 }
 }
+
+#include "moc_opdsprovider_p.cpp"

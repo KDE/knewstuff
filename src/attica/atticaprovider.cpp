@@ -685,3 +685,5 @@ Entry AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
 }
 
 } // namespace
+
+#include "moc_atticaprovider_p.cpp"

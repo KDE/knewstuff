@@ -101,3 +101,5 @@ void FileCopyJob::handleError(const QString &errorMessage)
     setErrorText(errorMessage);
     emitResult();
 }
+
+#include "moc_filecopyjob.cpp"

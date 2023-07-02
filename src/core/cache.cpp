@@ -298,3 +298,5 @@ KNSCore::Entry KNSCore::Cache::entryFromInstalledFile(const QString &installedFi
     }
     return Entry{};
 }
+
+#include "moc_cache.cpp"

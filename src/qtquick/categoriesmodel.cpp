@@ -99,3 +99,5 @@ QString CategoriesModel::idToDisplayName(const QString &id) const
     }
     return dispName;
 }
+
+#include "moc_categoriesmodel.cpp"

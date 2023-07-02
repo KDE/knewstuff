@@ -213,3 +213,5 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
+
+#include "moc_khotnewstuff_test.cpp"

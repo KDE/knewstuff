@@ -527,3 +527,5 @@ void Engine::registerTransaction(Transaction *transaction)
     connect(transaction, &Transaction::signalMessage, this, &EngineBase::signalMessage);
     connect(transaction, &Transaction::signalEntryEvent, this, &Engine::signalEntryEvent);
 }
+
+#include "moc_engine.cpp"

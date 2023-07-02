@@ -147,3 +147,5 @@ void SearchPresetModel::loadSearch(const QModelIndex &index)
     const KNSCore::Provider::SearchPreset preset = d->engine->searchPresets().at(index.row());
     d->engine->setSearchTerm(preset.request.searchTerm);
 }
+
+#include "moc_searchpresetmodel.cpp"

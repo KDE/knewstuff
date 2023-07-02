@@ -81,3 +81,5 @@ void ResultsStream::finish()
     Q_EMIT finished();
     deleteLater();
 }
+
+#include "moc_resultsstream.cpp"

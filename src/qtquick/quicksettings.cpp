@@ -58,3 +58,5 @@ bool KNewStuffQuick::Settings::allowedByKiosk() const
 {
     return KAuthorized::authorize(KAuthorized::GHNS);
 }
+
+#include "moc_quicksettings.cpp"

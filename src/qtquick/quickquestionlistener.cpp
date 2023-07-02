@@ -121,3 +121,5 @@ void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue
         d->question.clear();
     }
 }
+
+#include "moc_quickquestionlistener.cpp"

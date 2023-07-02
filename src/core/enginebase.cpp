@@ -456,3 +456,5 @@ ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
     return new ResultsStream(request, this);
 }
+
+#include "moc_enginebase.cpp"

@@ -52,3 +52,5 @@ void FileCopyWorker::run()
         Q_EMIT error(i18n("Could not open %1 for reading", d->source.fileName()));
     }
 }
+
+#include "moc_filecopyworker.cpp"

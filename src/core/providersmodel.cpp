@@ -118,3 +118,5 @@ void KNSCore::ProvidersModel::setEngine(QObject *engine)
 }
 
 }
+
+#include "moc_providersmodel.cpp"

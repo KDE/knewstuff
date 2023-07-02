@@ -56,3 +56,5 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
 
 Action::~Action() = default;
 }
+
+#include "moc_action.cpp"

@@ -50,3 +50,5 @@ QuestionManager::QuestionManager()
 }
 
 QuestionManager::~QuestionManager() = default;
+
+#include "moc_questionmanager.cpp"

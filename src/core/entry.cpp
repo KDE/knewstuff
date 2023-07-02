@@ -766,3 +766,5 @@ QDebug KNSCore::operator<<(QDebug debug, const KNSCore::Entry &entry)
                     << (deleted ? entry.uninstalledFiles() : entry.installedFiles()) << ')';
     return debug;
 }
+
+#include "moc_entry.cpp"

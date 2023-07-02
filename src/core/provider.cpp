@@ -195,3 +195,5 @@ void Provider::setIcon(const QUrl &icon)
     d->icon = icon;
 }
 }
+
+#include "moc_provider.cpp"

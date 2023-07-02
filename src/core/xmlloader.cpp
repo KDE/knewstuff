@@ -96,3 +96,5 @@ QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &ta
     return n;
 }
 } // end KNS namespace
+
+#include "moc_xmlloader_p.cpp"

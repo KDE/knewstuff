@@ -118,3 +118,5 @@ Entry Question::entry() const
 {
     return d->entry;
 }
+
+#include "moc_question.cpp"

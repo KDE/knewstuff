@@ -79,3 +79,5 @@ void Button::setConfigFile(const QString &configFile)
     d->configFile = configFile;
 }
 }
+
+#include "moc_button.cpp"
