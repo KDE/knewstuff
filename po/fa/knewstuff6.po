@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: attica/atticaprovider.cpp:168
 #, fuzzy, kde-format
@@ -138,6 +138,7 @@ msgstr "در حال نصب"
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
 msgstr[0] "بارکردن پیش‌نمایش"
+msgstr[1] ""
 
 #: core/engine.cpp:396
 #, fuzzy, kde-format
