@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: attica/atticaprovider.cpp:167
 #, fuzzy, kde-format
@@ -223,6 +223,7 @@ msgstr "در حال نصب"
 msgid "Loading one preview"
 msgid_plural "Loading %1 previews"
 msgstr[0] "بارکردن پیش‌نمایش"
+msgstr[1] ""
 
 #: core/engine.cpp:1225
 #, fuzzy, kde-format
@@ -1586,6 +1587,7 @@ msgctxt "A link to the knowledgebase (like a forum) (opens a web browser)"
 msgid "Knowledgebase (no entries)"
 msgid_plural "Knowledgebase (%1 entries)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ui/entrydetailsdialog.cpp:121
 #, fuzzy, kde-format
@@ -1616,11 +1618,12 @@ msgid "By <i>%1</i>"
 msgstr "از <i>%1</i>"
 
 #: ui/itemsgridviewdelegate.cpp:176 ui/itemsviewdelegate.cpp:262
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "fan as in supporter"
 msgid "1 fan"
 msgid_plural "%1 fans"
 msgstr[0] "%1 هوادار"
+msgstr[1] ""
 
 #: ui/itemsgridviewdelegate.cpp:179 ui/itemsviewdelegate.cpp:265
 #, fuzzy, kde-format
@@ -1628,6 +1631,7 @@ msgstr[0] "%1 هوادار"
 msgid "1 download"
 msgid_plural "%1 downloads"
 msgstr[0] "بارگیری‌ها:"
+msgstr[1] ""
 
 #: ui/itemsgridviewdelegate.cpp:245 ui/itemsviewdelegate.cpp:342
 #, kde-format
