@@ -26,11 +26,11 @@ static const QLatin1String OPDS_REL_AC_OPEN_ACCESS{"http://opds-spec.org/acquisi
 static const QLatin1String OPDS_REL_AC_BORROW{"http://opds-spec.org/acquisition/borrow"};
 static const QLatin1String OPDS_REL_AC_BUY{"http://opds-spec.org/acquisition/buy"};
 static const QLatin1String OPDS_REL_AC_SUBSCRIBE{"http://opds-spec.org/acquisition/subscribe"};
-static const QLatin1String OPDS_REL_AC_SAMPLE{"http://opds-spec.org/acquisition/sample"};
+// static const QLatin1String OPDS_REL_AC_SAMPLE{"http://opds-spec.org/acquisition/sample"};
 static const QLatin1String OPDS_REL_IMAGE{"http://opds-spec.org/image"};
 static const QLatin1String OPDS_REL_THUMBNAIL{"http://opds-spec.org/image/thumbnail"};
 static const QLatin1String OPDS_REL_CRAWL{"http://opds-spec.org/crawlable"};
-static const QLatin1String OPDS_REL_FACET{"http://opds-spec.org/facet"};
+// static const QLatin1String OPDS_REL_FACET{"http://opds-spec.org/facet"};
 static const QLatin1String OPDS_REL_SHELF{"http://opds-spec.org/shelf"};
 static const QLatin1String OPDS_REL_SORT_NEW{"http://opds-spec.org/sort/new"};
 static const QLatin1String OPDS_REL_SORT_POPULAR{"http://opds-spec.org/sort/popular"};
@@ -38,32 +38,32 @@ static const QLatin1String OPDS_REL_FEATURED{"http://opds-spec.org/featured"};
 static const QLatin1String OPDS_REL_RECOMMENDED{"http://opds-spec.org/recommended"};
 static const QLatin1String OPDS_REL_SUBSCRIPTIONS{"http://opds-spec.org/subscriptions"};
 static const QLatin1String OPDS_EL_PRICE{"opds:price"};
-static const QLatin1String OPDS_EL_INDIRECT{"opds:indirectAcquisition"};
-static const QLatin1String OPDS_ATTR_FACET_GROUP{"opds:facetGroup"};
-static const QLatin1String OPDS_ATTR_ACTIVE_FACET{"opds:activeFacet"};
+// static const QLatin1String OPDS_EL_INDIRECT{"opds:indirectAcquisition"};
+// static const QLatin1String OPDS_ATTR_FACET_GROUP{"opds:facetGroup"};
+// static const QLatin1String OPDS_ATTR_ACTIVE_FACET{"opds:activeFacet"};
 
 static const QLatin1String OPDS_ATOM_MT{"application/atom+xml"};
 static const QLatin1String OPDS_PROFILE{"profile=opds-catalog"};
 static const QLatin1String OPDS_TYPE_ENTRY{"type=entry"};
-static const QLatin1String OPDS_KIND_NAVIGATION{"kind=navigation"};
-static const QLatin1String OPDS_KIND_ACQUISITION{"kind=acquisition"};
+// static const QLatin1String OPDS_KIND_NAVIGATION{"kind=navigation"};
+// static const QLatin1String OPDS_KIND_ACQUISITION{"kind=acquisition"};
 
 static const QLatin1String REL_START{"start"};
-static const QLatin1String REL_SUBSECTION{"subsection"};
-static const QLatin1String REL_COLLECTION{"collection"};
-static const QLatin1String REL_PREVIEW{"preview"};
-static const QLatin1String REL_REPLIES{"replies"};
-static const QLatin1String REL_RELATED{"related"};
-static const QLatin1String REL_PREVIOUS{"previous"};
-static const QLatin1String REL_NEXT{"next"};
-static const QLatin1String REL_FIRST{"first"};
-static const QLatin1String REL_LAST{"last"};
+// static const QLatin1String REL_SUBSECTION{"subsection"};
+// static const QLatin1String REL_COLLECTION{"collection"};
+// static const QLatin1String REL_PREVIEW{"preview"};
+// static const QLatin1String REL_REPLIES{"replies"};
+// static const QLatin1String REL_RELATED{"related"};
+// static const QLatin1String REL_PREVIOUS{"previous"};
+// static const QLatin1String REL_NEXT{"next"};
+// static const QLatin1String REL_FIRST{"first"};
+// static const QLatin1String REL_LAST{"last"};
 static const QLatin1String REL_UP{"up"};
 static const QLatin1String REL_SELF{"self"};
 static const QLatin1String REL_ALTERNATE{"alternate"};
 static const QLatin1String ATTR_CURRENCY_CODE{"currencycode"};
-static const QLatin1String FEED_COMPLETE{"fh:complete"};
-static const QLatin1String THREAD_COUNT{"count"};
+// static const QLatin1String FEED_COMPLETE{"fh:complete"};
+// static const QLatin1String THREAD_COUNT{"count"};
 
 static const QLatin1String OPENSEARCH_NS{"http://a9.com/-/spec/opensearch/1.1/"};
 static const QLatin1String OPENSEARCH_MT{"application/opensearchdescription+xml"};
@@ -148,7 +148,6 @@ public:
         QUrl query = QUrl(urlPart);
         if (query.isRelative()) {
             if (selfUrl.isEmpty() || QUrl(selfUrl).isRelative()) {
-                QUrl host = currentUrl;
                 return currentUrl.resolved(query);
             } else {
                 return QUrl(selfUrl).resolved(query);
