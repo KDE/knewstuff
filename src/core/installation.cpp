@@ -66,8 +66,8 @@ bool Installation::readConfig(const KConfigGroup &group, QString &errorMessage)
         return false;
     }
 
-    kpackageType = group.readEntry("KPackageStructure");
-    if (uncompressSetting == UseKPackageUncompression && kpackageType.isEmpty()) {
+    kpackageStructure = group.readEntry("KPackageStructure");
+    if (uncompressSetting == UseKPackageUncompression && kpackageStructure.isEmpty()) {
         errorMessage = QStringLiteral("kpackage uncompress setting chosen, but no KPackageStructure specified");
         qCCritical(KNEWSTUFFCORE) << errorMessage;
         return false;
@@ -310,8 +310,8 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             Q_EMIT signalEntryChanged(changedEntry);
         };
 
-        qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << payloadfile << "as" << kpackageType;
-        auto job = KPackage::PackageJob::install(kpackageType, payloadfile);
+        qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << payloadfile << "as" << kpackageStructure;
+        auto job = KPackage::PackageJob::install(kpackageStructure, payloadfile);
         connect(job, &KPackage::PackageJob::finished, this, [this, entry, payloadfile, resetEntryStatus, job]() {
             if (job->error() == KJob::NoError) {
                 Entry newentry = entry;
@@ -588,7 +588,7 @@ void Installation::uninstall(Entry entry)
         if (lst.length() == 1) {
             const QString installedFile{lst.first()};
 
-            KJob *job = KPackage::PackageJob::uninstall(kpackageType, installedFile);
+            KJob *job = KPackage::PackageJob::uninstall(kpackageStructure, installedFile);
             connect(job, &KJob::result, this, [this, installedFile, entry, job]() {
                 Entry newEntry = entry;
                 if (job->error() == KJob::NoError) {
