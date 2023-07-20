@@ -58,8 +58,7 @@
          <string>Move down</string>
         </property>
         <property name="icon">
-         <iconset theme="arrow-down">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="arrow-down"/>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -78,8 +77,7 @@
          <string>Move up</string>
         </property>
         <property name="icon">
-         <iconset theme="arrow-up">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="arrow-up"/>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -98,8 +96,7 @@
          <string>Move to Main section</string>
         </property>
         <property name="icon">
-         <iconset theme="arrow-left">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="arrow-left"/>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -118,8 +115,7 @@
          <string>Move to More section</string>
         </property>
         <property name="icon">
-         <iconset theme="arrow-right">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="arrow-right"/>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -138,8 +134,7 @@
          <string>Reset</string>
         </property>
         <property name="icon">
-         <iconset theme="document-revert">
-          <normaloff>.</normaloff>.</iconset>
+         <iconset theme="document-revert"/>
         </property>
         <property name="toolButtonStyle">
          <enum>Qt::ToolButtonTextUnderIcon</enum>
