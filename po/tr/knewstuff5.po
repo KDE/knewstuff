@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:55+0000\n"
+"POT-Creation-Date: 2023-07-21 00:44+0000\n"
 "PO-Revision-Date: 2023-02-08 19:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -784,37 +784,37 @@ msgid "Move down"
 msgstr "Aşağı taşı"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:77
 #, kde-format
 msgid "Move up"
 msgstr "Yukarı taşı"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:96
 #, kde-format
 msgid "Move to Main section"
 msgstr "Ana bölüme taşı"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:115
 #, kde-format
 msgid "Move to More section"
 msgstr "Daha fazla bölümüne taşı"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:134
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:154
 #, kde-format
 msgid "More section"
 msgstr "Daha fazla bölümü"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:206
 #, kde-format
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
@@ -822,7 +822,7 @@ msgid ""
 msgstr "Bu menü için kurulu olmayan bazı başka araçlar da önerilmektedir:"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:216
 #, kde-format
 msgid "More tools..."
 msgstr "Daha fazla araç..."

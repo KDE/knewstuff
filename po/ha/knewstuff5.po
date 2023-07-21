@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:55+0000\n"
+"POT-Creation-Date: 2023-07-21 00:44+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -696,38 +696,38 @@ msgid "Move down"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:77
 #, kde-format
 msgid "Move up"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:96
 #, kde-format
 msgid "Move to Main section"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:115
 #, kde-format
 msgid "Move to More section"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:134
 #, kde-format
 msgid "Reset"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:154
 #, fuzzy, kde-format
 #| msgid "Action"
 msgid "More section"
 msgstr "Aiki"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:206
 #, kde-format
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
@@ -735,7 +735,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:216
 #, fuzzy, kde-format
 #| msgid "A&uthor"
 msgid "More tools..."

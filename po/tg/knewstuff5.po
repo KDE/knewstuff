@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:55+0000\n"
+"POT-Creation-Date: 2023-07-21 00:44+0000\n"
 "PO-Revision-Date: 2021-09-05 11:57-0700\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik Language Support\n"
@@ -726,37 +726,37 @@ msgid "Move down"
 msgstr "Ба поён ҳаракат кардан"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:77
 #, kde-format
 msgid "Move up"
 msgstr "Ба боло ҳаракат кардан"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:96
 #, kde-format
 msgid "Move to Main section"
 msgstr "Ба интихоби асосӣ ҳаракат кардан"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:115
 #, kde-format
 msgid "Move to More section"
 msgstr "Ба интихоби бештар ҳаракат кардан"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:134
 #, kde-format
 msgid "Reset"
 msgstr "Бозсозӣ кардан"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:154
 #, kde-format
 msgid "More section"
 msgstr "Интихоби бештар"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:206
 #, kde-format
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
@@ -766,7 +766,7 @@ msgstr ""
 "карда нашудаанд:"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:216
 #, kde-format
 msgid "More tools..."
 msgstr "Абзорҳои бештар..."

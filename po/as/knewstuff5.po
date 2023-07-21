@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:55+0000\n"
+"POT-Creation-Date: 2023-07-21 00:44+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -743,40 +743,40 @@ msgid "Move down"
 msgstr "তলত স্থানান্তৰ (&D)"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:78
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:77
 #, fuzzy, kde-format
 #| msgid "Move &Up"
 msgid "Move up"
 msgstr "ওপৰত স্থানান্তৰ (&U)"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:98
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:96
 #, kde-format
 msgid "Move to Main section"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:118
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:115
 #, fuzzy, kde-format
 #| msgid "More Actions"
 msgid "Move to More section"
 msgstr "অতিৰিক্ত কাৰ্য্য"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:138
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:134
 #, kde-format
 msgid "Reset"
 msgstr "ৰি-সেট কৰক"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:159
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:154
 #, fuzzy, kde-format
 #| msgid "More Actions"
 msgid "More section"
 msgstr "অতিৰিক্ত কাৰ্য্য"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:211
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:206
 #, kde-format
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
@@ -784,7 +784,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
-#: kmoretools/ui/kmoretoolsconfigwidget.ui:221
+#: kmoretools/ui/kmoretoolsconfigwidget.ui:216
 #, fuzzy, kde-format
 #| msgid "Choose..."
 msgid "More tools..."
