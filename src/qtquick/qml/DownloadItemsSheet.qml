@@ -49,8 +49,8 @@ Kirigami.OverlaySheet {
 
             // Don't need a highlight or hover effects
             hoverEnabled: false
-            activeBackgroundColor: "transparent"
             activeTextColor: Kirigami.Theme.textColor
+            background: null
 
             trailing: RowLayout {
                 QQC2.Label {
