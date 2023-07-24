@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:44+0000\n"
-"PO-Revision-Date: 2023-03-01 01:59+0100\n"
+"PO-Revision-Date: 2023-04-22 00:35+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -135,7 +135,7 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "%1의 설치 핸들러를 초기화할 수 없음\n"
-"치명적인 오류입니다.프로그램 개발자에게 보고해 주십시오"
+"치명적인 오류입니다.앱 개발자에게 보고해 주십시오"
 
 #: core/engine.cpp:359
 #, kde-format
