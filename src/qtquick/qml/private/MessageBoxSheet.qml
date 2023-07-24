@@ -27,7 +27,7 @@ Kirigami.OverlaySheet {
     // This is a TextEdit rather than a label, because the QQC Label control
     // does not support text selection (and it's very useful to be able to
     // select error texts for searchy purposes)
-    contentItem: QtLayouts.RowLayout {
+    QtLayouts.RowLayout {
         QtLayouts.Layout.preferredWidth: Kirigami.Units.gridUnit * 10
         QtLayouts.Layout.margins: Kirigami.Units.largeSpacing
         Kirigami.Icon {
@@ -47,19 +47,6 @@ Kirigami.OverlaySheet {
             selectionColor: Kirigami.Theme.highlightColor
             textFormat: TextEdit.AutoText
             onLinkActivated: Qt.openUrlExternally(link)
-        }
-    }
-    footer: QtLayouts.RowLayout {
-        Item { QtLayouts.Layout.fillWidth: true }
-        Repeater {
-            model: component.actions;
-            QtControls.Button {
-                action: modelData
-                Connections {
-                    target: action
-                    onTriggered: component.close()
-                }
-            }
         }
     }
 }
