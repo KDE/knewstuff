@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:44+0000\n"
-"PO-Revision-Date: 2023-04-22 00:35+0200\n"
+"PO-Revision-Date: 2023-07-25 00:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -1323,7 +1323,7 @@ msgstr "새로운 항목 업로드: %1"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "정보 가져오는 중..."
+msgstr "정보 업데이트 중..."
 
 #: qtquick/qml/UploadPage.qml:95
 #, kde-format
