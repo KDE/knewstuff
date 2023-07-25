@@ -552,6 +552,5 @@ inline uint qHash(const KNSCore::Entry &entry)
 
 KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug debug, const KNSCore::Entry &entry);
 }
-Q_DECLARE_METATYPE(KNSCore::Entry::List)
-Q_DECLARE_METATYPE(KNSCore::Entry)
+
 #endif

@@ -216,6 +216,5 @@ public:
 private:
     const std::unique_ptr<ItemsModelPrivate> d;
 };
-Q_DECLARE_METATYPE(ItemsModel::ItemStatus)
 
 #endif // ITEMSMODEL_H

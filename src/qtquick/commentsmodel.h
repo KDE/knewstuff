@@ -89,5 +89,5 @@ private:
     const std::unique_ptr<CommentsModelPrivate> d;
 };
 }
-Q_DECLARE_METATYPE(KNewStuffQuick::CommentsModel::IncludedComments)
+
 #endif // KNSQUICK_COMMENTSMODEL_H
