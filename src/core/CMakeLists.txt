@@ -99,13 +99,13 @@ target_link_libraries(KF6NewStuffCore
   PUBLIC
     KF6::Attica                # For interacting with ocs providers, public for uploaddialog slots
     KF6::CoreAddons
+    Qt6::Gui                   # For QImage
   PRIVATE
     KF6::Archive               # For decompressing archives
     KF6::I18n                  # For translations
     KF6::ConfigCore
     KF6::Package
     Qt6::Xml
-    Qt6::Gui                   # For QImage
     knscore_jobs_static
 )
 
