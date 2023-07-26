@@ -553,4 +553,6 @@ inline uint qHash(const KNSCore::Entry &entry)
 KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug debug, const KNSCore::Entry &entry);
 }
 
+Q_DECLARE_TYPEINFO(KNSCore::Entry, Q_RELOCATABLE_TYPE);
+
 #endif
