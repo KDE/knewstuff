@@ -94,14 +94,14 @@ void InstallationTest::testUninstallCommand()
     file.close();
     entry.setStatus(KNSCore::Entry::Installed);
     entry.setInstalledFiles(QStringList(file.fileName()));
-    QVERIFY(QFileInfo(file).exists());
+    QVERIFY(QFileInfo::exists(file));
     QVERIFY(!QFileInfo::exists("uninstalled.txt"));
 
     installation->uninstall(entry);
     QSignalSpy spy(installation, &Installation::signalEntryChanged);
     QVERIFY(spy.wait());
     QCOMPARE(entry.status(), KNSCore::Entry::Deleted);
-    QVERIFY(!QFileInfo(file).exists());
+    QVERIFY(!QFileInfo::exists(file));
     QVERIFY(QFileInfo::exists("uninstalled.txt"));
 }
 
