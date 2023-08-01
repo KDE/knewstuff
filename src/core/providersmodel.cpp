@@ -51,44 +51,32 @@ int KNSCore::ProvidersModel::rowCount(const QModelIndex &parent) const
 
 QVariant KNSCore::ProvidersModel::data(const QModelIndex &index, int role) const
 {
-    QVariant result;
     if (checkIndex(index) && d->engine) {
         QSharedPointer<Provider> provider = d->engine->provider(d->knownProviders.value(index.row()));
         if (provider) {
             switch (role) {
             case IdRole:
-                result.setValue(provider->id());
-                break;
+                return provider->id();
             case NameRole:
-                result.setValue(provider->name());
-                break;
+                return provider->name();
             case VersionRole:
-                result.setValue(provider->version());
-                break;
+                return provider->version();
             case WebsiteRole:
-                result.setValue(provider->website());
-                break;
+                return provider->website();
             case HostRole:
-                result.setValue(provider->host());
-                break;
+                return provider->host();
             case ContactEmailRole:
-                result.setValue(provider->contactEmail());
-                break;
+                return provider->contactEmail();
             case SupportsSslRole:
-                result.setValue(provider->supportsSsl());
-                break;
+                return provider->supportsSsl();
             case IconRole:
-                result.setValue(provider->icon());
-                break;
+                return provider->icon();
             case ObjectRole:
-                result.setValue<QObject *>(provider.data());
-                break;
-            default:
-                break;
+                return QVariant::fromValue(provider.data());
             }
         }
     }
-    return result;
+    return QVariant();
 }
 
 QObject *KNSCore::ProvidersModel::engine() const

@@ -118,56 +118,41 @@ QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
 
 QVariant KNSCore::CommentsModel::data(const QModelIndex &index, int role) const
 {
-    QVariant value;
-    if (checkIndex(index)) {
-        std::shared_ptr<KNSCore::Comment> comment = d->comments[index.row()];
-        switch (role) {
-        case IdRole:
-            value.setValue(comment->id);
-            break;
-        case SubjectRole:
-            value.setValue(comment->subject);
-            break;
-        case TextRole:
-            value.setValue(comment->text);
-            break;
-        case ChildCountRole:
-            value.setValue(comment->childCount);
-            break;
-        case UsernameRole:
-            value.setValue(comment->username);
-            break;
-        case DateRole:
-            value.setValue(comment->date);
-            break;
-        case ScoreRole:
-            value.setValue(comment->score);
-            break;
-        case ParentIndexRole: {
-            int idx{-1};
-            if (comment->parent) {
-                idx = d->comments.indexOf(comment->parent);
-            }
-            value.setValue(idx);
-        } break;
-        case DepthRole: {
-            int depth{0};
-            if (comment->parent) {
-                std::shared_ptr<KNSCore::Comment> child = comment->parent;
-                while (child) {
-                    ++depth;
-                    child = child->parent;
-                }
-            }
-            value.setValue(depth);
-            break;
-        }
-        default:
-            value.setValue(i18nc("The value returned for an unknown role when requesting data from the model.", "Unknown CommentsModel role"));
-            break;
-        }
+    if (!checkIndex(index)) {
+        return QVariant();
     }
-    return value;
+    const std::shared_ptr<KNSCore::Comment> comment = d->comments[index.row()];
+    switch (role) {
+    case IdRole:
+        return comment->id;
+    case SubjectRole:
+        return comment->subject;
+    case TextRole:
+        return comment->text;
+    case ChildCountRole:
+        return comment->childCount;
+    case UsernameRole:
+        return comment->username;
+    case DateRole:
+        return comment->date;
+    case ScoreRole:
+        return comment->score;
+    case ParentIndexRole:
+        return comment->parent ? d->comments.indexOf(comment->parent) : -1;
+    case DepthRole: {
+        int depth{0};
+        if (comment->parent) {
+            std::shared_ptr<KNSCore::Comment> child = comment->parent;
+            while (child) {
+                ++depth;
+                child = child->parent;
+            }
+        }
+        return depth;
+    }
+    default:
+        return i18nc("The value returned for an unknown role when requesting data from the model.", "Unknown CommentsModel role");
+    }
 }
 
 int KNSCore::CommentsModel::rowCount(const QModelIndex &parent) const

@@ -36,43 +36,35 @@ int CategoriesModel::rowCount(const QModelIndex &parent) const
 
 QVariant CategoriesModel::data(const QModelIndex &index, int role) const
 {
-    QVariant result;
+    if (!index.isValid()) {
+        return QVariant();
+    }
     const QList<KNSCore::Provider::CategoryMetadata> categoriesMetadata = m_engine->categoriesMetadata();
-    if (index.isValid()) {
-        if (index.row() == 0) {
-            switch (role) {
-            case NameRole:
-                result.setValue(QString());
-                break;
-            case IdRole:
-                result.setValue(0);
-                break;
-            case DisplayNameRole:
-                result.setValue(i18nc("The first entry in the category selection list (also the default value)", "All Categories"));
-                break;
-            default:
-                result.setValue(QStringLiteral("Unknown role"));
-                break;
-            }
-        } else if (index.row() <= categoriesMetadata.count()) {
-            const KNSCore::Provider::CategoryMetadata category = categoriesMetadata[index.row() - 1];
-            switch (role) {
-            case NameRole:
-                result.setValue(category.name);
-                break;
-            case IdRole:
-                result.setValue(category.id);
-                break;
-            case DisplayNameRole:
-                result.setValue(category.displayName);
-                break;
-            default:
-                result.setValue(QStringLiteral("Unknown role"));
-                break;
-            }
+    if (index.row() == 0) {
+        switch (role) {
+        case NameRole:
+            return QString();
+        case IdRole:
+            return 0;
+        case DisplayNameRole:
+            return i18nc("The first entry in the category selection list (also the default value)", "All Categories");
+        default:
+            return QStringLiteral("Unknown role");
+        }
+    } else if (index.row() <= categoriesMetadata.count()) {
+        const KNSCore::Provider::CategoryMetadata category = categoriesMetadata[index.row() - 1];
+        switch (role) {
+        case NameRole:
+            return category.name;
+        case IdRole:
+            return category.id;
+        case DisplayNameRole:
+            return category.displayName;
+        default:
+            return QStringLiteral("Unknown role");
         }
     }
-    return result;
+    return QVariant();
 }
 
 QString CategoriesModel::idToDisplayName(const QString &id) const

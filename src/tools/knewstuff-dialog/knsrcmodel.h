@@ -9,7 +9,6 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
-#include <memory>
 
 class KNSRCModel : public QAbstractListModel
 {
@@ -28,7 +27,11 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 private:
-    std::unique_ptr<class Private> d;
+    struct Entry {
+        QString name;
+        QString filePath;
+    };
+    QList<Entry *> m_entries;
 };
 
 #endif // KNSRCMODEL_H

@@ -159,22 +159,18 @@ int ItemsModel::rowCount(const QModelIndex &parent) const
 
 QVariant ItemsModel::data(const QModelIndex &index, int role) const
 {
-    QVariant data;
     if (index.isValid() && d->initModel()) {
         KNSCore::Entry entry = d->model->data(d->model->index(index.row()), Qt::UserRole).value<KNSCore::Entry>();
         switch (role) {
         case NameRole:
         case Qt::DisplayRole:
-            data.setValue<QString>(entry.name());
-            break;
+            return entry.name();
         case UniqueIdRole:
-            data.setValue<QString>(entry.uniqueId());
-            break;
+            return entry.uniqueId();
         case CategoryRole:
-            data.setValue<QString>(entry.category());
-            break;
+            return entry.category();
         case HomepageRole:
-            data.setValue<QUrl>(entry.homepage());
+            return entry.homepage();
             break;
         case AuthorRole: {
             KNSCore::Author author = entry.author();
@@ -186,37 +182,28 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             returnAuthor[QStringLiteral("jabber")] = author.jabber();
             returnAuthor[QStringLiteral("avatarUrl")] = author.avatarUrl();
             returnAuthor[QStringLiteral("description")] = author.description();
-            data.setValue<>(returnAuthor);
+            return returnAuthor;
         } break;
         case LicenseRole:
-            data.setValue<QString>(entry.license());
-            break;
+            return entry.license();
         case ShortSummaryRole:
-            data.setValue<QString>(entry.shortSummary());
-            break;
+            return entry.shortSummary();
         case SummaryRole:
-            data.setValue<QString>(entry.summary());
-            break;
+            return entry.summary();
         case ChangelogRole:
-            data.setValue<QString>(entry.changelog());
-            break;
+            return entry.changelog();
         case VersionRole:
-            data.setValue<QString>(entry.version());
-            break;
+            return entry.version();
         case ReleaseDateRole:
-            data.setValue<QDate>(entry.releaseDate());
-            break;
+            return entry.releaseDate();
         case UpdateVersionRole:
-            data.setValue<QString>(entry.updateVersion());
-            break;
+            return entry.updateVersion();
         case UpdateReleaseDateRole:
-            data.setValue<QDate>(entry.updateReleaseDate());
-            break;
+            return entry.updateReleaseDate();
         case PayloadRole:
-            data.setValue<QString>(entry.payload());
-            break;
+            return entry.payload();
         case Qt::DecorationRole:
-            data.setValue<QString>(entry.previewUrl(KNSCore::Entry::PreviewSmall1));
+            return entry.previewUrl(KNSCore::Entry::PreviewSmall1);
             break;
         case PreviewsSmallRole: {
             QStringList previews;
@@ -226,7 +213,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             while (!previews.isEmpty() && previews.last().isEmpty()) {
                 previews.takeLast();
             }
-            data.setValue(previews);
+            return previews;
         } break;
         case PreviewsRole: {
             QStringList previews;
@@ -236,32 +223,24 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             while (!previews.isEmpty() && previews.last().isEmpty()) {
                 previews.takeLast();
             }
-            data.setValue(previews);
+            return previews;
         } break;
         case InstalledFilesRole:
-            data.setValue(entry.installedFiles());
-            break;
+            return entry.installedFiles();
         case UnInstalledFilesRole:
-            data.setValue(entry.uninstalledFiles());
-            break;
+            return entry.uninstalledFiles();
         case RatingRole:
-            data.setValue<int>(entry.rating());
-            break;
+            return entry.rating();
         case NumberOfCommentsRole:
-            data.setValue<int>(entry.numberOfComments());
-            break;
+            return entry.numberOfComments();
         case DownloadCountRole:
-            data.setValue<int>(entry.downloadCount());
-            break;
+            return entry.downloadCount();
         case NumberFansRole:
-            data.setValue<int>(entry.numberFans());
-            break;
+            return entry.numberFans();
         case NumberKnowledgebaseEntriesRole:
-            data.setValue<int>(entry.numberKnowledgebaseEntries());
-            break;
+            return entry.numberKnowledgebaseEntries();
         case KnowledgebaseLinkRole:
-            data.setValue<QString>(entry.knowledgebaseLink());
-            break;
+            return entry.knowledgebaseLink();
         case DownloadLinksRole: {
             // This would be good to cache... but it also needs marking as dirty, somehow...
             const QList<KNSCore::Entry::DownloadLinkInformation> dllinks = entry.downloadLinkInformationList();
@@ -274,56 +253,43 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 data.descriptionLink = entry.payload();
                 list.append(QVariant::fromValue(DownloadLinkInfo(data)));
             }
-            data.setValue(list);
-        } break;
+            return QVariant::fromValue(list);
+        }
         case DonationLinkRole:
-            data.setValue<QString>(entry.donationLink());
-            break;
+            return entry.donationLink();
         case ProviderIdRole:
-            data.setValue<QString>(entry.providerId());
-            break;
+            return entry.providerId();
         case SourceRole: {
             KNSCore::Entry::Source src = entry.source();
             switch (src) {
             case KNSCore::Entry::Cache:
-                data.setValue<QString>(QStringLiteral("Cache"));
-                break;
+                return QStringLiteral("Cache");
             case KNSCore::Entry::Online:
-                data.setValue<QString>(QStringLiteral("Online"));
-                break;
+                return QStringLiteral("Online");
             case KNSCore::Entry::Registry:
-                data.setValue<QString>(QStringLiteral("Registry"));
-                break;
+                return QStringLiteral("Registry");
             default:
-                data.setValue<QString>(QStringLiteral("Unknown source - shouldn't be possible"));
-                break;
+                return QStringLiteral("Unknown source - shouldn't be possible");
             }
         } break;
         case StatusRole: {
             KNSCore::Entry::Status status = entry.status();
             switch (status) {
             case KNSCore::Entry::Downloadable:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::DownloadableStatus);
-                break;
+                return ItemsModel::DownloadableStatus;
             case KNSCore::Entry::Installed:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::InstalledStatus);
-                break;
+                return ItemsModel::InstalledStatus;
             case KNSCore::Entry::Updateable:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::UpdateableStatus);
-                break;
+                return ItemsModel::UpdateableStatus;
             case KNSCore::Entry::Deleted:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::DeletedStatus);
-                break;
+                return ItemsModel::DeletedStatus;
             case KNSCore::Entry::Installing:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::InstallingStatus);
-                break;
+                return ItemsModel::InstallingStatus;
             case KNSCore::Entry::Updating:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::UpdatingStatus);
-                break;
+                return ItemsModel::UpdatingStatus;
             case KNSCore::Entry::Invalid:
             default:
-                data.setValue<ItemsModel::ItemStatus>(ItemsModel::InvalidStatus);
-                break;
+                return ItemsModel::InvalidStatus;
             }
         } break;
         case CommentsModelRole: {
@@ -335,22 +301,21 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             } else {
                 commentsModel = d->commentsModels[entry.uniqueId()];
             }
-            data.setValue<QObject *>(commentsModel);
+            return QVariant::fromValue(commentsModel);
         } break;
         case EntryTypeRole: {
             KNSCore::Entry::EntryType type = entry.entryType();
             if (type == KNSCore::Entry::GroupEntry) {
-                data.setValue<ItemsModel::EntryType>(ItemsModel::GroupEntry);
+                return ItemsModel::GroupEntry;
             } else {
-                data.setValue<ItemsModel::EntryType>(ItemsModel::CatalogEntry);
+                return ItemsModel::CatalogEntry;
             }
         } break;
         default:
-            data.setValue<QString>(QStringLiteral("Unknown role"));
-            break;
+            return QStringLiteral("Unknown role");
         }
     }
-    return data;
+    return QVariant();
 }
 
 bool ItemsModel::canFetchMore(const QModelIndex &parent) const

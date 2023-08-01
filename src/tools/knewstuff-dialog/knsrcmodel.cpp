@@ -12,20 +12,8 @@
 #include <KConfigGroup>
 #include <QDir>
 
-struct Entry {
-    QString name;
-    QString filePath;
-};
-
-class Private
-{
-public:
-    QList<Entry *> m_entries;
-};
-
 KNSRCModel::KNSRCModel(QObject *parent)
     : QAbstractListModel(parent)
-    , d(new Private())
 {
     const QStringList files = KNSCore::EngineBase::availableConfigFiles();
     for (const auto &file : files) {
@@ -49,9 +37,9 @@ KNSRCModel::KNSRCModel(QObject *parent)
         entry->name = group.readEntry("Name", constructedName);
         entry->filePath = file;
 
-        d->m_entries << entry;
+        m_entries << entry;
     }
-    std::sort(d->m_entries.begin(), d->m_entries.end(), [](const Entry *a, const Entry *b) -> bool {
+    std::sort(m_entries.begin(), m_entries.end(), [](const Entry *a, const Entry *b) -> bool {
         return QString::localeAwareCompare(b->name, a->name) > 0;
     });
 }
@@ -69,26 +57,21 @@ int KNSRCModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return d->m_entries.count();
+    return m_entries.count();
 }
 
 QVariant KNSRCModel::data(const QModelIndex &index, int role) const
 {
-    QVariant result;
     if (checkIndex(index)) {
-        Entry *entry = d->m_entries[index.row()];
+        Entry *entry = m_entries[index.row()];
         switch (role) {
         case NameRole:
-            result.setValue(entry->name);
-            break;
+            return entry->name;
         case FilePathRole:
-            result.setValue(entry->filePath);
-            break;
-        default:
-            break;
+            return entry->filePath;
         }
     }
-    return result;
+    return QVariant();
 }
 
 #include "moc_knsrcmodel.cpp"

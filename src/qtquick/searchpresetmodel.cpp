@@ -29,93 +29,70 @@ QHash<int, QByteArray> SearchPresetModel::roleNames() const
 
 QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
 {
-    QVariant result;
     if (index.isValid() && checkIndex(index)) {
         const QList<KNSCore::Provider::SearchPreset> presets = m_engine->searchPresets();
         const KNSCore::Provider::SearchPreset preset = presets[index.row()];
 
         if (role == DisplayNameRole) {
-            QString name = preset.displayName;
-
-            if (name.isEmpty()) {
-                switch (preset.type) {
-                case KNSCore::Provider::SearchPresetTypes::GoBack:
-                    name = i18nc("Knewstuff5", "Back");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Popular:
-                    name = i18nc("Knewstuff5", "Popular");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Featured:
-                    name = i18nc("Knewstuff5", "Featured");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Start:
-                    name = i18nc("Knewstuff5", "Restart");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::New:
-                    name = i18nc("Knewstuff5", "New");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Root:
-                    name = i18nc("Knewstuff5", "Home");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Shelf:
-                    name = i18nc("Knewstuff5", "Shelf");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::FolderUp:
-                    name = i18nc("Knewstuff5", "Up");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Recommended:
-                    name = i18nc("Knewstuff5", "Recommended");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Subscription:
-                    name = i18nc("Knewstuff5", "Subscriptions");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::AllEntries:
-                    name = i18nc("Knewstuff5", "All Entries");
-                    break;
-                default:
-                    name = i18nc("Knewstuff5", "Search Preset: %1", preset.request.searchTerm);
-                }
+            if (QString name = preset.displayName; !name.isEmpty()) {
+                return name;
             }
 
-            result.setValue(name);
+            switch (preset.type) {
+            case KNSCore::Provider::SearchPresetTypes::GoBack:
+                return i18nc("Knewstuff5", "Back");
+            case KNSCore::Provider::SearchPresetTypes::Popular:
+                return i18nc("Knewstuff5", "Popular");
+            case KNSCore::Provider::SearchPresetTypes::Featured:
+                return i18nc("Knewstuff5", "Featured");
+            case KNSCore::Provider::SearchPresetTypes::Start:
+                return i18nc("Knewstuff5", "Restart");
+            case KNSCore::Provider::SearchPresetTypes::New:
+                return i18nc("Knewstuff5", "New");
+            case KNSCore::Provider::SearchPresetTypes::Root:
+                return i18nc("Knewstuff5", "Home");
+            case KNSCore::Provider::SearchPresetTypes::Shelf:
+                return i18nc("Knewstuff5", "Shelf");
+            case KNSCore::Provider::SearchPresetTypes::FolderUp:
+                return i18nc("Knewstuff5", "Up");
+            case KNSCore::Provider::SearchPresetTypes::Recommended:
+                return i18nc("Knewstuff5", "Recommended");
+            case KNSCore::Provider::SearchPresetTypes::Subscription:
+                return i18nc("Knewstuff5", "Subscriptions");
+            case KNSCore::Provider::SearchPresetTypes::AllEntries:
+                return i18nc("Knewstuff5", "All Entries");
+            default:
+                return i18nc("Knewstuff5", "Search Preset: %1", preset.request.searchTerm);
+            }
         } else if (role == IconRole) {
-            QString name = preset.iconName;
-
-            if (name.isEmpty()) {
-                switch (preset.type) {
-                case KNSCore::Provider::SearchPresetTypes::GoBack:
-                    name = QStringLiteral("arrow-left");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Popular:
-                case KNSCore::Provider::SearchPresetTypes::Featured:
-                case KNSCore::Provider::SearchPresetTypes::Recommended:
-                    name = QStringLiteral("rating");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::New:
-                    name = QStringLiteral("change-date-symbolic");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Start:
-                    name = QStringLiteral("start-over");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Root:
-                    name = QStringLiteral("go-home");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::Shelf:
-                case KNSCore::Provider::SearchPresetTypes::Subscription:
-                    name = QStringLiteral("bookmark");
-                    break;
-                case KNSCore::Provider::SearchPresetTypes::FolderUp:
-                    name = QStringLiteral("arrow-up");
-                    break;
-                default:
-                    name = QStringLiteral("search");
-                }
+            if (QString name = preset.iconName; !name.isEmpty()) {
+                return name;
             }
 
-            result.setValue(name);
+            switch (preset.type) {
+            case KNSCore::Provider::SearchPresetTypes::GoBack:
+                return QStringLiteral("arrow-left");
+            case KNSCore::Provider::SearchPresetTypes::Popular:
+            case KNSCore::Provider::SearchPresetTypes::Featured:
+            case KNSCore::Provider::SearchPresetTypes::Recommended:
+                return QStringLiteral("rating");
+            case KNSCore::Provider::SearchPresetTypes::New:
+                return QStringLiteral("change-date-symbolic");
+            case KNSCore::Provider::SearchPresetTypes::Start:
+                return QStringLiteral("start-over");
+            case KNSCore::Provider::SearchPresetTypes::Root:
+                return QStringLiteral("go-home");
+            case KNSCore::Provider::SearchPresetTypes::Shelf:
+            case KNSCore::Provider::SearchPresetTypes::Subscription:
+                return QStringLiteral("bookmark");
+            case KNSCore::Provider::SearchPresetTypes::FolderUp:
+                return QStringLiteral("arrow-up");
+            default:
+                return QStringLiteral("search");
+            }
         }
     }
-    return result;
+    return QVariant();
 }
 
 int SearchPresetModel::rowCount(const QModelIndex &parent) const
