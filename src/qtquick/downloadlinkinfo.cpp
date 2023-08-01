@@ -8,38 +8,22 @@
 #include <KFormat>
 #include <QMimeDatabase>
 
-static const KFormat formatter;
-
-class DownloadLinkInfoPrivate
+class DownloadLinkInfoPrivate : public QSharedData
 {
 public:
-    DownloadLinkInfoPrivate()
-        : id(0)
-        , isDownloadtypeLink(true)
-        , size(0)
-    {
-    }
-
     QString name;
     QString priceAmount;
     QString distributionType;
     QString descriptionLink;
-    int id;
-    bool isDownloadtypeLink;
-    quint64 size;
+    int id = 0;
+    bool isDownloadtypeLink = true;
+    quint64 size = 0;
     QString mimeType;
     QString icon;
 };
 
-DownloadLinkInfo::DownloadLinkInfo(QObject *parent)
-    : QObject(parent)
-    , d(new DownloadLinkInfoPrivate)
-{
-}
-
-DownloadLinkInfo::~DownloadLinkInfo() = default;
-
-void DownloadLinkInfo::setData(const KNSCore::Entry::DownloadLinkInformation &data)
+DownloadLinkInfo::DownloadLinkInfo(const KNSCore::Entry::DownloadLinkInformation &data)
+    : d(new DownloadLinkInfoPrivate)
 {
     d->name = data.name;
     d->priceAmount = data.priceAmount;
@@ -61,8 +45,11 @@ void DownloadLinkInfo::setData(const KNSCore::Entry::DownloadLinkInformation &da
     if (d->icon.isEmpty()) {
         d->icon = QStringLiteral("download");
     }
-    Q_EMIT dataChanged();
 }
+
+DownloadLinkInfo::DownloadLinkInfo(const DownloadLinkInfo &) = default;
+DownloadLinkInfo &DownloadLinkInfo::operator=(const DownloadLinkInfo &) = default;
+DownloadLinkInfo::~DownloadLinkInfo() = default;
 
 QString DownloadLinkInfo::name() const
 {
@@ -101,6 +88,7 @@ quint64 DownloadLinkInfo::size() const
 
 QString DownloadLinkInfo::formattedSize() const
 {
+    static const KFormat formatter;
     if (d->size == 0) {
         return QString();
     }

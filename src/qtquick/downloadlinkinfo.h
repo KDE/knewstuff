@@ -7,11 +7,9 @@
 #ifndef DOWNLOADLINKINFO_H
 #define DOWNLOADLINKINFO_H
 
-#include <QObject>
-
 #include "KNSCore/Entry"
 
-#include <memory>
+#include <QSharedData>
 
 class DownloadLinkInfoPrivate;
 /**
@@ -21,25 +19,24 @@ class DownloadLinkInfoPrivate;
  * instance and provides property accessors for each of the pieces of information stored
  * in it.
  */
-class DownloadLinkInfo : public QObject
+class DownloadLinkInfo
 {
-    Q_OBJECT
-    Q_PROPERTY(QString name READ name NOTIFY dataChanged)
-    Q_PROPERTY(QString priceAmount READ priceAmount NOTIFY dataChanged)
-    Q_PROPERTY(QString distributionType READ distributionType NOTIFY dataChanged)
-    Q_PROPERTY(QString descriptionLink READ descriptionLink NOTIFY dataChanged)
-    Q_PROPERTY(int id READ id NOTIFY dataChanged)
-    Q_PROPERTY(bool isDownloadtypeLink READ isDownloadtypeLink NOTIFY dataChanged)
-    Q_PROPERTY(quint64 size READ size NOTIFY dataChanged)
-    Q_PROPERTY(QString formattedSize READ formattedSize NOTIFY dataChanged)
-    Q_PROPERTY(QString icon READ icon NOTIFY dataChanged)
+    Q_GADGET
+    Q_PROPERTY(QString name READ name CONSTANT)
+    Q_PROPERTY(QString priceAmount READ priceAmount CONSTANT)
+    Q_PROPERTY(QString distributionType READ distributionType CONSTANT)
+    Q_PROPERTY(QString descriptionLink READ descriptionLink CONSTANT)
+    Q_PROPERTY(int id READ id CONSTANT)
+    Q_PROPERTY(bool isDownloadtypeLink READ isDownloadtypeLink CONSTANT)
+    Q_PROPERTY(quint64 size READ size CONSTANT)
+    Q_PROPERTY(QString formattedSize READ formattedSize CONSTANT)
+    Q_PROPERTY(QString icon READ icon CONSTANT)
 
 public:
-    explicit DownloadLinkInfo(QObject *parent = nullptr);
-    ~DownloadLinkInfo() override;
-
-    void setData(const KNSCore::Entry::DownloadLinkInformation &data);
-    Q_SIGNAL void dataChanged();
+    explicit DownloadLinkInfo(const KNSCore::Entry::DownloadLinkInformation &data);
+    DownloadLinkInfo(const DownloadLinkInfo &);
+    DownloadLinkInfo &operator=(const DownloadLinkInfo &);
+    ~DownloadLinkInfo();
 
     QString name() const;
     QString priceAmount() const;
@@ -52,7 +49,7 @@ public:
     QString icon() const;
 
 private:
-    const std::unique_ptr<DownloadLinkInfoPrivate> d;
+    QSharedDataPointer<DownloadLinkInfoPrivate> d;
 };
 
 #endif // DOWNLOADLINKINFO_H
