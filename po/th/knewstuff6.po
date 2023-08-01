@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-15 02:12+0000\n"
+"POT-Creation-Date: 2023-08-01 02:15+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -66,7 +66,7 @@ msgid "You are now a fan."
 msgstr "คุณเป็นแฟนคลับแล้วในตอนนี้"
 
 #: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
-#: opds/opdsprovider.cpp:287
+#: opds/opdsprovider.cpp:286
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
