@@ -11,48 +11,12 @@
 
 #include <QCoreApplication>
 
-using namespace KNewStuffQuick;
+Q_GLOBAL_STATIC(KNewStuffQuick::Settings, s_settings)
 
-class QuickSettingsHelper
+KNewStuffQuick::Settings *KNewStuffQuick::Settings::instance()
 {
-public:
-    QuickSettingsHelper()
-        : q(nullptr)
-    {
-    }
-    ~QuickSettingsHelper()
-    {
-    }
-    QuickSettingsHelper(const QuickSettingsHelper &) = delete;
-    QuickSettingsHelper &operator=(const QuickSettingsHelper &) = delete;
-    Settings *q;
-};
-Q_GLOBAL_STATIC(QuickSettingsHelper, s_kns3_quickSettingsListener)
-
-class KNewStuffQuick::SettingsPrivate
-{
-public:
-    SettingsPrivate()
-    {
-    }
-};
-
-Settings *KNewStuffQuick::Settings::instance()
-{
-    if (!s_kns3_quickSettingsListener()->q) {
-        new Settings;
-    }
-    return s_kns3_quickSettingsListener()->q;
+    return s_settings;
 }
-
-Settings::Settings()
-    : QObject(qApp)
-    , d(new KNewStuffQuick::SettingsPrivate)
-{
-    s_kns3_quickSettingsListener->q = this;
-}
-
-Settings::~Settings() = default;
 
 bool KNewStuffQuick::Settings::allowedByKiosk() const
 {

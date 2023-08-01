@@ -452,9 +452,19 @@ void EngineBase::updateStatus()
 {
 }
 
+Installation *EngineBase::installation() const
+{
+    return d->installation;
+}
+
 ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
     return new ResultsStream(request, this);
+}
+
+QList<QSharedPointer<Provider>> EngineBase::providers() const
+{
+    return d->providers.values();
 }
 
 #include "moc_enginebase.cpp"

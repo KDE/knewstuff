@@ -5,7 +5,11 @@
 */
 
 #include "quickengine.h"
+#include "cache.h"
 #include "errorcode.h"
+#include "imageloader_p.h"
+#include "installation_p.h"
+#include "knewstuffquick_debug.h"
 #include "quicksettings.h"
 
 #include <KLocalizedString>
@@ -15,32 +19,143 @@
 #include "quickquestionlistener.h"
 #include "searchpresetmodel.h"
 
-#include "engine.h"
-
 class EnginePrivate
 {
 public:
-    EnginePrivate()
-        : engine(nullptr)
-        , categoriesModel(nullptr)
-        , searchPresetModel(nullptr)
-    {
-    }
-    KNSCore::Engine *engine;
-    bool isLoading{false};
-    bool isValid{false};
-    CategoriesModel *categoriesModel;
-    SearchPresetModel *searchPresetModel;
+    bool isLoading = false;
+    bool isValid = false;
+    CategoriesModel *categoriesModel = nullptr;
+    SearchPresetModel *searchPresetModel = nullptr;
     QString configFile;
+    QTimer searchTimer;
+    Engine::BusyState busyState;
+    QString busyMessage;
+    // the current request from providers
+    KNSCore::Provider::SearchRequest currentRequest;
+    KNSCore::Provider::SearchRequest storedRequest;
+    // the page that is currently displayed, so it is not requested repeatedly
+    int currentPage = -1;
+
+    // when requesting entries from a provider, how many to ask for
+    int pageSize = 20;
+
+    int numDataJobs = 0;
+    int numPictureJobs = 0;
+    int numInstallJobs = 0;
 };
 
 Engine::Engine(QObject *parent)
-    : QObject(parent)
+    : KNSCore::EngineBase(parent)
     , d(new EnginePrivate)
 {
+    const auto setBusy = [this](Engine::BusyState state, const QString &msg) {
+        setBusyState(state);
+        d->busyMessage = msg;
+        if (!state) {
+            idleMessage(QString());
+        } else {
+            Q_EMIT busyMessage(msg);
+        }
+    };
+    setBusy(BusyOperation::Initializing, i18n("Initializing"));
+
+    KNewStuffQuick::QuickQuestionListener::instance();
+    d->categoriesModel = new CategoriesModel(this);
+    connect(d->categoriesModel, &QAbstractListModel::modelReset, this, &Engine::categoriesChanged);
+    d->searchPresetModel = new SearchPresetModel(this);
+    connect(d->searchPresetModel, &QAbstractListModel::modelReset, this, &Engine::searchPresetModelChanged);
+
+    d->searchTimer.setSingleShot(true);
+    d->searchTimer.setInterval(1000);
+    connect(&d->searchTimer, &QTimer::timeout, this, &Engine::reloadEntries);
+    connect(installation(), &KNSCore::Installation::signalInstallationFinished, this, [this]() {
+        --d->numInstallJobs;
+        updateStatus();
+    });
+    connect(installation(), &KNSCore::Installation::signalInstallationFailed, this, [this](const QString &message) {
+        --d->numInstallJobs;
+        Q_EMIT signalErrorCode(KNSCore::InstallationError, message, QVariant());
+    });
+    connect(this, &EngineBase::signalProvidersLoaded, this, &Engine::updateStatus);
+    connect(this, &EngineBase::signalProvidersLoaded, this, [this, setBusy]() {
+        d->isLoading = false;
+        Q_EMIT isLoadingChanged();
+        setBusy({}, QString());
+    });
+    connect(this, &EngineBase::loadingProvider, this, [setBusy]() {
+        setBusy(BusyOperation::LoadingData, i18n("Loading provider information"));
+    });
+
+    connect(this, &KNSCore::EngineBase::signalErrorCode, this, [this](const KNSCore::ErrorCode &error, const QString &message, const QVariant &metadata) {
+        Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+        if (error == KNSCore::ProviderError || error == KNSCore::ConfigFileError) {
+            // This means loading the config or providers file failed entirely and we cannot complete the
+            // initialisation. It also means the engine is done loading, but that nothing will
+            // work, and we need to inform the user of this.
+            d->isLoading = false;
+            Q_EMIT isLoadingChanged();
+        }
+
+        // Emit the signal later, currently QML is not connected to the slot
+        if (error == KNSCore::ConfigFileError) {
+            QTimer::singleShot(0, [=]() {
+                Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+            });
+        }
+    });
+
+    connect(this, &Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+        // Just forward the event but not do anything more
+        if (event != KNSCore::Entry::StatusChangedEvent) {
+            Q_EMIT entryEvent(entry, event);
+            return;
+        }
+
+        // We do not want to emit the entries changed signal for intermediate changed
+        // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
+        if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
+            return;
+        }
+        Q_EMIT entryEvent(entry, event);
+    });
+    //
+    // And finally, let's just make sure we don't miss out the various things here getting changed
+    // In other words, when we're asked to reset the view, actually do that
+    connect(this, &Engine::signalResetView, this, &Engine::categoriesFilterChanged);
+    connect(this, &Engine::signalResetView, this, &Engine::filterChanged);
+    connect(this, &Engine::signalResetView, this, &Engine::sortOrderChanged);
+    connect(this, &Engine::signalResetView, this, &Engine::searchTermChanged);
+}
+
+bool Engine::init(const QString &configfile)
+{
+    const bool valid = EngineBase::init(configfile);
+    if (valid) {
+        connect(this, &Engine::signalEntryEvent, cache().data(), [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+            if (event == KNSCore::Entry::StatusChangedEvent) {
+                cache()->registerChangedEntry(entry);
+            }
+        });
+        const auto slotEntryChanged = [this](const KNSCore::Entry &entry) {
+            Q_EMIT signalEntryEvent(entry, KNSCore::Entry::StatusChangedEvent);
+        };
+        connect(installation(), &KNSCore::Installation::signalEntryChanged, this, slotEntryChanged);
+        connect(cache().data(), &KNSCore::Cache::entryChanged, this, slotEntryChanged);
+    }
+    return valid;
 }
 
 Engine::~Engine() = default;
+
+void Engine::setBusyState(BusyState state)
+{
+    d->busyState = state;
+    Q_EMIT busyStateChanged();
+}
+Engine::BusyState Engine::busyState() const
+{
+    return d->busyState;
+}
 
 QString Engine::configFile() const
 {
@@ -56,74 +171,12 @@ void Engine::setConfigFile(const QString &newFile)
         Q_EMIT configFileChanged();
 
         if (KNewStuffQuick::Settings::instance()->allowedByKiosk()) {
-            if (!d->engine) {
-                d->engine = new KNSCore::Engine(this);
-                connect(d->engine, &KNSCore::Engine::signalProvidersLoaded, this, [=]() {
-                    d->isLoading = false;
-                    Q_EMIT isLoadingChanged();
-                });
-                connect(d->engine, &KNSCore::Engine::signalMessage, this, &Engine::message);
-                connect(d->engine, &KNSCore::Engine::busyStateChanged, this, [this]() {
-                    if (!d->engine->busyState()) {
-                        idleMessage(QString());
-                    } else {
-                        busyMessage(d->engine->busyMessage());
-                    }
-                });
-                connect(d->engine,
-                        &KNSCore::Engine::signalErrorCode,
-                        this,
-                        [=](const KNSCore::ErrorCode &coreEngineError, const QString &message, const QVariant &metadata) {
-                            Q_EMIT errorCode(static_cast<ErrorCode>(coreEngineError), message, metadata);
-                            if (coreEngineError == KNSCore::ProviderError || coreEngineError == KNSCore::ConfigFileError) {
-                                // This means loading the config or providers file failed entirely and we cannot complete the
-                                // initialisation. It also means the engine is done loading, but that nothing will
-                                // work, and we need to inform the user of this.
-                                d->isLoading = false;
-                                Q_EMIT isLoadingChanged();
-                            }
-
-                            // Emit the signal later, currently QML is not connected to the slot
-                            if (coreEngineError == KNSCore::ConfigFileError) {
-                                Q_EMIT errorMessage(message);
-                                QTimer::singleShot(0, [=]() {
-                                    Q_EMIT errorCode(static_cast<ErrorCode>(coreEngineError), message, metadata);
-                                });
-                            }
-                        });
-                connect(d->engine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
-                    // Just forward the event but not do anything more
-                    if (event != KNSCore::Entry::StatusChangedEvent) {
-                        Q_EMIT entryEvent(entry, event);
-                        return;
-                    }
-
-                    // We do not want to emit the entries changed signal for intermediate changed
-                    // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
-                    if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
-                        return;
-                    }
-                    Q_EMIT entryEvent(entry, event);
-                });
-                Q_EMIT engineChanged();
-                KNewStuffQuick::QuickQuestionListener::instance();
-                d->categoriesModel = new CategoriesModel(this);
-                Q_EMIT categoriesChanged();
-                d->searchPresetModel = new SearchPresetModel(this);
-                Q_EMIT searchPresetModelChanged();
-                // And finally, let's just make sure we don't miss out the various things here getting changed
-                // In other words, when we're asked to reset the view, actually do that
-                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::categoriesFilterChanged);
-                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::filterChanged);
-                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::sortOrderChanged);
-                connect(d->engine, &KNSCore::Engine::signalResetView, this, &Engine::searchTermChanged);
-                Q_EMIT categoriesFilterChanged();
-                Q_EMIT filterChanged();
-                Q_EMIT sortOrderChanged();
-                Q_EMIT searchTermChanged();
-            }
-            d->isValid = d->engine->init(d->configFile);
+            d->isValid = init(newFile);
             Q_EMIT engineInitialized();
+            Q_EMIT categoriesFilterChanged();
+            Q_EMIT filterChanged();
+            Q_EMIT sortOrderChanged();
+            Q_EMIT searchTermChanged();
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
             // nothing the user can do to fix it, and we just tell them so they're not wondering what's wrong)
@@ -134,30 +187,9 @@ void Engine::setConfigFile(const QString &newFile)
     }
 }
 
-QObject *Engine::engine() const
-{
-    return d->engine;
-}
-
 bool Engine::isLoading() const
 {
     return d->isLoading;
-}
-
-bool Engine::hasAdoptionCommand() const
-{
-    if (d->engine) {
-        return d->engine->hasAdoptionCommand();
-    }
-    return false;
-}
-
-QString Engine::name() const
-{
-    if (d->engine) {
-        return d->engine->name();
-    }
-    return QString{};
 }
 
 QObject *Engine::categories() const
@@ -167,78 +199,62 @@ QObject *Engine::categories() const
 
 QStringList Engine::categoriesFilter() const
 {
-    if (d->engine) {
-        return d->engine->categoriesFilter();
-    }
-    return QStringList{};
+    return d->currentRequest.categories;
 }
 
 void Engine::setCategoriesFilter(const QStringList &newCategoriesFilter)
 {
-    if (d->engine) {
-        // This ensures that if we somehow end up with any empty entries (such as the default
-        // option in the categories dropdowns), our list will remain empty.
-        QStringList filter{newCategoriesFilter};
-        filter.removeAll({});
-        if (d->engine->categoriesFilter() != filter) {
-            d->engine->setCategoriesFilter(filter);
-            Q_EMIT categoriesFilterChanged();
-        }
+    if (d->currentRequest.categories != newCategoriesFilter) {
+        d->currentRequest.categories = newCategoriesFilter;
+        reloadEntries();
+        Q_EMIT categoriesFilterChanged();
     }
 }
 
-void Engine::resetCategoriesFilter()
+KNSCore::Provider::Filter Engine::filter() const
 {
-    if (d->engine) {
-        d->engine->setCategoriesFilter(d->engine->categories());
-    }
+    return d->currentRequest.filter;
 }
 
-int Engine::filter() const
+void Engine::setFilter(KNSCore::Provider::Filter newFilter)
 {
-    if (d->engine) {
-        return d->engine->filter();
-    }
-    return 0;
-}
-
-void Engine::setFilter(int newFilter)
-{
-    if (d->engine && d->engine->filter() != newFilter) {
-        d->engine->setFilter(static_cast<KNSCore::Provider::Filter>(newFilter));
+    if (d->currentRequest.filter != newFilter) {
+        d->currentRequest.filter = newFilter;
+        reloadEntries();
         Q_EMIT filterChanged();
     }
 }
 
-int Engine::sortOrder() const
+KNSCore::Provider::SortMode Engine::sortOrder() const
 {
-    if (d->engine) {
-        return d->engine->sortMode();
-    }
-    return 0;
+    return d->currentRequest.sortMode;
 }
 
-void Engine::setSortOrder(int newSortOrder)
+void Engine::setSortOrder(KNSCore::Provider::SortMode mode)
 {
-    if (d->engine && d->engine->sortMode() != newSortOrder) {
-        d->engine->setSortMode(static_cast<KNSCore::Provider::SortMode>(newSortOrder));
+    if (d->currentRequest.sortMode == mode) {
+        d->currentRequest.sortMode = mode;
+        reloadEntries();
         Q_EMIT sortOrderChanged();
     }
 }
 
 QString Engine::searchTerm() const
 {
-    if (d->engine) {
-        return d->engine->searchTerm();
-    }
-    return QString{};
+    return d->currentRequest.searchTerm;
 }
 
-void Engine::setSearchTerm(const QString &newSearchTerm)
+void Engine::setSearchTerm(const QString &searchTerm)
 {
-    if (d->engine && d->isValid && d->engine->searchTerm() != newSearchTerm) {
-        d->engine->setSearchTerm(newSearchTerm);
+    if (d->isValid && d->currentRequest.searchTerm != searchTerm) {
+        d->currentRequest.searchTerm = searchTerm;
         Q_EMIT searchTermChanged();
+    }
+    KNSCore::Entry::List cacheEntries = cache()->requestFromCache(d->currentRequest);
+    if (!cacheEntries.isEmpty()) {
+        reloadEntries();
+    } else {
+        d->searchTimer.start();
     }
 }
 
@@ -247,14 +263,189 @@ QObject *Engine::searchPresetModel() const
     return d->searchPresetModel;
 }
 
-void Engine::resetSearchTerm()
-{
-    setSearchTerm(QString{});
-}
-
 bool Engine::isValid()
 {
     return d->isValid;
+}
+
+void Engine::reloadEntries()
+{
+    Q_EMIT signalResetView();
+    d->currentPage = -1;
+    d->currentRequest.page = 0;
+    d->numDataJobs = 0;
+
+    const auto providersList = EngineBase::providers();
+    for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
+        if (p->isInitialized()) {
+            if (d->currentRequest.filter == KNSCore::Provider::Installed) {
+                // when asking for installed entries, never use the cache
+                p->loadEntries(d->currentRequest);
+            } else {
+                // take entries from cache until there are no more
+                KNSCore::Entry::List cacheEntries;
+                KNSCore::Entry::List lastCache = cache()->requestFromCache(d->currentRequest);
+                while (!lastCache.isEmpty()) {
+                    qCDebug(KNEWSTUFFQUICK) << "From cache";
+                    cacheEntries << lastCache;
+
+                    d->currentPage = d->currentRequest.page;
+                    ++d->currentRequest.page;
+                    lastCache = cache()->requestFromCache(d->currentRequest);
+                }
+
+                // Since the cache has no more pages, reset the request's page
+                if (d->currentPage >= 0) {
+                    d->currentRequest.page = d->currentPage;
+                }
+
+                if (!cacheEntries.isEmpty()) {
+                    Q_EMIT signalEntriesLoaded(cacheEntries);
+                } else {
+                    qCDebug(KNEWSTUFFQUICK) << "From provider";
+                    p->loadEntries(d->currentRequest);
+
+                    ++d->numDataJobs;
+                    updateStatus();
+                }
+            }
+        }
+    }
+}
+void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
+{
+    EngineBase::addProvider(provider);
+    connect(provider.data(), &KNSCore::Provider::loadingFinished, this, [this](const auto &request, const auto &entries) {
+        d->currentPage = qMax<int>(request.page, d->currentPage);
+        qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page << "current page" << d->currentPage << "count:" << entries.count();
+
+        if (request.filter == KNSCore::Provider::Updates) {
+            Q_EMIT signalUpdateableEntriesLoaded(entries);
+        } else {
+            cache()->insertRequest(request, entries);
+            Q_EMIT signalEntriesLoaded(entries);
+        }
+
+        --d->numDataJobs;
+        updateStatus();
+    });
+    connect(provider.data(), &KNSCore::Provider::entryDetailsLoaded, this, [this](const auto &entry) {
+        --d->numDataJobs;
+        updateStatus();
+        Q_EMIT signalEntryEvent(entry, KNSCore::Entry::DetailsLoadedEvent);
+    });
+}
+
+void Engine::loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type)
+{
+    qCDebug(KNEWSTUFFQUICK) << "START  preview: " << entry.name() << type;
+    auto l = new KNSCore::ImageLoader(entry, type, this);
+    connect(l, &KNSCore::ImageLoader::signalPreviewLoaded, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type) {
+        qCDebug(KNEWSTUFFQUICK) << "FINISH preview: " << entry.name() << type;
+        Q_EMIT signalEntryPreviewLoaded(entry, type);
+        --d->numPictureJobs;
+        updateStatus();
+    });
+    connect(l, &KNSCore::ImageLoader::signalError, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type, const QString &errorText) {
+        Q_EMIT signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
+        qCDebug(KNEWSTUFFQUICK) << "ERROR preview: " << errorText << entry.name() << type;
+        --d->numPictureJobs;
+        updateStatus();
+    });
+    l->start();
+    ++d->numPictureJobs;
+    updateStatus();
+}
+
+void Engine::adoptEntry(const KNSCore::Entry &entry)
+{
+    registerTransaction(KNSCore::Transaction::adopt(this, entry));
+}
+void Engine::install(const KNSCore::Entry &entry, int linkId)
+{
+    auto transaction = KNSCore::Transaction::install(this, entry, linkId);
+    registerTransaction(transaction);
+    if (!transaction->isFinished()) {
+        ++d->numInstallJobs;
+    }
+}
+void Engine::uninstall(const KNSCore::Entry &entry)
+{
+    registerTransaction(KNSCore::Transaction::uninstall(this, entry));
+}
+void Engine::registerTransaction(KNSCore::Transaction *transaction)
+{
+    connect(transaction, &KNSCore::Transaction::signalErrorCode, this, &EngineBase::signalErrorCode);
+    connect(transaction, &KNSCore::Transaction::signalMessage, this, &EngineBase::signalMessage);
+    connect(transaction, &KNSCore::Transaction::signalEntryEvent, this, &Engine::signalEntryEvent);
+}
+
+void Engine::requestMoreData()
+{
+    qCDebug(KNEWSTUFFQUICK) << "Get more data! current page: " << d->currentPage << " requested: " << d->currentRequest.page;
+
+    if (d->currentPage < d->currentRequest.page) {
+        return;
+    }
+
+    d->currentRequest.page++;
+    doRequest();
+}
+void Engine::doRequest()
+{
+    const auto providersList = providers();
+    for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
+        if (p->isInitialized()) {
+            p->loadEntries(d->currentRequest);
+            ++d->numDataJobs;
+            updateStatus();
+        }
+    }
+}
+
+void Engine::revalidateCacheEntries()
+{
+    // This gets called from QML, because in QtQuick we reuse the engine, BUG: 417985
+    // We can't handle this in the cache, because it can't access the configuration of the engine
+    if (cache()) {
+        const auto providersList = providers();
+        for (const auto &provider : providersList) {
+            if (provider && provider->isInitialized()) {
+                const KNSCore::Entry::List cacheBefore = cache()->registryForProvider(provider->id());
+                cache()->removeDeletedEntries();
+                const KNSCore::Entry::List cacheAfter = cache()->registryForProvider(provider->id());
+                // If the user has deleted them in the background we have to update the state to deleted
+                for (const auto &oldCachedEntry : cacheBefore) {
+                    if (!cacheAfter.contains(oldCachedEntry)) {
+                        KNSCore::Entry removedEntry = oldCachedEntry;
+                        removedEntry.setEntryDeleted();
+                        Q_EMIT signalEntryEvent(removedEntry, KNSCore::Entry::StatusChangedEvent);
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Engine::restoreSearch()
+{
+    d->searchTimer.stop();
+    d->currentRequest = d->storedRequest;
+    if (cache()) {
+        KNSCore::Entry::List cacheEntries = cache()->requestFromCache(d->currentRequest);
+        if (!cacheEntries.isEmpty()) {
+            reloadEntries();
+        } else {
+            d->searchTimer.start();
+        }
+    } else {
+        qCWarning(KNEWSTUFFQUICK) << "Attempted to call restoreSearch() without a correctly initialized engine. You will likely get unexpected behaviour.";
+    }
+}
+
+void Engine::storeSearch()
+{
+    d->storedRequest = d->currentRequest;
 }
 
 #include "moc_quickengine.cpp"

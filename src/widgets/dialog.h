@@ -15,7 +15,7 @@
 
 namespace KNSCore
 {
-class Engine;
+class EngineBase;
 };
 
 namespace KNSWidgets
@@ -45,7 +45,7 @@ public:
      * Engine that is used by the dialog, might be null if the engine failed to initialize.
      * @return KNSCore::Engine used by the dialog
      */
-    KNSCore::Engine *engine();
+    KNSCore::EngineBase *engine();
 
     /**
      * Entries that were changed while the user interacted with the dialog

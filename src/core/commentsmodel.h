@@ -10,7 +10,7 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 
-#include "engine.h"
+#include "enginebase.h"
 
 #include "knewstuffcore_export.h"
 
@@ -55,7 +55,7 @@ public:
      * @note The class is intended to be constructed using the Engine::commentsForEntry function
      * @see Engine::commentsForEntry(KNSCore::Entry)
      */
-    explicit CommentsModel(Engine *parent = nullptr);
+    explicit CommentsModel(EngineBase *parent = nullptr);
     ~CommentsModel() override;
 
     enum Roles {

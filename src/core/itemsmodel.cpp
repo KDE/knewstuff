@@ -10,7 +10,7 @@
 #include <KLocalizedString>
 #include <knewstuffcore_debug.h>
 
-#include "engine.h"
+#include "enginebase.h"
 #include "imageloader_p.h"
 
 namespace KNSCore
@@ -18,16 +18,16 @@ namespace KNSCore
 class ItemsModelPrivate
 {
 public:
-    ItemsModelPrivate(Engine *e)
+    ItemsModelPrivate(EngineBase *e)
         : engine(e)
     {
     }
-    Engine *const engine;
+    EngineBase *const engine;
     // the list of entries
     QList<Entry> entries;
     bool hasPreviewImages = false;
 };
-ItemsModel::ItemsModel(Engine *engine, QObject *parent)
+ItemsModel::ItemsModel(EngineBase *engine, QObject *parent)
     : QAbstractListModel(parent)
     , d(new ItemsModelPrivate(engine))
 {
@@ -79,7 +79,7 @@ void ItemsModel::addEntry(const Entry &entry)
         endInsertRows();
 
         if (!preview.isEmpty() && entry.previewImage(Entry::PreviewSmall1).isNull()) {
-            d->engine->loadPreview(entry, Entry::PreviewSmall1);
+            Q_EMIT loadPreview(entry, Entry::PreviewSmall1);
         }
     }
 }
@@ -112,10 +112,9 @@ void ItemsModel::clearEntries()
 void ItemsModel::slotEntryPreviewLoaded(const Entry &entry, Entry::PreviewType type)
 {
     // we only care about the first small preview in the list
-    if (type != Entry::PreviewSmall1) {
-        return;
+    if (type == Entry::PreviewSmall1) {
+        slotEntryChanged(entry);
     }
-    slotEntryChanged(entry);
 }
 
 bool ItemsModel::hasPreviewImages() const

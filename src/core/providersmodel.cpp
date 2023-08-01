@@ -6,14 +6,14 @@
 
 #include "providersmodel.h"
 
-#include "engine.h"
+#include "enginebase.h"
 
 namespace KNSCore
 {
 class ProvidersModelPrivate
 {
 public:
-    Engine *engine{nullptr};
+    EngineBase *engine = nullptr;
     QStringList knownProviders;
 };
 
@@ -102,10 +102,10 @@ void KNSCore::ProvidersModel::setEngine(QObject *engine)
         if (d->engine) {
             d->engine->disconnect(this);
         }
-        d->engine = qobject_cast<Engine *>(engine);
+        d->engine = qobject_cast<EngineBase *>(engine);
         Q_EMIT engineChanged();
         if (d->engine) {
-            connect(d->engine, &Engine::providersChanged, this, [this]() {
+            connect(d->engine, &EngineBase::providersChanged, this, [this]() {
                 beginResetModel();
                 d->knownProviders = d->engine->providerIDs();
                 endResetModel();

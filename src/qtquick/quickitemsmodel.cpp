@@ -7,7 +7,6 @@
 #include "quickitemsmodel.h"
 #include "core/commentsmodel.h"
 #include "downloadlinkinfo.h"
-#include "engine.h"
 #include "itemsmodel.h"
 #include "quickengine.h"
 
@@ -21,13 +20,11 @@ public:
         : q(qq)
         , model(nullptr)
         , engine(nullptr)
-        , coreEngine(nullptr)
     {
     }
     ItemsModel *q;
     KNSCore::ItemsModel *model;
     Engine *engine;
-    KNSCore::Engine *coreEngine;
 
     QHash<QString, KNSCore::CommentsModel *> commentsModels;
 
@@ -38,43 +35,46 @@ public:
         if (model) {
             return true;
         }
-        if (!coreEngine) {
+        if (!engine) {
             return false;
         }
-        model = new KNSCore::ItemsModel(coreEngine, q);
-        q->connect(coreEngine, &KNSCore::Engine::busyStateChanged, q, [=]() {
+        model = new KNSCore::ItemsModel(engine, q);
+        q->connect(engine, &Engine::busyStateChanged, q, [=]() {
             // If we install/update an entry the spinner should be hidden, BUG: 422047
-            const KNSCore::Engine::BusyState state = coreEngine->busyState();
-            const bool busy = state && !state.testFlag(KNSCore::Engine::BusyOperation::InstallingEntry);
+            const Engine::BusyState state = engine->busyState();
+            const bool busy = state && !state.testFlag(Engine::BusyOperation::InstallingEntry);
             if (isLoadingData != busy) {
                 isLoadingData = busy;
                 Q_EMIT q->isLoadingDataChanged();
             }
         });
 
-        q->connect(coreEngine, &KNSCore::Engine::signalProvidersLoaded, coreEngine, &KNSCore::Engine::reloadEntries);
+        q->connect(engine, &Engine::signalProvidersLoaded, engine, &Engine::reloadEntries);
         // Entries have been fetched and should be shown:
-        q->connect(coreEngine, &KNSCore::Engine::signalEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
-            if (coreEngine->filter() != KNSCore::Provider::Updates) {
+        q->connect(engine, &Engine::signalEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
+            if (engine->filter() != KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(entries);
             }
         });
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryEvent, model, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
-            if (event == KNSCore::Entry::DetailsLoadedEvent && coreEngine->filter() != KNSCore::Provider::Updates) {
+        q->connect(engine, &Engine::entryEvent, model, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+            if (event == KNSCore::Entry::DetailsLoadedEvent && engine->filter() != KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(KNSCore::Entry::List{entry});
             }
         });
-        q->connect(coreEngine, &KNSCore::Engine::signalUpdateableEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
-            if (coreEngine->filter() == KNSCore::Provider::Updates) {
+        q->connect(engine, &Engine::signalUpdateableEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
+            if (engine->filter() == KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(entries);
             }
         });
 
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryEvent, q, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+        // Check if we need intermediate states
+        q->connect(engine, &Engine::entryEvent, q, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
             onEntryEvent(entry, event);
         });
-        q->connect(coreEngine, &KNSCore::Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
-        q->connect(coreEngine, &KNSCore::Engine::signalEntryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
+        q->connect(engine, &Engine::signalResetView, model, &KNSCore::ItemsModel::clearEntries);
+
+        q->connect(model, &KNSCore::ItemsModel::loadPreview, engine, &Engine::loadPreview);
+        q->connect(engine, &Engine::entryPreviewLoaded, model, &KNSCore::ItemsModel::slotEntryPreviewLoaded);
 
         q->connect(model, &KNSCore::ItemsModel::rowsInserted, q, &ItemsModel::rowsInserted);
         q->connect(model, &KNSCore::ItemsModel::rowsRemoved, q, &ItemsModel::rowsRemoved);
@@ -90,10 +90,9 @@ public:
             Q_EMIT q->entryChanged(model->row(entry));
 
             // If we update/uninstall an entry we have to update the UI, see BUG: 425135
-            if (coreEngine->filter() == KNSCore::Provider::Updates && entry.status() != KNSCore::Entry::Updateable
-                && entry.status() != KNSCore::Entry::Updating) {
+            if (engine->filter() == KNSCore::Provider::Updates && entry.status() != KNSCore::Entry::Updateable && entry.status() != KNSCore::Entry::Updating) {
                 model->removeEntry(entry);
-            } else if (coreEngine->filter() == KNSCore::Provider::Installed && entry.status() == KNSCore::Entry::Deleted) {
+            } else if (engine->filter() == KNSCore::Provider::Installed && entry.status() == KNSCore::Entry::Deleted) {
                 model->removeEntry(entry);
             }
         }
@@ -110,7 +109,6 @@ ItemsModel::~ItemsModel() = default;
 
 QHash<int, QByteArray> ItemsModel::roleNames() const
 {
-    // clang-format off
     static const QHash<int, QByteArray> roles = QHash<int, QByteArray>{
         {Qt::DisplayRole, "display"},
         {NameRole, "name"},
@@ -145,7 +143,6 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {StatusRole, "status"},
         {EntryTypeRole, "entryType"},
     };
-    // clang-format on
     return roles;
 }
 
@@ -332,7 +329,8 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
         case CommentsModelRole: {
             KNSCore::CommentsModel *commentsModel{nullptr};
             if (!d->commentsModels.contains(entry.uniqueId())) {
-                commentsModel = d->coreEngine->commentsForEntry(entry);
+                commentsModel = new KNSCore::CommentsModel(d->engine);
+                commentsModel->setEntry(entry);
                 d->commentsModels[entry.uniqueId()] = commentsModel;
             } else {
                 commentsModel = d->commentsModels[entry.uniqueId()];
@@ -357,15 +355,15 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
 
 bool ItemsModel::canFetchMore(const QModelIndex &parent) const
 {
-    return !parent.isValid() && d->coreEngine && d->coreEngine->categoriesMetadata().count() > 0;
+    return !parent.isValid() && d->engine && d->engine->categoriesMetadata().count() > 0;
 }
 
 void ItemsModel::fetchMore(const QModelIndex &parent)
 {
-    if (parent.isValid() || !d->coreEngine) {
+    if (parent.isValid() || !d->engine) {
         return;
     }
-    d->coreEngine->requestMoreData();
+    d->engine->requestMoreData();
 }
 
 QObject *ItemsModel::engine() const
@@ -380,17 +378,6 @@ void ItemsModel::setEngine(QObject *newEngine)
         d->engine = qobject_cast<Engine *>(newEngine);
         d->model->deleteLater();
         d->model = nullptr;
-        d->coreEngine = nullptr;
-        if (d->engine) {
-            d->coreEngine = qobject_cast<KNSCore::Engine *>(d->engine->engine());
-        }
-        connect(d->engine, &Engine::engineChanged, this, [this]() {
-            beginResetModel();
-            d->model->deleteLater();
-            d->model = nullptr;
-            d->coreEngine = qobject_cast<KNSCore::Engine *>(d->engine->engine());
-            endResetModel();
-        });
         Q_EMIT engineChanged();
         endResetModel();
     }
@@ -399,7 +386,7 @@ void ItemsModel::setEngine(QObject *newEngine)
 int ItemsModel::indexOfEntryId(const QString &providerId, const QString &entryId)
 {
     int idx{-1};
-    if (d->coreEngine && d->model) {
+    if (d->engine && d->model) {
         for (int i = 0; i < rowCount(); ++i) {
             KNSCore::Entry testEntry = d->model->data(d->model->index(i), Qt::UserRole).value<KNSCore::Entry>();
             if (providerId == QUrl(testEntry.providerId()).host() && entryId == testEntry.uniqueId()) {
@@ -418,10 +405,10 @@ bool ItemsModel::isLoadingData() const
 
 void ItemsModel::installItem(int index, int linkId)
 {
-    if (d->coreEngine) {
+    if (d->engine) {
         KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
         if (entry.isValid()) {
-            d->coreEngine->install(entry, linkId);
+            d->engine->install(entry, linkId);
         }
     }
 }
@@ -433,20 +420,20 @@ void ItemsModel::updateItem(int index)
 
 void ItemsModel::uninstallItem(int index)
 {
-    if (d->coreEngine) {
+    if (d->engine) {
         KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
         if (entry.isValid()) {
-            d->coreEngine->uninstall(entry);
+            d->engine->uninstall(entry);
         }
     }
 }
 
 void ItemsModel::adoptItem(int index)
 {
-    if (d->coreEngine) {
+    if (d->engine) {
         KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
         if (entry.isValid()) {
-            d->coreEngine->adoptEntry(entry);
+            d->engine->adoptEntry(entry);
         }
     }
 }

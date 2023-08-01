@@ -9,10 +9,8 @@
 
 #include <QAbstractListModel>
 
+#include "enginebase.h"
 #include "provider.h"
-#include "quickengine.h"
-
-class CategoriesModelPrivate;
 
 /**
  * @short A model which shows the categories found in an Engine
@@ -22,7 +20,7 @@ class CategoriesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit CategoriesModel(Engine *parent = nullptr);
+    explicit CategoriesModel(KNSCore::EngineBase *parent);
     ~CategoriesModel() override;
 
     enum Roles {
@@ -45,7 +43,7 @@ public:
     Q_INVOKABLE QString idToDisplayName(const QString &id) const;
 
 private:
-    const std::unique_ptr<CategoriesModelPrivate> d;
+    KNSCore::EngineBase *const m_engine;
 };
 
 #endif // CATEGORIESMODEL_H

@@ -5,27 +5,15 @@
 */
 
 #include "searchpresetmodel.h"
-#include "engine.h"
 
 #include "knewstuffquick_debug.h"
-
 #include <KLocalizedString>
 
-class SearchPresetModelPrivate
+SearchPresetModel::SearchPresetModel(KNSCore::EngineBase *engine)
+    : QAbstractListModel(engine)
+    , m_engine(engine)
 {
-public:
-    SearchPresetModelPrivate()
-    {
-    }
-    KNSCore::Engine *engine;
-};
-
-SearchPresetModel::SearchPresetModel(Engine *parent)
-    : QAbstractListModel(parent)
-    , d(new SearchPresetModelPrivate)
-{
-    d->engine = qobject_cast<KNSCore::Engine *>(parent->engine());
-    connect(d->engine, &KNSCore::Engine::signalSearchPresetsLoaded, this, [this]() {
+    connect(m_engine, &KNSCore::EngineBase::signalSearchPresetsLoaded, this, [this]() {
         beginResetModel();
         endResetModel();
     });
@@ -43,7 +31,7 @@ QVariant SearchPresetModel::data(const QModelIndex &index, int role) const
 {
     QVariant result;
     if (index.isValid() && checkIndex(index)) {
-        const QList<KNSCore::Provider::SearchPreset> presets = d->engine->searchPresets();
+        const QList<KNSCore::Provider::SearchPreset> presets = m_engine->searchPresets();
         const KNSCore::Provider::SearchPreset preset = presets[index.row()];
 
         if (role == DisplayNameRole) {
@@ -135,7 +123,7 @@ int SearchPresetModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return d->engine->searchPresets().count();
+    return m_engine->searchPresets().count();
 }
 
 void SearchPresetModel::loadSearch(const QModelIndex &index)
@@ -144,8 +132,8 @@ void SearchPresetModel::loadSearch(const QModelIndex &index)
         qCWarning(KNEWSTUFFQUICK) << "index SearchPresetModel::loadSearch invalid" << index;
         return;
     }
-    const KNSCore::Provider::SearchPreset preset = d->engine->searchPresets().at(index.row());
-    d->engine->setSearchTerm(preset.request.searchTerm);
+    const KNSCore::Provider::SearchPreset preset = m_engine->searchPresets().at(index.row());
+    m_engine->search(preset.request);
 }
 
 #include "moc_searchpresetmodel.cpp"

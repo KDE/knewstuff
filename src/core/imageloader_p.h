@@ -30,7 +30,7 @@ namespace KNSCore
  *
  * @internal
  */
-class ImageLoader : public QObject
+class KNEWSTUFFCORE_EXPORT ImageLoader : public QObject
 {
     Q_OBJECT
 public:

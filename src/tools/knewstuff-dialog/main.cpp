@@ -7,8 +7,6 @@
 
 #include "knsrcmodel.h"
 
-#include "engine.h"
-
 #include <KLocalizedString>
 
 #include <QApplication>

@@ -80,7 +80,7 @@ KCM.GridViewKCM {
     function showEntryDetails(providerId, entryId) {
         _showEntryDetailsThrottle.providerId = providerId;
         _showEntryDetailsThrottle.entryId = entryId;
-        newStuffEngine.engine.storeSearch();
+        newStuffEngine.storeSearch();
 
         //check if entry in question is perhaps a group, if so, load the new details.
         const theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
@@ -89,7 +89,7 @@ KCM.GridViewKCM {
         if (type === NewStuff.ItemsModel.GroupEntry) {
             newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
         } else {
-            newStuffEngine.engine.fetchEntryById(entryId);
+            newStuffEngine.fetchEntryById(entryId);
         }
 
         if (newStuffEngine.isLoading) {
@@ -133,7 +133,7 @@ KCM.GridViewKCM {
                     _restoreSearchState.enabled = true;
                 } else {
                     root.message(i18ndc("knewstuff6", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
-                    newStuffEngine.engine.restoreSearch();
+                    newStuffEngine.restoreSearch();
                 }
             } else if (newStuffModel.isLoadingData === false && root.view.count > 1) {
                 // right now, this is only one level deep...
@@ -151,14 +151,14 @@ KCM.GridViewKCM {
 
         function onCurrentIndexChanged() {
             if (pageStack.currentIndex === 0) {
-                newStuffEngine.engine.restoreSearch();
+                newStuffEngine.restoreSearch();
                 _restoreSearchState.enabled = false;
             }
         }
     }
 
     property string uninstallLabel: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
-    property string useLabel: engine.engine.useLabel
+    property string useLabel: engine.useLabel
 
     property int viewMode: Page.ViewMode.Tiles
 
@@ -205,7 +205,7 @@ KCM.GridViewKCM {
             root.busyMessage(message);
             statusMessage = message;
         }
-        onErrorMessage: message => {
+        onErrorCode: (code, message) => {
             root.errorMessage(message);
             statusMessage = message;
         }
@@ -394,7 +394,7 @@ KCM.GridViewKCM {
             text: i18nd("knewstuff6", "Upload…")
             tooltip: i18nd("knewstuff6", "Learn how to add your own hot new stuff to this list")
             icon.name: "upload-media"
-            visible: newStuffEngine.engine.uploadEnabled
+            visible: newStuffEngine.uploadEnabled
 
             onTriggered: {
                 pageStack.push(uploadPage);
@@ -496,7 +496,7 @@ KCM.GridViewKCM {
 
             text: i18nd("knewstuff6", "Contribute your own…")
             icon.name: "upload-media"
-            visible: newStuffEngine.engine.uploadEnabled && !uploadAction.visible
+            visible: newStuffEngine.uploadEnabled && !uploadAction.visible
 
             onClicked: {
                 pageStack.push(uploadPage);

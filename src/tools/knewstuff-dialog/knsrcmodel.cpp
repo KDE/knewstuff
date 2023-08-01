@@ -6,7 +6,7 @@
 
 #include "knsrcmodel.h"
 
-#include "engine.h"
+#include "enginebase.h"
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -27,7 +27,7 @@ KNSRCModel::KNSRCModel(QObject *parent)
     : QAbstractListModel(parent)
     , d(new Private())
 {
-    const QStringList files = KNSCore::Engine::availableConfigFiles();
+    const QStringList files = KNSCore::EngineBase::availableConfigFiles();
     for (const auto &file : files) {
         KConfig conf(file);
         KConfigGroup group;

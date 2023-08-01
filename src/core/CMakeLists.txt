@@ -7,7 +7,6 @@ set(KNewStuffCore_SRCS
     author.cpp
     commentsmodel.cpp
     cache.cpp
-    engine.cpp
     enginebase.cpp
     entry.cpp
     imageloader.cpp
@@ -121,7 +120,6 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   HEADER_NAMES
   Author
   Cache
-  Engine
   EngineBase
   Entry
   ErrorCode

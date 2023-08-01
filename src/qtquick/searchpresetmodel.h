@@ -11,10 +11,6 @@
 #include "quickengine.h"
 #include <QAbstractListModel>
 
-#include <memory>
-
-class SearchPresetModelPrivate;
-
 /**
  * @brief The SearchPresetModel class
  *
@@ -25,7 +21,7 @@ class SearchPresetModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit SearchPresetModel(Engine *parent = nullptr);
+    explicit SearchPresetModel(KNSCore::EngineBase *parent);
     ~SearchPresetModel() override;
 
     enum Roles {
@@ -42,7 +38,7 @@ public:
     Q_INVOKABLE void loadSearch(const QModelIndex &index);
 
 private:
-    const std::unique_ptr<SearchPresetModelPrivate> d;
+    KNSCore::EngineBase *const m_engine;
 };
 
 #endif // SEARCHPRESETMODEL_H

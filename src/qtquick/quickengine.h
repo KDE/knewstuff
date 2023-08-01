@@ -10,9 +10,11 @@
 #include <QObject>
 #include <QQmlListProperty>
 
+#include "enginebase.h"
 #include "entry.h"
 #include "errorcode.h"
-#include "knewstuffquick_export.h"
+#include "provider.h"
+#include "transaction.h"
 
 class EnginePrivate;
 
@@ -24,11 +26,10 @@ class EnginePrivate;
  *
  * @see ItemsModel
  */
-class Engine : public QObject
+class Engine : public KNSCore::EngineBase
 {
     Q_OBJECT
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
-    Q_PROPERTY(QObject *engine READ engine NOTIFY engineChanged)
     /**
      * Whether or not the engine is performing its initial loading operations
      * @since 5.65
@@ -38,14 +39,30 @@ class Engine : public QObject
     Q_PROPERTY(QString name READ name NOTIFY engineInitialized)
     Q_PROPERTY(QObject *categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QStringList categoriesFilter READ categoriesFilter WRITE setCategoriesFilter RESET resetCategoriesFilter NOTIFY categoriesFilterChanged)
-    Q_PROPERTY(int filter READ filter WRITE setFilter NOTIFY filterChanged)
-    Q_PROPERTY(int sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
+    Q_PROPERTY(KNSCore::Provider::Filter filter READ filter WRITE setFilter NOTIFY filterChanged)
+    Q_PROPERTY(KNSCore::Provider::SortMode sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(QObject *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
+
+    /**
+     * Current state of the engine, the state con contain multiple operations
+     * an empty BusyState represents the idle status
+     * @since 5.74
+     */
+    Q_PROPERTY(BusyState busyState READ busyState WRITE setBusyState NOTIFY busyStateChanged)
 public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
+    bool init(const QString &configfile) override;
+
+    enum class BusyOperation {
+        Initializing,
+        LoadingData,
+        LoadingPreview,
+        InstallingEntry,
+    };
+    Q_DECLARE_FLAGS(BusyState, BusyOperation)
 
     enum EntryEvent {
         UnknownEvent = KNSCore::Entry::UnknownEvent,
@@ -77,8 +94,15 @@ public:
     void setConfigFile(const QString &newFile);
     Q_SIGNAL void configFileChanged();
 
-    QObject *engine() const;
-    Q_SIGNAL void engineChanged();
+    Engine::BusyState busyState() const;
+    void setBusyState(Engine::BusyState state);
+    void setBusy(BusyState state, const QString &busyMessage);
+
+    /**
+     * Signal gets emitted when the busy state changes
+     * @since 5.74
+     */
+    Q_SIGNAL void busyStateChanged();
 
     /**
      * Whether or not the engine is performing its initial loading operations
@@ -91,8 +115,6 @@ public:
      */
     Q_SIGNAL void isLoadingChanged();
 
-    bool hasAdoptionCommand() const;
-    QString name() const;
     Q_SIGNAL void engineInitialized();
 
     QObject *categories() const;
@@ -100,31 +122,78 @@ public:
 
     QStringList categoriesFilter() const;
     void setCategoriesFilter(const QStringList &newCategoriesFilter);
-    Q_INVOKABLE void resetCategoriesFilter();
+    Q_INVOKABLE void resetCategoriesFilter()
+    {
+        setCategoriesFilter(categoriesFilter());
+    }
     Q_SIGNAL void categoriesFilterChanged();
 
-    int filter() const;
-    void setFilter(int newFilter);
+    KNSCore::Provider::Filter filter() const;
+    void setFilter(KNSCore::Provider::Filter filter);
     Q_SIGNAL void filterChanged();
 
-    int sortOrder() const;
-    void setSortOrder(int newSortOrder);
+    KNSCore::Provider::SortMode sortOrder() const;
+    void setSortOrder(KNSCore::Provider::SortMode newSortOrder);
     Q_SIGNAL void sortOrderChanged();
 
     QString searchTerm() const;
     void setSearchTerm(const QString &newSearchTerm);
-    Q_INVOKABLE void resetSearchTerm();
+    Q_INVOKABLE void resetSearchTerm()
+    {
+        setSearchTerm(QString());
+    }
     Q_SIGNAL void searchTermChanged();
 
     QObject *searchPresetModel() const;
     Q_SIGNAL void searchPresetModelChanged();
 
     bool isValid();
+    void reloadEntries();
+
+    void loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
+
+    void addProvider(QSharedPointer<KNSCore::Provider> provider) override;
+
+    /**
+     * Adopt an entry using the adoption command. This will also take care of displaying error messages
+     * @param entry Entry that should be adopted
+     * @see signalErrorCode
+     * @see signalEntryEvent
+     * @since 5.77
+     */
+    Q_INVOKABLE void adoptEntry(const KNSCore::Entry &entry);
+
+    /**
+     * Installs an entry's payload file. This includes verification, if
+     * necessary, as well as decompression and other steps according to the
+     * application's *.knsrc file.
+     *
+     * @param entry Entry to be installed
+     *
+     * @see signalInstallationFinished
+     * @see signalInstallationFailed
+     */
+    void install(const KNSCore::Entry &entry, int linkId = 1);
+
+    /**
+     * Uninstalls an entry. It reverses the steps which were performed
+     * during the installation.
+     *
+     * @param entry The entry to deinstall
+     */
+    void uninstall(const KNSCore::Entry &entry);
+
+    void requestMoreData();
+
+    Q_INVOKABLE void revalidateCacheEntries();
+    Q_INVOKABLE void restoreSearch();
+    Q_INVOKABLE void storeSearch();
 Q_SIGNALS:
     void message(const QString &message);
     void idleMessage(const QString &message);
     void busyMessage(const QString &message);
-    void errorMessage(const QString &message);
+
+    void signalResetView();
 
     /**
      * This is fired for events related directly to a single Entry instance
@@ -159,7 +228,15 @@ Q_SIGNALS:
      */
     void errorCode(Engine::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
+    void entryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
+
+    void signalEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
+    void signalUpdateableEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
 private:
+    Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
+    Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
+    void registerTransaction(KNSCore::Transaction *transactions);
+    void doRequest();
     const std::unique_ptr<EnginePrivate> d;
 };
 

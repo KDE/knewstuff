@@ -37,6 +37,7 @@ class Cache;
 class CommentsModel;
 class ResultsStream;
 class EngineBasePrivate;
+class Installation;
 
 /**
  * KNewStuff engine.
@@ -397,6 +398,8 @@ protected:
     friend class Engine;
     friend class ResultsStream;
     friend class Transaction;
+    Installation *installation() const; // Needed for quick engine
+    QList<QSharedPointer<Provider>> providers() const;
     std::unique_ptr<EngineBasePrivate> d;
 };
 

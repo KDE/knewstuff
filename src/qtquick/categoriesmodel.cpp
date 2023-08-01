@@ -6,25 +6,13 @@
 
 #include "categoriesmodel.h"
 
-#include "engine.h"
-
 #include <KLocalizedString>
 
-class CategoriesModelPrivate
-{
-public:
-    CategoriesModelPrivate()
-    {
-    }
-    KNSCore::Engine *engine;
-};
-
-CategoriesModel::CategoriesModel(Engine *parent)
+CategoriesModel::CategoriesModel(KNSCore::EngineBase *parent)
     : QAbstractListModel(parent)
-    , d(new CategoriesModelPrivate)
+    , m_engine(parent)
 {
-    d->engine = qobject_cast<KNSCore::Engine *>(parent->engine());
-    connect(d->engine, &KNSCore::Engine::signalCategoriesMetadataLoded, this, [this]() {
+    connect(m_engine, &KNSCore::EngineBase::signalCategoriesMetadataLoded, this, [this]() {
         beginResetModel();
         endResetModel();
     });
@@ -43,13 +31,13 @@ int CategoriesModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0;
     }
-    return d->engine->categoriesMetadata().count() + 1;
+    return m_engine->categoriesMetadata().count() + 1;
 }
 
 QVariant CategoriesModel::data(const QModelIndex &index, int role) const
 {
     QVariant result;
-    const QList<KNSCore::Provider::CategoryMetadata> categoriesMetadata = d->engine->categoriesMetadata();
+    const QList<KNSCore::Provider::CategoryMetadata> categoriesMetadata = m_engine->categoriesMetadata();
     if (index.isValid()) {
         if (index.row() == 0) {
             switch (role) {
@@ -90,7 +78,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
 QString CategoriesModel::idToDisplayName(const QString &id) const
 {
     QString dispName = i18nc("The string passed back in the case the requested category is not known", "Unknown Category");
-    const auto metaData = d->engine->categoriesMetadata();
+    const auto metaData = m_engine->categoriesMetadata();
     for (const KNSCore::Provider::CategoryMetadata &cat : metaData) {
         if (cat.id == id) {
             dispName = cat.displayName;

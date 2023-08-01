@@ -92,7 +92,7 @@ Window {
 
     onVisibleChanged: {
         if (visible) {
-            newStuffPage.engine.engine.revalidateCacheEntries();
+            newStuffPage.engine.revalidateCacheEntries();
         }
     }
 

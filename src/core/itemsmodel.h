@@ -18,14 +18,14 @@ class KJob;
 
 namespace KNSCore
 {
-class Engine;
+class EngineBase;
 class ItemsModelPrivate;
 
 class KNEWSTUFFCORE_EXPORT ItemsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit ItemsModel(Engine *engine, QObject *parent = nullptr);
+    explicit ItemsModel(EngineBase *engine, QObject *parent = nullptr);
     ~ItemsModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -45,6 +45,7 @@ public:
 
 Q_SIGNALS:
     void jobStarted(KJob *, const QString &label);
+    void loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
 
 public Q_SLOTS:
     void slotEntryChanged(const KNSCore::Entry &entry);

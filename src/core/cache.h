@@ -11,8 +11,8 @@
 #include <QObject>
 #include <QSet>
 
-#include "engine.h"
 #include "entry.h"
+#include "provider.h"
 
 #include "knewstuffcore_export.h"
 

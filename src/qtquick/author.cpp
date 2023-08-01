@@ -9,7 +9,6 @@
 #include "quickengine.h"
 
 #include "core/author.h"
-#include "core/engine.h"
 #include "core/provider.h"
 
 #include "knewstuffquick_debug.h"
@@ -44,13 +43,10 @@ public:
         if (provider) {
             provider->disconnect(q);
         }
-        if (engine && engine->engine()) {
-            KNSCore::Engine *coreEngine = qobject_cast<KNSCore::Engine *>(engine->engine());
-            if (coreEngine) {
-                provider = coreEngine->provider(providerId);
-            }
+        if (engine) {
+            provider = engine->provider(providerId);
             if (!provider) {
-                provider = coreEngine->defaultProvider();
+                provider = engine->defaultProvider();
             }
         }
         if (provider) {

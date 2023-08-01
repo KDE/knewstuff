@@ -23,7 +23,7 @@ public:
     {
     }
     CommentsModel *const q;
-    Engine *engine = nullptr;
+    EngineBase *engine = nullptr;
 
     Entry entry;
 
@@ -91,7 +91,7 @@ public:
 };
 }
 
-KNSCore::CommentsModel::CommentsModel(Engine *parent)
+KNSCore::CommentsModel::CommentsModel(EngineBase *parent)
     : QAbstractListModel(parent)
     , d(new CommentsModelPrivate(this))
 {
@@ -102,7 +102,6 @@ KNSCore::CommentsModel::~CommentsModel() = default;
 
 QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
 {
-    // clang-format off
     static const QHash<int, QByteArray> roles{
         {IdRole, "id"},
         {SubjectRole, "subject"},
@@ -112,9 +111,8 @@ QHash<int, QByteArray> KNSCore::CommentsModel::roleNames() const
         {DateRole, "date"},
         {ScoreRole, "score"},
         {ParentIndexRole, "parentIndex"},
-        {DepthRole, "depth"}
+        {DepthRole, "depth"},
     };
-    // clang-format on
     return roles;
 }
 

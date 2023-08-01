@@ -32,7 +32,7 @@ namespace KNSCore
  *
  * @internal
  */
-class Installation : public QObject
+class KNEWSTUFFCORE_EXPORT Installation : public QObject
 {
     Q_OBJECT
 public:

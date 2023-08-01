@@ -10,7 +10,9 @@
 #include <QtGlobal>
 
 #include "engine.h"
+#include "enginebase.h"
 #include "entry.h"
+#include "provider.h"
 
 using namespace KNSCore;
 
@@ -55,7 +57,7 @@ void EngineTest::testProviderFileLoading()
     KNSCore::Entry::List list;
     connect(
         engine,
-        &Engine::signalEntriesLoaded,
+        &EngineBase::signalEntriesLoaded,
         this,
         [&list](const KNSCore::Entry::List &loaded) {
             list = loaded;

@@ -14,8 +14,6 @@
 
 namespace KNewStuffQuick
 {
-class SettingsPrivate;
-
 /**
  * An object for handling KNewStuff related settings which make sense to handle without
  * instantiating an engine (specifically, for now, whether or not this is allowed by
@@ -25,17 +23,15 @@ class SettingsPrivate;
 class Settings : public QObject
 {
     Q_OBJECT
-    Q_DISABLE_COPY(Settings)
     Q_PROPERTY(bool allowedByKiosk READ allowedByKiosk CONSTANT)
 public:
     static Settings *instance();
-    ~Settings() override;
-
     bool allowedByKiosk() const;
 
-private:
-    Settings();
-    std::unique_ptr<SettingsPrivate> d;
+    /// @internal
+    Settings()
+    {
+    }
 };
 }
 #endif // KNSQ_QUICKSETTINGS_H

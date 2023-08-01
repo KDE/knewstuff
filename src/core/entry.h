@@ -532,6 +532,9 @@ public:
      */
     KNSCore::Entry::Status status() const;
 
+    /// @internal
+    void setEntryDeleted();
+
 private:
     friend class StaticXmlProvider;
     friend class Cache;
@@ -539,7 +542,6 @@ private:
     friend class Installation;
     friend KNewStuff2Test;
     friend testEntry;
-    void setEntryDeleted();
     QDomElement entryXML() const;
     bool setEntryXML(const QDomElement &xmldata);
     QExplicitlySharedDataPointer<EntryPrivate> d;

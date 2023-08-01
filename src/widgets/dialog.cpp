@@ -15,7 +15,7 @@
 
 #include <KLocalizedContext>
 
-#include "core/engine.h"
+#include "core/enginebase.h"
 #include "knewstuffwidgets_debug.h"
 
 using namespace KNSWidgets;
@@ -23,7 +23,7 @@ using namespace KNSWidgets;
 class KNSWidgets::DialogPrivate
 {
 public:
-    KNSCore::Engine *coreEngine = nullptr;
+    KNSCore::EngineBase *engine = nullptr;
     QQuickItem *item = nullptr;
     QList<KNSCore::Entry> changedEntries;
 };
@@ -67,12 +67,10 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
 
     if (QQuickItem *root = page->rootObject()) {
         d->item = root;
-        QObject *qtquickEngine = root->property("engine").value<QObject *>();
-        Q_ASSERT(qtquickEngine);
-        d->coreEngine = qtquickEngine->property("engine").value<KNSCore::Engine *>();
-        Q_ASSERT(d->coreEngine);
+        d->engine = qvariant_cast<KNSCore::EngineBase *>(root->property("engine"));
+        Q_ASSERT(d->engine);
 
-        connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+        /*connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
             if (event == KNSCore::Entry::StatusChangedEvent) {
                 if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
                     return; // We do not care about intermediate states
@@ -81,7 +79,7 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
                 d->changedEntries.removeOne(entry);
                 d->changedEntries.append(entry);
             }
-        });
+        });*/
     } else {
         qWarning(KNEWSTUFFWIDGETS) << "Error creating QtQuickDialogWrapper component:" << page->errors();
     }
@@ -92,9 +90,9 @@ Dialog::~Dialog()
     delete d->item;
 }
 
-KNSCore::Engine *Dialog::engine()
+KNSCore::EngineBase *Dialog::engine()
 {
-    return d->coreEngine;
+    return d->engine;
 }
 
 QList<KNSCore::Entry> Dialog::changedEntries() const
