@@ -135,6 +135,7 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {SourceRole, "source"},
         {StatusRole, "status"},
         {EntryTypeRole, "entryType"},
+        {EntryRole, "entry"},
     };
     return roles;
 }
@@ -158,6 +159,8 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
         case NameRole:
         case Qt::DisplayRole:
             return entry.name();
+        case EntryRole:
+            return QVariant::fromValue(entry);
         case UniqueIdRole:
             return entry.uniqueId();
         case CategoryRole:
@@ -197,7 +200,6 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             return entry.payload();
         case Qt::DecorationRole:
             return entry.previewUrl(KNSCore::Entry::PreviewSmall1);
-            break;
         case PreviewsSmallRole: {
             QStringList previews;
             previews << entry.previewUrl(KNSCore::Entry::PreviewSmall1);
@@ -207,7 +209,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 previews.takeLast();
             }
             return previews;
-        } break;
+        }
         case PreviewsRole: {
             QStringList previews;
             previews << entry.previewUrl(KNSCore::Entry::PreviewBig1);
@@ -217,7 +219,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 previews.takeLast();
             }
             return previews;
-        } break;
+        }
         case InstalledFilesRole:
             return entry.installedFiles();
         case UnInstalledFilesRole:
@@ -264,7 +266,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             default:
                 return QStringLiteral("Unknown source - shouldn't be possible");
             }
-        } break;
+        }
         case StatusRole: {
             KNSCore::Entry::Status status = entry.status();
             switch (status) {
@@ -284,7 +286,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             default:
                 return ItemsModel::InvalidStatus;
             }
-        } break;
+        }
         case CommentsModelRole: {
             KNSCore::CommentsModel *commentsModel{nullptr};
             if (!d->commentsModels.contains(entry.uniqueId())) {
@@ -295,7 +297,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 commentsModel = d->commentsModels[entry.uniqueId()];
             }
             return QVariant::fromValue(commentsModel);
-        } break;
+        }
         case EntryTypeRole: {
             KNSCore::Entry::EntryType type = entry.entryType();
             if (type == KNSCore::Entry::GroupEntry) {
@@ -303,7 +305,7 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
             } else {
                 return ItemsModel::CatalogEntry;
             }
-        } break;
+        }
         default:
             return QStringLiteral("Unknown role");
         }
@@ -359,41 +361,6 @@ int ItemsModel::indexOfEntryId(const QString &providerId, const QString &entryId
 bool ItemsModel::isLoadingData() const
 {
     return d->isLoadingData;
-}
-
-void ItemsModel::installItem(int index, int linkId)
-{
-    if (d->engine) {
-        KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
-        if (entry.isValid()) {
-            d->engine->install(entry, linkId);
-        }
-    }
-}
-
-void ItemsModel::updateItem(int index)
-{
-    installItem(index, AutoDetectLinkId);
-}
-
-void ItemsModel::uninstallItem(int index)
-{
-    if (d->engine) {
-        KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
-        if (entry.isValid()) {
-            d->engine->uninstall(entry);
-        }
-    }
-}
-
-void ItemsModel::adoptItem(int index)
-{
-    if (d->engine) {
-        KNSCore::Entry entry = d->model->data(d->model->index(index), Qt::UserRole).value<KNSCore::Entry>();
-        if (entry.isValid()) {
-            d->engine->adoptEntry(entry);
-        }
-    }
 }
 
 #include "moc_quickitemsmodel.cpp"

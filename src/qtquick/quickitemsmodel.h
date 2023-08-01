@@ -38,11 +38,11 @@ class ItemsModelPrivate;
     Item {
         NewStuff.ItemsModel {
             id: newStuffModel;
-            engine: newStuffEngine.engine;
+            engine: newStuffEngine
         }
         NewStuff.Engine {
-            id: newStuffEngine;
-            configFile: "/some/filesystem/location/wallpaper.knsrc";
+            id: newStuffEngine
+            configFile: "/some/filesystem/location/wallpaper.knsrc"
             onMessage: console.log("KNS Message: " + message);
             onIdleMessage: console.log("KNS Idle: " + message);
             onBusyMessage: console.log("KNS Busy: " + message);
@@ -57,7 +57,7 @@ class ItemsModel : public QAbstractListModel
     /**
      * The NewStuffQuickEngine to show items from
      */
-    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged)
+    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged REQUIRED)
     /**
      * Whether or not the model is fetching information from a remote location
      * @since 5.65
@@ -98,7 +98,8 @@ public:
         SourceRole,
         StatusRole,
         CommentsModelRole,
-        EntryTypeRole
+        EntryTypeRole,
+        EntryRole,
     };
     Q_ENUM(Roles)
     enum ItemStatus {
@@ -159,52 +160,6 @@ public:
      * @since 5.65
      */
     Q_SIGNAL void isLoadingDataChanged();
-
-    /**
-     * @brief This will install (or update, if already installed) the item at the given index
-     *
-     * There are no side effects of this function if it is called on an item which cannot be
-     * installed or updated (that is, if the status is not one such that these are possible,
-     * the function will simply return without performing any actions)
-     *
-     * @param index The index of the item to install or update
-     * @param linkId The download item to install. If this is -1, it is assumed to be an update with an unknown payload, and a number of heuristics will be
-     * applied by the engine
-     * @see Engine::downloadLinkLoaded implementation for details
-     * @see LinkId
-     */
-    Q_INVOKABLE void installItem(int index, int linkId);
-    /**
-     * @brief This will request an update of the given item
-     *
-     * There are no side effects of this function if it is called on an item which is not
-     * in an updateable state (that is, nothing will happen if this is called on an item
-     * which is not already installed, or on an installed item which does not have updates
-     * available).
-     *
-     * @param index The index of the item you wish to update
-     * @since 5.69
-     */
-    Q_INVOKABLE void updateItem(int index);
-    /**
-     * @brief Uninstall an already installed item
-     *
-     * There are no side effects of this function if it is called on an item which cannot be
-     * uninstalled (that is, if the status is not one such that this is possible,
-     * the function will simply return without performing any actions)
-     *
-     * @param index The index of the item to be uninstalled
-     */
-    Q_INVOKABLE void uninstallItem(int index);
-
-    /**
-     * @brief Run the adoption command on an already installed item
-     *
-     * @note This will simply fail quietly if the item is not installed
-     *
-     * @param index The intex of the item to be adopted
-     */
-    Q_INVOKABLE void adoptItem(int index);
 
     /**
      * @brief Fired when an entry's data changes

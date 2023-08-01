@@ -38,12 +38,6 @@ void QmlPlugins::registerTypes(const char *uri)
     // Version 1.62
     qmlRegisterType<KNewStuffQuick::Author>(uri, 1, 62, "Author");
     qmlRegisterType<KNewStuffQuick::CommentsModel>(uri, 1, 62, "CommentsModel");
-    qmlRegisterUncreatableType<DownloadLinkInfo>(
-        uri,
-        1,
-        0,
-        "DownloadLinkInfo",
-        QStringLiteral("This should only be created by the ItemsModel, and is associated with one entry in that model"));
     qmlRegisterUncreatableType<CategoriesModel>(
         uri,
         1,

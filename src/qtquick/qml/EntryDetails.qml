@@ -42,6 +42,7 @@ KCM.SimpleKCM {
     property var downloadLinks
     property string providerId
     property int entryType
+    property var entry
 
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
@@ -49,7 +50,7 @@ KCM.SimpleKCM {
         onItemPicked: {
             const entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
             applicationWindow().showPassiveNotification(i18ndc("knewstuff6", "A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
-            newStuffModel.installItem(entryId, downloadItemId);
+            newStuffModel.engine.install(component.entry, downloadItemId);
         }
     }
 
@@ -99,10 +100,10 @@ KCM.SimpleKCM {
             icon.name: "install"
             onTriggered: {
                 if (component.downloadLinks.length == 1) {
-                    newStuffModel.installItem(component.index, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.install(component.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = component.downloadLinks;
-                    downloadItemsSheet.entryId = component.index;
+                    downloadItemsSheet.entry = component.index;
                     downloadItemsSheet.open();
                 }
             }
@@ -112,14 +113,14 @@ KCM.SimpleKCM {
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
-            onTriggered: newStuffModel.updateItem(component.index)
+            onTriggered: newStuffModel.update(component.entry, NewStuff.ItemsModel.AutoDetectLinkId)
             enabled: component.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
             icon.name: "edit-delete"
-            onTriggered: newStuffModel.uninstallItem(component.index)
+            onTriggered: newStuffModel.engine.uninstall(component.entry)
             enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled
         }

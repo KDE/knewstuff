@@ -128,7 +128,8 @@ KCM.GridViewKCM {
                         rating: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.RatingRole),
                         downloadCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadCountRole),
                         downloadLinks: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
-                        providerId: _showEntryDetailsThrottle.providerId
+                        providerId: _showEntryDetailsThrottle.providerId,
+                        entry: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
                     });
                     _restoreSearchState.enabled = true;
                 } else {
@@ -513,8 +514,8 @@ KCM.GridViewKCM {
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
 
-        onItemPicked: {
-            newStuffModel.installItem(entryId, downloadItemId);
+        onItemPicked: (entry, downloadItemId) => {
+            newStuffModel.engine.install(entry, downloadItemId);
         }
     }
 

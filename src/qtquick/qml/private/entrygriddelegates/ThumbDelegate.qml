@@ -34,7 +34,7 @@ KCM.GridDelegate {
         Kirigami.Action {
             text: component.useLabel
             icon.name: "dialog-ok-apply"
-            onTriggered: { newStuffModel.adoptItem(model.index); }
+            onTriggered: { newStuffModel.engine.adoptEntry(model.entry); }
             enabled: (model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
@@ -43,10 +43,10 @@ KCM.GridDelegate {
             icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
-                    downloadItemsSheet.entryId = model.index;
+                    downloadItemsSheet.entry = model.entry;
                     downloadItemsSheet.open();
                 }
             }
@@ -56,14 +56,14 @@ KCM.GridDelegate {
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             icon.name: "update-none"
-            onTriggered: { newStuffModel.updateItem(model.index); }
+            onTriggered: { newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
-            onTriggered: { newStuffModel.uninstallItem(model.index); }
+            onTriggered: { newStuffModel.uninstall(model.entry); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled;
         }

@@ -20,11 +20,11 @@ import org.kde.newstuff as NewStuff
 Kirigami.OverlaySheet {
     id: component
 
-    property string entryId
+    property var entry
 
     property alias downloadLinks: itemsView.model
 
-    signal itemPicked(string entryId, int downloadItemId, string downloadName)
+    signal itemPicked(var entry, int downloadItemId, string downloadName)
 
     showCloseButton: true
     title: i18nd("knewstuff6", "Pick Your Installation Option")
@@ -65,7 +65,7 @@ Kirigami.OverlaySheet {
 
                     onClicked: {
                         component.close();
-                        component.itemPicked(component.entryId, modelData.id, modelData.name);
+                        component.itemPicked(component.entry, modelData.id, modelData.name);
                     }
                 }
             }

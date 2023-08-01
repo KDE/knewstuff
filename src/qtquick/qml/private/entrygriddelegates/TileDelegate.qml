@@ -22,7 +22,7 @@ Private.GridTileDelegate {
     function showDetails() {
 
         if (model.entryType == NewStuff.ItemsModel.GroupEntry) {
-            newStuffEngine.engine.storeSearch();
+            newStuffEngine.storeSearch();
             newStuffEngine.searchTerm = model.payload;
         } else {
             pageStack.push(detailsPage, {
@@ -40,7 +40,8 @@ Private.GridTileDelegate {
                 rating: model.rating,
                 downloadCount: model.downloadCount,
                 downloadLinks: model.downloadLinks,
-                providerId: model.providerId
+                providerId: model.providerId,
+                entry: model.entry,
             });
         }
     }
@@ -57,10 +58,10 @@ Private.GridTileDelegate {
             icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.installItem(model.index, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffEngine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
-                    downloadItemsSheet.entryId = model.index;
+                    downloadItemsSheet.entry = model.entry;
                     downloadItemsSheet.open();
                 }
             }
@@ -70,14 +71,14 @@ Private.GridTileDelegate {
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             icon.name: "update-none"
-            onTriggered: { newStuffModel.updateItem(model.index); }
+            onTriggered: { newStuffEngine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId); }
             enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
             visible: enabled;
         },
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
-            onTriggered: { newStuffModel.uninstallItem(model.index); }
+            onTriggered: { newStuffEngine.uninstall(model.entry); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled && hovered;
         }

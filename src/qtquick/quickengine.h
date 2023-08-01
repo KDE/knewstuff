@@ -166,7 +166,7 @@ public:
      * @see signalInstallationFinished
      * @see signalInstallationFailed
      */
-    void install(const KNSCore::Entry &entry, int linkId = 1);
+    Q_INVOKABLE void install(const KNSCore::Entry &entry, int linkId = 1);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed
@@ -174,7 +174,7 @@ public:
      *
      * @param entry The entry to deinstall
      */
-    void uninstall(const KNSCore::Entry &entry);
+    Q_INVOKABLE void uninstall(const KNSCore::Entry &entry);
 
     void requestMoreData();
 
