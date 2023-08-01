@@ -52,18 +52,11 @@ public:
         q->connect(engine, &Engine::signalProvidersLoaded, engine, &Engine::reloadEntries);
         // Entries have been fetched and should be shown:
         q->connect(engine, &Engine::signalEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
-            if (engine->filter() != KNSCore::Provider::Updates) {
-                model->slotEntriesLoaded(entries);
-            }
+            model->slotEntriesLoaded(entries);
         });
         q->connect(engine, &Engine::entryEvent, model, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
             if (event == KNSCore::Entry::DetailsLoadedEvent && engine->filter() != KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(KNSCore::Entry::List{entry});
-            }
-        });
-        q->connect(engine, &Engine::signalUpdateableEntriesLoaded, model, [this](const KNSCore::Entry::List &entries) {
-            if (engine->filter() == KNSCore::Provider::Updates) {
-                model->slotEntriesLoaded(entries);
             }
         });
 

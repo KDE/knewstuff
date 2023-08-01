@@ -69,7 +69,6 @@ HTTPWorker::HTTPWorker(const QUrl &url, JobType jobType, QObject *parent)
     : QObject(parent)
     , d(new HTTPWorkerPrivate)
 {
-    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
     d->source = url;
 }
@@ -78,7 +77,6 @@ HTTPWorker::HTTPWorker(const QUrl &source, const QUrl &destination, KNSCore::HTT
     : QObject(parent)
     , d(new HTTPWorkerPrivate)
 {
-    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
     d->jobType = jobType;
     d->source = source;
     d->destination = destination;

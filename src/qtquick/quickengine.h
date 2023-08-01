@@ -30,20 +30,17 @@ class Engine : public KNSCore::EngineBase
 {
     Q_OBJECT
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
-    /**
-     * Whether or not the engine is performing its initial loading operations
-     * @since 5.65
-     */
-    Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
-    Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY engineInitialized)
-    Q_PROPERTY(QString name READ name NOTIFY engineInitialized)
+    Q_PROPERTY(bool isLoading READ isLoading NOTIFY busyStateChanged)
+    Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY configFileChanged)
+    Q_PROPERTY(QString name READ name NOTIFY configFileChanged)
+    Q_PROPERTY(bool isValid READ isValid NOTIFY configFileChanged)
+
     Q_PROPERTY(QObject *categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QStringList categoriesFilter READ categoriesFilter WRITE setCategoriesFilter RESET resetCategoriesFilter NOTIFY categoriesFilterChanged)
     Q_PROPERTY(KNSCore::Provider::Filter filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(KNSCore::Provider::SortMode sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(QObject *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
-    Q_PROPERTY(bool isValid READ isValid NOTIFY engineInitialized)
 
     /**
      * Current state of the engine, the state con contain multiple operations
@@ -108,14 +105,10 @@ public:
      * Whether or not the engine is performing its initial loading operations
      * @since 5.65
      */
-    bool isLoading() const;
-    /**
-     * Fired when the isLoading value changes
-     * @since 5.65
-     */
-    Q_SIGNAL void isLoadingChanged();
-
-    Q_SIGNAL void engineInitialized();
+    bool isLoading() const
+    {
+        return busyState().toInt() != 0;
+    }
 
     QObject *categories() const;
     Q_SIGNAL void categoriesChanged();
@@ -231,7 +224,6 @@ Q_SIGNALS:
     void entryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
 
     void signalEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
-    void signalUpdateableEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
 private:
     Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
     Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);

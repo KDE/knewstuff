@@ -253,12 +253,12 @@ void Cache::insertRequest(const KNSCore::Provider::SearchRequest &request, const
             cacheList.append(entry);
         }
     }
-    qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add: " << entries.size() << " keys: " << d->requestCache.keys();
+    qCDebug(KNEWSTUFFCORE) << request.hashForRequest() << " add to cache: " << entries.size() << " keys: " << d->requestCache.keys();
 }
 
 Entry::List Cache::requestFromCache(const KNSCore::Provider::SearchRequest &request)
 {
-    qCDebug(KNEWSTUFFCORE) << request.hashForRequest();
+    qCDebug(KNEWSTUFFCORE) << "from cache" << request.hashForRequest();
     return d->requestCache.value(request.hashForRequest());
 }
 

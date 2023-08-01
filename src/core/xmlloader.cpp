@@ -72,8 +72,6 @@ void XmlLoader::load(const QUrl &url)
 
 void XmlLoader::slotJobData(KJob *, const QByteArray &data)
 {
-    qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO;
-
     m_jobdata.append(data);
 }
 

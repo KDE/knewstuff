@@ -22,7 +22,6 @@
 class EnginePrivate
 {
 public:
-    bool isLoading = false;
     bool isValid = false;
     CategoriesModel *categoriesModel = nullptr;
     SearchPresetModel *searchPresetModel = nullptr;
@@ -78,31 +77,32 @@ Engine::Engine(QObject *parent)
     });
     connect(this, &EngineBase::signalProvidersLoaded, this, &Engine::updateStatus);
     connect(this, &EngineBase::signalProvidersLoaded, this, [this, setBusy]() {
-        d->isLoading = false;
-        Q_EMIT isLoadingChanged();
         setBusy({}, QString());
+        d->currentRequest.categories = EngineBase::categories();
     });
     connect(this, &EngineBase::loadingProvider, this, [setBusy]() {
         setBusy(BusyOperation::LoadingData, i18n("Loading provider information"));
     });
 
-    connect(this, &KNSCore::EngineBase::signalErrorCode, this, [this](const KNSCore::ErrorCode &error, const QString &message, const QVariant &metadata) {
-        Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
-        if (error == KNSCore::ProviderError || error == KNSCore::ConfigFileError) {
-            // This means loading the config or providers file failed entirely and we cannot complete the
-            // initialisation. It also means the engine is done loading, but that nothing will
-            // work, and we need to inform the user of this.
-            d->isLoading = false;
-            Q_EMIT isLoadingChanged();
-        }
-
-        // Emit the signal later, currently QML is not connected to the slot
-        if (error == KNSCore::ConfigFileError) {
-            QTimer::singleShot(0, [=]() {
+    connect(this,
+            &KNSCore::EngineBase::signalErrorCode,
+            this,
+            [setBusy, this](const KNSCore::ErrorCode &error, const QString &message, const QVariant &metadata) {
                 Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+                if (error == KNSCore::ProviderError || error == KNSCore::ConfigFileError) {
+                    // This means loading the config or providers file failed entirely and we cannot complete the
+                    // initialisation. It also means the engine is done loading, but that nothing will
+                    // work, and we need to inform the user of this.
+                    setBusy({}, QString());
+                }
+
+                // Emit the signal later, currently QML is not connected to the slot
+                if (error == KNSCore::ConfigFileError) {
+                    QTimer::singleShot(0, [=]() {
+                        Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+                    });
+                }
             });
-        }
-    });
 
     connect(this, &Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
         // Just forward the event but not do anything more
@@ -165,14 +165,11 @@ QString Engine::configFile() const
 void Engine::setConfigFile(const QString &newFile)
 {
     if (d->configFile != newFile) {
-        d->isLoading = true;
-        Q_EMIT isLoadingChanged();
         d->configFile = newFile;
         Q_EMIT configFileChanged();
 
         if (KNewStuffQuick::Settings::instance()->allowedByKiosk()) {
             d->isValid = init(newFile);
-            Q_EMIT engineInitialized();
             Q_EMIT categoriesFilterChanged();
             Q_EMIT filterChanged();
             Q_EMIT sortOrderChanged();
@@ -185,11 +182,6 @@ void Engine::setConfigFile(const QString &newFile)
                       "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
         }
     }
-}
-
-bool Engine::isLoading() const
-{
-    return d->isLoading;
 }
 
 QObject *Engine::categories() const
@@ -275,9 +267,12 @@ void Engine::reloadEntries()
     d->currentRequest.page = 0;
     d->numDataJobs = 0;
 
+    qWarning() << Q_FUNC_INFO << d->currentRequest.categories;
+
     const auto providersList = EngineBase::providers();
     for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
         if (p->isInitialized()) {
+            qWarning() << d->currentRequest.filter;
             if (d->currentRequest.filter == KNSCore::Provider::Installed) {
                 // when asking for installed entries, never use the cache
                 p->loadEntries(d->currentRequest);
@@ -317,14 +312,13 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     EngineBase::addProvider(provider);
     connect(provider.data(), &KNSCore::Provider::loadingFinished, this, [this](const auto &request, const auto &entries) {
         d->currentPage = qMax<int>(request.page, d->currentPage);
+        qWarning() << request.categories;
         qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page << "current page" << d->currentPage << "count:" << entries.count();
 
-        if (request.filter == KNSCore::Provider::Updates) {
-            Q_EMIT signalUpdateableEntriesLoaded(entries);
-        } else {
+        if (request.filter != KNSCore::Provider::Updates) {
             cache()->insertRequest(request, entries);
-            Q_EMIT signalEntriesLoaded(entries);
         }
+        Q_EMIT signalEntriesLoaded(entries);
 
         --d->numDataJobs;
         updateStatus();

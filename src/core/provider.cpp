@@ -60,8 +60,8 @@ public:
 
 QString Provider::SearchRequest::hashForRequest() const
 {
-    return QString(QString::number((int)sortMode) + QLatin1Char(',') + searchTerm + QLatin1Char(',') + categories.join(QLatin1Char('-')) + QLatin1Char(',')
-                   + QString::number(page) + QLatin1Char(',') + QString::number(pageSize));
+    return QString::number((int)sortMode) + QLatin1Char(',') + searchTerm + QLatin1Char(',') + categories.join(QLatin1Char('-')) + QLatin1Char(',')
+        + QString::number(page) + QLatin1Char(',') + QString::number(pageSize);
 }
 
 Provider::Provider()
