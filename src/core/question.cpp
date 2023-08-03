@@ -21,7 +21,7 @@ class KNSCore::QuestionPrivate
 public:
     QuestionPrivate()
         : questionType(Question::YesNoQuestion)
-        , response(Question::InvalidResponse)
+        , response()
     {
     }
     QString question;
