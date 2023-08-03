@@ -9,46 +9,34 @@
 
 #include "question.h"
 
-using namespace KNSCore;
-
+namespace KNSCore
+{
 class QuestionManagerHelper
 {
 public:
-    QuestionManagerHelper()
-        : q(nullptr)
-    {
-    }
+    QuestionManagerHelper() = default;
     ~QuestionManagerHelper()
     {
         delete q;
     }
-    QuestionManagerHelper(const QuestionManagerHelper &) = delete;
-    QuestionManagerHelper &operator=(const QuestionManagerHelper &) = delete;
-    QuestionManager *q;
+    QuestionManager *q = nullptr;
 };
 Q_GLOBAL_STATIC(QuestionManagerHelper, s_kns3_questionManager)
-
-class KNSCore::QuestionManagerPrivate
-{
-public:
-    QuestionManagerPrivate() = default;
-};
 
 QuestionManager *QuestionManager::instance()
 {
     if (!s_kns3_questionManager()->q) {
-        new QuestionManager;
+        s_kns3_questionManager()->q = new QuestionManager;
     }
     return s_kns3_questionManager()->q;
 }
 
 QuestionManager::QuestionManager()
-    : QObject(nullptr)
-    , d(new QuestionManagerPrivate)
+    : QObject()
 {
-    s_kns3_questionManager()->q = this;
 }
 
 QuestionManager::~QuestionManager() = default;
+}
 
 #include "moc_questionmanager.cpp"

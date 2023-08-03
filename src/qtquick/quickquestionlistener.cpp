@@ -14,111 +14,76 @@
 
 using namespace KNewStuffQuick;
 
-class QuickQuestionListenerHelper
-{
-public:
-    QuickQuestionListenerHelper()
-        : q(nullptr)
-    {
-    }
-    ~QuickQuestionListenerHelper()
-    {
-    }
-    QuickQuestionListenerHelper(const QuickQuestionListenerHelper &) = delete;
-    QuickQuestionListenerHelper &operator=(const QuickQuestionListenerHelper &) = delete;
-    QuickQuestionListener *q;
-};
-Q_GLOBAL_STATIC(QuickQuestionListenerHelper, s_kns3_quickQuestionListener)
-
-class QuickQuestionListener::Private
-{
-public:
-    Private()
-    {
-    }
-    QPointer<KNSCore::Question> question;
-};
-
+Q_GLOBAL_STATIC(QuickQuestionListener, s_quickQuestionListener)
 QuickQuestionListener *QuickQuestionListener::instance()
 {
-    if (!s_kns3_quickQuestionListener()->q) {
-        new QuickQuestionListener;
-    }
-    return s_kns3_quickQuestionListener()->q;
-}
-
-QuickQuestionListener::QuickQuestionListener()
-    : KNSCore::QuestionListener(nullptr)
-    , d(new Private)
-{
-    setParent(qApp);
-    s_kns3_quickQuestionListener()->q = this;
+    return s_quickQuestionListener;
 }
 
 QuickQuestionListener::~QuickQuestionListener()
 {
-    if (d->question) {
-        d->question->setResponse(KNSCore::Question::CancelResponse);
+    if (m_question) {
+        m_question->setResponse(KNSCore::Question::CancelResponse);
     }
 }
 
 void QuickQuestionListener::askQuestion(KNSCore::Question *question)
 {
-    d->question = question;
     switch (question->questionType()) {
     case KNSCore::Question::SelectFromListQuestion:
         Q_EMIT askListQuestion(question->title(), question->question(), question->list());
         break;
     case KNSCore::Question::ContinueCancelQuestion:
-        Q_EMIT askContinueCancelQuestion(d->question->title(), d->question->question());
+        Q_EMIT askContinueCancelQuestion(question->title(), question->question());
         break;
     case KNSCore::Question::InputTextQuestion:
-        Q_EMIT askTextInputQuestion(d->question->title(), d->question->question());
+        Q_EMIT askTextInputQuestion(question->title(), question->question());
         break;
     case KNSCore::Question::PasswordQuestion:
-        Q_EMIT askPasswordQuestion(d->question->title(), d->question->question());
+        Q_EMIT askPasswordQuestion(question->title(), question->question());
         break;
     case KNSCore::Question::YesNoQuestion:
     default:
-        Q_EMIT askYesNoQuestion(d->question->title(), d->question->question());
+        Q_EMIT askYesNoQuestion(question->title(), question->question());
         break;
     }
+    m_question = question;
 }
 
 void KNewStuffQuick::QuickQuestionListener::passResponse(bool responseIsContinue, QString input)
 {
-    if (d->question) {
+    if (m_question) {
         if (responseIsContinue) {
-            d->question->setResponse(input);
-            switch (d->question->questionType()) {
+            m_question->setResponse(input);
+            switch (m_question->questionType()) {
             case KNSCore::Question::ContinueCancelQuestion:
-                d->question->setResponse(KNSCore::Question::ContinueResponse);
+                m_question->setResponse(KNSCore::Question::ContinueResponse);
                 break;
             case KNSCore::Question::YesNoQuestion:
-                d->question->setResponse(KNSCore::Question::YesResponse);
+                m_question->setResponse(KNSCore::Question::YesResponse);
                 break;
             case KNSCore::Question::SelectFromListQuestion:
             case KNSCore::Question::InputTextQuestion:
             case KNSCore::Question::PasswordQuestion:
             default:
-                d->question->setResponse(KNSCore::Question::OKResponse);
+                m_question->setResponse(KNSCore::Question::OKResponse);
                 break;
             }
         } else {
-            switch (d->question->questionType()) {
+            switch (m_question->questionType()) {
             case KNSCore::Question::YesNoQuestion:
-                d->question->setResponse(KNSCore::Question::NoResponse);
+                m_question->setResponse(KNSCore::Question::NoResponse);
                 break;
             case KNSCore::Question::SelectFromListQuestion:
             case KNSCore::Question::InputTextQuestion:
             case KNSCore::Question::PasswordQuestion:
             case KNSCore::Question::ContinueCancelQuestion:
             default:
-                d->question->setResponse(KNSCore::Question::CancelResponse);
+                m_question->setResponse(KNSCore::Question::CancelResponse);
                 break;
             }
         }
-        d->question.clear();
+        m_question.clear();
     }
 }
 

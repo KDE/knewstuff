@@ -32,7 +32,7 @@ public:
     explicit QuestionListener(QObject *parent = nullptr);
     ~QuestionListener() override;
 
-    virtual void askQuestion(Question *question);
+    virtual void askQuestion(Question *question) = 0;
 };
 }
 

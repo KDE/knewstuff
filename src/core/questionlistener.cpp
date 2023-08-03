@@ -19,8 +19,4 @@ QuestionListener::QuestionListener(QObject *parent)
 
 QuestionListener::~QuestionListener() = default;
 
-void QuestionListener::askQuestion(Question * /*question*/)
-{
-}
-
 #include "moc_questionlistener.cpp"

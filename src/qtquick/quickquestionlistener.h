@@ -9,6 +9,7 @@
 #define KNSQ_QUICKQUESTIONLISTENER_H
 
 #include "core/questionlistener.h"
+#include <QPointer>
 
 namespace KNewStuffQuick
 {
@@ -30,10 +31,9 @@ public:
 
     Q_SLOT void passResponse(bool responseIsContinue, QString input);
 
+    QuickQuestionListener() = default; // Only used by Q_GLOBAL_STATIC
 private:
-    QuickQuestionListener();
-    class Private;
-    Private *d;
+    QPointer<KNSCore::Question> m_question;
 };
 }
 

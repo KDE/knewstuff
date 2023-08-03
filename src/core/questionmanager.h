@@ -36,7 +36,7 @@ Q_SIGNALS:
 
 private:
     QuestionManager();
-    const std::unique_ptr<QuestionManagerPrivate> d;
+    const void *d; // Future BIC
 };
 }
 
