@@ -109,7 +109,7 @@ KCM.GridViewKCM {
         enabled: false
 
         function onIsLoadingDataChanged() {
-            if (newStuffModel.isLoadingData === false && root.view.count == 1) {
+            if (!newStuffModel.engine.isLoading && root.view.count == 1) {
                 _showEntryDetailsThrottle.enabled = false;
                 var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
                 if (theIndex > -1) {
@@ -136,7 +136,7 @@ KCM.GridViewKCM {
                     root.message(i18ndc("knewstuff6", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
                     newStuffEngine.restoreSearch();
                 }
-            } else if (newStuffModel.isLoadingData === false && root.view.count > 1) {
+            } else if (!newStuffModel.engine.isLoading && root.view.count > 1) {
                 // right now, this is only one level deep...
                 _showEntryDetailsThrottle.enabled = false;
                 _restoreSearchState.enabled = true;
@@ -598,7 +598,7 @@ KCM.GridViewKCM {
 
         anchors.fill: parent
 
-        opacity: (newStuffEngine.isLoading || newStuffModel.isLoadingData) ? 1 : 0
+        opacity: newStuffEngine.isLoading ? 1 : 0
         Behavior on opacity {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration

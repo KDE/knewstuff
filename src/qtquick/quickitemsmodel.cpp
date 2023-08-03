@@ -28,8 +28,6 @@ public:
 
     QHash<QString, KNSCore::CommentsModel *> commentsModels;
 
-    bool isLoadingData{false};
-
     bool initModel()
     {
         if (model) {
@@ -39,15 +37,6 @@ public:
             return false;
         }
         model = new KNSCore::ItemsModel(engine, q);
-        q->connect(engine, &Engine::busyStateChanged, q, [=]() {
-            // If we install/update an entry the spinner should be hidden, BUG: 422047
-            const Engine::BusyState state = engine->busyState();
-            const bool busy = state && !state.testFlag(Engine::BusyOperation::InstallingEntry);
-            if (isLoadingData != busy) {
-                isLoadingData = busy;
-                Q_EMIT q->isLoadingDataChanged();
-            }
-        });
 
         q->connect(engine, &Engine::signalProvidersLoaded, engine, &Engine::reloadEntries);
         // Entries have been fetched and should be shown:
@@ -356,11 +345,6 @@ int ItemsModel::indexOfEntryId(const QString &providerId, const QString &entryId
         }
     }
     return idx;
-}
-
-bool ItemsModel::isLoadingData() const
-{
-    return d->isLoadingData;
 }
 
 #include "moc_quickitemsmodel.cpp"

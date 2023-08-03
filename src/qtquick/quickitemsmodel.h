@@ -58,11 +58,6 @@ class ItemsModel : public QAbstractListModel
      * The NewStuffQuickEngine to show items from
      */
     Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged REQUIRED)
-    /**
-     * Whether or not the model is fetching information from a remote location
-     * @since 5.65
-     */
-    Q_PROPERTY(bool isLoadingData READ isLoadingData NOTIFY isLoadingDataChanged)
 public:
     explicit ItemsModel(QObject *parent = nullptr);
     ~ItemsModel() override;
@@ -149,17 +144,6 @@ public:
      * @since 5.79
      */
     Q_INVOKABLE int indexOfEntryId(const QString &providerId, const QString &entryId);
-
-    /**
-     * Whether or not the model is fetching information from a remote location
-     * @since 5.65
-     */
-    bool isLoadingData() const;
-    /**
-     * Fired when the isLoadingData value changes
-     * @since 5.65
-     */
-    Q_SIGNAL void isLoadingDataChanged();
 
     /**
      * @brief Fired when an entry's data changes
