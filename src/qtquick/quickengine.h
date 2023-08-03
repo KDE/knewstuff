@@ -51,7 +51,6 @@ class Engine : public KNSCore::EngineBase
 public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
-    bool init(const QString &configfile) override;
 
     enum class BusyOperation {
         Initializing,
@@ -225,6 +224,7 @@ Q_SIGNALS:
 
     void signalEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
 private:
+    bool init(const QString &configfile) override;
     Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
     Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
     void registerTransaction(KNSCore::Transaction *transactions);

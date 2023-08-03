@@ -1,29 +1,42 @@
 # SPDX-FileCopyrightText: KDE Contributors
 # SPDX-License-Identifier: BSD-2-Clause
 
-ecm_add_qml_module(newstuffqmlplugin URI "org.kde.newstuff" VERSION 1.0)
-
-target_sources(newstuffqmlplugin PRIVATE
-    qmlplugin.cpp
-
+add_library(knewstuff_qml_STATIC STATIC)
+target_sources(knewstuff_qml_STATIC PRIVATE
     quickengine.cpp
+    quicksettings.cpp
     quickitemsmodel.cpp
     quickquestionlistener.cpp
-    quicksettings.cpp
-    author.cpp
+    searchpresetmodel.cpp
     categoriesmodel.cpp
     commentsmodel.cpp
-    downloadlinkinfo.cpp
-    searchpresetmodel.cpp
 )
-
-ecm_qt_declare_logging_category(newstuffqmlplugin
+ecm_qt_declare_logging_category(knewstuff_qml_STATIC
     HEADER knewstuffquick_debug.h
     IDENTIFIER KNEWSTUFFQUICK
     CATEGORY_NAME kf.newstuff.quick
     OLD_CATEGORY_NAMES org.kde.knewstuff.quick
     DESCRIPTION "knewstuff (qtquick)"
     EXPORT KNEWSTUFF
+)
+
+set_property(TARGET knewstuff_qml_STATIC PROPERTY POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(knewstuff_qml_STATIC PUBLIC
+    Qt6::Core
+    Qt6::Gui # QImage
+    Qt6::Qml
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::NewStuffCore
+)
+
+ecm_add_qml_module(newstuffqmlplugin URI "org.kde.newstuff" VERSION 1.0)
+
+target_sources(newstuffqmlplugin PRIVATE
+    qmlplugin.cpp
+
+    author.cpp
+    downloadlinkinfo.cpp
 )
 
 ecm_target_qml_sources(newstuffqmlplugin VERSION 1.1 SOURCES
@@ -63,25 +76,6 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private/entrygriddelegates
     qml/private/entrygriddelegates/TileDelegate.qml
 )
 
-target_link_libraries (newstuffqmlplugin PRIVATE
-    Qt6::Core
-    Qt6::Qml
-    Qt6::Quick
-    Qt6::Xml
-    KF6::ConfigCore
-    KF6::I18n
-    KF6::NewStuffCore
-)
-
-# This is used only for the deprecation system - we don't export things from the QML plugin, that's not how they work
-ecm_generate_export_header(newstuffqmlplugin
-    EXPORT_FILE_NAME knewstuffquick_export.h
-    BASE_NAME KNewStuffQuick
-    GROUP_BASE_NAME KF
-    VERSION ${KF_VERSION}
-    DEPRECATED_BASE_VERSION 0
-    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
-    DEPRECATION_VERSIONS
-)
+target_link_libraries (newstuffqmlplugin PRIVATE knewstuff_qml_STATIC)
 
 ecm_finalize_qml_module(newstuffqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})

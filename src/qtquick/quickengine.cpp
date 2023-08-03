@@ -238,6 +238,7 @@ QString Engine::searchTerm() const
 
 void Engine::setSearchTerm(const QString &searchTerm)
 {
+    qWarning() << d->isValid << d->currentRequest.searchTerm << searchTerm;
     if (d->isValid && d->currentRequest.searchTerm != searchTerm) {
         d->currentRequest.searchTerm = searchTerm;
         Q_EMIT searchTermChanged();
@@ -267,12 +268,9 @@ void Engine::reloadEntries()
     d->currentRequest.page = 0;
     d->numDataJobs = 0;
 
-    qWarning() << Q_FUNC_INFO << d->currentRequest.categories;
-
     const auto providersList = EngineBase::providers();
     for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
         if (p->isInitialized()) {
-            qWarning() << d->currentRequest.filter;
             if (d->currentRequest.filter == KNSCore::Provider::Installed) {
                 // when asking for installed entries, never use the cache
                 p->loadEntries(d->currentRequest);
