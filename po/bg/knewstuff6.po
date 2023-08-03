@@ -1108,15 +1108,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Изтегляне на нови неща..."
-
-#~ msgid "Download New %1..."
-#~ msgstr "Изтегляне на нов %1..."
-
-#~ msgctxt ""
-#~ "Show installation options, where there is more than one downloadable item"
-#~ msgid "Install..."
-#~ msgstr "Инсталиране..."
-
-#~ msgctxt "Label for the busy indicator showing an item is installing"
-#~ msgid "Installing..."
-#~ msgstr "Инсталиране..."
