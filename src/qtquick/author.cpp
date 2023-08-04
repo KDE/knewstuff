@@ -58,6 +58,7 @@ public:
         }
     }
 
+    // TODO Having a shared ptr on a QSharedData class doesn't make sense
     std::shared_ptr<KNSCore::Author> author()
     {
         std::shared_ptr<KNSCore::Author> ret;

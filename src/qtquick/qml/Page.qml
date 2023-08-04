@@ -102,6 +102,7 @@ KCM.GridViewKCM {
     Connections {
         id: _showEntryDetailsThrottle
 
+        // TODO KF6 Consider making the entry a gadget and setting the entry directly
         property var entryId
         property var providerId
 

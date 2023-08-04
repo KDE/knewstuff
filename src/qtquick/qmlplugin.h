@@ -9,6 +9,7 @@
 
 #include <QQmlExtensionPlugin>
 
+// TODO KF6 just make this a c++ file only plugin
 class QmlPlugins : public QQmlExtensionPlugin
 {
     Q_OBJECT

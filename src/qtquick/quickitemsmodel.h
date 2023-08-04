@@ -97,7 +97,7 @@ public:
         EntryRole,
     };
     Q_ENUM(Roles)
-    enum ItemStatus {
+    enum ItemStatus { // TODO KF6 access those from KNSCore::Entry
         InvalidStatus,
         DownloadableStatus,
         InstalledStatus,
@@ -114,12 +114,11 @@ public:
      * @since 5.83
      */
     enum EntryType { CatalogEntry = 0, GroupEntry };
-
     Q_ENUM(EntryType)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
     // Consequently, this enum removes what would seem like magic numbers from the code, and
     // makes their meaning more explicit.
-    enum LinkId {
+    enum LinkId { // TODO KF6 reuse this enum in the transaction, we currently use magic numbers there
         AutoDetectLinkId = -1,
         FirstLinkId = 1,
     };

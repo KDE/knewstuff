@@ -67,7 +67,7 @@ QVariant CategoriesModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QString CategoriesModel::idToDisplayName(const QString &id) const
+QString CategoriesModel::idToDisplayName(const QString &id) const // TODO KF6 unused?
 {
     QString dispName = i18nc("The string passed back in the case the requested category is not known", "Unknown Category");
     const auto metaData = m_engine->categoriesMetadata();
