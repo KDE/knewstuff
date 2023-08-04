@@ -65,7 +65,7 @@ EngineBase::~EngineBase()
 
 bool EngineBase::init(const QString &configfile)
 {
-    qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::Engine from '" << configfile << "'";
+    qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::EngineBase from '" << configfile << "'";
 
     QString resolvedConfigFilePath;
     if (QFileInfo(configfile).isAbsolute()) {

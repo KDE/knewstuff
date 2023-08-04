@@ -395,7 +395,6 @@ protected:
     virtual void addProvider(QSharedPointer<KNSCore::Provider> provider);
     virtual void updateStatus();
 
-    friend class Engine;
     friend class ResultsStream;
     friend class Transaction;
     Installation *installation() const; // Needed for quick engine

@@ -22,7 +22,6 @@
 #include <memory>
 
 class testEntry;
-class KNewStuff2Test;
 class QDomElement;
 class QXmlStreamReader;
 
@@ -538,9 +537,7 @@ public:
 private:
     friend class StaticXmlProvider;
     friend class Cache;
-    friend class Engine;
     friend class Installation;
-    friend KNewStuff2Test;
     friend testEntry;
     QDomElement entryXML() const;
     bool setEntryXML(const QDomElement &xmldata);

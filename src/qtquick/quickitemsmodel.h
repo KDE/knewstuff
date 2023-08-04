@@ -18,7 +18,7 @@ class ItemsModelPrivate;
  *
  * Use an instance of this model to show the content items represented by the configuration
  * file passed to an engine. The following sample assumes you are using the Engine component,
- * however it is also possible to pass a KNSCore::Engine instance created from C++ to this
+ * however it is also possible to pass a KNSCore::EngineBase instance created from C++ to this
  * property, if you have specific requirements not covered by the convenience component.
  *
  * Most data in the model is simple, but the DownloadLinks role will return a list of

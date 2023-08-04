@@ -19,10 +19,7 @@
 class EnginePrivate;
 
 /**
- * @short Encapsulates a KNSCore::Engine for use in Qt Quick
- *
- * This class takes care of initialisation of a KNSCore::Engine when assigned a config file.
- * The actual KNSCore:Engine can be read through the Engine::engine property.
+ * KNSCore::EngineBase for interfacing with QML
  *
  * @see ItemsModel
  */

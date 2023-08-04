@@ -43,7 +43,7 @@ public:
 
     /**
      * Engine that is used by the dialog, might be null if the engine failed to initialize.
-     * @return KNSCore::Engine used by the dialog
+     * @return KNSCore::EngineBase used by the dialog
      */
     KNSCore::EngineBase *engine();
 

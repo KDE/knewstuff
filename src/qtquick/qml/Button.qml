@@ -22,7 +22,7 @@ QQC2.Button {
 
     /*
      * The configuration file is not aliased, because then we end up initialising the
-     * KNSCore::Engine immediately the Button is shown, which we want to avoid (as that
+     * Engine immediately the Button is shown, which we want to avoid (as that
      * is effectively a phone-home scenario, and causes internet traffic in situations
      * where it would not seem likely that there should be any).
      * If we want, in the future, to add some status display to Button (such as "there

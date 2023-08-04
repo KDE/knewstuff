@@ -45,7 +45,7 @@ public:
         });
         // Sanity checks, because we need a few things to be correct before we can actually fetch comments...
         if (!engine) {
-            qCWarning(KNEWSTUFFCORE) << "CommentsModel must be parented on a KNSCore::Engine instance to be able to fetch comments";
+            qCWarning(KNEWSTUFFCORE) << "CommentsModel must be parented on a KNSCore::EngineBase instance to be able to fetch comments";
         }
         if (!entry.isValid()) {
             qCWarning(KNEWSTUFFCORE) << "Without an entry to fetch comments for, CommentsModel cannot fetch comments for it";
