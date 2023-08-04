@@ -238,7 +238,6 @@ QString Engine::searchTerm() const
 
 void Engine::setSearchTerm(const QString &searchTerm)
 {
-    qWarning() << d->isValid << d->currentRequest.searchTerm << searchTerm;
     if (d->isValid && d->currentRequest.searchTerm != searchTerm) {
         d->currentRequest.searchTerm = searchTerm;
         Q_EMIT searchTermChanged();

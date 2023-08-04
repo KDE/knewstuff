@@ -105,10 +105,10 @@ KCM.GridViewKCM {
         property var entryId
         property var providerId
 
-        target: newStuffModel
+        target: newStuffModel.engine
         enabled: false
 
-        function onIsLoadingDataChanged() {
+        function onBusyStateChanged() {
             if (!newStuffModel.engine.isLoading && root.view.count == 1) {
                 _showEntryDetailsThrottle.enabled = false;
                 var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);

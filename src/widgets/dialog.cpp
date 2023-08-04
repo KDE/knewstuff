@@ -26,6 +26,17 @@ public:
     KNSCore::EngineBase *engine = nullptr;
     QQuickItem *item = nullptr;
     QList<KNSCore::Entry> changedEntries;
+    void onEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event)
+    {
+        if (event == KNSCore::Entry::StatusChangedEvent) {
+            if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
+                return; // We do not care about intermediate states
+            }
+            // To make sure we have no duplicates and always the latest entry
+            changedEntries.removeOne(entry);
+            changedEntries.append(entry);
+        }
+    }
 };
 
 class PeriodicIncubationController : public QObject, public QQmlIncubationController
@@ -70,16 +81,13 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
         d->engine = qvariant_cast<KNSCore::EngineBase *>(root->property("engine"));
         Q_ASSERT(d->engine);
 
-        /*connect(d->coreEngine, &KNSCore::Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
-            if (event == KNSCore::Entry::StatusChangedEvent) {
-                if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
-                    return; // We do not care about intermediate states
-                }
-                // To make sure we have no duplicates and always the latest entry
-                d->changedEntries.removeOne(entry);
-                d->changedEntries.append(entry);
-            }
-        });*/
+        // clang-format off
+        // Old-style connect, because we don't want the QML engine to be exported
+        connect(d->engine,
+                SIGNAL(entryEvent(KNSCore::Entry,KNSCore::Entry::EntryEvent)),
+                this,
+                SLOT(onEntryEvent(KNSCore::Entry,KNSCore::Entry::EntryEvent)));
+        // clang-format on
     } else {
         qWarning(KNEWSTUFFWIDGETS) << "Error creating QtQuickDialogWrapper component:" << page->errors();
     }

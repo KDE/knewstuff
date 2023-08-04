@@ -56,6 +56,7 @@ public:
     void open() override;
 
 private:
+    Q_PRIVATE_SLOT(d, void onEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event))
     const std::unique_ptr<DialogPrivate> d;
 
     Q_DISABLE_COPY(Dialog)
