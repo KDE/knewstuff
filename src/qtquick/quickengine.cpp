@@ -50,13 +50,8 @@ Engine::Engine(QObject *parent)
     const auto setBusy = [this](Engine::BusyState state, const QString &msg) {
         setBusyState(state);
         d->busyMessage = msg;
-        if (!state) {
-            idleMessage(QString());
-        } else {
-            Q_EMIT busyMessage(msg);
-        }
     };
-    setBusy(BusyOperation::Initializing, i18n("Initializing"));
+    setBusy(BusyOperation::Initializing, i18n("Loading data")); // For the user this should be the same as initializing
 
     KNewStuffQuick::QuickQuestionListener::instance();
     d->categoriesModel = new CategoriesModel(this);
@@ -76,12 +71,8 @@ Engine::Engine(QObject *parent)
         Q_EMIT signalErrorCode(KNSCore::InstallationError, message, QVariant());
     });
     connect(this, &EngineBase::signalProvidersLoaded, this, &Engine::updateStatus);
-    connect(this, &EngineBase::signalProvidersLoaded, this, [this, setBusy]() {
-        setBusy({}, QString());
+    connect(this, &EngineBase::signalProvidersLoaded, this, [this]() {
         d->currentRequest.categories = EngineBase::categories();
-    });
-    connect(this, &EngineBase::loadingProvider, this, [setBusy]() {
-        setBusy(BusyOperation::LoadingData, i18n("Loading provider information"));
     });
 
     connect(this,
@@ -144,6 +135,26 @@ bool Engine::init(const QString &configfile)
     }
     return valid;
 }
+void Engine::updateStatus()
+{
+    QString busyMessage;
+    BusyState state;
+    if (d->numPictureJobs > 0) {
+        // If it is loading previews or data is irrelevant for the user
+        busyMessage = i18n("Loading data");
+        state |= BusyOperation::LoadingPreview;
+    }
+    if (d->numInstallJobs > 0) {
+        busyMessage = i18n("Installing");
+        state |= BusyOperation::InstallingEntry;
+    }
+    if (d->numDataJobs > 0) {
+        busyMessage = i18n("Loading data");
+        state |= BusyOperation::LoadingPreview;
+    }
+    d->busyMessage = busyMessage;
+    setBusyState(state);
+}
 
 Engine::~Engine() = default;
 
@@ -155,6 +166,10 @@ void Engine::setBusyState(BusyState state)
 Engine::BusyState Engine::busyState() const
 {
     return d->busyState;
+}
+QString Engine::busyMessage() const
+{
+    return d->busyMessage;
 }
 
 QString Engine::configFile() const
@@ -177,9 +192,11 @@ void Engine::setConfigFile(const QString &newFile)
         } else {
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
             // nothing the user can do to fix it, and we just tell them so they're not wondering what's wrong)
-            Q_EMIT message(
+            Q_EMIT errorCode(
+                Engine::ConfigFileError,
                 i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality",
-                      "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."));
+                      "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."),
+                QVariant());
         }
     }
 }
@@ -309,7 +326,6 @@ void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
     EngineBase::addProvider(provider);
     connect(provider.data(), &KNSCore::Provider::loadingFinished, this, [this](const auto &request, const auto &entries) {
         d->currentPage = qMax<int>(request.page, d->currentPage);
-        qWarning() << request.categories;
         qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page << "current page" << d->currentPage << "count:" << entries.count();
 
         if (request.filter != KNSCore::Provider::Updates) {

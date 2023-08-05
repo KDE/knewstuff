@@ -38,29 +38,6 @@ KCM.GridViewKCM {
     readonly property alias engine: newStuffEngine
 
     /**
-     * Any generic message from the NewStuff.Engine
-     * @param message The message to be shown to the user
-     */
-    signal message(string message)
-    /**
-     * A message posted usually describing that whatever action a recent busy
-     * message said was happening has been completed
-     * @param message The message to be shown to the user
-     */
-    signal idleMessage(string message)
-    /**
-     * A message posted when the engine is busy doing something long duration
-     * (usually this will be when fetching installation data)
-     * @param message The message to be shown to the user
-     */
-    signal busyMessage(string message)
-    /**
-     * A message posted when something has gone wrong
-     * @param message The message to be shown to the user
-     */
-    signal errorMessage(string message)
-
-    /**
      * Whether or not to show the Upload... context action
      * Usually this will be bound to the engine's property which usually defines
      * this, but you can override it programmatically by setting it here.
@@ -192,25 +169,6 @@ KCM.GridViewKCM {
 
     NewStuff.Engine {
         id: newStuffEngine
-
-        property string statusMessage
-
-        onMessage: message => {
-            root.message(message);
-            statusMessage = message;
-        }
-        onIdleMessage: message => {
-            root.idleMessage(message);
-            statusMessage = message;
-        }
-        onBusyMessage: message => {
-            root.busyMessage(message);
-            statusMessage = message;
-        }
-        onErrorCode: (code, message) => {
-            root.errorMessage(message);
-            statusMessage = message;
-        }
     }
 
     NewStuff.QuestionAsker {}
@@ -615,7 +573,7 @@ KCM.GridViewKCM {
 
         Kirigami.LoadingPlaceholder {
             anchors.centerIn: parent
-            text: i18ndc("knewstuff6", "A text shown beside a busy indicator suggesting that data is being fetched", "Loading more…")
+            text: newStuffEngine.busyMessage
         }
     }
 }

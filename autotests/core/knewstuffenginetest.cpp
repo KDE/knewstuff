@@ -34,7 +34,7 @@ void EngineTest::initTestCase()
     engine = new Engine(this);
     engine->setConfigFile(dataDir + "enginetest.knsrc");
     QVERIFY(engine->isValid());
-    QCOMPARE(engine->busyState(), Engine::BusyOperation::LoadingData);
+    QCOMPARE(engine->busyState(), Engine::BusyOperation::Initializing);
     QSignalSpy providersLoaded(engine, &Engine::signalProvidersLoaded);
     QVERIFY(providersLoaded.wait());
     QCOMPARE(engine->busyState(), Engine::BusyState());

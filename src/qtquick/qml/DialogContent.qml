@@ -63,17 +63,6 @@ Kirigami.ApplicationItem {
         id: newStuffPage
 
         showUploadAction: false
-
-        function showMessage(message) {
-            // As the Page shows something nice and friendly while loading,
-            // there's no reason to do the passive notification thing for those.
-            if (!engine.isLoading) {
-                component.showPassiveNotification(message);
-            }
-        }
-
-        onMessage: message => component.showPassiveNotification(message)
-        onIdleMessage: message => component.showPassiveNotification(message)
     }
 
     contextDrawer: Kirigami.ContextDrawer {

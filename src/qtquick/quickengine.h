@@ -45,12 +45,13 @@ class Engine : public KNSCore::EngineBase
      * @since 5.74
      */
     Q_PROPERTY(BusyState busyState READ busyState WRITE setBusyState NOTIFY busyStateChanged)
+    Q_PROPERTY(QString busyMessage READ busyMessage NOTIFY busyStateChanged)
 public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
 
     enum class BusyOperation {
-        Initializing,
+        Initializing = 1,
         LoadingData,
         LoadingPreview,
         InstallingEntry,
@@ -88,8 +89,8 @@ public:
     Q_SIGNAL void configFileChanged();
 
     Engine::BusyState busyState() const;
+    QString busyMessage() const;
     void setBusyState(Engine::BusyState state);
-    void setBusy(BusyState state, const QString &busyMessage);
 
     /**
      * Signal gets emitted when the busy state changes
@@ -178,10 +179,6 @@ public:
     Q_INVOKABLE void restoreSearch();
     Q_INVOKABLE void storeSearch();
 Q_SIGNALS:
-    void message(const QString &message);
-    void idleMessage(const QString &message);
-    void busyMessage(const QString &message);
-
     void signalResetView();
 
     /**
@@ -222,6 +219,7 @@ Q_SIGNALS:
     void signalEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
 private:
     bool init(const QString &configfile) override;
+    void updateStatus() override;
     Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
     Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
     void registerTransaction(KNSCore::Transaction *transactions);

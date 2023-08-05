@@ -43,10 +43,8 @@ class ItemsModelPrivate;
         NewStuff.Engine {
             id: newStuffEngine
             configFile: "/some/filesystem/location/wallpaper.knsrc"
-            onMessage: console.log("KNS Message: " + message);
-            onIdleMessage: console.log("KNS Idle: " + message);
-            onBusyMessage: console.log("KNS Busy: " + message);
-            onErrorMessage: console.log("KNS Error: " + message);
+            onBusyMessageChanged: () => console.log("KNS Message: " + newStuffEngine.busyMessage);
+            onErrorCode: (code, message, metadata) => console.log("KNS Error: " + message);
         }
     }
     \endcode
