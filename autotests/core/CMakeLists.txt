@@ -17,6 +17,4 @@ knewstuff_unit_tests(
     installationtest.cpp
 )
 
-target_sources(installationtest PRIVATE ../../src/core/installation.cpp)
-target_sources(knewstuffauthortest PRIVATE ../../src/core/installation.cpp)
 target_link_libraries(knewstuffenginetest knewstuff_qml_STATIC)
