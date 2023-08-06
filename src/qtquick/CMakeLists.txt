@@ -26,11 +26,6 @@ ecm_qt_declare_logging_category(newstuffqmlplugin
     EXPORT KNEWSTUFF
 )
 
-ecm_target_qml_sources(newstuffqmlplugin SOURCES
-    qml/NewStuffList.qml
-    qml/NewStuffItem.qml
-)
-
 ecm_target_qml_sources(newstuffqmlplugin VERSION 1.1 SOURCES
     qml/Button.qml
     qml/Dialog.qml
