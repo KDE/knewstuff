@@ -253,7 +253,7 @@ msgid "Overwrite File"
 msgstr "Super scribe file"
 
 #: core/installation.cpp:487
-#, kde-format
+#, fuzzy, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
 msgstr "Incapace a mover le file %! al destination intendite %2"
 
