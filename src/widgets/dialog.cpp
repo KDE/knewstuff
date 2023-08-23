@@ -63,6 +63,7 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
 
     auto layout = new QVBoxLayout(this);
     layout->addWidget(page);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     if (QQuickItem *root = page->rootObject()) {
         d->item = root;
