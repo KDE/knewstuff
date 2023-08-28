@@ -357,7 +357,6 @@ msgstr ""
 
 #: qtquick/qml/Button.qml:44
 #, fuzzy, kde-format
-#| msgid "Download New Stuff..."
 msgid "Download New %1…"
 msgstr "Last ned nye saker …"
 
@@ -451,7 +450,6 @@ msgstr ""
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
 #, fuzzy, kde-format
-#| msgid "Install"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
@@ -831,7 +829,6 @@ msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, fuzzy, kde-format
-#| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
 msgstr "Installerer"
@@ -867,7 +864,6 @@ msgstr "Last ned nye saker …"
 
 #: qtquick/qml/UploadPage.qml:110
 #, fuzzy, kde-format
-#| msgid "Loading provider information"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
