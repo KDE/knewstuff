@@ -68,7 +68,7 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private/entrygriddelegates
     qml/private/entrygriddelegates/TileDelegate.qml
 )
 
-target_link_libraries (newstuffqmlplugin
+target_link_libraries (newstuffqmlplugin PRIVATE
     Qt6::Core
     Qt6::Qml
     Qt6::Quick
