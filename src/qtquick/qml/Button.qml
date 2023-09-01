@@ -96,15 +96,35 @@ QQC2.Button {
     property bool visibleWhenDisabled: false
 
     /**
+     * @internal The NewStuff dialog that is opened by the button.
+     * Use showDialog() to create and open the dialog.
+     */
+    property NewStuff.Dialog __ghnsDialog: null
+
+    /**
      * Show the dialog (same as clicking the button), if allowed by the Kiosk settings
      */
     function showDialog() {
-        if (NewStuff.Settings.allowedByKiosk) {
-            component.aboutToShowDialog();
-            ghnsDialog.open();
-        } else {
+        if (!NewStuff.Settings.allowedByKiosk) {
             // make some noise, because silently doing nothing is a bit annoying
+            console.warn("Not allowed by Kiosk");
+            return;
         }
+        component.aboutToShowDialog();
+        // Use this function to open the dialog. It seems roundabout, but this ensures
+        // that the dialog is not constructed until we want it to be shown the first time,
+        // since it will initialise itself/compile itself when using Loader on the first
+        // load and we don't want that until the user explicitly asks for it.
+        if (component.__ghnsDialog === null) {
+            const dialogComponent = Qt.createComponent("Dialog.qml");
+            component.__ghnsDialog = dialogComponent.createObject(component, {
+                "configFile": Qt.binding(() => component.configFile),
+                "viewMode": Qt.binding(() => component.viewMode),
+            });
+            dialogComponent.destroy();
+        }
+        component.__ghnsDialog.open();
+        component.engine = component.__ghnsDialog.engine;
     }
 
     onClicked: showDialog()
@@ -116,32 +136,6 @@ QQC2.Button {
         // If the user resets this when kiosk has disallowed ghns, force enabled back to false
         if (enabled && !NewStuff.Settings.allowedByKiosk) {
             enabled = false;
-        }
-    }
-
-    property Item ghnsDialog : Loader {
-        // Use this function to open the dialog. It seems roundabout, but this ensures
-        // that the dialog is not constructed until we want it to be shown the first time,
-        // since it will initialise itself on the first load (which causes it to phone
-        // home) and we don't want that until the user explicitly asks for it.
-        function open() {
-            if (item) {
-                item.open();
-            } else {
-                active = true;
-            }
-        }
-        onLoaded: {
-            item.open();
-            component.engine = item.engine;
-        }
-
-        active: false
-        asynchronous: true
-
-        sourceComponent: NewStuff.Dialog {
-            configFile: component.configFile
-            viewMode: component.viewMode
         }
     }
 }
