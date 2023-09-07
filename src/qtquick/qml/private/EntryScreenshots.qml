@@ -5,12 +5,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11
-import QtQuick.Layouts 1.11
-import Qt5Compat.GraphicalEffects 6.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Flickable {
     id: root
@@ -55,9 +55,8 @@ Flickable {
                 right: parent.left
                 verticalCenter: parent.verticalCenter
             }
+            action: leftAction
             visible: leftAction.visible
-            icon.name: leftAction.iconName
-            onClicked: leftAction.triggered(null)
         }
 
         Button {
@@ -65,9 +64,8 @@ Flickable {
                 left: parent.right
                 verticalCenter: parent.verticalCenter
             }
+            action: rightAction
             visible: rightAction.visible
-            icon.name: rightAction.iconName
-            onClicked: rightAction.triggered(null)
         }
 
         Kirigami.Action {
