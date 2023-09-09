@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2023-07-16 10:25+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -502,7 +502,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instalatu..."
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -511,8 +511,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Eguneratu"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -562,62 +561,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr "Jakin proiektu honi dohaintza nola egin"
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, kde-format
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "Instalatu"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr "Erakutsi guztia"
-
-#: qtquick/qml/NewStuffList.qml:82
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "Instalatutakoak soilik"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr "Eguneragarriak soilik"
-
-#: qtquick/qml/NewStuffList.qml:100
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "Erakutsi berrienak lehenengo"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr "Sailkatu alfabetikoki"
-
-#: qtquick/qml/NewStuffList.qml:102
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "Erakutsi balorazio handienekoak lehenengo"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "Erakutsi gehien zama-jaitsitakoak lehenengo"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1112,6 +1055,46 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Zama-jaitsi gauza berriak..."
+
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "Instalatu"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show Everything"
+#~ msgstr "Erakutsi guztia"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "Instalatutakoak soilik"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Updateable Only"
+#~ msgstr "Eguneragarriak soilik"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "Erakutsi berrienak lehenengo"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort alphabetically"
+#~ msgstr "Sailkatu alfabetikoki"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "Erakutsi balorazio handienekoak lehenengo"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "Erakutsi gehien zama-jaitsitakoak lehenengo"
 
 #~ msgid "Download New %1..."
 #~ msgstr "Zama-jaitsi %1..."

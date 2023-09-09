@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2023-07-25 00:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -487,7 +487,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "설치…"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -496,8 +496,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "업데이트"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -547,62 +546,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr "이 프로젝트에 기부하는 방법 알아보기"
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, kde-format
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "설치"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr "모든 항목 표시"
-
-#: qtquick/qml/NewStuffList.qml:82
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "설치된 것만"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr "업데이트 가능한 것만"
-
-#: qtquick/qml/NewStuffList.qml:100
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "가장 최근 항목 먼저 표시"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr "가나다순으로 정렬"
-
-#: qtquick/qml/NewStuffList.qml:102
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "별점이 높은 항목부터 표시"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "최다 다운로드 항목부터 표시"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1086,6 +1029,46 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "새로운 항목 다운로드..."
+
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "설치"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show Everything"
+#~ msgstr "모든 항목 표시"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "설치된 것만"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Updateable Only"
+#~ msgstr "업데이트 가능한 것만"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "가장 최근 항목 먼저 표시"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort alphabetically"
+#~ msgstr "가나다순으로 정렬"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "별점이 높은 항목부터 표시"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "최다 다운로드 항목부터 표시"
 
 #~ msgid "Download New %1..."
 #~ msgstr "새 %1 다운로드..."

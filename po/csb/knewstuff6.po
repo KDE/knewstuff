@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2009-12-04 22:09+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -470,7 +470,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instalëjë"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -480,8 +480,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Aktualizëjë"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
@@ -535,67 +534,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr ""
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "Instalëjë"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:82
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "Instalëjë"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:100
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "Pòkôżë wprzód katalodżi"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:102
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "Pòkôżë wprzód katalodżi"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "Nôczãsci zladowóné"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1106,6 +1044,40 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Zladëjë nowé paczétë..."
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "Instalëjë"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "Instalëjë"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "Pòkôżë wprzód katalodżi"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "Pòkôżë wprzód katalodżi"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "Nôczãsci zladowóné"
 
 #, fuzzy
 #~| msgid "Download New %1"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2013-12-21 17:26+0000\n"
 "Last-Translator: Ademovic Saudin <sademovic1@etf.unsa.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -481,7 +481,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instaliraj"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -491,8 +491,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Ažuriraj"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
@@ -546,69 +545,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr ""
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "Instaliraj"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr ""
-
-# >> @option:radio Order by
-#: qtquick/qml/NewStuffList.qml:82
-#, fuzzy, kde-format
-#| msgid "Installed"
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "instaliranom"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:100
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "Prikaži prvo direktorije"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:102
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "Prikaži prvo direktorije"
-
-# >> @option:radio Order by
-#: qtquick/qml/NewStuffList.qml:103
-#, fuzzy, kde-format
-#| msgid "Most downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "najviše preuzimanja"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1128,6 +1064,42 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Preuzmi novotarije..."
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "Instaliraj"
+
+# >> @option:radio Order by
+#, fuzzy
+#~| msgid "Installed"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "instaliranom"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "Prikaži prvo direktorije"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "Prikaži prvo direktorije"
+
+# >> @option:radio Order by
+#, fuzzy
+#~| msgid "Most downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "najviše preuzimanja"
 
 #, fuzzy
 #~| msgid "Download New Stuff..."

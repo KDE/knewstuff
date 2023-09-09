@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2023-08-08 00:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -499,7 +499,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "安裝…"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -508,8 +508,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "更新"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -559,62 +558,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr "得知如何捐助此專案"
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, kde-format
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "安裝"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr "顯示所有項目"
-
-#: qtquick/qml/NewStuffList.qml:82
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "僅顯示已安裝項"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr "只顯示可更新項"
-
-#: qtquick/qml/NewStuffList.qml:100
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "先顯示最近的項目"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr "依字母排序"
-
-#: qtquick/qml/NewStuffList.qml:102
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "先顯示評價最高的項目"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "先顯示下載數最多的項目"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1077,6 +1020,46 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下載熱門玩意..."
+
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "安裝"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show Everything"
+#~ msgstr "顯示所有項目"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "僅顯示已安裝項"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Updateable Only"
+#~ msgstr "只顯示可更新項"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "先顯示最近的項目"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort alphabetically"
+#~ msgstr "依字母排序"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "先顯示評價最高的項目"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "先顯示下載數最多的項目"
 
 #~ msgid "Download New %1..."
 #~ msgstr "下載新%1…"

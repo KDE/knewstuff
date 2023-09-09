@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -520,7 +520,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Įdiegti"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -529,8 +529,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Atnaujinti"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -580,62 +579,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, kde-format
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "Įdiegti"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr "Rodyti viską"
-
-#: qtquick/qml/NewStuffList.qml:82
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "Tik įdiegti"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr "Tik galimi atnaujinti"
-
-#: qtquick/qml/NewStuffList.qml:100
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "Iš pradžių, rodyti paskiausius"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr "Rikiuoti pagal abėcėlę"
-
-#: qtquick/qml/NewStuffList.qml:102
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "Iš pradžių, su aukščiausiu įvertinimu"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "Iš pradžių, rodyti daugiausiai atsisiųstus"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1144,6 +1087,46 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Atsisiųsti naujus elementus.."
+
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "Įdiegti"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show Everything"
+#~ msgstr "Rodyti viską"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "Tik įdiegti"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Updateable Only"
+#~ msgstr "Tik galimi atnaujinti"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "Iš pradžių, rodyti paskiausius"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort alphabetically"
+#~ msgstr "Rikiuoti pagal abėcėlę"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "Iš pradžių, su aukščiausiu įvertinimu"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "Iš pradžių, rodyti daugiausiai atsisiųstus"
 
 #~ msgid "Download New %1..."
 #~ msgstr "Atsisiųsti naują %1..."

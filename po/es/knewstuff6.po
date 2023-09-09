@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2023-06-04 15:11+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -508,7 +508,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instalar..."
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -517,8 +517,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Actualizar"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -568,62 +567,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr "Encuentre cómo hacer una donación a este proyecto"
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, kde-format
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "Instalar"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr "Mostrar todo"
-
-#: qtquick/qml/NewStuffList.qml:82
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "Solo instalados"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr "Solo actualizables"
-
-#: qtquick/qml/NewStuffList.qml:100
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "Mostrar primero los más recientes"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr "Ordenar alfabéticamente"
-
-#: qtquick/qml/NewStuffList.qml:102
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "Mostrar primero los más puntuados"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "Mostrar primero los más descargados"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1117,6 +1060,46 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Descargar novedades..."
+
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "Instalar"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show Everything"
+#~ msgstr "Mostrar todo"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "Solo instalados"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Updateable Only"
+#~ msgstr "Solo actualizables"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "Mostrar primero los más recientes"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort alphabetically"
+#~ msgstr "Ordenar alfabéticamente"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "Mostrar primero los más puntuados"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "Mostrar primero los más descargados"
 
 #~ msgid "Download New %1..."
 #~ msgstr "Descargar novedades: %1..."

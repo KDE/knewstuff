@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:15+0000\n"
+"POT-Creation-Date: 2023-09-09 01:57+0000\n"
 "PO-Revision-Date: 2009-01-02 17:37+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -474,7 +474,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
 
-#: qtquick/qml/EntryDetails.qml:113 qtquick/qml/NewStuffItem.qml:32
+#: qtquick/qml/EntryDetails.qml:113
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
@@ -484,8 +484,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "ଅଦ୍ୟତନ"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/NewStuffItem.qml:39
-#: qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
@@ -539,67 +538,6 @@ msgctxt ""
 "support of the entry"
 msgid "Find out how to donate to this project"
 msgstr ""
-
-#: qtquick/qml/NewStuffItem.qml:25
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt "Request installation of this item"
-msgid "Install"
-msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
-
-#: qtquick/qml/NewStuffList.qml:81
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show Everything"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:82
-#, fuzzy, kde-format
-#| msgid "Install"
-msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Installed Only"
-msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
-
-#: qtquick/qml/NewStuffList.qml:83
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Updateable Only"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:100
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show most recent first"
-msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
-
-#: qtquick/qml/NewStuffList.qml:101
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort alphabetically"
-msgstr ""
-
-#: qtquick/qml/NewStuffList.qml:102
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show highest rated first"
-msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
-
-#: qtquick/qml/NewStuffList.qml:103
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show most downloaded first"
-msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
 
 #: qtquick/qml/Page.qml:135
 #, kde-format
@@ -1113,6 +1051,40 @@ msgstr ""
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
 msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt "Request installation of this item"
+#~ msgid "Install"
+#~ msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Installed Only"
+#~ msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show most recent first"
+#~ msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show highest rated first"
+#~ msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show most downloaded first"
+#~ msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
 
 #, fuzzy
 #~| msgid "Download New %1"
