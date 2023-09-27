@@ -32,7 +32,7 @@
 
 using namespace KNSCore;
 
-typedef QHash<QUrl, XmlLoader *> EngineProviderLoaderHash;
+typedef QHash<QUrl, QPointer<XmlLoader>> EngineProviderLoaderHash;
 Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
 EngineBase::EngineBase(QObject *parent)
