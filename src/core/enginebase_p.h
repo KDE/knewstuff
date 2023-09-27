@@ -28,7 +28,6 @@ public:
     Attica::ProviderManager *atticaProviderManager = nullptr;
     QList<Provider::SearchPreset> searchPresets;
     QSharedPointer<Cache> cache;
-    bool initialized = false;
     bool shouldRemoveDeletedEntries = false;
     QList<Provider::CategoryMetadata> categoriesMetadata;
     QHash<QString, QSharedPointer<KNSCore::Provider>> providers;

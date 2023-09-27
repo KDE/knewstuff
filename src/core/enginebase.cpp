@@ -142,8 +142,6 @@ bool EngineBase::init(const QString &configfile)
         d->cache->removeDeletedEntries();
     }
 
-    d->initialized = true;
-
     loadProviders();
 
     return true;
