@@ -325,8 +325,10 @@ void ItemsModel::setEngine(QObject *newEngine)
     if (d->engine != newEngine) {
         beginResetModel();
         d->engine = qobject_cast<Engine *>(newEngine);
-        d->model->deleteLater();
-        d->model = nullptr;
+        if (d->model) {
+            d->model->deleteLater();
+            d->model = nullptr;
+        }
         Q_EMIT engineChanged();
         endResetModel();
     }
