@@ -109,7 +109,7 @@ msgstr "Rol descoñecido de CommentsModel"
 #: core/engine.cpp:89
 #, kde-format
 msgid "Initializing"
-msgstr "Estase a inicializar"
+msgstr "Inicializando"
 
 #: core/engine.cpp:99
 #, kde-format
@@ -187,7 +187,7 @@ msgstr "Carga dos fornecedores desde o ficheiro: %1 fallou"
 #: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Non se puideron obter fornecedores de novidades do ficheiro: %1"
+msgstr "Non foi posíbel obter fornecedores de novidades do ficheiro: %1"
 
 #: core/enginebase.cpp:322
 #, kde-format
@@ -219,7 +219,7 @@ msgstr ""
 #: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
-msgstr "Non se puido instalar «%1»: non se atopou o ficheiro."
+msgstr "Non foi posíbel instalar «%1»: non se atopou o ficheiro."
 
 #: core/installation.cpp:352 core/installation.cpp:598
 #, fuzzy, kde-format
