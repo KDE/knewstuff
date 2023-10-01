@@ -175,14 +175,3 @@ if(BUILD_QCH)
     )
 endif()
 
-include(ECMGeneratePriFile)
-ecm_generate_pri_file(
-    BASE_NAME KNewStuffCore
-    LIB_NAME KF6NewStuffCore
-    DEPS "Attica KCoreAddons"
-    FILENAME_VAR COREPRI_FILENAME
-    INCLUDE_INSTALL_DIRS
-        ${KNEWSTUFFCORE_INSTALL_INCLUDEDIR}
-        ${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff # module version header
-)
-install(FILES ${COREPRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
