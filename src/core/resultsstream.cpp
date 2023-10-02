@@ -41,6 +41,12 @@ ResultsStream::ResultsStream(const Provider::SearchRequest &request, EngineBase 
     };
     for (const auto &provider : d->providers) {
         connect(provider.data(), &Provider::loadingFinished, this, finished);
+        connect(provider.data(), &Provider::entryDetailsLoaded, this, [this](const KNSCore::Entry &entry) {
+            if (d->request.filter == KNSCore::Provider::ExactEntryId && d->request.searchTerm == entry.uniqueId()) {
+                Q_EMIT entriesFound({entry});
+                finish();
+            }
+        });
         connect(provider.data(), &Provider::loadingFailed, this, failed);
     }
 }
