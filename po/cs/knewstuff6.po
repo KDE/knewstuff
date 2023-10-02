@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 01:57+0000\n"
+"POT-Creation-Date: 2023-10-02 01:41+0000\n"
 "PO-Revision-Date: 2023-06-05 11:47+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -91,50 +91,12 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznámá chyba OCS API. (%1)"
 
-#: core/commentsmodel.cpp:168
+#: core/commentsmodel.cpp:154
 #, kde-format
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
 msgstr ""
-
-#: core/engine.cpp:89
-#, kde-format
-msgid "Initializing"
-msgstr "Probíhá inicializace"
-
-#: core/engine.cpp:99
-#, kde-format
-msgid "Loading provider information"
-msgstr "Načítají se informace o poskytovateli"
-
-#: core/engine.cpp:112
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Načítají se data od poskytovatele"
-
-#: core/engine.cpp:355
-#, kde-format
-msgid "Re: %1"
-msgstr "Znovu: %1"
-
-#: core/engine.cpp:388
-#, kde-format
-msgid "Installing"
-msgstr "Instaluje se"
-
-#: core/engine.cpp:392
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Načítá se náhled"
-msgstr[1] "Načítají se %1 náhledy"
-msgstr[2] "Načítá se %1 náhledů"
-
-#: core/engine.cpp:396
-#, kde-format
-msgid "Loading data"
-msgstr "Načítají se data"
 
 #: core/enginebase.cpp:43
 #, kde-format
@@ -328,14 +290,14 @@ msgid ""
 "%2"
 msgstr ""
 
-#: qtquick/categoriesmodel.cpp:63
+#: qtquick/categoriesmodel.cpp:50
 #, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "Všechny kategorie"
 
-#: qtquick/categoriesmodel.cpp:92
+#: qtquick/categoriesmodel.cpp:72
 #, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
@@ -392,14 +354,14 @@ msgstr ""
 msgid "Install"
 msgstr "Instalovat"
 
-#: qtquick/qml/EntryDetails.qml:51
+#: qtquick/qml/EntryDetails.qml:52
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "Instaluje se %1 z %2"
 
-#: qtquick/qml/EntryDetails.qml:74
+#: qtquick/qml/EntryDetails.qml:75
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -407,14 +369,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Aktuálně pracuji na položce %1 z %2. Prosím, počkejte…"
 
-#: qtquick/qml/EntryDetails.qml:77
+#: qtquick/qml/EntryDetails.qml:78
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Aktuálně aktualizuji %1 z %2. Prosím, počkejte…"
 
-#: qtquick/qml/EntryDetails.qml:80
+#: qtquick/qml/EntryDetails.qml:81
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -425,7 +387,7 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:94
+#: qtquick/qml/EntryDetails.qml:95
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -433,10 +395,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 od %2"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -444,37 +406,37 @@ msgctxt ""
 msgid "Install"
 msgstr "Instalovat"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
 msgstr "Instalovat…"
 
-#: qtquick/qml/EntryDetails.qml:113
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/EntryDetails.qml:114
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
-#: qtquick/qml/EntryDetails.qml:185
+#: qtquick/qml/EntryDetails.qml:186
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Komentáře a kontrola:"
 
-#: qtquick/qml/EntryDetails.qml:187
+#: qtquick/qml/EntryDetails.qml:188
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -482,17 +444,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 Hodnocení a komentáře"
 
-#: qtquick/qml/EntryDetails.qml:193
+#: qtquick/qml/EntryDetails.qml:194
 #, kde-format
 msgid "Rating:"
 msgstr "Hodnocení:"
 
-#: qtquick/qml/EntryDetails.qml:198
+#: qtquick/qml/EntryDetails.qml:199
 #, kde-format
 msgid "Homepage:"
 msgstr "Domácí stránka:"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:200
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -501,12 +463,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Otevřít domovskou stránku pro %1"
 
-#: qtquick/qml/EntryDetails.qml:205
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgid "How To Donate:"
 msgstr "Jak přispět:"
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:207
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -514,7 +476,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Jak přispět na tento projekt"
 
-#: qtquick/qml/Page.qml:135
+#: qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -524,7 +486,7 @@ msgid ""
 "not be found."
 msgstr ""
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:166
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -533,65 +495,65 @@ msgstr ""
 "Zde dostupný obsah byl odeslán uživateli jako jste vy a nebyl zkontrolován "
 "tvůrcem vaší distribuce zda je správně funkční a stabilní."
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:188
 #, kde-format
 msgid "Tiles"
 msgstr "Dlaždice"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:190
 #, kde-format
 msgid "Icons"
 msgstr "Ikony"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Preview"
 msgstr "Náhled"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:208
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Režim podrobného dlaždicového zobrazení"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Režim zobrazení pouze s ikonami"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Režim zobrazení velkého náhledu"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Everything"
 msgstr "Vše"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:239
 #, kde-format
 msgid "Installed"
 msgstr "Nainstalováno"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:241
 #, kde-format
 msgid "Updateable"
 msgstr "Aktualizovatelné"
 
-#: qtquick/qml/Page.qml:301
+#: qtquick/qml/Page.qml:261
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Zobrazit všechny položky"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Zobrazit pouze nainstalované položky"
 
-#: qtquick/qml/Page.qml:319
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -599,27 +561,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Zobrazit pouze aktualizovatelné položky"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Recent"
 msgstr "Nedávné"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Alphabetical"
 msgstr "Podle abecedy"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Rating"
 msgstr "Hodnocení"
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:296
 #, kde-format
 msgid "Downloads"
 msgstr "Stahování"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:316
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -627,7 +589,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Nejdříve zobrazit nejnovější"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:325
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -635,55 +597,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Seřadit abecedně podle jména"
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Nejdříve zobrazit nejlépe hodnocené"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:343
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Nejdříve zobrazit nejvíce stahované"
 
-#: qtquick/qml/Page.qml:394
+#: qtquick/qml/Page.qml:354
 #, kde-format
 msgid "Upload…"
 msgstr "Odeslat…"
 
-#: qtquick/qml/Page.qml:395
+#: qtquick/qml/Page.qml:355
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:405
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Go to…"
 msgstr "Přejít na…"
 
-#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
+#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
 #, kde-format
 msgid "Search…"
 msgstr "Hledat…"
 
-#: qtquick/qml/Page.qml:477
+#: qtquick/qml/Page.qml:437
 #, kde-format
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: qtquick/qml/Page.qml:497
+#: qtquick/qml/Page.qml:457
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Přispět vlastní…"
-
-#: qtquick/qml/Page.qml:616
-#, kde-format
-msgctxt ""
-"A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Loading more…"
-msgstr "Načítám další…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -728,15 +683,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "Zobrazit náhledy a odpovědi"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 stažení"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -865,7 +820,18 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:132
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:152
+#, kde-format
+msgid "Loading data"
+msgstr "Načítají se data"
+
+#: qtquick/quickengine.cpp:148
+#, kde-format
+msgid "Installing"
+msgstr "Instaluje se"
+
+#: qtquick/quickengine.cpp:198
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -875,79 +841,79 @@ msgid ""
 "please contact the person in charge of your permissions."
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:43
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Zpět"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:45
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "Populární"
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:47
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:49
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Restartovat"
 
-#: qtquick/searchpresetmodel.cpp:67
+#: qtquick/searchpresetmodel.cpp:51
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Nový"
 
-#: qtquick/searchpresetmodel.cpp:70
+#: qtquick/searchpresetmodel.cpp:53
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Domů"
 
-#: qtquick/searchpresetmodel.cpp:73
+#: qtquick/searchpresetmodel.cpp:55
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:76
+#: qtquick/searchpresetmodel.cpp:57
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Nahoru"
 
-#: qtquick/searchpresetmodel.cpp:79
+#: qtquick/searchpresetmodel.cpp:59
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "Doporučeno"
 
-#: qtquick/searchpresetmodel.cpp:82
+#: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Přihlášení"
 
-#: qtquick/searchpresetmodel.cpp:85
+#: qtquick/searchpresetmodel.cpp:63
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Všechny položky"
 
-#: qtquick/searchpresetmodel.cpp:88
+#: qtquick/searchpresetmodel.cpp:65
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr "Hledat předvolbu: %1"
 
-#: tools/knewstuff-dialog/main.cpp:31
+#: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -955,7 +921,7 @@ msgid ""
 "into the systemwide knsrc file location"
 msgstr ""
 
-#: tools/knewstuff-dialog/main.cpp:35
+#: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
@@ -975,3 +941,26 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Stáhnout nový obsah..."
+
+#~ msgid "Initializing"
+#~ msgstr "Probíhá inicializace"
+
+#~ msgid "Loading provider information"
+#~ msgstr "Načítají se informace o poskytovateli"
+
+#~ msgid "Loading data from provider"
+#~ msgstr "Načítají se data od poskytovatele"
+
+#~ msgid "Re: %1"
+#~ msgstr "Znovu: %1"
+
+#~ msgid "Loading one preview"
+#~ msgid_plural "Loading %1 previews"
+#~ msgstr[0] "Načítá se náhled"
+#~ msgstr[1] "Načítají se %1 náhledy"
+#~ msgstr[2] "Načítá se %1 náhledů"
+
+#~ msgctxt ""
+#~ "A text shown beside a busy indicator suggesting that data is being fetched"
+#~ msgid "Loading more…"
+#~ msgstr "Načítám další…"

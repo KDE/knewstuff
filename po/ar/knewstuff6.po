@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 01:57+0000\n"
+"POT-Creation-Date: 2023-10-02 01:41+0000\n"
 "PO-Revision-Date: 2023-06-08 12:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -83,53 +83,12 @@ msgstr "نسخة الخدمات التعاونية %1 لا تدعم الوظيف
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "خطأ غير معروف في واجهة API لخدمة التعاون المفتوحة. (%1)"
 
-#: core/commentsmodel.cpp:168
+#: core/commentsmodel.cpp:154
 #, kde-format
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
 msgstr "مهمة CommentsModel مجهولة"
-
-#: core/engine.cpp:89
-#, kde-format
-msgid "Initializing"
-msgstr "يهيّئ"
-
-#: core/engine.cpp:99
-#, kde-format
-msgid "Loading provider information"
-msgstr "يحمّل معلومات المزوّد"
-
-#: core/engine.cpp:112
-#, kde-format
-msgid "Loading data from provider"
-msgstr "يحمّل البيانات من المزود"
-
-#: core/engine.cpp:355
-#, kde-format
-msgid "Re: %1"
-msgstr "الإعادة: %1"
-
-#: core/engine.cpp:388
-#, kde-format
-msgid "Installing"
-msgstr "يثبّت"
-
-#: core/engine.cpp:392
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "لا يحمّل أي معاينة"
-msgstr[1] "يحمّل معاينة واحدة"
-msgstr[2] "يحمّل معاينتان"
-msgstr[3] "يحمّل %1 معاينات"
-msgstr[4] "يحمّل %1 معاينة"
-msgstr[5] "يحمّل %1 معاينة"
-
-#: core/engine.cpp:396
-#, kde-format
-msgid "Loading data"
-msgstr "يحمّل البيانات"
 
 #: core/enginebase.cpp:43
 #, kde-format
@@ -354,14 +313,14 @@ msgstr ""
 "فشل في الاعتماد  '%1'\n"
 "%2"
 
-#: qtquick/categoriesmodel.cpp:63
+#: qtquick/categoriesmodel.cpp:50
 #, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "جميع التصنيفات"
 
-#: qtquick/categoriesmodel.cpp:92
+#: qtquick/categoriesmodel.cpp:72
 #, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
@@ -423,14 +382,14 @@ msgstr ""
 msgid "Install"
 msgstr "ثبّت"
 
-#: qtquick/qml/EntryDetails.qml:51
+#: qtquick/qml/EntryDetails.qml:52
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "يثبّت %1 من %2"
 
-#: qtquick/qml/EntryDetails.qml:74
+#: qtquick/qml/EntryDetails.qml:75
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -438,14 +397,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "يعمل حاليا على العنصر %1 بواسطة %2. الرجاء الانتظار…"
 
-#: qtquick/qml/EntryDetails.qml:77
+#: qtquick/qml/EntryDetails.qml:78
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "يحدث حاليا العنصر %1 بواسطة %2. الرجاء الانتظار…"
 
-#: qtquick/qml/EntryDetails.qml:80
+#: qtquick/qml/EntryDetails.qml:81
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -459,7 +418,7 @@ msgstr ""
 "enter_bug.cgi?product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كِيدِي في "
 "تقرير علة</a>."
 
-#: qtquick/qml/EntryDetails.qml:94
+#: qtquick/qml/EntryDetails.qml:95
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -467,10 +426,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 لِـ %2"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -478,37 +437,37 @@ msgctxt ""
 msgid "Install"
 msgstr "ثبّت"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
 msgstr "ثبّت…"
 
-#: qtquick/qml/EntryDetails.qml:113
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/EntryDetails.qml:114
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "حدّث"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "أزل"
 
-#: qtquick/qml/EntryDetails.qml:185
+#: qtquick/qml/EntryDetails.qml:186
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "التعليقات والمراجعات:"
 
-#: qtquick/qml/EntryDetails.qml:187
+#: qtquick/qml/EntryDetails.qml:188
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -516,17 +475,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 تعليقات ومراجعات"
 
-#: qtquick/qml/EntryDetails.qml:193
+#: qtquick/qml/EntryDetails.qml:194
 #, kde-format
 msgid "Rating:"
 msgstr "التّقييم:"
 
-#: qtquick/qml/EntryDetails.qml:198
+#: qtquick/qml/EntryDetails.qml:199
 #, kde-format
 msgid "Homepage:"
 msgstr "الصّفحة الرّئيسيّة:"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:200
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -535,12 +494,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "افتح الصفحة الرئيسية لـ %1"
 
-#: qtquick/qml/EntryDetails.qml:205
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgid "How To Donate:"
 msgstr "كيف تتبرع:"
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:207
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -548,7 +507,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "تعرف على كيفية التبرع لهذا المشروع"
 
-#: qtquick/qml/Page.qml:135
+#: qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -559,7 +518,7 @@ msgid ""
 msgstr ""
 "تعذر العثور على الإدخال الذي حاولت عرضه ، المعرف بواسطة المعرف الفريد %1."
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:166
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -568,65 +527,65 @@ msgstr ""
 "المحتوى المتاح هنا مرفوع من قبل مستخدمين مثلك، ولم يراجع من قبل الموزع الخاص "
 "بك من أجل الوظائف أو الاستقرار."
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:188
 #, kde-format
 msgid "Tiles"
 msgstr "القراميد"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:190
 #, kde-format
 msgid "Icons"
 msgstr "الأيقونات"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Preview"
 msgstr "المعاينة"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:208
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "وضع عرض التفاصيل القراميد"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:217
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "وضع عرض الأيقونات فقط"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "وضع عرض المصغرات الكبيرة"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Everything"
 msgstr "كلّ شيء"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:239
 #, kde-format
 msgid "Installed"
 msgstr "الأكثر تثبيتاً"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:241
 #, kde-format
 msgid "Updateable"
 msgstr "القابل للتحديث"
 
-#: qtquick/qml/Page.qml:301
+#: qtquick/qml/Page.qml:261
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "اعرض كلّ المدخلات"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "أظهر المدخلات المثبتة فقط"
 
-#: qtquick/qml/Page.qml:319
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -634,27 +593,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "أظهر المدخلات القابلة للتحديث فقط"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Recent"
 msgstr "الحديثة"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Alphabetical"
 msgstr "أبجديّ"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Rating"
 msgstr "الأفضل تقييماً"
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:296
 #, kde-format
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:316
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -662,7 +621,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "أظهر الأحدث أولا"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:325
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -670,55 +629,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "افرز أبجديًا بواسطة الاسم"
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "أظهر الأعلى تقيما أولا"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:343
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "أظهر الأكثر تحميلاً أولا"
 
-#: qtquick/qml/Page.qml:394
+#: qtquick/qml/Page.qml:354
 #, kde-format
 msgid "Upload…"
 msgstr "يرفع…"
 
-#: qtquick/qml/Page.qml:395
+#: qtquick/qml/Page.qml:355
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "تعلم كيف تضيف أشيائك إلى هذه القائمة"
 
-#: qtquick/qml/Page.qml:405
+#: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Go to…"
 msgstr "اذهب إلى…"
 
-#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
+#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
 #, kde-format
 msgid "Search…"
 msgstr "ابحث…"
 
-#: qtquick/qml/Page.qml:477
+#: qtquick/qml/Page.qml:437
 #, kde-format
 msgid "Category:"
 msgstr "التصنيف:"
 
-#: qtquick/qml/Page.qml:497
+#: qtquick/qml/Page.qml:457
 #, kde-format
 msgid "Contribute your own…"
 msgstr "ساهم بما معك…"
-
-#: qtquick/qml/Page.qml:616
-#, kde-format
-msgctxt ""
-"A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Loading more…"
-msgstr "يحمّل المزيد…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -763,15 +715,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "أظهر المراجعات و الردود"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 تنزيل"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -911,7 +863,18 @@ msgstr ""
 "الإضافة. بدلاً من ذلك ، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى "
 "جديد."
 
-#: qtquick/quickengine.cpp:132
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:152
+#, kde-format
+msgid "Loading data"
+msgstr "يحمّل البيانات"
+
+#: qtquick/quickengine.cpp:148
+#, kde-format
+msgid "Installing"
+msgstr "يثبّت"
+
+#: qtquick/quickengine.cpp:198
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -923,79 +886,79 @@ msgstr ""
 "لست مخولاً للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ ، "
 "فيرجى الاتصال بالمسؤول عن الأذونات الخاصة بك."
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:43
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "عُد"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:45
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "الرائج"
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:47
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "مُختارة"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:49
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "أعد التّشغيل"
 
-#: qtquick/searchpresetmodel.cpp:67
+#: qtquick/searchpresetmodel.cpp:51
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "جديد"
 
-#: qtquick/searchpresetmodel.cpp:70
+#: qtquick/searchpresetmodel.cpp:53
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "المنزل"
 
-#: qtquick/searchpresetmodel.cpp:73
+#: qtquick/searchpresetmodel.cpp:55
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr "الرف"
 
-#: qtquick/searchpresetmodel.cpp:76
+#: qtquick/searchpresetmodel.cpp:57
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "الأعلى"
 
-#: qtquick/searchpresetmodel.cpp:79
+#: qtquick/searchpresetmodel.cpp:59
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "مستحسن"
 
-#: qtquick/searchpresetmodel.cpp:82
+#: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "الاشتراكات"
 
-#: qtquick/searchpresetmodel.cpp:85
+#: qtquick/searchpresetmodel.cpp:63
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "كلّ المدخلات"
 
-#: qtquick/searchpresetmodel.cpp:88
+#: qtquick/searchpresetmodel.cpp:65
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr "البحث المسبق: %1"
 
-#: tools/knewstuff-dialog/main.cpp:31
+#: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -1006,7 +969,7 @@ msgstr ""
 "يتيح لك التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى "
 "النظام"
 
-#: tools/knewstuff-dialog/main.cpp:35
+#: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
@@ -1035,6 +998,32 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "نزِل أشياء جديدة..."
+
+#~ msgid "Initializing"
+#~ msgstr "يهيّئ"
+
+#~ msgid "Loading provider information"
+#~ msgstr "يحمّل معلومات المزوّد"
+
+#~ msgid "Loading data from provider"
+#~ msgstr "يحمّل البيانات من المزود"
+
+#~ msgid "Re: %1"
+#~ msgstr "الإعادة: %1"
+
+#~ msgid "Loading one preview"
+#~ msgid_plural "Loading %1 previews"
+#~ msgstr[0] "لا يحمّل أي معاينة"
+#~ msgstr[1] "يحمّل معاينة واحدة"
+#~ msgstr[2] "يحمّل معاينتان"
+#~ msgstr[3] "يحمّل %1 معاينات"
+#~ msgstr[4] "يحمّل %1 معاينة"
+#~ msgstr[5] "يحمّل %1 معاينة"
+
+#~ msgctxt ""
+#~ "A text shown beside a busy indicator suggesting that data is being fetched"
+#~ msgid "Loading more…"
+#~ msgstr "يحمّل المزيد…"
 
 #~ msgctxt "Request installation of this item"
 #~ msgid "Install"

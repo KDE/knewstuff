@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 01:57+0000\n"
+"POT-Creation-Date: 2023-10-02 01:41+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -90,53 +90,13 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Earráid anaithnid in API na Seirbhíse Comhoibrithe Oscailte. (%1)"
 
-#: core/commentsmodel.cpp:168
+#: core/commentsmodel.cpp:154
 #, fuzzy, kde-format
 #| msgid "Unknown socket error"
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
 msgstr "Earráid: soicéad anaithnid"
-
-#: core/engine.cpp:89
-#, kde-format
-msgid "Initializing"
-msgstr "Á Thúsú"
-
-#: core/engine.cpp:99
-#, kde-format
-msgid "Loading provider information"
-msgstr "Faisnéis soláthraí á luchtú"
-
-#: core/engine.cpp:112
-#, kde-format
-msgid "Loading data from provider"
-msgstr "Sonraí á luchtú ó sholáthraí"
-
-#: core/engine.cpp:355
-#, kde-format
-msgid "Re: %1"
-msgstr "Maidir le: %1"
-
-#: core/engine.cpp:388
-#, kde-format
-msgid "Installing"
-msgstr "Á Shuiteáil"
-
-#: core/engine.cpp:392
-#, kde-format
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "Réamhamharc amháin á luchtú"
-msgstr[1] "%1 réamhamharc á Luchtú"
-msgstr[2] "%1 réamhamharc á Luchtú"
-msgstr[3] "%1 réamhamharc á Luchtú"
-msgstr[4] "%1 réamhamharc á Luchtú"
-
-#: core/engine.cpp:396
-#, kde-format
-msgid "Loading data"
-msgstr "Sonraí á luchtú"
 
 #: core/enginebase.cpp:43
 #, fuzzy, kde-format
@@ -340,7 +300,7 @@ msgid ""
 "%2"
 msgstr "Níorbh fhéidir comhad '%1' a luchtú"
 
-#: qtquick/categoriesmodel.cpp:63
+#: qtquick/categoriesmodel.cpp:50
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt ""
@@ -348,7 +308,7 @@ msgctxt ""
 msgid "All Categories"
 msgstr "Gach Catagóir"
 
-#: qtquick/categoriesmodel.cpp:92
+#: qtquick/categoriesmodel.cpp:72
 #, fuzzy, kde-format
 #| msgid "Unknown error"
 msgctxt ""
@@ -410,7 +370,7 @@ msgstr ""
 msgid "Install"
 msgstr "Suiteáil"
 
-#: qtquick/qml/EntryDetails.qml:51
+#: qtquick/qml/EntryDetails.qml:52
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt ""
@@ -418,7 +378,7 @@ msgctxt ""
 msgid "Installing %1 from %2"
 msgstr "Á Shuiteáil"
 
-#: qtquick/qml/EntryDetails.qml:74
+#: qtquick/qml/EntryDetails.qml:75
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -426,14 +386,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:77
+#: qtquick/qml/EntryDetails.qml:78
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:80
+#: qtquick/qml/EntryDetails.qml:81
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -444,7 +404,7 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:94
+#: qtquick/qml/EntryDetails.qml:95
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -452,10 +412,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -464,10 +424,10 @@ msgctxt ""
 msgid "Install"
 msgstr "Suiteáil"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -475,29 +435,29 @@ msgctxt ""
 msgid "Install…"
 msgstr "Suiteáil"
 
-#: qtquick/qml/EntryDetails.qml:113
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/EntryDetails.qml:114
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Nuashonraigh"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Díshuiteáil"
 
-#: qtquick/qml/EntryDetails.qml:185
+#: qtquick/qml/EntryDetails.qml:186
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:187
+#: qtquick/qml/EntryDetails.qml:188
 #, fuzzy, kde-format
 #| msgid "View Comments"
 msgctxt ""
@@ -506,19 +466,19 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "Amharc ar Nótaí"
 
-#: qtquick/qml/EntryDetails.qml:193
+#: qtquick/qml/EntryDetails.qml:194
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating:"
 msgstr "Rátáil:"
 
-#: qtquick/qml/EntryDetails.qml:198
+#: qtquick/qml/EntryDetails.qml:199
 #, fuzzy, kde-format
 #| msgid "Homepage"
 msgid "Homepage:"
 msgstr "Leathanach Baile"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:200
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -527,12 +487,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:205
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgid "How To Donate:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:207
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -540,7 +500,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:135
+#: qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -550,72 +510,72 @@ msgid ""
 "not be found."
 msgstr ""
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:166
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:188
 #, fuzzy, kde-format
 #| msgid "&Tile"
 msgid "Tiles"
 msgstr "&Tíl"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:190
 #, kde-format
 msgid "Icons"
 msgstr "Deilbhíní"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:192
 #, fuzzy, kde-format
 #| msgid "No Preview"
 msgid "Preview"
 msgstr "Gan Réamhamharc"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
 #| msgid "Detailed Tree View"
 msgid "Detailed Tiles View Mode"
 msgstr "Amharc Mionsonraithe Crainn"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:217
 #, fuzzy, kde-format
 #| msgid "Icons view mode"
 msgid "Icons Only View Mode"
 msgstr "Amharc le Deilbhíní"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:226
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Large Preview View Mode"
 msgstr "Amharc Mionsonraithe"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:239
 #, kde-format
 msgid "Installed"
 msgstr "Suiteáilte"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:241
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Nuashonraigh"
 
-#: qtquick/qml/Page.qml:301
+#: qtquick/qml/Page.qml:261
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "&Taispeáin Gach Iontráil"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:270
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -623,7 +583,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "&Taispeáin Gach Iontráil"
 
-#: qtquick/qml/Page.qml:319
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -632,30 +592,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "&Taispeáin Gach Iontráil"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:290
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Percent"
 msgid "Recent"
 msgstr "Comhartha Céatadáin"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Rating"
 msgstr "Rátáil"
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:296
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Íosluchtaigh"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:316
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -664,7 +624,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Taispeáin comhadlanna ag an mbarr"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:325
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -672,14 +632,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:334
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Taispeáin comhadlanna ag an mbarr"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:343
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -687,47 +647,39 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "An líon is mó íosluchtuithe"
 
-#: qtquick/qml/Page.qml:394
+#: qtquick/qml/Page.qml:354
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Uasluchtaigh..."
 
-#: qtquick/qml/Page.qml:395
+#: qtquick/qml/Page.qml:355
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:405
+#: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Téigh go..."
 
-#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
+#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Cuardaigh:"
 
-#: qtquick/qml/Page.qml:477
+#: qtquick/qml/Page.qml:437
 #, kde-format
 msgid "Category:"
 msgstr "Catagóir:"
 
-#: qtquick/qml/Page.qml:497
+#: qtquick/qml/Page.qml:457
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
 msgstr "Lean leis an oibríocht"
-
-#: qtquick/qml/Page.qml:616
-#, fuzzy, kde-format
-#| msgid "Loading preview..."
-msgctxt ""
-"A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Loading more…"
-msgstr "Réamhamharc á luchtú..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, fuzzy, kde-format
@@ -776,8 +728,8 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr ""
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
 #, fuzzy, kde-format
 #| msgid "1 download"
 #| msgid_plural "%1 downloads"
@@ -785,8 +737,8 @@ msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "1 íosluchtú"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
 #, fuzzy, kde-format
 #| msgctxt "Show the author of this item in a list"
 #| msgid "By <i>%1</i>"
@@ -938,7 +890,18 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:132
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:152
+#, kde-format
+msgid "Loading data"
+msgstr "Sonraí á luchtú"
+
+#: qtquick/quickengine.cpp:148
+#, kde-format
+msgid "Installing"
+msgstr "Á Shuiteáil"
+
+#: qtquick/quickengine.cpp:198
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -948,7 +911,7 @@ msgid ""
 "please contact the person in charge of your permissions."
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Back"
@@ -956,20 +919,20 @@ msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Siar"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:45
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:47
 #, fuzzy, kde-format
 #| msgid "Saturday"
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Satharn"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@action:button Restart find & replace"
 #| msgid "Restart"
@@ -977,7 +940,7 @@ msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Atosaigh"
 
-#: qtquick/searchpresetmodel.cpp:67
+#: qtquick/searchpresetmodel.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "New"
@@ -985,7 +948,7 @@ msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Nua"
 
-#: qtquick/searchpresetmodel.cpp:70
+#: qtquick/searchpresetmodel.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "keyboard-key-name"
 #| msgid "Home"
@@ -993,13 +956,13 @@ msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Home"
 
-#: qtquick/searchpresetmodel.cpp:73
+#: qtquick/searchpresetmodel.cpp:55
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:76
+#: qtquick/searchpresetmodel.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "keyboard-key-name"
 #| msgid "Up"
@@ -1007,7 +970,7 @@ msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Up"
 
-#: qtquick/searchpresetmodel.cpp:79
+#: qtquick/searchpresetmodel.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "dictionary variant"
 #| msgid "extended"
@@ -1015,7 +978,7 @@ msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "breisithe"
 
-#: qtquick/searchpresetmodel.cpp:82
+#: qtquick/searchpresetmodel.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Subscript"
@@ -1023,20 +986,20 @@ msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Foscript"
 
-#: qtquick/searchpresetmodel.cpp:85
+#: qtquick/searchpresetmodel.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "&Taispeáin Gach Iontráil"
 
-#: qtquick/searchpresetmodel.cpp:88
+#: qtquick/searchpresetmodel.cpp:65
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr ""
 
-#: tools/knewstuff-dialog/main.cpp:31
+#: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -1044,7 +1007,7 @@ msgid ""
 "into the systemwide knsrc file location"
 msgstr ""
 
-#: tools/knewstuff-dialog/main.cpp:35
+#: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
@@ -1064,6 +1027,33 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Íosluchtaigh Stuif Nua..."
+
+#~ msgid "Initializing"
+#~ msgstr "Á Thúsú"
+
+#~ msgid "Loading provider information"
+#~ msgstr "Faisnéis soláthraí á luchtú"
+
+#~ msgid "Loading data from provider"
+#~ msgstr "Sonraí á luchtú ó sholáthraí"
+
+#~ msgid "Re: %1"
+#~ msgstr "Maidir le: %1"
+
+#~ msgid "Loading one preview"
+#~ msgid_plural "Loading %1 previews"
+#~ msgstr[0] "Réamhamharc amháin á luchtú"
+#~ msgstr[1] "%1 réamhamharc á Luchtú"
+#~ msgstr[2] "%1 réamhamharc á Luchtú"
+#~ msgstr[3] "%1 réamhamharc á Luchtú"
+#~ msgstr[4] "%1 réamhamharc á Luchtú"
+
+#, fuzzy
+#~| msgid "Loading preview..."
+#~ msgctxt ""
+#~ "A text shown beside a busy indicator suggesting that data is being fetched"
+#~ msgid "Loading more…"
+#~ msgstr "Réamhamharc á luchtú..."
 
 #, fuzzy
 #~| msgid "Install"

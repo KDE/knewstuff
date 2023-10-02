@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 01:57+0000\n"
+"POT-Creation-Date: 2023-10-02 01:41+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
 
-#: core/commentsmodel.cpp:168
+#: core/commentsmodel.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "QFile"
 #| msgid "Unknown error"
@@ -108,48 +108,6 @@ msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
 msgstr "不明的錯誤"
-
-#: core/engine.cpp:89
-#, fuzzy, kde-format
-#| msgid "Install"
-msgid "Initializing"
-msgstr "安裝"
-
-#: core/engine.cpp:99
-#, fuzzy, kde-format
-#| msgid "View Frame Information"
-msgid "Loading provider information"
-msgstr "檢視框架資訊"
-
-#: core/engine.cpp:112
-#, kde-format
-msgid "Loading data from provider"
-msgstr ""
-
-#: core/engine.cpp:355
-#, fuzzy, kde-format
-#| msgid "Redo: %1"
-msgid "Re: %1"
-msgstr "重做：%1"
-
-#: core/engine.cpp:388
-#, fuzzy, kde-format
-#| msgid "Install"
-msgid "Installing"
-msgstr "安裝"
-
-#: core/engine.cpp:392
-#, fuzzy, kde-format
-#| msgid "Print Previe&w..."
-msgid "Loading one preview"
-msgid_plural "Loading %1 previews"
-msgstr[0] "預覽列印(&W)..."
-
-#: core/engine.cpp:396
-#, fuzzy, kde-format
-#| msgid "Loading Applet"
-msgid "Loading data"
-msgstr "載入 Applet"
 
 #: core/enginebase.cpp:43
 #, fuzzy, kde-format
@@ -357,7 +315,7 @@ msgid ""
 "%2"
 msgstr "無法讀入資源 '%1'"
 
-#: qtquick/categoriesmodel.cpp:63
+#: qtquick/categoriesmodel.cpp:50
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt ""
@@ -365,7 +323,7 @@ msgctxt ""
 msgid "All Categories"
 msgstr "分類"
 
-#: qtquick/categoriesmodel.cpp:92
+#: qtquick/categoriesmodel.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "QFile"
 #| msgid "Unknown error"
@@ -428,7 +386,7 @@ msgstr ""
 msgid "Install"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:51
+#: qtquick/qml/EntryDetails.qml:52
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -436,7 +394,7 @@ msgctxt ""
 msgid "Installing %1 from %2"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:74
+#: qtquick/qml/EntryDetails.qml:75
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -444,14 +402,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:77
+#: qtquick/qml/EntryDetails.qml:78
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:80
+#: qtquick/qml/EntryDetails.qml:81
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -462,7 +420,7 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:94
+#: qtquick/qml/EntryDetails.qml:95
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -470,10 +428,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -482,10 +440,10 @@ msgctxt ""
 msgid "Install"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:98
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:49
+#: qtquick/qml/EntryDetails.qml:99
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:56
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -493,29 +451,29 @@ msgctxt ""
 msgid "Install…"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:113
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
+#: qtquick/qml/EntryDetails.qml:114
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:71
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "更新"
 
-#: qtquick/qml/EntryDetails.qml:120 qtquick/qml/Page.qml:160
+#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:185
+#: qtquick/qml/EntryDetails.qml:186
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:187
+#: qtquick/qml/EntryDetails.qml:188
 #, fuzzy, kde-format
 #| msgid "Comment"
 msgctxt ""
@@ -524,19 +482,19 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "備註"
 
-#: qtquick/qml/EntryDetails.qml:193
+#: qtquick/qml/EntryDetails.qml:194
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgid "Rating:"
 msgstr "評分"
 
-#: qtquick/qml/EntryDetails.qml:198
+#: qtquick/qml/EntryDetails.qml:199
 #, fuzzy, kde-format
 #| msgid "Homepage"
 msgid "Homepage:"
 msgstr "首頁"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:200
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -545,12 +503,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:205
+#: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgid "How To Donate:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:207
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -558,7 +516,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:135
+#: qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -568,73 +526,73 @@ msgid ""
 "not be found."
 msgstr ""
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:166
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:188
 #, fuzzy, kde-format
 #| msgid "&Tile"
 msgid "Tiles"
 msgstr "鋪排(&T)"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:190
 #, kde-format
 msgid "Icons"
 msgstr "圖示"
 
-#: qtquick/qml/Page.qml:232
+#: qtquick/qml/Page.qml:192
 #, fuzzy, kde-format
 #| msgid "Preview URL:"
 msgid "Preview"
 msgstr "預覽 URL："
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
 #| msgid "Details"
 msgid "Detailed Tiles View Mode"
 msgstr "詳細資料"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:217
 #, fuzzy, kde-format
 #| msgid "Icon Size"
 msgid "Icons Only View Mode"
 msgstr "圖示大小"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:226
 #, fuzzy, kde-format
 #| msgid "Details"
 msgid "Large Preview View Mode"
 msgstr "詳細資料"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:239
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installed"
 msgstr "安裝"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:241
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "更新"
 
-#: qtquick/qml/Page.qml:301
+#: qtquick/qml/Page.qml:261
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "顯示所有選項"
 
-#: qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:270
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt ""
@@ -642,7 +600,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "顯示所有選項"
 
-#: qtquick/qml/Page.qml:319
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt ""
@@ -651,31 +609,31 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "顯示所有選項"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:290
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Percent"
 msgid "Recent"
 msgstr "百分比符號"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:294
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgid "Rating"
 msgstr "評分"
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:296
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "下載"
 
-#: qtquick/qml/Page.qml:356
+#: qtquick/qml/Page.qml:316
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -684,7 +642,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "最多下載次數"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:325
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -692,14 +650,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:374
+#: qtquick/qml/Page.qml:334
 #, fuzzy, kde-format
 #| msgid "Highest Rated"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "最高評分"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:343
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -707,48 +665,40 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "最多下載次數"
 
-#: qtquick/qml/Page.qml:394
+#: qtquick/qml/Page.qml:354
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "上傳(&U)"
 
-#: qtquick/qml/Page.qml:395
+#: qtquick/qml/Page.qml:355
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:405
+#: qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "移至(&G)..."
 
-#: qtquick/qml/Page.qml:412 qtquick/qml/Page.qml:421
+#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "搜尋(&S)："
 
-#: qtquick/qml/Page.qml:477
+#: qtquick/qml/Page.qml:437
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "分類"
 
-#: qtquick/qml/Page.qml:497
+#: qtquick/qml/Page.qml:457
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
 msgstr "繼續作業"
-
-#: qtquick/qml/Page.qml:616
-#, fuzzy, kde-format
-#| msgid "Print Previe&w..."
-msgctxt ""
-"A text shown beside a busy indicator suggesting that data is being fetched"
-msgid "Loading more…"
-msgstr "預覽列印(&W)..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -794,16 +744,16 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr ""
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
 #, fuzzy, kde-format
 #| msgid "Download"
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "下載"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:166
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
 #, fuzzy, kde-format
 #| msgid "<b>Error</b>: %1: %2"
 msgctxt ""
@@ -945,7 +895,20 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:132
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:152
+#, fuzzy, kde-format
+#| msgid "Loading Applet"
+msgid "Loading data"
+msgstr "載入 Applet"
+
+#: qtquick/quickengine.cpp:148
+#, fuzzy, kde-format
+#| msgid "Install"
+msgid "Installing"
+msgstr "安裝"
+
+#: qtquick/quickengine.cpp:198
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -955,41 +918,41 @@ msgid ""
 "please contact the person in charge of your permissions."
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:43
 #, fuzzy, kde-format
 #| msgid "Back"
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "上一步"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:45
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:47
 #, fuzzy, kde-format
 #| msgid "Saturday"
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "星期六"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:49
 #, fuzzy, kde-format
 #| msgid "Restart"
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "重新開始"
 
-#: qtquick/searchpresetmodel.cpp:67
+#: qtquick/searchpresetmodel.cpp:51
 #, fuzzy, kde-format
 #| msgid "New"
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "新增"
 
-#: qtquick/searchpresetmodel.cpp:70
+#: qtquick/searchpresetmodel.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "Opposite to End"
 #| msgid "Home"
@@ -997,45 +960,45 @@ msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "開頭"
 
-#: qtquick/searchpresetmodel.cpp:73
+#: qtquick/searchpresetmodel.cpp:55
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:76
+#: qtquick/searchpresetmodel.cpp:57
 #, fuzzy, kde-format
 #| msgid "Up"
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "向上"
 
-#: qtquick/searchpresetmodel.cpp:79
+#: qtquick/searchpresetmodel.cpp:59
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:82
+#: qtquick/searchpresetmodel.cpp:61
 #, fuzzy, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "語文(&I)"
 
-#: qtquick/searchpresetmodel.cpp:85
+#: qtquick/searchpresetmodel.cpp:63
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "顯示所有選項"
 
-#: qtquick/searchpresetmodel.cpp:88
+#: qtquick/searchpresetmodel.cpp:65
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr ""
 
-#: tools/knewstuff-dialog/main.cpp:31
+#: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -1043,7 +1006,7 @@ msgid ""
 "into the systemwide knsrc file location"
 msgstr ""
 
-#: tools/knewstuff-dialog/main.cpp:35
+#: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
@@ -1064,6 +1027,34 @@ msgstr ""
 #| msgid "Download New Stuff"
 msgid "Download New Stuff..."
 msgstr "下載熱門禮品"
+
+#, fuzzy
+#~| msgid "Install"
+#~ msgid "Initializing"
+#~ msgstr "安裝"
+
+#, fuzzy
+#~| msgid "View Frame Information"
+#~ msgid "Loading provider information"
+#~ msgstr "檢視框架資訊"
+
+#, fuzzy
+#~| msgid "Redo: %1"
+#~ msgid "Re: %1"
+#~ msgstr "重做：%1"
+
+#, fuzzy
+#~| msgid "Print Previe&w..."
+#~ msgid "Loading one preview"
+#~ msgid_plural "Loading %1 previews"
+#~ msgstr[0] "預覽列印(&W)..."
+
+#, fuzzy
+#~| msgid "Print Previe&w..."
+#~ msgctxt ""
+#~ "A text shown beside a busy indicator suggesting that data is being fetched"
+#~ msgid "Loading more…"
+#~ msgstr "預覽列印(&W)..."
 
 #, fuzzy
 #~| msgid "Install"
