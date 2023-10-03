@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:41+0000\n"
+"POT-Creation-Date: 2023-10-03 01:37+0000\n"
 "PO-Revision-Date: 2023-07-30 21:57+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -61,7 +61,7 @@ msgstr "Stemmen din er registrert."
 msgid "You are now a fan."
 msgstr "Du er no ein tilhengjar."
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:286
 #, kde-format
 msgid ""
@@ -141,17 +141,17 @@ msgstr ""
 "Dette er ein kritisk feil, som du bør melda frå om til utviklaren av "
 "programmet."
 
-#: core/enginebase.cpp:274
+#: core/enginebase.cpp:272
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Klarte ikkje henta leverandørinfo frå fila: %1 mislukka"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:289
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Klarte ikkje henta nye godsaker frå fila: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:320
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Feil ved klargjering av leverandør."

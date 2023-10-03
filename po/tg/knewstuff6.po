@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:41+0000\n"
+"POT-Creation-Date: 2023-10-03 01:37+0000\n"
 "PO-Revision-Date: 2021-09-05 11:57-0700\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik Language Support\n"
@@ -59,7 +59,7 @@ msgstr "Овози шумо сабт карда шуд."
 msgid "You are now a fan."
 msgstr "Акнун шумо дӯстдор шудед."
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:286
 #, kde-format
 msgid ""
@@ -136,17 +136,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:274
+#: core/enginebase.cpp:272
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Боркунии рӯйхати таҳвилгарон аз файли %1 қатъ шуд"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:289
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Рӯйхати таҳвилгарони маводҳои нав аз файли зерин бор карда нашуд: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:320
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Хатои омодасозии таҳвилгар."

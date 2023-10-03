@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:41+0000\n"
+"POT-Creation-Date: 2023-10-03 01:37+0000\n"
 "PO-Revision-Date: 2013-01-31 01:08+0400\n"
 "Last-Translator: Davit <nikdavnik@mail.ru>\n"
 "Language-Team: Armenian Language: hy\n"
@@ -60,7 +60,7 @@ msgstr "Ձեր ձայնը ընդունված է։"
 msgid "You are now a fan."
 msgstr "Այսուհետ դուք այս լրացման երկրպագուն եք։"
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:199
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:286
 #, kde-format
 msgid ""
@@ -136,17 +136,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:274
+#: core/enginebase.cpp:272
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Հնարավոր չէ նիշքից ներբեռնել մատակարարների ցանկը: %1"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:289
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Հնարավոր չէ նիշքից ներբեռնել մատակարարների ցանկը: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:320
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Մատակարարի նախապատրաստման սխալ։"
