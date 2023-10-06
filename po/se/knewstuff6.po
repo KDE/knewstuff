@@ -934,20 +934,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Viečča ođđa, somás tiŋggaid …"
-
-#~ msgid "Initializing"
-#~ msgstr "Vuolgimin johtui"
-
-#~ msgid "Loading provider information"
-#~ msgstr "Viežžamin skáhppojeaddjidieđuid"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "Viežžamin dataid skáhppojeaddjis"
-
-#~ msgid "Re: %1"
-#~ msgstr "Daga ođđasit: %1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "Viežžamin ovdačájeheami"
-#~ msgstr[1] "Viežžamin %1 ovdačájeheami"

@@ -940,20 +940,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Last ned nye saker …"
-
-#~ msgid "Initializing"
-#~ msgstr "Klargjør"
-
-#~ msgid "Loading provider information"
-#~ msgstr "Laster inn leverandørinformasjon"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "Laster inn data fra leverandøren"
-
-#~ msgid "Re: %1"
-#~ msgstr "Om: %1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "Laster en forhåndsvisning"
-#~ msgstr[1] "Laster %1 forhåndsvisninger"

@@ -1016,25 +1016,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Last ned nye saker …"
-
-#~ msgid "Initializing"
-#~ msgstr "Førebur"
-
-#~ msgid "Loading provider information"
-#~ msgstr "Hentar leverandørinformasjon"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "Hentar data frå leverandør"
-
-#~ msgid "Re: %1"
-#~ msgstr "Re: %1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "Lastar éi førehandsvising"
-#~ msgstr[1] "Lastar %1 førehandsvisingar"
-
-#~ msgctxt ""
-#~ "A text shown beside a busy indicator suggesting that data is being fetched"
-#~ msgid "Loading more…"
-#~ msgstr "Hentar fleire …"
