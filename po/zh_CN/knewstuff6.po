@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-03 01:37+0000\n"
-"PO-Revision-Date: 2023-09-16 10:06\n"
+"PO-Revision-Date: 2023-10-10 14:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -985,24 +985,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."
-
-#~ msgid "Initializing"
-#~ msgstr "正在初始化"
-
-#~ msgid "Loading provider information"
-#~ msgstr "正在加载内容提供者的信息"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "正在从内容提供者处加载数据"
-
-#~ msgid "Re: %1"
-#~ msgstr "回复：%1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "正在加载 %1 个预览"
-
-#~ msgctxt ""
-#~ "A text shown beside a busy indicator suggesting that data is being fetched"
-#~ msgid "Loading more…"
-#~ msgstr "正在加载更多…"

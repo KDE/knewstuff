@@ -941,26 +941,3 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Stáhnout nový obsah..."
-
-#~ msgid "Initializing"
-#~ msgstr "Probíhá inicializace"
-
-#~ msgid "Loading provider information"
-#~ msgstr "Načítají se informace o poskytovateli"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "Načítají se data od poskytovatele"
-
-#~ msgid "Re: %1"
-#~ msgstr "Znovu: %1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "Načítá se náhled"
-#~ msgstr[1] "Načítají se %1 náhledy"
-#~ msgstr[2] "Načítá se %1 náhledů"
-
-#~ msgctxt ""
-#~ "A text shown beside a busy indicator suggesting that data is being fetched"
-#~ msgid "Loading more…"
-#~ msgstr "Načítám další…"
