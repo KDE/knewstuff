@@ -515,6 +515,7 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath, c
             // and no error will be displayed to the user, BUG: 436355
             if (exitcode == 130) {
                 qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed was aborted by the user";
+                Q_EMIT signalInstallationFinished(entry);
             } else {
                 Q_EMIT signalInstallationError(
                     i18n("The installation failed with code %1 while attempting to run the command:\n%2\n\nThe returned output was:\n%3",
