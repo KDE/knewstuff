@@ -104,7 +104,8 @@ public:
      */
     bool isLoading() const
     {
-        return busyState().toInt() != 0;
+        // When installing entries, we don't want to block the UI
+        return busyState().toInt() != 0 && ((busyState() & BusyOperation::InstallingEntry) != BusyOperation::InstallingEntry);
     }
 
     QObject *categories() const;

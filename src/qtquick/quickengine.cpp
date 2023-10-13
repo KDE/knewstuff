@@ -150,7 +150,7 @@ void Engine::updateStatus()
     }
     if (d->numDataJobs > 0) {
         busyMessage = i18n("Loading data");
-        state |= BusyOperation::LoadingPreview;
+        state |= BusyOperation::LoadingData;
     }
     d->busyMessage = busyMessage;
     setBusyState(state);
