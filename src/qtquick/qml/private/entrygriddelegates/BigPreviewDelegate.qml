@@ -51,7 +51,7 @@ Private.GridTileDelegate {
             icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
                     downloadItemsSheet.entry = model.entry;

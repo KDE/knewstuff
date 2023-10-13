@@ -43,7 +43,7 @@ KCM.GridDelegate {
             icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
                     downloadItemsSheet.entry = model.entry;
@@ -63,7 +63,7 @@ KCM.GridDelegate {
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
-            onTriggered: { newStuffModel.uninstall(model.entry); }
+            onTriggered: { newStuffModel.engine.uninstall(model.entry); }
             enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
             visible: enabled;
         }
