@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ne m'eus ket gallet kavout ar servij '%1'."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installation of %1 failed: %2"
@@ -222,7 +222,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -232,7 +232,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -240,7 +240,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

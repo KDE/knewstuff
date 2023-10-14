@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2022-09-24 16:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Kunde inte installera \"%1\": filen hittades inte."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "Installation av %1 misslyckades: %2"
@@ -239,7 +239,7 @@ msgstr ""
 "Den returnerade utmatningen är:\n"
 "%2"
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -254,7 +254,7 @@ msgstr ""
 "Den returnerade utmatningen är:\n"
 "%3"
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -265,7 +265,7 @@ msgstr ""
 "kunde tas bort automatiskt. Du kan försöka ta bort den manuellt, om du tror "
 "att det är ett fel."
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

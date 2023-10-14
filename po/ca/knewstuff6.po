@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2023-09-20 20:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "No s'ha pogut instal·lar «%1»: no s'ha trobat el fitxer."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "La instal·lació de %1 ha fallat: %2"
@@ -242,7 +242,7 @@ msgstr ""
 "La sortida retornada ha estat:\n"
 "%2"
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -257,7 +257,7 @@ msgstr ""
 "La sortida retornada ha estat:\n"
 "%3"
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -268,7 +268,7 @@ msgstr ""
 "eliminar automàticament. Si creu que es tracta d'un error, podeu provar "
 "eliminant manualment aquest fitxer."
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2023-06-08 12:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "تعذّر تثبيب \"%1\": لم يُعثر على الملف."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "فشل تثبيت %1: %2"
@@ -223,7 +223,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%2"
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -238,7 +238,7 @@ msgstr ""
 "المخرجات الراجعة:\n"
 "%3"
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -248,7 +248,7 @@ msgstr ""
 "فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 تلقائيًا. يمكنك محاولة حذف هذا "
 "الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

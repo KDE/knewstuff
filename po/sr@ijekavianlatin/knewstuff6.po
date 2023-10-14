@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ne mogu da instaliram „%1“, fajl nije nađen."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, fuzzy, kde-format
 #| msgid "Download of \"%1\" failed, error: %2"
 msgid "Installation of %1 failed: %2"
@@ -220,7 +220,7 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -230,7 +230,7 @@ msgid ""
 "%3"
 msgstr ""
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -238,7 +238,7 @@ msgid ""
 "believe this is an error."
 msgstr ""
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

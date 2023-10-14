@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2023-07-16 10:25+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Could not install \"%1\": file not found."
 msgstr "Ezin \"%1\" instalatu: fitxategia ez da aurkitu."
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 instalatzea huts egin du: %2"
@@ -237,7 +237,7 @@ msgstr ""
 "Itzuli den irteerakoa hau izan da:\n"
 "%2"
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -252,7 +252,7 @@ msgstr ""
 "Itzuli den irteerakoa hau izan da:\n"
 "%3"
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -263,7 +263,7 @@ msgstr ""
 "automatikoki kendu. Fitxategi hori eskuz ezabatzen saia zaitezke, honakoa "
 "errore bat dela uste baduzu."
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"

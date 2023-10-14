@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:37+0000\n"
+"POT-Creation-Date: 2023-10-14 01:47+0000\n"
 "PO-Revision-Date: 2023-08-08 00:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -195,7 +195,7 @@ msgstr "無法安裝 %1，因為它指向一個網頁。點擊<a href='%2'>這�
 msgid "Could not install \"%1\": file not found."
 msgstr "無法安裝 %1：找不到檔案。"
 
-#: core/installation.cpp:352 core/installation.cpp:598
+#: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
 msgid "Installation of %1 failed: %2"
 msgstr "%1 安裝失敗：%2"
@@ -245,7 +245,7 @@ msgstr ""
 "回傳輸出：\n"
 "%2"
 
-#: core/installation.cpp:520
+#: core/installation.cpp:521
 #, kde-format
 msgid ""
 "The installation failed with code %1 while attempting to run the command:\n"
@@ -260,7 +260,7 @@ msgstr ""
 "回傳輸出：\n"
 "%3"
 
-#: core/installation.cpp:562
+#: core/installation.cpp:563
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed file %2 could not be "
@@ -270,7 +270,7 @@ msgstr ""
 "%1 移除失敗，安裝的檔案 %2 無法被自動移除。如果您相信這是錯的，您可嘗試自行刪"
 "除這個檔案。"
 
-#: core/installation.cpp:631
+#: core/installation.cpp:632
 #, kde-format
 msgid ""
 "The uninstallation process failed to successfully run the command %1\n"
