@@ -797,13 +797,13 @@ msgstr "Mou cap amunt"
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:96
 #, kde-format
 msgid "Move to Main section"
-msgstr "Mou a la secció Principal"
+msgstr "Mou cap a la secció Principal"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:115
 #, kde-format
 msgid "Move to More section"
-msgstr "Mou a la secció Més"
+msgstr "Mou cap a la secció Més"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:134
@@ -1218,7 +1218,7 @@ msgstr ""
 #: qtquick/qml/Page.qml:375
 #, kde-format
 msgid "Go to..."
-msgstr "Ves a..."
+msgstr "Ves fins a..."
 
 #: qtquick/qml/Page.qml:442
 #, kde-format
