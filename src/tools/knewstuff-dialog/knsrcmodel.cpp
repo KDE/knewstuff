@@ -24,7 +24,7 @@ KNSRCModel::KNSRCModel(QObject *parent)
         } else if (conf.hasGroup("KNewStuff")) {
             group = conf.group("KNewStuff");
         } else {
-            qWarning() << file << " doesn't contain a KNewStuff (or KNewStuff3) section.";
+            qWarning() << file << "doesn't contain a KNewStuff (or KNewStuff3) section.";
             continue;
         }
 

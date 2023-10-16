@@ -65,7 +65,7 @@ EngineBase::~EngineBase()
 
 bool EngineBase::init(const QString &configfile)
 {
-    qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::EngineBase from '" << configfile << "'";
+    qCDebug(KNEWSTUFFCORE) << "Initializing KNSCore::EngineBase from" << configfile;
 
     QString resolvedConfigFilePath;
     if (QFileInfo(configfile).isAbsolute()) {
@@ -85,14 +85,14 @@ bool EngineBase::init(const QString &configfile)
 
     if (conf.accessMode() == KConfig::NoAccess) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
-        qCCritical(KNEWSTUFFCORE) << "The knsrc file '" << configfile << "' was found but could not be opened.";
+        qCCritical(KNEWSTUFFCORE) << "The knsrc file" << configfile << "was found but could not be opened.";
         return false;
     }
 
     const KConfigGroup group = conf.hasGroup("KNewStuff") ? conf.group("KNewStuff") : conf.group("KNewStuff3");
     if (!group.exists()) {
         Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
-        qCCritical(KNEWSTUFFCORE) << configfile << " doesn't contain a KNewStuff or KNewStuff3 section.";
+        qCCritical(KNEWSTUFFCORE) << configfile << "doesn't contain a KNewStuff or KNewStuff3 section.";
         return false;
     }
 

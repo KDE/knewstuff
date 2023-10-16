@@ -381,7 +381,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                 // clang-format on
                 archive.reset(new KTar(payloadfile));
             } else {
-                qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file '" << payloadfile << "'";
+                qCCritical(KNEWSTUFFCORE) << "Could not determine type of archive file" << payloadfile;
                 if (uncompressionOpt == AlwaysUncompress) {
                     Q_EMIT signalInstallationError(i18n("Could not determine the type of archive of the downloaded file %1", payloadfile), entry);
                     return QStringList();
@@ -392,7 +392,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             if (isarchive) {
                 bool success = archive->open(QIODevice::ReadOnly);
                 if (!success) {
-                    qCCritical(KNEWSTUFFCORE) << "Cannot open archive file '" << payloadfile << "'";
+                    qCCritical(KNEWSTUFFCORE) << "Cannot open archive file" << payloadfile;
                     if (uncompressionOpt == AlwaysUncompress) {
                         Q_EMIT signalInstallationError(
                             i18n("Failed to open the archive file %1. The reported error was: %2", payloadfile, archive->errorString()),
@@ -485,7 +485,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             }
             if (!success) {
                 Q_EMIT signalInstallationError(i18n("Unable to move the file %1 to the intended destination %2", payloadfile, installpath), entry);
-                qCCritical(KNEWSTUFFCORE) << "Cannot move file '" << payloadfile << "' to destination '" << installpath << "'";
+                qCCritical(KNEWSTUFFCORE) << "Cannot move file" << payloadfile << "to destination" << installpath;
                 return QStringList();
             }
             installedFiles << installpath;
@@ -509,12 +509,12 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath, c
         if (status == QProcess::CrashExit) {
             QString errorMessage = i18n("The installation failed while attempting to run the command:\n%1\n\nThe returned output was:\n%2", command, output);
             Q_EMIT signalInstallationError(errorMessage, entry);
-            qCCritical(KNEWSTUFFCORE) << "Process crashed with command: " << command;
+            qCCritical(KNEWSTUFFCORE) << "Process crashed with command:" << command;
         } else if (exitcode) {
             // 130 means Ctrl+C as an exit code this is interpreted by KNewStuff as cancel operation
             // and no error will be displayed to the user, BUG: 436355
             if (exitcode == 130) {
-                qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed was aborted by the user";
+                qCCritical(KNEWSTUFFCORE) << "Command" << command << "failed was aborted by the user";
                 Q_EMIT signalInstallationFinished(entry);
             } else {
                 Q_EMIT signalInstallationError(
@@ -523,7 +523,7 @@ QProcess *Installation::runPostInstallationCommand(const QString &installPath, c
                          command,
                          output),
                     entry);
-                qCCritical(KNEWSTUFFCORE) << "Command '" << command << "' failed with code" << exitcode;
+                qCCritical(KNEWSTUFFCORE) << "Command" << command << "failed with code" << exitcode;
             }
         }
         sender()->deleteLater();
