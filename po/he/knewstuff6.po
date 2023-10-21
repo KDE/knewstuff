@@ -22,20 +22,21 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-14 01:47+0000\n"
-"PO-Revision-Date: 2017-05-16 06:50-0400\n"
+"PO-Revision-Date: 2023-10-20 11:19+0300\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: attica/atticaprovider.cpp:168
-#, fuzzy, kde-format
+#, kde-format
 msgid "All categories are missing"
-msgstr "כל הקטגוריות"
+msgstr "כל הקטגוריות חסרות"
 
 #: attica/atticaprovider.cpp:481
 #, kde-format
@@ -46,7 +47,7 @@ msgid ""
 "Do you want to buy it?"
 msgstr ""
 "הפריט הזה עולה %1 %2.\n"
-"האם ברצונך לקנות אותו?"
+"לקנות אותו?"
 
 #: attica/atticaprovider.cpp:495
 #, kde-format
@@ -68,7 +69,7 @@ msgstr "הצבעתך נקלטה בהצלחה."
 #: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
-msgstr "כעת הנך אוהד."
+msgstr "נשמרת בין האוהדים."
 
 #: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:286
@@ -76,24 +77,24 @@ msgstr "כעת הנך אוהד."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "השירות עובר עבודות תחזוקה והוא אמור לשוב ב־%1."
 
 #: attica/atticaprovider.cpp:586
-#, fuzzy, kde-format
+#, kde-format
 msgid "Network error %1: %2"
-msgstr "שגיאת רשת. (%1)"
+msgstr "שגיאת רשת %1: %2"
 
 #: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
-msgstr "יותר מדי בקשות אל השרת. אנא נסה במועד מאוחר יותר."
+msgstr "יותר מדי בקשות לשרת. נא לנסות במועד מאוחר יותר."
 
 #: attica/atticaprovider.cpp:595
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
-msgstr ""
+msgstr "מופע שירותי שיתוף הפעולה הפתוח %1 לא תומך בפונקציה שהוגשה לביצוע."
 
 #: attica/atticaprovider.cpp:599
 #, kde-format
@@ -105,7 +106,7 @@ msgstr "שגיאת Open Collaboration Service API.‏ (%1)"
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr ""
+msgstr "תפקיד דגם תגובות לא ידוע"
 
 #: core/enginebase.cpp:43
 #, kde-format
@@ -113,28 +114,28 @@ msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"אירעה שגיאה במהלך ההתקנה:\n"
+"%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "קובץ תצורה לא נמצא: \"%1\""
+msgstr "קובץ הגדרות לא קיים: „%1”"
 
 #: core/enginebase.cpp:87
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "קובץ תצורה לא נמצא: \"%1\""
+msgstr "קובץ תצורה קיים אך לא ניתן לפתיחה: „%1”"
 
 #: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
-msgstr "קובץ תצורה לא תקין: \"%1\""
+msgstr "קובץ תצורה שגוי: „%1”"
 
 #: core/enginebase.cpp:103
 #, kde-format
 msgid "Use"
-msgstr ""
+msgstr "שימוש"
 
 #: core/enginebase.cpp:121
 #, kde-format
@@ -143,6 +144,9 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"לא ניתן לאתחל את מטפל ההתקנה עבור %1:\n"
+"%2\n"
+"זו שגיאה מהותית ויש לדווח עליה ליוצרי היישום"
 
 #: core/enginebase.cpp:272
 #, kde-format
@@ -152,12 +156,12 @@ msgstr "טעינת הספקים מהקובץ: %1 נכשלה"
 #: core/enginebase.cpp:289
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "אין אפשרות לטעון ספקים של דברים חדשים מהקובץ: %1"
+msgstr "אי אפשר לטעון ספקים של דברים חדשים לוהטים מהקובץ: %1"
 
 #: core/enginebase.cpp:320
 #, kde-format
 msgid "Error initializing provider."
-msgstr "שגיאה בעת אתחול הספק."
+msgstr "שגיאה באתחול הספק."
 
 #: core/installation.cpp:101
 #, kde-format
@@ -167,12 +171,12 @@ msgstr "פריט שגוי."
 #: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
-msgstr "העלאה של פריט נכשלה: אין כתובת הורדה עבור \"%1\"."
+msgstr "העלאה של פריט נכשלה: אין כתובת הורדה עבור „%1”."
 
 #: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
-msgstr "ההורדה של \"%1\" נכשלה, שגיאה: %2."
+msgstr "הורדת „%1” נכשלה, שגיאה: %2"
 
 #: core/installation.cpp:148
 #, kde-format
@@ -180,27 +184,28 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"אי אפשר להתקין את ‚%1’ כיוון שהוא מפנה לאתר. יש ללחוץ <a href='%2'>כאן</a> "
+"כדי לסיים את ההתקנה."
 
 #: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
-msgstr "אין אפשרות להתקין את \"%1\": הקובץ לא נמצא."
+msgstr "אי אפשר להתקין את „%1”: הקובץ לא נמצא."
 
 #: core/installation.cpp:352 core/installation.cpp:599
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgid "Installation of %1 failed: %2"
-msgstr "מתקין"
+msgstr "ההתקנה של %1 נכשלה: %2"
 
 #: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "לא ניתן להסיק את סוג הארכיון של הקובץ %1 שהתקבל"
 
 #: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr ""
+msgstr "פתיחת קובץ הארכיון %1 נכשלה. השגיאה שדווחה הייתה: %2"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -209,17 +214,18 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"הקובץ הזה כבר קיים בכונן (כנראה עקב ניסיון הורדה כושל מהעבר). להמשיך בתהליך "
+"ולדרוס את הקובץ הקיים?"
 
 #: core/installation.cpp:468
-#, fuzzy, kde-format
-#| msgid "Overwrite existing file?"
+#, kde-format
 msgid "Overwrite File"
-msgstr "האם לשכתב קובץ קיים?"
+msgstr "שכתוב קובץ"
 
 #: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "לא ניתן להעביר את הקובץ %1 ליעד הרצוי %2"
 
 #: core/installation.cpp:510
 #, kde-format
@@ -230,6 +236,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"ההתקנה נכשלה כשניסתה להריץ את הפקודה:\n"
+"%1\n"
+"\n"
+"הפלט שיצא הוא:\n"
+"%2"
 
 #: core/installation.cpp:521
 #, kde-format
@@ -240,6 +251,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"ההתקנה נכשלה עם הקוד %1 תוך ניסיון להריץ את הפקודה:\n"
+"%2\n"
+"\n"
+"הפלט שיצא הוא:\n"
+"%3"
 
 #: core/installation.cpp:563
 #, kde-format
@@ -248,6 +264,8 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"הסרת %1 נכשלה כיוון שהקובץ המותקן %2 לא זמין להסרה אוטומטית. אפשר לנסות "
+"למחוק את הקובץ הזה ידנית אם לדעתך מדובר בשגיאה."
 
 #: core/installation.cpp:632
 #, kde-format
@@ -258,16 +276,20 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"תהליך ההסרה נכשל בהרצת הפקודה %1 בהצלחה\n"
+"הפלט היה: \n"
+"%2\n"
+"אם לדעתך זאת טעות, אפשר להמשיך או לבטל את תהליך ההסרה"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
 msgid "Could not open %1 for writing"
-msgstr ""
+msgstr "לא ניתן לפתוח את %1 לכתיבה"
 
 #: core/jobs/filecopyworker.cpp:52
 #, kde-format
 msgid "Could not open %1 for reading"
-msgstr ""
+msgstr "לא ניתן לפתוח את %1 לקריאה"
 
 #: core/transaction.cpp:154
 #, kde-format
@@ -275,11 +297,13 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"לא ניתן לבצע התקנה של הרשומה %1 כיוון שלא הוגדרו לה פריטים כלשהם שאפשר "
+"להוריד. נא ליצור קשר עם היוצרים כדי שיוכלו לתקן את זה."
 
 #: core/transaction.cpp:263
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "בחירת פריט עדכון"
 
 #: core/transaction.cpp:265
 #, kde-format
@@ -288,13 +312,15 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"נא לבחור את הפרט מהרשימה להלן שישמש להחלת העדכון הזה. לא הצלחנו לזהות איזה "
+"פריט לבחור לפי הפריט המקורי ששמו %1"
 
 #: core/transaction.cpp:289
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
-msgstr ""
+msgstr "לא הצלחנו לזהות קישור טוב לעדכון %1, ולא הצלחנו לבצע את העדכון"
 
 #: core/transaction.cpp:376
 #, kde-format
@@ -302,22 +328,22 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
+"אימוץ ‚%1’ נכשל\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "כל הקטגוריות"
 
 #: qtquick/categoriesmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Category:"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr "קטגוריה:"
+msgstr "קטגוריה לא ידועה"
 
 #. i18nd("knewstuff6", "Download New %1…").
 #. *
@@ -329,34 +355,31 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr ""
+msgstr "דברים"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgid "Download New %1…"
-msgstr "מוריד חומר חדש..."
+msgstr "הורדת %1 חדש…"
 
 #: qtquick/qml/Dialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "מוריד חומר חדש..."
+msgstr "הורדת %1 חדש"
 
 #: qtquick/qml/Dialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "מוריד חומר חדש..."
+msgstr "הורדת דברים חדשים"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
 msgid "Pick Your Installation Option"
-msgstr ""
+msgstr "בחירת אפשרות ההתקנה שלך"
 
 #: qtquick/qml/DownloadItemsSheet.qml:40
 #, kde-format
@@ -366,6 +389,9 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+"נא לבחור את האפשרות שברצונך להתקין מרשימת הפריטים שניתן להוריד להלן. אם לא "
+"ברור לך מה צריך לבחור מהאפשרויות הזמינות, נא ליצור קשר עם מי שיצר את הפריט "
+"הזה ולשאול אם יוכלו להסביר מה הרקע לפי שמות הפריטים."
 
 #: qtquick/qml/DownloadItemsSheet.qml:63
 #, kde-format
@@ -373,12 +399,11 @@ msgid "Install"
 msgstr "התקנה"
 
 #: qtquick/qml/EntryDetails.qml:52
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr "מתקין"
+msgstr "%1 מותקן מתוך %2"
 
 #: qtquick/qml/EntryDetails.qml:75
 #, kde-format
@@ -386,14 +411,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "מתבצעת עבודה על הפריט %1 מאת %2. נא להמתין…"
 
 #: qtquick/qml/EntryDetails.qml:78
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "הפריט %1 מאת %2 מתעדכן כרגע. נא להמתין…"
 
 #: qtquick/qml/EntryDetails.qml:81
 #, kde-format
@@ -405,6 +430,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"הפריט הזה נמצא כרגע במצב שגוי או לא ידוע. <a href=\"https://bugs.kde.org/"
+"enter_bug.cgi?product=frameworks-knewstuff\">נא לדווח על זה לקהילת KDE דרך "
+"דוח תקלה</a>."
 
 #: qtquick/qml/EntryDetails.qml:95
 #, kde-format
@@ -412,14 +440,13 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%1 מאת %2"
 
 #: qtquick/qml/EntryDetails.qml:99
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
 "downloadable item"
@@ -430,24 +457,23 @@ msgstr "התקנה"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "התקנה"
+msgstr "התקנה…"
 
 #: qtquick/qml/EntryDetails.qml:114
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "עדכון"
 
 #: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "הסרה"
@@ -455,7 +481,7 @@ msgstr "הסרה"
 #: qtquick/qml/EntryDetails.qml:186
 #, kde-format
 msgid "Comments and Reviews:"
-msgstr ""
+msgstr "תגובות וביקורות:"
 
 #: qtquick/qml/EntryDetails.qml:188
 #, kde-format
@@ -463,20 +489,17 @@ msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr ""
+msgstr "%1 ביקורות ותגובות"
 
 #: qtquick/qml/EntryDetails.qml:194
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgid "Rating:"
-msgstr "דירוג"
+msgstr "דירוג:"
 
 #: qtquick/qml/EntryDetails.qml:199
-#, fuzzy, kde-format
-#| msgctxt "A link to the description of this Get Hot New Stuff item"
-#| msgid "Homepage"
+#, kde-format
 msgid "Homepage:"
-msgstr "אתר בית"
+msgstr "אתר בית:"
 
 #: qtquick/qml/EntryDetails.qml:200
 #, kde-format
@@ -485,12 +508,12 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "פתיחת אתר הבית של %1"
 
 #: qtquick/qml/EntryDetails.qml:206
 #, kde-format
 msgid "How To Donate:"
-msgstr ""
+msgstr "איך לתרום:"
 
 #: qtquick/qml/EntryDetails.qml:207
 #, kde-format
@@ -498,7 +521,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "מידע על איך לתרום למיזם הזה"
 
 #: qtquick/qml/Page.qml:114
 #, kde-format
@@ -508,7 +531,7 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr ""
+msgstr "הרשומה שניסית להציג, שמסומנת במזהה הייחודי %1, לא נמצאת."
 
 #: qtquick/qml/Page.qml:166
 #, kde-format
@@ -516,45 +539,43 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"התוכן שזמין כאן הועלה על ידי משתמשים כמוך ולא עבר סקירה על ידי עורכי ההפצה "
+"שלך לבחינת היכולות או היציבות."
 
 #: qtquick/qml/Page.qml:188
 #, kde-format
 msgid "Tiles"
-msgstr ""
+msgstr "אריחים"
 
 #: qtquick/qml/Page.qml:190
 #, kde-format
 msgid "Icons"
-msgstr ""
+msgstr "סמלים"
 
 #: qtquick/qml/Page.qml:192
-#, fuzzy, kde-format
-#| msgid "Preview Images"
+#, kde-format
 msgid "Preview"
-msgstr "תצוגה מקדימה לתמונות"
+msgstr "תצוגה מקדימה"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "תצוגת פרטים"
+msgstr "מצב תצוגת אריחים מפורטים"
 
 #: qtquick/qml/Page.qml:217
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
-msgstr "תצוגת סמלים"
+msgstr "מצב תצוגת סמלים בלבד"
 
 #: qtquick/qml/Page.qml:226
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "תצוגת פרטים"
+msgstr "מצב תצוגה מקדימה גדולה"
 
 #: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Everything"
-msgstr ""
+msgstr "הכול"
 
 #: qtquick/qml/Page.qml:239
 #, kde-format
@@ -562,24 +583,22 @@ msgid "Installed"
 msgstr "הותקן"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Updateable"
-msgstr "עדכון"
+msgstr "זמין לעדכון"
 
 #: qtquick/qml/Page.qml:261
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
-msgstr "כל הקטגוריות"
+msgstr "הצגת כל הרשומות"
 
 #: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
-msgstr ""
+msgstr "להציג רשומות מותקנות בלבד"
 
 #: qtquick/qml/Page.qml:279
 #, kde-format
@@ -587,17 +606,17 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "להציג רשומות שניתן לעדכן בלבד"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Recent"
-msgstr ""
+msgstr "אחרונים"
 
 #: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Alphabetical"
-msgstr ""
+msgstr "לפי אלפבית"
 
 #: qtquick/qml/Page.qml:294
 #, kde-format
@@ -605,20 +624,17 @@ msgid "Rating"
 msgstr "דירוג"
 
 #: qtquick/qml/Page.qml:296
-#, fuzzy, kde-format
-#| msgid "1 download"
-#| msgid_plural "%1 downloads"
+#, kde-format
 msgid "Downloads"
-msgstr "הורדה אחת"
+msgstr "הורדות"
 
 #: qtquick/qml/Page.qml:316
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show Most Recent First"
-msgstr "מספר ההורדות הגדול ביותר"
+msgstr "הצגת העדכניים ביותר בהתחלה"
 
 #: qtquick/qml/Page.qml:325
 #, kde-format
@@ -626,44 +642,40 @@ msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort Alphabetically By Name"
-msgstr ""
+msgstr "מיון אלפביתי לפי שם"
 
 #: qtquick/qml/Page.qml:334
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
-msgstr "מספר ההורדות הגדול ביותר"
+msgstr "הצגת המדורגים ביותר בהתחלה"
 
 #: qtquick/qml/Page.qml:343
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "מספר ההורדות הגדול ביותר"
+msgstr "הצגת אלו שהורדו הכי הרבה בהתחלה"
 
 #: qtquick/qml/Page.qml:354
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload…"
-msgstr "העלאה חדשה"
+msgstr "העלאה…"
 
 #: qtquick/qml/Page.qml:355
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "הסבר על הוספת הדברים החמים החדשים שלך לרשימה הזאת"
 
 #: qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Go to…"
-msgstr ""
+msgstr "מעבר אל…"
 
 #: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "חיפוש:"
+msgstr "חיפוש…"
 
 #: qtquick/qml/Page.qml:437
 #, kde-format
@@ -673,14 +685,14 @@ msgstr "קטגוריה:"
 #: qtquick/qml/Page.qml:457
 #, kde-format
 msgid "Contribute your own…"
-msgstr ""
+msgstr "תרומת דברים משלך…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
-msgstr ""
+msgstr "<i>(אין כותרת)</i>"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:142
 #, kde-format
@@ -688,20 +700,19 @@ msgctxt ""
 "The author label in case the comment was written by the author of the "
 "content entry the comment is attached to"
 msgid "%1 <i>(author)</i>"
-msgstr ""
+msgstr "%1 <i>(יוצר)</i>"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:26
 #, kde-format
 msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
-msgstr ""
+msgstr "תגובות וביקורות של %1"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr "כל הקטגוריות"
+msgstr "הצגת כל התגובות"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:35
 #, kde-format
@@ -709,7 +720,7 @@ msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
 "should be shown"
 msgid "Show Reviews Only"
-msgstr ""
+msgstr "הצגת ביקורות בלבד"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
@@ -717,27 +728,23 @@ msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
 "their children should be shown"
 msgid "Show Reviews and Replies"
-msgstr ""
+msgstr "הצגת ביקורות ותגובות"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
-#, fuzzy, kde-format
-#| msgid "1 download"
-#| msgid_plural "%1 downloads"
+#, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
-msgstr "הורדה אחת"
+msgstr "%1 הורדות"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
-#, fuzzy, kde-format
-#| msgctxt "Show the author of this item in a list"
-#| msgid "By <i>%1</i>"
+#, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
 msgid "By <i>%1</i>"
-msgstr "על ידי<i>%1</i>"
+msgstr "מאת <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
 #, kde-format
@@ -745,16 +752,15 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr ""
+msgstr "נא להמתין…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "מעדכן"
+msgstr "מתבצע עדכון…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -766,63 +772,63 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"מצב שגוי או לא ידוע. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">נא לדווח על זה לקהילת KDE דרך דיוח על תקלה</"
+"a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "מתקין"
+msgstr "מתבצעת התקנה…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "אירעה שגיאה"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
 #, kde-format
 msgid "Please try again later."
-msgstr ""
+msgstr "נא לנסות שוב."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "אין"
 
 #: qtquick/qml/private/Rating.qml:80
 #, kde-format
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr ""
+msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
-msgstr "מוריד חומר חדש..."
+msgstr "העלאת דברים חדשים: %1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "טוען מידע אודות הספק"
+msgstr "המידע מעודכן…"
 
 #: qtquick/qml/UploadPage.qml:125
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr ""
+msgstr "חנות KDE"
 
 #: qtquick/qml/UploadPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "ספק:"
+msgstr "הספק שלך"
 
 #: qtquick/qml/UploadPage.qml:140
 #, kde-format
@@ -830,7 +836,7 @@ msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr ""
+msgstr "פתיחת אתר: %1"
 
 #: qtquick/qml/UploadPage.qml:146
 #, kde-format
@@ -838,7 +844,7 @@ msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr ""
+msgstr "שליחת דוא״ל אל: %1"
 
 #: qtquick/qml/UploadPage.qml:154
 #, kde-format
@@ -850,6 +856,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"כדי להעלות רשומות חדשות או כדי להוסיף תוכן לרשומה קיימת בחנות KDE, נא לפתוח "
+"את האתר ולהיכנס. לאחר שביצעת את הפעולה הזאת, יתאפשר לך למצוא את רשומת "
+"המוצרים שלי בתפריט שתקפוץ בלחיצה על סמל המשתמש שלך. יש ללחוץ על הרשומה הזאת "
+"כדי לעבור למערכת ניהול המוצרים, בה ניתן לעבוד על המוצרים שלך."
 
 #: qtquick/qml/UploadPage.qml:155
 #, kde-format
@@ -862,17 +872,21 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"כדי להעלות רשומות חדשות או כדי להוסיף תוכן לרשומה קיימת, נא לפתוח את אתר "
+"הספק ולעקוב אחר ההנחיות שם. כנראה יהיה עליך ליצור משתמש ולהיכנס למערכת ניהול "
+"המוצר, בה צריך לעקוב אחר ההוראות כיצד להוסיף. לחלופין, יכול להיות שצריך "
+"ליצור קשר עם מנהלי האתר ישירות כדי להוסיף תוכן חדש."
 
 #: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
 #: qtquick/quickengine.cpp:152
 #, kde-format
 msgid "Loading data"
-msgstr "טוען מידע"
+msgstr "מידע נטען"
 
 #: qtquick/quickengine.cpp:148
 #, kde-format
 msgid "Installing"
-msgstr "מתקין"
+msgstr "מתבצעת התקנה"
 
 #: qtquick/quickengine.cpp:198
 #, kde-format
@@ -883,83 +897,80 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"אסור לך להוריד דברים חדשים לוהטים. אם לדעתך זאת טעות, נא ליצור קשר עם אלו "
+"שאחראים על ההרשאות שלך."
 
 #: qtquick/searchpresetmodel.cpp:43
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
-msgstr ""
+msgstr "חזרה"
 
 #: qtquick/searchpresetmodel.cpp:45
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "נפוצים"
 
 #: qtquick/searchpresetmodel.cpp:47
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "מומלצי העורך"
 
 #: qtquick/searchpresetmodel.cpp:49
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
-msgstr ""
+msgstr "הפעלה מחדש"
 
 #: qtquick/searchpresetmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Newest"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
-msgstr "החדש ביותר"
+msgstr "חדש"
 
 #: qtquick/searchpresetmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "A link to the description of this Get Hot New Stuff item"
-#| msgid "Homepage"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr "אתר בית"
+msgstr "אתר הבית"
 
 #: qtquick/searchpresetmodel.cpp:55
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "מדף"
 
 #: qtquick/searchpresetmodel.cpp:57
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr ""
+msgstr "למעלה"
 
 #: qtquick/searchpresetmodel.cpp:59
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr ""
+msgstr "מומלצים"
 
 #: qtquick/searchpresetmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "תיאור:"
+msgstr "מינויים"
 
 #: qtquick/searchpresetmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr "כל הקטגוריות"
+msgstr "כל הרשומות"
 
 #: qtquick/searchpresetmodel.cpp:65
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "תבנית חיפוש: %1"
 
 #: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
@@ -968,6 +979,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"קובץ ה־KNSRC שברצונך להציג. אם לא מועבר כלום, תופיע חלונית שתאפשר לך לבחור "
+"מבין כל קובצי ההגדרות שמותקנים במקום קובצי ה־knsrc הכלל מערכתי"
 
 #: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
@@ -984,11 +997,20 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"כתובת kns ממנה להציג מיגע. התבנית לכתובת kns היא kns://knsrcfile/providerid/"
+"entryid\n"
+"‚knsrcfile’\n"
+"הוא שם קובץ ה־knsrc שניתן גם להעביר ישירות דרך הארגומנט knsrc של הכלי הזה\n"
+"‚providerid’\n"
+"הוא שם המארח שרשומת הספק אמורה להיות בו\n"
+"‚entryid’\n"
+"הוא המזהה הייחודי של רשומה שנמצאת בקובץ ה־knsrc שסופק על ידי הספק.\n"
+" דוגמה לכתובת כזאת היא kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
-msgstr "מוריד חומר חדש..."
+msgstr "דברים חדשים מגיעים…"
 
 #~ msgid "Initializing"
 #~ msgstr "אתחול"
