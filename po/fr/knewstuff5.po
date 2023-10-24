@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:44+0000\n"
-"PO-Revision-Date: 2023-03-08 12:28+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"PO-Revision-Date: 2023-10-14 22:21+0200\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -771,7 +771,7 @@ msgstr "Installer"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
-msgstr "Plus d'information disponible."
+msgstr "Plus d'informations disponibles."
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
 #, kde-format
