@@ -63,7 +63,11 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
     auto context = new KLocalizedContext(engine);
     engine->setIncubationController(new PeriodicIncubationController());
 
+    // TODO: It would be best to use a Kirigami.ApplicationWindow and use
+    // a multiple of gridUnit for our default and minimum size
+    setMinimumSize(600, 400);
     resize(600, 400);
+
     context->setTranslationDomain(QStringLiteral("knewstuff6"));
     engine->rootContext()->setContextObject(context);
     engine->rootContext()->setContextProperty(QStringLiteral("knsrcfile"), configFile);
