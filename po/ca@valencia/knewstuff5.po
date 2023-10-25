@@ -1404,8 +1404,9 @@ msgstr ""
 "Per a carregar entrades noves o per a afegir contingut a una entrada "
 "existent en la KDE Store, obriu el lloc web i accediu-hi. Una vegada fet "
 "açò, trobareu l'entrada «My Products» en el menú que apareixerà quan feu "
-"clic en la vostra icona d'usuari. Feu clic en esta entrada per anar al "
-"sistema de gestió de productes, on podreu treballar en els vostres productes."
+"clic en la vostra icona d'usuari. Feu clic en esta entrada per a anar fins "
+"al sistema de gestió de productes, on podreu treballar en els vostres "
+"productes."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
