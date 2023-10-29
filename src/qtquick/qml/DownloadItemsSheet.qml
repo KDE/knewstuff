@@ -9,6 +9,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.newstuff as NewStuff
 
 /**
@@ -41,27 +42,42 @@ Kirigami.OverlaySheet {
             wrapMode: Text.Wrap
         }
 
-        delegate: Kirigami.BasicListItem {
-            implicitHeight: installButton.implicitHeight + Kirigami.Units.smallSpacing * 2
+        delegate: QQC2.ItemDelegate {
+            id: delegate
 
-            text: modelData.name
+            width: itemsView.width
+
             icon.name: modelData.icon
+            text: modelData.name
 
-            // Don't need a highlight or hover effects
+            // Don't need a highlight, hover, or pressed effects
+            highlighted: false
             hoverEnabled: false
-            activeBackgroundColor: "transparent"
-            activeTextColor: Kirigami.Theme.textColor
+            down: false
 
-            trailing: RowLayout {
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
+                // TODO: switch to just IconTitle once it exists, since we don't need
+                // the subtitle here and are only using a Kirigami delegate for the visual
+                // consistency it offers
+                Kirigami.IconTitleSubtitle {
+                    Layout.fillWidth: true
+                    icon.name: delegate.icon.name
+                    title: delegate.text
+                    selected: delegate.highlighted
+                }
                 QQC2.Label {
                     text: modelData.formattedSize
+                    color: delegate.highlighted
+                        ? Kirigami.Theme.highlightedTextColor
+                        : Kirigami.Theme.textColor
                 }
-
                 QQC2.ToolButton {
                     id: installButton
 
                     text: i18nd("knewstuff6", "Install")
-                    icon.name: "install"
+                    icon.name: "install-symbolic"
 
                     onClicked: {
                         component.close();

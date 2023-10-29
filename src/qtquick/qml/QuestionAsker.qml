@@ -149,8 +149,8 @@ QQC2.Dialog {
 
             model: ListModel { }
 
-            delegate: Kirigami.BasicListItem {
-                reserveSpaceForIcon: false
+            delegate: QQC2.ItemDelegate {
+                width: listView.width
                 text: model.text
             }
         }
