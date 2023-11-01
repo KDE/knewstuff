@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-14 01:47+0000\n"
+"POT-Creation-Date: 2023-11-01 01:39+0000\n"
 "PO-Revision-Date: 2023-06-08 19:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -373,12 +373,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "Изтегляне на нови разширения"
 
-#: qtquick/qml/DownloadItemsSheet.qml:30
+#: qtquick/qml/DownloadItemsSheet.qml:31
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "Изберете вашата опция за инсталиране"
 
-#: qtquick/qml/DownloadItemsSheet.qml:40
+#: qtquick/qml/DownloadItemsSheet.qml:41
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -391,7 +391,7 @@ msgstr ""
 "опции, моля, свържете се с автора на този елемент и ги помолете да изяснят "
 "това чрез именуване на елементите."
 
-#: qtquick/qml/DownloadItemsSheet.qml:63
+#: qtquick/qml/DownloadItemsSheet.qml:79
 #, kde-format
 msgid "Install"
 msgstr "Инсталиране"

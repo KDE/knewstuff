@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-14 01:47+0000\n"
+"POT-Creation-Date: 2023-11-01 01:39+0000\n"
 "PO-Revision-Date: 2023-07-30 21:57+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -377,12 +377,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "Last ned nye ting"
 
-#: qtquick/qml/DownloadItemsSheet.qml:30
+#: qtquick/qml/DownloadItemsSheet.qml:31
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "Installasjonsval"
 
-#: qtquick/qml/DownloadItemsSheet.qml:40
+#: qtquick/qml/DownloadItemsSheet.qml:41
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -394,7 +394,7 @@ msgstr ""
 "klart kven av dei du bør velja, ta kontakt med opphavspersonen og be hen "
 "endra namna slik at dette vert klarare."
 
-#: qtquick/qml/DownloadItemsSheet.qml:63
+#: qtquick/qml/DownloadItemsSheet.qml:79
 #, kde-format
 msgid "Install"
 msgstr "Installer"

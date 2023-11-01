@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-14 01:47+0000\n"
+"POT-Creation-Date: 2023-11-01 01:39+0000\n"
 "PO-Revision-Date: 2023-06-04 19:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -381,12 +381,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "Отримання нових матеріалів"
 
-#: qtquick/qml/DownloadItemsSheet.qml:30
+#: qtquick/qml/DownloadItemsSheet.qml:31
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "Виберіть варіант встановлення"
 
-#: qtquick/qml/DownloadItemsSheet.qml:40
+#: qtquick/qml/DownloadItemsSheet.qml:41
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -400,7 +400,7 @@ msgstr ""
 "вказати потрібний вам варіант, зазначивши список усіх варіантів, які було "
 "показано."
 
-#: qtquick/qml/DownloadItemsSheet.qml:63
+#: qtquick/qml/DownloadItemsSheet.qml:79
 #, kde-format
 msgid "Install"
 msgstr "Встановити"

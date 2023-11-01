@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-14 01:47+0000\n"
+"POT-Creation-Date: 2023-11-01 01:39+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -358,12 +358,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "Lawrlwytho y Diweddaraf"
 
-#: qtquick/qml/DownloadItemsSheet.qml:30
+#: qtquick/qml/DownloadItemsSheet.qml:31
 #, fuzzy, kde-format
 msgid "Pick Your Installation Option"
 msgstr "Dewis Adnoddau"
 
-#: qtquick/qml/DownloadItemsSheet.qml:40
+#: qtquick/qml/DownloadItemsSheet.qml:41
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -372,7 +372,7 @@ msgid ""
 "this through the naming of the items."
 msgstr ""
 
-#: qtquick/qml/DownloadItemsSheet.qml:63
+#: qtquick/qml/DownloadItemsSheet.qml:79
 #, kde-format
 msgid "Install"
 msgstr "Arsefydlu"

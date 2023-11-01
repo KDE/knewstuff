@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-14 01:47+0000\n"
+"POT-Creation-Date: 2023-11-01 01:39+0000\n"
 "PO-Revision-Date: 2023-10-20 11:19+0300\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -376,12 +376,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "הורדת דברים חדשים"
 
-#: qtquick/qml/DownloadItemsSheet.qml:30
+#: qtquick/qml/DownloadItemsSheet.qml:31
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "בחירת אפשרות ההתקנה שלך"
 
-#: qtquick/qml/DownloadItemsSheet.qml:40
+#: qtquick/qml/DownloadItemsSheet.qml:41
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -393,7 +393,7 @@ msgstr ""
 "ברור לך מה צריך לבחור מהאפשרויות הזמינות, נא ליצור קשר עם מי שיצר את הפריט "
 "הזה ולשאול אם יוכלו להסביר מה הרקע לפי שמות הפריטים."
 
-#: qtquick/qml/DownloadItemsSheet.qml:63
+#: qtquick/qml/DownloadItemsSheet.qml:79
 #, kde-format
 msgid "Install"
 msgstr "התקנה"
