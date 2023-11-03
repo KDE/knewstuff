@@ -241,7 +241,7 @@ KNSCore::Provider::SortMode Engine::sortOrder() const
 
 void Engine::setSortOrder(KNSCore::Provider::SortMode mode)
 {
-    if (d->currentRequest.sortMode == mode) {
+    if (d->currentRequest.sortMode != mode) {
         d->currentRequest.sortMode = mode;
         reloadEntries();
         Q_EMIT sortOrderChanged();
