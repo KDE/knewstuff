@@ -64,7 +64,6 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private SOURCES
     qml/private/EntryScreenshots.qml
     qml/private/ErrorDisplayer.qml
     qml/private/GridTileDelegate.qml
-    qml/private/MessageBoxSheet.qml
     qml/private/Rating.qml
     qml/private/Shadow.qml
 )

@@ -4,13 +4,17 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.12
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.newstuff 1.83 as NewStuff
+import QtQuick
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.newstuff as NewStuff
 
-MessageBoxSheet {
+Kirigami.PromptDialog {
     id: component
+
     title: i18ndc("knewstuff6", "Title for a dialog box which shows error messages", "An Error Occurred");
+    standardButtons: Kirigami.Dialog.NoButton
+
     property bool active: true;
     property QtObject engine;
     property QtObject connection: Connections {
@@ -44,22 +48,41 @@ MessageBoxSheet {
     }
 
     property var currentError: null
-    text: {
-        if (currentError === null) {
-            return "";
-        } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
-            return currentError.message + "\n\n" + i18n("Please try again later.")
-        } else {
-            return currentError.message;
+
+    RowLayout {
+        implicitWidth: Kirigami.Units.gridUnit * 10
+        spacing: Kirigami.Units.largeSpacing
+
+        Kirigami.Icon {
+            Layout.alignment: Qt.AlignVCenter
+            visible: source !== ""
+            source: {
+                if (currentError === null) {
+                    return "";
+                } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
+                    return "accept_time_event";
+                } else {
+                    return "dialog-warning";
+                }
+            }
         }
-    }
-    icon: {
-        if (currentError === null) {
-            return "";
-        } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
-            return "accept_time_event";
-        } else {
-            return "dialog-warning";
+
+        Kirigami.SelectableLabel {
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignVCenter
+            wrapMode: Text.Wrap
+            textFormat: TextEdit.AutoText
+            onLinkActivated: link => Qt.openUrlExternally(link)
+
+            text: {
+                if (currentError === null) {
+                    return "";
+                } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
+                    return currentError.message + "\n\n" + i18n("Please try again later.")
+                } else {
+                    return currentError.message;
+                }
+            }
         }
     }
 }
