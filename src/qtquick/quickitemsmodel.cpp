@@ -78,6 +78,11 @@ public:
                 model->removeEntry(entry);
             }
         }
+
+        if (event == KNSCore::Entry::DetailsLoadedEvent) {
+            model->slotEntryChanged(entry);
+            Q_EMIT q->entryChanged(model->row(entry));
+        }
     }
 };
 

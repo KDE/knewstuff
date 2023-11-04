@@ -66,7 +66,8 @@ KCM.GridViewKCM {
         if (type === NewStuff.ItemsModel.GroupEntry) {
             newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
         } else {
-            newStuffEngine.fetchEntryById(entryId);
+            const entry = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole);
+            newStuffEngine.updateEntryContents(entry);
         }
 
         if (newStuffEngine.isLoading) {
@@ -94,18 +95,6 @@ KCM.GridViewKCM {
                     pageStack.push(detailsPage, {
                         newStuffModel: newStuffModel,
                         index: theIndex,
-                        name: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NameRole),
-                        author: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.AuthorRole),
-                        previews: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PreviewsRole),
-                        shortSummary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.ShortSummaryRole),
-                        summary: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.SummaryRole),
-                        homepage: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.HomepageRole),
-                        donationLink: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DonationLinkRole),
-                        status: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.StatusRole),
-                        commentsCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.NumberOfCommentsRole),
-                        rating: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.RatingRole),
-                        downloadCount: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadCountRole),
-                        downloadLinks: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
                         providerId: _showEntryDetailsThrottle.providerId,
                         entry: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
                     });

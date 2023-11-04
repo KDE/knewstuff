@@ -44,6 +44,29 @@ KCM.SimpleKCM {
     property int entryType
     property var entry
 
+    Component.onCompleted: {
+        updateContents();
+        newStuffModel.engine.updateEntryContents(component.entry);
+    }
+
+    function updateContents() {
+        const modelIndex = newStuffModel.index(index, 0);
+        const modelData = role => newStuffModel.data(modelIndex, role);
+
+        component.author = modelData(NewStuff.ItemsModel.AuthorRole);
+        component.name = modelData(NewStuff.ItemsModel.NameRole);
+        component.previews = modelData(NewStuff.ItemsModel.PreviewsRole);
+        component.shortSummary = modelData(NewStuff.ItemsModel.ShortSummaryRole);
+        component.summary = modelData(NewStuff.ItemsModel.SummaryRole);
+        component.homepage = modelData(NewStuff.ItemsModel.HomepageRole);
+        component.donationLink = modelData(NewStuff.ItemsModel.DonationLinkRole);
+        component.status = modelData(NewStuff.ItemsModel.StatusRole);
+        component.commentsCount = modelData(NewStuff.ItemsModel.NumberOfCommentsRole);
+        component.rating = modelData(NewStuff.ItemsModel.RatingRole);
+        component.downloadCount = modelData(NewStuff.ItemsModel.DownloadCountRole);
+        component.downloadLinks = modelData(NewStuff.ItemsModel.DownloadLinksRole);
+    }
+
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
 
@@ -82,6 +105,8 @@ KCM.SimpleKCM {
                 break;
             }
             component.status = status;
+
+            updateContents();
         }
     }
 

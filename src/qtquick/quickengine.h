@@ -138,6 +138,8 @@ public:
     QObject *searchPresetModel() const;
     Q_SIGNAL void searchPresetModelChanged();
 
+    Q_INVOKABLE void updateEntryContents(const KNSCore::Entry &entry);
+
     bool isValid();
     void reloadEntries();
 

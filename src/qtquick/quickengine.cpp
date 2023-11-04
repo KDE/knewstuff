@@ -277,6 +277,15 @@ bool Engine::isValid()
     return d->isValid;
 }
 
+void Engine::updateEntryContents(const KNSCore::Entry &entry)
+{
+    const auto provider = EngineBase::provider(entry.providerId());
+    if (provider.isNull() || !provider->isInitialized()) {
+        return;
+    }
+    provider->loadEntryDetails(entry);
+}
+
 void Engine::reloadEntries()
 {
     Q_EMIT signalResetView();
