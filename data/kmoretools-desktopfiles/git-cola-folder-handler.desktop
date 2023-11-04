@@ -41,7 +41,6 @@ Name[sv]=Git Cola
 Name[tg]=Git Cola
 Name[tr]=Git Cola
 Name[uk]=Git Cola
-Name[x-test]=xxGit Colaxx
 Name[zh_CN]=Git Cola
 Name[zh_TW]=Git Cola
 TryExec=git-cola

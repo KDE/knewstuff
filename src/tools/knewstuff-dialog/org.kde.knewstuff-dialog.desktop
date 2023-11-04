@@ -29,7 +29,6 @@ Comment[sl]=Vzorčna predstavitev funkcionalnosti prenosa dodatkov aplikacije kn
 Comment[sv]=Uppvisning av funktioner för nerladdning av tillägg
 Comment[tr]=KNewStuff eklenti indirme işlevi için örnek
 Comment[uk]=Демонстрація можливості отримання додатків у KNewStuff
-Comment[x-test]=xxShowcase for KNewStuff add-on downloading functionalityxx
 Comment[zh_CN]=演示 KNewStuff 的附加组件下载功能
 Comment[zh_TW]=KNewStuff 外掛程式下載功能的展示
 Exec=knewstuff-dialog
@@ -62,7 +61,6 @@ Name[sl]=Dialog KNewStuff
 Name[sv]=Nyhetsdialogruta
 Name[tr]=KNewStuff İletişim Kutusu
 Name[uk]=Вікно KNewStuff
-Name[x-test]=xxKNewStuff Dialogxx
 Name[zh_CN]=KNewStuff 对话框
 Name[zh_TW]=KNewStuff 對話框
 # This is more of an internal utility, so hide it from users
