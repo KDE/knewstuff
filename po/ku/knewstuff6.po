@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:39+0000\n"
+"POT-Creation-Date: 2023-11-04 01:37+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -787,13 +787,13 @@ msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
 msgstr "Saz dike"
 
-#: qtquick/qml/private/ErrorDisplayer.qml:13
+#: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
 msgstr ""
 
-#: qtquick/qml/private/ErrorDisplayer.qml:51
+#: qtquick/qml/private/ErrorDisplayer.qml:81
 #, fuzzy, kde-format
 #| msgid "Please put in a name."
 msgid "Please try again later."

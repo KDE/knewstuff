@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:39+0000\n"
+"POT-Creation-Date: 2023-11-04 01:37+0000\n"
 "PO-Revision-Date: 2023-06-11 18:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -772,13 +772,13 @@ msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
 msgstr "நிறுவுகிறது…"
 
-#: qtquick/qml/private/ErrorDisplayer.qml:13
+#: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
 msgstr "சிக்கல் ஏற்பட்டது"
 
-#: qtquick/qml/private/ErrorDisplayer.qml:51
+#: qtquick/qml/private/ErrorDisplayer.qml:81
 #, kde-format
 msgid "Please try again later."
 msgstr "தயவுசெய்து பின்னர் முயற்சிக்கவும்."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:39+0000\n"
+"POT-Creation-Date: 2023-11-04 01:37+0000\n"
 "PO-Revision-Date: 2023-01-14 23:42+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -808,13 +808,13 @@ msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
 msgstr "Quraşdırılma"
 
-#: qtquick/qml/private/ErrorDisplayer.qml:13
+#: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
 msgstr "Xəta baş verdi"
 
-#: qtquick/qml/private/ErrorDisplayer.qml:51
+#: qtquick/qml/private/ErrorDisplayer.qml:81
 #, kde-format
 msgid "Please try again later."
 msgstr "Lütfən sonra yenidən cəhd edin."
