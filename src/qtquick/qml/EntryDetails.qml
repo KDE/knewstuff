@@ -49,6 +49,15 @@ KCM.SimpleKCM {
         newStuffModel.engine.updateEntryContents(component.entry);
     }
 
+    Connections {
+        target: newStuffModel
+        function onEntryChanged(index) {
+            if (index == component.index) {
+                updateContents();
+            }
+        }
+    }
+
     function updateContents() {
         const modelIndex = newStuffModel.index(index, 0);
         const modelData = role => newStuffModel.data(modelIndex, role);
@@ -65,6 +74,8 @@ KCM.SimpleKCM {
         component.rating = modelData(NewStuff.ItemsModel.RatingRole);
         component.downloadCount = modelData(NewStuff.ItemsModel.DownloadCountRole);
         component.downloadLinks = modelData(NewStuff.ItemsModel.DownloadLinksRole);
+
+        component.status = modelData(NewStuff.ItemsModel.StatusRole);
     }
 
     NewStuff.DownloadItemsSheet {
@@ -80,34 +91,6 @@ KCM.SimpleKCM {
     Private.ErrorDisplayer {
         engine: component.newStuffModel.engine
         active: component.isCurrentPage
-    }
-
-    Connections {
-        target: newStuffModel
-
-        function onEntryChanged(index) {
-            const status = newStuffModel.data(newStuffModel.index(index, 0), NewStuff.ItemsModel.StatusRole);
-            switch (status) {
-            case NewStuff.ItemsModel.DownloadableStatus:
-            case NewStuff.ItemsModel.InstalledStatus:
-            case NewStuff.ItemsModel.UpdateableStatus:
-            case NewStuff.ItemsModel.DeletedStatus:
-                statusCard.message = "";
-                break;
-            case NewStuff.ItemsModel.InstallingStatus:
-                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait…", component.name, entryAuthor.name);
-                break;
-            case NewStuff.ItemsModel.UpdatingStatus:
-                statusCard.message = i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait…", component.name, entryAuthor.name);
-                break;
-            default:
-                statusCard.message = i18ndc("knewstuff6", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
-                break;
-            }
-            component.status = status;
-
-            updateContents();
-        }
     }
 
     NewStuff.Author {
@@ -157,7 +140,21 @@ KCM.SimpleKCM {
         Kirigami.AbstractCard {
             id: statusCard
 
-            property string message
+            readonly property string message: {
+                switch (component.status) {
+                case NewStuff.ItemsModel.DownloadableStatus:
+                case NewStuff.ItemsModel.InstalledStatus:
+                case NewStuff.ItemsModel.UpdateableStatus:
+                case NewStuff.ItemsModel.DeletedStatus:
+                    return "";
+                case NewStuff.ItemsModel.InstallingStatus:
+                    return i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait…", component.name, entryAuthor.name);
+                case NewStuff.ItemsModel.UpdatingStatus:
+                    return i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait…", component.name, entryAuthor.name);
+                default:
+                    return i18ndc("knewstuff6", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
+                }
+            }
 
             visible: opacity > 0
             opacity: message.length > 0 ? 1 : 0
