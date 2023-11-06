@@ -19,10 +19,10 @@ KNSRCModel::KNSRCModel(QObject *parent)
     for (const auto &file : files) {
         KConfig conf(file);
         KConfigGroup group;
-        if (conf.hasGroup("KNewStuff3")) {
-            group = conf.group("KNewStuff3");
-        } else if (conf.hasGroup("KNewStuff")) {
-            group = conf.group("KNewStuff");
+        if (conf.hasGroup(QStringLiteral("KNewStuff3"))) {
+            group = conf.group(QStringLiteral("KNewStuff3"));
+        } else if (conf.hasGroup(QStringLiteral("KNewStuff"))) {
+            group = conf.group(QStringLiteral("KNewStuff"));
         } else {
             qWarning() << file << "doesn't contain a KNewStuff (or KNewStuff3) section.";
             continue;
