@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:37+0000\n"
+"POT-Creation-Date: 2023-11-07 02:42+0000\n"
 "PO-Revision-Date: 2023-06-05 08:20+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -409,14 +409,58 @@ msgstr ""
 msgid "Install"
 msgstr "Installa"
 
-#: qtquick/qml/EntryDetails.qml:52
+#: qtquick/qml/EntryDetails.qml:86
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "Installazione %1 da %2"
 
-#: qtquick/qml/EntryDetails.qml:75
+#: qtquick/qml/EntryDetails.qml:103
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%1 da %2"
+
+#: qtquick/qml/EntryDetails.qml:107
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Installa"
+
+#: qtquick/qml/EntryDetails.qml:107
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install…"
+msgstr "Installa…"
+
+#: qtquick/qml/EntryDetails.qml:122
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Aggiorna"
+
+#: qtquick/qml/EntryDetails.qml:129 qtquick/qml/Page.qml:128
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Disinstalla"
+
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -424,14 +468,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Attualmente in lavorazione sull'elemento %1 da %2. Attendi..."
 
-#: qtquick/qml/EntryDetails.qml:78
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Aggiornamento dell'elemento %1 da %2 in corso. Attendi…"
 
-#: qtquick/qml/EntryDetails.qml:81
+#: qtquick/qml/EntryDetails.qml:155
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -445,56 +489,12 @@ msgstr ""
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff"
 "\">Segnalalo alla comunità di KDE in una segnalazione di bug</a>."
 
-#: qtquick/qml/EntryDetails.qml:95
-#, kde-format
-msgctxt ""
-"Combined title for the entry details page made of the name of the entry, and "
-"the author's name"
-msgid "%1 by %2"
-msgstr "%1 da %2"
-
-#: qtquick/qml/EntryDetails.qml:99
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, kde-format
-msgctxt ""
-"Request installation of this item, available when there is exactly one "
-"downloadable item"
-msgid "Install"
-msgstr "Installa"
-
-#: qtquick/qml/EntryDetails.qml:99
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, kde-format
-msgctxt ""
-"Show installation options, where there is more than one downloadable item"
-msgid "Install…"
-msgstr "Installa…"
-
-#: qtquick/qml/EntryDetails.qml:114
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
-#, kde-format
-msgctxt "Request updating of this item"
-msgid "Update"
-msgstr "Aggiorna"
-
-#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
-#, kde-format
-msgctxt "Request uninstallation of this item"
-msgid "Uninstall"
-msgstr "Disinstalla"
-
-#: qtquick/qml/EntryDetails.qml:186
+#: qtquick/qml/EntryDetails.qml:208
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Commenti e revisioni:"
 
-#: qtquick/qml/EntryDetails.qml:188
+#: qtquick/qml/EntryDetails.qml:210
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -502,17 +502,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 revisioni e commenti"
 
-#: qtquick/qml/EntryDetails.qml:194
+#: qtquick/qml/EntryDetails.qml:216
 #, kde-format
 msgid "Rating:"
 msgstr "Valutazione:"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:221
 #, kde-format
 msgid "Homepage:"
 msgstr "Pagina principale:"
 
-#: qtquick/qml/EntryDetails.qml:200
+#: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -521,12 +521,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Apri la pagina principale per %1"
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:228
 #, kde-format
 msgid "How To Donate:"
 msgstr "Come donare:"
 
-#: qtquick/qml/EntryDetails.qml:207
+#: qtquick/qml/EntryDetails.qml:229
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -534,7 +534,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Scopri come donare a questo progetto"
 
-#: qtquick/qml/Page.qml:114
+#: qtquick/qml/Page.qml:103
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -546,7 +546,7 @@ msgstr ""
 "Impossibile trovare la voce che hai tentato di visualizzare, identificata "
 "dall'ID univoco %1."
 
-#: qtquick/qml/Page.qml:166
+#: qtquick/qml/Page.qml:155
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -556,65 +556,65 @@ msgstr ""
 "stato esaminato dal tuo distributore per un verifica di funzionalità e "
 "stabilità."
 
-#: qtquick/qml/Page.qml:188
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgid "Tiles"
 msgstr "Piastrelle"
 
-#: qtquick/qml/Page.qml:190
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgid "Icons"
 msgstr "Icone"
 
-#: qtquick/qml/Page.qml:192
+#: qtquick/qml/Page.qml:181
 #, kde-format
 msgid "Preview"
 msgstr "Anteprima"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:197
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Modalità di visualizzazione con piastrelle dettagliate"
 
-#: qtquick/qml/Page.qml:217
+#: qtquick/qml/Page.qml:206
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Modalità di visualizzazione con sole icone"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Modalità di visualizzazione con anteprima grande"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Everything"
 msgstr "Tutto"
 
-#: qtquick/qml/Page.qml:239
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Installed"
 msgstr "Installato"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgid "Updateable"
 msgstr "Aggiornabili"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:250
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Mostra tutte le voci"
 
-#: qtquick/qml/Page.qml:270
+#: qtquick/qml/Page.qml:259
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Mostra solo le voci degli installati"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -622,27 +622,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Mostra solo le voci degli aggiornabili"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Recent"
 msgstr "Recenti"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Alphabetical"
 msgstr "Ordine alfabetico"
 
-#: qtquick/qml/Page.qml:294
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Rating"
 msgstr "Valutazione"
 
-#: qtquick/qml/Page.qml:296
+#: qtquick/qml/Page.qml:285
 #, kde-format
 msgid "Downloads"
 msgstr "Scaricamenti"
 
-#: qtquick/qml/Page.qml:316
+#: qtquick/qml/Page.qml:305
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -650,7 +650,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Mostra prima i più recenti"
 
-#: qtquick/qml/Page.qml:325
+#: qtquick/qml/Page.qml:314
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -658,45 +658,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordine alfabetico dei nomi"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:323
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Mostra prima i più valutati"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Mostra prima i più scaricati"
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:343
 #, kde-format
 msgid "Upload…"
 msgstr "Carica…"
 
-#: qtquick/qml/Page.qml:355
+#: qtquick/qml/Page.qml:344
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Scopri come aggiungere le tue novità nuove a questo elenco"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:354
 #, kde-format
 msgid "Go to…"
 msgstr "Vai a..."
 
-#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
+#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
 #, kde-format
 msgid "Search…"
 msgstr "Cerca…"
 
-#: qtquick/qml/Page.qml:437
+#: qtquick/qml/Page.qml:426
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: qtquick/qml/Page.qml:457
+#: qtquick/qml/Page.qml:446
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Contribuisci..."

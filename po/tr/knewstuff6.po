@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:37+0000\n"
+"POT-Creation-Date: 2023-11-07 02:42+0000\n"
 "PO-Revision-Date: 2023-06-04 12:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -407,14 +407,58 @@ msgstr ""
 msgid "Install"
 msgstr "Kur"
 
-#: qtquick/qml/EntryDetails.qml:52
+#: qtquick/qml/EntryDetails.qml:86
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "%1, %2 konumundan kuruluyor"
 
-#: qtquick/qml/EntryDetails.qml:75
+#: qtquick/qml/EntryDetails.qml:103
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr "%2 tarafından yapılan %1"
+
+#: qtquick/qml/EntryDetails.qml:107
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "Kur"
+
+#: qtquick/qml/EntryDetails.qml:107
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install…"
+msgstr "Kur…"
+
+#: qtquick/qml/EntryDetails.qml:122
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr "Güncelle"
+
+#: qtquick/qml/EntryDetails.qml:129 qtquick/qml/Page.qml:128
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr "Kaldır"
+
+#: qtquick/qml/EntryDetails.qml:151
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -422,14 +466,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "%2 tarafından yapılan %1 ögesi üzerinde çalışılıyor. Lütfen bekleyin…"
 
-#: qtquick/qml/EntryDetails.qml:78
+#: qtquick/qml/EntryDetails.qml:153
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "%2 tarafından yapılan %1 ögesi güncelleniyor. Lütfen bekleyin…"
 
-#: qtquick/qml/EntryDetails.qml:81
+#: qtquick/qml/EntryDetails.qml:155
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -443,56 +487,12 @@ msgstr ""
 "kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Bunu lütfen KDE "
 "Topluluğu'na bir hata raporu ile birlikte bildirin</a>."
 
-#: qtquick/qml/EntryDetails.qml:95
-#, kde-format
-msgctxt ""
-"Combined title for the entry details page made of the name of the entry, and "
-"the author's name"
-msgid "%1 by %2"
-msgstr "%2 tarafından yapılan %1"
-
-#: qtquick/qml/EntryDetails.qml:99
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, kde-format
-msgctxt ""
-"Request installation of this item, available when there is exactly one "
-"downloadable item"
-msgid "Install"
-msgstr "Kur"
-
-#: qtquick/qml/EntryDetails.qml:99
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, kde-format
-msgctxt ""
-"Show installation options, where there is more than one downloadable item"
-msgid "Install…"
-msgstr "Kur…"
-
-#: qtquick/qml/EntryDetails.qml:114
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
-#, kde-format
-msgctxt "Request updating of this item"
-msgid "Update"
-msgstr "Güncelle"
-
-#: qtquick/qml/EntryDetails.qml:121 qtquick/qml/Page.qml:139
-#, kde-format
-msgctxt "Request uninstallation of this item"
-msgid "Uninstall"
-msgstr "Kaldır"
-
-#: qtquick/qml/EntryDetails.qml:186
+#: qtquick/qml/EntryDetails.qml:208
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Yorumlar ve Gözden Geçirmeler"
 
-#: qtquick/qml/EntryDetails.qml:188
+#: qtquick/qml/EntryDetails.qml:210
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -500,17 +500,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 Gözden Geçirmeleri ve Yorumları"
 
-#: qtquick/qml/EntryDetails.qml:194
+#: qtquick/qml/EntryDetails.qml:216
 #, kde-format
 msgid "Rating:"
 msgstr "Derecelendirme:"
 
-#: qtquick/qml/EntryDetails.qml:199
+#: qtquick/qml/EntryDetails.qml:221
 #, kde-format
 msgid "Homepage:"
 msgstr "Ana sayfa:"
 
-#: qtquick/qml/EntryDetails.qml:200
+#: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -519,12 +519,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "%1 ana sayfasını açın"
 
-#: qtquick/qml/EntryDetails.qml:206
+#: qtquick/qml/EntryDetails.qml:228
 #, kde-format
 msgid "How To Donate:"
 msgstr "Bağış Yapma Yolları"
 
-#: qtquick/qml/EntryDetails.qml:207
+#: qtquick/qml/EntryDetails.qml:229
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -532,7 +532,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Bu projeye nasıl bağış yapabileceğinizi öğrenin"
 
-#: qtquick/qml/Page.qml:114
+#: qtquick/qml/Page.qml:103
 #, kde-format
 msgctxt ""
 "A message which is shown when the user attempts to display a specific entry "
@@ -544,7 +544,7 @@ msgstr ""
 "Göstermeye çalıştığınız ve benzersiz %1 kimliği ile tanımlanan girdi "
 "bulunamadı."
 
-#: qtquick/qml/Page.qml:166
+#: qtquick/qml/Page.qml:155
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -553,65 +553,65 @@ msgstr ""
 "Kullanılabilir içerik, sizin gibi kullanıcılar tarafından yüklenir ve "
 "işlevsellik veya kararlılık açısından gözden geçirilmemiştir."
 
-#: qtquick/qml/Page.qml:188
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgid "Tiles"
 msgstr "Karolar"
 
-#: qtquick/qml/Page.qml:190
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgid "Icons"
 msgstr "Simgeler"
 
-#: qtquick/qml/Page.qml:192
+#: qtquick/qml/Page.qml:181
 #, kde-format
 msgid "Preview"
 msgstr "Önizleme"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:197
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Ayrıntılı Karo Görünüm Kipi"
 
-#: qtquick/qml/Page.qml:217
+#: qtquick/qml/Page.qml:206
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Yalnızca Simgeler Görünümü Kipi"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Büyük Önizleme Görünümü Kipi"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Everything"
 msgstr "Her Şey"
 
-#: qtquick/qml/Page.qml:239
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Installed"
 msgstr "Kurulu"
 
-#: qtquick/qml/Page.qml:241
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgid "Updateable"
 msgstr "Güncellenebilir"
 
-#: qtquick/qml/Page.qml:261
+#: qtquick/qml/Page.qml:250
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Tüm Girdileri Göster"
 
-#: qtquick/qml/Page.qml:270
+#: qtquick/qml/Page.qml:259
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Yalnızca Kurulu Girdileri Göster"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -619,27 +619,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Yalnızca Güncellenebilir Girdileri Göster"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Recent"
 msgstr "Son Kullanılan"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Alphabetical"
 msgstr "Abecesel"
 
-#: qtquick/qml/Page.qml:294
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Rating"
 msgstr "Derecelendirme"
 
-#: qtquick/qml/Page.qml:296
+#: qtquick/qml/Page.qml:285
 #, kde-format
 msgid "Downloads"
 msgstr "İndirmeler"
 
-#: qtquick/qml/Page.qml:316
+#: qtquick/qml/Page.qml:305
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -647,7 +647,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Önce En Son Kullanılan"
 
-#: qtquick/qml/Page.qml:325
+#: qtquick/qml/Page.qml:314
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -655,45 +655,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ada Göre Abecesel Sırala"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:323
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Önce En Yüksek Dereceliler"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:332
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Önce En Çok İndirilen"
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:343
 #, kde-format
 msgid "Upload…"
 msgstr "Karşıya Yükle…"
 
-#: qtquick/qml/Page.qml:355
+#: qtquick/qml/Page.qml:344
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Bu listeye kendi yeni şeylerinizi nasıl ekleyeceğinizi öğrenin"
 
-#: qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:354
 #, kde-format
 msgid "Go to…"
 msgstr "Git…"
 
-#: qtquick/qml/Page.qml:372 qtquick/qml/Page.qml:381
+#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
 #, kde-format
 msgid "Search…"
 msgstr "Ara…"
 
-#: qtquick/qml/Page.qml:437
+#: qtquick/qml/Page.qml:426
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:457
+#: qtquick/qml/Page.qml:446
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Kendinizinkini katkıda bulunun..."
