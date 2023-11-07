@@ -43,6 +43,7 @@ Name[sv]=Git Cola (visa historik)
 Name[tg]=Git Cola (Дидани таърих)
 Name[tr]=Git Cola (Geçmişi Göster)
 Name[uk]=Git Cola (Перегляд журналу)
+Name[x-test]=xxGit Cola (View History)xx
 Name[zh_CN]=Git Cola (查看历史)
 Name[zh_TW]=Git Cola (檢視歷史紀錄)
 TryExec=git-cola
