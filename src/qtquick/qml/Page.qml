@@ -172,6 +172,14 @@ KCM.GridViewKCM {
 
     actions: [
         Kirigami.Action {
+            visible: newStuffEngine.needsLazyLoadSpinner
+            displayComponent: QQC2.BusyIndicator {
+                implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                implicitHeight: Kirigami.Units.iconSizes.smallMedium
+            }
+        },
+
+        Kirigami.Action {
             text: {
                 if (root.viewMode === Page.ViewMode.Tiles) {
                     return i18nd("knewstuff6", "Tiles");
@@ -545,8 +553,8 @@ KCM.GridViewKCM {
         id: loadingOverlay
 
         anchors.fill: parent
-
-        opacity: newStuffEngine.isLoading ? 1 : 0
+        
+        opacity: newStuffEngine.isLoading && !newStuffEngine.needsLazyLoadSpinner ? 1 : 0
         Behavior on opacity {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration

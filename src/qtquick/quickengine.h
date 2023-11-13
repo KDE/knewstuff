@@ -28,6 +28,7 @@ class Engine : public KNSCore::EngineBase
     Q_OBJECT
     Q_PROPERTY(QString configFile READ configFile WRITE setConfigFile NOTIFY configFileChanged)
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY busyStateChanged)
+    Q_PROPERTY(bool needsLazyLoadSpinner READ needsLazyLoadSpinner NOTIFY busyStateChanged)
     Q_PROPERTY(bool hasAdoptionCommand READ hasAdoptionCommand NOTIFY configFileChanged)
     Q_PROPERTY(QString name READ name NOTIFY configFileChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY configFileChanged)
@@ -223,6 +224,7 @@ Q_SIGNALS:
 private:
     bool init(const QString &configfile) override;
     void updateStatus() override;
+    bool needsLazyLoadSpinner();
     Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
     Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
     void registerTransaction(KNSCore::Transaction *transactions);

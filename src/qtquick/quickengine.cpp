@@ -156,6 +156,11 @@ void Engine::updateStatus()
     setBusyState(state);
 }
 
+bool Engine::needsLazyLoadSpinner()
+{
+    return d->numDataJobs > 0 || d->numPictureJobs;
+}
+
 Engine::~Engine() = default;
 
 void Engine::setBusyState(BusyState state)
