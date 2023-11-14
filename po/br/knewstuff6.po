@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-14 01:37+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -515,72 +515,72 @@ msgid ""
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:185
 #, fuzzy, kde-format
 #| msgid "&Tile"
 msgid "Tiles"
 msgstr "&Adrenkañ"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid "Icons"
 msgstr "Arlunioù"
 
-#: qtquick/qml/Page.qml:181
+#: qtquick/qml/Page.qml:189
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgid "Preview"
 msgstr "Rakgwel"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:205
 #, fuzzy, kde-format
 #| msgid "Detailed View"
 msgid "Detailed Tiles View Mode"
 msgstr "Gwell munut"
 
-#: qtquick/qml/Page.qml:206
+#: qtquick/qml/Page.qml:214
 #, fuzzy, kde-format
 #| msgid "Icon View"
 msgid "Icons Only View Mode"
 msgstr "Gwel Arlun"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:223
 #, fuzzy, kde-format
 #| msgid "Detailed View"
 msgid "Large Preview View Mode"
 msgstr "Gwell munut"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:236
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installed"
 msgstr "Staliañ"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:238
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Bremañaat"
 
-#: qtquick/qml/Page.qml:250
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Diskouez pep tra dibaboù"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:267
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Diskouez pep tra dibaboù"
 
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:276
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -588,31 +588,31 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Diskouez pep tra dibaboù"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:287
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Percent"
 msgid "Recent"
 msgstr "Dregantad"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:291
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgid "Rating"
 msgstr "Feur"
 
-#: qtquick/qml/Page.qml:285
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Enkargañ"
 
-#: qtquick/qml/Page.qml:305
+#: qtquick/qml/Page.qml:313
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -620,7 +620,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "&Diskennit"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:322
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -628,49 +628,49 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:331
 #, fuzzy, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "&Diskennit"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:340
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "&Diskennit"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:351
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "&Ezkargañ"
 
-#: qtquick/qml/Page.qml:344
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:362
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mont da ..."
 
-#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
+#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Klask :"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:434
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Rummoù"
 
-#: qtquick/qml/Page.qml:446
+#: qtquick/qml/Page.qml:454
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
@@ -886,7 +886,7 @@ msgstr "Emaon o kargañ an arloadig"
 msgid "Installing"
 msgstr "Staliañ"
 
-#: qtquick/quickengine.cpp:198
+#: qtquick/quickengine.cpp:203
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

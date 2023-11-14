@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-14 01:37+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -500,61 +500,61 @@ msgid ""
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:185
 #, fuzzy, kde-format
 msgid "Tiles"
 msgstr "&Ifayile"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, fuzzy, kde-format
 msgid "Icons"
 msgstr "Iintshukumo"
 
-#: qtquick/qml/Page.qml:181
+#: qtquick/qml/Page.qml:189
 #, fuzzy, kde-format
 msgid "Preview"
 msgstr "Imboniselo yasekuqaleni"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:205
 #, fuzzy, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "&Iinkcukacha"
 
-#: qtquick/qml/Page.qml:206
+#: qtquick/qml/Page.qml:214
 #, fuzzy, kde-format
 #| msgid "Icon Size"
 msgid "Icons Only View Mode"
 msgstr "Ubungakanani Bphawu lomfanekiso"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:223
 #, fuzzy, kde-format
 msgid "Large Preview View Mode"
 msgstr "&Iinkcukacha"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:236
 #, fuzzy, kde-format
 msgid "Installed"
 msgstr "Imizekelo"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:238
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Gqiba"
 
-#: qtquick/qml/Page.qml:250
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Bonisa zonke iinketho"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:267
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt ""
@@ -562,7 +562,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "Bonisa zonke iinketho"
 
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:276
 #, fuzzy, kde-format
 #| msgid "Show all options"
 msgctxt ""
@@ -571,29 +571,29 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Bonisa zonke iinketho"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:287
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Percent"
 msgid "Recent"
 msgstr "Ipesenti"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:291
 #, fuzzy, kde-format
 msgid "Rating"
 msgstr "Iyenza"
 
-#: qtquick/qml/Page.qml:285
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 msgid "Downloads"
 msgstr "Yehlela Ngezantsi"
 
-#: qtquick/qml/Page.qml:305
+#: qtquick/qml/Page.qml:313
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -601,7 +601,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Yehlela Ngezantsi"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:322
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -609,47 +609,47 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:331
 #, fuzzy, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Yehlela Ngezantsi"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:340
 #, fuzzy, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Yehlela Ngezantsi"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:351
 #, fuzzy, kde-format
 msgid "Upload…"
 msgstr "Ulayisho %1"
 
-#: qtquick/qml/Page.qml:344
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:362
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Yiya Ku..."
 
-#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
+#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
 #, fuzzy, kde-format
 msgid "Search…"
 msgstr "(phendla)"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:434
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Iintlobo"
 
-#: qtquick/qml/Page.qml:446
+#: qtquick/qml/Page.qml:454
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
@@ -854,7 +854,7 @@ msgstr "llayisha i Applet"
 msgid "Installing"
 msgstr "Imizekelo"
 
-#: qtquick/quickengine.cpp:198
+#: qtquick/quickengine.cpp:203
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

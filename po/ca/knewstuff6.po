@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-14 01:37+0000\n"
 "PO-Revision-Date: 2023-09-20 20:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -551,65 +551,65 @@ msgstr ""
 "El contingut disponible aquí ha estat carregat per usuaris com vosaltres i "
 "no ha estat revisat pel vostre distribuïdor de funcionalitat o estabilitat."
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:185
 #, kde-format
 msgid "Tiles"
 msgstr "Mosaics"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid "Icons"
 msgstr "Icones"
 
-#: qtquick/qml/Page.qml:181
+#: qtquick/qml/Page.qml:189
 #, kde-format
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:205
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Mode de vista de mosaic en detall"
 
-#: qtquick/qml/Page.qml:206
+#: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Mode de vista només icones"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Mode de vista prèvia gran"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgid "Everything"
 msgstr "Tot"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:236
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:238
 #, kde-format
 msgid "Updateable"
 msgstr "Actualitzable"
 
-#: qtquick/qml/Page.qml:250
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Mostra totes les entrades"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:267
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Mostra només les entrades instal·lades"
 
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -617,27 +617,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Mostra només les entrades actualitzables"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:287
 #, kde-format
 msgid "Recent"
 msgstr "Recents"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabèticament"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:291
 #, kde-format
 msgid "Rating"
 msgstr "Puntuació"
 
-#: qtquick/qml/Page.qml:285
+#: qtquick/qml/Page.qml:293
 #, kde-format
 msgid "Downloads"
 msgstr "Baixades"
 
-#: qtquick/qml/Page.qml:305
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -645,7 +645,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Primer mostra la més recent"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:322
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -653,47 +653,47 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordena alfabèticament per nom"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:331
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Primer mostra la que té millor puntuació"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Primer mostra la més baixada"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:351
 #, kde-format
 msgid "Upload…"
 msgstr "Puja…"
 
-#: qtquick/qml/Page.qml:344
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 "Apreneu com afegir les vostres pròpies coses noves i calentes a aquesta "
 "llista"
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:362
 #, kde-format
 msgid "Go to…"
 msgstr "Ves a…"
 
-#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
+#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
 #, kde-format
 msgid "Search…"
 msgstr "Cerca…"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:434
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: qtquick/qml/Page.qml:446
+#: qtquick/qml/Page.qml:454
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Col·laboreu-hi amb…"
@@ -903,7 +903,7 @@ msgstr "S'estan carregant les dades"
 msgid "Installing"
 msgstr "S'està instal·lant"
 
-#: qtquick/quickengine.cpp:198
+#: qtquick/quickengine.cpp:203
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

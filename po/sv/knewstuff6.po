@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-14 01:37+0000\n"
 "PO-Revision-Date: 2022-09-24 16:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -562,65 +562,65 @@ msgstr ""
 "Innehållet som är tillgängligt här har laddats upp av användare som du, och "
 "har inte granskats av distributören avseende funktion eller stabilitet."
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:185
 #, kde-format
 msgid "Tiles"
 msgstr "Rutor"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid "Icons"
 msgstr "Ikoner"
 
-#: qtquick/qml/Page.qml:181
+#: qtquick/qml/Page.qml:189
 #, kde-format
 msgid "Preview"
 msgstr "Förhandsgranskning"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:205
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Detaljerat visningsläge med rutor"
 
-#: qtquick/qml/Page.qml:206
+#: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Visningsläge enbart med ikoner"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Stort förhandsgranskningläge"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgid "Everything"
 msgstr "Allting"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:236
 #, kde-format
 msgid "Installed"
 msgstr "Installerad"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:238
 #, kde-format
 msgid "Updateable"
 msgstr "Uppdateringsbara"
 
-#: qtquick/qml/Page.qml:250
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Visa alla poster"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:267
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Visa bara installerade poster"
 
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -628,27 +628,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Visa bara uppdateringsbara poster"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:287
 #, kde-format
 msgid "Recent"
 msgstr "Senaste"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetiskt"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:291
 #, kde-format
 msgid "Rating"
 msgstr "Betyg"
 
-#: qtquick/qml/Page.qml:285
+#: qtquick/qml/Page.qml:293
 #, kde-format
 msgid "Downloads"
 msgstr "Nerladdningar"
 
-#: qtquick/qml/Page.qml:305
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -656,7 +656,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Visa senaste först"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:322
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -664,48 +664,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sortera alfabetiskt enligt namn"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:331
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Visa högst betyg först"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Visa flest nerladdningar först"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:351
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Ladda upp..."
 
-#: qtquick/qml/Page.qml:344
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ta reda på hur du kan lägga till dina egna heta nyheter i listan"
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:362
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Gå till..."
 
-#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
+#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Sök:"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:434
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:446
+#: qtquick/qml/Page.qml:454
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Bidra din egen…"
@@ -925,7 +925,7 @@ msgstr "Laddar data"
 msgid "Installing"
 msgstr "Installerar"
 
-#: qtquick/quickengine.cpp:198
+#: qtquick/quickengine.cpp:203
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

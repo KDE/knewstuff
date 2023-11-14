@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-14 01:37+0000\n"
 "PO-Revision-Date: 2023-10-20 11:19+0300\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -542,65 +542,65 @@ msgstr ""
 "התוכן שזמין כאן הועלה על ידי משתמשים כמוך ולא עבר סקירה על ידי עורכי ההפצה "
 "שלך לבחינת היכולות או היציבות."
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:185
 #, kde-format
 msgid "Tiles"
 msgstr "אריחים"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgid "Icons"
 msgstr "סמלים"
 
-#: qtquick/qml/Page.qml:181
+#: qtquick/qml/Page.qml:189
 #, kde-format
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:205
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "מצב תצוגת אריחים מפורטים"
 
-#: qtquick/qml/Page.qml:206
+#: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "מצב תצוגת סמלים בלבד"
 
-#: qtquick/qml/Page.qml:215
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "מצב תצוגה מקדימה גדולה"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgid "Everything"
 msgstr "הכול"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:236
 #, kde-format
 msgid "Installed"
 msgstr "הותקן"
 
-#: qtquick/qml/Page.qml:230
+#: qtquick/qml/Page.qml:238
 #, kde-format
 msgid "Updateable"
 msgstr "זמין לעדכון"
 
-#: qtquick/qml/Page.qml:250
+#: qtquick/qml/Page.qml:258
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "הצגת כל הרשומות"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:267
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "להציג רשומות מותקנות בלבד"
 
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -608,27 +608,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "להציג רשומות שניתן לעדכן בלבד"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:287
 #, kde-format
 msgid "Recent"
 msgstr "אחרונים"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Alphabetical"
 msgstr "לפי אלפבית"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:291
 #, kde-format
 msgid "Rating"
 msgstr "דירוג"
 
-#: qtquick/qml/Page.qml:285
+#: qtquick/qml/Page.qml:293
 #, kde-format
 msgid "Downloads"
 msgstr "הורדות"
 
-#: qtquick/qml/Page.qml:305
+#: qtquick/qml/Page.qml:313
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -636,7 +636,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "הצגת העדכניים ביותר בהתחלה"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:322
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -644,45 +644,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "מיון אלפביתי לפי שם"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:331
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "הצגת המדורגים ביותר בהתחלה"
 
-#: qtquick/qml/Page.qml:332
+#: qtquick/qml/Page.qml:340
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "הצגת אלו שהורדו הכי הרבה בהתחלה"
 
-#: qtquick/qml/Page.qml:343
+#: qtquick/qml/Page.qml:351
 #, kde-format
 msgid "Upload…"
 msgstr "העלאה…"
 
-#: qtquick/qml/Page.qml:344
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "הסבר על הוספת הדברים החמים החדשים שלך לרשימה הזאת"
 
-#: qtquick/qml/Page.qml:354
+#: qtquick/qml/Page.qml:362
 #, kde-format
 msgid "Go to…"
 msgstr "מעבר אל…"
 
-#: qtquick/qml/Page.qml:361 qtquick/qml/Page.qml:370
+#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
 #, kde-format
 msgid "Search…"
 msgstr "חיפוש…"
 
-#: qtquick/qml/Page.qml:426
+#: qtquick/qml/Page.qml:434
 #, kde-format
 msgid "Category:"
 msgstr "קטגוריה:"
 
-#: qtquick/qml/Page.qml:446
+#: qtquick/qml/Page.qml:454
 #, kde-format
 msgid "Contribute your own…"
 msgstr "תרומת דברים משלך…"
@@ -888,7 +888,7 @@ msgstr "מידע נטען"
 msgid "Installing"
 msgstr "מתבצעת התקנה"
 
-#: qtquick/quickengine.cpp:198
+#: qtquick/quickengine.cpp:203
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
