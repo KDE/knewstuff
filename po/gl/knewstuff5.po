@@ -1,7 +1,6 @@
 # translation of kdelibs4.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2008, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
@@ -10,13 +9,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2019-11-26 23:31+0100\n"
+"PO-Revision-Date: 2023-11-17 18:44+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -69,7 +69,7 @@ msgstr "Agora é o seu fan."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "O servizo está en mantemento en principio ata dentro de %1."
 
 #: attica/atticaprovider.cpp:585
 #, kde-format
@@ -116,6 +116,8 @@ msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"Produciuse un erro durante o proceso de instalación:\n"
+"%1"
 
 #: core/engine.cpp:203
 #, kde-format
@@ -143,6 +145,9 @@ msgid ""
 "Could not initialise the installation handler for %1\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"Non foi posíbel preparar o xestor de instalación de %1:\n"
+"Trátase dun erro crítico e defería informal del ao equipo desenvolvedor da "
+"aplicación."
 
 #: core/engine.cpp:359
 #, kde-format
@@ -180,11 +185,14 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"Non foi posíbel realizar a instalación da entrada %1 porque non ten "
+"definidos elementos para descargar. Contacte con quen o fixo para que o "
+"corrixan. "
 
 #: core/engine.cpp:872
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "Escoller o elemento de actualización"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -193,6 +201,9 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"Escolla na seguinte lista o elemento co que aplicar a actualización. Non foi "
+"posíbel identificar o elemento para seleccionar a partir do elemento "
+"orixinal, que se chamaba %1."
 
 #: core/engine.cpp:893
 #, kde-format
@@ -200,6 +211,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"Non foi posíbel identificar unha ligazón axeitada para actualizar %1, e non "
+"é posíbel realizar a actualización."
 
 #: core/engine.cpp:972
 #, kde-format
@@ -220,12 +233,13 @@ msgstr[0] "Estase cargar unha vista previa"
 msgstr[1] "Estanse cargar %1 vistas previas"
 
 #: core/engine.cpp:1225
-#, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
+#, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
 "%2"
-msgstr "Produciuse un erro ao cargar o ficheiro «%1»"
+msgstr ""
+"Non foi posíbel adoptar «%1».\n"
+"%2"
 
 #: core/installation.cpp:211
 #, kde-format
@@ -248,6 +262,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Non é posíbel instalar «%1» porque apunta a unha páxina web. Prema <a "
+"href='%2'>aquí</a> para rematar a instalación."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -257,15 +273,12 @@ msgstr "Non foi posíbel instalar «%1»: non se atopou o ficheiro."
 #: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
+msgstr "A instalación de %1 non puido crear o novo cartafol esperado %2"
 
 #: core/installation.cpp:516 core/installation.cpp:841
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A passive notification shown when installation of an item is initiated"
-#| msgid "Installing %1 from %2"
+#, kde-format
 msgid "Installation of %1 failed: %2"
-msgstr "Instalando %1 de %2"
+msgstr "A instalación de %1 fallou: %2"
 
 #: core/installation.cpp:525
 #, kde-format
@@ -274,6 +287,9 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
+"A instalación de %1 fallou porque o sistema non acepta o tipo de servizo %2 "
+"(esqueceu instalar o complemento de compatibilidade con KPackage para este "
+"tipo de paquete?)."
 
 #: core/installation.cpp:535
 #, kde-format
@@ -281,6 +297,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"A instalación de %1 fallou porque o paquete descargado non contén a "
+"estrutura correcta de KPackage."
 
 #: core/installation.cpp:541
 #, kde-format
@@ -288,6 +306,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr ""
+"A instalación de %1 fallou porque o paquete descargado non lista un tipo de "
+"servizo."
 
 #: core/installation.cpp:548
 #, kde-format
@@ -295,17 +315,20 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"A instalación de %1 fallou porque o paquete descargado non contén metadatos "
+"útiles, o que significa que non é un paquete válido para KPackage."
 
 #: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "Non é posíbel determinar o tipo de arquivo do ficheiro descargado %1"
 
 #: core/installation.cpp:594
-#, fuzzy, kde-format
-#| msgid "Unable to open temporary file. Error was: %1."
+#, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "Non foi posíbel abrir o ficheiro temporal. O erro foi: %1."
+msgstr ""
+"Non foi posíbel abrir o ficheiro de arquivo %1. O erro do que se informou "
+"foi: %2"
 
 #: core/installation.cpp:678
 #, kde-format
@@ -326,7 +349,7 @@ msgstr "Substituír o ficheiro"
 #: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "Non -e posíbel mover o ficheiro %1 ao destino desexado %2"
 
 #: core/installation.cpp:723
 #, kde-format
@@ -337,6 +360,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"A instalación fallou ao intentar executar a orde:\n"
+"%1\n"
+"\n"
+"A saída devolta foi:\n"
+"%2"
 
 #: core/installation.cpp:733
 #, kde-format
@@ -347,6 +375,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"A instalación fallou co código %1 ao intentar executar a orde:\n"
+"%2\n"
+"\n"
+"A saída devolta foi:\n"
+"%3"
 
 #: core/installation.cpp:775
 #, kde-format
@@ -355,6 +388,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"Non foi posíbel eliminar %1 porque non foi posíbel eliminar automaticamente "
+"o ficheiro instalado %2. Pode intentar eliminar o ficheiro manualmente se "
+"pensa que se trata dun erro."
 
 #: core/installation.cpp:848
 #, kde-format
@@ -362,6 +398,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"A eliminación de %1 fallou porque o paquete instalado non contén a estrutura "
+"correcta de KPackage."
 
 #: core/installation.cpp:853
 #, kde-format
@@ -370,6 +408,9 @@ msgid ""
 "(did you forget to install the KPackage support plugin for this type of "
 "package?)"
 msgstr ""
+"A eliminación de %1 fallou porque o paquete instalado non é dun tipo "
+"compatíbel (esqueceu instalar o complemento de compatibilidade con KPackage "
+"para este tipo de paquete?)."
 
 #: core/installation.cpp:860
 #, kde-format
@@ -377,6 +418,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"A eliminación de %1 fallou porque o paquete instalado non contén metadatos "
+"útiles, o que significa que non é un paquete válido para KPackage."
 
 #: core/installation.cpp:900
 #, kde-format
@@ -384,6 +427,8 @@ msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
+"Non foi posíbel eliminar %1 porque non foi posíbel eliminar automaticamente "
+"o ficheiro descargado %2."
 
 #: core/installation.cpp:905
 #, kde-format
@@ -392,6 +437,9 @@ msgid ""
 "The file in question was %2, and you can attempt to delete it yourself, if "
 "you are certain that it is not needed."
 msgstr ""
+"A eliminación de %1 fallou porque o ficheiro instalado non é un paquete de "
+"KPackage. O ficheiro en cuestión era %2, e pode intentar eliminalo se quere, "
+"se ten a certeza de que non é necesario."
 
 #: core/installation.cpp:913
 #, kde-format
@@ -399,6 +447,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
+"A eliminación de %1 fallou porque parece haber máis dunha cousa instalada, e "
+"iso non debería ser posíbel con entradas baseadas en KPackage."
 
 #: core/installation.cpp:946
 #, kde-format
@@ -409,18 +459,21 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"O proceso de instalación non conseguir executar correctamente a orde %1.\n"
+"A saída foi: \n"
+"%2\n"
+"Se pensa que é incorrecto, pode continuar ou cancelar o proceso de "
+"instalación."
 
 #: core/jobs/filecopyworker.cpp:49
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for writing"
-msgstr "Non é posíbel abrir %1 para lectura"
+msgstr "Non se puido acceder a %1 para escritura"
 
 #: core/jobs/filecopyworker.cpp:52
-#, fuzzy, kde-format
-#| msgid "Cannot open %1 for reading"
+#, kde-format
 msgid "Could not open %1 for reading"
-msgstr "Non é posíbel abrir %1 para lectura"
+msgstr "Non foi posíbel abrir %1 para ler"
 
 #: core/jobs/kpackagejob.cpp:114
 #, kde-format
@@ -428,6 +481,8 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
+"Non foi posíbel crear un traballo para a tarefa de xestión de paquetes. Isto "
+"adoita indicar que o paquete non é válido. Intentouse operar no paquete %1."
 
 #: core/jobs/kpackagejob.cpp:121
 #, kde-format
@@ -435,11 +490,13 @@ msgid ""
 "Could not create a package installer for the service type %1: The installer "
 "does not have a valid structure"
 msgstr ""
+"Non foi posíbel crear un instalador de paquete para o tipo de servizo %1: o "
+"instalador non ten unha estrutura válida."
 
 #: core/jobs/kpackagejob.cpp:125
 #, kde-format
 msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
+msgstr "O instalador de KPackage non recoñeceu o tipo de servizo %1."
 
 #: core/security.cpp:69
 #, kde-format
@@ -775,8 +832,7 @@ msgid "More tools..."
 msgstr "Máis ferramentas…"
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
@@ -794,38 +850,31 @@ msgstr "Categoría descoñecida"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to contruct the button's label (which will become Download New 'this "
-#| "value')"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr "Cousas"
+msgstr "cousas"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1..."
-msgstr "Descargar novidades de %1"
+msgstr "Descargar %1..."
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "Descargar novidades de %1"
+msgstr "Descargar %1"
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr "Descargar novidades…"
+msgstr "Descargar cousas"
 
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
@@ -853,16 +902,12 @@ msgid "Installing %1 from %2"
 msgstr "Instalando %1 de %2"
 
 #: qtquick/qml/EntryDetails.qml:65
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr "Actualizando o elemento %1 de %2. Agarde…"
+msgstr "Traballando no elemento %1 de %2. Agarde…"
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
@@ -872,13 +917,7 @@ msgid "Currently updating the item %1 by %2. Please wait..."
 msgstr "Actualizando o elemento %1 de %2. Agarde…"
 
 #: qtquick/qml/EntryDetails.qml:69
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message which should only be shown when the entry has been given "
-#| "some unknown or invalid status."
-#| msgid ""
-#| "This item is currently in an invalid or unknown state. Please report this "
-#| "to the KDE Community in a bug report."
+#, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
 "unknown or invalid status."
@@ -887,8 +926,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
-"Este elemento está nun estado incorrecto ou descoñecido. Informe disto á "
-"comunidade KDE mediante un informe de fallo."
+"Este elemento está nun estado non válido ou descoñecido. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Informe disto á "
+"comunidade KDE mediante un informe de fallo</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -941,13 +981,12 @@ msgid "Comments and Reviews:"
 msgstr "Comentarios e recensións:"
 
 #: qtquick/qml/EntryDetails.qml:155
-#, fuzzy, kde-format
-#| msgid "View Comments"
+#, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr "Ver os comentarios"
+msgstr "%1 recensións e comentarios"
 
 #: qtquick/qml/EntryDetails.qml:160
 #, kde-format
@@ -960,18 +999,13 @@ msgid "Homepage:"
 msgstr "Páxina web:"
 
 #: qtquick/qml/EntryDetails.qml:165
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens the website associated with the entry "
-#| "(this could be either one specific to the project, the author's homepage, "
-#| "or any other website they have chosen for the purpose)"
-#| msgid "Open the homepage for %2"
+#, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr "Abrir a páxina principal de %2"
+msgstr "Abrir a páxina principal de %1"
 
 #: qtquick/qml/EntryDetails.qml:170
 #, kde-format
@@ -1051,6 +1085,7 @@ msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
 msgstr ""
+"Non se atopou a entrada que intentou amosar, co identificador único %1."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1058,75 +1093,61 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"Este contido subírono persoas coma vostede, e a súa funcionalidade e "
+"estabilidade non as revisou o equipo da súa distribución."
 
 #: qtquick/qml/Page.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@option:check Do filter on type - show only files"
-#| msgid "Files"
+#, kde-format
 msgid "Tiles"
-msgstr "Ficheiros"
+msgstr "Teselas"
 
 #: qtquick/qml/Page.qml:216
-#, fuzzy, kde-format
-#| msgid "Icons"
+#, kde-format
 msgid "Icons"
 msgstr "Iconas"
 
 #: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-#| msgid "Preview URL:"
+#, kde-format
 msgid "Preview"
-msgstr "URL para previsualizar:"
+msgstr "Vista previa"
 
 #: qtquick/qml/Page.qml:233
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "Modo de vista de detalles"
+msgstr "Modo detallado de vista de teselas"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
-msgstr "Modo de vista en iconas"
+msgstr "Modo de vista de só iconas"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "Modo de vista de detalles"
+msgstr "Modo de vista de vista previa grande"
 
 #: qtquick/qml/Page.qml:259
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the filter to show everything"
-#| msgid "Show Everything"
+#, kde-format
 msgid "Everything"
-msgstr "Mostralo todo"
+msgstr "Todo"
 
 #: qtquick/qml/Page.qml:263
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the filter so only installed items with "
-#| "updates available are shown"
-#| msgid "Updateable Only"
+#, kde-format
 msgid "Updateable"
-msgstr "Só o actualizábel"
+msgstr "Actualizábel"
 
 #: qtquick/qml/Page.qml:282
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
-msgstr "Mostrar todas as categorías"
+msgstr "Amosar todas as entradas"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
-msgstr ""
+msgstr "Amosar só as entradas instaladas"
 
 #: qtquick/qml/Page.qml:298
 #, kde-format
@@ -1134,100 +1155,74 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "Amosar só as entradas actualizábeis"
 
 #: qtquick/qml/Page.qml:308
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Recent"
+#, kde-format
 msgid "Recent"
-msgstr "Abrir un recente"
+msgstr "Recentes"
 
 #: qtquick/qml/Page.qml:310
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgid "Alphabetical"
-msgstr "Ordenar alfabeticamente"
+msgstr "Alfabeticamente"
 
 #: qtquick/qml/Page.qml:314
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgid "Downloads"
-msgstr "Descargar"
+msgstr "Descargas"
 
 #: qtquick/qml/Page.qml:333
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on when items were "
-#| "most recently updated"
-#| msgid "Show most recent first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
 "recently updated"
 msgid "Show Most Recent First"
-msgstr "Mostrar primeiro o máis recente"
+msgstr "Amosar primeiro o máis recente"
 
 #: qtquick/qml/Page.qml:341
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
 "name"
 msgid "Sort Alphabetically By Name"
-msgstr "Ordenar alfabeticamente"
+msgstr "Ordenar alfabeticamente por nome"
 
 #: qtquick/qml/Page.qml:349
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the sort order to based on user ratings"
-#| msgid "Show highest rated first"
+#, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
-msgstr "Mostrar primeiro o de mellor cualificación"
+msgstr "Amosar primeiro o de mellor cualificación"
 
 #: qtquick/qml/Page.qml:357
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on number of downloads"
-#| msgid "Show most downloaded first"
+#, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "Mostrar primeiro o máis descargado"
+msgstr "Amosar primeiro o máis descargado"
 
 #: qtquick/qml/Page.qml:366
-#, fuzzy, kde-format
-#| msgid "New Upload"
+#, kde-format
 msgid "Upload..."
-msgstr "Envío novo"
+msgstr "Enviar…"
 
 #: qtquick/qml/Page.qml:367
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "Aprenda a engadir as súas cousas á lista"
 
 #: qtquick/qml/Page.qml:375
-#, fuzzy, kde-format
-#| msgid "&Go To..."
+#, kde-format
 msgid "Go to..."
-msgstr "&Ir a..."
+msgstr "Ir a..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Continue operation"
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Continuar a operación"
+msgstr "Contribuír o seu…"
 
 #: qtquick/qml/Page.qml:508
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Loading more..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Loading more…"
@@ -1255,13 +1250,10 @@ msgid "Comments and Reviews for %1"
 msgstr "Comentarios e recensións de %1"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr "Mostrar todas as categorías"
+msgstr "Amosar todos os comentarios"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:36
 #, kde-format
@@ -1269,7 +1261,7 @@ msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
 "should be shown"
 msgid "Show Reviews Only"
-msgstr ""
+msgstr "Amosar só as recensións"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:42
 #, kde-format
@@ -1277,7 +1269,7 @@ msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
 "their children should be shown"
 msgid "Show Reviews and Replies"
-msgstr ""
+msgstr "Amosar as recensións e as respostas"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:187
@@ -1301,7 +1293,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr ""
+msgstr "Traballando…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, kde-format
@@ -1312,13 +1304,7 @@ msgid "Updating..."
 msgstr "Actualizando…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator which should only be shown when the entry "
-#| "has been given some unknown or invalid status."
-#| msgid ""
-#| "Invalid or unknown state. Please report this to the KDE Community in a "
-#| "bug report."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator which should only be shown when the entry has "
 "been given some unknown or invalid status."
@@ -1327,8 +1313,9 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
-"Estado incorrecto ou descoñecido. Informe disto á comunidade KDE mediante un "
-"informe de fallo."
+"Estado non válido ou descoñecido. <a href=\"https://bugs.kde.org/enter_bug."
+"cgi?product=frameworks-knewstuff\">Informe disto á comunidade KDE mediante "
+"un informe de fallo</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1340,13 +1327,12 @@ msgstr "Instalando…"
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "Produciuse un erro"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:51
-#, fuzzy, kde-format
-#| msgid "Please put in a name."
+#, kde-format
 msgid "Please try again later."
-msgstr "Por favor, introduza un nome."
+msgstr "Inténteo de novo máis tarde."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
@@ -1354,60 +1340,52 @@ msgid "None"
 msgstr "Ningún"
 
 #: qtquick/qml/private/Rating.qml:80
-#, fuzzy, kde-format
-#| msgid "(%1/s)"
+#, kde-format
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr "(%1/s)"
+msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "@knewstuff5"
 msgid "Upload New Stuff: %1"
-msgstr "Descargar novidades…"
+msgstr "Enviar cousas: %1"
 
 #: qtquick/qml/UploadPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Billing information:"
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "Información de contabilidade:"
+msgstr "Actualizando a información…"
 
 #: qtquick/qml/UploadPage.qml:95
-#, fuzzy, kde-format
-#| msgid "&Store"
+#, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr "&Gardar"
+msgstr "Tenda de KDE"
 
 #: qtquick/qml/UploadPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Provider:"
+#, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr "Fornecedor:"
+msgstr "Fornecedor"
 
 #: qtquick/qml/UploadPage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "@label:button"
-#| msgid "&Open with %1"
+#, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr "&Abrir con %1"
+msgstr "Ir ao sitio web: %1"
 
 #: qtquick/qml/UploadPage.qml:114
-#, fuzzy, kde-format
-#| msgid "&Send Email"
+#, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr "&Enviar por correo"
+msgstr "Contactar: %1"
 
 #: qtquick/qml/UploadPage.qml:121
 #, kde-format
@@ -1419,6 +1397,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"Para enviar novas entradas ou para engadir contido a unha entrada existente "
+"da tenda de KDE abra o sitio web e identifíquese. Despois poderá atopar a "
+"entrada «Os meus produtos» no menú que aparece ao premer a súa icona de "
+"persoa usuaria. Prema esa entrada para ir ao sistema de xestión de produtos, "
+"desde onde pode traballar nos seus."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1431,6 +1414,12 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"Para enviar novas entradas ou engadir contido a unha entrada existente, abra "
+"o sitio web do fornecedor e siga as súas instrucións. Probabelmente teña que "
+"crear unha conta de persoa usuaria e acceder con ela a un sistema de xestión "
+"de produtos, desde onde terá que seguir instrucións para engadir un. Ou pode "
+"que se lle esixa contactar directamente coas persoas que xestionan o sitio "
+"para que engadan o seu contido."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1445,9 +1434,7 @@ msgstr ""
 "erro, contacte coa persoa responsábel dos seus permisos."
 
 #: qtquick/searchpresetmodel.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Back"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Atrás"
@@ -1456,34 +1443,28 @@ msgstr "Atrás"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "Popular"
 
 #: qtquick/searchpresetmodel.cpp:61
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "Promoción"
 
 #: qtquick/searchpresetmodel.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@action:button Restart find & replace"
-#| msgid "Restart"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Reiniciar"
 
 #: qtquick/searchpresetmodel.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
-msgstr "Novo"
+msgstr "Nova"
 
 #: qtquick/searchpresetmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Home"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Inicio"
@@ -1492,46 +1473,37 @@ msgstr "Inicio"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "Estante"
 
 #: qtquick/searchpresetmodel.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Up"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr "Arriba"
+msgstr "Subir"
 
 #: qtquick/searchpresetmodel.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "dictionary variant"
-#| msgid "extended"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr "ampliado"
+msgstr "Recomendación"
 
 #: qtquick/searchpresetmodel.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Subscript"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr "Subíndice"
+msgstr "Subscricións"
 
 #: qtquick/searchpresetmodel.cpp:85
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The first entry in the category selection list (also the default value)"
-#| msgid "Show All Categories"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr "Mostrar todas as categorías"
+msgstr "Todas as entradas"
 
 #: qtquick/searchpresetmodel.cpp:88
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "Predefinición de busca: %1"
 
 #: tools/knewstuff-dialog/main.cpp:31
 #, kde-format
@@ -1540,6 +1512,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"O ficheiro KNSRC que quere amosar. Se non se indica ningún, presentaráselle "
+"un diálogo no que pode alternar entre todos os ficheiros de configuración "
+"instalados na localización de ficheiros knsrc do sistema."
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
@@ -1556,6 +1531,17 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"Un URL de KNS para amosar a súa información. O formato dun URL de KNS é "
+"«kns://ficheiro-knsrc/identificador-do-fornecedor/identificador-da-"
+"entrada».\n"
+"«ficheiro-knsrc»\n"
+"Nome do ficheiro knsrc que pode pasarse directamente mediante o parámetro "
+"«knsrcfile» desta ferramenta.\n"
+"«identificador-do-fornecedor»\n"
+"Nome de servidor do fornecedor no que debería existir a entrada.\n"
+"«identificador-da-entrada»\n"
+"Identificador único dunha entrada do fornecedor indicado no ficheiro knsrc.\n"
+" Por exemplo: kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: ui/entrydetailsdialog.cpp:84
 #, kde-format
@@ -1655,15 +1641,13 @@ msgid "<p>Size: %1</p>"
 msgstr "<p>Tamaño: %1</p>"
 
 #: ui/widgetquestionlistener.cpp:89
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes"
 msgstr "Si"
 
 #: ui/widgetquestionlistener.cpp:90
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@action:button"
 msgid "No"
 msgstr "Non"
