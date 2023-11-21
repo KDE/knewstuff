@@ -61,6 +61,7 @@ public:
         q->connect(model, &KNSCore::ItemsModel::rowsInserted, q, &ItemsModel::rowsInserted);
         q->connect(model, &KNSCore::ItemsModel::rowsRemoved, q, &ItemsModel::rowsRemoved);
         q->connect(model, &KNSCore::ItemsModel::dataChanged, q, &ItemsModel::dataChanged);
+        q->connect(model, &KNSCore::ItemsModel::modelAboutToBeReset, q, &ItemsModel::modelAboutToBeReset);
         q->connect(model, &KNSCore::ItemsModel::modelReset, q, &ItemsModel::modelReset);
         return true;
     }
