@@ -89,7 +89,7 @@ Engine::Engine(QObject *parent)
 
                 // Emit the signal later, currently QML is not connected to the slot
                 if (error == KNSCore::ConfigFileError) {
-                    QTimer::singleShot(0, [=]() {
+                    QTimer::singleShot(0, [this, error, message, metadata]() {
                         Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
                     });
                 }

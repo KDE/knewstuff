@@ -50,7 +50,7 @@ public:
             }
         }
         if (provider) {
-            QObject::connect(provider.get(), &KNSCore::Provider::personLoaded, q, [=](const std::shared_ptr<KNSCore::Author> author) {
+            QObject::connect(provider.get(), &KNSCore::Provider::personLoaded, q, [this](const std::shared_ptr<KNSCore::Author> author) {
                 allAuthors()->insert(QStringLiteral("%1 %2").arg(provider->id(), author->id()), author);
                 Q_EMIT q->dataChanged();
             });
