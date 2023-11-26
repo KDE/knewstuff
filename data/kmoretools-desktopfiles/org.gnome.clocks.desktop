@@ -243,7 +243,7 @@ Keywords[tg]=вақт;вақтсанҷ;ҳушдор;вақти ҷаҳонӣ;со
 Keywords[tr]=saat;zamanlayıcı;alarm;dünya saatleri;kronometre;saat dilimi;
 Keywords[uk]=time;timer;alarm;world clock;stopwatch;time zone;час;таймер;нагадування;годинник;світ;секундомір;часовий;пояс;
 Keywords[x-test]=xxtimexx;xxtimerxx;xxalarmxx;xxworld clockxx;xxstopwatchxx;xxtime zonexx;
-Keywords[zh_CN]=time;timer;alarm;world clock;stopwatch;time zone;时间;计时器;闹钟;世界时钟;跑表;时区;
+Keywords[zh_CN]=time;timer;alarm;world clock;stopwatch;time zone;时间;计时器;闹钟;世界时钟;秒表;跑表;时区;shijian;jishiqi;naozhong;shijieshizhong;shijieshijian;miaobiao;paobiao;shiqu;
 Keywords[zh_TW]=time;timer;alarm;world clock;stopwatch;time zone;
 Exec=gnome-clocks
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!

@@ -240,7 +240,7 @@ Keywords[tg]=Қисми диск;
 Keywords[tr]=Bölüntü;
 Keywords[uk]=Partition;розділ;поділ;
 Keywords[x-test]=xxPartitionxx;
-Keywords[zh_CN]=Partition;分区;
+Keywords[zh_CN]=Partition;分区;fenqu;
 Keywords[zh_TW]=Partition;
 StartupNotify=true
 
