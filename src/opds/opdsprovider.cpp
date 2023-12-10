@@ -258,7 +258,7 @@ void parseFeedData(const QDomDocument &doc)
                     xmlLoader,
                     &XmlLoader::signalHttpError,
                     q,
-                    [this, &osdUrlLoader, theLink](int status, QList<QNetworkReply::RawHeaderPair> rawHeaders) {
+                    [this, &osdUrlLoader, theLink](int status, QList<QNetworkReply::RawHeaderPair> rawHeaders) { // clazy:exclude=lambda-in-connect
                         if (status == 503) { // Temporarily Unavailable
                             QDateTime retryAfter;
                             static const QByteArray retryAfterKey{"Retry-After"};
@@ -274,6 +274,7 @@ void parseFeedData(const QDomDocument &doc)
                                     break;
                                 }
                             }
+                            // clazy:exclude=lambda-in-connect
                             QTimer::singleShot(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch(), q, [&osdUrlLoader, theLink]() {
                                 osdUrlLoader(theLink);
                             });

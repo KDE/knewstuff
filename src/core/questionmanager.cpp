@@ -34,6 +34,7 @@ QuestionManager *QuestionManager::instance()
 QuestionManager::QuestionManager()
     : QObject()
 {
+    Q_UNUSED(d)
 }
 
 QuestionManager::~QuestionManager() = default;
