@@ -55,6 +55,15 @@ public:
 
     bool readConfig(const KConfigGroup &group, QString &errorMessage);
 
+    QString targetInstallationPath() const;
+
+    /**
+     * Returns the uncompression setting, in a computer-readable format
+     *
+     * @return The value of this setting
+     */
+    UncompressionOptions uncompressionSetting() const;
+
 public Q_SLOTS:
     /**
      * Downloads a payload file. The payload file matching most closely
@@ -103,22 +112,7 @@ public Q_SLOTS:
      */
     void uninstall(KNSCore::Entry entry);
 
-    /**
-     * Returns the uncompression setting, in a computer-readable format
-     *
-     * @return The value of this setting
-     * @since 5.71
-     */
-    UncompressionOptions uncompressionSetting() const;
-
     void slotPayloadResult(KJob *job);
-
-    /**
-     * @returns the installation path
-     *
-     * @since 5.31
-     */
-    QString targetInstallationPath() const;
 
 Q_SIGNALS:
     void signalEntryChanged(const KNSCore::Entry &entry);
