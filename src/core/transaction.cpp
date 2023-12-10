@@ -138,7 +138,7 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
     auto ret = new Transaction(_entry, engine);
     connect(engine->d->installation, &Installation::signalInstallationError, ret, [ret, _entry](const QString &msg, const KNSCore::Entry &entry) {
         if (_entry.uniqueId() == entry.uniqueId()) {
-            ret->signalErrorCode(KNSCore::InstallationError, msg, {});
+            Q_EMIT ret->signalErrorCode(KNSCore::InstallationError, msg, {});
         }
     });
 
