@@ -23,7 +23,6 @@
 
 #include "knewstuffcore_export.h"
 
-
 namespace KNSCore
 {
 class ProviderPrivate;
@@ -204,7 +203,7 @@ public:
      * @see commentsLoaded(const QList<shared_ptr<KNSCore::Comment>> comments)
      * @since 5.63
      */
-    Q_SIGNAL void loadComments(const Entry &entry, int commentsPerPage, int page);
+    Q_SIGNAL void loadComments(const KNSCore::Entry &entry, int commentsPerPage, int page);
     /**
      * Request loading of the details for a specific person with the given username.
      * The engine listens to the personLoaded() for the result
@@ -366,13 +365,13 @@ Q_SIGNALS:
      * searches for the user, such as recommendations.
      * @since 5.83
      */
-    void searchPresetsLoaded(const QList<SearchPreset> &presets);
+    void searchPresetsLoaded(const QList<KNSCore::Provider::SearchPreset> &presets);
 
     void signalInformation(const QString &) const;
     void signalError(const QString &) const;
     void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata) const;
 
-    void categoriesMetadataLoded(const QList<CategoryMetadata> &categories);
+    void categoriesMetadataLoded(const QList<KNSCore::Provider::CategoryMetadata> &categories);
 
 protected:
     void setName(const QString &name);

@@ -83,7 +83,7 @@ Q_SIGNALS:
      *
      * @param event nature of the change
      */
-    void signalEntryEvent(const Entry &entry, Entry::EntryEvent event);
+    void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
 
     /**
      * Fires in the case of any critical or serious errors, such as network or API problems.
