@@ -55,22 +55,10 @@ public:
     void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
     void loadEntryDetails(const KNSCore::Entry &entry) override;
     void loadPayloadLink(const Entry &entry, int linkId) override;
-    /**
-     * The slot which causes loading of comments for the Attica provider
-     * @see Provider::loadComments(const Entry &entry, int commentsPerPage, int page)
-     */
-    Q_SLOT void loadComments(const KNSCore::Entry &entry, int commentsPerPage, int page);
-    /**
-     * The slot which causes loading of a person's details
-     * @see Provider::loadPerson(const QString &username)
-     */
-    Q_SLOT void loadPerson(const QString &username);
-    /**
-     * The slot which causes the provider's basic information to be fetched.
-     * For the Attica provider, this translates to an OCS Config call
-     * @see Provider::loadBasics()
-     */
-    Q_SLOT void loadBasics();
+
+    void loadComments(const KNSCore::Entry &entry, int commentsPerPage, int page) override;
+    void loadPerson(const QString &username) override;
+    void loadBasics() override;
 
     bool userCanVote() override
     {
@@ -106,7 +94,7 @@ private Q_SLOTS:
 private:
     void checkForUpdates();
     Entry::List installedEntries() const;
-    bool jobSuccess(Attica::BaseJob *job) const;
+    bool jobSuccess(Attica::BaseJob *job);
 
     Attica::Provider::SortMode atticaSortMode(SortMode sortMode);
 

@@ -43,9 +43,6 @@ AtticaProvider::AtticaProvider(const QStringList &categories, const QString &add
         m_provider.setAdditionalAgentInformation(additionalAgentInformation);
     });
     connect(&m_providerManager, &ProviderManager::authenticationCredentialsMissing, this, &AtticaProvider::onAuthenticationCredentialsMissing);
-    connect(this, &Provider::loadComments, this, &AtticaProvider::loadComments);
-    connect(this, &Provider::loadPerson, this, &AtticaProvider::loadPerson);
-    connect(this, &Provider::loadBasics, this, &AtticaProvider::loadBasics);
 }
 
 AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString &additionalAgentInformation)
@@ -553,7 +550,7 @@ void AtticaProvider::becomeFanFinished(Attica::BaseJob *job)
     Q_EMIT signalInformation(i18n("You are now a fan."));
 }
 
-bool AtticaProvider::jobSuccess(Attica::BaseJob *job) const
+bool AtticaProvider::jobSuccess(Attica::BaseJob *job)
 {
     if (job->metadata().error() == Attica::Metadata::NoError) {
         return true;

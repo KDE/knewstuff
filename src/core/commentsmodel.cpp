@@ -85,7 +85,7 @@ public:
             int pageToLoad = comments.count() / commentsPerPage;
             qCDebug(KNEWSTUFFCORE) << "Loading comments, page" << pageToLoad << "with current comment count" << comments.count() << "out of a total of"
                                    << entry.numberOfComments();
-            Q_EMIT provider->loadComments(entry, commentsPerPage, pageToLoad);
+            provider->loadComments(entry, commentsPerPage, pageToLoad);
         }
     }
 };

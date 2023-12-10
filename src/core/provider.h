@@ -199,11 +199,13 @@ public:
      * @note Implementation detail: All subclasses should connect to this signal
      * and point it at a slot which does the actual work, if they support comments.
      *
-     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
      * @see commentsLoaded(const QList<shared_ptr<KNSCore::Comment>> comments)
      * @since 5.63
      */
-    Q_SIGNAL void loadComments(const KNSCore::Entry &entry, int commentsPerPage, int page);
+    virtual void loadComments(const KNSCore::Entry &, int /*commentsPerPage*/, int /*page*/)
+    {
+    }
+
     /**
      * Request loading of the details for a specific person with the given username.
      * The engine listens to the personLoaded() for the result
@@ -211,10 +213,12 @@ public:
      * @note Implementation detail: All subclasses should connect to this signal
      * and point it at a slot which does the actual work, if they support comments.
      *
-     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
      * @since 5.63
      */
-    Q_SIGNAL void loadPerson(const QString &username);
+    virtual void loadPerson(const QString & /*username*/)
+    {
+    }
+
     /**
      * Request loading of the basic information for this provider. The engine listens
      * to the basicsLoaded() signal for the result, which is also the signal the respective
@@ -230,7 +234,6 @@ public:
      * this basic information (if the information is set during construction, you will
      * not need to worry about this).
      *
-     * TODO: KF6 This should be a virtual function, but can't do it now because BIC
      * @see version()
      * @see website()
      * @see host();
@@ -238,7 +241,10 @@ public:
      * @see supportsSsl()
      * @since 5.85
      */
-    Q_SIGNAL void loadBasics();
+    virtual void loadBasics()
+    {
+    }
+
     /**
      * @since 5.85
      */
@@ -337,8 +343,8 @@ public:
 Q_SIGNALS:
     void providerInitialized(KNSCore::Provider *);
 
-    void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &) const;
-    void loadingFailed(const KNSCore::Provider::SearchRequest &) const;
+    void loadingFinished(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &);
+    void loadingFailed(const KNSCore::Provider::SearchRequest &);
 
     void entryDetailsLoaded(const KNSCore::Entry &);
     void payloadLinkLoaded(const KNSCore::Entry &);
@@ -367,9 +373,9 @@ Q_SIGNALS:
      */
     void searchPresetsLoaded(const QList<KNSCore::Provider::SearchPreset> &presets);
 
-    void signalInformation(const QString &) const;
-    void signalError(const QString &) const;
-    void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata) const;
+    void signalInformation(const QString &);
+    void signalError(const QString &);
+    void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
     void categoriesMetadataLoded(const QList<KNSCore::Provider::CategoryMetadata> &categories);
 
