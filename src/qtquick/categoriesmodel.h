@@ -28,7 +28,7 @@ public:
         IdRole,
         DisplayNameRole,
     };
-    Q_ENUMS(Roles)
+    Q_ENUM(Roles)
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

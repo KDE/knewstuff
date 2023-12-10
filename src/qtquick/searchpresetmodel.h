@@ -28,7 +28,7 @@ public:
         DisplayNameRole = Qt::UserRole + 1,
         IconRole,
     };
-    Q_ENUMS(Roles)
+    Q_ENUM(Roles)
 
     QHash<int, QByteArray> roleNames() const override;
 
