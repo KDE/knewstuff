@@ -390,7 +390,7 @@ QList<Attica::Provider *> EngineBase::atticaProviders() const
 {
     QList<Attica::Provider *> ret;
     ret.reserve(d->providers.size());
-    for (const auto &p : d->providers) {
+    for (const auto &p : std::as_const(d->providers)) {
         const auto atticaProvider = p.dynamicCast<AtticaProvider>();
         if (atticaProvider) {
             ret += atticaProvider->provider();

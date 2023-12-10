@@ -94,7 +94,7 @@ Cache::Cache(const QString &appName)
             // Then run through the new cache and see if there's any that were not
             // in the old cache (at which point just emit those as having changed,
             // they're already the correct status)
-            for (const Entry &entry : d->cache) {
+            for (const Entry &entry : std::as_const(d->cache)) {
                 auto iterator = oldCache.constFind(entry);
                 if (iterator == oldCache.constEnd()) {
                     Q_EMIT entryChanged(entry);
@@ -291,7 +291,7 @@ void KNSCore::Cache::removeDeletedEntries()
 
 KNSCore::Entry KNSCore::Cache::entryFromInstalledFile(const QString &installedFile) const
 {
-    for (const Entry &entry : d->cache) {
+    for (const Entry &entry : std::as_const(d->cache)) {
         if (entry.installedFiles().contains(installedFile)) {
             return entry;
         }
