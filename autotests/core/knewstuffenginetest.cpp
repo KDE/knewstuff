@@ -32,7 +32,7 @@ private Q_SLOTS:
 void EngineTest::initTestCase()
 {
     engine = new Engine(this);
-    engine->setConfigFile(dataDir + "enginetest.knsrc");
+    engine->setConfigFile(dataDir + QLatin1String("enginetest.knsrc"));
     QVERIFY(engine->isValid());
     QCOMPARE(engine->busyState(), Engine::BusyOperation::Initializing);
     QSignalSpy providersLoaded(engine, &Engine::signalProvidersLoaded);
@@ -43,14 +43,15 @@ void EngineTest::initTestCase()
 void EngineTest::testPropertiesReading()
 {
     QCOMPARE(engine->name(), QStringLiteral("InstallCommands"));
-    QCOMPARE(static_cast<EngineBase *>(engine)->categories(), QStringList({"KDE Wallpaper 1920x1200", "KDE Wallpaper 1600x1200"}));
+    QCOMPARE(static_cast<EngineBase *>(engine)->categories(),
+             QStringList({QStringLiteral("KDE Wallpaper 1920x1200"), QStringLiteral("KDE Wallpaper 1600x1200")}));
     QCOMPARE(engine->useLabel(), QStringLiteral("UseLabelTest"));
     QVERIFY(engine->hasAdoptionCommand());
 }
 
 void EngineTest::testProviderFileLoading()
 {
-    const QString providerId = QUrl::fromLocalFile(dataDir + "entry.xml").toString();
+    const QString providerId = QUrl::fromLocalFile(dataDir + QLatin1String("entry.xml")).toString();
     QSharedPointer<Provider> provider = engine->provider(providerId);
     QVERIFY(provider);
     QCOMPARE(engine->defaultProvider(), provider);

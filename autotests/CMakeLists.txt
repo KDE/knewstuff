@@ -10,8 +10,6 @@ set_package_properties(Qt6Test PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required for unit tests")
 
-# src also removes -DQT_NO_CAST_FROM_ASCII
-remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 include_directories( ${CMAKE_CURRENT_BINARY_DIR}/../src ../src )
 
 add_library(knewstuff_test_static STATIC ${CMAKE_BINARY_DIR}/src/core/knewstuffcore_debug.cpp)
