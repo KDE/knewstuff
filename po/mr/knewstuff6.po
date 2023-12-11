@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:37+0000\n"
+"POT-Creation-Date: 2023-12-11 01:34+0000\n"
 "PO-Revision-Date: 2013-03-29 16:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: attica/atticaprovider.cpp:168
+#: attica/atticaprovider.cpp:165
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgid "All categories are missing"
 msgstr "सर्व विभाग"
 
-#: attica/atticaprovider.cpp:481
+#: attica/atticaprovider.cpp:478
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -36,7 +36,7 @@ msgstr ""
 "या वस्तुची किंमत आहे %1 %2.\n"
 "तुम्हाला ती खरेदी करायची आहे का?"
 
-#: attica/atticaprovider.cpp:495
+#: attica/atticaprovider.cpp:492
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -47,44 +47,44 @@ msgstr ""
 "तुमची शिल्लक: %1\n"
 "किंमत: %2"
 
-#: attica/atticaprovider.cpp:538
+#: attica/atticaprovider.cpp:535
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "तुमचे मत नोंदविलेले आहे."
 
-#: attica/atticaprovider.cpp:553
+#: attica/atticaprovider.cpp:550
 #, kde-format
 msgid "You are now a fan."
 msgstr "तुम्ही आता प्रशंसक बनला आहात."
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
-#: opds/opdsprovider.cpp:286
+#: attica/atticaprovider.cpp:578 core/enginebase.cpp:197
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:586
+#: attica/atticaprovider.cpp:583
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "संजाळ त्रुटी. (%1)"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:589
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "सर्व्हरला खूप जास्त विनंत्या आल्या आहेत. कृपया काही वेळेनंतर प्रयत्न करा."
 
-#: attica/atticaprovider.cpp:595
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:599
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "अनोळखी त्रुटी - Open Collaboration Service API (%1)"

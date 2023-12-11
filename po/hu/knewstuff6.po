@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:37+0000\n"
+"POT-Creation-Date: 2023-12-11 01:34+0000\n"
 "PO-Revision-Date: 2021-12-10 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.12.0\n"
 
-#: attica/atticaprovider.cpp:168
+#: attica/atticaprovider.cpp:165
 #, kde-format
 msgid "All categories are missing"
 msgstr "Minden kategória hiányzik"
 
-#: attica/atticaprovider.cpp:481
+#: attica/atticaprovider.cpp:478
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -33,7 +33,7 @@ msgstr ""
 "Az elem ára: %2 %1.\n"
 "Szeretné megvenni?"
 
-#: attica/atticaprovider.cpp:495
+#: attica/atticaprovider.cpp:492
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -44,19 +44,19 @@ msgstr ""
 "Egyenleg: %1\n"
 "Ár: %2"
 
-#: attica/atticaprovider.cpp:538
+#: attica/atticaprovider.cpp:535
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Rögzítettük a szavazatát."
 
-#: attica/atticaprovider.cpp:553
+#: attica/atticaprovider.cpp:550
 #, kde-format
 msgid "You are now a fan."
 msgstr "Ön most már rajongó."
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:197
-#: opds/opdsprovider.cpp:286
+#: attica/atticaprovider.cpp:578 core/enginebase.cpp:197
+#: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -64,17 +64,17 @@ msgid ""
 msgstr ""
 "A szolgáltatás jelenleg karbantartás alatt áll, működés várhatóan %1 múlva."
 
-#: attica/atticaprovider.cpp:586
+#: attica/atticaprovider.cpp:583
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Hálózati hiba (%1): %2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:589
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Túl sok kérés a szerverhez. Próbálkozzon újra néhány perc múlva."
 
-#: attica/atticaprovider.cpp:595
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "A(z) %1 Open Collaboration Services példány nem támogatja a kért funkciót."
 
-#: attica/atticaprovider.cpp:599
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Ismeretlen Open Collaboration Service API hiba. (%1)"
