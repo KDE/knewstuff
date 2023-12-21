@@ -544,9 +544,9 @@ private:
     QExplicitlySharedDataPointer<EntryPrivate> d;
 };
 
-inline uint qHash(const KNSCore::Entry &entry)
+inline size_t qHash(const KNSCore::Entry &entry, size_t seed = 0)
 {
-    return qHash(entry.uniqueId());
+    return qHash(entry.uniqueId(), seed);
 }
 
 KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug debug, const KNSCore::Entry &entry);
