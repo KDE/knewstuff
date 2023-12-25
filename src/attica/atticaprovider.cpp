@@ -184,6 +184,7 @@ void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request
         break;
     case ExactEntryId: {
         ItemJob<Content> *job = m_provider.requestContent(request.searchTerm);
+        job->setProperty("providedEntryId", request.searchTerm);
         connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
         job->start();
         return;
@@ -249,6 +250,7 @@ void AtticaProvider::detailsLoaded(BaseJob *job)
         auto *contentJob = static_cast<ItemJob<Content> *>(job);
         Content content = contentJob->result();
         Entry entry = entryFromAtticaContent(content);
+        entry.setEntryRequestedId(job->property("providedEntryId").toString()); // The ResultsStream should still known that this entry was for its query
         Q_EMIT entryDetailsLoaded(entry);
         qCDebug(KNEWSTUFFCORE) << "check update finished: " << entry.name();
     }

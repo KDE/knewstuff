@@ -33,6 +33,7 @@ public:
     }
 
     QString mUniqueId;
+    QString mRequestedUniqueId; // We need to map the entry to the request in the ResultsStream, but invalid entries would have an empty ID
     QString mName;
     QUrl mHomepage;
     QString mCategory;
@@ -103,7 +104,7 @@ Entry::~Entry() = default;
 
 bool Entry::isValid() const
 {
-    return !d->mUniqueId.isEmpty();
+    return !d->mUniqueId.isEmpty(); // This should not use the uniqueId getter due to the fallback!
 }
 
 QString Entry::name() const
@@ -118,7 +119,7 @@ void Entry::setName(const QString &name)
 
 QString Entry::uniqueId() const
 {
-    return d->mUniqueId;
+    return d->mUniqueId.isEmpty() ? d->mRequestedUniqueId : d->mUniqueId;
 }
 
 void Entry::setUniqueId(const QString &id)
@@ -734,6 +735,11 @@ void KNSCore::Entry::setEntryDeleted()
     setStatus(Entry::Deleted);
     d->mUnInstalledFiles = installedFiles();
     setInstalledFiles(QStringList());
+}
+
+void KNSCore::Entry::setEntryRequestedId(const QString &id)
+{
+    d->mRequestedUniqueId = id;
 }
 
 QString KNSCore::replaceBBCode(const QString &unformattedText)

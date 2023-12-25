@@ -538,7 +538,9 @@ private:
     friend class StaticXmlProvider;
     friend class Cache;
     friend class Installation;
+    friend class AtticaProvider;
     friend testEntry;
+    KNEWSTUFFCORE_NO_EXPORT void setEntryRequestedId(const QString &id);
     QDomElement entryXML() const;
     bool setEntryXML(const QDomElement &xmldata);
     QExplicitlySharedDataPointer<EntryPrivate> d;
