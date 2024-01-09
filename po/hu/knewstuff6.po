@@ -1,13 +1,13 @@
 # Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
-# Kristof Kiszel <kiszel.kristof@gmail.com>, 2018, 2021.
+# SPDX-FileCopyrightText: 2018, 2021, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 01:34+0000\n"
-"PO-Revision-Date: 2021-12-10 11:02+0100\n"
+"POT-Creation-Date: 2024-01-09 01:31+0000\n"
+"PO-Revision-Date: 2024-01-08 10:40+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
 msgid "All categories are missing"
 msgstr "Minden kategória hiányzik"
 
-#: attica/atticaprovider.cpp:478
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -33,7 +33,7 @@ msgstr ""
 "Az elem ára: %2 %1.\n"
 "Szeretné megvenni?"
 
-#: attica/atticaprovider.cpp:492
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -44,18 +44,18 @@ msgstr ""
 "Egyenleg: %1\n"
 "Ár: %2"
 
-#: attica/atticaprovider.cpp:535
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Rögzítettük a szavazatát."
 
-#: attica/atticaprovider.cpp:550
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Ön most már rajongó."
 
-#: attica/atticaprovider.cpp:578 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -64,17 +64,17 @@ msgid ""
 msgstr ""
 "A szolgáltatás jelenleg karbantartás alatt áll, működés várhatóan %1 múlva."
 
-#: attica/atticaprovider.cpp:583
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Hálózati hiba (%1): %2"
 
-#: attica/atticaprovider.cpp:589
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Túl sok kérés a szerverhez. Próbálkozzon újra néhány perc múlva."
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "A(z) %1 Open Collaboration Services példány nem támogatja a kért funkciót."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Ismeretlen Open Collaboration Service API hiba. (%1)"
@@ -104,10 +104,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Nem található beállítófájl: „%1”"
+msgstr "A beállítófájl nem létezik: „%1”"
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -125,16 +124,14 @@ msgid "Use"
 msgstr "Használat"
 
 #: core/enginebase.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "Nem sikerült inicializálni a telepítési kezelőt ehhez: %1\n"
+"%2\n"
 "Ez egy kritikus hiba, jelentse az alkalmazás szerzőjének"
 
 #: core/enginebase.cpp:272
@@ -176,6 +173,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"A(z) „%1” nem telepíthető, mivel egy weboldalra mutat. Kattintson <a "
+"href='%2'>ide</a> a telepítés befejezéséhez."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -345,24 +344,17 @@ msgstr "Ismeretlen kategória"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr "cuccok"
+msgstr "dolgok"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "Új %1 letöltése"
+msgstr "Új %1 letöltése…"
 
 #: qtquick/qml/Dialog.qml:42
 #, kde-format
@@ -430,12 +422,11 @@ msgstr "Telepítés"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Telepítés"
+msgstr "Telepítés…"
 
 #: qtquick/qml/EntryDetails.qml:122
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
@@ -453,11 +444,7 @@ msgid "Uninstall"
 msgstr "Eltávolítás"
 
 #: qtquick/qml/EntryDetails.qml:151
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "installed OR uninstalled"
-#| msgid "Currently working on the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
@@ -465,11 +452,7 @@ msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "A(z) %1 (szerző: %2) elem feldolgozása folyamatban. Kis türelmet…"
 
 #: qtquick/qml/EntryDetails.qml:153
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
@@ -670,8 +653,7 @@ msgid "Show Most Downloaded First"
 msgstr "Legtöbbször letöltöttek előre"
 
 #: qtquick/qml/Page.qml:351
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
 msgstr "Feltöltés…"
 
@@ -681,16 +663,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ismerje meg, hogyan addhatja hozzá saját munkáját ehhez a listához"
 
 #: qtquick/qml/Page.qml:362
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
 msgstr "Ugrás ide…"
 
 #: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Keresés:"
+msgstr "Keresés…"
 
 #: qtquick/qml/Page.qml:434
 #, kde-format
@@ -698,8 +678,7 @@ msgid "Category:"
 msgstr "Kategória:"
 
 #: qtquick/qml/Page.qml:454
-#, fuzzy, kde-format
-#| msgid "Contribute your own..."
+#, kde-format
 msgid "Contribute your own…"
 msgstr "Tegye közzé sajátját…"
 
@@ -763,11 +742,7 @@ msgid "By <i>%1</i>"
 msgstr "<i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
@@ -775,13 +750,12 @@ msgid "Working…"
 msgstr "Folyamatban…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Frissítés"
+msgstr "Frissítés…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -798,11 +772,10 @@ msgstr ""
 "Communitynek</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Telepítés"
+msgstr "Telepítés…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -811,10 +784,9 @@ msgid "An Error Occurred"
 msgstr "Hiba történt"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:81
-#, fuzzy, kde-format
-#| msgid "Please put in a name."
+#, kde-format
 msgid "Please try again later."
-msgstr "Adjon meg egy nevet."
+msgstr "Próbálja újra később."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
@@ -829,18 +801,13 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Új dolog feltöltése: %1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"

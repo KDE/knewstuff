@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 01:34+0000\n"
+"POT-Creation-Date: 2024-01-09 01:31+0000\n"
 "PO-Revision-Date: 2023-12-02 20:07+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Všetky kategórie chýbajú"
 
-#: attica/atticaprovider.cpp:478
+#: attica/atticaprovider.cpp:480
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Táto položka stojí %1 %2.\n"
 "Chcete ju kúpiť?"
 
-#: attica/atticaprovider.cpp:492
+#: attica/atticaprovider.cpp:494
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,18 +51,18 @@ msgstr ""
 "Zostatok: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:535
+#: attica/atticaprovider.cpp:537
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Váš hlas bol zaznamenaný."
 
-#: attica/atticaprovider.cpp:550
+#: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
 msgstr "Teraz ste fanúšik."
 
-#: attica/atticaprovider.cpp:578 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -71,17 +71,17 @@ msgid ""
 msgstr ""
 "Služba v súčasnosti prechádza údržbou a očakáva sa, že bude obnovená v %1."
 
-#: attica/atticaprovider.cpp:583
+#: attica/atticaprovider.cpp:585
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Chyba siete %1: %2"
 
-#: attica/atticaprovider.cpp:589
+#: attica/atticaprovider.cpp:591
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Príliš veľa požiadaviek na server. Skúste to znovu za niekoľko minúť."
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:594
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -90,7 +90,7 @@ msgstr ""
 "Inštancia Open Collaboration Services %1 nepodporuje akciu, ktorú chcete "
 "spraviť."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:598
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznáma chyba API služby otvorenej spolupráce. (%1)"
