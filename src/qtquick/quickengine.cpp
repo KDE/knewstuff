@@ -286,6 +286,7 @@ void Engine::updateEntryContents(const KNSCore::Entry &entry)
 {
     const auto provider = EngineBase::provider(entry.providerId());
     if (provider.isNull() || !provider->isInitialized()) {
+        qCWarning(KNEWSTUFFQUICK) << "Provider was not found or is not initialized" << provider << entry.providerId();
         return;
     }
     provider->loadEntryDetails(entry);

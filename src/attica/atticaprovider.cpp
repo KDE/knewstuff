@@ -103,7 +103,7 @@ void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 
     m_provider = provider;
     m_provider.setAdditionalAgentInformation(name());
-    m_providerId = provider.baseUrl().toString();
+    m_providerId = provider.baseUrl().host();
 
     Attica::ListJob<Attica::Category> *job = m_provider.requestCategories();
     connect(job, &BaseJob::finished, this, &AtticaProvider::listOfCategoriesLoaded);

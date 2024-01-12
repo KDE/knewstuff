@@ -21,15 +21,6 @@ KCM.GridDelegate {
     property string useLabel
     property string uninstallLabel
     text: model.name
-//         onClicked: pageStack.push(detailsPage, {
-//             name: model.name,
-//             author: model.author,
-//             previews: model.previews,
-//             shortSummary: model.shortSummary,
-//             summary: model.summary,
-//             homepage: model.homepage,
-//             donationLink: model.donationLink
-//         });
     actions: [
         Kirigami.Action {
             text: component.useLabel

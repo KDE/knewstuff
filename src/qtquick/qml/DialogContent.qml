@@ -41,15 +41,7 @@ Kirigami.ApplicationItem {
      */
     property alias viewMode: newStuffPage.viewMode
 
-    /**
-     * Show the details page for a specific entry.
-     * If you call this function before the engine initialisation has been completed,
-     * the action itself will be postponed until that has happened.
-     * @param providerId The provider ID for the entry you wish to show details for
-     * @param entryId The unique ID for the entry you wish to show details for
-     * @since 5.79
-     */
-    function showEntryDetails(providerId, entryId) {
+    function __showEntryDetails(providerId, entryId) {
         newStuffPage.showEntryDetails(providerId, entryId);
     }
 

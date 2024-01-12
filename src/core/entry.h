@@ -19,8 +19,6 @@
 #include "author.h"
 #include "knewstuffcore_export.h"
 
-#include <memory>
-
 class testEntry;
 class QDomElement;
 class QXmlStreamReader;
@@ -51,6 +49,8 @@ class KNEWSTUFFCORE_EXPORT Entry
     Q_GADGET
 public:
     typedef QList<Entry> List;
+    Q_PROPERTY(QString providerId READ providerId)
+    Q_PROPERTY(QString uniqueId READ uniqueId)
 
     /**
      * Status of the entry. An entry will be downloadable from the provider's

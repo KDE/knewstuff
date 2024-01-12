@@ -55,58 +55,44 @@ KCM.GridViewKCM {
      * @since 5.79
      */
     function showEntryDetails(providerId, entryId) {
-        _showEntryDetailsThrottle.providerId = providerId;
-        _showEntryDetailsThrottle.entryId = entryId;
-        newStuffEngine.storeSearch();
-
-        //check if entry in question is perhaps a group, if so, load the new details.
-        const theIndex = newStuffModel.indexOfEntryId(providerId, entryId);
-        const type = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.EntryTypeRole);
-
-        if (type === NewStuff.ItemsModel.GroupEntry) {
-            newStuffEngine.searchTerm = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.PayloadRole);
+        _showEntryDetailsThrottle.enabled = true;
+        _showEntryDetailsThrottle.entry = newStuffEngine. __createEntry(providerId, entryId);
+        if (newStuffEngine.busyState === NewStuff.Engine.Initializing) {
+            _showEntryDetailsThrottle.queryWhenInitialized = true;
         } else {
-            const entry = newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole);
-            newStuffEngine.updateEntryContents(entry);
-        }
-
-        if (newStuffEngine.isLoading) {
-            _showEntryDetailsThrottle.enabled = true;
-        } else {
-            _showEntryDetailsThrottle.onIsLoadingDataChanged();
+            _showEntryDetailsThrottle.requestDetails();
         }
     }
 
+    // Helper for loading and showing entry details
     Connections {
         id: _showEntryDetailsThrottle
-
-        // TODO KF6 Consider making the entry a gadget and setting the entry directly
-        property var entryId
-        property var providerId
-
         target: newStuffModel.engine
         enabled: false
 
+        property var entry
+        property bool queryWhenInitialized: false
+
+        function requestDetails() {
+            newStuffEngine.updateEntryContents(entry);
+            queryWhenInitialized = false;
+        }
+
         function onBusyStateChanged() {
-            if (!newStuffModel.engine.isLoading && root.view.count == 1) {
-                _showEntryDetailsThrottle.enabled = false;
-                var theIndex = newStuffModel.indexOfEntryId(_showEntryDetailsThrottle.providerId, _showEntryDetailsThrottle.entryId);
-                if (theIndex > -1) {
-                    pageStack.push(detailsPage, {
-                        newStuffModel: newStuffModel,
-                        index: theIndex,
-                        providerId: _showEntryDetailsThrottle.providerId,
-                        entry: newStuffModel.data(newStuffModel.index(theIndex, 0), NewStuff.ItemsModel.DownloadLinksRole),
-                    });
-                    _restoreSearchState.enabled = true;
-                } else {
-                    root.message(i18ndc("knewstuff6", "A message which is shown when the user attempts to display a specific entry from a specific provider, but that entry isn't found", "The entry you attempted to display, identified by the unique ID %1, could not be found.", _showEntryDetailsThrottle.entryId));
-                    newStuffEngine.restoreSearch();
-                }
-            } else if (!newStuffModel.engine.isLoading && root.view.count > 1) {
-                // right now, this is only one level deep...
-                _showEntryDetailsThrottle.enabled = false;
-                _restoreSearchState.enabled = true;
+           if (queryWhenInitialized && newStuffEngine.busyState !== NewStuff.Engine.Initializing) {
+                requestDetails();
+                queryWhenInitialized = false;
+           }
+        }
+
+        function onSignalEntryEvent(changedEntry, event) {
+            if (event === NewStuff.Engine.DetailsLoadedEvent && changedEntry === entry) { // only uniqueId and providerId are checked for equality
+                enabled = false;
+                pageStack.push(detailsPage, {
+                    newStuffModel,
+                    providerId: changedEntry.providerId,
+                    entry: changedEntry,
+                });
             }
         }
     }

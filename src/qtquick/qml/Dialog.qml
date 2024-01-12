@@ -83,7 +83,7 @@ Window {
      * @since 5.79
      */
     function showEntryDetails(providerId, entryId) {
-        newStuffPage.showEntryDetails(providerId, entryId);
+        newStuffPage.__showEntryDetails(providerId, entryId);
     }
 
     function open() {

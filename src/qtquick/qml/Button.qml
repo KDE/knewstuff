@@ -76,18 +76,6 @@ QQC2.Button {
     }
 
     /**
-     * Show the details page for a specific entry.
-     * If you call this function before the engine initialisation has been completed,
-     * the action itself will be postponed until that has happened.
-     * @param providerId The provider ID for the entry you wish to show details for
-     * @param entryId The unique ID for the entry you wish to show details for
-     * @since 5.79
-     */
-    function showEntryDetails(providerId, entryId) {
-        newStuffPage.showEntryDetails(providerId, entryId);
-    }
-
-    /**
      * If this is true (default is false), the button will be shown when the Kiosk settings are such
      * that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
      * Usually you would want to leave this alone, but occasionally you may have a reason to

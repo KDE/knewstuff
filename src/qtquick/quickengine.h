@@ -58,6 +58,7 @@ public:
         InstallingEntry,
     };
     Q_DECLARE_FLAGS(BusyState, BusyOperation)
+    Q_ENUM(BusyOperation)
 
     enum EntryEvent {
         UnknownEvent = KNSCore::Entry::UnknownEvent,
@@ -140,6 +141,13 @@ public:
     Q_SIGNAL void searchPresetModelChanged();
 
     Q_INVOKABLE void updateEntryContents(const KNSCore::Entry &entry);
+    Q_INVOKABLE KNSCore::Entry __createEntry(const QString &providerId, const QString &entryId)
+    {
+        KNSCore::Entry e;
+        e.setProviderId(providerId);
+        e.setUniqueId(entryId);
+        return e;
+    }
 
     bool isValid();
     void reloadEntries();
@@ -221,12 +229,13 @@ Q_SIGNALS:
     void entryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
 
     void signalEntriesLoaded(const KNSCore::Entry::List &entries); ///@internal
+    void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event); ///@internal
+
 private:
     bool init(const QString &configfile) override;
     void updateStatus() override;
     bool needsLazyLoadSpinner();
     Q_SIGNAL void signalEntryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
-    Q_SIGNAL void signalEntryEvent(const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event);
     void registerTransaction(KNSCore::Transaction *transactions);
     void doRequest();
     const std::unique_ptr<EnginePrivate> d;

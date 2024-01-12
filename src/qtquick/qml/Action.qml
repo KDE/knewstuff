@@ -85,20 +85,6 @@ Kirigami.Action {
     signal entryEvent(var entry, int event);
 
     /**
-     * Show the details page for a specific entry.
-     * If you call this function before the engine initialisation has been completed,
-     * the action itself will be postponed until that has happened.
-     * @param providerId The provider ID for the entry you wish to show details for
-     * @param entryId The unique ID for the entry you wish to show details for
-     * @since 5.79
-     */
-    function showEntryDetails(providerId, entryId) {
-        component._private.providerId = providerId;
-        component._private.entryId = entryId;
-        component._private.showHotNewStuff();
-    }
-
-    /**
      * If this is true (default is false), the action will be shown when the Kiosk settings are such
      * that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
      * Usually you would want to leave this alone, but occasionally you may have a reason to

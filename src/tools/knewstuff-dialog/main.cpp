@@ -33,7 +33,7 @@ int main(int argc, char **argv)
                            i18n("A kns url to show information from. The format for a kns url is kns://knsrcfile/providerid/entryid\n'knsrcfile'\nis the name "
                                 "of a knsrc file as might be passed directly through this tool's knsrcfile argument\n'providerid'\nis the hostname of the "
                                 "provider the entry should exist on\n'entryid'\nis the unique ID of an entry found in the provider specified by the knsrc "
-                                "file.\n An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"),
+                                "file.\n An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"),
                            QStringLiteral("knsurl")));
     parser->process(app);
 
@@ -49,13 +49,15 @@ int main(int argc, char **argv)
         Q_ASSERT(url.scheme() == QLatin1String("kns"));
 
         const QString knsrcfile{url.host()};
-        const auto pathParts = url.path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
+
+        const QStringList pathParts = url.path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
+        const QString providerId = pathParts.at(0);
+        const QString entryId = pathParts.at(1);
         if (pathParts.size() != 2) {
             qWarning() << "wrong format in the url path" << url << pathParts;
-            return 1;
         }
-        const auto providerId = pathParts.at(0);
-        const auto entryId = pathParts.at(1);
+        Q_ASSERT(!providerId.isEmpty() && !entryId.isEmpty());
+
         appengine->rootContext()->setContextProperty(QStringLiteral("knsrcfile"), knsrcfile);
         appengine->rootContext()->setContextProperty(QStringLiteral("knsProviderId"), providerId);
         appengine->rootContext()->setContextProperty(QStringLiteral("knsEntryId"), entryId);
