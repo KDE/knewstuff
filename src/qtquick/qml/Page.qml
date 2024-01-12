@@ -421,8 +421,6 @@ KCM.GridViewKCM {
         }
     }
 
-    extraFooterTopPadding: false
-
     footer: RowLayout {
         spacing: Kirigami.Units.smallSpacing
 
