@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:31+0000\n"
+"POT-Creation-Date: 2024-01-13 00:36+0000\n"
 "PO-Revision-Date: 2009-11-22 00:01+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -660,12 +660,12 @@ msgstr "પ્રતિ જાઓ. (&G).."
 msgid "Search…"
 msgstr "શોધો:"
 
-#: qtquick/qml/Page.qml:434
+#: qtquick/qml/Page.qml:432
 #, kde-format
 msgid "Category:"
 msgstr "વર્ગ:"
 
-#: qtquick/qml/Page.qml:454
+#: qtquick/qml/Page.qml:452
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"

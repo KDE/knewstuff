@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:31+0000\n"
+"POT-Creation-Date: 2024-01-13 00:36+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -618,12 +618,12 @@ msgstr ""
 msgid "Search…"
 msgstr ""
 
-#: qtquick/qml/Page.qml:434
+#: qtquick/qml/Page.qml:432
 #, kde-format
 msgid "Category:"
 msgstr ""
 
-#: qtquick/qml/Page.qml:454
+#: qtquick/qml/Page.qml:452
 #, kde-format
 msgid "Contribute your own…"
 msgstr ""

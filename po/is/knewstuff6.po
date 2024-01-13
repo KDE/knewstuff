@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:31+0000\n"
+"POT-Creation-Date: 2024-01-13 00:36+0000\n"
 "PO-Revision-Date: 2013-05-13 22:40+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -677,12 +677,12 @@ msgstr "&Fara að..."
 msgid "Search…"
 msgstr "Leita:"
 
-#: qtquick/qml/Page.qml:434
+#: qtquick/qml/Page.qml:432
 #, kde-format
 msgid "Category:"
 msgstr "Flokkur:"
 
-#: qtquick/qml/Page.qml:454
+#: qtquick/qml/Page.qml:452
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
