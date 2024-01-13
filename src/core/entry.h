@@ -51,6 +51,19 @@ public:
     typedef QList<Entry> List;
     Q_PROPERTY(QString providerId READ providerId)
     Q_PROPERTY(QString uniqueId READ uniqueId)
+    Q_PROPERTY(Entry::Status status READ status)
+
+    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(KNSCore::Author author READ author)
+    Q_PROPERTY(QString shortSummary READ shortSummary)
+    Q_PROPERTY(QString summary READ summary)
+    // TODO  Q_PROPERTY(QString previews READ previews)
+    Q_PROPERTY(QUrl homepage READ homepage)
+    Q_PROPERTY(QString donationLink READ donationLink)
+    Q_PROPERTY(int numberOfComments READ numberOfComments)
+    Q_PROPERTY(int rating READ rating)
+    Q_PROPERTY(int downloadCount READ downloadCount)
+    Q_PROPERTY(QList<KNSCore::Entry::DownloadLinkInformation> downloadLinks READ downloadLinkInformationList)
 
     /**
      * Status of the entry. An entry will be downloadable from the provider's

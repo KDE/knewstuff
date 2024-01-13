@@ -35,7 +35,7 @@ class CommentsModel : public QSortFilterProxyModel, public QQmlParserStatus
     /**
      * The index in the model of the entry to fetch comments for
      */
-    Q_PROPERTY(int entryIndex READ entryIndex WRITE setEntryIndex NOTIFY entryIndexChanged)
+    Q_PROPERTY(KNSCore::Entry entry READ entry WRITE setEntry NOTIFY entryChanged)
     /**
      * Which types of comments should be included
      * @default AllComments
@@ -63,9 +63,9 @@ public:
     void setItemsModel(QObject *newItemsModel);
     Q_SIGNAL void itemsModelChanged();
 
-    int entryIndex() const;
-    void setEntryIndex(int entryIndex);
-    Q_SIGNAL void entryIndexChanged();
+    KNSCore::Entry entry() const;
+    void setEntry(const KNSCore::Entry &entry);
+    Q_SIGNAL void entryChanged();
 
     /**
      * Which comments should be included

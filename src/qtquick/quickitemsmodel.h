@@ -9,6 +9,8 @@
 
 #include <QAbstractListModel>
 
+#include "entry.h"
+
 #include <memory>
 
 class ItemsModelPrivate;
@@ -141,13 +143,17 @@ public:
      * @since 5.79
      */
     Q_INVOKABLE int indexOfEntryId(const QString &providerId, const QString &entryId);
+    Q_INVOKABLE int indexOfEntry(const KNSCore::Entry &e)
+    {
+        return indexOfEntryId(e.providerId(), e.uniqueId());
+    }
 
     /**
      * @brief Fired when an entry's data changes
      *
      * @param index The index of the item which has changed
      */
-    Q_SIGNAL void entryChanged(int index);
+    Q_SIGNAL void entryChanged(const KNSCore::Entry &entry);
 
 private:
     const std::unique_ptr<ItemsModelPrivate> d;

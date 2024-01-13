@@ -103,20 +103,7 @@ KCM.GridDelegate {
             cursorShape: Qt.PointingHandCursor;
             onClicked: pageStack.push(detailsPage, {
                 newStuffModel: component.GridView.view.model,
-                index: model.index,
-                name: model.name,
-                author: model.author,
-                previews: model.previews,
-                shortSummary: model.shortSummary,
-                summary: model.summary,
-                homepage: model.homepage,
-                donationLink: model.donationLink,
-                status: model.status,
-                commentsCount: model.numberOfComments,
-                rating: model.rating,
-                downloadCount: model.downloadCount,
-                downloadLinks: model.downloadLinks,
-                providerId: model.providerId
+                entry: model.entry,
             });
         }
     }

@@ -10,8 +10,6 @@
 
 #include "core/commentsmodel.h"
 
-#include "knewstuffquick_debug.h"
-
 namespace KNewStuffQuick
 {
 class CommentsModelPrivate
@@ -23,7 +21,7 @@ public:
     }
     CommentsModel *q;
     ItemsModel *itemsModel{nullptr};
-    int entryIndex{-1};
+    KNSCore::Entry entry;
     bool componentCompleted{false};
     CommentsModel::IncludedComments includedComments{CommentsModel::IncludeAllComments};
 
@@ -31,8 +29,8 @@ public:
     void resetConnections()
     {
         if (componentCompleted && itemsModel) {
-            q->setSourceModel(
-                qobject_cast<QAbstractListModel *>(itemsModel->data(itemsModel->index(entryIndex), ItemsModel::CommentsModelRole).value<QObject *>()));
+            q->setSourceModel(qobject_cast<QAbstractListModel *>(
+                itemsModel->data(itemsModel->index(itemsModel->indexOfEntry(entry)), ItemsModel::CommentsModelRole).value<QObject *>()));
         }
     }
 
@@ -89,18 +87,16 @@ void CommentsModel::setItemsModel(QObject *newItemsModel)
     }
 }
 
-int CommentsModel::entryIndex() const
+KNSCore::Entry CommentsModel::entry() const
 {
-    return d->entryIndex;
+    return d->entry;
 }
 
-void CommentsModel::setEntryIndex(int entryIndex)
+void CommentsModel::setEntry(const KNSCore::Entry &entry)
 {
-    if (d->entryIndex != entryIndex) {
-        d->entryIndex = entryIndex;
-        d->resetConnections();
-        Q_EMIT entryIndexChanged();
-    }
+    d->entry = entry;
+    d->resetConnections();
+    Q_EMIT entryChanged();
 }
 
 CommentsModel::IncludedComments KNewStuffQuick::CommentsModel::includedComments() const

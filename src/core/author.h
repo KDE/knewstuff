@@ -30,6 +30,10 @@ class AuthorPrivate;
  */
 class KNEWSTUFFCORE_EXPORT Author
 {
+    Q_GADGET
+    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QString email READ email)
+
 public:
     explicit Author();
     Author(const Author &other);

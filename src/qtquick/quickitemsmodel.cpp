@@ -70,7 +70,7 @@ public:
     {
         if (event == KNSCore::Entry::StatusChangedEvent) {
             model->slotEntryChanged(entry);
-            Q_EMIT q->entryChanged(model->row(entry));
+            Q_EMIT q->entryChanged(entry);
 
             // If we update/uninstall an entry we have to update the UI, see BUG: 425135
             if (engine->filter() == KNSCore::Provider::Updates && entry.status() != KNSCore::Entry::Updateable && entry.status() != KNSCore::Entry::Updating) {
@@ -82,7 +82,7 @@ public:
 
         if (event == KNSCore::Entry::DetailsLoadedEvent) {
             model->slotEntryChanged(entry);
-            Q_EMIT q->entryChanged(model->row(entry));
+            Q_EMIT q->entryChanged(entry);
         }
     }
 };
@@ -346,7 +346,7 @@ int ItemsModel::indexOfEntryId(const QString &providerId, const QString &entryId
     if (d->engine && d->model) {
         for (int i = 0; i < rowCount(); ++i) {
             KNSCore::Entry testEntry = d->model->data(d->model->index(i), Qt::UserRole).value<KNSCore::Entry>();
-            if (providerId == QUrl(testEntry.providerId()).host() && entryId == testEntry.uniqueId()) {
+            if (providerId == testEntry.providerId() && entryId == testEntry.uniqueId()) {
                 idx = i;
                 break;
             }

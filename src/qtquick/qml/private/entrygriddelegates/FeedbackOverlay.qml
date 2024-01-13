@@ -33,7 +33,7 @@ Item {
         id: statusLabel
         Connections {
             target: newStuffModel
-            function onEntryChanged(index) {
+            function onEntryChanged(index) {//TODO
                 var status = newStuffModel.data(newStuffModel.index(index, 0), NewStuff.ItemsModel.StatusRole);
                 if (status == NewStuff.ItemsModel.DownloadableStatus
                 || status == NewStuff.ItemsModel.InstalledStatus

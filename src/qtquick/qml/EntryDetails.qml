@@ -27,7 +27,8 @@ KCM.SimpleKCM {
     id: component
 
     property QtObject newStuffModel
-    property int index
+    property var entry
+
     property string name
     property var author
     property alias shortSummary: shortSummaryItem.text
@@ -42,7 +43,6 @@ KCM.SimpleKCM {
     property var downloadLinks
     property string providerId
     property int entryType
-    property var entry
 
     Component.onCompleted: {
         updateContents();
@@ -51,31 +51,32 @@ KCM.SimpleKCM {
 
     Connections {
         target: newStuffModel
-        function onEntryChanged(index) {
-            if (index == component.index) {
+        function onEntryChanged(changedEntry) {
+            if (entry === changedEntry) {
                 updateContents();
             }
         }
     }
 
     function updateContents() {
-        const modelIndex = newStuffModel.index(index, 0);
-        const modelData = role => newStuffModel.data(modelIndex, role);
+        component.providerId = entry.providerId;
+        component.status = entry.status;
 
-        component.author = modelData(NewStuff.ItemsModel.AuthorRole);
-        component.name = modelData(NewStuff.ItemsModel.NameRole);
-        component.previews = modelData(NewStuff.ItemsModel.PreviewsRole);
-        component.shortSummary = modelData(NewStuff.ItemsModel.ShortSummaryRole);
-        component.summary = modelData(NewStuff.ItemsModel.SummaryRole);
-        component.homepage = modelData(NewStuff.ItemsModel.HomepageRole);
-        component.donationLink = modelData(NewStuff.ItemsModel.DonationLinkRole);
-        component.status = modelData(NewStuff.ItemsModel.StatusRole);
-        component.commentsCount = modelData(NewStuff.ItemsModel.NumberOfCommentsRole);
-        component.rating = modelData(NewStuff.ItemsModel.RatingRole);
-        component.downloadCount = modelData(NewStuff.ItemsModel.DownloadCountRole);
-        component.downloadLinks = modelData(NewStuff.ItemsModel.DownloadLinksRole);
+        component.author = entry.author;
+        component.name = entry.name;
+        component.shortSummary = entry.shortSummary;
+        component.summary = entry.summary;
+        component.homepage = entry.homepage;
+        component.donationLink = entry.donationLink;
+        component.status = entry.status;
+        component.commentsCount = entry.numberOfComments;
+        component.rating = entry.rating;
+        component.downloadCount = entry.downloadCount;
 
-        component.status = modelData(NewStuff.ItemsModel.StatusRole);
+        const modelIndex = newStuffModel.index(newStuffModel.indexOfEntry(entry), 0);
+        component.previews = newStuffModel.data(modelIndex, NewStuff.ItemsModel.PreviewsRole);
+        component.downloadLinks = newStuffModel.data(modelIndex, NewStuff.ItemsModel.DownloadLinksRole);
+
     }
 
     NewStuff.DownloadItemsSheet {
@@ -246,7 +247,7 @@ KCM.SimpleKCM {
 
             Private.EntryCommentsPage {
                 itemsModel: component.newStuffModel
-                entryIndex: component.index
+                entry: component.entry
                 entryName: component.name
                 entryAuthorId: component.author.name
                 entryProviderId: component.providerId
