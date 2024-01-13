@@ -59,7 +59,7 @@ Kirigami.PromptDialog {
             source: {
                 if (currentError === null) {
                     return "";
-                } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
+                } else if (currentError.code === NewStuff.ErrorCode.TryAgainLaterError) {
                     return "accept_time_event";
                 } else {
                     return "dialog-warning";
@@ -77,7 +77,7 @@ Kirigami.PromptDialog {
             text: {
                 if (currentError === null) {
                     return "";
-                } else if (currentError.code == NewStuff.Engine.TryAgainLaterError) {
+                } else if (currentError.code === NewStuff.ErrorCode.TryAgainLaterError) {
                     return currentError.message + "\n\n" + i18n("Please try again later.")
                 } else {
                     return currentError.message;

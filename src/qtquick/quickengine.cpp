@@ -79,7 +79,7 @@ Engine::Engine(QObject *parent)
             &KNSCore::EngineBase::signalErrorCode,
             this,
             [setBusy, this](const KNSCore::ErrorCode &error, const QString &message, const QVariant &metadata) {
-                Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+                Q_EMIT errorCode(error, message, metadata);
                 if (error == KNSCore::ProviderError || error == KNSCore::ConfigFileError) {
                     // This means loading the config or providers file failed entirely and we cannot complete the
                     // initialisation. It also means the engine is done loading, but that nothing will
@@ -90,7 +90,7 @@ Engine::Engine(QObject *parent)
                 // Emit the signal later, currently QML is not connected to the slot
                 if (error == KNSCore::ConfigFileError) {
                     QTimer::singleShot(0, [this, error, message, metadata]() {
-                        Q_EMIT errorCode(static_cast<ErrorCode>(error), message, metadata);
+                        Q_EMIT errorCode(error, message, metadata);
                     });
                 }
             });
@@ -198,7 +198,7 @@ void Engine::setConfigFile(const QString &newFile)
             // This is not an error message in the proper sense, and the message is not intended to look like an error (as there is really
             // nothing the user can do to fix it, and we just tell them so they're not wondering what's wrong)
             Q_EMIT errorCode(
-                Engine::ConfigFileError,
+                KNSCore::ErrorCode::ConfigFileError,
                 i18nc("An informational message which is shown to inform the user they are not authorized to use GetHotNewStuff functionality",
                       "You are not authorized to Get Hot New Stuff. If you think this is in error, please contact the person in charge of your permissions."),
                 QVariant());

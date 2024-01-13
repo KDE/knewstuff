@@ -68,24 +68,6 @@ public:
     };
     Q_ENUM(EntryEvent)
 
-    /**
-     * Registering the error codes from KNSCore to allow them to be used easily in QtQuick
-     * @see KNSCore::ErrorCode
-     * @since 5.84
-     */
-    enum ErrorCode {
-        UnknownError = KNSCore::ErrorCode::UnknownError,
-        NetworkError = KNSCore::ErrorCode::NetworkError,
-        OcsError = KNSCore::ErrorCode::OcsError,
-        ConfigFileError = KNSCore::ErrorCode::ConfigFileError,
-        ProviderError = KNSCore::ErrorCode::ProviderError,
-        InstallationError = KNSCore::ErrorCode::InstallationError,
-        ImageError = KNSCore::ErrorCode::ImageError,
-        AdoptionError = KNSCore::ErrorCode::AdoptionError,
-        TryAgainLaterError = KNSCore::ErrorCode::TryAgainLaterError,
-    };
-    Q_ENUM(ErrorCode)
-
     QString configFile() const;
     void setConfigFile(const QString &newFile);
     Q_SIGNAL void configFileChanged();
@@ -224,7 +206,7 @@ Q_SIGNALS:
      * @see KNSCore::Engine::signalErrorCode
      * @since 5.84
      */
-    void errorCode(Engine::ErrorCode errorCode, const QString &message, const QVariant &metadata);
+    void errorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
     void entryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
 

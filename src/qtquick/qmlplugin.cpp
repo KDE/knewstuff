@@ -9,7 +9,6 @@
 #include "author.h"
 #include "categoriesmodel.h"
 #include "commentsmodel.h"
-#include "downloadlinkinfo.h"
 #include "quickengine.h"
 #include "quickitemsmodel.h"
 #include "quickquestionlistener.h"
@@ -66,6 +65,7 @@ void QmlPlugins::registerTypes(const char *uri)
                                                                         return KNewStuffQuick::QuickQuestionListener::instance();
                                                                     });
     qmlRegisterUncreatableMetaObject(KNSCore::Entry::staticMetaObject, uri, 1, 91, "Entry", QStringLiteral("Entries should only be created by the engine"));
+    qmlRegisterUncreatableMetaObject(KNSCore::staticMetaObject, uri, 1, 91, "ErrorCode", QStringLiteral("Only for access to the KNSCore::ErrorCode enum"));
 
     // Version 1.81
     qmlRegisterSingletonType<KNewStuffQuick::Settings>(uri, 1, 81, "Settings", [](QQmlEngine *engine, QJSEngine * /*scriptEngine*/) -> QObject * {
