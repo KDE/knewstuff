@@ -91,30 +91,11 @@ public:
         DonationLinkRole,
         ProviderIdRole,
         SourceRole,
-        StatusRole,
         CommentsModelRole,
-        EntryTypeRole,
         EntryRole,
     };
     Q_ENUM(Roles)
-    enum ItemStatus { // TODO KF6 access those from KNSCore::Entry
-        InvalidStatus,
-        DownloadableStatus,
-        InstalledStatus,
-        UpdateableStatus,
-        DeletedStatus,
-        InstallingStatus,
-        UpdatingStatus,
-    };
-    Q_ENUM(ItemStatus)
 
-    /**
-     * Represents whether the current entry is an actual catalog entry,
-     * or an entry that represents a set of entries.
-     * @since 5.83
-     */
-    enum EntryType { CatalogEntry = 0, GroupEntry };
-    Q_ENUM(EntryType)
     // The lists in OCS are one-indexed, and that isn't how one usually does things in C++.
     // Consequently, this enum removes what would seem like magic numbers from the code, and
     // makes their meaning more explicit.

@@ -128,8 +128,6 @@ QHash<int, QByteArray> ItemsModel::roleNames() const
         {DonationLinkRole, "donationLink"},
         {ProviderIdRole, "providerId"},
         {SourceRole, "source"},
-        {StatusRole, "status"},
-        {EntryTypeRole, "entryType"},
         {EntryRole, "entry"},
     };
     return roles;
@@ -262,26 +260,6 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 return QStringLiteral("Unknown source - shouldn't be possible");
             }
         }
-        case StatusRole: {
-            KNSCore::Entry::Status status = entry.status();
-            switch (status) {
-            case KNSCore::Entry::Downloadable:
-                return ItemsModel::DownloadableStatus;
-            case KNSCore::Entry::Installed:
-                return ItemsModel::InstalledStatus;
-            case KNSCore::Entry::Updateable:
-                return ItemsModel::UpdateableStatus;
-            case KNSCore::Entry::Deleted:
-                return ItemsModel::DeletedStatus;
-            case KNSCore::Entry::Installing:
-                return ItemsModel::InstallingStatus;
-            case KNSCore::Entry::Updating:
-                return ItemsModel::UpdatingStatus;
-            case KNSCore::Entry::Invalid:
-            default:
-                return ItemsModel::InvalidStatus;
-            }
-        }
         case CommentsModelRole: {
             KNSCore::CommentsModel *commentsModel{nullptr};
             if (!d->commentsModels.contains(entry.uniqueId())) {
@@ -292,14 +270,6 @@ QVariant ItemsModel::data(const QModelIndex &index, int role) const
                 commentsModel = d->commentsModels[entry.uniqueId()];
             }
             return QVariant::fromValue(commentsModel);
-        }
-        case EntryTypeRole: {
-            KNSCore::Entry::EntryType type = entry.entryType();
-            if (type == KNSCore::Entry::GroupEntry) {
-                return ItemsModel::GroupEntry;
-            } else {
-                return ItemsModel::CatalogEntry;
-            }
         }
         default:
             return QStringLiteral("Unknown role");

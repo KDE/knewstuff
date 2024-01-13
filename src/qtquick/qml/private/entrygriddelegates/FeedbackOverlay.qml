@@ -9,12 +9,12 @@ import QtQuick.Controls 2.11 as QtControls
 
 import org.kde.kirigami 2.7 as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff as NewStuff
 
 Item {
     property QtObject newStuffModel
     visible: opacity > 0
-    opacity: (model.status == NewStuff.ItemsModel.InstallingStatus || model.status == NewStuff.ItemsModel.UpdatingStatus) ? 1 : 0
+    opacity: (model.entry.status == NewStuff.Entry.Installing || model.entry.status == NewStuff.Entry.Updating) ? 1 : 0
     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
     Rectangle {
         anchors.fill: parent
@@ -33,16 +33,16 @@ Item {
         id: statusLabel
         Connections {
             target: newStuffModel
-            function onEntryChanged(index) {//TODO
-                var status = newStuffModel.data(newStuffModel.index(index, 0), NewStuff.ItemsModel.StatusRole);
-                if (status == NewStuff.ItemsModel.DownloadableStatus
-                || status == NewStuff.ItemsModel.InstalledStatus
-                || status == NewStuff.ItemsModel.UpdateableStatus
-                || status == NewStuff.ItemsModel.DeletedStatus) {
+            function onEntryChanged(entry) {
+                const status = entry.status;
+                if (status == NewStuff.Entry.Downloadable
+                || status == NewStuff.Entry.Installed
+                || status == NewStuff.Entry.Updateable
+                || status == NewStuff.Entry.Deleted) {
                     statusLabel.text = "";
-                } else if (status == NewStuff.ItemsModel.InstallingStatus) {
+                } else if (status == NewStuff.Entry.Installing) {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working…");
-                } else if (status == NewStuff.ItemsModel.UpdatingStatus) {
+                } else if (status == NewStuff.Entry.Updating) {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is in the process of being updated", "Updating…");
                 } else {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator which should only be shown when the entry has been given some unknown or invalid status.", "Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");

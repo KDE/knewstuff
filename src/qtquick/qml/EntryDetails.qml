@@ -116,21 +116,21 @@ KCM.SimpleKCM {
                     downloadItemsSheet.open();
                 }
             }
-            enabled: component.status == NewStuff.ItemsModel.DownloadableStatus || component.status == NewStuff.ItemsModel.DeletedStatus
+            enabled: component.status == NewStuff.Entry.Downloadable || component.status == NewStuff.Entry.Deleted
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
             onTriggered: newStuffModel.update(component.entry, NewStuff.ItemsModel.AutoDetectLinkId)
-            enabled: component.status == NewStuff.ItemsModel.UpdateableStatus
+            enabled: component.status == NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
             icon.name: "edit-delete"
             onTriggered: newStuffModel.engine.uninstall(component.entry)
-            enabled: component.status == NewStuff.ItemsModel.InstalledStatus || component.status == NewStuff.ItemsModel.UpdateableStatus
+            enabled: component.status == NewStuff.Entry.Installed || component.status == NewStuff.Entry.Updateable
             visible: enabled
         }
     ]
@@ -143,14 +143,14 @@ KCM.SimpleKCM {
 
             readonly property string message: {
                 switch (component.status) {
-                case NewStuff.ItemsModel.DownloadableStatus:
-                case NewStuff.ItemsModel.InstalledStatus:
-                case NewStuff.ItemsModel.UpdateableStatus:
-                case NewStuff.ItemsModel.DeletedStatus:
+                case NewStuff.Entry.Downloadable:
+                case NewStuff.Entry.Installed:
+                case NewStuff.Entry.Updateable:
+                case NewStuff.Entry.Deleted:
                     return "";
-                case NewStuff.ItemsModel.InstallingStatus:
+                case NewStuff.Entry.Installing:
                     return i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being installed OR uninstalled", "Currently working on the item %1 by %2. Please wait…", component.name, entryAuthor.name);
-                case NewStuff.ItemsModel.UpdatingStatus:
+                case NewStuff.Entry.Updating:
                     return i18ndc("knewstuff6", "Status message to be shown when the entry is in the process of being updated", "Currently updating the item %1 by %2. Please wait…", component.name, entryAuthor.name);
                 default:
                     return i18ndc("knewstuff6", "Status message which should only be shown when the entry has been given some unknown or invalid status.", "This item is currently in an invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");

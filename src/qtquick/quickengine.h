@@ -60,7 +60,7 @@ public:
     Q_DECLARE_FLAGS(BusyState, BusyOperation)
     Q_ENUM(BusyOperation)
 
-    enum EntryEvent {
+    enum EntryEvent { // TODO KF6 remove in favor of using NewStuff.Entry values
         UnknownEvent = KNSCore::Entry::UnknownEvent,
         StatusChangedEvent = KNSCore::Entry::StatusChangedEvent,
         AdoptedEvent = KNSCore::Entry::AdoptedEvent,

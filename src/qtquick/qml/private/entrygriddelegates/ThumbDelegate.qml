@@ -12,7 +12,7 @@ import Qt5Compat.GraphicalEffects 6.0 as QtEffects
 import org.kde.kcmutils as KCM
 import org.kde.kirigami 2.7 as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff as NewStuff
 
 import ".." as Private
 
@@ -21,12 +21,13 @@ KCM.GridDelegate {
     property string useLabel
     property string uninstallLabel
     text: model.name
+    property var entry: model.entry
     actions: [
         Kirigami.Action {
             text: component.useLabel
             icon.name: "dialog-ok-apply"
-            onTriggered: { newStuffModel.engine.adoptEntry(model.entry); }
-            enabled: (model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus) && newStuffEngine.hasAdoptionCommand
+            onTriggered: { newStuffModel.engine.adoptEntry(entry); }
+            enabled: (entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
@@ -34,29 +35,29 @@ KCM.GridDelegate {
             icon.name: "install"
             onTriggered: {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.install(entry, NewStuff.Entry.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
-                    downloadItemsSheet.entry = model.entry;
+                    downloadItemsSheet.entry = entry;
                     downloadItemsSheet.open();
                 }
             }
-            enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
-            visible: enabled;
+            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted
+            visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             icon.name: "update-none"
-            onTriggered: { newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId); }
-            enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
-            visible: enabled;
+            onTriggered: { newStuffModel.engine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId); }
+            enabled: entry.status == NewStuff.Entry.Updateable
+            visible: enabled
         },
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
-            onTriggered: { newStuffModel.engine.uninstall(model.entry); }
-            enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
-            visible: enabled;
+            onTriggered: { newStuffModel.engine.uninstall(entry); }
+            enabled: entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable
+            visible: enabled
         }
     ]
     thumbnailAvailable: model.previewsSmall.length > 0
@@ -70,7 +71,7 @@ KCM.GridDelegate {
         source: thumbnailAvailable ? model.previewsSmall[0] : "";
         Kirigami.Icon {
             id: updateAvailableBadge;
-            opacity: (model.status == NewStuff.ItemsModel.UpdateableStatus) ? 1 : 0;
+            opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0;
             Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
             anchors {
                 top: parent.top;
@@ -83,7 +84,7 @@ KCM.GridDelegate {
         }
         Kirigami.Icon {
             id: installedBadge;
-            opacity: (model.status == NewStuff.ItemsModel.InstalledStatus) ? 1 : 0;
+            opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0;
             Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
             anchors {
                 top: parent.top;
@@ -103,8 +104,9 @@ KCM.GridDelegate {
             cursorShape: Qt.PointingHandCursor;
             onClicked: pageStack.push(detailsPage, {
                 newStuffModel: component.GridView.view.model,
-                entry: model.entry,
+                entry: entry,
             });
+
         }
     }
 }

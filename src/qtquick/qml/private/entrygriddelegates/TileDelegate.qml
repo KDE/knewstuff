@@ -11,23 +11,23 @@ import Qt5Compat.GraphicalEffects 6.0 as QtEffects
 
 import org.kde.kirigami 2.12 as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff as NewStuff
 
 import ".." as Private
 
 Private.GridTileDelegate {
     id: component
+    property var entry: model.entry
     property string useLabel
     property string uninstallLabel
     function showDetails() {
-
-        if (model.entryType == NewStuff.ItemsModel.GroupEntry) {
+        if (entry.entryType == NewStuff.Entry.GroupEntry) {
             newStuffEngine.storeSearch();
             newStuffEngine.searchTerm = model.payload;
         } else {
             pageStack.push(detailsPage, {
                 newStuffModel: GridView.view.model,
-                entry: model.entry,
+                entry,
             });
         }
     }
@@ -36,37 +36,37 @@ Private.GridTileDelegate {
             text: component.useLabel
             icon.name: "dialog-ok-apply"
             onTriggered: { newStuffModel.adoptItem(model.index); }
-            enabled: (model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus) && newStuffEngine.hasAdoptionCommand
+            enabled: (entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
+            text: entry.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
             icon.name: "install"
             onTriggered: {
-                if (model.downloadLinks.length === 1) {
-                    newStuffEngine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
+                if (entry.downloadLinks.length === 1) {
+                    newStuffEngine.install(entry.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
-                    downloadItemsSheet.downloadLinks = model.downloadLinks;
-                    downloadItemsSheet.entry = model.entry;
+                    downloadItemsSheet.downloadLinks = entry.downloadLinks;
+                    downloadItemsSheet.entry = entry;
                     downloadItemsSheet.open();
                 }
             }
-            enabled: model.status == NewStuff.ItemsModel.DownloadableStatus || model.status == NewStuff.ItemsModel.DeletedStatus;
+            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted;
             visible: enabled;
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             icon.name: "update-none"
-            onTriggered: { newStuffEngine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId); }
-            enabled: model.status == NewStuff.ItemsModel.UpdateableStatus;
-            visible: enabled;
+            onTriggered: { newStuffEngine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId); }
+            enabled: entry.status == NewStuff.Entry.Updateable
+            visible: enabled
         },
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
             onTriggered: { newStuffEngine.uninstall(model.entry); }
-            enabled: model.status == NewStuff.ItemsModel.InstalledStatus || model.status == NewStuff.ItemsModel.UpdateableStatus
-            visible: enabled && hovered;
+            enabled: entry.status == NewStuff.Entry.Installed|| entry.status == NewStuff.Entry.Updateable
+            visible: enabled && hovered
         }
     ]
     thumbnailAvailable: model.previewsSmall.length > 0
@@ -107,7 +107,7 @@ Private.GridTileDelegate {
                     }
                     Kirigami.Icon {
                         id: updateAvailableBadge;
-                        opacity: (model.status == NewStuff.ItemsModel.UpdateableStatus) ? 1 : 0;
+                        opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0;
                         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
                         anchors {
                             top: parent.top;
@@ -120,7 +120,7 @@ Private.GridTileDelegate {
                     }
                     Kirigami.Icon {
                         id: installedBadge;
-                        opacity: (model.status == NewStuff.ItemsModel.InstalledStatus) ? 1 : 0;
+                        opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0;
                         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
                         anchors {
                             top: parent.top;
@@ -143,36 +143,36 @@ Private.GridTileDelegate {
                     QtLayouts.Layout.fillWidth: true
                     elide: Text.ElideRight
                     level: 3
-                    text: model.name
+                    text: entry.name
                 }
                 Kirigami.Heading {
                     QtLayouts.Layout.fillWidth: true
                     elide: Text.ElideRight
                     level: 4
                     textFormat: Text.StyledText
-                    text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
+                    text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", entry.author.name)
                 }
                 QtControls.Label {
                     QtLayouts.Layout.fillWidth: true
                     QtLayouts.Layout.fillHeight: true
                     wrapMode: Text.Wrap
-                    text: model.shortSummary.length > 0 ? model.shortSummary : model.summary
+                    text: entry.shortSummary.length > 0 ? entry.shortSummary : entry.summary
                     elide: Text.ElideRight
                     clip: true // We are dealing with content over which we have very little control. Sometimes that means being a bit abrupt.
                 }
             }
             Private.Rating {
                 QtLayouts.Layout.fillWidth: true
-                rating: model.rating
-                visible: model.entryType == NewStuff.ItemsModel.CatalogEntry;
+                rating: entry.rating
+                visible: entry.entryType == NewStuff.Entry.CatalogEntry;
             }
             Kirigami.Heading {
                 QtLayouts.Layout.fillWidth: true
                 horizontalAlignment: Text.AlignRight
                 level: 5
                 elide: Text.ElideRight
-                text: i18ndc("knewstuff6", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
-                visible: model.entryType == NewStuff.ItemsModel.CatalogEntry;
+                text: i18ndc("knewstuff6", "The number of times the item has been downloaded", "%1 downloads", entry.downloadCount)
+                visible: entry.entryType == NewStuff.Entry.CatalogEntry
             }
         }
         FeedbackOverlay {

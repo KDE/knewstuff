@@ -51,7 +51,8 @@ public:
     typedef QList<Entry> List;
     Q_PROPERTY(QString providerId READ providerId)
     Q_PROPERTY(QString uniqueId READ uniqueId)
-    Q_PROPERTY(Entry::Status status READ status)
+    Q_PROPERTY(KNSCore::Entry::Status status READ status)
+    Q_PROPERTY(KNSCore::Entry::EntryType entryType READ entryType)
 
     Q_PROPERTY(QString name READ name)
     Q_PROPERTY(KNSCore::Author author READ author)
@@ -133,6 +134,7 @@ public:
         CatalogEntry = 0, ///< These are the main entries that KNewStuff can get the details about and download links for.
         GroupEntry ///< these are entries whose payload is another feed. Currently only used by the OPDS provider.
     };
+    Q_ENUM(EntryType)
 
     /**
      * Constructor.

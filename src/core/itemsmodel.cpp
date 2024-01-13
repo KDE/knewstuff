@@ -98,6 +98,7 @@ void ItemsModel::removeEntry(const Entry &entry)
 void ItemsModel::slotEntryChanged(const Entry &entry)
 {
     int i = d->entries.indexOf(entry);
+    Q_ASSERT(i != -1);
     QModelIndex entryIndex = index(i, 0);
     Q_EMIT dataChanged(entryIndex, entryIndex);
 }
