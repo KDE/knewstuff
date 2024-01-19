@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:36+0000\n"
+"POT-Creation-Date: 2024-01-19 00:35+0000\n"
 "PO-Revision-Date: 2023-07-30 21:57+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -399,14 +399,14 @@ msgstr ""
 msgid "Install"
 msgstr "Installer"
 
-#: qtquick/qml/EntryDetails.qml:86
+#: qtquick/qml/EntryDetails.qml:87
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "Installerer %1 frå %2"
 
-#: qtquick/qml/EntryDetails.qml:103
+#: qtquick/qml/EntryDetails.qml:104
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -414,10 +414,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 av %2"
 
-#: qtquick/qml/EntryDetails.qml:107
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#: qtquick/qml/EntryDetails.qml:108
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -425,32 +425,32 @@ msgctxt ""
 msgid "Install"
 msgstr "Installer"
 
-#: qtquick/qml/EntryDetails.qml:107
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:50
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:42
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#: qtquick/qml/EntryDetails.qml:108
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
 #, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
 msgstr "Installerer …"
 
-#: qtquick/qml/EntryDetails.qml:122
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:65
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:57
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:72
+#: qtquick/qml/EntryDetails.qml:123
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:49
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:58
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Oppdater"
 
-#: qtquick/qml/EntryDetails.qml:129 qtquick/qml/Page.qml:128
+#: qtquick/qml/EntryDetails.qml:130 qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Avinstaller"
 
-#: qtquick/qml/EntryDetails.qml:151
+#: qtquick/qml/EntryDetails.qml:152
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -458,14 +458,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "Arbeider på elementet %1 av %2. Vent litt …"
 
-#: qtquick/qml/EntryDetails.qml:153
+#: qtquick/qml/EntryDetails.qml:154
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "Oppdaterer %1 av %2. Vent litt …"
 
-#: qtquick/qml/EntryDetails.qml:155
+#: qtquick/qml/EntryDetails.qml:156
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -479,12 +479,12 @@ msgstr ""
 "org/enter_bug.cgi?product=frameworks-knewstuff\">Meld dette inn som ein "
 "feilrapport til KDE-fellesskapet</a>."
 
-#: qtquick/qml/EntryDetails.qml:208
+#: qtquick/qml/EntryDetails.qml:209
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Kommentarar og vurderingar:"
 
-#: qtquick/qml/EntryDetails.qml:210
+#: qtquick/qml/EntryDetails.qml:211
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -492,17 +492,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 vurderingar og kommentarar"
 
-#: qtquick/qml/EntryDetails.qml:216
+#: qtquick/qml/EntryDetails.qml:217
 #, kde-format
 msgid "Rating:"
 msgstr "Karakter:"
 
-#: qtquick/qml/EntryDetails.qml:221
+#: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgid "Homepage:"
 msgstr "Heimeside:"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:223
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -511,12 +511,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Opna heimesida til %1"
 
-#: qtquick/qml/EntryDetails.qml:228
+#: qtquick/qml/EntryDetails.qml:229
 #, kde-format
 msgid "How To Donate:"
 msgstr "Korleis gje pengegåver:"
 
-#: qtquick/qml/EntryDetails.qml:229
+#: qtquick/qml/EntryDetails.qml:230
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -524,19 +524,8 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Les om korleis du kan gje ei pengegåve til prosjektet"
 
-#: qtquick/qml/Page.qml:103
-#, kde-format
-msgctxt ""
-"A message which is shown when the user attempts to display a specific entry "
-"from a specific provider, but that entry isn't found"
-msgid ""
-"The entry you attempted to display, identified by the unique ID %1, could "
-"not be found."
-msgstr ""
-"Fann ikkje oppføringa du prøvde å visa (identifisert med den unike ID-en %1)."
-
 # Sjå tilsvarande tekst i «plasma-welcome.po».
-#: qtquick/qml/Page.qml:155
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -545,65 +534,65 @@ msgstr ""
 "Alt innhaldet her er lasta opp av andre brukarar. Leverandøren din har ikkje "
 "kvalitets­sikra at det verkar skikkeleg eller stabilt."
 
-#: qtquick/qml/Page.qml:185
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Tiles"
 msgstr "Fliser"
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Icons"
 msgstr "Ikon"
 
-#: qtquick/qml/Page.qml:189
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Preview"
 msgstr "Førehandsvising"
 
-#: qtquick/qml/Page.qml:205
+#: qtquick/qml/Page.qml:191
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Flisvisings­modus"
 
-#: qtquick/qml/Page.qml:214
+#: qtquick/qml/Page.qml:200
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Ikonmodus"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Førehandsvisings­modus"
 
-#: qtquick/qml/Page.qml:234
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Everything"
 msgstr "Alt"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Installed"
 msgstr "Installert"
 
-#: qtquick/qml/Page.qml:238
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Updateable"
 msgstr "Oppdaterbare"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:244
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Vis alle oppføringar"
 
-#: qtquick/qml/Page.qml:267
+#: qtquick/qml/Page.qml:253
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Vis berre installerte oppføringar"
 
-#: qtquick/qml/Page.qml:276
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -611,27 +600,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Vis berre oppdaterbare oppføringar"
 
-#: qtquick/qml/Page.qml:287
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Recent"
 msgstr "Nylege"
 
-#: qtquick/qml/Page.qml:289
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetisk"
 
-#: qtquick/qml/Page.qml:291
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Rating"
 msgstr "Karakter"
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Downloads"
 msgstr "Nedlastingar"
 
-#: qtquick/qml/Page.qml:313
+#: qtquick/qml/Page.qml:299
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -639,7 +628,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Nyaste først"
 
-#: qtquick/qml/Page.qml:322
+#: qtquick/qml/Page.qml:308
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -647,45 +636,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sorter alfabetisk etter namn"
 
-#: qtquick/qml/Page.qml:331
+#: qtquick/qml/Page.qml:317
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Høgaste karakter først"
 
-#: qtquick/qml/Page.qml:340
+#: qtquick/qml/Page.qml:326
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Mest nedlasta først"
 
-#: qtquick/qml/Page.qml:351
+#: qtquick/qml/Page.qml:337
 #, kde-format
 msgid "Upload…"
 msgstr "Last opp …"
 
-#: qtquick/qml/Page.qml:352
+#: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Les om korleis du kan bidra med kule, nye ting til lista"
 
-#: qtquick/qml/Page.qml:362
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgid "Go to…"
 msgstr "Gå til …"
 
-#: qtquick/qml/Page.qml:369 qtquick/qml/Page.qml:378
+#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
 #, kde-format
 msgid "Search…"
 msgstr "Søk …"
 
-#: qtquick/qml/Page.qml:432
+#: qtquick/qml/Page.qml:418
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:452
+#: qtquick/qml/Page.qml:438
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Bidra med noko sjølv …"
@@ -733,15 +722,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "Vis vurderingar og svar"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:188
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 nedlastingar"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:154
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:167
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -985,7 +974,19 @@ msgstr ""
 "vindauge der du kan byta mellom oppsett­filene som er installert globalt"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "A kns url to show information from. The format for a kns url is kns://"
+#| "knsrcfile/providerid/entryid\n"
+#| "'knsrcfile'\n"
+#| "is the name of a knsrc file as might be passed directly through this "
+#| "tool's knsrcfile argument\n"
+#| "'providerid'\n"
+#| "is the hostname of the provider the entry should exist on\n"
+#| "'entryid'\n"
+#| "is the unique ID of an entry found in the provider specified by the knsrc "
+#| "file.\n"
+#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -997,7 +998,7 @@ msgid ""
 "'entryid'\n"
 "is the unique ID of an entry found in the provider specified by the knsrc "
 "file.\n"
-" An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+" An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
 "Ei kns-adressa å visa informasjon frå. Formatet: kns://knsrc_fil/"
 "leverandør_id/oppføring_id\n"
@@ -1016,3 +1017,13 @@ msgstr ""
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "Last ned nye saker …"
+
+#~ msgctxt ""
+#~ "A message which is shown when the user attempts to display a specific "
+#~ "entry from a specific provider, but that entry isn't found"
+#~ msgid ""
+#~ "The entry you attempted to display, identified by the unique ID %1, could "
+#~ "not be found."
+#~ msgstr ""
+#~ "Fann ikkje oppføringa du prøvde å visa (identifisert med den unike ID-en "
+#~ "%1)."
