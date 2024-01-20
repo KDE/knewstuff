@@ -11,7 +11,7 @@
 #include "knewstuffcore_export.h"
 #include <qobjectdefs.h>
 
-namespace KNSCore
+namespace KNSCore::ErrorCode
 {
 Q_NAMESPACE_EXPORT(KNEWSTUFFCORE_EXPORT)
 /**

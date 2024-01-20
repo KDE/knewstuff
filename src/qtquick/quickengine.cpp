@@ -68,7 +68,7 @@ Engine::Engine(QObject *parent)
     });
     connect(installation(), &KNSCore::Installation::signalInstallationFailed, this, [this](const QString &message) {
         --d->numInstallJobs;
-        Q_EMIT signalErrorCode(KNSCore::InstallationError, message, QVariant());
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::InstallationError, message, QVariant());
     });
     connect(this, &EngineBase::signalProvidersLoaded, this, &Engine::updateStatus);
     connect(this, &EngineBase::signalProvidersLoaded, this, [this]() {
@@ -78,9 +78,9 @@ Engine::Engine(QObject *parent)
     connect(this,
             &KNSCore::EngineBase::signalErrorCode,
             this,
-            [setBusy, this](const KNSCore::ErrorCode &error, const QString &message, const QVariant &metadata) {
+            [setBusy, this](const KNSCore::ErrorCode::ErrorCode &error, const QString &message, const QVariant &metadata) {
                 Q_EMIT errorCode(error, message, metadata);
-                if (error == KNSCore::ProviderError || error == KNSCore::ConfigFileError) {
+                if (error == KNSCore::ErrorCode::ProviderError || error == KNSCore::ErrorCode::ConfigFileError) {
                     // This means loading the config or providers file failed entirely and we cannot complete the
                     // initialisation. It also means the engine is done loading, but that nothing will
                     // work, and we need to inform the user of this.
@@ -88,7 +88,7 @@ Engine::Engine(QObject *parent)
                 }
 
                 // Emit the signal later, currently QML is not connected to the slot
-                if (error == KNSCore::ConfigFileError) {
+                if (error == KNSCore::ErrorCode::ConfigFileError) {
                     QTimer::singleShot(0, [this, error, message, metadata]() {
                         Q_EMIT errorCode(error, message, metadata);
                     });
@@ -369,7 +369,7 @@ void Engine::loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewTyp
         updateStatus();
     });
     connect(l, &KNSCore::ImageLoader::signalError, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type, const QString &errorText) {
-        Q_EMIT signalErrorCode(KNSCore::ImageError, errorText, QVariantList() << entry.name() << type);
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ImageError, errorText, QVariantList() << entry.name() << type);
         qCDebug(KNEWSTUFFQUICK) << "ERROR preview: " << errorText << entry.name() << type;
         --d->numPictureJobs;
         updateStatus();

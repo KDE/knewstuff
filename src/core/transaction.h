@@ -93,7 +93,7 @@ Q_SIGNALS:
      * metadata details)
      * @see KNSCore::Entry::ErrorCode
      */
-    void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
+    void signalErrorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
 private:
     Transaction(const KNSCore::Entry &entry, EngineBase *engine);

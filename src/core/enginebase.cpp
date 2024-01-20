@@ -76,7 +76,7 @@ bool EngineBase::init(const QString &configfile)
     }
 
     if (!QFileInfo::exists(resolvedConfigFilePath)) {
-        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file does not exist: \"%1\"", configfile), configfile);
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ConfigFileError, i18n("Configuration file does not exist: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file" << configfile << "does not exist";
         return false;
     }
@@ -84,14 +84,14 @@ bool EngineBase::init(const QString &configfile)
     const KConfig conf(resolvedConfigFilePath);
 
     if (conf.accessMode() == KConfig::NoAccess) {
-        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ConfigFileError, i18n("Configuration file exists, but cannot be opened: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << "The knsrc file" << configfile << "was found but could not be opened.";
         return false;
     }
 
     const KConfigGroup group = conf.hasGroup(QStringLiteral("KNewStuff")) ? conf.group(QStringLiteral("KNewStuff")) : conf.group(QStringLiteral("KNewStuff3"));
     if (!group.exists()) {
-        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ConfigFileError, i18n("Configuration file is invalid: \"%1\"", configfile), configfile);
         qCCritical(KNEWSTUFFCORE) << configfile << "doesn't contain a KNewStuff or KNewStuff3 section.";
         return false;
     }
@@ -193,7 +193,7 @@ void EngineBase::loadProviders()
                     if (retryAfter.toSecsSinceEpoch() - QDateTime::currentSecsSinceEpoch() > 2) {
                         // more than that, spit out TryAgainLaterError to let the user know what we're doing with their time
                         static const KFormat formatter;
-                        Q_EMIT signalErrorCode(KNSCore::TryAgainLaterError,
+                        Q_EMIT signalErrorCode(KNSCore::ErrorCode::TryAgainLaterError,
                                                i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
                                                     formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
                                                {retryAfter});
@@ -269,7 +269,9 @@ void EngineBase::providerInitialized(Provider *p)
 
 void EngineBase::slotProvidersFailed()
 {
-    Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Loading of providers from file: %1 failed", d->providerFileUrl.toString()), d->providerFileUrl);
+    Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError,
+                           i18n("Loading of providers from file: %1 failed", d->providerFileUrl.toString()),
+                           d->providerFileUrl);
 }
 
 void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
@@ -285,7 +287,7 @@ void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
         isAtticaProviderFile = true;
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
         qWarning() << "No document in providers.xml.";
-        Q_EMIT signalErrorCode(KNSCore::ProviderError,
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError,
                                i18n("Could not load get hot new stuff providers from file: %1", d->providerFileUrl.toString()),
                                d->providerFileUrl);
         return;
@@ -317,7 +319,7 @@ void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
         if (provider->setProviderXML(n)) {
             addProvider(provider);
         } else {
-            Q_EMIT signalErrorCode(KNSCore::ProviderError, i18n("Error initializing provider."), d->providerFileUrl);
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError, i18n("Error initializing provider."), d->providerFileUrl);
         }
         n = n.nextSiblingElement();
     }

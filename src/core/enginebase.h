@@ -352,7 +352,7 @@ Q_SIGNALS:
      * @see KNSCore::Entry::ErrorCode
      * @since 5.53
      */
-    void signalErrorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
+    void signalErrorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
 

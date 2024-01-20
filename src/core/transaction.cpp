@@ -138,7 +138,7 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
     auto ret = new Transaction(_entry, engine);
     connect(engine->d->installation, &Installation::signalInstallationError, ret, [ret, _entry](const QString &msg, const KNSCore::Entry &entry) {
         if (_entry.uniqueId() == entry.uniqueId()) {
-            Q_EMIT ret->signalErrorCode(KNSCore::InstallationError, msg, {});
+            Q_EMIT ret->signalErrorCode(KNSCore::ErrorCode::InstallationError, msg, {});
         }
     });
 
@@ -150,7 +150,7 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
             qCDebug(KNEWSTUFFCORE) << "There were no downloadlinks defined in the entry we were just asked to update: " << entry.uniqueId() << "on provider"
                                    << entry.providerId();
             Q_EMIT ret->signalErrorCode(
-                KNSCore::InstallationError,
+                KNSCore::ErrorCode::InstallationError,
                 i18n("Could not perform an installation of the entry %1 as it does not have any downloadable items defined. Please contact the "
                      "author so they can fix this.",
                      entry.name()),
@@ -374,7 +374,7 @@ Transaction *Transaction::adopt(EngineBase *engine, const Entry &entry)
                 }
             } else {
                 const QString errorMsg = i18n("Failed to adopt '%1'\n%2", entry.name(), QString::fromLocal8Bit(process->readAllStandardError()));
-                Q_EMIT ret->signalErrorCode(KNSCore::AdoptionError, errorMsg, QVariantList{command});
+                Q_EMIT ret->signalErrorCode(KNSCore::ErrorCode::AdoptionError, errorMsg, QVariantList{command});
             }
             ret->d->finish();
         });

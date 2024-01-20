@@ -283,7 +283,7 @@ void parseFeedData(const QDomDocument &doc)
                                 // more than that, spit out TryAgainLaterError to let the user know what we're doing with their time
                                 static const KFormat formatter;
                                 Q_EMIT q->signalErrorCode(
-                                    KNSCore::TryAgainLaterError,
+                                    KNSCore::ErrorCode::TryAgainLaterError,
                                     i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
                                          formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
                                     {retryAfter});

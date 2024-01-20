@@ -38,7 +38,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories, const QString &add
         mCategoryMap.insert(category, Attica::Category());
     }
 
-    connect(&m_providerManager, &ProviderManager::providerAdded, this, [=](const Attica::Provider &provider) {
+    connect(&m_providerManager, &ProviderManager::providerAdded, this, [this, additionalAgentInformation](const Attica::Provider &provider) {
         providerLoaded(provider);
         m_provider.setAdditionalAgentInformation(additionalAgentInformation);
     });
@@ -162,7 +162,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
         Q_EMIT providerInitialized(this);
         Q_EMIT categoriesMetadataLoded(categoryMetadataList);
     } else {
-        Q_EMIT signalErrorCode(KNSCore::ConfigFileError, i18n("All categories are missing"), QVariant());
+        Q_EMIT signalErrorCode(KNSCore::ErrorCode::ConfigFileError, i18n("All categories are missing"), QVariant());
     }
 }
 
@@ -576,25 +576,27 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job)
                 }
             }
             static const KFormat formatter;
-            Q_EMIT signalErrorCode(KNSCore::TryAgainLaterError,
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::TryAgainLaterError,
                                    i18n("The service is currently undergoing maintenance and is expected to be back in %1.",
                                         formatter.formatSpelloutDuration(retryAfter.toMSecsSinceEpoch() - QDateTime::currentMSecsSinceEpoch())),
                                    {retryAfter});
         } else {
-            Q_EMIT signalErrorCode(KNSCore::NetworkError,
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::NetworkError,
                                    i18n("Network error %1: %2", job->metadata().statusCode(), job->metadata().statusString()),
                                    job->metadata().statusCode());
         }
     }
     if (job->metadata().error() == Attica::Metadata::OcsError) {
         if (job->metadata().statusCode() == 200) {
-            Q_EMIT signalErrorCode(KNSCore::OcsError, i18n("Too many requests to server. Please try again in a few minutes."), job->metadata().statusCode());
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::OcsError,
+                                   i18n("Too many requests to server. Please try again in a few minutes."),
+                                   job->metadata().statusCode());
         } else if (job->metadata().statusCode() == 405) {
-            Q_EMIT signalErrorCode(KNSCore::OcsError,
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::OcsError,
                                    i18n("The Open Collaboration Services instance %1 does not support the attempted function.", name()),
                                    job->metadata().statusCode());
         } else {
-            Q_EMIT signalErrorCode(KNSCore::OcsError,
+            Q_EMIT signalErrorCode(KNSCore::ErrorCode::OcsError,
                                    i18n("Unknown Open Collaboration Service API error. (%1)", job->metadata().statusCode()),
                                    job->metadata().statusCode());
         }

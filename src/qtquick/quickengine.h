@@ -206,7 +206,7 @@ Q_SIGNALS:
      * @see KNSCore::Engine::signalErrorCode
      * @since 5.84
      */
-    void errorCode(KNSCore::ErrorCode errorCode, const QString &message, const QVariant &metadata);
+    void errorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
     void entryPreviewLoaded(const KNSCore::Entry &, KNSCore::Entry::PreviewType);
 
