@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -87,21 +87,21 @@ msgstr ""
 msgid "Network error %1: %2"
 msgstr "Mrežna pogreška. (%1)"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Previše zahtjeva prema poslužitelju. Molim pokušajte ponovno za nekoliko "
 "minuta."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nepoznata pogreška API-ja Open Collaboration Servicea. (%1)"
@@ -151,17 +151,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Učitavanje pružatelja usluge iz datoteke: %1 nije uspjelo"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nije moguće učitati pružatelje Nabavi nove sadržaje iz datoteke: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Pogreška pri inicijalizaciji pružatelja."
@@ -512,80 +512,80 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, fuzzy, kde-format
 #| msgctxt "@option:check Do filter on type - show only files"
 #| msgid "Files"
 msgid "Tiles"
 msgstr "sDatoteke"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Ikone"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Preview URL:"
 msgid "Preview"
 msgstr "Pregled URL-a:"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Detailed Tiles View Mode"
 msgstr "Način detaljnog prikaza"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, fuzzy, kde-format
 #| msgid "Icons view mode"
 msgid "Icons Only View Mode"
 msgstr "Način prikaza s ikonama"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Large Preview View Mode"
 msgstr "Način detaljnog prikaza"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Instalirano"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Ažuriraj"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Sve kategorije"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -593,30 +593,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Open Recent"
 msgid "Recent"
 msgstr "Otvori &nedavno"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Ocjena"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Preuzmi"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -625,7 +625,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Prvo prikaži direktorije"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -633,14 +633,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Prvo prikaži direktorije"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -648,35 +648,35 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "Najviše preuzimanja"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "New Upload"
 msgid "Upload…"
 msgstr "Novo slanje"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Idi na…"
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Pretraga:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"

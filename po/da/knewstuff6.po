@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2021-09-09 21:26+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -70,13 +70,13 @@ msgstr "Tjenesten er under vedligeholdelse og forventes at være tilbage om %1."
 msgid "Network error %1: %2"
 msgstr "Netværksfejl %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "For mange anmodninger til serveren. Prøv venligst igen om nogle få minutter."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "Open Collaboration-instansen %1 understøtter ikke den forsøgte funktion."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Ukendt fejl fra Open Collaboration Service-API. (%1)"
@@ -139,17 +139,17 @@ msgstr ""
 "Kunne ikke initialisere installationshåndteringen for %1\n"
 "Dette er en kritisk fejl og bør rapporteres til programmets ophavsmand"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Indlæsning af udbydere fra filen %1 mislykkedes"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Kunne ikke indlæse Hent smarte nye ting-udbydere fra filen: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Fejl under initialisering af udbyder."
@@ -538,72 +538,72 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Find ud af hvordan man donerer til dette projekt"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "Felter"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Ikoner"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Detaljeret visningstilstand med felter"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Visningstilstand kun med ikoner"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Visningstilstand med stor forhåndsvisning"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr "Alt"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Installeret"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, kde-format
 msgid "Updateable"
 msgstr "Kan opdateres"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Vis alle indgange"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Vis kun installerede indgange"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -611,27 +611,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Vis kun indgange som kan opdateres"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, kde-format
 msgid "Recent"
 msgstr "Nylige"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetisk"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Vurdering"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, kde-format
 msgid "Downloads"
 msgstr "Downloads"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -639,7 +639,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Vis mest nylige først"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -647,48 +647,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sortér alfabetisk efter navn"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Vis højest vurderede først"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Vis flest downloads først"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Upload..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Lær hvordan du kan tilføje dine egne smarte ting til denne liste"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Gå til..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Søg:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, fuzzy, kde-format
 #| msgid "Contribute your own..."
 msgid "Contribute your own…"

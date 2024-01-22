@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2009-01-02 17:37+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -71,19 +71,19 @@ msgstr ""
 msgid "Network error %1: %2"
 msgstr ""
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
@@ -134,17 +134,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr ""
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr ""
@@ -497,79 +497,79 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, fuzzy, kde-format
 #| msgid "File"
 msgid "Tiles"
 msgstr "ଫାଇଲ"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "ଚିତ୍ରସଂକେତ"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "No Preview"
 msgid "Preview"
 msgstr "ପ୍ରାକଦର୍ଶନ ନାହିଁ"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr ""
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, fuzzy, kde-format
 #| msgid "Icons Only"
 msgid "Icons Only View Mode"
 msgstr "କେବଳ ଚିତ୍ରସଙ୍କେତ"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, fuzzy, kde-format
 #| msgid "Preview URL:"
 msgid "Large Preview View Mode"
 msgstr "ପ୍ରାକଦର୍ଶନ URL:"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installed"
 msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "ଅଦ୍ୟତନ"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, fuzzy, kde-format
 #| msgid "Pages"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "ପୃଷ୍ଠାଗୁଡିକ"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -577,30 +577,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, fuzzy, kde-format
 #| msgid "Open &Recent"
 msgid "Recent"
 msgstr "ସାମ୍ପ୍ରତିକକୁ ଖୋଲନ୍ତୁ (&R)"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating"
 msgstr "ଆକଳନ: "
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "ଆହରଣ"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -609,7 +609,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -617,14 +617,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -632,36 +632,36 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "ବଦଳାନ୍ତୁ (&R)..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "କୁ ଯାଆନ୍ତୁ (&G)..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "ଖୋଜନ୍ତୁ (&e):"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr "ଅକ୍ଷର:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"

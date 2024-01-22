@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2022-12-12 21:24+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -77,12 +77,12 @@ msgstr ""
 msgid "Network error %1: %2"
 msgstr "Tinklo klaida %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Per daug užklausų į serverį. Po kelių minučių bandykite dar kartą."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 "Open Collaboration Services egzempliorius %1 nepalaiko bandytos funkcijos."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nežinoma Open Collaboration Service API klaida. (%1)"
@@ -145,17 +145,17 @@ msgstr ""
 "Nepavyko inicijuoti diegimo doroklės, skirtos %1\n"
 "Tai yra kritinė klaida ir apie ją turėtų būti pranešta programos autoriui"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Tiekėjų įkėlimas iš failo: %1 nepavyko"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nepavyko įkelti karštų naujų elementų gavimo tiekėjų iš failo: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Klaida inicijuojant tiekėją."
@@ -541,7 +541,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -551,65 +551,65 @@ msgstr ""
 "jūsų platinamojo paketo platintojas nepatikrino kaip šis turinys veikia "
 "funkcionalumo ar stabilumo atžvilgiu."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "Plytelės"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Piktogramos"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "Peržiūra"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Išsamių plytelių rodinio veiksena"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Tik piktogramų rodinio veiksena"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Didelės peržiūros rodinio veiksena"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr "Visi"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Įdiegti"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, kde-format
 msgid "Updateable"
 msgstr "Galimi atnaujinti"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Rodyti visus įrašus"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Rodyti tik įdiegtus įrašus"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -617,27 +617,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Rodyti tik galimus atnaujinti įrašus"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, kde-format
 msgid "Recent"
 msgstr "Paskiausi"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr "Pagal abėcėlę"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Įvertinimas"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, kde-format
 msgid "Downloads"
 msgstr "Atsiuntimai"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -645,7 +645,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Pirmiausia, rodyti paskiausius"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -653,48 +653,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Rikiuoti pavadinimus pagal abėcėlę"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Pirmiausia, su aukščiausiu įvertinimu"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Pirmiausia, rodyti daugiausiai atsisiųstus"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Išsiųsti..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Sužinokite kaip pridėti į šį sąrašą savo asmeninius naujus elementus"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Pereiti į..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Ieškoti:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Paskelbti viešai savo asmeninį…"

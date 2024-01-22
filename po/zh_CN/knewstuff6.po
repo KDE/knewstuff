@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
-"PO-Revision-Date: 2024-01-13 05:59\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
+"PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -68,19 +68,19 @@ msgstr "该服务目前正在维护，预计将在 %1 后恢复。"
 msgid "Network error %1: %2"
 msgstr "网络错误 %1：%2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "向服务器发送请求的次数过多，请几分钟后再试。"
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Open Collaboration Services 的实例 %1 不支持此功能。"
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Open Collaboration Services 的 API 出现了未知错误。(%1)"
@@ -132,17 +132,17 @@ msgstr ""
 "%2\n"
 "这是一个严重的错误，请向应用程序的作者报告"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "无法从文件 %1 中加载内容提供者的信息"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "无法从文件 %1 中加载资源提供者的信息"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "初始化内容提供者时出错。"
@@ -504,7 +504,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "了解如何为此项目捐款"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -513,65 +513,65 @@ msgstr ""
 "此处提供的内容由像您这样的用户上传，系统软件的发行组织并未对它们功能或稳定性"
 "进行审查。"
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "卡片"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "图标"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "预览"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "详细卡片视图模式"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "仅图标视图模式"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "宽大预览视图模式"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "已安装"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, kde-format
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "显示所有项"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "只显示已安装的项目"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -579,27 +579,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "只显示可更新的项目"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, kde-format
 msgid "Recent"
 msgstr "最新"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr "字母顺序"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "评分"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, kde-format
 msgid "Downloads"
 msgstr "下载量"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -607,7 +607,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "最新的在前"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -615,45 +615,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "按名称的字母排序"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "高分在前"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "最多下载在前"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Upload…"
 msgstr "上传…"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何向此列表添加您自己的资源"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, kde-format
 msgid "Go to…"
 msgstr "转到…"
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, kde-format
 msgid "Search…"
 msgstr "搜索…"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "分类："
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, kde-format
 msgid "Contribute your own…"
 msgstr "贡献您的内容…"
@@ -948,19 +948,7 @@ msgstr ""
 "KNSRC 文件位置中安装的所有配置文件里进行选择。"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -975,23 +963,12 @@ msgid ""
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
 "显示信息来源的 kns URL，其格式为 kns://knsrcfile/providerid/entryid\n"
-"'knsrcfile'\n"
-"即直接传给本工具的 knsrcfile 参数的 knsrc 文件名。\n"
-"'providerid'\n"
-"即内容提供者的主机名。\n"
-"'entryid'\n"
-"即内容提供者提供的 knsrc 文件中，项目的唯一 ID。\n"
-" URL 示例：kns://peruse.knsrc/api.kde-look.org/1316714"
+"knsrcfile 是可以直接通过本工具的 knsrcfile 参数传输的 knsrc 文件名。\n"
+"providerid 是项目提供者所在的主机名。\n"
+"entryid 是位于该 knsrc 文件指定的提供者中的项目唯一 ID。\n"
+"示例 URL：kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
 msgstr "下载新资源..."
-
-#~ msgctxt ""
-#~ "A message which is shown when the user attempts to display a specific "
-#~ "entry from a specific provider, but that entry isn't found"
-#~ msgid ""
-#~ "The entry you attempted to display, identified by the unique ID %1, could "
-#~ "not be found."
-#~ msgstr "您想要查看的项目 (唯一 ID %1) 已不存在。"

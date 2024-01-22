@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2022-09-24 16:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -77,12 +77,12 @@ msgstr ""
 msgid "Network error %1: %2"
 msgstr "Nätverksfel %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "För många begäran till servern. Försök igen om några minuter."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -91,7 +91,7 @@ msgstr ""
 "Instansen %1 av öppen samarbetstjänst stöder inte funktionen som försökte "
 "användas."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Okänt fel i programmeringsgränssnitt för öppen samarbetstjänst. (%1)"
@@ -146,17 +146,17 @@ msgstr ""
 "Kunde inte installera installationshanteraren för %1\n"
 "Det är ett kritiskt fel och ska rapporteras till programupphovsmannen"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Inläsning av leverantörer från filen %1 misslyckades"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Kunde inte ladda ner leverantörer av heta nyheter från fil: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Fel vid initiering av leverantör."
@@ -542,7 +542,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Ta reda på hur man bidrar till projektet"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -551,65 +551,65 @@ msgstr ""
 "Innehållet som är tillgängligt här har laddats upp av användare som du, och "
 "har inte granskats av distributören avseende funktion eller stabilitet."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "Rutor"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Ikoner"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "Förhandsgranskning"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Detaljerat visningsläge med rutor"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Visningsläge enbart med ikoner"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Stort förhandsgranskningläge"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr "Allting"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Installerad"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, kde-format
 msgid "Updateable"
 msgstr "Uppdateringsbara"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Visa alla poster"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Visa bara installerade poster"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -617,27 +617,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Visa bara uppdateringsbara poster"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, kde-format
 msgid "Recent"
 msgstr "Senaste"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetiskt"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Betyg"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, kde-format
 msgid "Downloads"
 msgstr "Nerladdningar"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -645,7 +645,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Visa senaste först"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -653,48 +653,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sortera alfabetiskt enligt namn"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Visa högst betyg först"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Visa flest nerladdningar först"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Ladda upp..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ta reda på hur du kan lägga till dina egna heta nyheter i listan"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Gå till..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Sök:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Bidra din egen…"

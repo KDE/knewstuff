@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2022-12-28 21:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -70,19 +70,19 @@ msgstr "Serviciul e acum în mentenanță și se așteaptă să revină în %1."
 msgid "Network error %1: %2"
 msgstr "Eroare de rețea %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Prea multe cereri către server. Reîncercați în câteva minute."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Instanța „Open Collaboration Services” %1nu susține funcția încercată."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Eroare de API de servicu de colaborare deschisă necunoscută. (%1)"
@@ -137,17 +137,17 @@ msgstr ""
 "Nu s-a putut inițializa gestionarul de instalare pentru %1\n"
 "Această eroare e critică și trebuie raportată autorului aplicației"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Încărcarea furnizorilor din fișier: %1 a eșuat"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nu s-au putut obține furnizori de lucruri noi din fișier: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Eroare la inițializarea furnizorului."
@@ -534,7 +534,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Aflați cum să donați acestui proiect"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -544,65 +544,65 @@ msgstr ""
 "și nu a fost revizuit de către distribuitor pentru funcționalitate sau "
 "stabilitate."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "Dale"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Pictograme"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "Previzualizare"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Regim de vizualizare cu dale detaliate"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Regim de vizualizare numai cu pictograme"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Regim de vizualizare cu previzualizare mare"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, kde-format
 msgid "Everything"
 msgstr "Tot"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Instalat"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, kde-format
 msgid "Updateable"
 msgstr "Actualizabile"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Arată toate înregistrările"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Arată doar înregistrări instalate"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -610,27 +610,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Arată doar înregistrări actualizabile"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, kde-format
 msgid "Recent"
 msgstr "Recente"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetic"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Evaluare"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, kde-format
 msgid "Downloads"
 msgstr "Descărcări"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -638,7 +638,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Arată întâi pe cele mai recente"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -646,48 +646,48 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sortează alfabetic după denumire"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Arată întâi pe cele mai apreciate"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Arată întâi pe cele mai descărcate"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Încarcă…"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Învățați cum să vă adăugați propriile lucruri noi la această listă"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Mergi la…"
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Caută:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Categorie:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, fuzzy, kde-format
 #| msgid "Contribute your own..."
 msgid "Contribute your own…"

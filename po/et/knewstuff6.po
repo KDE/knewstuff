@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:35+0000\n"
+"POT-Creation-Date: 2024-01-22 00:35+0000\n"
 "PO-Revision-Date: 2020-10-07 21:04+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -72,13 +72,13 @@ msgstr ""
 msgid "Network error %1: %2"
 msgstr "Võrgu viga %1: %2"
 
-#: attica/atticaprovider.cpp:591
+#: attica/atticaprovider.cpp:592
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Liiga palju päringuid serverile. Palun proovi mõne minuti pärast uuesti."
 
-#: attica/atticaprovider.cpp:594
+#: attica/atticaprovider.cpp:596
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -87,7 +87,7 @@ msgstr ""
 "Open Collaboration Services isend %1 ei toeta funktsiooni, mida proovisid "
 "kasutada."
 
-#: attica/atticaprovider.cpp:598
+#: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Tundmatu avatud koostööteenuste API viga. (%1)"
@@ -142,17 +142,17 @@ msgstr ""
 "%1 paigalduskäitleja initsialiseerimine nurjus.\n"
 "See on kriitiline tõrge ja sellest tuleks teatada rakenduse autorile"
 
-#: core/enginebase.cpp:272
+#: core/enginebase.cpp:273
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Pakkujate laadimine failist %1 nurjus"
 
-#: core/enginebase.cpp:289
+#: core/enginebase.cpp:291
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Uue kuuma kraami pakkujate laadimine failist nurjus: %1"
 
-#: core/enginebase.cpp:320
+#: core/enginebase.cpp:322
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Viga pakkuja initsialiseerimisel."
@@ -535,61 +535,61 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Selgitamine, kuidas projektile annetus teha"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:172
 #, fuzzy, kde-format
 #| msgid "&Tile"
 msgid "Tiles"
 msgstr "&Paanidena"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Ikoonid"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Previews"
 msgid "Preview"
 msgstr "Eelvaatlused"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:192
 #, fuzzy, kde-format
 #| msgid "Detailed Tree View"
 msgid "Detailed Tiles View Mode"
 msgstr "Detailne puuvaade"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:201
 #, fuzzy, kde-format
 #| msgid "Icons view mode"
 msgid "Icons Only View Mode"
 msgstr "Ikoonivaate režiim"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:210
 #, fuzzy, kde-format
 #| msgid "Preview view mode"
 msgid "Large Preview View Mode"
 msgstr "Eelvaatluse režiim"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:221
 #, fuzzy, kde-format
 #| msgctxt "List option which will set the filter to show everything"
 #| msgid "Everything"
 msgid "Everything"
 msgstr "Kõik"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:223
 #, kde-format
 msgid "Installed"
 msgstr "Paigaldatud"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:225
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "List option which will set the filter so only installed items with "
@@ -598,14 +598,14 @@ msgstr "Paigaldatud"
 msgid "Updateable"
 msgstr "Ainult uuendatavad"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:245
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "&Näita kõiki kirjeid"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:254
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -613,7 +613,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "&Näita kõiki kirjeid"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:263
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -622,14 +622,14 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "&Näita kõiki kirjeid"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:274
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Percent"
 msgid "Recent"
 msgstr "Protsent"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:276
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "List option which will set the sort order to be alphabetical based on the "
@@ -638,18 +638,18 @@ msgstr "Protsent"
 msgid "Alphabetical"
 msgstr "Sorteerimine tähestiku järgi"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:278
 #, kde-format
 msgid "Rating"
 msgstr "Hinnang"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:280
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Laadi alla"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:300
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "List option which will set the sort order to based on when items were "
@@ -661,7 +661,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Uusimate näitamine esimesena"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "List option which will set the sort order to be alphabetical based on the "
@@ -673,7 +673,7 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Sorteerimine tähestiku järgi"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:318
 #, fuzzy, kde-format
 #| msgctxt "List option which will set the sort order to based on user ratings"
 #| msgid "Show highest rated first"
@@ -681,7 +681,7 @@ msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Kõige hinnatumate näitamine esimesena"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:327
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "List option which will set the sort order to based on number of downloads"
@@ -691,35 +691,35 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "Kõige enam alla laaditute näitamine esimesena"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:338
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Üleslaadimine..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:339
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:349
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mine..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Otsing:"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:419
 #, kde-format
 msgid "Category:"
 msgstr "Kategooria:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:439
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
