@@ -124,7 +124,6 @@ KCM.GridViewKCM {
 
     // Otherwise the first item will be focused, see BUG: 424894
     Component.onCompleted: {
-console.log(NewStuff.ErrorCode.TryAgainLaterError)
         view.currentIndex = -1;
     }
 
