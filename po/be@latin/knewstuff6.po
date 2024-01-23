@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 00:35+0000\n"
+"POT-Creation-Date: 2024-01-23 00:35+0000\n"
 "PO-Revision-Date: 2008-08-30 01:10+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -494,79 +494,79 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:171
 #, fuzzy, kde-format
 #| msgid "File"
 msgid "Tiles"
 msgstr "Fajł"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Icons"
 msgstr "Ikony"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:175
 #, fuzzy, kde-format
 #| msgid "No Preview"
 msgid "Preview"
 msgstr "Niama padhladu"
 
-#: qtquick/qml/Page.qml:192
+#: qtquick/qml/Page.qml:191
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr ""
 
-#: qtquick/qml/Page.qml:201
+#: qtquick/qml/Page.qml:200
 #, fuzzy, kde-format
 #| msgid "Icons Only"
 msgid "Icons Only View Mode"
 msgstr "Tolki ikony"
 
-#: qtquick/qml/Page.qml:210
+#: qtquick/qml/Page.qml:209
 #, fuzzy, kde-format
 #| msgid "Preview URL:"
 msgid "Large Preview View Mode"
 msgstr "Adras padhladu:"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:222
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installed"
 msgstr "Zainstaluj"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:224
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Aktualizuj"
 
-#: qtquick/qml/Page.qml:245
+#: qtquick/qml/Page.qml:244
 #, fuzzy, kde-format
 #| msgid "Pages"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Staronki"
 
-#: qtquick/qml/Page.qml:254
+#: qtquick/qml/Page.qml:253
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -574,31 +574,31 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:274
+#: qtquick/qml/Page.qml:273
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Open Recent"
 msgid "Recent"
 msgstr "Adčyni niadaŭnaje"
 
-#: qtquick/qml/Page.qml:276
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:278
+#: qtquick/qml/Page.qml:277
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating"
 msgstr "Acenka: "
 
-#: qtquick/qml/Page.qml:280
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Zabiary z servera"
 
-#: qtquick/qml/Page.qml:300
+#: qtquick/qml/Page.qml:299
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -607,7 +607,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Spačatku pakazvaj katalohi"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:308
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -615,14 +615,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:318
+#: qtquick/qml/Page.qml:317
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Spačatku pakazvaj katalohi"
 
-#: qtquick/qml/Page.qml:327
+#: qtquick/qml/Page.qml:326
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -630,36 +630,36 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "Najčaściej adbiranyja"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:337
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "&Zamiani..."
 
-#: qtquick/qml/Page.qml:339
+#: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Pierajdzi..."
 
-#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "&Šukaj:"
 
-#: qtquick/qml/Page.qml:419
+#: qtquick/qml/Page.qml:418
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr "Znak:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:438
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"

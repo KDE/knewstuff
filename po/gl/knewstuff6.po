@@ -9,22 +9,22 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 00:35+0000\n"
-"PO-Revision-Date: 2023-11-17 18:44+0100\n"
+"POT-Creation-Date: 2024-01-23 00:35+0000\n"
+"PO-Revision-Date: 2024-01-22 18:51+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -532,7 +532,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Descubra como doar a este proxecto"
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
@@ -541,65 +541,65 @@ msgstr ""
 "Este contido subírono persoas coma vostede, e a súa funcionalidade e "
 "estabilidade non as revisou o equipo da súa distribución."
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Tiles"
 msgstr "Teselas"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Icons"
 msgstr "Iconas"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Preview"
 msgstr "Vista previa"
 
-#: qtquick/qml/Page.qml:192
+#: qtquick/qml/Page.qml:191
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Modo detallado de vista de teselas"
 
-#: qtquick/qml/Page.qml:201
+#: qtquick/qml/Page.qml:200
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Modo de vista de só iconas"
 
-#: qtquick/qml/Page.qml:210
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Modo de vista de vista previa grande"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Everything"
 msgstr "Todo"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Installed"
 msgstr "Instalado"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Updateable"
 msgstr "Actualizábel"
 
-#: qtquick/qml/Page.qml:245
+#: qtquick/qml/Page.qml:244
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Amosar todas as entradas"
 
-#: qtquick/qml/Page.qml:254
+#: qtquick/qml/Page.qml:253
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Amosar só as entradas instaladas"
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -607,27 +607,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Amosar só as entradas actualizábeis"
 
-#: qtquick/qml/Page.qml:274
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Recent"
 msgstr "Recentes"
 
-#: qtquick/qml/Page.qml:276
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabeticamente"
 
-#: qtquick/qml/Page.qml:278
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Rating"
 msgstr "Cualificación"
 
-#: qtquick/qml/Page.qml:280
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Downloads"
 msgstr "Descargas"
 
-#: qtquick/qml/Page.qml:300
+#: qtquick/qml/Page.qml:299
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -635,7 +635,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Amosar primeiro o máis recente"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:308
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -643,45 +643,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordenar alfabeticamente por nome"
 
-#: qtquick/qml/Page.qml:318
+#: qtquick/qml/Page.qml:317
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Amosar primeiro o de mellor cualificación"
 
-#: qtquick/qml/Page.qml:327
+#: qtquick/qml/Page.qml:326
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Amosar primeiro o máis descargado"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:337
 #, kde-format
 msgid "Upload…"
 msgstr "Enviar…"
 
-#: qtquick/qml/Page.qml:339
+#: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Aprenda a engadir as súas cousas á lista"
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgid "Go to…"
 msgstr "Ir a…"
 
-#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
 #, kde-format
 msgid "Search…"
 msgstr "Buscar…"
 
-#: qtquick/qml/Page.qml:419
+#: qtquick/qml/Page.qml:418
 #, kde-format
 msgid "Category:"
 msgstr "Categoría:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:438
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Contribuír o seu…"
@@ -986,19 +986,7 @@ msgstr ""
 "instalados na localización de ficheiros knsrc do sistema."
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1022,7 +1010,7 @@ msgstr ""
 "Nome de servidor do fornecedor no que debería existir a entrada.\n"
 "«identificador-da-entrada»\n"
 "Identificador único dunha entrada do fornecedor indicado no ficheiro knsrc.\n"
-" Por exemplo: kns://peruse.knsrc/api.kde-look.org/1316714"
+" Por exemplo: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-22 00:35+0000\n"
+"POT-Creation-Date: 2024-01-23 00:35+0000\n"
 "PO-Revision-Date: 2023-02-23 14:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -496,72 +496,72 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "このプロジェクトに寄付する方法を調べる"
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Tiles"
 msgstr "タイトル"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Icons"
 msgstr "アイコン"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Preview"
 msgstr "プレビュー"
 
-#: qtquick/qml/Page.qml:192
+#: qtquick/qml/Page.qml:191
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "詳細タイル表示モード"
 
-#: qtquick/qml/Page.qml:201
+#: qtquick/qml/Page.qml:200
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "アイコン表示モード"
 
-#: qtquick/qml/Page.qml:210
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "大きなプレビュー表示モード"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Everything"
 msgstr "すべて"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Installed"
 msgstr "インストール済み"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Updateable"
 msgstr "更新できるもの"
 
-#: qtquick/qml/Page.qml:245
+#: qtquick/qml/Page.qml:244
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "すべてのエントリを表示"
 
-#: qtquick/qml/Page.qml:254
+#: qtquick/qml/Page.qml:253
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:263
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -569,27 +569,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:274
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Recent"
 msgstr "最近更新"
 
-#: qtquick/qml/Page.qml:276
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Alphabetical"
 msgstr "アルファベット順"
 
-#: qtquick/qml/Page.qml:278
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Rating"
 msgstr "評価"
 
-#: qtquick/qml/Page.qml:280
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: qtquick/qml/Page.qml:300
+#: qtquick/qml/Page.qml:299
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -597,7 +597,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "最新のもの順に表示"
 
-#: qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:308
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -605,47 +605,47 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "アルファベット順にソート"
 
-#: qtquick/qml/Page.qml:318
+#: qtquick/qml/Page.qml:317
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "高評価順に表示"
 
-#: qtquick/qml/Page.qml:327
+#: qtquick/qml/Page.qml:326
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "ダウンロード数が多い順に表示"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:337
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "アップロード..."
 
-#: qtquick/qml/Page.qml:339
+#: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:349
+#: qtquick/qml/Page.qml:348
 #, kde-format
 msgid "Go to…"
 msgstr ""
 
-#: qtquick/qml/Page.qml:356 qtquick/qml/Page.qml:365
+#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "検索:"
 
-#: qtquick/qml/Page.qml:419
+#: qtquick/qml/Page.qml:418
 #, kde-format
 msgid "Category:"
 msgstr "カテゴリ:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:438
 #, kde-format
 msgid "Contribute your own…"
 msgstr ""
