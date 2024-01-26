@@ -1,6 +1,6 @@
 # translation of kdelibs4.po to Français
 # translation of kdelibs4.po to
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Matthieu Robin <kde@macolu.org>, 2002,2003, 2004.
 # Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
 # Gilles Caulier <caulier.gilles@free.fr>, 2003.
@@ -25,15 +25,15 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-23 00:35+0000\n"
-"PO-Revision-Date: 2023-10-14 22:21+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
+"PO-Revision-Date: 2024-01-23 10:25+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1011,19 +1011,7 @@ msgstr ""
 "« knsrc » pour l'ensemble de votre système."
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1047,8 +1035,8 @@ msgstr ""
 "« entryid »\n"
 "est l'identifiant unique de l'entrée, qui est présente chez le fournisseur "
 "et spécifiée par le fichier « knsrc ».\n"
-" Une exemple de ce type d'« URL » est « kns://peruse.knsrc/api.kde-look."
-"org/1316714 »."
+" Une exemple de ce type d'« URL » est « kns://sddmtheme.knsrc/api.kde-look."
+"org/2059021 »."
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
