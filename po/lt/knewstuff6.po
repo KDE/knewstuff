@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-23 00:35+0000\n"
-"PO-Revision-Date: 2022-12-12 21:24+0200\n"
+"PO-Revision-Date: 2024-01-27 14:54+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -112,10 +112,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Konfigūravimo failas nerastas: „%1“"
+msgstr "Konfigūracijos failo nėra: „%1“"
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -133,16 +132,14 @@ msgid "Use"
 msgstr "Naudoti"
 
 #: core/enginebase.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"Nepavyko inicijuoti diegimo doroklės, skirtos %1\n"
+"Nepavyko inicijuoti diegimo doroklės, skirtos %1:\n"
+"%2\n"
 "Tai yra kritinė klaida ir apie ją turėtų būti pranešta programos autoriui"
 
 #: core/enginebase.cpp:273
@@ -181,6 +178,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Nepavyksta įdiegti „%1“, nes elementas nurodo į saityno puslapį. "
+"Spustelėkite <a href='%2'>čia</a> norėdami užbaigti diegimą."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -351,11 +350,7 @@ msgstr "Nežinoma kategorija"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
@@ -363,12 +358,9 @@ msgid "Stuff"
 msgstr "elementą"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "Atsisiųsti naują %1"
+msgstr "Atsisiųsti naują %1…"
 
 #: qtquick/qml/Dialog.qml:42
 #, kde-format
@@ -437,12 +429,11 @@ msgstr "Įdiegti"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Įdiegti"
+msgstr "Įdiegti…"
 
 #: qtquick/qml/EntryDetails.qml:123
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
@@ -460,27 +451,19 @@ msgid "Uninstall"
 msgstr "Pašalinti"
 
 #: qtquick/qml/EntryDetails.qml:152
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "installed OR uninstalled"
-#| msgid "Currently working on the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "Šiuo metu dirbama su elementu %1 pagal %2. Palaukite..."
+msgstr "Šiuo metu dirbama su elementu %1 pagal %2. Palaukite…"
 
 #: qtquick/qml/EntryDetails.qml:154
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "Šiuo metu atnaujinamas elementas %1 pagal %2. Palaukite..."
+msgstr "Šiuo metu atnaujinamas elementas %1 pagal %2. Palaukite…"
 
 #: qtquick/qml/EntryDetails.qml:156
 #, kde-format
@@ -667,10 +650,9 @@ msgid "Show Most Downloaded First"
 msgstr "Pirmiausia, rodyti daugiausiai atsisiųstus"
 
 #: qtquick/qml/Page.qml:337
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
-msgstr "Išsiųsti..."
+msgstr "Išsiųsti…"
 
 #: qtquick/qml/Page.qml:338
 #, kde-format
@@ -678,16 +660,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Sužinokite kaip pridėti į šį sąrašą savo asmeninius naujus elementus"
 
 #: qtquick/qml/Page.qml:348
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
-msgstr "Pereiti į..."
+msgstr "Pereiti į…"
 
 #: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Ieškoti:"
+msgstr "Ieškoti…"
 
 #: qtquick/qml/Page.qml:418
 #, kde-format
@@ -759,25 +739,20 @@ msgid "By <i>%1</i>"
 msgstr "Pagal <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "Dirbama..."
+msgstr "Dirbama…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Atnaujinama"
+msgstr "Atnaujinama…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -794,11 +769,10 @@ msgstr ""
 "bendruomenei pranešime apie klaidą</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Įdiegiama"
+msgstr "Įdiegiama…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -824,22 +798,17 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Išsiųsti naują elementą: %1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "Atnaujinama informacija..."
+msgstr "Atnaujinama informacija…"
 
 #: qtquick/qml/UploadPage.qml:125
 #, kde-format
@@ -1011,19 +980,7 @@ msgstr ""
 "failų, įdiegtų į knsrc failų vietą sistemos mastu"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1046,7 +1003,7 @@ msgstr ""
 "yra tiekėjo serveris, kuriame turėtų būti įrašas\n"
 "„įrašoid“\n"
 "yra unikalus įrašo ID, kurį galima rasti knsrc failo nurodytame tiekėjuje.\n"
-" Tokio url pavyzdys yra kns://peruse.knsrc/api.kde-look.org/1316714"
+" Tokio url pavyzdys yra kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
