@@ -33,7 +33,7 @@ T2.ItemDelegate {
      * tile: Item
      * the item actually implementing the tile: the visualization is up to the implementation
      */
-    property alias tile: thumbnailArea.data
+    property alias tile: contentArea.data
 
     /**
      * thumbnailAvailable: bool
@@ -54,6 +54,12 @@ T2.ItemDelegate {
      * The anchors of the actions listing
      */
     property alias actionsAnchors: actionsScope.anchors
+
+    /**
+     * thumbnailArea: Item
+     * The item that will contain the thumbnail within the delegate
+     */
+    property Item thumbnailArea : contentArea
 
     width: GridView.view.cellWidth
     height: GridView.view.cellHeight
@@ -97,7 +103,7 @@ T2.ItemDelegate {
         }
 
         Rectangle {
-            id: thumbnailArea
+            id: contentArea
             radius: Kirigami.Units.smallSpacing/2
             anchors {
                 fill: parent
@@ -105,17 +111,19 @@ T2.ItemDelegate {
             }
 
             color: Kirigami.Theme.backgroundColor
-            Kirigami.Icon {
-                visible: !delegate.thumbnailAvailable
-                anchors.centerIn: parent
-                width: Kirigami.Units.iconSizes.large
-                height: width
-                source: delegate.text === i18nd("knewstuff6", "None") ? "edit-none" : "view-preview"
-            }
+        }
+
+        Kirigami.Icon {
+            parent: thumbnailArea
+            visible: !delegate.thumbnailAvailable
+            anchors.centerIn: parent
+            width: Kirigami.Units.iconSizes.large
+            height: width
+            source: delegate.text === i18nd("knewstuff6", "None") ? "edit-none" : "view-preview"
         }
 
         Rectangle {
-            anchors.fill: thumbnailArea
+            anchors.fill: contentArea
             visible: actionsColumn.children.length > 0
             opacity: Kirigami.Settings.isMobile || delegate.hovered || (actionsScope.focus) ? 1 : 0
             radius: Kirigami.Units.smallSpacing

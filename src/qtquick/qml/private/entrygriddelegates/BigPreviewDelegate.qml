@@ -63,6 +63,7 @@ Private.GridTileDelegate {
             visible: enabled
         }
     ]
+    thumbnailArea: bigPreview
     thumbnailAvailable: model.previewsSmall.length > 0
     tile: Item {
         anchors {
