@@ -302,7 +302,7 @@ void Engine::reloadEntries()
     const auto providersList = EngineBase::providers();
     for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
         if (p->isInitialized()) {
-            if (d->currentRequest.filter == KNSCore::Provider::Installed) {
+            if (d->currentRequest.filter == KNSCore::Provider::Installed || d->currentRequest.filter == KNSCore::Provider::Updates) {
                 // when asking for installed entries, never use the cache
                 p->loadEntries(d->currentRequest);
             } else {

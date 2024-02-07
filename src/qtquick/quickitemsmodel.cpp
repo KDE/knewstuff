@@ -44,7 +44,8 @@ public:
             model->slotEntriesLoaded(entries);
         });
         q->connect(engine, &Engine::entryEvent, model, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
-            if (event == KNSCore::Entry::DetailsLoadedEvent && engine->filter() != KNSCore::Provider::Updates) {
+            if (event == KNSCore::Entry::DetailsLoadedEvent && engine->filter() != KNSCore::Provider::Installed
+                && engine->filter() != KNSCore::Provider::Updates) {
                 model->slotEntriesLoaded(KNSCore::Entry::List{entry});
             }
         });
