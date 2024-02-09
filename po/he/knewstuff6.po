@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 00:35+0000\n"
+"POT-Creation-Date: 2024-02-09 00:35+0000\n"
 "PO-Revision-Date: 2024-01-19 08:31+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -721,15 +721,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "הצגת ביקורות ותגובות"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 הורדות"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -784,7 +784,7 @@ msgstr "אירעה שגיאה"
 msgid "Please try again later."
 msgstr "נא לנסות שוב."
 
-#: qtquick/qml/private/GridTileDelegate.qml:113
+#: qtquick/qml/private/GridTileDelegate.qml:122
 #, kde-format
 msgid "None"
 msgstr "אין"

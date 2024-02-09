@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 00:35+0000\n"
+"POT-Creation-Date: 2024-02-09 00:35+0000\n"
 "PO-Revision-Date: 2011-07-25 07:45+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -722,16 +722,16 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr ""
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
 #, fuzzy, kde-format
 #| msgid "Download"
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "බාගන්න"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
 #, fuzzy, kde-format
 #| msgctxt "@interface/rich"
 #| msgid "<i>%1</i>"
@@ -788,7 +788,7 @@ msgstr ""
 msgid "Please try again later."
 msgstr "කරුණාකර නමක් තුළ යොදන්න."
 
-#: qtquick/qml/private/GridTileDelegate.qml:113
+#: qtquick/qml/private/GridTileDelegate.qml:122
 #, fuzzy, kde-format
 #| msgctxt "No border line"
 #| msgid "None"

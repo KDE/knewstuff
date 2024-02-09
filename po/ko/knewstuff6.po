@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 00:35+0000\n"
+"POT-Creation-Date: 2024-02-09 00:35+0000\n"
 "PO-Revision-Date: 2023-07-25 00:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -708,15 +708,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "리뷰와 답글 표시"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "다운로드 %1회"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -770,7 +770,7 @@ msgstr "오류 발생"
 msgid "Please try again later."
 msgstr "나중에 다시 시도하십시오."
 
-#: qtquick/qml/private/GridTileDelegate.qml:113
+#: qtquick/qml/private/GridTileDelegate.qml:122
 #, kde-format
 msgid "None"
 msgstr "없음"
