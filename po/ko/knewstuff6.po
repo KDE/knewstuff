@@ -1,7 +1,7 @@
 # Korean messages for kdelibs.
 # Copyright (C) Free Software Foundation, Inc.
 # Cho Sung Jae <cho.sungjae@gmail.com>, 2007.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 # JungHee Lee (이정희) <daemul72@gmail.com>, 2019, 2020.
 #
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-09 00:35+0000\n"
-"PO-Revision-Date: 2023-07-25 00:58+0200\n"
+"PO-Revision-Date: 2024-02-09 23:48+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -959,19 +959,7 @@ msgstr ""
 "에 있는 모든 설정 파일을 전환할 수 있는 대화 상자를 표시합니다"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -993,7 +981,7 @@ msgstr ""
 "항목 공급자의 호스트 이름입니다.\n"
 "'entryid'\n"
 "knsrc 파일에서 공급자가 지정한 항목의 고유 ID입니다.\n"
-" URL 예제: kns://peruse.knsrc/api.kde-look.org/1316714"
+" URL 예제: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
