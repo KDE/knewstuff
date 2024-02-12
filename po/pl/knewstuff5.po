@@ -11,13 +11,13 @@
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Michal Rudolf <michal@rudolf.waw.pl>, 2010.
 # Artur Chłond <eugenewolfe@o2.pl>, 2010.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022.
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2022-12-29 10:57+0100\n"
+"PO-Revision-Date: 2024-02-11 13:00+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -108,7 +108,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -125,7 +125,7 @@ msgid ""
 "This item costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
-"Koszt tej pozycji wynosi %1 %2.\n"
+"Cena tej rzeczy wynosi %1 %2.\n"
 "Czy chcesz ją kupić?"
 
 #: attica/atticaprovider.cpp:494
@@ -1169,7 +1169,8 @@ msgid ""
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 "Treść dostępna tutaj został wysłana przez użytkowników takich jak ty i nie "
-"została sprawdzona przez dystrybutora pod kątem stabilności i zdatności."
+"została sprawdzona przez dystrybutora pod kątem stabilności, czy zdatności "
+"do użytku."
 
 #: qtquick/qml/Page.qml:214
 #, kde-format
