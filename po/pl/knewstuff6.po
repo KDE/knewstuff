@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-09 00:35+0000\n"
-"PO-Revision-Date: 2024-01-21 08:19+0100\n"
+"PO-Revision-Date: 2024-02-11 13:00+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -615,7 +615,8 @@ msgid ""
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
 "Treść dostępna tutaj został wysłana przez użytkowników takich jak ty i nie "
-"została sprawdzona przez dystrybutora pod kątem stabilności i zdatności."
+"została sprawdzona przez dystrybutora pod kątem stabilności, czy zdatności "
+"do użytku."
 
 #: qtquick/qml/Page.qml:171
 #, kde-format
