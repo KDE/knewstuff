@@ -1,4 +1,5 @@
 # Translation of kdelibs4 into Japanese.
+# SPDX-FileCopyrightText: 2023, 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # This file is distributed under the same license as the kdelibs package.
 # Taiki Komoda <kom@kde.gr.jp>, 2002, 2004, 2006, 2010.
 # Noboru Sinohara <shinobo@leo.bekkoame.ne.jp>, 2004.
@@ -9,16 +10,15 @@
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008, 2009, 2010.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2006, 2007, 2008, 2010, 2011, 2019, 2020.
-# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-09 00:35+0000\n"
-"PO-Revision-Date: 2023-02-23 14:22+0900\n"
+"PO-Revision-Date: 2024-02-23 02:27+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language-Team: ja\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,12 +26,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
 msgid "All categories are missing"
-msgstr "すべてのカテゴリがありません"
+msgstr "カテゴリがありません"
 
 #: attica/atticaprovider.cpp:480
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "ファンに登録しました。"
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "現在、サービスはメンテナンス中です。%1 に復帰する予定です。"
 
 #: attica/atticaprovider.cpp:585
 #, kde-format
@@ -90,6 +90,8 @@ msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
+"Open Collaboration Services のインスタンス %1 はこの機能をサポートしていませ"
+"ん。"
 
 #: attica/atticaprovider.cpp:600
 #, kde-format
@@ -101,7 +103,7 @@ msgstr "未知の Open Collaboration Service API エラーです (%1)"
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr ""
+msgstr "未知の CommentsModel ロール"
 
 #: core/enginebase.cpp:43
 #, kde-format
@@ -113,10 +115,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "無効な設定ファイルです: \"%1\""
+msgstr "設定ファイルが存在しません: \"%1\""
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -140,6 +141,10 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"%1 のインストールハンドラを初期化できませんでした。\n"
+"%2\n"
+"これは重大なエラーです。アプリケーションの作者に報告することを検討してくださ"
+"い。"
 
 #: core/enginebase.cpp:273
 #, kde-format
@@ -159,7 +164,7 @@ msgstr "プロバイダの初期化に失敗。"
 #: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
-msgstr "無効なアイテム。"
+msgstr "無効なアイテムです。"
 
 #: core/installation.cpp:108
 #, kde-format
@@ -178,6 +183,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"ウェブページが示されているため、'%1' をインストールできませんでした。<a "
+"href='%2'>ここ</a>をクリックしてインストールを完了してください。"
 
 #: core/installation.cpp:186
 #, kde-format
@@ -318,11 +325,7 @@ msgstr "不明なカテゴリ"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
@@ -330,12 +333,9 @@ msgid "Stuff"
 msgstr "もの"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "新しい %1 をダウンロード"
+msgstr "新しい %1 をダウンロード…"
 
 #: qtquick/qml/Dialog.qml:42
 #, kde-format
@@ -403,12 +403,11 @@ msgstr "インストール"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "インストール"
+msgstr "インストール…"
 
 #: qtquick/qml/EntryDetails.qml:123
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
@@ -431,14 +430,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "%2 の %1 に関する処理を実行しています。しばらくお待ちください..."
 
 #: qtquick/qml/EntryDetails.qml:154
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "%2 の %1 を更新しています。しばらくお待ちください..."
 
 #: qtquick/qml/EntryDetails.qml:156
 #, kde-format
@@ -450,6 +449,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"このアイテムは現在、無効もしくは不明な状態です。<a href=\"https://bugs.kde."
+"org/enter_bug.cgi?product=frameworks-knewstuff\">KDE Community にこのバグを報"
+"告してください。</a>"
 
 #: qtquick/qml/EntryDetails.qml:209
 #, kde-format
@@ -502,6 +504,9 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"ここで取得できるコンテンツは、あなたのようなユーザによってアップロードされて"
+"います。そのため、ディストリビュータによる機能性や安定性の確認はされていませ"
+"ん。"
 
 #: qtquick/qml/Page.qml:171
 #, kde-format
@@ -559,7 +564,7 @@ msgstr "すべてのエントリを表示"
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
-msgstr ""
+msgstr "インストール済みのエントリのみ表示"
 
 #: qtquick/qml/Page.qml:262
 #, kde-format
@@ -567,7 +572,7 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr ""
+msgstr "更新できるエントリのみ表示"
 
 #: qtquick/qml/Page.qml:273
 #, kde-format
@@ -619,26 +624,24 @@ msgid "Show Most Downloaded First"
 msgstr "ダウンロード数が多い順に表示"
 
 #: qtquick/qml/Page.qml:337
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
-msgstr "アップロード..."
+msgstr "アップロード…"
 
 #: qtquick/qml/Page.qml:338
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "作成したものをこのリストに追加する方法を知る"
 
 #: qtquick/qml/Page.qml:348
 #, kde-format
 msgid "Go to…"
-msgstr ""
+msgstr "移動…"
 
 #: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "検索:"
+msgstr "検索…"
 
 #: qtquick/qml/Page.qml:418
 #, kde-format
@@ -648,14 +651,14 @@ msgstr "カテゴリ:"
 #: qtquick/qml/Page.qml:438
 #, kde-format
 msgid "Contribute your own…"
-msgstr ""
+msgstr "作成したものをアップロード..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
-msgstr ""
+msgstr "(タイトルなし)"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:142
 #, kde-format
@@ -663,7 +666,7 @@ msgctxt ""
 "The author label in case the comment was written by the author of the "
 "content entry the comment is attached to"
 msgid "%1 <i>(author)</i>"
-msgstr ""
+msgstr "%1 <i>(作者)</i>"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:26
 #, kde-format
@@ -683,7 +686,7 @@ msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
 "should be shown"
 msgid "Show Reviews Only"
-msgstr ""
+msgstr "レビューのみ表示"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:41
 #, kde-format
@@ -691,7 +694,7 @@ msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
 "their children should be shown"
 msgid "Show Reviews and Replies"
-msgstr ""
+msgstr "レビューと返信を表示"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
@@ -710,25 +713,20 @@ msgid "By <i>%1</i>"
 msgstr "作者: <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "進行中..."
+msgstr "進行中…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "アップデート中"
+msgstr "アップデート中…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -740,13 +738,15 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"無効もしくは不明な状態です。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">KDE Community にこのバグを報告してください。</"
+"a>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "インストール中"
+msgstr "インストール中…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -769,21 +769,16 @@ msgstr "なし"
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr ""
+msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "新しいものをアップロード: %1"
 
 #: qtquick/qml/UploadPage.qml:110
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
@@ -827,6 +822,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"新しいエントリをアップロード、もしくは既存のエントリに何かを追加するには、"
+"KDE Store を開いてログインしてください。あなたのユーザアイコンをクリックする"
+"と表示されるメニューに、\"My Products\" エントリがあります。このエントリをク"
+"リックして管理システムを開き、あなたの製作物を公開してください。"
 
 #: qtquick/qml/UploadPage.qml:155
 #, kde-format
@@ -839,6 +838,10 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"新しいエントリをアップロード、もしくは既存のエントリに何かを追加するには、プ"
+"ロバイダのウェブサイトの指示に従ってください。おそらく、まず管理システムの"
+"ユーザアカウントを作成してログインする必要があります。コンテンツを追加するた"
+"めに、ウェブサイトの管理者への連絡が要求されることもあります。"
 
 #: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
 #: qtquick/quickengine.cpp:152
@@ -907,7 +910,7 @@ msgstr ""
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr ""
+msgstr "上へ"
 
 #: qtquick/searchpresetmodel.cpp:59
 #, kde-format
@@ -931,7 +934,7 @@ msgstr "すべてのエントリ"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "検索プリセット: %1"
 
 #: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
