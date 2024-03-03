@@ -1,13 +1,14 @@
 # Traducerea kdelibs4.po în Română
 # Laurenţiu Buzdugan <lbuz@rolix.org>, 2008, 2009.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2022, 2024.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010.
+# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2014, 2020, 2022, 2024.
 # Cristian Oneț <onet.cristian@gmail.com>, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-02-24 17:13+0000\n"
+"PO-Revision-Date: 2024-02-25 14:48+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -249,6 +250,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Nu se poate instala „%1” deoarece acesta indică spre o pagină web. Apăsați "
+"<a href='%2'>aici</a> pentru a finaliza instalarea."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -1414,6 +1417,12 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"Pentru a încărca articole noi, sau pentru a adăuga conținut la un articol "
+"existent în Magazinul KDE, deschideți saitul și autentificați-vă. După "
+"aceasta, veți putea găsi înregistrarea „Produsele mele” în meniul ce apare "
+"când apăsați pe pictograma utilizatorului dumneavoastră. Apăsați pe această "
+"înregistrare pentru a merge la sistemul de gestiune a produselor, unde "
+"puteți lucra asupra produselor dumneavoastră."
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1426,6 +1435,12 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"Pentru a încărca articole noi, sau pentru a adăuga conținut la un articol "
+"existent, deschideți saitul furnizorului și urmați instrucțiunile de acolo. "
+"Probabil va fi nevoie să vă creați un cont și să vă autentificați într-un "
+"sistem de gestiune a produselor, unde să urmați instrucțiuni pentru "
+"adăugare. Alternativ, vi se poate cere să contactați administratorul "
+"saitului direct pentru a încărca conținut nou."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1537,6 +1552,17 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"Un URL KNS de pe care să fie arătate informații Formatul unui URL KNS e "
+"kns://fișierknsrc/idfurnizor/idarticol\n"
+"„fișierknsrc”\n"
+"e denumirea unui fișier knsrc după cum se transmite direct prin argumentul "
+"„knsrcfile” al acestei unelte\n"
+"„idfurnizor”\n"
+"e numele de gazdă al furnizorului la care trebuie să existe articolul\n"
+"„idarticol”\n"
+"e identificatorul unic al unui articol găsit la furnizorul specificat de "
+"fișierul knsrc.\n"
+" Un exemplu de astfel de URL e kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: ui/entrydetailsdialog.cpp:84
 #, kde-format
