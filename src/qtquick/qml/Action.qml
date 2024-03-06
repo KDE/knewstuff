@@ -93,6 +93,14 @@ Kirigami.Action {
     property bool visibleWhenDisabled: false
 
     /**
+     * The parent window for the dialog created by invoking the action
+     *
+     * @since 6.1
+     *
+     */
+    property var transientParent: null
+
+    /**
     * Show the page/dialog (same as activating the action), if allowed by the Kiosk settings
     */
     function showHotNewStuff() {
@@ -185,6 +193,7 @@ Kirigami.Action {
             asynchronous: true
 
             sourceComponent: NewStuff.Dialog {
+                transientParent: component.transientParent
                 configFile: component.configFile
                 viewMode: component.viewMode
             }
