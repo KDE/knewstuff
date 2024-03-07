@@ -23,6 +23,8 @@ import org.kde.newstuff as NewStuff
 Window {
     id: component
 
+    // Keep in sync with the implicit sizes in DialogContent.qml and the default
+    // size in dialog.cpp
     width: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
     height: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
 

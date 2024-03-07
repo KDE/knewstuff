@@ -63,10 +63,12 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
     auto context = new KLocalizedContext(engine);
     engine->setIncubationController(new PeriodicIncubationController());
 
-    // TODO: It would be best to use a Kirigami.ApplicationWindow and use
-    // a multiple of gridUnit for our default and minimum size
     setMinimumSize(600, 400);
-    resize(600, 400);
+    // Keep in sync with the sizes in Dialog.qml and DialogContent.qml
+    // (reminder that a default gridUnit is 18px).
+    // TODO: It would be best to use a Kirigami.ApplicationWindow and use
+    // a multiple of gridUnit directly!
+    resize(792, 540);
 
     context->setTranslationDomain(QStringLiteral("knewstuff6"));
     engine->rootContext()->setContextObject(context);

@@ -45,8 +45,9 @@ Kirigami.ApplicationItem {
         newStuffPage.showEntryDetails(providerId, entryId);
     }
 
-    Layout.preferredWidth: Kirigami.Units.gridUnit * 50
-    Layout.preferredHeight: Kirigami.Units.gridUnit * 40
+    // Keep in sync with the default sizes in Dialog.qml and dialog.cpp
+    implicitWidth: Kirigami.Units.gridUnit * 44
+    implicitHeight: Kirigami.Units.gridUnit * 30
 
     pageStack.defaultColumnWidth: pageStack.width
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.Auto
