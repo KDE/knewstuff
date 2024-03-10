@@ -40,14 +40,14 @@ Private.GridTileDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: entry.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
+            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
             icon.name: "install"
             onTriggered: {
-                if (entry.downloadLinks.length === 1) {
-                    newStuffEngine.install(entry.entry, NewStuff.ItemsModel.FirstLinkId);
+                if (model.downloadLinks.length === 1) {
+                    newStuffEngine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
-                    downloadItemsSheet.downloadLinks = entry.downloadLinks;
-                    downloadItemsSheet.entry = entry;
+                    downloadItemsSheet.downloadLinks = model.downloadLinks;
+                    downloadItemsSheet.entry = model.entry;
                     downloadItemsSheet.open();
                 }
             }
