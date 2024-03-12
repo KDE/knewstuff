@@ -5,31 +5,38 @@
 */
 
 import QtQuick 2.11
-import Qt5Compat.GraphicalEffects 6.0
 
 import org.kde.kirigami 2.2
 
-LinearGradient {
+Item {
     id: shadow
     property int edge: Qt.LeftEdge
 
     width: Units.gridUnit/2
     height: Units.gridUnit/2
 
-    start: Qt.point((edge !== Qt.RightEdge ? 0 : width), (edge !== Qt.BottomEdge ? 0 : height))
-    end: Qt.point((edge !== Qt.LeftEdge ? 0 : width), (edge !== Qt.TopEdge ? 0 : height))
-    gradient: Gradient {
-        GradientStop {
-            position: 0.0
-            color: Theme.backgroundColor
+    Rectangle {
+        x: shadow.width / 2 - width / 2
+        y: shadow.height / 2 - height / 2
+        width: (shadow.edge === Qt.LeftEdge || shadow.edge === Qt.RightEdge) ? shadow.height : shadow.width
+        height: (shadow.edge === Qt.LeftEdge || shadow.edge === Qt.RightEdge) ? shadow.width : shadow.height
+        rotation: {
+            switch (shadow.edge) {
+                case Qt.TopEdge: return 0;
+                case Qt.LeftEdge: return 270;
+                case Qt.RightEdge: return 90;
+                case Qt.BottomEdge: return 180;
+            }
         }
-        GradientStop {
-            position: 0.3
-            color: Qt.rgba(0, 0, 0, 0.1)
-        }
-        GradientStop {
-            position: 1.0
-            color:  "transparent"
+        gradient: Gradient {
+            GradientStop {
+                position: 0.3
+                color: Qt.rgba(0, 0, 0, 0.1)
+            }
+            GradientStop {
+                position: 1.0
+                color:  "transparent"
+            }
         }
     }
 }
