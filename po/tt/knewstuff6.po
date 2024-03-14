@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-09 00:35+0000\n"
+"POT-Creation-Date: 2024-03-14 00:35+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -294,7 +294,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:376
+#: core/transaction.cpp:381
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -388,9 +388,9 @@ msgid "%1 by %2"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -400,9 +400,9 @@ msgid "Install"
 msgstr "Урнаштыру"
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -411,9 +411,9 @@ msgid "Install…"
 msgstr "Урнаштыру"
 
 #: qtquick/qml/EntryDetails.qml:123
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:49
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:58
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:51
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:48
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "Request updating of this item"
@@ -717,8 +717,8 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr ""
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
 #, fuzzy, kde-format
 #| msgid "1 download"
 #| msgid_plural "%1 downloads"
@@ -726,8 +726,8 @@ msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 кабул итү"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
 #, fuzzy, kde-format
 #| msgctxt "Show the author of this item in a list"
 #| msgid "By <i>%1</i>"
@@ -784,7 +784,7 @@ msgstr ""
 msgid "Please try again later."
 msgstr "Исем кертегез."
 
-#: qtquick/qml/private/GridTileDelegate.qml:122
+#: qtquick/qml/private/GridTileDelegate.qml:121
 #, fuzzy, kde-format
 #| msgctxt "No border line"
 #| msgid "None"

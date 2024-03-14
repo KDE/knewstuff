@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-09 00:35+0000\n"
+"POT-Creation-Date: 2024-03-14 00:35+0000\n"
 "PO-Revision-Date: 2022-02-26 11:47+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -291,7 +291,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:376
+#: core/transaction.cpp:381
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -385,9 +385,9 @@ msgid "%1 by %2"
 msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -397,9 +397,9 @@ msgid "Install"
 msgstr "संस्थापित करें"
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -408,9 +408,9 @@ msgid "Install…"
 msgstr "संस्थापित करें"
 
 #: qtquick/qml/EntryDetails.qml:123
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:49
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:58
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:51
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:48
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "Request updating of this item"
@@ -715,8 +715,8 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr ""
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
 #, fuzzy, kde-format
 #| msgid "1 download"
 #| msgid_plural "%1 downloads"
@@ -724,8 +724,8 @@ msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "१ डाउनलोड"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
 #, fuzzy, kde-format
 #| msgctxt "Show the author of this item in a list"
 #| msgid "By <i>%1</i>"
@@ -782,7 +782,7 @@ msgstr ""
 msgid "Please try again later."
 msgstr "कृपया नाम भरें"
 
-#: qtquick/qml/private/GridTileDelegate.qml:122
+#: qtquick/qml/private/GridTileDelegate.qml:121
 #, fuzzy, kde-format
 #| msgctxt "No border line"
 #| msgid "None"

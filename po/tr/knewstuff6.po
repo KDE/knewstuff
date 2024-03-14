@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-09 00:35+0000\n"
+"POT-Creation-Date: 2024-03-14 00:35+0000\n"
 "PO-Revision-Date: 2024-01-19 12:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -330,7 +330,7 @@ msgstr ""
 "%1 güncellemesi için düzgün bir bağlantı tanımlayamadık; bu yüzden "
 "güncellemeyi gerçekleştiremiyoruz"
 
-#: core/transaction.cpp:376
+#: core/transaction.cpp:381
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -423,9 +423,9 @@ msgid "%1 by %2"
 msgstr "%2 tarafından yapılan %1"
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -434,9 +434,9 @@ msgid "Install"
 msgstr "Kur"
 
 #: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:37
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:34
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
 #, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
@@ -444,9 +444,9 @@ msgid "Install…"
 msgstr "Kur…"
 
 #: qtquick/qml/EntryDetails.qml:123
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:52
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:49
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:58
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:51
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:48
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
@@ -729,15 +729,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "Gözden Geçirmeleri ve Yanıtları Göster"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:129
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:175
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 indirme"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:142
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:154
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -792,7 +792,7 @@ msgstr "Bir Hata Oluştu"
 msgid "Please try again later."
 msgstr "Lütfen daha sonra yeniden deneyin."
 
-#: qtquick/qml/private/GridTileDelegate.qml:122
+#: qtquick/qml/private/GridTileDelegate.qml:121
 #, kde-format
 msgid "None"
 msgstr "Yok"
