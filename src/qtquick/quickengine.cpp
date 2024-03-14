@@ -97,16 +97,6 @@ Engine::Engine(QObject *parent)
 
     connect(this, &Engine::signalEntryEvent, this, [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
         // Just forward the event but not do anything more
-        if (event != KNSCore::Entry::StatusChangedEvent) {
-            Q_EMIT entryEvent(entry, event);
-            return;
-        }
-
-        // We do not want to emit the entries changed signal for intermediate changed
-        // this would cause the KCMs to reload their view unnecessarily, BUG: 431568
-        if (entry.status() == KNSCore::Entry::Installing || entry.status() == KNSCore::Entry::Updating) {
-            return;
-        }
         Q_EMIT entryEvent(entry, event);
     });
     //
