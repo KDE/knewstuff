@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:35+0000\n"
+"POT-Creation-Date: 2024-03-15 00:36+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -860,20 +860,20 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
-#: qtquick/quickengine.cpp:152
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
+#: qtquick/quickengine.cpp:142
 #, fuzzy, kde-format
 #| msgid "Loading Applet"
 msgid "Loading data"
 msgstr "এপ্লেট তুলি লোৱা হৈছে"
 
-#: qtquick/quickengine.cpp:148
+#: qtquick/quickengine.cpp:138
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installing"
 msgstr "সংস্থাপন কৰক"
 
-#: qtquick/quickengine.cpp:203
+#: qtquick/quickengine.cpp:193
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

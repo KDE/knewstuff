@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:35+0000\n"
+"POT-Creation-Date: 2024-03-15 00:36+0000\n"
 "PO-Revision-Date: 2024-01-19 16:53+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -882,18 +882,18 @@ msgstr ""
 "necessario contattare direttamente i gestori del sito per aggiungere nuovi "
 "contenuti."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
-#: qtquick/quickengine.cpp:152
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
+#: qtquick/quickengine.cpp:142
 #, kde-format
 msgid "Loading data"
 msgstr "Caricamento dei dati"
 
-#: qtquick/quickengine.cpp:148
+#: qtquick/quickengine.cpp:138
 #, kde-format
 msgid "Installing"
 msgstr "Installazione"
 
-#: qtquick/quickengine.cpp:203
+#: qtquick/quickengine.cpp:193
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

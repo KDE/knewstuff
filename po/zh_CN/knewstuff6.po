@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:35+0000\n"
-"PO-Revision-Date: 2024-03-13 20:04\n"
+"POT-Creation-Date: 2024-03-15 00:36+0000\n"
+"PO-Revision-Date: 2024-03-14 19:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -844,18 +844,18 @@ msgstr ""
 "示继续。您可能需要创建新账户并登录到产品管理系统，然后遵循网站上的添加教程；"
 "或者您需要联系网站管理员直接添加新内容。"
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
-#: qtquick/quickengine.cpp:152
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
+#: qtquick/quickengine.cpp:142
 #, kde-format
 msgid "Loading data"
 msgstr "正在加载数据"
 
-#: qtquick/quickengine.cpp:148
+#: qtquick/quickengine.cpp:138
 #, kde-format
 msgid "Installing"
 msgstr "正在安装"
 
-#: qtquick/quickengine.cpp:203
+#: qtquick/quickengine.cpp:193
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

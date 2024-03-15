@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:35+0000\n"
+"POT-Creation-Date: 2024-03-15 00:36+0000\n"
 "PO-Revision-Date: 2024-01-19 09:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -880,18 +880,18 @@ msgstr ""
 "зв'язатися із командою з керування сайтом безпосередньо для додавання нових "
 "даних."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
-#: qtquick/quickengine.cpp:152
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
+#: qtquick/quickengine.cpp:142
 #, kde-format
 msgid "Loading data"
 msgstr "Завантаження даних"
 
-#: qtquick/quickengine.cpp:148
+#: qtquick/quickengine.cpp:138
 #, kde-format
 msgid "Installing"
 msgstr "Встановлення"
 
-#: qtquick/quickengine.cpp:203
+#: qtquick/quickengine.cpp:193
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

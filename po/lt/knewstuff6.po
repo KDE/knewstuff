@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:35+0000\n"
+"POT-Creation-Date: 2024-03-15 00:36+0000\n"
 "PO-Revision-Date: 2024-01-27 14:54+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -873,18 +873,18 @@ msgstr ""
 "tai, kaip pridėti įrašą. Priešingu atveju, jums gali tekti tiesiogiai "
 "susisiekti su svetainės administratoriais, kad būtų pridėtas naujas turinys."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:144
-#: qtquick/quickengine.cpp:152
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
+#: qtquick/quickengine.cpp:142
 #, kde-format
 msgid "Loading data"
 msgstr "Įkeliami duomenys"
 
-#: qtquick/quickengine.cpp:148
+#: qtquick/quickengine.cpp:138
 #, kde-format
 msgid "Installing"
 msgstr "Įdiegiama"
 
-#: qtquick/quickengine.cpp:203
+#: qtquick/quickengine.cpp:193
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
