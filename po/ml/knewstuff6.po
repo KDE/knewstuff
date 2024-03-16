@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:36+0000\n"
+"POT-Creation-Date: 2024-03-16 00:36+0000\n"
 "PO-Revision-Date: 2010-12-29 15:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -324,14 +324,14 @@ msgstr ""
 msgid "Download New %1…"
 msgstr "പുതിയവ ഇറക്കുക..."
 
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "പുതിയവ ഇറക്കുക..."
 
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, fuzzy, kde-format
 #| msgid "Download New Stuff..."
 msgctxt ""

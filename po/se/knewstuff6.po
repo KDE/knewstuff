@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:36+0000\n"
+"POT-Creation-Date: 2024-03-16 00:36+0000\n"
 "PO-Revision-Date: 2012-05-30 23:19+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -317,13 +317,13 @@ msgstr ""
 msgid "Download New %1…"
 msgstr "Viečča ođđa, somás tiŋggaid …"
 
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr ""
 
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "

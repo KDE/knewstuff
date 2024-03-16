@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:36+0000\n"
+"POT-Creation-Date: 2024-03-16 00:36+0000\n"
 "PO-Revision-Date: 2024-02-14 18:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -375,13 +375,13 @@ msgid "Download New %1…"
 msgstr "Lataa uusia – %1…"
 
 # *** HUOM! Tarkoitettu väliaikaiseksi, kunnes %1 saataisiin muotoiltua järkeväksi tai koko jono muuttuisi. ”Lataa uusi – Väriteemat” on aavistuksen (vaikkei paljon) parempi kuin ”Lataa uusi Väriteemat”.
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "Lataa uusia – %1"
 
-#: qtquick/qml/Dialog.qml:42
+#: qtquick/qml/Dialog.qml:44
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
