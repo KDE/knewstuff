@@ -131,14 +131,14 @@ KCM.GridViewKCM {
 
     view.header: Item {
         implicitWidth: view.width - Kirigami.Units.gridUnit
-        implicitHeight: Kirigami.Units.gridUnit * 3
+        implicitHeight: Kirigami.Units.gridUnit * 5
         visible: !loadingOverlay.visible
 
         Kirigami.InlineMessage {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
             visible: true
-            text: i18nd("knewstuff6", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
+            text: i18nd("knewstuff6", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability. They can run commands that can be potentially harmful for your computer. Please only install items you trust!")
         }
     }
 
