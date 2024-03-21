@@ -14,16 +14,17 @@ class KNSCore::ResultsStreamPrivate
 {
 public:
     QList<QSharedPointer<KNSCore::Provider>> providers;
-    EngineBase *engine;
+    EngineBase const *engine;
     Provider::SearchRequest request;
 };
 
 ResultsStream::ResultsStream(const Provider::SearchRequest &request, EngineBase *base)
-    : d(new ResultsStreamPrivate)
+    : d(new ResultsStreamPrivate{
+        .providers = base->d->providers.values(),
+        .engine = base,
+        .request = request,
+    })
 {
-    d->engine = base;
-    d->request = request;
-    d->providers = base->d->providers.values();
     auto finished = [this](const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry::List &entries) {
         d->providers.removeAll(static_cast<Provider *>(sender()));
         if (entries.isEmpty() && d->providers.isEmpty()) {
