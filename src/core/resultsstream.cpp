@@ -8,6 +8,8 @@
 #include "enginebase_p.h"
 #include "knewstuffcore_debug.h"
 
+#include <QTimer>
+
 using namespace KNSCore;
 
 class KNSCore::ResultsStreamPrivate
@@ -76,7 +78,9 @@ void ResultsStream::fetch()
 
     for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
         if (p->isInitialized()) {
-            p->loadEntries(d->request);
+            QTimer::singleShot(0, this, [this, p] {
+                p->loadEntries(d->request);
+            });
         } else {
             connect(p.get(), &KNSCore::Provider::providerInitialized, this, [this, p] {
                 disconnect(p.get(), &KNSCore::Provider::providerInitialized, this, nullptr);
