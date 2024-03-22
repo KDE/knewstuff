@@ -26,12 +26,19 @@ ResultsStream::ResultsStream(const Provider::SearchRequest &request, EngineBase 
     })
 {
     auto finished = [this](const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry::List &entries) {
-        d->providers.removeAll(static_cast<Provider *>(sender()));
+        if (request != d->request) {
+            return;
+        }
+
+        if (d->providers.removeAll(qobject_cast<Provider *>(sender())) <= 0) {
+            qCDebug(KNEWSTUFFCORE) << "Request finished twice, check your provider" << sender() << d->engine << entries.size();
+            return;
+        }
+
         if (entries.isEmpty() && d->providers.isEmpty()) {
             finish();
         }
-
-        if (request == d->request) {
+        if (!entries.isEmpty()) {
             Q_EMIT entriesFound(entries);
         }
     };
