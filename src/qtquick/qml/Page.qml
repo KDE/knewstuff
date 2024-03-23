@@ -138,7 +138,7 @@ KCM.GridViewKCM {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
             visible: true
-            text: i18nd("knewstuff6", "<b>Any use of the provided files is at your own risk!</b> The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability. They can run commands that can be potentially harmful for your computer.")
+            text: i18nd("knewstuff6", "<b>Any use of the provided files is at your own risk!</b> The content available here has been uploaded by third party developers and the itemas are not part of or endorsed in any way by KDE. They have not been reviewed by your distributor for functionality, stability or safety; and can run commands that can be potentially harmful for your computer.")
         }
     }
 
