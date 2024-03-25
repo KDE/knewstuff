@@ -75,7 +75,7 @@ public:
         int page;
         int pageSize;
 
-        SearchRequest(SortMode sortMode_ = Newest,
+        SearchRequest(SortMode sortMode_ = Downloads,
                       Filter filter_ = None,
                       const QString &searchTerm_ = QString(),
                       const QStringList &categories_ = QStringList(),
