@@ -114,6 +114,17 @@ bool EngineBase::init(const QString &configfile)
     d->tagFilter = group.readEntry("TagFilter", QStringList(QStringLiteral("ghns_excluded!=1")));
     d->downloadTagFilter = group.readEntry("DownloadTagFilter", QStringList());
 
+    QByteArray rawContentWarningType = group.readEntry("ContentWarning", QByteArrayLiteral("Static"));
+    bool ok = false;
+    int value = QMetaEnum::fromType<ContentWarningType>().keyToValue(rawContentWarningType.constData(), &ok);
+    if (ok) {
+        d->contentWarningType = static_cast<ContentWarningType>(value);
+    } else {
+        qCWarning(KNEWSTUFFCORE) << "Could not parse ContentWarning, invalid entry" << rawContentWarningType;
+    }
+
+    Q_EMIT contentWarningTypeChanged();
+
     // Make sure that config is valid
     QString error;
     if (!d->installation->readConfig(group, error)) {
@@ -460,6 +471,11 @@ Installation *EngineBase::installation() const
 ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
     return new ResultsStream(request, this);
+}
+
+EngineBase::ContentWarningType EngineBase::contentWarningType() const
+{
+    return d->contentWarningType;
 }
 
 QList<QSharedPointer<Provider>> EngineBase::providers() const

@@ -10,6 +10,7 @@
 #define KNEWSTUFF3_ENGINEBASE_H
 
 #include <QHash>
+#include <QMetaEnum>
 #include <QObject>
 #include <QSharedPointer>
 #include <QString>
@@ -69,6 +70,11 @@ class KNEWSTUFFCORE_EXPORT EngineBase : public QObject
      * @since 5.85
      */
     Q_PROPERTY(QStringList providerIDs READ providerIDs NOTIFY providersChanged)
+
+    /**
+     * @copydoc contentWarningType
+     */
+    Q_PROPERTY(ContentWarningType contentWarningType READ contentWarningType NOTIFY contentWarningTypeChanged)
 
 public:
     EngineBase(QObject *parent = nullptr);
@@ -334,6 +340,37 @@ public:
      * @since 6.0
      */
     ResultsStream *search(const KNSCore::Provider::SearchRequest &request);
+
+    /**
+     * @brief The ContentWarningType enum
+     * @since 6.1
+     */
+    enum class ContentWarningType {
+        /**
+         * Content consists of static assets only
+         * Installation should not pose a security risk
+         */
+        Static,
+        /**
+         * Content may contain scripts or other executable code
+         * Users should be warned to treat it like any other program
+         */
+        Executables
+    };
+    Q_ENUM(ContentWarningType)
+
+    /**
+     * @brief The level of warning that should be presented to the user
+     * @since 6.1
+     * @see ContentWarningType
+     */
+    ContentWarningType contentWarningType() const;
+
+    /**
+     * Emitted after the initial config load
+     * @since 6.1
+     */
+    Q_SIGNAL void contentWarningTypeChanged();
 
 Q_SIGNALS:
     /**

@@ -10,6 +10,7 @@
 #define KNEWSTUFF3_ENGINEBASE_P_H
 
 #include "cache.h"
+#include "enginebase.h"
 #include "installation_p.h"
 #include <Attica/ProviderManager>
 
@@ -31,6 +32,7 @@ public:
     bool shouldRemoveDeletedEntries = false;
     QList<Provider::CategoryMetadata> categoriesMetadata;
     QHash<QString, QSharedPointer<KNSCore::Provider>> providers;
+    KNSCore::EngineBase::ContentWarningType contentWarningType = KNSCore::EngineBase::ContentWarningType::Static;
 };
 
 #endif
