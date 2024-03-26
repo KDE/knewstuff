@@ -47,6 +47,7 @@ void EngineTest::testPropertiesReading()
              QStringList({QStringLiteral("KDE Wallpaper 1920x1200"), QStringLiteral("KDE Wallpaper 1600x1200")}));
     QCOMPARE(engine->useLabel(), QStringLiteral("UseLabelTest"));
     QVERIFY(engine->hasAdoptionCommand());
+    QCOMPARE(engine->contentWarningType(), EngineBase::ContentWarningType::Executables);
 }
 
 void EngineTest::testProviderFileLoading()
