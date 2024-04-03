@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2012-07-04 17:33+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -66,7 +66,7 @@ msgstr "Vosse vôtaedje a stî eredjistrî."
 msgid "You are now a fan."
 msgstr "Vos estoz on rafiyant asteure."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -134,7 +134,7 @@ msgstr "Li fitchî d' apontiaedje est mwais : « %1 »"
 msgid "Use"
 msgstr ""
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -142,17 +142,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Dji tchedje des ahesseus a pårti do fitchî : %1 a fwait berwete"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Dji n' a savou tcherdjî les ahesseus di noveatés a pårti do fitchî: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Åk n' a nén stî come dj' inicialijheu l' ahesseu."

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2024-01-20 09:31+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -73,7 +73,7 @@ msgstr "Ваш голос учтён."
 msgid "You are now a fan."
 msgstr "Теперь вы фанат этого дополнения."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -143,7 +143,7 @@ msgstr "Некорректный конфигурационный файл: «%1
 msgid "Use"
 msgstr "Использовать"
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -154,17 +154,17 @@ msgstr ""
 "%2\n"
 "Это критическая ошибка, и о ней следует сообщить автору приложения"
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Ошибка загрузки поставщиков из файла: %1"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Не удалось загрузить список поставщиков из файла: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Ошибка инициализации поставщика."

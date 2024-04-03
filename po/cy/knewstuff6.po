@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -65,7 +65,7 @@ msgstr "Ni amnewidwyd testun. "
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -133,7 +133,7 @@ msgstr "Ffurfwedd"
 msgid "Use"
 msgstr "Dat-gysgodi"
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -141,18 +141,18 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, fuzzy, kde-format
 #| msgid "Loading resource '%1' failed!"
 msgid "Loading of providers from file: %1 failed"
 msgstr "Methodd llwytho adnodd '%1'!"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, fuzzy, kde-format
 #| msgid "Error parsing providers list."
 msgid "Error initializing provider."

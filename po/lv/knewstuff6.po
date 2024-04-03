@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2024-02-27 17:00+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "Jūsu balss ir reģistrēta."
 msgid "You are now a fan."
 msgstr "Jūs tagad esat fans."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -131,7 +131,7 @@ msgstr "Konfigurācijas datne „%1“ nav derīga."
 msgid "Use"
 msgstr "Lietot"
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -142,17 +142,17 @@ msgstr ""
 "%2\n"
 "Šī ir kritiska kļūda un par to ir jāziņo programmas autoram"
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Neizdevās sniedzēju ielāde no datnes: „%1“"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Neizdevās ielādēt jauno lietu sniedzējus no„datnes: „%1“"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Kļūda inicializējot sniedzēju."

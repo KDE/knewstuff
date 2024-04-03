@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2013-11-04 23:55+0630\n"
 "Last-Translator: Bhuvan Krishna <bhuvan@swecha.org>\n"
 "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
@@ -63,7 +63,7 @@ msgstr "మీ వోటు నమోదు కాలే."
 msgid "You are now a fan."
 msgstr "మీరు ఇప్పుడు ఒక ఫ్యాన్."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -131,7 +131,7 @@ msgstr "ఆకృతీకరణ దస్త్రాలు నిస్సా�
 msgid "Use"
 msgstr ""
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -139,17 +139,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "దస్త్రం యోక్క సరఫరాదారులు నుండి  లోడింగ్ : %1 విఫలమైంది"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "దస్త్రం నుండి వేడిగా కొత్త అంశాలు సరఫరానుంచి పొందుటకు లోడ్ చేయబడలేదు: %1"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, kde-format
 msgid "Error initializing provider."
 msgstr "సరఫరా సంసిద్ధసు లోపం."

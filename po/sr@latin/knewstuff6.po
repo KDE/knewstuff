@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:36+0000\n"
+"POT-Creation-Date: 2024-04-03 00:36+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "Vaš glas je ubeležen."
 msgid "You are now a fan."
 msgstr "Sada ste ljubitelj."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:197
+#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -125,7 +125,7 @@ msgstr "Postavni fajl nije dobar: „%1“"
 msgid "Use"
 msgstr "Upotrebi"
 
-#: core/enginebase.cpp:121
+#: core/enginebase.cpp:132
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -133,17 +133,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:273
+#: core/enginebase.cpp:284
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Učitavanje dobavljačâ̂ iz fajla nije uspelo: „%1“"
 
-#: core/enginebase.cpp:291
+#: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Ne mogu da učitam dobavljače vrućih novotarija iz fajla: „%1“"
 
-#: core/enginebase.cpp:322
+#: core/enginebase.cpp:333
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Greška u pripremanju dobavljača."
