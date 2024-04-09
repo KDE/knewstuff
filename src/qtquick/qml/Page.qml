@@ -135,10 +135,14 @@ KCM.GridViewKCM {
         visible: !loadingOverlay.visible
 
         Kirigami.InlineMessage {
+            readonly property bool riskyContent: newStuffEngine.contentWarningType === NewStuff.Engine.Executables
             anchors.fill: parent
             anchors.margins: Kirigami.Units.smallSpacing
             visible: true
-            text: i18nd("knewstuff6", "The content available here has been uploaded by users like you, and has not been reviewed by your distributor for functionality or stability.")
+            type: riskyContent ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
+            text: riskyContent
+                ? xi18nd("knewstuff6", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality")
+                : i18nd("knewstuff6", "User-created content shown here hasn't been tested by KDE or your distributor for functionality or quality.")
         }
     }
 
