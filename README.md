@@ -99,6 +99,7 @@ As an example, the file might look like this for wallpapers found on the KDE Sto
     Categories=KDE Wallpaper 1920x1200,KDE Wallpaper 1600x1200
     XdgTargetDir=wallpapers
     Uncompress=archive
+    ContentWarning=Static
 
 ### Name
 
@@ -162,6 +163,13 @@ Uncompress can be one of: `always`, `never`, `archive`, `surdir`, or `kpackage`:
 * `subdir`: Logic as archive, but decompress into a subdirectory named after the payload filename
 * `kpackage`: Require that the downloaded file is a kpackage, and use the KPackage framework for handling installation and removal (since 5.70).
   See also the note on [KPackage Support below](#kpackage-support) below.
+
+### ContentWarning
+
+Depending on store categories, downloaded content might be of more intrinsically innocuous nature such as Images or simple text files—or potentially more security-sensitive, for instance containing executable JavaScript code.
+For this reason, the `ContentWarning` key can be set to one of two values appropriate for the content type:
+* `Static`: for static contents such as images (this is the default value).
+* `Executable`: for content that can include executable scripts such as JavaScript or QML, or textual metadata like .desktop files that can specify executables which will then be run by the application.
 
 ### Entry and Download Item Tag Filter
 
