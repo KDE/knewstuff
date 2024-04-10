@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:36+0000\n"
+"POT-Creation-Date: 2024-04-10 00:36+0000\n"
 "PO-Revision-Date: 2024-02-27 17:00+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -523,75 +523,86 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Uzziniet, kā varat ziedot šim projektam"
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:144
+#, kde-kuit-format
 msgid ""
-"The content available here has been uploaded by users like you, and has not "
-"been reviewed by your distributor for functionality or stability."
+"Use caution when accessing user-created content shown here, as it may "
+"contain executable code that hasn't been tested by KDE or your distributor "
+"for safety, stability, or quality"
+msgstr ""
+
+#: qtquick/qml/Page.qml:145
+#, fuzzy, kde-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
+msgid ""
+"User-created content shown here hasn't been tested by KDE or your "
+"distributor for functionality or quality."
 msgstr ""
 "Šeit pieejamo saturu ir augšupielādējuši parasti lietotāji un to nav "
 "pārbaudījuši jūsu operētājsistēmas izplatītāji, tāpēc tas var nedarboties "
 "vai darboties nestabili."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Tiles"
 msgstr "Flīzes"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgid "Icons"
 msgstr "Ikonas"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:195
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Informatīvu flīžu skata režīms"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:204
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Tikai ikonu skata režīms"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Lielu priekšskatījumu skata režīms"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Everything"
 msgstr "Visi"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Installed"
 msgstr "Instalēti"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Updateable"
 msgstr "Atjaunināmi"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Rādīt visus ierakstus"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Rādīt tikai instalētos ierakstus"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:266
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -599,27 +610,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Rādīt tikai atjaunināmos ierakstus"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Recent"
 msgstr "Nesenie"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabēta kārtībā"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Rating"
 msgstr "Vērtējums"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Downloads"
 msgstr "Lejupielādes"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -627,7 +638,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Jaunākos rādīt vispirms"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:312
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -635,45 +646,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Kārtot alfabētiski pēc nosaukuma"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:321
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Augstāk norādītos rādīt pirmos"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:330
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Visvairāk lejupielādētos rādīt pirmos"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:341
 #, kde-format
 msgid "Upload…"
 msgstr "Augšupielādēt..."
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:342
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Uzziniet, kā sarakstam pievienot savu saturu"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Go to…"
 msgstr "Iet uz..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
 #, kde-format
 msgid "Search…"
 msgstr "Meklēt..."
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:422
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Iesniegt savu..."

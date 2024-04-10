@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:36+0000\n"
+"POT-Creation-Date: 2024-04-10 00:36+0000\n"
 "PO-Revision-Date: 2024-01-23 10:25+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -552,75 +552,86 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Découvrez comment faire un don pour ce projet"
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:144
+#, kde-kuit-format
 msgid ""
-"The content available here has been uploaded by users like you, and has not "
-"been reviewed by your distributor for functionality or stability."
+"Use caution when accessing user-created content shown here, as it may "
+"contain executable code that hasn't been tested by KDE or your distributor "
+"for safety, stability, or quality"
+msgstr ""
+
+#: qtquick/qml/Page.qml:145
+#, fuzzy, kde-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
+msgid ""
+"User-created content shown here hasn't been tested by KDE or your "
+"distributor for functionality or quality."
 msgstr ""
 "Le contenu disponible ici a été téléchargé par des utilisateurs comme vous. "
 "Il n'a pas été vérifié par votre distributeur quant à sa fonctionnalité ou "
 "sa stabilité."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Tiles"
 msgstr "Tuiles"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgid "Icons"
 msgstr "Icônes"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgid "Preview"
 msgstr "Aperçu"
 
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:195
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Mode d'affichage détaillé en tuiles"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:204
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Mode d'affichage uniquement avec icônes"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Mode d'affichage par aperçus larges"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Everything"
 msgstr "Tout"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Installed"
 msgstr "Installés"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Updateable"
 msgstr "Pouvant être mis à jour"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Afficher tous les entrées"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Afficher uniquement les entrées installées"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:266
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -628,27 +639,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Afficher uniquement les entrées pouvant être mises à jour"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Recent"
 msgstr "Récent"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alphabétique"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Rating"
 msgstr "Note"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Downloads"
 msgstr "Téléchargements"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -656,7 +667,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Afficher les plus récents en premier"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:312
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -664,45 +675,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Trier les noms par ordre alphabétique"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:321
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Afficher les mieux notés en premier"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:330
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Afficher les plus téléchargés en premier"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:341
 #, kde-format
 msgid "Upload…"
 msgstr "Envoyer…"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:342
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Apprendre à ajouter sa propre nouveauté à cette liste"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Go to…"
 msgstr "Aller à..."
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
 #, kde-format
 msgid "Search…"
 msgstr "Rechercher..."
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:422
 #, kde-format
 msgid "Category:"
 msgstr "Catégorie :"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Contribuer personnellement..."

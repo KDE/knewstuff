@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:36+0000\n"
+"POT-Creation-Date: 2024-04-10 00:36+0000\n"
 "PO-Revision-Date: 2024-02-14 18:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -538,75 +538,86 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Miten lahjoittaa projektille"
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:144
+#, kde-kuit-format
 msgid ""
-"The content available here has been uploaded by users like you, and has not "
-"been reviewed by your distributor for functionality or stability."
+"Use caution when accessing user-created content shown here, as it may "
+"contain executable code that hasn't been tested by KDE or your distributor "
+"for safety, stability, or quality"
+msgstr ""
+
+#: qtquick/qml/Page.qml:145
+#, fuzzy, kde-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
+msgid ""
+"User-created content shown here hasn't been tested by KDE or your "
+"distributor for functionality or quality."
 msgstr ""
 "Tässä saatavilla olevan sisällön tarjoavat kaltaisesti käyttäjät, eikä "
 "jakelusi ole tarkistanut sen toimivuutta tai vakautta."
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgid "Tiles"
 msgstr "Ruudukko"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgid "Icons"
 msgstr "Kuvakkeet"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgid "Preview"
 msgstr "Esikatselu"
 
 # Ruudukko-sanavalinta tulee Facebookin vastaavanoloisesta näkymästä
-#: qtquick/qml/Page.qml:191
+#: qtquick/qml/Page.qml:195
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Yksityiskohtainen ruudukkonäkymä"
 
-#: qtquick/qml/Page.qml:200
+#: qtquick/qml/Page.qml:204
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Vain kuvakkeet -näkymä"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:213
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Suuri esikatselunäkymä"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgid "Everything"
 msgstr "Kaikki"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgid "Installed"
 msgstr "Asennetut"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgid "Updateable"
 msgstr "Päivitettävissä"
 
-#: qtquick/qml/Page.qml:244
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Näytä kaikki kohteet"
 
-#: qtquick/qml/Page.qml:253
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Näytä vain asennetut kohteet"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:266
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -614,27 +625,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Näytä vain päivitettävissä olevat kohteet"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Recent"
 msgstr "Uusimmat"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:281
 #, kde-format
 msgid "Rating"
 msgstr "Arvostelu"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Downloads"
 msgstr "Lataukset"
 
-#: qtquick/qml/Page.qml:299
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -642,7 +653,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Näytä ensin uusimmat"
 
-#: qtquick/qml/Page.qml:308
+#: qtquick/qml/Page.qml:312
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -650,45 +661,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Aakkosta nimen mukaan"
 
-#: qtquick/qml/Page.qml:317
+#: qtquick/qml/Page.qml:321
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Näytä ensin parhaiksi arvioidut"
 
-#: qtquick/qml/Page.qml:326
+#: qtquick/qml/Page.qml:330
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Näytä ensin ladatuimmat"
 
-#: qtquick/qml/Page.qml:337
+#: qtquick/qml/Page.qml:341
 #, kde-format
 msgid "Upload…"
 msgstr "Lähetä…"
 
-#: qtquick/qml/Page.qml:338
+#: qtquick/qml/Page.qml:342
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Lisätietoa siitä, miten lisätä luetteloon omia uutuuksiasi"
 
-#: qtquick/qml/Page.qml:348
+#: qtquick/qml/Page.qml:352
 #, kde-format
 msgid "Go to…"
 msgstr "Siirry…"
 
-#: qtquick/qml/Page.qml:355 qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
 #, kde-format
 msgid "Search…"
 msgstr "Etsi…"
 
-#: qtquick/qml/Page.qml:418
+#: qtquick/qml/Page.qml:422
 #, kde-format
 msgid "Category:"
 msgstr "Luokka:"
 
-#: qtquick/qml/Page.qml:438
+#: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Lahjoita omasi…"
