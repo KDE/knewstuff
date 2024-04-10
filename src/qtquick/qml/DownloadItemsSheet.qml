@@ -50,6 +50,8 @@ Kirigami.OverlaySheet {
             icon.name: modelData.icon
             text: modelData.name
 
+            Kirigami.Theme.useAlternateBackgroundColor: true
+
             // Don't need a highlight, hover, or pressed effects
             highlighted: false
             hoverEnabled: false
