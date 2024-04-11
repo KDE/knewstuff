@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
 "PO-Revision-Date: 2010-12-29 15:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -354,7 +354,7 @@ msgid ""
 "this through the naming of the items."
 msgstr ""
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "ഇന്‍സ്റ്റാള്‍ ചെയ്യുക"

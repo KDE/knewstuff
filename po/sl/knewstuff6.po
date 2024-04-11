@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 06:40+0100\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"PO-Revision-Date: 2024-04-10 07:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -399,7 +399,7 @@ msgstr ""
 "se obrnite na avtorja tega predmeta in ga prosite, da to pojasni s "
 "poimenovanjem predmetov."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Namesti"
@@ -536,19 +536,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Bodite previdni, ko dostopate do tukaj prikazane vsebine, ki jo ustvarijo "
+"uporabniki, saj lahko vsebuje izvedljivo kodo, ki je KDE ali vaš distributer "
+"ni testiral glede varnosti, stabilnosti ali kakovosti"
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Razpoložljiva vsebina, ki je na voljo tukaj, je bila poslana od uporabnikov "
-"kakor ste vi in ni bila pregledana s strani distributerja glede "
-"funkcionalnosti ali stabilnosti."
+"Uporabniško ustvarjena vsebina, prikazana tukaj, ni bila testirana s strani "
+"KDE ali vašega distributerja glede funkcionalnosti ali kakovosti."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format

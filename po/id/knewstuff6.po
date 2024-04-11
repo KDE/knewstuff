@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
 "PO-Revision-Date: 2023-12-27 18:14+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -402,7 +402,7 @@ msgstr ""
 "tersedia, silakan hubungi pembuat item ini dan minta mereka menjelaskannya "
 "melalui penamaan item."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Instal"

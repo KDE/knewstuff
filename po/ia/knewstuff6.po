@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
 "PO-Revision-Date: 2024-01-19 10:05+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -394,7 +394,7 @@ msgstr ""
 "optiones disponibile, pro favor tu continge le autor de iste elemento e "
 "demanda que illos clarar isto per nominar le elementos."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Installa"

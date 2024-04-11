@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 11:12+0100\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"PO-Revision-Date: 2024-04-10 11:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attica/atticaprovider.cpp:165
@@ -411,7 +411,7 @@ msgstr ""
 "beschikbare opties, neem dan contact op met de auteur van dit item en vraag "
 "om verheldering hiervan via de naam van de items."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Installeren"
@@ -548,18 +548,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Wees voorzichtig bij benaderen van gebruiker-gemaakte, hier getoonde inhoud, "
+"omdat het uitvoerbare code kan bevatten die niet is getest op veiligheid, "
+"stabiliteit of kwaliteit door KDE of uw distributie"
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"De hier beschikbare inhoud is geüpload door gebruikers zoals u en is niet "
-"beoordeeld door uw leverancier op functionaliteit of stabiliteit."
+"Gebruiker-gemaakte, hier getoonde inhoud, is niet getest op functionaliteit "
+"of kwaliteit door KDE of uw distributie."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format

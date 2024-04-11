@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
 "PO-Revision-Date: 2024-01-27 14:54+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -394,7 +394,7 @@ msgstr ""
 "įdiegti, susisiekite su šio elemento autoriumi ir paprašykite, kad jis tai "
 "patikslintų savo elemento pavadinime."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Įdiegti"

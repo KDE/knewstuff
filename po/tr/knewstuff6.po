@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 12:45+0300\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"PO-Revision-Date: 2024-04-10 14:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -101,7 +101,7 @@ msgstr "Açık İşbirliği Hizmetleri örneği %1, istenen işlevi desteklemiyo
 #: attica/atticaprovider.cpp:600
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
-msgstr "Açık İşbirliği Hizmeti'nde bilinmeyen API hatası. (%1)"
+msgstr "Açık İşbirliği Hizmeti’nde bilinmeyen API hatası. (%1)"
 
 #: core/commentsmodel.cpp:154
 #, kde-format
@@ -122,17 +122,17 @@ msgstr ""
 #: core/enginebase.cpp:79
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Yapılandırma dosyası yok: \"%1\""
+msgstr "Yapılandırma dosyası yok: “%1”"
 
 #: core/enginebase.cpp:87
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "Yapılandırma dosyası var; ancak açılamıyor: \"%1\""
+msgstr "Yapılandırma dosyası var; ancak açılamıyor: “%1”"
 
 #: core/enginebase.cpp:94
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
-msgstr "Yapılandırma dosyası geçersiz: \"%1\""
+msgstr "Yapılandırma dosyası geçersiz: “%1”"
 
 #: core/enginebase.cpp:103
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "%1 dosyasından sağlayıcılar okunamadı"
 #: core/enginebase.cpp:302
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr "Dosyadan \"Yeni Çıkanlar\" alınamadı: %1"
+msgstr "Dosyadan “Yeni Çıkanlar” alınamadı: %1"
 
 #: core/enginebase.cpp:333
 #, kde-format
@@ -173,12 +173,12 @@ msgstr "Geçersiz öge."
 #: core/installation.cpp:108
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
-msgstr "Öge indirilemedi: \"%1\" için indirme URL'si yok."
+msgstr "Öge indirilemedi: “%1” için indirme URL’si yok."
 
 #: core/installation.cpp:139
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
-msgstr "\"%1\" indirilemedi, hata: %2"
+msgstr "“%1” indirilemedi, hata: %2"
 
 #: core/installation.cpp:148
 #, kde-format
@@ -186,7 +186,7 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
-"'%1' kurulamıyor; çünkü bir web sayfasına işaret ediyor. Kurulumu tamamlamak "
+"“%1” kurulamıyor; çünkü bir web sayfasına işaret ediyor. Kurulumu tamamlamak "
 "için <a href='%2'>buraya</a> tıklayın."
 
 #: core/installation.cpp:186
@@ -336,7 +336,7 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
-"'%1' ayarlanamadı\n"
+"“%1” ayarlanamadı\n"
 "%2"
 
 #: qtquick/categoriesmodel.cpp:50
@@ -374,7 +374,7 @@ msgstr "Yeni %1 İndir…"
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "Yeni %1 İndir..."
+msgstr "Yeni %1 İndir"
 
 #: qtquick/qml/Dialog.qml:44
 #, kde-format
@@ -402,7 +402,7 @@ msgstr ""
 "emin değilseniz bu ögenin yazarıyla iletişime geçin ve bunu ögenin "
 "adlandırması üzerinden açıklığa kavuşturun."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "Kur"
@@ -485,7 +485,7 @@ msgid ""
 msgstr ""
 "Bu öge şu anda geçersiz veya bilinmeyen bir durumda. <a href=\"https://bugs."
 "kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Bunu lütfen KDE "
-"Topluluğu'na bir hata raporu ile birlikte bildirin</a>."
+"Topluluğu’na bir hata raporu ile birlikte bildirin</a>."
 
 #: qtquick/qml/EntryDetails.qml:209
 #, kde-format
@@ -539,18 +539,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"KDE veya dağıtımınız tarafından güvenlik, kararlılık veya kalite açısından "
+"sınanmayın yürütülebilir kodlar içerebileceğinden, burada gösterilen "
+"kullanıcı yapımı içeriğe erişirken dikkatli olun"
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Kullanılabilir içerik, sizin gibi kullanıcılar tarafından yüklenir ve "
-"işlevsellik veya kararlılık açısından gözden geçirilmemiştir."
+"Burada gösterilen kullanıcı yapımı içerik, KDE veya dağtımınız tarafından "
+"işlevsellik veya kalite açısından sınanmamıştır."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format
@@ -695,7 +695,7 @@ msgstr "Kategori:"
 #: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
-msgstr "Kendinizinkini katkıda bulunun..."
+msgstr "Kendin Bir Şeyler Koy…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:110
 #, kde-format
@@ -783,7 +783,7 @@ msgid ""
 "bug report</a>."
 msgstr ""
 "Geçersiz veya bilinmeyen durum.<a href=\"https://bugs.kde.org/enter_bug.cgi?"
-"product=frameworks-knewstuff\">Bunu lütfen KDE Topluluğu'na bir hata raporu "
+"product=frameworks-knewstuff\">Bunu lütfen KDE Topluluğu’na bir hata raporu "
 "ile birlikte bildirin</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
@@ -866,10 +866,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
-"Yeni girdiler yüklemek için veya KDE Mağazası'ndaki var olan bir girdiye "
+"Yeni girdiler yüklemek için veya KDE Mağazası’ndaki var olan bir girdiye "
 "yeni içerik eklemek için önce web sayfasını açın ve oturum açın. Bunu "
 "yaptıktan sonra, kullanıcı simgenize tıkladığınızda açılan menüden "
-"Ürünlerim'i bulun. Buraya tıklayıp ürünleriniz üzerinde çalışabileceğiniz "
+"Ürünlerim’i bulun. Buraya tıklayıp ürünleriniz üzerinde çalışabileceğiniz "
 "ürün yönetimini açın."
 
 #: qtquick/qml/UploadPage.qml:155
@@ -1011,13 +1011,13 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
-"Bilgi göstermek için bir KNS URL'si. Bir KNS URL'sinin biçimi kns://"
+"Bilgi göstermek için bir KNS URL’si. Bir KNS URL’sinin biçimi kns://"
 "knsrcdosyası/sağlayıcıkimliği/girdikimliği biçimindedir\n"
-"'knsrcdosyası'\n"
+"“knsrcdosyası”\n"
 "bu aracın doğrudan knsrc argümanına geçirilebilecek knsrc dosyasının adıdır\n"
-"'sağlayıcıkimliği'\n"
+"“sağlayıcıkimliği”\n"
 "girdinin var olması gereken sağlayıcı makinesinin adıdır\n"
-"'girdikimliği'\n"
+"“girdikimliği”\n"
 "knsrc dosyasında belirtilen sağlayıcıda bulunan girdinin benzersiz "
 "kimliğidir.\n"
 "Örnek bir URL: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
@@ -1025,7 +1025,7 @@ msgstr ""
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
 msgid "Download New Stuff..."
-msgstr "Yeni Şeyler İndir..."
+msgstr "Yeni Şeyler İndir…"
 
 #~ msgctxt ""
 #~ "A message which is shown when the user attempts to display a specific "

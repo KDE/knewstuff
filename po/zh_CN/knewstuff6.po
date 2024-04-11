@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
-"PO-Revision-Date: 2024-03-30 19:36\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"PO-Revision-Date: 2024-04-10 19:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -375,7 +375,7 @@ msgstr ""
 "请从下载列表中选择您要安装的项目。如果您不知道选哪个，请联系项目的作者起一个"
 "更清楚的名字。"
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "安装"
@@ -513,16 +513,11 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"此处提供的内容由像您这样的用户上传，系统软件的发行组织并未对它们功能或稳定性"
-"进行审查。"
 
 #: qtquick/qml/Page.qml:175
 #, kde-format

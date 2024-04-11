@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 06:25+0100\n"
+"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"PO-Revision-Date: 2024-04-10 04:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -385,7 +385,7 @@ msgstr ""
 "გნებავთ, დააყენოთ. თუ ის, რომელი ვარიანტი უნდა აირჩიოთ, გაურკვეველია, "
 "დაუკავშირდით ელემენტის ავტორს და სთხოვეთ, მისი სახელი უფრო გასაგებად აღწეროს."
 
-#: qtquick/qml/DownloadItemsSheet.qml:79
+#: qtquick/qml/DownloadItemsSheet.qml:81
 #, kde-format
 msgid "Install"
 msgstr "დაყენება"
@@ -522,18 +522,19 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"გამოიჩინეთ სიფრთხილე მომხმარებლის მიერ შექმნილ შემცველობასთან წვდომისას, "
+"რადგან ის შეიძლება შეიცავდეს შესრულებად კოდს, რომელიც არ შემოწმებულა KDE-ის "
+"ან თქვენი დისტრიბუტორის მიერ, არის თუ არა ის უსაფრთხო, სტაბილური ან "
+"ხარისხიანი."
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"აქ არსებული შიგთავსი ატვირთულია მომხმარებლების მიერ, რომელიც თქვენგან "
-"არაფრით განსხვავდება და ისინი ფუნქციონალზე და სტაბილურობაზე შემოწმებული არაა."
+"აქ ნაჩვენები მომხმარებლის მიერ შექმნილი შემცველობა, რომელიც KDE-ის ან თქვენი "
+"დისტრიბუტორის მიერ ფუნქციონალზე ან ხარისხზე არ შემოწმებულა."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format
