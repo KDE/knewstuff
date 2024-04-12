@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-11 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 08:31+0200\n"
+"PO-Revision-Date: 2024-04-10 06:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -531,18 +531,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"להשתמש באזהרה בעת גישה לתוכן שנוצר על ידי משתמשים שמופיע כאן, כיוון שהוא "
+"יכול להכיל קוד שאפשר להריץ שלא נבדק על ידי KDE או על ידי מהנדסי ההפצה שלך "
+"מבחינת בטיחות, יציבות או איכות"
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"התוכן שזמין כאן הועלה על ידי משתמשים כמוך ולא עבר סקירה על ידי עורכי ההפצה "
-"שלך לבחינת היכולות או היציבות."
+"תוכן שמופיע כאן ונוצר על ידי המשתמשים לא נבדק על ידי KDE או על ידי מהנדסי "
+"ההפצה שלך מבחינת תקינות או איכות."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format

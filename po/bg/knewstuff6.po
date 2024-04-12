@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-11 00:36+0000\n"
-"PO-Revision-Date: 2024-02-03 15:56+0100\n"
+"PO-Revision-Date: 2024-04-11 11:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attica/atticaprovider.cpp:165
@@ -528,18 +528,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Бъдете предпазливи, когато използвате създадени от потребителя съдържания, "
+"показани тук, тъй като те може да съдържат изпълним код, който не е тестван "
+"от KDE или от вашия дистрибутор за безопасност, стабилност или качество."
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Наличното съдържание тук е качено от потребители като вас и не е прегледано "
-"от вашия дистрибутор за функционалност или стабилност."
+"Създаденото от потребителя съдържание, показано тук, не е тествано от KDE "
+"или от вашия дистрибутора за функционалност или качество."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format

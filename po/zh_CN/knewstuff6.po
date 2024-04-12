@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-11 00:36+0000\n"
-"PO-Revision-Date: 2024-04-10 19:49\n"
+"PO-Revision-Date: 2024-04-11 19:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -511,6 +511,8 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"此处显示的由其他用户创建的内容可能包含未经 KDE 或者本机系统的发行机构测试的可"
+"执行代码，无法保证它们的安全性、稳定性或者内容质量。请谨慎使用。"
 
 #: qtquick/qml/Page.qml:145
 #, kde-format
@@ -518,6 +520,8 @@ msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
+"此处显示的由其他用户创建的内容没有经过 KDE 或者本机系统的发行机构测试，无法保"
+"证它们的功能和内容质量。"
 
 #: qtquick/qml/Page.qml:175
 #, kde-format
