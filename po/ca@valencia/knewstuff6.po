@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-11 00:36+0000\n"
-"PO-Revision-Date: 2024-01-19 11:24+0100\n"
+"PO-Revision-Date: 2024-04-10 12:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -539,18 +539,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Aneu amb compte en accedir al contingut creat per l'usuari que es mostra "
+"ací, ja que pot contindre codi executable del qual no s'ha provat la "
+"seguretat, l'estabilitat o la qualitat per KDE o el vostre distribuïdor"
 
 #: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"El contingut disponible ací ha sigut carregat per usuaris com vosaltres i no "
-"ha sigut revisat pel vostre distribuïdor de funcionalitat o estabilitat."
+"El contingut creat per l'usuari que es mostra ací no s'ha provat la "
+"funcionalitat o la qualitat per KDE ni el vostre distribuïdor."
 
 #: qtquick/qml/Page.qml:175
 #, kde-format
