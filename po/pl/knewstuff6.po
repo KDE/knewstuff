@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:36+0000\n"
-"PO-Revision-Date: 2024-02-11 13:00+0100\n"
+"POT-Creation-Date: 2024-04-14 00:36+0000\n"
+"PO-Revision-Date: 2024-04-13 19:33+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -108,7 +108,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -608,86 +608,85 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Dowiedz się jak pieniężnie wesprzeć ten projekt"
 
-#: qtquick/qml/Page.qml:144
+#: qtquick/qml/Page.qml:139
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Zachowaj ostrożność pobierając stąd treści stworzone przez użytkowników, bo "
+"mogą zawierać kod, który nie został sprawdzony ani przez KDE, ani przez "
+"twojego dystrybutora pod kątem bezpieczeństwa, stabilności, czy jakości"
 
-#: qtquick/qml/Page.qml:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#: qtquick/qml/Page.qml:140
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Treść dostępna tutaj został wysłana przez użytkowników takich jak ty i nie "
-"została sprawdzona przez dystrybutora pod kątem stabilności, czy zdatności "
-"do użytku."
+"Treści pokazywane tutaj nie zostały sprawdzone ani przez KDE, ani przez "
+"twojego dystrybutora pod kątem funkcjonalności, czy jakości."
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:169
 #, kde-format
 msgid "Tiles"
 msgstr "Kafelki"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Icons"
 msgstr "Ikony"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Preview"
 msgstr "Podgląd"
 
-#: qtquick/qml/Page.qml:195
+#: qtquick/qml/Page.qml:189
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Tryb widoku szczegółowych kafelków"
 
-#: qtquick/qml/Page.qml:204
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Ikonowy tryb widoku"
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Tryb widoku z dużymi podglądami"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgid "Everything"
 msgstr "Wszystkie"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Installed"
 msgstr "Wgranych"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Updateable"
 msgstr "Tylko do uaktualnienia"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:242
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Pokaż wszystkie rzeczy"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:251
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Pokaż tylko wgrane rzeczy"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -695,27 +694,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Pokaż tylko rzeczy do uaktualnienia"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:271
 #, kde-format
 msgid "Recent"
 msgstr "Ostatnie"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetycznie"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Rating"
 msgstr "Ocen"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Downloads"
 msgstr "Pobierane"
 
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -723,7 +722,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Najpierw pokaż najnowsze"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:306
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -731,45 +730,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Uszereguj alfabetycznie po nazwie"
 
-#: qtquick/qml/Page.qml:321
+#: qtquick/qml/Page.qml:315
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Najpierw pokaż najwyżej oceniane"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:324
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Najpierw pokaż najczęściej pobierane"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:335
 #, kde-format
 msgid "Upload…"
 msgstr "Wyślij…"
 
-#: qtquick/qml/Page.qml:342
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Naucz się jak dodawać swoje własne rzeczy do tej listy"
 
-#: qtquick/qml/Page.qml:352
+#: qtquick/qml/Page.qml:346
 #, kde-format
 msgid "Go to…"
 msgstr "Przejdź do…"
 
-#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
+#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
 #, kde-format
 msgid "Search…"
 msgstr "Poszukaj…"
 
-#: qtquick/qml/Page.qml:422
+#: qtquick/qml/Page.qml:416
 #, kde-format
 msgid "Category:"
 msgstr "Kategoria:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:436
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Dodaj coś od siebie..."

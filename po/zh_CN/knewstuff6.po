@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"POT-Creation-Date: 2024-04-14 00:36+0000\n"
 "PO-Revision-Date: 2024-04-11 19:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -504,7 +504,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "了解如何为此项目捐款"
 
-#: qtquick/qml/Page.qml:144
+#: qtquick/qml/Page.qml:139
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -514,7 +514,7 @@ msgstr ""
 "此处显示的由其他用户创建的内容可能包含未经 KDE 或者本机系统的发行机构测试的可"
 "执行代码，无法保证它们的安全性、稳定性或者内容质量。请谨慎使用。"
 
-#: qtquick/qml/Page.qml:145
+#: qtquick/qml/Page.qml:140
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -523,65 +523,65 @@ msgstr ""
 "此处显示的由其他用户创建的内容没有经过 KDE 或者本机系统的发行机构测试，无法保"
 "证它们的功能和内容质量。"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:169
 #, kde-format
 msgid "Tiles"
 msgstr "卡片"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Icons"
 msgstr "图标"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Preview"
 msgstr "预览"
 
-#: qtquick/qml/Page.qml:195
+#: qtquick/qml/Page.qml:189
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "详细卡片视图模式"
 
-#: qtquick/qml/Page.qml:204
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "仅图标视图模式"
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "宽大预览视图模式"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgid "Everything"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Installed"
 msgstr "已安装"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:242
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "显示所有项"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:251
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "只显示已安装的项目"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -589,27 +589,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "只显示可更新的项目"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:271
 #, kde-format
 msgid "Recent"
 msgstr "最新"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Alphabetical"
 msgstr "字母顺序"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Rating"
 msgstr "评分"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Downloads"
 msgstr "下载量"
 
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -617,7 +617,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "最新的在前"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:306
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -625,45 +625,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "按名称的字母排序"
 
-#: qtquick/qml/Page.qml:321
+#: qtquick/qml/Page.qml:315
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "高分在前"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:324
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "最多下载在前"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:335
 #, kde-format
 msgid "Upload…"
 msgstr "上传…"
 
-#: qtquick/qml/Page.qml:342
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何向此列表添加您自己的资源"
 
-#: qtquick/qml/Page.qml:352
+#: qtquick/qml/Page.qml:346
 #, kde-format
 msgid "Go to…"
 msgstr "转到…"
 
-#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
+#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
 #, kde-format
 msgid "Search…"
 msgstr "搜索…"
 
-#: qtquick/qml/Page.qml:422
+#: qtquick/qml/Page.qml:416
 #, kde-format
 msgid "Category:"
 msgstr "分类："
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:436
 #, kde-format
 msgid "Contribute your own…"
 msgstr "贡献您的内容…"

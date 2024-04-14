@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"POT-Creation-Date: 2024-04-14 00:36+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -494,7 +494,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:144
+#: qtquick/qml/Page.qml:139
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -502,73 +502,73 @@ msgid ""
 "for safety, stability, or quality"
 msgstr ""
 
-#: qtquick/qml/Page.qml:145
+#: qtquick/qml/Page.qml:140
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:169
 #, fuzzy, kde-format
 #| msgid "File"
 msgid "Tiles"
 msgstr "फाइल"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Icons"
 msgstr "चिनहा"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:173
 #, fuzzy, kde-format
 #| msgid "No Preview"
 msgid "Preview"
 msgstr "प्रिव्यू नइ"
 
-#: qtquick/qml/Page.qml:195
+#: qtquick/qml/Page.qml:189
 #, fuzzy, kde-format
 #| msgid "Detailed View"
 msgid "Detailed Tiles View Mode"
 msgstr "विस्तृत दृस्य"
 
-#: qtquick/qml/Page.qml:204
+#: qtquick/qml/Page.qml:198
 #, fuzzy, kde-format
 #| msgid "Icons Only"
 msgid "Icons Only View Mode"
 msgstr "सिरिफ चिनहा"
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:207
 #, fuzzy, kde-format
 #| msgid "Detailed View"
 msgid "Large Preview View Mode"
 msgstr "विस्तृत दृस्य"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:220
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installed"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:222
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "अपडेट"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:242
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "सब्बो प्रविस्टि देखाव (&S)"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:251
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -576,7 +576,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "सब्बो प्रविस्टि देखाव (&S)"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:260
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -585,30 +585,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "सब्बो प्रविस्टि देखाव (&S)"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:271
 #, fuzzy, kde-format
 #| msgid "Open &Recent"
 msgid "Recent"
 msgstr "अभी हाल के वाले ल खोलव  (&R)"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:275
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating"
 msgstr "रेटिंग:"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:277
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "डाउनलोड"
 
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:297
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -617,7 +617,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "पहिली डिरेक्टरी देखाव"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:306
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -625,14 +625,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:321
+#: qtquick/qml/Page.qml:315
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "पहिली डिरेक्टरी देखाव"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:324
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -640,36 +640,36 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "सबसे अधिक डाउनलोड"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:335
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "बदलव...(&R)"
 
-#: qtquick/qml/Page.qml:342
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:352
+#: qtquick/qml/Page.qml:346
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "इहां जाव... (&G)"
 
-#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
+#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "खोजव: (&e)"
 
-#: qtquick/qml/Page.qml:422
+#: qtquick/qml/Page.qml:416
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr "अक्छर:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:436
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"

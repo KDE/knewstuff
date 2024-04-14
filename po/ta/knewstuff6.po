@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:36+0000\n"
+"POT-Creation-Date: 2024-04-14 00:36+0000\n"
 "PO-Revision-Date: 2023-06-11 18:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -510,7 +510,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "இதற்கு எப்படி நன்கொடை அளிப்பது என தெரிந்துகொள்ளுங்கள்"
 
-#: qtquick/qml/Page.qml:144
+#: qtquick/qml/Page.qml:139
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -518,7 +518,7 @@ msgid ""
 "for safety, stability, or quality"
 msgstr ""
 
-#: qtquick/qml/Page.qml:145
+#: qtquick/qml/Page.qml:140
 #, fuzzy, kde-format
 #| msgid ""
 #| "The content available here has been uploaded by users like you, and has "
@@ -530,68 +530,68 @@ msgstr ""
 "இங்கு உள்ளவற்றை உங்களைப் போன்ற பயனர்கள் பதிவேற்றியுள்ளனர்.இவை சரியாக வேலை செய்யுமா என்பதை "
 "உங்கள் இயங்குதள பராமரிப்பாளர்கள் சரிபார்த்திருக்க மாட்டார்கள். "
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@option:check Do filter on type - show only files"
 #| msgid "Files"
 msgid "Tiles"
 msgstr "கோப்புகள்"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:171
 #, kde-format
 msgid "Icons"
 msgstr "சின்னங்கள்"
 
-#: qtquick/qml/Page.qml:179
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgid "Preview"
 msgstr "முன்னோட்டம்"
 
-#: qtquick/qml/Page.qml:195
+#: qtquick/qml/Page.qml:189
 #, fuzzy, kde-format
 #| msgid "Details view mode"
 msgid "Detailed Tiles View Mode"
 msgstr "விவரங்கள் காட்டப்படும் காட்சி"
 
-#: qtquick/qml/Page.qml:204
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "சின்னங்களை மட்டும் காட்டும் காட்சிமுறை"
 
-#: qtquick/qml/Page.qml:213
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "பெரிய முன்னோட்டங்களை காட்டும் காட்சிமுறை"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgid "Everything"
 msgstr "அனைத்தும்"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:220
 #, kde-format
 msgid "Installed"
 msgstr "நிறுவப்பட்டுள்ளவை"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgid "Updateable"
 msgstr "புதுப்பிக்கத்தக்கவை"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:242
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "அனைத்து பதிவுகளையும் காட்டு"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:251
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "நிறுவப்பட்டுள்ளவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:266
+#: qtquick/qml/Page.qml:260
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -599,27 +599,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "புதுப்பிக்கத்தக்கவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:271
 #, kde-format
 msgid "Recent"
 msgstr "சமீபமானவை"
 
-#: qtquick/qml/Page.qml:279
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgid "Alphabetical"
 msgstr "அகரவரிசை"
 
-#: qtquick/qml/Page.qml:281
+#: qtquick/qml/Page.qml:275
 #, kde-format
 msgid "Rating"
 msgstr "மதிப்பீடு"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:277
 #, kde-format
 msgid "Downloads"
 msgstr "பதிவிறக்கங்கள்"
 
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:297
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -627,7 +627,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "மிகப்புதியவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:306
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -635,45 +635,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "பெயரின்படி அகரவரிசையாக வரிசைப்படுத்து"
 
-#: qtquick/qml/Page.qml:321
+#: qtquick/qml/Page.qml:315
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "உயர்வாக மதிப்பிடப்பட்டுள்ளதை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:324
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:341
+#: qtquick/qml/Page.qml:335
 #, kde-format
 msgid "Upload…"
 msgstr "பதிவேற்று…"
 
-#: qtquick/qml/Page.qml:342
+#: qtquick/qml/Page.qml:336
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
-#: qtquick/qml/Page.qml:352
+#: qtquick/qml/Page.qml:346
 #, kde-format
 msgid "Go to…"
 msgstr "செல்..."
 
-#: qtquick/qml/Page.qml:359 qtquick/qml/Page.qml:368
+#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
 #, kde-format
 msgid "Search…"
 msgstr "தேடு…"
 
-#: qtquick/qml/Page.qml:422
+#: qtquick/qml/Page.qml:416
 #, kde-format
 msgid "Category:"
 msgstr "பகுப்பு:"
 
-#: qtquick/qml/Page.qml:442
+#: qtquick/qml/Page.qml:436
 #, kde-format
 msgid "Contribute your own…"
 msgstr "உங்களுடையதை பதிவேற்றுங்கள்…"
