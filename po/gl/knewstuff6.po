@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:36+0000\n"
-"PO-Revision-Date: 2024-01-22 18:51+0100\n"
+"PO-Revision-Date: 2024-04-21 09:42+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -539,18 +539,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Teña coidado ao acceder a este contido creado por persoas usuarias. Pode "
+"conter código executábel, e nin KDE nin o seu distribuidor comprobaron a súa "
+"seguridade, estabilidade ou calidade."
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Este contido subírono persoas coma vostede, e a súa funcionalidade e "
-"estabilidade non as revisou o equipo da súa distribución."
+"Nin KDE nin o seu distribuidor comprobaron a funcionalidade ou calidade "
+"deste contido creado por persoas usuarias."
 
 #: qtquick/qml/Page.qml:169
 #, kde-format
