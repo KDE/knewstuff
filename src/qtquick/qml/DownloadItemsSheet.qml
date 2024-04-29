@@ -18,20 +18,26 @@ import org.kde.newstuff as NewStuff
  * This is used by the NewStuff.Page component
  * @since 5.63
  */
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: component
 
     property var entry
+
+    // Ensure the dialog does not get too small
+    height: Math.max(Math.round(root.height - (root.height / 4)), Kirigami.Units.gridUnit  * 20)
+    width: Math.max(Math.round(root.width - (root.width / 4)), Kirigami.Units.gridUnit  * 25)
 
     property alias downloadLinks: itemsView.model
 
     signal itemPicked(var entry, int downloadItemId, string downloadName)
 
-    showCloseButton: true
+    showCloseButton: false
     title: i18nd("knewstuff6", "Pick Your Installation Option")
 
     ListView {
         id: itemsView
+
+        clip: true
 
         headerPositioning: ListView.InlineHeader
         header: QQC2.Label {
