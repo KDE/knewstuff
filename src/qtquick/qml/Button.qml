@@ -54,7 +54,7 @@ QQC2.Button {
      * emitted when the Hot New Stuff dialog is about to be shown, usually
      * as a result of the user having click on the button
      */
-    signal aboutToShowDialog();
+    signal aboutToShowDialog()
 
     /**
      * The engine which handles the content in this Button

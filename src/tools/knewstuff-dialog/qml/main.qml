@@ -18,8 +18,8 @@ Kirigami.ApplicationWindow {
         id: globalDrawer
         title: "KNewStuff Dialog"
         titleIcon: "get-hot-new-stuff"
-        drawerOpen: true;
-        modal: false;
+        drawerOpen: true
+        modal: false
 
         actions: []
         Instantiator {

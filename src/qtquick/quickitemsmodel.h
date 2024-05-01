@@ -39,14 +39,14 @@ class ItemsModelPrivate;
     import org.kde.newstuff 1.0 as NewStuff
     Item {
         NewStuff.ItemsModel {
-            id: newStuffModel;
+            id: newStuffModel
             engine: newStuffEngine
         }
         NewStuff.Engine {
             id: newStuffEngine
             configFile: "/some/filesystem/location/wallpaper.knsrc"
-            onBusyMessageChanged: () => console.log("KNS Message: " + newStuffEngine.busyMessage);
-            onErrorCode: (code, message, metadata) => console.log("KNS Error: " + message);
+            onBusyMessageChanged: () => console.log("KNS Message: " + newStuffEngine.busyMessage)
+            onErrorCode: (code, message, metadata) => console.log("KNS Error: " + message)
         }
     }
     \endcode

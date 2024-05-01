@@ -15,11 +15,11 @@ Item {
     property QtObject newStuffModel
     visible: opacity > 0
     opacity: (model.entry.status == NewStuff.Entry.Installing || model.entry.status == NewStuff.Entry.Updating) ? 1 : 0
-    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; } }
+    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration } }
     Rectangle {
         anchors.fill: parent
         color: Kirigami.Theme.backgroundColor
-        opacity: 0.9;
+        opacity: 0.9
     }
     QtControls.BusyIndicator {
         anchors {
@@ -58,6 +58,6 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         // TODO: This is where we'd want to put the download progress and cancel button as well
-        text: i18ndc("knewstuff6", "Label for the busy indicator showing an item is installing", "Installing…");
+        text: i18ndc("knewstuff6", "Label for the busy indicator showing an item is installing", "Installing…")
     }
 }

@@ -82,7 +82,7 @@ Kirigami.Action {
      * This forwards the entry changed event from the QtQuick engine
      * @see Engine::entryEvent
      */
-    signal entryEvent(var entry, int event);
+    signal entryEvent(var entry, int event)
 
     /**
      * If this is true (default is false), the action will be shown when the Kiosk settings are such

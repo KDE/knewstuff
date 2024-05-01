@@ -41,7 +41,7 @@ Private.GridTileDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
+            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
             icon.name: "install"
             onTriggered: source => {
                 if (model.downloadLinks.length === 1) {
@@ -52,11 +52,11 @@ Private.GridTileDelegate {
                     downloadItemsSheet.open();
                 }
             }
-            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted;
-            visible: enabled;
+            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted
+            visible: enabled
         },
         Kirigami.Action {
-            text: i18ndc("knewstuff6", "Request updating of this item", "Update");
+            text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
             onTriggered: source => {
                 newStuffEngine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId);
@@ -82,7 +82,7 @@ Private.GridTileDelegate {
             margins: Kirigami.Units.smallSpacing
         }
         QtLayouts.GridLayout {
-            anchors.fill: parent;
+            anchors.fill: parent
             columns: 2
             QtLayouts.ColumnLayout {
                 QtLayouts.Layout.minimumWidth: view.implicitCellWidth / 5
@@ -93,18 +93,18 @@ Private.GridTileDelegate {
                     QtLayouts.Layout.maximumHeight: width
                     Kirigami.ShadowedRectangle {
                         visible: tilePreview.status == Image.Ready
-                        anchors.centerIn: tilePreview;
-                        width: Math.min(tilePreview.paintedWidth, tilePreview.width);
-                        height: Math.min(tilePreview.paintedHeight, tilePreview.height);
+                        anchors.centerIn: tilePreview
+                        width: Math.min(tilePreview.paintedWidth, tilePreview.width)
+                        height: Math.min(tilePreview.paintedHeight, tilePreview.height)
                         Kirigami.Theme.colorSet: Kirigami.Theme.View
                         shadow.size: Kirigami.Units.largeSpacing
                         shadow.color: Qt.rgba(0, 0, 0, 0.3)
                     }
                     Image {
                         id: tilePreview
-                        asynchronous: true;
-                        fillMode: Image.PreserveAspectFit;
-                        source: thumbnailAvailable ? model.previewsSmall[0] : "";
+                        asynchronous: true
+                        fillMode: Image.PreserveAspectFit
+                        source: thumbnailAvailable ? model.previewsSmall[0] : ""
                         anchors {
                             fill: parent
                             margins: Kirigami.Units.smallSpacing
@@ -112,30 +112,30 @@ Private.GridTileDelegate {
                         verticalAlignment: Image.AlignTop
                     }
                     Kirigami.Icon {
-                        id: updateAvailableBadge;
-                        opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0;
-                        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+                        id: updateAvailableBadge
+                        opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0
+                        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
                         anchors {
-                            top: parent.top;
-                            left: parent.left;
-                            margins: -Kirigami.Units.smallSpacing;
+                            top: parent.top
+                            left: parent.left
+                            margins: -Kirigami.Units.smallSpacing
                         }
-                        height: Kirigami.Units.iconSizes.smallMedium;
-                        width: height;
-                        source: "package-installed-outdated";
+                        height: Kirigami.Units.iconSizes.smallMedium
+                        width: height
+                        source: "package-installed-outdated"
                     }
                     Kirigami.Icon {
-                        id: installedBadge;
-                        opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0;
-                        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
+                        id: installedBadge
+                        opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0
+                        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
                         anchors {
-                            top: parent.top;
-                            left: parent.left;
-                            margins: -Kirigami.Units.smallSpacing;
+                            top: parent.top
+                            left: parent.left
+                            margins: -Kirigami.Units.smallSpacing
                         }
-                        height: Kirigami.Units.iconSizes.smallMedium;
-                        width: height;
-                        source: "package-installed-updated";
+                        height: Kirigami.Units.iconSizes.smallMedium
+                        width: height
+                        source: "package-installed-updated"
                     }
                 }
                 Item {
@@ -170,7 +170,7 @@ Private.GridTileDelegate {
             Private.Rating {
                 QtLayouts.Layout.fillWidth: true
                 rating: entry.rating
-                visible: entry.entryType == NewStuff.Entry.CatalogEntry;
+                visible: entry.entryType == NewStuff.Entry.CatalogEntry
             }
             Kirigami.Heading {
                 QtLayouts.Layout.fillWidth: true
@@ -186,8 +186,8 @@ Private.GridTileDelegate {
             newStuffModel: component.GridView.view.model
         }
         MouseArea {
-            anchors.fill: parent;
-            cursorShape: Qt.PointingHandCursor;
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
             onClicked: mouse => {
                 component.showDetails();
             }

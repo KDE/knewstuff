@@ -15,8 +15,8 @@ Kirigami.PromptDialog {
     title: i18ndc("knewstuff6", "Title for a dialog box which shows error messages", "An Error Occurred");
     standardButtons: Kirigami.Dialog.NoButton
 
-    property bool active: true;
-    property QtObject engine;
+    property bool active: true
+    property QtObject engine
     property QtObject connection: Connections {
         target: engine
         function onErrorCode(errorCode, message, metadata) {
@@ -38,7 +38,7 @@ Kirigami.PromptDialog {
     onVisibleChanged: displayThrottle.start()
     property QtObject displayThrottle: Timer {
         interval: Kirigami.Units.shortDuration
-        onTriggered: showNextError();
+        onTriggered: showNextError()
     }
     function showNextError() {
         if (visible === false && errorsToShow.length > 0) {
