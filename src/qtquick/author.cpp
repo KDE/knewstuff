@@ -11,8 +11,6 @@
 #include "core/author.h"
 #include "core/provider.h"
 
-#include "knewstuffquick_debug.h"
-
 #include <memory>
 
 namespace KNewStuffQuick

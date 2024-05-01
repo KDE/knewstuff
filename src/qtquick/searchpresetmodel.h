@@ -7,8 +7,8 @@
 #ifndef SEARCHPRESETMODEL_H
 #define SEARCHPRESETMODEL_H
 
-#include "provider.h"
-#include "quickengine.h"
+#include "enginebase.h"
+
 #include <QAbstractListModel>
 
 /**

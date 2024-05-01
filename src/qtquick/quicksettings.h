@@ -8,9 +8,7 @@
 #ifndef KNSQ_QUICKSETTINGS_H
 #define KNSQ_QUICKSETTINGS_H
 
-#include "core/questionlistener.h"
-
-#include <memory>
+#include <QObject>
 
 namespace KNewStuffQuick
 {

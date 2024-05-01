@@ -6,6 +6,8 @@
 
 #include "categoriesmodel.h"
 
+#include "provider.h"
+
 #include <KLocalizedString>
 
 CategoriesModel::CategoriesModel(KNSCore::EngineBase *parent)

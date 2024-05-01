@@ -10,7 +10,6 @@
 #include <QAbstractListModel>
 
 #include "enginebase.h"
-#include "provider.h"
 
 /**
  * @short A model which shows the categories found in an Engine

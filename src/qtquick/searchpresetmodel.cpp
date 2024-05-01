@@ -7,6 +7,7 @@
 #include "searchpresetmodel.h"
 
 #include "knewstuffquick_debug.h"
+
 #include <KLocalizedString>
 
 SearchPresetModel::SearchPresetModel(KNSCore::EngineBase *engine)
