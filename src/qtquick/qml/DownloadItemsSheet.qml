@@ -8,7 +8,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.newstuff as NewStuff
 

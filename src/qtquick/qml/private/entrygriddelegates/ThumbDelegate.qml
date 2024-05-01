@@ -9,7 +9,7 @@ import QtQuick.Controls 2.11 as QtControls
 import QtQuick.Layouts 1.11 as QtLayouts
 
 import org.kde.kcmutils as KCM
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami as Kirigami
 
 import org.kde.newstuff as NewStuff
 

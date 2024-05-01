@@ -7,7 +7,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.11 as QtControls
 
-import org.kde.kirigami 2.7 as Kirigami
+import org.kde.kirigami as Kirigami
 
 import org.kde.newstuff as NewStuff
 

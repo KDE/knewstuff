@@ -6,7 +6,7 @@
 
 import QtQuick 2.7
 import QtQuick.Layouts 1.12 as QtLayouts
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.newstuff 1.91 as NewStuff
 import org.kde.newstuff.tools.dialog 1.0 as Myself
 

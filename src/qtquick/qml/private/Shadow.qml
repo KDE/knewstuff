@@ -6,7 +6,7 @@
 
 import QtQuick 2.11
 
-import org.kde.kirigami 2.2
+import org.kde.kirigami
 
 Item {
     id: shadow

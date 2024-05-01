@@ -10,7 +10,7 @@ import QtQuick.Controls 2.11 as Controls
 import QtQuick.Templates 2.11 as T2
 import QtQuick.Layouts 1.11
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 
 /**
  * Base delegate for KControlmodules based on Grid views of thumbnails
