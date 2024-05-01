@@ -154,7 +154,7 @@ Kirigami.ScrollablePage {
                 contentItem: QQC2.Label {
                     wrapMode: Text.Wrap
                     text: model.name === "api.kde-look.org"
-                        ? i18ndc("knewstuff6", "A description of how to upload content to a generic provider", "To upload new entries, or to add content to an existing entry on the KDE Store, please open the website and log in. Once you have done this, you will be able to find the My Products entry in the menu which pops up when you click your user icon. Click on this entry to go to the product management system, where you can work on your products .")
+                        ? i18ndc("knewstuff6", "A description of how to upload content to a generic provider", "To upload new entries, or to add content to an existing entry on the KDE Store, please open the website and log in. Once you have done this, you will be able to find the My Products entry in the menu which pops up when you click your user icon. Click on this entry to go to the product management system, where you can work on your products.")
                         : i18ndc("knewstuff6", "A description of how to upload content to the KDE Store specifically", "To upload new entries, or to add content to an existing entry, please open the provider's website and follow the instructions there. You will likely need to create a user and log in to a product management system, where you will need to follow the instructions for how to add. Alternatively, you might be required to contact the managers of the site directly to get new content added.")
                 }
             }
