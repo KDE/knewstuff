@@ -18,12 +18,12 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kcmutils as KCM
+import org.kde.kcmutils as KCMUtils
 import org.kde.newstuff as NewStuff
 
 import "private" as Private
 
-KCM.SimpleKCM {
+KCMUtils.SimpleKCM {
     id: component
 
     property QtObject newStuffModel

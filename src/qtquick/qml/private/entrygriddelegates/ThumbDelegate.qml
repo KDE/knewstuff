@@ -6,14 +6,14 @@
 
 import QtQuick
 
-import org.kde.kcmutils as KCM
+import org.kde.kcmutils as KCMUtils
 import org.kde.kirigami as Kirigami
 
 import org.kde.newstuff as NewStuff
 
 import ".." as Private
 
-KCM.GridDelegate {
+KCMUtils.GridDelegate {
     id: component
 
     property string useLabel
