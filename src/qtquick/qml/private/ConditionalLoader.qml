@@ -8,13 +8,11 @@ import QtQuick
 import QtQuick.Layouts
 
 Loader {
-    id: root
-
     property Component componentTrue
     property Component componentFalse
     property bool condition
 
-    Layout.minimumHeight: item && item.Layout ? item.Layout.minimumHeight : 0
-    Layout.minimumWidth: item && item.Layout ? item.Layout.minimumWidth : 0
+    Layout.minimumHeight: item ? item.Layout.minimumHeight : 0
+    Layout.minimumWidth: item ? item.Layout.minimumWidth : 0
     sourceComponent: condition ? componentTrue : componentFalse
 }
