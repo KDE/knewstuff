@@ -6,7 +6,7 @@
 */
 
 import QtQuick
-import QtQuick.Controls as Controls
+import QtQuick.Controls as QQC2
 import QtQuick.Templates as T2
 import QtQuick.Layouts
 
@@ -154,7 +154,7 @@ T2.ItemDelegate {
 
                     Repeater {
                         model: delegate.actions
-                        delegate: Controls.Button {
+                        delegate: QQC2.Button {
                             icon.name: modelData.iconName
                             text: modelData.text
                             activeFocusOnTab: focus || delegate.focus
@@ -162,10 +162,10 @@ T2.ItemDelegate {
                             enabled: modelData.enabled
                             visible: modelData.visible
                             //NOTE: there aren't any global settings where to take "official" tooltip timeouts
-                            Controls.ToolTip.delay: 1000
-                            Controls.ToolTip.timeout: 5000
-                            Controls.ToolTip.visible: (Kirigami.Settings.isMobile ? pressed : hovered) && modelData.tooltip.length > 0
-                            Controls.ToolTip.text: modelData.tooltip
+                            QQC2.ToolTip.delay: 1000
+                            QQC2.ToolTip.timeout: 5000
+                            QQC2.ToolTip.visible: (Kirigami.Settings.isMobile ? pressed : hovered) && modelData.tooltip.length > 0
+                            QQC2.ToolTip.text: modelData.tooltip
                         }
                     }
                 }
@@ -173,8 +173,8 @@ T2.ItemDelegate {
         }
     }
 
-    Controls.ToolTip.delay: 1000
-    Controls.ToolTip.timeout: 5000
-    Controls.ToolTip.visible: hovered && delegate.toolTip.length > 0
-    Controls.ToolTip.text: toolTip
+    QQC2.ToolTip.delay: 1000
+    QQC2.ToolTip.timeout: 5000
+    QQC2.ToolTip.visible: hovered && delegate.toolTip.length > 0
+    QQC2.ToolTip.text: toolTip
 }

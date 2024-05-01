@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls as QtControls
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 
@@ -24,7 +24,7 @@ RowLayout {
     readonly property var ratingIndex: Math.floor((theRepeater.count * view.rating) / view.max)
     readonly property var ratingHalf: (theRepeater.count * view.rating) % view.max >= view.max / 2
 
-    QtControls.Label {
+    QQC2.Label {
         Layout.minimumWidth: view.starSize
         Layout.minimumHeight: view.starSize
         visible: view.reverseLayout
@@ -73,7 +73,7 @@ RowLayout {
         Layout.minimumWidth: Kirigami.Units.smallSpacing;
         Layout.maximumWidth: Kirigami.Units.smallSpacing;
     }
-    QtControls.Label {
+    QQC2.Label {
         id: ratingAsText
         Layout.minimumWidth: view.starSize
         Layout.minimumHeight: view.starSize

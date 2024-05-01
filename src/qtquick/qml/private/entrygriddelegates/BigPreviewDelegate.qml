@@ -5,7 +5,7 @@
 */
 
 import QtQuick
-import QtQuick.Controls as QtControls
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts as QtLayouts
 
 import org.kde.kirigami as Kirigami
@@ -152,7 +152,7 @@ Private.GridTileDelegate {
                 textFormat: Text.StyledText
                 text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
             }
-            QtControls.Label {
+            QQC2.Label {
                 QtLayouts.Layout.fillWidth: true
                 QtLayouts.Layout.fillHeight: true
                 QtLayouts.Layout.minimumHeight: Kirigami.Units.gridUnit

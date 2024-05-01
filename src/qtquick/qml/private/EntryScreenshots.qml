@@ -6,7 +6,7 @@
 */
 
 import QtQuick
-import QtQuick.Controls
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
@@ -23,9 +23,9 @@ Flickable {
     contentHeight: height
     contentWidth: screenshotsLayout.width
 
-    Popup {
+    QQC2.Popup {
         id: overlay
-        parent: applicationWindow().Overlay.overlay
+        parent: applicationWindow().QQC2.Overlay.overlay
         modal: true
         clip: false
 
@@ -41,7 +41,7 @@ Flickable {
             : Math.min(parent.height * 0.9, (parent.width * 0.9) * proportion, overlayImage.sourceSize.height)
         width: height / proportion
 
-        BusyIndicator {
+        QQC2.BusyIndicator {
             id: indicator
             visible: running
             running: overlayImage.status == Image.Loading
@@ -57,7 +57,7 @@ Flickable {
             smooth: true
         }
 
-        Button {
+        QQC2.Button {
             anchors {
                 right: parent.left
                 verticalCenter: parent.verticalCenter
@@ -66,7 +66,7 @@ Flickable {
             visible: leftAction.visible
         }
 
-        Button {
+        QQC2.Button {
             anchors {
                 left: parent.right
                 verticalCenter: parent.verticalCenter
@@ -144,7 +144,7 @@ Flickable {
                     shadow.color: Qt.rgba(0, 0, 0, 0.3)
                 }
 
-                BusyIndicator {
+                QQC2.BusyIndicator {
                     visible: running
                     running: thumbnail.status == Image.Loading
                     anchors.centerIn: parent

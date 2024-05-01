@@ -9,7 +9,7 @@
  */
 
 import QtQuick
-import QtQuick.Controls as QtControls
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts as QtLayouts
 
 import org.kde.kirigami as Kirigami
@@ -122,7 +122,7 @@ QtLayouts.RowLayout {
             }
         }
 
-        QtControls.Label {
+        QQC2.Label {
             id: reviewLabel
             QtLayouts.Layout.fillWidth: true
             QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
@@ -143,7 +143,7 @@ QtLayouts.RowLayout {
                     ? i18ndc("knewstuff6", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name)
                     : component.commentAuthor.name
             }
-            QtControls.Label {
+            QQC2.Label {
                 visible: !authorLabel.visible
                 text: authorLabel.text
             }

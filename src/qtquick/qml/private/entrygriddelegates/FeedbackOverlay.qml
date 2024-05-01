@@ -5,7 +5,7 @@
 */
 
 import QtQuick
-import QtQuick.Controls as QtControls
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 
@@ -23,7 +23,7 @@ Item {
         color: Kirigami.Theme.backgroundColor
         opacity: 0.9
     }
-    QtControls.BusyIndicator {
+    QQC2.BusyIndicator {
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.verticalCenter
@@ -31,7 +31,7 @@ Item {
         }
         running: parent.visible
     }
-    QtControls.Label {
+    QQC2.Label {
         id: statusLabel
         Connections {
             target: newStuffModel
