@@ -145,7 +145,6 @@ Flickable {
                 }
 
                 QQC2.BusyIndicator {
-                    visible: running
                     running: thumbnail.status === Image.Loading
                     anchors.centerIn: parent
                 }
