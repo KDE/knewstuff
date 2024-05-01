@@ -9,7 +9,7 @@
  */
 
 import QtQuick
-import QtQuick.Layouts as QtLayouts
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
         model: NewStuff.CommentsModel {
             id: commentsModel
         }
-        QtLayouts.Layout.fillWidth: true
+        Layout.fillWidth: true
         header: Item {
             anchors {
                 left: parent.left

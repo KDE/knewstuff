@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts as QtLayouts
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -81,13 +81,13 @@ Private.GridTileDelegate {
             fill: parent
             margins: Kirigami.Units.smallSpacing
         }
-        QtLayouts.ColumnLayout {
+        ColumnLayout {
             anchors.fill: parent
             Item {
-                QtLayouts.Layout.fillWidth: true
-                QtLayouts.Layout.fillHeight: true
-                QtLayouts.Layout.minimumHeight: width / 5
-                QtLayouts.Layout.maximumHeight: width / 1.8
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumHeight: width / 5
+                Layout.maximumHeight: width / 1.8
                 Kirigami.ShadowedRectangle {
                     visible: bigPreview.status == Image.Ready
                     anchors.centerIn: bigPreview
@@ -130,33 +130,33 @@ Private.GridTileDelegate {
                 }
             }
             Private.Rating {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 rating: model.rating
             }
             Kirigami.Heading {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 level: 5
                 elide: Text.ElideRight
                 text: i18ndc("knewstuff6", "The number of times the item has been downloaded", "%1 downloads", model.downloadCount)
             }
             Kirigami.Heading {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 elide: Text.ElideRight
                 level: 3
                 text: model.name
             }
             Kirigami.Heading {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 elide: Text.ElideRight
                 level: 4
                 textFormat: Text.StyledText
                 text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", model.author.name)
             }
             QQC2.Label {
-                QtLayouts.Layout.fillWidth: true
-                QtLayouts.Layout.fillHeight: true
-                QtLayouts.Layout.minimumHeight: Kirigami.Units.gridUnit
-                QtLayouts.Layout.maximumHeight: Kirigami.Units.gridUnit * 3
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 3
                 wrapMode: Text.Wrap
                 text: model.shortSummary.length > 0 ? model.shortSummary : model.summary
                 elide: Text.ElideRight

@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts as QtLayouts
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -86,16 +86,16 @@ Private.GridTileDelegate {
             fill: parent
             margins: Kirigami.Units.smallSpacing
         }
-        QtLayouts.GridLayout {
+        GridLayout {
             anchors.fill: parent
             columns: 2
-            QtLayouts.ColumnLayout {
-                QtLayouts.Layout.minimumWidth: view.implicitCellWidth / 5
-                QtLayouts.Layout.maximumWidth: view.implicitCellWidth / 5
+            ColumnLayout {
+                Layout.minimumWidth: view.implicitCellWidth / 5
+                Layout.maximumWidth: view.implicitCellWidth / 5
                 Item {
-                    QtLayouts.Layout.fillWidth: true
-                    QtLayouts.Layout.minimumHeight: width
-                    QtLayouts.Layout.maximumHeight: width
+                    Layout.fillWidth: true
+                    Layout.minimumHeight: width
+                    Layout.maximumHeight: width
                     Kirigami.ShadowedRectangle {
                         visible: tilePreview.status == Image.Ready
                         anchors.centerIn: tilePreview
@@ -144,28 +144,28 @@ Private.GridTileDelegate {
                     }
                 }
                 Item {
-                    QtLayouts.Layout.fillHeight: true
+                    Layout.fillHeight: true
                 }
             }
-            QtLayouts.ColumnLayout {
-                QtLayouts.Layout.fillWidth: true
-                QtLayouts.Layout.fillHeight: true
+            ColumnLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 Kirigami.Heading {
-                    QtLayouts.Layout.fillWidth: true
+                    Layout.fillWidth: true
                     elide: Text.ElideRight
                     level: 3
                     text: entry.name
                 }
                 Kirigami.Heading {
-                    QtLayouts.Layout.fillWidth: true
+                    Layout.fillWidth: true
                     elide: Text.ElideRight
                     level: 4
                     textFormat: Text.StyledText
                     text: i18ndc("knewstuff6", "Subheading for the tile view, located immediately underneath the name of the item", "By <i>%1</i>", entry.author.name)
                 }
                 QQC2.Label {
-                    QtLayouts.Layout.fillWidth: true
-                    QtLayouts.Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
                     wrapMode: Text.Wrap
                     text: entry.shortSummary.length > 0 ? entry.shortSummary : entry.summary
                     elide: Text.ElideRight
@@ -173,12 +173,12 @@ Private.GridTileDelegate {
                 }
             }
             Private.Rating {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 rating: entry.rating
                 visible: entry.entryType == NewStuff.Entry.CatalogEntry
             }
             Kirigami.Heading {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
                 horizontalAlignment: Text.AlignRight
                 level: 5
                 elide: Text.ElideRight

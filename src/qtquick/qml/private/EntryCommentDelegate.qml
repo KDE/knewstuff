@@ -10,13 +10,13 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts as QtLayouts
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
 import org.kde.newstuff as NewStuff
 
-QtLayouts.RowLayout {
+RowLayout {
     id: component
 
     /**
@@ -73,9 +73,9 @@ QtLayouts.RowLayout {
     Repeater {
         model: component.depth
         delegate: Rectangle {
-            QtLayouts.Layout.fillHeight: true
-            QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
+            Layout.fillHeight: true
+            Layout.minimumWidth: Kirigami.Units.largeSpacing
+            Layout.maximumWidth: Kirigami.Units.largeSpacing
             color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.8))
             Rectangle {
                 anchors {
@@ -89,27 +89,27 @@ QtLayouts.RowLayout {
         }
     }
 
-    QtLayouts.ColumnLayout {
+    ColumnLayout {
         Item {
             visible: component.depth === 0
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.minimumHeight: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumHeight: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.minimumHeight: Kirigami.Units.largeSpacing
+            Layout.maximumHeight: Kirigami.Units.largeSpacing
         }
 
         Kirigami.Separator {
-            QtLayouts.Layout.fillWidth: true
+            Layout.fillWidth: true
         }
 
-        QtLayouts.RowLayout {
+        RowLayout {
             visible: (component.title !== "" || component.score !== 0)
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
             Kirigami.Heading {
                 id: titleLabel
                 text: ((component.title === "") ? i18ndc("knewstuff6", "Placeholder title for when a comment has no subject, but does have a rating", "<i>(no title)</i>") : component.title)
                 level: 4
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
             }
             Rating {
                 id: ratingStars
@@ -117,23 +117,23 @@ QtLayouts.RowLayout {
                 reverseLayout: true
             }
             Item {
-                QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-                QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
+                Layout.minimumWidth: Kirigami.Units.largeSpacing
+                Layout.maximumWidth: Kirigami.Units.largeSpacing
             }
         }
 
         QQC2.Label {
             id: reviewLabel
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.leftMargin: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
             wrapMode: Text.Wrap
         }
 
-        QtLayouts.RowLayout {
-            QtLayouts.Layout.fillWidth: true
+        RowLayout {
+            Layout.fillWidth: true
             Item {
-                QtLayouts.Layout.fillWidth: true
+                Layout.fillWidth: true
             }
             Kirigami.UrlButton {
                 id: authorLabel
@@ -149,9 +149,9 @@ QtLayouts.RowLayout {
             }
             Image {
                 id: authorIcon
-                QtLayouts.Layout.maximumWidth: height
-                QtLayouts.Layout.minimumWidth: height
-                QtLayouts.Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                Layout.maximumWidth: height
+                Layout.minimumWidth: height
+                Layout.preferredHeight: Kirigami.Units.iconSizes.medium
                 fillMode: Image.PreserveAspectFit
                 source: component.commentAuthor.avatarUrl
                 Kirigami.Icon {
@@ -163,14 +163,14 @@ QtLayouts.RowLayout {
                 }
             }
             Item {
-                QtLayouts.Layout.minimumWidth: Kirigami.Units.largeSpacing
-                QtLayouts.Layout.maximumWidth: Kirigami.Units.largeSpacing
+                Layout.minimumWidth: Kirigami.Units.largeSpacing
+                Layout.maximumWidth: Kirigami.Units.largeSpacing
             }
         }
         Item {
-            QtLayouts.Layout.fillWidth: true
-            QtLayouts.Layout.minimumHeight: Kirigami.Units.largeSpacing
-            QtLayouts.Layout.maximumHeight: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.minimumHeight: Kirigami.Units.largeSpacing
+            Layout.maximumHeight: Kirigami.Units.largeSpacing
         }
     }
 }
