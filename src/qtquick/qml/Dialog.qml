@@ -16,7 +16,6 @@
  */
 
 import QtQuick
-import QtQuick.Window
 import org.kde.kirigami 2 as Kirigami
 import org.kde.newstuff as NewStuff
 
