@@ -5,7 +5,6 @@
 */
 
 import QtQuick
-import QtQuick.Layouts as QtLayouts
 import org.kde.kirigami as Kirigami
 import org.kde.newstuff as NewStuff
 import org.kde.newstuff.tools.dialog as Myself

@@ -5,8 +5,6 @@
 */
 
 import QtQuick
-import QtQuick.Controls as QtControls
-import QtQuick.Layouts as QtLayouts
 
 import org.kde.kcmutils as KCM
 import org.kde.kirigami as Kirigami
