@@ -4,11 +4,11 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.12 as QtLayouts
+import QtQuick
+import QtQuick.Layouts as QtLayouts
 import org.kde.kirigami as Kirigami
-import org.kde.newstuff 1.91 as NewStuff
-import org.kde.newstuff.tools.dialog 1.0 as Myself
+import org.kde.newstuff as NewStuff
+import org.kde.newstuff.tools.dialog as Myself
 
 Kirigami.ApplicationWindow {
     id: root;

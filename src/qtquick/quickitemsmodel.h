@@ -36,7 +36,7 @@ class ItemsModelPrivate;
  * @see NewStuffEntryComments
  *
  * \code
-    import org.kde.newstuff 1.0 as NewStuff
+    import org.kde.newstuff as NewStuff
     Item {
         NewStuff.ItemsModel {
             id: newStuffModel

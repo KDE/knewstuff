@@ -8,13 +8,13 @@
  * @brief A card based delegate for showing a comment from a KNewStuffQuick::QuickCommentsModel
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
+import QtQuick
+import QtQuick.Controls as QtControls
+import QtQuick.Layouts as QtLayouts
 
 import org.kde.kirigami as Kirigami
 
-import org.kde.newstuff 1.62 as NewStuff
+import org.kde.newstuff as NewStuff
 
 QtLayouts.RowLayout {
     id: component

@@ -4,8 +4,8 @@
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
+import QtQuick
+import QtQuick.Layouts
 
 Loader {
     id: root

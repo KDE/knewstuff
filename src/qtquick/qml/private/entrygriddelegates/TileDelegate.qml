@@ -4,9 +4,9 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.11 as QtControls
-import QtQuick.Layouts 1.11 as QtLayouts
+import QtQuick
+import QtQuick.Controls as QtControls
+import QtQuick.Layouts as QtLayouts
 
 import org.kde.kirigami as Kirigami
 
