@@ -76,7 +76,7 @@ RowLayout {
             Layout.fillHeight: true
             Layout.minimumWidth: Kirigami.Units.largeSpacing
             Layout.maximumWidth: Kirigami.Units.largeSpacing
-            color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.8))
+            color: Qt.tint(Kirigami.Theme.textColor, Qt.alpha(Kirigami.Theme.backgroundColor, 0.8))
             Rectangle {
                 anchors {
                     top: parent.top
