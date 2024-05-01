@@ -10,10 +10,11 @@ import org.kde.kirigami 2.2
 
 Item {
     id: shadow
+
     property int edge: Qt.LeftEdge
 
-    width: Units.gridUnit/2
-    height: Units.gridUnit/2
+    width: Units.gridUnit / 2
+    height: Units.gridUnit / 2
 
     Rectangle {
         x: shadow.width / 2 - width / 2
@@ -35,9 +36,8 @@ Item {
             }
             GradientStop {
                 position: 1.0
-                color:  "transparent"
+                color: "transparent"
             }
         }
     }
 }
-

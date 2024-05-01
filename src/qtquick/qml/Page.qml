@@ -522,7 +522,7 @@ KCM.GridViewKCM {
     Component {
         id: tileDelegate
 
-        EntryGridDelegates.TileDelegate  {
+        EntryGridDelegates.TileDelegate {
             useLabel: root.useLabel
             uninstallLabel: root.uninstallLabel
         }
@@ -555,7 +555,7 @@ KCM.GridViewKCM {
         id: loadingOverlay
 
         anchors.fill: parent
-        
+
         opacity: newStuffEngine.isLoading && !newStuffEngine.needsLazyLoadSpinner ? 1 : 0
         Behavior on opacity {
             NumberAnimation {

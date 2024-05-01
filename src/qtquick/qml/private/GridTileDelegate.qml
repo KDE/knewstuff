@@ -67,7 +67,9 @@ T2.ItemDelegate {
     Kirigami.ShadowedRectangle {
         id: tile
         anchors.centerIn: parent
-        width: Kirigami.Settings.isMobile ? delegate.width - Kirigami.Units.gridUnit : Math.min(delegate.GridView.view.implicitCellWidth, delegate.width - Kirigami.Units.gridUnit)
+        width: Kirigami.Settings.isMobile
+            ? delegate.width - Kirigami.Units.gridUnit
+            : Math.min(delegate.GridView.view.implicitCellWidth, delegate.width - Kirigami.Units.gridUnit)
         height: Math.min(delegate.GridView.view.implicitCellHeight, delegate.height - Kirigami.Units.gridUnit)
         radius: Kirigami.Units.smallSpacing
         Kirigami.Theme.inherit: false

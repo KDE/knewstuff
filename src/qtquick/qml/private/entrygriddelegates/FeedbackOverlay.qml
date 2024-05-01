@@ -13,8 +13,10 @@ import org.kde.newstuff as NewStuff
 
 Item {
     property QtObject newStuffModel
+
     visible: opacity > 0
     opacity: (model.entry.status == NewStuff.Entry.Installing || model.entry.status == NewStuff.Entry.Updating) ? 1 : 0
+
     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration } }
     Rectangle {
         anchors.fill: parent
@@ -36,9 +38,9 @@ Item {
             function onEntryChanged(entry) {
                 const status = entry.status;
                 if (status == NewStuff.Entry.Downloadable
-                || status == NewStuff.Entry.Installed
-                || status == NewStuff.Entry.Updateable
-                || status == NewStuff.Entry.Deleted) {
+                    || status == NewStuff.Entry.Installed
+                    || status == NewStuff.Entry.Updateable
+                    || status == NewStuff.Entry.Deleted) {
                     statusLabel.text = "";
                 } else if (status == NewStuff.Entry.Installing) {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working…");

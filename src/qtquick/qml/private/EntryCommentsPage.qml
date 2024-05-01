@@ -18,11 +18,13 @@ import org.kde.newstuff 1.62 as NewStuff
 
 Kirigami.ScrollablePage {
     id: component
+
     property string entryName
     property string entryAuthorId
     property string entryProviderId
     property alias entry: commentsModel.entry
     property alias itemsModel: commentsModel.itemsModel
+
     title: i18ndc("knewstuff6", "Title for the page containing a view of the comments for the entry", "Comments and Reviews for %1", component.entryName)
     actions: [
         Kirigami.Action {

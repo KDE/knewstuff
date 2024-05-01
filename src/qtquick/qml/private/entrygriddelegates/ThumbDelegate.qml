@@ -17,10 +17,13 @@ import ".." as Private
 
 KCM.GridDelegate {
     id: component
+
     property string useLabel
     property string uninstallLabel
-    text: model.name
     property var entry: model.entry
+
+    text: model.name
+
     actions: [
         Kirigami.Action {
             text: component.useLabel
@@ -32,7 +35,9 @@ KCM.GridDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
+            text: model.downloadLinks.length === 1
+                ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install")
+                : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
             icon.name: "install"
             onTriggered: source => {
                 if (model.downloadLinks.length === 1) {

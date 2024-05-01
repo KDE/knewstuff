@@ -122,7 +122,7 @@ Kirigami.ScrollablePage {
                 banner {
                     title: {
                         if (model.name === "api.kde-look.org") {
-                            return  i18ndc("knewstuff6", "The name of the KDE Store", "KDE Store");
+                            return i18ndc("knewstuff6", "The name of the KDE Store", "KDE Store");
                         } else if (model.name !== "") {
                             return model.name;
                         } else if (component.engine.name !== "") {

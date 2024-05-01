@@ -16,14 +16,18 @@ import ".." as Private
 
 Private.GridTileDelegate {
     id: component
+
     property var entry: model.entry
-    actionsAnchors.topMargin: bigPreview.height + Kirigami.Units.smallSpacing * 2
+
     function showDetails() {
         pageStack.push(detailsPage, {
             newStuffModel: GridView.view.model,
             entry: model.entry,
         });
     }
+
+    actionsAnchors.topMargin: bigPreview.height + Kirigami.Units.smallSpacing * 2
+
     actions: [
         Kirigami.Action {
             text: root.useLabel
@@ -35,7 +39,9 @@ Private.GridTileDelegate {
             visible: enabled
         },
         Kirigami.Action {
-            text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
+            text: model.downloadLinks.length === 1
+                ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install")
+                : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
             icon.name: "install"
             onTriggered: source => {
                 if (model.downloadLinks.length === 1) {

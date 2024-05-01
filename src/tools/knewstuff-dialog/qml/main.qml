@@ -49,28 +49,28 @@ Kirigami.ApplicationWindow {
         id: startPageComponent
         Kirigami.AboutPage {
             aboutData: {
-                "displayName" : "KNewStuff Dialog",
-                "productName" : "org.kde.knewstuff.tools.dialog",
-                "programLogo" : "get-hot-new-stuff",
-                "componentName" : "knewstuff-dialog",
-                "shortDescription" : "Get All Your Hot New Stuff",
-                "homepage" : "https://kde.org/",
-                "bugAddress" : "https://bugs.kde.org/",
-                "version" : "v1.0",
+                "displayName": "KNewStuff Dialog",
+                "productName": "org.kde.knewstuff.tools.dialog",
+                "programLogo": "get-hot-new-stuff",
+                "componentName": "knewstuff-dialog",
+                "shortDescription": "Get All Your Hot New Stuff",
+                "homepage": "https://kde.org/",
+                "bugAddress": "https://bugs.kde.org/",
+                "version": "v1.0",
                 "otherText": "",
-                "authors" : [
-                            {
-                                "name" : "Dan Leinir Turthra Jensen\n",
-                                "task" : "Lead Developer",
-                                "emailAddress" : "admin@leinir.dk",
-                                "webAddress" : "https://leinir.dk/",
-                                "ocsUsername" : "leinir"
-                            }
-                        ],
-                "credits" : [],
-                "translators" : [],
-                "copyrightStatement" : "© 2020 The KDE Community",
-                "desktopFileName" : "org.kde.knewstuff.tools.dialog"
+                "authors": [
+                    {
+                        "name": "Dan Leinir Turthra Jensen\n",
+                        "task": "Lead Developer",
+                        "emailAddress": "admin@leinir.dk",
+                        "webAddress": "https://leinir.dk/",
+                        "ocsUsername": "leinir",
+                    },
+                ],
+                "credits": [],
+                "translators": [],
+                "copyrightStatement": "© 2020 The KDE Community",
+                "desktopFileName": "org.kde.knewstuff.tools.dialog",
             }
         }
     }

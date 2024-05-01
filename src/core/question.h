@@ -38,7 +38,7 @@ question.setTitle("Pick your option");
 question.setQuestion("Please select which option you would like");
 question.setList(choices);
 question.setEntry(entry);
-if(question.ask() == Question::OKResponse) {
+if (question.ask() == Question::OKResponse) {
     QString theChoice = question.response();
 }
 @endcode

@@ -13,10 +13,12 @@ import org.kde.kirigami as Kirigami
 
 Flickable {
     id: root
+
     property alias screenshotsModel: screenshotsRep.model
     readonly property alias count: screenshotsRep.count
     property int currentIndex: -1
     property Item currentItem: screenshotsRep.itemAt(currentIndex)
+
     Layout.preferredHeight: Kirigami.Units.gridUnit * 13
     contentHeight: height
     contentWidth: screenshotsLayout.width
@@ -27,11 +29,17 @@ Flickable {
         modal: true
         clip: false
 
-        x: (parent.width - width)/2
-        y: (parent.height - height)/2
-        readonly property real proportion: overlayImage.sourceSize.width>1 ? overlayImage.sourceSize.height/overlayImage.sourceSize.width : 1
-        height: overlayImage.status == Image.Loading ? Kirigami.Units.gridUnit * 5 : Math.min(parent.height * 0.9, (parent.width * 0.9) * proportion, overlayImage.sourceSize.height)
-        width: height/proportion
+        x: (parent.width - width) / 2
+        y: (parent.height - height) / 2
+
+        readonly property real proportion: overlayImage.sourceSize.width > 1
+            ? overlayImage.sourceSize.height / overlayImage.sourceSize.width
+            : 1
+
+        height: overlayImage.status == Image.Loading
+            ? Kirigami.Units.gridUnit * 5
+            : Math.min(parent.height * 0.9, (parent.width * 0.9) * proportion, overlayImage.sourceSize.height)
+        width: height / proportion
 
         BusyIndicator {
             id: indicator
@@ -112,9 +120,12 @@ Flickable {
 
             delegate: MouseArea {
                 readonly property url imageSource: modelData
-                readonly property real proportion: thumbnail.sourceSize.width>1 ? thumbnail.sourceSize.height/thumbnail.sourceSize.width : 1
+                readonly property real proportion: thumbnail.sourceSize.width > 1
+                    ? thumbnail.sourceSize.height / thumbnail.sourceSize.width
+                    : 1
+
                 anchors.verticalCenter: parent.verticalCenter
-                width: Math.max(50, height/proportion)
+                width: Math.max(50, height / proportion)
                 height: screenshotsLayout.height - 2 * Kirigami.Units.largeSpacing
 
                 hoverEnabled: true
@@ -158,7 +169,7 @@ Flickable {
             bottom: parent.bottom
         }
         edge: Qt.LeftEdge
-        width: Math.max(0, Math.min(root.width/5, root.contentX))
+        width: Math.max(0, Math.min(root.width / 5, root.contentX))
     }
 
     readonly property var rightShadow: Shadow {
@@ -169,6 +180,6 @@ Flickable {
             bottom: parent.bottom
         }
         edge: Qt.RightEdge
-        width: Math.max(0, Math.min(root.contentWidth - root.contentX - root.width)/5)
+        width: Math.max(0, Math.min(root.contentWidth - root.contentX - root.width) / 5)
     }
 }

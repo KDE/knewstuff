@@ -41,7 +41,9 @@ Window {
      * @note For the sake of consistency, you should NOT override the title property, just set this one
      */
     property string downloadNewWhat: engine.name
-    title: component.downloadNewWhat.length > 0 ? i18ndc("knewstuff6", "The dialog title when we know which type of stuff is being requested", "Download New %1", component.downloadNewWhat) : i18ndc("knewstuff6", "A placeholder title used in the dialog when there is no better title available", "Download New Stuff")
+    title: component.downloadNewWhat.length > 0
+        ? i18ndc("knewstuff6", "The dialog title when we know which type of stuff is being requested", "Download New %1", component.downloadNewWhat)
+        : i18ndc("knewstuff6", "A placeholder title used in the dialog when there is no better title available", "Download New Stuff")
 
     /**
      * The engine which handles the content in this dialog

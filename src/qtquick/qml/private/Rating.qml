@@ -10,8 +10,7 @@ import QtQuick.Controls 2.11 as QtControls
 
 import org.kde.kirigami 2.0 as Kirigami
 
-RowLayout
-{
+RowLayout {
     id: view
     property bool editable: false
     property int max: 100
@@ -22,8 +21,8 @@ RowLayout
     clip: true
     spacing: 0
 
-    readonly property var ratingIndex: Math.floor((theRepeater.count*view.rating)/view.max)
-    readonly property var ratingHalf: (theRepeater.count*view.rating)%view.max >= view.max / 2
+    readonly property var ratingIndex: Math.floor((theRepeater.count * view.rating) / view.max)
+    readonly property var ratingHalf: (theRepeater.count * view.rating) % view.max >= view.max / 2
 
     QtControls.Label {
         Layout.minimumWidth: view.starSize

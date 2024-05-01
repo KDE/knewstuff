@@ -105,7 +105,10 @@ KCM.SimpleKCM {
 
     actions: [
         Kirigami.Action {
-            text: component.downloadLinks.length == 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
+            text: component.downloadLinks.length == 1
+                ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install")
+                : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
+
             icon.name: "install"
             onTriggered: source => {
                 if (component.downloadLinks.length == 1) {

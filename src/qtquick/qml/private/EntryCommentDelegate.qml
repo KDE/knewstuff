@@ -139,7 +139,9 @@ QtLayouts.RowLayout {
                 id: authorLabel
                 visible: (url !== "")
                 url: (component.commentAuthor.homepage === "") ? component.commentAuthor.profilepage : component.commentAuthor.homepage
-                text: (component.author === component.entryAuthorId) ? i18ndc("knewstuff6", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name) : component.commentAuthor.name
+                text: (component.author === component.entryAuthorId)
+                    ? i18ndc("knewstuff6", "The author label in case the comment was written by the author of the content entry the comment is attached to", "%1 <i>(author)</i>", component.commentAuthor.name)
+                    : component.commentAuthor.name
             }
             QtControls.Label {
                 visible: !authorLabel.visible
@@ -170,6 +172,5 @@ QtLayouts.RowLayout {
             QtLayouts.Layout.minimumHeight: Kirigami.Units.largeSpacing
             QtLayouts.Layout.maximumHeight: Kirigami.Units.largeSpacing
         }
-
     }
 }

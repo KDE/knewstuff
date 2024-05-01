@@ -101,7 +101,7 @@ QQC2.Dialog {
 
     function passResponse(responseIsContinue) {
         let input = "";
-        switch(dialog.questionType) {
+        switch (dialog.questionType) {
         case NewStuffCore.Question.SelectFromListQuestion:
             input = listView.currentItem.text;
             listView.model.clear();

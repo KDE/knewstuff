@@ -7,8 +7,7 @@
 import QtQuick 2.11
 import QtQuick.Layouts 1.11
 
-Loader
-{
+Loader {
     id: root
 
     property Component componentTrue
