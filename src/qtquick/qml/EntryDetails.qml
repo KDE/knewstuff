@@ -225,14 +225,14 @@ KCMUtils.SimpleKCM {
                 Kirigami.FormData.label: i18nd("knewstuff6", "Homepage:")
                 text: i18ndc("knewstuff6", "A link which, when clicked, opens the website associated with the entry (this could be either one specific to the project, the author's homepage, or any other website they have chosen for the purpose)", "Open the homepage for %1", component.name)
                 url: component.homepage
-                visible: component.homepage
+                visible: url !== ""
             }
 
             Kirigami.UrlButton {
                 Kirigami.FormData.label: i18nd("knewstuff6", "How To Donate:")
                 text: i18ndc("knewstuff6", "A link which, when clicked, opens a website with information on donation in support of the entry", "Find out how to donate to this project")
                 url: component.donationLink
-                visible: component.donationLink
+                visible: url !== ""
             }
         }
 
