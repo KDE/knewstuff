@@ -7,8 +7,8 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Templates as T2
 import QtQuick.Layouts
+import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
 
@@ -19,7 +19,7 @@ import org.kde.kirigami as Kirigami
  * from the KCM module
  * @inherits QtQuick.Templates.ItemDelegate
  */
-T2.ItemDelegate {
+T.ItemDelegate {
     id: delegate
 
     /**
