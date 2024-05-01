@@ -6,15 +6,15 @@
 
 import QtQuick
 
-import org.kde.kirigami
+import org.kde.kirigami as Kirigami
 
 Item {
     id: shadow
 
     property int edge: Qt.LeftEdge
 
-    width: Units.gridUnit / 2
-    height: Units.gridUnit / 2
+    width: Kirigami.Units.gridUnit / 2
+    height: Kirigami.Units.gridUnit / 2
 
     Rectangle {
         x: shadow.width / 2 - width / 2
