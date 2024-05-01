@@ -9,6 +9,8 @@
 
 #include <QAbstractListModel>
 
+#include "enginebase.h"
+
 #include "knewstuffcore_export.h"
 
 #include <memory>
@@ -27,7 +29,7 @@ class KNEWSTUFFCORE_EXPORT ProvidersModel : public QAbstractListModel
     /**
      * The Engine for which this model displays Providers
      */
-    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged)
+    Q_PROPERTY(EngineBase *engine READ engine WRITE setEngine NOTIFY engineChanged)
 public:
     explicit ProvidersModel(QObject *parent = nullptr);
     ~ProvidersModel() override;
@@ -49,8 +51,8 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QObject *engine() const;
-    void setEngine(QObject *engine);
+    EngineBase *engine() const;
+    void setEngine(EngineBase *engine);
     Q_SIGNAL void engineChanged();
 
 private:

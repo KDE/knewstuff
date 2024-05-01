@@ -6,8 +6,6 @@
 
 #include "commentsmodel.h"
 
-#include "quickitemsmodel.h"
-
 #include "core/commentsmodel.h"
 
 namespace KNewStuffQuick
@@ -73,15 +71,15 @@ void KNewStuffQuick::CommentsModel::componentComplete()
     d->resetConnections();
 }
 
-QObject *CommentsModel::itemsModel() const
+ItemsModel *CommentsModel::itemsModel() const
 {
     return d->itemsModel;
 }
 
-void CommentsModel::setItemsModel(QObject *newItemsModel)
+void CommentsModel::setItemsModel(ItemsModel *newItemsModel)
 {
     if (d->itemsModel != newItemsModel) {
-        d->itemsModel = qobject_cast<ItemsModel *>(newItemsModel);
+        d->itemsModel = newItemsModel;
         d->resetConnections();
         Q_EMIT itemsModelChanged();
     }

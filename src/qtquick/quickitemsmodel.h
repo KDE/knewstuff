@@ -10,6 +10,7 @@
 #include <QAbstractListModel>
 
 #include "entry.h"
+#include "quickengine.h"
 
 #include <memory>
 
@@ -57,7 +58,7 @@ class ItemsModel : public QAbstractListModel
     /**
      * The NewStuffQuickEngine to show items from
      */
-    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged REQUIRED)
+    Q_PROPERTY(Engine *engine READ engine WRITE setEngine NOTIFY engineChanged REQUIRED)
 public:
     explicit ItemsModel(QObject *parent = nullptr);
     ~ItemsModel() override;
@@ -111,8 +112,8 @@ public:
     bool canFetchMore(const QModelIndex &parent) const override;
     void fetchMore(const QModelIndex &parent) override;
 
-    QObject *engine() const;
-    void setEngine(QObject *newEngine);
+    Engine *engine() const;
+    void setEngine(Engine *newEngine);
     Q_SIGNAL void engineChanged();
 
     /**

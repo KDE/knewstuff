@@ -94,15 +94,15 @@ void Author::componentComplete()
     d->resetConnections();
 }
 
-QObject *Author::engine() const
+Engine *Author::engine() const
 {
     return d->engine;
 }
 
-void Author::setEngine(QObject *newEngine)
+void Author::setEngine(Engine *newEngine)
 {
     if (d->engine != newEngine) {
-        d->engine = qobject_cast<Engine *>(newEngine);
+        d->engine = newEngine;
         d->resetConnections();
         Q_EMIT engineChanged();
     }

@@ -196,7 +196,7 @@ void Engine::setConfigFile(const QString &newFile)
     }
 }
 
-QObject *Engine::categories() const
+CategoriesModel *Engine::categories() const
 {
     return d->categoriesModel;
 }
@@ -262,7 +262,7 @@ void Engine::setSearchTerm(const QString &searchTerm)
     }
 }
 
-QObject *Engine::searchPresetModel() const
+SearchPresetModel *Engine::searchPresetModel() const
 {
     return d->searchPresetModel;
 }

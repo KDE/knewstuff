@@ -79,18 +79,18 @@ QVariant KNSCore::ProvidersModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QObject *KNSCore::ProvidersModel::engine() const
+EngineBase *KNSCore::ProvidersModel::engine() const
 {
     return d->engine;
 }
 
-void KNSCore::ProvidersModel::setEngine(QObject *engine)
+void KNSCore::ProvidersModel::setEngine(EngineBase *engine)
 {
     if (d->engine != engine) {
         if (d->engine) {
             d->engine->disconnect(this);
         }
-        d->engine = qobject_cast<EngineBase *>(engine);
+        d->engine = engine;
         Q_EMIT engineChanged();
         if (d->engine) {
             connect(d->engine, &EngineBase::providersChanged, this, [this]() {

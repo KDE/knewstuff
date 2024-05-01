@@ -7,9 +7,12 @@
 #ifndef KNSQUICK_COMMENTSMODEL_H
 #define KNSQUICK_COMMENTSMODEL_H
 
+#include "quickitemsmodel.h"
+
+#include <entry.h>
+
 #include <QQmlParserStatus>
 #include <QSortFilterProxyModel>
-#include <entry.h>
 
 #include <memory>
 
@@ -31,7 +34,7 @@ class CommentsModel : public QSortFilterProxyModel, public QQmlParserStatus
     /**
      * The KNewStufQuick::ItemsModel to interact with servers through
      */
-    Q_PROPERTY(QObject *itemsModel READ itemsModel WRITE setItemsModel NOTIFY itemsModelChanged)
+    Q_PROPERTY(ItemsModel *itemsModel READ itemsModel WRITE setItemsModel NOTIFY itemsModelChanged)
     /**
      * The index in the model of the entry to fetch comments for
      */
@@ -59,8 +62,8 @@ public:
     void classBegin() override;
     void componentComplete() override;
 
-    QObject *itemsModel() const;
-    void setItemsModel(QObject *newItemsModel);
+    ItemsModel *itemsModel() const;
+    void setItemsModel(ItemsModel *newItemsModel);
     Q_SIGNAL void itemsModelChanged();
 
     KNSCore::Entry entry() const;

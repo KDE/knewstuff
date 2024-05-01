@@ -10,10 +10,12 @@
 #include <QObject>
 #include <QQmlListProperty>
 
+#include "categoriesmodel.h"
 #include "enginebase.h"
 #include "entry.h"
 #include "errorcode.h"
 #include "provider.h"
+#include "searchpresetmodel.h"
 #include "transaction.h"
 
 class EnginePrivate;
@@ -33,12 +35,12 @@ class Engine : public KNSCore::EngineBase
     Q_PROPERTY(QString name READ name NOTIFY configFileChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY configFileChanged)
 
-    Q_PROPERTY(QObject *categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(CategoriesModel *categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QStringList categoriesFilter READ categoriesFilter WRITE setCategoriesFilter RESET resetCategoriesFilter NOTIFY categoriesFilterChanged)
     Q_PROPERTY(KNSCore::Provider::Filter filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(KNSCore::Provider::SortMode sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
-    Q_PROPERTY(QObject *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
+    Q_PROPERTY(SearchPresetModel *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
 
     /**
      * Current state of the engine, the state con contain multiple operations
@@ -92,7 +94,7 @@ public:
         return busyState().toInt() != 0 && ((busyState() & BusyOperation::InstallingEntry) != BusyOperation::InstallingEntry);
     }
 
-    QObject *categories() const;
+    CategoriesModel *categories() const;
     Q_SIGNAL void categoriesChanged();
 
     QStringList categoriesFilter() const;
@@ -119,7 +121,7 @@ public:
     }
     Q_SIGNAL void searchTermChanged();
 
-    QObject *searchPresetModel() const;
+    SearchPresetModel *searchPresetModel() const;
     Q_SIGNAL void searchPresetModelChanged();
 
     Q_INVOKABLE void updateEntryContents(const KNSCore::Entry &entry);

@@ -11,6 +11,8 @@
 #include <QQmlParserStatus>
 #include <entry.h>
 
+#include "quickengine.h"
+
 // TODO This is not a class for exposing data QtQuick, but for implementing it's fetching in the first place.
 // Also it sepnds on the QML parser status, this is kindof ugly...
 namespace KNewStuffQuick
@@ -30,7 +32,7 @@ class Author : public QObject, public QQmlParserStatus
     /**
      * The NewStuffQuickEngine to interact with servers through
      */
-    Q_PROPERTY(QObject *engine READ engine WRITE setEngine NOTIFY engineChanged)
+    Q_PROPERTY(Engine *engine READ engine WRITE setEngine NOTIFY engineChanged)
     /**
      * The ID of the provider which the user is registered on
      */
@@ -51,8 +53,8 @@ public:
     void classBegin() override;
     void componentComplete() override;
 
-    QObject *engine() const;
-    void setEngine(QObject *newEngine);
+    Engine *engine() const;
+    void setEngine(Engine *newEngine);
     Q_SIGNAL void engineChanged();
 
     QString providerId() const;

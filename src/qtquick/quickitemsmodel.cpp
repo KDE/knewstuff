@@ -292,16 +292,16 @@ void ItemsModel::fetchMore(const QModelIndex &parent)
     d->engine->requestMoreData();
 }
 
-QObject *ItemsModel::engine() const
+Engine *ItemsModel::engine() const
 {
     return d->engine;
 }
 
-void ItemsModel::setEngine(QObject *newEngine)
+void ItemsModel::setEngine(Engine *newEngine)
 {
     if (d->engine != newEngine) {
         beginResetModel();
-        d->engine = qobject_cast<Engine *>(newEngine);
+        d->engine = newEngine;
         if (d->model) {
             d->model->deleteLater();
             d->model = nullptr;
