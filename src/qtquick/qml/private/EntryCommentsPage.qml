@@ -68,7 +68,15 @@ Kirigami.ScrollablePage {
             }
             height: Kirigami.Units.largeSpacing
         }
+
+        leftMargin: Kirigami.Units.largeSpacing
+        rightMargin: Kirigami.Units.largeSpacing
+
         delegate: EntryCommentDelegate {
+            width: {
+                const view = ListView.view;
+                return view ? view.width - view.leftMargin - view.rightMargin : 0;
+            }
             engine: component.itemsModel.engine
             entryAuthorId: component.entryAuthorId
             entryProviderId: component.entryProviderId

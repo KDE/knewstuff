@@ -63,13 +63,6 @@ RowLayout {
         username: component.author
     }
 
-    anchors {
-        left: parent.left
-        right: parent.right
-        leftMargin: Kirigami.Units.largeSpacing
-        rightMargin: Kirigami.Units.largeSpacing
-    }
-
     Repeater {
         model: component.depth
         delegate: Rectangle {
