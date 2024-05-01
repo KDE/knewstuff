@@ -187,7 +187,9 @@ KCM.GridViewKCM {
             Kirigami.Action {
                 icon.name: "view-list-details"
                 text: i18nd("knewstuff6", "Detailed Tiles View Mode")
-                onTriggered: { root.viewMode = Page.ViewMode.Tiles; }
+                onTriggered: source => {
+                    root.viewMode = Page.ViewMode.Tiles;
+                }
                 checked: root.viewMode === Page.ViewMode.Tiles
                 checkable: true
                 QQC2.ActionGroup.group: viewModeActionGroup
@@ -196,7 +198,9 @@ KCM.GridViewKCM {
             Kirigami.Action {
                 icon.name: "view-list-icons"
                 text: i18nd("knewstuff6", "Icons Only View Mode")
-                onTriggered: { root.viewMode = Page.ViewMode.Icons; }
+                onTriggered: source => {
+                    root.viewMode = Page.ViewMode.Icons;
+                }
                 checked: root.viewMode === Page.ViewMode.Icons
                 checkable: true
                 QQC2.ActionGroup.group: viewModeActionGroup
@@ -205,7 +209,9 @@ KCM.GridViewKCM {
             Kirigami.Action {
                 icon.name: "view-preview"
                 text: i18nd("knewstuff6", "Large Preview View Mode")
-                onTriggered: { root.viewMode = Page.ViewMode.Preview; }
+                onTriggered: source => {
+                    root.viewMode = Page.ViewMode.Preview;
+                }
                 checked: root.viewMode === Page.ViewMode.Preview
                 checkable: true
                 QQC2.ActionGroup.group: viewModeActionGroup
@@ -242,7 +248,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the filter to show everything", "Show All Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 0
-                onTriggered: { newStuffEngine.filter = 0; }
+                onTriggered: source => {
+                    newStuffEngine.filter = 0;
+                }
                 QQC2.ActionGroup.group: viewFilterActionGroup
             }
 
@@ -251,7 +259,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 1
-                onTriggered: { newStuffEngine.filter = 1; }
+                onTriggered: source => {
+                    newStuffEngine.filter = 1;
+                }
                 QQC2.ActionGroup.group: viewFilterActionGroup
             }
 
@@ -260,7 +270,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
                 checkable: true
                 checked: newStuffEngine.filter === 2
-                onTriggered: { newStuffEngine.filter = 2; }
+                onTriggered: source => {
+                    newStuffEngine.filter = 2;
+                }
                 QQC2.ActionGroup.group: viewFilterActionGroup
             }
         },
@@ -297,7 +309,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 0
-                onTriggered: { newStuffEngine.sortOrder = 0; }
+                onTriggered: source => {
+                    newStuffEngine.sortOrder = 0;
+                }
                 QQC2.ActionGroup.group: viewSortingActionGroup
             }
 
@@ -306,7 +320,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 1
-                onTriggered: { newStuffEngine.sortOrder = 1; }
+                onTriggered: source => {
+                    newStuffEngine.sortOrder = 1;
+                }
                 QQC2.ActionGroup.group: viewSortingActionGroup
             }
 
@@ -315,7 +331,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 2
-                onTriggered: { newStuffEngine.sortOrder = 2; }
+                onTriggered: source => {
+                    newStuffEngine.sortOrder = 2;
+                }
                 QQC2.ActionGroup.group: viewSortingActionGroup
             }
 
@@ -324,7 +342,9 @@ KCM.GridViewKCM {
                 text: i18ndc("knewstuff6", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 3
-                onTriggered: { newStuffEngine.sortOrder = 3; }
+                onTriggered: source => {
+                    newStuffEngine.sortOrder = 3;
+                }
                 QQC2.ActionGroup.group: viewSortingActionGroup
             }
         },
@@ -337,7 +357,7 @@ KCM.GridViewKCM {
             icon.name: "upload-media"
             visible: newStuffEngine.uploadEnabled
 
-            onTriggered: {
+            onTriggered: source => {
                 pageStack.push(uploadPage);
             }
         },
@@ -386,7 +406,7 @@ KCM.GridViewKCM {
             text: model.displayName
             icon.name: model.iconName
 
-            onTriggered: {
+            onTriggered: source => {
                 const curIndex = newStuffEngine.searchPresetModel.index(index, 0);
                 newStuffEngine.searchPresetModel.loadSearch(curIndex);
             }

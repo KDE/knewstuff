@@ -82,7 +82,7 @@ KCM.SimpleKCM {
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
 
-        onItemPicked: {
+        onItemPicked: (entry, downloadItemId, downloadName) => {
             const entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
             applicationWindow().showPassiveNotification(i18ndc("knewstuff6", "A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
             newStuffModel.engine.install(component.entry, downloadItemId);
@@ -107,7 +107,7 @@ KCM.SimpleKCM {
         Kirigami.Action {
             text: component.downloadLinks.length == 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
             icon.name: "install"
-            onTriggered: {
+            onTriggered: source => {
                 if (component.downloadLinks.length == 1) {
                     newStuffModel.engine.install(component.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
@@ -122,14 +122,14 @@ KCM.SimpleKCM {
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
-            onTriggered: newStuffModel.update(component.entry, NewStuff.ItemsModel.AutoDetectLinkId)
+            onTriggered: source => newStuffModel.update(component.entry, NewStuff.ItemsModel.AutoDetectLinkId)
             enabled: component.status == NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
             icon.name: "edit-delete"
-            onTriggered: newStuffModel.engine.uninstall(component.entry)
+            onTriggered: source => newStuffModel.engine.uninstall(component.entry)
             enabled: component.status == NewStuff.Entry.Installed || component.status == NewStuff.Entry.Updateable
             visible: enabled
         }
@@ -177,7 +177,7 @@ KCM.SimpleKCM {
                     Layout.fillWidth: true
                     text: statusCard.message
                     wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link);
+                    onLinkActivated: link => Qt.openUrlExternally(link)
                 }
 
                 QQC2.BusyIndicator {
@@ -209,7 +209,7 @@ KCM.SimpleKCM {
                 Kirigami.FormData.label: i18nd("knewstuff6", "Comments and Reviews:")
                 enabled: component.commentsCount > 0
                 text: i18ndc("knewstuff6", "A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
-                onClicked: pageStack.push(commentsPage)
+                onClicked: mouse => pageStack.push(commentsPage)
             }
 
             Private.Rating {

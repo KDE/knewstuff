@@ -72,7 +72,9 @@ Flickable {
             icon.name: "arrow-left"
             enabled: overlay.visible && visible
             visible: root.currentIndex >= 1 && !indicator.running
-            onTriggered: root.currentIndex = (root.currentIndex - 1) % root.count
+            onTriggered: source => {
+                root.currentIndex = (root.currentIndex - 1) % root.count;
+            }
         }
 
         Kirigami.Action {
@@ -80,7 +82,9 @@ Flickable {
             icon.name: "arrow-right"
             enabled: overlay.visible && visible
             visible: root.currentIndex < (root.count - 1) && !indicator.running
-            onTriggered: root.currentIndex = (root.currentIndex + 1) % root.count
+            onTriggered: source => {
+                root.currentIndex = (root.currentIndex + 1) % root.count;
+            }
         }
     }
 
@@ -92,8 +96,16 @@ Flickable {
         rightPadding: spacing
         focus: overlay.visible
 
-        Keys.onLeftPressed:  if (leftAction.visible)  leftAction.trigger()
-        Keys.onRightPressed: if (rightAction.visible) rightAction.trigger()
+        Keys.onLeftPressed: event => {
+            if (leftAction.visible) {
+                leftAction.trigger();
+            }
+        }
+        Keys.onRightPressed: event => {
+            if (rightAction.visible) {
+                rightAction.trigger();
+            }
+        }
 
         Repeater {
             id: screenshotsRep
@@ -108,7 +120,7 @@ Flickable {
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
 
-                onClicked: {
+                onClicked: mouse => {
                     root.currentIndex = index
                     overlay.open()
                 }

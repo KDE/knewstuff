@@ -104,7 +104,7 @@ Window {
         id: newStuffPage
         anchors.fill: parent
         downloadNewWhat: component.downloadNewWhat
-        Keys.onEscapePressed: component.close()
+        Keys.onEscapePressed: event => component.close()
     }
 
     Component {

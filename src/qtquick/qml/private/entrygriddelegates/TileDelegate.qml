@@ -34,14 +34,16 @@ Private.GridTileDelegate {
         Kirigami.Action {
             text: component.useLabel
             icon.name: "dialog-ok-apply"
-            onTriggered: { newStuffModel.adoptItem(model.index); }
+            onTriggered: source => {
+                newStuffModel.adoptItem(model.index);
+            }
             enabled: (entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
             text: model.downloadLinks.length === 1 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install") : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…");
             icon.name: "install"
-            onTriggered: {
+            onTriggered: source => {
                 if (model.downloadLinks.length === 1) {
                     newStuffEngine.install(entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
@@ -56,14 +58,18 @@ Private.GridTileDelegate {
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update");
             icon.name: "update-none"
-            onTriggered: { newStuffEngine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId); }
+            onTriggered: source => {
+                newStuffEngine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId);
+            }
             enabled: entry.status == NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
             text: component.uninstallLabel
             icon.name: "edit-delete"
-            onTriggered: { newStuffEngine.uninstall(model.entry); }
+            onTriggered: source => {
+                newStuffEngine.uninstall(model.entry);
+            }
             enabled: entry.status == NewStuff.Entry.Installed|| entry.status == NewStuff.Entry.Updateable
             visible: enabled && hovered
         }
@@ -182,7 +188,9 @@ Private.GridTileDelegate {
         MouseArea {
             anchors.fill: parent;
             cursorShape: Qt.PointingHandCursor;
-            onClicked: component.showDetails();
+            onClicked: mouse => {
+                component.showDetails();
+            }
         }
     }
 }

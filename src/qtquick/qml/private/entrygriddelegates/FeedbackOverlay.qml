@@ -49,7 +49,7 @@ Item {
                 }
             }
         }
-        onLinkActivated: Qt.openUrlExternally(link);
+        onLinkActivated: link => Qt.openUrlExternally(link)
         anchors {
             top: parent.verticalCenter
             left: parent.left
