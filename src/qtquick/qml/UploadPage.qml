@@ -112,7 +112,7 @@ Kirigami.ScrollablePage {
 
         Repeater {
             model: NewStuff.ProvidersModel {
-                engine: component.engine.engine
+                engine: component.engine
             }
 
             Kirigami.Card {
