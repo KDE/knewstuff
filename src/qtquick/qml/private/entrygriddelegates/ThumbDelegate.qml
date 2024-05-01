@@ -29,7 +29,7 @@ KCMUtils.GridDelegate {
             onTriggered: source => {
                 newStuffModel.engine.adoptEntry(entry);
             }
-            enabled: (entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
+            enabled: (entry.status === NewStuff.Entry.Installed || entry.status === NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
@@ -46,7 +46,7 @@ KCMUtils.GridDelegate {
                     downloadItemsSheet.open();
                 }
             }
-            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted
+            enabled: entry.status === NewStuff.Entry.Downloadable || entry.status === NewStuff.Entry.Deleted
             visible: enabled
         },
         Kirigami.Action {
@@ -55,7 +55,7 @@ KCMUtils.GridDelegate {
             onTriggered: source => {
                 newStuffModel.engine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId);
             }
-            enabled: entry.status == NewStuff.Entry.Updateable
+            enabled: entry.status === NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
@@ -64,7 +64,7 @@ KCMUtils.GridDelegate {
             onTriggered: source => {
                 newStuffModel.engine.uninstall(entry);
             }
-            enabled: entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable
+            enabled: entry.status === NewStuff.Entry.Installed || entry.status === NewStuff.Entry.Updateable
             visible: enabled
         }
     ]
@@ -79,7 +79,7 @@ KCMUtils.GridDelegate {
         source: thumbnailAvailable ? model.previewsSmall[0] : ""
         Kirigami.Icon {
             id: updateAvailableBadge
-            opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0
+            opacity: (entry.status === NewStuff.Entry.Updateable) ? 1 : 0
             Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
             anchors {
                 top: parent.top
@@ -92,7 +92,7 @@ KCMUtils.GridDelegate {
         }
         Kirigami.Icon {
             id: installedBadge
-            opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0
+            opacity: (entry.status === NewStuff.Entry.Installed) ? 1 : 0
             Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
             anchors {
                 top: parent.top

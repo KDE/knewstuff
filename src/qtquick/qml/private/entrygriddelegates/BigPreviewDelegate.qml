@@ -89,7 +89,7 @@ Private.GridTileDelegate {
                 Layout.minimumHeight: width / 5
                 Layout.maximumHeight: width / 1.8
                 Kirigami.ShadowedRectangle {
-                    visible: bigPreview.status == Image.Ready
+                    visible: bigPreview.status === Image.Ready
                     anchors.centerIn: bigPreview
                     width: Math.min(bigPreview.paintedWidth, bigPreview.width)
                     height: Math.min(bigPreview.paintedHeight, bigPreview.height)
@@ -106,7 +106,7 @@ Private.GridTileDelegate {
                 }
                 Kirigami.Icon {
                     id: updateAvailableBadge
-                    opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0
+                    opacity: (entry.status === NewStuff.Entry.Updateable) ? 1 : 0
                     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
                     anchors {
                         top: parent.top

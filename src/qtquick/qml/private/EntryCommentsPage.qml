@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Title for the item which is checked when all comments should be shown", "Show All Comments")
-            checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeAllComments
+            checked: commentsModel.includedComments === NewStuff.CommentsModel.IncludeAllComments
             checkable: true
             onTriggered: source => {
                 commentsModel.includedComments = NewStuff.CommentsModel.IncludeAllComments;
@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Title for the item which is checked when only comments which are reviews should be shown", "Show Reviews Only")
-            checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeOnlyReviews
+            checked: commentsModel.includedComments === NewStuff.CommentsModel.IncludeOnlyReviews
             checkable: true
             onTriggered: source => {
                 commentsModel.includedComments = NewStuff.CommentsModel.IncludeOnlyReviews;
@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Title for the item which is checked when comments which are reviews, and their children should be shown", "Show Reviews and Replies")
-            checked: commentsModel.includedComments == NewStuff.CommentsModel.IncludeReviewsAndReplies
+            checked: commentsModel.includedComments === NewStuff.CommentsModel.IncludeReviewsAndReplies
             checkable: true
             onTriggered: source => {
                 commentsModel.includedComments = NewStuff.CommentsModel.IncludeReviewsAndReplies;

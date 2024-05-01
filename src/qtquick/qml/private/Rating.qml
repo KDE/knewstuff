@@ -47,7 +47,7 @@ RowLayout {
 
             source: index < view.ratingIndex
                 ? "rating"
-                : (view.ratingHalf && index == view.ratingIndex
+                : (view.ratingHalf && index === view.ratingIndex
                     ? (view.LayoutMirroring.enabled ? "rating-half-rtl" : "rating-half")
                     : "rating-unrated")
             opacity: (view.editable && mouse.item.containsMouse) ? 0.7 : 1

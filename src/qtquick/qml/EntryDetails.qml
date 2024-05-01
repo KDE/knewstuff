@@ -105,13 +105,13 @@ KCMUtils.SimpleKCM {
 
     actions: [
         Kirigami.Action {
-            text: component.downloadLinks.length == 1
+            text: component.downloadLinks.length === 1
                 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install")
                 : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
 
             icon.name: "install"
             onTriggered: source => {
-                if (component.downloadLinks.length == 1) {
+                if (component.downloadLinks.length === 1) {
                     newStuffModel.engine.install(component.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = component.downloadLinks;
@@ -119,21 +119,21 @@ KCMUtils.SimpleKCM {
                     downloadItemsSheet.open();
                 }
             }
-            enabled: component.status == NewStuff.Entry.Downloadable || component.status == NewStuff.Entry.Deleted
+            enabled: component.status === NewStuff.Entry.Downloadable || component.status === NewStuff.Entry.Deleted
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
             onTriggered: source => newStuffModel.update(component.entry, NewStuff.ItemsModel.AutoDetectLinkId)
-            enabled: component.status == NewStuff.Entry.Updateable
+            enabled: component.status === NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
             text: i18ndc("knewstuff6", "Request uninstallation of this item", "Uninstall")
             icon.name: "edit-delete"
             onTriggered: source => newStuffModel.engine.uninstall(component.entry)
-            enabled: component.status == NewStuff.Entry.Installed || component.status == NewStuff.Entry.Updateable
+            enabled: component.status === NewStuff.Entry.Installed || component.status === NewStuff.Entry.Updateable
             visible: enabled
         }
     ]

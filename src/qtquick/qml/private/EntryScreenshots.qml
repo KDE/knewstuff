@@ -36,7 +36,7 @@ Flickable {
             ? overlayImage.sourceSize.height / overlayImage.sourceSize.width
             : 1
 
-        height: overlayImage.status == Image.Loading
+        height: overlayImage.status === Image.Loading
             ? Kirigami.Units.gridUnit * 5
             : Math.min(parent.height * 0.9, (parent.width * 0.9) * proportion, overlayImage.sourceSize.height)
         width: height / proportion
@@ -44,7 +44,7 @@ Flickable {
         QQC2.BusyIndicator {
             id: indicator
             visible: running
-            running: overlayImage.status == Image.Loading
+            running: overlayImage.status === Image.Loading
             anchors.fill: parent
         }
 
@@ -137,7 +137,7 @@ Flickable {
                 }
 
                 Kirigami.ShadowedRectangle {
-                    visible: thumbnail.status == Image.Ready
+                    visible: thumbnail.status === Image.Ready
                     anchors.fill: thumbnail
                     Kirigami.Theme.colorSet: Kirigami.Theme.View
                     shadow.size: Kirigami.Units.largeSpacing
@@ -146,7 +146,7 @@ Flickable {
 
                 QQC2.BusyIndicator {
                     visible: running
-                    running: thumbnail.status == Image.Loading
+                    running: thumbnail.status === Image.Loading
                     anchors.centerIn: parent
                 }
 

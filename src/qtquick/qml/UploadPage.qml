@@ -130,12 +130,12 @@ Kirigami.ScrollablePage {
                             return i18ndc("knewstuff6", "An unnamed provider", "Your Provider");
                         }
                     }
-                    titleIcon: model.icon == "" ? "get-hot-new-stuff" : model.icon
+                    titleIcon: model.icon.toString() === "" ? "get-hot-new-stuff" : model.icon
                 }
 
                 actions: [
                     Kirigami.Action {
-                        visible: model.website != ""
+                        visible: model.website !== ""
                         text: i18ndc("knewstuff6", "Text for an action which causes the specified website to be opened using the user's system default browser", "Open Website: %1", model.website)
                         onTriggered: source => {
                             Qt.openUrlExternally(model.website);
@@ -143,7 +143,7 @@ Kirigami.ScrollablePage {
                     },
 
                     Kirigami.Action {
-                        visible: model.contactEmail != "" && model.name != "api.kde-look.org"
+                        visible: model.contactEmail !== "" && model.name !== "api.kde-look.org"
                         text: i18ndc("knewstuff6", "Text for an action which will attempt to send an email using the user's system default email client", "Send Email To: %1", model.contactEmail)
                         onTriggered: source => {
                             Qt.openUrlExternally("mailto:" + model.contactEmail);

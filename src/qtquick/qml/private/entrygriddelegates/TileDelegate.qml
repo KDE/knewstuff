@@ -22,7 +22,7 @@ Private.GridTileDelegate {
     property string uninstallLabel
 
     function showDetails() {
-        if (entry.entryType == NewStuff.Entry.GroupEntry) {
+        if (entry.entryType === NewStuff.Entry.GroupEntry) {
             newStuffEngine.storeSearch();
             newStuffEngine.searchTerm = model.payload;
         } else {
@@ -40,7 +40,7 @@ Private.GridTileDelegate {
             onTriggered: source => {
                 newStuffModel.adoptItem(model.index);
             }
-            enabled: (entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
+            enabled: (entry.status === NewStuff.Entry.Installed || entry.status === NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
         },
         Kirigami.Action {
@@ -57,7 +57,7 @@ Private.GridTileDelegate {
                     downloadItemsSheet.open();
                 }
             }
-            enabled: entry.status == NewStuff.Entry.Downloadable || entry.status == NewStuff.Entry.Deleted
+            enabled: entry.status === NewStuff.Entry.Downloadable || entry.status === NewStuff.Entry.Deleted
             visible: enabled
         },
         Kirigami.Action {
@@ -66,7 +66,7 @@ Private.GridTileDelegate {
             onTriggered: source => {
                 newStuffEngine.install(entry, NewStuff.ItemsModel.AutoDetectLinkId);
             }
-            enabled: entry.status == NewStuff.Entry.Updateable
+            enabled: entry.status === NewStuff.Entry.Updateable
             visible: enabled
         },
         Kirigami.Action {
@@ -75,7 +75,7 @@ Private.GridTileDelegate {
             onTriggered: source => {
                 newStuffEngine.uninstall(model.entry);
             }
-            enabled: entry.status == NewStuff.Entry.Installed || entry.status == NewStuff.Entry.Updateable
+            enabled: entry.status === NewStuff.Entry.Installed || entry.status === NewStuff.Entry.Updateable
             visible: enabled && hovered
         }
     ]
@@ -97,7 +97,7 @@ Private.GridTileDelegate {
                     Layout.minimumHeight: width
                     Layout.maximumHeight: width
                     Kirigami.ShadowedRectangle {
-                        visible: tilePreview.status == Image.Ready
+                        visible: tilePreview.status === Image.Ready
                         anchors.centerIn: tilePreview
                         width: Math.min(tilePreview.paintedWidth, tilePreview.width)
                         height: Math.min(tilePreview.paintedHeight, tilePreview.height)
@@ -118,7 +118,7 @@ Private.GridTileDelegate {
                     }
                     Kirigami.Icon {
                         id: updateAvailableBadge
-                        opacity: (entry.status == NewStuff.Entry.Updateable) ? 1 : 0
+                        opacity: (entry.status === NewStuff.Entry.Updateable) ? 1 : 0
                         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
                         anchors {
                             top: parent.top
@@ -131,7 +131,7 @@ Private.GridTileDelegate {
                     }
                     Kirigami.Icon {
                         id: installedBadge
-                        opacity: (entry.status == NewStuff.Entry.Installed) ? 1 : 0
+                        opacity: (entry.status === NewStuff.Entry.Installed) ? 1 : 0
                         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
                         anchors {
                             top: parent.top
@@ -175,7 +175,7 @@ Private.GridTileDelegate {
             Private.Rating {
                 Layout.fillWidth: true
                 rating: entry.rating
-                visible: entry.entryType == NewStuff.Entry.CatalogEntry
+                visible: entry.entryType === NewStuff.Entry.CatalogEntry
             }
             Kirigami.Heading {
                 Layout.fillWidth: true
@@ -183,7 +183,7 @@ Private.GridTileDelegate {
                 level: 5
                 elide: Text.ElideRight
                 text: i18ndc("knewstuff6", "The number of times the item has been downloaded", "%1 downloads", entry.downloadCount)
-                visible: entry.entryType == NewStuff.Entry.CatalogEntry
+                visible: entry.entryType === NewStuff.Entry.CatalogEntry
             }
         }
         FeedbackOverlay {

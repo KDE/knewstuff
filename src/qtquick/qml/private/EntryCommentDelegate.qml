@@ -158,7 +158,7 @@ RowLayout {
                     anchors.fill: parent;
                     source: "user"
                     visible: opacity > 0
-                    opacity: authorIcon.status == Image.Ready ? 0 : 1
+                    opacity: authorIcon.status === Image.Ready ? 0 : 1
                     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; } }
                 }
             }

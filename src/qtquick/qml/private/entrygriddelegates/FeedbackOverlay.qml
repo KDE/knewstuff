@@ -15,7 +15,7 @@ Item {
     property QtObject newStuffModel
 
     visible: opacity > 0
-    opacity: (model.entry.status == NewStuff.Entry.Installing || model.entry.status == NewStuff.Entry.Updating) ? 1 : 0
+    opacity: (model.entry.status === NewStuff.Entry.Installing || model.entry.status === NewStuff.Entry.Updating) ? 1 : 0
 
     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration } }
     Rectangle {
@@ -37,14 +37,14 @@ Item {
             target: newStuffModel
             function onEntryChanged(entry) {
                 const status = entry.status;
-                if (status == NewStuff.Entry.Downloadable
-                    || status == NewStuff.Entry.Installed
-                    || status == NewStuff.Entry.Updateable
-                    || status == NewStuff.Entry.Deleted) {
+                if (status === NewStuff.Entry.Downloadable
+                    || status === NewStuff.Entry.Installed
+                    || status === NewStuff.Entry.Updateable
+                    || status === NewStuff.Entry.Deleted) {
                     statusLabel.text = "";
-                } else if (status == NewStuff.Entry.Installing) {
+                } else if (status === NewStuff.Entry.Installing) {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is being installed OR uninstalled", "Working…");
-                } else if (status == NewStuff.Entry.Updating) {
+                } else if (status === NewStuff.Entry.Updating) {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator showing an item is in the process of being updated", "Updating…");
                 } else {
                     statusLabel.text = i18ndc("knewstuff6", "Label for the busy indicator which should only be shown when the entry has been given some unknown or invalid status.", "Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this to the KDE Community in a bug report</a>.");
