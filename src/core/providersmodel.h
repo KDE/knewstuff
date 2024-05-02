@@ -29,7 +29,7 @@ class KNEWSTUFFCORE_EXPORT ProvidersModel : public QAbstractListModel
     /**
      * The Engine for which this model displays Providers
      */
-    Q_PROPERTY(EngineBase *engine READ engine WRITE setEngine NOTIFY engineChanged)
+    Q_PRIVATE_PROPERTY(d, EngineBase *engine READ getEngine WRITE setEngine NOTIFY engineChanged)
 public:
     explicit ProvidersModel(QObject *parent = nullptr);
     ~ProvidersModel() override;
@@ -51,8 +51,9 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    EngineBase *engine() const;
-    void setEngine(EngineBase *engine);
+    // TODO KF7: Port property to back to public getter/setter, narrow types to EngineBase
+    QObject *engine() const;
+    void setEngine(QObject *engine);
     Q_SIGNAL void engineChanged();
 
 private:

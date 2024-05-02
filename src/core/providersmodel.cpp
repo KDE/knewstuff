@@ -12,14 +12,34 @@ namespace KNSCore
 {
 class ProvidersModelPrivate
 {
+    ProvidersModel *const q;
+
 public:
+    explicit ProvidersModelPrivate(ProvidersModel *qq)
+        : q(qq)
+    {
+    }
+
+    EngineBase *getEngine() const;
+    void setEngine(EngineBase *engine);
+
     EngineBase *engine = nullptr;
     QStringList knownProviders;
 };
 
+EngineBase *ProvidersModelPrivate::getEngine() const
+{
+    return engine;
+}
+
+void ProvidersModelPrivate::setEngine(EngineBase *engine)
+{
+    q->setEngine(engine);
+}
+
 ProvidersModel::ProvidersModel(QObject *parent)
     : QAbstractListModel(parent)
-    , d(new ProvidersModelPrivate)
+    , d(new ProvidersModelPrivate(this))
 {
 }
 
@@ -79,18 +99,18 @@ QVariant KNSCore::ProvidersModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-EngineBase *KNSCore::ProvidersModel::engine() const
+QObject *KNSCore::ProvidersModel::engine() const
 {
     return d->engine;
 }
 
-void KNSCore::ProvidersModel::setEngine(EngineBase *engine)
+void KNSCore::ProvidersModel::setEngine(QObject *engine)
 {
     if (d->engine != engine) {
         if (d->engine) {
             d->engine->disconnect(this);
         }
-        d->engine = engine;
+        d->engine = qobject_cast<EngineBase *>(engine);
         Q_EMIT engineChanged();
         if (d->engine) {
             connect(d->engine, &EngineBase::providersChanged, this, [this]() {
