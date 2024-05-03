@@ -68,6 +68,7 @@ Kirigami.OverlaySheet {
                     icon.name: delegate.icon.name
                     title: delegate.text
                     selected: delegate.highlighted
+                    wrapMode: Text.WrapAnywhere
                 }
                 QQC2.Label {
                     text: modelData.formattedSize
