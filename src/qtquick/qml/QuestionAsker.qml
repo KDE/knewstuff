@@ -26,10 +26,7 @@ QQC2.Dialog {
 
     property int questionType
 
-    implicitWidth: Math.max(Kirigami.Units.gridUnit * 20, view.width - (Kirigami.Units.gridUnit * 6))
-    implicitHeight: dialog.height + footer.height + (Kirigami.Units.gridUnit * 3)
-
-    anchors.centerIn: QQC2.Overlay.overlay
+    anchors.centerIn: parent
 
     modal: true
     focus: true
@@ -130,7 +127,13 @@ QQC2.Dialog {
     ColumnLayout {
         id: layout
 
-        property int maxWidth: dialog.width - (dialog.leftPadding + dialog.leftMargin + dialog.rightMargin + dialog.rightPadding)
+        readonly property real maxWidth: {
+            const bounds = dialog.parent;
+            if (!bounds) {
+                return 0;
+            }
+            return bounds.width - (dialog.leftPadding + dialog.leftMargin + dialog.rightMargin + dialog.rightPadding);
+        }
 
         anchors.fill: parent
         spacing: Kirigami.Units.smallSpacing
