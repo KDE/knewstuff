@@ -33,7 +33,7 @@ Private.GridTileDelegate {
             text: root.useLabel
             icon.name: "dialog-ok-apply"
             onTriggered: source => {
-                newStuffModel.adoptEntry(model.entry);
+                newStuffModel.engine.adoptEntry(model.entry);
             }
             enabled: (entry.status === NewStuff.Entry.Installed || entry.status === NewStuff.Entry.Updateable) && newStuffEngine.hasAdoptionCommand
             visible: enabled
