@@ -49,7 +49,9 @@ Kirigami.ScrollablePage {
 
     title: i18nc("@knewstuff6", "Upload New Stuff: %1", component.engine.name)
 
-    NewStuff.QuestionAsker { }
+    NewStuff.QuestionAsker {
+        parent: component.QQC2.Overlay.overlay
+    }
 
     Private.ErrorDisplayer {
         engine: component.engine

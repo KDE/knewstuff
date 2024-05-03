@@ -144,7 +144,10 @@ KCMUtils.GridViewKCM {
         id: newStuffEngine
     }
 
-    NewStuff.QuestionAsker {}
+    NewStuff.QuestionAsker {
+        parent: root.QQC2.Overlay.overlay
+    }
+
     Private.ErrorDisplayer {
         engine: newStuffEngine
         active: root.isCurrentPage
@@ -471,6 +474,8 @@ KCMUtils.GridViewKCM {
 
     NewStuff.DownloadItemsSheet {
         id: downloadItemsSheet
+
+        parent: root.QQC2.Overlay.overlay
 
         onItemPicked: (entry, downloadItemId) => {
             newStuffModel.engine.install(entry, downloadItemId);
