@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 00:36+0000\n"
+"POT-Creation-Date: 2024-05-04 00:36+0000\n"
 "PO-Revision-Date: 2022-12-15 09:31+0000\n"
 "Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -429,14 +429,14 @@ msgstr ""
 "Não foi possível adoptar o '%1'\n"
 "%2"
 
-#: qtquick/categoriesmodel.cpp:50
+#: qtquick/categoriesmodel.cpp:52
 #, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "Todas as Categorias"
 
-#: qtquick/categoriesmodel.cpp:72
+#: qtquick/categoriesmodel.cpp:74
 #, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
@@ -473,7 +473,7 @@ msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "Obter %1 Novos/as"
 
-#: qtquick/qml/Dialog.qml:44
+#: qtquick/qml/Dialog.qml:45
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -481,12 +481,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "Obter Coisas Novas"
 
-#: qtquick/qml/DownloadItemsSheet.qml:31
+#: qtquick/qml/DownloadItemsSheet.qml:35
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "Escolha o seu Local de Instalação"
 
-#: qtquick/qml/DownloadItemsSheet.qml:41
+#: qtquick/qml/DownloadItemsSheet.qml:47
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -499,19 +499,19 @@ msgstr ""
 "contacte por favor o autor deste item e peça para clarificar isto com base "
 "no nome dos itens."
 
-#: qtquick/qml/DownloadItemsSheet.qml:81
+#: qtquick/qml/DownloadItemsSheet.qml:88
 #, kde-format
 msgid "Install"
 msgstr "Instalar"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:89
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "A Instalar %1 de %2"
 
-#: qtquick/qml/EntryDetails.qml:104
+#: qtquick/qml/EntryDetails.qml:106
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -519,10 +519,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 de %2"
 
-#: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
+#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -530,10 +530,10 @@ msgctxt ""
 msgid "Install"
 msgstr "Instalar"
 
-#: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
+#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -541,22 +541,22 @@ msgctxt ""
 msgid "Install…"
 msgstr "Instalar"
 
-#: qtquick/qml/EntryDetails.qml:123
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:51
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:48
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Actualizar"
 
-#: qtquick/qml/EntryDetails.qml:130 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: qtquick/qml/EntryDetails.qml:152
+#: qtquick/qml/EntryDetails.qml:157
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Status message to be shown when the entry is in the process of being "
@@ -568,7 +568,7 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "A tratar de momento o item %1 de %2. Espere por favor..."
 
-#: qtquick/qml/EntryDetails.qml:154
+#: qtquick/qml/EntryDetails.qml:159
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Status message to be shown when the entry is in the process of being "
@@ -579,7 +579,7 @@ msgctxt ""
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "A actualizar de momento o item %1 de %2. Espere por favor..."
 
-#: qtquick/qml/EntryDetails.qml:156
+#: qtquick/qml/EntryDetails.qml:161
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -593,12 +593,12 @@ msgstr ""
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Por "
 "favor, comunique isto à Comunidade do KDE num relatório de erros</a>."
 
-#: qtquick/qml/EntryDetails.qml:209
+#: qtquick/qml/EntryDetails.qml:214
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "Comentários e Revisões:"
 
-#: qtquick/qml/EntryDetails.qml:211
+#: qtquick/qml/EntryDetails.qml:216
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -606,17 +606,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 Revisões e Comentários"
 
-#: qtquick/qml/EntryDetails.qml:217
+#: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgid "Rating:"
 msgstr "Classificação:"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:227
 #, kde-format
 msgid "Homepage:"
 msgstr "Página Web:"
 
-#: qtquick/qml/EntryDetails.qml:223
+#: qtquick/qml/EntryDetails.qml:228
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -625,12 +625,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "Abrir a página Web de %1"
 
-#: qtquick/qml/EntryDetails.qml:229
+#: qtquick/qml/EntryDetails.qml:234
 #, kde-format
 msgid "How To Donate:"
 msgstr "Como Doar:"
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:235
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -659,65 +659,65 @@ msgstr ""
 "que não feita nenhuma revisão de funcionalidades ou estabilidade por parte "
 "da sua distribuição."
 
-#: qtquick/qml/Page.qml:169
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "Padrões"
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "Ícones"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "Antevisão"
 
-#: qtquick/qml/Page.qml:189
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "Modo de Vista em Padrões Detalhados"
 
-#: qtquick/qml/Page.qml:198
+#: qtquick/qml/Page.qml:203
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "Modo de Vista Apenas em Ícones"
 
-#: qtquick/qml/Page.qml:207
+#: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "Modo de Vista em Antevisão Grande"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:227
 #, kde-format
 msgid "Everything"
 msgstr "Tudo"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:229
 #, kde-format
 msgid "Installed"
 msgstr "Instalado"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:231
 #, kde-format
 msgid "Updateable"
 msgstr "Actualizáveis"
 
-#: qtquick/qml/Page.qml:242
+#: qtquick/qml/Page.qml:251
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Mostrar Todos os Itens"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Mostrar Apenas os Itens Instalados"
 
-#: qtquick/qml/Page.qml:260
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -725,27 +725,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Mostrar Apenas os Itens para Actualização"
 
-#: qtquick/qml/Page.qml:271
+#: qtquick/qml/Page.qml:286
 #, kde-format
 msgid "Recent"
 msgstr "Recentes"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:288
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabética"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Rating"
 msgstr "Classificação"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Downloads"
 msgstr "Transferências"
 
-#: qtquick/qml/Page.qml:297
+#: qtquick/qml/Page.qml:312
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -753,7 +753,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Mostrar as Mais Recentes Primeiro"
 
-#: qtquick/qml/Page.qml:306
+#: qtquick/qml/Page.qml:323
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -761,60 +761,60 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Ordenar Alfabeticamente pelo Nome"
 
-#: qtquick/qml/Page.qml:315
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Mostrar os Melhor Classificados Primeiro"
 
-#: qtquick/qml/Page.qml:324
+#: qtquick/qml/Page.qml:345
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Mostrar os Mais Transferidos Primeiro"
 
-#: qtquick/qml/Page.qml:335
+#: qtquick/qml/Page.qml:358
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Enviar..."
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:359
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Aprenda como adicionar os seus itens novos a esta lista"
 
-#: qtquick/qml/Page.qml:346
+#: qtquick/qml/Page.qml:369
 #, fuzzy, kde-format
 #| msgid "Go to..."
 msgid "Go to…"
 msgstr "Ir para..."
 
-#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
+#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Procurar:"
 
-#: qtquick/qml/Page.qml:416
+#: qtquick/qml/Page.qml:439
 #, kde-format
 msgid "Category:"
 msgstr "Categoria:"
 
-#: qtquick/qml/Page.qml:436
+#: qtquick/qml/Page.qml:459
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Contribua com os seus…"
 
-#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
 msgstr "<i>(sem título)</i>"
 
-#: qtquick/qml/private/EntryCommentDelegate.qml:142
+#: qtquick/qml/private/EntryCommentDelegate.qml:136
 #, kde-format
 msgctxt ""
 "The author label in case the comment was written by the author of the "
@@ -822,19 +822,19 @@ msgctxt ""
 msgid "%1 <i>(author)</i>"
 msgstr "%1 <i>(autor)</i>"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:26
+#: qtquick/qml/private/EntryCommentsPage.qml:27
 #, kde-format
 msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "Comentários e Revisões de %1"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:29
+#: qtquick/qml/private/EntryCommentsPage.qml:30
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "Mostrar Todos os Comentários"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:35
+#: qtquick/qml/private/EntryCommentsPage.qml:38
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -842,7 +842,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "Mostrar Apenas as Revisões"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:41
+#: qtquick/qml/private/EntryCommentsPage.qml:46
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
@@ -850,15 +850,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "Mostrar as Revisões e as Respostas"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:185
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 transferências"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:164
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -866,7 +866,7 @@ msgctxt ""
 msgid "By <i>%1</i>"
 msgstr "De <i>%1</i>"
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Label for the busy indicator showing an item is being installed OR "
@@ -878,7 +878,7 @@ msgctxt ""
 msgid "Working…"
 msgstr "Em curso..."
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, fuzzy, kde-format
 #| msgid "Updating"
 msgctxt ""
@@ -887,7 +887,7 @@ msgctxt ""
 msgid "Updating…"
 msgstr "A Actualizar"
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
 msgctxt ""
 "Label for the busy indicator which should only be shown when the entry has "
@@ -901,7 +901,7 @@ msgstr ""
 "cgi?product=frameworks-knewstuff\"> Por favor, comunique isto à Comunidade "
 "do KDE num relatório de erros</a>."
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
 #, fuzzy, kde-format
 #| msgid "Installing"
 msgctxt "Label for the busy indicator showing an item is installing"
@@ -919,19 +919,19 @@ msgstr "Ocorreu um Erro"
 msgid "Please try again later."
 msgstr "Por favor, tente mais tarde de novo."
 
-#: qtquick/qml/private/GridTileDelegate.qml:121
+#: qtquick/qml/private/GridTileDelegate.qml:120
 #, kde-format
 msgid "None"
 msgstr "Nenhum"
 
-#: qtquick/qml/private/Rating.qml:80
+#: qtquick/qml/private/Rating.qml:81
 #, kde-format
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
-#: qtquick/qml/UploadPage.qml:51
+#: qtquick/qml/UploadPage.qml:50
 #, fuzzy, kde-format
 #| msgctxt "@knewstuff5"
 #| msgid "Upload New Stuff: %1"
@@ -939,7 +939,7 @@ msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Enviar Coisas Novas: %1"
 
-#: qtquick/qml/UploadPage.qml:110
+#: qtquick/qml/UploadPage.qml:111
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "A text shown beside a busy indicator suggesting that data is being fetched"
@@ -949,19 +949,19 @@ msgctxt ""
 msgid "Updating information…"
 msgstr "A actualizar as informações..."
 
-#: qtquick/qml/UploadPage.qml:125
+#: qtquick/qml/UploadPage.qml:126
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "Loja do KDE"
 
-#: qtquick/qml/UploadPage.qml:131
+#: qtquick/qml/UploadPage.qml:132
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "O Seu Fornecedor"
 
-#: qtquick/qml/UploadPage.qml:140
+#: qtquick/qml/UploadPage.qml:141
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -969,7 +969,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "Abrir a Página Web: %1"
 
-#: qtquick/qml/UploadPage.qml:146
+#: qtquick/qml/UploadPage.qml:149
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -977,15 +977,22 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "Enviar um E-Mail Para: %1"
 
-#: qtquick/qml/UploadPage.qml:154
-#, kde-format
+#: qtquick/qml/UploadPage.qml:159
+#, fuzzy, kde-format
+#| msgctxt "A description of how to upload content to a generic provider"
+#| msgid ""
+#| "To upload new entries, or to add content to an existing entry on the KDE "
+#| "Store, please open the website and log in. Once you have done this, you "
+#| "will be able to find the My Products entry in the menu which pops up when "
+#| "you click your user icon. Click on this entry to go to the product "
+#| "management system, where you can work on your products ."
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
 "Store, please open the website and log in. Once you have done this, you will "
 "be able to find the My Products entry in the menu which pops up when you "
 "click your user icon. Click on this entry to go to the product management "
-"system, where you can work on your products ."
+"system, where you can work on your products."
 msgstr ""
 "Para enviar novos itens, ou para adicionar um item existente à Loja do KDE, "
 "por favor abra a página Web e autentique-se. Assim que o tiver feito, será "
@@ -993,7 +1000,7 @@ msgstr ""
 "carrega no ícone do seu utilizador. Carregue neste item para ir para o "
 "sistema de gestão de produtos, no qual poderá lidar com os seus produtos."
 
-#: qtquick/qml/UploadPage.qml:155
+#: qtquick/qml/UploadPage.qml:160
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""
@@ -1034,73 +1041,73 @@ msgstr ""
 "Não está autorizado para Obter Coisas Novas. Se pensa que isto é um erro, "
 "contacte por favor a pessoa responsável pelas suas permissões."
 
-#: qtquick/searchpresetmodel.cpp:43
+#: qtquick/searchpresetmodel.cpp:44
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Recuar"
 
-#: qtquick/searchpresetmodel.cpp:45
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "Populares"
 
-#: qtquick/searchpresetmodel.cpp:47
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Em Destaque"
 
-#: qtquick/searchpresetmodel.cpp:49
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: qtquick/searchpresetmodel.cpp:51
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Novos"
 
-#: qtquick/searchpresetmodel.cpp:53
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Início"
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr "Prateleira"
 
-#: qtquick/searchpresetmodel.cpp:57
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Subir"
 
-#: qtquick/searchpresetmodel.cpp:59
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "Recomendados"
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Subscrições"
 
-#: qtquick/searchpresetmodel.cpp:63
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Todos os Itens"
 
-#: qtquick/searchpresetmodel.cpp:65
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"

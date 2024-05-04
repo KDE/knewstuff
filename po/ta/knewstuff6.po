@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 00:36+0000\n"
+"POT-Creation-Date: 2024-05-04 00:36+0000\n"
 "PO-Revision-Date: 2024-04-21 21:37+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -322,14 +322,14 @@ msgid ""
 "%2"
 msgstr ""
 
-#: qtquick/categoriesmodel.cpp:50
+#: qtquick/categoriesmodel.cpp:52
 #, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
 msgstr "அனைத்து பகுப்புகளும்"
 
-#: qtquick/categoriesmodel.cpp:72
+#: qtquick/categoriesmodel.cpp:74
 #, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
@@ -359,7 +359,7 @@ msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "%1 பதிவிறக்கு"
 
-#: qtquick/qml/Dialog.qml:44
+#: qtquick/qml/Dialog.qml:45
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -367,12 +367,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "புதியவற்றைப் பதிவிறக்கு"
 
-#: qtquick/qml/DownloadItemsSheet.qml:31
+#: qtquick/qml/DownloadItemsSheet.qml:35
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "நிறுவ வேண்டியதைத் தேர்ந்தெடுங்கள்"
 
-#: qtquick/qml/DownloadItemsSheet.qml:41
+#: qtquick/qml/DownloadItemsSheet.qml:47
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -384,19 +384,19 @@ msgstr ""
 "இருந்தால், இதை இயற்றியவரை தொடர்புகொண்டு கீழுள்ளவற்றிற்கு பொருத்தமான பெயரைகளை இட "
 "சொல்லுங்கள்."
 
-#: qtquick/qml/DownloadItemsSheet.qml:81
+#: qtquick/qml/DownloadItemsSheet.qml:88
 #, kde-format
 msgid "Install"
 msgstr "நிறுவு"
 
-#: qtquick/qml/EntryDetails.qml:87
+#: qtquick/qml/EntryDetails.qml:89
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "%2 வழங்கும் %1 நிறுவப்படுகிறது"
 
-#: qtquick/qml/EntryDetails.qml:104
+#: qtquick/qml/EntryDetails.qml:106
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -404,10 +404,10 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%2 வழங்கும் %1"
 
-#: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
+#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
@@ -415,32 +415,32 @@ msgctxt ""
 msgid "Install"
 msgstr "நிறுவு"
 
-#: qtquick/qml/EntryDetails.qml:108
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:36
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:33
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:42
+#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
 msgstr "நிறுவு…"
 
-#: qtquick/qml/EntryDetails.qml:123
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:51
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:48
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:57
+#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
+#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "புதுப்பி"
 
-#: qtquick/qml/EntryDetails.qml:130 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "நிறுவல் நீக்கு"
 
-#: qtquick/qml/EntryDetails.qml:152
+#: qtquick/qml/EntryDetails.qml:157
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -448,14 +448,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "%2 வழங்கும் %1 கையாளப்படுகிறது. காத்திருக்கவும்…"
 
-#: qtquick/qml/EntryDetails.qml:154
+#: qtquick/qml/EntryDetails.qml:159
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "%2 வழங்கும் %1 புதுப்பிக்கப்படுகிறது. காத்திருக்கவும்…"
 
-#: qtquick/qml/EntryDetails.qml:156
+#: qtquick/qml/EntryDetails.qml:161
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -469,12 +469,12 @@ msgstr ""
 "kde.org/enter_bug.cgi?product=frameworks-knewstuff\">இதை ஓர் பிழையறிக்கை மூலம் "
 "கே.டீ.யீ. சமூகத்திற்குத் தெரிவிக்கவும்</a>."
 
-#: qtquick/qml/EntryDetails.qml:209
+#: qtquick/qml/EntryDetails.qml:214
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "விமர்சனங்களும் மதிப்பீடுகளும்:"
 
-#: qtquick/qml/EntryDetails.qml:211
+#: qtquick/qml/EntryDetails.qml:216
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -482,17 +482,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 விமர்சனங்களும் மதிப்பீடுகளும்:"
 
-#: qtquick/qml/EntryDetails.qml:217
+#: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgid "Rating:"
 msgstr "மதிப்பீடு:"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:227
 #, kde-format
 msgid "Homepage:"
 msgstr "முகப்புப்பக்கம்:"
 
-#: qtquick/qml/EntryDetails.qml:223
+#: qtquick/qml/EntryDetails.qml:228
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -501,12 +501,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "%1-க்கான முகப்புப்பக்கத்தை திற"
 
-#: qtquick/qml/EntryDetails.qml:229
+#: qtquick/qml/EntryDetails.qml:234
 #, kde-format
 msgid "How To Donate:"
 msgstr "நன்கொடை அளிப்பது:"
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:235
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -534,65 +534,65 @@ msgstr ""
 "இங்கு உள்ளவற்றை உங்களைப் போன்ற பயனர்கள் பதிவேற்றியுள்ளனர். இவைகே.டீ.யீ.யாலும் உங்கள் இயங்குதள "
 "வழங்குநர்களாலும் சோதிக்கப்படாதவை."
 
-#: qtquick/qml/Page.qml:169
+#: qtquick/qml/Page.qml:172
 #, kde-format
 msgid "Tiles"
 msgstr "கட்டங்கள்"
 
-#: qtquick/qml/Page.qml:171
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Icons"
 msgstr "சின்னங்கள்"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Preview"
 msgstr "முன்னோட்டம்"
 
-#: qtquick/qml/Page.qml:189
+#: qtquick/qml/Page.qml:192
 #, kde-format
 msgid "Detailed Tiles View Mode"
 msgstr "விவரங்களை கொண்ட சதுரங்களை காட்டும் காட்சிமுறை"
 
-#: qtquick/qml/Page.qml:198
+#: qtquick/qml/Page.qml:203
 #, kde-format
 msgid "Icons Only View Mode"
 msgstr "சின்னங்களை மட்டும் காட்டும் காட்சிமுறை"
 
-#: qtquick/qml/Page.qml:207
+#: qtquick/qml/Page.qml:214
 #, kde-format
 msgid "Large Preview View Mode"
 msgstr "பெரிய முன்னோட்டங்களை காட்டும் காட்சிமுறை"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:227
 #, kde-format
 msgid "Everything"
 msgstr "அனைத்தும்"
 
-#: qtquick/qml/Page.qml:220
+#: qtquick/qml/Page.qml:229
 #, kde-format
 msgid "Installed"
 msgstr "நிறுவப்பட்டுள்ளவை"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:231
 #, kde-format
 msgid "Updateable"
 msgstr "புதுப்பிக்கத்தக்கவை"
 
-#: qtquick/qml/Page.qml:242
+#: qtquick/qml/Page.qml:251
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "அனைத்து பதிவுகளையும் காட்டு"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:262
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "நிறுவப்பட்டுள்ளவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:260
+#: qtquick/qml/Page.qml:273
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -600,27 +600,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "புதுப்பிக்கத்தக்கவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:271
+#: qtquick/qml/Page.qml:286
 #, kde-format
 msgid "Recent"
 msgstr "சமீபமானவை"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:288
 #, kde-format
 msgid "Alphabetical"
 msgstr "அகரவரிசை"
 
-#: qtquick/qml/Page.qml:275
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Rating"
 msgstr "மதிப்பீடு"
 
-#: qtquick/qml/Page.qml:277
+#: qtquick/qml/Page.qml:292
 #, kde-format
 msgid "Downloads"
 msgstr "பதிவிறக்கங்கள்"
 
-#: qtquick/qml/Page.qml:297
+#: qtquick/qml/Page.qml:312
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -628,7 +628,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "மிகப்புதியவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:306
+#: qtquick/qml/Page.qml:323
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -636,57 +636,57 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "பெயரின்படி அகரவரிசையாக வரிசைப்படுத்து"
 
-#: qtquick/qml/Page.qml:315
+#: qtquick/qml/Page.qml:334
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "உயர்வாக மதிப்பிடப்பட்டுள்ளதை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:324
+#: qtquick/qml/Page.qml:345
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:335
+#: qtquick/qml/Page.qml:358
 #, kde-format
 msgid "Upload…"
 msgstr "பதிவேற்று…"
 
-#: qtquick/qml/Page.qml:336
+#: qtquick/qml/Page.qml:359
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
-#: qtquick/qml/Page.qml:346
+#: qtquick/qml/Page.qml:369
 #, kde-format
 msgid "Go to…"
 msgstr "செல்..."
 
-#: qtquick/qml/Page.qml:353 qtquick/qml/Page.qml:362
+#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
 #, kde-format
 msgid "Search…"
 msgstr "தேடு…"
 
-#: qtquick/qml/Page.qml:416
+#: qtquick/qml/Page.qml:439
 #, kde-format
 msgid "Category:"
 msgstr "பகுப்பு:"
 
-#: qtquick/qml/Page.qml:436
+#: qtquick/qml/Page.qml:459
 #, kde-format
 msgid "Contribute your own…"
 msgstr "உங்களுடையதை பதிவேற்றுங்கள்…"
 
-#: qtquick/qml/private/EntryCommentDelegate.qml:110
+#: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
 msgstr "<i>(தலைப்பில்லை)</i>"
 
-#: qtquick/qml/private/EntryCommentDelegate.qml:142
+#: qtquick/qml/private/EntryCommentDelegate.qml:136
 #, kde-format
 msgctxt ""
 "The author label in case the comment was written by the author of the "
@@ -694,19 +694,19 @@ msgctxt ""
 msgid "%1 <i>(author)</i>"
 msgstr "%1 <i>(நிரலாளர்)</i>"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:26
+#: qtquick/qml/private/EntryCommentsPage.qml:27
 #, kde-format
 msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
 msgstr "%1 என்பதற்கான விமர்சனங்களும் மதிப்பீடுகளும்"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:29
+#: qtquick/qml/private/EntryCommentsPage.qml:30
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
 msgstr "அனைத்து கருத்துகளையும் காட்டு"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:35
+#: qtquick/qml/private/EntryCommentsPage.qml:38
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
@@ -714,7 +714,7 @@ msgctxt ""
 msgid "Show Reviews Only"
 msgstr "விமர்சனங்களை மட்டும் காட்டு"
 
-#: qtquick/qml/private/EntryCommentsPage.qml:41
+#: qtquick/qml/private/EntryCommentsPage.qml:46
 #, kde-format
 msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
@@ -722,15 +722,15 @@ msgctxt ""
 msgid "Show Reviews and Replies"
 msgstr "விமர்சனங்களையும் பதில்களையும் காட்டு"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:128
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:174
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:185
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
 msgstr "%1 பதிவிறக்கங்கள்"
 
-#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:141
-#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:164
 #, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
@@ -738,7 +738,7 @@ msgctxt ""
 msgid "By <i>%1</i>"
 msgstr "இயற்றியவர் <i>%1</i>"
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:44
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
@@ -746,7 +746,7 @@ msgctxt ""
 msgid "Working…"
 msgstr "வேலை செய்கிறது…"
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
@@ -754,7 +754,7 @@ msgctxt ""
 msgid "Updating…"
 msgstr "புதுப்பிக்கிறது…"
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
 msgctxt ""
 "Label for the busy indicator which should only be shown when the entry has "
@@ -768,7 +768,7 @@ msgstr ""
 "cgi?product=frameworks-knewstuff\">இதை ஓர் பிழையாக கே.டீ.யீ.யிடம் தெரிவியுங்கள்</"
 "a>."
 
-#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
 #, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
@@ -785,44 +785,44 @@ msgstr "சிக்கல் ஏற்பட்டது"
 msgid "Please try again later."
 msgstr "தயவுசெய்து பின்னர் முயற்சிக்கவும்."
 
-#: qtquick/qml/private/GridTileDelegate.qml:121
+#: qtquick/qml/private/GridTileDelegate.qml:120
 #, kde-format
 msgid "None"
 msgstr "ஏதுமில்லை "
 
-#: qtquick/qml/private/Rating.qml:80
+#: qtquick/qml/private/Rating.qml:81
 #, kde-format
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
-#: qtquick/qml/UploadPage.qml:51
+#: qtquick/qml/UploadPage.qml:50
 #, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "புதியதை பதிவேற்று: %1"
 
-#: qtquick/qml/UploadPage.qml:110
+#: qtquick/qml/UploadPage.qml:111
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
 msgstr "விவரங்கள் புதுப்பிக்கப்படுகின்றன…"
 
-#: qtquick/qml/UploadPage.qml:125
+#: qtquick/qml/UploadPage.qml:126
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "கே.டீ.யீ. களஞ்சியம்"
 
-#: qtquick/qml/UploadPage.qml:131
+#: qtquick/qml/UploadPage.qml:132
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "உங்கள் வழங்குநர்"
 
-#: qtquick/qml/UploadPage.qml:140
+#: qtquick/qml/UploadPage.qml:141
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -830,7 +830,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "இணையதளத்தை திற: %1"
 
-#: qtquick/qml/UploadPage.qml:146
+#: qtquick/qml/UploadPage.qml:149
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -838,7 +838,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "இவருக்கு மின்னஞ்சல் அனுப்பு: %1"
 
-#: qtquick/qml/UploadPage.qml:154
+#: qtquick/qml/UploadPage.qml:159
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -846,10 +846,10 @@ msgid ""
 "Store, please open the website and log in. Once you have done this, you will "
 "be able to find the My Products entry in the menu which pops up when you "
 "click your user icon. Click on this entry to go to the product management "
-"system, where you can work on your products ."
+"system, where you can work on your products."
 msgstr ""
 
-#: qtquick/qml/UploadPage.qml:155
+#: qtquick/qml/UploadPage.qml:160
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""
@@ -882,73 +882,73 @@ msgid ""
 "please contact the person in charge of your permissions."
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:43
+#: qtquick/searchpresetmodel.cpp:44
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "பின்னே"
 
-#: qtquick/searchpresetmodel.cpp:45
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "மக்கள் விரும்புபவை"
 
-#: qtquick/searchpresetmodel.cpp:47
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "சிறப்பானவை"
 
-#: qtquick/searchpresetmodel.cpp:49
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "மீள்துவக்கு"
 
-#: qtquick/searchpresetmodel.cpp:51
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "புதியவை"
 
-#: qtquick/searchpresetmodel.cpp:53
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "முகப்பு"
 
-#: qtquick/searchpresetmodel.cpp:55
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:57
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "மேலே"
 
-#: qtquick/searchpresetmodel.cpp:59
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "பரிந்துரைக்கப்படுபவை"
 
-#: qtquick/searchpresetmodel.cpp:61
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "சந்தாக்கள்"
 
-#: qtquick/searchpresetmodel.cpp:63
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "அனைத்தும்"
 
-#: qtquick/searchpresetmodel.cpp:65
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
