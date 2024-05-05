@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:36+0000\n"
-"PO-Revision-Date: 2024-04-10 14:23+0300\n"
+"PO-Revision-Date: 2024-05-04 14:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -857,14 +857,7 @@ msgid "Send Email To: %1"
 msgstr "E-posta Gönder: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "

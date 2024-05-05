@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:36+0000\n"
-"PO-Revision-Date: 2024-04-18 13:30+0400\n"
+"PO-Revision-Date: 2024-05-04 11:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -831,14 +831,7 @@ msgid "Send Email To: %1"
 msgstr "أرسل بريدًا إلى: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -850,8 +843,7 @@ msgstr ""
 "لتحميل إدخالات جديدة ، أو لإضافة محتوى إلى إدخال موجود في متجر كِيدِي ، يرجى "
 "فتح موقع الويب وتسجيل الدخول. بمجرد القيام بذلك ، ستتمكن من العثور على إدخال "
 "\"منتجاتي\" في القائمة التي تنبثق عندما انقر فوق رمز المستخدم الخاص بك. انقر "
-"فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج ، حيث يمكنك العمل على "
-"منتجاتك. "
+"فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج ، حيث يمكنك العمل على منتجاتك."
 
 #: qtquick/qml/UploadPage.qml:160
 #, kde-format
