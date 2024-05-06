@@ -133,7 +133,7 @@ public:
     /**
      * @brief Fired when an entry's data changes
      *
-     * @param index The index of the item which has changed
+     * @param entry The entry which has changed
      */
     Q_SIGNAL void entryChanged(const KNSCore::Entry &entry);
 
