@@ -96,9 +96,8 @@ Kirigami.Action {
      * The parent window for the dialog created by invoking the action
      *
      * @since 6.1
-     *
      */
-    property var transientParent: null
+    property Window transientParent
 
     /**
     * Show the page/dialog (same as activating the action), if allowed by the Kiosk settings
