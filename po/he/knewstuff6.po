@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:36+0000\n"
-"PO-Revision-Date: 2024-05-04 06:38+0300\n"
+"PO-Revision-Date: 2024-05-05 11:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -390,9 +390,9 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
-"נא לבחור את האפשרות שברצונך להתקין מרשימת הפריטים שניתן להוריד להלן. אם לא "
-"ברור לך מה צריך לבחור מהאפשרויות הזמינות, נא ליצור קשר עם מי שיצר את הפריט "
-"הזה ולשאול אם יוכלו להסביר מה הרקע לפי שמות הפריטים."
+"נא לבחור את האפשרות להתקנה מרשימת הפריטים שניתן להוריד להלן. אם לא ברור לך "
+"מה צריך לבחור מהאפשרויות הזמינות, נא ליצור קשר עם מי שיצר את הפריט הזה "
+"ולשאול אם יוכלו להסביר מה הרקע לפי שמות הפריטים."
 
 #: qtquick/qml/DownloadItemsSheet.qml:88
 #, kde-format
@@ -981,8 +981,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
-"קובץ ה־KNSRC שברצונך להציג. אם לא מועבר כלום, תופיע חלונית שתאפשר לך לבחור "
-"מבין כל קובצי ההגדרות שמותקנים במקום קובצי ה־knsrc הכלל מערכתי"
+"קובץ ה־KNSRC להצגה. אם לא מועבר כלום, תופיע חלונית שתאפשר לך לבחור מבין כל "
+"קובצי ההגדרות שמותקנים במקום קובצי ה־knsrc הכלל מערכתי"
 
 #: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
