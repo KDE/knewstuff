@@ -25,7 +25,7 @@ Action::Action(const QString &text, const QString &configFile, QObject *parent)
     , d(new ActionPrivate)
 {
     if (text.isEmpty()) {
-        setText(i18n("Download New Stuff..."));
+        setText(i18nc("@action", "Download New Stuff…"));
     } else {
         setText(text);
     }

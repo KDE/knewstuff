@@ -67,7 +67,7 @@ Button::Button(const QString &text, const QString &configFile, QWidget *parent)
 }
 
 Button::Button(QWidget *parent)
-    : Button(i18n("Download New Stuff..."), QString(), parent)
+    : Button(i18nc("@action", "Download New Stuff…"), QString(), parent)
 {
 }
 
