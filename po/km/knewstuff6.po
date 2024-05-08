@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2012-06-27 10:04+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -1003,9 +1003,14 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt "@action"
+msgid "Download New Stuff…"
 msgstr "ទាញយក​ធាតុ​ថ្មី..."
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "ទាញយក​ធាតុ​ថ្មី..."
 
 #~ msgid "Initializing"
 #~ msgstr "ចាប់ផ្ដើម"

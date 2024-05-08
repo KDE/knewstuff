@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -1015,9 +1015,14 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "ಹೊಸ ಪದಾರ್ಥವನ್ನು ನಕಲಿಳಿಸಿ..."
+#, fuzzy, kde-format
+#| msgid "Download New Stuff"
+msgctxt "@action"
+msgid "Download New Stuff…"
+msgstr "ಹೊಸ ಪದಾರ್ಥವನ್ನು ನಕಲಿಳಿಸಿ"
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "ಹೊಸ ಪದಾರ್ಥವನ್ನು ನಕಲಿಳಿಸಿ..."
 
 #~ msgid "Initializing"
 #~ msgstr "ಆರಂಭಿಸಲಾಗುತ್ತಿದೆ"

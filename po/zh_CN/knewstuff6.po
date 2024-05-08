@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -827,14 +827,7 @@ msgid "Send Email To: %1"
 msgstr "发送邮件至：%1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -843,8 +836,6 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
-"若要向 KDE 商店上传新条目或为已有条目添加内容，请打开网站并登录。登录后点击您"
-"的用户图标，再点击“我的产品”，即可打开产品管理系统并处理您的产品。"
 
 #: qtquick/qml/UploadPage.qml:160
 #, kde-format
@@ -986,6 +977,14 @@ msgstr ""
 "示例 URL：kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "下载新资源..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A placeholder title used in the dialog when there is no better title "
+#| "available"
+#| msgid "Download New Stuff"
+msgctxt "@action"
+msgid "Download New Stuff…"
+msgstr "下载新资源"
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "下载新资源..."

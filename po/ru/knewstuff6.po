@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2024-01-20 09:31+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1031,9 +1031,17 @@ msgstr ""
 " Пример такого URL-адреса: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "Загрузить материалы..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A placeholder title used in the dialog when there is no better title "
+#| "available"
+#| msgid "Download New Stuff"
+msgctxt "@action"
+msgid "Download New Stuff…"
+msgstr "Загрузка новых материалов"
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "Загрузить материалы..."
 
 #~ msgctxt ""
 #~ "A message which is shown when the user attempts to display a specific "

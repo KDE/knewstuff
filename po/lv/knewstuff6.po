@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2024-02-27 17:00+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1023,9 +1023,17 @@ msgstr ""
 " Šādas saites piemērs ir kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
-msgstr "Lejupielādēt ko jaunu..."
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A placeholder title used in the dialog when there is no better title "
+#| "available"
+#| msgid "Download New Stuff"
+msgctxt "@action"
+msgid "Download New Stuff…"
+msgstr "Lejupielādēt ko jaunu"
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "Lejupielādēt ko jaunu..."
 
 #~ msgid "Initializing"
 #~ msgstr "Inicializē"

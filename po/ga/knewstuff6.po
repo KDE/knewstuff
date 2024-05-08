@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1022,9 +1022,14 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt "@action"
+msgid "Download New Stuff…"
 msgstr "Íosluchtaigh Stuif Nua..."
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "Íosluchtaigh Stuif Nua..."
 
 #~ msgid "Initializing"
 #~ msgstr "Á Thúsú"

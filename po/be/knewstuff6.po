@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2009-09-06 15:21+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1015,8 +1015,14 @@ msgstr ""
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
-msgid "Download New Stuff..."
+msgctxt "@action"
+msgid "Download New Stuff…"
 msgstr "Сцягнцуь новыя файлы"
+
+#, fuzzy
+#~| msgid "Download New Stuff"
+#~ msgid "Download New Stuff..."
+#~ msgstr "Сцягнцуь новыя файлы"
 
 #, fuzzy
 #~| msgid "Install"

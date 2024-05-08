@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2011-07-16 00:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1014,9 +1014,14 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, kde-format
-msgid "Download New Stuff..."
+#, fuzzy, kde-format
+#| msgid "Download New Stuff..."
+msgctxt "@action"
+msgid "Download New Stuff…"
 msgstr "Muatturun Barangan Baru..."
+
+#~ msgid "Download New Stuff..."
+#~ msgstr "Muatturun Barangan Baru..."
 
 #, fuzzy
 #~| msgid "Installing"

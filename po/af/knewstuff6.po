@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:36+0000\n"
+"POT-Creation-Date: 2024-05-08 00:36+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -1001,8 +1001,14 @@ msgstr ""
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
-msgid "Download New Stuff..."
+msgctxt "@action"
+msgid "Download New Stuff…"
 msgstr "Laai 'New Stuff' af"
+
+#, fuzzy
+#~| msgid "Download New Stuff"
+#~ msgid "Download New Stuff..."
+#~ msgstr "Laai 'New Stuff' af"
 
 #, fuzzy
 #~| msgid "Install"
