@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-08 00:36+0000\n"
-"PO-Revision-Date: 2024-05-05 11:58+0300\n"
+"PO-Revision-Date: 2024-05-08 09:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1010,14 +1010,10 @@ msgstr ""
 " דוגמה לכתובת כזאת היא kns://peruse.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "הורדת דברים חדשים"
+msgstr "הורדת דברים חדשים…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "דברים חדשים מגיעים…"

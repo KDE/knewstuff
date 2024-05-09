@@ -1040,6 +1040,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Last ned nye ting"
-
-#~ msgid "Download New Stuff..."
-#~ msgstr "Last ned nye saker …"
