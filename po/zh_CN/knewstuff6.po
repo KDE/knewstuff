@@ -982,4 +982,4 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr ""
+msgstr "下载新资源…"
