@@ -103,7 +103,7 @@ msgstr ""
 #: button.cpp:43 widgets/action.cpp:34 widgets/button.cpp:58
 #, kde-format
 msgid "Download New Stuff..."
-msgstr "Baixa les novetats..."
+msgstr "Baixa les novetats…"
 
 #: core/commentsmodel.cpp:168
 #, kde-format
@@ -669,7 +669,7 @@ msgstr "Busca:"
 #: downloadwidget.ui:217 qtquick/qml/Page.qml:381 qtquick/qml/Page.qml:388
 #, kde-format
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: downloadwidget.ui:371
@@ -727,7 +727,7 @@ msgstr "Més"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: kmoretools/kmoretools_p.h:373
 #, kde-format
@@ -831,7 +831,7 @@ msgstr ""
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:216
 #, kde-format
 msgid "More tools..."
-msgstr "Més eines..."
+msgstr "Més eines…"
 
 #: qtquick/categoriesmodel.cpp:63
 #, kde-format
@@ -862,7 +862,7 @@ msgstr "novetats"
 #: qtquick/qml/Button.qml:44
 #, kde-format
 msgid "Download New %1..."
-msgstr "Baixa %1..."
+msgstr "Baixa %1…"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -909,14 +909,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr "Actualment, s'està treballant sobre l'element %1 per a %2. Espereu..."
+msgstr "Actualment, s'està treballant sobre l'element %1 per a %2. Espereu…"
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr "Actualment, s'està actualitzant l'element %1 per a %2. Espereu..."
+msgstr "Actualment, s'està actualitzant l'element %1 per a %2. Espereu…"
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
@@ -959,7 +959,7 @@ msgstr "Instal·la"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install..."
-msgstr "Instal·la..."
+msgstr "Instal·la…"
 
 #: qtquick/qml/EntryDetails.qml:102 qtquick/qml/NewStuffItem.qml:29
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:64
@@ -1207,7 +1207,7 @@ msgstr "Primer mostra la més baixada"
 #: qtquick/qml/Page.qml:366
 #, kde-format
 msgid "Upload..."
-msgstr "Puja..."
+msgstr "Puja…"
 
 #: qtquick/qml/Page.qml:367
 #, kde-format
@@ -1218,7 +1218,7 @@ msgstr ""
 #: qtquick/qml/Page.qml:375
 #, kde-format
 msgid "Go to..."
-msgstr "Ves fins a..."
+msgstr "Ves fins a…"
 
 #: qtquick/qml/Page.qml:442
 #, kde-format
@@ -1297,7 +1297,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working..."
-msgstr "S'està treballant..."
+msgstr "S'està treballant…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, kde-format
@@ -1305,7 +1305,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating..."
-msgstr "S'està actualitzant..."
+msgstr "S'està actualitzant…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -1325,7 +1325,7 @@ msgstr ""
 #, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing..."
-msgstr "S'està instal·lant..."
+msgstr "S'està instal·lant…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:13
 #, kde-format
@@ -1361,7 +1361,7 @@ msgstr "Puja les novetats: %1"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information..."
-msgstr "S'està actualitzant la informació..."
+msgstr "S'està actualitzant la informació…"
 
 #: qtquick/qml/UploadPage.qml:95
 #, kde-format
