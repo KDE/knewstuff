@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-08 00:36+0000\n"
-"PO-Revision-Date: 2024-04-21 21:37+0530\n"
+"PO-Revision-Date: 2024-05-12 13:13+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -848,6 +848,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
+"புதியவற்றைப் பதிவேற்ற, அல்லது ஏற்கனவே கே.டீ.யீ. களஞ்சியத்தில் உள்ள ஒன்றில் புதிய "
+"உருப்படிகளை சேர்க்க, உரிய இணையதளத்தைத் திறந்து உள்நுழையவும். உங்கள் பயனர் சின்னத்தை கிளிக் "
+"செய்யும்போது வரும் பட்டியில் 'My Products' என்று ஓர் இணைப்பு இருக்கும். இதன் மூலம் உங்கள்  "
+"பதிவேற்றங்களை நிர்வகிக்கலாம்."
 
 #: qtquick/qml/UploadPage.qml:160
 #, kde-format
@@ -860,6 +864,10 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"புதியவற்றைப் பதிவேற்ற, அல்லது ஏற்கனவே உள்ள ஒன்றில் புதிய உருப்படிகளை சேர்க்க, வழங்குநரின் "
+"இணையதளத்தைத் திறந்து அங்கு கொடுக்கப்பட்டள்ள செயல்முறையை கடைப்பிடிக்கவும். உங்கள் "
+"பதிவேற்றங்களை நிர்வகிக்க உதவும் தனிப்பட்ட பக்கம் இருக்கலாம், அல்லது இத்தளத்தின் நிர்வாகிகளை "
+"தொடர்புகொள்ள வேண்டியிருக்கலாம்."
 
 #: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
 #: qtquick/quickengine.cpp:142
@@ -881,6 +889,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"புதியவற்றைப் பதிவிறக்குவதற்கான அனுமதி உங்களிடம் இல்லை. இது தவறு என தோன்றினால், உங்கள் "
+"அனுமதிகளை நிர்வகிப்பவரைத் தொடர்புகொள்ளவும்."
 
 #: qtquick/searchpresetmodel.cpp:44
 #, kde-format
@@ -961,6 +971,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"காட்ட விரும்பும் KNSRC கோப்பு. எதுவும் குறிப்பிடப்படவில்லையெனில், கணினி முழுவதற்கும் "
+"நிறுவப்பட்டுள்ள knsrc கோப்புகளைக் காட்டும் கோப்புத்தேர்வு சாளரம் காட்டப்படும்"
 
 #: tools/knewstuff-dialog/main.cpp:33
 #, kde-format
@@ -979,14 +991,10 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "புதியவற்றைப் பதிவிறக்கு"
+msgstr "புதியவற்றைப் பதிவிறக்கு…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "புதியவற்றை பதிவிறக்கு..."
