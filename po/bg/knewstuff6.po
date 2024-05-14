@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-08 00:36+0000\n"
-"PO-Revision-Date: 2024-05-06 10:30+0200\n"
+"PO-Revision-Date: 2024-05-13 22:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -453,14 +453,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "В момента се обработва елементът %1 от %2. Моля изчакайте..."
+msgstr "В момента се обработва елементът %1 от %2. Моля изчакайте…"
 
 #: qtquick/qml/EntryDetails.qml:159
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "В момента се актуализира елементът %1 от %2. Моля изчакайте..."
+msgstr "В момента се актуализира елементът %1 от %2. Моля изчакайте…"
 
 #: qtquick/qml/EntryDetails.qml:161
 #, kde-format
@@ -669,12 +669,12 @@ msgstr "Научете се как да качвате нови разширен
 #: qtquick/qml/Page.qml:369
 #, kde-format
 msgid "Go to…"
-msgstr "Отиване на..."
+msgstr "Отиване на…"
 
 #: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
 #, kde-format
 msgid "Search…"
-msgstr "Търсене..."
+msgstr "Търсене…"
 
 #: qtquick/qml/Page.qml:439
 #, kde-format
@@ -751,7 +751,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "Обработване..."
+msgstr "Обработване…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -759,7 +759,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Актуализиране..."
+msgstr "Актуализиране…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -815,7 +815,7 @@ msgstr "Качване на ново разширение: %1"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "Обновяване на информацията..."
+msgstr "Обновяване на информацията…"
 
 #: qtquick/qml/UploadPage.qml:126
 #, kde-format
@@ -1014,14 +1014,10 @@ msgstr ""
 "Пример за такъв адрес е kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Изтегляне на нови разширения"
+msgstr "Изтегляне на нови разширения…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Изтегляне на нови неща..."
