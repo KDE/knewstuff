@@ -936,14 +936,7 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Stáhnout nový obsah"
-
-#~ msgid "Download New Stuff..."
-#~ msgstr "Stáhnout nový obsah..."
+msgstr ""
