@@ -448,7 +448,7 @@ public:
      * The number of available download options for this entry
      * @return The number of download options
      */
-    int downloadLinkCount() const;
+    [[deprecated]] int downloadLinkCount() const;
     /**
      * A list of downloadable data for this entry
      * @return The list of download options
@@ -459,11 +459,11 @@ public:
      * Add a new download option to this entry
      * @param info The new download option
      */
-    void appendDownloadLinkInformation(const DownloadLinkInformation &info);
+    [[deprecated]] void appendDownloadLinkInformation(const DownloadLinkInformation &info);
     /**
      * Remove all download options from this entry
      */
-    void clearDownloadLinkInformation();
+    [[deprecated]] void clearDownloadLinkInformation();
 
     /**
      * A string representing the URL for a website where the user can donate
