@@ -7,6 +7,7 @@
 #include "atticaprovider_p.h"
 
 #include "commentsmodel.h"
+#include "entry_p.h"
 #include "question.h"
 #include "tagsfilterchecker.h"
 
@@ -667,19 +668,19 @@ Entry AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
     entry.setChangelog(content.changelog());
     entry.setTags(content.tags());
 
-    entry.clearDownloadLinkInformation();
     const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
+    entry.d->mDownloadLinkInformationList.clear();
+    entry.d->mDownloadLinkInformationList.reserve(descs.size());
     for (const Attica::DownloadDescription &desc : descs) {
-        Entry::DownloadLinkInformation info;
-        info.name = desc.name();
-        info.priceAmount = desc.priceAmount();
-        info.distributionType = desc.distributionType();
-        info.descriptionLink = desc.link();
-        info.id = desc.id();
-        info.size = desc.size();
-        info.isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload;
-        info.tags = desc.tags();
-        entry.appendDownloadLinkInformation(info);
+        entry.d->mDownloadLinkInformationList.append({.name = desc.name(),
+                                                      .priceAmount = desc.priceAmount(),
+                                                      .distributionType = desc.distributionType(),
+                                                      .descriptionLink = desc.link(),
+                                                      .id = desc.id(),
+                                                      .isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload,
+                                                      .size = desc.size(),
+                                                      .tags = desc.tags(),
+                                                      .version = desc.version()});
     }
 
     return entry;

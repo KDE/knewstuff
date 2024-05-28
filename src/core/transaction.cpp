@@ -7,6 +7,7 @@
 #include "transaction.h"
 #include "enginebase.h"
 #include "enginebase_p.h"
+#include "entry_p.h"
 #include "provider.h"
 #include "question.h"
 
@@ -15,10 +16,44 @@
 #include <QDir>
 #include <QProcess>
 #include <QTimer>
+#include <QVersionNumber>
 
 #include <knewstuffcore_debug.h>
 
 using namespace KNSCore;
+
+namespace
+{
+std::optional<int> linkIdFromVersions(const QList<DownloadLinkInformationV2Private> &downloadLinksInformationList)
+{
+    switch (downloadLinksInformationList.size()) {
+    case 0:
+        return {};
+    case 1:
+        return downloadLinksInformationList.at(0).id;
+    }
+
+    QMap<QVersionNumber, int> infoByVersion;
+    for (const auto &info : downloadLinksInformationList) {
+        const auto number = QVersionNumber::fromString(info.version);
+        if (number.isNull()) {
+            qCDebug(KNEWSTUFFCORE) << "Found no valid version number on linkid" << info.id << info.version;
+            continue;
+        }
+        if (infoByVersion.contains(number)) {
+            qCWarning(KNEWSTUFFCORE) << "Encountered version number" << info.version << "more than once. Ignoring duplicates." << info.distributionType;
+            continue;
+        }
+        infoByVersion[number] = info.id;
+    }
+
+    if (infoByVersion.isEmpty()) { // found no valid version
+        return {};
+    }
+
+    return infoByVersion.last(); // map is sorted by keys, highest version is last entry.
+}
+} // namespace
 
 class KNSCore::TransactionPrivate
 {
@@ -168,21 +203,29 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
             QSharedPointer<Provider> p = engine->d->providers.value(entry.providerId());
             if (p) {
                 connect(p.data(), &Provider::payloadLinkLoaded, ret, &Transaction::downloadLinkLoaded);
-                // If linkId is -1, assume that it's an update and that we don't know what to update
-                if (entry.status() == KNSCore::Entry::Updating && linkId == -1) {
-                    if (entry.downloadLinkCount() == 1 || !entry.payload().isEmpty()) {
-                        // If there is only one downloadable item (which also includes a predefined payload name), then we can fairly safely assume that's what
-                        // we're wanting to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
-                        qCDebug(KNEWSTUFFCORE) << "Just the one download link, so let's use that";
+                // If linkId is -1, assume we don't know what to update
+                if (linkId == -1) {
+                    const auto downloadLinksInformationList = entry.d.constData()->mDownloadLinkInformationList;
+                    const auto optionalLinkId = linkIdFromVersions(downloadLinksInformationList);
+                    if (optionalLinkId.has_value()) {
+                        qCDebug(KNEWSTUFFCORE) << "Found linkid by version" << optionalLinkId.value();
                         ret->d->payloadToIdentify[entry] = QString{};
-                        linkId = 1;
+                        linkId = optionalLinkId.value();
                     } else {
-                        qCDebug(KNEWSTUFFCORE) << "Try and identify a download link to use from a total of" << entry.downloadLinkCount();
-                        // While this seems silly, the payload gets reset when fetching the new download link information
-                        ret->d->payloadToIdentify[entry] = entry.payload();
-                        // Drop a fresh list in place so we've got something to work with when we get the links
-                        ret->d->payloads[entry] = QStringList{};
-                        linkId = 1;
+                        if (downloadLinksInformationList.size() == 1 || !entry.payload().isEmpty()) {
+                            // If there is only one downloadable item (which also includes a predefined payload name), then we can fairly safely assume that's
+                            // what we're wanting to update, meaning we can bypass some of the more expensive operations in downloadLinkLoaded
+                            qCDebug(KNEWSTUFFCORE) << "Just the one download link, so let's use that";
+                            ret->d->payloadToIdentify[entry] = QString{};
+                            linkId = 1;
+                        } else {
+                            qCDebug(KNEWSTUFFCORE) << "Try and identify a download link to use from a total of" << entry.downloadLinkCount();
+                            // While this seems silly, the payload gets reset when fetching the new download link information
+                            ret->d->payloadToIdentify[entry] = entry.payload();
+                            // Drop a fresh list in place so we've got something to work with when we get the links
+                            ret->d->payloads[entry] = QStringList{};
+                            linkId = 1;
+                        }
                     }
                 } else {
                     qCDebug(KNEWSTUFFCORE) << "Link ID already known" << linkId;

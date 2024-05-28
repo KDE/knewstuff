@@ -554,6 +554,7 @@ private:
     friend class Cache;
     friend class Installation;
     friend class AtticaProvider;
+    friend class Transaction;
     friend testEntry;
     KNEWSTUFFCORE_NO_EXPORT void setEntryRequestedId(const QString &id);
     QDomElement entryXML() const;

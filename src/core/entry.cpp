@@ -8,6 +8,7 @@
 */
 
 #include "entry.h"
+#include "entry_p.h"
 
 #include <QDomElement>
 #include <QMetaEnum>
@@ -18,61 +19,6 @@
 #include "xmlloader_p.h"
 
 using namespace KNSCore;
-
-class KNSCore::EntryPrivate : public QSharedData
-{
-public:
-    EntryPrivate()
-    {
-        qRegisterMetaType<KNSCore::Entry::List>();
-    }
-
-    bool operator==(const EntryPrivate &other) const
-    {
-        return mUniqueId == other.mUniqueId && mProviderId == other.mProviderId;
-    }
-
-    QString mUniqueId;
-    QString mRequestedUniqueId; // We need to map the entry to the request in the ResultsStream, but invalid entries would have an empty ID
-    QString mName;
-    QUrl mHomepage;
-    QString mCategory;
-    QString mLicense;
-    QString mVersion;
-    QDate mReleaseDate = QDate::currentDate();
-
-    // Version and date if a newer version is found (updateable)
-    QString mUpdateVersion;
-    QDate mUpdateReleaseDate;
-
-    Author mAuthor;
-    int mRating = 0;
-    int mNumberOfComments = 0;
-    int mDownloadCount = 0;
-    int mNumberFans = 0;
-    int mNumberKnowledgebaseEntries = 0;
-    QString mKnowledgebaseLink;
-    QString mSummary;
-    QString mShortSummary;
-    QString mChangelog;
-    QString mPayload;
-    QStringList mInstalledFiles;
-    QString mProviderId;
-    QStringList mUnInstalledFiles;
-    QString mDonationLink;
-    QStringList mTags;
-
-    QString mChecksum;
-    QString mSignature;
-    KNSCore::Entry::Status mStatus = Entry::Invalid;
-    Entry::Source mSource = Entry::Online;
-    Entry::EntryType mEntryType = Entry::CatalogEntry;
-
-    QString mPreviewUrl[6];
-    QImage mPreviewImage[6];
-
-    QList<Entry::DownloadLinkInformation> mDownloadLinkInformationList;
-};
 
 Entry::Entry()
     : d(new EntryPrivate())
@@ -407,12 +353,33 @@ int KNSCore::Entry::downloadLinkCount() const
 
 QList<KNSCore::Entry::DownloadLinkInformation> KNSCore::Entry::downloadLinkInformationList() const
 {
-    return d->mDownloadLinkInformationList;
+    const auto infos = d->mDownloadLinkInformationList;
+    QList<KNSCore::Entry::DownloadLinkInformation> ret;
+    ret.reserve(infos.size());
+    for (const auto &info : infos) {
+        ret.append({.name = info.name,
+                    .priceAmount = info.priceAmount,
+                    .distributionType = info.distributionType,
+                    .descriptionLink = info.descriptionLink,
+                    .id = info.id,
+                    .isDownloadtypeLink = info.isDownloadtypeLink,
+                    .size = info.size,
+                    .tags = info.tags});
+    }
+    return ret;
 }
 
 void KNSCore::Entry::appendDownloadLinkInformation(const KNSCore::Entry::DownloadLinkInformation &info)
 {
-    d->mDownloadLinkInformationList.append(info);
+    d->mDownloadLinkInformationList.append({.name = info.name,
+                                            .priceAmount = info.priceAmount,
+                                            .distributionType = info.distributionType,
+                                            .descriptionLink = info.descriptionLink,
+                                            .id = info.id,
+                                            .isDownloadtypeLink = info.isDownloadtypeLink,
+                                            .size = info.size,
+                                            .tags = info.tags,
+                                            .version = QString()});
 }
 
 void Entry::clearDownloadLinkInformation()
