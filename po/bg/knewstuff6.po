@@ -1018,6 +1018,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Изтегляне на нови разширения…"
-
-#~ msgid "Download New Stuff..."
-#~ msgstr "Изтегляне на нови неща..."
