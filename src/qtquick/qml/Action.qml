@@ -123,17 +123,6 @@ Kirigami.Action {
         // Probably wants to be deleted and cleared if the "mode" changes at runtime...
         property QtObject pageItem
 
-        property string providerId
-        property string entryId
-
-        readonly property Connections showSpecificEntryConnection: Connections {
-            target: component.engine
-
-            function onInitialized() {
-                pageItem.showEntryDetails(providerId, component._private.entryId);
-            }
-        }
-
         readonly property Connections engineConnections: Connections {
             target: component.engine
 
