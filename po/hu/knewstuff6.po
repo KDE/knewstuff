@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-08 00:36+0000\n"
-"PO-Revision-Date: 2024-01-08 10:40+0100\n"
+"PO-Revision-Date: 2024-05-31 22:55+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -524,19 +524,19 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Legyen óvatos az itt megjelenő, felhasználók által létrehozott tartalmak "
+"elérésekor, mivel azok olyan futtatható kódot tartalmazhatnak, amelyet a KDE "
+"vagy a disztribútora nem tesztelt biztonság, stabilitás vagy minőség "
+"szempontjából"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Az itt található tartalmakat Önhöz hasonló felhasználók töltötték fel, a "
-"disztribúciója készítője nem ellenőrizte azokat funkcionalitás vagy "
-"stabilitás szempontjából."
+"A felhasználók által készített tartalmakat a KDE vagy a disztribúciója "
+"készítője nem ellenőrizte funkcionalitás vagy stabilitás szempontjából."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -843,14 +843,7 @@ msgid "Send Email To: %1"
 msgstr "E-mail küldése: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -993,19 +986,7 @@ msgstr ""
 "rendszerszintű ksnrc fájlhelyre telepített konfigurációs fájl közl"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1029,17 +1010,13 @@ msgstr ""
 "'entryid'\n"
 "a knsrc fájlban megadott szolgáltatóban található bejegyzés egyedi "
 "azonosítója.\n"
-" Egy példa egy ilyen url-re: kns://peruse.knsrc/api.kde-look.org/1316714"
+" Egy példa egy ilyen url-re: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Új cuccok letöltése"
+msgstr "Új kiegészítők letöltése…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Új kiegészítők letöltése…"
