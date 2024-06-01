@@ -59,7 +59,7 @@ Private.GridTileDelegate {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
             onTriggered: source => {
-                newStuffModel.engine.install(model.index, NewStuff.ItemsModel.AutoDetectLinkId);
+                newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId);
             }
             enabled: entry.status === NewStuff.Entry.Updateable
             visible: enabled
