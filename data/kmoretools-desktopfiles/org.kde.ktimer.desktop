@@ -51,6 +51,7 @@ Icon=ktimer
 Type=Application
 Terminal=false
 Name=KTimer
+Name[ar]=مؤقّت ك
 Name[az]=KTimer
 Name[bg]=KTimer
 Name[ca]=KTimer

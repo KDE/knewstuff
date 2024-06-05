@@ -50,6 +50,7 @@ Comment[zh_CN]=为您点击鼠标，减轻肢体重复性劳损 (RSI) 效应
 Comment[zh_TW]=幫您點擊滑鼠
 Terminal=false
 Name=KMouseTool
+Name[ar]=أداة فأرة كي
 Name[az]=KMouseTool
 Name[bg]=KMouseTool
 Name[ca]=KMouseTool

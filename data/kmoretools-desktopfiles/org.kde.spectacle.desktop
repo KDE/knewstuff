@@ -101,6 +101,7 @@ X-DBUS-ServiceName=org.kde.Spectacle
 
 [Desktop Action FullScreenScreenShot]
 Name=Capture Entire Desktop
+Name[ar]=التقط سطح المكتب بالكامل
 Name[az]=Bütün Masaüstlərini Çəkin
 Name[bg]=Заснемане на целия работен плот
 Name[ca]=Captura l'escriptori sencer
@@ -147,6 +148,7 @@ Exec=spectacle -f
 
 [Desktop Action CurrentMonitorScreenShot]
 Name=Capture Current Monitor
+Name[ar]=التقط الشّاشة الحاليّة
 Name[az]=Cari Masaüstünü Çəkin
 Name[bg]=Заснемане на текущия монитор
 Name[ca]=Captura el monitor actual
@@ -193,6 +195,7 @@ Exec=spectacle -m
 
 [Desktop Action ActiveWindowScreenShot]
 Name=Capture Active Window
+Name[ar]=التقط النّافذة النّشطة
 Name[az]=Aktiv Pəncərəni Çəkin
 Name[bg]=Заснемане на активен прозорец
 Name[ca]=Captura la finestra activa
