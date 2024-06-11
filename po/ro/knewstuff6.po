@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-08 00:36+0000\n"
-"PO-Revision-Date: 2024-02-25 14:48+0000\n"
+"PO-Revision-Date: 2024-06-09 12:59+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -523,19 +523,18 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality"
 msgstr ""
+"Aveți grijă când accesați conținutul creat de utilizatori afișat aici, "
+"întrucât poate conține cod executabil ce nu a fost testat de către KDE sau "
+"distribuitor pentru siguranță, stabilitate, sau calitate"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Conținutul disponibil aici a fost încărcat de utilizatori ca dumneavoastră "
-"și nu a fost revizuit de către distribuitor pentru funcționalitate sau "
-"stabilitate."
+"Conținutul afișat aici e creat de utilizatori și nu a fost testat de către "
+"KDE sau distribuitor pentru funcționalitate sau calitate."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -842,14 +841,7 @@ msgid "Send Email To: %1"
 msgstr "Trimite e-mail către: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -1017,14 +1009,10 @@ msgstr ""
 " Un exemplu de astfel de URL e kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Descarcă lucruri noi"
+msgstr "Descarcă lucruri noi…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Descărcare lucruri noi..."
