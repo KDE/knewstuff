@@ -136,7 +136,7 @@ KCMUtils.GridViewKCM {
         type: riskyContent ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
         position: Kirigami.InlineMessage.Position.Header
         text: riskyContent
-            ? xi18nd("knewstuff6", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality")
+            ? xi18nd("knewstuff6", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality.")
             : i18nd("knewstuff6", "User-created content shown here hasn't been tested by KDE or your distributor for functionality or quality.")
     }
 
