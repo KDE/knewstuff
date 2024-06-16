@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:36+0000\n"
+"POT-Creation-Date: 2024-06-16 00:36+0000\n"
 "PO-Revision-Date: 2023-08-11 23:54-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -533,12 +533,17 @@ msgid "Find out how to donate to this project"
 msgstr "Saiba como doar para este projeto"
 
 #: qtquick/qml/Page.qml:139
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality"
+"for safety, stability, or quality."
 msgstr ""
+"O conteúdo disponível aqui foi enviado por usuários como você e não foi "
+"revisto pelo nosso distribuidor por funcionalidade ou estabilidade."
 
 #: qtquick/qml/Page.qml:140
 #, fuzzy, kde-format

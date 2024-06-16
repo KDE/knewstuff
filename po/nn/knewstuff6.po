@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:36+0000\n"
+"POT-Creation-Date: 2024-06-16 00:36+0000\n"
 "PO-Revision-Date: 2023-07-30 21:57+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -524,13 +524,19 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Les om korleis du kan gje ei pengegåve til prosjektet"
 
+# Sjå tilsvarande tekst i «plasma-welcome.po».
 #: qtquick/qml/Page.qml:139
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality"
+"for safety, stability, or quality."
 msgstr ""
+"Alt innhaldet her er lasta opp av andre brukarar. Leverandøren din har ikkje "
+"kvalitets­sikra at det verkar skikkeleg eller stabilt."
 
 # Sjå tilsvarande tekst i «plasma-welcome.po».
 #: qtquick/qml/Page.qml:140

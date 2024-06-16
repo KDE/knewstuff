@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 00:36+0000\n"
+"POT-Creation-Date: 2024-06-16 00:36+0000\n"
 "PO-Revision-Date: 2023-12-02 20:07+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -524,12 +524,17 @@ msgid "Find out how to donate to this project"
 msgstr "Zistiť ako sa dá prispieť na tento projekt"
 
 #: qtquick/qml/Page.qml:139
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "The content available here has been uploaded by users like you, and has "
+#| "not been reviewed by your distributor for functionality or stability."
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality"
+"for safety, stability, or quality."
 msgstr ""
+"Obsah, ktorý je tu k dispozícii, nahrali používatelia, ako ste vy, a nebol "
+"skontrolovaný distribútorom z hľadiska funkčnosti alebo stability."
 
 #: qtquick/qml/Page.qml:140
 #, fuzzy, kde-format
