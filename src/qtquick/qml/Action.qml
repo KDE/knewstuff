@@ -62,7 +62,7 @@ Kirigami.Action {
      * set using the NewStuff.Page.ViewMode enum
      * @see NewStuff.Page.ViewMode
      */
-    property int viewMode: NewStuff.Page.ViewMode.Preview
+    property int viewMode: NewStuff.Page.ViewMode.Tiles
 
     /**
      * If this is set, the action will push a NewStuff.Page onto this page stack

@@ -507,15 +507,16 @@ KCMUtils.GridViewKCM {
     }
 
     view.delegate: switch (root.viewMode) {
-        case Page.ViewMode.Tiles:
-            return tileDelegate;
 
         case Page.ViewMode.Preview:
             return bigPreviewDelegate;
 
         case Page.ViewMode.Icons:
-        default:
             return thumbDelegate;
+
+        case Page.ViewMode.Tiles:
+        default:
+            return tileDelegate;
     }
 
     Component {

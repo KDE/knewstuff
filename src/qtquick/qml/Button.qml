@@ -48,7 +48,7 @@ QQC2.Button {
      * set using the NewStuff.Page.ViewMode enum
      * @see NewStuff.Page.ViewMode
      */
-    property int viewMode: NewStuff.Page.ViewMode.Preview
+    property int viewMode: NewStuff.Page.ViewMode.Tiles
 
     /**
      * emitted when the Hot New Stuff dialog is about to be shown, usually
