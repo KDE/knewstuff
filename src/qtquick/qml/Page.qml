@@ -116,6 +116,7 @@ KCMUtils.GridViewKCM {
 
     property int viewMode: Page.ViewMode.Tiles
 
+    // TODO KF7: remove Icons
     enum ViewMode {
         Tiles,
         Icons,
@@ -427,38 +428,31 @@ KCMUtils.GridViewKCM {
     }
 
     view.implicitCellWidth: switch (root.viewMode) {
-        case Page.ViewMode.Tiles:
-            return Kirigami.Units.gridUnit * 30;
-
         case Page.ViewMode.Preview:
             return Kirigami.Units.gridUnit * 25;
 
+        case Page.ViewMode.Tiles:
         case Page.ViewMode.Icons:
         default:
-            return Kirigami.Units.gridUnit * 10;
+            return Kirigami.Units.gridUnit * 30;
     }
 
     view.implicitCellHeight: switch (root.viewMode) {
-        case Page.ViewMode.Tiles:
-            return Math.round(view.implicitCellWidth / 3);
-
         case Page.ViewMode.Preview:
             return Kirigami.Units.gridUnit * 25;
 
+        case Page.ViewMode.Tiles:
         case Page.ViewMode.Icons:
         default:
-            return Math.round(view.implicitCellWidth / 1.6) + Kirigami.Units.gridUnit * 2;
+            return Math.round(view.implicitCellWidth / 3);
     }
 
     view.delegate: switch (root.viewMode) {
-
         case Page.ViewMode.Preview:
             return bigPreviewDelegate;
 
-        case Page.ViewMode.Icons:
-            return thumbDelegate;
-
         case Page.ViewMode.Tiles:
+        case Page.ViewMode.Icons:
         default:
             return tileDelegate;
     }
@@ -473,15 +467,6 @@ KCMUtils.GridViewKCM {
         id: tileDelegate
 
         EntryGridDelegates.TileDelegate {
-            useLabel: root.useLabel
-            uninstallLabel: root.uninstallLabel
-        }
-    }
-
-    Component {
-        id: thumbDelegate
-
-        EntryGridDelegates.ThumbDelegate {
             useLabel: root.useLabel
             uninstallLabel: root.uninstallLabel
         }

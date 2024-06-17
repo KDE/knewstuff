@@ -58,8 +58,10 @@ Kirigami.Action {
     property string configFile
 
     /**
-     * The default view mode of the page spawned by this action. This should be
-     * set using the NewStuff.Page.ViewMode enum
+     * The view mode of the page spawned by this action, which overrides the
+     * default one (ViewMode.Tiles). This should be set using the
+     * NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
+     * and asking for it will return ViewMode.Tiles.
      * @see NewStuff.Page.ViewMode
      */
     property int viewMode: NewStuff.Page.ViewMode.Tiles

@@ -44,8 +44,10 @@ QQC2.Button {
     text: i18nd("knewstuff6", "Download New %1…", downloadNewWhat)
 
     /**
-     * The default view mode of the dialog spawned by this button. This should be
-     * set using the NewStuff.Page.ViewMode enum
+     * The view mode of the dialog spawned by this button, which overrides the
+     * default one (ViewMode.Tiles). This should be set using the
+     * NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
+     * and asking for it will return ViewMode.Tiles.
      * @see NewStuff.Page.ViewMode
      */
     property int viewMode: NewStuff.Page.ViewMode.Tiles

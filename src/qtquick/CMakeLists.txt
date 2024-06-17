@@ -71,7 +71,6 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private SOURCES
 ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private/entrygriddelegates SOURCES
     qml/private/entrygriddelegates/BigPreviewDelegate.qml
     qml/private/entrygriddelegates/FeedbackOverlay.qml
-    qml/private/entrygriddelegates/ThumbDelegate.qml
     qml/private/entrygriddelegates/TileDelegate.qml
 )
 
