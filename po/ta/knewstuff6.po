@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2024-05-12 13:13+0530\n"
+"PO-Revision-Date: 2024-06-16 19:58+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -321,6 +321,8 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
+"'%1' தனை தத்தெடுக்க முடியவில்லை\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:52
 #, kde-format
@@ -515,11 +517,7 @@ msgid "Find out how to donate to this project"
 msgstr "இதற்கு எப்படி நன்கொடை அளிப்பது என தெரிந்துகொள்ளுங்கள்"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "

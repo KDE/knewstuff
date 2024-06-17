@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2024-05-09 18:58+0300\n"
+"PO-Revision-Date: 2024-06-16 10:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -533,19 +533,15 @@ msgid "Find out how to donate to this project"
 msgstr "Bu projeye nasıl bağış yapabileceğinizi öğrenin"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
 "KDE veya dağıtımınız tarafından güvenlik, kararlılık veya kalite açısından "
-"sınanmayın yürütülebilir kodlar içerebileceğinden, burada gösterilen "
-"kullanıcı yapımı içeriğe erişirken dikkatli olun"
+"sınanmamış yürütülebilir kodlar içerebileceğinden, burada gösterilen "
+"kullanıcı yapımı içeriğe erişirken dikkatli olun."
 
 #: qtquick/qml/Page.qml:140
 #, kde-format

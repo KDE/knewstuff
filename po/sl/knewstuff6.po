@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2024-05-08 07:36+0200\n"
+"PO-Revision-Date: 2024-06-16 08:36+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -530,11 +530,7 @@ msgid "Find out how to donate to this project"
 msgstr "Ugotovite, kako lahko donirate za ta projekt"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -542,7 +538,7 @@ msgid ""
 msgstr ""
 "Bodite previdni, ko dostopate do tukaj prikazane vsebine, ki jo ustvarijo "
 "uporabniki, saj lahko vsebuje izvedljivo kodo, ki je KDE ali vaš distributer "
-"ni testiral glede varnosti, stabilnosti ali kakovosti"
+"ni testiral glede varnosti, stabilnosti ali kakovosti."
 
 #: qtquick/qml/Page.qml:140
 #, kde-format

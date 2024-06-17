@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2024-05-08 16:10+0200\n"
+"PO-Revision-Date: 2024-06-16 08:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -533,11 +533,7 @@ msgid "Find out how to donate to this project"
 msgstr "Trobeu com fer una donació al projecte"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -545,7 +541,7 @@ msgid ""
 msgstr ""
 "Aneu amb compte en accedir al contingut creat per l'usuari que es mostra "
 "ací, ja que pot contindre codi executable del qual no s'ha provat la "
-"seguretat, l'estabilitat o la qualitat per KDE o el vostre distribuïdor"
+"seguretat, l'estabilitat o la qualitat per KDE o el vostre distribuïdor."
 
 #: qtquick/qml/Page.qml:140
 #, kde-format
@@ -806,7 +802,7 @@ msgstr "S'ha produït un error"
 #: qtquick/qml/private/ErrorDisplayer.qml:81
 #, kde-format
 msgid "Please try again later."
-msgstr "Torneu-ho a intentar més tard."
+msgstr "Torneu-ho a provar més tard."
 
 #: qtquick/qml/private/GridTileDelegate.qml:120
 #, kde-format
