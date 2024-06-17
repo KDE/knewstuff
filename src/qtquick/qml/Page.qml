@@ -153,7 +153,6 @@ KCMUtils.GridViewKCM {
         active: root.isCurrentPage
     }
 
-    QQC2.ActionGroup { id: viewModeActionGroup }
     QQC2.ActionGroup { id: viewFilterActionGroup }
     QQC2.ActionGroup { id: viewSortingActionGroup }
 
@@ -163,61 +162,6 @@ KCMUtils.GridViewKCM {
             displayComponent: QQC2.BusyIndicator {
                 implicitWidth: Kirigami.Units.iconSizes.smallMedium
                 implicitHeight: Kirigami.Units.iconSizes.smallMedium
-            }
-        },
-
-        Kirigami.Action {
-            text: {
-                if (root.viewMode === Page.ViewMode.Tiles) {
-                    return i18nd("knewstuff6", "Tiles");
-                } else if (root.viewMode === Page.ViewMode.Icons) {
-                    return i18nd("knewstuff6", "Icons");
-                } else {
-                    return i18nd("knewstuff6", "Preview");
-                }
-            }
-            checkable: false
-            icon.name: {
-                if (root.viewMode === Page.ViewMode.Tiles) {
-                    return "view-list-details";
-                } else if (root.viewMode === Page.ViewMode.Icons) {
-                    return "view-list-icons";
-                } else {
-                    return "view-preview";
-                }
-            }
-
-            Kirigami.Action {
-                icon.name: "view-list-details"
-                text: i18nd("knewstuff6", "Detailed Tiles View Mode")
-                onTriggered: source => {
-                    root.viewMode = Page.ViewMode.Tiles;
-                }
-                checked: root.viewMode === Page.ViewMode.Tiles
-                checkable: true
-                QQC2.ActionGroup.group: viewModeActionGroup
-            }
-
-            Kirigami.Action {
-                icon.name: "view-list-icons"
-                text: i18nd("knewstuff6", "Icons Only View Mode")
-                onTriggered: source => {
-                    root.viewMode = Page.ViewMode.Icons;
-                }
-                checked: root.viewMode === Page.ViewMode.Icons
-                checkable: true
-                QQC2.ActionGroup.group: viewModeActionGroup
-            }
-
-            Kirigami.Action {
-                icon.name: "view-preview"
-                text: i18nd("knewstuff6", "Large Preview View Mode")
-                onTriggered: source => {
-                    root.viewMode = Page.ViewMode.Preview;
-                }
-                checked: root.viewMode === Page.ViewMode.Preview
-                checkable: true
-                QQC2.ActionGroup.group: viewModeActionGroup
             }
         },
 
