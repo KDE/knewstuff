@@ -6,7 +6,7 @@
 # Anders Widell <awl@hem.passagen.se>, 1998-2000.
 # Per Lindström <pelinstr@algonet.se>, 2000.
 # Mattias Newzella <newzella@linux.nu>, 2000, 2001, 2002,2003, 2004, 2005.
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2002.
+# SPDX-FileCopyrightText: 2002, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhäll <stefan.asserhall@gmail.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
 # Arve Eriksson <031299870@telia.com>, 2011.
@@ -15,14 +15,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2022-09-24 16:15+0200\n"
+"PO-Revision-Date: 2024-06-20 22:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attica/atticaprovider.cpp:165
@@ -113,10 +113,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:79
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Inställningsfil hittades inte: \"%1\""
+msgstr "Inställningsfil finns inte: \"%1\""
 
 #: core/enginebase.cpp:87
 #, kde-format
@@ -134,17 +133,15 @@ msgid "Use"
 msgstr "Använd"
 
 #: core/enginebase.cpp:132
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
 "Kunde inte installera installationshanteraren för %1\n"
-"Det är ett kritiskt fel och ska rapporteras till programupphovsmannen"
+"%2\n"
+"Det är ett kritiskt fel och bör rapporteras till programupphovsmannen"
 
 #: core/enginebase.cpp:284
 #, kde-format
@@ -182,6 +179,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Kan inte installera '%1' eftersom det pekar på en webbsida. Klicka <a "
+"href='%2'>här</a> för att slutföra installationen."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -352,24 +351,17 @@ msgstr "Okänd kategori"
 #. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:43
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr "saker"
+msgstr "Saker"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "Ladda ner nya %1"
+msgstr "Ladda ner nya %1…"
 
 #: qtquick/qml/Dialog.qml:44
 #, kde-format
@@ -438,12 +430,11 @@ msgstr "Installera"
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Installera"
+msgstr "Installera…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
@@ -461,27 +452,19 @@ msgid "Uninstall"
 msgstr "Avinstallera"
 
 #: qtquick/qml/EntryDetails.qml:157
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "installed OR uninstalled"
-#| msgid "Currently working on the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "Arbetar för närvarande med objekt %1 av %2. Vänta ..."
+msgstr "Arbetar för närvarande med objekt %1 av %2. Vänta …"
 
 #: qtquick/qml/EntryDetails.qml:159
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "Håller på att ladda upp objekt %1 av %2. Vänta ..."
+msgstr "Håller på att ladda upp objekt %1 av %2. Vänta …"
 
 #: qtquick/qml/EntryDetails.qml:161
 #, kde-format
@@ -543,29 +526,24 @@ msgid "Find out how to donate to this project"
 msgstr "Ta reda på hur man bidrar till projektet"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Innehållet som är tillgängligt här har laddats upp av användare som du, och "
-"har inte granskats av distributören avseende funktion eller stabilitet."
+"Var försiktig vid användning av innehåll skapat av användare som visas här, "
+"eftersom det kan innehålla körbar kod som inte har testats av KDE eller din "
+"distributör avseende säkerhet, stabilitet eller kvalitet."
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Innehållet som är tillgängligt här har laddats upp av användare som du, och "
-"har inte granskats av distributören avseende funktion eller stabilitet."
+"Innehåll skapat av användare som visas här har inte testats av KDE eller din "
+"distributör avseende funktionalitet eller kvalitet."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -683,10 +661,9 @@ msgid "Show Most Downloaded First"
 msgstr "Visa flest nerladdningar först"
 
 #: qtquick/qml/Page.qml:358
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
-msgstr "Ladda upp..."
+msgstr "Ladda upp…"
 
 #: qtquick/qml/Page.qml:359
 #, kde-format
@@ -694,16 +671,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ta reda på hur du kan lägga till dina egna heta nyheter i listan"
 
 #: qtquick/qml/Page.qml:369
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
-msgstr "Gå till..."
+msgstr "Gå till…"
 
 #: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Sök:"
+msgstr "Sök…"
 
 #: qtquick/qml/Page.qml:439
 #, kde-format
@@ -775,25 +750,20 @@ msgid "By <i>%1</i>"
 msgstr "Av <i>%1</i>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "Arbetar..."
+msgstr "Arbetar…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Uppdaterar"
+msgstr "Uppdaterar…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -810,11 +780,10 @@ msgstr ""
 "en felrapport</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Installerar"
+msgstr "Installerar…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -840,22 +809,17 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "Ladda upp nyheter: %1"
 
 #: qtquick/qml/UploadPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "Uppdaterar information..."
+msgstr "Uppdaterar information…"
 
 #: qtquick/qml/UploadPage.qml:126
 #, kde-format
@@ -886,14 +850,7 @@ msgid "Send Email To: %1"
 msgstr "Skicka e-post till: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -1033,19 +990,7 @@ msgstr ""
 "systemomfattande platsen för knsrc-filer."
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1060,26 +1005,22 @@ msgid ""
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
 "En kns-webbadress att visa information från. Formatet för en kns-webbadress "
-"är kns://knsrcfile/leverantör/postid\n"
+"är kns://knsrcfile/leverantörsid/postid\n"
 "'knsrcfie'\n"
 "är namnet på en knsrc-fil som kan skickas direkt via det här verktygets "
 "väljare knsrcfile\n"
 "'leverantörsid'\n"
 "är värddatornamnet för leverantören där posten ska finnas\n"
 "'postid'\n"
-"är unikt id för en post som hittas på leverantören angiven av knsrc-filen.\n"
-"Ett exempel på en sådan webbadress är kns://peruse.knsrc/api.kde-look."
-"org/1316714"
+"är unikt id för en post som hittas hos leverantören angiven av knsrc-filen.\n"
+"Ett exempel på en sådan webbadress är kns://sddmtheme.knsrc/api.kde-look."
+"org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Ladda ner nyheter"
+msgstr "Ladda ner nyheter…"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Ladda ner nyheter..."
