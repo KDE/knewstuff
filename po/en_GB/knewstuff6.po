@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-16 00:36+0000\n"
-"PO-Revision-Date: 2024-05-20 19:31+0100\n"
+"PO-Revision-Date: 2024-06-22 13:08+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: attica/atticaprovider.cpp:165
 #, kde-format
@@ -521,11 +521,7 @@ msgid "Find out how to donate to this project"
 msgstr "Find out how to donate to this project"
 
 #: qtquick/qml/Page.qml:139
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -533,7 +529,7 @@ msgid ""
 msgstr ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality"
+"for safety, stability, or quality."
 
 #: qtquick/qml/Page.qml:140
 #, kde-format
