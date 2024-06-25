@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2010-07-22 09:48+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: nl <kde-i18n-doc@lists.kde.org>\n"
@@ -386,7 +386,6 @@ msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -398,7 +397,6 @@ msgstr "Ynstallearje"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -409,7 +407,6 @@ msgstr "Ynstallearje"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, fuzzy, kde-format
 #| msgid "Update"
@@ -498,7 +495,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -506,7 +503,7 @@ msgid ""
 "for safety, stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -514,70 +511,36 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgid "File"
-msgid "Tiles"
-msgstr "Triem"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "Byldkaikes"
-
-#: qtquick/qml/Page.qml:176
-#, kde-format
-msgid "Preview"
-msgstr "Foarbylden"
-
-#: qtquick/qml/Page.qml:192
-#, fuzzy, kde-format
-#| msgid "Details view mode"
-msgid "Detailed Tiles View Mode"
-msgstr "Details werjeftemodus"
-
-#: qtquick/qml/Page.qml:203
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
-msgid "Icons Only View Mode"
-msgstr "Byldkaike werjeftemodus"
-
-#: qtquick/qml/Page.qml:214
-#, fuzzy, kde-format
-#| msgid "Details view mode"
-msgid "Large Preview View Mode"
-msgstr "Details werjeftemodus"
-
-#: qtquick/qml/Page.qml:227
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "Ynstallearre"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Bywurkje"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Alles kategoryen"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -585,30 +548,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Open Recent"
 msgid "Recent"
 msgstr "Resinte iepene"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "Wurdearring"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Ynlade"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -617,7 +580,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Lit triemtafels earst sjen"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -625,14 +588,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Lit triemtafels earst sjen"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -640,35 +603,35 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "Measte ynladen"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Opladen..."
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Gean nei..."
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Sykje:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "Kategory:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
@@ -1012,6 +975,32 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Nij guod ynlade..."
+
+#, fuzzy
+#~| msgid "File"
+#~ msgid "Tiles"
+#~ msgstr "Triem"
+
+#~ msgid "Icons"
+#~ msgstr "Byldkaikes"
+
+#~ msgid "Preview"
+#~ msgstr "Foarbylden"
+
+#, fuzzy
+#~| msgid "Details view mode"
+#~ msgid "Detailed Tiles View Mode"
+#~ msgstr "Details werjeftemodus"
+
+#, fuzzy
+#~| msgid "Icons view mode"
+#~ msgid "Icons Only View Mode"
+#~ msgstr "Byldkaike werjeftemodus"
+
+#, fuzzy
+#~| msgid "Details view mode"
+#~ msgid "Large Preview View Mode"
+#~ msgstr "Details werjeftemodus"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Nij guod ynlade..."

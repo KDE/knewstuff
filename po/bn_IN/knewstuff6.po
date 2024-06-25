@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2009-12-28 14:35+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
@@ -389,7 +389,6 @@ msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -401,7 +400,6 @@ msgstr "ইনস্টল করুন"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -412,7 +410,6 @@ msgstr "ইনস্টল করুন"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, fuzzy, kde-format
 #| msgid "Update"
@@ -501,7 +498,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -509,7 +506,7 @@ msgid ""
 "for safety, stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -517,70 +514,36 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgid "File"
-msgid "Tiles"
-msgstr "ফাইল"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "আইকন"
-
-#: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Previews"
-msgid "Preview"
-msgstr "পূর্বদৃশ্য"
-
-#: qtquick/qml/Page.qml:192
-#, kde-format
-msgid "Detailed Tiles View Mode"
-msgstr ""
-
-#: qtquick/qml/Page.qml:203
-#, fuzzy, kde-format
-#| msgid "Icons Only"
-msgid "Icons Only View Mode"
-msgstr "শুধুমাত্র আইকন"
-
-#: qtquick/qml/Page.qml:214
-#, fuzzy, kde-format
-#| msgid "Preview Image:"
-msgid "Large Preview View Mode"
-msgstr "ছবির পূর্বদৃশ্য:"
-
-#: qtquick/qml/Page.qml:227
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "ইনস্টল করা"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "আপডেট করুন"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "সকল শ্রেণী"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -588,30 +551,30 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr ""
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Open Recent"
 msgid "Recent"
 msgstr "সম্প্রতি ব্যবহৃত খুলুন"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "গুরুত্বের মান"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "ডাউনলোড করা হবে"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -620,7 +583,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "প্রথমে ডিরেক্টরি প্রদর্শিত হবে"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -628,14 +591,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "প্রথমে ডিরেক্টরি প্রদর্শিত হবে"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt ""
@@ -643,35 +606,35 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "সর্বাধিকবার ডাউনলোড করা হয়েছে"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "আপলোড করুন..."
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "চিহ্নিত অবস্থানে চলুন...(&G)"
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "অনুসন্ধান:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "শ্রেণী:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
@@ -1013,6 +976,29 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "নতুন জিনিস ডাউনলোড করুন..."
+
+#, fuzzy
+#~| msgid "File"
+#~ msgid "Tiles"
+#~ msgstr "ফাইল"
+
+#~ msgid "Icons"
+#~ msgstr "আইকন"
+
+#, fuzzy
+#~| msgid "Previews"
+#~ msgid "Preview"
+#~ msgstr "পূর্বদৃশ্য"
+
+#, fuzzy
+#~| msgid "Icons Only"
+#~ msgid "Icons Only View Mode"
+#~ msgstr "শুধুমাত্র আইকন"
+
+#, fuzzy
+#~| msgid "Preview Image:"
+#~ msgid "Large Preview View Mode"
+#~ msgstr "ছবির পূর্বদৃশ্য:"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "নতুন জিনিস ডাউনলোড করুন..."

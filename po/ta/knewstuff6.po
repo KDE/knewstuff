@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2024-06-16 19:58+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -408,7 +408,6 @@ msgstr "%2 வழங்கும் %1"
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
 msgctxt ""
@@ -419,7 +418,6 @@ msgstr "நிறுவு"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
 msgctxt ""
@@ -429,7 +427,6 @@ msgstr "நிறுவு…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
@@ -516,7 +513,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "இதற்கு எப்படி நன்கொடை அளிப்பது என தெரிந்துகொள்ளுங்கள்"
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -527,7 +524,7 @@ msgstr ""
 "சிறுநிரல்கள் இருக்கலாம். அப்படிப்பட்ட சிறுநிரல்கள் கே.டீ.யீ.யாலும் உங்கள் இயங்குதள "
 "வழங்குநராலும் சரிபார்க்கப்படாதவை."
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -538,63 +535,33 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
-msgid "Tiles"
-msgstr "கட்டங்கள்"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "சின்னங்கள்"
-
-#: qtquick/qml/Page.qml:176
-#, kde-format
-msgid "Preview"
-msgstr "முன்னோட்டம்"
-
-#: qtquick/qml/Page.qml:192
-#, kde-format
-msgid "Detailed Tiles View Mode"
-msgstr "விவரங்களை கொண்ட சதுரங்களை காட்டும் காட்சிமுறை"
-
-#: qtquick/qml/Page.qml:203
-#, kde-format
-msgid "Icons Only View Mode"
-msgstr "சின்னங்களை மட்டும் காட்டும் காட்சிமுறை"
-
-#: qtquick/qml/Page.qml:214
-#, kde-format
-msgid "Large Preview View Mode"
-msgstr "பெரிய முன்னோட்டங்களை காட்டும் காட்சிமுறை"
-
-#: qtquick/qml/Page.qml:227
-#, kde-format
 msgid "Everything"
 msgstr "அனைத்தும்"
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "நிறுவப்பட்டுள்ளவை"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Updateable"
 msgstr "புதுப்பிக்கத்தக்கவை"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "அனைத்து பதிவுகளையும் காட்டு"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "நிறுவப்பட்டுள்ளவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -602,27 +569,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "புதுப்பிக்கத்தக்கவற்றை மட்டும் காட்டு"
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, kde-format
 msgid "Recent"
 msgstr "சமீபமானவை"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr "அகரவரிசை"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "மதிப்பீடு"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Downloads"
 msgstr "பதிவிறக்கங்கள்"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -630,7 +597,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "மிகப்புதியவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -638,45 +605,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "பெயரின்படி அகரவரிசையாக வரிசைப்படுத்து"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "உயர்வாக மதிப்பிடப்பட்டுள்ளதை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "அதிகமாக பதிவிறக்கப்பட்டவற்றை முதலில் காட்டு"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgid "Upload…"
 msgstr "பதிவேற்று…"
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "இப்பட்டியலில் உங்கள் நிரல்களை எவ்வாறு சேர்ப்பதென தெரிந்துகொள்ளங்கள்"
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, kde-format
 msgid "Go to…"
 msgstr "செல்..."
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, kde-format
 msgid "Search…"
 msgstr "தேடு…"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "பகுப்பு:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, kde-format
 msgid "Contribute your own…"
 msgstr "உங்களுடையதை பதிவேற்றுங்கள்…"
@@ -997,6 +964,24 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "புதியவற்றைப் பதிவிறக்கு…"
+
+#~ msgid "Tiles"
+#~ msgstr "கட்டங்கள்"
+
+#~ msgid "Icons"
+#~ msgstr "சின்னங்கள்"
+
+#~ msgid "Preview"
+#~ msgstr "முன்னோட்டம்"
+
+#~ msgid "Detailed Tiles View Mode"
+#~ msgstr "விவரங்களை கொண்ட சதுரங்களை காட்டும் காட்சிமுறை"
+
+#~ msgid "Icons Only View Mode"
+#~ msgstr "சின்னங்களை மட்டும் காட்டும் காட்சிமுறை"
+
+#~ msgid "Large Preview View Mode"
+#~ msgstr "பெரிய முன்னோட்டங்களை காட்டும் காட்சிமுறை"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "புதியவற்றை பதிவிறக்கு..."

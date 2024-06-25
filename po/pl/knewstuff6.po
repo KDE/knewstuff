@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2024-05-12 08:46+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -415,7 +415,6 @@ msgstr "%1 autorstwa %2"
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
 msgctxt ""
@@ -426,7 +425,6 @@ msgstr "Wgraj"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
 msgctxt ""
@@ -436,7 +434,6 @@ msgstr "Wgraj…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
@@ -523,7 +520,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Dowiedz się jak pieniężnie wesprzeć ten projekt"
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "Use caution when accessing user-created content shown here, as it may "
@@ -538,7 +535,7 @@ msgstr ""
 "mogą zawierać kod, który nie został sprawdzony ani przez KDE, ani przez "
 "twojego dystrybutora pod kątem bezpieczeństwa, stabilności, czy jakości"
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -549,63 +546,33 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
-msgid "Tiles"
-msgstr "Kafelki"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "Ikony"
-
-#: qtquick/qml/Page.qml:176
-#, kde-format
-msgid "Preview"
-msgstr "Podgląd"
-
-#: qtquick/qml/Page.qml:192
-#, kde-format
-msgid "Detailed Tiles View Mode"
-msgstr "Tryb widoku szczegółowych kafelków"
-
-#: qtquick/qml/Page.qml:203
-#, kde-format
-msgid "Icons Only View Mode"
-msgstr "Ikonowy tryb widoku"
-
-#: qtquick/qml/Page.qml:214
-#, kde-format
-msgid "Large Preview View Mode"
-msgstr "Tryb widoku z dużymi podglądami"
-
-#: qtquick/qml/Page.qml:227
-#, kde-format
 msgid "Everything"
 msgstr "Wszystkie"
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "Wgranych"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Updateable"
 msgstr "Tylko do uaktualnienia"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Pokaż wszystkie rzeczy"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Pokaż tylko wgrane rzeczy"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -613,27 +580,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Pokaż tylko rzeczy do uaktualnienia"
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, kde-format
 msgid "Recent"
 msgstr "Ostatnie"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetycznie"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "Ocen"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Downloads"
 msgstr "Pobierane"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -641,7 +608,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Najpierw pokaż najnowsze"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -649,45 +616,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Uszereguj alfabetycznie po nazwie"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Najpierw pokaż najwyżej oceniane"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Najpierw pokaż najczęściej pobierane"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgid "Upload…"
 msgstr "Wyślij…"
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Naucz się jak dodawać swoje własne rzeczy do tej listy"
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, kde-format
 msgid "Go to…"
 msgstr "Przejdź do…"
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, kde-format
 msgid "Search…"
 msgstr "Poszukaj…"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "Kategoria:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Dodaj coś od siebie..."
@@ -1024,6 +991,24 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Pobierz nowe rzeczy…"
+
+#~ msgid "Tiles"
+#~ msgstr "Kafelki"
+
+#~ msgid "Icons"
+#~ msgstr "Ikony"
+
+#~ msgid "Preview"
+#~ msgstr "Podgląd"
+
+#~ msgid "Detailed Tiles View Mode"
+#~ msgstr "Tryb widoku szczegółowych kafelków"
+
+#~ msgid "Icons Only View Mode"
+#~ msgstr "Ikonowy tryb widoku"
+
+#~ msgid "Large Preview View Mode"
+#~ msgstr "Tryb widoku z dużymi podglądami"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Pobierz nowe rzeczy..."

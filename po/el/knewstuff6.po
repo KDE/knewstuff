@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2016-12-08 10:14+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -398,7 +398,6 @@ msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -410,7 +409,6 @@ msgstr "Εγκατάσταση"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, fuzzy, kde-format
 #| msgid "Install"
@@ -421,7 +419,6 @@ msgstr "Εγκατάσταση"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
@@ -508,7 +505,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -516,7 +513,7 @@ msgid ""
 "for safety, stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -524,65 +521,29 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@option:check Do filter on type - show only files"
-#| msgid "Files"
-msgid "Tiles"
-msgstr "Αρχεία"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "Εικονίδια"
-
-#: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Previews"
-msgid "Preview"
-msgstr "Προεπισκοπήσεις"
-
-#: qtquick/qml/Page.qml:192
-#, fuzzy, kde-format
-#| msgid "Detailed View"
-msgid "Detailed Tiles View Mode"
-msgstr "Λεπτομερής προβολή"
-
-#: qtquick/qml/Page.qml:203
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
-msgid "Icons Only View Mode"
-msgstr "Λειτουργία προβολής εικονιδίων"
-
-#: qtquick/qml/Page.qml:214
-#, fuzzy, kde-format
-#| msgid "Details view mode"
-msgid "Large Preview View Mode"
-msgstr "Λειτουργία λεπτομερής προβολής"
-
-#: qtquick/qml/Page.qml:227
 #, kde-format
 msgid "Everything"
 msgstr ""
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "Εγκατεστημένο"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
 msgid "Updateable"
 msgstr "Ενημέρωση"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "&Εμφάνιση όλων των επιλογών"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -590,7 +551,7 @@ msgctxt ""
 msgid "Show Only Installed Entries"
 msgstr "&Εμφάνιση όλων των επιλογών"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, fuzzy, kde-format
 #| msgid "&Show All Entries"
 msgctxt ""
@@ -599,29 +560,29 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "&Εμφάνιση όλων των επιλογών"
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, fuzzy, kde-format
 #| msgid "Open &Recent"
 msgid "Recent"
 msgstr "Άνοιγμα πρόσ&φατου"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr ""
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "Αξιολόγηση"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Να γίνει λήψη"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt ""
@@ -630,7 +591,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Εμφάνιση πρώτα των καταλόγων"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -638,14 +599,14 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr ""
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, fuzzy, kde-format
 #| msgid "Show directories first"
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Εμφάνιση πρώτα των καταλόγων"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, fuzzy, kde-format
 #| msgid "Most downloads"
 msgctxt ""
@@ -653,35 +614,35 @@ msgctxt ""
 msgid "Show Most Downloaded First"
 msgstr "Περισσότερες λήψεις"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Αποστολή..."
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Μετάβαση σε..."
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Αναζήτηση:"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "Κατηγορία:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute your own…"
@@ -1026,6 +987,35 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Λήψη νέου υλικού"
+
+#, fuzzy
+#~| msgctxt "@option:check Do filter on type - show only files"
+#~| msgid "Files"
+#~ msgid "Tiles"
+#~ msgstr "Αρχεία"
+
+#~ msgid "Icons"
+#~ msgstr "Εικονίδια"
+
+#, fuzzy
+#~| msgid "Previews"
+#~ msgid "Preview"
+#~ msgstr "Προεπισκοπήσεις"
+
+#, fuzzy
+#~| msgid "Detailed View"
+#~ msgid "Detailed Tiles View Mode"
+#~ msgstr "Λεπτομερής προβολή"
+
+#, fuzzy
+#~| msgid "Icons view mode"
+#~ msgid "Icons Only View Mode"
+#~ msgstr "Λειτουργία προβολής εικονιδίων"
+
+#, fuzzy
+#~| msgid "Details view mode"
+#~ msgid "Large Preview View Mode"
+#~ msgstr "Λειτουργία λεπτομερής προβολής"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Λήψη νέου υλικού..."

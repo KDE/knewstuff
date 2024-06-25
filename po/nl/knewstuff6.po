@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-16 00:36+0000\n"
+"POT-Creation-Date: 2024-06-25 00:36+0000\n"
 "PO-Revision-Date: 2024-06-16 15:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -433,7 +433,6 @@ msgstr "%1 door %2"
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:37
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
 msgctxt ""
@@ -444,7 +443,6 @@ msgstr "Installeren"
 
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:38
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
 msgctxt ""
@@ -454,7 +452,6 @@ msgstr "Installeren…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
-#: qtquick/qml/private/entrygriddelegates/ThumbDelegate.qml:53
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
 msgctxt "Request updating of this item"
@@ -541,7 +538,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Zoek uit hoe te doneren aan dit project"
 
-#: qtquick/qml/Page.qml:139
+#: qtquick/qml/Page.qml:140
 #, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -552,7 +549,7 @@ msgstr ""
 "omdat het uitvoerbare code kan bevatten die niet is getest op veiligheid, "
 "stabiliteit of kwaliteit door KDE of uw distributie."
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -563,63 +560,33 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
-msgid "Tiles"
-msgstr "Stenen"
-
-#: qtquick/qml/Page.qml:174
-#, kde-format
-msgid "Icons"
-msgstr "Pictogrammen"
-
-#: qtquick/qml/Page.qml:176
-#, kde-format
-msgid "Preview"
-msgstr "Voorbeeld"
-
-#: qtquick/qml/Page.qml:192
-#, kde-format
-msgid "Detailed Tiles View Mode"
-msgstr "Detailweergavemodus van stenen"
-
-#: qtquick/qml/Page.qml:203
-#, kde-format
-msgid "Icons Only View Mode"
-msgstr "Modus alleen pictogramweergave"
-
-#: qtquick/qml/Page.qml:214
-#, kde-format
-msgid "Large Preview View Mode"
-msgstr "Groot voorbeeld weergavemodus"
-
-#: qtquick/qml/Page.qml:227
-#, kde-format
 msgid "Everything"
 msgstr "Alles"
 
-#: qtquick/qml/Page.qml:229
+#: qtquick/qml/Page.qml:174
 #, kde-format
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:176
 #, kde-format
 msgid "Updateable"
 msgstr "Bij te werken"
 
-#: qtquick/qml/Page.qml:251
+#: qtquick/qml/Page.qml:196
 #, kde-format
 msgctxt "List option which will set the filter to show everything"
 msgid "Show All Entries"
 msgstr "Alle items tonen"
 
-#: qtquick/qml/Page.qml:262
+#: qtquick/qml/Page.qml:207
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items are shown"
 msgid "Show Only Installed Entries"
 msgstr "Alleen geïnstalleerde items tonen"
 
-#: qtquick/qml/Page.qml:273
+#: qtquick/qml/Page.qml:218
 #, kde-format
 msgctxt ""
 "List option which will set the filter so only installed items with updates "
@@ -627,27 +594,27 @@ msgctxt ""
 msgid "Show Only Updateable Entries"
 msgstr "Alleen bij te werken items tonen"
 
-#: qtquick/qml/Page.qml:286
+#: qtquick/qml/Page.qml:231
 #, kde-format
 msgid "Recent"
 msgstr "Recent"
 
-#: qtquick/qml/Page.qml:288
+#: qtquick/qml/Page.qml:233
 #, kde-format
 msgid "Alphabetical"
 msgstr "Alfabetisch"
 
-#: qtquick/qml/Page.qml:290
+#: qtquick/qml/Page.qml:235
 #, kde-format
 msgid "Rating"
 msgstr "Waardering"
 
-#: qtquick/qml/Page.qml:292
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgid "Downloads"
 msgstr "Downloads"
 
-#: qtquick/qml/Page.qml:312
+#: qtquick/qml/Page.qml:257
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on when items were most "
@@ -655,7 +622,7 @@ msgctxt ""
 msgid "Show Most Recent First"
 msgstr "Meest recente eerst tonen"
 
-#: qtquick/qml/Page.qml:323
+#: qtquick/qml/Page.qml:268
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to be alphabetical based on the "
@@ -663,45 +630,45 @@ msgctxt ""
 msgid "Sort Alphabetically By Name"
 msgstr "Alfabetisch op naam sorteren"
 
-#: qtquick/qml/Page.qml:334
+#: qtquick/qml/Page.qml:279
 #, kde-format
 msgctxt "List option which will set the sort order to based on user ratings"
 msgid "Show Highest Rated First"
 msgstr "Hoogst gewaardeerde eerst tonen"
 
-#: qtquick/qml/Page.qml:345
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
 msgstr "Meest gedownloade eerst tonen"
 
-#: qtquick/qml/Page.qml:358
+#: qtquick/qml/Page.qml:303
 #, kde-format
 msgid "Upload…"
 msgstr "Uploaden…"
 
-#: qtquick/qml/Page.qml:359
+#: qtquick/qml/Page.qml:304
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Leren hoe u uw eigen heet van de naald aan deze lijst toevoegt"
 
-#: qtquick/qml/Page.qml:369
+#: qtquick/qml/Page.qml:314
 #, kde-format
 msgid "Go to…"
 msgstr "Ga naar…"
 
-#: qtquick/qml/Page.qml:376 qtquick/qml/Page.qml:385
+#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
 #, kde-format
 msgid "Search…"
 msgstr "Zoeken…"
 
-#: qtquick/qml/Page.qml:439
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Category:"
 msgstr "Categorie:"
 
-#: qtquick/qml/Page.qml:459
+#: qtquick/qml/Page.qml:404
 #, kde-format
 msgid "Contribute your own…"
 msgstr "Bijdragen van uzelf…"
@@ -1037,6 +1004,24 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Nieuwe zaken downloaden…"
+
+#~ msgid "Tiles"
+#~ msgstr "Stenen"
+
+#~ msgid "Icons"
+#~ msgstr "Pictogrammen"
+
+#~ msgid "Preview"
+#~ msgstr "Voorbeeld"
+
+#~ msgid "Detailed Tiles View Mode"
+#~ msgstr "Detailweergavemodus van stenen"
+
+#~ msgid "Icons Only View Mode"
+#~ msgstr "Modus alleen pictogramweergave"
+
+#~ msgid "Large Preview View Mode"
+#~ msgstr "Groot voorbeeld weergavemodus"
 
 #~ msgid "Download New Stuff..."
 #~ msgstr "Nieuwe zaken downloaden..."
