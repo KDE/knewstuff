@@ -1013,21 +1013,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Last ned nye ting"
-
-#~ msgid "Tiles"
-#~ msgstr "Fliser"
-
-#~ msgid "Icons"
-#~ msgstr "Ikon"
-
-#~ msgid "Preview"
-#~ msgstr "Førehandsvising"
-
-#~ msgid "Detailed Tiles View Mode"
-#~ msgstr "Flisvisings­modus"
-
-#~ msgid "Icons Only View Mode"
-#~ msgstr "Ikonmodus"
-
-#~ msgid "Large Preview View Mode"
-#~ msgstr "Førehandsvisings­modus"

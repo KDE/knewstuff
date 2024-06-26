@@ -950,21 +950,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "下载新资源…"
-
-#~ msgid "Tiles"
-#~ msgstr "卡片"
-
-#~ msgid "Icons"
-#~ msgstr "图标"
-
-#~ msgid "Preview"
-#~ msgstr "预览"
-
-#~ msgid "Detailed Tiles View Mode"
-#~ msgstr "详细卡片视图模式"
-
-#~ msgid "Icons Only View Mode"
-#~ msgstr "仅图标视图模式"
-
-#~ msgid "Large Preview View Mode"
-#~ msgstr "宽大预览视图模式"

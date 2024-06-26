@@ -907,21 +907,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Stáhnout nový obsah…"
-
-#~ msgid "Tiles"
-#~ msgstr "Dlaždice"
-
-#~ msgid "Icons"
-#~ msgstr "Ikony"
-
-#~ msgid "Preview"
-#~ msgstr "Náhled"
-
-#~ msgid "Detailed Tiles View Mode"
-#~ msgstr "Režim podrobného dlaždicového zobrazení"
-
-#~ msgid "Icons Only View Mode"
-#~ msgstr "Režim zobrazení pouze s ikonami"
-
-#~ msgid "Large Preview View Mode"
-#~ msgstr "Režim zobrazení velkého náhledu"
