@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-25 00:36+0000\n"
-"PO-Revision-Date: 2024-05-09 09:45+0400\n"
+"PO-Revision-Date: 2024-06-26 18:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -505,11 +505,7 @@ msgid "Find out how to donate to this project"
 msgstr "تعرف على كيفية التبرع لهذا المشروع"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -517,7 +513,7 @@ msgid ""
 msgstr ""
 "توخى الحذر عند الوصول إلى المحتوى الذي أنشأه المستخدم الموضح هنا، لأنه قد "
 "يحتوي على تعليمات برمجية قابلة للتنفيذ لم تفحص من قبل كيدي أو الموزع الخاص "
-"بك من حيث السلامة أو الاستقرار أو الجودة"
+"بك من حيث السلامة أو الاستقرار أو الجودة."
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
