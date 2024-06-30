@@ -61,7 +61,7 @@ QQC2.Button {
     /**
      * The engine which handles the content in this Button
      */
-    property QtObject engine: null
+    property NewStuff.Engine engine
 
     /**
      * This forwards the entryEvent from the QtQuick engine
@@ -89,7 +89,7 @@ QQC2.Button {
      * @internal The NewStuff dialog that is opened by the button.
      * Use showDialog() to create and open the dialog.
      */
-    property NewStuff.Dialog __ghnsDialog: null
+    property NewStuff.Dialog __ghnsDialog
 
     /**
      * Show the dialog (same as clicking the button), if allowed by the Kiosk settings

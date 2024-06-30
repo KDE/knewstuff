@@ -22,7 +22,7 @@ RowLayout {
     /**
      * The KNSQuick Engine object which handles all our content
      */
-    property QtObject engine
+    property NewStuff.Engine engine
 
     /**
      * The username of the author of whatever the comment is attached to
@@ -57,7 +57,7 @@ RowLayout {
 
     spacing: 0
 
-    property QtObject commentAuthor: NewStuff.Author {
+    property NewStuff.Author commentAuthor: NewStuff.Author {
         engine: component.engine
         providerId: component.entryProviderId
         username: component.author
@@ -148,7 +148,7 @@ RowLayout {
                 fillMode: Image.PreserveAspectFit
                 source: component.commentAuthor.avatarUrl
                 Kirigami.Icon {
-                    anchors.fill: parent;
+                    anchors.fill: parent
                     source: "user"
                     visible: opacity > 0
                     opacity: authorIcon.status === Image.Ready ? 0 : 1

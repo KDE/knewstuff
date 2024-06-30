@@ -21,8 +21,8 @@ RowLayout {
     clip: true
     spacing: 0
 
-    readonly property var ratingIndex: Math.floor((theRepeater.count * view.rating) / view.max)
-    readonly property var ratingHalf: (theRepeater.count * view.rating) % view.max >= view.max / 2
+    readonly property int ratingIndex: Math.floor((theRepeater.count * view.rating) / view.max)
+    readonly property bool ratingHalf: (theRepeater.count * view.rating) % view.max >= view.max / 2
 
     QQC2.Label {
         Layout.minimumWidth: view.starSize
