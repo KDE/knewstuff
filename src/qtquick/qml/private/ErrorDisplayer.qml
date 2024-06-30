@@ -16,9 +16,10 @@ Kirigami.PromptDialog {
     standardButtons: Kirigami.Dialog.NoButton
 
     property bool active: true
-    property QtObject engine
-    property QtObject connection: Connections {
-        target: engine
+    property NewStuff.Engine engine
+
+    readonly property Connections connection: Connections {
+        target: component.engine
         function onErrorCode(errorCode, message, metadata) {
             component.showError(errorCode, message, metadata);
         }

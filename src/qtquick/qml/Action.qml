@@ -72,13 +72,13 @@ Kirigami.Action {
      * property, the action will spawn a NewStuff.Dialog instead.
      * @note If you are building a KCM, set this to your ```kcm``` object.
      */
-    property QtObject pageStack: null
+    property Item pageStack
 
     /**
      * The engine which handles the content in this Action
      * This will be null until the action has been triggered the first time
      */
-    readonly property QtObject engine: component._private.engine
+    readonly property NewStuff.Engine engine: component._private.engine
 
     /**
      * This forwards the entry changed event from the QtQuick engine
@@ -121,9 +121,9 @@ Kirigami.Action {
     }
 
     readonly property QtObject _private: QtObject {
-        property QtObject engine: pageItem ? pageItem.engine : null
+        property NewStuff.Engine engine: pageItem ? pageItem.engine : null
         // Probably wants to be deleted and cleared if the "mode" changes at runtime...
-        property QtObject pageItem
+        property /* NewStuff.Dialog | NewStuff.Page */QtObject pageItem
 
         readonly property Connections engineConnections: Connections {
             target: component.engine

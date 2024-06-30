@@ -45,9 +45,9 @@ Kirigami.ScrollablePage {
      }
      \endcode
      */
-    required property QtObject engine
+    required property NewStuff.Engine engine
 
-    title: i18nc("@knewstuff6", "Upload New Stuff: %1", component.engine.name)
+    title: i18nc("@knewstuff6", "Upload New Stuff: %1", engine.name)
 
     NewStuff.QuestionAsker {
         parent: component.QQC2.Overlay.overlay

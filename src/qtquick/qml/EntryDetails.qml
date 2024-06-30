@@ -26,7 +26,7 @@ import "private" as Private
 KCMUtils.SimpleKCM {
     id: component
 
-    property QtObject newStuffModel
+    property NewStuff.ItemsModel newStuffModel
     property var entry
 
     property string name
