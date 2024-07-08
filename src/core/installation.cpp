@@ -311,7 +311,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
         };
 
         qCDebug(KNEWSTUFFCORE) << "About to attempt to install" << payloadfile << "as" << kpackageStructure;
-        auto job = KPackage::PackageJob::install(kpackageStructure, payloadfile);
+        auto job = KPackage::PackageJob::update(kpackageStructure, payloadfile);
         connect(job, &KPackage::PackageJob::finished, this, [this, entry, payloadfile, resetEntryStatus, job]() {
             if (job->error() == KJob::NoError) {
                 Entry newentry = entry;
