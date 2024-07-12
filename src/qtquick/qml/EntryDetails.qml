@@ -85,9 +85,9 @@ KCMUtils.SimpleKCM {
         parent: component.QQC2.Overlay.overlay
 
         onItemPicked: (entry, downloadItemId, downloadName) => {
-            const entryName = newStuffModel.data(newStuffModel.index(entryId, 0), NewStuff.ItemsModel.NameRole);
+            const entryName = component.newStuffModel.data(component.newStuffModel.index(downloadItemId, 0), NewStuff.ItemsModel.NameRole);
             applicationWindow().showPassiveNotification(i18ndc("knewstuff6", "A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
-            newStuffModel.engine.install(component.entry, downloadItemId);
+            component.newStuffModel.engine.install(component.entry, downloadItemId);
         }
     }
 
