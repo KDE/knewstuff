@@ -149,6 +149,7 @@ public:
      */
     Q_INVOKABLE void adoptEntry(const KNSCore::Entry &entry);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Installs an entry's payload file. This includes verification, if
      * necessary, as well as decompression and other steps according to the
@@ -158,8 +159,29 @@ public:
      *
      * @see signalInstallationFinished
      * @see signalInstallationFailed
+     * @deprecated since 6.9, use installLatest or installLinkId instead
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "use installLatest or installLinkId instead")
     Q_INVOKABLE void install(const KNSCore::Entry &entry, int linkId = 1);
+#endif
+
+    /**
+     * Performs an install on the given @p entry
+     *
+     * @param linkId specifies which of the assets we want to see installed.
+     * @since 6.9
+     */
+    Q_INVOKABLE void installLinkId(const KNSCore::Entry &entry, quint8 linkId);
+
+    /**
+     * Performs an install of the latest version on the given @p entry
+     *
+     * The latest version is determined using heuristics. If you want tight control over which offering gets installed
+     * you need to use installLinkId and manually figure out the id.
+     *
+     * @since 6.9
+     */
+    Q_INVOKABLE void installLatest(const KNSCore::Entry &entry);
 
     /**
      * Uninstalls an entry. It reverses the steps which were performed

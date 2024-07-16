@@ -40,13 +40,37 @@ class KNEWSTUFFCORE_EXPORT Transaction : public QObject
 public:
     ~Transaction() override;
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Performs an install on the given @p entry from the @p engine.
      *
      * @param linkId specifies which of the assets we want to see installed.
      * @returns a Transaction object that we can use to track the progress to completion
+     * @deprecated since 6.9, use installLatest or installLinkId instead
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "use installLatest or installLinkId instead")
     static Transaction *install(EngineBase *engine, const Entry &entry, int linkId = 1);
+#endif
+
+    /**
+     * Performs an install on the given @p entry from the @p engine.
+     *
+     * @param linkId specifies which of the assets we want to see installed.
+     * @returns a Transaction object that we can use to track the progress to completion
+     * @since 6.9
+     */
+    [[nodiscard]] static Transaction *installLinkId(EngineBase *engine, const Entry &entry, quint8 linkId);
+
+    /**
+     * Performs an install of the latest version on the given @p entry from the @p engine.
+     *
+     * The latest version is determined using heuristics. If you want tight control over which offering gets installed
+     * you need to use installLinkId and manually figure out the id.
+     *
+     * @returns a Transaction object that we can use to track the progress to completion
+     * @since 6.9
+     */
+    [[nodiscard]] static Transaction *installLatest(EngineBase *engine, const Entry &entry);
 
     /**
      * Uninstalls the given @p entry from the @p engine.
@@ -96,6 +120,8 @@ Q_SIGNALS:
     void signalErrorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
 private:
+    friend class TransactionPrivate;
+
     Transaction(const KNSCore::Entry &entry, EngineBase *engine);
     void downloadLinkLoaded(const KNSCore::Entry &entry);
 

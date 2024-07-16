@@ -13,6 +13,7 @@
 #include "quicksettings.h"
 
 #include <KLocalizedString>
+#include <QQmlInfo>
 #include <QTimer>
 
 #include "categoriesmodel.h"
@@ -376,12 +377,32 @@ void Engine::adoptEntry(const KNSCore::Entry &entry)
 }
 void Engine::install(const KNSCore::Entry &entry, int linkId)
 {
+    qmlWarning(this) << "org.kde.newstuff.core.Engine.install is deprecated. Use installLinkId or installLatest";
     auto transaction = KNSCore::Transaction::install(this, entry, linkId);
     registerTransaction(transaction);
     if (!transaction->isFinished()) {
         ++d->numInstallJobs;
     }
 }
+
+void Engine::installLinkId(const KNSCore::Entry &entry, quint8 linkId)
+{
+    auto transaction = KNSCore::Transaction::installLinkId(this, entry, linkId);
+    registerTransaction(transaction);
+    if (!transaction->isFinished()) {
+        ++d->numInstallJobs;
+    }
+}
+
+void Engine::installLatest(const KNSCore::Entry &entry)
+{
+    auto transaction = KNSCore::Transaction::installLatest(this, entry);
+    registerTransaction(transaction);
+    if (!transaction->isFinished()) {
+        ++d->numInstallJobs;
+    }
+}
+
 void Engine::uninstall(const KNSCore::Entry &entry)
 {
     registerTransaction(KNSCore::Transaction::uninstall(this, entry));

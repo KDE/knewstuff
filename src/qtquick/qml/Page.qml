@@ -402,7 +402,7 @@ KCMUtils.GridViewKCM {
         parent: root.QQC2.Overlay.overlay
 
         onItemPicked: (entry, downloadItemId) => {
-            newStuffModel.engine.install(entry, downloadItemId);
+            newStuffModel.engine.installLinkId(entry, downloadItemId);
         }
     }
 
