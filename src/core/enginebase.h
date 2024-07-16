@@ -434,6 +434,7 @@ protected:
 
     friend class ResultsStream;
     friend class Transaction;
+    friend class TransactionPrivate;
     Installation *installation() const; // Needed for quick engine
     QList<QSharedPointer<Provider>> providers() const;
     std::unique_ptr<EngineBasePrivate> d;

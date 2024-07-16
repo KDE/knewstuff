@@ -87,7 +87,7 @@ KCMUtils.SimpleKCM {
         onItemPicked: (entry, downloadItemId, downloadName) => {
             const entryName = component.newStuffModel.data(component.newStuffModel.index(downloadItemId, 0), NewStuff.ItemsModel.NameRole);
             applicationWindow().showPassiveNotification(i18ndc("knewstuff6", "A passive notification shown when installation of an item is initiated", "Installing %1 from %2", downloadName, entryName), 1500);
-            component.newStuffModel.engine.install(component.entry, downloadItemId);
+            component.newStuffModel.engine.installLinkId(component.entry, downloadItemId);
         }
     }
 
@@ -114,7 +114,7 @@ KCMUtils.SimpleKCM {
             icon.name: "install"
             onTriggered: source => {
                 if (component.downloadLinks.length === 1) {
-                    newStuffModel.engine.install(component.entry, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.installLinkId(component.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = component.downloadLinks;
                     downloadItemsSheet.entry = component.index;
