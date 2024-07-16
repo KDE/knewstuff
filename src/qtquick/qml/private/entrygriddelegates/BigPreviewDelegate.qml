@@ -45,7 +45,7 @@ Private.GridTileDelegate {
             icon.name: "install"
             onTriggered: source => {
                 if (model.downloadLinks.length === 1) {
-                    newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.FirstLinkId);
+                    newStuffModel.engine.installLinkId(model.entry, NewStuff.ItemsModel.FirstLinkId);
                 } else {
                     downloadItemsSheet.downloadLinks = model.downloadLinks;
                     downloadItemsSheet.entry = model.entry;
@@ -59,7 +59,7 @@ Private.GridTileDelegate {
             text: i18ndc("knewstuff6", "Request updating of this item", "Update")
             icon.name: "update-none"
             onTriggered: source => {
-                newStuffModel.engine.install(model.entry, NewStuff.ItemsModel.AutoDetectLinkId);
+                newStuffModel.engine.installLatest(model.entry);
             }
             enabled: entry.status === NewStuff.Entry.Updateable
             visible: enabled
