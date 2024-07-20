@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2024-06-16 10:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -33,12 +33,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 24.07.70\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, kde-format
 msgid "All categories are missing"
 msgstr "Tüm kategoriler eksik"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -49,7 +49,7 @@ msgstr ""
 "Bu ögenin fiyatı %1 %2.\n"
 "Satın almak istiyor musunuz?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -60,18 +60,18 @@ msgstr ""
 "Bakiye: %1\n"
 "Fiyat: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Oyunuz kaydedildi."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Hayranı oldunuz."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -79,26 +79,26 @@ msgid ""
 "in %1."
 msgstr "Hizmet şu anda bakımda ve %1 içinde yeniden açılması bekleniyor."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Ağ hatası %1: %2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Sunucuya çok fazla istek gönderildi. Lütfen birkaç dakika sonra yeniden "
 "deneyin."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Açık İşbirliği Hizmetleri örneği %1, istenen işlevi desteklemiyor."
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Açık İşbirliği Hizmeti’nde bilinmeyen API hatası. (%1)"
@@ -296,7 +296,7 @@ msgstr "%1, yazma için açılamadı"
 msgid "Could not open %1 for reading"
 msgstr "%1, okuma için açılamadı"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -306,12 +306,12 @@ msgstr ""
 "gerçekleştirilemiyor. Lütfen uygulama yazarına bunu bildirin ki "
 "düzeltebilsinler."
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Güncellenecek Ögeyi Seç"
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -321,7 +321,7 @@ msgstr ""
 "Bu güncellemeyi uygulamak için kullanılacak ögeyi aşağıdaki listeden seçin. "
 "%1 adlı özgün ögeyi temel alarak hangi ögeyi seçeceğimizi belirleyemedik"
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -330,7 +330,7 @@ msgstr ""
 "%1 güncellemesi için düzgün bir bağlantı tanımlayamadık; bu yüzden "
 "güncellemeyi gerçekleştiremiyoruz"
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

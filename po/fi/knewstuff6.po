@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2024-02-14 18:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -37,12 +37,12 @@ msgstr ""
 "X-Generator: Lokalize 22.12.3\n"
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, kde-format
 msgid "All categories are missing"
 msgstr "Kaikki luokat puuttuvat."
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -53,7 +53,7 @@ msgstr ""
 "Kohteen hinta on %1 %2.\n"
 "Haluatko ostaa sen?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -64,18 +64,18 @@ msgstr ""
 "Saldo: %1\n"
 "Hinta: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Äänesi rekisteröitiin."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Sinut on merkitty faniksi."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -83,18 +83,18 @@ msgid ""
 "in %1."
 msgstr "Palvelua huolletaan paraikaa, ja sen pitäisi palata käyttöön %1."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Verkkovirhe %1: %2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Palvelimeen on liikaa pyyntöjä: yritä uudelleen muutaman minuutin kuluttua."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -102,7 +102,7 @@ msgid ""
 msgstr "Open Collaboration Services -ilmentymä %1 ei tue yritettyä toimintoa."
 
 # OCS on erisnimi, jota ei käännetä.
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Tuntematon Open Collaboration Service -APIn virhe. (%1)"
@@ -300,7 +300,7 @@ msgstr "Ei voitu avata kirjoitettavaksi: %1"
 msgid "Could not open %1 for reading"
 msgstr "Ei voitu avata luettavaksi: %1"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -309,12 +309,12 @@ msgstr ""
 "Kohdetta %1 ei voitu asentaa, koska se ei määritä ladattavia tiedostoja. Ota "
 "yhteyttä tekijään, jotta asia voidaan korjata."
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Poimi päivityskohde"
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -324,7 +324,7 @@ msgstr ""
 "Poimi alla olevasta luettelosta päivityksen kohde. Tätä ei saatu selville "
 "ohjelmallisesti alkuperäisen tietueen (nimeltään %1) perusteella"
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -333,7 +333,7 @@ msgstr ""
 "Kelvollista kohteen %1 päivityslinkkiä ei löytynyt eikä päivitystä voida "
 "tehdä"
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

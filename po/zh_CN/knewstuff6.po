@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/knewstuff/knewstuff6.pot\n"
 "X-Crowdin-File-ID: 42625\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, kde-format
 msgid "All categories are missing"
 msgstr "未找到任何分类"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -33,7 +33,7 @@ msgstr ""
 "此项目会花费您 %2 %1。\n"
 "您想要购买吗？"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -44,18 +44,18 @@ msgstr ""
 "余额：%1\n"
 "价格：%2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "您的投票已记录。"
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "您已成为粉丝。"
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -63,24 +63,24 @@ msgid ""
 "in %1."
 msgstr "该服务目前正在维护，预计将在 %1 后恢复。"
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "网络错误 %1：%2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "向服务器发送请求的次数过多，请几分钟后再试。"
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Open Collaboration Services 的实例 %1 不支持此功能。"
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Open Collaboration Services 的 API 出现了未知错误。(%1)"
@@ -274,7 +274,7 @@ msgstr "无法打开 %1 进行写入"
 msgid "Could not open %1 for reading"
 msgstr "无法打开 %1 进行读取"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -283,12 +283,12 @@ msgstr ""
 "无法执行项目 %1 的安装，因为它没有定义任何可下载的项目。 请与作者联系解决此问"
 "题。"
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr "选择需更新的项目"
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -298,14 +298,14 @@ msgstr ""
 "请从下面的列表中选择要应用此次更新的项目，我们无法根据原项目 %1 辨别应选择的"
 "项目。"
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr "我们无法识别更新 %1 的链接，故无法进行更新"
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

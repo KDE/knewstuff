@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -21,13 +21,13 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgid "All categories are missing"
 msgstr "หมวดหมู่ทั้งหมด"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -43,7 +43,7 @@ msgstr ""
 "รายการนี้มีราคา %1 %2\n"
 "คุณต้องการจะซื้อมันหรือไม่ ?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -54,18 +54,18 @@ msgstr ""
 "เงินคงเหลือ: %1\n"
 "ราคา: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "การโหวตของคุณถูกบันทึกเรียบร้อยแล้ว"
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "คุณเป็นแฟนคลับแล้วในตอนนี้"
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -73,25 +73,25 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "เครือข่ายผิดพลาด (%1)"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "มีการร้องขอเข้ามายังเซิร์ฟเวอร์เป็นจำนวนมาก โปรดลองใหม่อีกครั้งในภายหลัง"
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "มีข้อผิดพลาด API ของบริการร่วมมือแบบเปิดที่ไม่รู้จัก (%1)"
@@ -269,19 +269,19 @@ msgstr "ไม่สามารถเปิด %1 เพื่อทำกา�
 msgid "Could not open %1 for reading"
 msgstr "ไม่สามารถเปิด %1 เพื่อทำการอ่านได้"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -289,14 +289,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2024-07-05 22:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -23,12 +23,12 @@ msgstr ""
 "X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, kde-format
 msgid "All categories are missing"
 msgstr "Kategoria guztiak falta dira"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -39,7 +39,7 @@ msgstr ""
 "Elementu honek %2 %1-(e)ko kostua dauka.\n"
 "Erosi nahi duzu?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -50,18 +50,18 @@ msgstr ""
 "Zure balantzea: %1\n"
 "Salneurria: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Zure bozka erregistratu da."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Orain fan bat zara."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -69,18 +69,18 @@ msgid ""
 "in %1."
 msgstr "Zerbitzua mantentze-lanetan dago orain, eta %1ean itzultzea espero da."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Sareko errorea %1: %2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Zerbitzariak eskaera gehiegi dauzka. Saiatu berriz minutu batzuk barru."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -89,7 +89,7 @@ msgstr ""
 "«Open Collaboration Services» %1 instantziak ez du onartzen ahalegindutako "
 "funtzioa."
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "«Open Collaboration Service» API-aren errore ezezaguna. (%1)"
@@ -288,7 +288,7 @@ msgstr "Ezin izan du %1 idazteko ireki"
 msgid "Could not open %1 for reading"
 msgstr "Ezin du %1 irakurtzeko ireki"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -298,12 +298,12 @@ msgstr ""
 "elementurik definituta. Jar zaitez harremanetan egilearekin, hori konpon "
 "dezaten."
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Aukeratu eguneratze elementua"
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -314,7 +314,7 @@ msgstr ""
 "elementua. Ezin izan da identifikatu zein elementu aukeratu behar den "
 "jatorrizko elementua oinarri hartuta, haren izena %1 zen"
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -323,7 +323,7 @@ msgstr ""
 "Ez dugu %1 eguneratzeko esteka onik identifikatzerik izan, eta ezin dugu "
 "eguneratu"
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2023-12-02 20:07+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -24,12 +24,12 @@ msgstr ""
 "X-Generator: Lokalize 24.01.80\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, kde-format
 msgid "All categories are missing"
 msgstr "Všetky kategórie chýbajú"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Táto položka stojí %1 %2.\n"
 "Chcete ju kúpiť?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,18 +51,18 @@ msgstr ""
 "Zostatok: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Váš hlas bol zaznamenaný."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Teraz ste fanúšik."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -71,17 +71,17 @@ msgid ""
 msgstr ""
 "Služba v súčasnosti prechádza údržbou a očakáva sa, že bude obnovená v %1."
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Chyba siete %1: %2"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Príliš veľa požiadaviek na server. Skúste to znovu za niekoľko minúť."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -90,7 +90,7 @@ msgstr ""
 "Inštancia Open Collaboration Services %1 nepodporuje akciu, ktorú chcete "
 "spraviť."
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznáma chyba API služby otvorenej spolupráce. (%1)"
@@ -287,7 +287,7 @@ msgstr "Nie je možné otvoriť %1 na zápis"
 msgid "Could not open %1 for reading"
 msgstr "Nie je možné otvoriť %1 na čítanie"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -296,12 +296,12 @@ msgstr ""
 "Nepodarilo sa vykonať inštaláciu položky %1, pretože nemá žiadne definované "
 "položky na stiahnutie. Prosím, kontaktujte autora, aby to mohli opraviť."
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Vybrať položku na aktualizáciu"
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -312,7 +312,7 @@ msgstr ""
 "tejto aktualizácie. Na základe pôvodnej položky s názvom %1 sa nám "
 "nepodarilo identifikovať, ktorú položku vybrať"
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -321,7 +321,7 @@ msgstr ""
 "Nepodarilo sa identifikovať dobrý odkaz na aktualizáciu %1 a nie je možné "
 "vykonať aktualizáciu"
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

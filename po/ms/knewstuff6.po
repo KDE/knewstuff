@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:36+0000\n"
+"POT-Creation-Date: 2024-07-20 00:37+0000\n"
 "PO-Revision-Date: 2011-07-16 00:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -21,13 +21,13 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=1;\n"
 
-#: attica/atticaprovider.cpp:165
+#: attica/atticaprovider.cpp:166
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgid "All categories are missing"
 msgstr "Semua Kategori"
 
-#: attica/atticaprovider.cpp:480
+#: attica/atticaprovider.cpp:481
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -43,7 +43,7 @@ msgstr ""
 "Item ini bernilai %1 %2.\n"
 "Adakah anda hendak membelinya?"
 
-#: attica/atticaprovider.cpp:494
+#: attica/atticaprovider.cpp:495
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -54,19 +54,19 @@ msgstr ""
 "Baki anda: %1\n"
 "Harga: %2"
 
-#: attica/atticaprovider.cpp:537
+#: attica/atticaprovider.cpp:538
 #, fuzzy, kde-format
 #| msgid "Your vote was successful."
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Undian anda berjaya."
 
-#: attica/atticaprovider.cpp:552
+#: attica/atticaprovider.cpp:553
 #, kde-format
 msgid "You are now a fan."
 msgstr "Anda sekarang adalah peminat."
 
-#: attica/atticaprovider.cpp:580 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -74,24 +74,24 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:585
+#: attica/atticaprovider.cpp:586
 #, fuzzy, kde-format
 msgid "Network error %1: %2"
 msgstr "Rangkaian ralat"
 
-#: attica/atticaprovider.cpp:592
+#: attica/atticaprovider.cpp:593
 #, fuzzy, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "ke  dalam  a sedikit minit."
 
-#: attica/atticaprovider.cpp:596
+#: attica/atticaprovider.cpp:597
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:600
+#: attica/atticaprovider.cpp:601
 #, fuzzy, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Tidak diketahui Buka Kerjasama Servis ralat"
@@ -271,19 +271,19 @@ msgstr "Tidak dapat membuka %1 untuk dibaca"
 msgid "Could not open %1 for reading"
 msgstr "Tidak dapat membuka %1 untuk dibaca"
 
-#: core/transaction.cpp:154
+#: core/transaction.cpp:189
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:263
+#: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:265
+#: core/transaction.cpp:308
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -291,14 +291,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:289
+#: core/transaction.cpp:332
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:381
+#: core/transaction.cpp:424
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
