@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-20 00:37+0000\n"
-"PO-Revision-Date: 2024-01-27 14:54+0200\n"
+"PO-Revision-Date: 2024-07-27 20:01+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: attica/atticaprovider.cpp:166
 #, kde-format
@@ -522,31 +522,26 @@ msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Čia prieinamą turinį išsiuntė tokie patys naudotojai, kaip ir jūs, todėl "
-"jūsų platinamojo paketo platintojas nepatikrino kaip šis turinys veikia "
-"funkcionalumo ar stabilumo atžvilgiu."
+"Čia atvaizduojamą naudotojų sukurtą turinį naudokite apdairiai, nes jame "
+"gali būti vykdomojo kodo, kurio KDE ar jūsų platinamojo paketo platintojas "
+"netestavo ir netikrino, kaip šis turinys veikia funkcionalumo, stabilumo ar "
+"kokybės atžvilgiu."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Čia prieinamą turinį išsiuntė tokie patys naudotojai, kaip ir jūs, todėl "
-"jūsų platinamojo paketo platintojas nepatikrino kaip šis turinys veikia "
-"funkcionalumo ar stabilumo atžvilgiu."
+"Čia rodomą naudotojų sukurtą turinį netestavo KDE ar jūsų platinamojo paketo "
+"platintojas ir netikrino kaip šis turinys veikia funkcionalumo ar kokybės "
+"atžvilgiu."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -823,14 +818,7 @@ msgid "Send Email To: %1"
 msgstr "Siųsti el. laišką: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -997,14 +985,10 @@ msgstr ""
 " Tokio url pavyzdys yra kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Atsisiųsti naujus elementus"
+msgstr "Atsisiųsti naujų elementų…"
 
 #~ msgid "Tiles"
 #~ msgstr "Plytelės"
