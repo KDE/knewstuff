@@ -2,7 +2,6 @@
 #
 # Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 2003, 2004, 2005, 2006.
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2003, 2005.
-# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2021, 2022.
 msgid ""
@@ -10,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-20 00:37+0000\n"
-"PO-Revision-Date: 2023-07-30 21:57+0200\n"
+"PO-Revision-Date: 2024-07-28 00:32+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -521,32 +520,25 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Les om korleis du kan gje ei pengegåve til prosjektet"
 
-# Sjå tilsvarande tekst i «plasma-welcome.po».
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Alt innhaldet her er lasta opp av andre brukarar. Leverandøren din har ikkje "
-"kvalitets­sikra at det verkar skikkeleg eller stabilt."
+"Utvis varsemd før du eventuelt tek i bruk innhald som er vist her, då det "
+"kan innehalda dataprogram som ikkje er testa av KDE eller distributøren din, "
+"verken når det gjeld tryggleik, stabilitet eller kvalitet."
 
-# Sjå tilsvarande tekst i «plasma-welcome.po».
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Alt innhaldet her er lasta opp av andre brukarar. Leverandøren din har ikkje "
-"kvalitets­sikra at det verkar skikkeleg eller stabilt."
+"Brukarinnhald som er vist her, er ikkje testa av KDE eller distributøren, "
+"verken når det gjeld funksjonalitet eller kvalitet."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -823,14 +815,7 @@ msgid "Send Email To: %1"
 msgstr "Send e-post til: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -965,19 +950,7 @@ msgstr ""
 "vindauge der du kan byta mellom oppsett­filene som er installert globalt"
 
 #: tools/knewstuff-dialog/main.cpp:33
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1001,15 +974,11 @@ msgstr ""
 "«entryid»\n"
 "er den unike ID-en til ei oppføring som finst hos leverandøren definert i "
 "«knsrc»-fila.\n"
-"Her er eit eksempel på ei gyldig kns-adresse: kns://peruse.knsrc/api.kde-"
-"look.org/1316714"
+"Her er eit eksempel på ei gyldig kns-adresse: kns://sddmtheme.knsrc/api.kde-"
+"look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Last ned nye ting"
+msgstr "Last ned nye ting …"
