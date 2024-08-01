@@ -39,6 +39,7 @@ NewStuff.Action {
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.newstuff as NewStuff
+import org.kde.newstuff.private as NewStuffPrivate
 
 Kirigami.Action {
     id: component
@@ -99,6 +100,7 @@ Kirigami.Action {
      *
      * @since 6.1
      */
+    // TODO KF7: make this required. without it we have a hard time doing complex window management in systemsettings
     property Window transientParent
 
     /**
@@ -186,6 +188,7 @@ Kirigami.Action {
                 transientParent: component.transientParent
                 configFile: component.configFile
                 viewMode: component.viewMode
+                NewStuffPrivate.TransientMagicianAssistant {}
             }
         }
     }

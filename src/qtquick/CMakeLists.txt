@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: KDE Contributors
 # SPDX-License-Identifier: BSD-2-Clause
 
+add_subdirectory(private)
+
 add_library(knewstuff_qml_STATIC STATIC)
 target_sources(knewstuff_qml_STATIC PRIVATE
     quickengine.cpp
