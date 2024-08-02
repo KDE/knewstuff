@@ -192,7 +192,7 @@ msgstr "Installation de %1 falleva: %2"
 #: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr "Nonpote determinar le typo de archivo del file discargate %1"
+msgstr "Non pote determinar le typo de archivo del file discargate %1"
 
 #: core/installation.cpp:398
 #, kde-format
@@ -258,7 +258,7 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
-"Le elimination d %1 falleva, proque le file %2 nonpoteve esser eliminate "
+"Le elimination d %1 falleva, proque le file %2 non poteve esser eliminate "
 "automaticamente. Tu pote essayar a deler manualmente iste file, si tu crede "
 "que isto es un error."
 
