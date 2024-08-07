@@ -142,8 +142,6 @@ void StaticXmlProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntri
 
 void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
-    mCurrentRequest = request;
-
     // static providers only have on page containing everything
     if (request.page > 0) {
         Q_EMIT loadingFinished(request, Entry::List());
@@ -165,8 +163,12 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
         // TODO first get the entries, then filter with searchString, finally emit the finished signal...
         // FIXME: don't create an endless number of xmlloaders!
         XmlLoader *loader = new XmlLoader(this);
-        connect(loader, &XmlLoader::signalLoaded, this, &StaticXmlProvider::slotFeedFileLoaded);
-        connect(loader, &XmlLoader::signalFailed, this, &StaticXmlProvider::slotFeedFailed);
+        connect(loader, &XmlLoader::signalLoaded, this, [this, request](const QDomDocument &doc) {
+            slotFeedFileLoaded(request, doc);
+        });
+        connect(loader, &XmlLoader::signalFailed, this, [this, request] {
+            Q_EMIT loadingFailed(request);
+        });
         loader->setFilter(request.filter);
         loader->setSearchTerm(request.searchTerm);
 
@@ -201,12 +203,12 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
     return url;
 }
 
-void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
+void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::Provider::SearchRequest &request, const QDomDocument &doc)
 {
     XmlLoader *loader = qobject_cast<KNSCore::XmlLoader *>(sender());
     if (!loader) {
         qWarning() << "Loader not found!";
-        Q_EMIT loadingFailed(mCurrentRequest);
+        Q_EMIT loadingFailed(request);
         return;
     }
 
@@ -255,7 +257,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
             if (filterAcceptsDownloads) {
                 mCachedEntries.append(entry);
 
-                if (searchIncludesEntry(entry)) {
+                if (searchIncludesEntry(request, entry)) {
                     switch (loader->filter()) {
                     case Installed:
                         // This is dealt with in loadEntries separately
@@ -282,26 +284,21 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
             qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << entry.name() << "on entry filter" << tagFilter();
         }
     }
-    Q_EMIT loadingFinished(mCurrentRequest, entries);
+    Q_EMIT loadingFinished(request, entries);
 }
 
-void StaticXmlProvider::slotFeedFailed()
+bool StaticXmlProvider::searchIncludesEntry(const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry &entry) const
 {
-    Q_EMIT loadingFailed(mCurrentRequest);
-}
-
-bool StaticXmlProvider::searchIncludesEntry(const KNSCore::Entry &entry) const
-{
-    if (mCurrentRequest.filter == Updates) {
+    if (request.filter == Updates) {
         if (entry.status() != KNSCore::Entry::Updateable) {
             return false;
         }
     }
 
-    if (mCurrentRequest.searchTerm.isEmpty()) {
+    if (request.searchTerm.isEmpty()) {
         return true;
     }
-    QString search = mCurrentRequest.searchTerm;
+    QString search = request.searchTerm;
     if (entry.name().contains(search, Qt::CaseInsensitive) || entry.summary().contains(search, Qt::CaseInsensitive)
         || entry.author().name().contains(search, Qt::CaseInsensitive)) {
         return true;
