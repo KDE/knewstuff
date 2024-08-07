@@ -27,6 +27,7 @@ set(KNewStuffCore_SRCS
     questionlistener.cpp
 
     ../attica/atticaprovider.cpp
+    ../attica/atticarequester.cpp
     ../staticxml/staticxmlprovider.cpp
 )
 if(KF6Syndication_FOUND)

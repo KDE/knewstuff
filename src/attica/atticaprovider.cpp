@@ -26,13 +26,14 @@
 #include <attica/provider.h>
 #include <attica/providermanager.h>
 
+#include "atticarequester_p.h"
+
 using namespace Attica;
 
 namespace KNSCore
 {
 AtticaProvider::AtticaProvider(const QStringList &categories, const QString &additionalAgentInformation)
-    : mEntryJob(nullptr)
-    , mInitialized(false)
+    : mInitialized(false)
 {
     // init categories map with invalid categories
     for (const QString &category : categories) {
@@ -47,8 +48,7 @@ AtticaProvider::AtticaProvider(const QStringList &categories, const QString &add
 }
 
 AtticaProvider::AtticaProvider(const Attica::Provider &provider, const QStringList &categories, const QString &additionalAgentInformation)
-    : mEntryJob(nullptr)
-    , mInitialized(false)
+    : mInitialized(false)
 {
     // init categories map with invalid categories
     for (const QString &category : categories) {
@@ -174,159 +174,24 @@ bool AtticaProvider::isInitialized() const
 
 void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
 {
-    if (mEntryJob) {
-        mEntryJob->abort();
-        mEntryJob = nullptr;
-    }
-
-    mCurrentRequest = request;
-    switch (request.filter) {
-    case None:
-        break;
-    case ExactEntryId: {
-        ItemJob<Content> *job = m_provider.requestContent(request.searchTerm);
-        job->setProperty("providedEntryId", request.searchTerm);
-        connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
-        job->start();
-        return;
-    }
-    case Installed:
-        if (request.page == 0) {
-            Q_EMIT loadingFinished(request, installedEntries());
-        } else {
-            Q_EMIT loadingFinished(request, Entry::List());
-        }
-        return;
-    case Updates:
-        checkForUpdates();
-        return;
-    }
-
-    Attica::Provider::SortMode sorting = atticaSortMode(request.sortMode);
-    Attica::Category::List categoriesToSearch;
-
-    if (request.categories.isEmpty()) {
-        // search in all categories
-        categoriesToSearch = mCategoryMap.values();
-    } else {
-        categoriesToSearch.reserve(request.categories.size());
-        for (const QString &categoryName : std::as_const(request.categories)) {
-            categoriesToSearch.append(mCategoryMap.values(categoryName));
-        }
-    }
-
-    ListJob<Content> *job = m_provider.searchContents(categoriesToSearch, request.searchTerm, sorting, request.page, request.pageSize);
-    job->setProperty("searchRequest", QVariant::fromValue(request));
-    connect(job, &BaseJob::finished, this, &AtticaProvider::categoryContentsLoaded);
-
-    mEntryJob = job;
-    job->start();
-}
-
-void AtticaProvider::checkForUpdates()
-{
-    if (mCachedEntries.isEmpty()) {
-        Q_EMIT loadingFinished(mCurrentRequest, {});
-    }
-
-    for (const Entry &e : std::as_const(mCachedEntries)) {
-        ItemJob<Content> *job = m_provider.requestContent(e.uniqueId());
-        connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
-        m_updateJobs.insert(job);
-        job->start();
-        qCDebug(KNEWSTUFFCORE) << "Checking for update: " << e.name();
-    }
+    auto requester = new AtticaRequester(request, this, this);
+    connect(requester, &AtticaRequester::entryDetailsLoaded, this, &AtticaProvider::entryDetailsLoaded);
+    connect(requester, &AtticaRequester::loadingFinished, this, [this, requester](const KNSCore::Entry::List &list) {
+        Q_EMIT loadingFinished(requester->request(), list);
+    });
+    connect(requester, &AtticaRequester::loadingFailed, this, [this, requester] {
+        Q_EMIT loadingFailed(requester->request());
+    });
+    requester->start();
 }
 
 void AtticaProvider::loadEntryDetails(const KNSCore::Entry &entry)
 {
     ItemJob<Content> *job = m_provider.requestContent(entry.uniqueId());
-    connect(job, &BaseJob::finished, this, &AtticaProvider::detailsLoaded);
-    job->start();
-}
-
-void AtticaProvider::detailsLoaded(BaseJob *job)
-{
-    if (jobSuccess(job)) {
-        auto *contentJob = static_cast<ItemJob<Content> *>(job);
-        Content content = contentJob->result();
-        Entry entry = entryFromAtticaContent(content);
-        entry.setEntryRequestedId(job->property("providedEntryId").toString()); // The ResultsStream should still known that this entry was for its query
+    connect(job, &BaseJob::finished, this, [this, entry] {
         Q_EMIT entryDetailsLoaded(entry);
-        qCDebug(KNEWSTUFFCORE) << "check update finished: " << entry.name();
-    }
-
-    if (m_updateJobs.remove(job) && m_updateJobs.isEmpty()) {
-        qCDebug(KNEWSTUFFCORE) << "check update finished.";
-        QList<Entry> updatable;
-        for (const Entry &entry : std::as_const(mCachedEntries)) {
-            if (entry.status() == KNSCore::Entry::Updateable) {
-                updatable.append(entry);
-            }
-        }
-        Q_EMIT loadingFinished(mCurrentRequest, updatable);
-    }
-}
-
-void AtticaProvider::categoryContentsLoaded(BaseJob *job)
-{
-    if (!jobSuccess(job)) {
-        return;
-    }
-
-    auto *listJob = static_cast<ListJob<Content> *>(job);
-    const Content::List contents = listJob->itemList();
-
-    Entry::List entries;
-    TagsFilterChecker checker(tagFilter());
-    TagsFilterChecker downloadschecker(downloadTagFilter());
-    for (const Content &content : contents) {
-        if (!content.isValid()) {
-            qCDebug(KNEWSTUFFCORE)
-                << "Filtered out an invalid entry. This suggests something is not right on the originating server. Please contact the administrators of"
-                << name() << "and inform them there is an issue with content in the category or categories" << mCurrentRequest.categories;
-            continue;
-        }
-        if (checker.filterAccepts(content.tags())) {
-            bool filterAcceptsDownloads = true;
-            if (content.downloads() > 0) {
-                filterAcceptsDownloads = false;
-                const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
-                for (const Attica::DownloadDescription &dli : descs) {
-                    if (downloadschecker.filterAccepts(dli.tags())) {
-                        filterAcceptsDownloads = true;
-                        break;
-                    }
-                }
-            }
-            if (filterAcceptsDownloads) {
-                mCachedContent.insert(content.id(), content);
-                entries.append(entryFromAtticaContent(content));
-            } else {
-                qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << content.name() << "on download filter" << downloadTagFilter();
-            }
-        } else {
-            qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << content.name() << "on entry filter" << tagFilter();
-        }
-    }
-
-    qCDebug(KNEWSTUFFCORE) << "loaded: " << mCurrentRequest.hashForRequest() << " count: " << entries.size();
-    Q_EMIT loadingFinished(mCurrentRequest, entries);
-    mEntryJob = nullptr;
-}
-
-Attica::Provider::SortMode AtticaProvider::atticaSortMode(SortMode sortMode)
-{
-    switch (sortMode) {
-    case Newest:
-        return Attica::Provider::Newest;
-    case Alphabetical:
-        return Attica::Provider::Alphabetical;
-    case Downloads:
-        return Attica::Provider::Downloads;
-    default:
-        return Attica::Provider::Rating;
-    }
+    });
+    job->start();
 }
 
 void AtticaProvider::loadPayloadLink(const KNSCore::Entry &entry, int linkId)
@@ -512,17 +377,6 @@ void AtticaProvider::downloadItemLoaded(BaseJob *baseJob)
     Q_EMIT payloadLinkLoaded(entry);
 }
 
-Entry::List AtticaProvider::installedEntries() const
-{
-    Entry::List entries;
-    for (const Entry &entry : std::as_const(mCachedEntries)) {
-        if (entry.status() == KNSCore::Entry::Installed || entry.status() == KNSCore::Entry::Updateable) {
-            entries.append(entry);
-        }
-    }
-    return entries;
-}
-
 void AtticaProvider::vote(const Entry &entry, uint rating)
 {
     PostJob *job = m_provider.voteForContent(entry.uniqueId(), rating);
@@ -608,82 +462,6 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job)
         Q_EMIT loadingFailed(req);
     }
     return false;
-}
-
-Entry AtticaProvider::entryFromAtticaContent(const Attica::Content &content)
-{
-    Entry entry;
-
-    entry.setProviderId(id());
-    entry.setUniqueId(content.id());
-    entry.setStatus(KNSCore::Entry::Downloadable);
-    entry.setVersion(content.version());
-    entry.setReleaseDate(content.updated().date());
-    entry.setCategory(content.attribute(QStringLiteral("typeid")));
-
-    int index = mCachedEntries.indexOf(entry);
-    if (index >= 0) {
-        Entry &cacheEntry = mCachedEntries[index];
-        // check if updateable
-        if (((cacheEntry.status() == KNSCore::Entry::Installed) || (cacheEntry.status() == KNSCore::Entry::Updateable))
-            && ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
-            cacheEntry.setStatus(KNSCore::Entry::Updateable);
-            cacheEntry.setUpdateVersion(entry.version());
-            cacheEntry.setUpdateReleaseDate(entry.releaseDate());
-        }
-        entry = cacheEntry;
-    } else {
-        mCachedEntries.append(entry);
-    }
-
-    entry.setName(content.name());
-    entry.setHomepage(content.detailpage());
-    entry.setRating(content.rating());
-    entry.setNumberOfComments(content.numberOfComments());
-    entry.setDownloadCount(content.downloads());
-    entry.setNumberFans(content.attribute(QStringLiteral("fans")).toInt());
-    entry.setDonationLink(content.attribute(QStringLiteral("donationpage")));
-    entry.setKnowledgebaseLink(content.attribute(QStringLiteral("knowledgebasepage")));
-    entry.setNumberKnowledgebaseEntries(content.attribute(QStringLiteral("knowledgebaseentries")).toInt());
-    entry.setHomepage(content.detailpage());
-
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("1")), Entry::PreviewSmall1);
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("2")), Entry::PreviewSmall2);
-    entry.setPreviewUrl(content.smallPreviewPicture(QStringLiteral("3")), Entry::PreviewSmall3);
-
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("1")), Entry::PreviewBig1);
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("2")), Entry::PreviewBig2);
-    entry.setPreviewUrl(content.previewPicture(QStringLiteral("3")), Entry::PreviewBig3);
-
-    entry.setLicense(content.license());
-    Author author;
-    author.setId(content.author());
-    author.setName(content.author());
-    author.setHomepage(content.attribute(QStringLiteral("profilepage")));
-    entry.setAuthor(author);
-
-    entry.setSource(Entry::Online);
-    entry.setSummary(content.description());
-    entry.setShortSummary(content.summary());
-    entry.setChangelog(content.changelog());
-    entry.setTags(content.tags());
-
-    const QList<Attica::DownloadDescription> descs = content.downloadUrlDescriptions();
-    entry.d->mDownloadLinkInformationList.clear();
-    entry.d->mDownloadLinkInformationList.reserve(descs.size());
-    for (const Attica::DownloadDescription &desc : descs) {
-        entry.d->mDownloadLinkInformationList.append({.name = desc.name(),
-                                                      .priceAmount = desc.priceAmount(),
-                                                      .distributionType = desc.distributionType(),
-                                                      .descriptionLink = desc.link(),
-                                                      .id = desc.id(),
-                                                      .isDownloadtypeLink = desc.type() == Attica::DownloadDescription::LinkDownload,
-                                                      .size = desc.size(),
-                                                      .tags = desc.tags(),
-                                                      .version = desc.version()});
-    }
-
-    return entry;
 }
 
 } // namespace

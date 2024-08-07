@@ -35,7 +35,7 @@ namespace KNSCore
  *
  * @internal
  */
-class AtticaProvider : public Provider
+class /* for autotest: */ KNEWSTUFFCORE_EXPORT AtticaProvider : public Provider
 {
     Q_OBJECT
 public:
@@ -80,25 +80,17 @@ public:
 private Q_SLOTS:
     void providerLoaded(const Attica::Provider &provider);
     void listOfCategoriesLoaded(Attica::BaseJob *);
-    void categoryContentsLoaded(Attica::BaseJob *job);
     void downloadItemLoaded(Attica::BaseJob *job);
     void accountBalanceLoaded(Attica::BaseJob *job);
     void onAuthenticationCredentialsMissing(const Attica::Provider &);
     void votingFinished(Attica::BaseJob *);
     void becomeFanFinished(Attica::BaseJob *job);
-    void detailsLoaded(Attica::BaseJob *job);
     void loadedComments(Attica::BaseJob *job);
     void loadedPerson(Attica::BaseJob *job);
     void loadedConfig(Attica::BaseJob *job);
 
 private:
-    void checkForUpdates();
-    Entry::List installedEntries() const;
     bool jobSuccess(Attica::BaseJob *job);
-
-    Attica::Provider::SortMode atticaSortMode(SortMode sortMode);
-
-    Entry entryFromAtticaContent(const Attica::Content &);
 
     // the attica categories we are interested in (e.g. Wallpaper, Application, Vocabulary File...)
     QMultiHash<QString, Attica::Category> mCategoryMap;
@@ -114,16 +106,11 @@ private:
     // when the result is there.
     QHash<Attica::BaseJob *, QPair<Entry, int>> mDownloadLinkJobs;
 
-    // keep track of the current request
-    QPointer<Attica::BaseJob> mEntryJob;
-    Provider::SearchRequest mCurrentRequest;
-
-    QSet<Attica::BaseJob *> m_updateJobs;
-
     bool mInitialized;
     QString m_providerId;
 
     Q_DISABLE_COPY(AtticaProvider)
+    friend class AtticaRequester;
 };
 
 }
