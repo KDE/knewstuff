@@ -56,11 +56,10 @@ public:
 
 private Q_SLOTS:
     void slotEmitProviderInitialized();
-    void slotFeedFileLoaded(const QDomDocument &);
-    void slotFeedFailed();
+    void slotFeedFileLoaded(const KNSCore::Provider::SearchRequest &request, const QDomDocument &);
 
 private:
-    bool searchIncludesEntry(const Entry &entry) const;
+    bool searchIncludesEntry(const KNSCore::Provider::SearchRequest &request, const Entry &entry) const;
     QUrl downloadUrl(SortMode mode) const;
     Entry::List installedEntries() const;
 
@@ -72,7 +71,6 @@ private:
     // cache of all entries known from this provider so far, mapped by their id
     Entry::List mCachedEntries;
     QMap<Provider::SortMode, XmlLoader *> mFeedLoaders;
-    Provider::SearchRequest mCurrentRequest;
     QString mId;
     bool mInitialized;
 
