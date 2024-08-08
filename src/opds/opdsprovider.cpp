@@ -17,6 +17,8 @@
 
 #include <knewstuffcore_debug.h>
 
+#include "searchpreset.h"
+#include "searchpreset_p.h"
 #include "tagsfilterchecker.h"
 
 namespace KNSCore
@@ -112,13 +114,13 @@ public:
     XmlLoader *xmlLoader;
 
     Entry::List cachedEntries;
-    Provider::SearchRequest currentRequest;
+    SearchRequest currentRequest;
 
     QUrl openSearchDocumentURL;
     QString openSearchTemplate;
 
     // Generate an opensearch string.
-    QUrl openSearchStringForRequest(const KNSCore::Provider::SearchRequest &request)
+    QUrl openSearchStringForRequest(const KNSCore::SearchRequest &request)
     {
         {
             QUrl searchUrl = QUrl(openSearchTemplate);
@@ -128,13 +130,13 @@ public:
 
             for (QPair<QString, QString> key : templateQuery.queryItems()) {
                 if (key.second.contains(OPENSEARCH_SEARCH_TERMS)) {
-                    query.addQueryItem(key.first, request.searchTerm);
+                    query.addQueryItem(key.first, request.searchTerm());
                 } else if (key.second.contains(OPENSEARCH_COUNT)) {
-                    query.addQueryItem(key.first, QString::number(request.pageSize));
+                    query.addQueryItem(key.first, QString::number(request.pageSize()));
                 } else if (key.second.contains(OPENSEARCH_START_PAGE)) {
-                    query.addQueryItem(key.first, QString::number(request.page));
+                    query.addQueryItem(key.first, QString::number(request.page()));
                 } else if (key.second.contains(OPENSEARCH_START_INDEX)) {
-                    query.addQueryItem(key.first, QString::number(request.page * request.pageSize));
+                    query.addQueryItem(key.first, QString::number(request.page() * request.pageSize()));
                 }
             }
             searchUrl.setQuery(query);
@@ -220,15 +222,17 @@ void parseFeedData(const QDomDocument &doc)
     }
 
     Entry::List entries;
-    QList<OPDSProvider::SearchPreset> presets;
+    QList<SearchPreset> presets;
 
     {
-        OPDSProvider::SearchPreset preset;
-        preset.providerId = providerId;
-        OPDSProvider::SearchRequest request;
-        request.searchTerm = providerId;
-        preset.request = request;
-        preset.type = Provider::SearchPresetTypes::Start;
+        SearchRequest request(SortMode::Downloads, Filter::None, providerId);
+        SearchPreset preset(new SearchPresetPrivate{
+            .request = request,
+            .displayName = {},
+            .iconName = {},
+            .type = SearchPreset::Type::Start,
+            .providerId = providerId,
+        });
         presets.append(preset);
     }
 
@@ -294,36 +298,44 @@ void parseFeedData(const QDomDocument &doc)
                 xmlLoader->load(openSearchDocumentURL);
             };
         } else if (link.type().contains(OPDS_PROFILE) && link.rel() != REL_SELF) {
-            OPDSProvider::SearchPreset preset;
-            preset.providerId = providerId;
-            preset.displayName = link.title();
-            OPDSProvider::SearchRequest request;
-            request.searchTerm = fixRelativeUrl(link.href()).toString();
-            preset.request = request;
-            if (link.rel() == REL_START) {
-                preset.type = Provider::SearchPresetTypes::Root;
-            } else if (link.rel() == OPDS_REL_FEATURED) {
-                preset.type = Provider::SearchPresetTypes::Featured;
-            } else if (link.rel() == OPDS_REL_SHELF) {
-                preset.type = Provider::SearchPresetTypes::Shelf;
-            } else if (link.rel() == OPDS_REL_SORT_NEW) {
-                preset.type = Provider::SearchPresetTypes::New;
-            } else if (link.rel() == OPDS_REL_SORT_POPULAR) {
-                preset.type = Provider::SearchPresetTypes::Popular;
-            } else if (link.rel() == REL_UP) {
-                preset.type = Provider::SearchPresetTypes::FolderUp;
-            } else if (link.rel() == OPDS_REL_CRAWL) {
-                preset.type = Provider::SearchPresetTypes::AllEntries;
-            } else if (link.rel() == OPDS_REL_RECOMMENDED) {
-                preset.type = Provider::SearchPresetTypes::Recommended;
-            } else if (link.rel() == OPDS_REL_SUBSCRIPTIONS) {
-                preset.type = Provider::SearchPresetTypes::Subscription;
-            } else {
-                preset.type = Provider::SearchPresetTypes::NoPresetType;
-                if (preset.displayName.isEmpty()) {
-                    preset.displayName = link.rel();
-                }
-            }
+            SearchRequest request(SortMode::Downloads, Filter::None, fixRelativeUrl(link.href()).toString());
+            SearchPreset preset(new SearchPresetPrivate{
+                .request = request,
+                .displayName = link.title().isEmpty() ? link.rel() : link.title(),
+                .iconName = {},
+                .type =
+                    [&link] {
+                        if (link.rel() == REL_START) {
+                            return SearchPreset::Type::Root;
+                        }
+                        if (link.rel() == OPDS_REL_FEATURED) {
+                            return SearchPreset::Type::Featured;
+                        }
+                        if (link.rel() == OPDS_REL_SHELF) {
+                            return SearchPreset::Type::Shelf;
+                        }
+                        if (link.rel() == OPDS_REL_SORT_NEW) {
+                            return SearchPreset::Type::New;
+                        }
+                        if (link.rel() == OPDS_REL_SORT_POPULAR) {
+                            return SearchPreset::Type::Popular;
+                        }
+                        if (link.rel() == REL_UP) {
+                            return SearchPreset::Type::FolderUp;
+                        }
+                        if (link.rel() == OPDS_REL_CRAWL) {
+                            return SearchPreset::Type::AllEntries;
+                        }
+                        if (link.rel() == OPDS_REL_RECOMMENDED) {
+                            return SearchPreset::Type::Recommended;
+                        }
+                        if (link.rel() == OPDS_REL_SUBSCRIPTIONS) {
+                            return SearchPreset::Type::Subscription;
+                        }
+                        return SearchPreset::Type::NoPresetType;
+                    }(),
+                .providerId = providerId,
+            });
             presets.append(preset);
         }
     }
@@ -543,23 +555,23 @@ QUrl OPDSProvider::icon() const
     return d->iconUrl;
 }
 
-void OPDSProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
+void OPDSProvider::loadEntries(const KNSCore::SearchRequest &request)
 {
     d->currentRequest = request;
 
-    if (request.filter == Installed) {
+    if (request.filter() == Filter::Installed) {
         Q_EMIT loadingFinished(request, d->installedEntries());
         return;
-    } else if (request.filter == Provider::ExactEntryId) {
+    } else if (request.filter() == Filter::ExactEntryId) {
         for (Entry entry : d->cachedEntries) {
-            if (entry.uniqueId() == request.searchTerm) {
+            if (entry.uniqueId() == request.searchTerm()) {
                 loadEntryDetails(entry);
             }
         }
     } else {
-        if (QUrl(request.searchTerm).scheme().startsWith(QStringLiteral("http"))) {
-            d->currentUrl = QUrl(request.searchTerm);
-        } else if (!d->openSearchTemplate.isEmpty() && !request.searchTerm.isEmpty()) {
+        if (QUrl(request.searchTerm()).scheme().startsWith(QStringLiteral("http"))) {
+            d->currentUrl = QUrl(request.searchTerm());
+        } else if (!d->openSearchTemplate.isEmpty() && !request.searchTerm().isEmpty()) {
             // We should check if there's an opensearch implementation, and see if we can funnel search
             // requests to that.
             d->currentUrl = d->openSearchStringForRequest(request);
@@ -665,6 +677,31 @@ bool OPDSProvider::isInitialized() const
 void OPDSProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
 {
     d->cachedEntries = cachedEntries;
+}
+
+[[nodiscard]] QString OPDSProvider::version()
+{
+    return {};
+}
+
+[[nodiscard]] QUrl OPDSProvider::website()
+{
+    return {};
+}
+
+[[nodiscard]] QUrl OPDSProvider::host()
+{
+    return {};
+}
+
+[[nodiscard]] QString OPDSProvider::contactEmail()
+{
+    return {};
+}
+
+[[nodiscard]] bool OPDSProvider::supportsSsl()
+{
+    return false;
 }
 }
 

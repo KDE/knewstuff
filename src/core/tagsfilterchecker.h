@@ -44,6 +44,7 @@ class TagsFilterCheckerPrivate;
  * entry to be included in the return data)
  * @since 5.51
  */
+// TODO KF7: privatize this class. it's not used by the outside
 class KNEWSTUFFCORE_EXPORT TagsFilterChecker
 {
 public:

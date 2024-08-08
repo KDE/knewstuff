@@ -15,6 +15,7 @@
 #include <KLocalizedString>
 #include <QCollator>
 #include <QDomDocument>
+#include <QTimer>
 #include <knewstuffcore_debug.h>
 
 #include <attica/accountbalance.h>
@@ -27,6 +28,8 @@
 #include <attica/providermanager.h>
 
 #include "atticarequester_p.h"
+#include "categorymetadata.h"
+#include "categorymetadata_p.h"
 
 using namespace Attica;
 
@@ -98,8 +101,8 @@ void AtticaProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
 
 void AtticaProvider::providerLoaded(const Attica::Provider &provider)
 {
-    setName(provider.name());
-    setIcon(provider.icon());
+    m_name = provider.name();
+    m_icon = provider.icon();
     qCDebug(KNEWSTUFFCORE) << "Added provider: " << provider.name();
 
     m_provider = provider;
@@ -133,21 +136,19 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
                 mCategoryMap.insert(category.name(), category);
             }
 
-            CategoryMetadata categoryMetadata;
-            categoryMetadata.id = category.id();
-            categoryMetadata.name = category.name();
-            categoryMetadata.displayName = category.displayName();
-            categoryMetadataList << categoryMetadata;
+            categoryMetadataList << CategoryMetadata(new CategoryMetadataPrivate{
+                .id = category.id(),
+                .name = category.name(),
+                .displayName = category.displayName(),
+            });
         }
     }
-    std::sort(categoryMetadataList.begin(),
-              categoryMetadataList.end(),
-              [](const AtticaProvider::CategoryMetadata &i, const AtticaProvider::CategoryMetadata &j) -> bool {
-                  const QString a(i.displayName.isEmpty() ? i.name : i.displayName);
-                  const QString b(j.displayName.isEmpty() ? j.name : j.displayName);
+    std::sort(categoryMetadataList.begin(), categoryMetadataList.end(), [](const auto &i, const auto &j) -> bool {
+        const QString a(i.displayName().isEmpty() ? i.name() : i.displayName());
+        const QString b(j.displayName().isEmpty() ? j.name() : j.displayName());
 
-                  return (QCollator().compare(a, b) < 0);
-              });
+        return (QCollator().compare(a, b) < 0);
+    });
 
     bool correct = false;
     for (auto it = mCategoryMap.cbegin(), itEnd = mCategoryMap.cend(); it != itEnd; ++it) {
@@ -161,7 +162,7 @@ void AtticaProvider::listOfCategoriesLoaded(Attica::BaseJob *listJob)
     if (correct) {
         mInitialized = true;
         Q_EMIT providerInitialized(this);
-        Q_EMIT categoriesMetadataLoded(categoryMetadataList);
+        Q_EMIT categoriesMetadataLoaded(categoryMetadataList);
     } else {
         Q_EMIT signalErrorCode(KNSCore::ErrorCode::ConfigFileError, i18n("All categories are missing"), QVariant());
     }
@@ -172,7 +173,7 @@ bool AtticaProvider::isInitialized() const
     return mInitialized;
 }
 
-void AtticaProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
+void AtticaProvider::loadEntries(const KNSCore::SearchRequest &request)
 {
     auto requester = new AtticaRequester(request, this, this);
     connect(requester, &AtticaRequester::entryDetailsLoaded, this, &AtticaProvider::entryDetailsLoaded);
@@ -291,38 +292,40 @@ void AtticaProvider::loadedPerson(Attica::BaseJob *baseJob)
     Q_EMIT personLoaded(author);
 }
 
-void AtticaProvider::loadBasics()
-{
-    Attica::ItemJob<Attica::Config> *configJob = m_provider.requestConfig();
-    connect(configJob, &BaseJob::finished, this, &AtticaProvider::loadedConfig);
-    configJob->start();
-}
-
 void AtticaProvider::loadedConfig(Attica::BaseJob *baseJob)
 {
-    if (jobSuccess(baseJob)) {
-        auto *job = static_cast<ItemJob<Attica::Config> *>(baseJob);
-        Attica::Config config = job->result();
-        setVersion(config.version());
-        setSupportsSsl(config.ssl());
-        setContactEmail(config.contact());
+    if (!jobSuccess(baseJob)) {
+        return;
+    }
+
+    auto *job = dynamic_cast<ItemJob<Attica::Config> *>(baseJob);
+    Attica::Config config = job->result();
+    m_version = config.version();
+    m_supportsSsl = config.ssl();
+    m_contactEmail = config.contact();
+    const auto protocol = [&config] {
         QString protocol{QStringLiteral("http")};
         if (config.ssl()) {
             protocol = QStringLiteral("https");
         }
+        return protocol;
+    }();
+    m_website = [&config, &protocol] {
         // There is usually no protocol in the website and host, but in case
         // there is, trust what's there
         if (config.website().contains(QLatin1String("://"))) {
-            setWebsite(QUrl(config.website()));
-        } else {
-            setWebsite(QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.website())));
+            return QUrl(config.website());
         }
+        return QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.website()));
+    }();
+    m_host = [&config, &protocol] {
         if (config.host().contains(QLatin1String("://"))) {
-            setHost(QUrl(config.host()));
-        } else {
-            setHost(QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.host())));
+            return QUrl(config.host());
         }
-    }
+        return QUrl(QLatin1String("%1://%2").arg(protocol).arg(config.host()));
+    }();
+
+    Q_EMIT basicsLoaded();
 }
 
 void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
@@ -458,12 +461,64 @@ bool AtticaProvider::jobSuccess(Attica::BaseJob *job)
     }
 
     if (auto searchRequestVar = job->property("searchRequest"); searchRequestVar.isValid()) {
-        SearchRequest req = searchRequestVar.value<SearchRequest>();
+        auto req = searchRequestVar.value<SearchRequest>();
         Q_EMIT loadingFailed(req);
     }
     return false;
 }
 
-} // namespace
+void AtticaProvider::updateOnFirstBasicsGet()
+{
+    if (!m_basicsGot) {
+        m_basicsGot = true;
+        QTimer::singleShot(0, this, [this] {
+            Attica::ItemJob<Attica::Config> *configJob = m_provider.requestConfig();
+            connect(configJob, &BaseJob::finished, this, &AtticaProvider::loadedConfig);
+            configJob->start();
+        });
+    }
+};
+
+QString AtticaProvider::name() const
+{
+    return m_name;
+}
+
+QUrl AtticaProvider::icon() const
+{
+    return m_icon;
+}
+
+QString AtticaProvider::version()
+{
+    updateOnFirstBasicsGet();
+    return m_version;
+}
+
+QUrl AtticaProvider::website()
+{
+    updateOnFirstBasicsGet();
+    return m_website;
+}
+
+QUrl AtticaProvider::host()
+{
+    updateOnFirstBasicsGet();
+    return m_host;
+}
+
+QString AtticaProvider::contactEmail()
+{
+    updateOnFirstBasicsGet();
+    return m_contactEmail;
+}
+
+bool AtticaProvider::supportsSsl()
+{
+    updateOnFirstBasicsGet();
+    return m_supportsSsl;
+}
+
+} // namespace KNSCore
 
 #include "moc_atticaprovider_p.cpp"

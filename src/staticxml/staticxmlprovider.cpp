@@ -12,6 +12,7 @@
 
 #include "xmlloader_p.h"
 
+#include "searchrequest_p.h"
 #include <QTimer>
 #include <knewstuffcore_debug.h>
 #include <tagsfilterchecker.h>
@@ -58,11 +59,13 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     }
 
     // FIXME: this depends on freedesktop.org icon naming... introduce 'desktopicon'?
-    QUrl iconurl(xmldata.attribute(QStringLiteral("icon")));
-    if (!iconurl.isValid()) {
-        iconurl = QUrl::fromLocalFile(xmldata.attribute(QStringLiteral("icon")));
-    }
-    setIcon(iconurl);
+    m_iconUrl = [&xmldata] {
+        QUrl iconurl(xmldata.attribute(QStringLiteral("icon")));
+        if (!iconurl.isValid()) {
+            iconurl = QUrl::fromLocalFile(xmldata.attribute(QStringLiteral("icon")));
+        }
+        return iconurl;
+    }();
 
     QDomNode n;
     QLocale::Language systemLanguage = QLocale::system().language();
@@ -83,7 +86,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
                 }
             }
             if (useThisTitle) {
-                setName(e.text().trimmed());
+                m_name = e.text().trimmed();
                 qCDebug(KNEWSTUFFCORE) << "add name for provider (" << this << "): " << e.text();
             }
             if (firstName.isEmpty()) {
@@ -93,7 +96,7 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
     }
     if (name().isEmpty()) {
         // Just a fallback, because those are quite nice to have...
-        setName(firstName);
+        m_name = firstName;
     }
 
     // Validation
@@ -107,26 +110,18 @@ bool StaticXmlProvider::setProviderXML(const QDomElement &xmldata)
         return false;
     }
 
-    if (mUploadUrl.isValid()) {
-        setWebsite(mUploadUrl);
-    } else {
-        setWebsite(mNoUploadUrl);
-    }
-
     mId = mDownloadUrls[QString()].url();
     if (mId.isEmpty()) {
         mId = mDownloadUrls[mDownloadUrls.begin().key()].url();
     }
 
-    QTimer::singleShot(0, this, &StaticXmlProvider::slotEmitProviderInitialized);
+    QTimer::singleShot(0, this, [this] {
+        mInitialized = true;
+        Q_EMIT providerInitialized(this);
+        Q_EMIT basicsLoaded();
+    });
 
     return true;
-}
-
-void StaticXmlProvider::slotEmitProviderInitialized()
-{
-    mInitialized = true;
-    Q_EMIT providerInitialized(this);
 }
 
 bool StaticXmlProvider::isInitialized() const
@@ -140,17 +135,17 @@ void StaticXmlProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntri
     mCachedEntries.append(cachedEntries);
 }
 
-void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &request)
+void StaticXmlProvider::loadEntries(const KNSCore::SearchRequest &request)
 {
     // static providers only have on page containing everything
-    if (request.page > 0) {
+    if (request.d->page > 0) {
         Q_EMIT loadingFinished(request, Entry::List());
         return;
     }
 
-    if (request.filter == Installed) {
+    if (request.d->filter == Filter::Installed) {
         qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
-        if (request.page == 0) {
+        if (request.d->page == 0) {
             Q_EMIT loadingFinished(request, installedEntries());
         } else {
             Q_EMIT loadingFinished(request, Entry::List());
@@ -158,7 +153,7 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
         return;
     }
 
-    QUrl url = downloadUrl(request.sortMode);
+    QUrl url = downloadUrl(request.d->sortMode);
     if (!url.isEmpty()) {
         // TODO first get the entries, then filter with searchString, finally emit the finished signal...
         // FIXME: don't create an endless number of xmlloaders!
@@ -169,10 +164,10 @@ void StaticXmlProvider::loadEntries(const KNSCore::Provider::SearchRequest &requ
         connect(loader, &XmlLoader::signalFailed, this, [this, request] {
             Q_EMIT loadingFailed(request);
         });
-        loader->setFilter(request.filter);
-        loader->setSearchTerm(request.searchTerm);
+        loader->setFilter(request.d->filter);
+        loader->setSearchTerm(request.d->searchTerm);
 
-        mFeedLoaders.insert(request.sortMode, loader);
+        mFeedLoaders.insert(request.d->sortMode, loader);
 
         loader->load(url);
     } else {
@@ -184,16 +179,16 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
 {
     QUrl url;
     switch (mode) {
-    case Rating:
+    case SortMode::Rating:
         url = mDownloadUrls.value(QStringLiteral("score"));
         break;
-    case Alphabetical:
+    case SortMode::Alphabetical:
         url = mDownloadUrls.value(QString());
         break;
-    case Newest:
+    case SortMode::Newest:
         url = mDownloadUrls.value(QStringLiteral("latest"));
         break;
-    case Downloads:
+    case SortMode::Downloads:
         url = mDownloadUrls.value(QStringLiteral("downloads"));
         break;
     }
@@ -203,7 +198,7 @@ QUrl StaticXmlProvider::downloadUrl(SortMode mode) const
     return url;
 }
 
-void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::Provider::SearchRequest &request, const QDomDocument &doc)
+void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::SearchRequest &request, const QDomDocument &doc)
 {
     XmlLoader *loader = qobject_cast<KNSCore::XmlLoader *>(sender());
     if (!loader) {
@@ -259,20 +254,20 @@ void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::Provider::SearchReques
 
                 if (searchIncludesEntry(request, entry)) {
                     switch (loader->filter()) {
-                    case Installed:
+                    case Filter::Installed:
                         // This is dealt with in loadEntries separately
                         Q_UNREACHABLE();
-                    case Updates:
+                    case Filter::Updates:
                         if (entry.status() == KNSCore::Entry::Updateable) {
                             entries << entry;
                         }
                         break;
-                    case ExactEntryId:
+                    case Filter::ExactEntryId:
                         if (entry.uniqueId() == loader->searchTerm()) {
                             entries << entry;
                         }
                         break;
-                    case None:
+                    case Filter::None:
                         entries << entry;
                         break;
                     }
@@ -287,18 +282,18 @@ void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::Provider::SearchReques
     Q_EMIT loadingFinished(request, entries);
 }
 
-bool StaticXmlProvider::searchIncludesEntry(const KNSCore::Provider::SearchRequest &request, const KNSCore::Entry &entry) const
+bool StaticXmlProvider::searchIncludesEntry(const KNSCore::SearchRequest &request, const KNSCore::Entry &entry) const
 {
-    if (request.filter == Updates) {
+    if (request.d->filter == Filter::Updates) {
         if (entry.status() != KNSCore::Entry::Updateable) {
             return false;
         }
     }
 
-    if (request.searchTerm.isEmpty()) {
+    if (request.d->searchTerm.isEmpty()) {
         return true;
     }
-    QString search = request.searchTerm;
+    QString search = request.d->searchTerm;
     if (entry.name().contains(search, Qt::CaseInsensitive) || entry.summary().contains(search, Qt::CaseInsensitive)
         || entry.author().name().contains(search, Qt::CaseInsensitive)) {
         return true;
@@ -321,6 +316,41 @@ Entry::List StaticXmlProvider::installedEntries() const
         }
     }
     return entries;
+}
+
+QString StaticXmlProvider::name() const
+{
+    return m_name;
+}
+
+QUrl StaticXmlProvider::icon() const
+{
+    return m_iconUrl;
+}
+
+QString StaticXmlProvider::version()
+{
+    return {};
+}
+
+QUrl StaticXmlProvider::website()
+{
+    return mUploadUrl.isValid() ? mUploadUrl : mNoUploadUrl;
+}
+
+QUrl StaticXmlProvider::host()
+{
+    return {};
+}
+
+QString StaticXmlProvider::contactEmail()
+{
+    return {};
+}
+
+bool StaticXmlProvider::supportsSsl()
+{
+    return false;
 }
 
 }

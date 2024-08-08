@@ -5,14 +5,12 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef CACHE_H
-#define CACHE_H
+#pragma once
 
 #include <QObject>
 #include <QSet>
 
 #include "entry.h"
-#include "provider.h"
 
 #include "knewstuffcore_export.h"
 
@@ -20,8 +18,11 @@
 
 namespace KNSCore
 {
-class CachePrivate;
-class KNEWSTUFFCORE_EXPORT KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Do not use the cache directly.") Cache : public QObject
+class Cache2Private;
+class SearchRequest;
+
+// Exported for our internal QtQuick tech. Do not install this header or use it outside knewstuff!
+class KNEWSTUFFCORE_EXPORT Cache2 : public QObject
 {
     Q_OBJECT
 
@@ -33,9 +34,10 @@ public:
      * @param appName The file name of the registry - this is usually
      * the application name, it will be stored in "apps/knewstuff3/appname.knsregistry"
      */
-    static QSharedPointer<Cache> getCache(const QString &appName);
+    static QSharedPointer<Cache2> getCache(const QString &appName);
 
-    ~Cache() override;
+    ~Cache2() override;
+    Q_DISABLE_COPY(Cache2)
 
     /// Read the installed entries (on startup)
     void readRegistry();
@@ -48,8 +50,8 @@ public:
     /// Save the list of installed entries
     void writeRegistry();
 
-    void insertRequest(const KNSCore::Provider::SearchRequest &, const KNSCore::Entry::List &entries);
-    Entry::List requestFromCache(const KNSCore::Provider::SearchRequest &);
+    void insertRequest(const KNSCore::SearchRequest &, const KNSCore::Entry::List &entries);
+    Entry::List requestFromCache(const KNSCore::SearchRequest &);
 
     /**
      * This will run through all entries in the cache, and remove all entries
@@ -87,13 +89,10 @@ public Q_SLOTS:
     void registerChangedEntry(const KNSCore::Entry &entry);
 
 private:
-    Q_DISABLE_COPY(Cache)
-    Cache(const QString &appName);
+    Cache2(const QString &appName);
 
 private:
-    std::unique_ptr<CachePrivate> d;
+    std::unique_ptr<Cache2Private> d;
 };
 
 }
-
-#endif

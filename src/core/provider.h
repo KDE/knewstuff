@@ -27,6 +27,7 @@ namespace KNSCore
 {
 class ProviderPrivate;
 struct Comment;
+
 /**
  * @short KNewStuff Base Provider class.
  *
@@ -36,8 +37,13 @@ struct Comment;
  * static website providers.
  *
  * @author Jeremy Whiting <jpwhiting@kde.org>
+ * @deprecated since 6.9 Use ProviderBase to implement providers (only in-tree supported). Use ProviderCore to manage instances of base.
  */
-class KNEWSTUFFCORE_EXPORT Provider : public QObject
+class KNEWSTUFFCORE_EXPORT
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6,
+                                     9,
+                                     "Use ProviderBase to implement providers (only in-tree supported). Use ProviderCore to manage instances of base.") Provider
+    : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString version READ version WRITE setVersion NOTIFY basicsLoaded)
@@ -66,8 +72,9 @@ public:
 
     /**
      * used to keep track of a search
+     * @deprecated since 6.9 Use KNSCore::SearchRequest
      */
-    struct SearchRequest {
+    struct KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use KNSCore::SearchRequest") SearchRequest {
         SortMode sortMode;
         Filter filter;
         QString searchTerm;
@@ -100,8 +107,9 @@ public:
 
     /**
      * Describes a category: id/name/displayName
+     * @deprecated since 6.9 Use KNSCore::CategoryMetadata
      */
-    struct CategoryMetadata {
+    struct KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use KNSCore::CategoryMetadata") CategoryMetadata {
         QString id;
         QString name;
         QString displayName;
@@ -112,8 +120,9 @@ public:
      * the preset type enum is a helper to identify the kind of label and icon
      * the search preset should have if none are found.
      * @since 5.83
+     * @deprecated since 6.9 Use KNSCore::SearchPreset::SearchPresetTypes
      */
-    enum SearchPresetTypes {
+    enum KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use KNSCore::SearchPreset::SearchPresetTypes") SearchPresetTypes {
         NoPresetType = 0,
         GoBack, ///< preset representing the previous search.
         Root, ///< preset indicating a root directory.
@@ -131,8 +140,9 @@ public:
      * Describes a search request that may come from the provider.
      * This is used by the OPDS provider to handle the different urls.
      * @since 5.83
+     * @deprecated since 6.9 Use KNSCore::SearchPreset
      */
-    struct SearchPreset {
+    struct KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use KNSCore::SearchPreset") SearchPreset {
         SearchRequest request;
         QString displayName;
         QString iconName;
@@ -378,12 +388,15 @@ Q_SIGNALS:
     void signalErrorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
     void categoriesMetadataLoded(const QList<KNSCore::Provider::CategoryMetadata> &categories);
+    void tagFilterChanged();
+    void downloadTagFilterChanged();
 
 protected:
     void setName(const QString &name);
     void setIcon(const QUrl &icon);
 
 private:
+    friend class ProviderBubbleWrap;
     const std::unique_ptr<ProviderPrivate> d;
     Q_DISABLE_COPY(Provider)
 };
