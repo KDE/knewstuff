@@ -25,21 +25,22 @@
 #include <attica/providermanager.h>
 
 #include "atticaprovider_p.h"
+#include "searchrequest_p.h"
 
 using namespace Attica;
 
 namespace
 {
-Attica::Provider::SortMode atticaSortMode(KNSCore::Provider::SortMode sortMode)
+Attica::Provider::SortMode atticaSortMode(KNSCore::SortMode sortMode)
 {
     switch (sortMode) {
-    case KNSCore::Provider::SortMode::Newest:
+    case KNSCore::SortMode::Newest:
         return Attica::Provider::Newest;
-    case KNSCore::Provider::SortMode::Alphabetical:
+    case KNSCore::SortMode::Alphabetical:
         return Attica::Provider::Alphabetical;
-    case KNSCore::Provider::SortMode::Downloads:
+    case KNSCore::SortMode::Downloads:
         return Attica::Provider::Downloads;
-    case KNSCore::Provider::SortMode::Rating:
+    case KNSCore::SortMode::Rating:
         return Attica::Provider::Rating;
     }
     qWarning() << "Unmapped sortMode" << sortMode;
@@ -50,7 +51,7 @@ Attica::Provider::SortMode atticaSortMode(KNSCore::Provider::SortMode sortMode)
 namespace KNSCore
 {
 
-AtticaRequester::AtticaRequester(const KNSCore::Provider::SearchRequest &request, AtticaProvider *provider, QObject *parent)
+AtticaRequester::AtticaRequester(const KNSCore::SearchRequest &request, AtticaProvider *provider, QObject *parent)
     : QObject(parent)
     , m_request(request)
     , m_provider(provider)
@@ -129,7 +130,7 @@ void AtticaRequester::categoryContentsLoaded(BaseJob *job)
         if (!content.isValid()) {
             qCDebug(KNEWSTUFFCORE)
                 << "Filtered out an invalid entry. This suggests something is not right on the originating server. Please contact the administrators of"
-                << m_provider->name() << "and inform them there is an issue with content in the category or categories" << m_request.categories;
+                << m_provider->name() << "and inform them there is an issue with content in the category or categories" << m_request.d->categories;
             continue;
         }
         if (checker.filterAccepts(content.tags())) {
@@ -155,48 +156,49 @@ void AtticaRequester::categoryContentsLoaded(BaseJob *job)
         }
     }
 
-    qCDebug(KNEWSTUFFCORE) << "loaded: " << m_request.hashForRequest() << " count: " << entries.size();
+    qCDebug(KNEWSTUFFCORE) << "loaded: " << m_request.d->hashForRequest() << " count: " << entries.size();
     Q_EMIT loadingFinished(entries);
 }
 
 void AtticaRequester::startInternal()
 {
-    switch (m_request.filter) {
-    case KNSCore::Provider::None:
+    switch (m_request.d->filter) {
+    case KNSCore::Filter::None:
         break;
-    case KNSCore::Provider::ExactEntryId: {
-        ItemJob<Content> *job = m_provider->m_provider.requestContent(m_request.searchTerm);
-        job->setProperty("providedEntryId", m_request.searchTerm);
+    case KNSCore::Filter::ExactEntryId: {
+        ItemJob<Content> *job = m_provider->m_provider.requestContent(m_request.d->searchTerm);
+        job->setProperty("providedEntryId", m_request.d->searchTerm);
         connect(job, &BaseJob::finished, this, &AtticaRequester::detailsLoaded);
         job->start();
         return;
     }
-    case KNSCore::Provider::Installed:
-        if (m_request.page == 0) {
+    case KNSCore::Filter::Installed:
+        if (m_request.d->page == 0) {
             Q_EMIT loadingFinished(installedEntries());
         } else {
             Q_EMIT loadingFinished({});
         }
         return;
-    case KNSCore::Provider::Updates:
+    case KNSCore::Filter::Updates:
         checkForUpdates();
         return;
     }
 
-    Attica::Provider::SortMode sorting = atticaSortMode(m_request.sortMode);
+    Attica::Provider::SortMode sorting = atticaSortMode(m_request.d->sortMode);
     Attica::Category::List categoriesToSearch;
 
-    if (m_request.categories.isEmpty()) {
+    if (m_request.d->categories.isEmpty()) {
         // search in all categories
         categoriesToSearch = m_provider->mCategoryMap.values();
     } else {
-        categoriesToSearch.reserve(m_request.categories.size());
-        for (const QString &categoryName : std::as_const(m_request.categories)) {
+        categoriesToSearch.reserve(m_request.d->categories.size());
+        for (const QString &categoryName : std::as_const(m_request.d->categories)) {
             categoriesToSearch.append(m_provider->mCategoryMap.values(categoryName));
         }
     }
 
-    ListJob<Content> *job = m_provider->m_provider.searchContents(categoriesToSearch, m_request.searchTerm, sorting, m_request.page, m_request.pageSize);
+    ListJob<Content> *job =
+        m_provider->m_provider.searchContents(categoriesToSearch, m_request.d->searchTerm, sorting, m_request.d->page, m_request.d->pageSize);
     job->setProperty("searchRequest", QVariant::fromValue(m_request));
     connect(job, &BaseJob::finished, this, &AtticaRequester::categoryContentsLoaded);
     job->start();
@@ -281,7 +283,7 @@ Entry AtticaRequester::entryFromAtticaContent(const Attica::Content &content)
     return entry;
 }
 
-[[nodiscard]] KNSCore::Provider::SearchRequest AtticaRequester::request() const
+[[nodiscard]] KNSCore::SearchRequest AtticaRequester::request() const
 {
     return m_request;
 }

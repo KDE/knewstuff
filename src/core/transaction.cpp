@@ -8,7 +8,9 @@
 #include "enginebase.h"
 #include "enginebase_p.h"
 #include "entry_p.h"
-#include "provider.h"
+#include "providerbase_p.h"
+#include "providercore.h"
+#include "providercore_p.h"
 #include "question.h"
 
 #include <KLocalizedString>
@@ -200,9 +202,9 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
             Q_EMIT ret->signalEntryEvent(entry, Entry::StatusChangedEvent);
 
             qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
-            QSharedPointer<Provider> p = engine->d->providers.value(entry.providerId());
+            const auto &p = engine->d->providerCores.value(entry.providerId());
             if (p) {
-                connect(p.data(), &Provider::payloadLinkLoaded, ret, &Transaction::downloadLinkLoaded);
+                connect(p->d->base, &ProviderBase::payloadLinkLoaded, ret, &Transaction::downloadLinkLoaded);
                 // If linkId is -1, assume we don't know what to update
                 if (linkId == -1) {
                     const auto downloadLinksInformationList = entry.d.constData()->mDownloadLinkInformationList;
@@ -233,7 +235,7 @@ Transaction *Transaction::install(EngineBase *engine, const KNSCore::Entry &_ent
                     ret->d->payloadToIdentify[entry] = QString{};
                 }
 
-                p->loadPayloadLink(entry, linkId);
+                p->d->base->loadPayloadLink(entry, linkId);
 
                 ret->d->m_finished = false;
                 ret->d->m_engine->updateStatus();
@@ -258,10 +260,10 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
             QStringList payloads = d->payloads[entry];
             payloads << entry.payload();
             d->payloads[entry] = payloads;
-            QSharedPointer<Provider> p = d->m_engine->d->providers.value(entry.providerId());
+            const auto &p = d->m_engine->d->providerCores.value(entry.providerId());
             if (p) {
                 // ok, so this should definitely always work, but... safety first, kids!
-                p->loadPayloadLink(entry, payloads.count());
+                p->d->base->loadPayloadLink(entry, payloads.count());
             }
         } else {
             // We now have all the links, so let's try and identify the correct one...
