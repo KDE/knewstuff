@@ -10,7 +10,7 @@
 #ifndef KNEWSTUFF3_STATICXMLPROVIDER_P_H
 #define KNEWSTUFF3_STATICXMLPROVIDER_P_H
 
-#include "provider.h"
+#include "providerbase_p.h"
 #include <QDomDocument>
 #include <QMap>
 
@@ -30,7 +30,7 @@ class XmlLoader;
  *
  * @internal
  */
-class StaticXmlProvider : public Provider
+class StaticXmlProvider : public ProviderBase
 {
     Q_OBJECT
 public:
@@ -51,15 +51,22 @@ public:
 
     void setCachedEntries(const KNSCore::Entry::List &cachedEntries) override;
 
-    void loadEntries(const KNSCore::Provider::SearchRequest &request) override;
+    void loadEntries(const KNSCore::SearchRequest &request) override;
     void loadPayloadLink(const KNSCore::Entry &entry, int) override;
 
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] QUrl icon() const override;
+    [[nodiscard]] QString version() override;
+    [[nodiscard]] QUrl website() override;
+    [[nodiscard]] QUrl host() override;
+    [[nodiscard]] QString contactEmail() override;
+    [[nodiscard]] bool supportsSsl() override;
+
 private Q_SLOTS:
-    void slotEmitProviderInitialized();
-    void slotFeedFileLoaded(const KNSCore::Provider::SearchRequest &request, const QDomDocument &);
+    void slotFeedFileLoaded(const KNSCore::SearchRequest &request, const QDomDocument &);
 
 private:
-    bool searchIncludesEntry(const KNSCore::Provider::SearchRequest &request, const Entry &entry) const;
+    bool searchIncludesEntry(const KNSCore::SearchRequest &request, const Entry &entry) const;
     QUrl downloadUrl(SortMode mode) const;
     Entry::List installedEntries() const;
 
@@ -70,9 +77,11 @@ private:
 
     // cache of all entries known from this provider so far, mapped by their id
     Entry::List mCachedEntries;
-    QMap<Provider::SortMode, XmlLoader *> mFeedLoaders;
+    QMap<SortMode, XmlLoader *> mFeedLoaders;
     QString mId;
     bool mInitialized;
+    QUrl m_iconUrl;
+    QString m_name;
 
     Q_DISABLE_COPY(StaticXmlProvider)
 };

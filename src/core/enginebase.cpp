@@ -24,7 +24,10 @@
 #include <QTimer>
 
 #include "attica/atticaprovider_p.h"
+#include "categorymetadata.h"
 #include "opds/opdsprovider_p.h"
+#include "providercore.h"
+#include "providercore_p.h"
 #include "resultsstream.h"
 #include "staticxml/staticxmlprovider_p.h"
 #include "transaction.h"
@@ -35,9 +38,47 @@ using namespace KNSCore;
 typedef QHash<QUrl, QPointer<XmlLoader>> EngineProviderLoaderHash;
 Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
+namespace
+{
+
+}
+
+EngineBasePrivate::EngineBasePrivate(EngineBase *qptr)
+    : q(qptr)
+{
+}
+
+void EngineBasePrivate::addProvider(const QSharedPointer<KNSCore::ProviderCore> &provider)
+{
+    qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->d->base->id();
+    providerCores.insert(provider->d->base->id(), provider);
+    provider->d->base->setTagFilter(tagFilter);
+    provider->d->base->setDownloadTagFilter(downloadTagFilter);
+    QObject::connect(provider->d->base, &ProviderBase::providerInitialized, q, [this, providerBase = provider->d->base] {
+        qCDebug(KNEWSTUFFCORE) << "providerInitialized" << providerBase->name();
+        providerBase->setCachedEntries(cache->registryForProvider(providerBase->id()));
+
+        for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(providers)) {
+            if (!p->isInitialized()) {
+                return;
+            }
+        }
+        Q_EMIT q->signalProvidersLoaded();
+    });
+
+    QObject::connect(provider->d->base, &ProviderBase::signalError, q, [this, provider](const QString &msg) {
+        Q_EMIT q->signalErrorCode(ErrorCode::ProviderError, msg, providerFileUrl);
+    });
+    QObject::connect(provider->d->base, &ProviderBase::signalErrorCode, q, &EngineBase::signalErrorCode);
+    QObject::connect(provider->d->base, &ProviderBase::signalInformation, q, &EngineBase::signalMessage);
+    QObject::connect(provider->d->base, &ProviderBase::basicsLoaded, q, &EngineBase::providersChanged);
+    Q_EMIT q->providerAdded(provider.get());
+    Q_EMIT q->providersChanged();
+}
+
 EngineBase::EngineBase(QObject *parent)
     : QObject(parent)
-    , d(new EngineBasePrivate)
+    , d(new EngineBasePrivate(this))
 {
     connect(d->installation, &Installation::signalInstallationError, this, [this](const QString &message) {
         Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant());
@@ -138,7 +179,12 @@ bool EngineBase::init(const QString &configfile)
     }
 
     const QString configFileBasename = QFileInfo(resolvedConfigFilePath).completeBaseName();
-    d->cache = Cache::getCache(configFileBasename);
+
+    d->legacyCache = Cache::getCache(configFileBasename);
+    qCDebug(KNEWSTUFFCORE) << "Legacy cache is" << d->legacyCache << "for" << configFileBasename;
+    d->legacyCache->readRegistry();
+
+    d->cache = Cache2::getCache(configFileBasename);
     qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileBasename;
     d->cache->readRegistry();
 
@@ -230,10 +276,103 @@ QStringList EngineBase::categories() const
 
 QList<Provider::CategoryMetadata> EngineBase::categoriesMetadata()
 {
+    QList<Provider::CategoryMetadata> list;
+    for (const auto &data : d->categoriesMetadata) {
+        list.append(Provider::CategoryMetadata{.id = data.id(), .name = data.name(), .displayName = data.displayName()});
+    }
+    return list;
+}
+
+QList<CategoryMetadata> EngineBase::categoriesMetadata2()
+{
     return d->categoriesMetadata;
 }
 
 QList<Provider::SearchPreset> EngineBase::searchPresets()
+{
+    QList<Provider::SearchPreset> list;
+    for (const auto &preset : d->searchPresets) {
+        // This is slightly mad backwards compat. We back-convert a SearchPreset which requires a convert of
+        // SearchRequest and all the involved enums.
+        // Since this is the only place we need it this has been implemented thusly.
+        // Should someone find it offensive feel free to tear it apart into functions, but understand they are only
+        // used here.
+        list.append([preset] {
+            const auto request = preset.request();
+            return Provider::SearchPreset{
+                .request = Provider::SearchRequest(
+                    [mode = request.sortMode()] {
+                        switch (mode) {
+                        case KNSCore::SortMode::Alphabetical:
+                            return KNSCore::Provider::Alphabetical;
+                        case KNSCore::SortMode::Downloads:
+                            return KNSCore::Provider::Downloads;
+                        case KNSCore::SortMode::Newest:
+                            return KNSCore::Provider::Newest;
+                        case KNSCore::SortMode::Rating:
+                            return KNSCore::Provider::Rating;
+                        }
+                        return KNSCore::Provider::Rating;
+                    }(),
+                    [filter = request.filter()] {
+                        switch (filter) {
+                        case KNSCore::Filter::ExactEntryId:
+                            return KNSCore::Provider::ExactEntryId;
+                        case KNSCore::Filter::Installed:
+                            return KNSCore::Provider::Installed;
+                        case KNSCore::Filter::Updates:
+                            return KNSCore::Provider::Updates;
+                        case KNSCore::Filter::None:
+                            return KNSCore::Provider::None;
+                        }
+                        return KNSCore::Provider::None;
+                    }(),
+                    request.searchTerm(),
+                    request.categories(),
+                    request.page(),
+                    request.pageSize()
+                    // Note that this loses the id but there's nothing we can do about it. It's why we deprecated it.
+                    ),
+                .displayName = preset.displayName(),
+                .iconName = preset.iconName(),
+                .type =
+                    [type = preset.type()] {
+                        switch (type) {
+                        case KNSCore::SearchPreset::SearchPresetTypes::GoBack:
+                            return KNSCore::Provider::SearchPresetTypes::GoBack;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Popular:
+                            return KNSCore::Provider::SearchPresetTypes::Popular;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Featured:
+                            return KNSCore::Provider::SearchPresetTypes::Featured;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Start:
+                            return KNSCore::Provider::SearchPresetTypes::Start;
+                        case KNSCore::SearchPreset::SearchPresetTypes::New:
+                            return KNSCore::Provider::SearchPresetTypes::New;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Root:
+                            return KNSCore::Provider::SearchPresetTypes::Root;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Shelf:
+                            return KNSCore::Provider::SearchPresetTypes::Shelf;
+                        case KNSCore::SearchPreset::SearchPresetTypes::FolderUp:
+                            return KNSCore::Provider::SearchPresetTypes::FolderUp;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Recommended:
+                            return KNSCore::Provider::SearchPresetTypes::Recommended;
+                        case KNSCore::SearchPreset::SearchPresetTypes::Subscription:
+                            return KNSCore::Provider::SearchPresetTypes::Subscription;
+                        case KNSCore::SearchPreset::SearchPresetTypes::AllEntries:
+                            return KNSCore::Provider::SearchPresetTypes::AllEntries;
+                        case KNSCore::SearchPreset::SearchPresetTypes::NoPresetType:
+                            return KNSCore::Provider::SearchPresetTypes::NoPresetType;
+                        }
+                        return KNSCore::Provider::SearchPresetTypes::NoPresetType;
+                    }(),
+                .providerId = preset.providerId(),
+            };
+        }());
+    }
+    return list;
+}
+
+QList<SearchPreset> EngineBase::searchPresets2()
 {
     return d->searchPresets;
 }
@@ -308,27 +447,28 @@ void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
     while (!n.isNull()) {
         qCDebug(KNEWSTUFFCORE) << "Provider attributes: " << n.attribute(QStringLiteral("type"));
 
-        QSharedPointer<KNSCore::Provider> provider;
+        QSharedPointer<KNSCore::ProviderCore> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider.reset(new AtticaProvider(d->categories, {}));
-            connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
+            provider.reset(new ProviderCore(new AtticaProvider(d->categories, {})));
+            connect(provider->d->base, &ProviderBase::categoriesMetadataLoaded, this, [this](const QList<CategoryMetadata> &categories) {
                 d->categoriesMetadata = categories;
-                Q_EMIT signalCategoriesMetadataLoded(categories);
+                Q_EMIT signalCategoriesMetadataLoaded(categories);
             });
 #ifdef SYNDICATION_FOUND
         } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")) {
-            provider.reset(new OPDSProvider);
-            connect(provider.data(), &Provider::searchPresetsLoaded, this, [this](const QList<Provider::SearchPreset> &presets) {
+            provider.reset(new ProviderCore(new OPDSProvider));
+            connect(provider->d->base, &ProviderBase::searchPresetsLoaded, this, [this](const QList<SearchPreset> &presets) {
                 d->searchPresets = presets;
                 Q_EMIT signalSearchPresetsLoaded(presets);
             });
 #endif
         } else {
-            provider.reset(new StaticXmlProvider);
+            provider.reset(new ProviderCore(new StaticXmlProvider));
         }
 
-        if (provider->setProviderXML(n)) {
-            addProvider(provider);
+        if (provider->d->base->setProviderXML(n)) {
+            d->addProvider(provider);
+#warning is it a problem that addProvider on the enginebase is unused and dead
         } else {
             Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError, i18n("Error initializing provider."), d->providerFileUrl);
         }
@@ -344,17 +484,20 @@ void EngineBase::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         qCDebug(KNEWSTUFFCORE) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
-    QSharedPointer<KNSCore::Provider> provider = QSharedPointer<KNSCore::Provider>(new AtticaProvider(atticaProvider, d->categories, {}));
-    connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
+    auto provider = QSharedPointer<KNSCore::ProviderCore>(new KNSCore::ProviderCore(new AtticaProvider(atticaProvider, d->categories, {})));
+    connect(provider->d->base, &ProviderBase::categoriesMetadataLoaded, this, [this](const QList<CategoryMetadata> &categories) {
         d->categoriesMetadata = categories;
-        Q_EMIT signalCategoriesMetadataLoded(categories);
+#warning what to do with this we have different types
+        // Q_EMIT signalCategoriesMetadataLoded(categories);
+        Q_EMIT signalCategoriesMetadataLoaded(categories);
     });
-    addProvider(provider);
+#warning is it a problem that addProvider on the enginebase is unused and dead
+    d->addProvider(provider);
 }
 
 QSharedPointer<Cache> EngineBase::cache() const
 {
-    return d->cache;
+    return d->legacyCache;
 }
 
 void EngineBase::setTagFilter(const QStringList &filter)
@@ -470,7 +613,40 @@ Installation *EngineBase::installation() const
 
 ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
-    return new ResultsStream(request, this);
+    return new ResultsStream(KNSCore::SearchRequest(
+                                 [request] {
+                                     switch (request.sortMode) {
+                                     case Provider::SortMode::Alphabetical:
+                                         return SortMode::Alphabetical;
+                                     case Provider::SortMode::Downloads:
+                                         return SortMode::Downloads;
+                                     case Provider::SortMode::Newest:
+                                         return SortMode::Newest;
+                                     case Provider::SortMode::Rating:
+                                         return SortMode::Rating;
+                                     }
+                                     Q_ASSERT(false);
+                                     return SortMode::Rating;
+                                 }(),
+                                 [request] {
+                                     switch (request.filter) {
+                                     case Provider::Filter::None:
+                                         return Filter::None;
+                                     case Provider::Filter::Installed:
+                                         return Filter::Installed;
+                                     case Provider::Filter::Updates:
+                                         return Filter::Updates;
+                                     case Provider::Filter::ExactEntryId:
+                                         return Filter::ExactEntryId;
+                                     }
+                                     Q_ASSERT(false);
+                                     return Filter::None;
+                                 }(),
+                                 request.searchTerm,
+                                 request.categories,
+                                 request.page,
+                                 request.pageSize),
+                             this);
 }
 
 EngineBase::ContentWarningType EngineBase::contentWarningType() const
@@ -481,6 +657,11 @@ EngineBase::ContentWarningType EngineBase::contentWarningType() const
 QList<QSharedPointer<Provider>> EngineBase::providers() const
 {
     return d->providers.values();
+}
+
+KNSCore::ResultsStream *KNSCore::EngineBase::search(const KNSCore::SearchRequest &request)
+{
+    return new ResultsStream(request, this);
 }
 
 #include "moc_enginebase.cpp"

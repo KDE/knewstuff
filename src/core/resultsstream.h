@@ -16,6 +16,7 @@
 
 namespace KNSCore
 {
+class SearchRequest;
 class ResultsStreamPrivate;
 /**
  * The ResultsStream is returned by EngineBase::search. It is used to communicate
@@ -47,7 +48,9 @@ Q_SIGNALS:
 
 private:
     friend class EngineBase;
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 6, "Use SearchRequest constructor")
     ResultsStream(const Provider::SearchRequest &request, EngineBase *base);
+    ResultsStream(const SearchRequest &request, EngineBase *base);
     void finish();
 
     std::unique_ptr<ResultsStreamPrivate> d;

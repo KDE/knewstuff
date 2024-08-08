@@ -112,13 +112,13 @@ public:
     XmlLoader *xmlLoader;
 
     Entry::List cachedEntries;
-    Provider::SearchRequest currentRequest;
+    SearchRequest currentRequest;
 
     QUrl openSearchDocumentURL;
     QString openSearchTemplate;
 
     // Generate an opensearch string.
-    QUrl openSearchStringForRequest(const KNSCore::Provider::SearchRequest &request)
+    QUrl openSearchStringForRequest(const KNSCore::SearchRequest &request)
     {
         {
             QUrl searchUrl = QUrl(openSearchTemplate);
@@ -128,13 +128,13 @@ public:
 
             for (QPair<QString, QString> key : templateQuery.queryItems()) {
                 if (key.second.contains(OPENSEARCH_SEARCH_TERMS)) {
-                    query.addQueryItem(key.first, request.searchTerm);
+                    query.addQueryItem(key.first, request.searchTerm());
                 } else if (key.second.contains(OPENSEARCH_COUNT)) {
-                    query.addQueryItem(key.first, QString::number(request.pageSize));
+                    query.addQueryItem(key.first, QString::number(request.pageSize()));
                 } else if (key.second.contains(OPENSEARCH_START_PAGE)) {
-                    query.addQueryItem(key.first, QString::number(request.page));
+                    query.addQueryItem(key.first, QString::number(request.page()));
                 } else if (key.second.contains(OPENSEARCH_START_INDEX)) {
-                    query.addQueryItem(key.first, QString::number(request.page * request.pageSize));
+                    query.addQueryItem(key.first, QString::number(request.page() * request.pageSize()));
                 }
             }
             searchUrl.setQuery(query);
@@ -228,7 +228,7 @@ void parseFeedData(const QDomDocument &doc)
         OPDSProvider::SearchRequest request;
         request.searchTerm = providerId;
         preset.request = request;
-        preset.type = Provider::SearchPresetTypes::Start;
+        preset.type = SearchPresetTypes::Start;
         presets.append(preset);
     }
 
@@ -301,25 +301,25 @@ void parseFeedData(const QDomDocument &doc)
             request.searchTerm = fixRelativeUrl(link.href()).toString();
             preset.request = request;
             if (link.rel() == REL_START) {
-                preset.type = Provider::SearchPresetTypes::Root;
+                preset.type = SearchPresetTypes::Root;
             } else if (link.rel() == OPDS_REL_FEATURED) {
-                preset.type = Provider::SearchPresetTypes::Featured;
+                preset.type = SearchPresetTypes::Featured;
             } else if (link.rel() == OPDS_REL_SHELF) {
-                preset.type = Provider::SearchPresetTypes::Shelf;
+                preset.type = SearchPresetTypes::Shelf;
             } else if (link.rel() == OPDS_REL_SORT_NEW) {
-                preset.type = Provider::SearchPresetTypes::New;
+                preset.type = SearchPresetTypes::New;
             } else if (link.rel() == OPDS_REL_SORT_POPULAR) {
-                preset.type = Provider::SearchPresetTypes::Popular;
+                preset.type = SearchPresetTypes::Popular;
             } else if (link.rel() == REL_UP) {
-                preset.type = Provider::SearchPresetTypes::FolderUp;
+                preset.type = SearchPresetTypes::FolderUp;
             } else if (link.rel() == OPDS_REL_CRAWL) {
-                preset.type = Provider::SearchPresetTypes::AllEntries;
+                preset.type = SearchPresetTypes::AllEntries;
             } else if (link.rel() == OPDS_REL_RECOMMENDED) {
-                preset.type = Provider::SearchPresetTypes::Recommended;
+                preset.type = SearchPresetTypes::Recommended;
             } else if (link.rel() == OPDS_REL_SUBSCRIPTIONS) {
-                preset.type = Provider::SearchPresetTypes::Subscription;
+                preset.type = SearchPresetTypes::Subscription;
             } else {
-                preset.type = Provider::SearchPresetTypes::NoPresetType;
+                preset.type = SearchPresetTypes::NoPresetType;
                 if (preset.displayName.isEmpty()) {
                     preset.displayName = link.rel();
                 }
@@ -665,6 +665,31 @@ bool OPDSProvider::isInitialized() const
 void OPDSProvider::setCachedEntries(const KNSCore::Entry::List &cachedEntries)
 {
     d->cachedEntries = cachedEntries;
+}
+
+[[nodiscard]] QString OPDSProvider::version() override
+{
+    return {};
+}
+
+[[nodiscard]] QUrl OPDSProvider::website() override
+{
+    return {};
+}
+
+[[nodiscard]] QUrl OPDSProvider::host() override
+{
+    return {};
+}
+
+[[nodiscard]] QString OPDSProvider::contactEmail() override
+{
+    return {};
+}
+
+[[nodiscard]] bool OPDSProvider::supportsSsl() override
+{
+    return false;
 }
 }
 

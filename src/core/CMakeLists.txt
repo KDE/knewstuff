@@ -26,6 +26,13 @@ set(KNewStuffCore_SRCS
     questionmanager.cpp
     questionlistener.cpp
 
+    providercore.cpp
+    providerbase.cpp
+    categorymetadata.cpp
+    searchrequest.cpp
+    searchpreset.cpp
+    cache2.cpp
+
     ../attica/atticaprovider.cpp
     ../attica/atticarequester.cpp
     ../staticxml/staticxmlprovider.cpp
@@ -79,7 +86,7 @@ ecm_generate_export_header(KF6NewStuffCore
     VERSION_BASE_NAME KNewStuff
     DEPRECATED_BASE_VERSION 0
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
-    DEPRECATION_VERSIONS
+    DEPRECATION_VERSIONS 6.6
 )
 
 set(KNewStuffCore_BUILD_INCLUDE_DIRS
@@ -107,6 +114,7 @@ target_link_libraries(KF6NewStuffCore
     KF6::Package
     Qt6::Xml
     knscore_jobs_static
+    stdc++exp
 )
 
 if(KF6Syndication_FOUND)
@@ -133,6 +141,10 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   ResultsStream
   TagsFilterChecker
   Transaction
+  SearchRequest
+  ProviderCore
+  CategoryMetadata
+  SearchPreset
 
   REQUIRED_HEADERS KNewStuffCore_HEADERS
   OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore
