@@ -15,17 +15,19 @@
 #include <QSharedPointer>
 #include <QString>
 
+#include "categorymetadata.h"
 #include "entry.h"
 #include "errorcode.h"
-#include "provider.h"
-
 #include "knewstuffcore_export.h"
+#include "provider.h"
+#include "searchpreset.h"
 
 #include <memory>
 
 class KJob;
 class EnginePrivate;
 class QDomDocument;
+class SearchPresetModel;
 
 namespace Attica
 {
@@ -39,6 +41,8 @@ class CommentsModel;
 class ResultsStream;
 class EngineBasePrivate;
 class Installation;
+class SearchRequest;
+class ProviderCore;
 
 /**
  * KNewStuff engine.
@@ -78,7 +82,8 @@ class KNEWSTUFFCORE_EXPORT EngineBase : public QObject
 
 public:
     EngineBase(QObject *parent = nullptr);
-    ~EngineBase();
+    ~EngineBase() override;
+    Q_DISABLE_COPY_MOVE(EngineBase)
 
     /**
      * List of all available config files. This list will contain no duplicated filenames.
@@ -140,14 +145,23 @@ public:
      */
     QStringList categories() const;
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Get the entries cache for this engine (note that it may be null if the engine is
      * not yet initialized).
      * @return The cache for this engine (or null if the engine is not initialized)
      * @since 5.74
+     * @deprecated since 6.9 Do not use the cache directly
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Do not use the cache directly")
     QSharedPointer<Cache> cache() const;
+#endif
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 use categoriesMetadata2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use categoriesMetadata2")
+    QList<Provider::CategoryMetadata> categoriesMetadata();
+#endif
     /**
      * The list of metadata for the categories handled by this engine instance.
      * If you wish to show the categories to the user, this is the data to use.
@@ -158,9 +172,14 @@ public:
      *
      * @return The metadata for all categories handled by this engine
      */
-    QList<Provider::CategoryMetadata> categoriesMetadata();
+    QList<CategoryMetadata> categoriesMetadata2();
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 use searchPresets2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use searchPresets2")
     QList<Provider::SearchPreset> searchPresets();
+#endif
+    QList<SearchPreset> searchPresets2();
 
     /**
      * @returns the list of attica (OCS) providers this engine is connected to
@@ -302,21 +321,29 @@ public:
     void becomeFan(const Entry &entry);
     // FIXME There is currently no exposed API to remove the fan status
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * The Provider instance with the passed ID
      *
      * @param providerId The ID of the Provider to fetch
      * @return The Provider with the passed ID, or null if non such Provider exists
      * @since 5.63
+     * @deprecated since 6.9 Do not write provider-specific code
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Do not write provider-specific code")
     QSharedPointer<Provider> provider(const QString &providerId) const;
+#endif
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Return the first provider in the providers list (usually the default provider)
      * @return The first Provider (or null if the engine is not initialized)
      * @since 5.63
+     * @deprecated since 6.9 Do not write provider-specific code
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Do not write provider-specific code")
     QSharedPointer<Provider> defaultProvider() const;
+#endif
 
     /**
      * The IDs of all providers known by this engine. Use this in combination with
@@ -334,12 +361,23 @@ public:
      */
     bool hasAdoptionCommand() const;
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Returns a stream object that will fulfill the @p request.
      *
      * @since 6.0
+     * @deprecated since 6.9 Use the new search function
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use the new search function")
     ResultsStream *search(const KNSCore::Provider::SearchRequest &request);
+#endif
+
+    /**
+     * Returns a stream object that will fulfill the @p request.
+     *
+     * @since 6.9
+     */
+    ResultsStream *search(const KNSCore::SearchRequest &request);
 
     /**
      * @brief The ContentWarningType enum
@@ -384,29 +422,50 @@ Q_SIGNALS:
      * Fires in the case of any critical or serious errors, such as network or API problems.
      * @param errorCode Represents the specific type of error which has occurred
      * @param message A human-readable message which can be shown to the end user
-     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
+     * @param metadata Any additional data which might be helpful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
      * metadata details)
      * @see KNSCore::Entry::ErrorCode
      * @since 5.53
      */
     void signalErrorCode(KNSCore::ErrorCode::ErrorCode errorCode, const QString &message, const QVariant &metadata);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Use variant with new argument type
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use variant with new argument type")
     void signalCategoriesMetadataLoded(const QList<Provider::CategoryMetadata> &categories);
+#endif
+    void signalCategoriesMetadataLoaded(const QList<KNSCore::CategoryMetadata> &categories);
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Fires when the engine has loaded search presets. These represent interesting
      * searches for the user, such as recommendations.
      * @since 5.83
+     * @deprecated since 6.9 Use variant with new argument type
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use variant with new argument type")
     void signalSearchPresetsLoaded(const QList<Provider::SearchPreset> &presets);
+#endif
 
+    /**
+     * Fires when the engine has loaded search presets. These represent interesting
+     * searches for the user, such as recommendations.
+     * @since 6.9
+     */
+    void signalSearchPresetsLoaded(const QList<KNSCore::SearchPreset> &presets);
+
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
      * Fired whenever the list of providers changes
      * @since 5.85
+     * @deprecated since 6.9 Use providerAdded signal
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use providerAdded signal")
     void providersChanged();
+#endif
 
     void loadingProvider();
+    void providerAdded(KNSCore::ProviderCore *provider);
 
 private:
     // the .knsrc file was loaded
@@ -426,17 +485,28 @@ private:
     void loadProviders();
 
 protected:
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
     /**
-      Add a provider and connect it to the right slots
+     * Add a provider and connect it to the right slots
+     * @deprecated since 6.9 Use providerAdded signal
      */
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use providerAdded signal")
     virtual void addProvider(QSharedPointer<KNSCore::Provider> provider);
+#endif
     virtual void updateStatus();
 
     friend class ResultsStream;
     friend class Transaction;
     friend class TransactionPrivate;
+    friend class EngineBasePrivate;
+    friend class ::SearchPresetModel;
     Installation *installation() const; // Needed for quick engine
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Do not write provider-specific code
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Do not write provider-specific code")
     QList<QSharedPointer<Provider>> providers() const;
+#endif
+    // FIXME KF7: make this private and declare QuickEngine a friend. this cannot be used from the outside!
     std::unique_ptr<EngineBasePrivate> d;
 };
 

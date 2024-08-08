@@ -33,8 +33,8 @@ private Q_SLOTS:
 
         QSignalSpy spy(&provider, &AtticaProvider::loadingFinished);
 
-        provider.loadEntries(Provider::SearchRequest(Provider::SortMode::Downloads, Provider::Filter::None, "kora"));
-        provider.loadEntries(Provider::SearchRequest(Provider::SortMode::Downloads, Provider::Filter::None, "kde"));
+        provider.loadEntries(SearchRequest(SortMode::Downloads, Filter::None, "kora"));
+        provider.loadEntries(SearchRequest(SortMode::Downloads, Filter::None, "kde"));
 
         QVERIFY(spy.wait(networkTimeout));
         if (spy.size() != 2) {

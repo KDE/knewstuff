@@ -38,7 +38,9 @@ class Engine : public KNSCore::EngineBase
     Q_PROPERTY(CategoriesModel *categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QStringList categoriesFilter READ categoriesFilter WRITE setCategoriesFilter RESET resetCategoriesFilter NOTIFY categoriesFilterChanged)
     Q_PROPERTY(KNSCore::Provider::Filter filter READ filter WRITE setFilter NOTIFY filterChanged)
+    Q_PROPERTY(KNSCore::Filter filter2 READ filter2 WRITE setFilter2 NOTIFY filterChanged)
     Q_PROPERTY(KNSCore::Provider::SortMode sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
+    Q_PROPERTY(KNSCore::SortMode sortOrder2 READ sortOrder2 WRITE setSortOrder2 NOTIFY sortOrderChanged)
     Q_PROPERTY(QString searchTerm READ searchTerm WRITE setSearchTerm RESET resetSearchTerm NOTIFY searchTermChanged)
     Q_PROPERTY(SearchPresetModel *searchPresetModel READ searchPresetModel NOTIFY searchPresetModelChanged)
 
@@ -52,6 +54,7 @@ class Engine : public KNSCore::EngineBase
 public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
+    Q_DISABLE_COPY_MOVE(Engine)
 
     enum class BusyOperation {
         Initializing = 1,
@@ -105,12 +108,32 @@ public:
     }
     Q_SIGNAL void categoriesFilterChanged();
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Use filter2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use filter2")
     KNSCore::Provider::Filter filter() const;
+#endif
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Use setFilter2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use setFilter2")
     void setFilter(KNSCore::Provider::Filter filter);
+#endif
+    [[nodiscard]] KNSCore::Filter filter2() const;
+    void setFilter2(KNSCore::Filter filter);
     Q_SIGNAL void filterChanged();
 
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Use sortOrder2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use sortOrder2")
     KNSCore::Provider::SortMode sortOrder() const;
+#endif
+#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+    /// @deprecated since 6.9 Use setSortOrder2
+    KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use setSortOrder2")
     void setSortOrder(KNSCore::Provider::SortMode newSortOrder);
+#endif
+    [[nodiscard]] KNSCore::SortMode sortOrder2() const;
+    void setSortOrder2(KNSCore::SortMode newSortOrder);
     Q_SIGNAL void sortOrderChanged();
 
     QString searchTerm() const;
@@ -137,8 +160,6 @@ public:
     void reloadEntries();
 
     void loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type);
-
-    void addProvider(QSharedPointer<KNSCore::Provider> provider) override;
 
     /**
      * Adopt an entry using the adoption command. This will also take care of displaying error messages
@@ -245,6 +266,7 @@ private:
     void registerTransaction(KNSCore::Transaction *transactions);
     void doRequest();
     const std::unique_ptr<EnginePrivate> d;
+    KNSCore::EngineBasePrivate *dd;
 };
 
 #endif // ENGINE_H

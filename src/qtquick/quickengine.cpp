@@ -20,6 +20,12 @@
 #include "quickquestionlistener.h"
 #include "searchpresetmodel.h"
 
+#include "../core/enginebase_p.h"
+#include "../core/providerbase_p.h"
+#include "../core/providercore.h"
+#include "../core/providercore_p.h"
+
+// Could be made :public EngineBasePrivate so we don't have two distinct d pointers
 class EnginePrivate
 {
 public:
@@ -31,8 +37,8 @@ public:
     Engine::BusyState busyState;
     QString busyMessage;
     // the current request from providers
-    KNSCore::Provider::SearchRequest currentRequest;
-    KNSCore::Provider::SearchRequest storedRequest;
+    KNSCore::SearchRequest currentRequest;
+    KNSCore::SearchRequest storedRequest;
     // the page that is currently displayed, so it is not requested repeatedly
     int currentPage = -1;
 
@@ -47,7 +53,28 @@ public:
 Engine::Engine(QObject *parent)
     : KNSCore::EngineBase(parent)
     , d(new EnginePrivate)
+    , dd(KNSCore::EngineBase::d.get())
 {
+    connect(this, &KNSCore::EngineBase::providerAdded, this, [this](auto core) {
+        connect(core->d->base, &KNSCore::ProviderBase::loadingFinished, this, [this](const auto &request, const auto &entries) {
+            d->currentPage = qMax<int>(request.page(), d->currentPage);
+            qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page() << "current page" << d->currentPage << "count:" << entries.count();
+
+            if (request.filter() != KNSCore::Filter::Updates) {
+                dd->cache->insertRequest(request, entries);
+            }
+            Q_EMIT signalEntriesLoaded(entries);
+
+            --d->numDataJobs;
+            updateStatus();
+        });
+        connect(core->d->base, &KNSCore::ProviderBase::entryDetailsLoaded, this, [this](const auto &entry) {
+            --d->numDataJobs;
+            updateStatus();
+            Q_EMIT signalEntryEvent(entry, KNSCore::Entry::DetailsLoadedEvent);
+        });
+    });
+
     const auto setBusy = [this](Engine::BusyState state, const QString &msg) {
         setBusyState(state);
         d->busyMessage = msg;
@@ -73,7 +100,12 @@ Engine::Engine(QObject *parent)
     });
     connect(this, &EngineBase::signalProvidersLoaded, this, &Engine::updateStatus);
     connect(this, &EngineBase::signalProvidersLoaded, this, [this]() {
-        d->currentRequest.categories = EngineBase::categories();
+        d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                                   d->currentRequest.filter(),
+                                                   d->currentRequest.searchTerm(),
+                                                   EngineBase::categories(),
+                                                   d->currentRequest.page(),
+                                                   d->currentRequest.pageSize());
     });
 
     connect(this,
@@ -113,9 +145,9 @@ bool Engine::init(const QString &configfile)
 {
     const bool valid = EngineBase::init(configfile);
     if (valid) {
-        connect(this, &Engine::signalEntryEvent, cache().data(), [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
+        connect(this, &Engine::signalEntryEvent, dd->cache.get(), [this](const KNSCore::Entry &entry, KNSCore::Entry::EntryEvent event) {
             if (event == KNSCore::Entry::StatusChangedEvent) {
-                cache()->registerChangedEntry(entry);
+                dd->cache->registerChangedEntry(entry);
             }
         });
         const auto slotEntryChanged = [this](const KNSCore::Entry &entry) {
@@ -123,7 +155,7 @@ bool Engine::init(const QString &configfile)
         };
         // Don't connect KNSCore::Installation::signalEntryChanged as is already forwarded to
         // Transaction, which in turn is forwarded to our slotEntryChanged, so avoids a double emission
-        connect(cache().data(), &KNSCore::Cache::entryChanged, this, slotEntryChanged);
+        connect(dd->cache.get(), &KNSCore::Cache2::entryChanged, this, slotEntryChanged);
     }
     return valid;
 }
@@ -205,41 +237,132 @@ CategoriesModel *Engine::categories() const
 
 QStringList Engine::categoriesFilter() const
 {
-    return d->currentRequest.categories;
+    return d->currentRequest.categories();
 }
 
 void Engine::setCategoriesFilter(const QStringList &newCategoriesFilter)
 {
-    if (d->currentRequest.categories != newCategoriesFilter) {
-        d->currentRequest.categories = newCategoriesFilter;
+    if (d->currentRequest.categories() != newCategoriesFilter) {
+        d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                                   d->currentRequest.filter(),
+                                                   d->currentRequest.searchTerm(),
+                                                   newCategoriesFilter,
+                                                   d->currentRequest.page(),
+                                                   d->currentRequest.pageSize());
         reloadEntries();
         Q_EMIT categoriesFilterChanged();
     }
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 KNSCore::Provider::Filter Engine::filter() const
 {
-    return d->currentRequest.filter;
+    return [filter = filter2()] {
+        switch (filter) {
+        case KNSCore::Filter::None:
+            return KNSCore::Provider::None;
+        case KNSCore::Filter::Installed:
+            return KNSCore::Provider::Installed;
+        case KNSCore::Filter::Updates:
+            return KNSCore::Provider::Updates;
+        case KNSCore::Filter::ExactEntryId:
+            return KNSCore::Provider::ExactEntryId;
+        }
+        return KNSCore::Provider::None;
+    }();
+}
+#endif
+
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
+void Engine::setFilter(KNSCore::Provider::Filter newFilter_)
+{
+    setFilter2([newFilter_] {
+        switch (newFilter_) {
+        case KNSCore::Provider::None:
+            return KNSCore::Filter::None;
+        case KNSCore::Provider::Installed:
+            return KNSCore::Filter::Installed;
+        case KNSCore::Provider::Updates:
+            return KNSCore::Filter::Updates;
+        case KNSCore::Provider::ExactEntryId:
+            return KNSCore::Filter::ExactEntryId;
+        }
+        return KNSCore::Filter::None;
+    }());
+}
+#endif
+
+KNSCore::Filter Engine::filter2() const
+{
+    return d->currentRequest.filter();
 }
 
-void Engine::setFilter(KNSCore::Provider::Filter newFilter)
+void Engine::setFilter2(KNSCore::Filter newFilter)
 {
-    if (d->currentRequest.filter != newFilter) {
-        d->currentRequest.filter = newFilter;
+    if (d->currentRequest.filter() != newFilter) {
+        d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                                   newFilter,
+                                                   d->currentRequest.searchTerm(),
+                                                   d->currentRequest.categories(),
+                                                   d->currentRequest.page(),
+                                                   d->currentRequest.pageSize());
         reloadEntries();
         Q_EMIT filterChanged();
     }
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 KNSCore::Provider::SortMode Engine::sortOrder() const
 {
-    return d->currentRequest.sortMode;
+    return [mode = sortOrder2()] {
+        switch (mode) {
+        case KNSCore::SortMode::Newest:
+            return KNSCore::Provider::Newest;
+        case KNSCore::SortMode::Alphabetical:
+            return KNSCore::Provider::Alphabetical;
+        case KNSCore::SortMode::Rating:
+            return KNSCore::Provider::Rating;
+        case KNSCore::SortMode::Downloads:
+            return KNSCore::Provider::Downloads;
+        }
+        return KNSCore::Provider::Rating;
+    }();
+}
+#endif
+
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
+void Engine::setSortOrder(KNSCore::Provider::SortMode mode_)
+{
+    setSortOrder2([mode_] {
+        switch (mode_) {
+        case KNSCore::Provider::Newest:
+            return KNSCore::SortMode::Newest;
+        case KNSCore::Provider::Alphabetical:
+            return KNSCore::SortMode::Alphabetical;
+        case KNSCore::Provider::Rating:
+            return KNSCore::SortMode::Rating;
+        case KNSCore::Provider::Downloads:
+            return KNSCore::SortMode::Downloads;
+        }
+        return KNSCore::SortMode::Rating;
+    }());
+}
+#endif
+
+KNSCore::SortMode Engine::sortOrder2() const
+{
+    return d->currentRequest.sortMode();
 }
 
-void Engine::setSortOrder(KNSCore::Provider::SortMode mode)
+void Engine::setSortOrder2(KNSCore::SortMode mode)
 {
-    if (d->currentRequest.sortMode != mode) {
-        d->currentRequest.sortMode = mode;
+    if (d->currentRequest.sortMode() != mode) {
+        d->currentRequest = KNSCore::SearchRequest(mode,
+                                                   d->currentRequest.filter(),
+                                                   d->currentRequest.searchTerm(),
+                                                   d->currentRequest.categories(),
+                                                   d->currentRequest.page(),
+                                                   d->currentRequest.pageSize());
         reloadEntries();
         Q_EMIT sortOrderChanged();
     }
@@ -247,16 +370,21 @@ void Engine::setSortOrder(KNSCore::Provider::SortMode mode)
 
 QString Engine::searchTerm() const
 {
-    return d->currentRequest.searchTerm;
+    return d->currentRequest.searchTerm();
 }
 
 void Engine::setSearchTerm(const QString &searchTerm)
 {
-    if (d->isValid && d->currentRequest.searchTerm != searchTerm) {
-        d->currentRequest.searchTerm = searchTerm;
+    if (d->isValid && d->currentRequest.searchTerm() != searchTerm) {
+        d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                                   d->currentRequest.filter(),
+                                                   searchTerm,
+                                                   d->currentRequest.categories(),
+                                                   d->currentRequest.page(),
+                                                   d->currentRequest.pageSize());
         Q_EMIT searchTermChanged();
     }
-    KNSCore::Entry::List cacheEntries = cache()->requestFromCache(d->currentRequest);
+    KNSCore::Entry::List cacheEntries = dd->cache->requestFromCache(d->currentRequest);
     if (!cacheEntries.isEmpty()) {
         reloadEntries();
     } else {
@@ -276,50 +404,68 @@ bool Engine::isValid()
 
 void Engine::updateEntryContents(const KNSCore::Entry &entry)
 {
-    const auto provider = EngineBase::provider(entry.providerId());
-    if (provider.isNull() || !provider->isInitialized()) {
-        qCWarning(KNEWSTUFFQUICK) << "Provider was not found or is not initialized" << provider << entry.providerId();
+    const auto core = dd->providerCores.value(entry.providerId());
+    if (!core) {
+        qCWarning(KNEWSTUFFQUICK) << "Provider was not found" << entry.providerId();
         return;
     }
-    provider->loadEntryDetails(entry);
+
+    const auto base = core->d->base;
+    if (!base->isInitialized()) {
+        qCWarning(KNEWSTUFFQUICK) << "Provider was not initialized" << base << entry.providerId();
+        return;
+    }
+
+    base->loadEntryDetails(entry);
 }
 
 void Engine::reloadEntries()
 {
     Q_EMIT signalResetView();
     d->currentPage = -1;
-    d->currentRequest.page = 0;
+    d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                               d->currentRequest.filter(),
+                                               d->currentRequest.searchTerm(),
+                                               d->currentRequest.categories(),
+                                               0,
+                                               d->currentRequest.pageSize());
     d->numDataJobs = 0;
 
-    const auto providersList = EngineBase::providers();
-    for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
-        if (p->isInitialized()) {
-            if (d->currentRequest.filter == KNSCore::Provider::Installed || d->currentRequest.filter == KNSCore::Provider::Updates) {
+    const auto providersList = dd->providerCores;
+    for (const auto &core : providersList) {
+        const auto &base = core->d->base;
+        if (base->isInitialized()) {
+            if (d->currentRequest.filter() == KNSCore::Filter::Installed || d->currentRequest.filter() == KNSCore::Filter::Updates) {
                 // when asking for installed entries, never use the cache
-                p->loadEntries(d->currentRequest);
+                base->loadEntries(d->currentRequest);
             } else {
                 // take entries from cache until there are no more
                 KNSCore::Entry::List cacheEntries;
-                KNSCore::Entry::List lastCache = cache()->requestFromCache(d->currentRequest);
+                KNSCore::Entry::List lastCache = dd->cache->requestFromCache(d->currentRequest);
                 while (!lastCache.isEmpty()) {
                     qCDebug(KNEWSTUFFQUICK) << "From cache";
                     cacheEntries << lastCache;
 
-                    d->currentPage = d->currentRequest.page;
-                    ++d->currentRequest.page;
-                    lastCache = cache()->requestFromCache(d->currentRequest);
+                    d->currentPage = d->currentRequest.page();
+                    d->currentRequest = d->currentRequest.nextPage();
+                    lastCache = dd->cache->requestFromCache(d->currentRequest);
                 }
 
                 // Since the cache has no more pages, reset the request's page
                 if (d->currentPage >= 0) {
-                    d->currentRequest.page = d->currentPage;
+                    d->currentRequest = KNSCore::SearchRequest(d->currentRequest.sortMode(),
+                                                               d->currentRequest.filter(),
+                                                               d->currentRequest.searchTerm(),
+                                                               d->currentRequest.categories(),
+                                                               d->currentPage,
+                                                               d->currentRequest.pageSize());
                 }
 
                 if (!cacheEntries.isEmpty()) {
                     Q_EMIT signalEntriesLoaded(cacheEntries);
                 } else {
                     qCDebug(KNEWSTUFFQUICK) << "From provider";
-                    p->loadEntries(d->currentRequest);
+                    base->loadEntries(d->currentRequest);
 
                     ++d->numDataJobs;
                     updateStatus();
@@ -327,27 +473,6 @@ void Engine::reloadEntries()
             }
         }
     }
-}
-void Engine::addProvider(QSharedPointer<KNSCore::Provider> provider)
-{
-    EngineBase::addProvider(provider);
-    connect(provider.data(), &KNSCore::Provider::loadingFinished, this, [this](const auto &request, const auto &entries) {
-        d->currentPage = qMax<int>(request.page, d->currentPage);
-        qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page << "current page" << d->currentPage << "count:" << entries.count();
-
-        if (request.filter != KNSCore::Provider::Updates) {
-            cache()->insertRequest(request, entries);
-        }
-        Q_EMIT signalEntriesLoaded(entries);
-
-        --d->numDataJobs;
-        updateStatus();
-    });
-    connect(provider.data(), &KNSCore::Provider::entryDetailsLoaded, this, [this](const auto &entry) {
-        --d->numDataJobs;
-        updateStatus();
-        Q_EMIT signalEntryEvent(entry, KNSCore::Entry::DetailsLoadedEvent);
-    });
 }
 
 void Engine::loadPreview(const KNSCore::Entry &entry, KNSCore::Entry::PreviewType type)
@@ -419,21 +544,23 @@ void Engine::registerTransaction(KNSCore::Transaction *transaction)
 
 void Engine::requestMoreData()
 {
-    qCDebug(KNEWSTUFFQUICK) << "Get more data! current page: " << d->currentPage << " requested: " << d->currentRequest.page;
+    qCDebug(KNEWSTUFFQUICK) << "Get more data! current page: " << d->currentPage << " requested: " << d->currentRequest.page();
 
-    if (d->currentPage < d->currentRequest.page) {
+    if (d->currentPage < d->currentRequest.page()) {
         return;
     }
 
-    d->currentRequest.page++;
+    d->currentRequest = d->currentRequest.nextPage();
     doRequest();
 }
+
 void Engine::doRequest()
 {
-    const auto providersList = providers();
-    for (const QSharedPointer<KNSCore::Provider> &p : providersList) {
-        if (p->isInitialized()) {
-            p->loadEntries(d->currentRequest);
+    const auto cores = dd->providerCores;
+    for (const auto &core : cores) {
+        const auto &base = core->d->base;
+        if (base->isInitialized()) {
+            base->loadEntries(d->currentRequest);
             ++d->numDataJobs;
             updateStatus();
         }
@@ -444,13 +571,14 @@ void Engine::revalidateCacheEntries()
 {
     // This gets called from QML, because in QtQuick we reuse the engine, BUG: 417985
     // We can't handle this in the cache, because it can't access the configuration of the engine
-    if (cache()) {
-        const auto providersList = providers();
-        for (const auto &provider : providersList) {
-            if (provider && provider->isInitialized()) {
-                const KNSCore::Entry::List cacheBefore = cache()->registryForProvider(provider->id());
-                cache()->removeDeletedEntries();
-                const KNSCore::Entry::List cacheAfter = cache()->registryForProvider(provider->id());
+    if (dd->cache) {
+        const auto cores = dd->providerCores;
+        for (const auto &core : cores) {
+            const auto &base = core->d->base;
+            if (base && base->isInitialized()) {
+                const KNSCore::Entry::List cacheBefore = dd->cache->registryForProvider(base->id());
+                dd->cache->removeDeletedEntries();
+                const KNSCore::Entry::List cacheAfter = dd->cache->registryForProvider(base->id());
                 // If the user has deleted them in the background we have to update the state to deleted
                 for (const auto &oldCachedEntry : cacheBefore) {
                     if (!cacheAfter.contains(oldCachedEntry)) {
@@ -468,8 +596,8 @@ void Engine::restoreSearch()
 {
     d->searchTimer.stop();
     d->currentRequest = d->storedRequest;
-    if (cache()) {
-        KNSCore::Entry::List cacheEntries = cache()->requestFromCache(d->currentRequest);
+    if (dd->cache) {
+        KNSCore::Entry::List cacheEntries = dd->cache->requestFromCache(d->currentRequest);
         if (!cacheEntries.isEmpty()) {
             reloadEntries();
         } else {
@@ -484,5 +612,3 @@ void Engine::storeSearch()
 {
     d->storedRequest = d->currentRequest;
 }
-
-#include "moc_quickengine.cpp"

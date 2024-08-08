@@ -8,7 +8,9 @@
 #include "enginebase.h"
 #include "enginebase_p.h"
 #include "entry_p.h"
-#include "provider.h"
+#include "providerbase_p.h"
+#include "providercore.h"
+#include "providercore_p.h"
 #include "question.h"
 
 #include <KLocalizedString>
@@ -118,12 +120,12 @@ public:
         if (subject.downloadLinkCount() == 0 && subject.payload().isEmpty()) {
             // Turns out this happens sometimes, so we should deal with that and spit out an error
             qCDebug(KNEWSTUFFCORE) << "There were no downloadlinks defined in the entry we were just asked to update: " << subject.uniqueId() << "on provider"
-                                << subject.providerId();
+                                   << subject.providerId();
             Q_EMIT q->signalErrorCode(
                 KNSCore::ErrorCode::InstallationError,
                 i18n("Could not perform an installation of the entry %1 as it does not have any downloadable items defined. Please contact the "
-                    "author so they can fix this.",
-                    subject.name()),
+                     "author so they can fix this.",
+                     subject.name()),
                 subject.uniqueId());
             finish();
             return;
@@ -138,12 +140,12 @@ public:
         Q_EMIT q->signalEntryEvent(entry, Entry::StatusChangedEvent);
 
         qCDebug(KNEWSTUFFCORE) << "Install " << entry.name() << " from: " << entry.providerId();
-        QSharedPointer<Provider> provider = m_engine->d->providers.value(entry.providerId());
+        auto provider = m_engine->d->providerCores.value(entry.providerId());
         if (!provider) {
             return;
         }
 
-        QObject::connect(provider.data(), &Provider::payloadLinkLoaded, q, &Transaction::downloadLinkLoaded);
+        QObject::connect(provider->d->base, &ProviderBase::payloadLinkLoaded, q, &Transaction::downloadLinkLoaded);
         // If linkId is -1, assume we don't know what to update
         if (linkId == -1) {
             linkId = findLinkIdToInstall(entry);
@@ -153,7 +155,7 @@ public:
             payloadToIdentify[entry] = QString{};
         }
 
-        provider->loadPayloadLink(entry, linkId);
+        provider->d->base->loadPayloadLink(entry, linkId);
 
         m_finished = false;
         m_engine->updateStatus();
@@ -287,10 +289,10 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
             QStringList payloads = d->payloads[entry];
             payloads << entry.payload();
             d->payloads[entry] = payloads;
-            QSharedPointer<Provider> p = d->m_engine->d->providers.value(entry.providerId());
+            const auto &p = d->m_engine->d->providerCores.value(entry.providerId());
             if (p) {
                 // ok, so this should definitely always work, but... safety first, kids!
-                p->loadPayloadLink(entry, payloads.count());
+                p->d->base->loadPayloadLink(entry, payloads.count());
             }
         } else {
             // We now have all the links, so let's try and identify the correct one...

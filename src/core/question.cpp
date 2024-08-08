@@ -46,7 +46,7 @@ Question::~Question() = default;
 
 Question::Response Question::ask()
 {
-    Q_EMIT QuestionManager::instance()->askQuestion(this);
+    Q_EMIT QuestionManager::instance() -> askQuestion(this);
     if (!d->response.has_value()) {
         d->loop.exec(); // Wait for the setResponse method to quit the event loop
     }

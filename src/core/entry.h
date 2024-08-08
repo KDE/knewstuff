@@ -552,6 +552,7 @@ public:
 private:
     friend class StaticXmlProvider;
     friend class Cache;
+    friend class Cache2;
     friend class Installation;
     friend class AtticaProvider;
     friend class AtticaRequester;

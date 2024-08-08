@@ -24,8 +24,14 @@
 #include <QTimer>
 
 #include "attica/atticaprovider_p.h"
+#include "categorymetadata.h"
+#include "compat_p.h"
 #include "opds/opdsprovider_p.h"
+#include "providerbubblewrap_p.h"
+#include "providercore.h"
+#include "providercore_p.h"
 #include "resultsstream.h"
+#include "searchrequest_p.h"
 #include "staticxml/staticxmlprovider_p.h"
 #include "transaction.h"
 #include "xmlloader_p.h"
@@ -35,9 +41,58 @@ using namespace KNSCore;
 typedef QHash<QUrl, QPointer<XmlLoader>> EngineProviderLoaderHash;
 Q_GLOBAL_STATIC(QThreadStorage<EngineProviderLoaderHash>, s_engineProviderLoaders)
 
+namespace
+{
+
+}
+
+EngineBasePrivate::EngineBasePrivate(EngineBase *qptr)
+    : q(qptr)
+{
+}
+
+void EngineBasePrivate::addProvider(const QSharedPointer<KNSCore::ProviderCore> &provider)
+{
+    { // ProviderCore
+        qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->d->base->id();
+        providerCores.insert(provider->d->base->id(), provider);
+        provider->d->base->setTagFilter(tagFilter);
+        provider->d->base->setDownloadTagFilter(downloadTagFilter);
+        QObject::connect(provider->d->base, &ProviderBase::providerInitialized, q, [this, providerBase = provider->d->base] {
+            qCDebug(KNEWSTUFFCORE) << "providerInitialized" << providerBase->name();
+            providerBase->setCachedEntries(cache->registryForProvider(providerBase->id()));
+
+            for (const auto &core : std::as_const(providerCores)) {
+                if (!core->d->base->isInitialized()) {
+                    return;
+                }
+            }
+            Q_EMIT q->signalProvidersLoaded();
+        });
+
+        QObject::connect(provider->d->base, &ProviderBase::signalError, q, [this, provider](const QString &msg) {
+            Q_EMIT q->signalErrorCode(ErrorCode::ProviderError, msg, providerFileUrl);
+        });
+        QObject::connect(provider->d->base, &ProviderBase::signalErrorCode, q, &EngineBase::signalErrorCode);
+        QObject::connect(provider->d->base, &ProviderBase::signalInformation, q, &EngineBase::signalMessage);
+        QObject::connect(provider->d->base, &ProviderBase::basicsLoaded, q, &EngineBase::providersChanged);
+        Q_EMIT q->providerAdded(provider.get());
+    }
+
+    { // ProviderBubbleWrap for legacy compatibility
+        QSharedPointer<ProviderBubbleWrap> wrappedProvider(new ProviderBubbleWrap(provider));
+        legacyProviders.insert(wrappedProvider->id(), wrappedProvider);
+        wrappedProvider->setTagFilter(tagFilter);
+        wrappedProvider->setDownloadTagFilter(downloadTagFilter);
+        q->addProvider(wrappedProvider);
+    }
+
+    Q_EMIT q->providersChanged();
+}
+
 EngineBase::EngineBase(QObject *parent)
     : QObject(parent)
-    , d(new EngineBasePrivate)
+    , d(new EngineBasePrivate(this))
 {
     connect(d->installation, &Installation::signalInstallationError, this, [this](const QString &message) {
         Q_EMIT signalErrorCode(ErrorCode::InstallationError, i18n("An error occurred during the installation process:\n%1", message), QVariant());
@@ -138,7 +193,12 @@ bool EngineBase::init(const QString &configfile)
     }
 
     const QString configFileBasename = QFileInfo(resolvedConfigFilePath).completeBaseName();
-    d->cache = Cache::getCache(configFileBasename);
+
+    d->legacyCache = Cache::getCache(configFileBasename);
+    qCDebug(KNEWSTUFFCORE) << "Legacy cache is" << d->legacyCache << "for" << configFileBasename;
+    d->legacyCache->readRegistry();
+
+    d->cache = Cache2::getCache(configFileBasename);
     qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileBasename;
     d->cache->readRegistry();
 
@@ -228,12 +288,39 @@ QStringList EngineBase::categories() const
     return d->categories;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QList<Provider::CategoryMetadata> EngineBase::categoriesMetadata()
+{
+    QList<Provider::CategoryMetadata> list;
+    for (const auto &data : d->categoriesMetadata) {
+        list.append(Provider::CategoryMetadata{.id = data.id(), .name = data.name(), .displayName = data.displayName()});
+    }
+    return list;
+}
+#endif
+
+QList<CategoryMetadata> EngineBase::categoriesMetadata2()
 {
     return d->categoriesMetadata;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QList<Provider::SearchPreset> EngineBase::searchPresets()
+{
+    QList<Provider::SearchPreset> list;
+    for (const auto &preset : d->searchPresets) {
+        // This is slightly mad backwards compat. We back-convert a SearchPreset which requires a convert of
+        // SearchRequest and all the involved enums.
+        // Since this is the only place we need it this has been implemented thusly.
+        // Should someone find it offensive feel free to tear it apart into functions, but understand they are only
+        // used here.
+        list.append(KNSCompat::searchPresetToLegacy(preset));
+    }
+    return list;
+}
+#endif
+
+QList<SearchPreset> EngineBase::searchPresets2()
 {
     return d->searchPresets;
 }
@@ -248,34 +335,16 @@ bool EngineBase::uploadEnabled() const
     return d->uploadEnabled;
 }
 
-void EngineBase::addProvider(QSharedPointer<KNSCore::Provider> provider)
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
+void EngineBase::addProvider(QSharedPointer<KNSCore::Provider> /*provider*/)
 {
-    qCDebug(KNEWSTUFFCORE) << "Engine addProvider called with provider with id " << provider->id();
-    d->providers.insert(provider->id(), provider);
-    provider->setTagFilter(d->tagFilter);
-    provider->setDownloadTagFilter(d->downloadTagFilter);
-    connect(provider.data(), &Provider::providerInitialized, this, &EngineBase::providerInitialized);
-
-    connect(provider.data(), &Provider::signalError, this, [this, provider](const QString &msg) {
-        Q_EMIT signalErrorCode(ErrorCode::ProviderError, msg, d->providerFileUrl);
-    });
-    connect(provider.data(), &Provider::signalErrorCode, this, &EngineBase::signalErrorCode);
-    connect(provider.data(), &Provider::signalInformation, this, &EngineBase::signalMessage);
-    connect(provider.data(), &Provider::basicsLoaded, this, &EngineBase::providersChanged);
-    Q_EMIT providersChanged();
+    // Connections are established in the modern variant of this function. No need to do anything.
 }
+#endif
 
-void EngineBase::providerInitialized(Provider *p)
+void EngineBase::providerInitialized([[maybe_unused]] Provider *p)
 {
-    qCDebug(KNEWSTUFFCORE) << "providerInitialized" << p->name();
-    p->setCachedEntries(d->cache->registryForProvider(p->id()));
-
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
-        if (!p->isInitialized()) {
-            return;
-        }
-    }
-    Q_EMIT signalProvidersLoaded();
+    // Unused. Replaced by lambda. Here for ABI stability.
 }
 
 void EngineBase::slotProvidersFailed()
@@ -308,27 +377,27 @@ void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
     while (!n.isNull()) {
         qCDebug(KNEWSTUFFCORE) << "Provider attributes: " << n.attribute(QStringLiteral("type"));
 
-        QSharedPointer<KNSCore::Provider> provider;
+        QSharedPointer<KNSCore::ProviderCore> provider;
         if (isAtticaProviderFile || n.attribute(QStringLiteral("type")).toLower() == QLatin1String("rest")) {
-            provider.reset(new AtticaProvider(d->categories, {}));
-            connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
+            provider.reset(new ProviderCore(new AtticaProvider(d->categories, {})));
+            connect(provider->d->base, &ProviderBase::categoriesMetadataLoaded, this, [this](const QList<CategoryMetadata> &categories) {
                 d->categoriesMetadata = categories;
-                Q_EMIT signalCategoriesMetadataLoded(categories);
+                Q_EMIT signalCategoriesMetadataLoaded(categories);
             });
 #ifdef SYNDICATION_FOUND
         } else if (n.attribute(QStringLiteral("type")).toLower() == QLatin1String("opds")) {
-            provider.reset(new OPDSProvider);
-            connect(provider.data(), &Provider::searchPresetsLoaded, this, [this](const QList<Provider::SearchPreset> &presets) {
+            provider.reset(new ProviderCore(new OPDSProvider));
+            connect(provider->d->base, &ProviderBase::searchPresetsLoaded, this, [this](const QList<SearchPreset> &presets) {
                 d->searchPresets = presets;
                 Q_EMIT signalSearchPresetsLoaded(presets);
             });
 #endif
         } else {
-            provider.reset(new StaticXmlProvider);
+            provider.reset(new ProviderCore(new StaticXmlProvider));
         }
 
-        if (provider->setProviderXML(n)) {
-            addProvider(provider);
+        if (provider->d->base->setProviderXML(n)) {
+            d->addProvider(provider);
         } else {
             Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError, i18n("Error initializing provider."), d->providerFileUrl);
         }
@@ -344,24 +413,22 @@ void EngineBase::atticaProviderLoaded(const Attica::Provider &atticaProvider)
         qCDebug(KNEWSTUFFCORE) << "Found provider: " << atticaProvider.baseUrl() << " but it does not support content";
         return;
     }
-    QSharedPointer<KNSCore::Provider> provider = QSharedPointer<KNSCore::Provider>(new AtticaProvider(atticaProvider, d->categories, {}));
-    connect(provider.data(), &Provider::categoriesMetadataLoded, this, [this](const QList<Provider::CategoryMetadata> &categories) {
-        d->categoriesMetadata = categories;
-        Q_EMIT signalCategoriesMetadataLoded(categories);
-    });
-    addProvider(provider);
+    auto provider = QSharedPointer<KNSCore::ProviderCore>(new KNSCore::ProviderCore(new AtticaProvider(atticaProvider, d->categories, {})));
+    d->addProvider(provider);
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QSharedPointer<Cache> EngineBase::cache() const
 {
-    return d->cache;
+    return d->legacyCache;
 }
+#endif
 
 void EngineBase::setTagFilter(const QStringList &filter)
 {
     d->tagFilter = filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
-        p->setTagFilter(d->tagFilter);
+    for (const auto &core : std::as_const(d->providerCores)) {
+        core->d->base->setTagFilter(d->tagFilter);
     }
 }
 
@@ -373,16 +440,16 @@ QStringList EngineBase::tagFilter() const
 void KNSCore::EngineBase::addTagFilter(const QString &filter)
 {
     d->tagFilter << filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
-        p->setTagFilter(d->tagFilter);
+    for (const auto &core : std::as_const(d->providerCores)) {
+        core->d->base->setTagFilter(d->tagFilter);
     }
 }
 
 void EngineBase::setDownloadTagFilter(const QStringList &filter)
 {
     d->downloadTagFilter = filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
-        p->setDownloadTagFilter(d->downloadTagFilter);
+    for (const auto &core : std::as_const(d->providerCores)) {
+        core->d->base->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
 
@@ -394,19 +461,19 @@ QStringList EngineBase::downloadTagFilter() const
 void EngineBase::addDownloadTagFilter(const QString &filter)
 {
     d->downloadTagFilter << filter;
-    for (const QSharedPointer<KNSCore::Provider> &p : std::as_const(d->providers)) {
-        p->setDownloadTagFilter(d->downloadTagFilter);
+    for (const auto &core : std::as_const(d->providerCores)) {
+        core->d->base->setDownloadTagFilter(d->downloadTagFilter);
     }
 }
 
 QList<Attica::Provider *> EngineBase::atticaProviders() const
 {
+    // This function is absolutely horrific. Unfortunately used in discover.
     QList<Attica::Provider *> ret;
-    ret.reserve(d->providers.size());
-    for (const auto &p : std::as_const(d->providers)) {
-        const auto atticaProvider = p.dynamicCast<AtticaProvider>();
-        if (atticaProvider) {
-            ret += atticaProvider->provider();
+    ret.reserve(d->providerCores.size());
+    for (const auto &core : d->providerCores) {
+        if (const auto &provider = qobject_cast<AtticaProvider *>(core->d->base)) {
+            ret.append(provider->provider());
         }
     }
     return ret;
@@ -414,44 +481,48 @@ QList<Attica::Provider *> EngineBase::atticaProviders() const
 
 bool EngineBase::userCanVote(const Entry &entry)
 {
-    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
-    return p->userCanVote();
+    const auto &core = d->providerCores.value(entry.providerId());
+    return core->d->base->userCanVote();
 }
 
 void EngineBase::vote(const Entry &entry, uint rating)
 {
-    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
-    p->vote(entry, rating);
+    const auto &core = d->providerCores.value(entry.providerId());
+    core->d->base->vote(entry, rating);
 }
 
 bool EngineBase::userCanBecomeFan(const Entry &entry)
 {
-    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
-    return p->userCanBecomeFan();
+    const auto &core = d->providerCores.value(entry.providerId());
+    return core->d->base->userCanBecomeFan();
 }
 
 void EngineBase::becomeFan(const Entry &entry)
 {
-    QSharedPointer<Provider> p = d->providers.value(entry.providerId());
-    p->becomeFan(entry);
+    const auto &core = d->providerCores.value(entry.providerId());
+    core->d->base->becomeFan(entry);
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QSharedPointer<Provider> EngineBase::provider(const QString &providerId) const
 {
-    return d->providers.value(providerId);
+    return d->legacyProviders.value(providerId);
 }
+#endif
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QSharedPointer<Provider> EngineBase::defaultProvider() const
 {
-    if (d->providers.count() > 0) {
-        return d->providers.constBegin().value();
+    if (d->legacyProviders.count() > 0) {
+        return d->legacyProviders.constBegin().value();
     }
     return nullptr;
 }
+#endif
 
 QStringList EngineBase::providerIDs() const
 {
-    return d->providers.keys();
+    return d->legacyProviders.keys();
 }
 
 bool EngineBase::hasAdoptionCommand() const
@@ -468,19 +539,26 @@ Installation *EngineBase::installation() const
     return d->installation;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 ResultsStream *EngineBase::search(const Provider::SearchRequest &request)
 {
-    return new ResultsStream(request, this);
+    return new ResultsStream(searchRequestFromLegacy(request), this);
 }
+#endif
 
 EngineBase::ContentWarningType EngineBase::contentWarningType() const
 {
     return d->contentWarningType;
 }
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QList<QSharedPointer<Provider>> EngineBase::providers() const
 {
-    return d->providers.values();
+    return d->legacyProviders.values();
 }
+#endif
 
-#include "moc_enginebase.cpp"
+KNSCore::ResultsStream *KNSCore::EngineBase::search(const KNSCore::SearchRequest &request)
+{
+    return new ResultsStream(request, this);
+}

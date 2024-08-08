@@ -57,7 +57,7 @@ public:
                 q->beginResetModel();
                 comments.clear();
                 provider->disconnect(q);
-                q->connect(provider.data(), &Provider::commentsLoaded, q, [=](const QList<std::shared_ptr<KNSCore::Comment>> &newComments) {
+                q->connect(provider.data(), &Provider::commentsLoaded, q, [this](const QList<std::shared_ptr<KNSCore::Comment>> &newComments) {
                     QList<std::shared_ptr<KNSCore::Comment>> actualNewComments;
                     for (const std::shared_ptr<KNSCore::Comment> &comment : newComments) {
                         bool commentIsKnown = false;

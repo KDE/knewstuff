@@ -4,11 +4,12 @@
 
 #pragma once
 
-#include "provider.h"
-
 #include <attica/content.h>
 #include <attica/provider.h>
 #include <attica/providermanager.h>
+
+#include "entry.h"
+#include "searchrequest.h"
 
 namespace KNSCore
 {
@@ -18,9 +19,9 @@ class AtticaRequester : public QObject
 {
     Q_OBJECT
 public:
-    explicit AtticaRequester(const KNSCore::Provider::SearchRequest &request, AtticaProvider *provider, QObject *parent = nullptr);
+    explicit AtticaRequester(const KNSCore::SearchRequest &request, AtticaProvider *provider, QObject *parent = nullptr);
     void start();
-    [[nodiscard]] KNSCore::Provider::SearchRequest request() const;
+    [[nodiscard]] KNSCore::SearchRequest request() const;
 
 Q_SIGNALS:
     void loadingFinished(const KNSCore::Entry::List &list);
@@ -37,7 +38,7 @@ private:
     [[nodiscard]] Entry::List installedEntries() const;
     [[nodiscard]] Entry entryFromAtticaContent(const Attica::Content &content);
 
-    KNSCore::Provider::SearchRequest m_request;
+    KNSCore::SearchRequest m_request;
     AtticaProvider *m_provider;
     QSet<Attica::BaseJob *> m_updateJobs;
 };

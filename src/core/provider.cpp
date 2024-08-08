@@ -10,53 +10,17 @@
 
 #include "provider.h"
 
+#include "provider_p.h"
 #include "xmlloader_p.h"
 
 #include <KLocalizedString>
 
 #include <QTimer>
 
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
+
 namespace KNSCore
 {
-class ProviderPrivate
-{
-public:
-    ProviderPrivate(Provider *qq)
-        : q(qq)
-    {
-    }
-    Provider *const q;
-    QStringList tagFilter;
-    QStringList downloadTagFilter;
-
-    QTimer *basicsThrottle{nullptr};
-    QString version;
-    QUrl website;
-    QUrl host;
-    QString contactEmail;
-    QString name;
-    QUrl icon;
-    bool supportsSsl{false};
-    bool basicsGot{false};
-
-    void updateOnFirstBasicsGet()
-    {
-        if (!basicsGot) {
-            basicsGot = true;
-            QTimer::singleShot(0, q, &Provider::loadBasics);
-        }
-    };
-    void throttleBasics()
-    {
-        if (!basicsThrottle) {
-            basicsThrottle = new QTimer(q);
-            basicsThrottle->setInterval(0);
-            basicsThrottle->setSingleShot(true);
-            QObject::connect(basicsThrottle, &QTimer::timeout, q, &Provider::basicsLoaded);
-        }
-        basicsThrottle->start();
-    }
-};
 
 QString Provider::SearchRequest::hashForRequest() const
 {
@@ -84,6 +48,7 @@ QUrl Provider::icon() const
 void Provider::setTagFilter(const QStringList &tagFilter)
 {
     d->tagFilter = tagFilter;
+    Q_EMIT tagFilterChanged();
 }
 
 QStringList Provider::tagFilter() const
@@ -94,6 +59,7 @@ QStringList Provider::tagFilter() const
 void Provider::setDownloadTagFilter(const QStringList &downloadTagFilter)
 {
     d->downloadTagFilter = downloadTagFilter;
+    Q_EMIT downloadTagFilterChanged();
 }
 
 QStringList Provider::downloadTagFilter() const
@@ -197,3 +163,5 @@ void Provider::setIcon(const QUrl &icon)
 }
 
 #include "moc_provider.cpp"
+
+#endif
