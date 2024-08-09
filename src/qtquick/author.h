@@ -14,7 +14,7 @@
 #include "quickengine.h"
 
 // TODO This is not a class for exposing data QtQuick, but for implementing it's fetching in the first place.
-// Also it sepnds on the QML parser status, this is kindof ugly...
+// Also it depends on the QML parser status, this is kindof ugly...
 namespace KNewStuffQuick
 {
 class AuthorPrivate;

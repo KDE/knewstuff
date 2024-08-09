@@ -35,7 +35,7 @@
  * - No Sorting
  *
  * Would-be-nice, but requires a lot of rewiring in knewstuff:
- * - We could get authenticated feeds going by using basic http authentiation(in spec), or have bearer token uris (oauth bearcaps).
+ * - We could get authenticated feeds going by using basic http authentication(in spec), or have bearer token uris (oauth bearcaps).
  * - Autodiscovery or protocol based discovery of opds catalogs, this does not gel with the provider xml system used by knewstuff.
  *
  * @since 5.83

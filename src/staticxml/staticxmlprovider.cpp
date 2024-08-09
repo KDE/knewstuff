@@ -258,7 +258,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const QDomDocument &doc)
                 if (searchIncludesEntry(entry)) {
                     switch (loader->filter()) {
                     case Installed:
-                        // This is dealth with in loadEntries separately
+                        // This is dealt with in loadEntries separately
                         Q_UNREACHABLE();
                     case Updates:
                         if (entry.status() == KNSCore::Entry::Updateable) {

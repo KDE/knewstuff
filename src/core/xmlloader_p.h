@@ -26,7 +26,7 @@ QDomElement addElement(QDomDocument &doc, QDomElement &parent, const QString &ta
 
 /**
  * KNewStuff xml loader.
- * This class loads an xml document from a kurl and returns the
+ * This class loads an xml document from a qurl and returns the
  * resulting domdocument once completed.
  * It should probably not be used directly by the application.
  *

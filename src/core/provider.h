@@ -99,7 +99,7 @@ public:
     };
 
     /**
-     * Describes a category: id/name/disaplayName
+     * Describes a category: id/name/displayName
      */
     struct CategoryMetadata {
         QString id;
