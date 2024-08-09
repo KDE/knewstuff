@@ -32,7 +32,7 @@ class CommentsModel : public QSortFilterProxyModel, public QQmlParserStatus
     Q_OBJECT
     Q_INTERFACES(QQmlParserStatus)
     /**
-     * The KNewStufQuick::ItemsModel to interact with servers through
+     * The KNewStuffQuick::ItemsModel to interact with servers through
      */
     Q_PROPERTY(ItemsModel *itemsModel READ itemsModel WRITE setItemsModel NOTIFY itemsModelChanged)
     /**

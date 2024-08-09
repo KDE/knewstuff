@@ -165,7 +165,7 @@ public:
      * Uninstalls an entry. It reverses the steps which were performed
      * during the installation.
      *
-     * @param entry The entry to deinstall
+     * @param entry The entry to uninstall
      */
     Q_INVOKABLE void uninstall(const KNSCore::Entry &entry);
 
@@ -203,7 +203,7 @@ Q_SIGNALS:
      * enumerations.
      * @param errorCode Represents the specific type of error which has occurred
      * @param message A human-readable message which can be shown to the end user
-     * @param metadata Any additional data which might be hepful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
+     * @param metadata Any additional data which might be helpful to further work out the details of the error (see KNSCore::Entry::ErrorCode for the
      * metadata details)
      * @see KNSCore::Engine::signalErrorCode
      * @since 5.84
