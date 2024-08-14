@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:37+0000\n"
+"POT-Creation-Date: 2024-08-14 00:37+0000\n"
 "PO-Revision-Date: 2012-09-23 18:43+0800\n"
 "Last-Translator: Lê Hoàng Phương <herophuong93@gmail.com>\n"
 "Language-Team: American English <kde-i18n-vi@kde.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Tất cả thể loại"
 
-#: attica/atticaprovider.cpp:481
+#: attica/atticaprovider.cpp:346
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -41,7 +41,7 @@ msgstr ""
 "Mục này có giá %1 %2.\n"
 "Bạn có muốn mua chứ?"
 
-#: attica/atticaprovider.cpp:495
+#: attica/atticaprovider.cpp:360
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -52,18 +52,18 @@ msgstr ""
 "Số dư: %1\n"
 "Giá: %2"
 
-#: attica/atticaprovider.cpp:538
+#: attica/atticaprovider.cpp:392
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Bình chọn của bạn đã được lưu lại."
 
-#: attica/atticaprovider.cpp:553
+#: attica/atticaprovider.cpp:407
 #, kde-format
 msgid "You are now a fan."
 msgstr "Giờ bạn đã là một fan rồi."
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -71,25 +71,25 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:586
+#: attica/atticaprovider.cpp:440
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "Lỗi mạng. (%1)"
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:447
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Quá nhiều yêu cầu đến máy chủ. Hãy thử lại sau vài phút."
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:451
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:601
+#: attica/atticaprovider.cpp:455
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Lỗi API Dịch vụ cộng tác mở không rõ. (%1)"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:37+0000\n"
+"POT-Creation-Date: 2024-08-14 00:37+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Расм етишмаяпти."
 
-#: attica/atticaprovider.cpp:481
+#: attica/atticaprovider.cpp:346
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -32,7 +32,7 @@ msgid ""
 "Do you want to buy it?"
 msgstr ""
 
-#: attica/atticaprovider.cpp:495
+#: attica/atticaprovider.cpp:360
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -40,19 +40,19 @@ msgid ""
 "Price: %2"
 msgstr ""
 
-#: attica/atticaprovider.cpp:538
+#: attica/atticaprovider.cpp:392
 #, fuzzy, kde-format
 #| msgid "No text was replaced."
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Ҳеч қандай матн алмаштирилмади."
 
-#: attica/atticaprovider.cpp:553
+#: attica/atticaprovider.cpp:407
 #, kde-format
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:581 core/enginebase.cpp:208
+#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
 #: opds/opdsprovider.cpp:287
 #, kde-format
 msgid ""
@@ -60,24 +60,24 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:586
+#: attica/atticaprovider.cpp:440
 #, kde-format
 msgid "Network error %1: %2"
 msgstr ""
 
-#: attica/atticaprovider.cpp:593
+#: attica/atticaprovider.cpp:447
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 
-#: attica/atticaprovider.cpp:597
+#: attica/atticaprovider.cpp:451
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:601
+#: attica/atticaprovider.cpp:455
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
