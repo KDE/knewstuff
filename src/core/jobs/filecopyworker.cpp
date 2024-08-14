@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QFile>
 
+using namespace std::chrono_literals;
 using namespace KNSCore;
 
 class KNSCore::FileCopyWorkerPrivate
@@ -29,7 +30,17 @@ FileCopyWorker::FileCopyWorker(const QUrl &source, const QUrl &destination, QObj
     d->destination.setFileName(destination.toLocalFile());
 }
 
-FileCopyWorker::~FileCopyWorker() = default;
+FileCopyWorker::~FileCopyWorker()
+{
+    if (isRunning()) {
+        requestInterruption();
+        quit();
+        if (!wait(1s)) {
+            terminate();
+            wait();
+        }
+    }
+}
 
 void FileCopyWorker::run()
 {
