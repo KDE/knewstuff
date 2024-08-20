@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-14 00:37+0000\n"
-"PO-Revision-Date: 2024-02-09 23:48+0100\n"
+"PO-Revision-Date: 2024-08-19 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: attica/atticaprovider.cpp:166
 #, kde-format
@@ -509,29 +509,22 @@ msgid "Find out how to donate to this project"
 msgstr "이 프로젝트에 기부하는 방법 알아보기"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"여기에 있는 콘텐츠는 여러분과 같은 사용자가 업로드했으며, 배포판 관리자가 기"
-"능 및 안정성을 검증하지 않았을 수도 있습니다."
+"여기에 나열된 사용자 제작 콘텐츠를 사용할 때 주의하십시오. KDE나 배포판에서 "
+"안전성, 안정성, 품질을 점검하지 않았습니다."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"여기에 있는 콘텐츠는 여러분과 같은 사용자가 업로드했으며, 배포판 관리자가 기"
-"능 및 안정성을 검증하지 않았을 수도 있습니다."
+"사용자 제작 콘텐츠는 KDE나 배포판에서 기능 및 안정성을 검증하지 않았습니다."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -807,14 +800,7 @@ msgid "Send Email To: %1"
 msgstr "이메일 보내기: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -974,14 +960,10 @@ msgstr ""
 " URL 예제: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "새로운 항목 다운로드"
+msgstr "새로운 항목 다운로드…"
 
 #~ msgid "Tiles"
 #~ msgstr "타일"
