@@ -897,7 +897,6 @@ msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, fuzzy, kde-format
-#| msgid "Download New Stuff..."
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Viečča ođđa, somás tiŋggaid …"
