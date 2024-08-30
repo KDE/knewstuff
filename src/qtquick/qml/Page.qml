@@ -137,8 +137,8 @@ KCMUtils.GridViewKCM {
         type: riskyContent ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
         position: Kirigami.InlineMessage.Position.Header
         text: riskyContent
-            ? xi18nd("knewstuff6", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality.")
-            : i18nd("knewstuff6", "User-created content shown here hasn't been tested by KDE or your distributor for functionality or quality.")
+            ? xi18ndc("knewstuff6", "@info displayed as InlineMessage", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality.")
+            : i18ndc("knewstuff6", "@info displayed as InlineMessage", "User-created content shown here hasn't been tested by KDE or your distributor for functionality or quality.")
     }
 
     NewStuff.Engine {
@@ -169,31 +169,21 @@ KCMUtils.GridViewKCM {
         Kirigami.Action {
             text: {
                 if (newStuffEngine.filter === 0) {
-                    return i18nd("knewstuff6", "Everything");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "All");
                 } else if (newStuffEngine.filter === 1) {
-                    return i18nd("knewstuff6", "Installed");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Installed");
                 } else if (newStuffEngine.filter === 2) {
-                    return i18nd("knewstuff6", "Updateable");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Updateable");
                 } else {
                     // then it's ExactEntryId and we want to probably just ignore that
                 }
             }
             checkable: false
-            icon.name: {
-                if (newStuffEngine.filter === 0) {
-                    return "package-available"
-                } else if (newStuffEngine.filter === 1) {
-                    return "package-installed-updated"
-                } else if (newStuffEngine.filter === 2) {
-                    return "package-installed-outdated"
-                } else {
-                    // then it's ExactEntryId and we want to probably just ignore that
-                }
-            }
+            icon.name: "view-filter"
 
             Kirigami.Action {
                 icon.name: "package-available"
-                text: i18ndc("knewstuff6", "List option which will set the filter to show everything", "Show All Entries")
+                text: i18ndc("knewstuff6", "@option:radio similar to combobox item, List option which will set the filter to show everything", "All")
                 checkable: true
                 checked: newStuffEngine.filter === 0
                 onTriggered: source => {
@@ -204,7 +194,7 @@ KCMUtils.GridViewKCM {
 
             Kirigami.Action {
                 icon.name: "package-installed-updated"
-                text: i18ndc("knewstuff6", "List option which will set the filter so only installed items are shown", "Show Only Installed Entries")
+                text: i18ndc("knewstuff6", "@option:radio similar to combobox item, List option which will set the filter so only installed items are shown", "Installed")
                 checkable: true
                 checked: newStuffEngine.filter === 1
                 onTriggered: source => {
@@ -215,7 +205,7 @@ KCMUtils.GridViewKCM {
 
             Kirigami.Action {
                 icon.name: "package-installed-outdated"
-                text: i18ndc("knewstuff6", "List option which will set the filter so only installed items with updates available are shown", "Show Only Updateable Entries")
+                text: i18ndc("knewstuff6", "@option:radio similar to combobox item, List option which will set the filter so only installed items with updates available are shown", "Updateable")
                 checkable: true
                 checked: newStuffEngine.filter === 2
                 onTriggered: source => {
@@ -228,44 +218,22 @@ KCMUtils.GridViewKCM {
         Kirigami.Action {
             text: {
                 if (newStuffEngine.sortOrder === 0) {
-                    return i18nd("knewstuff6", "Recent");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Sort: Release date");
                 } else if (newStuffEngine.sortOrder === 1) {
-                    return i18nd("knewstuff6", "Alphabetical");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Sort: Name");
                 } else if (newStuffEngine.sortOrder === 2) {
-                    return i18nd("knewstuff6", "Rating");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Sort: Rating");
                 } else if (newStuffEngine.sortOrder === 3) {
-                    return i18nd("knewstuff6", "Downloads");
+                    return i18ndc("knewstuff6", "@action:button opening menu similar to combobox, filter list", "Sort: Downloads");
                 } else {
                 }
             }
             checkable: false
-            icon.name: {
-                if (newStuffEngine.sortOrder === 0) {
-                    return "change-date-symbolic";
-                } else if (newStuffEngine.sortOrder === 1) {
-                    return "sort-name";
-                } else if (newStuffEngine.sortOrder === 2) {
-                    return "rating";
-                } else if (newStuffEngine.sortOrder === 3) {
-                    return "download";
-                } else {
-                }
-            }
-
-            Kirigami.Action {
-                icon.name: "change-date-symbolic"
-                text: i18ndc("knewstuff6", "List option which will set the sort order to based on when items were most recently updated", "Show Most Recent First")
-                checkable: true
-                checked: newStuffEngine.sortOrder === 0
-                onTriggered: source => {
-                    newStuffEngine.sortOrder = 0;
-                }
-                QQC2.ActionGroup.group: viewSortingActionGroup
-            }
+            icon.name: "view-sort"
 
             Kirigami.Action {
                 icon.name: "sort-name"
-                text: i18ndc("knewstuff6", "List option which will set the sort order to be alphabetical based on the name", "Sort Alphabetically By Name")
+                text: i18ndc("knewstuff6", "@option:radio in menu, List option which will set the sort order to be alphabetical based on the name", "Name")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 1
                 onTriggered: source => {
@@ -276,7 +244,7 @@ KCMUtils.GridViewKCM {
 
             Kirigami.Action {
                 icon.name: "rating"
-                text: i18ndc("knewstuff6", "List option which will set the sort order to based on user ratings", "Show Highest Rated First")
+                text: i18ndc("knewstuff6", "@option:radio in menu, List option which will set the sort order to based on user ratings", "Rating")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 2
                 onTriggered: source => {
@@ -287,11 +255,22 @@ KCMUtils.GridViewKCM {
 
             Kirigami.Action {
                 icon.name: "download"
-                text: i18ndc("knewstuff6", "List option which will set the sort order to based on number of downloads", "Show Most Downloaded First")
+                text: i18ndc("knewstuff6", "@option:radio similar to combobox item, List option which will set the sort order to based on number of downloads", "Downloads")
                 checkable: true
                 checked: newStuffEngine.sortOrder === 3
                 onTriggered: source => {
                     newStuffEngine.sortOrder = 3;
+                }
+                QQC2.ActionGroup.group: viewSortingActionGroup
+            }
+
+            Kirigami.Action {
+                icon.name: "change-date-symbolic"
+                text: i18ndc("knewstuff6", "@option:radio similar to combobox item, List option which will set the sort order to based on when items were most recently updated", "Release date")
+                checkable: true
+                checked: newStuffEngine.sortOrder === 0
+                onTriggered: source => {
+                    newStuffEngine.sortOrder = 0;
                 }
                 QQC2.ActionGroup.group: viewSortingActionGroup
             }
@@ -401,7 +380,7 @@ KCMUtils.GridViewKCM {
         QQC2.Button {
             Layout.alignment: Qt.AlignRight
 
-            text: i18nd("knewstuff6", "Contribute your own…")
+            text: i18nd("knewstuff6", "Contribute Your Own…")
             icon.name: "upload-media"
             visible: newStuffEngine.uploadEnabled && !uploadAction.visible
 
