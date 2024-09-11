@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -497,6 +497,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -505,135 +506,154 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "Holl"
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
 #| msgid "Install"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Staliañ"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Bremañaat"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Diskouez pep tra dibaboù"
-
-#: qtquick/qml/Page.qml:207
-#, fuzzy, kde-format
+#| msgid "All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "Diskouez pep tra dibaboù"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "Holl"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
+#| msgid "Install"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "Diskouez pep tra dibaboù"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Staliañ"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Percent"
-msgid "Recent"
-msgstr "Dregantad"
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Bremañaat"
 
-#: qtquick/qml/Page.qml:233
-#, kde-format
-msgid "Alphabetical"
-msgstr ""
+#: qtquick/qml/Page.qml:221
+#, fuzzy, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr "Distruj restr"
 
-#: qtquick/qml/Page.qml:235
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Additional Names"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Anvioù ouzhpenn"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Sorting"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Emaon o rummañ"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "&Diskennit"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Anv"
+
+#: qtquick/qml/Page.qml:247
 #, fuzzy, kde-format
 #| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Feur"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Enkargañ"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "&Diskennit"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "Distruj restr"
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr ""
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "&Diskennit"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "&Diskennit"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "&Ezkargañ"
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mont da ..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Klask :"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Rummoù"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Kenderc'hel"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -966,6 +986,48 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Enkargañ"
+
+#, fuzzy
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Diskouez pep tra dibaboù"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "Diskouez pep tra dibaboù"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "Diskouez pep tra dibaboù"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Percent"
+#~ msgid "Recent"
+#~ msgstr "Dregantad"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "&Diskennit"
+
+#, fuzzy
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "&Diskennit"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "&Diskennit"
 
 #, fuzzy
 #~| msgid "&Tile"
@@ -1567,9 +1629,6 @@ msgstr "Enkargañ"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
-
-#~ msgid "Name"
-#~ msgstr "Anv"
 
 #, fuzzy
 #~| msgid "Host:"
@@ -7963,10 +8022,6 @@ msgstr "Enkargañ"
 #~ msgid "Latest"
 #~ msgstr "Diwezhatañ"
 
-#, fuzzy
-#~ msgid "Most Downloads"
-#~ msgstr "&Diskennit"
-
 #~ msgid "Add Comment"
 #~ msgstr "Ouzhpennañ un askelenn"
 
@@ -8864,11 +8919,6 @@ msgstr "Enkargañ"
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "Deskrivadur"
-
-#, fuzzy
-#~| msgid "Additional Names"
-#~ msgid "Autor Name"
-#~ msgstr "Anvioù ouzhpenn"
 
 #, fuzzy
 #~ msgid "Could not get account balance."
@@ -11121,9 +11171,6 @@ msgstr "Enkargañ"
 #~ msgid "New Folder..."
 #~ msgstr "Renkell nevez ..."
 
-#~ msgid "Sorting"
-#~ msgstr "Emaon o rummañ"
-
 #~ msgid "By Name"
 #~ msgstr "Evit Anv"
 
@@ -11916,10 +11963,6 @@ msgstr "Enkargañ"
 #~ msgstr "Degemer"
 
 #, fuzzy
-#~ msgid "Release Date"
-#~ msgstr "Distruj restr"
-
-#, fuzzy
 #~ msgid "Installation successful."
 #~ msgstr "Krouiñ ur renkell nevez e :"
 
@@ -12328,9 +12371,6 @@ msgstr "Enkargañ"
 
 #~ msgid "Unknown type"
 #~ msgstr "Rizh dianav"
-
-#~ msgid "All"
-#~ msgstr "Holl"
 
 #~ msgid "Frequent"
 #~ msgstr "Stank"

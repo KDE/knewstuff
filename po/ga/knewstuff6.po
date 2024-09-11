@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -499,6 +499,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -507,138 +508,156 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "Uile"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Suiteáilte"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Nuashonraigh"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "&Taispeáin Gach Iontráil"
-
-#: qtquick/qml/Page.qml:207
-#, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "&Taispeáin Gach Iontráil"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "Uile"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "Installed"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "&Taispeáin Gach Iontráil"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Suiteáilte"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Percent"
-msgid "Recent"
-msgstr "Comhartha Céatadáin"
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Nuashonraigh"
 
-#: qtquick/qml/Page.qml:233
-#, kde-format
-msgid "Alphabetical"
-msgstr ""
+#: qtquick/qml/Page.qml:221
+#, fuzzy, kde-format
+#| msgid "Release Date"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr "Dáta Foilsithe"
 
-#: qtquick/qml/Page.qml:235
-#, kde-format
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "First Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Ainm"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Sorting"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Sórtáil"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "An Líon is Mó Íosluchtuithe"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Ainm"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Rátáil"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Íosluchtaigh"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
-#| msgid "Show directories first"
+#| msgid "Release Date"
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Taispeáin comhadlanna ag an mbarr"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "Dáta Foilsithe"
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr ""
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Taispeáin comhadlanna ag an mbarr"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "An líon is mó íosluchtuithe"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Uasluchtaigh..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Téigh go..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Cuardaigh:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "Catagóir:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Lean leis an oibríocht"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -989,6 +1008,54 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Íosluchtaigh Stuif Nua..."
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "&Taispeáin Gach Iontráil"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "&Taispeáin Gach Iontráil"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "&Taispeáin Gach Iontráil"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Percent"
+#~ msgid "Recent"
+#~ msgstr "Comhartha Céatadáin"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Taispeáin comhadlanna ag an mbarr"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Taispeáin comhadlanna ag an mbarr"
+
+#, fuzzy
+#~| msgid "Most downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "An líon is mó íosluchtuithe"
 
 #, fuzzy
 #~| msgid "&Tile"
@@ -1716,9 +1783,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "seoc@iolfree.ie,kscanne@gmail.com,s_oceallaigh@yahoo.com"
-
-#~ msgid "Name"
-#~ msgstr "Ainm"
 
 #~ msgid "Host"
 #~ msgstr "Óstríomhaire"
@@ -9925,9 +9989,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #~ msgid "Highest Rated"
 #~ msgstr "Meas is Airde"
 
-#~ msgid "Most Downloads"
-#~ msgstr "An Líon is Mó Íosluchtuithe"
-
 #~ msgid "Add Rating"
 #~ msgstr "Cuir Rátáil Leis"
 
@@ -12633,9 +12694,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #~ msgid "New Folder..."
 #~ msgstr "Fillteán Nua..."
 
-#~ msgid "Sorting"
-#~ msgstr "Sórtáil"
-
 #~ msgid "By Name"
 #~ msgstr "De Réir Ainm"
 
@@ -13286,9 +13344,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 #~ msgid "Welcome"
 #~ msgstr "Fáilte"
 
-#~ msgid "Release Date"
-#~ msgstr "Dáta Foilsithe"
-
 #~ msgid ""
 #~ "Name: %1\n"
 #~ "Author: %2\n"
@@ -13771,9 +13826,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 
 #~ msgid "Unknown type"
 #~ msgstr "Cineál Anaithnid"
-
-#~ msgid "All"
-#~ msgstr "Uile"
 
 #~ msgid "Frequent"
 #~ msgstr "Go Minic"
@@ -14437,9 +14489,6 @@ msgstr "Íosluchtaigh Stuif Nua..."
 
 #~ msgid "Name Prefix"
 #~ msgstr "Iarmhír Ainm"
-
-#~ msgid "First Name"
-#~ msgstr "Ainm"
 
 #~ msgid "Middle Name"
 #~ msgstr "Ainm Láir"

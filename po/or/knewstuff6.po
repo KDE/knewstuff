@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2009-01-02 17:37+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -496,6 +496,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -504,138 +505,157 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "ସମସ୍ତ (&A)"
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
 #| msgid "Install"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "ଅଦ୍ୟତନ"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "Pages"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "ପୃଷ୍ଠାଗୁଡିକ"
-
-#: qtquick/qml/Page.qml:207
-#, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "ସମସ୍ତ (&A)"
 
-#: qtquick/qml/Page.qml:218
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr ""
-
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "Open &Recent"
-msgid "Recent"
-msgstr "ସାମ୍ପ୍ରତିକକୁ ଖୋଲନ୍ତୁ (&R)"
+#| msgid "Install"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "ଅଦ୍ୟତନ"
+
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:235
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Action Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "କାର୍ଯ୍ୟ ନାମ"
+
+#: qtquick/qml/Page.qml:225
 #, fuzzy, kde-format
 #| msgid "Rating: "
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "ଆକଳନ: "
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "ନାମ"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating: "
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "ଆକଳନ: "
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "ଆହରଣ"
 
-#: qtquick/qml/Page.qml:257
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
-
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:269
 #, kde-format
 msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "ବଦଳାନ୍ତୁ (&R)..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "କୁ ଯାଆନ୍ତୁ (&G)..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "ଖୋଜନ୍ତୁ (&e):"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr "ଅକ୍ଷର:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "ପ୍ରଚଳନକୁ ଆଗକୁ ବଢାନ୍ତୁ"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -976,6 +996,38 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Pages"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "ପୃଷ୍ଠାଗୁଡିକ"
+
+#, fuzzy
+#~| msgid "Open &Recent"
+#~ msgid "Recent"
+#~ msgstr "ସାମ୍ପ୍ରତିକକୁ ଖୋଲନ୍ତୁ (&R)"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "ଡିରେକ୍ଟରିଗୁଡିକୁ ପ୍ରଥମେ ଦର୍ଶାନ୍ତୁ"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
 
 #, fuzzy
 #~| msgid "File"
@@ -1608,9 +1660,6 @@ msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "mgiri@redhat.com"
-
-#~ msgid "Name"
-#~ msgstr "ନାମ"
 
 #~ msgid "Host"
 #~ msgstr "ଆଧାର"
@@ -5174,10 +5223,6 @@ msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
 #~ msgid "Replace"
 #~ msgstr "ବଦଳାନ୍ତୁ"
 
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "ସମସ୍ତ (&A)"
-
 #~ msgid "&Skip"
 #~ msgstr "ଏଡାଇ ଯାଆନ୍ତୁ (&S)"
 
@@ -8687,9 +8732,6 @@ msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
 #~ msgid "Highest Rated"
 #~ msgstr "ସର୍ବାଧିକ ଆକଳିତ"
 
-#~ msgid "Most Downloads"
-#~ msgstr "ଅଧିକାଂଶ ଆହରଣଗୁଡିକ"
-
 #~ msgid "Add Rating"
 #~ msgstr "ଆକଳନ ଯୋଗକରନ୍ତୁ"
 
@@ -9802,11 +9844,6 @@ msgstr "ନୁତନ ଉପାଦାନ ଆହରଣ କରନ୍ତୁ"
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "ବର୍ଣ୍ଣନା"
-
-#, fuzzy
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "କାର୍ଯ୍ୟ ନାମ"
 
 #, fuzzy
 #~| msgid "Could not construct value"

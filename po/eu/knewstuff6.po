@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2024-07-05 22:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -523,7 +523,12 @@ msgid "Find out how to donate to this project"
 msgstr "Jakin proiektu honi dohaintza nola egin"
 
 #: qtquick/qml/Page.qml:140
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "Use caution when accessing user-created content shown here, as it may "
+#| "contain executable code that hasn't been tested by KDE or your "
+#| "distributor for safety, stability, or quality."
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -534,7 +539,11 @@ msgstr ""
 "kalitatea aztertu ez duten kode exekutagarria izatea."
 
 #: qtquick/qml/Page.qml:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "User-created content shown here hasn't been tested by KDE or your "
+#| "distributor for functionality or quality."
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
@@ -543,118 +552,145 @@ msgstr ""
 "kalitatea ez du KDEk ez eta zure banatzaileak aztertu."
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr "Dena"
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "&Dena"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Instalatuta"
 
 #: qtquick/qml/Page.qml:176
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Updateable"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Eguneragarria"
 
-#: qtquick/qml/Page.qml:196
-#, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Erakutsi kategoria guztiak"
-
-#: qtquick/qml/Page.qml:207
-#, kde-format
+#: qtquick/qml/Page.qml:186
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "Erakutsi instalatutako sarrerak bakarrik"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "&Dena"
 
-#: qtquick/qml/Page.qml:218
-#, kde-format
+#: qtquick/qml/Page.qml:197
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "Erakutsi sarrera eguneragarriak bakarrik"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Instalatuta"
 
-#: qtquick/qml/Page.qml:231
-#, kde-format
-msgid "Recent"
-msgstr "Azken aldikoa"
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Updateable"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Eguneragarria"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
-msgstr "Alfabetikoki"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr ""
 
-#: qtquick/qml/Page.qml:235
+#: qtquick/qml/Page.qml:223
 #, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr ""
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Puntuazioa"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Gehien jaitsitakoak"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Izena"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Puntuazioa"
 
-#: qtquick/qml/Page.qml:237
-#, kde-format
+#: qtquick/qml/Page.qml:258
+#, fuzzy, kde-format
+#| msgid "Downloads"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Zama-jaisteak"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, kde-format
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Erakutsi berrienak lehenengo"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr ""
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr "Sailkatu alfabetikoki izenaren arabera"
-
-#: qtquick/qml/Page.qml:279
-#, kde-format
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Erakutsi balorazio handienekoak lehenengo"
-
-#: qtquick/qml/Page.qml:290
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Erakutsi gehien zama-jaitsitakoak lehenengo"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, kde-format
 msgid "Upload…"
 msgstr "Zama-igo..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Ikasi zeure berrikuntza propioak zerrenda honetara gehitzen"
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, kde-format
 msgid "Go to…"
 msgstr "Joan hona..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, kde-format
 msgid "Search…"
 msgstr "Bilatu..."
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "Saila:"
 
-#: qtquick/qml/Page.qml:404
-#, kde-format
-msgid "Contribute your own…"
+#: qtquick/qml/Page.qml:383
+#, fuzzy, kde-format
+#| msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Zure ekarpena..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -988,6 +1024,51 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Gauza berriak zama-jaitsi..."
+
+#~ msgid "Everything"
+#~ msgstr "Dena"
+
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Erakutsi kategoria guztiak"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "Erakutsi instalatutako sarrerak bakarrik"
+
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "Erakutsi sarrera eguneragarriak bakarrik"
+
+#~ msgid "Recent"
+#~ msgstr "Azken aldikoa"
+
+#~ msgid "Alphabetical"
+#~ msgstr "Alfabetikoki"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Erakutsi berrienak lehenengo"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort Alphabetically By Name"
+#~ msgstr "Sailkatu alfabetikoki izenaren arabera"
+
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Erakutsi balorazio handienekoak lehenengo"
+
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Erakutsi gehien zama-jaitsitakoak lehenengo"
 
 #~ msgid "Tiles"
 #~ msgstr "Lauzak"
@@ -1748,9 +1829,6 @@ msgstr "Gauza berriak zama-jaitsi..."
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "marcos@euskalgnu.org,igaztanaga@gmail.com,xalba@euskalnet.net"
-
-#~ msgid "Name"
-#~ msgstr "Izena"
 
 #~ msgid "Host"
 #~ msgstr "Ostalaria"
@@ -5825,10 +5903,6 @@ msgstr "Gauza berriak zama-jaitsi..."
 #~ msgid "Replace"
 #~ msgstr "Ordeztu"
 
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "&Dena"
-
 #~ msgid "&Skip"
 #~ msgstr "&Baztertu"
 
@@ -9777,9 +9851,6 @@ msgstr "Gauza berriak zama-jaitsi..."
 
 #~ msgid "Highest Rated"
 #~ msgstr "Puntuazio onenak"
-
-#~ msgid "Most Downloads"
-#~ msgstr "Gehien jaitsitakoak"
 
 #~ msgid "Add Rating"
 #~ msgstr "Gehitu puntuazioa"

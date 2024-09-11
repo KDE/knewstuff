@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -506,6 +506,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -514,141 +515,157 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "Cwbl"
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
 #| msgid "Install"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Arsefydlu"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Diweddaru"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "Show all options"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Dangos y dewisiadau i gyd"
-
-#: qtquick/qml/Page.qml:207
-#, fuzzy, kde-format
-#| msgid "Show all options"
+#| msgid "All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "Dangos y dewisiadau i gyd"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "Cwbl"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "Show all options"
+#| msgid "Install"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "Dangos y dewisiadau i gyd"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Arsefydlu"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Percent"
-msgid "Recent"
-msgstr "Canran-nod"
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Diweddaru"
 
-#: qtquick/qml/Page.qml:233
-#, kde-format
-msgid "Alphabetical"
-msgstr ""
+#: qtquick/qml/Page.qml:221
+#, fuzzy, kde-format
+#| msgid "Release Date"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr "Dyddiad Rhyddháu"
 
-#: qtquick/qml/Page.qml:235
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Additional Names"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Enwau Ychwanegol"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Sort String"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Llinyn Trefnu"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Lawrlwythir yn Amlaf"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Enw"
+
+#: qtquick/qml/Page.qml:247
 #, fuzzy, kde-format
 #| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Poblogrwydd"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Lawrlwytho"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
-#| msgid "Most Downloads"
+#| msgid "Release Date"
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Lawrlwythir yn Amlaf"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "Dyddiad Rhyddháu"
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr ""
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Highest Rated"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Ystyriedir y Gorau"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Lawrlwythir yn Amlaf"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "&Lanlwytho"
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mynd i.."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "C&hwilio"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Categoriau"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Ewch ymlaen a'r gweithrediad"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -978,6 +995,54 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Lawrlwytho y Diweddaraf"
+
+#, fuzzy
+#~| msgid "Show all options"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Dangos y dewisiadau i gyd"
+
+#, fuzzy
+#~| msgid "Show all options"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "Dangos y dewisiadau i gyd"
+
+#, fuzzy
+#~| msgid "Show all options"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "Dangos y dewisiadau i gyd"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Percent"
+#~ msgid "Recent"
+#~ msgstr "Canran-nod"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Lawrlwythir yn Amlaf"
+
+#, fuzzy
+#~| msgid "Highest Rated"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Ystyriedir y Gorau"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Lawrlwythir yn Amlaf"
 
 #, fuzzy
 #~| msgid "&Tile"
@@ -1599,9 +1664,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "kyfieithu@dotmon.com"
-
-#~ msgid "Name"
-#~ msgstr "Enw"
 
 #, fuzzy
 #~| msgid "Host:"
@@ -9417,9 +9479,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~ msgid "Latest"
 #~ msgstr "Diweddaraf"
 
-#~ msgid "Most Downloads"
-#~ msgstr "Lawrlwythir yn Amlaf"
-
 #, fuzzy
 #~| msgid "Rating"
 #~ msgid "Add Rating"
@@ -10436,11 +10495,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~| msgid "Description:"
 #~ msgid "description"
 #~ msgstr "Disgrifiad:"
-
-#, fuzzy
-#~| msgid "Additional Names"
-#~ msgid "Autor Name"
-#~ msgstr "Enwau Ychwanegol"
 
 #, fuzzy
 #~ msgid "Could not get account balance."
@@ -12890,11 +12944,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~ msgstr "Ail-lwytho"
 
 #, fuzzy
-#~| msgid "Sort String"
-#~ msgid "Sorting"
-#~ msgstr "Llinyn Trefnu"
-
-#, fuzzy
 #~| msgid "Name"
 #~ msgid "By Name"
 #~ msgstr "Enw"
@@ -13802,9 +13851,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 #~ msgid "Welcome"
 #~ msgstr "Croeso"
 
-#~ msgid "Release Date"
-#~ msgstr "Dyddiad Rhyddháu"
-
 #~ msgid ""
 #~ "Name: %1\n"
 #~ "Author: %2\n"
@@ -14293,9 +14339,6 @@ msgstr "Lawrlwytho y Diweddaraf"
 
 #~ msgid "Unknown type"
 #~ msgstr "Math anhysbys"
-
-#~ msgid "All"
-#~ msgstr "Cwbl"
 
 #~ msgid "Frequent"
 #~ msgstr "Aml"

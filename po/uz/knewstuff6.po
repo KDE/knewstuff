@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2008-05-30 17:29+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -487,6 +487,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -495,137 +496,155 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "Hammasi"
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
 #| msgid "Install"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Oʻrnatish"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Yangilash"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Hamma parametrlarni koʻrsatish"
+#| msgid "All"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "Hammasi"
 
-#: qtquick/qml/Page.qml:207
+#: qtquick/qml/Page.qml:197
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Oʻrnatish"
+
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Yangilash"
+
+#: qtquick/qml/Page.qml:221
+#, fuzzy, kde-format
+#| msgid "Release Date"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr "Chiqqan kuni"
+
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Action Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Amalning nomi"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Mos&lamalar"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Eng koʻp yozib olingan"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Nomi"
+
+#: qtquick/qml/Page.qml:247
 #, fuzzy, kde-format
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "Hamma parametrlarni koʻrsatish"
-
-#: qtquick/qml/Page.qml:218
-#, fuzzy, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "Hamma parametrlarni koʻrsatish"
-
-#: qtquick/qml/Page.qml:231
-#, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Percent"
-msgid "Recent"
-msgstr "Foiz"
-
-#: qtquick/qml/Page.qml:233
-#, kde-format
-msgid "Alphabetical"
-msgstr ""
-
-#: qtquick/qml/Page.qml:235
-#, fuzzy, kde-format
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Baho"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Yozib olish"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
-#| msgid "Most Downloads"
+#| msgid "Release Date"
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Eng koʻp yozib olingan"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "Chiqqan kuni"
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr ""
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Highest Rated"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Eng yuqori baholangan"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Eng koʻp yozib olingan"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "&Yozib qoʻyish"
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "Oʻ&tish..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "Q&idirish:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Toifalar"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Amalni davom etish"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -953,6 +972,51 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Yangi narsalarni olish"
+
+#, fuzzy
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Hamma parametrlarni koʻrsatish"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "Hamma parametrlarni koʻrsatish"
+
+#, fuzzy
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "Hamma parametrlarni koʻrsatish"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Percent"
+#~ msgid "Recent"
+#~ msgstr "Foiz"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Eng koʻp yozib olingan"
+
+#, fuzzy
+#~| msgid "Highest Rated"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Eng yuqori baholangan"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Eng koʻp yozib olingan"
 
 #, fuzzy
 #~| msgid "File"
@@ -1573,9 +1637,6 @@ msgstr "Yangi narsalarni olish"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "kmashrab@uni-bremen.de"
-
-#~ msgid "Name"
-#~ msgstr "Nomi"
 
 #~ msgid "Host"
 #~ msgstr "Xost"
@@ -8375,9 +8436,6 @@ msgstr "Yangi narsalarni olish"
 #~ msgid "Latest"
 #~ msgstr "Eng oxirgi"
 
-#~ msgid "Most Downloads"
-#~ msgstr "Eng koʻp yozib olingan"
-
 #, fuzzy
 #~ msgid "Add Rating"
 #~ msgstr "Baho"
@@ -9239,11 +9297,6 @@ msgstr "Yangi narsalarni olish"
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "Taʼrifi"
-
-#, fuzzy
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "Amalning nomi"
 
 #, fuzzy
 #~ msgid "Could not get account balance."
@@ -11491,10 +11544,6 @@ msgstr "Yangi narsalarni olish"
 #~ msgstr "Qaytadan yuklash"
 
 #, fuzzy
-#~ msgid "Sorting"
-#~ msgstr "Mos&lamalar"
-
-#, fuzzy
 #~ msgid "By Name"
 #~ msgstr "Nomi"
 
@@ -12302,9 +12351,6 @@ msgstr "Yangi narsalarni olish"
 #~ msgid "Welcome"
 #~ msgstr "Marhamat"
 
-#~ msgid "Release Date"
-#~ msgstr "Chiqqan kuni"
-
 #~ msgid ""
 #~ "Name: %1\n"
 #~ "Author: %2\n"
@@ -12821,9 +12867,6 @@ msgstr "Yangi narsalarni olish"
 
 #~ msgid "Unknown type"
 #~ msgstr "Nomaʼlum tur"
-
-#~ msgid "All"
-#~ msgstr "Hammasi"
 
 #~ msgid "Frequent"
 #~ msgstr "Tez-tez foydalaniladigan"

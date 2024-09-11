@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2008-08-16 16:01-0800\n"
 "Last-Translator: Zabeeh Khan <zabeehkhan@gmail.com>\n"
 "Language-Team: Pashto <pathanisation@googlegroups.com>\n"
@@ -494,6 +494,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -502,141 +503,156 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "ټول&"
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
 #| msgid "Install"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "لګول"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "اوسمهالول"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "ټولې ننوتنې ښودل&"
-
-#: qtquick/qml/Page.qml:207
-#, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "ټولې ننوتنې ښودل&"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "ټول&"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "Install"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "ټولې ننوتنې ښودل&"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "لګول"
 
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "OpenRecent"
-msgid "Recent"
-msgstr "اوسنی پرانيستل"
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "اوسمهالول"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:235
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Action Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "چار نوم"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Sorting"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "اڼل کيږي"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "ډېرې رالېښنې"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "نوم"
+
+#: qtquick/qml/Page.qml:247
 #, fuzzy, kde-format
 #| msgid "Rating: "
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr ":کچونه"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "رالېښنې"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
-#| msgid "Show directories first"
+#| msgid "&Release '%1'"
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "لومړی پوښۍ ښودل"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "'%1' خوشېينه&"
 
-#: qtquick/qml/Page.qml:268
-#, kde-format
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr ""
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "لومړی پوښۍ ښودل"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "ډېرې رالېښنې"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "...ځاېناستول&"
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "ته ورتګ"
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr ":پ&لټون"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr ":لوښه"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "چلښت پرمخبيول"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -976,6 +992,54 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "نوي څيزونه رالېښل"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "ټولې ننوتنې ښودل&"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "ټولې ننوتنې ښودل&"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "ټولې ننوتنې ښودل&"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "OpenRecent"
+#~ msgid "Recent"
+#~ msgstr "اوسنی پرانيستل"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "لومړی پوښۍ ښودل"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "لومړی پوښۍ ښودل"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "ډېرې رالېښنې"
 
 #, fuzzy
 #~| msgid "File"
@@ -1620,9 +1684,6 @@ msgstr "نوي څيزونه رالېښل"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "zabeehkhan@gmail.com"
-
-#~ msgid "Name"
-#~ msgstr "نوم"
 
 #~ msgid "Host"
 #~ msgstr "کوربه"
@@ -5037,12 +5098,6 @@ msgstr "نوي څيزونه رالېښل"
 
 #~ msgid "Replace"
 #~ msgstr "ځاېناستول"
-
-#, fuzzy
-#~| msgid "&All"
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "ټول&"
 
 #~ msgid "&Skip"
 #~ msgstr "پرېښودل"
@@ -8498,9 +8553,6 @@ msgstr "نوي څيزونه رالېښل"
 #~ msgid "Highest Rated"
 #~ msgstr "لوړ کچول شوی"
 
-#~ msgid "Most Downloads"
-#~ msgstr "ډېرې رالېښنې"
-
 #~ msgid "Add Rating"
 #~ msgstr "کچونه زياتول"
 
@@ -9614,11 +9666,6 @@ msgstr "نوي څيزونه رالېښل"
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "سپړاوی"
-
-#, fuzzy
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "چار نوم"
 
 #, fuzzy
 #~| msgid "Could not construct value"
@@ -11729,9 +11776,6 @@ msgstr "نوي څيزونه رالېښل"
 #~ msgid "Root"
 #~ msgstr "ولۍ"
 
-#~ msgid "&Release '%1'"
-#~ msgstr "'%1' خوشېينه&"
-
 #~ msgid "&Safely Remove '%1'"
 #~ msgstr "په خوندي توګه ړنګول '%1'&"
 
@@ -11864,9 +11908,6 @@ msgstr "نوي څيزونه رالېښل"
 
 #~ msgid "New Folder..."
 #~ msgstr "...نوې پوښۍ"
-
-#~ msgid "Sorting"
-#~ msgstr "اڼل کيږي"
 
 #~ msgid "By Name"
 #~ msgstr "په نوم"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2009-12-04 22:09+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -492,6 +492,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -500,136 +501,156 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "&Wszëtczé"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Instalacëjô"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Aktualizëjë"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "All Categories"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Wszëtczé kategòrëje"
-
-#: qtquick/qml/Page.qml:207
-#, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "&Wszëtczé"
 
-#: qtquick/qml/Page.qml:218
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr ""
-
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Recent"
-msgid "Recent"
-msgstr "Òtemkni wczasniészi"
+#| msgid "Installed"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Instalacëjô"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Aktualizëjë"
+
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:235
-#, kde-format
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Action Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Miono dzejaniô"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Òbtaksowanié"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Nôczãsci zladowóné"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Miono"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Òbtaksowanié"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Ladëjë"
 
-#: qtquick/qml/Page.qml:257
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Pòkôżë wprzód katalodżi"
-
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:269
 #, kde-format
 msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Pòkôżë wprzód katalodżi"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Nôczãsci zladowóné"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Wladënk..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Biéj do..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Szëkba:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "Kategòrëjô:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Biéj dali z òperacëją"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -969,6 +990,39 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Zladëjë nowé paczétë"
+
+#, fuzzy
+#~| msgid "All Categories"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Wszëtczé kategòrëje"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Open Recent"
+#~ msgid "Recent"
+#~ msgstr "Òtemkni wczasniészi"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Pòkôżë wprzód katalodżi"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Pòkôżë wprzód katalodżi"
+
+#, fuzzy
+#~| msgid "Most Downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Nôczãsci zladowóné"
 
 #, fuzzy
 #~| msgid "File"
@@ -1637,9 +1691,6 @@ msgstr "Zladëjë nowé paczétë"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "michol@linuxcsb.org, mark@linuxcsb.org"
-
-#~ msgid "Name"
-#~ msgstr "Miono"
 
 #~ msgid "Host"
 #~ msgstr "Hòst"
@@ -5725,10 +5776,6 @@ msgstr "Zladëjë nowé paczétë"
 #~ msgid "Replace"
 #~ msgstr "Zastãpi"
 
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "&Wszëtczé"
-
 #~ msgid "&Skip"
 #~ msgstr "&Przepùscë"
 
@@ -9625,9 +9672,6 @@ msgstr "Zladëjë nowé paczétë"
 #~ msgid "Highest Rated"
 #~ msgstr "Nôwëżi òtaksowóné"
 
-#~ msgid "Most Downloads"
-#~ msgstr "Nôczãsci zladowóné"
-
 #~ msgid "Add Rating"
 #~ msgstr "Dodôj taksa"
 
@@ -10884,11 +10928,6 @@ msgstr "Zladëjë nowé paczétë"
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "Òpisënk"
-
-#, fuzzy
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "Miono dzejaniô"
 
 #, fuzzy
 #~| msgid "Could not construct value"

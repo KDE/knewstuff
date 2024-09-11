@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -502,6 +502,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -510,136 +511,156 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "ทั้งห&มด"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "ติดตั้งแล้ว"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "ปรับรุ่น"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "All Categories"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "หมวดหมู่ทั้งหมด"
-
-#: qtquick/qml/Page.qml:207
-#, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "ทั้งห&มด"
 
-#: qtquick/qml/Page.qml:218
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr ""
-
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Recent"
-msgid "Recent"
-msgstr "เปิดที่เคยเรียกใช้"
+#| msgid "Installed"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "ติดตั้งแล้ว"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "ปรับรุ่น"
+
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:235
-#, kde-format
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Action Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "ชื่อการกระทำ"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "การจัดอันดับ"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "ถูกดาวน์โหลดมากที่สุด"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "ชื่อ"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "การจัดอันดับ"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "ดาวน์โหลด"
 
-#: qtquick/qml/Page.qml:257
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "แสดงไดเรกทอรีก่อน"
-
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:269
 #, kde-format
 msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "แสดงไดเรกทอรีก่อน"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "ถูกดาวน์โหลดมากที่สุด"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "อัปโหลด..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "ไป&ยัง..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "ค้นหา:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "หมวดหมู่:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "ดำเนินการต่อไป"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -980,6 +1001,39 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็นที่นิยม"
+
+#, fuzzy
+#~| msgid "All Categories"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "หมวดหมู่ทั้งหมด"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Open Recent"
+#~ msgid "Recent"
+#~ msgstr "เปิดที่เคยเรียกใช้"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "แสดงไดเรกทอรีก่อน"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "แสดงไดเรกทอรีก่อน"
+
+#, fuzzy
+#~| msgid "Most downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "ถูกดาวน์โหลดมากที่สุด"
 
 #, fuzzy
 #~| msgctxt "@option:check Do filter on type - show only files"
@@ -1653,9 +1707,6 @@ msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็�
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "donga.nb@gmail.com, drrider@gmail.com"
-
-#~ msgid "Name"
-#~ msgstr "ชื่อ"
 
 #~ msgid "Host"
 #~ msgstr "เครื่อง"
@@ -5645,10 +5696,6 @@ msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็�
 #~ msgid "Replace"
 #~ msgstr "แทนที่"
 
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "ทั้งห&มด"
-
 #~ msgid "&Skip"
 #~ msgstr "&ข้าม"
 
@@ -9516,9 +9563,6 @@ msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็�
 #~ msgid "Highest Rated"
 #~ msgstr "ได้รับอันดับสูงสุด"
 
-#~ msgid "Most Downloads"
-#~ msgstr "ถูกดาวน์โหลดมากที่สุด"
-
 #~ msgid "Add Rating"
 #~ msgstr "เพิ่มการจัดอันดับ"
 
@@ -10770,11 +10814,6 @@ msgstr "ดาวน์โหลดของใหม่ ๆ ที่เป็�
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "รายละเอียด"
-
-#, fuzzy
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "ชื่อการกระทำ"
 
 #~ msgid "Could not get account balance."
 #~ msgstr "ไม่สามารถหาเงินคงเหลือในบัญชีได้"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2013-01-31 01:08+0400\n"
 "Last-Translator: Davit <nikdavnik@mail.ru>\n"
 "Language-Team: Armenian Language: hy\n"
@@ -497,6 +497,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -505,138 +506,159 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, kde-format
-msgid "Everything"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr "&Բոլորը"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Տեղադրված"
 
 #: qtquick/qml/Page.qml:176
 #, fuzzy, kde-format
 #| msgid "Update"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Թարմացում"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "All Categories"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "Բոլոր կատեգորիաները"
-
-#: qtquick/qml/Page.qml:207
-#, kde-format
+#| msgctxt "@action:button Replace all occurrences"
+#| msgid "&All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "&Բոլորը"
 
-#: qtquick/qml/Page.qml:218
-#, kde-format
-msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr ""
-
-#: qtquick/qml/Page.qml:231
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Open Recent"
-msgid "Recent"
-msgstr "Վերջին նիշքերը"
+#| msgid "Installed"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Տեղադրված"
 
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:208
+#, fuzzy, kde-format
+#| msgid "Update"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Թարմացում"
+
+#: qtquick/qml/Page.qml:221
 #, kde-format
-msgid "Alphabetical"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
 msgstr ""
+
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "Autor Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Название действия"
 
 # վարկանիշ
-#: qtquick/qml/Page.qml:235
-#, kde-format
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Վարկանիշ"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Ամենահայտնի"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Անուն"
+
+# վարկանիշ
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Վարկանիշ"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Ներբեռնել"
 
-#: qtquick/qml/Page.qml:257
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Թղթապանակները սկզբում"
-
-#: qtquick/qml/Page.qml:268
+#: qtquick/qml/Page.qml:269
 #, kde-format
 msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgid "Show directories first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Թղթապանակները սկզբում"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgid "Most downloads"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Ամենաշատ ներբեռնված"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "&Заменить..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Անցնել..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Փնտրել:"
 
 # կարգ
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "Կատեգորիա:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Շարունակել գործողությունը"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -978,6 +1000,39 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Загрузить материалы..."
+
+#, fuzzy
+#~| msgid "All Categories"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "Բոլոր կատեգորիաները"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Open Recent"
+#~ msgid "Recent"
+#~ msgstr "Վերջին նիշքերը"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Թղթապանակները սկզբում"
+
+#, fuzzy
+#~| msgid "Show directories first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Թղթապանակները սկզբում"
+
+#, fuzzy
+#~| msgid "Most downloads"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Ամենաշատ ներբեռնված"
 
 #, fuzzy
 #~| msgctxt "@option:check Do filter on type - show only files"
@@ -1683,9 +1738,6 @@ msgstr "Загрузить материалы..."
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "nikdavnik@mail.ru"
-
-#~ msgid "Name"
-#~ msgstr "Անուն"
 
 #~ msgid "Host"
 #~ msgstr "Հանգույց"
@@ -5713,10 +5765,6 @@ msgstr "Загрузить материалы..."
 #~ msgid "Replace"
 #~ msgstr "Փոփոխել"
 
-#~ msgctxt "@action:button Replace all occurrences"
-#~ msgid "&All"
-#~ msgstr "&Բոլորը"
-
 #~ msgid "&Skip"
 #~ msgstr "&Բաց թողնել"
 
@@ -9690,9 +9738,6 @@ msgstr "Загрузить материалы..."
 #~ msgid "Highest Rated"
 #~ msgstr "Ամենաբարձր վարկանիշով"
 
-#~ msgid "Most Downloads"
-#~ msgstr "Ամենահայտնի"
-
 #~ msgid "Add Rating"
 #~ msgstr "Բարձրացնել վարկանիշը"
 
@@ -10999,10 +11044,6 @@ msgstr "Загрузить материалы..."
 #~| msgid "Description"
 #~ msgid "description"
 #~ msgstr "Описание"
-
-#~| msgid "Action Name"
-#~ msgid "Autor Name"
-#~ msgstr "Название действия"
 
 #~| msgid "Could not construct value"
 #~ msgid "Could not get account balance."

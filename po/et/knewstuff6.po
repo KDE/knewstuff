@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:37+0000\n"
+"POT-Creation-Date: 2024-09-11 00:37+0000\n"
 "PO-Revision-Date: 2020-10-07 21:04+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -534,6 +534,7 @@ msgstr "Selgitamine, kuidas projektile annetus teha"
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
@@ -542,6 +543,7 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
+msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
@@ -549,13 +551,15 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:172
 #, fuzzy, kde-format
-#| msgctxt "List option which will set the filter to show everything"
-#| msgid "Everything"
-msgid "Everything"
+#| msgid "All"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
 msgstr "Kõik"
 
 #: qtquick/qml/Page.qml:174
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Paigaldatud"
 
@@ -565,134 +569,136 @@ msgstr "Paigaldatud"
 #| "List option which will set the filter so only installed items with "
 #| "updates available are shown"
 #| msgid "Updateable Only"
+msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Ainult uuendatavad"
 
-#: qtquick/qml/Page.qml:196
+#: qtquick/qml/Page.qml:186
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
-msgctxt "List option which will set the filter to show everything"
-msgid "Show All Entries"
-msgstr "&Näita kõiki kirjeid"
-
-#: qtquick/qml/Page.qml:207
-#, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "All"
 msgctxt ""
-"List option which will set the filter so only installed items are shown"
-msgid "Show Only Installed Entries"
-msgstr "&Näita kõiki kirjeid"
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr "Kõik"
 
-#: qtquick/qml/Page.qml:218
+#: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "&Show All Entries"
+#| msgid "Installed"
 msgctxt ""
-"List option which will set the filter so only installed items with updates "
-"available are shown"
-msgid "Show Only Updateable Entries"
-msgstr "&Näita kõiki kirjeid"
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr "Paigaldatud"
 
-#: qtquick/qml/Page.qml:231
-#, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Percent"
-msgid "Recent"
-msgstr "Protsent"
-
-#: qtquick/qml/Page.qml:233
+#: qtquick/qml/Page.qml:208
 #, fuzzy, kde-format
 #| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
-msgid "Alphabetical"
-msgstr "Sorteerimine tähestiku järgi"
+#| "List option which will set the filter so only installed items with "
+#| "updates available are shown"
+#| msgid "Updateable Only"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr "Ainult uuendatavad"
 
-#: qtquick/qml/Page.qml:235
-#, kde-format
+#: qtquick/qml/Page.qml:221
+#, fuzzy, kde-format
+#| msgid "Release Date"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr "Väljalaske kuupäev"
+
+#: qtquick/qml/Page.qml:223
+#, fuzzy, kde-format
+#| msgid "First Name"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr "Eesnimi"
+
+#: qtquick/qml/Page.qml:225
+#, fuzzy, kde-format
+#| msgid "Sorting"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr "Sorteerimine"
+
+#: qtquick/qml/Page.qml:227
+#, fuzzy, kde-format
+#| msgid "Most Downloads"
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr "Kõige tõmmatumad"
+
+#: qtquick/qml/Page.qml:236
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr "Nimi"
+
+#: qtquick/qml/Page.qml:247
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
 msgid "Rating"
 msgstr "Hinnang"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:258
 #, fuzzy, kde-format
 #| msgid "Download"
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
 msgid "Downloads"
 msgstr "Laadi alla"
 
-#: qtquick/qml/Page.qml:257
+#: qtquick/qml/Page.qml:269
 #, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on when items were "
-#| "most recently updated"
-#| msgid "Show most recent first"
+#| msgid "Release Date"
 msgctxt ""
-"List option which will set the sort order to based on when items were most "
-"recently updated"
-msgid "Show Most Recent First"
-msgstr "Uusimate näitamine esimesena"
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr "Väljalaske kuupäev"
 
-#: qtquick/qml/Page.qml:268
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to be alphabetical based on the "
-#| "name"
-#| msgid "Sort alphabetically"
-msgctxt ""
-"List option which will set the sort order to be alphabetical based on the "
-"name"
-msgid "Sort Alphabetically By Name"
-msgstr "Sorteerimine tähestiku järgi"
-
-#: qtquick/qml/Page.qml:279
-#, fuzzy, kde-format
-#| msgctxt "List option which will set the sort order to based on user ratings"
-#| msgid "Show highest rated first"
-msgctxt "List option which will set the sort order to based on user ratings"
-msgid "Show Highest Rated First"
-msgstr "Kõige hinnatumate näitamine esimesena"
-
-#: qtquick/qml/Page.qml:290
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "List option which will set the sort order to based on number of downloads"
-#| msgid "Show most downloaded first"
-msgctxt ""
-"List option which will set the sort order to based on number of downloads"
-msgid "Show Most Downloaded First"
-msgstr "Kõige enam alla laaditute näitamine esimesena"
-
-#: qtquick/qml/Page.qml:303
+#: qtquick/qml/Page.qml:282
 #, fuzzy, kde-format
 #| msgid "Upload..."
 msgid "Upload…"
 msgstr "Üleslaadimine..."
 
-#: qtquick/qml/Page.qml:304
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:314
+#: qtquick/qml/Page.qml:293
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mine..."
 
-#: qtquick/qml/Page.qml:321 qtquick/qml/Page.qml:330
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Otsing:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:363
 #, kde-format
 msgid "Category:"
 msgstr "Kategooria:"
 
-#: qtquick/qml/Page.qml:404
+#: qtquick/qml/Page.qml:383
 #, fuzzy, kde-format
 #| msgid "Continue operation"
-msgid "Contribute your own…"
+msgid "Contribute Your Own…"
 msgstr "Jätka tegevust"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
@@ -1042,6 +1048,86 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Uue kraami tõmbamine"
+
+#, fuzzy
+#~| msgctxt "List option which will set the filter to show everything"
+#~| msgid "Everything"
+#~ msgid "Everything"
+#~ msgstr "Kõik"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt "List option which will set the filter to show everything"
+#~ msgid "Show All Entries"
+#~ msgstr "&Näita kõiki kirjeid"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items are shown"
+#~ msgid "Show Only Installed Entries"
+#~ msgstr "&Näita kõiki kirjeid"
+
+#, fuzzy
+#~| msgid "&Show All Entries"
+#~ msgctxt ""
+#~ "List option which will set the filter so only installed items with "
+#~ "updates available are shown"
+#~ msgid "Show Only Updateable Entries"
+#~ msgstr "&Näita kõiki kirjeid"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Percent"
+#~ msgid "Recent"
+#~ msgstr "Protsent"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "List option which will set the sort order to be alphabetical based on "
+#~| "the name"
+#~| msgid "Sort alphabetically"
+#~ msgid "Alphabetical"
+#~ msgstr "Sorteerimine tähestiku järgi"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "List option which will set the sort order to based on when items were "
+#~| "most recently updated"
+#~| msgid "Show most recent first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on when items were "
+#~ "most recently updated"
+#~ msgid "Show Most Recent First"
+#~ msgstr "Uusimate näitamine esimesena"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "List option which will set the sort order to be alphabetical based on "
+#~| "the name"
+#~| msgid "Sort alphabetically"
+#~ msgctxt ""
+#~ "List option which will set the sort order to be alphabetical based on the "
+#~ "name"
+#~ msgid "Sort Alphabetically By Name"
+#~ msgstr "Sorteerimine tähestiku järgi"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "List option which will set the sort order to based on user ratings"
+#~| msgid "Show highest rated first"
+#~ msgctxt "List option which will set the sort order to based on user ratings"
+#~ msgid "Show Highest Rated First"
+#~ msgstr "Kõige hinnatumate näitamine esimesena"
+
+#, fuzzy
+#~| msgctxt ""
+#~| "List option which will set the sort order to based on number of downloads"
+#~| msgid "Show most downloaded first"
+#~ msgctxt ""
+#~ "List option which will set the sort order to based on number of downloads"
+#~ msgid "Show Most Downloaded First"
+#~ msgstr "Kõige enam alla laaditute näitamine esimesena"
 
 #, fuzzy
 #~| msgid "&Tile"
@@ -1803,9 +1889,6 @@ msgstr "Uue kraami tõmbamine"
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "bald@smail.ee"
-
-#~ msgid "Name"
-#~ msgstr "Nimi"
 
 #~ msgid "Host"
 #~ msgstr "Masin"
@@ -9807,9 +9890,6 @@ msgstr "Uue kraami tõmbamine"
 #~ msgid "Highest Rated"
 #~ msgstr "Kõige hinnatumad"
 
-#~ msgid "Most Downloads"
-#~ msgstr "Kõige tõmmatumad"
-
 #~ msgid "Add Rating"
 #~ msgstr "Lisa hinnang"
 
@@ -13440,9 +13520,6 @@ msgstr "Uue kraami tõmbamine"
 #~ msgid "New Folder..."
 #~ msgstr "Uus kataloog..."
 
-#~ msgid "Sorting"
-#~ msgstr "Sorteerimine"
-
 #~ msgid "By Name"
 #~ msgstr "Nime järgi"
 
@@ -14062,9 +14139,6 @@ msgstr "Uue kraami tõmbamine"
 #~ msgid "Welcome"
 #~ msgstr "Tere tulemast"
 
-#~ msgid "Release Date"
-#~ msgstr "Väljalaske kuupäev"
-
 #~ msgid ""
 #~ "Name: %1\n"
 #~ "Author: %2\n"
@@ -14643,9 +14717,6 @@ msgstr "Uue kraami tõmbamine"
 
 #~ msgid "Unknown type"
 #~ msgstr "Tundmatu tüüp"
-
-#~ msgid "All"
-#~ msgstr "Kõik"
 
 #~ msgid "Frequent"
 #~ msgstr "Sagedane"
@@ -15354,9 +15425,6 @@ msgstr "Uue kraami tõmbamine"
 
 #~ msgid "Name Prefix"
 #~ msgstr "Nime eesliide"
-
-#~ msgid "First Name"
-#~ msgstr "Eesnimi"
 
 #~ msgid "Middle Name"
 #~ msgstr "Keskmine nimi"
