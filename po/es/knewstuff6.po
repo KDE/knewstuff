@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-11 00:37+0000\n"
-"PO-Revision-Date: 2024-06-16 13:40+0200\n"
+"PO-Revision-Date: 2024-09-12 01:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attica/atticaprovider.cpp:166
@@ -529,11 +529,7 @@ msgid "Find out how to donate to this project"
 msgstr "Descubra cómo hacer un donativo a este proyecto"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -546,10 +542,7 @@ msgstr ""
 "distribuidor."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -559,40 +552,33 @@ msgstr ""
 "muestra aquí no han sido comprobadas por KDE o por su distribuidor."
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr "&Todo"
+msgstr "Todo"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Instalado"
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Actualizable"
 
 #: qtquick/qml/Page.qml:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr "&Todo"
+msgstr "Todo"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -600,8 +586,7 @@ msgid "Installed"
 msgstr "Instalado"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -612,31 +597,28 @@ msgstr "Actualizable"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Orden: Fecha de lanzamiento"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Orden: Nombre"
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Puntuación"
+msgstr "Orden: Puntuación"
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Más descargado"
+msgstr "Orden: Descargas"
 
 #: qtquick/qml/Page.qml:236
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
@@ -644,8 +626,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -653,8 +634,7 @@ msgid "Rating"
 msgstr "Puntuación"
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
@@ -667,7 +647,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Fecha de lanzamiento"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -695,8 +675,7 @@ msgid "Category:"
 msgstr "Categoría:"
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Contribuir con el suyo..."
 
