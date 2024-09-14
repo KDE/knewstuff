@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-02-23 02:27+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
+"PO-Revision-Date: 2024-09-11 07:08+0900\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: ja\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -184,11 +184,13 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"ダウンロード可能なアイテムが定義されていないため、エントリ %1 のインストール"
+"を実行できませんでした。作成者に連絡して修正を依頼してください。"
 
 #: core/engine.cpp:872
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "アップデートアイテムを選択"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -197,6 +199,9 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"このアップデートを適用するために使用するアイテムを以下のリストから選択してく"
+"ださい。元のアイテムの名前が %1 であるため、どのアイテムを選択すればよいか特"
+"定できませんでした"
 
 #: core/engine.cpp:893
 #, kde-format
@@ -204,6 +209,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"%1 をアップデートするための適切なリンクを特定できなかったため、アップデートを"
+"実行できません"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -263,6 +270,7 @@ msgstr "%1 をインストールできませんでした: ファイルが見つ�
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
 msgstr ""
+"%1 のインストールにおいて、必要な新ディレクトリ %2 を作成できませんでした"
 
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
@@ -276,6 +284,9 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
+"サービスタイプ %2 がシステムによって受け入れられなかったため、%1 のインストー"
+"ルに失敗しました (このタイプのパッケージの KPackage サポートプラグインをイン"
+"ストールしていますか？)"
 
 #: core/installation.cpp:535
 #, kde-format
@@ -301,12 +312,12 @@ msgstr ""
 #: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "ダウンロードしたファイル %1 のアーカイブの種類を判別できませんでした"
 
 #: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr ""
+msgstr "アーカイブファイル %1 を開けませんでした。報告されたエラー: %2"
 
 #: core/installation.cpp:678
 #, kde-format
@@ -315,6 +326,8 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"このファイルは既にディスクに存在します (以前のダウンロード試行が失敗した可能"
+"性があります)。続行すると上書きされます。既存のファイルを上書きしますか？"
 
 #: core/installation.cpp:681
 #, kde-format
@@ -324,7 +337,7 @@ msgstr "ファイルを上書き"
 #: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "ファイル %1 を目的の場所 %2 に移動できません"
 
 #: core/installation.cpp:723
 #, kde-format
@@ -335,6 +348,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"コマンドの実行中にインストールが失敗しました:\n"
+"%1\n"
+"\n"
+"返された出力は次のとおりです:\n"
+"%2"
 
 #: core/installation.cpp:733
 #, kde-format
@@ -345,6 +363,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"コマンドの実行中にコード %1 でインストールが失敗しました:\n"
+"%2\n"
+"\n"
+"返された出力は次のとおりです:\n"
+"%3"
 
 #: core/installation.cpp:775
 #, kde-format
@@ -407,16 +430,21 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"アンインストールプロセスでコマンド %1 を正常に実行できませんでした\n"
+"出力は次のとおりでした: \n"
+"%2\n"
+"これが間違っていると思う場合は、アンインストールプロセスを続行するかキャンセ"
+"ルできます"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
 msgid "Could not open %1 for writing"
-msgstr ""
+msgstr "%1 を書き込み用に開けませんでした"
 
 #: core/jobs/filecopyworker.cpp:52
 #, kde-format
 msgid "Could not open %1 for reading"
-msgstr ""
+msgstr "%1 を読み取り用に開けませんでした"
 
 #: core/jobs/kpackagejob.cpp:114
 #, kde-format
@@ -424,6 +452,8 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
+"パッケージ管理タスクのジョブを作成できませんでした。これは通常、パッケージが"
+"無効であることが原因です。パッケージ %1 を操作しようとしました"
 
 #: core/jobs/kpackagejob.cpp:121
 #, kde-format
@@ -431,11 +461,14 @@ msgid ""
 "Could not create a package installer for the service type %1: The installer "
 "does not have a valid structure"
 msgstr ""
+"サービスタイプ %1 のパッケージインストーラを作成できませんでした: インストー"
+"ラの構造が無効です"
 
 #: core/jobs/kpackagejob.cpp:125
 #, kde-format
 msgid "The service type %1 was not understood by the KPackage installer"
 msgstr ""
+"サービスタイプ %1 は、KPackage インストーラによって認識されませんでした"
 
 #: core/security.cpp:69
 #, kde-format
@@ -983,7 +1016,7 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Updateable Only"
-msgstr "更新できるもののみ"
+msgstr "アップデートできるもののみ"
 
 #: qtquick/qml/NewStuffList.qml:82
 #, kde-format
@@ -1073,7 +1106,7 @@ msgstr "すべて"
 #: qtquick/qml/Page.qml:263
 #, kde-format
 msgid "Updateable"
-msgstr "更新できるもの"
+msgstr "アップデートできるもの"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -1094,7 +1127,7 @@ msgctxt ""
 "List option which will set the filter so only installed items with updates "
 "available are shown"
 msgid "Show Only Updateable Entries"
-msgstr "更新できるエントリのみ表示"
+msgstr "アップデートできるエントリのみ表示"
 
 #: qtquick/qml/Page.qml:308
 #, kde-format
@@ -1366,6 +1399,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"あなたには「Get Hot New Stuff」の権限がありません。これが誤りだと思う場合は、"
+"権限の担当者に連絡してください。"
 
 #: qtquick/searchpresetmodel.cpp:55
 #, kde-format
@@ -1407,7 +1442,7 @@ msgstr "ホーム"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "棚"
 
 #: qtquick/searchpresetmodel.cpp:76
 #, kde-format
