@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-11 00:37+0000\n"
-"PO-Revision-Date: 2024-02-23 02:27+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
+"PO-Revision-Date: 2024-09-11 07:08+0900\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: ja\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: attica/atticaprovider.cpp:166
 #, kde-format
@@ -199,12 +199,12 @@ msgstr "%1 のインストールに失敗しました: %2"
 #: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "ダウンロードしたファイル %1 のアーカイブの種類を判別できませんでした"
 
 #: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr ""
+msgstr "アーカイブファイル %1 を開けませんでした。報告されたエラー: %2"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -213,6 +213,8 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"このファイルは既にディスクに存在します (以前のダウンロード試行が失敗した可能"
+"性があります)。続行すると上書きされます。既存のファイルを上書きしますか？"
 
 #: core/installation.cpp:468
 #, kde-format
@@ -222,7 +224,7 @@ msgstr "ファイルを上書き"
 #: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "ファイル %1 を目的の場所 %2 に移動できません"
 
 #: core/installation.cpp:510
 #, kde-format
@@ -233,6 +235,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"コマンドの実行中にインストールが失敗しました:\n"
+"%1\n"
+"\n"
+"返された出力は次のとおりです:\n"
+"%2"
 
 #: core/installation.cpp:521
 #, kde-format
@@ -243,6 +250,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"コマンドの実行中にコード %1 でインストールが失敗しました:\n"
+"%2\n"
+"\n"
+"返された出力は次のとおりです:\n"
+"%3"
 
 #: core/installation.cpp:563
 #, kde-format
@@ -261,16 +273,21 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"アンインストールプロセスでコマンド %1 を正常に実行できませんでした\n"
+"出力は次のとおりでした: \n"
+"%2\n"
+"これが間違っていると思う場合は、アンインストールプロセスを続行するかキャンセ"
+"ルできます"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
 msgid "Could not open %1 for writing"
-msgstr ""
+msgstr "%1 を書き込み用に開けませんでした"
 
 #: core/jobs/filecopyworker.cpp:52
 #, kde-format
 msgid "Could not open %1 for reading"
-msgstr ""
+msgstr "%1 を読み取り用に開けませんでした"
 
 #: core/transaction.cpp:189
 #, kde-format
@@ -278,11 +295,13 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"ダウンロード可能なアイテムが定義されていないため、エントリ %1 のインストール"
+"を実行できませんでした。作成者に連絡して修正を依頼してください。"
 
 #: core/transaction.cpp:306
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "アップデートアイテムを選択"
 
 #: core/transaction.cpp:308
 #, kde-format
@@ -291,6 +310,9 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"このアップデートを適用するために使用するアイテムを以下のリストから選択してく"
+"ださい。元のアイテムの名前が %1 であるため、どのアイテムを選択すればよいか特"
+"定できませんでした"
 
 #: core/transaction.cpp:332
 #, kde-format
@@ -298,6 +320,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"%1 をアップデートするための適切なリンクを特定できなかったため、アップデートを"
+"実行できません"
 
 #: core/transaction.cpp:424
 #, kde-format
@@ -821,14 +845,7 @@ msgid "Send Email To: %1"
 msgstr "メールを送信する: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -837,10 +854,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
-"新しいエントリをアップロード、もしくは既存のエントリに何かを追加するには、"
-"KDE Store を開いてログインしてください。あなたのユーザアイコンをクリックする"
-"と表示されるメニューに、\"My Products\" エントリがあります。このエントリをク"
-"リックして管理システムを開き、あなたの製作物を公開してください。"
+"新しいエントリをアップロードしたり、KDE ストアの既存のエントリにコンテンツを"
+"追加するには、ウェブサイトを開いてログインしてください。これが完了すると、"
+"ユーザアイコンのクリックでポップアップする「My Products」エントリが表示されま"
+"す。このエントリをクリックすると、プロダクト管理システムに移動し、プロダクト"
+"の作業を行うことができます。"
 
 #: qtquick/qml/UploadPage.qml:160
 #, kde-format
@@ -878,6 +896,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"あなたには「Get Hot New Stuff」の権限がありません。これが誤りだと思う場合は、"
+"権限の担当者に連絡してください。"
 
 #: qtquick/searchpresetmodel.cpp:44
 #, kde-format
@@ -919,7 +939,7 @@ msgstr "ホーム"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "棚"
 
 #: qtquick/searchpresetmodel.cpp:58
 #, kde-format
@@ -976,77 +996,7 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "新しいものをダウンロード"
-
-#~ msgid "Everything"
-#~ msgstr "すべて"
-
-#~ msgctxt "List option which will set the filter to show everything"
-#~ msgid "Show All Entries"
-#~ msgstr "すべてのエントリを表示"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items are shown"
-#~ msgid "Show Only Installed Entries"
-#~ msgstr "インストール済みのエントリのみ表示"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items with "
-#~ "updates available are shown"
-#~ msgid "Show Only Updateable Entries"
-#~ msgstr "更新できるエントリのみ表示"
-
-#~ msgid "Recent"
-#~ msgstr "最近更新"
-
-#~ msgid "Alphabetical"
-#~ msgstr "アルファベット順"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on when items were "
-#~ "most recently updated"
-#~ msgid "Show Most Recent First"
-#~ msgstr "最新のもの順に表示"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to be alphabetical based on the "
-#~ "name"
-#~ msgid "Sort Alphabetically By Name"
-#~ msgstr "アルファベット順にソート"
-
-#~ msgctxt "List option which will set the sort order to based on user ratings"
-#~ msgid "Show Highest Rated First"
-#~ msgstr "高評価順に表示"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on number of downloads"
-#~ msgid "Show Most Downloaded First"
-#~ msgstr "ダウンロード数が多い順に表示"
-
-#~ msgid "Tiles"
-#~ msgstr "タイトル"
-
-#~ msgid "Icons"
-#~ msgstr "アイコン"
-
-#~ msgid "Preview"
-#~ msgstr "プレビュー"
-
-#~ msgid "Detailed Tiles View Mode"
-#~ msgstr "詳細タイル表示モード"
-
-#~ msgid "Icons Only View Mode"
-#~ msgstr "アイコン表示モード"
-
-#~ msgid "Large Preview View Mode"
-#~ msgstr "大きなプレビュー表示モード"
-
-#~ msgid "Download New Stuff..."
-#~ msgstr "新しいものをダウンロード..."
+msgstr "新しいものをダウンロード..."
