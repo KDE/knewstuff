@@ -28,8 +28,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: attica/atticaprovider.cpp:166
 #, kde-format
@@ -312,8 +312,7 @@ msgid ""
 msgstr "Αποτυχία φόρτωσης του αρχείου '%1'"
 
 #: qtquick/categoriesmodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
@@ -340,21 +339,18 @@ msgid "Stuff"
 msgstr ""
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "Λήψη νέου %1"
+msgstr "Λήψη νέου %1…"
 
 #: qtquick/qml/Dialog.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New %1"
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "Λήψη νέου %1"
 
 #: qtquick/qml/Dialog.qml:45
-#, fuzzy, kde-format
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
@@ -399,8 +395,7 @@ msgstr ""
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Request installation of this item, available when there is exactly one "
 "downloadable item"
@@ -410,12 +405,11 @@ msgstr "Εγκατάσταση"
 #: qtquick/qml/EntryDetails.qml:112
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Εγκατάσταση"
+msgstr "Εγκατάσταση…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
@@ -472,16 +466,14 @@ msgid "%1 Reviews and Comments"
 msgstr "Προβολή σχολίων"
 
 #: qtquick/qml/EntryDetails.qml:222
-#, fuzzy, kde-format
-#| msgid "Rating: "
+#, kde-format
 msgid "Rating:"
-msgstr "Αξιολόγηση: "
+msgstr "Αξιολόγηση:"
 
 #: qtquick/qml/EntryDetails.qml:227
-#, fuzzy, kde-format
-#| msgid "Homepage"
+#, kde-format
 msgid "Homepage:"
-msgstr "Αρχική σελίδα"
+msgstr "Αρχική σελίδα:"
 
 #: qtquick/qml/EntryDetails.qml:228
 #, kde-format
@@ -523,16 +515,13 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr "Ό&λα"
+msgstr "Όλα"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Εγκατεστημένο"
@@ -545,18 +534,15 @@ msgid "Updateable"
 msgstr "Ενημέρωση"
 
 #: qtquick/qml/Page.qml:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr "Ό&λα"
+msgstr "Όλα"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -600,8 +586,7 @@ msgid "Sort: Downloads"
 msgstr "Περισσότερες λήψεις"
 
 #: qtquick/qml/Page.qml:236
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
@@ -609,8 +594,7 @@ msgid "Name"
 msgstr "Όνομα"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -636,10 +620,9 @@ msgid "Release date"
 msgstr "Α&φαίρεση '%1'"
 
 #: qtquick/qml/Page.qml:282
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
-msgstr "Αποστολή..."
+msgstr "Αποστολή…"
 
 #: qtquick/qml/Page.qml:283
 #, kde-format
@@ -647,16 +630,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
 #: qtquick/qml/Page.qml:293
-#, fuzzy, kde-format
-#| msgid "&Go To..."
+#, kde-format
 msgid "Go to…"
-msgstr "&Μετάβαση σε..."
+msgstr "Μετάβαση σε…"
 
 #: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Αναζήτηση:"
+msgstr "Αναζήτηση…"
 
 #: qtquick/qml/Page.qml:363
 #, kde-format
@@ -727,9 +708,7 @@ msgstr "1 λήψη"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:164
-#, fuzzy, kde-format
-#| msgctxt "Show the author of this item in a list"
-#| msgid "By <i>%1</i>"
+#, kde-format
 msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
@@ -745,13 +724,12 @@ msgid "Working…"
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Ενημέρωση"
+msgstr "Ενημέρωση…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -765,11 +743,10 @@ msgid ""
 msgstr ""
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Εγκατάσταση"
+msgstr "Εγκατάσταση…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -784,9 +761,7 @@ msgid "Please try again later."
 msgstr "Παρακαλώ εισάγετε ένα όνομα."
 
 #: qtquick/qml/private/GridTileDelegate.qml:120
-#, fuzzy, kde-format
-#| msgctxt "No border line"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Καμία"
 
@@ -891,9 +866,7 @@ msgid ""
 msgstr ""
 
 #: qtquick/searchpresetmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Back"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Πίσω"
@@ -912,25 +885,19 @@ msgid "Featured"
 msgstr "Σάββατο"
 
 #: qtquick/searchpresetmodel.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action:button Restart find & replace"
-#| msgid "Restart"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
 #: qtquick/searchpresetmodel.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Νέο"
 
 #: qtquick/searchpresetmodel.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Home"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Home"
@@ -942,9 +909,7 @@ msgid "Shelf"
 msgstr ""
 
 #: qtquick/searchpresetmodel.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Up"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Πάνω"
@@ -1003,11 +968,10 @@ msgid ""
 msgstr ""
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Λήψη νέου υλικού"
+msgstr "Λήψη νέου υλικού…"
 
 #, fuzzy
 #~| msgid "&Show All Entries"
