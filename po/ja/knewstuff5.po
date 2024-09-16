@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-09-11 07:08+0900\n"
+"PO-Revision-Date: 2024-09-15 18:58+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: ja\n"
 "Language: ja\n"
@@ -146,7 +146,7 @@ msgid ""
 msgstr ""
 "%1 のインストールハンドラを初期化できませんでした。\n"
 "これは重大なエラーです。アプリケーションの作者に報告することを検討してくださ"
-"い。"
+"い"
 
 #: core/engine.cpp:359
 #, kde-format
@@ -235,6 +235,8 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
+"「%1」を採用できませんでした\n"
+"%2"
 
 #: core/installation.cpp:211
 #, kde-format
@@ -899,7 +901,7 @@ msgid ""
 msgstr ""
 "このアイテムは現在、無効もしくは不明な状態です。<a href=\"https://bugs.kde."
 "org/enter_bug.cgi?product=frameworks-knewstuff\">KDE Community にこのバグを報"
-"告してください。</a>"
+"告してください</a>"
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -1286,8 +1288,7 @@ msgid ""
 "bug report</a>."
 msgstr ""
 "無効もしくは不明な状態です。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
-"product=frameworks-knewstuff\">KDE Community にこのバグを報告してください。</"
-"a>"
+"product=frameworks-knewstuff\">KDE Community にこのバグを報告してください</a>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1481,6 +1482,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"表示する KNSRC ファイル。何も渡されない場合は、システム全体の KNSRC ファイル"
+"の場所にインストールされている、すべての設定ファイルを切り替えることができる"
+"ダイアログが表示されます。"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
@@ -1497,6 +1501,15 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"情報を表示する kns url。kns url の形式は kns://knsrcfile/providerid/entryid\n"
+"「knsrcfile」は、\n"
+"このツールの knsrcfile 引数を介して直接渡される可能性のある knsrc ファイルの"
+"名前です\n"
+"「providerid」は、\n"
+"エントリが存在するプロバイダのホスト名です\n"
+"「entryid」は、\n"
+"knsrc ファイルで指定されたプロバイダで見つかったエントリの一意の ID です。\n"
+"url の例 kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: ui/entrydetailsdialog.cpp:84
 #, kde-format
