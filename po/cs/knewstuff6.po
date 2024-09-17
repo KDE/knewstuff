@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Lukáš Tinkl <lukas@kde.org>, 2010, 2011, 2012.
-# Vít Pelčák <vit@pelcak.org>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2024 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-11 00:37+0000\n"
-"PO-Revision-Date: 2024-05-29 11:22+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-09-03 08:49+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.08.0\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -474,31 +474,21 @@ msgid "Find out how to donate to this project"
 msgstr "Jak přispět na tento projekt"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Obsah vytvořený uživateli nebyl testován KDE ani tvůrcem vaší distribuce zda "
-"je správně funkční a stabilní."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Obsah vytvořený uživateli nebyl testován KDE ani tvůrcem vaší distribuce zda "
-"je správně funkční a stabilní."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
@@ -507,18 +497,16 @@ msgid "All"
 msgstr ""
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
-msgstr "Nainstalováno"
+msgstr ""
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
-msgstr "Aktualizovatelné"
+msgstr ""
 
 #: qtquick/qml/Page.qml:186
 #, kde-format
@@ -529,22 +517,20 @@ msgid "All"
 msgstr ""
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr "Nainstalováno"
+msgstr ""
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
 msgid "Updateable"
-msgstr "Aktualizovatelné"
+msgstr ""
 
 #: qtquick/qml/Page.qml:221
 #, kde-format
@@ -559,18 +545,16 @@ msgid "Sort: Name"
 msgstr ""
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Hodnocení"
+msgstr ""
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Stahování"
+msgstr ""
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -581,22 +565,20 @@ msgid "Name"
 msgstr ""
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
 msgid "Rating"
-msgstr "Hodnocení"
+msgstr ""
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr "Stahování"
+msgstr ""
 
 #: qtquick/qml/Page.qml:269
 #, kde-format
@@ -632,10 +614,9 @@ msgid "Category:"
 msgstr "Kategorie:"
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
-msgstr "Přispět vlastní…"
+msgstr ""
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
@@ -908,7 +889,7 @@ msgstr "Všechny položky"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr "Hledat předvolbu: %1"
+msgstr "Hledat přednastavení: %1"
 
 #: tools/knewstuff-dialog/main.cpp:29
 #, kde-format
@@ -939,48 +920,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Stáhnout nový obsah…"
-
-#~ msgid "Everything"
-#~ msgstr "Vše"
-
-#~ msgctxt "List option which will set the filter to show everything"
-#~ msgid "Show All Entries"
-#~ msgstr "Zobrazit všechny položky"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items are shown"
-#~ msgid "Show Only Installed Entries"
-#~ msgstr "Zobrazit pouze nainstalované položky"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items with "
-#~ "updates available are shown"
-#~ msgid "Show Only Updateable Entries"
-#~ msgstr "Zobrazit pouze aktualizovatelné položky"
-
-#~ msgid "Recent"
-#~ msgstr "Nedávné"
-
-#~ msgid "Alphabetical"
-#~ msgstr "Podle abecedy"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on when items were "
-#~ "most recently updated"
-#~ msgid "Show Most Recent First"
-#~ msgstr "Nejdříve zobrazit nejnovější"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to be alphabetical based on the "
-#~ "name"
-#~ msgid "Sort Alphabetically By Name"
-#~ msgstr "Seřadit abecedně podle jména"
-
-#~ msgctxt "List option which will set the sort order to based on user ratings"
-#~ msgid "Show Highest Rated First"
-#~ msgstr "Nejdříve zobrazit nejlépe hodnocené"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on number of downloads"
-#~ msgid "Show Most Downloaded First"
-#~ msgstr "Nejdříve zobrazit nejvíce stahované"
