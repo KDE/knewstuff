@@ -216,10 +216,9 @@ msgid ""
 msgstr ""
 
 #: core/installation.cpp:468
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgid "Overwrite File"
-msgstr "Αντικατάσταση αρχείου;"
+msgstr "Αντικατάσταση αρχείου"
 
 #: core/installation.cpp:487
 #, kde-format
