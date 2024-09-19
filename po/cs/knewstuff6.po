@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-11 00:37+0000\n"
-"PO-Revision-Date: 2024-09-03 08:49+0200\n"
+"PO-Revision-Date: 2024-09-18 09:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -481,6 +481,9 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
+"Při použití obsahu vytvořeného uživateli zachovávejte opatrnost protože "
+"nebyl testován KDE ani tvůrcem vaší distribuce zda je bezpečný, správně "
+"funkční a stabilní."
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
@@ -489,24 +492,26 @@ msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
+"Obsah vytvořený uživateli nebyl testován KDE ani tvůrcem vaší distribuce zda "
+"je správně funkční a stabilní."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 #: qtquick/qml/Page.qml:174
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
-msgstr ""
+msgstr "Nainstalováno"
 
 #: qtquick/qml/Page.qml:176
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
-msgstr ""
+msgstr "Aktualizovatelné"
 
 #: qtquick/qml/Page.qml:186
 #, kde-format
@@ -514,7 +519,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 #: qtquick/qml/Page.qml:197
 #, kde-format
@@ -522,7 +527,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr ""
+msgstr "Nainstalováno"
 
 #: qtquick/qml/Page.qml:208
 #, kde-format
@@ -530,31 +535,31 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
 msgid "Updateable"
-msgstr ""
+msgstr "Aktualizovatelné"
 
 #: qtquick/qml/Page.qml:221
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Seřadit: Datum vydání"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Seřadit: Název"
 
 #: qtquick/qml/Page.qml:225
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr ""
+msgstr "Seřadit: Hodnocení"
 
 #: qtquick/qml/Page.qml:227
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr ""
+msgstr "Seřadit: Stahování"
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -562,7 +567,7 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: qtquick/qml/Page.qml:247
 #, kde-format
@@ -570,7 +575,7 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
 msgid "Rating"
-msgstr ""
+msgstr "Hodnocení"
 
 #: qtquick/qml/Page.qml:258
 #, kde-format
@@ -578,7 +583,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr ""
+msgstr "Stahování"
 
 #: qtquick/qml/Page.qml:269
 #, kde-format
@@ -586,7 +591,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Datum vydání"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -616,7 +621,7 @@ msgstr "Kategorie:"
 #: qtquick/qml/Page.qml:383
 #, kde-format
 msgid "Contribute Your Own…"
-msgstr ""
+msgstr "Přispět vlastní…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
