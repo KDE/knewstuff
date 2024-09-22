@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-11 00:37+0000\n"
-"PO-Revision-Date: 2024-09-15 04:00+0200\n"
+"PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -591,25 +591,25 @@ msgstr "Ĝisdatigebla"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr "Origi: Eldondato"
+msgstr "Ordigi: Eldondato"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr "Origi: Nomo"
+msgstr "Ordigi: Nomo"
 
 #: qtquick/qml/Page.qml:225
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Origi: Pritakso"
+msgstr "Ordigi: Pritakso"
 
 #: qtquick/qml/Page.qml:227
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Origi: Elŝutoj"
+msgstr "Ordigi: Elŝutoj"
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -641,7 +641,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Eldondato"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
