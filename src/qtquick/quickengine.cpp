@@ -120,7 +120,8 @@ bool Engine::init(const QString &configfile)
         const auto slotEntryChanged = [this](const KNSCore::Entry &entry) {
             Q_EMIT signalEntryEvent(entry, KNSCore::Entry::StatusChangedEvent);
         };
-        connect(installation(), &KNSCore::Installation::signalEntryChanged, this, slotEntryChanged);
+        // Don't connect KNSCore::Installation::signalEntryChanged as is already forwarded to
+        // Transaction, which in turn is forwarded to our slotEntryChanged, so avoids a double emission
         connect(cache().data(), &KNSCore::Cache::entryChanged, this, slotEntryChanged);
     }
     return valid;

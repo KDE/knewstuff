@@ -378,6 +378,7 @@ Transaction *Transaction::uninstall(EngineBase *engine, const KNSCore::Entry &_e
         qCDebug(KNEWSTUFFCORE) << "about to uninstall entry " << entry.uniqueId();
         ret->d->m_engine->d->installation->uninstall(actualEntryForUninstall2);
 
+        // FIXME: signalEntryEvent to uninstalled already happened in installation.cpp:584
         // Update the correct entry
         entry.setStatus(actualEntryForUninstall2.status());
         Q_EMIT ret->signalEntryEvent(entry, Entry::StatusChangedEvent);
