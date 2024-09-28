@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 00:37+0000\n"
+"POT-Creation-Date: 2024-09-28 00:37+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -289,7 +289,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:424
+#: core/transaction.cpp:425
 #, fuzzy, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -853,20 +853,20 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
-#: qtquick/quickengine.cpp:142
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
+#: qtquick/quickengine.cpp:143
 #, fuzzy, kde-format
 #| msgid "Loading Applet"
 msgid "Loading data"
 msgstr "Amgaang, de Miniprogramm ze lueden"
 
-#: qtquick/quickengine.cpp:138
+#: qtquick/quickengine.cpp:139
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installing"
 msgstr "Installéieren"
 
-#: qtquick/quickengine.cpp:193
+#: qtquick/quickengine.cpp:194
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

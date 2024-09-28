@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 00:37+0000\n"
+"POT-Creation-Date: 2024-09-28 00:37+0000\n"
 "PO-Revision-Date: 2024-09-15 18:58+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: ja\n"
@@ -323,7 +323,7 @@ msgstr ""
 "%1 をアップデートするための適切なリンクを特定できなかったため、アップデートを"
 "実行できません"
 
-#: core/transaction.cpp:424
+#: core/transaction.cpp:425
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -861,18 +861,18 @@ msgstr ""
 "ユーザアカウントを作成してログインする必要があります。コンテンツを追加するた"
 "めに、ウェブサイトの管理者への連絡が要求されることもあります。"
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
-#: qtquick/quickengine.cpp:142
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
+#: qtquick/quickengine.cpp:143
 #, kde-format
 msgid "Loading data"
 msgstr "データをロード中"
 
-#: qtquick/quickengine.cpp:138
+#: qtquick/quickengine.cpp:139
 #, kde-format
 msgid "Installing"
 msgstr "インストール中"
 
-#: qtquick/quickengine.cpp:193
+#: qtquick/quickengine.cpp:194
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

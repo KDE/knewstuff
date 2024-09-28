@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 00:37+0000\n"
+"POT-Creation-Date: 2024-09-28 00:37+0000\n"
 "PO-Revision-Date: 2024-06-09 12:59+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -314,7 +314,7 @@ msgstr ""
 "Nu s-a putut identifica o legătură bună pentru actualizarea %1 și nu se "
 "poate efectua actualizarea"
 
-#: core/transaction.cpp:424
+#: core/transaction.cpp:425
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -873,18 +873,18 @@ msgstr ""
 "adăugare. Alternativ, vi se poate cere să contactați administratorul "
 "saitului direct pentru a încărca conținut nou."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
-#: qtquick/quickengine.cpp:142
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
+#: qtquick/quickengine.cpp:143
 #, kde-format
 msgid "Loading data"
 msgstr "Se încarcă date"
 
-#: qtquick/quickengine.cpp:138
+#: qtquick/quickengine.cpp:139
 #, kde-format
 msgid "Installing"
 msgstr "Se instalează"
 
-#: qtquick/quickengine.cpp:193
+#: qtquick/quickengine.cpp:194
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

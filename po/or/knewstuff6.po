@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-11 00:37+0000\n"
+"POT-Creation-Date: 2024-09-28 00:37+0000\n"
 "PO-Revision-Date: 2009-01-02 17:37+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -290,7 +290,7 @@ msgid ""
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:424
+#: core/transaction.cpp:425
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -855,20 +855,20 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:134
-#: qtquick/quickengine.cpp:142
+#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
+#: qtquick/quickengine.cpp:143
 #, fuzzy, kde-format
 #| msgid "Loading Applet"
 msgid "Loading data"
 msgstr "ଆପଲେଟ ଧାରଣ କରାଯାଉଛି"
 
-#: qtquick/quickengine.cpp:138
+#: qtquick/quickengine.cpp:139
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installing"
 msgstr "ସ୍ଥାପନ କରନ୍ତୁ"
 
-#: qtquick/quickengine.cpp:193
+#: qtquick/quickengine.cpp:194
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
