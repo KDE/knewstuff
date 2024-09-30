@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-02-11 13:00+0100\n"
+"PO-Revision-Date: 2024-09-29 09:37+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1162,7 +1162,7 @@ msgstr "Alfabetycznie"
 #: qtquick/qml/Page.qml:314
 #, kde-format
 msgid "Downloads"
-msgstr "Pobierane"
+msgstr "Pobrań"
 
 #: qtquick/qml/Page.qml:333
 #, kde-format
@@ -1211,7 +1211,7 @@ msgstr "Przejdź do..."
 #: qtquick/qml/Page.qml:442
 #, kde-format
 msgid "Contribute your own…"
-msgstr "Dodaj coś od siebie..."
+msgstr "Dodaj coś od siebie…"
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
