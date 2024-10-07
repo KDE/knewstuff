@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-28 00:37+0000\n"
-"PO-Revision-Date: 2024-07-27 20:01+0300\n"
+"PO-Revision-Date: 2024-10-06 21:48+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -522,11 +522,7 @@ msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -539,35 +535,30 @@ msgstr ""
 "kokybės atžvilgiu."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Čia rodomą naudotojų sukurtą turinį netestavo KDE ar jūsų platinamojo paketo "
-"platintojas ir netikrino kaip šis turinys veikia funkcionalumo ar kokybės "
+"KDE ar jūsų platinamojo paketo platintojas netestavo čia rodomą naudotojų "
+"sukurtą turinį ir netikrino kaip šis turinys veikia funkcionalumo ar kokybės "
 "atžvilgiu."
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Įdiegti"
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Galimi atnaujinti"
@@ -578,11 +569,10 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -590,8 +580,7 @@ msgid "Installed"
 msgstr "Įdiegti"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -602,27 +591,25 @@ msgstr "Galimi atnaujinti"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Rikiuoti: Laidos data"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Rikiuoti: Pavadinimas"
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Įvertinimas"
+msgstr "Rikiuoti: Įvertinimas"
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Atsisiuntimų kiekį"
+msgstr "Rikiuoti: Atsiuntimų kiekis"
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -630,11 +617,10 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -642,13 +628,12 @@ msgid "Rating"
 msgstr "Įvertinimas"
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr "Atsiuntimai"
+msgstr "Atsiuntimų kiekis"
 
 #: qtquick/qml/Page.qml:269
 #, kde-format
@@ -656,7 +641,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Laidos data"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -684,8 +669,7 @@ msgid "Category:"
 msgstr "Kategorija:"
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Paskelbti viešai savo asmeninį…"
 
