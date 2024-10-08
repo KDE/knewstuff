@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: knewstuff6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2023-03-21 19:57+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-10-07 17:52+0200\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -68,7 +68,7 @@ msgstr "Sind sind nun ein Fan."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "Der Dienst wird derzeit gewartet und wir zurückerwartet in %1."
 
 #: attica/atticaprovider.cpp:585
 #, kde-format
@@ -146,6 +146,9 @@ msgid ""
 "Could not initialise the installation handler for %1\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"Das Installationsmodul für %1 kann nicht initialisiert werden:\n"
+"\n"
+"Dieser kritische Fehler sollte an den Autor der Anwendung berichtet werden"
 
 #: core/engine.cpp:359
 #, kde-format
@@ -223,12 +226,13 @@ msgstr[0] "Eine Vorschau wird geladen"
 msgstr[1] "%1 Vorschauen werden geladen"
 
 #: core/engine.cpp:1225
-#, fuzzy, kde-format
-#| msgid "Failed to load file '%1'"
+#, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
 "%2"
-msgstr "Die Datei „%1“ kann nicht geladen werden"
+msgstr ""
+"„%1“ kann nicht angepasst werden\n"
+"%2"
 
 #: core/installation.cpp:211
 #, kde-format
@@ -238,13 +242,12 @@ msgstr "Ungültiges Element."
 #: core/installation.cpp:218
 #, kde-format
 msgid "Download of item failed: no download URL for \"%1\"."
-msgstr ""
-"„%1“ kann aufgrund fehlender Download-Adresse nicht heruntergeladen werden."
+msgstr "„%1“ kann nicht heruntergeladen werden. Die Download-Adresse fehlt."
 
 #: core/installation.cpp:249
 #, kde-format
 msgid "Download of \"%1\" failed, error: %2"
-msgstr "Das Herunterladen von „%1“ ist mit folgendem Fehler fehlgeschlagen: %2"
+msgstr "„%1“ kann nicht heruntergeladen werden. Fehler: %2"
 
 #: core/installation.cpp:262
 #, kde-format
@@ -252,6 +255,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"„%1“ kann nicht installiert werden. Es verweist auf eine Webseite. Zum "
+"Abschluss der Installation <a href='%2'>hier</a> klicken."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -267,7 +272,7 @@ msgstr ""
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
 msgid "Installation of %1 failed: %2"
-msgstr "Installation von %1 fehlgeschlagen: %2"
+msgstr "%1 kann nicht installiert werden: %2"
 
 #: core/installation.cpp:525
 #, kde-format
@@ -276,8 +281,8 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
-"Die Installation von %1 ist fehlgeschlagen. Das System akzeptiert den Typ %2 "
-"nicht. Ist das entsprechende KPackage-Unterstützungsmodul installiert?"
+"%1 kann nicht installiert werden. Das System akzeptiert den Typ %2 nicht.  "
+"Ist das Unterstützungsmodul von KPackage für diese Paketart installiert?"
 
 #: core/installation.cpp:535
 #, kde-format
@@ -285,8 +290,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
-"Die Installation von %1 ist fehlgeschlagen. Das heruntergeladene Paket "
-"enthält nicht die korrekte KPackage-Struktur."
+"%1 kann nicht installiert werden. Das heruntergeladene Paket enthält nicht "
+"die korrekte KPackage-Struktur."
 
 #: core/installation.cpp:541
 #, kde-format
@@ -294,6 +299,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr ""
+"%1 kann nicht installiert werden. Das heruntergeladene Paket besitzt keinen "
+"Dienst-Typ."
 
 #: core/installation.cpp:548
 #, kde-format
@@ -301,6 +308,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"%1 kann nicht installiert werden. Das heruntergeladene Paket besitzt keine "
+"nützlichen Metadaten, weshalb es kein gültiges KPackage ist."
 
 #: core/installation.cpp:582
 #, kde-format
@@ -320,6 +329,9 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"Diese Datei ist bereits auf dem Laufwerk vorhanden (möglicherweise durch "
+"einen früheren fehlgeschlagenen Versuch des Herunterladens). Beim Fortfahren "
+"wird sie überschrieben. Möchten Sie die vorhandene Datei überschreiben?"
 
 #: core/installation.cpp:681
 #, kde-format
@@ -329,7 +341,7 @@ msgstr "Datei überschreiben"
 #: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr "Die Datei %1 konnte nicht nach %2 verschoben werden"
+msgstr "Die Datei %1 kann nicht nach %2 verschoben werden"
 
 #: core/installation.cpp:723
 #, kde-format
@@ -340,6 +352,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"Die Installation ist fehlgeschlagen. Der Befehl war nicht erfolgreich:\n"
+"%1\n"
+"\n"
+"Die Rückmeldung lautet:\n"
+"%2"
 
 #: core/installation.cpp:733
 #, kde-format
@@ -350,6 +367,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"Die Installation ist mit %1 beendet worden. Der Befehl war:\n"
+"%2\n"
+"\n"
+"Die Rückmeldung lautet:\n"
+"%3"
 
 #: core/installation.cpp:775
 #, kde-format
@@ -358,6 +380,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"%1 kann nicht entfernt werden. Die installierte Datei %2 kann nicht "
+"automatisch entfernt werden. Sollte es sich um einen Fehler handeln, kann "
+"das manuelle Löschen der Datei versucht werden."
 
 #: core/installation.cpp:848
 #, kde-format
@@ -365,6 +390,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"%1 kann nicht entfernt werden. Das installierte Paket besitzt keine gültige "
+"KPackage-Struktur."
 
 #: core/installation.cpp:853
 #, kde-format
@@ -373,6 +400,9 @@ msgid ""
 "(did you forget to install the KPackage support plugin for this type of "
 "package?)"
 msgstr ""
+"%1 kann nicht entfernt werden. Das installierte Paket wird nicht "
+"unterstützt. Ist das Unterstützungsmodul von KPackage für diese Paketart "
+"installiert?"
 
 #: core/installation.cpp:860
 #, kde-format
@@ -380,6 +410,8 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"%1 kann nicht entfernt werden. Das installierte Paket besitzt keine "
+"nützlichen Metadaten, weshalb es kein gültiges KPackage ist."
 
 #: core/installation.cpp:900
 #, kde-format
@@ -387,6 +419,8 @@ msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
 msgstr ""
+"%1 kann nicht entfernt werden. Die heruntergeladene Datei %2 kann nicht "
+"automatisch entfernt werden."
 
 #: core/installation.cpp:905
 #, kde-format
@@ -395,6 +429,9 @@ msgid ""
 "The file in question was %2, and you can attempt to delete it yourself, if "
 "you are certain that it is not needed."
 msgstr ""
+"%1 kann nicht entfernt werden. Die installierte Datei ist kein KPackage. "
+"Sofern die fragwürdige Datei %2 nicht benötigt wird, kann das manuelle "
+"Löschen dieser Datei versucht werden."
 
 #: core/installation.cpp:913
 #, kde-format
@@ -402,6 +439,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
+"%1 kann nicht entfernt werden. Es scheint als wären mehrere Sachen "
+"installiert, die für KPackage nicht gedacht sind."
 
 #: core/installation.cpp:946
 #, kde-format
@@ -412,6 +451,12 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"Der Deinstallationsprozess ist fehlgeschlagen. Der Befehl %1 kann nicht "
+"erfolgreich ausgeführt werden\n"
+"Die Ausgabe ist:\n"
+"%2\n"
+"Sollte es sich um einen Fehler handeln, kann der Deinstallationsprozess "
+"fortgeführt oder abgebrochen werden"
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
@@ -800,7 +845,7 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'...)"
 msgid "Stuff"
-msgstr ""
+msgstr "Erweiterungen"
 
 #: qtquick/qml/Button.qml:44
 #, kde-format
@@ -848,14 +893,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "Derzeit wird das Element %1 von %2 bearbeitet. Bitte warten …"
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "Derzeit wird das Element %1 von %2 aktualisiert. Bitte warten …"
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
@@ -867,6 +912,10 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"Das Element befindet sich derzeit in einem ungültigen oder unbekannten "
+"Status. <a href=\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-"
+"knewstuff\">Der Fehler sollte an die KDE-Gemeinschaft mittels Fehlerbericht "
+"mitgeteilt werden.</a>"
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -934,7 +983,7 @@ msgstr "Bewertung:"
 #: qtquick/qml/EntryDetails.qml:164
 #, kde-format
 msgid "Homepage:"
-msgstr "Homepage:"
+msgstr "Webseite:"
 
 #: qtquick/qml/EntryDetails.qml:165
 #, kde-format
@@ -1012,7 +1061,7 @@ msgstr "Mit höchster Bewertung zuerst anzeigen"
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
-msgstr "Am meistern heruntergeladene zuerst anzeigen"
+msgstr "Am meisten heruntergeladene zuerst anzeigen"
 
 #: qtquick/qml/Page.qml:132
 #, kde-format
@@ -1022,7 +1071,9 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr "Der gewünschte Eintrag mit der ID %1 konnte nicht gefunden werden."
+msgstr ""
+"Der gewünschte Eintrag mit der eindeutigen Kennung %1 kann nicht gefunden "
+"werden."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1030,6 +1081,9 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"Der angezeigte Inhalt wird von Benutzern wie Ihnen hochgeladen und ist "
+"deshalb nicht von Ihrer Distribution auf Funktionalität und Stabilität "
+"geprüft."
 
 #: qtquick/qml/Page.qml:214
 #, kde-format
@@ -1134,7 +1188,7 @@ msgstr "Mit höchster Bewertung zuerst anzeigen"
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "Am meistern heruntergeladene zuerst anzeigen"
+msgstr "Am meisten heruntergeladene zuerst anzeigen"
 
 #: qtquick/qml/Page.qml:366
 #, kde-format
@@ -1152,10 +1206,9 @@ msgid "Go to..."
 msgstr "Gehe zu ..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Continue operation"
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Vorgang fortsetzen"
+msgstr "Eigenes beitragen …"
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
@@ -1249,6 +1302,9 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"Ungültiger oder unbekannter Status. <a href=\"https://bugs.kde.org/enter_bug."
+"cgi?product=frameworks-knewstuff\">Der Fehler sollte an die KDE-Gemeinschaft "
+"mittels Fehlerbericht mitgeteilt werden.</a>"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1280,14 +1336,10 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:51
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@knewstuff5"
 msgid "Upload New Stuff: %1"
-msgstr "Erweiterungen herunterladen"
+msgstr "Erweiterungen hochladen: %1"
 
 #: qtquick/qml/UploadPage.qml:83
 #, kde-format
@@ -1356,6 +1408,9 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"Die Berechtigung zum Beziehen von Erweiterungen fehlt. Falls es sich um "
+"einen Fehler handeln könnte, sollte die Person für die Rechtevergabe "
+"kontaktiert werden."
 
 #: qtquick/searchpresetmodel.cpp:55
 #, kde-format
@@ -1400,12 +1455,10 @@ msgid "Shelf"
 msgstr ""
 
 #: qtquick/searchpresetmodel.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "keyboard-key-name"
-#| msgid "Up"
+#, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr "Pfeil hoch"
+msgstr "Nach oben"
 
 #: qtquick/searchpresetmodel.cpp:79
 #, kde-format
