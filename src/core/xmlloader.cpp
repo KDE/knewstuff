@@ -49,7 +49,7 @@ void XmlLoader::load(const QUrl &url)
         m_jobdata.clear();
         static const QStringList remoteSchemeOptions{QLatin1String{"http"}, QLatin1String{"https"}, QLatin1String{"ftp"}};
         if (remoteSchemeOptions.contains(url.scheme())) {
-            HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo);
+            HTTPJob *job = HTTPJob::get(url, Reload, JobFlag::HideProgressInfo, this);
             connect(job, &KJob::result, this, &XmlLoader::slotJobResult);
             connect(job, &HTTPJob::data, this, &XmlLoader::slotJobData);
             connect(job, &HTTPJob::httpError, this, &XmlLoader::signalHttpError);
