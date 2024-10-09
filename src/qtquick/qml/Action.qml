@@ -164,6 +164,7 @@ Kirigami.Action {
         }
 
         property Item newStuffDialog: Loader {
+            id: dialogLoader
             // Use this function to open the dialog. It seems roundabout, but this ensures
             // that the dialog is not constructed until we want it to be shown the first time,
             // since it will initialise itself on the first load (which causes it to phone
@@ -188,6 +189,13 @@ Kirigami.Action {
                 transientParent: component.transientParent
                 configFile: component.configFile
                 viewMode: component.viewMode
+                onClosing: {
+                    // Unload the dialog when it is closed otherwise it gets stuck in memory because of the weird
+                    // constructs we have in play here between nested objects and loaders and what not.
+                    // Since the dialog is a top level window it would then prevent the QApplication from quitting.
+                    dialogLoader.active = false
+                    component._private.pageItem = null
+                }
                 NewStuffPrivate.TransientMagicianAssistant {}
             }
         }
