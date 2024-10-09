@@ -20,6 +20,18 @@
 #include <QStorageInfo>
 #include <QThread>
 
+namespace std
+{
+template<>
+struct default_delete<QNetworkReply> {
+    void operator()(QNetworkReply *ptr) const
+    {
+        ptr->abort();
+        ptr->deleteLater();
+    }
+};
+} // namespace std
+
 class HTTPWorkerNAM
 {
 public:
@@ -59,7 +71,7 @@ public:
     HTTPWorker::JobType jobType;
     QUrl source;
     QUrl destination;
-    QNetworkReply *reply;
+    std::unique_ptr<QNetworkReply> reply;
     QUrl redirectUrl;
 
     QFile dataFile;
@@ -120,9 +132,9 @@ void HTTPWorker::startRequest()
 
     QNetworkRequest request(d->source);
     addUserAgent(request);
-    d->reply = s_httpWorkerNAM->get(request);
-    connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
-    connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
+    d->reply.reset(s_httpWorkerNAM->get(request));
+    connect(d->reply.get(), &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
+    connect(d->reply.get(), &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
     if (d->jobType == DownloadJob) {
         d->dataFile.setFileName(d->destination.toLocalFile());
         connect(this, &HTTPWorker::data, this, &HTTPWorker::handleData);
@@ -161,12 +173,11 @@ void HTTPWorker::handleFinished()
         if (d->redirectUrl.scheme().startsWith(QLatin1String("http"))) {
             qCDebug(KNEWSTUFFCORE) << d->reply->url().toDisplayString() << "was redirected to" << d->redirectUrl.toDisplayString() << fromCache
                                    << d->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-            d->reply->deleteLater();
             QNetworkRequest request(d->redirectUrl);
             addUserAgent(request);
-            d->reply = s_httpWorkerNAM->get(request);
-            connect(d->reply, &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
-            connect(d->reply, &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
+            d->reply.reset(s_httpWorkerNAM->get(request));
+            connect(d->reply.get(), &QNetworkReply::readyRead, this, &HTTPWorker::handleReadyRead);
+            connect(d->reply.get(), &QNetworkReply::finished, this, &HTTPWorker::handleFinished);
             return;
         } else {
             qCWarning(KNEWSTUFFCORE) << "Redirection to" << d->redirectUrl.toDisplayString() << "forbidden.";
