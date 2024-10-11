@@ -502,11 +502,7 @@ msgid "Find out how to donate to this project"
 msgstr "了解如何为此项目捐款"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -517,10 +513,7 @@ msgstr ""
 "执行代码，无法保证它们的安全性、稳定性或者内容质量。请谨慎使用。"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
@@ -533,18 +526,16 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "已安装"
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "可更新"
@@ -555,11 +546,10 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -567,8 +557,7 @@ msgid "Installed"
 msgstr "已安装"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -579,27 +568,25 @@ msgstr "可更新"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "排序：发布日期"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "排序：名称"
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "评分"
+msgstr "排序：评分"
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "下载量"
+msgstr "排序：下载量"
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -607,11 +594,10 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -619,8 +605,7 @@ msgid "Rating"
 msgstr "评分"
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
@@ -633,7 +618,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "发布日期"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -661,8 +646,7 @@ msgid "Category:"
 msgstr "分类："
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "贡献您的内容…"
 
@@ -981,48 +965,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "下载新资源…"
-
-#~ msgid "Everything"
-#~ msgstr "全部"
-
-#~ msgctxt "List option which will set the filter to show everything"
-#~ msgid "Show All Entries"
-#~ msgstr "显示所有项"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items are shown"
-#~ msgid "Show Only Installed Entries"
-#~ msgstr "只显示已安装的项目"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items with "
-#~ "updates available are shown"
-#~ msgid "Show Only Updateable Entries"
-#~ msgstr "只显示可更新的项目"
-
-#~ msgid "Recent"
-#~ msgstr "最新"
-
-#~ msgid "Alphabetical"
-#~ msgstr "字母顺序"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on when items were "
-#~ "most recently updated"
-#~ msgid "Show Most Recent First"
-#~ msgstr "最新的在前"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to be alphabetical based on the "
-#~ "name"
-#~ msgid "Sort Alphabetically By Name"
-#~ msgstr "按名称的字母排序"
-
-#~ msgctxt "List option which will set the sort order to based on user ratings"
-#~ msgid "Show Highest Rated First"
-#~ msgstr "高分在前"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on number of downloads"
-#~ msgid "Show Most Downloaded First"
-#~ msgstr "最多下载在前"
