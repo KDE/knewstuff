@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2024-10-15 00:37+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -255,13 +255,13 @@ msgid ""
 "uninstallation process"
 msgstr ""
 
-#: core/jobs/filecopyworker.cpp:49
+#: core/jobs/filecopyworker.cpp:60
 #, fuzzy, kde-format
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for writing"
 msgstr "%1 файлын укып булмады"
 
-#: core/jobs/filecopyworker.cpp:52
+#: core/jobs/filecopyworker.cpp:63
 #, fuzzy, kde-format
 #| msgid "Cannot open %1 for reading"
 msgid "Could not open %1 for reading"
