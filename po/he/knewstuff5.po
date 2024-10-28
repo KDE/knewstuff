@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-10-20 19:42+0300\n"
+"PO-Revision-Date: 2024-10-27 08:03+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "תועדת כאוהד/ת."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "השירות עובר עבודות תחזוקה והוא אמור לשוב ב־%1."
 
 #: attica/atticaprovider.cpp:585
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "יותר מדי בקשות לשרת. נא לנסות בהמשך."
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
-msgstr ""
+msgstr "מופע שירותי שיתוף הפעולה הפתוח %1 לא תומך בפונקציה שהוגשה לביצוע."
 
 #: attica/atticaprovider.cpp:598
 #, kde-format
@@ -147,6 +147,8 @@ msgid ""
 "Could not initialise the installation handler for %1\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"לא ניתן לאתחל את מטפל ההתקנה עבור %1:\n"
+"זו שגיאה מהותית ויש לדווח עליה ליוצרי היישום"
 
 #: core/engine.cpp:359
 #, kde-format
@@ -184,6 +186,8 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"לא ניתן לבצע התקנה של הרשומה %1 כיוון שלא הוגדרו לה פריטים כלשהם שאפשר "
+"להוריד. נא ליצור קשר עם היוצרים כדי שיוכלו לתקן את זה."
 
 #: core/engine.cpp:872
 #, kde-format
@@ -266,7 +270,7 @@ msgstr "לא ניתן להתקין את „%1”: הקובץ לא נמצא."
 #: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
+msgstr "ההתקנה של %1 לא הצליחה ליצור את התיקייה החדשה המצופה %2"
 
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
@@ -280,13 +284,15 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
+"התקנת %1 נכשלה, כיוון שסוג השירות %2 לא התקבל על ידי המערכת (שכחת להתקין את "
+"תוסף התמיכה ב־KPackage לסוג החבילה הזה?)"
 
 #: core/installation.cpp:535
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
-msgstr ""
+msgstr "התקנת %1 נכשלה, כיוון שהחבילה שהתקבלה לא מכילה מבנה KPackage נכון."
 
 #: core/installation.cpp:541
 #, kde-format
@@ -500,12 +506,12 @@ msgid "Select Signing Key"
 msgstr "בחירת מפתח לחתימה"
 
 #: core/security.cpp:348
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>Cannot start <i>gpg</i> and sign the file. Make sure that <i>gpg</i> is "
 "installed, otherwise signing of the resources will not be possible.</qt>"
 msgstr ""
-"<qt> אין אפשרות להפעיל את <i>gpg</i> ולחתום על הקובץ. ודא ש־<i>gpg</i> "
+"<qt> לא ניתן להפעיל את <i>gpg</i> ולחתום על הקובץ. כדאי לוודא ש־<i>gpg</i> "
 "מותקן, אחרת לא ניתן יהיה לחתום על משאבים. </qt>"
 
 #: downloaddialog.cpp:69 downloadwidget.cpp:213
@@ -514,7 +520,7 @@ msgid "Get Hot New Stuff"
 msgstr "הורדת דברים חדשים ולוהטים"
 
 #: downloaddialog.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Program name followed by 'Add On Installer'"
 msgid "%1 Add-On Installer"
 msgstr "תוסף התקנה של %1"
@@ -705,14 +711,14 @@ msgid "No further information available."
 msgstr "אין מידע נוסף זמין."
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgid "Configure menu"
-msgstr "הגדרות"
+msgstr "תפריט הגדרות"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
+#, kde-format
 msgid "Configure menu - %1"
-msgstr "&הגדרות %1..."
+msgstr "תפריט הגדרות - %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
 #, kde-format
@@ -758,9 +764,9 @@ msgstr "העברה לסעיף הראשי"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move to More section"
-msgstr "פעולות נוספות"
+msgstr "העברה לסעיף הנוספים"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:134
@@ -770,9 +776,9 @@ msgstr "איפוס"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:154
-#, fuzzy, kde-format
+#, kde-format
 msgid "More section"
-msgstr "פעולות נוספות"
+msgstr "סעיף הנוספים"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:206
@@ -784,13 +790,12 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:216
-#, fuzzy, kde-format
+#, kde-format
 msgid "More tools..."
-msgstr "יותר..."
+msgstr "כלים נוספים…"
 
 #: qtquick/categoriesmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "All Categories"
+#, kde-format
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
@@ -816,10 +821,9 @@ msgid "Stuff"
 msgstr "דברים"
 
 #: qtquick/qml/Button.qml:44
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgid "Download New %1..."
-msgstr "מוריד חומר חדש..."
+msgstr "הורדת %1 חדש…"
 
 #: qtquick/qml/Dialog.qml:43
 #, fuzzy, kde-format
@@ -1043,7 +1047,7 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr ""
+msgstr "הרשומה שניסית להציג שמזוהה על ידי %1, לא נמצאה."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
