@@ -153,6 +153,7 @@ void ResultsStream::fetchMore()
     const auto nextPage = d->request.d->page + 1;
     d->request =
         SearchRequest(d->request.d->sortMode, d->request.d->filter, d->request.d->searchTerm, d->request.d->categories, nextPage, d->request.d->pageSize);
+    d->providers = d->engine->d->providerCores.values();
     fetch();
 }
 
