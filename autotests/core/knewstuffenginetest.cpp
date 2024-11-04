@@ -95,7 +95,7 @@ void EngineTest::testInstallCommand()
     entry.setPayload(QUrl::fromLocalFile(QFINDTESTDATA("data/testfile.txt")).toString());
 
     QSignalSpy spy(engine, &Engine::signalEntryEvent);
-    engine->install(entry);
+    engine->installLatest(entry);
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
     QCOMPARE(entry.status(), KNSCore::Entry::Installing);
