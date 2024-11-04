@@ -375,6 +375,8 @@ void Engine::adoptEntry(const KNSCore::Entry &entry)
 {
     registerTransaction(KNSCore::Transaction::adopt(this, entry));
 }
+
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 void Engine::install(const KNSCore::Entry &entry, int linkId)
 {
     qmlWarning(this) << "org.kde.newstuff.core.Engine.install is deprecated. Use installLinkId or installLatest";
@@ -384,6 +386,7 @@ void Engine::install(const KNSCore::Entry &entry, int linkId)
         ++d->numInstallJobs;
     }
 }
+#endif
 
 void Engine::installLinkId(const KNSCore::Entry &entry, quint8 linkId)
 {
