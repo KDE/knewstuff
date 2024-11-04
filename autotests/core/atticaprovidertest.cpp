@@ -8,6 +8,7 @@
 #include "../src/attica/atticaprovider_p.h"
 
 using namespace KNSCore;
+using namespace std::chrono_literals;
 
 class AtticaProviderTest : public QObject
 {
@@ -20,11 +21,12 @@ private Q_SLOTS:
     }
     void testReentrancy()
     {
+        constexpr auto networkTimeout = 30s; // when this test does network IO it may be slow, in particular on the CI
         Attica::ProviderManager manager;
         {
             QSignalSpy spy(&manager, &Attica::ProviderManager::defaultProvidersLoaded);
             manager.loadDefaultProviders();
-            QVERIFY(spy.wait());
+            QVERIFY(spy.wait(networkTimeout));
             QVERIFY(spy.size() > 0);
         }
         AtticaProvider provider(manager.providers().at(0), QStringList{}, QString{});
@@ -34,9 +36,9 @@ private Q_SLOTS:
         provider.loadEntries(Provider::SearchRequest(Provider::SortMode::Downloads, Provider::Filter::None, "kora"));
         provider.loadEntries(Provider::SearchRequest(Provider::SortMode::Downloads, Provider::Filter::None, "kde"));
 
-        QVERIFY(spy.wait());
+        QVERIFY(spy.wait(networkTimeout));
         if (spy.size() != 2) {
-            spy.wait();
+            spy.wait(networkTimeout);
         }
         QCOMPARE(spy.size(), 2);
     }
