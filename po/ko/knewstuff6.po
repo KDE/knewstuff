@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-08-19 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -279,7 +279,7 @@ msgstr "%1에 쓰려고 열 수 없음"
 msgid "Could not open %1 for reading"
 msgstr "%1에서 읽으려고 열 수 없음"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -288,12 +288,12 @@ msgstr ""
 "다운로드할 수 있는 항목이 정의되어 있지 않아서 항목 %1을(를) 설치할 수 없습니"
 "다. 항목 작성자에게 연락하여 수정을 요청하십시오."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "업데이트 항목 선택"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -303,14 +303,14 @@ msgstr ""
 "이 업데이트를 적용할 때 사용할 항목을 아래 목록에서 선택하십시오. 이름이 %1"
 "인 원래 항목에서 선택할 항목을 식별할 수 없었습니다"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr "%1을(를) 업데이트할 수 있는 링크를 찾지 못해서 업데이트할 수 없음"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -860,18 +860,18 @@ msgstr ""
 "오. 사이트에 따라서 제품 관리 시스템에 계정을 만들고 로그인해야 할 수도 있습"
 "니다. 새 제품을 추가할 때 스토어 관리자에게 직접 연락하여야 할 수도 있습니다."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "데이터 불러오는 중"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "설치 중"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

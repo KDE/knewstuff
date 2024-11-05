@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-09-11 07:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -293,7 +293,7 @@ msgstr "Ni bilo mogoče odpreti %1 za pisanje"
 msgid "Could not open %1 for reading"
 msgstr "Ni bilo mogoče odpreti %1 za branje"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -302,12 +302,12 @@ msgstr ""
 "Ni bilo mogoče namestiti vnosa %1, ker nima določenih nobenih predmetov za "
 "prenos. Prosimo, da stopite v stik z avtorjem, da to popravi."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Poberi predmet posodobitve"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -318,7 +318,7 @@ msgstr ""
 "posodobitve. Na podlagi prvotnega predmeta, poimenovanega %1, ni mogoče "
 "določiti, kateri predmet naj bi izbrali"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -327,7 +327,7 @@ msgstr ""
 "Identifikacije dobre povezave za posodobitev %1 nismo pridobili, zato "
 "posodobitve ne moremo izvesti"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -868,18 +868,18 @@ msgstr ""
 "boste morali upoštevati navodila za dodajanje. Druga možnost je, da se "
 "obrnete na upravljavce spletišča, da dodajo novo vsebino."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Nalaganje podatkov"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Nameščanje"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

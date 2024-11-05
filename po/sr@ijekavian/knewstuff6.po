@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -258,19 +258,19 @@ msgstr ""
 msgid "Could not open %1 for reading"
 msgstr ""
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -278,14 +278,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -837,18 +837,18 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Учитавам податке"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Инсталирам"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-10-06 21:48+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -288,7 +288,7 @@ msgstr "Nepavyko atverti %1 įrašymui"
 msgid "Could not open %1 for reading"
 msgstr "Nepavyko atverti %1 skaitymui"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -297,12 +297,12 @@ msgstr ""
 "Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
 "apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Pasirinkti atnaujinimo elementą"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -313,7 +313,7 @@ msgstr ""
 "atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
 "%1, nepavyko nustatyti pradinio elemento"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -322,7 +322,7 @@ msgstr ""
 "Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
 "atlikti atnaujinimo"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -867,18 +867,18 @@ msgstr ""
 "tai, kaip pridėti įrašą. Priešingu atveju, jums gali tekti tiesiogiai "
 "susisiekti su svetainės administratoriais, kad būtų pridėtas naujas turinys."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Įkeliami duomenys"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Įdiegiama"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

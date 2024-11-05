@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2008-08-16 16:01-0800\n"
 "Last-Translator: Zabeeh Khan <zabeehkhan@gmail.com>\n"
 "Language-Team: Pashto <pathanisation@googlegroups.com>\n"
@@ -261,19 +261,19 @@ msgstr "د لوستلو لپاره نه شي پرانيستلی %1"
 msgid "Could not open %1 for reading"
 msgstr "د لوستلو لپاره نه شي پرانيستلی %1"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -281,14 +281,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -853,20 +853,20 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, fuzzy, kde-format
 #| msgid "Loading Applet"
 msgid "Loading data"
 msgstr "څېرمه کړنلار لېښل کيږي"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, fuzzy, kde-format
 #| msgid "Install"
 msgid "Installing"
 msgstr "لګول"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -290,7 +290,7 @@ msgstr "Ne eblis malfermi %1 por skribado"
 msgid "Could not open %1 for reading"
 msgstr "Ne eblis malfermi %1 por legado"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -299,12 +299,12 @@ msgstr ""
 "Ne eblis fari instaladon de la eniro %1 ĉar ĝi ne havas iujn elŝuteblajn "
 "erojn difinitajn. Bonvolu kontakti la aŭtoron por ke ili povu ripari ĉi tion."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Elekti ĝisdatigaĵon"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -315,7 +315,7 @@ msgstr ""
 "ĉi tiun ĝisdatigon. Ni ne povis identigi kiun objekton elekti, surbaze de la "
 "origina ero, kiu estis nomita %1"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -324,7 +324,7 @@ msgstr ""
 "Ni malsukcesis identigi bonan ligilon por ĝisdatigi %1, kaj ne kapablas "
 "plenumi la ĝisdatigon"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -866,18 +866,18 @@ msgstr ""
 "devos kontakti la administrantojn de la retejo rekte por aldoni novan "
 "enhavon."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Ŝarganta datumojn"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Instalanta"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

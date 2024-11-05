@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-09-15 18:58+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: ja\n"
@@ -289,7 +289,7 @@ msgstr "%1 を書き込み用に開けませんでした"
 msgid "Could not open %1 for reading"
 msgstr "%1 を読み取り用に開けませんでした"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -298,12 +298,12 @@ msgstr ""
 "ダウンロード可能なアイテムが定義されていないため、エントリ %1 のインストール"
 "を実行できませんでした。作成者に連絡して修正を依頼してください。"
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "アップデートアイテムを選択"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -314,7 +314,7 @@ msgstr ""
 "ださい。元のアイテムの名前が %1 であるため、どのアイテムを選択すればよいか特"
 "定できませんでした"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -323,7 +323,7 @@ msgstr ""
 "%1 をアップデートするための適切なリンクを特定できなかったため、アップデートを"
 "実行できません"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -861,18 +861,18 @@ msgstr ""
 "ユーザアカウントを作成してログインする必要があります。コンテンツを追加するた"
 "めに、ウェブサイトの管理者への連絡が要求されることもあります。"
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "データをロード中"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "インストール中"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2023-12-27 18:14+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -289,7 +289,7 @@ msgstr "Tidak dapat membuka %1 untuk penulisan"
 msgid "Could not open %1 for reading"
 msgstr "Tidak dapat membuka %1 untuk membaca"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -298,12 +298,12 @@ msgstr ""
 "Tidak dapat menginstal entri %1 karena tidak memiliki item yang dapat "
 "diunduh. Mohon hubungi penulis supaya mereka dapat memperbaikinya."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "PIlih Item Pembaruan"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -314,7 +314,7 @@ msgstr ""
 "untuk menerapkan pembaruan ini. Kita tidak dapat mengidentifikasi item yang "
 "mana untuk dipilih, berdasarkan pada item asli, yang bernama %1"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -323,7 +323,7 @@ msgstr ""
 "Kami tidak dapat mengidentifikasi tautan yang baik untuk memperbarui %1, dan "
 "tidak dapat melakukan pembaruan"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -923,18 +923,18 @@ msgstr ""
 "Anda mungkin harus menghubungi pengelola situs secara langsung untuk dapat "
 "menambahkan konten baru."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Memuat data"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Menginstal"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

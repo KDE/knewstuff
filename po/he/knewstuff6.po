@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-09-12 08:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -292,7 +292,7 @@ msgstr "לא ניתן לפתוח את %1 לכתיבה"
 msgid "Could not open %1 for reading"
 msgstr "לא ניתן לפתוח את %1 לקריאה"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -301,12 +301,12 @@ msgstr ""
 "לא ניתן לבצע התקנה של הרשומה %1 כיוון שלא הוגדרו לה פריטים כלשהם שאפשר "
 "להוריד. נא ליצור קשר עם היוצרים כדי שיוכלו לתקן את זה."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "בחירת פריט עדכון"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -316,14 +316,14 @@ msgstr ""
 "נא לבחור את הפרט מהרשימה להלן שישמש להחלת העדכון הזה. לא הצלחנו לזהות איזה "
 "פריט לבחור לפי הפריט המקורי ששמו %1"
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr "לא הצלחנו לזהות קישור טוב לעדכון %1, ולא הצלחנו לבצע את העדכון"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -861,18 +861,18 @@ msgstr ""
 "המוצר, בה צריך לעקוב אחר ההוראות כיצד להוסיף. לחלופין, יכול להיות שצריך "
 "ליצור קשר עם מנהלי האתר ישירות כדי להוסיף תוכן חדש."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "מידע נטען"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "מתבצעת התקנה"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "

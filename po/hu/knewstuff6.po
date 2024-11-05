@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-05 00:37+0000\n"
 "PO-Revision-Date: 2024-06-20 22:16+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -282,7 +282,7 @@ msgstr "Nem sikerült megnyitni írásra: %1"
 msgid "Could not open %1 for reading"
 msgstr "Nem sikerült megnyitni olvasásra: %1"
 
-#: core/transaction.cpp:189
+#: core/transaction.cpp:124
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -291,12 +291,12 @@ msgstr ""
 "Nem sikerült végrehajtani a(z) %1 bejegyzés telepítését, mivel nem definiál "
 "egy letölthető elemet sem. Vegyefel a kapcsolatot a szerzővel a javításhoz."
 
-#: core/transaction.cpp:306
+#: core/transaction.cpp:335
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Frissítés kiválasztása"
 
-#: core/transaction.cpp:308
+#: core/transaction.cpp:337
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -307,7 +307,7 @@ msgstr ""
 "elemet. Az eredeti elem (%1) alapján nem tudtuk azonosítani, melyiket "
 "kellene kiválasztani."
 
-#: core/transaction.cpp:332
+#: core/transaction.cpp:361
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -316,7 +316,7 @@ msgstr ""
 "Nem sikerült azonosítani a megfelelő hivatkozást a(z) %1 frissítéséhez, nem "
 "lehet végrehajtani a frissítést"
 
-#: core/transaction.cpp:425
+#: core/transaction.cpp:454
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -881,18 +881,18 @@ msgstr ""
 "hogy közvetlenül a webhely kezelőivel kell kapcsolatba lépnie az új tartalom "
 "hozzáadásához."
 
-#: qtquick/quickengine.cpp:54 qtquick/quickengine.cpp:135
-#: qtquick/quickengine.cpp:143
+#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
+#: qtquick/quickengine.cpp:144
 #, kde-format
 msgid "Loading data"
 msgstr "Adatok betöltése"
 
-#: qtquick/quickengine.cpp:139
+#: qtquick/quickengine.cpp:140
 #, kde-format
 msgid "Installing"
 msgstr "Telepítés"
 
-#: qtquick/quickengine.cpp:194
+#: qtquick/quickengine.cpp:195
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
