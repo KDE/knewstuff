@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-10-27 08:03+0200\n"
+"PO-Revision-Date: 2024-11-04 08:14+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -299,7 +299,7 @@ msgstr "התקנת %1 נכשלה, כיוון שהחבילה שהתקבלה לא 
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
-msgstr ""
+msgstr "התקנת %1 נכשלה, כיוון שהחבילה שירדה לא מציגה סוג שירות."
 
 #: core/installation.cpp:548
 #, kde-format
@@ -307,6 +307,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"התקנת %1 נכשלה, כיוון שהחבילה שירדה לא מכילה פרטי על שימושיים, מה שאומר שזאת "
+"אינה חבילת KPackage תקנית."
 
 #: core/installation.cpp:582
 #, kde-format
@@ -405,7 +407,7 @@ msgstr ""
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
-msgstr ""
+msgstr "הסרת %1 נכשלה, כיוון שלא ניתן להסיר ידנית את הקובץ שירד %2."
 
 #: core/installation.cpp:905
 #, kde-format
@@ -414,6 +416,8 @@ msgid ""
 "The file in question was %2, and you can attempt to delete it yourself, if "
 "you are certain that it is not needed."
 msgstr ""
+"הסרת %1 נכשלה, כיוון שהקובץ המותקן אינו מסוג KPackage. הקובץ הנדון היה %2, "
+"ואפשר לנסות למחוק אותו ידנית, אם ברור לך לחלוטין שאינו נחוץ."
 
 #: core/installation.cpp:913
 #, kde-format
@@ -421,6 +425,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
+"הסרת %1 נכשלה, נראה שיש יותר מדבר אחד מותקן, מצב בלתי אפשרי לרשומות מבוססות "
+"KPackage."
 
 #: core/installation.cpp:946
 #, kde-format
@@ -486,14 +492,12 @@ msgstr ""
 "i><br />: </qt>"
 
 #: core/security.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>Cannot start <i>gpg</i> and check the validity of the file. Make sure "
 "that <i>gpg</i> is installed, otherwise verification of downloaded resources "
 "will not be possible.</qt>"
 msgstr ""
-"<qt> אין אפשרות להפעיל את <i>gpg</i> ולבדוק את תוקף הקובץ. ודא ש־<i>gpg</i> "
-"מותקן, אחרת לא ניתן יהיה לוודא את תוקפם של משאבים שיורדו על ידך. </qt>"
 
 #: core/security.cpp:320
 #, kde-format
@@ -826,11 +830,10 @@ msgid "Download New %1..."
 msgstr "הורדת %1 חדש…"
 
 #: qtquick/qml/Dialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Download New Stuff..."
+#, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr "מוריד חומר חדש..."
+msgstr "הורדת %1 חדש"
 
 #: qtquick/qml/Dialog.qml:43
 #, kde-format
@@ -1438,7 +1441,7 @@ msgstr "מדף"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr ""
+msgstr "למעלה"
 
 #: qtquick/searchpresetmodel.cpp:79
 #, kde-format
