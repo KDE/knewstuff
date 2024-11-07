@@ -26,6 +26,7 @@ class ProviderBase;
  * static website providers.
  *
  * @author Jeremy Whiting <jpwhiting@kde.org>
+ * @since 6.9
  */
 class KNEWSTUFFCORE_EXPORT ProviderCore : public QObject
 {

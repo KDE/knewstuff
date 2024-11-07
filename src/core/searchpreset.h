@@ -19,7 +19,7 @@ class SearchPresetPrivate;
 /**
  * Describes a search request that may come from the provider.
  * This is used by the OPDS provider to handle the different urls.
- * @since 6.5
+ * @since 6.9
  */
 class KNEWSTUFFCORE_EXPORT SearchPreset
 {
@@ -28,7 +28,7 @@ public:
      * @brief The SearchPresetTypes enum
      * the preset type enum is a helper to identify the kind of label and icon
      * the search preset should have if none are found.
-     * @since 6.5
+     * @since 6.9
      */
     enum class Type {
         NoPresetType = 0,

@@ -12,6 +12,10 @@ namespace KNSCore
 
 class CategoryMetadataPrivate;
 
+/**
+ * Describes a category
+ * @since 6.9
+ */
 class KNEWSTUFFCORE_EXPORT CategoryMetadata
 {
 public:

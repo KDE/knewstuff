@@ -14,7 +14,7 @@ Q_NAMESPACE_EXPORT(KNEWSTUFFCORE_EXPORT)
 struct SearchRequestPrivate;
 
 /**
- * @since 6.5
+ * @since 6.9
  */
 enum class SortMode {
     Newest,
@@ -25,7 +25,7 @@ enum class SortMode {
 Q_ENUM_NS(SortMode)
 
 /**
- * @since 6.5
+ * @since 6.9
  */
 enum class Filter {
     None,
@@ -39,7 +39,7 @@ KNEWSTUFFCORE_EXPORT QDebug operator<<(QDebug, const class SearchRequest &);
 
 /**
  * @brief A search request
- * @since 6.5
+ * @since 6.9
  */
 class KNEWSTUFFCORE_EXPORT SearchRequest
 {

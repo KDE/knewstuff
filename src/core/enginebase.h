@@ -179,6 +179,7 @@ public:
     KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use searchPresets2")
     QList<Provider::SearchPreset> searchPresets();
 #endif
+    /// @since 6.9
     QList<SearchPreset> searchPresets2();
 
     /**

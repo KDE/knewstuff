@@ -53,6 +53,11 @@ private:
     KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use SearchRequest constructor")
     ResultsStream(const Provider::SearchRequest &request, EngineBase *base);
 #endif
+    /**
+     * @param request The search request to be issued
+     * @param base The engine issuing the request
+     * @since 6.9
+     */
     ResultsStream(const SearchRequest &request, EngineBase *base);
     void finish();
 
