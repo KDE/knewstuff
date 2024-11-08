@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-05 00:37+0000\n"
+"POT-Creation-Date: 2024-11-08 00:38+0000\n"
 "PO-Revision-Date: 2024-09-17 08:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 "X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: attica/atticaprovider.cpp:166
+#: attica/atticaprovider.cpp:167
 #, kde-format
 msgid "All categories are missing"
 msgstr "遺失所有分類"
@@ -43,7 +43,7 @@ msgstr "遺失所有分類"
 # TRANSTR:
 # 這個項目要價 1 USD。\n
 # 確定購買？
-#: attica/atticaprovider.cpp:346
+#: attica/atticaprovider.cpp:349
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -54,7 +54,7 @@ msgstr ""
 "這個項目要價 %2 %1。\n"
 "確定購買？"
 
-#: attica/atticaprovider.cpp:360
+#: attica/atticaprovider.cpp:363
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -65,43 +65,43 @@ msgstr ""
 "餘額：%1\n"
 "售價：%2"
 
-#: attica/atticaprovider.cpp:392
+#: attica/atticaprovider.cpp:395
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "已記錄投票。"
 
-#: attica/atticaprovider.cpp:407
+#: attica/atticaprovider.cpp:410
 #, kde-format
 msgid "You are now a fan."
 msgstr "您已成為粉絲。"
 
-#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
-#: opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr "服務目前正在維護中，預計 %1 後會恢復。"
 
-#: attica/atticaprovider.cpp:440
+#: attica/atticaprovider.cpp:443
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "網路錯誤 %1：%2"
 
-#: attica/atticaprovider.cpp:447
+#: attica/atticaprovider.cpp:450
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "太多要求到伺服器。請稍等幾分鐘後再嘗試。"
 
-#: attica/atticaprovider.cpp:451
+#: attica/atticaprovider.cpp:454
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "%1 開放協同服務實例不支援嘗試使用的功能。"
 
-#: attica/atticaprovider.cpp:455
+#: attica/atticaprovider.cpp:458
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "未知的開放協同服務 API 錯誤。(%1)"
@@ -113,7 +113,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "未知 CommentsModel 角色"
 
-#: core/enginebase.cpp:43
+#: core/enginebase.cpp:98
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -122,27 +122,27 @@ msgstr ""
 "安裝程序發生錯誤：\n"
 "%1"
 
-#: core/enginebase.cpp:79
+#: core/enginebase.cpp:134
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "設定檔不存在：\"%1\""
 
-#: core/enginebase.cpp:87
+#: core/enginebase.cpp:142
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "設定檔已存在，但無法開啟：「%1」"
 
-#: core/enginebase.cpp:94
+#: core/enginebase.cpp:149
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "設定檔無效：%1"
 
-#: core/enginebase.cpp:103
+#: core/enginebase.cpp:158
 #, kde-format
 msgid "Use"
 msgstr "使用"
 
-#: core/enginebase.cpp:132
+#: core/enginebase.cpp:187
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -153,17 +153,17 @@ msgstr ""
 "%2\n"
 "此為嚴重錯誤，應向應用程式作者回報"
 
-#: core/enginebase.cpp:284
+#: core/enginebase.cpp:353
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "從檔案 %1 載入提供者失敗"
 
-#: core/enginebase.cpp:302
+#: core/enginebase.cpp:371
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "無法從檔案 %1 載入熱門新玩意的供應者"
 
-#: core/enginebase.cpp:333
+#: core/enginebase.cpp:402
 #, kde-format
 msgid "Error initializing provider."
 msgstr "初始化提供者時發生錯誤。"
@@ -294,7 +294,7 @@ msgstr "無法開啟 %1 供寫入"
 msgid "Could not open %1 for reading"
 msgstr "無法開啟 %1 供讀取"
 
-#: core/transaction.cpp:124
+#: core/transaction.cpp:126
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -303,12 +303,12 @@ msgstr ""
 "由於條目 %1 沒有定義任何可下載的項目，因此無法進行安裝。請與作者聯絡好修正這"
 "個問題。"
 
-#: core/transaction.cpp:335
+#: core/transaction.cpp:337
 #, kde-format
 msgid "Pick Update Item"
 msgstr "選擇更新項目"
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:339
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -318,14 +318,14 @@ msgstr ""
 "請從下方列表選擇要套用此更新的項目。我們無法基於名稱為 %1 的原始項目來識別要"
 "選擇的項目。"
 
-#: core/transaction.cpp:361
+#: core/transaction.cpp:363
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr "我們無法辨識可用以更新 %1 用的連結，因此無法進行更新"
 
-#: core/transaction.cpp:454
+#: core/transaction.cpp:456
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -846,18 +846,18 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
-#: qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
 msgstr "載入資料中"
 
-#: qtquick/quickengine.cpp:140
+#: qtquick/quickengine.cpp:172
 #, kde-format
 msgid "Installing"
 msgstr "安裝中"
 
-#: qtquick/quickengine.cpp:195
+#: qtquick/quickengine.cpp:227
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -868,73 +868,73 @@ msgid ""
 msgstr ""
 "您未授權使用「取得新熱門項目」。如果你認為這是錯誤，請聯絡負責您權限的人。"
 
-#: qtquick/searchpresetmodel.cpp:44
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "返回"
 
-#: qtquick/searchpresetmodel.cpp:46
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "受歡迎"
 
-#: qtquick/searchpresetmodel.cpp:48
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "特色"
 
-#: qtquick/searchpresetmodel.cpp:50
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "重新啟動"
 
-#: qtquick/searchpresetmodel.cpp:52
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "新的"
 
-#: qtquick/searchpresetmodel.cpp:54
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "首頁"
 
-#: qtquick/searchpresetmodel.cpp:56
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "往上"
 
-#: qtquick/searchpresetmodel.cpp:60
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "建議"
 
-#: qtquick/searchpresetmodel.cpp:62
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "訂閱"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "所有項目"
 
-#: qtquick/searchpresetmodel.cpp:66
+#: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"

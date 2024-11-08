@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-05 00:37+0000\n"
+"POT-Creation-Date: 2024-11-08 00:38+0000\n"
 "PO-Revision-Date: 2024-10-06 21:48+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -24,12 +24,12 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: attica/atticaprovider.cpp:166
+#: attica/atticaprovider.cpp:167
 #, kde-format
 msgid "All categories are missing"
 msgstr "Trūksta visų kategorijų"
 
-#: attica/atticaprovider.cpp:346
+#: attica/atticaprovider.cpp:349
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Šis elementas kainuoja %1 %2.\n"
 "Ar norite jį įsigyti?"
 
-#: attica/atticaprovider.cpp:360
+#: attica/atticaprovider.cpp:363
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,19 +51,19 @@ msgstr ""
 "Jūsų likutis: %1\n"
 "Kaina: %2"
 
-#: attica/atticaprovider.cpp:392
+#: attica/atticaprovider.cpp:395
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Jūsų balsas įskaičiuotas."
 
-#: attica/atticaprovider.cpp:407
+#: attica/atticaprovider.cpp:410
 #, kde-format
 msgid "You are now a fan."
 msgstr "Dabar esate fanas."
 
-#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
-#: opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -72,17 +72,17 @@ msgstr ""
 "Šiuo metu vyksta techninė paslaugos priežiūra. Tikimasi, kad paslauga pradės "
 "veikti po %1."
 
-#: attica/atticaprovider.cpp:440
+#: attica/atticaprovider.cpp:443
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Tinklo klaida %1: %2"
 
-#: attica/atticaprovider.cpp:447
+#: attica/atticaprovider.cpp:450
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Per daug užklausų į serverį. Po kelių minučių bandykite dar kartą."
 
-#: attica/atticaprovider.cpp:451
+#: attica/atticaprovider.cpp:454
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 "Open Collaboration Services egzempliorius %1 nepalaiko bandytos funkcijos."
 
-#: attica/atticaprovider.cpp:455
+#: attica/atticaprovider.cpp:458
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Nežinoma Open Collaboration Service API klaida. (%1)"
@@ -102,7 +102,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Nežinomas CommentsModel vaidmuo"
 
-#: core/enginebase.cpp:43
+#: core/enginebase.cpp:98
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -111,27 +111,27 @@ msgstr ""
 "Įdiegimo metu įvyko klaida:\n"
 "%1"
 
-#: core/enginebase.cpp:79
+#: core/enginebase.cpp:134
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Konfigūracijos failo nėra: „%1“"
 
-#: core/enginebase.cpp:87
+#: core/enginebase.cpp:142
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Konfigūracijos failas yra, tačiau jo nepavyko atverti: \"%1\""
 
-#: core/enginebase.cpp:94
+#: core/enginebase.cpp:149
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Konfigūracijos failas yra neteisingas: „%1“"
 
-#: core/enginebase.cpp:103
+#: core/enginebase.cpp:158
 #, kde-format
 msgid "Use"
 msgstr "Naudoti"
 
-#: core/enginebase.cpp:132
+#: core/enginebase.cpp:187
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -142,17 +142,17 @@ msgstr ""
 "%2\n"
 "Tai yra kritinė klaida ir apie ją turėtų būti pranešta programos autoriui"
 
-#: core/enginebase.cpp:284
+#: core/enginebase.cpp:353
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Tiekėjų įkėlimas iš failo: %1 nepavyko"
 
-#: core/enginebase.cpp:302
+#: core/enginebase.cpp:371
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Nepavyko įkelti karštų naujų elementų gavimo tiekėjų iš failo: %1"
 
-#: core/enginebase.cpp:333
+#: core/enginebase.cpp:402
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Klaida inicijuojant tiekėją."
@@ -288,7 +288,7 @@ msgstr "Nepavyko atverti %1 įrašymui"
 msgid "Could not open %1 for reading"
 msgstr "Nepavyko atverti %1 skaitymui"
 
-#: core/transaction.cpp:124
+#: core/transaction.cpp:126
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -297,12 +297,12 @@ msgstr ""
 "Nepavyko atlikti %1 įrašo diegimo, nes jame nėra jokių atsisiuntimui "
 "apibrėžtų elementų. Susisiekite su autoriumi, kad jis tai pataisytų."
 
-#: core/transaction.cpp:335
+#: core/transaction.cpp:337
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Pasirinkti atnaujinimo elementą"
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:339
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -313,7 +313,7 @@ msgstr ""
 "atnaujinimo taikymui. Mums, remiantis pradiniu elementu, kurio pavadinimas "
 "%1, nepavyko nustatyti pradinio elemento"
 
-#: core/transaction.cpp:361
+#: core/transaction.cpp:363
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -322,7 +322,7 @@ msgstr ""
 "Nepavyko atpažinti tinkamos nuorodos, skirtos atnaujinti %1, taigi negalime "
 "atlikti atnaujinimo"
 
-#: core/transaction.cpp:454
+#: core/transaction.cpp:456
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -867,18 +867,18 @@ msgstr ""
 "tai, kaip pridėti įrašą. Priešingu atveju, jums gali tekti tiesiogiai "
 "susisiekti su svetainės administratoriais, kad būtų pridėtas naujas turinys."
 
-#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
-#: qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
 msgstr "Įkeliami duomenys"
 
-#: qtquick/quickengine.cpp:140
+#: qtquick/quickengine.cpp:172
 #, kde-format
 msgid "Installing"
 msgstr "Įdiegiama"
 
-#: qtquick/quickengine.cpp:195
+#: qtquick/quickengine.cpp:227
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -890,73 +890,73 @@ msgstr ""
 "Jūs nesate įgalioti gauti karštus naujus elementus. Jeigu manote, kad tai "
 "klaida, susisiekite su asmeniu, atsakančiu už jūsų leidimus."
 
-#: qtquick/searchpresetmodel.cpp:44
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Atgal"
 
-#: qtquick/searchpresetmodel.cpp:46
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "Populiarūs"
 
-#: qtquick/searchpresetmodel.cpp:48
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Pasižymėję"
 
-#: qtquick/searchpresetmodel.cpp:50
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Paleisti iš naujo"
 
-#: qtquick/searchpresetmodel.cpp:52
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Nauja"
 
-#: qtquick/searchpresetmodel.cpp:54
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Pradžia"
 
-#: qtquick/searchpresetmodel.cpp:56
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr "Stalčius"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Aukštyn"
 
-#: qtquick/searchpresetmodel.cpp:60
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "Rekomenduojami"
 
-#: qtquick/searchpresetmodel.cpp:62
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Prenumeratos"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Visi įrašai"
 
-#: qtquick/searchpresetmodel.cpp:66
+#: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"

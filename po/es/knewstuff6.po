@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-05 00:37+0000\n"
+"POT-Creation-Date: 2024-11-08 00:38+0000\n"
 "PO-Revision-Date: 2024-09-12 01:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -26,12 +26,12 @@ msgstr ""
 "X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: attica/atticaprovider.cpp:166
+#: attica/atticaprovider.cpp:167
 #, kde-format
 msgid "All categories are missing"
 msgstr "Faltan todas las categorías"
 
-#: attica/atticaprovider.cpp:346
+#: attica/atticaprovider.cpp:349
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -42,7 +42,7 @@ msgstr ""
 "Este elemento cuesta %1 %2.\n"
 "¿Quiere comprarlo?"
 
-#: attica/atticaprovider.cpp:360
+#: attica/atticaprovider.cpp:363
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -53,19 +53,19 @@ msgstr ""
 "Su balance: %1\n"
 "Precio: %2"
 
-#: attica/atticaprovider.cpp:392
+#: attica/atticaprovider.cpp:395
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Su voto ha sido registrado."
 
-#: attica/atticaprovider.cpp:407
+#: attica/atticaprovider.cpp:410
 #, kde-format
 msgid "You are now a fan."
 msgstr "Ahora se ha convertido en fan."
 
-#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
-#: opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -74,17 +74,17 @@ msgstr ""
 "El servicio se encuentra actualmente en mantenimiento y se espera que vuelva "
 "a estar operativo en %1."
 
-#: attica/atticaprovider.cpp:440
+#: attica/atticaprovider.cpp:443
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Error de red %1: %2"
 
-#: attica/atticaprovider.cpp:447
+#: attica/atticaprovider.cpp:450
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Demasiadas peticiones al servidor. Pruebe de nuevo tras unos minutos."
 
-#: attica/atticaprovider.cpp:451
+#: attica/atticaprovider.cpp:454
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -93,7 +93,7 @@ msgstr ""
 "La instancia de Open Collaboration Services %1 no permite la función que ha "
 "usado."
 
-#: attica/atticaprovider.cpp:455
+#: attica/atticaprovider.cpp:458
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Error desconocido de la API de Open Collaboration Service. (%1)"
@@ -105,7 +105,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Rol de CommentsModel desconocido"
 
-#: core/enginebase.cpp:43
+#: core/enginebase.cpp:98
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -114,27 +114,27 @@ msgstr ""
 "Ha ocurrido un error durante el proceso de instalación:\n"
 "%1"
 
-#: core/enginebase.cpp:79
+#: core/enginebase.cpp:134
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "El archivo de configuración no existe: «%1»"
 
-#: core/enginebase.cpp:87
+#: core/enginebase.cpp:142
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "El archivo de configuración existe, pero no se puede abrir: «%1»"
 
-#: core/enginebase.cpp:94
+#: core/enginebase.cpp:149
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Archivo de configuración no válido: «%1»"
 
-#: core/enginebase.cpp:103
+#: core/enginebase.cpp:158
 #, kde-format
 msgid "Use"
 msgstr "Usar"
 
-#: core/enginebase.cpp:132
+#: core/enginebase.cpp:187
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -146,18 +146,18 @@ msgstr ""
 "%2\n"
 "Se trata de un error crítico que se debe notificar al autor de la aplicación."
 
-#: core/enginebase.cpp:284
+#: core/enginebase.cpp:353
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Ha fallado la carga de proveedores desde el archivo %1"
 
-#: core/enginebase.cpp:302
+#: core/enginebase.cpp:371
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 "No se pueden cargar los proveedores para las novedades desde el archivo: %1"
 
-#: core/enginebase.cpp:333
+#: core/enginebase.cpp:402
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Error al inicializar el proveedor."
@@ -294,7 +294,7 @@ msgstr "No se ha podido abrir %1 para escritura"
 msgid "Could not open %1 for reading"
 msgstr "No se ha podido abrir %1 para lectura"
 
-#: core/transaction.cpp:124
+#: core/transaction.cpp:126
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -304,12 +304,12 @@ msgstr ""
 "definidos elementos para descargar. Contacte con el autor para que pueda "
 "corregir este problema."
 
-#: core/transaction.cpp:335
+#: core/transaction.cpp:337
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Escoger elemento a actualizar"
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:339
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -320,7 +320,7 @@ msgstr ""
 "actualización. No se ha podido determinar el elemento a seleccionar según el "
 "elemento original, llamado %1"
 
-#: core/transaction.cpp:361
+#: core/transaction.cpp:363
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -329,7 +329,7 @@ msgstr ""
 "Hemos fallado al identificar un buen enlace para actualizar %1, por lo que "
 "no se puede realizar la actualización."
 
-#: core/transaction.cpp:454
+#: core/transaction.cpp:456
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -872,18 +872,18 @@ msgstr ""
 "alternativa, es posible que deba ponerse en contacto directamente con los "
 "administradores del sitio para añadir contenido nuevo."
 
-#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
-#: qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
 msgstr "Cargando datos"
 
-#: qtquick/quickengine.cpp:140
+#: qtquick/quickengine.cpp:172
 #, kde-format
 msgid "Installing"
 msgstr "Instalando"
 
-#: qtquick/quickengine.cpp:195
+#: qtquick/quickengine.cpp:227
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -895,73 +895,73 @@ msgstr ""
 "No tiene autorización para descargar novedades. Si cree que se trata de un "
 "error, contacte con la persona encargada de asignarle permisos."
 
-#: qtquick/searchpresetmodel.cpp:44
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Volver"
 
-#: qtquick/searchpresetmodel.cpp:46
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "Popular"
 
-#: qtquick/searchpresetmodel.cpp:48
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Destacado"
 
-#: qtquick/searchpresetmodel.cpp:50
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: qtquick/searchpresetmodel.cpp:52
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Nuevo"
 
-#: qtquick/searchpresetmodel.cpp:54
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Inicio"
 
-#: qtquick/searchpresetmodel.cpp:56
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr "Estantería"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Arriba"
 
-#: qtquick/searchpresetmodel.cpp:60
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "Recomendado"
 
-#: qtquick/searchpresetmodel.cpp:62
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Suscripciones"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Todas las entradas"
 
-#: qtquick/searchpresetmodel.cpp:66
+#: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-05 00:37+0000\n"
+"POT-Creation-Date: 2024-11-08 00:38+0000\n"
 "PO-Revision-Date: 2024-09-11 11:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: attica/atticaprovider.cpp:166
+#: attica/atticaprovider.cpp:167
 #, kde-format
 msgid "All categories are missing"
 msgstr "Усі категорії пропущено"
 
-#: attica/atticaprovider.cpp:346
+#: attica/atticaprovider.cpp:349
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -39,7 +39,7 @@ msgstr ""
 "Вартість позначеного складає %2 %1.\n"
 "Підтверджуєте купівлю?"
 
-#: attica/atticaprovider.cpp:360
+#: attica/atticaprovider.cpp:363
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -50,19 +50,19 @@ msgstr ""
 "На рахунку: %1\n"
 "Ціна: %2"
 
-#: attica/atticaprovider.cpp:392
+#: attica/atticaprovider.cpp:395
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Ваш голос враховано."
 
-#: attica/atticaprovider.cpp:407
+#: attica/atticaprovider.cpp:410
 #, kde-format
 msgid "You are now a fan."
 msgstr "Вас додано до списку прихильників."
 
-#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
-#: opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
@@ -71,19 +71,19 @@ msgstr ""
 "Зараз служба перебуває на обслуговуванні. Відновлення повноцінної роботи "
 "очікуємо за %1."
 
-#: attica/atticaprovider.cpp:440
+#: attica/atticaprovider.cpp:443
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Помилка мережі %1: %2"
 
-#: attica/atticaprovider.cpp:447
+#: attica/atticaprovider.cpp:450
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Занадто багато запитів до сервера. Будь ласка, повторіть спробу за декілька "
 "хвилин."
 
-#: attica/atticaprovider.cpp:451
+#: attica/atticaprovider.cpp:454
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -92,7 +92,7 @@ msgstr ""
 "У екземплярі Open Collaboration Services %1 не передбачено підтримки "
 "відповідної функції."
 
-#: attica/atticaprovider.cpp:455
+#: attica/atticaprovider.cpp:458
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
@@ -105,7 +105,7 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Невідома роль CommentsModel"
 
-#: core/enginebase.cpp:43
+#: core/enginebase.cpp:98
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
@@ -114,27 +114,27 @@ msgstr ""
 "Під час встановлення сталася помилка:\n"
 "%1"
 
-#: core/enginebase.cpp:79
+#: core/enginebase.cpp:134
 #, kde-format
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Файла налаштувань не існує: «%1»"
 
-#: core/enginebase.cpp:87
+#: core/enginebase.cpp:142
 #, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Файл налаштувань знайдено, але його не вдалося відкрити: «%1»"
 
-#: core/enginebase.cpp:94
+#: core/enginebase.cpp:149
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Некоректний файл налаштувань: «%1»"
 
-#: core/enginebase.cpp:103
+#: core/enginebase.cpp:158
 #, kde-format
 msgid "Use"
 msgstr "Використати"
 
-#: core/enginebase.cpp:132
+#: core/enginebase.cpp:187
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -145,17 +145,17 @@ msgstr ""
 "%2\n"
 "Це критична помилка, про яку слід повідомити автору програми"
 
-#: core/enginebase.cpp:284
+#: core/enginebase.cpp:353
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Завантаження параметрів надання з файла: помилка %1"
 
-#: core/enginebase.cpp:302
+#: core/enginebase.cpp:371
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
 
-#: core/enginebase.cpp:333
+#: core/enginebase.cpp:402
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
@@ -292,7 +292,7 @@ msgstr "Не вдалося відкрити «%1» для запису"
 msgid "Could not open %1 for reading"
 msgstr "Не вдалося відкрити %1 для читання"
 
-#: core/transaction.cpp:124
+#: core/transaction.cpp:126
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
@@ -302,12 +302,12 @@ msgstr ""
 "жодних придатних до отримання пунктів даних. Будь ласка, зв'яжіться із "
 "автором, щоб розв'язати цю проблему."
 
-#: core/transaction.cpp:335
+#: core/transaction.cpp:337
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Виберіть запис для оновлення"
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:339
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -318,7 +318,7 @@ msgstr ""
 "скористатися для застосування цього оновлення. Нам не вдалося визначити, "
 "який із записів слід вибрати на основі початкового запису, який мав назву %1"
 
-#: core/transaction.cpp:361
+#: core/transaction.cpp:363
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -327,7 +327,7 @@ msgstr ""
 "Не вдалося визначити добре посилання для оновлення %1, тому оновлення є "
 "неможливим"
 
-#: core/transaction.cpp:454
+#: core/transaction.cpp:456
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
@@ -872,18 +872,18 @@ msgstr ""
 "зв'язатися із командою з керування сайтом безпосередньо для додавання нових "
 "даних."
 
-#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
-#: qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
 msgstr "Завантаження даних"
 
-#: qtquick/quickengine.cpp:140
+#: qtquick/quickengine.cpp:172
 #, kde-format
 msgid "Installing"
 msgstr "Встановлення"
 
-#: qtquick/quickengine.cpp:195
+#: qtquick/quickengine.cpp:227
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -896,73 +896,73 @@ msgstr ""
 "вважаєте, що це є помилкою, будь ласка, повідомте про неї особу, яка "
 "відповідає за права доступу у вашій системі."
 
-#: qtquick/searchpresetmodel.cpp:44
+#: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Назад"
 
-#: qtquick/searchpresetmodel.cpp:46
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr "Популярні"
 
-#: qtquick/searchpresetmodel.cpp:48
+#: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Рекомендовані"
 
-#: qtquick/searchpresetmodel.cpp:50
+#: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Перезапустити"
 
-#: qtquick/searchpresetmodel.cpp:52
+#: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Нові"
 
-#: qtquick/searchpresetmodel.cpp:54
+#: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Домівка"
 
-#: qtquick/searchpresetmodel.cpp:56
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr "Шафа"
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Вище"
 
-#: qtquick/searchpresetmodel.cpp:60
+#: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "Рекомендовані"
 
-#: qtquick/searchpresetmodel.cpp:62
+#: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Підписки"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Усі пункти"
 
-#: qtquick/searchpresetmodel.cpp:66
+#: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"

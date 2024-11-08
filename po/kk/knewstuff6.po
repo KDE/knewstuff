@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-05 00:37+0000\n"
+"POT-Creation-Date: 2024-11-08 00:38+0000\n"
 "PO-Revision-Date: 2013-11-08 01:24+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -23,13 +23,13 @@ msgstr ""
 "\n"
 "\n"
 
-#: attica/atticaprovider.cpp:166
+#: attica/atticaprovider.cpp:167
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgid "All categories are missing"
 msgstr "Барлық санаттар"
 
-#: attica/atticaprovider.cpp:346
+#: attica/atticaprovider.cpp:349
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -40,7 +40,7 @@ msgstr ""
 "Бұның бағасы %1 %2.\n"
 "Сатып алмақсыз ба?"
 
-#: attica/atticaprovider.cpp:360
+#: attica/atticaprovider.cpp:363
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -51,45 +51,45 @@ msgstr ""
 "Балансыңызда: %1\n"
 "Бағасы: %2"
 
-#: attica/atticaprovider.cpp:392
+#: attica/atticaprovider.cpp:395
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Дауысыңыз жазып алынды."
 
-#: attica/atticaprovider.cpp:407
+#: attica/atticaprovider.cpp:410
 #, kde-format
 msgid "You are now a fan."
 msgstr "Сүйермен тізіміне кірдіңіз."
 
-#: attica/atticaprovider.cpp:435 core/enginebase.cpp:208
-#: opds/opdsprovider.cpp:287
+#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:440
+#: attica/atticaprovider.cpp:443
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "Желі қатесі. (%1)"
 
-#: attica/atticaprovider.cpp:447
+#: attica/atticaprovider.cpp:450
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Серверге тым көп сұраныс түсті. Бірнеше минуттан кейін қайталап көріңіз."
 
-#: attica/atticaprovider.cpp:451
+#: attica/atticaprovider.cpp:454
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:455
+#: attica/atticaprovider.cpp:458
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Open Collaboration қызметінің API беймәлім қатесі. (%1)"
@@ -102,36 +102,36 @@ msgctxt ""
 msgid "Unknown CommentsModel role"
 msgstr "Беймәлім сокет қатесі"
 
-#: core/enginebase.cpp:43
+#: core/enginebase.cpp:98
 #, kde-format
 msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
 
-#: core/enginebase.cpp:79
+#: core/enginebase.cpp:134
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file does not exist: \"%1\""
 msgstr "Баптау файлы табылмады: \"%1\""
 
-#: core/enginebase.cpp:87
+#: core/enginebase.cpp:142
 #, fuzzy, kde-format
 #| msgid "Configuration file not found: \"%1\""
 msgid "Configuration file exists, but cannot be opened: \"%1\""
 msgstr "Баптау файлы табылмады: \"%1\""
 
-#: core/enginebase.cpp:94
+#: core/enginebase.cpp:149
 #, kde-format
 msgid "Configuration file is invalid: \"%1\""
 msgstr "Баптау файлы жарамсыз: \"%1\""
 
-#: core/enginebase.cpp:103
+#: core/enginebase.cpp:158
 #, kde-format
 msgid "Use"
 msgstr ""
 
-#: core/enginebase.cpp:132
+#: core/enginebase.cpp:187
 #, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
@@ -139,17 +139,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:284
+#: core/enginebase.cpp:353
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Үлестірушілерін %1 файынан табу жаңылысы"
 
-#: core/enginebase.cpp:302
+#: core/enginebase.cpp:371
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Келесі файлдан жаңа нәрселер үлестірушілер алынбады: %1"
 
-#: core/enginebase.cpp:333
+#: core/enginebase.cpp:402
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Үлестіруші мәліметінің қатесі."
@@ -267,19 +267,19 @@ msgstr "%1 оқуға ашылмайды"
 msgid "Could not open %1 for reading"
 msgstr "%1 оқуға ашылмайды"
 
-#: core/transaction.cpp:124
+#: core/transaction.cpp:126
 #, kde-format
 msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:335
+#: core/transaction.cpp:337
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:339
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -287,14 +287,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:361
+#: core/transaction.cpp:363
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:454
+#: core/transaction.cpp:456
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""
@@ -859,18 +859,18 @@ msgid ""
 "content added."
 msgstr ""
 
-#: qtquick/quickengine.cpp:55 qtquick/quickengine.cpp:136
-#: qtquick/quickengine.cpp:144
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
 msgstr "Деректерді жүктеу"
 
-#: qtquick/quickengine.cpp:140
+#: qtquick/quickengine.cpp:172
 #, kde-format
 msgid "Installing"
 msgstr "Орнату"
 
-#: qtquick/quickengine.cpp:195
+#: qtquick/quickengine.cpp:227
 #, kde-format
 msgctxt ""
 "An informational message which is shown to inform the user they are not "
@@ -880,7 +880,7 @@ msgid ""
 "please contact the person in charge of your permissions."
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:44
+#: qtquick/searchpresetmodel.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Back"
@@ -888,20 +888,20 @@ msgctxt "Knewstuff5"
 msgid "Back"
 msgstr "Шегіну"
 
-#: qtquick/searchpresetmodel.cpp:46
+#: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:48
+#: qtquick/searchpresetmodel.cpp:50
 #, fuzzy, kde-format
 #| msgid "Saturday"
 msgctxt "Knewstuff5"
 msgid "Featured"
 msgstr "Сенбі"
 
-#: qtquick/searchpresetmodel.cpp:50
+#: qtquick/searchpresetmodel.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "@action:button Restart find & replace"
 #| msgid "Restart"
@@ -909,7 +909,7 @@ msgctxt "Knewstuff5"
 msgid "Restart"
 msgstr "Қайта бастау"
 
-#: qtquick/searchpresetmodel.cpp:52
+#: qtquick/searchpresetmodel.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "New"
@@ -917,7 +917,7 @@ msgctxt "Knewstuff5"
 msgid "New"
 msgstr "Жаңа"
 
-#: qtquick/searchpresetmodel.cpp:54
+#: qtquick/searchpresetmodel.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "keyboard-key-name"
 #| msgid "Home"
@@ -925,13 +925,13 @@ msgctxt "Knewstuff5"
 msgid "Home"
 msgstr "Home"
 
-#: qtquick/searchpresetmodel.cpp:56
+#: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
 msgstr ""
 
-#: qtquick/searchpresetmodel.cpp:58
+#: qtquick/searchpresetmodel.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "keyboard-key-name"
 #| msgid "Up"
@@ -939,7 +939,7 @@ msgctxt "Knewstuff5"
 msgid "Up"
 msgstr "Жоғары"
 
-#: qtquick/searchpresetmodel.cpp:60
+#: qtquick/searchpresetmodel.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "dictionary variant"
 #| msgid "extended"
@@ -947,7 +947,7 @@ msgctxt "Knewstuff5"
 msgid "Recommended"
 msgstr "кеңейтілген"
 
-#: qtquick/searchpresetmodel.cpp:62
+#: qtquick/searchpresetmodel.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Subscript"
@@ -955,14 +955,14 @@ msgctxt "Knewstuff5"
 msgid "Subscriptions"
 msgstr "Жол астығы"
 
-#: qtquick/searchpresetmodel.cpp:64
+#: qtquick/searchpresetmodel.cpp:66
 #, fuzzy, kde-format
 #| msgid "All Categories"
 msgctxt "Knewstuff5"
 msgid "All Entries"
 msgstr "Барлық санаттар"
 
-#: qtquick/searchpresetmodel.cpp:66
+#: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
