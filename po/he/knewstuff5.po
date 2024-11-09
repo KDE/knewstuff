@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-11-04 08:14+0200\n"
+"PO-Revision-Date: 2024-11-08 09:10+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -458,6 +458,8 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
+"יצירת משימה לניהול חבילות נכשלה. זה בדרך כלל קורה כיוון שהחבילה שגויה. "
+"ניסינו לפעול על החבילה %1"
 
 #: core/jobs/kpackagejob.cpp:121
 #, kde-format
@@ -465,11 +467,12 @@ msgid ""
 "Could not create a package installer for the service type %1: The installer "
 "does not have a valid structure"
 msgstr ""
+"לא ניתן ליצור תוכנית התקנת חבילה לסוג השירות %1: לתוכנית ההתקנה אין מבנה תקף"
 
 #: core/jobs/kpackagejob.cpp:125
 #, kde-format
 msgid "The service type %1 was not understood by the KPackage installer"
-msgstr ""
+msgstr "סוג השירות %1 לא פוענח נכון על ידי תוכנית ההתקנה KPackage"
 
 #: core/security.cpp:69
 #, kde-format
@@ -790,7 +793,7 @@ msgstr "סעיף הנוספים"
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
 "installed:"
-msgstr ""
+msgstr "לתפריט הזה יש כמה כלים מוצעים נוספים שלא מותקנים כרגע:"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:216
