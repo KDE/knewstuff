@@ -194,7 +194,8 @@ public:
 Q_SIGNALS:
     void providerInitialized(KNSCore::ProviderBase *);
 
-    void loadingFinished(const KNSCore::SearchRequest &, const KNSCore::Entry::List &);
+    void entriesLoaded(const KNSCore::SearchRequest &, const KNSCore::Entry::List &);
+    void loadingDone(const KNSCore::SearchRequest &);
     void loadingFailed(const KNSCore::SearchRequest &);
 
     void entryDetailsLoaded(const KNSCore::Entry &);

@@ -56,7 +56,7 @@ Engine::Engine(QObject *parent)
     , dd(KNSCore::EngineBase::d.get())
 {
     connect(this, &KNSCore::EngineBase::providerAdded, this, [this](auto core) {
-        connect(core->d->base, &KNSCore::ProviderBase::loadingFinished, this, [this](const auto &request, const auto &entries) {
+        connect(core->d->base, &KNSCore::ProviderBase::entriesLoaded, this, [this](const auto &request, const auto &entries) {
             d->currentPage = qMax<int>(request.page(), d->currentPage);
             qCDebug(KNEWSTUFFQUICK) << "loaded page " << request.page() << "current page" << d->currentPage << "count:" << entries.count();
 

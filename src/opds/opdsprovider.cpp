@@ -526,7 +526,7 @@ void parseFeedData(const QDomDocument &doc)
         Q_EMIT q->entryDetailsLoaded(entries.first());
         loadingExtraDetails = false;
     } else {
-        Q_EMIT q->loadingFinished(currentRequest, entries);
+        Q_EMIT q->entriesLoaded(currentRequest, entries);
     }
     Q_EMIT q->searchPresetsLoaded(presets);
 };
@@ -560,7 +560,8 @@ void OPDSProvider::loadEntries(const KNSCore::SearchRequest &request)
     d->currentRequest = request;
 
     if (request.filter() == Filter::Installed) {
-        Q_EMIT loadingFinished(request, d->installedEntries());
+        Q_EMIT entriesLoaded(request, d->installedEntries());
+        Q_EMIT loadingDone(request);
         return;
     } else if (request.filter() == Filter::ExactEntryId) {
         for (Entry entry : d->cachedEntries) {

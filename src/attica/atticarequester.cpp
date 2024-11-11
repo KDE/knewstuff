@@ -78,14 +78,15 @@ void AtticaRequester::detailsLoaded(BaseJob *job)
             }
         }
         qDebug() << "UPDATABLE" << updatable;
-        Q_EMIT loadingFinished(updatable);
+        Q_EMIT entriesLoaded(updatable);
+        Q_EMIT loadingDone();
     }
 }
 
 void AtticaRequester::checkForUpdates()
 {
     if (m_provider->mCachedEntries.isEmpty()) {
-        Q_EMIT loadingFinished({});
+        Q_EMIT loadingDone();
         return;
     }
 
@@ -157,7 +158,8 @@ void AtticaRequester::categoryContentsLoaded(BaseJob *job)
     }
 
     qCDebug(KNEWSTUFFCORE) << "loaded: " << m_request.d->hashForRequest() << " count: " << entries.size();
-    Q_EMIT loadingFinished(entries);
+    Q_EMIT entriesLoaded(entries);
+    Q_EMIT loadingDone();
 }
 
 void AtticaRequester::startInternal()
@@ -174,9 +176,10 @@ void AtticaRequester::startInternal()
     }
     case KNSCore::Filter::Installed:
         if (m_request.d->page == 0) {
-            Q_EMIT loadingFinished(installedEntries());
-        } else {
-            Q_EMIT loadingFinished({});
+            Q_EMIT entriesLoaded(installedEntries());
+            Q_EMIT loadingDone();
+        } else { // We always load everything on the first page. The caller may fetchMore and try to read further pages though.
+            Q_EMIT loadingDone();
         }
         return;
     case KNSCore::Filter::Updates:

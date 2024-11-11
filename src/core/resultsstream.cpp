@@ -47,12 +47,19 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
           .request = request,
       })
 {
-    auto finished = [this](const KNSCore::SearchRequest &request, const KNSCore::Entry::List &entries) {
+    auto entriesLoaded = [this](const KNSCore::SearchRequest &request, const KNSCore::Entry::List &entries) {
+        if (request.d != d->request.d) {
+            return;
+        }
+        Q_EMIT entriesFound(entries);
+    };
+
+    auto done = [this](const KNSCore::SearchRequest &request) {
         if (request.d != d->request.d) {
             return;
         }
 
-        qDebug() << this << "Finishing" << sender() << request.d->id;
+        qWarning() << this << "Finishing" << sender() << request.d->id;
 
         auto base = qobject_cast<ProviderBase *>(sender());
         Q_ASSERT_X(base, Q_FUNC_INFO, "Sender failed to cast to ProviderBase");
@@ -60,12 +67,13 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
                 return core->d->base == base;
             });
             coresRemoved <= 0) {
-            qCWarning(KNEWSTUFFCORE) << "Request finished twice, check your provider" << sender() << d->engine << entries.size();
+            qCWarning(KNEWSTUFFCORE) << "Request finished twice, check your provider" << sender() << d->engine;
+
             Q_ASSERT(false);
             return;
         }
 
-        if (entries.isEmpty() && d->providers.isEmpty()) {
+        if (d->providers.isEmpty()) {
             d->finished = true;
             if (d->queuedFetch > 0) {
                 d->queuedFetch--;
@@ -76,9 +84,6 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
             d->request = {}; // prevent this stream from making more requests
             d->finished = true;
             finish();
-        }
-        if (!entries.isEmpty()) {
-            Q_EMIT entriesFound(entries);
         }
     };
     auto failed = [this](const KNSCore::SearchRequest &request) {
@@ -93,7 +98,8 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
         Q_ASSERT(!seenProviders.contains(provider));
         seenProviders.append(provider);
 
-        connect(provider->d->base, &ProviderBase::loadingFinished, this, finished);
+        connect(provider->d->base, &ProviderBase::entriesLoaded, this, entriesLoaded);
+        connect(provider->d->base, &ProviderBase::loadingDone, this, done);
         connect(provider->d->base, &ProviderBase::entryDetailsLoaded, this, [this](const KNSCore::Entry &entry) {
             if (d->request.d->filter == KNSCore::Filter::ExactEntryId && d->request.d->searchTerm == entry.uniqueId()) {
                 if (entry.isValid()) {

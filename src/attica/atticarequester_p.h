@@ -24,7 +24,8 @@ public:
     [[nodiscard]] KNSCore::SearchRequest request() const;
 
 Q_SIGNALS:
-    void loadingFinished(const KNSCore::Entry::List &list);
+    void entriesLoaded(const KNSCore::Entry::List &list);
+    void loadingDone();
     void loadingFailed();
     void entryDetailsLoaded(const KNSCore::Entry &entry);
 

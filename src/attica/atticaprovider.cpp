@@ -177,8 +177,11 @@ void AtticaProvider::loadEntries(const KNSCore::SearchRequest &request)
 {
     auto requester = new AtticaRequester(request, this, this);
     connect(requester, &AtticaRequester::entryDetailsLoaded, this, &AtticaProvider::entryDetailsLoaded);
-    connect(requester, &AtticaRequester::loadingFinished, this, [this, requester](const KNSCore::Entry::List &list) {
-        Q_EMIT loadingFinished(requester->request(), list);
+    connect(requester, &AtticaRequester::entriesLoaded, this, [this, requester](const KNSCore::Entry::List &list) {
+        Q_EMIT entriesLoaded(requester->request(), list);
+    });
+    connect(requester, &AtticaRequester::loadingDone, this, [this, requester] {
+        Q_EMIT loadingDone(requester->request());
     });
     connect(requester, &AtticaRequester::loadingFailed, this, [this, requester] {
         Q_EMIT loadingFailed(requester->request());

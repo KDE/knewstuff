@@ -38,9 +38,11 @@ public:
         connect(m_core->d->base, &ProviderBase::providerInitialized, this, [this](const auto & /*providerBase*/) {
             Q_EMIT providerInitialized(this);
         });
-        // const KNSCore::SearchRequest & _t1, const KNSCore::Entry::List &
-        connect(m_core->d->base, &ProviderBase::loadingFinished, this, [this](const auto &request, const auto &entries) {
+        connect(m_core->d->base, &ProviderBase::entriesLoaded, this, [this](const auto &request, const auto &entries) {
             Q_EMIT loadingFinished(KNSCompat::searchRequestToLegacy(request), entries);
+        });
+        connect(m_core->d->base, &ProviderBase::loadingDone, this, [this](const auto &request) {
+            Q_EMIT loadingFinished(KNSCompat::searchRequestToLegacy(request), {});
         });
         connect(m_core->d->base, &ProviderBase::loadingFailed, this, [this](const auto &request) {
             Q_EMIT loadingFailed(KNSCompat::searchRequestToLegacy(request));

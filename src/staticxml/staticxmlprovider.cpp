@@ -139,16 +139,17 @@ void StaticXmlProvider::loadEntries(const KNSCore::SearchRequest &request)
 {
     // static providers only have on page containing everything
     if (request.d->page > 0) {
-        Q_EMIT loadingFinished(request, Entry::List());
+        Q_EMIT loadingDone(request);
         return;
     }
 
     if (request.d->filter == Filter::Installed) {
         qCDebug(KNEWSTUFFCORE) << "Installed entries: " << mId << installedEntries().size();
         if (request.d->page == 0) {
-            Q_EMIT loadingFinished(request, installedEntries());
+            Q_EMIT entriesLoaded(request, installedEntries());
+            Q_EMIT loadingDone(request);
         } else {
-            Q_EMIT loadingFinished(request, Entry::List());
+            Q_EMIT loadingDone(request);
         }
         return;
     }
@@ -160,6 +161,7 @@ void StaticXmlProvider::loadEntries(const KNSCore::SearchRequest &request)
         XmlLoader *loader = new XmlLoader(this);
         connect(loader, &XmlLoader::signalLoaded, this, [this, request](const QDomDocument &doc) {
             slotFeedFileLoaded(request, doc);
+            Q_EMIT loadingDone(request);
         });
         connect(loader, &XmlLoader::signalFailed, this, [this, request] {
             Q_EMIT loadingFailed(request);
@@ -277,7 +279,7 @@ void StaticXmlProvider::slotFeedFileLoaded(const KNSCore::SearchRequest &request
             qCDebug(KNEWSTUFFCORE) << "Filter has excluded" << entry.name() << "on entry filter" << tagFilter();
         }
     }
-    Q_EMIT loadingFinished(request, entries);
+    Q_EMIT entriesLoaded(request, entries);
 }
 
 bool StaticXmlProvider::searchIncludesEntry(const KNSCore::SearchRequest &request, const KNSCore::Entry &entry) const

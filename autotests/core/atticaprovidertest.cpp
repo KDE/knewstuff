@@ -31,7 +31,7 @@ private Q_SLOTS:
         }
         AtticaProvider provider(manager.providers().at(0), QStringList{}, QString{});
 
-        QSignalSpy spy(&provider, &AtticaProvider::loadingFinished);
+        QSignalSpy spy(&provider, &AtticaProvider::loadingDone);
 
         provider.loadEntries(SearchRequest(SortMode::Downloads, Filter::None, "kora"));
         provider.loadEntries(SearchRequest(SortMode::Downloads, Filter::None, "kde"));
