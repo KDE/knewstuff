@@ -77,7 +77,6 @@ private:
 
     // cache of all entries known from this provider so far, mapped by their id
     Entry::List mCachedEntries;
-    QMap<SortMode, XmlLoader *> mFeedLoaders;
     QString mId;
     bool mInitialized;
     QUrl m_iconUrl;

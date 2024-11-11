@@ -167,8 +167,6 @@ void StaticXmlProvider::loadEntries(const KNSCore::SearchRequest &request)
         loader->setFilter(request.d->filter);
         loader->setSearchTerm(request.d->searchTerm);
 
-        mFeedLoaders.insert(request.d->sortMode, loader);
-
         loader->load(url);
     } else {
         Q_EMIT loadingFailed(request);
