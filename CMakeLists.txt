@@ -22,7 +22,7 @@ include(ECMQmlModule)
 include(ECMQtDeclareLoggingCategory)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 
-set(REQUIRED_QT_VERSION 6.5.0)
+set(REQUIRED_QT_VERSION 6.6.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED COMPONENTS Gui Widgets Xml Qml Quick QuickWidgets)
 find_package(KF6Archive ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Config ${KF_DEP_VERSION} REQUIRED)
