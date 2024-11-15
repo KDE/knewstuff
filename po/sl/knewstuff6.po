@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:37+0000\n"
 "PO-Revision-Date: 2024-09-11 07:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Manjkajo vse kategorije"
 
-#: attica/atticaprovider.cpp:349
+#: attica/atticaprovider.cpp:352
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -46,7 +46,7 @@ msgstr ""
 "Ta predmet stane %1 %2.\n"
 "Ali ga želite kupiti?"
 
-#: attica/atticaprovider.cpp:363
+#: attica/atticaprovider.cpp:366
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -57,18 +57,18 @@ msgstr ""
 "Stanje: %1\n"
 "Cena: %2"
 
-#: attica/atticaprovider.cpp:395
+#: attica/atticaprovider.cpp:398
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Vaš glas je bil zabeležen."
 
-#: attica/atticaprovider.cpp:410
+#: attica/atticaprovider.cpp:413
 #, kde-format
 msgid "You are now a fan."
 msgstr "Sedaj ste postali oboževalec."
 
-#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -77,24 +77,24 @@ msgid ""
 msgstr ""
 "Storitev je trenutno v vzdrževanju in bo predvidoma spet na voljo v %1."
 
-#: attica/atticaprovider.cpp:443
+#: attica/atticaprovider.cpp:446
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Napaka omrežja %1: %2"
 
-#: attica/atticaprovider.cpp:450
+#: attica/atticaprovider.cpp:453
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "Strežnik je prejel preveč zahtev. Poskusite znova čez nekaj minut."
 
-#: attica/atticaprovider.cpp:454
+#: attica/atticaprovider.cpp:457
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr "Primerek Open Collaboration Services %1 ne podpira te funkcije."
 
-#: attica/atticaprovider.cpp:458
+#: attica/atticaprovider.cpp:461
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Neznana napaka programskega vmesnika Open Collaboration Service: (%1)"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:37+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "ಎಲ್ಲಾ ಪಂಗಡಗಳು"
 
-#: attica/atticaprovider.cpp:349
+#: attica/atticaprovider.cpp:352
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -43,7 +43,7 @@ msgstr ""
 "ಈ ವಸ್ತುವಿಗೆ %1 %2 ಬೆಲೆ ಇದೆ.\n"
 "ಖರೀದಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: attica/atticaprovider.cpp:363
+#: attica/atticaprovider.cpp:366
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -54,18 +54,18 @@ msgstr ""
 "ನಿಮ್ಮಲ್ಲಿರುವ ಬಾಕಿ ಮೊತ್ತ: %1\n"
 "ಬೆಲೆ: %2"
 
-#: attica/atticaprovider.cpp:395
+#: attica/atticaprovider.cpp:398
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "ನಿಮ್ಮ ಓಟನ್ನು ದಾಖಲಿಸಿಕೊಳ್ಳಲಾಗಿದೆ."
 
-#: attica/atticaprovider.cpp:410
+#: attica/atticaprovider.cpp:413
 #, kde-format
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -73,25 +73,25 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:443
+#: attica/atticaprovider.cpp:446
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "ಜಾಲ ದೋಷ. (%1)"
 
-#: attica/atticaprovider.cpp:450
+#: attica/atticaprovider.cpp:453
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr "ಪರಿಚಾರಕಕ್ಕೆ ಬಹಳಷ್ಟು ಮನವಿಗಳು ಬಂದಿವೆ. ದಯವಿಟ್ಟು ಕೆಲವು ಕ್ಷಣಗಳ ನಂತರ ಪ್ರಯತ್ನಿಸಿ."
 
-#: attica/atticaprovider.cpp:454
+#: attica/atticaprovider.cpp:457
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:458
+#: attica/atticaprovider.cpp:461
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "ಗೊತ್ತಿರದ ಮುಕ್ತ ಸಹಯೋಗ ಸೇವೆ (ಓಪನ್ ಕೊಲ್ಯಾಬರೇಶನ್ ಸರ್ವಿಸ್) API ದೋಷ. (%1)"

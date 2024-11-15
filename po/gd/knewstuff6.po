@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:37+0000\n"
 "PO-Revision-Date: 2015-11-04 15:13+0000\n"
 "Last-Translator: Michael Bauer <fios@akerbeltz.org>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "A h-uile roinn-seòrsa"
 
-#: attica/atticaprovider.cpp:349
+#: attica/atticaprovider.cpp:352
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -36,7 +36,7 @@ msgstr ""
 "Tha an nì seo %1 %2.\n"
 "A bheil thu airson a cheannach?"
 
-#: attica/atticaprovider.cpp:363
+#: attica/atticaprovider.cpp:366
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -47,18 +47,18 @@ msgstr ""
 "Am balans agad: %1\n"
 "A' phrìs: %2"
 
-#: attica/atticaprovider.cpp:395
+#: attica/atticaprovider.cpp:398
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Chaidh a' bhòt agad a chlàradh."
 
-#: attica/atticaprovider.cpp:410
+#: attica/atticaprovider.cpp:413
 #, kde-format
 msgid "You are now a fan."
 msgstr "Tha thu 'ga leantainn a-nis."
 
-#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -66,27 +66,27 @@ msgid ""
 "in %1."
 msgstr ""
 
-#: attica/atticaprovider.cpp:443
+#: attica/atticaprovider.cpp:446
 #, fuzzy, kde-format
 #| msgid "Network error. (%1)"
 msgid "Network error %1: %2"
 msgstr "Mearachd lìonraidh. (%1)"
 
-#: attica/atticaprovider.cpp:450
+#: attica/atticaprovider.cpp:453
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Tha iarrtasan aig an fhrithealaiche. Feuch ris a-rithist an ceann mionaid no "
 "dhà."
 
-#: attica/atticaprovider.cpp:454
+#: attica/atticaprovider.cpp:457
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
 
-#: attica/atticaprovider.cpp:458
+#: attica/atticaprovider.cpp:461
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Mearachd Open Collaboration Service API nach aihne dhuinn. (%1)"

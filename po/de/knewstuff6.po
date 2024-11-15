@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:37+0000\n"
 "PO-Revision-Date: 2024-10-07 17:52+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "All categories are missing"
 msgstr "Alle Kategorien fehlen"
 
-#: attica/atticaprovider.cpp:349
+#: attica/atticaprovider.cpp:352
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -41,7 +41,7 @@ msgstr ""
 "Diese Software kostet %2 %1.\n"
 "Möchten Sie sie kaufen?"
 
-#: attica/atticaprovider.cpp:363
+#: attica/atticaprovider.cpp:366
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -52,18 +52,18 @@ msgstr ""
 "Ihr Kontostand: %1\n"
 "Preis: %2"
 
-#: attica/atticaprovider.cpp:395
+#: attica/atticaprovider.cpp:398
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Ihre Bewertung wurde aufgenommen."
 
-#: attica/atticaprovider.cpp:410
+#: attica/atticaprovider.cpp:413
 #, kde-format
 msgid "You are now a fan."
 msgstr "Sind sind nun ein Fan."
 
-#: attica/atticaprovider.cpp:438 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -71,19 +71,19 @@ msgid ""
 "in %1."
 msgstr "Der Dienst wird derzeit gewartet und wir zurückerwartet in %1."
 
-#: attica/atticaprovider.cpp:443
+#: attica/atticaprovider.cpp:446
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Netzwerkfehler %1: %2"
 
-#: attica/atticaprovider.cpp:450
+#: attica/atticaprovider.cpp:453
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Zu viele Anfragen zum Server. Bitte versuchen Sie es in einigen Minuten "
 "erneut."
 
-#: attica/atticaprovider.cpp:454
+#: attica/atticaprovider.cpp:457
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -91,7 +91,7 @@ msgid ""
 msgstr ""
 "Der Open-Collaboration-Dienst %1 unterstützt die angeforderte Funktion nicht."
 
-#: attica/atticaprovider.cpp:458
+#: attica/atticaprovider.cpp:461
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr ""
