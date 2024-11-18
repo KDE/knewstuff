@@ -21,5 +21,9 @@ target_link_libraries(knewstuff-dialog6
     KF6::NewStuffCore
 )
 
+target_link_libraries(knewstuff-dialog6
+        KF6::I18nQml
+)
+
 install(TARGETS knewstuff-dialog6 ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.knewstuff-dialog6.desktop DESTINATION ${KDE_INSTALL_APPDIR})

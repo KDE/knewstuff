@@ -6,6 +6,7 @@
 */
 
 #include "knsrcmodel.h"
+#include <KLocalizedQmlContext>
 
 #include <KLocalizedString>
 
@@ -39,7 +40,7 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine *appengine = new QQmlApplicationEngine();
     qmlRegisterType<KNSRCModel>("org.kde.newstuff.tools.dialog", 1, 0, "KNSRCModel");
-    auto *context = new KLocalizedContext(appengine);
+    auto *context = new KLocalizedQmlContext(appengine);
     context->setTranslationDomain(QStringLiteral("knewstuff6"));
     appengine->rootContext()->setContextObject(context);
 

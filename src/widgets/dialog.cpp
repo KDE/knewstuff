@@ -13,7 +13,7 @@
 #include <QQuickWidget>
 #include <QVBoxLayout>
 
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 
 #include "core/enginebase.h"
 #include "knewstuffwidgets_debug.h"
@@ -60,7 +60,7 @@ Dialog::Dialog(const QString &configFile, QWidget *parent)
     , d(new DialogPrivate())
 {
     auto engine = new QQmlEngine(this);
-    auto context = new KLocalizedContext(engine);
+    auto context = new KLocalizedQmlContext(engine);
     engine->setIncubationController(new PeriodicIncubationController());
 
     setMinimumSize(600, 400);

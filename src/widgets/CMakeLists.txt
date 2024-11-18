@@ -51,6 +51,10 @@ target_link_libraries(KF6NewStuffWidgets
     Qt6::QuickWidgets
 )
 
+target_link_libraries(KF6NewStuffWidgets PRIVATE
+        KF6::I18nQml
+)
+
 target_include_directories(KF6NewStuffWidgets
     PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
     INTERFACE
