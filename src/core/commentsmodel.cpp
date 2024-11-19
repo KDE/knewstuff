@@ -72,7 +72,7 @@ public:
                         }
                         actualNewComments << comment;
                     }
-                    if (actualNewComments.count() > 0) {
+                    if (!actualNewComments.isEmpty()) {
                         q->beginInsertRows(QModelIndex(), comments.count(), comments.count() + actualNewComments.count() - 1);
                         qCDebug(KNEWSTUFFCORE) << "Appending" << actualNewComments.count() << "new comments";
                         comments.append(actualNewComments);

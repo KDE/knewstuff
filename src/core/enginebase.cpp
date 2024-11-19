@@ -513,7 +513,7 @@ QSharedPointer<Provider> EngineBase::provider(const QString &providerId) const
 #if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
 QSharedPointer<Provider> EngineBase::defaultProvider() const
 {
-    if (d->legacyProviders.count() > 0) {
+    if (!d->legacyProviders.isEmpty()) {
         return d->legacyProviders.constBegin().value();
     }
     return nullptr;
