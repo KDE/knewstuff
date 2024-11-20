@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-20 00:37+0000\n"
 "PO-Revision-Date: 2023-12-02 20:07+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -984,7 +984,7 @@ msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr "Hšadať predvoľbu: %1"
 
-#: tools/knewstuff-dialog/main.cpp:29
+#: tools/knewstuff-dialog/main.cpp:30
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -995,7 +995,7 @@ msgstr ""
 "dialógové okno, ktoré vám umožní prepínať medzi všetkými nainštalovanými "
 "konfiguračnými súbormi do celosystémového umiestnenia súboru knsrc"
 
-#: tools/knewstuff-dialog/main.cpp:33
+#: tools/knewstuff-dialog/main.cpp:34
 #, fuzzy, kde-format
 #| msgid ""
 #| "A kns url to show information from. The format for a kns url is kns://"

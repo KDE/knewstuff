@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-20 00:37+0000\n"
 "PO-Revision-Date: 2024-10-09 21:06+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -948,7 +948,7 @@ msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
 msgstr "தேடல் முன்னமைப்பு: %1"
 
-#: tools/knewstuff-dialog/main.cpp:29
+#: tools/knewstuff-dialog/main.cpp:30
 #, kde-format
 msgid ""
 "The KNSRC file you want to show. If none is passed, you will be presented "
@@ -958,7 +958,7 @@ msgstr ""
 "காட்ட விரும்பும் KNSRC கோப்பு. எதுவும் குறிப்பிடப்படவில்லையெனில், கணினி முழுவதற்கும் "
 "நிறுவப்பட்டுள்ள knsrc கோப்புகளைக் காட்டும் கோப்புத்தேர்வு சாளரம் காட்டப்படும்"
 
-#: tools/knewstuff-dialog/main.cpp:33
+#: tools/knewstuff-dialog/main.cpp:34
 #, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
