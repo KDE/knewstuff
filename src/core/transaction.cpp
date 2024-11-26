@@ -245,7 +245,7 @@ Transaction::Transaction(const KNSCore::Entry &entry, EngineBase *engine)
 {
     connect(d->m_engine->d->installation, &Installation::signalEntryChanged, this, [this](const KNSCore::Entry &changedEntry) {
         Q_EMIT signalEntryEvent(changedEntry, Entry::StatusChangedEvent);
-        d->m_engine->cache()->registerChangedEntry(changedEntry);
+        d->m_engine->d->cache->registerChangedEntry(changedEntry);
     });
     connect(d->m_engine->d->installation, &Installation::signalInstallationFailed, this, [this](const QString &message, const KNSCore::Entry &entry) {
         if (entry == d->subject) {
@@ -386,7 +386,7 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
 Transaction *Transaction::uninstall(EngineBase *engine, const KNSCore::Entry &_entry)
 {
     auto ret = new Transaction(_entry, engine);
-    const KNSCore::Entry::List list = ret->d->m_engine->cache()->registryForProvider(_entry.providerId());
+    const KNSCore::Entry::List list = ret->d->m_engine->d->cache->registryForProvider(_entry.providerId());
     // we have to use the cached entry here, not the entry from the provider
     // since that does not contain the list of installed files
     KNSCore::Entry actualEntryForUninstall;
