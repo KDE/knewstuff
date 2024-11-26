@@ -281,8 +281,12 @@ void Transaction::downloadLinkLoaded(const KNSCore::Entry &entry)
             // If there's nothing to identify, and we've arrived here, then we know what the payload is
             qCDebug(KNEWSTUFFCORE) << "If there's nothing to identify, and we've arrived here, then we know what the payload is";
             d->m_engine->d->installation->install(entry);
+            connect(d->m_engine->d->installation, &Installation::signalInstallationFinished, this, [this, entry](const KNSCore::Entry &finishedEntry) {
+                if (entry.uniqueId() == finishedEntry.uniqueId()) {
+                    d->finish();
+                }
+            });
             d->payloadToIdentify.remove(entry);
-            d->finish();
         } else if (d->payloads[entry].count() < entry.downloadLinkCount()) {
             // We've got more to get before we can attempt to identify anything, so fetch the next one...
             qCDebug(KNEWSTUFFCORE) << "We've got more to get before we can attempt to identify anything, so fetch the next one...";
