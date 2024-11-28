@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-09-11 10:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "El vostre vot s'ha enregistrat."
 msgid "You are now a fan."
 msgstr "Ara sou un fan."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -146,17 +146,17 @@ msgstr ""
 "%2\n"
 "Aquest és un error crític i s'hauria d'informar a l'autor de l'aplicació"
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Ha fallat la càrrega de proveïdors des del fitxer: %1"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "No s'ha pogut carregar cap proveïdor de novetats des del fitxer: %1"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Error en inicialitzar el proveïdor."
@@ -303,12 +303,12 @@ msgstr ""
 "definit cap element descarregable. Contacteu amb l'autor perquè puguin "
 "solucionar aquest problema."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Trieu l'element d'actualització"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -319,7 +319,7 @@ msgstr ""
 "aquesta actualització. No es pot identificar l'element a seleccionar, basant-"
 "se en l'element original, el qual s'anomenava %1"
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -328,7 +328,7 @@ msgstr ""
 "S'ha fallat en identificar un bon enllaç per a actualitzar %1 i no es pot "
 "realitzar l'actualització"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

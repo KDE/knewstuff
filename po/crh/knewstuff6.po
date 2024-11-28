@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2009-02-12 23:29-0600\n"
 "Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
 "Language-Team: Qırımtatarca (Qırım Türkçesi)\n"
@@ -53,7 +53,7 @@ msgstr "İç bir metin deñiştirilmedi."
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -129,17 +129,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr ""
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr ""
@@ -265,12 +265,12 @@ msgid ""
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr ""
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -278,14 +278,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, fuzzy, kde-format
 #| msgid "Failed to load file '%1'"
 msgid ""

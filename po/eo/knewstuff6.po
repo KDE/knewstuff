@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-09-21 10:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "Via marko estis registrita."
 msgid "You are now a fan."
 msgstr "Vi nun estas ŝatanto."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -143,17 +143,17 @@ msgstr ""
 "Ĉi tio estas kritika eraro kaj devus esti raportita al la aŭtoro de la "
 "aplikaĵo."
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Ŝargado de provizantoj el dosiero: %1 fiaskis"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Ne eblis ŝargi akiri varmajn novajn provizantojn de dosiero: %1"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Eraro dum pravalorizado de provizanto."
@@ -299,12 +299,12 @@ msgstr ""
 "Ne eblis fari instaladon de la eniro %1 ĉar ĝi ne havas iujn elŝuteblajn "
 "erojn difinitajn. Bonvolu kontakti la aŭtoron por ke ili povu ripari ĉi tion."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Elekti ĝisdatigaĵon"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -315,7 +315,7 @@ msgstr ""
 "ĉi tiun ĝisdatigon. Ni ne povis identigi kiun objekton elekti, surbaze de la "
 "origina ero, kiu estis nomita %1"
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -324,7 +324,7 @@ msgstr ""
 "Ni malsukcesis identigi bonan ligilon por ĝisdatigi %1, kaj ne kapablas "
 "plenumi la ĝisdatigon"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

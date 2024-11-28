@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-10-09 21:06+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "உங்கள் வாக்கு பதிவு செய்யப
 msgid "You are now a fan."
 msgstr "நீங்கள் ரசிகராகிவிட்டீர்கள்."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -140,17 +140,17 @@ msgstr ""
 "%2\n"
 "இச்சிக்கல், செயலியை இயற்றியவரிடம் தெரிவிக்கப்பட வேண்டும்"
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "%1 எனும் கோப்பிலிருந்து வழங்கிகளை ஏற்றுவது தோல்வியடைந்த‍து"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "%1 எனும் கோப்பிலிருந்து வழங்கிகளைப் பற்றிய விவரங்களை ஏற்ற முடியவில்லை"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "வழங்கியை தொடங்குவதில் சிக்கல்."
@@ -292,12 +292,12 @@ msgstr ""
 "%1 எனும் பதிவில் பதிவிறக்கக்கூடியவை ஏதும் இல்லாத‍தால் அதை நிறுவ முடியவில்லை. அதை "
 "இயற்றியவரிடம் இச்சிக்கலைத் தெரிவியுங்கள்."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "புதுப்பிப்புக்கான உருப்படியைத் தேர்ந்தெடுத்தல்"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -307,7 +307,7 @@ msgstr ""
 "புதுப்பிப்புக்கு பயன்படுத்த வேண்டியதை கீழுள்ள பட்டியலிலிருந்து தேர்ந்தெடுங்கள். முந்தையதன் "
 "பெயர் %1 ஆகும், ஆனால் அப்பெயரின் அடிப்படையில் புதியதைத் தேர்ந்தெடுக்க முடியவில்லை."
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -315,7 +315,7 @@ msgid ""
 msgstr ""
 "%1 என்பதை புதுப்பிப்பதற்கான முகவரியைக் கண்டறிய முடியாத‍தால் அதைப் புதுப்பிக்க முடியவில்லை"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

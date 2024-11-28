@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-09-11 11:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -61,7 +61,7 @@ msgstr "Ваш голос враховано."
 msgid "You are now a fan."
 msgstr "Вас додано до списку прихильників."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -145,17 +145,17 @@ msgstr ""
 "%2\n"
 "Це критична помилка, про яку слід повідомити автору програми"
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Завантаження параметрів надання з файла: помилка %1"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Не вдалося завантажити параметри надання нових даних з файла: %1"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Помилка під час спроби ініціалізація запису надавача послуг."
@@ -302,12 +302,12 @@ msgstr ""
 "жодних придатних до отримання пунктів даних. Будь ласка, зв'яжіться із "
 "автором, щоб розв'язати цю проблему."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Виберіть запис для оновлення"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -318,7 +318,7 @@ msgstr ""
 "скористатися для застосування цього оновлення. Нам не вдалося визначити, "
 "який із записів слід вибрати на основі початкового запису, який мав назву %1"
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -327,7 +327,7 @@ msgstr ""
 "Не вдалося визначити добре посилання для оновлення %1, тому оновлення є "
 "неможливим"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

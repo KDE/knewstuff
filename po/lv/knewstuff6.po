@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-10-02 12:08+0300\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr "Jūsu balss ir reģistrēta."
 msgid "You are now a fan."
 msgstr "Jūs tagad esat fans."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -142,17 +142,17 @@ msgstr ""
 "%2\n"
 "Šī ir kritiska kļūda un par to ir jāziņo programmas autoram"
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Neizdevās sniedzēju ielāde no datnes: „%1“"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "Neizdevās ielādēt jauno lietu sniedzējus no„datnes: „%1“"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Kļūda inicializējot sniedzēju."
@@ -296,12 +296,12 @@ msgstr ""
 "Neizdevās izpildīt ieraksta „%1“ instalāciju, jo tam nav lejupielādējamu "
 "vienumu. Sazinieties ar autoru, lai to varētu novērst."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Atlasīt atjaunināšanas vienumu"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -312,7 +312,7 @@ msgstr ""
 "pielietošanai. Mums neizdevās identificēt atlasāmo, balstoties uz sākotnējo "
 "vienumu ar nosaukumu „%1“"
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -321,7 +321,7 @@ msgstr ""
 "Nav izdevies identificēt derīgu saiti „%1“ atjaunināšanai, tāpēc nevaram "
 "veikt atjaunināšanu"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"

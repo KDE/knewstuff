@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:37+0000\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
 "PO-Revision-Date: 2024-09-11 10:55+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -69,7 +69,7 @@ msgstr "Uw uitgebrachte stem is opgeslagen."
 msgid "You are now a fan."
 msgstr "U bent nu een fan."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:268
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -152,18 +152,18 @@ msgstr ""
 "Dit is een kritieke fout en zou gerapporteerd moeten worden aan de auteur "
 "van de toepassing"
 
-#: core/enginebase.cpp:353
+#: core/enginebase.cpp:351
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "Laden van leveranciers uit bestand: %1 is mislukt"
 
-#: core/enginebase.cpp:371
+#: core/enginebase.cpp:369
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 "Kon de leveranciers van \"Vers van de pers\" niet laden uit bestand: %1"
 
-#: core/enginebase.cpp:402
+#: core/enginebase.cpp:400
 #, kde-format
 msgid "Error initializing provider."
 msgstr "Fout bij het initialiseren van leverancier."
@@ -314,12 +314,12 @@ msgstr ""
 "gedefinieerd heeft om te downloaden. Neem contact op met de auteur zodat dit "
 "gerepareerd kan worden."
 
-#: core/transaction.cpp:337
+#: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
 msgstr "Item voor bijwerken oppakken"
 
-#: core/transaction.cpp:339
+#: core/transaction.cpp:343
 #, kde-format
 msgid ""
 "Please pick the item from the list below which should be used to apply this "
@@ -330,7 +330,7 @@ msgstr ""
 "dit bij te werken. We zijn niet in staat om het te selecteren item te "
 "identificeren, gebaseerd op het originele item met de naam %1"
 
-#: core/transaction.cpp:363
+#: core/transaction.cpp:367
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
@@ -339,7 +339,7 @@ msgstr ""
 "Het is mislukt om een goede koppeling voor bijwerken van %1 te identificeren "
 "en zijn niet in staat om het bijwerken uit te voeren"
 
-#: core/transaction.cpp:456
+#: core/transaction.cpp:460
 #, kde-format
 msgid ""
 "Failed to adopt '%1'\n"
