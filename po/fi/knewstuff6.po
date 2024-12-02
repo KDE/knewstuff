@@ -11,7 +11,7 @@
 # Joonas Niilola <juippis@roskakori.org>, 2006.
 # Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
 # Teemu Rytilahti <tpr@d5k.net>, 2008.
-# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2006, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
 #
@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:37+0000\n"
-"PO-Revision-Date: 2024-02-14 18:46+0200\n"
+"PO-Revision-Date: 2024-10-18 18:59+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,8 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
-"X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -536,67 +535,55 @@ msgid "Find out how to donate to this project"
 msgstr "Miten lahjoittaa projektille"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Tässä saatavilla olevan sisällön tarjoavat kaltaisesti käyttäjät, eikä "
-"jakelusi ole tarkistanut sen toimivuutta tai vakautta."
+"Noudata varovaisuutta käyttäessä tässä esitettyä käyttäjien tuottamaa "
+"sisältöä, koska se voi sisältää ohjelmakoodia, jonka turvallisuutta, "
+"vakautta tai laatua KDE tai jakelusi ei ole testannut."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Tässä saatavilla olevan sisällön tarjoavat kaltaisesti käyttäjät, eikä "
-"jakelusi ole tarkistanut sen toimivuutta tai vakautta."
+"Tässä saatavilla olevan sisällön tarjoavat kaltaisesi käyttäjät, eikä KDE "
+"tai jakelusi ole tarkistanut sen toimivuutta tai vakautta."
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr "&Kaikki"
+msgstr "Kaikki"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Asennetut"
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Päivitettävissä"
 
 #: qtquick/qml/Page.qml:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr "&Kaikki"
+msgstr "Kaikki"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -604,8 +591,7 @@ msgid "Installed"
 msgstr "Asennetut"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -616,31 +602,28 @@ msgstr "Päivitettävissä"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Lajittelu: julkaisupäivä"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Lajittelu: nimi"
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Sorting"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Lajitellaan"
+msgstr "Lajittelu: arvostelu"
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Eniten latauksia"
+msgstr "Lajittelu: latausmäärä"
 
 #: qtquick/qml/Page.qml:236
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
@@ -648,8 +631,7 @@ msgid "Name"
 msgstr "Nimi"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -657,8 +639,7 @@ msgid "Rating"
 msgstr "Arvostelu"
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
@@ -666,13 +647,12 @@ msgid "Downloads"
 msgstr "Lataukset"
 
 #: qtquick/qml/Page.qml:269
-#, fuzzy, kde-format
-#| msgid "&Release '%1'"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr "&Vapauta ”%1”"
+msgstr "Julkaisupäivä"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
@@ -700,8 +680,7 @@ msgid "Category:"
 msgstr "Luokka:"
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Lahjoita omasi…"
 
@@ -864,14 +843,7 @@ msgid "Send Email To: %1"
 msgstr "Lähetä sähköpostia: %1"
 
 #: qtquick/qml/UploadPage.qml:159
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -1036,11 +1008,7 @@ msgstr ""
 "Esimerkki osoitteesta: kns://sddmteema.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Lataa uutuuksia…"
