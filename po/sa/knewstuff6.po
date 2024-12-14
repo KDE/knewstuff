@@ -1,0 +1,964 @@
+# Sanskrit translations for knewstuff package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the knewstuff package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: knewstuff\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-11-28 00:37+0000\n"
+"PO-Revision-Date: 2024-12-13 20:20+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.08.2\n"
+
+#: attica/atticaprovider.cpp:167
+#, kde-format
+msgid "All categories are missing"
+msgstr "सर्वे वर्गाः लुप्ताः सन्ति"
+
+#: attica/atticaprovider.cpp:352
+#, kde-format
+msgctxt ""
+"the price of a download item, parameter 1 is the currency, 2 is the price"
+msgid ""
+"This item costs %1 %2.\n"
+"Do you want to buy it?"
+msgstr ""
+
+#: attica/atticaprovider.cpp:366
+#, kde-format
+msgid ""
+"Your account balance is too low:\n"
+"Your balance: %1\n"
+"Price: %2"
+msgstr ""
+"भवतः खातेः शेषः अतीव न्यूनः अस्ति:\n"
+"भवतः शेषः : %1\n"
+"मूल्यम् : %2"
+
+#: attica/atticaprovider.cpp:398
+#, kde-format
+msgctxt "voting for an item (good/bad)"
+msgid "Your vote was recorded."
+msgstr ""
+
+#: attica/atticaprovider.cpp:413
+#, kde-format
+msgid "You are now a fan."
+msgstr "त्वम् अधुना प्रशंसकः असि।"
+
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
+#: opds/opdsprovider.cpp:291
+#, kde-format
+msgid ""
+"The service is currently undergoing maintenance and is expected to be back "
+"in %1."
+msgstr "सेवा सम्प्रति अनुरक्षणं प्रचलति, %1 मध्ये पुनः आगमिष्यति इति अपेक्षा अस्ति ।"
+
+#: attica/atticaprovider.cpp:446
+#, kde-format
+msgid "Network error %1: %2"
+msgstr "संजालदोषः %1: %2"
+
+#: attica/atticaprovider.cpp:453
+#, kde-format
+msgid "Too many requests to server. Please try again in a few minutes."
+msgstr "सर्वरं प्रति बहु अनुरोधाः। कृपया कतिपयेषु निमेषेषु पुनः प्रयासं कुर्वन्तु।"
+
+#: attica/atticaprovider.cpp:457
+#, kde-format
+msgid ""
+"The Open Collaboration Services instance %1 does not support the attempted "
+"function."
+msgstr "Open Collaboration Services उदाहरण %1 प्रयतितं कार्यं न समर्थयति ।"
+
+#: attica/atticaprovider.cpp:461
+#, kde-format
+msgid "Unknown Open Collaboration Service API error. (%1)"
+msgstr "अज्ञात मुक्तसहकार्यसेवा एपिआइ त्रुटिः। (%1) ९."
+
+#: core/commentsmodel.cpp:154
+#, kde-format
+msgctxt ""
+"The value returned for an unknown role when requesting data from the model."
+msgid "Unknown CommentsModel role"
+msgstr ""
+
+#: core/enginebase.cpp:98
+#, kde-format
+msgid ""
+"An error occurred during the installation process:\n"
+"%1"
+msgstr ""
+"संस्थापनप्रक्रियायाः समये एकः त्रुटिः अभवत् :\n"
+"%1"
+
+#: core/enginebase.cpp:134
+#, kde-format
+msgid "Configuration file does not exist: \"%1\""
+msgstr "विन्याससञ्चिका नास्ति: \"%1\"."
+
+#: core/enginebase.cpp:142
+#, kde-format
+msgid "Configuration file exists, but cannot be opened: \"%1\""
+msgstr "विन्याससञ्चिका अस्ति, परन्तु उद्घाटयितुं न शक्यते: \"%1\"."
+
+#: core/enginebase.cpp:149
+#, kde-format
+msgid "Configuration file is invalid: \"%1\""
+msgstr "विन्याससञ्चिका अमान्यः अस्ति: \"%1\"."
+
+#: core/enginebase.cpp:158
+#, kde-format
+msgid "Use"
+msgstr "उपयुञ्जताम्‌"
+
+#: core/enginebase.cpp:187
+#, kde-format
+msgid ""
+"Could not initialise the installation handler for %1:\n"
+"%2\n"
+"This is a critical error and should be reported to the application author"
+msgstr ""
+"%1 कृते संस्थापनसञ्चालकं आरम्भं कर्तुं न शक्तम्:\n"
+"%2\n"
+"एषा गम्भीरदोषः अस्ति, अतः अनुप्रयोगलेखकाय निवेदितव्यम्"
+
+#: core/enginebase.cpp:351
+#, kde-format
+msgid "Loading of providers from file: %1 failed"
+msgstr "सञ्चिकातः प्रदातृणां लोडिंग्: %1 विफलम्"
+
+#: core/enginebase.cpp:369
+#, kde-format
+msgid "Could not load get hot new stuff providers from file: %1"
+msgstr "सञ्चिकातः get hot new stuff providers लोड् कर्तुं न शक्तम्: %1"
+
+#: core/enginebase.cpp:400
+#, kde-format
+msgid "Error initializing provider."
+msgstr "प्रदातृणां आरम्भे त्रुटिः।"
+
+#: core/installation.cpp:101
+#, kde-format
+msgid "Invalid item."
+msgstr "अमान्य मद।"
+
+#: core/installation.cpp:108
+#, kde-format
+msgid "Download of item failed: no download URL for \"%1\"."
+msgstr "मदस्य डाउनलोड् विफलम्: \"%1\" कृते डाउनलोड् URL नास्ति ।"
+
+#: core/installation.cpp:139
+#, kde-format
+msgid "Download of \"%1\" failed, error: %2"
+msgstr "\"%1\" इत्यस्य डाउनलोड् विफलम्, त्रुटिः: %2"
+
+#: core/installation.cpp:148
+#, kde-format
+msgid ""
+"Cannot install '%1' because it points to a web page. Click <a "
+"href='%2'>here</a> to finish the installation."
+msgstr ""
+"&#39;%1&#39; संस्थापयितुं न शक्यते यतः एतत् जालपुटं दर्शयति । संस्थापनं समाप्तुं <a "
+"href='%2'>अत्र</a> क्लिक् कुर्वन्तु ।"
+
+#: core/installation.cpp:186
+#, kde-format
+msgid "Could not install \"%1\": file not found."
+msgstr "\"%1\" संस्थापयितुं न शक्यते: सञ्चिका न प्राप्ता ।"
+
+#: core/installation.cpp:352 core/installation.cpp:599
+#, kde-format
+msgid "Installation of %1 failed: %2"
+msgstr "%1 इत्यस्य संस्थापनं विफलम्: %2"
+
+#: core/installation.cpp:386
+#, kde-format
+msgid "Could not determine the type of archive of the downloaded file %1"
+msgstr "%1 अवतरणं कृतस्य सञ्चिकायाः संग्रहस्य प्रकारं निर्धारयितुं न शक्तम्"
+
+#: core/installation.cpp:398
+#, kde-format
+msgid "Failed to open the archive file %1. The reported error was: %2"
+msgstr "%1 संग्रहसञ्चिकां उद्घाटयितुं असफलम् । निवेदितदोषः आसीत्: %2"
+
+#: core/installation.cpp:465
+#, kde-format
+msgid ""
+"This file already exists on disk (possibly due to an earlier failed download "
+"attempt). Continuing means overwriting it. Do you wish to overwrite the "
+"existing file?"
+msgstr ""
+"इयं सञ्चिका पूर्वमेव डिस्क-मध्ये विद्यते (पूर्वं विफल-अवलोकन-प्रयासस्य कारणेन सम्भवतः) । "
+"निरन्तरता तस्य अधिलेखनम् इत्यर्थः । किं भवान् विद्यमानसञ्चिकां अधिलेखयितुम् इच्छति ?"
+
+#: core/installation.cpp:468
+#, kde-format
+msgid "Overwrite File"
+msgstr "सञ्चिकां अधिलेखयतु"
+
+#: core/installation.cpp:487
+#, kde-format
+msgid "Unable to move the file %1 to the intended destination %2"
+msgstr "%1 सञ्चिकां अभिप्रेतगन्तव्यस्थानं %2 स्थानान्तरयितुं असमर्थः"
+
+#: core/installation.cpp:510
+#, kde-format
+msgid ""
+"The installation failed while attempting to run the command:\n"
+"%1\n"
+"\n"
+"The returned output was:\n"
+"%2"
+msgstr ""
+"आदेशं चालयितुं प्रयतमाने संस्थापनं विफलम् अभवत्:\n"
+"%1\n"
+"\n"
+"प्रत्यागतं उत्पादनं आसीत् : १.\n"
+"%2"
+
+#: core/installation.cpp:521
+#, kde-format
+msgid ""
+"The installation failed with code %1 while attempting to run the command:\n"
+"%2\n"
+"\n"
+"The returned output was:\n"
+"%3"
+msgstr ""
+"आदेशं चालयितुं प्रयतमाने %1 कोडेन संस्थापनं विफलम् अभवत्:\n"
+"%2\n"
+"\n"
+"प्रत्यागतं उत्पादनं आसीत् : १.\n"
+"%3"
+
+#: core/installation.cpp:563
+#, kde-format
+msgid ""
+"The removal of %1 failed, as the installed file %2 could not be "
+"automatically removed. You can attempt to manually delete this file, if you "
+"believe this is an error."
+msgstr ""
+"%1 इत्यस्य निष्कासनं विफलम्, यतः संस्थापिता सञ्चिका %2 स्वयमेव निष्कासयितुं न शक्यते स्म । "
+"भवान् एतां सञ्चिकां स्वहस्तेन विलोपयितुं प्रयतितुं शक्नोति, यदि भवान् मन्यते यत् एषा त्रुटिः "
+"अस्ति ।"
+
+#: core/installation.cpp:632
+#, kde-format
+msgid ""
+"The uninstallation process failed to successfully run the command %1\n"
+"The output of was: \n"
+"%2\n"
+"If you think this is incorrect, you can continue or cancel the "
+"uninstallation process"
+msgstr ""
+"विस्थापनप्रक्रिया %1 इति आदेशं सफलतया चालयितुं असफलतां प्राप्तवती\n"
+"इत्यस्य उत्पादनं आसीत् : १. \n"
+"%2\n"
+"यदि भवान् एतत् अशुद्धं मन्यते तर्हि विस्थापनप्रक्रियाम् अग्रे सारयितुं वा रद्दं कर्तुं वा शक्नोति"
+
+#: core/jobs/filecopyworker.cpp:60
+#, kde-format
+msgid "Could not open %1 for writing"
+msgstr "लेखनार्थं %1 उद्घाटयितुं न शक्तम्"
+
+#: core/jobs/filecopyworker.cpp:63
+#, kde-format
+msgid "Could not open %1 for reading"
+msgstr "पठनार्थं %1 उद्घाटयितुं न शक्तम्"
+
+#: core/transaction.cpp:126
+#, kde-format
+msgid ""
+"Could not perform an installation of the entry %1 as it does not have any "
+"downloadable items defined. Please contact the author so they can fix this."
+msgstr ""
+"%1 इति प्रविष्टेः संस्थापनं कर्तुं न शक्तवान् यतः तस्मिन् किमपि अवतरणं कर्तुं शक्यं द्रव्यं "
+"परिभाषितं नास्ति । कृपया लेखकेन सह सम्पर्कं कुर्वन्तु येन ते एतत् समाधातुं शक्नुवन्ति।"
+
+#: core/transaction.cpp:341
+#, kde-format
+msgid "Pick Update Item"
+msgstr "Update Item इति चिनुत"
+
+#: core/transaction.cpp:343
+#, kde-format
+msgid ""
+"Please pick the item from the list below which should be used to apply this "
+"update. We were unable to identify which item to select, based on the "
+"original item, which was named %1"
+msgstr ""
+"कृपया अधोलिखितायाः सूचीतः तत् द्रव्यं चिनुत यस्य उपयोगः एतत् अद्यतनं प्रयोक्तव्यम् । वयं कस्य "
+"द्रव्यस्य चयनं कर्तुं असमर्थाः अभवम, मूलवस्तुनः आधारेण, यस्य नाम %1 आसीत्"
+
+#: core/transaction.cpp:367
+#, kde-format
+msgid ""
+"We failed to identify a good link for updating %1, and are unable to perform "
+"the update"
+msgstr ""
+"%1 अद्यतनीकरणार्थं वयं उत्तमं लिङ्कं चिन्तयितुं असफलाः अस्मत्, अद्यतनं कर्तुं च असमर्थाः स्मः"
+
+#: core/transaction.cpp:460
+#, kde-format
+msgid ""
+"Failed to adopt '%1'\n"
+"%2"
+msgstr ""
+"'%1' स्वीकुर्वितुं असफलः ।\n"
+"%2"
+
+#: qtquick/categoriesmodel.cpp:52
+#, kde-format
+msgctxt ""
+"The first entry in the category selection list (also the default value)"
+msgid "All Categories"
+msgstr ""
+
+#: qtquick/categoriesmodel.cpp:74
+#, kde-format
+msgctxt ""
+"The string passed back in the case the requested category is not known"
+msgid "Unknown Category"
+msgstr ""
+
+#. i18nd("knewstuff6", "Download New %1…").
+#. *
+#. @note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:43
+#, kde-format
+msgctxt ""
+"Used to construct the button's label (which will become Download New 'this "
+"value'…)"
+msgid "Stuff"
+msgstr ""
+
+#: qtquick/qml/Button.qml:44
+#, kde-format
+msgid "Download New %1…"
+msgstr "Download नवीनं %1..."
+
+#: qtquick/qml/Dialog.qml:44
+#, kde-format
+msgctxt "The dialog title when we know which type of stuff is being requested"
+msgid "Download New %1"
+msgstr ""
+
+#: qtquick/qml/Dialog.qml:45
+#, kde-format
+msgctxt ""
+"A placeholder title used in the dialog when there is no better title "
+"available"
+msgid "Download New Stuff"
+msgstr ""
+
+#: qtquick/qml/DownloadItemsSheet.qml:35
+#, kde-format
+msgid "Pick Your Installation Option"
+msgstr "स्वस्य संस्थापनविकल्पं चिनुत"
+
+#: qtquick/qml/DownloadItemsSheet.qml:47
+#, kde-format
+msgid ""
+"Please select the option you wish to install from the list of downloadable "
+"items below. If it is unclear which you should chose out of the available "
+"options, please contact the author of this item and ask that they clarify "
+"this through the naming of the items."
+msgstr ""
+"कृपया अधोलिखितानां डाउनलोड्-करणीयवस्तूनाम् सूचीतः यत् विकल्पं संस्थापयितुम् इच्छति तत् चिनोतु "
+"। यदि अस्पष्टं भवति यत् भवता उपलब्धविकल्पेषु कः चयनीयः तर्हि कृपया अस्य द्रव्यस्य लेखकेन सह "
+"सम्पर्कं कृत्वा पृच्छन्तु यत् ते वस्तुनां नामकरणद्वारा एतत् स्पष्टीकरोतु।"
+
+#: qtquick/qml/DownloadItemsSheet.qml:88
+#, kde-format
+msgid "Install"
+msgstr "प्रतिस्था"
+
+#: qtquick/qml/EntryDetails.qml:89
+#, kde-format
+msgctxt ""
+"A passive notification shown when installation of an item is initiated"
+msgid "Installing %1 from %2"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:106
+#, kde-format
+msgctxt ""
+"Combined title for the entry details page made of the name of the entry, and "
+"the author's name"
+msgid "%1 by %2"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
+#, kde-format
+msgctxt ""
+"Request installation of this item, available when there is exactly one "
+"downloadable item"
+msgid "Install"
+msgstr "प्रतिस्था"
+
+#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
+#, kde-format
+msgctxt ""
+"Show installation options, where there is more than one downloadable item"
+msgid "Install…"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
+#, kde-format
+msgctxt "Request updating of this item"
+msgid "Update"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#, kde-format
+msgctxt "Request uninstallation of this item"
+msgid "Uninstall"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:157
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being "
+"installed OR uninstalled"
+msgid "Currently working on the item %1 by %2. Please wait…"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:159
+#, kde-format
+msgctxt ""
+"Status message to be shown when the entry is in the process of being updated"
+msgid "Currently updating the item %1 by %2. Please wait…"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:161
+#, kde-format
+msgctxt ""
+"Status message which should only be shown when the entry has been given some "
+"unknown or invalid status."
+msgid ""
+"This item is currently in an invalid or unknown state. <a href=\"https://"
+"bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
+"to the KDE Community in a bug report</a>."
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:214
+#, kde-format
+msgid "Comments and Reviews:"
+msgstr "टिप्पण्याः समीक्षा च : १."
+
+#: qtquick/qml/EntryDetails.qml:216
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a new sub page with comments (comments "
+"with or without ratings) for this entry"
+msgid "%1 Reviews and Comments"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:222
+#, kde-format
+msgid "Rating:"
+msgstr "रेटिंग् : १."
+
+#: qtquick/qml/EntryDetails.qml:227
+#, kde-format
+msgid "Homepage:"
+msgstr "मुखपृष्ठम् : १."
+
+#: qtquick/qml/EntryDetails.qml:228
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens the website associated with the entry "
+"(this could be either one specific to the project, the author's homepage, or "
+"any other website they have chosen for the purpose)"
+msgid "Open the homepage for %1"
+msgstr ""
+
+#: qtquick/qml/EntryDetails.qml:234
+#, kde-format
+msgid "How To Donate:"
+msgstr "दानं कथं करणीयम् : १."
+
+#: qtquick/qml/EntryDetails.qml:235
+#, kde-format
+msgctxt ""
+"A link which, when clicked, opens a website with information on donation in "
+"support of the entry"
+msgid "Find out how to donate to this project"
+msgstr ""
+
+#: qtquick/qml/Page.qml:140
+#, kde-kuit-format
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"Use caution when accessing user-created content shown here, as it may "
+"contain executable code that hasn't been tested by KDE or your distributor "
+"for safety, stability, or quality."
+msgstr ""
+
+#: qtquick/qml/Page.qml:141
+#, kde-format
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"User-created content shown here hasn't been tested by KDE or your "
+"distributor for functionality or quality."
+msgstr ""
+
+#: qtquick/qml/Page.qml:172
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "All"
+msgstr ""
+
+#: qtquick/qml/Page.qml:174
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Installed"
+msgstr ""
+
+#: qtquick/qml/Page.qml:176
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Updateable"
+msgstr ""
+
+#: qtquick/qml/Page.qml:186
+#, kde-format
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter to show everything"
+msgid "All"
+msgstr ""
+
+#: qtquick/qml/Page.qml:197
+#, kde-format
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items are shown"
+msgid "Installed"
+msgstr ""
+
+#: qtquick/qml/Page.qml:208
+#, kde-format
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the "
+"filter so only installed items with updates available are shown"
+msgid "Updateable"
+msgstr ""
+
+#: qtquick/qml/Page.qml:221
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Release date"
+msgstr ""
+
+#: qtquick/qml/Page.qml:223
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Name"
+msgstr ""
+
+#: qtquick/qml/Page.qml:225
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Rating"
+msgstr ""
+
+#: qtquick/qml/Page.qml:227
+#, kde-format
+msgctxt "@action:button opening menu similar to combobox, filter list"
+msgid "Sort: Downloads"
+msgstr ""
+
+#: qtquick/qml/Page.qml:236
+#, kde-format
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to be "
+"alphabetical based on the name"
+msgid "Name"
+msgstr ""
+
+#: qtquick/qml/Page.qml:247
+#, kde-format
+msgctxt ""
+"@option:radio in menu, List option which will set the sort order to based on "
+"user ratings"
+msgid "Rating"
+msgstr ""
+
+#: qtquick/qml/Page.qml:258
+#, kde-format
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on number of downloads"
+msgid "Downloads"
+msgstr ""
+
+#: qtquick/qml/Page.qml:269
+#, kde-format
+msgctxt ""
+"@option:radio similar to combobox item, List option which will set the sort "
+"order to based on when items were most recently updated"
+msgid "Release date"
+msgstr ""
+
+#: qtquick/qml/Page.qml:282
+#, kde-format
+msgid "Upload…"
+msgstr "अपलोड्..."
+
+#: qtquick/qml/Page.qml:283
+#, kde-format
+msgid "Learn how to add your own hot new stuff to this list"
+msgstr "अस्मिन् सूचौ स्वस्य उष्णं नूतनं द्रव्यं कथं योजयितुं शक्यते इति ज्ञातव्यम्"
+
+#: qtquick/qml/Page.qml:293
+#, kde-format
+msgid "Go to…"
+msgstr "गच्छतु..."
+
+#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#, kde-format
+msgid "Search…"
+msgstr "अन्वेषण…"
+
+#: qtquick/qml/Page.qml:363
+#, kde-format
+msgid "Category:"
+msgstr "कोटी:"
+
+#: qtquick/qml/Page.qml:383
+#, kde-format
+msgid "Contribute Your Own…"
+msgstr "स्वस्य योगदानं ददातु..."
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:103
+#, kde-format
+msgctxt ""
+"Placeholder title for when a comment has no subject, but does have a rating"
+msgid "<i>(no title)</i>"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentDelegate.qml:136
+#, kde-format
+msgctxt ""
+"The author label in case the comment was written by the author of the "
+"content entry the comment is attached to"
+msgid "%1 <i>(author)</i>"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:27
+#, kde-format
+msgctxt "Title for the page containing a view of the comments for the entry"
+msgid "Comments and Reviews for %1"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:30
+#, kde-format
+msgctxt "Title for the item which is checked when all comments should be shown"
+msgid "Show All Comments"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:38
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when only comments which are reviews "
+"should be shown"
+msgid "Show Reviews Only"
+msgstr ""
+
+#: qtquick/qml/private/EntryCommentsPage.qml:46
+#, kde-format
+msgctxt ""
+"Title for the item which is checked when comments which are reviews, and "
+"their children should be shown"
+msgid "Show Reviews and Replies"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:185
+#, kde-format
+msgctxt "The number of times the item has been downloaded"
+msgid "%1 downloads"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
+#: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:164
+#, kde-format
+msgctxt ""
+"Subheading for the tile view, located immediately underneath the name of the "
+"item"
+msgid "By <i>%1</i>"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is being installed OR "
+"uninstalled"
+msgid "Working…"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
+#, kde-format
+msgctxt ""
+"Label for the busy indicator showing an item is in the process of being "
+"updated"
+msgid "Updating…"
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
+#, kde-format
+msgctxt ""
+"Label for the busy indicator which should only be shown when the entry has "
+"been given some unknown or invalid status."
+msgid ""
+"Invalid or unknown state. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Please report this to the KDE Community in a "
+"bug report</a>."
+msgstr ""
+
+#: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
+#, kde-format
+msgctxt "Label for the busy indicator showing an item is installing"
+msgid "Installing…"
+msgstr ""
+
+#: qtquick/qml/private/ErrorDisplayer.qml:15
+#, kde-format
+msgctxt "Title for a dialog box which shows error messages"
+msgid "An Error Occurred"
+msgstr ""
+
+#: qtquick/qml/private/ErrorDisplayer.qml:82
+#, kde-format
+msgid "Please try again later."
+msgstr "कृपया पश्चात् पुनः प्रयासं कुर्वन्तु।"
+
+#: qtquick/qml/private/GridTileDelegate.qml:120
+#, kde-format
+msgid "None"
+msgstr "न कश्चित्"
+
+#: qtquick/qml/private/Rating.qml:81
+#, kde-format
+msgctxt ""
+"A text representation of the rating, shown as a fraction of the max value"
+msgid "(%1/%2)"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:50
+#, kde-format
+msgctxt "@knewstuff6"
+msgid "Upload New Stuff: %1"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:111
+#, kde-format
+msgctxt ""
+"A text shown beside a busy indicator suggesting that data is being fetched"
+msgid "Updating information…"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:126
+#, kde-format
+msgctxt "The name of the KDE Store"
+msgid "KDE Store"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:132
+#, kde-format
+msgctxt "An unnamed provider"
+msgid "Your Provider"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:141
+#, kde-format
+msgctxt ""
+"Text for an action which causes the specified website to be opened using the "
+"user's system default browser"
+msgid "Open Website: %1"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:149
+#, kde-format
+msgctxt ""
+"Text for an action which will attempt to send an email using the user's "
+"system default email client"
+msgid "Send Email To: %1"
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:159
+#, kde-format
+msgctxt "A description of how to upload content to a generic provider"
+msgid ""
+"To upload new entries, or to add content to an existing entry on the KDE "
+"Store, please open the website and log in. Once you have done this, you will "
+"be able to find the My Products entry in the menu which pops up when you "
+"click your user icon. Click on this entry to go to the product management "
+"system, where you can work on your products."
+msgstr ""
+
+#: qtquick/qml/UploadPage.qml:160
+#, kde-format
+msgctxt "A description of how to upload content to the KDE Store specifically"
+msgid ""
+"To upload new entries, or to add content to an existing entry, please open "
+"the provider's website and follow the instructions there. You will likely "
+"need to create a user and log in to a product management system, where you "
+"will need to follow the instructions for how to add. Alternatively, you "
+"might be required to contact the managers of the site directly to get new "
+"content added."
+msgstr ""
+
+#: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
+#: qtquick/quickengine.cpp:176
+#, kde-format
+msgid "Loading data"
+msgstr "दत्तांशं लोडयति"
+
+#: qtquick/quickengine.cpp:172
+#, kde-format
+msgid "Installing"
+msgstr "संस्थापनम्"
+
+#: qtquick/quickengine.cpp:227
+#, kde-format
+msgctxt ""
+"An informational message which is shown to inform the user they are not "
+"authorized to use GetHotNewStuff functionality"
+msgid ""
+"You are not authorized to Get Hot New Stuff. If you think this is in error, "
+"please contact the person in charge of your permissions."
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:46
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Back"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:48
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Popular"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:50
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Featured"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:52
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Restart"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:54
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "New"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:56
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Home"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:58
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Shelf"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:60
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Up"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:62
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Recommended"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:64
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Subscriptions"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:66
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "All Entries"
+msgstr ""
+
+#: qtquick/searchpresetmodel.cpp:70
+#, kde-format
+msgctxt "Knewstuff5"
+msgid "Search Preset: %1"
+msgstr ""
+
+#: tools/knewstuff-dialog/main.cpp:30
+#, kde-format
+msgid ""
+"The KNSRC file you want to show. If none is passed, you will be presented "
+"with a dialog which lets you switch between all the config files installed "
+"into the systemwide knsrc file location"
+msgstr ""
+"यत् KNSRC सञ्चिकां भवन्तः दर्शयितुम् इच्छन्ति। यदि कोऽपि पारितः नास्ति तर्हि भवन्तः एकं "
+"संवादं प्रस्तुतं भविष्यन्ति यत् भवन्तं systemwide knsrc सञ्चिकास्थाने संस्थापितानां सर्वेषां "
+"config सञ्चिकानां मध्ये स्विच् कर्तुं शक्नोति"
+
+#: tools/knewstuff-dialog/main.cpp:34
+#, kde-format
+msgid ""
+"A kns url to show information from. The format for a kns url is kns://"
+"knsrcfile/providerid/entryid\n"
+"'knsrcfile'\n"
+"is the name of a knsrc file as might be passed directly through this tool's "
+"knsrcfile argument\n"
+"'providerid'\n"
+"is the hostname of the provider the entry should exist on\n"
+"'entryid'\n"
+"is the unique ID of an entry found in the provider specified by the knsrc "
+"file.\n"
+" An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
+msgstr ""
+"एकं kns url इत्यस्मात् सूचनां दर्शयितुं। kns url इत्यस्य प्रारूपं kns://knsrcfile/"
+"providerid/entryid अस्ति\n"
+"'knsrcfile' इति ।\n"
+"knsrc सञ्चिकायाः नाम अस्ति यथा अस्य साधनस्य knsrcfile तर्कद्वारा प्रत्यक्षतया पारितं "
+"भवितुम् अर्हति\n"
+"'प्रदाता' इति ।\n"
+"प्रविष्टिः यस्मिन् प्रदातुः भवितव्या तस्य होस्टनाम अस्ति\n"
+"'प्रवेशः' इति ।\n"
+"knsrc सञ्चिकाद्वारा निर्दिष्टे प्रदातृमध्ये प्राप्तस्य प्रविष्टेः अद्वितीयं ID अस्ति ।\n"
+" एतादृशस्य url इत्यस्य उदाहरणं kns://sddmtheme.knsrc/api.kde-look.org/2059021 अस्ति"
+
+#: widgets/action.cpp:28 widgets/button.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "Download New Stuff…"
+msgstr ""
