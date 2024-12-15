@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 20:20+0530\n"
+"PO-Revision-Date: 2024-12-14 01:48+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -32,6 +32,8 @@ msgid ""
 "This item costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
+"अस्य द्रव्यस्य मूल्यं %1 %2 अस्ति ।\n"
+"किं त्वं तत् क्रीतुम् इच्छसि ?"
 
 #: attica/atticaprovider.cpp:366
 #, kde-format
@@ -48,7 +50,7 @@ msgstr ""
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
-msgstr ""
+msgstr "भवतः मतदानं अभिलेखितम् आसीत्।"
 
 #: attica/atticaprovider.cpp:413
 #, kde-format
@@ -90,7 +92,7 @@ msgstr "अज्ञात मुक्तसहकार्यसेवा ए�
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr ""
+msgstr "अज्ञात टिप्पणियाँModel role"
 
 #: core/enginebase.cpp:98
 #, kde-format
@@ -322,14 +324,14 @@ msgstr ""
 msgctxt ""
 "The first entry in the category selection list (also the default value)"
 msgid "All Categories"
-msgstr ""
+msgstr "सर्वे श्रेणयः"
 
 #: qtquick/categoriesmodel.cpp:74
 #, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
-msgstr ""
+msgstr "अज्ञात श्रेणी"
 
 #. i18nd("knewstuff6", "Download New %1…").
 #. *
@@ -341,18 +343,18 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr ""
+msgstr "द्रव्यम्‌"
 
 #: qtquick/qml/Button.qml:44
 #, kde-format
 msgid "Download New %1…"
-msgstr "Download नवीनं %1..."
+msgstr "Download नवीनं %1…"
 
 #: qtquick/qml/Dialog.qml:44
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
-msgstr ""
+msgstr "नवीनं %1 डाउनलोड् कुर्वन्तु"
 
 #: qtquick/qml/Dialog.qml:45
 #, kde-format
@@ -360,7 +362,7 @@ msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
 "available"
 msgid "Download New Stuff"
-msgstr ""
+msgstr "New Stuff डाउनलोड करें"
 
 #: qtquick/qml/DownloadItemsSheet.qml:35
 #, kde-format
@@ -389,7 +391,7 @@ msgstr "प्रतिस्था"
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr ""
+msgstr "%2 तः %1 संस्थापनम्"
 
 #: qtquick/qml/EntryDetails.qml:106
 #, kde-format
@@ -397,7 +399,7 @@ msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
 "the author's name"
 msgid "%1 by %2"
-msgstr ""
+msgstr "%1 द्वारा %2"
 
 #: qtquick/qml/EntryDetails.qml:111
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
@@ -416,7 +418,7 @@ msgstr "प्रतिस्था"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr ""
+msgstr "प्रतिस्था…"
 
 #: qtquick/qml/EntryDetails.qml:128
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
@@ -424,13 +426,13 @@ msgstr ""
 #, kde-format
 msgctxt "Request updating of this item"
 msgid "Update"
-msgstr ""
+msgstr "अद्यतन"
 
 #: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
-msgstr ""
+msgstr "अनइन्स्टॉल"
 
 #: qtquick/qml/EntryDetails.qml:157
 #, kde-format
@@ -438,14 +440,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "सम्प्रति %1 by %2 इति द्रव्ये कार्यं कुर्वन् । कृपया प्रतीक्ष्यताम्…"
 
 #: qtquick/qml/EntryDetails.qml:159
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr ""
+msgstr "सम्प्रति %1 द्रव्यं %2 द्वारा अद्यतनं कुर्वन् । कृपया प्रतीक्ष्यताम्…"
 
 #: qtquick/qml/EntryDetails.qml:161
 #, kde-format
@@ -457,6 +459,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"एतत् द्रव्यं सम्प्रति अमान्ये अथवा अज्ञाते अवस्थायां वर्तते । <a href=\"https://bugs.kde."
+"org/enter_bug.cgi?product=frameworks-knewstuff\">कृपया एतत् KDE समुदायाय "
+"दोषप्रतिवेदने निवेदयन्तु</a> |"
 
 #: qtquick/qml/EntryDetails.qml:214
 #, kde-format
@@ -469,7 +474,7 @@ msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
 "with or without ratings) for this entry"
 msgid "%1 Reviews and Comments"
-msgstr ""
+msgstr "%1 समीक्षाः टिप्पण्याः च"
 
 #: qtquick/qml/EntryDetails.qml:222
 #, kde-format
@@ -488,7 +493,7 @@ msgctxt ""
 "(this could be either one specific to the project, the author's homepage, or "
 "any other website they have chosen for the purpose)"
 msgid "Open the homepage for %1"
-msgstr ""
+msgstr "%1 कृते मुखपृष्ठं उद्घाटयन्तु"
 
 #: qtquick/qml/EntryDetails.qml:234
 #, kde-format
@@ -501,7 +506,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "अस्मिन् परियोजनायां दानं कथं करणीयम् इति ज्ञातव्यम्"
 
 #: qtquick/qml/Page.qml:140
 #, kde-kuit-format
@@ -511,6 +516,9 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
+"अत्र दर्शितां उपयोक्तृनिर्मितसामग्रीम् अभिगन्तुं सावधानीम् उपयुज्यताम्, यतः तस्मिन् "
+"कार्यान्वयनीयसङ्केतः भवितुं शक्नोति यस्य KDE अथवा भवतः वितरकेन सुरक्षा, स्थिरता, गुणवत्ता "
+"वा न परीक्षितः अस्ति"
 
 #: qtquick/qml/Page.qml:141
 #, kde-format
@@ -519,24 +527,26 @@ msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
+"अत्र दर्शिता उपयोक्तृनिर्मितसामग्री KDE द्वारा अथवा भवतः वितरकेन कार्यक्षमतायाः "
+"गुणवत्तायाः वा परीक्षणं न कृतम् ।"
 
 #: qtquick/qml/Page.qml:172
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "सर्वे"
 
 #: qtquick/qml/Page.qml:174
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
-msgstr ""
+msgstr "संस्थापितम्"
 
 #: qtquick/qml/Page.qml:176
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
-msgstr ""
+msgstr "अद्यतनीयम्"
 
 #: qtquick/qml/Page.qml:186
 #, kde-format
@@ -544,7 +554,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "सर्वे"
 
 #: qtquick/qml/Page.qml:197
 #, kde-format
@@ -552,7 +562,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr ""
+msgstr "संस्थापितम्"
 
 #: qtquick/qml/Page.qml:208
 #, kde-format
@@ -560,31 +570,31 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
 msgid "Updateable"
-msgstr ""
+msgstr "अद्यतनीयम्"
 
 #: qtquick/qml/Page.qml:221
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "क्रमाङ्कनम् : विमोचनतिथिः"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "क्रमाङ्कः नाम"
 
 #: qtquick/qml/Page.qml:225
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr ""
+msgstr "क्रमाङ्कनम् : रेटिंग्"
 
 #: qtquick/qml/Page.qml:227
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr ""
+msgstr "क्रमाङ्कनम् : डाउनलोड्स्"
 
 #: qtquick/qml/Page.qml:236
 #, kde-format
@@ -592,7 +602,7 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "नामः"
 
 #: qtquick/qml/Page.qml:247
 #, kde-format
@@ -600,7 +610,7 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
 msgid "Rating"
-msgstr ""
+msgstr "रेटिंग्"
 
 #: qtquick/qml/Page.qml:258
 #, kde-format
@@ -608,7 +618,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr ""
+msgstr "डाउनलोड्स्"
 
 #: qtquick/qml/Page.qml:269
 #, kde-format
@@ -616,12 +626,12 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "विमोचन तिथि"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
 msgid "Upload…"
-msgstr "अपलोड्..."
+msgstr "अपलोड्…"
 
 #: qtquick/qml/Page.qml:283
 #, kde-format
@@ -631,7 +641,7 @@ msgstr "अस्मिन् सूचौ स्वस्य उष्णं �
 #: qtquick/qml/Page.qml:293
 #, kde-format
 msgid "Go to…"
-msgstr "गच्छतु..."
+msgstr "गच्छतु…"
 
 #: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
 #, kde-format
@@ -646,14 +656,14 @@ msgstr "कोटी:"
 #: qtquick/qml/Page.qml:383
 #, kde-format
 msgid "Contribute Your Own…"
-msgstr "स्वस्य योगदानं ददातु..."
+msgstr "स्वस्य योगदानं ददातु…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
 msgctxt ""
 "Placeholder title for when a comment has no subject, but does have a rating"
 msgid "<i>(no title)</i>"
-msgstr ""
+msgstr "<i>(उपाधिः नास्ति) २.</i>"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:136
 #, kde-format
@@ -661,19 +671,19 @@ msgctxt ""
 "The author label in case the comment was written by the author of the "
 "content entry the comment is attached to"
 msgid "%1 <i>(author)</i>"
-msgstr ""
+msgstr "%1 <i>(लेखकः) २.</i>"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:27
 #, kde-format
 msgctxt "Title for the page containing a view of the comments for the entry"
 msgid "Comments and Reviews for %1"
-msgstr ""
+msgstr "%1 कृते टिप्पण्याः समीक्षाः च"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:30
 #, kde-format
 msgctxt "Title for the item which is checked when all comments should be shown"
 msgid "Show All Comments"
-msgstr ""
+msgstr "सर्वाणि टिप्पण्यानि दर्शयतु"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:38
 #, kde-format
@@ -681,7 +691,7 @@ msgctxt ""
 "Title for the item which is checked when only comments which are reviews "
 "should be shown"
 msgid "Show Reviews Only"
-msgstr ""
+msgstr "केवलं समीक्षाः दर्शयतु"
 
 #: qtquick/qml/private/EntryCommentsPage.qml:46
 #, kde-format
@@ -689,14 +699,14 @@ msgctxt ""
 "Title for the item which is checked when comments which are reviews, and "
 "their children should be shown"
 msgid "Show Reviews and Replies"
-msgstr ""
+msgstr "समीक्षाः उत्तराणि च दर्शयतु"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:140
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:185
 #, kde-format
 msgctxt "The number of times the item has been downloaded"
 msgid "%1 downloads"
-msgstr ""
+msgstr "%1 डाउनलोड् भवति"
 
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:153
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:164
@@ -705,7 +715,7 @@ msgctxt ""
 "Subheading for the tile view, located immediately underneath the name of the "
 "item"
 msgid "By <i>%1</i>"
-msgstr ""
+msgstr "<i>%1</i> द्वारा"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
 #, kde-format
@@ -713,7 +723,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr ""
+msgstr "करोति…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -721,7 +731,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr ""
+msgstr "अद्यतनं कुर्वन्…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -733,18 +743,20 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"असिद्धा वा अज्ञाता अवस्था । <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">कृपया एतत् KDE समुदायाय दोषप्रतिवेदने निवेदयन्तु</a> |"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
 #, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr ""
+msgstr "संस्थापनं कृत्वा…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
 msgctxt "Title for a dialog box which shows error messages"
 msgid "An Error Occurred"
-msgstr ""
+msgstr "एकः त्रुटिः अभवत्"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:82
 #, kde-format
@@ -761,32 +773,32 @@ msgstr "न कश्चित्"
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr ""
+msgstr "(%1/%2) २."
 
 #: qtquick/qml/UploadPage.qml:50
 #, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
-msgstr ""
+msgstr "नवीनं द्रव्यं अपलोड् कुर्वन्तु: %1"
 
 #: qtquick/qml/UploadPage.qml:111
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr ""
+msgstr "सूचनां अद्यतनं कुर्वन्…"
 
 #: qtquick/qml/UploadPage.qml:126
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr ""
+msgstr "केडीई भण्डार"
 
 #: qtquick/qml/UploadPage.qml:132
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
-msgstr ""
+msgstr "भवतः प्रदाता"
 
 #: qtquick/qml/UploadPage.qml:141
 #, kde-format
@@ -794,7 +806,7 @@ msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
 "user's system default browser"
 msgid "Open Website: %1"
-msgstr ""
+msgstr "वेबसाइट् उद्घाटयतु: %1"
 
 #: qtquick/qml/UploadPage.qml:149
 #, kde-format
@@ -802,7 +814,7 @@ msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
 "system default email client"
 msgid "Send Email To: %1"
-msgstr ""
+msgstr "ईमेल प्रेषयतु: %1"
 
 #: qtquick/qml/UploadPage.qml:159
 #, kde-format
@@ -814,6 +826,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
+"नूतनानि प्रविष्टयः अपलोड् कर्तुं, अथवा KDE Store इत्यत्र विद्यमानप्रविष्टौ सामग्रीं "
+"योजयितुं, कृपया वेबसाइट् उद्घाट्य प्रवेशं कुर्वन्तु एकवारं भवन्तः एतत् कृत्वा, भवन्तः मेनूमध्ये My "
+"Products प्रविष्टिं अन्वेष्टुं शक्नुवन्ति यत् यदा भवन्तः पोप् अप भवति स्वस्य उपयोक्तृचिह्नं क्लिक् "
+"कुर्वन्तु । उत्पादप्रबन्धनप्रणालीं गन्तुं एतत् प्रविष्टिं नुदन्तु, यत्र भवान् स्वउत्पादानाम् उपरि "
+"कार्यं कर्तुं शक्नोति ।"
 
 #: qtquick/qml/UploadPage.qml:160
 #, kde-format
@@ -826,6 +843,11 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"नूतनानि प्रविष्टयः अपलोड् कर्तुं, अथवा विद्यमानप्रविष्टौ सामग्रीं योजयितुं, कृपया प्रदातुः "
+"जालपुटं उद्घाट्य तत्र निर्देशान् अनुसरणं कुर्वन्तु । सम्भवतः भवन्तः उपयोक्तारं निर्माय "
+"उत्पादप्रबन्धनप्रणाल्यां प्रवेशं कर्तुं प्रवृत्ताः भविष्यन्ति, यत्र भवन्तः कथं योजयितुं निर्देशान् "
+"अनुसरणं कर्तुं प्रवृत्ताः भविष्यन्ति । वैकल्पिकरूपेण, नूतना सामग्रीं योजयितुं भवद्भिः प्रत्यक्षतया "
+"साइट्-प्रबन्धकैः सह सम्पर्कः करणीयः भवितुम् अर्हति ।"
 
 #: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
 #: qtquick/quickengine.cpp:176
@@ -847,78 +869,80 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"भवन्तः Get Hot New Stuff इति अधिकृताः न सन्ति। यदि भवान् एतत् त्रुटिपूर्णं मन्यते तर्हि "
+"कृपया स्वस्य अनुमतिप्रभारी व्यक्तिं सम्पर्कं कुर्वन्तु ।"
 
 #: qtquick/searchpresetmodel.cpp:46
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Back"
-msgstr ""
+msgstr "पृष्ठभागः"
 
 #: qtquick/searchpresetmodel.cpp:48
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Popular"
-msgstr ""
+msgstr "लोकप्रियं"
 
 #: qtquick/searchpresetmodel.cpp:50
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "विशेषता"
 
 #: qtquick/searchpresetmodel.cpp:52
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Restart"
-msgstr ""
+msgstr "पुनः आरभत"
 
 #: qtquick/searchpresetmodel.cpp:54
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
-msgstr ""
+msgstr "नूतनम्‌"
 
 #: qtquick/searchpresetmodel.cpp:56
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Home"
-msgstr ""
+msgstr "गृहम्‌"
 
 #: qtquick/searchpresetmodel.cpp:58
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "सन्धाय"
 
 #: qtquick/searchpresetmodel.cpp:60
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Up"
-msgstr ""
+msgstr "उपरि"
 
 #: qtquick/searchpresetmodel.cpp:62
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr ""
+msgstr "प्रस्तावित"
 
 #: qtquick/searchpresetmodel.cpp:64
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Subscriptions"
-msgstr ""
+msgstr "सदस्यता"
 
 #: qtquick/searchpresetmodel.cpp:66
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "All Entries"
-msgstr ""
+msgstr "सर्वाणि प्रविष्टयः"
 
 #: qtquick/searchpresetmodel.cpp:70
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "अन्वेषणपूर्वनिर्धारितम्: %1"
 
 #: tools/knewstuff-dialog/main.cpp:30
 #, kde-format
@@ -961,4 +985,4 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr ""
+msgstr "नवीनं सामानं डाउनलोड् कुर्वन्तु…"
