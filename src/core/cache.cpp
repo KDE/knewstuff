@@ -20,7 +20,7 @@ using namespace KNSCore;
 
 Cache::Cache(const QString &appName)
     : QObject(nullptr)
-    , d(new CachePrivate(Cache2::getCache(appName)))
+    , d(new CachePrivate({Cache2::getCache(appName)}))
 {
 }
 
