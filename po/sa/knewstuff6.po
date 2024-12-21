@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:37+0000\n"
-"PO-Revision-Date: 2024-12-19 21:41+0530\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -85,7 +85,7 @@ msgstr "Open Collaboration Services उदाहरण %1 प्रयतित�
 #: attica/atticaprovider.cpp:461
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
-msgstr "अज्ञात मुक्तसहकार्यसेवा एपिआइ त्रुटिः। (%1) ९."
+msgstr "अज्ञात मुक्तसहकार्यसेवा एपिआइ त्रुटिः। (%1)"
 
 #: core/commentsmodel.cpp:154
 #, kde-format
@@ -466,7 +466,7 @@ msgstr ""
 #: qtquick/qml/EntryDetails.qml:214
 #, kde-format
 msgid "Comments and Reviews:"
-msgstr "टिप्पण्याः समीक्षा च : १."
+msgstr "टिप्पण्याः समीक्षा च :"
 
 #: qtquick/qml/EntryDetails.qml:216
 #, kde-format
@@ -479,12 +479,12 @@ msgstr "%1 समीक्षाः टिप्पण्याः च"
 #: qtquick/qml/EntryDetails.qml:222
 #, kde-format
 msgid "Rating:"
-msgstr "रेटिंग् : १."
+msgstr "रेटिंग् :"
 
 #: qtquick/qml/EntryDetails.qml:227
 #, kde-format
 msgid "Homepage:"
-msgstr "मुखपृष्ठम् : १."
+msgstr "मुखपृष्ठम् :"
 
 #: qtquick/qml/EntryDetails.qml:228
 #, kde-format
@@ -498,7 +498,7 @@ msgstr "%1 कृते मुखपृष्ठं उद्घाटयन्�
 #: qtquick/qml/EntryDetails.qml:234
 #, kde-format
 msgid "How To Donate:"
-msgstr "दानं कथं करणीयम् : १."
+msgstr "दानं कथं करणीयम् :"
 
 #: qtquick/qml/EntryDetails.qml:235
 #, kde-format
@@ -773,7 +773,7 @@ msgstr "न कश्चित्"
 msgctxt ""
 "A text representation of the rating, shown as a fraction of the max value"
 msgid "(%1/%2)"
-msgstr "(%1/%2) २."
+msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:50
 #, kde-format
