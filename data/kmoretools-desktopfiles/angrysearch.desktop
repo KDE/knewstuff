@@ -1,7 +1,6 @@
 [Desktop Entry]
 Categories=Utility;Filesystem;Qt;KDE;
 Name=ANGRYsearch
-Name[ar]=ANGRYsearch
 Name[az]=ANGRYsearch
 Name[bg]=ANGRYsearch
 Name[ca]=ANGRYsearch
@@ -27,7 +26,6 @@ Name[ko]=ANGRYsearch
 Name[lt]=ANGRYsearch
 Name[nl]=ANGRYsearch
 Name[nn]=ANGRYsearch
-Name[pl]=ANGRYsearch
 Name[pt]=ANGRYsearch
 Name[pt_BR]=ANGRYsearch
 Name[ru]=ANGRYsearch
@@ -69,7 +67,6 @@ GenericName[ko]=입력하는 대로 검색하는 Linux 파일 검색
 GenericName[lt]=Linux failų paieška, greiti rezultatai jums berašant
 GenericName[nl]=Linux bestandszoeken, onmiddellijk resultaat terwijl u typt
 GenericName[nn]=Filsøk for Linux, med kontinuerleg vising av søkjeresultat
-GenericName[pl]=Wyszukiwanie plików Linuksa, wyniki dostępne w trakcie pisania
 GenericName[pt]=Pesquisa de ficheiros no Linux - resultados instantâneos à medida que escreve
 GenericName[pt_BR]=Pesquisa de arquivos Linux, resultados instantâneos enquanto você digita
 GenericName[ru]=Поиск файлов в Linux, с результатами по мере набора

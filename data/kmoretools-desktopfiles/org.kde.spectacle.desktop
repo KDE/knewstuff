@@ -1,6 +1,5 @@
 [Desktop Entry]
 GenericName=Screenshot Capture Utility
-GenericName[ar]=أداة لالتقاط الشّاشة
 GenericName[az]=Ekran Şəklini Çəkmə Aləti
 GenericName[bg]=Помощна програма за заснемане на екранни снимки
 GenericName[ca]=Utilitat de captura de pantalla
@@ -29,7 +28,6 @@ GenericName[lt]=Ekrano kopijų fotografavimo paslaugų programa
 GenericName[nb]=Verktøy til å ta opp skjermbilde
 GenericName[nl]=Hulpmiddel voor het maken van een schermafdruk
 GenericName[nn]=Verktøy for å lagra skjermbilete
-GenericName[pl]=Narzędzie do zrzutów ekranu
 GenericName[pt]=Utilitário de Captura de Imagens
 GenericName[pt_BR]=Utilitário de captura de tela
 GenericName[ru]=Создание снимков экрана
@@ -48,7 +46,6 @@ GenericName[x-test]=xxScreenshot Capture Utilityxx
 GenericName[zh_CN]=截图抓取工具
 GenericName[zh_TW]=畫面擷取工具
 Name=Spectacle
-Name[ar]=لاقط الشاشة
 Name[az]=Spectacle
 Name[bg]=Spectacle
 Name[ca]=Spectacle
@@ -74,7 +71,6 @@ Name[ko]=Spectacle
 Name[lt]=Spectacle
 Name[nl]=Spectacle
 Name[nn]=Spectacle
-Name[pl]=Spectacle
 Name[pt]=Spectacle
 Name[pt_BR]=Spectacle
 Name[ru]=Spectacle
@@ -103,7 +99,6 @@ X-DBUS-ServiceName=org.kde.Spectacle
 
 [Desktop Action FullScreenScreenShot]
 Name=Capture Entire Desktop
-Name[ar]=التقط سطح المكتب بالكامل
 Name[az]=Bütün Masaüstlərini Çəkin
 Name[bg]=Заснемане на целия работен плот
 Name[ca]=Captura l'escriptori sencer
@@ -129,7 +124,6 @@ Name[ko]=전체 바탕 화면 찍기
 Name[lt]=Fotografuoti visą darbalaukį
 Name[nl]=Gehele bureaublad vangen
 Name[nn]=Ta bilete av heile skrivebordet
-Name[pl]=Zrzuć cały pulpit
 Name[pt]=Capturar Todo o Ecrã
 Name[pt_BR]=Capturar toda a área de trabalho
 Name[ru]=Сделать снимок всех экранов
@@ -151,7 +145,6 @@ Exec=spectacle -f
 
 [Desktop Action CurrentMonitorScreenShot]
 Name=Capture Current Monitor
-Name[ar]=التقط الشّاشة الحاليّة
 Name[az]=Cari Masaüstünü Çəkin
 Name[bg]=Заснемане на текущия монитор
 Name[ca]=Captura el monitor actual
@@ -177,7 +170,6 @@ Name[ko]=현재 모니터 찍기
 Name[lt]=Fotografuoti esamą monitorių
 Name[nl]=Huidige monitor vangen
 Name[nn]=Ta bilete av gjeldande skjerm
-Name[pl]=Zrzuć bieżący monitor
 Name[pt]=Capturar o Monitor Actual
 Name[pt_BR]=Capturar do monitor atual
 Name[ru]=Сделать снимок текущего экрана
@@ -199,7 +191,6 @@ Exec=spectacle -m
 
 [Desktop Action ActiveWindowScreenShot]
 Name=Capture Active Window
-Name[ar]=التقط النّافذة النّشطة
 Name[az]=Aktiv Pəncərəni Çəkin
 Name[bg]=Заснемане на активен прозорец
 Name[ca]=Captura la finestra activa
@@ -225,7 +216,6 @@ Name[ko]=활성 창 찍기
 Name[lt]=Fotografuoti aktyvų langą
 Name[nl]=Actieve venster vangen
 Name[nn]=Ta bilete av aktivt vindauge
-Name[pl]=Zrzuć bieżące okno
 Name[pt]=Capturar a Janela Activa
 Name[pt_BR]=Capturar a janela ativa
 Name[ru]=Сделать снимок активного окна
@@ -247,7 +237,6 @@ Exec=spectacle -a
 
 [Desktop Action RectangularRegionScreenShot]
 Name=Capture Rectangular Region
-Name[ar]=التقط منطقة مستطيلة
 Name[az]=Ekranın düzbucaqlı sahəsinin çəkin
 Name[bg]=Заснемане на правоъгълен регион
 Name[ca]=Captura una regió rectangular
@@ -273,7 +262,6 @@ Name[ko]=화면의 사각형 영역 찍기
 Name[lt]=Fotografuoti stačiakampę sritį
 Name[nl]=Rechthoekig gebied vangen
 Name[nn]=Ta bilete av skjermutsnitt
-Name[pl]=Zrzuć obszar prostokątny
 Name[pt]=Capturar uma Região Rectangular
 Name[pt_BR]=Capturar uma região retangular
 Name[ru]=Сделать снимок прямоугольной области экрана
