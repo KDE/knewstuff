@@ -11,6 +11,7 @@ Categories=Qt;KDE;X-KDE-settings-system;
 X-KDE-System-Settings-Parent-Category=font
 
 Name=Font Management
+Name[ar]=إدارة الخطوط
 Name[az]=Şrift idarəetməsi
 Name[bg]=Мениджър на шрифтове
 Name[ca]=Gestió dels tipus de lletra
@@ -100,6 +101,7 @@ Comment[zh_CN]=字体安装，预览和删除
 Comment[zh_TW]=字型安裝、預覽與移除
 
 X-KDE-Keywords=font,fonts,installer,truetype,type1,bitmap
+X-KDE-Keywords[ar]=خط,خطوط,مثبت,تروتايب,تايب1,بت ماب
 X-KDE-Keywords[az]=font,fonts,installer,truetype,type1,bitmap 
 X-KDE-Keywords[bg]=font,fonts,installer,truetype,type1,bitmap
 X-KDE-Keywords[ca]=tipus de lletra,tipus de lletres,instal·lador,truetype,type1,mapa de bits

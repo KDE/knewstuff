@@ -49,6 +49,7 @@ Type=Application
 Terminal=false
 X-DocPath=kcharselect/index.html
 Name=KCharSelect
+Name[ar]=حرف
 Name[az]=KCharSelect
 Name[bg]=KCharSelect
 Name[ca]=KCharSelect

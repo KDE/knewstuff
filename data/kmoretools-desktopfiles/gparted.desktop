@@ -1,6 +1,7 @@
 [Desktop Entry]
 DocPath=gparted
 Name=GParted
+Name[ar]=جي بارتد
 Name[az]=GParted
 Name[bg]=GParted
 Name[ca]=GParted
@@ -198,6 +199,7 @@ Terminal=false
 Type=Application
 Categories=GNOME;System;Filesystem;
 Keywords=Partition;
+Keywords[ar]=القسم;
 Keywords[az]=Disk Bölməsi;
 Keywords[bg]=Разделяне на дялове;
 Keywords[ca]=Partició;

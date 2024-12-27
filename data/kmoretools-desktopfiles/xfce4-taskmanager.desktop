@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Task Manager
+Name[ar]=مدير المهام
 Name[az]=Tapşırıq meneceri (Xfce)
 Name[bg]=Диспечер на задачи
 Name[ca]=Gestor de tasques
@@ -91,6 +92,7 @@ Comment[x-test]=xxEasy to use task managerxx
 Comment[zh_CN]=简单易用的任务管理器
 Comment[zh_TW]=簡易的工作管理員
 GenericName=Task Manager
+GenericName[ar]=مدير المهام
 GenericName[az]=Tapşırıq meneceri
 GenericName[bg]=Диспечер на задачи
 GenericName[ca]=Gestor de tasques

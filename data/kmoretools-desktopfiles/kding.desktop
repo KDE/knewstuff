@@ -87,6 +87,7 @@ GenericName[x-test]=xxGerman-English Translatorxx
 GenericName[zh_CN]=德语-英语翻译器
 GenericName[zh_TW]=德文↔英文翻譯機
 Comment=Translator
+Comment[ar]=مترجم
 Comment[az]=Tərcüməçi
 Comment[bg]=Преводач
 Comment[ca]=Traductor
