@@ -23,7 +23,7 @@ Q_DECLARE_OPERATORS_FOR_FLAGS(JobFlags)
 
 enum LoadType {
     Reload,
-    NoReload
+    NoReload,
 };
 
 }
