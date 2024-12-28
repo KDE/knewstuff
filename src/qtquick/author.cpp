@@ -63,7 +63,7 @@ public:
         if (provider && !username.isEmpty()) {
             ret = allAuthors()->value(QStringLiteral("%1 %2").arg(provider->id(), username));
             if (!ret.get()) {
-                Q_EMIT provider->loadPerson(username);
+                provider->loadPerson(username);
             }
         }
         return ret;
