@@ -41,7 +41,6 @@ public:
     void removeEntry(const Entry &entry);
 
     bool hasPreviewImages() const;
-    bool hasWebService() const;
 
 Q_SIGNALS:
     void jobStarted(KJob *, const QString &label);
