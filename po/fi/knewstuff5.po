@@ -712,114 +712,144 @@ msgid "Install"
 msgstr "Asenna"
 
 #: kmoretools/kmoretools.cpp:521
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Not installed:"
 msgctxt "@action:inmenu"
 msgid "Not installed:"
 msgstr "Ei asennettu:"
 
 #: kmoretools/kmoretools.cpp:618
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "More"
 msgctxt "@action:inmenu"
 msgid "More"
 msgstr "Lisää"
 
 #: kmoretools/kmoretools.cpp:654
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Configure..."
 msgctxt "@action:inmenu"
 msgid "Configure..."
 msgstr "Asetukset…"
 
 #: kmoretools/kmoretools_p.h:373
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Visit homepage"
 msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Avaa kotisivu"
 
 #: kmoretools/kmoretools_p.h:386
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Install"
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Asenna"
 
 #: kmoretools/kmoretools_p.h:395
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "No further information available."
 msgctxt "@action:inmenu"
 msgid "No further information available."
 msgstr "Lisätietoa ei saatavilla."
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure menu"
 msgid "Configure menu"
 msgstr "Valikon asetukset"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure menu - %1"
 msgid "Configure menu - %1"
 msgstr "Valikon asetukset – %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu %1=\"$GenericName\""
+#| msgid "%1 - current folder"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 – nykyinen kansio"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu %1=\"$GenericName\""
+#| msgid "%1 - current device"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr "%1 – nykyinen laite"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu %1=\"$GenericName\""
+#| msgid "%1 - all devices"
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 – kaikki laitteet"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Main section"
 msgid "Main section"
 msgstr "Pääosio"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move down"
 msgid "Move down"
 msgstr "Siirrä alemmas"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move up"
 msgid "Move up"
 msgstr "Siirrä ylemmäs"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to Main section"
 msgid "Move to Main section"
 msgstr "Siirrä pääosioon"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move to More section"
 msgid "Move to More section"
 msgstr "Siirrä Lisää-osioon"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:134
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset"
 msgid "Reset"
 msgstr "Nollaa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "More section"
 msgid "More section"
 msgstr "Lisää-osio"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:206
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "For this menu there are some more tools suggested which are currently not "
+#| "installed:"
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
 "installed:"
@@ -827,7 +857,8 @@ msgstr "Tähän valikkoon suositellaan lisää työkaluja, joita ei ole asennett
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:216
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "More tools..."
 msgid "More tools..."
 msgstr "Lisää työkaluja…"
 

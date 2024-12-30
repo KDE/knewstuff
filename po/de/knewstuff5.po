@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2024-10-07 17:52+0200\n"
+"PO-Revision-Date: 2024-12-29 19:01+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -186,11 +186,14 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"Die Installation des Eintrags %1 lässt sich nicht ausführen, da hierfür kein "
+"herunterladbares Element festgelegt sind. Der Autor sollte zur "
+"Fehlerbehebung kontaktiert werden."
 
 #: core/engine.cpp:872
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "Aktualisierungseintrag auswählen"
 
 #: core/engine.cpp:874
 #, kde-format
@@ -206,6 +209,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"Die Bestimmung einer guten Verknüpfung zum Aktualisieren von %1 ist "
+"fehlgeschlagen, sodass die Aktualisierung nicht ausgeführt werden kann"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -474,6 +479,9 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
+"Die Aufgabe für den Paketverwaltungsdienst kann nicht erstellt werden. Dies "
+"deutet gewöhnlich auf ein ungültiges Paket hin. Es wurde das Paket „%1“ "
+"versucht."
 
 #: core/jobs/kpackagejob.cpp:121
 #, kde-format
@@ -869,7 +877,7 @@ msgstr "Erweiterungen herunterladen"
 #: qtquick/qml/DownloadItemsSheet.qml:30
 #, kde-format
 msgid "Pick Your Installation Option"
-msgstr ""
+msgstr "Installationsmöglichkeit auswählen"
 
 #: qtquick/qml/DownloadItemsSheet.qml:40
 #, kde-format
@@ -879,6 +887,10 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+"Bitte wählen Sie ein herunterladbares Element aus der nachfolgenden Liste. "
+"Ist Ihnen die Bedeutung der einzelnen auswählbaren Möglichkeiten nicht "
+"bekannt, sollten Sie den Autor dieses Eintrags um Verdeutlichung durch "
+"Benennung der Elemente bitten."
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
@@ -1005,7 +1017,7 @@ msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
 "support of the entry"
 msgid "Find out how to donate to this project"
-msgstr ""
+msgstr "Möglichkeiten zum Spenden an dieses Projekt"
 
 #: qtquick/qml/NewStuffItem.qml:22
 #, kde-format
@@ -1199,6 +1211,8 @@ msgstr "Hochladen ..."
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
+"Erfahren Sie, wie Sie Ihre eigenen Erweiterungen zu dieser Liste hinzufügen "
+"können"
 
 #: qtquick/qml/Page.qml:375
 #, kde-format
@@ -1482,7 +1496,7 @@ msgstr "Alle Einträge"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "Suchvorgabe: %1"
 
 #: tools/knewstuff-dialog/main.cpp:31
 #, kde-format
@@ -1491,6 +1505,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"Die anzuzeigende KNSRC-Datei. Sofern keine angegeben wurde, wird ein Dialog "
+"zur Auswahl aller im systemweiten KNSRC-Dateispeicherort befindlichen "
+"Einrichtungsdateien aufgerufen."
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
