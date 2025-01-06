@@ -500,7 +500,6 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:174
 #, fuzzy, kde-format
-#| msgid "Installed"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Installert"
@@ -521,7 +520,6 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:197
 #, fuzzy, kde-format
-#| msgid "Installed"
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -550,7 +548,6 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:225
 #, fuzzy, kde-format
-#| msgid "Rating"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "Vurdering"
@@ -571,7 +568,6 @@ msgstr ""
 
 #: qtquick/qml/Page.qml:247
 #, fuzzy, kde-format
-#| msgid "Rating"
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
