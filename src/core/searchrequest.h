@@ -48,7 +48,7 @@ public:
                   Filter filter_ = KNSCore::Filter::None,
                   const QString &searchTerm_ = {},
                   const QStringList &categories_ = {},
-                  int page_ = -1,
+                  int page_ = 0,
                   int pageSize_ = 20);
 
     [[nodiscard]] SortMode sortMode() const;

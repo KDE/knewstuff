@@ -86,7 +86,7 @@ public:
                       Filter filter_ = None,
                       const QString &searchTerm_ = QString(),
                       const QStringList &categories_ = QStringList(),
-                      int page_ = -1,
+                      int page_ = 0,
                       int pageSize_ = 20)
             : sortMode(sortMode_)
             , filter(filter_)
