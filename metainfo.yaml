@@ -13,7 +13,7 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
- - cmake: "KF6::NewStuff"
+    - cmake: "KF6::NewStuff"
 cmakename: KF6NewStuff
 
 public_lib: true
