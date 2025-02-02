@@ -5,20 +5,23 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief A dialog which has a NewStuff.Page at the base
- *
- * This component is equivalent to the old DownloadDialog, but you should consider
- * using NewStuff.Page instead for a more modern style of integration into your
- * application's flow.
- * @see KNewStuff::DownloadDialog
- * @since 5.63
- */
-
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.newstuff as NewStuff
 
+/*!
+   \qmltype Dialog
+   \inqmlmodule org.kde.newstuff
+  
+   \brief A dialog which has a NewStuff.Page at the base.
+  
+   This component is equivalent to the old DownloadDialog, but you should consider
+   using NewStuff.Page instead for a more modern style of integration into your
+   application's flow.
+  
+   \sa KNewStuff::DownloadDialog
+   \since 5.63
+ */
 Window {
     id: component
 
@@ -27,45 +30,45 @@ Window {
     width: Math.min(Kirigami.Units.gridUnit * 44, Screen.width)
     height: Math.min(Kirigami.Units.gridUnit * 30, Screen.height)
 
-    /**
-     * The configuration file to use for this button
+    /*!
+       The configuration file to use for this button
      */
     property alias configFile: newStuffPage.configFile
 
-    /**
-     * Set the text that should appear as the dialog's title. Will be set as
-     * i18nd("knewstuff6", "Download New %1").
-     *
-     * @default The name defined by your knsrc config file
-     * @note For the sake of consistency, you should NOT override the title property, just set this one
+    /*!
+       Set the text that should appear as the dialog's title. Will be set as
+       i18nd("knewstuff6", "Download New %1").
+      
+       \default The name defined by your knsrc config file
+       \note For the sake of consistency, you should NOT override the title property, just set this one
      */
     property string downloadNewWhat: engine.name
     title: component.downloadNewWhat.length > 0
         ? i18ndc("knewstuff6", "The dialog title when we know which type of stuff is being requested", "Download New %1", component.downloadNewWhat)
         : i18ndc("knewstuff6", "A placeholder title used in the dialog when there is no better title available", "Download New Stuff")
 
-    /**
-     * The engine which handles the content in this dialog
+    /*!
+       The engine which handles the content in this dialog
      */
     property alias engine: newStuffPage.engine
 
-    /**
-     * The default view mode of the dialog spawned by this button. This should be
-     * set using the NewStuff.Page.ViewMode enum
-     * @see NewStuff.Page.ViewMode
+    /*!
+       The default view mode of the dialog spawned by this button. This should be
+       set using the NewStuff.Page.ViewMode enum.
+       \sa NewStuff.Page.ViewMode
      */
     property alias viewMode: newStuffPage.viewMode
 
-    /**
-     * emitted when the Hot New Stuff dialog is about to be shown, usually
-     * as a result of the user having click on the button
+    /*!
+       Emitted when the Hot New Stuff dialog is about to be shown, usually
+       as a result of the user having click on the button.
      */
     signal aboutToShowDialog()
 
-    /**
-     * This forwards the entryEvent from the QtQuick engine
-     * @see Engine::entryEvent
-     * @since 5.82
+    /*!
+       This forwards the entryEvent from the QtQuick engine
+       \sa Engine::entryEvent
+       \since 5.82
      */
     signal entryEvent(var entry, int event)
 
@@ -77,13 +80,16 @@ Window {
         }
     }
 
-    /**
-     * Show the details page for a specific entry.
-     * If you call this function before the engine initialisation has been completed,
-     * the action itself will be postponed until that has happened.
-     * @param providerId The provider ID for the entry you wish to show details for
-     * @param entryId The unique ID for the entry you wish to show details for
-     * @since 5.79
+    /*!
+       Show the details page for a specific entry.
+       If you call this function before the engine initialisation has been completed,
+       the action itself will be postponed until that has happened.
+
+       \a providerId The provider ID for the entry you wish to show details for
+
+       \a entryId The unique ID for the entry you wish to show details for
+
+       \since 5.79
      */
     function showEntryDetails(providerId, entryId) {
         newStuffPage.__showEntryDetails(providerId, entryId);

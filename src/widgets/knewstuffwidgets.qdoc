@@ -1,0 +1,9 @@
+/*!
+    \module KNewStuffWidgets
+    \title KNewStuff Widgets C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent NewStuff
+
+    \brief Widgets for KNewStuff.
+*/

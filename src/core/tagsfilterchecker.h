@@ -15,8 +15,11 @@
 namespace KNSCore
 {
 class TagsFilterCheckerPrivate;
-/**
- * @brief Apply simple filtering logic to a list of tags
+/*!
+ * \class KNSCore::TagsFilterChecker
+ * \inmodule KNewStuffCore
+ *
+ * \brief Apply simple filtering logic to a list of tags.
  *
  * == Examples of specifying tag filters ==
  * Value for tag "tagname" must be exactly "tagdata":
@@ -42,18 +45,19 @@ class TagsFilterCheckerPrivate;
  * The value does not current support wildcards. The list should be considered
  * a binary AND operation (that is, all filter entries must match for the data
  * entry to be included in the return data)
- * @since 5.51
+ * \since 5.51
  */
 // TODO KF7: privatize this class. it's not used by the outside
 class KNEWSTUFFCORE_EXPORT TagsFilterChecker
 {
 public:
-    /**
+    /*!
      * Constructs an instance of the tags filter checker, prepopulated
      * with the list of tag filters in the tagFilter parameter.
      *
-     * @param tagFilter The list of tag filters
-     * @since 5.51
+     * \a tagFilter The list of tag filters
+     *
+     * \since 5.51
      */
     explicit TagsFilterChecker(const QStringList &tagFilter);
     ~TagsFilterChecker();
@@ -61,12 +65,13 @@ public:
     TagsFilterChecker(const TagsFilterChecker &) = delete;
     TagsFilterChecker &operator=(const TagsFilterChecker &) = delete;
 
-    /**
+    /*!
      * Check whether the filter list accepts the passed list of tags
      *
-     * @param tags A list of tags in the form of key=value strings
-     * @return True if the filter accepts the list, false if not
-     * @since 5.51
+     * \a tags A list of tags in the form of key=value strings
+     *
+     * Returns True if the filter accepts the list, false if not
+     * \since 5.51
      */
     bool filterAccepts(const QStringList &tags);
 

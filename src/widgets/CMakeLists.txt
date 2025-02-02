@@ -103,26 +103,4 @@ if (BUILD_DESIGNERPLUGIN)
     )
 endif()
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6NewStuffWidgets_QCH
-        NAME KNewStuffWidgets
-        BASE_NAME KF6NewStuffWidgets
-        VERSION ${KF_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES ${KNewStuffWidgets_HEADERS}
-        LINK_QCHS
-            KF6NewStuffCore_QCH
-            KF6NewStuff_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-            ${KNewStuff_BINARY_DIR}
-        BLANK_MACROS
-            KNEWSTUFFWIDGETS_EXPORT
-            "KNEWSTUFFWIDGETS_DEPRECATED_VERSION(x, y, t)"
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
+ecm_generate_qdoc(KF6NewStuffWidgets knewstuffwidgets.qdocconf)

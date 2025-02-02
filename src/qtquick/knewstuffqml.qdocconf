@@ -1,0 +1,12 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KNewStuffQML
+description = Framework for downloading and sharing additional application data.
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+excludedirs = qml/private
+
+depends += qtcore qtquick knewstuffcore

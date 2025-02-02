@@ -5,18 +5,21 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief A button which when clicked will open a dialog with a NewStuff.Page at the base
- *
- * This component is equivalent to the old Button
- * @see KNewStuff::Button
- * @since 5.63
- */
-
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.newstuff as NewStuff
 
+/*!
+   \qmltype Button
+   \inqmlmodule org.kde.newstuff
+  
+   \brief A button which when clicked will open a dialog with a NewStuff.Page at the base.
+  
+   This component is equivalent to the old Button.
+
+   \sa Button
+   \since 5.63
+ */
 QQC2.Button {
     id: component
 
@@ -29,44 +32,44 @@ QQC2.Button {
      * are updates to be had" or somesuch, then we can do this, but until that choice is
      * made, let's not)
      */
-    /**
-     * The configuration file to use for this button
+    /*!
+       The configuration file to use for this button
      */
     property string configFile
 
-    /**
-     * Set the text that should appear on the button. Will be set as
-     * i18nd("knewstuff6", "Download New %1…").
-     *
-     * @note For the sake of consistency, you should NOT override the text property, just set this one
+    /*!
+       Set the text that should appear on the button. Will be set as
+       i18nd("knewstuff6", "Download New %1…").
+      
+       \note For the sake of consistency, you should NOT override the text property, just set this one
      */
     property string downloadNewWhat: i18ndc("knewstuff6", "Used to construct the button's label (which will become Download New 'this value'…)", "Stuff")
     text: i18nd("knewstuff6", "Download New %1…", downloadNewWhat)
 
-    /**
-     * The view mode of the dialog spawned by this button, which overrides the
-     * default one (ViewMode.Tiles). This should be set using the
-     * NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
-     * and asking for it will return ViewMode.Tiles.
-     * @see NewStuff.Page.ViewMode
+    /*!
+       The view mode of the dialog spawned by this button, which overrides the
+       default one (ViewMode.Tiles). This should be set using the
+       NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
+       and asking for it will return ViewMode.Tiles.
+       \sa NewStuff.Page.ViewMode
      */
     property int viewMode: NewStuff.Page.ViewMode.Tiles
 
-    /**
-     * emitted when the Hot New Stuff dialog is about to be shown, usually
-     * as a result of the user having click on the button
+    /*!
+       Emitted when the Hot New Stuff dialog is about to be shown, usually
+       as a result of the user having click on the button.
      */
     signal aboutToShowDialog()
 
-    /**
-     * The engine which handles the content in this Button
+    /*!
+       The engine which handles the content in this Button.
      */
     property NewStuff.Engine engine
 
-    /**
-     * This forwards the entryEvent from the QtQuick engine
-     * @see Engine::entryEvent
-     * @since 5.82
+    /*!
+       This forwards the entryEvent from the QtQuick engine.
+       \sa Engine::entryEvent
+       \since 5.82
      */
     signal entryEvent(var entry, int event)
 
@@ -77,22 +80,22 @@ QQC2.Button {
         }
     }
 
-    /**
-     * If this is true (default is false), the button will be shown when the Kiosk settings are such
-     * that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
-     * Usually you would want to leave this alone, but occasionally you may have a reason to
-     * leave a button in place that the user is unable to enable.
+    /*!
+       If this is true (default is false), the button will be shown when the Kiosk settings are such
+       that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
+       Usually you would want to leave this alone, but occasionally you may have a reason to
+       leave a button in place that the user is unable to enable.
      */
     property bool visibleWhenDisabled: false
 
-    /**
-     * @internal The NewStuff dialog that is opened by the button.
-     * Use showDialog() to create and open the dialog.
+    /*!
+       \internal The NewStuff dialog that is opened by the button.
+       Use showDialog() to create and open the dialog.
      */
     property NewStuff.Dialog __ghnsDialog
 
-    /**
-     * Show the dialog (same as clicking the button), if allowed by the Kiosk settings
+    /*!
+       Show the dialog (same as clicking the button), if allowed by the Kiosk settings.
      */
     function showDialog() {
         if (!NewStuff.Settings.allowedByKiosk) {

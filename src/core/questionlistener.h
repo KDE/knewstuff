@@ -15,8 +15,11 @@
 namespace KNSCore
 {
 class Question;
-/**
- * @short Implementation-side handler class for questions sent from KNewStuffCore
+/*!
+ * \class KNSCore::QuestionListener
+ * \inmodule KNewStuffCore
+ *
+ * \brief Implementation-side handler class for questions sent from KNewStuffCore.
  *
  * When implementing anything on top of KNewStuffCore, you will need to be able
  * to react to questions asked from inside the framework. This is done by creating

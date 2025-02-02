@@ -17,32 +17,38 @@
 namespace KNSWidgets
 {
 class ButtonPrivate;
-/**
- * @class Button button.h <KNSWidgets/Button>
+/*!
+ * \class KNSWidgets::Button
+ * \inmodule KNewStuffWidgets
  *
- * QPushButton subclass that encapsulates the logic for showing the KNewStuff dialog.
+ * \brief QPushButton subclass that encapsulates the logic for showing the KNewStuff dialog.
+ *
  * If KNewStuff is disabled using KAuthorized, the button is hidden.
- * @see KAuthorized::GenericRestriction::GHNS
  *
- * @since 5.91
+ * \sa KAuthorized::GenericRestriction::GHNS
+ *
+ * \since 5.91
  */
 class KNEWSTUFFWIDGETS_EXPORT Button : public QPushButton
 {
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Constructor used when the details of the KHotNewStuff
      * download is known when the button is created.
      *
-     * @param text describing what is being downloaded.
-     *        It should be a text beginning with "Download New ..." for consistency
-     * @param configFile the name of the .knsrc file
-     * @param parent the parent widget
+     * \a text describing what is being downloaded.
+     * It should be a text beginning with "Download New ..." for consistency
+     *
+     * \a configFile the name of the .knsrc file
+     *
+     * \a parent the parent widget
+     *
      */
     explicit Button(const QString &text, const QString &configFile, QWidget *parent);
 
-    /**
+    /*!
      * Constructor used when the code is generated from a .ui file
      * After the UI is set up, you must call setConfigFile(QString)
      */
@@ -50,14 +56,17 @@ public:
 
     ~Button() override;
 
-    /**
-     * @note This should only be used when crating the button from a UI-file
+    /*!
+     * \note This should only be used when creating the button from a UI-file.
      */
     void setConfigFile(const QString &configFile);
 
 Q_SIGNALS:
-    /**
-     * emitted when the dialog has been closed
+    /*!
+     * Emitted when the dialog has been closed.
+     *
+     * \a changedEntries contains the entries that were changed
+     *
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 

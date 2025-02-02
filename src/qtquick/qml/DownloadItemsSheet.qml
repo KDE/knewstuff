@@ -12,11 +12,14 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.newstuff as NewStuff
 
-/**
- * @brief An overlay sheet for showing a list of download options for one entry
- *
- * This is used by the NewStuff.Page component
- * @since 5.63
+/*!
+   \qmltype DownloadItemsSheet
+   \inqmlmodule org.kde.newstuff
+  
+   \brief An overlay sheet for showing a list of download options for one entry.
+  
+   This is used by the NewStuff.Page component
+   \since 5.63
  */
 Kirigami.Dialog {
     id: component

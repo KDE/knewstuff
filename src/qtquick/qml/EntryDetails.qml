@@ -5,14 +5,6 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief A Kirigami.Page component used for displaying the details for a single entry
- *
- * This component is equivalent to the details view in the old DownloadDialog
- * @see KNewStuff::DownloadDialog
- * @since 5.63
- */
-
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -22,6 +14,17 @@ import org.kde.kcmutils as KCMUtils
 import org.kde.newstuff as NewStuff
 
 import "private" as Private
+
+/*!
+   \qmltype EntryDetails
+   \inqmlmodule org.kde.newstuff
+  
+   \brief A Kirigami.Page component used for displaying the details for a single entry.
+  
+   This component is equivalent to the details view in the old DownloadDialog
+   \sa KNewStuff::DownloadDialog
+   \since 5.63
+ */
 
 KCMUtils.SimpleKCM {
     id: component

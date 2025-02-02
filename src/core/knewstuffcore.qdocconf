@@ -1,0 +1,27 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KNewStuffCore
+description = Framework for downloading and sharing additional application data.
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += qtcore qtgui kcoreaddons knewstuffwidgets knewstuffqml
+
+qhp.projects            = KNewStuffCore
+
+qhp.KNewStuffCore.file                = knewstuffcore.qhp
+qhp.KNewStuffCore.namespace           = org.kde.knewstuffcore.$QT_VERSION_TAG
+qhp.KNewStuffCore.virtualFolder       = knewstuffcore
+qhp.KNewStuffCore.indexTitle          = KNewStuffCore
+qhp.KNewStuffCore.indexRoot           =
+
+qhp.KNewStuffCore.subprojects         = classes
+qhp.KNewStuffCore.subprojects.classes.title = C++ Classes
+qhp.KNewStuffCore.subprojects.classes.indexTitle = KNewStuffCore C++ Classes
+qhp.KNewStuffCore.subprojects.classes.selectors = class fake:headerfile
+qhp.KNewStuffCore.subprojects.classes.sortPages = true

@@ -13,38 +13,53 @@
 
 #include "knewstuffwidgets_export.h"
 
+/*!
+ * \namespace KNSWidgets
+ * \inmodule KNewStuffWidgets
+ *
+ * \brief Contains UX widgets for KNewStuffCore.
+ */
 namespace KNSWidgets
 {
 class ActionPrivate;
-/**
- * @class Action action.h <KNSWidgets/Action>
+/*!
+ * \class KNSWidgets::Action
+ * \inmodule KNewStuffWidgets
  *
- * QAction subclass that encapsulates the logic for showing the KNewStuff dialog.
+ * \brief QAction subclass that encapsulates the logic for showing the KNewStuff dialog.
+ *
  * If KNewStuff is disabled using KAuthorized, the action is hidden.
- * @see KAuthorized::GenericRestriction::GHNS
  *
- * @since 5.90
+ * \sa KAuthorized::GenericRestriction::GHNS
+ *
+ * \since 5.90
  */
 class KNEWSTUFFWIDGETS_EXPORT Action : public QAction
 {
     Q_OBJECT
 
 public:
-    /**
-     * Constrcuts a KNSWidgets::Action instance
+    /*!
+     * Constructs a KNSWidgets::Action instance.
      *
-     * @param text describing what is being downloaded.
-     *        It should be a text beginning with "Download New ..." for consistency
-     * @param configFile the name of the .knsrc file
-     * @param parent the parent object
+     * \a text describing what is being downloaded.
+     * It should be a text beginning with "Download New ..." for consistency
+     *
+     * \a configFile the name of the .knsrc file
+     *
+     * \a parent the parent object
+     *
      */
     explicit Action(const QString &text, const QString &configFile, QObject *parent);
 
     ~Action();
 
 Q_SIGNALS:
-    /**
+    /*!
      * Emitted when the dialog has been closed.
+     *
+     * \a changedEntries contains the entries that were changed
+     *
      */
     void dialogFinished(const QList<KNSCore::Entry> &changedEntries);
 

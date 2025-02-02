@@ -18,15 +18,18 @@
 namespace KNSCore
 {
 class ProvidersModelPrivate;
-/**
- * @brief A model which holds information on all known Providers for a specific Engine
+/*!
+ * \class KNSCore::ProvidersModel
+ * \inmodule KNewStuffCore
  *
- * @since 5.85
+ * \brief A model which holds information on all known Providers for a specific Engine.
+ *
+ * \since 5.85
  */
 class KNEWSTUFFCORE_EXPORT ProvidersModel : public QAbstractListModel
 {
     Q_OBJECT
-    /**
+    /*
      * The Engine for which this model displays Providers
      */
     Q_PRIVATE_PROPERTY(d, EngineBase *engine READ getEngine WRITE setEngine NOTIFY engineChanged)
@@ -34,6 +37,20 @@ public:
     explicit ProvidersModel(QObject *parent = nullptr);
     ~ProvidersModel() override;
 
+    /*!
+     * \enum KNSCore::ProvidersModel::Roles
+     *
+     * \value IdRole
+     * \value NameRole,
+     * \value VersionRole,
+     * \value WebsiteRole,
+     * \value HostRole,
+     * \value ContactEmailRole,
+     * \value SupportsSslRole,
+     * \value IconRole,
+     * \value ObjectRole
+     * The actual Provider object. Do not hold this locally and expect it to disappear at a moment's notice.
+     */
     enum Roles {
         IdRole = Qt::UserRole + 1,
         NameRole,
@@ -43,7 +60,7 @@ public:
         ContactEmailRole,
         SupportsSslRole,
         IconRole,
-        ObjectRole, ///< The actual Provider object. Do not hold this locally and expect it to disappear at a moment's notice
+        ObjectRole,
     };
     Q_ENUM(Roles)
 
