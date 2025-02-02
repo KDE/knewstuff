@@ -5,21 +5,24 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief A component used to forward questions from KNewStuff's engine to the UI
- *
- * This component is equivalent to the WidgetQuestionListener
- * @see KNewStuff::WidgetQuestionListener
- * @see KNewStuffCore::Question
- * @since 5.63
- */
-
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.newstuff as NewStuff
 import org.kde.newstuff.core as NewStuffCore
+
+/*!
+   \qmltype QuestionAsker
+   \inqmlmodule org.kde.newstuff
+  
+   \brief A component used to forward questions from KNewStuff's engine to the UI.
+  
+   This component is equivalent to the WidgetQuestionListener
+   \sa KNewStuff::WidgetQuestionListener
+   \sa KNewStuffCore::Question
+   \since 5.63
+ */
 
 QQC2.Dialog {
     id: dialog

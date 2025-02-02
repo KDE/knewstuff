@@ -12,9 +12,12 @@ namespace KNSCore
 
 class CategoryMetadataPrivate;
 
-/**
- * Describes a category
- * @since 6.9
+/*!
+ * \class KNSCore::CategoryMetadata
+ * \inheaderfile KNSCore/CategoryMetadata
+ * \inmodule KNewStuffCore
+ * \brief Describes a category
+ * \since 6.9
  */
 class KNEWSTUFFCORE_EXPORT CategoryMetadata
 {

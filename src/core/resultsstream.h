@@ -18,17 +18,20 @@ namespace KNSCore
 {
 class SearchRequest;
 class ResultsStreamPrivate;
-/**
- * The ResultsStream is returned by EngineBase::search. It is used to communicate
- * the different entries in response to a request using the signal @m entriesFound.
+/*!
+ * \class KNSCore::ResultsStream
+ * \inmodule KNewStuffCore
+ *
+ * \brief The ResultsStream is returned by EngineBase::search. It is used to communicate
+ * the different entries in response to a request using the signal \c entriesFound.
  *
  * Initially the stream will communicate the entries part of the page as specified
- * in the request. Further pages can be requested using @m fetchMore.
+ * in the request. Further pages can be requested using \c fetchMore.
  *
  * Once we have reached the end of the requested stream, the object shall emit
- * @m finished and delete itself.
+ * \c finished and delete itself.
  *
- * @since 6.0
+ * \since 6.0
  */
 class KNEWSTUFFCORE_EXPORT ResultsStream : public QObject
 {

@@ -15,8 +15,11 @@ namespace KNSCore
 {
 class Question;
 class QuestionManagerPrivate;
-/**
- * @short The central class handling Question redirection
+/*!
+ * \class KNSCore::QuestionManager
+ * \inmodule KNewStuffCore
+ *
+ * \brief The central class handling Question redirection.
  *
  * This class is used to ensure that KNSCore::Question instances get redirected
  * to the appropriate KNSCore::QuestionListener instances. It is a very dumb class

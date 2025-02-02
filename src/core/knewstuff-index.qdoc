@@ -1,0 +1,22 @@
+/*!
+    \page knewstuff-index.html
+    \title KNewStuff
+
+    Support for downloading application assets from the network
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KF6} {NewStuff} {KF6::NewStuffCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{KNewStuff Core C++ Classes}
+        \li \l{KNewStuff Widgets C++ Classes}
+        \li \l{KNewStuff QML Types}
+    \endlist
+*/

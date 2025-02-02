@@ -79,3 +79,5 @@ ecm_target_qml_sources(newstuffqmlplugin PRIVATE PATH private/entrygriddelegates
 target_link_libraries (newstuffqmlplugin PRIVATE knewstuff_qml_STATIC)
 
 ecm_finalize_qml_module(newstuffqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_generate_qdoc(newstuffqmlplugin knewstuffqml.qdocconf)

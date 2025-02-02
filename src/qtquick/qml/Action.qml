@@ -5,16 +5,24 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief An action which when triggered will open a NewStuff.Dialog or a NewStuff.Page, depending on settings
- *
- * This component is equivalent to the old Button component, but functions in more modern applications
- *
- * The following is a simple example of how to use this Action to show wallpapers from the KDE Store, on a
- * system where Plasma has been installed (and consequently the wallpaper knsrc file is available). This also
- * shows how to make the action push a page to a pageStack rather than opening a dialog:
- *
-\code{.qml}
+import QtQuick
+import org.kde.kirigami as Kirigami
+import org.kde.newstuff as NewStuff
+import org.kde.newstuff.private as NewStuffPrivate
+
+/*!
+   \qmltype Action
+   \inqmlmodule org.kde.newstuff
+  
+   \brief An action which when triggered will open a NewStuff.Dialog or a NewStuff.Page, depending on settings.
+  
+   This component is equivalent to the old Button component, but functions in more modern applications
+  
+   The following is a simple example of how to use this Action to show wallpapers from the KDE Store, on a
+   system where Plasma has been installed (and consequently the wallpaper knsrc file is available). This also
+   shows how to make the action push a page to a pageStack rather than opening a dialog:
+  
+\qml
 import org.kde.newstuff as NewStuff
 
 NewStuff.Action {
@@ -30,17 +38,11 @@ NewStuff.Action {
         }
     }
 }
-\endcode
- *
- * @see NewStuff.Button
- * @since 5.81
+\endqml
+  
+   \sa NewStuff.Button
+   \since 5.81
  */
-
-import QtQuick
-import org.kde.kirigami as Kirigami
-import org.kde.newstuff as NewStuff
-import org.kde.newstuff.private as NewStuffPrivate
-
 Kirigami.Action {
     id: component
 
@@ -53,58 +55,58 @@ Kirigami.Action {
      * are updates to be had" or somesuch, then we can do this, but until that choice is
      * made, let's not)
      */
-    /**
-     * The configuration file to use for the Page created by this action
+    /*!
+       The configuration file to use for the Page created by this action
      */
     property string configFile
 
-    /**
-     * The view mode of the page spawned by this action, which overrides the
-     * default one (ViewMode.Tiles). This should be set using the
-     * NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
-     * and asking for it will return ViewMode.Tiles.
-     * @see NewStuff.Page.ViewMode
+    /*!
+       The view mode of the page spawned by this action, which overrides the
+       default one (ViewMode.Tiles). This should be set using the
+       NewStuff.Page.ViewMode enum. Note that ViewMode.Icons has been removed,
+       and asking for it will return ViewMode.Tiles.
+       \sa Page::ViewMode
      */
     property int viewMode: NewStuff.Page.ViewMode.Tiles
 
-    /**
-     * If this is set, the action will push a NewStuff.Page onto this page stack
-     * (and request it is made visible if triggered again). If you do not set this
-     * property, the action will spawn a NewStuff.Dialog instead.
-     * @note If you are building a KCM, set this to your ```kcm``` object.
+    /*!
+       If this is set, the action will push a NewStuff.Page onto this page stack
+       (and request it is made visible if triggered again). If you do not set this
+       property, the action will spawn a NewStuff.Dialog instead.
+       \note If you are building a KCM, set this to your ```kcm``` object.
      */
     property Item pageStack
 
-    /**
-     * The engine which handles the content in this Action
-     * This will be null until the action has been triggered the first time
+    /*!
+       The engine which handles the content in this Action
+       This will be null until the action has been triggered the first time
      */
     readonly property NewStuff.Engine engine: component._private.engine
 
-    /**
-     * This forwards the entry changed event from the QtQuick engine
-     * @see Engine::entryEvent
+    /*!
+       This forwards the \a entry changed \a event from the QtQuick engine.
+       \sa Engine::entryEvent
      */
     signal entryEvent(var entry, int event)
 
-    /**
-     * If this is true (default is false), the action will be shown when the Kiosk settings are such
-     * that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
-     * Usually you would want to leave this alone, but occasionally you may have a reason to
-     * leave a action in place that the user is unable to enable.
+    /*!
+       If this is true (default is false), the action will be shown when the Kiosk settings are such
+       that Get Hot New Stuff is disallowed (and any other time enabled is set to false).
+       Usually you would want to leave this alone, but occasionally you may have a reason to
+       leave a action in place that the user is unable to enable.
      */
     property bool visibleWhenDisabled: false
 
-    /**
-     * The parent window for the dialog created by invoking the action
-     *
-     * @since 6.1
-     */
     // TODO KF7: make this required. without it we have a hard time doing complex window management in systemsettings
+    /*!
+       The parent window for the dialog created by invoking the action
+
+       \since 6.1
+     */
     property Window transientParent
 
-    /**
-    * Show the page/dialog (same as activating the action), if allowed by the Kiosk settings
+    /*!
+      Show the page/dialog (same as activating the action), if allowed by the Kiosk settings
     */
     function showHotNewStuff() {
         component._private.showHotNewStuff();

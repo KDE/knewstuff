@@ -5,14 +5,6 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-/**
- * @brief A Kirigami.Page component used for managing KNS entries
- *
- * This component is functionally equivalent to the old DownloadDialog
- * @see KNewStuff::DownloadDialog
- * @since 5.63
- */
-
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -24,35 +16,49 @@ import org.kde.newstuff as NewStuff
 import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
 
+/*!
+   \qmltype Page
+   \inqmlmodule org.kde.newstuff
+  
+   \brief A Kirigami.Page component used for managing KNS entries.
+  
+   This component is functionally equivalent to the old DownloadDialog.
+  
+   \sa KNewStuff::DownloadDialog
+   \since 5.63
+ */
 KCMUtils.GridViewKCM {
     id: root
 
-    /**
-     * @brief The configuration file which describes the application (knsrc)
-     *
-     * The format and location of this file is found in the documentation for
-     * KNS3::DownloadDialog
+    /*!
+       \brief The configuration file which describes the application (knsrc)
+      
+       The format and location of this file is found in the documentation for
+       KNS3::DownloadDialog
      */
     property alias configFile: newStuffEngine.configFile
 
     readonly property alias engine: newStuffEngine
 
-    /**
-     * Whether or not to show the Upload... context action
-     * Usually this will be bound to the engine's property which usually defines
-     * this, but you can override it programmatically by setting it here.
-     * @since 5.85
-     * @see KNSCore::Engine::uploadEnabled
+    /*!
+       Whether or not to show the Upload... context action
+       Usually this will be bound to the engine's property which usually defines
+       this, but you can override it programmatically by setting it here.
+       \since 5.85
+       \sa KNSCore::Engine::uploadEnabled
      */
     property alias showUploadAction: uploadAction.visible
 
-    /**
-     * Show the details page for a specific entry.
-     * If you call this function before the engine initialisation has been completed,
-     * the action itself will be postponed until that has happened.
-     * @param providerId The provider ID for the entry you wish to show details for
-     * @param entryId The unique ID for the entry you wish to show details for
-     * @since 5.79
+    /*!
+       Show the details page for a specific entry.
+       If you call this function before the engine initialisation has been completed,
+       the action itself will be postponed until that has happened.
+
+       \a providerId The provider ID for the entry you wish to show details for
+
+       \a entryId The unique ID for the entry you wish to show details for
+
+       \since 5.79
      */
     function showEntryDetails(providerId, entryId) {
         _showEntryDetailsThrottle.enabled = true;

@@ -32,32 +32,53 @@ struct Comment {
 };
 class CommentsModelPrivate;
 
-/**
- * @brief A model which takes care of the comments for a single Entry
+/*!
+ * \class KNSCore::CommentsModel
+ * \inmodule KNewStuffCore
  *
- * This model should preferably be constructed by asking the Engine to give a model
+ * \brief A model which takes care of the comments for a single Entry.
+ *
+ * \note This model should preferably be constructed by asking the Engine to give a model
  * instance to you for a specific entry using the commentsForEntry function. If you
  * insist, you can construct an instance yourself as well, but this is not recommended.
  *
- * @see Engine::commentsForEntry(KNSCore::Entry)
- * @since 5.63
+ * \sa Engine::commentsForEntry(KNSCore::Entry)
+ * \since 5.63
  */
 class KNEWSTUFFCORE_EXPORT CommentsModel : public QAbstractListModel
 {
     Q_OBJECT
-    /**
+    /*!
+     * \qmlproperty Entry CommentsModel::entry
+     * The Entry for which this model should handle comments
+     */
+    /*!
+     * \property KNSCore::CommentsModel::entry
      * The Entry for which this model should handle comments
      */
     Q_PROPERTY(KNSCore::Entry entry READ entry WRITE setEntry NOTIFY entryChanged)
 public:
-    /**
+    /*!
      * Construct a new CommentsModel instance.
-     * @note The class is intended to be constructed using the Engine::commentsForEntry function
-     * @see Engine::commentsForEntry(KNSCore::Entry)
+     * \note The class is intended to be constructed using the Engine::commentsForEntry function
+     * \sa Engine::commentsForEntry(KNSCore::Entry)
      */
     explicit CommentsModel(EngineBase *parent = nullptr);
     ~CommentsModel() override;
 
+    /*!
+     * \enum KNSCore::CommentsModel::Roles
+     *
+     * \value SubjectRole
+     * \value IdRole
+     * \value TextRole
+     * \value ChildCountRole
+     * \value UsernameRole
+     * \value DateRole
+     * \value ScoreRole
+     * \value ParentIndexRole
+     * \value DepthRole
+     */
     enum Roles {
         SubjectRole = Qt::DisplayRole,
         IdRole = Qt::UserRole + 1,

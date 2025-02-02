@@ -1,0 +1,11 @@
+/*!
+    \module KNewStuffCore
+    \title KNewStuff Core C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent NewStuff
+
+    \brief Provides Stuff.
+
+    Stuff
+*/
