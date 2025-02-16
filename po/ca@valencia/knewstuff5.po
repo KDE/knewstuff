@@ -1336,7 +1336,7 @@ msgstr "S'ha produït un error"
 #: qtquick/qml/private/ErrorDisplayer.qml:51
 #, kde-format
 msgid "Please try again later."
-msgstr "Torneu-ho a intentar més tard."
+msgstr "Torneu-ho a provar més tard."
 
 #: qtquick/qml/private/GridTileDelegate.qml:113
 #, kde-format
