@@ -3,6 +3,7 @@
 
 [Desktop Entry]
 Name=gitk
+Name[ar]=جيتك
 Name[az]=gitk
 Name[bg]=gitk
 Name[ca]=gitk
@@ -49,6 +50,7 @@ Name[x-test]=xxgitkxx
 Name[zh_CN]=gitk
 Name[zh_TW]=gitk
 GenericName=gitk
+GenericName[ar]=جيتك
 GenericName[az]=gitk
 GenericName[bg]=gitk
 GenericName[ca]=gitk

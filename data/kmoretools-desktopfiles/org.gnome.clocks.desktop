@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Clocks
+Name[ar]=الساعات
 Name[az]=Saatlar
 Name[bg]=Часовници
 Name[ca]=Rellotges
@@ -46,6 +47,7 @@ Name[x-test]=xxClocksxx
 Name[zh_CN]=时钟
 Name[zh_TW]=時鐘
 GenericName=Clocks
+GenericName[ar]=الساعات
 GenericName[az]=Saatlar
 GenericName[bg]=Часовници
 GenericName[ca]=Rellotges
@@ -160,6 +162,7 @@ X-GNOME-FullName[zh_TW]=GNOME Clocks
 X-GNOME-FullName[ug]=گىنوم سائەتلىرى
 X-GNOME-FullName=GNOME Clocks
 Comment=Clocks for world times, plus alarms, stopwatch and a timer
+Comment[ar]=ساعات للأوقات العالمية، بالإضافة إلى منبهات وساعة إيقاف ومؤقت
 Comment[az]=Dünya vaxtı üçün saatlar, zəngçalar, saniyəölçən və vaxtölçən
 Comment[bg]=Часовници за световното време, аларми, хронометър и таймер
 Comment[ca]=Rellotges per a les hores del món, més alarmes, compte enrere i un temporitzador

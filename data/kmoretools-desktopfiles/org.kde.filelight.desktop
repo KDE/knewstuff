@@ -1,6 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Name=Filelight
+Name[ar]=كاشف الملفات
 Name[az]=Filelight
 Name[bg]=Filelight
 Name[ca]=Filelight
@@ -97,6 +98,7 @@ Type=Application
 Exec=filelight %f
 Icon=filelight
 Comment=View disk usage information
+Comment[ar]=اعرض معلومات عن استخدام القرص
 Comment[az]=Diskdən istifadəsi məlumatlarına bax
 Comment[bg]=Преглед на използването на диска
 Comment[ca]=Veure la informació d'ús del disc

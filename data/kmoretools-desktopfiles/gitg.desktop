@@ -1,5 +1,6 @@
 [Desktop Entry]
 GenericName=Git repository viewer
+GenericName[ar]=عارض لمستودعات «غِت»
 GenericName[az]=Git repozitoriyasına baxmaq
 GenericName[bg]=Преглед на хранилище Git
 GenericName[ca]=Visualitzador del repositori Git
@@ -93,6 +94,7 @@ Name[x-test]=xxgitgxx
 Name[zh_CN]= 
 Name[zh_TW]=gitg
 Comment=Git repository browser
+Comment[ar]=متصفّح لمستودعات «غِت»
 Comment[az]=Git repozitoriyaya baxış proqramı
 Comment[bg]=Браузър на хранилището на Git
 Comment[ca]=Navegador per al repositori Git

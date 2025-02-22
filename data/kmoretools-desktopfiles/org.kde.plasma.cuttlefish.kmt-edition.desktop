@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=List and preview available icons
+Comment[ar]=قائمة الأيقونات المتاحة ومعاينتها
 Comment[az]=Mövcud ikonları göstər və sırala
 Comment[bg]=Списък и визуализация на наличните икони
 Comment[ca]=Llista i fa una vista prèvia de les icones disponibles
@@ -46,6 +47,7 @@ Comment[zh_CN]=列出和预览可用图标
 Comment[zh_TW]=列出並預覽可用的圖示
 Exec=cuttlefish
 GenericName=Icon Browser
+GenericName[ar]=متصفح الأيقونات
 GenericName[az]=İkonlara Baxış
 GenericName[bg]=Браузър на икони
 GenericName[ca]=Navegador d'icones

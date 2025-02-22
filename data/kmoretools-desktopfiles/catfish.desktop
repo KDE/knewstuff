@@ -88,6 +88,7 @@ GenericName[x-test]=xxFile searchxx
 GenericName[zh_CN]=文件搜索
 GenericName[zh_TW]=檔案搜尋
 Comment=Search the file system
+Comment[ar]=ابحث في نظام الملفات
 Comment[az]=fayl sistemində axtarış
 Comment[bg]=Търсене във файловата система
 Comment[ca]=Cerca al sistema de fitxers

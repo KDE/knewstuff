@@ -46,6 +46,7 @@ Name[zh_CN]=ding
 Name[zh_TW]=ding
 Exec=ding
 GenericName=German<=>English Dictionary
+GenericName[ar]=القاموس الألماني<==>الإنجليزي
 GenericName[az]=Almanca<=>İngiliscə Lüğət
 GenericName[bg]=Немски<=>английски речник
 GenericName[ca]=Diccionari alemany<=>anglès

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Shutter
+Name[ar]=الغالق
 Name[az]=Shutter
 Name[bg]=Shutter
 Name[ca]=Shutter
@@ -47,6 +48,7 @@ Name[x-test]=xxShutterxx
 Name[zh_CN]=Shutter
 Name[zh_TW]=影像擷取_Shutter
 GenericName=Screenshot Tool
+GenericName[ar]=أداة لأخذ لقطات الشاشة
 GenericName[az]=Ekran şəkli çəkmə aləti
 GenericName[bg]=Инструмент за правене на екранни снимки
 GenericName[ca]=Eina de captura de pantalla

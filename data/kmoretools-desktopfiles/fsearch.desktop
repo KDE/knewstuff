@@ -45,6 +45,7 @@ Name[x-test]=xxFSearchxx
 Name[zh_CN]=FSearch
 Name[zh_TW]=FSearch
 Comment=A file search application focusing on performance and advanced features
+Comment[ar]=تطبيق بحث عن الملفات يركز على الأداء والميزات المتقدمة
 Comment[az]=Performans və inkişaf etmiş xüsusiyyətlərə yönəlmiş fayl axtarış tətbiqi
 Comment[bg]=Приложение за търсене на файлове, фокусирано върху производителността и разширените функции
 Comment[ca]=Una aplicació de cerca de fitxers enfocada al rendiment i a funcionalitats avançades

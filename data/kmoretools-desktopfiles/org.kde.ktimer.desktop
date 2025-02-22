@@ -1,5 +1,6 @@
 [Desktop Entry]
 GenericName=Countdown Launcher
+GenericName[ar]=مطلق العدّ التنازلى
 GenericName[az]=Gerisayım
 GenericName[bg]=Countdown Launcher
 GenericName[ca]=Llançador amb compte enrere
@@ -51,6 +52,7 @@ Icon=ktimer
 Type=Application
 Terminal=false
 Name=KTimer
+Name[ar]=مؤقّت ك
 Name[az]=KTimer
 Name[bg]=KTimer
 Name[ca]=KTimer
