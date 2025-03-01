@@ -17,13 +17,13 @@
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Мария Шикунова <translation-team@basealt.ru>, 2021, 2022.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2024.
-# SPDX-FileCopyrightText: 2024 Olesya Gerasimenko <translation-team@basealt.ru>
+# SPDX-FileCopyrightText: 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:37+0000\n"
-"PO-Revision-Date: 2024-09-05 16:07+0300\n"
+"PO-Revision-Date: 2025-02-28 17:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -530,70 +530,56 @@ msgid "Find out how to donate to this project"
 msgstr "Узнать, как поддержать проект финансово"
 
 #: qtquick/qml/Page.qml:140
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or your distributor "
 "for safety, stability, or quality."
 msgstr ""
-"Будьте осторожны при использовании материалов, загруженных пользователями: "
+"Будьте осторожны при использовании материалов, отправленных пользователями: "
 "такие материалы могут содержать исполняемый код, который не был "
 "протестирован KDE или разработчиками используемого вами дистрибутива на "
 "предмет безопасности, стабильности или качества."
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or your "
 "distributor for functionality or quality."
 msgstr ""
-"Доступное здесь содержимое было загружено обычными пользователями и не "
+"Доступное здесь содержимое было отправлено обычными пользователями и не "
 "проверялось разработчиками на функциональность и стабильность."
 
 #: qtquick/qml/Page.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr "&Все"
+msgstr "Все"
 
 #: qtquick/qml/Page.qml:174
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Установленные"
 
 #: qtquick/qml/Page.qml:176
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
-msgstr "Только обновляемые"
+msgstr "Обновляемые"
 
 #: qtquick/qml/Page.qml:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr "&Все"
+msgstr "Все"
 
 #: qtquick/qml/Page.qml:197
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -601,43 +587,39 @@ msgid "Installed"
 msgstr "Установленные"
 
 #: qtquick/qml/Page.qml:208
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
 msgid "Updateable"
-msgstr "Только обновляемые"
+msgstr "Обновляемые"
 
 #: qtquick/qml/Page.qml:221
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Упорядочить по дате выхода"
 
 #: qtquick/qml/Page.qml:223
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Упорядочить по имени"
 
 #: qtquick/qml/Page.qml:225
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Высоко оценённые"
+msgstr "Упорядочить по оценке"
 
 #: qtquick/qml/Page.qml:227
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Самые популярные"
+msgstr "Упорядочить по количеству загрузок"
 
 #: qtquick/qml/Page.qml:236
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
@@ -645,22 +627,20 @@ msgid "Name"
 msgstr "Название"
 
 #: qtquick/qml/Page.qml:247
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
 msgid "Rating"
-msgstr "Высоко оценённые"
+msgstr "Оценка"
 
 #: qtquick/qml/Page.qml:258
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr "Загрузки"
+msgstr "Количество загрузок"
 
 #: qtquick/qml/Page.qml:269
 #, kde-format
@@ -668,12 +648,12 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Дата выхода"
 
 #: qtquick/qml/Page.qml:282
 #, kde-format
 msgid "Upload…"
-msgstr "Загрузить…"
+msgstr "Отправить…"
 
 #: qtquick/qml/Page.qml:283
 #, kde-format
@@ -696,10 +676,9 @@ msgid "Category:"
 msgstr "Категория:"
 
 #: qtquick/qml/Page.qml:383
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
-msgstr "Загрузить свои материалы…"
+msgstr "Отправить свои материалы…"
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
@@ -824,7 +803,7 @@ msgstr "(%1/%2)"
 #, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
-msgstr "Загрузка новых материалов: %1"
+msgstr "Отправка новых материалов: %1"
 
 #: qtquick/qml/UploadPage.qml:111
 #, kde-format
@@ -871,7 +850,7 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
-"Чтобы загружать свои дополнения или редактировать уже существующие в KDE "
+"Чтобы отправить свои дополнения или редактировать уже существующие в KDE "
 "Store материалы, откройте веб-сайт и войдите в свою учётную запись. После "
 "этого появится возможность открыть в меню, которое появляется при нажатии на "
 "значок пользователя, вкладку «My Products». Эта вкладка позволяет перейти в "
@@ -889,11 +868,11 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
-"Чтобы загрузить новые дополнения или отредактировать существующие материалы, "
-"откройте веб-сайт поставщика и проследуйте инструкциям, указанным на "
-"страница. Возможно, понадобится создать учётную запись и войти в систему, "
-"где будет располагаться инструкция по загрузке своих материалов. Либо "
-"потребуется связаться с владельцами сайта."
+"Чтобы отправить новые дополнения или отредактировать существующие материалы, "
+"откройте веб-сайт поставщика и выполните инструкции, указанные на странице. "
+"Возможно, понадобится создать учётную запись и войти в систему, где будет "
+"располагаться инструкция по отправке своих материалов. Либо потребуется "
+"связаться с владельцами сайта."
 
 #: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
 #: qtquick/quickengine.cpp:176
@@ -915,9 +894,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
-"Вам не разрешено использовать загружать дополнительные материалы посредством "
-"Get Hot New Stuff. Если так не должно быть, обратитесь к ответственному за "
-"выдачу вам прав доступа."
+"Вам не разрешено загружать дополнительные материалы из Интернета. Если так "
+"не должно быть, обратитесь к ответственному за выдачу вам прав доступа."
 
 #: qtquick/searchpresetmodel.cpp:46
 #, kde-format
