@@ -192,13 +192,16 @@ bool EngineBase::init(const QString &configfile)
         return false;
     }
 
-    const QString configFileBasename = QFileInfo(resolvedConfigFilePath).completeBaseName();
+    QString registryFileName = group.readEntry("AliasFor", QString());
+    if (registryFileName.isEmpty()) {
+        registryFileName = QFileInfo(resolvedConfigFilePath).completeBaseName();
+    }
 
-    d->cache = Cache2::getCache(configFileBasename);
-    qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << configFileBasename;
+    d->cache = Cache2::getCache(registryFileName);
+    qCDebug(KNEWSTUFFCORE) << "Cache is" << d->cache << "for" << registryFileName;
     d->cache->readRegistry();
     // This is a facade for cache2, no need to call anything on it.
-    d->legacyCache = Cache::getCache(configFileBasename);
+    d->legacyCache = Cache::getCache(registryFileName);
 
     // Cache cleanup option, to help work around people deleting files from underneath KNewStuff (this
     // happens a lot with e.g. wallpapers and icons)
