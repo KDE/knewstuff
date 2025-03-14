@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 00:37+0000\n"
+"POT-Creation-Date: 2025-03-14 00:38+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -54,7 +54,7 @@ msgstr "कोई पाठ बदले नइ गिस."
 msgid "You are now a fan."
 msgstr ""
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:269
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -130,17 +130,17 @@ msgid ""
 "This is a critical error and should be reported to the application author"
 msgstr ""
 
-#: core/enginebase.cpp:351
+#: core/enginebase.cpp:354
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr ""
 
-#: core/enginebase.cpp:369
+#: core/enginebase.cpp:372
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr ""
 
-#: core/enginebase.cpp:400
+#: core/enginebase.cpp:403
 #, kde-format
 msgid "Error initializing provider."
 msgstr ""

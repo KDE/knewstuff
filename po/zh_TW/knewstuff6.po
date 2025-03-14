@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 00:37+0000\n"
+"POT-Creation-Date: 2025-03-14 00:38+0000\n"
 "PO-Revision-Date: 2024-09-17 08:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -76,7 +76,7 @@ msgstr "已記錄投票。"
 msgid "You are now a fan."
 msgstr "您已成為粉絲。"
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:266
+#: attica/atticaprovider.cpp:441 core/enginebase.cpp:269
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -153,17 +153,17 @@ msgstr ""
 "%2\n"
 "此為嚴重錯誤，應向應用程式作者回報"
 
-#: core/enginebase.cpp:351
+#: core/enginebase.cpp:354
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
 msgstr "從檔案 %1 載入提供者失敗"
 
-#: core/enginebase.cpp:369
+#: core/enginebase.cpp:372
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
 msgstr "無法從檔案 %1 載入熱門新玩意的供應者"
 
-#: core/enginebase.cpp:400
+#: core/enginebase.cpp:403
 #, kde-format
 msgid "Error initializing provider."
 msgstr "初始化提供者時發生錯誤。"
