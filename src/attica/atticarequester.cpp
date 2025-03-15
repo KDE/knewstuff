@@ -43,7 +43,7 @@ Attica::Provider::SortMode atticaSortMode(KNSCore::SortMode sortMode)
     case KNSCore::SortMode::Rating:
         return Attica::Provider::Rating;
     }
-    qWarning() << "Unmapped sortMode" << sortMode;
+    qCWarning(KNEWSTUFFCORE) << "Unmapped sortMode" << sortMode;
     return Attica::Provider::Rating;
 }
 } // namespace
@@ -77,7 +77,7 @@ void AtticaRequester::detailsLoaded(BaseJob *job)
                 updatable.append(entry);
             }
         }
-        qDebug() << "UPDATABLE" << updatable;
+        qCDebug(KNEWSTUFFCORE) << "UPDATABLE" << updatable;
         Q_EMIT entriesLoaded(updatable);
         Q_EMIT loadingDone();
     }
@@ -218,12 +218,12 @@ Entry AtticaRequester::entryFromAtticaContent(const Attica::Content &content)
     entry.setReleaseDate(content.updated().date());
     entry.setCategory(content.attribute(QStringLiteral("typeid")));
 
-    qDebug() << "looking for cache entry";
+    qCDebug(KNEWSTUFFCORE) << "looking for cache entry";
     auto index = m_provider->mCachedEntries.indexOf(entry);
-    qDebug() << "looking for cache entry" << index;
+    qCDebug(KNEWSTUFFCORE) << "looking for cache entry" << index;
     if (index >= 0) {
         Entry &cacheEntry = m_provider->mCachedEntries[index];
-        qDebug() << "cache entry" << cacheEntry << cacheEntry.version() << entry.version();
+        qCDebug(KNEWSTUFFCORE) << "cache entry" << cacheEntry << cacheEntry.version() << entry.version();
         // check if updateable
         if (((cacheEntry.status() == KNSCore::Entry::Installed) || (cacheEntry.status() == KNSCore::Entry::Updateable))
             && ((cacheEntry.version() != entry.version()) || (cacheEntry.releaseDate() != entry.releaseDate()))) {
