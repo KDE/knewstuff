@@ -514,7 +514,7 @@ bool KNSCore::Entry::setEntryXML(QXmlStreamReader &reader)
 
     // Validation
     if (d->mName.isEmpty()) {
-        qWarning() << "Entry: no name given";
+        qCWarning(KNEWSTUFFCORE) << "Entry: no name given";
         return false;
     }
 
@@ -527,7 +527,7 @@ bool KNSCore::Entry::setEntryXML(QXmlStreamReader &reader)
     }
 
     if (d->mPayload.isEmpty()) {
-        qWarning() << "Entry: no payload URL given for: " << d->mName << " - " << d->mUniqueId;
+        qCWarning(KNEWSTUFFCORE) << "Entry: no payload URL given for: " << d->mName << " - " << d->mUniqueId;
         return false;
     }
     return true;
@@ -536,7 +536,7 @@ bool KNSCore::Entry::setEntryXML(QXmlStreamReader &reader)
 bool KNSCore::Entry::setEntryXML(const QDomElement &xmldata)
 {
     if (xmldata.tagName() != QLatin1String("stuff")) {
-        qWarning() << "Parsing Entry from invalid XML";
+        qCWarning(KNEWSTUFFCORE) << "Parsing Entry from invalid XML";
         return false;
     }
 
@@ -608,7 +608,7 @@ bool KNSCore::Entry::setEntryXML(const QDomElement &xmldata)
 
     // Validation
     if (d->mName.isEmpty()) {
-        qWarning() << "Entry: no name given";
+        qCWarning(KNEWSTUFFCORE) << "Entry: no name given";
         return false;
     }
 
@@ -621,7 +621,7 @@ bool KNSCore::Entry::setEntryXML(const QDomElement &xmldata)
     }
 
     if (d->mPayload.isEmpty()) {
-        qWarning() << "Entry: no payload URL given for: " << d->mName << " - " << d->mUniqueId;
+        qCWarning(KNEWSTUFFCORE) << "Entry: no payload URL given for: " << d->mName << " - " << d->mUniqueId;
         return false;
     }
     return true;

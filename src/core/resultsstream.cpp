@@ -10,6 +10,7 @@
 
 #include <iostream>
 
+#include <QLoggingCategory>
 #include <QTimer>
 
 #include "providerbase_p.h"
@@ -36,7 +37,7 @@ ResultsStream::ResultsStream([[maybe_unused]] const Provider::SearchRequest &req
 {
     // This ctor should not be used. It is private and we don't use. Nobody else should either. Here for ABI stability.
     Q_ASSERT(false);
-    qFatal("Do not use private constructors!");
+    qCFatal(KNEWSTUFFCORE, "Do not use private constructors!");
 }
 #endif
 
@@ -59,7 +60,7 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
             return;
         }
 
-        qWarning() << this << "Finishing" << sender() << request.d->id;
+        qCWarning(KNEWSTUFFCORE) << this << "Finishing" << sender() << request.d->id;
 
         auto base = qobject_cast<ProviderBase *>(sender());
         Q_ASSERT_X(base, Q_FUNC_INFO, "Sender failed to cast to ProviderBase");
@@ -121,7 +122,7 @@ void ResultsStream::fetch()
         return;
     }
 
-    qDebug() << this << "fetching" << d->request;
+    qCDebug(KNEWSTUFFCORE) << this << "fetching" << d->request;
     if (d->request.d->filter != Filter::Installed) {
         // when asking for installed entries, never use the cache
         Entry::List cacheEntries = d->engine->d->cache->requestFromCache(d->request);
@@ -133,7 +134,7 @@ void ResultsStream::fetch()
 
     for (const auto &providerCore : std::as_const(d->providers)) {
         auto provider = providerCore->d->base;
-        qDebug() << this << "loading entries from provider" << provider;
+        qCDebug(KNEWSTUFFCORE) << this << "loading entries from provider" << provider;
         if (provider->isInitialized()) {
             QTimer::singleShot(0, this, [this, provider] {
                 provider->loadEntries(d->request);

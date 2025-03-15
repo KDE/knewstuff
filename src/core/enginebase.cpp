@@ -367,7 +367,7 @@ void EngineBase::slotProviderFileLoaded(const QDomDocument &doc)
     if (providers.tagName() == QLatin1String("providers")) {
         isAtticaProviderFile = true;
     } else if (providers.tagName() != QLatin1String("ghnsproviders") && providers.tagName() != QLatin1String("knewstuffproviders")) {
-        qWarning() << "No document in providers.xml.";
+        qCWarning(KNEWSTUFFCORE) << "No document in providers.xml.";
         Q_EMIT signalErrorCode(KNSCore::ErrorCode::ProviderError,
                                i18n("Could not load get hot new stuff providers from file: %1", d->providerFileUrl.toString()),
                                d->providerFileUrl);

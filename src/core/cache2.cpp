@@ -148,7 +148,7 @@ void Cache2::readRegistry()
     QFile f(d->registryFile);
     if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) {
         if (QFileInfo::exists(d->registryFile)) {
-            qWarning() << "The file " << d->registryFile << " could not be opened.";
+            qCWarning(KNEWSTUFFCORE) << "The file " << d->registryFile << " could not be opened.";
         }
         return;
     }
@@ -209,7 +209,7 @@ void Cache2::writeRegistry()
     d->writingRegistry = true;
     QFile f(d->registryFile);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qWarning() << "Cannot write meta information to" << d->registryFile;
+        qCWarning(KNEWSTUFFCORE) << "Cannot write meta information to" << d->registryFile;
         return;
     }
 

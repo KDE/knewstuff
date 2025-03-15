@@ -558,7 +558,7 @@ void Installation::uninstall(Entry entry)
                 if (info.exists() || info.isSymLink()) {
                     bool worked = QFile::remove(file);
                     if (!worked) {
-                        qWarning() << "unable to delete file " << file;
+                        qCWarning(KNEWSTUFFCORE) << "unable to delete file " << file;
                         Q_EMIT signalInstallationFailed(
                             i18n("The removal of %1 failed, as the installed file %2 could not be automatically removed. You can attempt to manually delete "
                                  "this file, if you believe this is an error.",
@@ -570,7 +570,7 @@ void Installation::uninstall(Entry entry)
                         break;
                     }
                 } else {
-                    qWarning() << "unable to delete file " << file << ". file does not exist.";
+                    qCWarning(KNEWSTUFFCORE) << "unable to delete file " << file << ". file does not exist.";
                 }
             }
         }
