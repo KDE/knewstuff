@@ -60,7 +60,7 @@ ResultsStream::ResultsStream(const SearchRequest &request, EngineBase *base)
             return;
         }
 
-        qCWarning(KNEWSTUFFCORE) << this << "Finishing" << sender() << request.d->id;
+        qCDebug(KNEWSTUFFCORE) << this << "Finishing" << sender() << request.d->id;
 
         auto base = qobject_cast<ProviderBase *>(sender());
         Q_ASSERT_X(base, Q_FUNC_INFO, "Sender failed to cast to ProviderBase");
