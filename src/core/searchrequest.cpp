@@ -104,3 +104,5 @@ KNSCore::SearchRequest KNSCore::searchRequestFromLegacy(const KNSCore::Provider:
             request.page,
             request.pageSize};
 }
+
+#include "moc_searchrequest.cpp"

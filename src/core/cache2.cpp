@@ -301,3 +301,5 @@ KNSCore::Entry KNSCore::Cache2::entryFromInstalledFile(const QString &installedF
     }
     return Entry{};
 }
+
+#include "moc_cache2_p.cpp"

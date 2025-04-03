@@ -129,3 +129,5 @@ QString Author::description() const
 {
     return d->description;
 }
+
+#include "moc_author.cpp"

@@ -52,3 +52,5 @@ bool KNSCore::ProviderCore::supportsSsl() const
 {
     return d->base->supportsSsl();
 }
+
+#include "moc_providercore.cpp"

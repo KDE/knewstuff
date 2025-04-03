@@ -612,3 +612,5 @@ void Engine::storeSearch()
 {
     d->storedRequest = d->currentRequest;
 }
+
+#include "moc_quickengine.cpp"

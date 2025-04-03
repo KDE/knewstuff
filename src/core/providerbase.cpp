@@ -41,3 +41,5 @@ QStringList ProviderBase::downloadTagFilter() const
 }
 
 } // namespace KNSCore
+
+#include "moc_providerbase_p.cpp"

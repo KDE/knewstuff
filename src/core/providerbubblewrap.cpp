@@ -2,3 +2,5 @@
 // SPDX-FileCopyrightText: 2024 Harald Sitter <sitter@kde.org>
 
 #include "providerbubblewrap_p.h"
+
+#include "moc_providerbubblewrap_p.cpp"

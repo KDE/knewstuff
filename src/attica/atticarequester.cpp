@@ -292,3 +292,5 @@ Entry AtticaRequester::entryFromAtticaContent(const Attica::Content &content)
 }
 
 } // namespace KNSCore
+
+#include "moc_atticarequester_p.cpp"

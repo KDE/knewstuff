@@ -53,3 +53,5 @@ std::optional<QQuickWindow *> TransientMagicianAssistant::findWindowParent()
     }
     return {};
 }
+
+#include "moc_transientmagicianassistant.cpp"

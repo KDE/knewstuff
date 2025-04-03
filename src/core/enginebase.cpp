@@ -563,3 +563,5 @@ KNSCore::ResultsStream *KNSCore::EngineBase::search(const KNSCore::SearchRequest
 {
     return new ResultsStream(request, this);
 }
+
+#include "moc_enginebase.cpp"
