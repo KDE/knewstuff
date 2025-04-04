@@ -1,6 +1,6 @@
 # translation of kdelibs4.po to Français
 # translation of kdelibs4.po to
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Matthieu Robin <kde@macolu.org>, 2002,2003, 2004.
 # Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
 # Gilles Caulier <caulier.gilles@free.fr>, 2003.
@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-09-12 09:17+0200\n"
+"PO-Revision-Date: 2025-04-02 21:38+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Text-Markup: kde4\n"
 
 #: attica/atticaprovider.cpp:167
@@ -1026,7 +1026,7 @@ msgstr ""
 "argument à cet outil.\n"
 "« providerid »\n"
 "est le nom d'hôte pour le fournisseur sur lequel l'entrée doit exister.\n"
-"« entryid »\n"
+"« entryID »\n"
 "est l'identifiant unique de l'entrée, qui est présente chez le fournisseur "
 "et spécifiée par le fichier « knsrc ».\n"
 " Une exemple de ce type d'« URL » est « kns://sddmtheme.knsrc/api.kde-look."
