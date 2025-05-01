@@ -20,6 +20,7 @@ import QtQuick.Layouts
 import org.kde.kcmutils as KCMUtils
 import org.kde.kirigami as Kirigami
 import org.kde.newstuff as NewStuff
+import org.kde.coreaddons as KCoreAddons
 
 import "private" as Private
 import "private/entrygriddelegates" as EntryGridDelegates
@@ -137,8 +138,8 @@ KCMUtils.GridViewKCM {
         type: riskyContent ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
         position: Kirigami.InlineMessage.Position.Header
         text: riskyContent
-            ? xi18ndc("knewstuff6", "@info displayed as InlineMessage", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or your distributor for safety, stability, or quality.")
-            : i18ndc("knewstuff6", "@info displayed as InlineMessage", "User-created content shown here hasn't been tested by KDE or your distributor for functionality or quality.")
+            ? xi18ndc("knewstuff6", "@info displayed as InlineMessage", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or %1 for safety, stability, or quality.", KCoreAddons.KOSRelease.name)
+            : i18ndc("knewstuff6", "@info displayed as InlineMessage", "User-created content shown here hasn't been tested by KDE or %1 for functionality or quality.", KCoreAddons.KOSRelease.name)
     }
 
     NewStuff.Engine {
