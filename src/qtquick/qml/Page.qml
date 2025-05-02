@@ -71,6 +71,8 @@ KCMUtils.GridViewKCM {
         }
     }
 
+    readonly property url hostUrl: "https://pling.com"
+
     // Helper for loading and showing entry details
     Connections {
         id: _showEntryDetailsThrottle
@@ -144,8 +146,15 @@ KCMUtils.GridViewKCM {
         type: riskyContent ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
         position: Kirigami.InlineMessage.Position.Header
         text: riskyContent
-            ? xi18ndc("knewstuff6", "@info displayed as InlineMessage", "Use caution when accessing user-created content shown here, as it may contain executable code that hasn't been tested by KDE or %1 for safety, stability, or quality.", KCoreAddons.KOSRelease.name)
-            : i18ndc("knewstuff6", "@info displayed as InlineMessage", "User-created content shown here hasn't been tested by KDE or %1 for functionality or quality.", KCoreAddons.KOSRelease.name)
+            ? xi18ndc("knewstuff6",
+                      "@info displayed as InlineMessage",
+                      "User-created content shown here is hosted on <link url='%1'>%1</link>, and hasn't been tested by KDE or %2 for safety, stability, or quality. Use caution as it may contain executable code.",
+                      root.hostUrl, KCoreAddons.KOSRelease.name)
+            : xi18ndc("knewstuff6",
+                      "@info displayed as InlineMessage",
+                      "User-created content shown here is hosted on <link url='%1'>%1</link>, and hasn't been tested by KDE or %2 for functionality or quality.",
+                      root.hostUrl, KCoreAddons.KOSRelease.name)
+        onLinkActivated: link => Qt.openUrlExternally(link)
     }
 
     NewStuff.Engine {
@@ -469,6 +478,80 @@ KCMUtils.GridViewKCM {
 
         NewStuff.UploadPage {
             engine: newStuffEngine
+        }
+    }
+
+    Kirigami.AbstractCard {
+        id: brandingCard
+
+        readonly property int outerMargins: Kirigami.Units.largeSpacing
+        // Impossible to get the view's actual scrollbar width, but this should be good enough
+        readonly property int verticalScrollbarWidth: 20
+        readonly property int maxContentWidth: Kirigami.Units.gridUnit * 4
+
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+            bottomMargin: outerMargins
+            rightMargin: outerMargins + verticalScrollbarWidth
+        }
+
+        // Intentionally not in the ContentItem layout so it can ignore paddings
+        QQC2.ToolButton {
+            id: brandingCardCloseButton
+
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+            width: visible ? implicitWidth : 0
+            height: visible ? implicitHeight : 0
+
+            hoverEnabled: true
+            visible: hovered || brandingCardHeaderHoverHandler.hovered
+
+            icon.name: "dialog-close-symbolic"
+            icon.width: Kirigami.Units.iconSizes.sizeForLabels
+            icon.height: Kirigami.Units.iconSizes.sizeForLabels
+
+            onClicked: brandingCard.visible = false;
+        }
+
+        contentItem: ColumnLayout {
+            spacing: 0
+
+            QQC2.Label {
+                text: i18nc("@info There's a brand logo underneath this label, so it effectively says 'Powered by [some company]'", "Powered by")
+                Layout.maximumWidth: brandingCard.maxContentWidth - brandingCardCloseButton.width + brandingCard.rightPadding
+                elide: Text.ElideRight
+
+                HoverHandler {
+                    id: brandingCardHeaderHoverHandler
+                }
+            }
+
+            Image {
+                fillMode: Image.PreserveAspectFit
+                Layout.maximumWidth: brandingCard.maxContentWidth
+                Layout.maximumHeight: Math.round(brandingCard.maxContentWidth / 2)
+                source: "pling-logo.png"
+
+                HoverHandler {
+                    id: brandingImageHoverHandler
+                    cursorShape: Qt.PointingHandCursor
+                }
+                TapHandler {
+                    id: brandingImageTapHandler
+                    onTapped: Qt.openUrlExternally(root.hostUrl);
+                }
+
+                QQC2.ToolTip {
+                    visible: Kirigami.Settings.isMobile ? brandingImageTapHandler.pressed : brandingImageHoverHandler.hovered
+                    delay: Kirigami.Units.toolTipDelay
+
+                    text: i18nc("@info:tooltip %1 is a web link", "Visit %1", root.hostUrl)
+                }
+            }
         }
     }
 

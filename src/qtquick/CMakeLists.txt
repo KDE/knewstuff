@@ -41,7 +41,8 @@ target_sources(newstuffqmlplugin PRIVATE
     downloadlinkinfo.cpp
 )
 
-ecm_target_qml_sources(newstuffqmlplugin VERSION 1.1 SOURCES
+ecm_target_qml_sources(newstuffqmlplugin VERSION 1.1
+    SOURCES
     qml/Button.qml
     qml/Dialog.qml
     qml/DialogContent.qml
@@ -49,6 +50,9 @@ ecm_target_qml_sources(newstuffqmlplugin VERSION 1.1 SOURCES
     qml/EntryDetails.qml
     qml/Page.qml
     qml/QuestionAsker.qml
+
+    RESOURCES
+    assets/pling-logo.png
 )
 
 ecm_target_qml_sources(newstuffqmlplugin VERSION 1.81 SOURCES
