@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:38+0000\n"
+"POT-Creation-Date: 2025-05-02 00:39+0000\n"
 "PO-Revision-Date: 2024-09-25 19:24+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -440,7 +440,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Oppdater"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -520,47 +520,56 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Les om korleis du kan gje ei pengegåve til prosjektet"
 
-#: qtquick/qml/Page.qml:140
-#, kde-kuit-format
+#: qtquick/qml/Page.qml:141
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "Use caution when accessing user-created content shown here, as it may "
+#| "contain executable code that hasn't been tested by KDE or your "
+#| "distributor for safety, stability, or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
-"contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality."
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 msgstr ""
 "Utvis varsemd før du eventuelt tek i bruk innhald som er vist her, då det "
 "kan innehalda dataprogram som ikkje er testa av KDE eller distributøren din, "
 "verken når det gjeld tryggleik, stabilitet eller kvalitet."
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "User-created content shown here hasn't been tested by KDE or your "
+#| "distributor for functionality or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
-"User-created content shown here hasn't been tested by KDE or your "
-"distributor for functionality or quality."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 msgstr ""
 "Brukarinnhald som er vist her, er ikkje testa av KDE eller distributøren, "
 "verken når det gjeld funksjonalitet eller kvalitet."
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "Alle"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Installerte"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Oppdaterbare"
 
-#: qtquick/qml/Page.qml:186
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -568,7 +577,7 @@ msgctxt ""
 msgid "All"
 msgstr "Alle"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -576,7 +585,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "Installerte"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -584,31 +593,31 @@ msgctxt ""
 msgid "Updateable"
 msgstr "Oppdaterbare"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "Sortering: utgjevingsdato"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "Sortering: namn"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "Sortering: karakter"
 
-#: qtquick/qml/Page.qml:227
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "Sortering: nedlasting"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
@@ -616,7 +625,7 @@ msgctxt ""
 msgid "Name"
 msgstr "Namn"
 
-#: qtquick/qml/Page.qml:247
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
@@ -624,7 +633,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "Karakter"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:259
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -632,7 +641,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "Nedlastingar"
 
-#: qtquick/qml/Page.qml:269
+#: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -640,32 +649,32 @@ msgctxt ""
 msgid "Release date"
 msgstr "Utgjevingsdato"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Upload…"
 msgstr "Last opp …"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:284
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Les om korleis du kan bidra med kule, nye ting til lista"
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Go to…"
 msgstr "Gå til …"
 
-#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
 #, kde-format
 msgid "Search…"
 msgstr "Søk …"
 
-#: qtquick/qml/Page.qml:363
+#: qtquick/qml/Page.qml:364
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Contribute Your Own…"
 msgstr "Bidra med noko sjølv …"

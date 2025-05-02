@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:38+0000\n"
+"POT-Creation-Date: 2025-05-02 00:39+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -414,7 +414,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Bremañaat"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
 #, fuzzy, kde-format
 #| msgid "Deinstall"
 msgctxt "Request uninstallation of this item"
@@ -495,45 +495,45 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
-"contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality."
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
-"User-created content shown here hasn't been tested by KDE or your "
-"distributor for functionality or quality."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:173
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "Holl"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:175
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Staliañ"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:177
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Bremañaat"
 
-#: qtquick/qml/Page.qml:186
+#: qtquick/qml/Page.qml:187
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt ""
@@ -542,7 +542,7 @@ msgctxt ""
 msgid "All"
 msgstr "Holl"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:198
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -551,7 +551,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "Staliañ"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:209
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt ""
@@ -560,33 +560,33 @@ msgctxt ""
 msgid "Updateable"
 msgstr "Bremañaat"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:222
 #, fuzzy, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "Distruj restr"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:224
 #, fuzzy, kde-format
 #| msgid "Additional Names"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "Anvioù ouzhpenn"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:226
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "Emaon o rummañ"
 
-#: qtquick/qml/Page.qml:227
+#: qtquick/qml/Page.qml:228
 #, fuzzy, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "&Diskennit"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:237
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt ""
@@ -595,7 +595,7 @@ msgctxt ""
 msgid "Name"
 msgstr "Anv"
 
-#: qtquick/qml/Page.qml:247
+#: qtquick/qml/Page.qml:248
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt ""
@@ -604,7 +604,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "Feur"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:259
 #, fuzzy, kde-format
 #| msgid "Download"
 msgctxt ""
@@ -613,7 +613,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "Enkargañ"
 
-#: qtquick/qml/Page.qml:269
+#: qtquick/qml/Page.qml:270
 #, fuzzy, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -621,36 +621,36 @@ msgctxt ""
 msgid "Release date"
 msgstr "Distruj restr"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:283
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "&Ezkargañ"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:284
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:294
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "&Mont da ..."
 
-#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgid "Search…"
 msgstr "Klask :"
 
-#: qtquick/qml/Page.qml:363
+#: qtquick/qml/Page.qml:364
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "Rummoù"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:384
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute Your Own…"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:38+0000\n"
+"POT-Creation-Date: 2025-05-02 00:39+0000\n"
 "PO-Revision-Date: 2025-04-07 14:45+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -443,7 +443,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "更新"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -522,44 +522,53 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "得知如何捐助此專案"
 
-#: qtquick/qml/Page.qml:140
-#, kde-kuit-format
+#: qtquick/qml/Page.qml:141
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "Use caution when accessing user-created content shown here, as it may "
+#| "contain executable code that hasn't been tested by KDE or your "
+#| "distributor for safety, stability, or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
-"contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality."
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 msgstr ""
 "存取此處所顯示的內容時請小心：它們是其他使用者所供應的，也可以包含可執行的程"
 "式碼，這些程式碼沒有由 KDE 或您的發行版檢查是否安全、穩定或是品質如何。"
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "User-created content shown here hasn't been tested by KDE or your "
+#| "distributor for functionality or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
-"User-created content shown here hasn't been tested by KDE or your "
-"distributor for functionality or quality."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 msgstr "此處顯示的使用者供應內容未由 KDE 或您的發行版檢查功能或品質。"
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "已安裝"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:186
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -567,7 +576,7 @@ msgctxt ""
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -575,7 +584,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "已安裝"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -583,31 +592,31 @@ msgctxt ""
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "排序：發佈日期"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "排序：名稱"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "排序：評分"
 
-#: qtquick/qml/Page.qml:227
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "排序：下載次數"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
@@ -615,7 +624,7 @@ msgctxt ""
 msgid "Name"
 msgstr "名稱"
 
-#: qtquick/qml/Page.qml:247
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
@@ -623,7 +632,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "評分"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:259
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -631,7 +640,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "下載次數"
 
-#: qtquick/qml/Page.qml:269
+#: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -639,32 +648,32 @@ msgctxt ""
 msgid "Release date"
 msgstr "發佈日期"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Upload…"
 msgstr "上傳…"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:284
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何將您自己的新玩意加到這個列表裡"
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Go to…"
 msgstr "跳到…"
 
-#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
 #, kde-format
 msgid "Search…"
 msgstr "搜尋…"
 
-#: qtquick/qml/Page.qml:363
+#: qtquick/qml/Page.qml:364
 #, kde-format
 msgid "Category:"
 msgstr "類別："
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Contribute Your Own…"
 msgstr "貢獻您自己的…"

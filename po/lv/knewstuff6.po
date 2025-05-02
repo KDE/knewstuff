@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:38+0000\n"
+"POT-Creation-Date: 2025-05-02 00:39+0000\n"
 "PO-Revision-Date: 2024-10-02 12:08+0300\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -440,7 +440,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "Atjaunināt"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
@@ -520,47 +520,56 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "Uzziniet, kā varat ziedot šim projektam"
 
-#: qtquick/qml/Page.qml:140
-#, kde-kuit-format
+#: qtquick/qml/Page.qml:141
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "Use caution when accessing user-created content shown here, as it may "
+#| "contain executable code that hasn't been tested by KDE or your "
+#| "distributor for safety, stability, or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
-"contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality."
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 msgstr ""
 "Rīkojieties piesardzīgi, izmantojot te redzamo lietotāju veidoto saturu, jo "
 "tas var saturēt izpildāmu kodu, kura drošumu, stabilitāti un kvalitāti nav "
 "pārbaudījuši KDE un jūsu distributīva veidotāji."
 
-#: qtquick/qml/Page.qml:141
-#, kde-format
+#: qtquick/qml/Page.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@info displayed as InlineMessage"
+#| msgid ""
+#| "User-created content shown here hasn't been tested by KDE or your "
+#| "distributor for functionality or quality."
 msgctxt "@info displayed as InlineMessage"
 msgid ""
-"User-created content shown here hasn't been tested by KDE or your "
-"distributor for functionality or quality."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 msgstr ""
 "Te redzamo lietotāju veidotā satura funkcionalitāti un kvalitāti nav "
 "pārbaudījuši KDE un jūsu distributīva veidotāji."
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:173
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "Visas"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:175
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Instalēti"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:177
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Atjaunināmi"
 
-#: qtquick/qml/Page.qml:186
+#: qtquick/qml/Page.qml:187
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -568,7 +577,7 @@ msgctxt ""
 msgid "All"
 msgstr "Visas"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:198
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -576,7 +585,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "Instalēti"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:209
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -584,31 +593,31 @@ msgctxt ""
 msgid "Updateable"
 msgstr "Atjaunināmi"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:222
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "Kārtot: pēc izdošanas datuma"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:224
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "Kārtot: pēc nosaukuma"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:226
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "Kārtot: pēc vērtējuma"
 
-#: qtquick/qml/Page.qml:227
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "Kārtot: pēc lejupielādēm"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:237
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
@@ -616,7 +625,7 @@ msgctxt ""
 msgid "Name"
 msgstr "Nosaukums"
 
-#: qtquick/qml/Page.qml:247
+#: qtquick/qml/Page.qml:248
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
@@ -624,7 +633,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "Vērtējums"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:259
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -632,7 +641,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "Lejupielādes"
 
-#: qtquick/qml/Page.qml:269
+#: qtquick/qml/Page.qml:270
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -640,32 +649,32 @@ msgctxt ""
 msgid "Release date"
 msgstr "Izdošanas datums"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:283
 #, kde-format
 msgid "Upload…"
 msgstr "Augšupielādēt…"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:284
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Uzziniet, kā sarakstam pievienot savu saturu"
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:294
 #, kde-format
 msgid "Go to…"
 msgstr "Iet uz…"
 
-#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
 #, kde-format
 msgid "Search…"
 msgstr "Meklēt…"
 
-#: qtquick/qml/Page.qml:363
+#: qtquick/qml/Page.qml:364
 #, kde-format
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:384
 #, kde-format
 msgid "Contribute Your Own…"
 msgstr "Iesniegt savu…"

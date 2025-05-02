@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:38+0000\n"
+"POT-Creation-Date: 2025-05-02 00:39+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -432,7 +432,7 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "更新"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:114
+#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "Request uninstallation of this item"
@@ -513,45 +513,45 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:140
+#: qtquick/qml/Page.qml:141
 #, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
-"contain executable code that hasn't been tested by KDE or your distributor "
-"for safety, stability, or quality."
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:142
 #, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
-"User-created content shown here hasn't been tested by KDE or your "
-"distributor for functionality or quality."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:172
+#: qtquick/qml/Page.qml:173
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:174
+#: qtquick/qml/Page.qml:175
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "安裝"
 
-#: qtquick/qml/Page.qml:176
+#: qtquick/qml/Page.qml:177
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "更新"
 
-#: qtquick/qml/Page.qml:186
+#: qtquick/qml/Page.qml:187
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt ""
@@ -560,7 +560,7 @@ msgctxt ""
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:197
+#: qtquick/qml/Page.qml:198
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -569,7 +569,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "安裝"
 
-#: qtquick/qml/Page.qml:208
+#: qtquick/qml/Page.qml:209
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt ""
@@ -578,35 +578,35 @@ msgctxt ""
 msgid "Updateable"
 msgstr "更新"
 
-#: qtquick/qml/Page.qml:221
+#: qtquick/qml/Page.qml:222
 #, fuzzy, kde-format
 #| msgid "Release Date"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "發行日期"
 
-#: qtquick/qml/Page.qml:223
+#: qtquick/qml/Page.qml:224
 #, fuzzy, kde-format
 #| msgid "Additional Names"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "別名"
 
-#: qtquick/qml/Page.qml:225
+#: qtquick/qml/Page.qml:226
 #, fuzzy, kde-format
 #| msgid "Sort String"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "分類字串"
 
-#: qtquick/qml/Page.qml:227
+#: qtquick/qml/Page.qml:228
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "最多下載次數"
 
-#: qtquick/qml/Page.qml:236
+#: qtquick/qml/Page.qml:237
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt ""
@@ -615,7 +615,7 @@ msgctxt ""
 msgid "Name"
 msgstr "名稱"
 
-#: qtquick/qml/Page.qml:247
+#: qtquick/qml/Page.qml:248
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt ""
@@ -624,7 +624,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "評分"
 
-#: qtquick/qml/Page.qml:258
+#: qtquick/qml/Page.qml:259
 #, fuzzy, kde-format
 #| msgid "Download"
 msgctxt ""
@@ -633,7 +633,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "下載"
 
-#: qtquick/qml/Page.qml:269
+#: qtquick/qml/Page.qml:270
 #, fuzzy, kde-format
 #| msgid "Release Date"
 msgctxt ""
@@ -642,36 +642,36 @@ msgctxt ""
 msgid "Release date"
 msgstr "發行日期"
 
-#: qtquick/qml/Page.qml:282
+#: qtquick/qml/Page.qml:283
 #, fuzzy, kde-format
 #| msgid "&Upload"
 msgid "Upload…"
 msgstr "上傳(&U)"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:284
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:293
+#: qtquick/qml/Page.qml:294
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "移至(&G)..."
 
-#: qtquick/qml/Page.qml:300 qtquick/qml/Page.qml:309
+#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "搜尋(&S)："
 
-#: qtquick/qml/Page.qml:363
+#: qtquick/qml/Page.qml:364
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgid "Category:"
 msgstr "分類"
 
-#: qtquick/qml/Page.qml:383
+#: qtquick/qml/Page.qml:384
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute Your Own…"
