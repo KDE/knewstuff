@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2024-09-11 07:42+0200\n"
+"PO-Revision-Date: 2025-05-02 07:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -527,12 +527,7 @@ msgid "Find out how to donate to this project"
 msgstr "Ugotovite, kako lahko donirate za ta projekt"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -540,22 +535,18 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "Bodite previdni, ko dostopate do tukaj prikazane vsebine, ki jo ustvarijo "
-"uporabniki, saj lahko vsebuje izvedljivo kodo, ki je KDE ali vaš distributer "
-"ni testiral glede varnosti, stabilnosti ali kakovosti."
+"uporabniki, saj lahko vsebuje izvedljivo kodo, ki je KDE ali %1 ni testiral "
+"glede varnosti, stabilnosti ali kakovosti."
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "Uporabniško ustvarjena vsebina, prikazana tukaj, ni bila testirana s strani "
-"KDE ali vašega distributerja glede funkcionalnosti ali kakovosti."
+"KDE ali %1 glede funkcionalnosti ali kakovosti."
 
 #: qtquick/qml/Page.qml:173
 #, kde-format

@@ -9,7 +9,7 @@
 # Tom Albers <tomalbers@kde.nl>, 2004.
 # Sander Koning <sanderkoning@kde.nl>, 2005.
 # Tijmen Baarda <tijmenbaarda@kde.nl>, 2005.
-# SPDX-FileCopyrightText: 2008, 2009, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2008, 2009, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 # Kristof Bal <kristof.bal@gmail.com>, 2008, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2012.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2024-09-11 10:55+0200\n"
+"PO-Revision-Date: 2025-05-02 13:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attica/atticaprovider.cpp:167
@@ -539,12 +539,7 @@ msgid "Find out how to donate to this project"
 msgstr "Zoek uit hoe te doneren aan dit project"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -552,22 +547,18 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "Wees voorzichtig bij benaderen van gebruiker-gemaakte, hier getoonde inhoud, "
-"omdat het uitvoerbare code kan bevatten die niet is getest op veiligheid, "
-"stabiliteit of kwaliteit door KDE of uw distributie."
+"omdat het uitvoerbare code kan bevatten die niet door KDE of %1 is getest op "
+"veiligheid, stabiliteit of kwaliteit."
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "Gebruiker-gemaakte, hier getoonde inhoud, is niet getest op functionaliteit "
-"of kwaliteit door KDE of uw distributie."
+"of kwaliteit door KDE of %1."
 
 #: qtquick/qml/Page.qml:173
 #, kde-format

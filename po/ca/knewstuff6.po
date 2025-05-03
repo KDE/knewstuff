@@ -1,28 +1,28 @@
 # Translation of knewstuff6.po to Catalan
-# Copyright (C) 1998-2024 This_file_is_part_of_KDE
+# Copyright (C) 1998-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2006, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020, 2021, 2022.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2007.
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Robert Millan <rmh@aybabtu.com>, 2009.
 # Orestes Mas <orestes@tsc.upc.edu>, 2010.
 # Empar Montoro Martín <montoro_mde@gva.es>, 2019.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2024-09-11 10:18+0200\n"
+"PO-Revision-Date: 2025-05-02 13:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -528,12 +528,7 @@ msgid "Find out how to donate to this project"
 msgstr "Trobeu com fer una donació al projecte"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -542,21 +537,17 @@ msgid ""
 msgstr ""
 "Aneu amb compte en accedir al contingut creat per l'usuari que es mostra "
 "aquí, ja que pot contenir codi executable del qual no s'ha provat la "
-"seguretat, l'estabilitat o la qualitat per KDE o el vostre distribuïdor."
+"seguretat, l'estabilitat o la qualitat per KDE o %1."
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "El contingut creat per l'usuari que es mostra aquí no s'ha provat la "
-"funcionalitat o la qualitat per KDE ni el vostre distribuïdor."
+"funcionalitat o la qualitat per KDE ni %1."
 
 #: qtquick/qml/Page.qml:173
 #, kde-format
@@ -1022,153 +1013,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Baixa les novetats…"
-
-#~ msgid "Everything"
-#~ msgstr "Tot"
-
-#~ msgctxt "List option which will set the filter to show everything"
-#~ msgid "Show All Entries"
-#~ msgstr "Mostra totes les entrades"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items are shown"
-#~ msgid "Show Only Installed Entries"
-#~ msgstr "Mostra només les entrades instal·lades"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items with "
-#~ "updates available are shown"
-#~ msgid "Show Only Updateable Entries"
-#~ msgstr "Mostra només les entrades actualitzables"
-
-#~ msgid "Recent"
-#~ msgstr "Recents"
-
-#~ msgid "Alphabetical"
-#~ msgstr "Alfabèticament"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on when items were "
-#~ "most recently updated"
-#~ msgid "Show Most Recent First"
-#~ msgstr "Primer mostra la més recent"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to be alphabetical based on the "
-#~ "name"
-#~ msgid "Sort Alphabetically By Name"
-#~ msgstr "Ordena alfabèticament per nom"
-
-#~ msgctxt "List option which will set the sort order to based on user ratings"
-#~ msgid "Show Highest Rated First"
-#~ msgstr "Primer mostra la que té millor puntuació"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on number of downloads"
-#~ msgid "Show Most Downloaded First"
-#~ msgstr "Primer mostra la més baixada"
-
-#~ msgid "Tiles"
-#~ msgstr "Mosaics"
-
-#~ msgid "Icons"
-#~ msgstr "Icones"
-
-#~ msgid "Preview"
-#~ msgstr "Vista prèvia"
-
-#~ msgid "Detailed Tiles View Mode"
-#~ msgstr "Mode de vista de mosaic en detall"
-
-#~ msgid "Icons Only View Mode"
-#~ msgstr "Mode de vista només icones"
-
-#~ msgid "Large Preview View Mode"
-#~ msgstr "Mode de vista prèvia gran"
-
-#~ msgid "Download New Stuff..."
-#~ msgstr "Baixa les novetats..."
-
-#~ msgctxt ""
-#~ "A message which is shown when the user attempts to display a specific "
-#~ "entry from a specific provider, but that entry isn't found"
-#~ msgid ""
-#~ "The entry you attempted to display, identified by the unique ID %1, could "
-#~ "not be found."
-#~ msgstr ""
-#~ "No s'ha pogut trobar l'entrada que heu intentat mostrar, identificada per "
-#~ "l'ID únic %1."
-
-#~ msgid "Initializing"
-#~ msgstr "S'està inicialitzant"
-
-#~ msgid "Loading provider information"
-#~ msgstr "S'està carregant la informació del proveïdor"
-
-#~ msgid "Loading data from provider"
-#~ msgstr "S'estan carregant les dades des del proveïdor"
-
-#~ msgid "Re: %1"
-#~ msgstr "Re: %1"
-
-#~ msgid "Loading one preview"
-#~ msgid_plural "Loading %1 previews"
-#~ msgstr[0] "S'està carregant una vista prèvia"
-#~ msgstr[1] "S'estan carregant %1 vistes prèvies"
-
-#~ msgctxt ""
-#~ "A text shown beside a busy indicator suggesting that data is being fetched"
-#~ msgid "Loading more…"
-#~ msgstr "S'està carregant més…"
-
-#~ msgctxt "Request installation of this item"
-#~ msgid "Install"
-#~ msgstr "Instal·la"
-
-#~ msgctxt "List option which will set the filter to show everything"
-#~ msgid "Show Everything"
-#~ msgstr "Mostra-ho tot"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items are shown"
-#~ msgid "Installed Only"
-#~ msgstr "Només els instal·lats"
-
-#~ msgctxt ""
-#~ "List option which will set the filter so only installed items with "
-#~ "updates available are shown"
-#~ msgid "Updateable Only"
-#~ msgstr "Només els actualitzables"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on when items were "
-#~ "most recently updated"
-#~ msgid "Show most recent first"
-#~ msgstr "Primer mostra el més recent"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to be alphabetical based on the "
-#~ "name"
-#~ msgid "Sort alphabetically"
-#~ msgstr "Ordena alfabèticament"
-
-#~ msgctxt "List option which will set the sort order to based on user ratings"
-#~ msgid "Show highest rated first"
-#~ msgstr "Primer mostra el que té millor puntuació"
-
-#~ msgctxt ""
-#~ "List option which will set the sort order to based on number of downloads"
-#~ msgid "Show most downloaded first"
-#~ msgstr "Primer mostra el més baixat"
-
-#~ msgid "Download New %1..."
-#~ msgstr "Baixa %1..."
-
-#~ msgctxt ""
-#~ "Show installation options, where there is more than one downloadable item"
-#~ msgid "Install..."
-#~ msgstr "Instal·la..."
-
-#~ msgctxt "Label for the busy indicator showing an item is installing"
-#~ msgid "Installing..."
-#~ msgstr "S'està instal·lant..."

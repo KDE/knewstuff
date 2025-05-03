@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2024-09-11 05:32+0200\n"
+"PO-Revision-Date: 2025-05-02 03:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -513,12 +513,7 @@ msgid "Find out how to donate to this project"
 msgstr "გარკვევა, როგორ შევწიროთ ამ პროექტს"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -527,22 +522,17 @@ msgid ""
 msgstr ""
 "გამოიჩინეთ სიფრთხილე მომხმარებლის მიერ შექმნილ შემცველობასთან წვდომისას, "
 "რადგან ის შეიძლება შეიცავდეს შესრულებად კოდს, რომელიც არ შემოწმებულა KDE-ის "
-"ან თქვენი დისტრიბუტორის მიერ, არის თუ არა ის უსაფრთხო, სტაბილური ან "
-"ხარისხიანი."
+"ან %1-ის მიერ, არის თუ არა ის უსაფრთხო, სტაბილური ან ხარისხიანი."
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"აქ ნაჩვენები მომხმარებლის მიერ შექმნილი შემცველობა, რომელიც KDE-ის ან თქვენი "
-"დისტრიბუტორის მიერ ფუნქციონალზე ან ხარისხზე არ შემოწმებულა."
+"აქ ნაჩვენები მომხმარებლის მიერ შექმნილი შემცველობა, რომელიც KDE-ის, ან %1-ის "
+"მიერ ფუნქციონალზე ან ხარისხზე არ შემოწმებულა."
 
 #: qtquick/qml/Page.qml:173
 #, kde-format
