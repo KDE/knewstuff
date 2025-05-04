@@ -17,13 +17,13 @@
 # Meni Livne <livne@kde.org>, 2007.
 # tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2024-09-12 08:48+0300\n"
+"PO-Revision-Date: 2025-05-03 14:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -522,12 +522,7 @@ msgid "Find out how to donate to this project"
 msgstr "מידע על איך לתרום למיזם הזה"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -535,22 +530,17 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "מוטב לנקוט במשנה זהירות בתוכן כאן שיצרו משתמשים אחרים, כיוון שהוא יכול להכיל "
-"קוד שאפשר להריץ שלא נבדק על ידי KDE או מפיצת מערכת ההפעלה שלך לאימות "
-"הבטיחות, היציבות והאיכות."
+"קוד שאפשר להריץ שלא נבדק על ידי KDE או %1 לאימות הבטיחות, היציבות והאיכות."
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"תוכן שמופיע כאן ונוצר על ידי המשתמשים לא נבדק על ידי KDE או על ידי מהנדסי "
-"ההפצה שלך מבחינת תקינות או איכות."
+"תוכן שמופיע כאן ונוצר על ידי המשתמשים לא נבדק על ידי KDE או על ידי %1 מבחינת "
+"תקינות או איכות."
 
 #: qtquick/qml/Page.qml:173
 #, kde-format

@@ -19,14 +19,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-02 00:39+0000\n"
-"PO-Revision-Date: 2025-04-07 14:45+0900\n"
+"PO-Revision-Date: 2025-05-03 14:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.07.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: attica/atticaprovider.cpp:167
@@ -523,12 +523,7 @@ msgid "Find out how to donate to this project"
 msgstr "得知如何捐助此專案"
 
 #: qtquick/qml/Page.qml:141
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -536,19 +531,15 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "存取此處所顯示的內容時請小心：它們是其他使用者所供應的，也可以包含可執行的程"
-"式碼，這些程式碼沒有由 KDE 或您的發行版檢查是否安全、穩定或是品質如何。"
+"式碼，這些程式碼沒有由 KDE 或 %1 檢查是否安全、穩定或是品質如何。"
 
 #: qtquick/qml/Page.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
-msgstr "此處顯示的使用者供應內容未由 KDE 或您的發行版檢查功能或品質。"
+msgstr "此處顯示的使用者供應內容未由 KDE 或 %1 檢查功能或品質。"
 
 #: qtquick/qml/Page.qml:173
 #, kde-format
