@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-02 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:38+0000\n"
 "PO-Revision-Date: 2024-09-19 09:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -329,10 +329,10 @@ msgstr "تصنيف مجهول"
 
 # هذه جزء من "نزل أشياء جديدة"
 #. i18nd("knewstuff6", "Download New %1…").
-#. *
-#. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
-#: qtquick/qml/Button.qml:43
+#. \note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:46
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
@@ -340,18 +340,18 @@ msgctxt ""
 msgid "Stuff"
 msgstr "أشياء جديدة"
 
-#: qtquick/qml/Button.qml:44
+#: qtquick/qml/Button.qml:47
 #, kde-format
 msgid "Download New %1…"
 msgstr "نزّل %1…"
 
-#: qtquick/qml/Dialog.qml:44
+#: qtquick/qml/Dialog.qml:47
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "نزّل أشياء %1"
 
-#: qtquick/qml/Dialog.qml:45
+#: qtquick/qml/Dialog.qml:48
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -359,12 +359,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "نزِل أشياء جديدة"
 
-#: qtquick/qml/DownloadItemsSheet.qml:35
+#: qtquick/qml/DownloadItemsSheet.qml:38
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "اختر خيار تثبيتك"
 
-#: qtquick/qml/DownloadItemsSheet.qml:47
+#: qtquick/qml/DownloadItemsSheet.qml:50
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -377,19 +377,19 @@ msgstr ""
 "المتاحة ، فيرجى الاتصال بمؤلف هذا العنصر واطلب منه توضيح ذلك من خلال تسمية "
 "العناصر."
 
-#: qtquick/qml/DownloadItemsSheet.qml:88
+#: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
 msgid "Install"
 msgstr "ثبّت"
 
-#: qtquick/qml/EntryDetails.qml:89
+#: qtquick/qml/EntryDetails.qml:92
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "يثبّت %1 من %2"
 
-#: qtquick/qml/EntryDetails.qml:106
+#: qtquick/qml/EntryDetails.qml:109
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -397,7 +397,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 لِـ %2"
 
-#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/EntryDetails.qml:114
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
@@ -407,7 +407,7 @@ msgctxt ""
 msgid "Install"
 msgstr "ثبّت"
 
-#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/EntryDetails.qml:115
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
@@ -416,7 +416,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "ثبّت…"
 
-#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/EntryDetails.qml:131
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
@@ -424,13 +424,13 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "حدّث"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
+#: qtquick/qml/EntryDetails.qml:138 qtquick/qml/Page.qml:121
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "أزل"
 
-#: qtquick/qml/EntryDetails.qml:157
+#: qtquick/qml/EntryDetails.qml:160
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -438,14 +438,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "يعمل حاليا على العنصر %1 بواسطة %2. الرجاء الانتظار…"
 
-#: qtquick/qml/EntryDetails.qml:159
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "يحدث حاليا العنصر %1 بواسطة %2. الرجاء الانتظار…"
 
-#: qtquick/qml/EntryDetails.qml:161
+#: qtquick/qml/EntryDetails.qml:164
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -459,12 +459,12 @@ msgstr ""
 "enter_bug.cgi?product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كِيدِي في "
 "تقرير علة</a>."
 
-#: qtquick/qml/EntryDetails.qml:214
+#: qtquick/qml/EntryDetails.qml:217
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "التعليقات والمراجعات:"
 
-#: qtquick/qml/EntryDetails.qml:216
+#: qtquick/qml/EntryDetails.qml:219
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -472,17 +472,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 تعليقات ومراجعات"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:225
 #, kde-format
 msgid "Rating:"
 msgstr "التّقييم:"
 
-#: qtquick/qml/EntryDetails.qml:227
+#: qtquick/qml/EntryDetails.qml:230
 #, kde-format
 msgid "Homepage:"
 msgstr "الصّفحة الرّئيسيّة:"
 
-#: qtquick/qml/EntryDetails.qml:228
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -491,12 +491,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "افتح الصفحة الرئيسية لـ %1"
 
-#: qtquick/qml/EntryDetails.qml:234
+#: qtquick/qml/EntryDetails.qml:237
 #, kde-format
 msgid "How To Donate:"
 msgstr "كيف تتبرع:"
 
-#: qtquick/qml/EntryDetails.qml:235
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -504,7 +504,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "تعرف على كيفية التبرع لهذا المشروع"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:147
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info displayed as InlineMessage"
 #| msgid ""
@@ -521,7 +521,7 @@ msgstr ""
 "يحتوي على تعليمات برمجية قابلة للتنفيذ لم تفحص من قبل كيدي أو الموزع الخاص "
 "بك من حيث السلامة أو الاستقرار أو الجودة."
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:148
 #, fuzzy, kde-format
 #| msgctxt "@info displayed as InlineMessage"
 #| msgid ""
@@ -535,25 +535,25 @@ msgstr ""
 "المحتوى الذي أنشأه المستخدم والموضح هنا لم يفحص من قبل كيدي أو الموزع الخاص "
 "بك من حيث الأداء الوظيفي أو الجودة."
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "الكلّ"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:181
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "الأكثر تثبيتاً"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:183
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "القابل للتحديث"
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:193
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -561,7 +561,7 @@ msgctxt ""
 msgid "All"
 msgstr "الكلّ"
 
-#: qtquick/qml/Page.qml:198
+#: qtquick/qml/Page.qml:204
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -569,7 +569,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "الأكثر تثبيتاً"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -577,31 +577,31 @@ msgctxt ""
 msgid "Updateable"
 msgstr "القابل للتحديث"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "رتب حسب: تاريخ الإصدار"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "رتب حسب : الاسم"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "رتب حسب: التقييم"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "رتب حسب: الأكثر تحميلاً"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:243
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
@@ -609,7 +609,7 @@ msgctxt ""
 msgid "Name"
 msgstr "الاسم"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
@@ -617,7 +617,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "التّقييم"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:265
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -625,7 +625,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "التنزيلات"
 
-#: qtquick/qml/Page.qml:270
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -633,32 +633,32 @@ msgctxt ""
 msgid "Release date"
 msgstr "تاريخ الإصدار"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Upload…"
 msgstr "يرفع…"
 
-#: qtquick/qml/Page.qml:284
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "تعلم كيف تضيف أشيائك إلى هذه القائمة"
 
-#: qtquick/qml/Page.qml:294
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgid "Go to…"
 msgstr "اذهب إلى…"
 
-#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:307 qtquick/qml/Page.qml:316
 #, kde-format
 msgid "Search…"
 msgstr "ابحث…"
 
-#: qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:370
 #, kde-format
 msgid "Category:"
 msgstr "التصنيف:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:390
 #, kde-format
 msgid "Contribute Your Own…"
 msgstr "ساهم بما معك…"
@@ -780,32 +780,32 @@ msgctxt ""
 msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
-#: qtquick/qml/UploadPage.qml:50
+#: qtquick/qml/UploadPage.qml:53
 #, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "يرفع: %1"
 
-#: qtquick/qml/UploadPage.qml:111
+#: qtquick/qml/UploadPage.qml:114
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
 msgstr "يحدث المعلومات…"
 
-#: qtquick/qml/UploadPage.qml:126
+#: qtquick/qml/UploadPage.qml:129
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "متجر كِيدِي"
 
-#: qtquick/qml/UploadPage.qml:132
+#: qtquick/qml/UploadPage.qml:135
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "مزودك:"
 
-#: qtquick/qml/UploadPage.qml:141
+#: qtquick/qml/UploadPage.qml:144
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -813,7 +813,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "افتح موقع : %1"
 
-#: qtquick/qml/UploadPage.qml:149
+#: qtquick/qml/UploadPage.qml:152
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -821,7 +821,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "أرسل بريدًا إلى: %1"
 
-#: qtquick/qml/UploadPage.qml:159
+#: qtquick/qml/UploadPage.qml:162
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -836,7 +836,7 @@ msgstr ""
 "\"منتجاتي\" في القائمة التي تنبثق عندما انقر فوق رمز المستخدم الخاص بك. انقر "
 "فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج ، حيث يمكنك العمل على منتجاتك."
 
-#: qtquick/qml/UploadPage.qml:160
+#: qtquick/qml/UploadPage.qml:163
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""

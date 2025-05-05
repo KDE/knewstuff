@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-02 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:38+0000\n"
 "PO-Revision-Date: 2025-05-03 14:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -349,10 +349,10 @@ msgid "Unknown Category"
 msgstr "未知分類"
 
 #. i18nd("knewstuff6", "Download New %1…").
-#. *
-#. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
-#: qtquick/qml/Button.qml:43
+#. \note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:46
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
@@ -361,18 +361,18 @@ msgid "Stuff"
 msgstr "玩意"
 
 # %1 會是譯文，所以不留空格
-#: qtquick/qml/Button.qml:44
+#: qtquick/qml/Button.qml:47
 #, kde-format
 msgid "Download New %1…"
 msgstr "下載新%1…"
 
-#: qtquick/qml/Dialog.qml:44
+#: qtquick/qml/Dialog.qml:47
 #, kde-format
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "下載新%1"
 
-#: qtquick/qml/Dialog.qml:45
+#: qtquick/qml/Dialog.qml:48
 #, kde-format
 msgctxt ""
 "A placeholder title used in the dialog when there is no better title "
@@ -380,12 +380,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "下載熱門玩意"
 
-#: qtquick/qml/DownloadItemsSheet.qml:35
+#: qtquick/qml/DownloadItemsSheet.qml:38
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr "選擇安裝選項"
 
-#: qtquick/qml/DownloadItemsSheet.qml:47
+#: qtquick/qml/DownloadItemsSheet.qml:50
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -396,19 +396,19 @@ msgstr ""
 "請在下方的可下載項目清單中選擇你要安裝的選項。如果你所要選的可用選項不夠清"
 "楚，請聯絡此項目的作者，並請求他們說明這個項目的命名意義。"
 
-#: qtquick/qml/DownloadItemsSheet.qml:88
+#: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
 msgid "Install"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:89
+#: qtquick/qml/EntryDetails.qml:92
 #, kde-format
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
 msgstr "從 %2 安裝 %1"
 
-#: qtquick/qml/EntryDetails.qml:106
+#: qtquick/qml/EntryDetails.qml:109
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -416,7 +416,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr "%1 由 %2"
 
-#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/EntryDetails.qml:114
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, kde-format
@@ -426,7 +426,7 @@ msgctxt ""
 msgid "Install"
 msgstr "安裝"
 
-#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/EntryDetails.qml:115
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, kde-format
@@ -435,7 +435,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "安裝…"
 
-#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/EntryDetails.qml:131
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, kde-format
@@ -443,13 +443,13 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "更新"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
+#: qtquick/qml/EntryDetails.qml:138 qtquick/qml/Page.qml:121
 #, kde-format
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "解除安裝"
 
-#: qtquick/qml/EntryDetails.qml:157
+#: qtquick/qml/EntryDetails.qml:160
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -457,14 +457,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr "目前正在處理 %2 的項目 %1。請稍候…"
 
-#: qtquick/qml/EntryDetails.qml:159
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr "目前正在更新 %2 的項目 %1。請稍候…"
 
-#: qtquick/qml/EntryDetails.qml:161
+#: qtquick/qml/EntryDetails.qml:164
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -477,12 +477,12 @@ msgstr ""
 "這個項目目前無效或處於不明狀態。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
 "product=frameworks-knewstuff\">請在漏洞回報中回報此問題至 KDE 社群</a>。"
 
-#: qtquick/qml/EntryDetails.qml:214
+#: qtquick/qml/EntryDetails.qml:217
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr "留言及評論："
 
-#: qtquick/qml/EntryDetails.qml:216
+#: qtquick/qml/EntryDetails.qml:219
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a new sub page with comments (comments "
@@ -490,17 +490,17 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "%1 則評論及留言"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:225
 #, kde-format
 msgid "Rating:"
 msgstr "評價："
 
-#: qtquick/qml/EntryDetails.qml:227
+#: qtquick/qml/EntryDetails.qml:230
 #, kde-format
 msgid "Homepage:"
 msgstr "首頁："
 
-#: qtquick/qml/EntryDetails.qml:228
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -509,12 +509,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "開啟 %1 首頁"
 
-#: qtquick/qml/EntryDetails.qml:234
+#: qtquick/qml/EntryDetails.qml:237
 #, kde-format
 msgid "How To Donate:"
 msgstr "捐助方法："
 
-#: qtquick/qml/EntryDetails.qml:235
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -522,7 +522,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr "得知如何捐助此專案"
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:147
 #, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
@@ -533,7 +533,7 @@ msgstr ""
 "存取此處所顯示的內容時請小心：它們是其他使用者所供應的，也可以包含可執行的程"
 "式碼，這些程式碼沒有由 KDE 或 %1 檢查是否安全、穩定或是品質如何。"
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:148
 #, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
@@ -541,25 +541,25 @@ msgid ""
 "functionality or quality."
 msgstr "此處顯示的使用者供應內容未由 KDE 或 %1 檢查功能或品質。"
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:179
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:181
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "已安裝"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:183
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:193
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -567,7 +567,7 @@ msgctxt ""
 msgid "All"
 msgstr "全部"
 
-#: qtquick/qml/Page.qml:198
+#: qtquick/qml/Page.qml:204
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -575,7 +575,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "已安裝"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:215
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -583,31 +583,31 @@ msgctxt ""
 msgid "Updateable"
 msgstr "可更新"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr "排序：發佈日期"
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:230
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "排序：名稱"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:232
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "排序：評分"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:234
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "排序：下載次數"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:243
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
@@ -615,7 +615,7 @@ msgctxt ""
 msgid "Name"
 msgstr "名稱"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:254
 #, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
@@ -623,7 +623,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "評分"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:265
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -631,7 +631,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "下載次數"
 
-#: qtquick/qml/Page.qml:270
+#: qtquick/qml/Page.qml:276
 #, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
@@ -639,32 +639,32 @@ msgctxt ""
 msgid "Release date"
 msgstr "發佈日期"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Upload…"
 msgstr "上傳…"
 
-#: qtquick/qml/Page.qml:284
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr "了解如何將您自己的新玩意加到這個列表裡"
 
-#: qtquick/qml/Page.qml:294
+#: qtquick/qml/Page.qml:300
 #, kde-format
 msgid "Go to…"
 msgstr "跳到…"
 
-#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:307 qtquick/qml/Page.qml:316
 #, kde-format
 msgid "Search…"
 msgstr "搜尋…"
 
-#: qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:370
 #, kde-format
 msgid "Category:"
 msgstr "類別："
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:390
 #, kde-format
 msgid "Contribute Your Own…"
 msgstr "貢獻您自己的…"
@@ -786,32 +786,32 @@ msgctxt ""
 msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
-#: qtquick/qml/UploadPage.qml:50
+#: qtquick/qml/UploadPage.qml:53
 #, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "上傳好玩意：%1"
 
-#: qtquick/qml/UploadPage.qml:111
+#: qtquick/qml/UploadPage.qml:114
 #, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
 msgstr "更新資訊中…"
 
-#: qtquick/qml/UploadPage.qml:126
+#: qtquick/qml/UploadPage.qml:129
 #, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "KDE Store"
 
-#: qtquick/qml/UploadPage.qml:132
+#: qtquick/qml/UploadPage.qml:135
 #, kde-format
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "您的提供者"
 
-#: qtquick/qml/UploadPage.qml:141
+#: qtquick/qml/UploadPage.qml:144
 #, kde-format
 msgctxt ""
 "Text for an action which causes the specified website to be opened using the "
@@ -819,7 +819,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr "開啟網站：%1"
 
-#: qtquick/qml/UploadPage.qml:149
+#: qtquick/qml/UploadPage.qml:152
 #, kde-format
 msgctxt ""
 "Text for an action which will attempt to send an email using the user's "
@@ -827,7 +827,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "傳送電子郵件給：%1"
 
-#: qtquick/qml/UploadPage.qml:159
+#: qtquick/qml/UploadPage.qml:162
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -842,7 +842,7 @@ msgstr ""
 "Products（我的產品）這個選項。點擊它將帶您到 KDE Store 的產品管理系統，讓您可"
 "以編輯或新增產品（商店項目）。"
 
-#: qtquick/qml/UploadPage.qml:160
+#: qtquick/qml/UploadPage.qml:163
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""

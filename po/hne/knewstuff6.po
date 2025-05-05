@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-02 00:39+0000\n"
+"POT-Creation-Date: 2025-05-05 00:38+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -312,10 +312,10 @@ msgid "Unknown Category"
 msgstr "अग्यात गलती"
 
 #. i18nd("knewstuff6", "Download New %1…").
-#. *
-#. @note For the sake of consistency, you should NOT override the text property, just set this one
 #.
-#: qtquick/qml/Button.qml:43
+#. \note For the sake of consistency, you should NOT override the text property, just set this one
+#.
+#: qtquick/qml/Button.qml:46
 #, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
@@ -323,20 +323,20 @@ msgctxt ""
 msgid "Stuff"
 msgstr ""
 
-#: qtquick/qml/Button.qml:44
+#: qtquick/qml/Button.qml:47
 #, fuzzy, kde-format
 #| msgid "Download New %1"
 msgid "Download New %1…"
 msgstr "नवा %1 डाउनलोड करव"
 
-#: qtquick/qml/Dialog.qml:44
+#: qtquick/qml/Dialog.qml:47
 #, fuzzy, kde-format
 #| msgid "Download New %1"
 msgctxt "The dialog title when we know which type of stuff is being requested"
 msgid "Download New %1"
 msgstr "नवा %1 डाउनलोड करव"
 
-#: qtquick/qml/Dialog.qml:45
+#: qtquick/qml/Dialog.qml:48
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
 msgctxt ""
@@ -345,12 +345,12 @@ msgctxt ""
 msgid "Download New Stuff"
 msgstr "ताजा सामान डाउनलोड करव"
 
-#: qtquick/qml/DownloadItemsSheet.qml:35
+#: qtquick/qml/DownloadItemsSheet.qml:38
 #, kde-format
 msgid "Pick Your Installation Option"
 msgstr ""
 
-#: qtquick/qml/DownloadItemsSheet.qml:47
+#: qtquick/qml/DownloadItemsSheet.qml:50
 #, kde-format
 msgid ""
 "Please select the option you wish to install from the list of downloadable "
@@ -359,12 +359,12 @@ msgid ""
 "this through the naming of the items."
 msgstr ""
 
-#: qtquick/qml/DownloadItemsSheet.qml:88
+#: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
 msgid "Install"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/EntryDetails.qml:89
+#: qtquick/qml/EntryDetails.qml:92
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -372,7 +372,7 @@ msgctxt ""
 msgid "Installing %1 from %2"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/EntryDetails.qml:106
+#: qtquick/qml/EntryDetails.qml:109
 #, kde-format
 msgctxt ""
 "Combined title for the entry details page made of the name of the entry, and "
@@ -380,7 +380,7 @@ msgctxt ""
 msgid "%1 by %2"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:111
+#: qtquick/qml/EntryDetails.qml:114
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:43
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:48
 #, fuzzy, kde-format
@@ -391,7 +391,7 @@ msgctxt ""
 msgid "Install"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/EntryDetails.qml:112
+#: qtquick/qml/EntryDetails.qml:115
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
 #, fuzzy, kde-format
@@ -401,7 +401,7 @@ msgctxt ""
 msgid "Install…"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/EntryDetails.qml:128
+#: qtquick/qml/EntryDetails.qml:131
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:64
 #, fuzzy, kde-format
@@ -410,14 +410,14 @@ msgctxt "Request updating of this item"
 msgid "Update"
 msgstr "अपडेट"
 
-#: qtquick/qml/EntryDetails.qml:135 qtquick/qml/Page.qml:115
+#: qtquick/qml/EntryDetails.qml:138 qtquick/qml/Page.qml:121
 #, fuzzy, kde-format
 #| msgid "Uninstall"
 msgctxt "Request uninstallation of this item"
 msgid "Uninstall"
 msgstr "अनइंस्टाल"
 
-#: qtquick/qml/EntryDetails.qml:157
+#: qtquick/qml/EntryDetails.qml:160
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
@@ -425,14 +425,14 @@ msgctxt ""
 msgid "Currently working on the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:159
+#: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:161
+#: qtquick/qml/EntryDetails.qml:164
 #, kde-format
 msgctxt ""
 "Status message which should only be shown when the entry has been given some "
@@ -443,12 +443,12 @@ msgid ""
 "to the KDE Community in a bug report</a>."
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:214
+#: qtquick/qml/EntryDetails.qml:217
 #, kde-format
 msgid "Comments and Reviews:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:216
+#: qtquick/qml/EntryDetails.qml:219
 #, fuzzy, kde-format
 #| msgid "View Comments"
 msgctxt ""
@@ -457,19 +457,19 @@ msgctxt ""
 msgid "%1 Reviews and Comments"
 msgstr "टिप्पनी मन ल देखव"
 
-#: qtquick/qml/EntryDetails.qml:222
+#: qtquick/qml/EntryDetails.qml:225
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating:"
 msgstr "रेटिंग:"
 
-#: qtquick/qml/EntryDetails.qml:227
+#: qtquick/qml/EntryDetails.qml:230
 #, fuzzy, kde-format
 #| msgid "Homepage"
 msgid "Homepage:"
 msgstr "मुख पेज"
 
-#: qtquick/qml/EntryDetails.qml:228
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -478,12 +478,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:234
+#: qtquick/qml/EntryDetails.qml:237
 #, kde-format
 msgid "How To Donate:"
 msgstr ""
 
-#: qtquick/qml/EntryDetails.qml:235
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -491,7 +491,7 @@ msgctxt ""
 msgid "Find out how to donate to this project"
 msgstr ""
 
-#: qtquick/qml/Page.qml:141
+#: qtquick/qml/Page.qml:147
 #, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
@@ -500,7 +500,7 @@ msgid ""
 "stability, or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:142
+#: qtquick/qml/Page.qml:148
 #, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
@@ -508,27 +508,27 @@ msgid ""
 "functionality or quality."
 msgstr ""
 
-#: qtquick/qml/Page.qml:173
+#: qtquick/qml/Page.qml:179
 #, fuzzy, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "सब्बो (&A)"
 
-#: qtquick/qml/Page.qml:175
+#: qtquick/qml/Page.qml:181
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/Page.qml:177
+#: qtquick/qml/Page.qml:183
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "अपडेट"
 
-#: qtquick/qml/Page.qml:187
+#: qtquick/qml/Page.qml:193
 #, fuzzy, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
@@ -536,7 +536,7 @@ msgctxt ""
 msgid "All"
 msgstr "सब्बो (&A)"
 
-#: qtquick/qml/Page.qml:198
+#: qtquick/qml/Page.qml:204
 #, fuzzy, kde-format
 #| msgid "Install"
 msgctxt ""
@@ -545,7 +545,7 @@ msgctxt ""
 msgid "Installed"
 msgstr "इनस्टाल करव"
 
-#: qtquick/qml/Page.qml:209
+#: qtquick/qml/Page.qml:215
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt ""
@@ -554,34 +554,34 @@ msgctxt ""
 msgid "Updateable"
 msgstr "अपडेट"
 
-#: qtquick/qml/Page.qml:222
+#: qtquick/qml/Page.qml:228
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
 msgstr ""
 
-#: qtquick/qml/Page.qml:224
+#: qtquick/qml/Page.qml:230
 #, fuzzy, kde-format
 #| msgid "Action Name"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
 msgstr "काम नाम"
 
-#: qtquick/qml/Page.qml:226
+#: qtquick/qml/Page.qml:232
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "छंटाई"
 
-#: qtquick/qml/Page.qml:228
+#: qtquick/qml/Page.qml:234
 #, fuzzy, kde-format
 #| msgid "Most Downloads"
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "सबसे अधिक डाउनलोड"
 
-#: qtquick/qml/Page.qml:237
+#: qtquick/qml/Page.qml:243
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt ""
@@ -590,7 +590,7 @@ msgctxt ""
 msgid "Name"
 msgstr "नाम"
 
-#: qtquick/qml/Page.qml:248
+#: qtquick/qml/Page.qml:254
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt ""
@@ -599,7 +599,7 @@ msgctxt ""
 msgid "Rating"
 msgstr "रेटिंग:"
 
-#: qtquick/qml/Page.qml:259
+#: qtquick/qml/Page.qml:265
 #, fuzzy, kde-format
 #| msgid "Download"
 msgctxt ""
@@ -608,7 +608,7 @@ msgctxt ""
 msgid "Downloads"
 msgstr "डाउनलोड"
 
-#: qtquick/qml/Page.qml:270
+#: qtquick/qml/Page.qml:276
 #, fuzzy, kde-format
 #| msgid "&Remove '%1'"
 msgctxt ""
@@ -617,36 +617,36 @@ msgctxt ""
 msgid "Release date"
 msgstr "मेटाव '%1' (&R)"
 
-#: qtquick/qml/Page.qml:283
+#: qtquick/qml/Page.qml:289
 #, fuzzy, kde-format
 #| msgid "&Replace..."
 msgid "Upload…"
 msgstr "बदलव...(&R)"
 
-#: qtquick/qml/Page.qml:284
+#: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
 msgstr ""
 
-#: qtquick/qml/Page.qml:294
+#: qtquick/qml/Page.qml:300
 #, fuzzy, kde-format
 #| msgid "&Go To..."
 msgid "Go to…"
 msgstr "इहां जाव... (&G)"
 
-#: qtquick/qml/Page.qml:301 qtquick/qml/Page.qml:310
+#: qtquick/qml/Page.qml:307 qtquick/qml/Page.qml:316
 #, fuzzy, kde-format
 #| msgid "S&earch:"
 msgid "Search…"
 msgstr "खोजव: (&e)"
 
-#: qtquick/qml/Page.qml:364
+#: qtquick/qml/Page.qml:370
 #, fuzzy, kde-format
 #| msgid "Character:"
 msgid "Category:"
 msgstr "अक्छर:"
 
-#: qtquick/qml/Page.qml:384
+#: qtquick/qml/Page.qml:390
 #, fuzzy, kde-format
 #| msgid "Continue operation"
 msgid "Contribute Your Own…"
@@ -780,14 +780,14 @@ msgctxt ""
 msgid "(%1/%2)"
 msgstr "(%1/s)"
 
-#: qtquick/qml/UploadPage.qml:50
+#: qtquick/qml/UploadPage.qml:53
 #, fuzzy, kde-format
 #| msgid "Download New Stuff"
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
 msgstr "ताजा सामान डाउनलोड करव"
 
-#: qtquick/qml/UploadPage.qml:111
+#: qtquick/qml/UploadPage.qml:114
 #, fuzzy, kde-format
 #| msgid "Billing Information:"
 msgctxt ""
@@ -795,20 +795,20 @@ msgctxt ""
 msgid "Updating information…"
 msgstr "बिलिंग जानकारी"
 
-#: qtquick/qml/UploadPage.qml:126
+#: qtquick/qml/UploadPage.qml:129
 #, fuzzy, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
 msgstr "भंडारित करव"
 
-#: qtquick/qml/UploadPage.qml:132
+#: qtquick/qml/UploadPage.qml:135
 #, fuzzy, kde-format
 #| msgid "Provider: %1"
 msgctxt "An unnamed provider"
 msgid "Your Provider"
 msgstr "प्रदाता: %1"
 
-#: qtquick/qml/UploadPage.qml:141
+#: qtquick/qml/UploadPage.qml:144
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgctxt ""
@@ -817,7 +817,7 @@ msgctxt ""
 msgid "Open Website: %1"
 msgstr " '%1' एखर साथ खोलव (&O)"
 
-#: qtquick/qml/UploadPage.qml:149
+#: qtquick/qml/UploadPage.qml:152
 #, fuzzy, kde-format
 #| msgid "&Send Email"
 msgctxt ""
@@ -826,7 +826,7 @@ msgctxt ""
 msgid "Send Email To: %1"
 msgstr "ईमेल भेजव (&S)"
 
-#: qtquick/qml/UploadPage.qml:159
+#: qtquick/qml/UploadPage.qml:162
 #, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
@@ -837,7 +837,7 @@ msgid ""
 "system, where you can work on your products."
 msgstr ""
 
-#: qtquick/qml/UploadPage.qml:160
+#: qtquick/qml/UploadPage.qml:163
 #, kde-format
 msgctxt "A description of how to upload content to the KDE Store specifically"
 msgid ""
