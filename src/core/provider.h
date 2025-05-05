@@ -164,6 +164,7 @@ public:
     /*!
      * Describes a category: id/name/displayName
      * \deprecated[6.9]
+     * \inmodule KNewStuffCore
      * Use KNSCore::CategoryMetadata
      */
     struct KNEWSTUFFCORE_DEPRECATED_VERSION(6, 9, "Use KNSCore::CategoryMetadata") CategoryMetadata {
