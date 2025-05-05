@@ -29,7 +29,7 @@ class ProviderPrivate;
 struct Comment;
 
 /*!
- * \class KNewStuff::Provider
+ * \class KNSCore::Provider
  * \inheaderfile KNewStuff/Provider
  * \inmodule KNewStuffCore
  *
