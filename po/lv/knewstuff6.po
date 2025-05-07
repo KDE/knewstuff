@@ -8,14 +8,14 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008, 2010.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
 # Einars Sprugis <einars8@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:38+0000\n"
-"PO-Revision-Date: 2024-10-02 12:08+0300\n"
-"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"PO-Revision-Date: 2025-05-04 18:21+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 "X-Launchpad-Export-Date: 2007-11-22 17:44+0000\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -521,12 +521,7 @@ msgid "Find out how to donate to this project"
 msgstr "Uzziniet, kā varat ziedot šim projektam"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -535,21 +530,17 @@ msgid ""
 msgstr ""
 "Rīkojieties piesardzīgi, izmantojot te redzamo lietotāju veidoto saturu, jo "
 "tas var saturēt izpildāmu kodu, kura drošumu, stabilitāti un kvalitāti nav "
-"pārbaudījuši KDE un jūsu distributīva veidotāji."
+"pārbaudījuši KDE vai „%1“ veidotāji."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "Te redzamo lietotāju veidotā satura funkcionalitāti un kvalitāti nav "
-"pārbaudījuši KDE un jūsu distributīva veidotāji."
+"pārbaudījuši KDE vai „%1“ veidotāji."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
