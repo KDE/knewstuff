@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 g.sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:38+0000\n"
-"PO-Revision-Date: 2024-09-11 09:56+0200\n"
+"PO-Revision-Date: 2025-05-09 17:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -524,12 +524,7 @@ msgid "Find out how to donate to this project"
 msgstr "Discoperi como donar a iste projecto"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -538,22 +533,17 @@ msgid ""
 msgstr ""
 "Usa precaution quando on accede a contento create per le usator monstrate "
 "hic, proque illo pote continer codice executabile que non ha essite "
-"verificate per KDE o per tu distributor per sanitate, stabilitate  o "
-"qualitate."
+"verificate per KDE o %1 per sanitate, stabilitate  o qualitate."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "Le contento create per le usator monstrate hic non ha essite controlate per "
-"KDE o per tu distributor per functionalitate o qualitate."
+"KDE o %1 per functionalitate o qualitate."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
