@@ -213,13 +213,6 @@ KCMUtils.SimpleKCM {
         Kirigami.FormLayout {
             Layout.fillWidth: true
 
-            Kirigami.LinkButton {
-                Kirigami.FormData.label: i18nd("knewstuff6", "Comments and Reviews:")
-                enabled: component.commentsCount > 0
-                text: i18ndc("knewstuff6", "A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
-                onClicked: mouse => pageStack.push(commentsPage)
-            }
-
             Private.Rating {
                 id: ratingsItem
                 Kirigami.FormData.label: i18nd("knewstuff6", "Rating:")
@@ -239,6 +232,14 @@ KCMUtils.SimpleKCM {
                 url: component.donationLink
                 visible: url !== ""
             }
+        }
+
+        QQC2.Button {
+            Layout.alignment: Qt.AlignHCenter
+            visible: component.commentsCount > 0
+            icon.name: "edit-comment"
+            text: i18ndc("knewstuff6", "@action:button Opens a new sub-page with comments for this entry", "See %1 Reviews and Comments", component.commentsCount)
+            onClicked: pageStack.push(commentsPage)
         }
 
         Kirigami.SelectableLabel {
