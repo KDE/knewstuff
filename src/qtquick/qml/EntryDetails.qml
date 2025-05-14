@@ -110,6 +110,13 @@ KCMUtils.SimpleKCM {
 
     actions: [
         Kirigami.Action {
+            text: i18ndc("knewstuff6", "@action:button Opens a new sub-page with comments for this entry", "See %1 Reviews and Comments", component.commentsCount)
+            icon.name: "edit-comment"
+            onTriggered: mouse => pageStack.push(commentsPage)
+            enabled: component.commentsCount > 0
+            visible: enabled
+        },
+        Kirigami.Action {
             text: component.downloadLinks.length === 1
                 ? i18ndc("knewstuff6", "Request installation of this item, available when there is exactly one downloadable item", "Install")
                 : i18ndc("knewstuff6", "Show installation options, where there is more than one downloadable item", "Install…")
@@ -212,13 +219,6 @@ KCMUtils.SimpleKCM {
 
         Kirigami.FormLayout {
             Layout.fillWidth: true
-
-            Kirigami.LinkButton {
-                Kirigami.FormData.label: i18nd("knewstuff6", "Comments and Reviews:")
-                enabled: component.commentsCount > 0
-                text: i18ndc("knewstuff6", "A link which, when clicked, opens a new sub page with comments (comments with or without ratings) for this entry", "%1 Reviews and Comments", component.commentsCount)
-                onClicked: mouse => pageStack.push(commentsPage)
-            }
 
             Private.Rating {
                 id: ratingsItem
