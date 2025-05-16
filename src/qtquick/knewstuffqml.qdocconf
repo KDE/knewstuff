@@ -9,4 +9,6 @@ headerdirs += .
 sourcedirs += .
 excludedirs = qml/private
 
+navigation.landingpage = "KNewStuff"
+
 depends += qtcore qtquick knewstuffcore

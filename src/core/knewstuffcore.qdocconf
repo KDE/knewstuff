@@ -10,6 +10,8 @@ sourcedirs += .
 
 outputformats = HTML
 
+navigation.landingpage = "KNewStuff"
+
 depends += qtcore qtgui kcoreaddons knewstuffwidgets knewstuffqml
 
 qhp.projects            = KNewStuffCore
