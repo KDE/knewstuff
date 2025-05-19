@@ -4,13 +4,13 @@
 # Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
 # Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
 # ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-05 00:38+0000\n"
-"PO-Revision-Date: 2024-10-09 21:06+0530\n"
+"PO-Revision-Date: 2025-05-18 19:07+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -514,12 +514,7 @@ msgid "Find out how to donate to this project"
 msgstr "இதற்கு எப்படி நன்கொடை அளிப்பது என தெரிந்துகொள்ளுங்கள்"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -527,22 +522,18 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "இங்கு காட்டப்படுபவை, உங்களைப் போன்ற பயனர்களால் உருவாக்கப்பட்டுள்ளவை. அவற்றில் இயக்கவல்ல "
-"சிறுநிரல்கள் இருக்கலாம். அப்படிப்பட்ட சிறுநிரல்கள் கே.டீ.யீ.யாலும் உங்கள் இயங்குதள "
-"வழங்குநராலும் சரிபார்க்கப்படாதவை."
+"சிறுநிரல்கள் இருக்கலாம். அப்படிப்பட்ட சிறுநிரல்கள் கே.டீ.யீ.யாலும் %1-ஆலும் "
+"சரிபார்க்கப்படாதவை."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"இங்கு உள்ளவற்றை உங்களைப் போன்ற பயனர்கள் பதிவேற்றியுள்ளனர். இவைகே.டீ.யீ.யாலும் உங்கள் இயங்குதள "
-"வழங்குநர்களாலும் சோதிக்கப்படாதவை."
+"இங்கு உள்ளவற்றை உங்களைப் போன்ற பயனர்கள் பதிவேற்றியுள்ளனர். இவைகே.டீ.யீ.யாலும் %1-ஆலும் "
+"சோதிக்கப்படாதவை."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -640,7 +631,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "வெளியிட்ட தேதி"
 
 #: qtquick/qml/Page.qml:289
 #, kde-format
@@ -925,7 +916,7 @@ msgstr "முகப்பு"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "அலமாரி"
 
 #: qtquick/searchpresetmodel.cpp:60
 #, kde-format
