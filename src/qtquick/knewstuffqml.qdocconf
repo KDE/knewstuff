@@ -12,3 +12,17 @@ excludedirs = qml/private
 navigation.landingpage = "KNewStuff"
 
 depends += qtcore qtquick knewstuffcore
+
+qhp.projects            = KNewStuffQML
+
+qhp.KNewStuffQML.file                = knewstuffqml.qhp
+qhp.KNewStuffQML.namespace           = org.kde.knewstuffqml.$QT_VERSION_TAG
+qhp.KNewStuffQML.virtualFolder       = knewstuffqml
+qhp.KNewStuffQML.indexTitle          = KNewStuff QML
+qhp.KNewStuffQML.indexRoot           =
+
+qhp.KNewStuffQML.subprojects         = qmltypes
+qhp.KNewStuffQML.subprojects.qmltypes.title = QML Types
+qhp.KNewStuffQML.subprojects.qmltypes.indexTitle = KNewStuff QML Types
+qhp.KNewStuffQML.subprojects.qmltypes.selectors = qmltype
+qhp.KNewStuffQML.subprojects.qmltypes.sortPages = true
