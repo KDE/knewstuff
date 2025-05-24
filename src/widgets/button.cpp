@@ -33,7 +33,7 @@ public:
         Q_ASSERT_X(!configFile.isEmpty(), Q_FUNC_INFO, "The configFile for the KNSWidgets::Button must be explicitly set");
 
         if (!dialog) {
-            dialog.reset(new KNSWidgets::Dialog(configFile, q));
+            dialog.reset(new KNSWidgets::Dialog(configFile));
             dialog->setWindowTitle(q->text().remove(QLatin1Char('&')));
             QObject::connect(dialog.get(), &KNSWidgets::Dialog::finished, q, [this]() {
                 Q_EMIT q->dialogFinished(dialog->changedEntries());
