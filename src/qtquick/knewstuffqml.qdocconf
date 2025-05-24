@@ -26,3 +26,5 @@ qhp.KNewStuffQML.subprojects.qmltypes.title = QML Types
 qhp.KNewStuffQML.subprojects.qmltypes.indexTitle = KNewStuff QML Types
 qhp.KNewStuffQML.subprojects.qmltypes.selectors = qmltype
 qhp.KNewStuffQML.subprojects.qmltypes.sortPages = true
+
+tagfile = knewstuffqml.tags

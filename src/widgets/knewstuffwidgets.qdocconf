@@ -32,3 +32,5 @@ qhp.KNewStuffWidgets.subprojects.classes.title = C++ Classes
 qhp.KNewStuffWidgets.subprojects.classes.indexTitle = KNewStuff Widgets C++ Classes
 qhp.KNewStuffWidgets.subprojects.classes.selectors = class fake:headerfile
 qhp.KNewStuffWidgets.subprojects.classes.sortPages = true
+
+tagfile = knewstuffwidgets.tags

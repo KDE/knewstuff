@@ -27,3 +27,5 @@ qhp.KNewStuffCore.subprojects.classes.title = C++ Classes
 qhp.KNewStuffCore.subprojects.classes.indexTitle = KNewStuffCore C++ Classes
 qhp.KNewStuffCore.subprojects.classes.selectors = class fake:headerfile
 qhp.KNewStuffCore.subprojects.classes.sortPages = true
+
+tagfile = knewstuffcore.tags
