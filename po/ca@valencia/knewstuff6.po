@@ -185,8 +185,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
-"No s'ha pogut instal·lar «%1» perquè apunta cap a una pàgina web. Feu clic "
-"<a href='%2'>ací</a> per a finalitzar la instal·lació."
+"No s'ha pogut instal·lar «%1» perquè apunta cap a una pàgina web. Cliqueu <a "
+"href='%2'>ací</a> per a finalitzar la instal·lació."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -851,9 +851,9 @@ msgid ""
 msgstr ""
 "Per a carregar entrades noves o per a afegir contingut a una entrada "
 "existent en la KDE Store, obriu el lloc web i accediu-hi. Una vegada fet "
-"açò, trobareu l'entrada «My Products» en el menú que apareixerà quan feu "
-"clic en la vostra icona d'usuari. Feu clic en esta entrada per a anar fins "
-"al sistema de gestió de productes, on podreu treballar en els vostres "
+"açò, trobareu l'entrada «My Products» en el menú que apareixerà quan cliqueu "
+"damunt de la vostra icona d'usuari. Cliqueu damunt d'esta entrada per a anar "
+"fins al sistema de gestió de productes, on podreu treballar en els vostres "
 "productes."
 
 #: qtquick/qml/UploadPage.qml:163
