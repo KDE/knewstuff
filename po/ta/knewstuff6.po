@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:38+0000\n"
+"POT-Creation-Date: 2025-05-30 00:39+0000\n"
 "PO-Revision-Date: 2025-05-18 19:07+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -468,30 +468,27 @@ msgstr ""
 "kde.org/enter_bug.cgi?product=frameworks-knewstuff\">இதை ஓர் பிழையறிக்கை மூலம் "
 "கே.டீ.யீ. சமூகத்திற்குத் தெரிவிக்கவும்</a>."
 
-#: qtquick/qml/EntryDetails.qml:217
-#, kde-format
-msgid "Comments and Reviews:"
-msgstr "விமர்சனங்களும் மதிப்பீடுகளும்:"
-
-#: qtquick/qml/EntryDetails.qml:219
-#, kde-format
-msgctxt ""
-"A link which, when clicked, opens a new sub page with comments (comments "
-"with or without ratings) for this entry"
-msgid "%1 Reviews and Comments"
-msgstr "%1 விமர்சனங்களும் மதிப்பீடுகளும்:"
-
-#: qtquick/qml/EntryDetails.qml:225
+#: qtquick/qml/EntryDetails.qml:218
 #, kde-format
 msgid "Rating:"
 msgstr "மதிப்பீடு:"
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:226
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens a new sub page with comments (comments "
+#| "with or without ratings) for this entry"
+#| msgid "%1 Reviews and Comments"
+msgctxt "@action:button Opens a new sub-page with comments for this entry"
+msgid "See %1 Reviews and Comments"
+msgstr "%1 விமர்சனங்களும் மதிப்பீடுகளும்:"
+
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgid "Homepage:"
 msgstr "முகப்புப்பக்கம்:"
 
-#: qtquick/qml/EntryDetails.qml:231
+#: qtquick/qml/EntryDetails.qml:232
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -500,12 +497,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "%1-க்கான முகப்புப்பக்கத்தை திற"
 
-#: qtquick/qml/EntryDetails.qml:237
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgid "How To Donate:"
 msgstr "நன்கொடை அளிப்பது:"
 
-#: qtquick/qml/EntryDetails.qml:238
+#: qtquick/qml/EntryDetails.qml:239
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -979,6 +976,9 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "புதியவற்றைப் பதிவிறக்கு…"
+
+#~ msgid "Comments and Reviews:"
+#~ msgstr "விமர்சனங்களும் மதிப்பீடுகளும்:"
 
 #~ msgid "Everything"
 #~ msgstr "அனைத்தும்"

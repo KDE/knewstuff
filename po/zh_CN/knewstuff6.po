@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:38+0000\n"
+"POT-Creation-Date: 2025-05-30 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -456,30 +456,27 @@ msgstr ""
 "此项处于无效或未知状态。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
 "product=frameworks-knewstuff\">请向 KDE 社区报告错误</a>。"
 
-#: qtquick/qml/EntryDetails.qml:217
-#, kde-format
-msgid "Comments and Reviews:"
-msgstr "评论："
-
-#: qtquick/qml/EntryDetails.qml:219
-#, kde-format
-msgctxt ""
-"A link which, when clicked, opens a new sub page with comments (comments "
-"with or without ratings) for this entry"
-msgid "%1 Reviews and Comments"
-msgstr "%1 条评论"
-
-#: qtquick/qml/EntryDetails.qml:225
+#: qtquick/qml/EntryDetails.qml:218
 #, kde-format
 msgid "Rating:"
 msgstr "评分："
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:226
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens a new sub page with comments (comments "
+#| "with or without ratings) for this entry"
+#| msgid "%1 Reviews and Comments"
+msgctxt "@action:button Opens a new sub-page with comments for this entry"
+msgid "See %1 Reviews and Comments"
+msgstr "%1 条评论"
+
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgid "Homepage:"
 msgstr "主页："
 
-#: qtquick/qml/EntryDetails.qml:231
+#: qtquick/qml/EntryDetails.qml:232
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -488,12 +485,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "打开 %1 的主页"
 
-#: qtquick/qml/EntryDetails.qml:237
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgid "How To Donate:"
 msgstr "如何捐款："
 
-#: qtquick/qml/EntryDetails.qml:238
+#: qtquick/qml/EntryDetails.qml:239
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -965,3 +962,6 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "下载新资源…"
+
+#~ msgid "Comments and Reviews:"
+#~ msgstr "评论："

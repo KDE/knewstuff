@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:38+0000\n"
+"POT-Creation-Date: 2025-05-30 00:39+0000\n"
 "PO-Revision-Date: 2024-12-24 17:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -463,30 +463,27 @@ msgstr ""
 "kde.org/enter_bug.cgi?product=frameworks-knewstuff\">KDE 커뮤니티에 버그를 보"
 "고해 주십시오</a>."
 
-#: qtquick/qml/EntryDetails.qml:217
-#, kde-format
-msgid "Comments and Reviews:"
-msgstr "댓글과 리뷰:"
-
-#: qtquick/qml/EntryDetails.qml:219
-#, kde-format
-msgctxt ""
-"A link which, when clicked, opens a new sub page with comments (comments "
-"with or without ratings) for this entry"
-msgid "%1 Reviews and Comments"
-msgstr "댓글과 리뷰 %1개"
-
-#: qtquick/qml/EntryDetails.qml:225
+#: qtquick/qml/EntryDetails.qml:218
 #, kde-format
 msgid "Rating:"
 msgstr "별점:"
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:226
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens a new sub page with comments (comments "
+#| "with or without ratings) for this entry"
+#| msgid "%1 Reviews and Comments"
+msgctxt "@action:button Opens a new sub-page with comments for this entry"
+msgid "See %1 Reviews and Comments"
+msgstr "댓글과 리뷰 %1개"
+
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgid "Homepage:"
 msgstr "홈페이지:"
 
-#: qtquick/qml/EntryDetails.qml:231
+#: qtquick/qml/EntryDetails.qml:232
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -495,12 +492,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "%1의 홈페이지 열기"
 
-#: qtquick/qml/EntryDetails.qml:237
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgid "How To Donate:"
 msgstr "기부 방법:"
 
-#: qtquick/qml/EntryDetails.qml:238
+#: qtquick/qml/EntryDetails.qml:239
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -988,6 +985,9 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "새로운 항목 다운로드…"
+
+#~ msgid "Comments and Reviews:"
+#~ msgstr "댓글과 리뷰:"
 
 #~ msgid "Everything"
 #~ msgstr "모두"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:38+0000\n"
+"POT-Creation-Date: 2025-05-30 00:39+0000\n"
 "PO-Revision-Date: 2025-05-03 14:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -477,30 +477,27 @@ msgstr ""
 "這個項目目前無效或處於不明狀態。<a href=\"https://bugs.kde.org/enter_bug.cgi?"
 "product=frameworks-knewstuff\">請在漏洞回報中回報此問題至 KDE 社群</a>。"
 
-#: qtquick/qml/EntryDetails.qml:217
-#, kde-format
-msgid "Comments and Reviews:"
-msgstr "留言及評論："
-
-#: qtquick/qml/EntryDetails.qml:219
-#, kde-format
-msgctxt ""
-"A link which, when clicked, opens a new sub page with comments (comments "
-"with or without ratings) for this entry"
-msgid "%1 Reviews and Comments"
-msgstr "%1 則評論及留言"
-
-#: qtquick/qml/EntryDetails.qml:225
+#: qtquick/qml/EntryDetails.qml:218
 #, kde-format
 msgid "Rating:"
 msgstr "評價："
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:226
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens a new sub page with comments (comments "
+#| "with or without ratings) for this entry"
+#| msgid "%1 Reviews and Comments"
+msgctxt "@action:button Opens a new sub-page with comments for this entry"
+msgid "See %1 Reviews and Comments"
+msgstr "%1 則評論及留言"
+
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgid "Homepage:"
 msgstr "首頁："
 
-#: qtquick/qml/EntryDetails.qml:231
+#: qtquick/qml/EntryDetails.qml:232
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -509,12 +506,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "開啟 %1 首頁"
 
-#: qtquick/qml/EntryDetails.qml:237
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgid "How To Donate:"
 msgstr "捐助方法："
 
-#: qtquick/qml/EntryDetails.qml:238
+#: qtquick/qml/EntryDetails.qml:239
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -991,6 +988,9 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "下載熱門玩意…"
+
+#~ msgid "Comments and Reviews:"
+#~ msgstr "留言及評論："
 
 #~ msgid "Everything"
 #~ msgstr "所有項目"

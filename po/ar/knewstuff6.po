@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:38+0000\n"
+"POT-Creation-Date: 2025-05-30 00:39+0000\n"
 "PO-Revision-Date: 2024-09-19 09:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -459,30 +459,27 @@ msgstr ""
 "enter_bug.cgi?product=frameworks-knewstuff\">الرجاء التبليغ مجتمع كِيدِي في "
 "تقرير علة</a>."
 
-#: qtquick/qml/EntryDetails.qml:217
-#, kde-format
-msgid "Comments and Reviews:"
-msgstr "التعليقات والمراجعات:"
-
-#: qtquick/qml/EntryDetails.qml:219
-#, kde-format
-msgctxt ""
-"A link which, when clicked, opens a new sub page with comments (comments "
-"with or without ratings) for this entry"
-msgid "%1 Reviews and Comments"
-msgstr "%1 تعليقات ومراجعات"
-
-#: qtquick/qml/EntryDetails.qml:225
+#: qtquick/qml/EntryDetails.qml:218
 #, kde-format
 msgid "Rating:"
 msgstr "التّقييم:"
 
-#: qtquick/qml/EntryDetails.qml:230
+#: qtquick/qml/EntryDetails.qml:226
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "A link which, when clicked, opens a new sub page with comments (comments "
+#| "with or without ratings) for this entry"
+#| msgid "%1 Reviews and Comments"
+msgctxt "@action:button Opens a new sub-page with comments for this entry"
+msgid "See %1 Reviews and Comments"
+msgstr "%1 تعليقات ومراجعات"
+
+#: qtquick/qml/EntryDetails.qml:231
 #, kde-format
 msgid "Homepage:"
 msgstr "الصّفحة الرّئيسيّة:"
 
-#: qtquick/qml/EntryDetails.qml:231
+#: qtquick/qml/EntryDetails.qml:232
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens the website associated with the entry "
@@ -491,12 +488,12 @@ msgctxt ""
 msgid "Open the homepage for %1"
 msgstr "افتح الصفحة الرئيسية لـ %1"
 
-#: qtquick/qml/EntryDetails.qml:237
+#: qtquick/qml/EntryDetails.qml:238
 #, kde-format
 msgid "How To Donate:"
 msgstr "كيف تتبرع:"
 
-#: qtquick/qml/EntryDetails.qml:238
+#: qtquick/qml/EntryDetails.qml:239
 #, kde-format
 msgctxt ""
 "A link which, when clicked, opens a website with information on donation in "
@@ -989,6 +986,9 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "نزِل أشياء جديدة…"
+
+#~ msgid "Comments and Reviews:"
+#~ msgstr "التعليقات والمراجعات:"
 
 #~ msgid "Everything"
 #~ msgstr "كلّ شيء"
