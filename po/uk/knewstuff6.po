@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: knewstuff5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-05-02 09:56+0300\n"
+"PO-Revision-Date: 2025-05-30 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -488,14 +488,10 @@ msgid "Rating:"
 msgstr "Оцінка:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "Рецензії і коментарі щодо %1"
+msgstr "Див. «Рецензії і коментарі» щодо %1"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format

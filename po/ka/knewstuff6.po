@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-05-02 03:31+0200\n"
+"PO-Revision-Date: 2025-05-30 04:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -473,14 +473,10 @@ msgid "Rating:"
 msgstr "შეფასება:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 მიმოხილვა და კომენტარი"
+msgstr "%1-ის მიმოხილვებისა და კომენტარების ნახვა"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
