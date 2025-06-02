@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the knewstuff package.
 #
 # SPDX-FileCopyrightText: 2024 X əyyam
-# SPDX-FileCopyrightText: 2024 Khayyam <xxmn77@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Khayyam <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2024-08-13 16:54+0400\n"
-"Last-Translator: Khayyam <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-06-01 20:18+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -107,10 +107,9 @@ msgstr ""
 "%1"
 
 #: core/enginebase.cpp:134
-#, fuzzy, kde-format
-#| msgid "Configuration file is invalid: \"%1\""
+#, kde-format
 msgid "Configuration file does not exist: \"%1\""
-msgstr "Konfiqurasiya faylı yararsızdır: \"%1\""
+msgstr "Tənzimləmə faylı mövcud deyil: \"%1\""
 
 #: core/enginebase.cpp:142
 #, kde-format
@@ -128,17 +127,15 @@ msgid "Use"
 msgstr "İstifadə etmək"
 
 #: core/enginebase.cpp:187
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not initialise the installation handler for %1\n"
-#| "This is a critical error and should be reported to the application author"
+#, kde-format
 msgid ""
 "Could not initialise the installation handler for %1:\n"
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"%1 üçün quraşdırma idarəedicisini başlatmaq olmur\n"
-"Bu kritik bir səhvdir və tətbiq müəllifinə bildirilməlidir"
+"%1 üçün quraşdırıcını başlatmaq mümkün olmadı:\n"
+"%2\n"
+"Bu ciddi bir xətadır və tətbiq müəllifinə bildirilməlidir"
 
 #: core/enginebase.cpp:354
 #, kde-format
@@ -348,24 +345,17 @@ msgstr "Naməlum Kateqoriya"
 #. \note For the sake of consistency, you should NOT override the text property, just set this one
 #.
 #: qtquick/qml/Button.qml:46
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Used to construct the button's label (which will become Download New "
-#| "'this value'...)"
-#| msgid "Stuff"
+#, kde-format
 msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr "Doldurmaq"
+msgstr "Materiallar"
 
 #: qtquick/qml/Button.qml:47
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The dialog title when we know which type of stuff is being requested"
-#| msgid "Download New %1"
+#, kde-format
 msgid "Download New %1…"
-msgstr "Yeni %1 yüklə"
+msgstr "Yeni %1 endirmək..."
 
 #: qtquick/qml/Dialog.qml:47
 #, kde-format
@@ -432,12 +422,11 @@ msgstr "Quraşdırmaq"
 #: qtquick/qml/EntryDetails.qml:115
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:44
 #: qtquick/qml/private/entrygriddelegates/TileDelegate.qml:49
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Quraşdır"
+msgstr "Quraşdırmaq..."
 
 #: qtquick/qml/EntryDetails.qml:131
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
@@ -454,27 +443,19 @@ msgid "Uninstall"
 msgstr "Silmək"
 
 #: qtquick/qml/EntryDetails.qml:160
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "installed OR uninstalled"
-#| msgid "Currently working on the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "%2 tərəfindən %1 komponenti işləyir. Lütfən gözləyin..."
+msgstr "Hazırda %1 elenti %2 tərəfindən i hazırlanır.Gözləyin..."
 
 #: qtquick/qml/EntryDetails.qml:162
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Status message to be shown when the entry is in the process of being "
-#| "updated"
-#| msgid "Currently updating the item %1 by %2. Please wait..."
+#, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "%2 tərəfindən %1 komponenti yenilənir. Lütfən gözləyin..."
+msgstr "%1 elementi %2 tərəfindən yenilənir. Gözləyin..."
 
 #: qtquick/qml/EntryDetails.qml:164
 #, kde-format
@@ -496,14 +477,10 @@ msgid "Rating:"
 msgstr "Qiymət:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 Rəy və Şərh"
+msgstr "%1 şərh və rəylərinə baxmaq"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -533,33 +510,26 @@ msgid "Find out how to donate to this project"
 msgstr "Bu layihəyə necə maddi kömək göstərməyi öyrənin"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or %1 for safety, "
 "stability, or quality."
 msgstr ""
-"Burada mövcud olan məzmun sizin kimi istifadəçilər tərəfindən yüklənib və "
-"distribyutorunuz tərəfindən funksionallıq və sabitlik baxımından nəzərdən "
-"keçirilməyib."
+"İstifadəçilərin tərəfindən yaradılaraq burada yerləşdirilən məzmunlardan "
+"istifadə edərkən ehtiyyatlı olun, çünki bunların təhülkəsizliyi, stabilliyi "
+"və k eyfiyyəti KDE və ya %1 tərəfindən yoxlanılmayıb."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"Burada mövcud olan məzmun sizin kimi istifadəçilər tərəfindən yüklənib və "
-"distribyutorunuz tərəfindən funksionallıq və sabitlik baxımından nəzərdən "
-"keçirilməyib."
+"İstifaadəçi tərəfindən yaradılaraq burada yerləşdirilən məzmunun "
+"funksionallığı və keyfiyyəti KDE və ya %1 tərəfindən yoxlanılmayıb."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -568,18 +538,16 @@ msgid "All"
 msgstr ""
 
 #: qtquick/qml/Page.qml:181
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Quraşdırılan"
 
 #: qtquick/qml/Page.qml:183
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
-msgstr "Yenilənə bilənlər"
+msgstr "Yenilənə bilən"
 
 #: qtquick/qml/Page.qml:193
 #, kde-format
@@ -590,8 +558,7 @@ msgid "All"
 msgstr ""
 
 #: qtquick/qml/Page.qml:204
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -599,13 +566,12 @@ msgid "Installed"
 msgstr "Quraşdırılan"
 
 #: qtquick/qml/Page.qml:215
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
 msgid "Updateable"
-msgstr "Yenilənə bilənlər"
+msgstr "Yenilənə bilən"
 
 #: qtquick/qml/Page.qml:228
 #, kde-format
@@ -620,18 +586,16 @@ msgid "Sort: Name"
 msgstr ""
 
 #: qtquick/qml/Page.qml:232
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Ən qiymətli"
+msgstr "Qiymətinə görə sıralamaq"
 
 #: qtquick/qml/Page.qml:234
-#, fuzzy, kde-format
-#| msgid "Most downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Ən çox yüklənənlər"
+msgstr "Endirməyə görə sıralamaq"
 
 #: qtquick/qml/Page.qml:243
 #, kde-format
@@ -642,22 +606,20 @@ msgid "Name"
 msgstr ""
 
 #: qtquick/qml/Page.qml:254
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
 msgid "Rating"
-msgstr "Ən qiymətli"
+msgstr "Qiyməti"
 
 #: qtquick/qml/Page.qml:265
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
 msgid "Downloads"
-msgstr "Endirmələr"
+msgstr "Endirmə sayı"
 
 #: qtquick/qml/Page.qml:276
 #, kde-format
@@ -668,8 +630,7 @@ msgid "Release date"
 msgstr ""
 
 #: qtquick/qml/Page.qml:289
-#, fuzzy, kde-format
-#| msgid "Upload..."
+#, kde-format
 msgid "Upload…"
 msgstr "Yükləmək..."
 
@@ -679,16 +640,14 @@ msgid "Learn how to add your own hot new stuff to this list"
 msgstr "Bu siyahıya ən yeni elementinizi necə əlavə edəcəyinizi öyrənin"
 
 #: qtquick/qml/Page.qml:300
-#, fuzzy, kde-format
-#| msgid "Go to..."
+#, kde-format
 msgid "Go to…"
 msgstr "Keçmək..."
 
 #: qtquick/qml/Page.qml:307 qtquick/qml/Page.qml:316
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Axtar:"
+msgstr "Axtarış..."
 
 #: qtquick/qml/Page.qml:370
 #, kde-format
@@ -696,10 +655,9 @@ msgid "Category:"
 msgstr "Kateqoriya:"
 
 #: qtquick/qml/Page.qml:390
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
-msgstr "Öz işinizi əlavə edin..."
+msgstr "Siz də göndərin..."
 
 #: qtquick/qml/private/EntryCommentDelegate.qml:103
 #, kde-format
@@ -761,25 +719,20 @@ msgid "By <i>%1</i>"
 msgstr "<i>%1</i> tərəfindən"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:46
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for the busy indicator showing an item is being installed OR "
-#| "uninstalled"
-#| msgid "Working..."
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "İşləyir..."
+msgstr "İcra olunur..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
-#, fuzzy, kde-format
-#| msgid "Updating"
+#, kde-format
 msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Yenilənmə"
+msgstr "Yenilənir..."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -796,11 +749,10 @@ msgstr ""
 "hesabatı göndərin</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
-#, fuzzy, kde-format
-#| msgid "Installing"
+#, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Quraşdırılma"
+msgstr "Quraşdırılır..."
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -826,18 +778,13 @@ msgid "(%1/%2)"
 msgstr "(%1/%2)"
 
 #: qtquick/qml/UploadPage.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@knewstuff5"
-#| msgid "Upload New Stuff: %1"
+#, kde-format
 msgctxt "@knewstuff6"
 msgid "Upload New Stuff: %1"
-msgstr "Yeni elementi yükləmək: %1"
+msgstr "Yeni material yüklənir: %1"
 
 #: qtquick/qml/UploadPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A text shown beside a busy indicator suggesting that data is being fetched"
-#| msgid "Updating information..."
+#, kde-format
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
@@ -872,14 +819,7 @@ msgid "Send Email To: %1"
 msgstr "E-poçt göndərin: %1"
 
 #: qtquick/qml/UploadPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -888,11 +828,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
-"Yeni yazını və ya mövcud yazının məzmununu KDE Mağazasına əlavə etmək üçün "
-"lütfən, veb-səhifəni açın və hesabınıza daxil olun. Siz bunu etdikdə, "
-"istifadəçi nişanına vurduqda açılan ani pəncərədə 'Məhsullarım haqqında "
-"yazılar'ı tapa biləcəksiniz. Bu yazıya vurmaqla məhsullarınızın üzərində "
-"işləmək üçün məhsulun idarə edilməsi sistemi açılacaqdır."
+"Yeni yazını və ya mövcud yazının məzmununu KDE mağazasına əlavə etmək üçün,  "
+"veb-səhifəni açın və hesabınıza daxil olun. Siz bunu etdikdən sonra, "
+"istifadəçi nişanına vurduqda açılan ani pəncərədə \"Məhsullarım\" menyu "
+"girişini tapa biləcəksiniz. Bu menyu girişinə vurmaqla məhsullarınızın "
+"üzərində işləmək üçün məhsulun idarə edilməsi sisteminə keçid edə bilərsiniz."
 
 #: qtquick/qml/UploadPage.qml:163
 #, kde-format
@@ -1021,19 +961,7 @@ msgstr ""
 "pəncərəsini təqdim edir"
 
 #: tools/knewstuff-dialog/main.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1047,27 +975,23 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
-"Məlumatı göstərmək üçün bir kns url. Kns url üçün format://knsrcfile/"
+"Məlumatı göstərmək üçün bir kns url. Kns url üçün format: /kns://knsrcfile/"
 "providerid/entryid\n"
-"\"knsrc_faylı\"\n"
-"- bu alətin knsrcfile arqumenti üzərindən birbaşa göndərilə bilən knsrc "
+"'knsrcfile'\n"
+"bu alətin knsrcfile arqumenti üzərindən birbaşa göndərilə bilən knsrc "
 "faylının adıdır\n"
-"\"provayder_id'si\"\n"
-"- qeyd saxlanıldığı provayder qovşağının adıdır\n"
-"\"qeyd_id'si\"\n"
-"knsrc faylı tərəfindən təyin olunan, provayderdə tapılan unikal qeyd "
+"'providerid'\n"
+"bu, materiallar yerləşən təminatçınını host adıdır\n"
+"entryid'\n"
+"bu, knsrc faylı tərəfindən göstərilən təminatçıda tapılan materialın unikal "
 "identifikatorudur\n"
-" Belə URL ünvanının nümunəsi: kns://peruse.knsrc/api.kde-look.org/1316714"
+" Belə URL ünvanının nümunəsi: kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
-msgstr "Yeni materialı yüklə"
+msgstr "Yeni materialı endirmək..."
 
 #~ msgid "Comments and Reviews:"
 #~ msgstr "Şərhlər və rəylər:"

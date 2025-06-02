@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-05-02 13:31+0200\n"
+"PO-Revision-Date: 2025-05-30 10:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -490,14 +490,10 @@ msgid "Rating:"
 msgstr "Puntuació:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 ressenyes i comentaris"
+msgstr "Vegeu %1 ressenyes i comentaris"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -1012,6 +1008,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Baixa les novetats…"
-
-#~ msgid "Comments and Reviews:"
-#~ msgstr "Comentaris i ressenyes:"
