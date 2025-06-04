@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-06-01 20:18+0400\n"
+"PO-Revision-Date: 2025-06-02 12:24+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: attica/atticaprovider.cpp:167
 #, kde-format
 msgid "All categories are missing"
-msgstr "Çatışmayan bütün kateqoriyalar"
+msgstr "Heç bir kateqoriya tapılmadı"
 
 #: attica/atticaprovider.cpp:352
 #, kde-format
@@ -535,7 +535,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "Hamısı"
 
 #: qtquick/qml/Page.qml:181
 #, kde-format
@@ -555,7 +555,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "Hamısı"
 
 #: qtquick/qml/Page.qml:204
 #, kde-format
@@ -577,13 +577,13 @@ msgstr "Yenilənə bilən"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Buraxılış tarixinə görə sıralamaq"
 
 #: qtquick/qml/Page.qml:230
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Sıralama: ada görə"
 
 #: qtquick/qml/Page.qml:232
 #, kde-format
@@ -603,7 +603,7 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "Adı"
 
 #: qtquick/qml/Page.qml:254
 #, kde-format
@@ -627,7 +627,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Buraxılış tarixi"
 
 #: qtquick/qml/Page.qml:289
 #, kde-format
