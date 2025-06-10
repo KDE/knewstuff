@@ -849,7 +849,7 @@ msgstr ""
 msgctxt ""
 "A passive notification shown when installation of an item is initiated"
 msgid "Installing %1 from %2"
-msgstr "正在从 %2 安装 %1"
+msgstr "正在安装 %1 (来源：%2)"
 
 #: qtquick/qml/EntryDetails.qml:65
 #, kde-format
