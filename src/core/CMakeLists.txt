@@ -162,28 +162,4 @@ install(
     COMPONENT Devel
 )
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6NewStuffCore_QCH
-        NAME KNewStuffCore
-        BASE_NAME KF6NewStuffCore
-        VERSION ${KF_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES ${KNewStuffCore_HEADERS}
-        LINK_QCHS
-            KF6Attica_QCH
-            KF6CoreAddons_QCH
-        INCLUDE_DIRS
-            ${KNewStuffCore_BUILD_INCLUDE_DIRS}
-        BLANK_MACROS
-            KNEWSTUFFCORE_EXPORT
-            KNEWSTUFFCORE_DEPRECATED
-            KNEWSTUFFCORE_DEPRECATED_EXPORT
-            "KNEWSTUFFCORE_DEPRECATED_VERSION(x, y, t)"
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
 ecm_generate_qdoc(KF6NewStuffCore knewstuffcore.qdocconf)
