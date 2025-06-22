@@ -993,6 +993,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Изтегляне на нови разширения…"
-
-#~ msgid "Comments and Reviews:"
-#~ msgstr "Коментари и рецензии:"

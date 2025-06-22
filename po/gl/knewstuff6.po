@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-05-20 06:37+0200\n"
+"PO-Revision-Date: 2025-06-19 09:43+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -490,14 +490,10 @@ msgid "Rating:"
 msgstr "Cualificación:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 recensións e comentarios"
+msgstr "Ver %1 recensións e comentarios"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
