@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2024-09-19 09:25+0400\n"
+"PO-Revision-Date: 2025-07-16 10:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -465,14 +465,10 @@ msgid "Rating:"
 msgstr "التّقييم:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 تعليقات ومراجعات"
+msgstr "انظر تعليقات ومراجعات %1"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -502,12 +498,7 @@ msgid "Find out how to donate to this project"
 msgstr "تعرف على كيفية التبرع لهذا المشروع"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -515,22 +506,18 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "توخى الحذر عند الوصول إلى المحتوى الذي أنشأه المستخدم الموضح هنا، لأنه قد "
-"يحتوي على تعليمات برمجية قابلة للتنفيذ لم تفحص من قبل كيدي أو الموزع الخاص "
-"بك من حيث السلامة أو الاستقرار أو الجودة."
+"يحتوي على تعليمات برمجية قابلة للتنفيذ لم تفحص من قبل كيدي أو %1 من حيث "
+"السلامة أو الاستقرار أو الجودة."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"المحتوى الذي أنشأه المستخدم والموضح هنا لم يفحص من قبل كيدي أو الموزع الخاص "
-"بك من حيث الأداء الوظيفي أو الجودة."
+"المحتوى الذي أنشأه المستخدم والموضح هنا لم يفحص من قبل كيدي أو %1من حيث "
+"الأداء الوظيفي أو الجودة."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
