@@ -47,6 +47,7 @@ Name[x-test]=xxGit Colaxx
 Name[zh_CN]=Git Cola
 Name[zh_TW]=Git Cola
 Comment=The highly caffeinated Git GUI
+Comment[ar]=واجهة المستخدم الرسومية ”غت“ عالية الكافيين
 Comment[az]=Git çevik qrafik interfeysi
 Comment[bg]=Графичен потребителски интерфейс на Git с високо съдържание на кофеин
 Comment[ca]=La IGU amb alta dosi de cafeïna de Git

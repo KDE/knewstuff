@@ -209,6 +209,7 @@ Comment[zh_CN]=世界时间的时钟，外加闹钟，跑表，和计时器
 Comment[zh_TW]=世界時鐘，包含鬧鐘、計時器等
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=time;timer;alarm;world clock;stopwatch;time zone;
+Keywords[ar]=وقت;مؤقت;منبه;ساعة العالم;توقيت;منطقة زمنية;
 Keywords[az]=vaxt;taymer;zəngçalar;dünya vaxtı;vaxtölçən;saat qurşağı;
 Keywords[bg]=време;таймер;аларма;световен часовник;хронометър;часова зона;
 Keywords[ca]=hora;temporitzador;alarma;rellotge del món;compte enrere;zona horària;

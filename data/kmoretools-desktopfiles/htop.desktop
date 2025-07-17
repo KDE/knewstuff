@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Htop
+Name[ar]=Htop
 Name[az]=Htop
 Name[bg]=Htop
 Name[ca]=Htop
@@ -148,6 +149,7 @@ GenericName[x-test]=xxProcess Viewerxx
 GenericName[zh_CN]=进程查看器
 GenericName[zh_TW]=行程檢視器
 Keywords=system;process;task;
+Keywords[ar]=نظام;عملية;مهمة;
 Keywords[az]=system;process;task;sistem;proses;tapşırıq;
 Keywords[bg]=system;process;task;
 Keywords[ca]=sistema;procés;tasca;

@@ -2,6 +2,7 @@
 Version=1.0
 Type=Application
 Name=FSearch
+Name[ar]=FSearch
 Name[az]=FSearch
 Name[bg]=FSearch
 Name[ca]=FSearch
@@ -92,6 +93,7 @@ TryExec=fsearch
 Exec=fsearch
 Categories=GTK;Utility;Core;
 Keywords=search;fsearch;files;folders;music;video;documents;find;tool;everything;
+Keywords[ar]=بحث;ملفات;مجلدات;موسيقى;فيديو;مستندات;بحث;أداة;كل شيء;
 Keywords[az]=search;fsearch;files;folders;music;video;documents;find;tool;everything; axtarış;qovluqlar;musiqi;video;sənədlər;tapmaq;hər şey;
 Keywords[bg]=търсене;fsearch;файлове;папки;музика;видео;документи;намиране;инструмент;всичко;
 Keywords[ca]=cerca;fsearch;fitxers;carpetes;música;vídeo;documents;troba;eina;tot;

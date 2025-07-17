@@ -48,6 +48,7 @@ Name[x-test]=xxFilelightxx
 Name[zh_CN]=Filelight
 Name[zh_TW]=Filelight
 GenericName=Disk Usage Statistics
+GenericName[ar]=إحصائيّات استخدام القرص
 GenericName[az]=Diskin İstifadəsi Statistikası
 GenericName[bg]=Статистика на използване на диска
 GenericName[ca]=Estadístiques d'ús del disc

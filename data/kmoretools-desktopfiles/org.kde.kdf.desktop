@@ -50,6 +50,7 @@ Exec=kdf -qwindowtitle %c
 Icon=kdf
 Type=Application
 GenericName=View Disk Usage
+GenericName[ar]=اعرض استخدام القرص
 GenericName[az]=Diskin istifadəsinə bax
 GenericName[bg]=Преглед на използването на диска
 GenericName[ca]=Veure l'ús del disc
