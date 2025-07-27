@@ -1,13 +1,13 @@
 # Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
-# SPDX-FileCopyrightText: 2018, 2021, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2018, 2021, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2024-06-20 22:16+0200\n"
+"PO-Revision-Date: 2025-07-26 21:50+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -678,8 +678,7 @@ msgid "Category:"
 msgstr "Kategória:"
 
 #: qtquick/qml/Page.qml:390
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Tegye közzé sajátját…"
 
