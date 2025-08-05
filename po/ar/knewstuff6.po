@@ -245,7 +245,7 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
-"فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 تلقائيًا. يمكنك محاولة حذف هذا "
+"فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 آليًّا. يمكنك محاولة حذف هذا "
 "الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
 
 #: core/installation.cpp:632
