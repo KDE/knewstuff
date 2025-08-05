@@ -363,7 +363,7 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
-"فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 تلقائيًا. يمكنك محاولة حذف هذا "
+"فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 آليًّا. يمكنك محاولة حذف هذا "
 "الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
 
 #: core/installation.cpp:848
@@ -397,7 +397,7 @@ msgstr ""
 msgid ""
 "The removal of %1 failed, as the downloaded file %2 could not be "
 "automatically removed."
-msgstr "فشلت إزالة %1، حيث تعذر إزالة الملف المنزل %2 تلقائيًا."
+msgstr "فشلت إزالة %1، حيث تعذر إزالة الملف المنزل %2 آليًّا."
 
 #: core/installation.cpp:905
 #, kde-format
