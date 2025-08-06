@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2025-08-03 11:09+0400\n"
+"PO-Revision-Date: 2025-08-05 18:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -51,7 +51,7 @@ msgstr "أرسل صوتك بنجاح."
 #: attica/atticaprovider.cpp:552
 #, kde-format
 msgid "You are now a fan."
-msgstr "تم تسجيل صوتك."
+msgstr "أنت الآن معجب."
 
 #: attica/atticaprovider.cpp:580 core/engine.cpp:394 opds/opdsprovider.cpp:288
 #, kde-format
@@ -184,8 +184,8 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 "الرجاء اختيار العنصر من القائمة أدناه والذي يجب استخدامه لتطبيق هذا التحديث. "
-"لم نتمكن من التعرف على العنصر المراد تحديده ، بناءً على العنصر الأصلي ، والذي "
-"تم تسميته %1"
+"لم نتمكن من التعرف على العنصر المراد تحديده ، بناءً على العنصر الأصلي المسمى "
+"%1"
 
 #: core/engine.cpp:893
 #, kde-format
@@ -252,7 +252,7 @@ msgstr ""
 #: core/installation.cpp:303
 #, kde-format
 msgid "Could not install \"%1\": file not found."
-msgstr "تعذّر تثبيب \"%1\": لم يُعثر على الملف."
+msgstr "تعذّر تثييب \"%1\": لم يُعثر على الملف."
 
 #: core/installation.cpp:493
 #, kde-format
@@ -271,8 +271,8 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
-"فشل تثبيت %1 ، حيث لم يتم قبول نوع الخدمة %2 من قبل النظام (هل نسيت تثبيت "
-"المكون الإضافي لدعم KPackage لهذا النوع من الحزم؟)"
+"فشل تثبيت %1 ، حيث لم تُقبل نوع الخدمة %2 من قبل النظام (هل نسيت تثبيت المكون "
+"الإضافي لدعم KPackage لهذا النوع من الحزم؟)"
 
 #: core/installation.cpp:535
 #, kde-format
@@ -295,7 +295,7 @@ msgid ""
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
 "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
-"أنها حزمKPackage غير صالحة."
+"أنها حزم KPackage غير صالحة."
 
 #: core/installation.cpp:582
 #, kde-format
@@ -390,7 +390,7 @@ msgid ""
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
 "فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
-"أنها حزمKPackage غير صالحة."
+"أنها حزم KPackage غير صالحة."
 
 #: core/installation.cpp:900
 #, kde-format
@@ -1473,9 +1473,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
-"ملف KNSRC الذي تريد إظهاره. إذا لم يتم تمرير أي شيء ، فسيظهر لك مربع حوار "
-"يتيح لك التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى "
-"النظام"
+"ملف KNSRC الذي تريد إظهاره. إذا لم يمرر أي شيء ، فسيظهر لك مربع حوار يتيح لك "
+"التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى النظام"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
