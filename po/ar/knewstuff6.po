@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-08-03 11:09+0400\n"
+"PO-Revision-Date: 2025-08-05 18:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -51,7 +51,7 @@ msgstr "أرسل صوتك بنجاح."
 #: attica/atticaprovider.cpp:413
 #, kde-format
 msgid "You are now a fan."
-msgstr "تم تسجيل صوتك."
+msgstr "أنت الآن معجب."
 
 #: attica/atticaprovider.cpp:441 core/enginebase.cpp:269
 #: opds/opdsprovider.cpp:291
@@ -172,7 +172,7 @@ msgstr ""
 #: core/installation.cpp:186
 #, kde-format
 msgid "Could not install \"%1\": file not found."
-msgstr "تعذّر تثبيب \"%1\": لم يُعثر على الملف."
+msgstr "تعذّر تثييب \"%1\": لم يُعثر على الملف."
 
 #: core/installation.cpp:352 core/installation.cpp:599
 #, kde-format
@@ -294,8 +294,8 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 "الرجاء اختيار العنصر من القائمة أدناه والذي يجب استخدامه لتطبيق هذا التحديث. "
-"لم نتمكن من التعرف على العنصر المراد تحديده ، بناءً على العنصر الأصلي ، والذي "
-"تم تسميته %1"
+"لم نتمكن من التعرف على العنصر المراد تحديده ، بناءً على العنصر الأصلي المسمى "
+"%1"
 
 #: core/transaction.cpp:367
 #, kde-format
@@ -939,9 +939,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
-"ملف KNSRC الذي تريد إظهاره. إذا لم يتم تمرير أي شيء ، فسيظهر لك مربع حوار "
-"يتيح لك التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى "
-"النظام"
+"ملف KNSRC الذي تريد إظهاره. إذا لم يمرر أي شيء ، فسيظهر لك مربع حوار يتيح لك "
+"التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى النظام"
 
 #: tools/knewstuff-dialog/main.cpp:34
 #, kde-format
