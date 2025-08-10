@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2025-08-05 18:08+0400\n"
+"PO-Revision-Date: 2025-08-09 22:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -184,15 +184,14 @@ msgid ""
 "original item, which was named %1"
 msgstr ""
 "الرجاء اختيار العنصر من القائمة أدناه والذي يجب استخدامه لتطبيق هذا التحديث. "
-"لم نتمكن من التعرف على العنصر المراد تحديده ، بناءً على العنصر الأصلي المسمى "
-"%1"
+"لم نتمكن من التعرف على العنصر المراد تحديده، بناءً على العنصر الأصلي المسمى %1"
 
 #: core/engine.cpp:893
 #, kde-format
 msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
-msgstr "فشلنا في التعرف على رابط جيد لتحديث %1 ، ولا يمكننا إجراء التحديث"
+msgstr "فشلنا في التعرف على رابط جيد لتحديث %1، ولا يمكننا إجراء التحديث"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -271,7 +270,7 @@ msgid ""
 "the system (did you forget to install the KPackage support plugin for this "
 "type of package?)"
 msgstr ""
-"فشل تثبيت %1 ، حيث لم تُقبل نوع الخدمة %2 من قبل النظام (هل نسيت تثبيت المكون "
+"فشل تثبيت %1، حيث لم تُقبل نوع الخدمة %2 من قبل النظام (هل نسيت تثبيت المكون "
 "الإضافي لدعم KPackage لهذا النوع من الحزم؟)"
 
 #: core/installation.cpp:535
@@ -279,14 +278,14 @@ msgstr ""
 msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
-msgstr "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
+msgstr "فشل تثبيت %1، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
 
 #: core/installation.cpp:541
 #, kde-format
 msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
-msgstr "فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تسرد نوع الخدمة."
+msgstr "فشل تثبيت %1، لأن الحزمة التي نزّلت لا تسرد نوع الخدمة."
 
 #: core/installation.cpp:548
 #, kde-format
@@ -294,7 +293,7 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
-"فشل تثبيت %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
+"فشل تثبيت %1، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
 "أنها حزم KPackage غير صالحة."
 
 #: core/installation.cpp:582
@@ -364,14 +363,14 @@ msgid ""
 "believe this is an error."
 msgstr ""
 "فشلت إزالة %1، حيث تعذر إزالة الملف المثبت %2 آليًّا. يمكنك محاولة حذف هذا "
-"الملف يدويًا ، إذا كنت تعتقد أن هذا خطأ."
+"الملف يدويًا، إذا كنت تعتقد أن هذا خطأ."
 
 #: core/installation.cpp:848
 #, kde-format
 msgid ""
 "The removal of %1 failed, as the installed package does not contain a "
 "correct KPackage structure."
-msgstr "فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
+msgstr "فشل إزالة %1، لأن الحزمة التي نزّلت لا تحتوي على بنية KPackage صحيحة."
 
 #: core/installation.cpp:853
 #, kde-format
@@ -380,7 +379,7 @@ msgid ""
 "(did you forget to install the KPackage support plugin for this type of "
 "package?)"
 msgstr ""
-"فشل إزالة %1 ، حيث أن  نوع الحزمة المثبتة غير مدعومة (هل نسيت تثبيت المكون "
+"فشل إزالة %1، حيث أن  نوع الحزمة المثبتة غير مدعومة (هل نسيت تثبيت المكون "
 "الإضافي لدعم KPackage لهذا النوع من الحزم؟)"
 
 #: core/installation.cpp:860
@@ -389,7 +388,7 @@ msgid ""
 "The removal of %1 failed, as the installed package does not contain any "
 "useful meta information, which means it is not a valid KPackage."
 msgstr ""
-"فشل إزالة %1 ، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
+"فشل إزالة %1، لأن الحزمة التي نزّلت لا تحتوي معلومات تعريفية مفيدة، مما يعني "
 "أنها حزم KPackage غير صالحة."
 
 #: core/installation.cpp:900
@@ -406,8 +405,8 @@ msgid ""
 "The file in question was %2, and you can attempt to delete it yourself, if "
 "you are certain that it is not needed."
 msgstr ""
-"فشلت إزالة %1 نظرًا لأن الملف المثبت ليس حزمة KPackage.الملف المعني هو %2 ، "
-"ويمكنك محاولة حذفه بنفسك ، إذا كنت متأكدًا من عدم الحاجة إليه."
+"فشلت إزالة %1 نظرًا لأن الملف المثبت ليس حزمة KPackage.الملف المعني هو %2، "
+"ويمكنك محاولة حذفه بنفسك، إذا كنت متأكدًا من عدم الحاجة إليه."
 
 #: core/installation.cpp:913
 #, kde-format
@@ -415,8 +414,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
-"فشلت إزالة %1 ، حيث يبدو أن هناك أكثر من شيء مثبت بطريقة ما ، وهو أمر لا "
-"يُفترض أن يكون ممكنًا للإدخالات القائمة على KPackage."
+"فشلت إزالة %1، حيث يبدو أن هناك أكثر من شيء مثبت بطريقة ما، وهو أمر لا يُفترض "
+"أن يكون ممكنًا للإدخالات القائمة على KPackage."
 
 #: core/installation.cpp:946
 #, kde-format
@@ -430,7 +429,7 @@ msgstr ""
 "فشلت عملية إلغاء التثبيت في تشغيل الأمر %1 بنجاح \n"
 "كان إخراج: \n"
 "%2 \n"
-"إذا كنت تعتقد أن هذا غير صحيح ، يمكنك متابعة أو إلغاء عملية إلغاء التثبيت "
+"إذا كنت تعتقد أن هذا غير صحيح، يمكنك متابعة أو إلغاء عملية إلغاء التثبيت "
 
 #: core/jobs/filecopyworker.cpp:49
 #, kde-format
@@ -489,8 +488,8 @@ msgid ""
 "that <i>gpg</i> is installed, otherwise verification of downloaded resources "
 "will not be possible.</qt>"
 msgstr ""
-"<qt>لا يمكن بدء <i>gpg</i> وفحص صلاحية الملف. تأكد من أن <i>gpg</i> is "
-"مثبت ، وإلا فلن يمكن التحقق من الموارد المحملة.</qt>"
+"<qt>لا يمكن بدء <i>gpg</i> وفحص صلاحية الملف. تأكد من أن <i>gpg</i> is مثبت، "
+"وإلا فلن يمكن التحقق من الموارد المحملة.</qt>"
 
 #: core/security.cpp:320
 #, kde-format
@@ -784,7 +783,7 @@ msgid ""
 "For this menu there are some more tools suggested which are currently not "
 "installed:"
 msgstr ""
-"بالنسبة إلى هذه القائمة ، هناك بعض الأدوات الأخرى المقترحة والتي لم تثبتها "
+"بالنسبة إلى هذه القائمة، هناك بعض الأدوات الأخرى المقترحة والتي لم تثبتها "
 "حاليًا:"
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
@@ -854,7 +853,7 @@ msgid ""
 msgstr ""
 "الرجاء تحديد الخيار الذي ترغب في تثبيته من قائمة العناصر القابلة للتنزيل "
 "أدناه. إذا لم يكن من الواضح ما الذي يجب عليك اختياره من بين الخيارات "
-"المتاحة ، فيرجى الاتصال بمؤلف هذا العنصر واطلب منه توضيح ذلك من خلال تسمية "
+"المتاحة، فيرجى الاتصال بمؤلف هذا العنصر واطلب منه توضيح ذلك من خلال تسمية "
 "العناصر."
 
 #: qtquick/qml/EntryDetails.qml:49
@@ -1048,7 +1047,7 @@ msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
 msgstr ""
-"تعذر العثور على الإدخال الذي حاولت عرضه ، المعرف بواسطة المعرف الفريد %1."
+"تعذر العثور على الإدخال الذي حاولت عرضه، المعرف بواسطة المعرف الفريد %1."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1359,11 +1358,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
-"لتحميل إدخالات جديدة ، أو لإضافة محتوى إلى إدخال موجود في متجر كِيدِي ، يرجى "
-"فتح موقع الويب وتسجيل الدخول. بمجرد القيام بذلك ، ستتمكن من العثور على إدخال "
+"لتحميل إدخالات جديدة، أو لإضافة محتوى إلى إدخال موجود في متجر كِيدِي، يرجى فتح "
+"موقع الويب وتسجيل الدخول. بمجرد القيام بذلك، ستتمكن من العثور على إدخال "
 "\"منتجاتي\" في القائمة التي تنبثق عندما انقر فوق رمز المستخدم الخاص بك. انقر "
-"فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج ، حيث يمكنك العمل على "
-"منتجاتك. "
+"فوق هذا الإدخال للانتقال إلى نظام إدارة المنتج، حيث يمكنك العمل على منتجاتك. "
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1376,11 +1374,10 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
-"لتحميل إدخالات جديدة ، أو لإضافة محتوى إلى إدخال موجود ، يرجى فتح موقع "
-"المزود واتباع التعليمات هناك. ستحتاج على الأرجح إلى إنشاء مستخدم وتسجيل "
-"الدخول إلى نظام إدارة المنتج ، حيث ستحتاج إلى اتباع التعليمات الخاصة بكيفية "
-"الإضافة. بدلاً من ذلك ، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى "
-"جديد."
+"لتحميل إدخالات جديدة، أو لإضافة محتوى إلى إدخال موجود، يرجى فتح موقع المزود "
+"واتباع التعليمات هناك. ستحتاج على الأرجح إلى إنشاء مستخدم وتسجيل الدخول إلى "
+"نظام إدارة المنتج، حيث ستحتاج إلى اتباع التعليمات الخاصة بكيفية الإضافة. "
+"بدلاً من ذلك، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى جديد."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1391,7 +1388,7 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
-"لست مخولاً للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ ، "
+"لست مخولاً للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ، "
 "فيرجى الاتصال بالمسؤول عن الأذونات الخاصة بك."
 
 #: qtquick/searchpresetmodel.cpp:55
@@ -1473,8 +1470,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
-"ملف KNSRC الذي تريد إظهاره. إذا لم يمرر أي شيء ، فسيظهر لك مربع حوار يتيح لك "
-"التبديل بين جميع ملفات التكوين المثبتة في موقع ملف knsrc على مستوى النظام"
+"ملف KNSRC الذي تريد إظهاره. إذا لم يمرر أي شيء، فسيظهر لك مربع حوار يتيح لك "
+"التبديل بين جميع ملفات الضبط المثبتة في موقع ملف knsrc على مستوى النظام"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
