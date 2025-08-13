@@ -145,8 +145,8 @@ ecm_generate_headers(KNewStuffCore_CamelCase_HEADERS
   CategoryMetadata
   SearchPreset
 
+  SHARED_PREFIX KNSCore
   REQUIRED_HEADERS KNewStuffCore_HEADERS
-  OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSCore
 )
 
 install(TARGETS KF6NewStuffCore EXPORT KF6NewStuffCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
