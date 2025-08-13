@@ -68,8 +68,8 @@ ecm_generate_headers(KNewStuffWidgets_CamelCase_HEADERS
   Button
   Dialog
 
+  SHARED_PREFIX KNSWidgets
   REQUIRED_HEADERS KNewStuffWidgets_HEADERS
-  OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/KNSWidgets
 )
 
 install(
