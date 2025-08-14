@@ -92,7 +92,6 @@ ecm_generate_export_header(KF6NewStuffCore
 
 set(KNewStuffCore_BUILD_INCLUDE_DIRS
     ${KNewStuff_BINARY_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/src
 )
 

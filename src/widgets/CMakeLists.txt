@@ -56,7 +56,7 @@ target_link_libraries(KF6NewStuffWidgets PRIVATE
 )
 
 target_include_directories(KF6NewStuffWidgets
-    PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR};${CMAKE_CURRENT_BINARY_DIR}>"
+    PUBLIC "$<BUILD_INTERFACE:${KNewStuff_BINARY_DIR}>"
     INTERFACE
         "$<INSTALL_INTERFACE:${KNEWSTUFFWIDGETS_INSTALL_INCLUDEDIR}>"
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KNewStuff>" # module version header
