@@ -434,14 +434,10 @@ msgid "Rating:"
 msgstr "Hodnocení:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 Hodnocení a komentáře"
+msgstr ""
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -917,6 +913,3 @@ msgstr ""
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Stáhnout nový obsah…"
-
-#~ msgid "Comments and Reviews:"
-#~ msgstr "Komentáře a kontrola:"
