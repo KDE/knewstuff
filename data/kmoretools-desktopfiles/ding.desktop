@@ -42,7 +42,6 @@ Name[sv]=ding
 Name[tg]=овози зангӯла
 Name[tr]=ding
 Name[uk]=ding
-Name[x-test]=xxdingxx
 Name[zh_CN]=ding
 Name[zh_TW]=ding
 Exec=ding
@@ -88,7 +87,6 @@ GenericName[ta]=ஜெர்மன்<=>ஆங்கில அகரமுதல
 GenericName[tg]=Луғати немисӣ <=>англисӣ
 GenericName[tr]=Almanca<=>İngilice Sözlük
 GenericName[uk]=Німецько-англійський словник
-GenericName[x-test]=xxGerman<=>English Dictionaryxx
 GenericName[zh_CN]=德国 <=> 英语词典
 GenericName[zh_TW]=德↔英字典
 

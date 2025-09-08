@@ -53,7 +53,6 @@ Name[ta]=எழுத்துரு மேலாண்மை
 Name[tg]=Идоракунии ҳуруф
 Name[tr]=Yazıtipi Yönetimi
 Name[uk]=Керування шрифтами
-Name[x-test]=xxFont Managementxx
 Name[zh_CN]=字体管理
 Name[zh_TW]=字型管理
 
@@ -99,7 +98,6 @@ Comment[sv]=Installation, förhandsgranskning och borttagning av teckensnitt
 Comment[tg]=Насбкунии ҳуруф, пешнамоиш ва тозакунӣ
 Comment[tr]=Yazıtipi Kurulumu, Önizleme ve Kaldırma
 Comment[uk]=Встановлення, перегляд і вилучення шрифтів
-Comment[x-test]=xxFont Installation, Preview and Removalxx
 Comment[zh_CN]=字体安装，预览和删除
 Comment[zh_TW]=字型安裝、預覽與移除
 
@@ -145,8 +143,7 @@ X-KDE-Keywords[sv]=teckensnitt,installation,truetype,type1,bitavbildning
 X-KDE-Keywords[tg]=ҳарф,ҳуруф,насбкунанда,навъи ҳақиқӣ,навъи1,нақши нуқтаӣ
 X-KDE-Keywords[tr]=yazıtipi,yazı tipi,yazıtipleri,kur,kurucu,trueytpe,type1,resim,biteşlem
 X-KDE-Keywords[uk]=font,fonts,installer,bitmap,шрифт,шрифти,встановлювач,truetype,type1,растрові
-X-KDE-Keywords[x-test]=xxfontxx,xxfontsxx,xxinstallerxx,xxtruetypexx,xxtype1xx,xxbitmapxx
-X-KDE-Keywords[zh_CN]=font,fonts,installer,truetype,type1,bitmap,字体,安装器,点阵;ziti;anzhuangchengxu,dianzhen
+X-KDE-Keywords[zh_CN]=font,fonts,installer,truetype,type1,bitmap,ziti,zixing,anzhuangchengxu,dianzhen,字体,字形,安装程序,点阵
 X-KDE-Keywords[zh_TW]=font,fonts,installer,truetype,type1,bitmap
 
 
