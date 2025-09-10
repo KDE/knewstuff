@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2024-10-06 21:48+0300\n"
+"PO-Revision-Date: 2025-09-10 00:05+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -482,14 +482,10 @@ msgid "Rating:"
 msgstr "Įvertinimas:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 apžvalgos ir komentarai"
+msgstr "Rodyti %1 apžvalgas ir komentarus"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -519,37 +515,26 @@ msgid "Find out how to donate to this project"
 msgstr "Sužinokite kaip paremti šį projektą"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or %1 for safety, "
 "stability, or quality."
 msgstr ""
-"Čia atvaizduojamą naudotojų sukurtą turinį naudokite apdairiai, nes jame "
-"gali būti vykdomojo kodo, kurio KDE ar jūsų platinamojo paketo platintojas "
-"netestavo ir netikrino, kaip šis turinys veikia funkcionalumo, stabilumo ar "
-"kokybės atžvilgiu."
+"Apdairiai naudokite čia atvaizduojamą naudotojų sukurtą turinį, nes jame "
+"gali būti vykdomojo kodo, kurio KDE ir %1 netestavo ir netikrino, kaip šis "
+"turinys veikia saugumo, stabilumo ar kokybės atžvilgiu."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@info displayed as InlineMessage"
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"KDE ar jūsų platinamojo paketo platintojas netestavo čia rodomą naudotojų "
-"sukurtą turinį ir netikrino kaip šis turinys veikia funkcionalumo ar kokybės "
-"atžvilgiu."
+"KDE ir %1 netestavo čia rodomo naudotojų sukurto turinio ir netikrino, kaip "
+"šis turinys veikia funkcionalumo ar kokybės atžvilgiu."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
