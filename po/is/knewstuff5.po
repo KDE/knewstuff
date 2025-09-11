@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:25+0000\n"
-"PO-Revision-Date: 2025-09-09 18:12+0000\n"
+"PO-Revision-Date: 2025-09-10 16:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -116,6 +116,8 @@ msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"Villa kom upp á meðan uppsetningu stóð:\n"
+"%1"
 
 #: core/engine.cpp:203
 #, kde-format
@@ -123,10 +125,9 @@ msgid "Initializing"
 msgstr "Frumstilli"
 
 #: core/engine.cpp:241
-#, fuzzy, kde-format
-#| msgid "Configuration file not found: \"%1\""
+#, kde-format
 msgid "Configuration file exists, but cannot be opened: \"%1\""
-msgstr "Stillingarskrá fannst ekki: \"%1\""
+msgstr "Stillingarskrá er til staðar, en er ekki hægt að opna: \"%1\""
 
 #: core/engine.cpp:254
 #, kde-format
@@ -252,6 +253,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Ekki er hægt að setja upp '%1' því það beinir á vefsíðu. Smelltu <a "
+"href='%2'>hér</a> til að ljúka uppsetningunni."
 
 #: core/installation.cpp:303
 #, kde-format
@@ -261,7 +264,7 @@ msgstr "Gat ekki sett upp \"%1\": skrá fannst ekki."
 #: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr ""
+msgstr "Uppsetning á %1 mistókst að útbúa væntanlegu nýju möppuna %2"
 
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
@@ -282,6 +285,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain a "
 "correct KPackage structure."
 msgstr ""
+"Uppsetning á %1 mistókst þar sem sótti pakkinn inniheldur ekki rétta "
+"uppbyggingu fyrir KPackage."
 
 #: core/installation.cpp:541
 #, kde-format
@@ -289,6 +294,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not list a "
 "service type."
 msgstr ""
+"Uppsetning á %1 mistókst þar sem sótti pakkinn skilgreinir ekki tegund "
+"þjónustu."
 
 #: core/installation.cpp:548
 #, kde-format
@@ -296,6 +303,8 @@ msgid ""
 "The installation of %1 failed, as the downloaded package does not contain "
 "any useful meta information, which means it is not a valid KPackage."
 msgstr ""
+"Uppsetning á %1 mistókst þar sem sótti pakkinn inniheldur ekki nein nothæf "
+"lýsigögn, sem þýðir að þetta er ekki gildur KPackage-pakki."
 
 #: core/installation.cpp:582
 #, kde-format
@@ -323,7 +332,7 @@ msgstr "Skrifa yfir skrá"
 #: core/installation.cpp:700
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "Tókst ekki að færa skrána %1 í ætluðu móttökumöppuna %2"
 
 #: core/installation.cpp:723
 #, kde-format
@@ -334,6 +343,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"Uppsetningin mistókst við að reyna að keyra skipunina:\n"
+"%1\n"
+"\n"
+"Svarað var með:\n"
+"%2"
 
 #: core/installation.cpp:733
 #, kde-format
@@ -344,6 +358,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"Uppsetningin mistókst með villukóðanum %1 við að reyna að keyra skipunina:\n"
+"%2\n"
+"\n"
+"Svarað var með:\n"
+"%3"
 
 #: core/installation.cpp:775
 #, kde-format
@@ -774,8 +793,7 @@ msgid "All Categories"
 msgstr "Allir flokkar"
 
 #: qtquick/categoriesmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Unknown error"
+#, kde-format
 msgctxt ""
 "The string passed back in the case the requested category is not known"
 msgid "Unknown Category"
@@ -839,14 +857,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "Er að vinna með %1 frá %2, bíddu aðeins..."
 
 #: qtquick/qml/EntryDetails.qml:67
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait..."
-msgstr ""
+msgstr "Er að uppfæra %1 frá %2, bíddu aðeins..."
 
 #: qtquick/qml/EntryDetails.qml:69
 #, kde-format
@@ -858,6 +876,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"Þetta atriði er núna í ógildri eða óþekktri stöðu. <a href=\"https://bugs."
+"kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Tilkynntu þetta til KDE-"
+"samfélagsins í villuskýrslu</a>."
 
 #: qtquick/qml/EntryDetails.qml:83
 #, kde-format
@@ -1038,22 +1059,19 @@ msgid "Preview"
 msgstr "Forskoðun"
 
 #: qtquick/qml/Page.qml:233
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Detailed Tiles View Mode"
-msgstr "Hamur smáatriðasýnar"
+msgstr "Sjá flísar með nákvæmum upplýsingum"
 
 #: qtquick/qml/Page.qml:241
-#, fuzzy, kde-format
-#| msgid "Icons view mode"
+#, kde-format
 msgid "Icons Only View Mode"
-msgstr "Hamur táknmyndasýnar"
+msgstr "Sjá einungis táknmyndir"
 
 #: qtquick/qml/Page.qml:249
-#, fuzzy, kde-format
-#| msgid "Details view mode"
+#, kde-format
 msgid "Large Preview View Mode"
-msgstr "Hamur smáatriðasýnar"
+msgstr "Sjá stórar forskoðanir"
 
 #: qtquick/qml/Page.qml:259
 #, kde-format
@@ -1138,7 +1156,7 @@ msgstr "Senda inn..."
 #: qtquick/qml/Page.qml:367
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "Sjáðu hvernig þú getur bætt þínu eigin svala dóti á þennan lista"
 
 #: qtquick/qml/Page.qml:375
 #, kde-format
@@ -1146,10 +1164,9 @@ msgid "Go to..."
 msgstr "Fara á..."
 
 #: qtquick/qml/Page.qml:442
-#, fuzzy, kde-format
-#| msgid "Continue operation"
+#, kde-format
 msgid "Contribute your own…"
-msgstr "Halda áfram aðgerð"
+msgstr "Komdu á framfæri þínum eigin…"
 
 #: qtquick/qml/Page.qml:508
 #, kde-format
@@ -1243,6 +1260,9 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"Ógild eða óþekkt staða. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Tilkynntu þetta til KDE-samfélagsins í "
+"villuskýrslu</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:61
 #, kde-format
@@ -1287,11 +1307,10 @@ msgid "Updating information..."
 msgstr "Uppfæri upplýsingar..."
 
 #: qtquick/qml/UploadPage.qml:95
-#, fuzzy, kde-format
-#| msgid "&Store"
+#, kde-format
 msgctxt "The name of the KDE Store"
 msgid "KDE Store"
-msgstr "&Geyma"
+msgstr "KDE Store"
 
 #: qtquick/qml/UploadPage.qml:101
 #, kde-format
@@ -1418,7 +1437,7 @@ msgstr "Allar færslur"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Search Preset: %1"
-msgstr ""
+msgstr "Leita að forstillingu: %1"
 
 #: tools/knewstuff-dialog/main.cpp:31
 #, kde-format
