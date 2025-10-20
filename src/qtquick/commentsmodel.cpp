@@ -105,8 +105,15 @@ CommentsModel::IncludedComments KNewStuffQuick::CommentsModel::includedComments(
 void KNewStuffQuick::CommentsModel::setIncludedComments(CommentsModel::IncludedComments includedComments)
 {
     if (d->includedComments != includedComments) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         d->includedComments = includedComments;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
         Q_EMIT includedCommentsChanged();
     }
 }
