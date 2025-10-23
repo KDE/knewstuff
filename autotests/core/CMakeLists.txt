@@ -24,3 +24,5 @@ if(LINUX) # fails on freebsd for unknown reasons
 endif()
 
 target_link_libraries(knewstuffenginetest knewstuff_qml_STATIC)
+
+set_tests_properties(knewstuff-installationtest PROPERTIES ENVIRONMENT "LANG=C")
