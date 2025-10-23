@@ -16,3 +16,5 @@ knewstuff_unit_tests(
         knewstuffenginetest.cpp
         installationtest.cpp
 )
+
+set_tests_properties(knewstuff-installationtest PROPERTIES ENVIRONMENT "LANG=C")
