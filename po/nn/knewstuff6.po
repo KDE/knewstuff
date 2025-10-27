@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-06-01 14:46+0200\n"
+"PO-Revision-Date: 2025-10-26 13:41+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -481,14 +481,10 @@ msgid "Rating:"
 msgstr "Karakter:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr "%1 vurderingar og kommentarar"
+msgstr "Sjå %1 vurderingar og kommentarar"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
