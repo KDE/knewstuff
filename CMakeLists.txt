@@ -79,7 +79,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KNEWSTUFFWIDGETS
 add_definitions(-DTRANSLATION_DOMAIN=\"knewstuff6\")
 ecm_set_disabled_deprecation_versions(
     QT 6.10.0
-    KF 6.18.0
+    KF 6.19.0
 )
 
 ki18n_install(po)
