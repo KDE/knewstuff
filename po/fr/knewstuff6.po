@@ -992,7 +992,7 @@ msgid ""
 "into the systemwide knsrc file location"
 msgstr ""
 "Le fichier « KNSRC » que vous voulez afficher. Si aucun paramètre n'est "
-"fourni, une boîte de dialogue apparaîtra vous permettant de choisir parmi "
+"fourni, une boite de dialogue apparaitra vous permettant de choisir parmi "
 "tous les fichiers de configuration installés à l'emplacement des fichiers "
 "« knsrc » pour l'ensemble de votre système."
 
