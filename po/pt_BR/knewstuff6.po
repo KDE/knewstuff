@@ -16,20 +16,21 @@
 # Frederico Goncalves Guimaraes <frederico@teia.bio.br>, 2018.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-30 00:39+0000\n"
-"PO-Revision-Date: 2025-08-29 08:53-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-11-08 21:10-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -367,7 +368,7 @@ msgstr "Coisas"
 #: qtquick/qml/Button.qml:47
 #, kde-format
 msgid "Download New %1…"
-msgstr "Baixar %1 novas..."
+msgstr "Baixar %1 novas…"
 
 #: qtquick/qml/Dialog.qml:47
 #, kde-format
@@ -438,7 +439,7 @@ msgstr "Instalar"
 msgctxt ""
 "Show installation options, where there is more than one downloadable item"
 msgid "Install…"
-msgstr "Instalar..."
+msgstr "Instalar…"
 
 #: qtquick/qml/EntryDetails.qml:131
 #: qtquick/qml/private/entrygriddelegates/BigPreviewDelegate.qml:59
@@ -460,14 +461,14 @@ msgctxt ""
 "Status message to be shown when the entry is in the process of being "
 "installed OR uninstalled"
 msgid "Currently working on the item %1 by %2. Please wait…"
-msgstr "Trabalhando atualmente no item %1 por %2. Aguarde..."
+msgstr "Trabalhando atualmente no item %1 por %2. Aguarde…"
 
 #: qtquick/qml/EntryDetails.qml:162
 #, kde-format
 msgctxt ""
 "Status message to be shown when the entry is in the process of being updated"
 msgid "Currently updating the item %1 by %2. Please wait…"
-msgstr "Atualizando o item %1 de %2. Aguarde um momento..."
+msgstr "Atualizando o item %1 de %2. Aguarde um momento…"
 
 #: qtquick/qml/EntryDetails.qml:164
 #, kde-format
@@ -645,7 +646,7 @@ msgstr "Data de lançamento"
 #: qtquick/qml/Page.qml:289
 #, kde-format
 msgid "Upload…"
-msgstr "Enviar..."
+msgstr "Enviar…"
 
 #: qtquick/qml/Page.qml:290
 #, kde-format
@@ -655,12 +656,12 @@ msgstr "Aprenda como adicionar suas próprias coisas novas nesta lista"
 #: qtquick/qml/Page.qml:300
 #, kde-format
 msgid "Go to…"
-msgstr "Ir para..."
+msgstr "Ir para…"
 
 #: qtquick/qml/Page.qml:307 qtquick/qml/Page.qml:316
 #, kde-format
 msgid "Search…"
-msgstr "Pesquisar..."
+msgstr "Pesquisar…"
 
 #: qtquick/qml/Page.qml:370
 #, kde-format
@@ -737,7 +738,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is being installed OR "
 "uninstalled"
 msgid "Working…"
-msgstr "Trabalhando..."
+msgstr "Trabalhando…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:48
 #, kde-format
@@ -745,7 +746,7 @@ msgctxt ""
 "Label for the busy indicator showing an item is in the process of being "
 "updated"
 msgid "Updating…"
-msgstr "Atualizando..."
+msgstr "Atualizando…"
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:50
 #, kde-format
@@ -765,7 +766,7 @@ msgstr ""
 #, kde-format
 msgctxt "Label for the busy indicator showing an item is installing"
 msgid "Installing…"
-msgstr "Instalando..."
+msgstr "Instalando…"
 
 #: qtquick/qml/private/ErrorDisplayer.qml:15
 #, kde-format
@@ -801,7 +802,7 @@ msgstr "Enviar coisas novas: %1"
 msgctxt ""
 "A text shown beside a busy indicator suggesting that data is being fetched"
 msgid "Updating information…"
-msgstr "Atualizando informação..."
+msgstr "Atualizando informação…"
 
 #: qtquick/qml/UploadPage.qml:129
 #, kde-format
