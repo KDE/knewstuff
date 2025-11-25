@@ -13,20 +13,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2019, 2020.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2023-01-29 23:25+0900\n"
+"PO-Revision-Date: 2025-11-24 19:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 26.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: attica/atticaprovider.cpp:167
@@ -239,6 +239,8 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
+"採用「%1」失敗\n"
+"%2"
 
 #: core/installation.cpp:211
 #, kde-format
@@ -427,6 +429,8 @@ msgid ""
 "The removal of %1 failed, as there seems to somehow be more than one thing "
 "installed, which is not supposed to be possible for KPackage based entries."
 msgstr ""
+"移除 %1 失敗，因為似乎有找過一個已安裝的項目。基於 KPackage 的項目不該有可能"
+"出現這種情況。"
 
 #: core/installation.cpp:946
 #, kde-format
@@ -1051,7 +1055,7 @@ msgctxt ""
 msgid ""
 "The entry you attempted to display, identified by the unique ID %1, could "
 "not be found."
-msgstr ""
+msgstr "您嘗試顯示的項目（獨特 ID 為 %1）無法找到。"
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -1059,6 +1063,8 @@ msgid ""
 "The content available here has been uploaded by users like you, and has not "
 "been reviewed by your distributor for functionality or stability."
 msgstr ""
+"在此提供的內容為由如同您一般的使用者所上傳，未經您的發行版審閱確保是否可用或"
+"穩定。"
 
 #: qtquick/qml/Page.qml:214
 #, kde-format
@@ -1360,6 +1366,10 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products ."
 msgstr ""
+"要上傳新項目到 KDE Store，或是要加入內容到 KDE Store 上的現有項目，請開啟網站"
+"之後登入。登入後，點擊您的使用者圖示會顯示一個選單，這個選單中會有 My "
+"Products（我的產品）這個選項。點擊它將帶您到 KDE Store 的產品管理系統，讓您可"
+"以編輯或新增產品（商店項目）。"
 
 #: qtquick/qml/UploadPage.qml:122
 #, kde-format
@@ -1372,6 +1382,9 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"要上傳新項目，或是要加入內容到現有項目，請開啟提供者的網站並跟隨它的指示。最"
+"有可能的是您會需要建立使用者並登入一個產品管理系統。您也有可能會需要與該網站"
+"的管理者直接聯繫來加入內容。"
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1424,7 +1437,7 @@ msgstr "首頁"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "櫃子"
 
 #: qtquick/searchpresetmodel.cpp:76
 #, kde-format
@@ -1463,6 +1476,8 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"要顯示的 KNSRC 檔案。如果沒有傳遞，會向您顯示對話框來在系統 knsrc 檔案位置當"
+"中已安裝的設定檔案之間做選擇"
 
 #: tools/knewstuff-dialog/main.cpp:35
 #, kde-format
@@ -1479,6 +1494,15 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
 msgstr ""
+"顯示資訊時資訊來源的 KNS 網址。KNS 網址的格式是 kns://knsrcfile/providerid/"
+"entryid\n"
+"'knsrcfile'\n"
+"是 knsrc 檔案的名稱，跟直接傳遞給這個工具的 knsrcfile 參數是一樣的\n"
+"'providerid'\n"
+"是項目所屬網站的提供者的主機名稱\n"
+"'entryid'\n"
+"是 knsrc 檔案中指定的提供者當中的項目的 ID\n"
+" KNS 網址範例：kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: ui/entrydetailsdialog.cpp:84
 #, kde-format
