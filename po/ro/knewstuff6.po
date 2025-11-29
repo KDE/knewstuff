@@ -1,14 +1,13 @@
 # Traducerea kdelibs4.po în Română
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2022, 2024, 2025 Sergiu Bivol <sergiu@cip.md>
 # Laurenţiu Buzdugan <lbuz@rolix.org>, 2008, 2009.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2014, 2020, 2022, 2024.
 # Cristian Oneț <onet.cristian@gmail.com>, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2024-06-09 12:59+0100\n"
+"PO-Revision-Date: 2025-11-28 13:26+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -17,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -475,11 +474,7 @@ msgid "Rating:"
 msgstr "Evaluare:"
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
 msgstr "Recenzii și comentarii pentru %1"
@@ -512,11 +507,7 @@ msgid "Find out how to donate to this project"
 msgstr "Aflați cum să donați acestui proiect"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "Use caution when accessing user-created content shown here, as it may "
-#| "contain executable code that hasn't been tested by KDE or your "
-#| "distributor for safety, stability, or quality"
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
@@ -525,37 +516,32 @@ msgid ""
 msgstr ""
 "Aveți grijă când accesați conținutul creat de utilizatori afișat aici, "
 "întrucât poate conține cod executabil ce nu a fost testat de către KDE sau "
-"distribuitor pentru siguranță, stabilitate, sau calitate"
+"%1 pentru siguranță, stabilitate, sau calitate."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "User-created content shown here hasn't been tested by KDE or your "
-#| "distributor for functionality or quality."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
 "Conținutul afișat aici e creat de utilizatori și nu a fost testat de către "
-"KDE sau distribuitor pentru funcționalitate sau calitate."
+"KDE sau %1 pentru funcționalitate sau calitate."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #: qtquick/qml/Page.qml:181
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
-msgstr "Instalat"
+msgstr "Instalate"
 
 #: qtquick/qml/Page.qml:183
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Actualizabile"
@@ -566,20 +552,18 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #: qtquick/qml/Page.qml:204
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr "Instalat"
+msgstr "Instalate"
 
 #: qtquick/qml/Page.qml:215
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -590,27 +574,25 @@ msgstr "Actualizabile"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Sortare: Data lansării"
 
 #: qtquick/qml/Page.qml:230
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Sortare: Denumire"
 
 #: qtquick/qml/Page.qml:232
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
-msgstr "Evaluare"
+msgstr "Sortare: Evaluare"
 
 #: qtquick/qml/Page.qml:234
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "Descărcări"
+msgstr "Sortare: Descărcări"
 
 #: qtquick/qml/Page.qml:243
 #, kde-format
@@ -618,11 +600,10 @@ msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
 msgid "Name"
-msgstr ""
+msgstr "Denumire"
 
 #: qtquick/qml/Page.qml:254
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -630,8 +611,7 @@ msgid "Rating"
 msgstr "Evaluare"
 
 #: qtquick/qml/Page.qml:265
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
@@ -644,7 +624,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Data lansării"
 
 #: qtquick/qml/Page.qml:289
 #, kde-format
@@ -672,8 +652,7 @@ msgid "Category:"
 msgstr "Categorie:"
 
 #: qtquick/qml/Page.qml:390
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Contribuiți propriul conținut…"
 
