@@ -162,7 +162,7 @@ msgstr "No s'ha pogut carregar cap proveïdor de novetats des del fitxer: %1"
 #: core/enginebase.cpp:403
 #, kde-format
 msgid "Error initializing provider."
-msgstr "S'ha produït un error en restablir el proveïdor."
+msgstr "S'ha produït un error mentre es restablia el proveïdor."
 
 #: core/installation.cpp:101
 #, kde-format
@@ -207,7 +207,7 @@ msgstr "No s'ha pogut determinar el tipus d'arxiu del fitxer baixat %1"
 #: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "No s'ha pogut crear l'arxiu %1. S'ha informat de l'error: %2"
+msgstr "Ha fallat mentre es creava l'arxiu %1. S'ha informat de l'error: %2"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -328,8 +328,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
-"S'ha fallat en identificar un bon enllaç per a actualitzar %1 i no es pot "
-"realitzar l'actualització"
+"S'ha fallat mentre s'identificava un bon enllaç per a actualitzar %1 i no es "
+"pot realitzar l'actualització"
 
 #: core/transaction.cpp:460
 #, kde-format
