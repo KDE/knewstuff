@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2025-11-08 21:10-0300\n"
+"PO-Revision-Date: 2025-12-25 04:09-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -187,7 +187,7 @@ msgid ""
 "href='%2'>here</a> to finish the installation."
 msgstr ""
 "Não foi possível instalar '%1' porque ele aponta para uma página na web. "
-"Clique<a href='%2'>arqui</a> para concluir a instalação."
+"Clique <a href='%2'>aqui</a> para concluir a instalação."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -531,7 +531,7 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or %1 for safety, "
 "stability, or quality."
 msgstr ""
-"Tenha cuidado ao acessar o conteúdo criado pelo usuário mostrado aqui, pois "
+"Tenha cuidado ao acessar o conteúdo criado por usuários mostrado aqui, pois "
 "ele pode conter código executável que não foi testado pelo KDE ou %1 quanto "
 "à segurança, estabilidade ou qualidade."
 
