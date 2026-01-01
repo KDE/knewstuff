@@ -413,24 +413,16 @@ KCMUtils.GridViewKCM {
         }
     }
 
-    view.implicitCellWidth: switch (root.viewMode) {
-        case Page.ViewMode.Preview:
-            return Kirigami.Units.gridUnit * 25;
-
-        case Page.ViewMode.Tiles:
-        case Page.ViewMode.Icons:
-        default:
-            return Kirigami.Units.gridUnit * 30;
-    }
+    view.implicitCellWidth: Kirigami.Units.gridUnit * 20
 
     view.implicitCellHeight: switch (root.viewMode) {
         case Page.ViewMode.Preview:
-            return Kirigami.Units.gridUnit * 25;
+            return Kirigami.Units.gridUnit * 20;
 
         case Page.ViewMode.Tiles:
         case Page.ViewMode.Icons:
         default:
-            return Math.round(view.implicitCellWidth / 3);
+            return Kirigami.Units.gridUnit * 8;
     }
 
     view.delegate: switch (root.viewMode) {
