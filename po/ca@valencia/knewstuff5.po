@@ -164,7 +164,7 @@ msgstr "No s'ha pogut carregar cap proveïdor de novetats des del fitxer: %1"
 #: core/engine.cpp:450
 #, kde-format
 msgid "Error initializing provider."
-msgstr "S'ha produït un error en restablir el proveïdor."
+msgstr "S'ha produït un error mentre es restablia el proveïdor."
 
 #: core/engine.cpp:454 core/engine.cpp:1022
 #, kde-format
@@ -213,8 +213,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
-"S'ha fallat en identificar un bon enllaç per a actualitzar %1 i no es pot "
-"realitzar l'actualització"
+"S'ha fallat mentre s'identificava un bon enllaç per a actualitzar %1 i no es "
+"pot realitzar l'actualització"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -276,7 +276,8 @@ msgstr "No s'ha pogut instal·lar «%1»: no s'ha trobat el fitxer."
 #: core/installation.cpp:493
 #, kde-format
 msgid "The installation of %1 failed to create the expected new directory %2"
-msgstr "La instal·lació de %1 ha fallat en crear el directori nou esperat %2"
+msgstr ""
+"La instal·lació de %1 ha fallat mentre es creava el directori nou esperat %2"
 
 #: core/installation.cpp:516 core/installation.cpp:841
 #, kde-format
@@ -329,7 +330,7 @@ msgstr "No s'ha pogut determinar el tipus d'arxiu del fitxer baixat %1"
 #: core/installation.cpp:594
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr "No s'ha pogut crear l'arxiu %1. S'ha informat de l'error: %2"
+msgstr "Ha fallat mentre es creava l'arxiu %1. S'ha informat de l'error: %2"
 
 #: core/installation.cpp:678
 #, kde-format
@@ -483,7 +484,7 @@ msgid ""
 "Failed to create a job for the package management task. This is usually "
 "because the package is invalid. We attempted to operate on the package %1"
 msgstr ""
-"No s'ha pogut crear un treball per a la tasca de gestió de paquets. "
+"Ha fallat mentre es creava un treball per a la tasca de gestió de paquets. "
 "Normalment, açò és perquè el paquet no és vàlid. S'intentarà operar amb el "
 "paquet %1"
 
