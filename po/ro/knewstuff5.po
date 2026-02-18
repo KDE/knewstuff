@@ -1,14 +1,13 @@
 # Traducerea kdelibs4.po în Română
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2022, 2024, 2025 Sergiu Bivol <sergiu@cip.md>
 # Laurenţiu Buzdugan <lbuz@rolix.org>, 2008, 2009.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2014, 2020, 2022, 2024.
 # Cristian Oneț <onet.cristian@gmail.com>, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2024-02-25 14:48+0000\n"
+"PO-Revision-Date: 2025-11-28 13:26+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -17,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -697,144 +696,114 @@ msgid "Install"
 msgstr "Instalează"
 
 #: kmoretools/kmoretools.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Not installed:"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Not installed:"
 msgstr "Neinstalate:"
 
 #: kmoretools/kmoretools.cpp:618
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "More"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "More"
 msgstr "Mai multe"
 
 #: kmoretools/kmoretools.cpp:654
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Configure..."
 msgstr "Configurare..."
 
 #: kmoretools/kmoretools_p.h:373
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Visit homepage"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Visit homepage"
 msgstr "Vizitează pagina"
 
 #: kmoretools/kmoretools_p.h:386
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Install"
 msgstr "Instalează"
 
 #: kmoretools/kmoretools_p.h:395
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "No further information available."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "No further information available."
 msgstr "Nu sunt disponibile informații suplimentare."
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:170
-#, fuzzy, kde-format
-#| msgid "Configure menu"
+#, kde-format
 msgid "Configure menu"
 msgstr "Configurează meniul"
 
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:172
-#, fuzzy, kde-format
-#| msgid "Configure menu - %1"
+#, kde-format
 msgid "Configure menu - %1"
 msgstr "Configurează meniul - %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu %1=\"$GenericName\""
-#| msgid "%1 - current folder"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
 msgstr "%1 - dosarul actual"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu %1=\"$GenericName\""
-#| msgid "%1 - current device"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
 msgstr "%1 - dispozitiv actual"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu %1=\"$GenericName\""
-#| msgid "%1 - all devices"
+#, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
 msgstr "%1 - toate dispozitivele"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
-#, fuzzy, kde-format
-#| msgid "Main section"
+#, kde-format
 msgid "Main section"
 msgstr "Secțiunea principală"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveDown)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Move down"
+#, kde-format
 msgid "Move down"
 msgstr "Mută în jos"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveUp)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:77
-#, fuzzy, kde-format
-#| msgid "Move up"
+#, kde-format
 msgid "Move up"
 msgstr "Mută în sus"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMain)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:96
-#, fuzzy, kde-format
-#| msgid "Move to Main section"
+#, kde-format
 msgid "Move to Main section"
 msgstr "Mută la secțiunea principală"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonMoveToMore)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:115
-#, fuzzy, kde-format
-#| msgid "Move to More section"
+#, kde-format
 msgid "Move to More section"
 msgstr "Mută la secțiunea „Suplimentar”"
 
 #. i18n: ectx: property (text), widget (QToolButton, buttonReset)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:134
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgid "Reset"
 msgstr "Restabilește"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMoreSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:154
-#, fuzzy, kde-format
-#| msgid "More section"
+#, kde-format
 msgid "More section"
 msgstr "Secțiunea „Suplimentar”"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:206
-#, fuzzy, kde-format
-#| msgid ""
-#| "For this menu there are some more tools suggested which are currently not "
-#| "installed:"
+#, kde-format
 msgid ""
 "For this menu there are some more tools suggested which are currently not "
 "installed:"
@@ -844,8 +813,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, buttonNotInstalledTools)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:216
-#, fuzzy, kde-format
-#| msgid "More tools..."
+#, kde-format
 msgid "More tools..."
 msgstr "Mai multe unelte..."
 
