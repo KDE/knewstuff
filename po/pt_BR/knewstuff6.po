@@ -16,13 +16,13 @@
 # Frederico Goncalves Guimaraes <frederico@teia.bio.br>, 2018.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
-# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: knewstuff\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2025-12-25 04:09-0300\n"
+"PO-Revision-Date: 2026-03-06 16:19-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -482,8 +482,7 @@ msgid ""
 msgstr ""
 "Este item está atualmente em um estado inválido ou desconhecido. <a href="
 "\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Por "
-"favor, comunique isto à Comunidade do KDE através de um relatório de erros</"
-"a>."
+"favor, comunique isto à Comunidade KDE através de um relatório de erros</a>."
 
 #: qtquick/qml/EntryDetails.qml:218
 #, kde-format
@@ -532,7 +531,7 @@ msgid ""
 "stability, or quality."
 msgstr ""
 "Tenha cuidado ao acessar o conteúdo criado por usuários mostrado aqui, pois "
-"ele pode conter código executável que não foi testado pelo KDE ou %1 quanto "
+"ele pode conter código executável que não foi testado pela KDE ou %1 quanto "
 "à segurança, estabilidade ou qualidade."
 
 #: qtquick/qml/Page.qml:148
@@ -542,7 +541,7 @@ msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"O conteúdo criado pelo usuário mostrado aqui não foi testado pelo KDE ou %1 "
+"O conteúdo criado pelo usuário mostrado aqui não foi testado pela KDE ou %1 "
 "quanto à funcionalidade ou qualidade."
 
 #: qtquick/qml/Page.qml:179
