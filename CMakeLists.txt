@@ -46,14 +46,14 @@ set_package_properties(KF6Attica PROPERTIES DESCRIPTION "A Qt library that imple
                        URL "https://commits.kde.org/attica"
                        TYPE REQUIRED
                       )
-find_package(KF6Kirigami2 2.12.0)
-set_package_properties(KF6Kirigami2 PROPERTIES
+find_package(KF6Kirigami 2.12.0)
+set_package_properties(KF6Kirigami PROPERTIES
     DESCRIPTION "KDE's lightweight user interface framework for mobile and convergent applications"
     URL "https://techbase.kde.org/Kirigami"
     PURPOSE "Required by KNewStuffQuick's qml components"
     TYPE RUNTIME)
 
-find_package(KF6Syndication ${KF6_DEP_VERSION})
+find_package(KF6Syndication ${KF_DEP_VERSION})
 set_package_properties(KF6Syndication PROPERTIES
     DESCRIPTION "KDE's RSS/Atom parser library"
     PURPOSE "Used by the OPDS provider to handle most of the parsing."
