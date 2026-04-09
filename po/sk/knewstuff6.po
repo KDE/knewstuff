@@ -21,8 +21,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.01.80\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -481,11 +481,7 @@ msgid "Rating:"
 msgstr "Hodnotenie: "
 
 #: qtquick/qml/EntryDetails.qml:226
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A link which, when clicked, opens a new sub page with comments (comments "
-#| "with or without ratings) for this entry"
-#| msgid "%1 Reviews and Comments"
+#, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
 msgstr "%1 Hodnotení a komentárov"
@@ -518,58 +514,47 @@ msgid "Find out how to donate to this project"
 msgstr "Zistiť ako sa dá prispieť na tento projekt"
 
 #: qtquick/qml/Page.qml:147
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-kuit-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "Use caution when accessing user-created content shown here, as it may "
 "contain executable code that hasn't been tested by KDE or %1 for safety, "
 "stability, or quality."
 msgstr ""
-"Obsah, ktorý je tu k dispozícii, nahrali používatelia, ako ste vy, a nebol "
-"skontrolovaný distribútorom z hľadiska funkčnosti alebo stability."
+"Use caution when accessing user-created content shown here, as it may "
+"contain executable code that hasn't been tested by KDE or %1 for safety, "
+"stability, or quality."
 
 #: qtquick/qml/Page.qml:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "The content available here has been uploaded by users like you, and has "
-#| "not been reviewed by your distributor for functionality or stability."
+#, kde-format
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
-"Obsah, ktorý je tu k dispozícii, nahrali používatelia, ako ste vy, a nebol "
-"skontrolovaný distribútorom z hľadiska funkčnosti alebo stability."
+"User-created content shown here hasn't been tested by KDE or %1 for "
+"functionality or quality."
 
 #: qtquick/qml/Page.qml:179
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "All"
 msgstr "&Všetky"
 
 #: qtquick/qml/Page.qml:181
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
 msgstr "Nainštalované"
 
 #: qtquick/qml/Page.qml:183
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Updateable"
 msgstr "Aktualizovateľné"
 
 #: qtquick/qml/Page.qml:193
-#, fuzzy, kde-format
-#| msgctxt "@action:button Replace all occurrences"
-#| msgid "&All"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter to show everything"
@@ -577,8 +562,7 @@ msgid "All"
 msgstr "&Všetky"
 
 #: qtquick/qml/Page.qml:204
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
@@ -586,8 +570,7 @@ msgid "Installed"
 msgstr "Nainštalované"
 
 #: qtquick/qml/Page.qml:215
-#, fuzzy, kde-format
-#| msgid "Updateable"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items with updates available are shown"
@@ -598,31 +581,28 @@ msgstr "Aktualizovateľné"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Release date"
-msgstr ""
+msgstr "Zoradiť: Dátum vydania"
 
 #: qtquick/qml/Page.qml:230
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Name"
-msgstr ""
+msgstr "Zoradiť: Názov"
 
 #: qtquick/qml/Page.qml:232
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Rating"
 msgstr "Hodnotenie"
 
 #: qtquick/qml/Page.qml:234
-#, fuzzy, kde-format
-#| msgid "Most Downloads"
+#, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
 msgstr "Najviac stiahnutí"
 
 #: qtquick/qml/Page.qml:243
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to be "
 "alphabetical based on the name"
@@ -630,8 +610,7 @@ msgid "Name"
 msgstr "Názov"
 
 #: qtquick/qml/Page.qml:254
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt ""
 "@option:radio in menu, List option which will set the sort order to based on "
 "user ratings"
@@ -639,8 +618,7 @@ msgid "Rating"
 msgstr "Hodnotenie"
 
 #: qtquick/qml/Page.qml:265
-#, fuzzy, kde-format
-#| msgid "Downloads"
+#, kde-format
 msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on number of downloads"
@@ -653,7 +631,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the sort "
 "order to based on when items were most recently updated"
 msgid "Release date"
-msgstr ""
+msgstr "Dátum vydania"
 
 #: qtquick/qml/Page.qml:289
 #, kde-format
@@ -681,8 +659,7 @@ msgid "Category:"
 msgstr "Kategória:"
 
 #: qtquick/qml/Page.qml:390
-#, fuzzy, kde-format
-#| msgid "Contribute your own…"
+#, kde-format
 msgid "Contribute Your Own…"
 msgstr "Pridajte svoje vlastné..."
 
@@ -846,14 +823,7 @@ msgid "Send Email To: %1"
 msgstr "Poslať Email do: %1"
 
 #: qtquick/qml/UploadPage.qml:162
-#, fuzzy, kde-format
-#| msgctxt "A description of how to upload content to a generic provider"
-#| msgid ""
-#| "To upload new entries, or to add content to an existing entry on the KDE "
-#| "Store, please open the website and log in. Once you have done this, you "
-#| "will be able to find the My Products entry in the menu which pops up when "
-#| "you click your user icon. Click on this entry to go to the product "
-#| "management system, where you can work on your products ."
+#, kde-format
 msgctxt "A description of how to upload content to a generic provider"
 msgid ""
 "To upload new entries, or to add content to an existing entry on the KDE "
@@ -993,19 +963,7 @@ msgstr ""
 "konfiguračnými súbormi do celosystémového umiestnenia súboru knsrc"
 
 #: tools/knewstuff-dialog/main.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "A kns url to show information from. The format for a kns url is kns://"
-#| "knsrcfile/providerid/entryid\n"
-#| "'knsrcfile'\n"
-#| "is the name of a knsrc file as might be passed directly through this "
-#| "tool's knsrcfile argument\n"
-#| "'providerid'\n"
-#| "is the hostname of the provider the entry should exist on\n"
-#| "'entryid'\n"
-#| "is the unique ID of an entry found in the provider specified by the knsrc "
-#| "file.\n"
-#| " An example of such a url is kns://peruse.knsrc/api.kde-look.org/1316714"
+#, kde-format
 msgid ""
 "A kns url to show information from. The format for a kns url is kns://"
 "knsrcfile/providerid/entryid\n"
@@ -1031,11 +989,7 @@ msgstr ""
 "Príklad takého URL je kns://peruse.knsrc/api.kde-look.org/1316714"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "A placeholder title used in the dialog when there is no better title "
-#| "available"
-#| msgid "Download New Stuff"
+#, kde-format
 msgctxt "@action"
 msgid "Download New Stuff…"
 msgstr "Stiahnuť novú vec"
@@ -1543,13 +1497,11 @@ msgstr "Stiahnuť novú vec"
 #~ msgstr ">Veľkosť: %1</p>"
 
 #, fuzzy
-#~| msgid "Yes"
 #~ msgctxt "@action:button"
 #~ msgid "Yes"
 #~ msgstr "Áno"
 
 #, fuzzy
-#~| msgid "No"
 #~ msgctxt "@action:button"
 #~ msgid "No"
 #~ msgstr "Nie"
