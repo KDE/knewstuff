@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2025-09-10 16:56+0000\n"
+"PO-Revision-Date: 2025-12-03 14:26+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -41,8 +41,8 @@ msgid ""
 "This item costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
-"Þessi hlutur kostar %1 %2.\n"
-"Viltu kaupa hann?"
+"Þetta atriði kostar %1 %2.\n"
+"Viltu kaupa það?"
 
 #: attica/atticaprovider.cpp:494
 #, kde-format
@@ -204,6 +204,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"Ekki tókst að finna góðan tengil til að uppfæra %1 og er því ekki hægt að "
+"framkvæma uppfærsluna"
 
 #: core/engine.cpp:972
 #, kde-format
@@ -309,7 +311,7 @@ msgstr ""
 #: core/installation.cpp:582
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "Get ekki ákvarðað tegund safnskrár fyrir sóttu skrána %1"
 
 #: core/installation.cpp:594
 #, kde-format
@@ -1366,6 +1368,9 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"Þú hefur ekki heimild til að sækja nýtt frábært dót. Ef þú heldur að þetta "
+"hljóti að vera mistök, ættirðu að hafa samband við þá sem stýra heimildunum "
+"þínum."
 
 #: qtquick/searchpresetmodel.cpp:55
 #, kde-format
