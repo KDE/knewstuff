@@ -1,7 +1,7 @@
 # translation of kdelibs4.po to Polish
 # translation of kdelibs4.po to
 # Version: $Revision: 685926 $
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2011-2019, 2021-2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Ostatnie poprawki przed 2.0 Jacek Stolarczyk <jstolarz@kde.org>
 # Jacek Stolarczyk <jstolarz@kde.org>, 2001.
 # Piotr Roszatycki <dexter@debian.org>, 1997-2000.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2025-12-06 15:50+0100\n"
+"PO-Revision-Date: 2026-05-09 16:53+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: attica/atticaprovider.cpp:167
 #, kde-format
@@ -568,7 +568,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr "Wgranych"
+msgstr "Wgrane"
 
 #: qtquick/qml/Page.qml:215
 #, kde-format
