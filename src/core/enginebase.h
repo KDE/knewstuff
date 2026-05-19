@@ -574,7 +574,7 @@ private:
     void loadProviders();
 
 protected:
-#if KNEWSTUFFCORE_ENABLE_DEPRECATED_SINCE(6, 9)
+#if KNEWSTUFFCORE_BUILD_DEPRECATED_SINCE(6, 9)
     /*!
      * Add a provider and connect it to the right slots
      * \deprecated[6.9]
