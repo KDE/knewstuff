@@ -73,7 +73,7 @@ msgstr "Error de rete %1: %2"
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
-"Troppo requestas al servitor. Pro favor prova de novo inter pauc minutas."
+"Troppo requestas al servitor. Pro favor prova de novo inter pauco minutas."
 
 #: attica/atticaprovider.cpp:457
 #, kde-format
