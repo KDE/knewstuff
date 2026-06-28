@@ -757,25 +757,25 @@ msgstr "Configura el menú"
 #: kmoretools/kmoretoolsconfigdialog_p.cpp:172
 #, kde-format
 msgid "Configure menu - %1"
-msgstr "Configura el menú - %1"
+msgstr "Configura el menú – %1"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:173
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current folder"
-msgstr "%1 - Carpeta actual"
+msgstr "%1 – Carpeta actual"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:182
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - current device"
-msgstr "%1 - Dispositiu actual"
+msgstr "%1 – Dispositiu actual"
 
 #: kmoretools/kmoretoolsmenufactory.cpp:195
 #, kde-format
 msgctxt "@action:inmenu %1=\"$GenericName\""
 msgid "%1 - all devices"
-msgstr "%1 - Tots els dispositius"
+msgstr "%1 – Tots els dispositius"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMainSection)
 #: kmoretools/ui/kmoretoolsconfigwidget.ui:25
