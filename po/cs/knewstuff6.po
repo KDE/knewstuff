@@ -4,21 +4,22 @@
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2024 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2024-09-18 09:43+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-27 23:53+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -66,7 +67,7 @@ msgstr "Nyní jste fanoušek."
 msgid ""
 "The service is currently undergoing maintenance and is expected to be back "
 "in %1."
-msgstr ""
+msgstr "Služba právě prochází údržbou a její obnovení se očekává v %1."
 
 #: attica/atticaprovider.cpp:446
 #, kde-format
@@ -85,6 +86,8 @@ msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
 "function."
 msgstr ""
+"Instance služby Open Collaboration Services %1 nepodporuje požadovanou "
+"funkci."
 
 #: attica/atticaprovider.cpp:461
 #, kde-format
@@ -96,7 +99,7 @@ msgstr "Neznámá chyba OCS API. (%1)"
 msgctxt ""
 "The value returned for an unknown role when requesting data from the model."
 msgid "Unknown CommentsModel role"
-msgstr ""
+msgstr "Neznámé role CommentsModel"
 
 #: core/enginebase.cpp:98
 #, kde-format
@@ -104,6 +107,8 @@ msgid ""
 "An error occurred during the installation process:\n"
 "%1"
 msgstr ""
+"Během instalace došlo k chybě:\n"
+"%1"
 
 #: core/enginebase.cpp:134
 #, kde-format
@@ -132,6 +137,9 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
+"Nepodařilo se inicializovat instalační modul pro %1:\n"
+"%2\n"
+"Jedná se o kritickou chybu, kterou je třeba nahlásit autorovi aplikace"
 
 #: core/enginebase.cpp:354
 #, kde-format
@@ -169,6 +177,8 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
+"Nelze nainstalovat '%1', protože odkazuje na webovou stránku. Klikněte <a "
+"href='%2'>zde</a>, abyste dokončili instalaci."
 
 #: core/installation.cpp:186
 #, kde-format
@@ -183,12 +193,12 @@ msgstr "Instalace %1 selhala: %2"
 #: core/installation.cpp:386
 #, kde-format
 msgid "Could not determine the type of archive of the downloaded file %1"
-msgstr ""
+msgstr "Nepodařilo se určit typ archivu staženého souboru %1"
 
 #: core/installation.cpp:398
 #, kde-format
 msgid "Failed to open the archive file %1. The reported error was: %2"
-msgstr ""
+msgstr "Nepodařilo se otevřít soubor archivu %1. Nahlášená chyba byla: %2"
 
 #: core/installation.cpp:465
 #, kde-format
@@ -197,6 +207,9 @@ msgid ""
 "attempt). Continuing means overwriting it. Do you wish to overwrite the "
 "existing file?"
 msgstr ""
+"Tento soubor již na disku existuje (pravděpodobně v důsledku předchozího "
+"neúspěšného pokusu o stažení). Pokračováním dojde k jeho přepsání. Chcete "
+"stávající soubor přepsat?"
 
 #: core/installation.cpp:468
 #, kde-format
@@ -206,7 +219,7 @@ msgstr "Přepsat soubor"
 #: core/installation.cpp:487
 #, kde-format
 msgid "Unable to move the file %1 to the intended destination %2"
-msgstr ""
+msgstr "Nelze přesunout soubor %1 do požadovaného cílového umístění %2"
 
 #: core/installation.cpp:510
 #, kde-format
@@ -217,6 +230,11 @@ msgid ""
 "The returned output was:\n"
 "%2"
 msgstr ""
+"Instalace selhala při pokusu o spuštění příkazu:\n"
+"%1\n"
+"\n"
+"Výsledný výstup byl:\n"
+"%2"
 
 #: core/installation.cpp:521
 #, kde-format
@@ -227,6 +245,11 @@ msgid ""
 "The returned output was:\n"
 "%3"
 msgstr ""
+"Při pokusu o spuštění příkazu došlo k selhání instalace s kódem %1:\n"
+"%2\n"
+"\n"
+"Výsledný výstup byl:\n"
+"%3"
 
 #: core/installation.cpp:563
 #, kde-format
@@ -235,6 +258,9 @@ msgid ""
 "automatically removed. You can attempt to manually delete this file, if you "
 "believe this is an error."
 msgstr ""
+"Odstranění souboru %1 se nezdařilo, protože nainstalovaný soubor %2 nebylo "
+"možné automaticky odstranit. Pokud se domníváte, že se jedná o chybu, můžete "
+"se pokusit tento soubor odstranit ručně."
 
 #: core/installation.cpp:632
 #, kde-format
@@ -245,6 +271,11 @@ msgid ""
 "If you think this is incorrect, you can continue or cancel the "
 "uninstallation process"
 msgstr ""
+"Při odinstalaci se nepodařilo úspěšně spustit příkaz %1\n"
+"Výstup byl: \n"
+"%2\n"
+"Pokud se domníváte, že je tento údaj nesprávný, můžete v odinstalaci "
+"pokračovat nebo ji zrušit"
 
 #: core/jobs/filecopyworker.cpp:60
 #, kde-format
@@ -262,11 +293,14 @@ msgid ""
 "Could not perform an installation of the entry %1 as it does not have any "
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
+"Instalaci položky %1 se nepodařilo provést, protože pro ni nejsou definovány "
+"žádné položky ke stažení. Obraťte se prosím na autora, aby tento problém "
+"vyřešil."
 
 #: core/transaction.cpp:341
 #, kde-format
 msgid "Pick Update Item"
-msgstr ""
+msgstr "Vybrat položku k aktualizaci"
 
 #: core/transaction.cpp:343
 #, kde-format
@@ -275,6 +309,9 @@ msgid ""
 "update. We were unable to identify which item to select, based on the "
 "original item, which was named %1"
 msgstr ""
+"Z níže uvedeného seznamu prosím vyberte položku, která by měla být použita k "
+"instalaci této aktualizace. Na základě původní položky s názvem %1 se "
+"nepodařilo určit, kterou položku vybrat"
 
 #: core/transaction.cpp:367
 #, kde-format
@@ -282,6 +319,8 @@ msgid ""
 "We failed to identify a good link for updating %1, and are unable to perform "
 "the update"
 msgstr ""
+"Nepodařilo se najít vhodný odkaz pro aktualizaci %1, a proto nelze "
+"aktualizaci provést"
 
 #: core/transaction.cpp:460
 #, kde-format
@@ -289,6 +328,8 @@ msgid ""
 "Failed to adopt '%1'\n"
 "%2"
 msgstr ""
+"Nepodařilo se přijmout '%1'\n"
+"%2"
 
 #: qtquick/categoriesmodel.cpp:52
 #, kde-format
@@ -314,7 +355,7 @@ msgctxt ""
 "Used to construct the button's label (which will become Download New 'this "
 "value'…)"
 msgid "Stuff"
-msgstr ""
+msgstr "Obsah"
 
 #: qtquick/qml/Button.qml:47
 #, kde-format
@@ -348,6 +389,10 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
+"Z níže uvedeného seznamu položek ke stažení prosím vyberte tu, kterou chcete "
+"nainstalovat. Pokud vám není jasné, kterou z dostupných možností byste měli "
+"zvolit, obraťte se prosím na autora této položky a požádejte ho o upřesnění "
+"prostřednictvím názvu položky."
 
 #: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
@@ -427,6 +472,9 @@ msgid ""
 "bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Please report this "
 "to the KDE Community in a bug report</a>."
 msgstr ""
+"Tato položka se momentálně nachází v neplatném nebo neznámém stavu. <a href="
+"\"https://bugs.kde.org/enter_bug.cgi?product=frameworks-knewstuff\">Prosíme, "
+"nahlaste tuto skutečnost komunitě KDE prostřednictvím hlášení chyby</a>."
 
 #: qtquick/qml/EntryDetails.qml:218
 #, kde-format
@@ -437,7 +485,7 @@ msgstr "Hodnocení:"
 #, kde-format
 msgctxt "@action:button Opens a new sub-page with comments for this entry"
 msgid "See %1 Reviews and Comments"
-msgstr ""
+msgstr "Zobrazit recenze a komentáře k %1"
 
 #: qtquick/qml/EntryDetails.qml:231
 #, kde-format
@@ -474,6 +522,9 @@ msgid ""
 "contain executable code that hasn't been tested by KDE or %1 for safety, "
 "stability, or quality."
 msgstr ""
+"Při prohlížení zde zobrazeného obsahu vytvořeného uživateli buďte opatrní, "
+"protože může obsahovat spustitelný kód, jehož bezpečnost, stabilita ani "
+"kvalita nebyly otestovány organizací KDE ani %1."
 
 #: qtquick/qml/Page.qml:148
 #, kde-format
@@ -482,6 +533,8 @@ msgid ""
 "User-created content shown here hasn't been tested by KDE or %1 for "
 "functionality or quality."
 msgstr ""
+"Obsah vytvořený uživateli, který je zde zobrazen, nebyl ze strany KDE ani %1 "
+"otestován z hlediska funkčnosti ani kvality."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -589,7 +642,7 @@ msgstr "Odeslat…"
 #: qtquick/qml/Page.qml:290
 #, kde-format
 msgid "Learn how to add your own hot new stuff to this list"
-msgstr ""
+msgstr "Zjistěte, jak do tohoto seznamu přidat svůj vlastní nový obsah"
 
 #: qtquick/qml/Page.qml:300
 #, kde-format
@@ -696,6 +749,9 @@ msgid ""
 "product=frameworks-knewstuff\">Please report this to the KDE Community in a "
 "bug report</a>."
 msgstr ""
+"Neplatný nebo neznámý stav. <a href=\"https://bugs.kde.org/enter_bug.cgi?"
+"product=frameworks-knewstuff\">Prosíme, nahlaste tuto chybu komunitě KDE "
+"prostřednictvím hlášení o chybě</a>."
 
 #: qtquick/qml/private/entrygriddelegates/FeedbackOverlay.qml:63
 #, kde-format
@@ -778,6 +834,11 @@ msgid ""
 "click your user icon. Click on this entry to go to the product management "
 "system, where you can work on your products."
 msgstr ""
+"Chcete-li nahrát nové položky nebo doplnit obsah ke stávající položce v KDE "
+"Store, otevřete prosím webovou stránku a přihlaste se. Poté v nabídce, která "
+"se zobrazí po kliknutí na vaši uživatelskou ikonu, najdete položku \"Moje "
+"produkty\". Kliknutím na tuto položku přejdete do systému pro správu "
+"produktů, kde můžete se svými produkty pracovat."
 
 #: qtquick/qml/UploadPage.qml:163
 #, kde-format
@@ -790,6 +851,12 @@ msgid ""
 "might be required to contact the managers of the site directly to get new "
 "content added."
 msgstr ""
+"Chcete-li nahrát nové položky nebo doplnit obsah do stávající položky, "
+"otevřete prosím webové stránky poskytovatele a postupujte podle pokynů, "
+"které tam najdete. Pravděpodobně budete muset vytvořit uživatelský účet a "
+"přihlásit se do systému pro správu produktů, kde budete muset postupovat "
+"podle pokynů k přidávání položek. Případně může být nutné obrátit se přímo "
+"na správce webu, aby nový obsah přidali."
 
 #: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
 #: qtquick/quickengine.cpp:176
@@ -811,6 +878,8 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
+"Nemáte oprávnění ke stažení nového obsahu. Pokud se domníváte, že se jedná o "
+"omyl, obraťte se prosím na osobu odpovědnou za vaše oprávnění."
 
 #: qtquick/searchpresetmodel.cpp:46
 #, kde-format
@@ -828,7 +897,7 @@ msgstr "Populární"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Featured"
-msgstr ""
+msgstr "Zvýrazněné"
 
 #: qtquick/searchpresetmodel.cpp:52
 #, kde-format
@@ -852,7 +921,7 @@ msgstr "Domů"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Shelf"
-msgstr ""
+msgstr "Shelf"
 
 #: qtquick/searchpresetmodel.cpp:60
 #, kde-format
@@ -891,6 +960,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
+"Soubor KNSRC, který chcete zobrazit. Pokud není zadán žádný, zobrazí se "
+"dialogové okno, ve kterém můžete přepínat mezi všemi konfiguračními soubory "
+"nainstalovanými v systémovém umístění souborů knsrc"
 
 #: tools/knewstuff-dialog/main.cpp:34
 #, kde-format
@@ -907,6 +979,16 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
+"URL adresa KNS, ze které se mají zobrazit informace. Formát URL adresy KNS "
+"je kns://knsrcfile/providerid/entryid\n"
+"'knsrcfile'\n"
+"je název souboru knsrc, který lze předat přímo prostřednictvím argumentu "
+"knsrcfile tohoto nástroje\n"
+"'providerid'\n"
+"je název hostitele poskytovatele, u kterého by měla položka existovat\n"
+"'entryid'\n"
+"je jedinečné ID záznamu nalezeného u poskytovatele určeného souborem knsrc.\n"
+"Příklad takové adresy URL je kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 
 #: widgets/action.cpp:28 widgets/button.cpp:70
 #, kde-format
