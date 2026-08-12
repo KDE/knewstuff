@@ -528,7 +528,7 @@ msgstr "الكلّ"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Installed"
-msgstr "الأكثر تثبيتاً"
+msgstr "الأكثر تثبيتًا"
 
 #: qtquick/qml/Page.qml:183
 #, kde-format
@@ -550,7 +550,7 @@ msgctxt ""
 "@option:radio similar to combobox item, List option which will set the "
 "filter so only installed items are shown"
 msgid "Installed"
-msgstr "الأكثر تثبيتاً"
+msgstr "الأكثر تثبيتًا"
 
 #: qtquick/qml/Page.qml:215
 #, kde-format
@@ -582,7 +582,7 @@ msgstr "رتب حسب: التقييم"
 #, kde-format
 msgctxt "@action:button opening menu similar to combobox, filter list"
 msgid "Sort: Downloads"
-msgstr "رتب حسب: الأكثر تحميلاً"
+msgstr "رتب حسب: الأكثر تحميلًا"
 
 #: qtquick/qml/Page.qml:243
 #, kde-format
@@ -833,7 +833,7 @@ msgstr ""
 "لتحميل إدخالات جديدة، أو لإضافة محتوى إلى إدخال موجود، يرجى فتح موقع المزود "
 "واتباع التعليمات هناك. ستحتاج على الأرجح إلى إنشاء مستخدم وتسجيل الدخول إلى "
 "نظام إدارة المنتج، حيث ستحتاج إلى اتباع التعليمات الخاصة بكيفية الإضافة. "
-"بدلاً من ذلك، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى جديد."
+"بدلًا من ذلك، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى جديد."
 
 #: qtquick/quickengine.cpp:82 qtquick/quickengine.cpp:168
 #: qtquick/quickengine.cpp:176
@@ -855,7 +855,7 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
-"لست مخولاً للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ، "
+"لست مخولًا للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ، "
 "فيرجى الاتصال بالمسؤول عن الأذون الخاصة بك."
 
 #: qtquick/searchpresetmodel.cpp:46
