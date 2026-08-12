@@ -592,7 +592,7 @@ msgstr "التصنيف:"
 #: downloadwidget.ui:90
 #, kde-format
 msgid "Most downloads"
-msgstr "الأكثر تحميلاً"
+msgstr "الأكثر تحميلًا"
 
 #. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
 #: downloadwidget.ui:103
@@ -604,13 +604,13 @@ msgstr "الأحدث"
 #: downloadwidget.ui:110 qtquick/qml/Page.qml:312
 #, kde-format
 msgid "Rating"
-msgstr "الأفضل تقييماً"
+msgstr "الأفضل تقييمًا"
 
 #. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
 #: downloadwidget.ui:117 qtquick/qml/Page.qml:261
 #, kde-format
 msgid "Installed"
-msgstr "الأكثر تثبيتاً"
+msgstr "الأكثر تثبيتًا"
 
 #. i18n: ectx: property (text), widget (QLabel, orderLabel)
 #: downloadwidget.ui:175
@@ -1036,7 +1036,7 @@ msgstr "أظهر الأعلى تقيما أولا"
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show most downloaded first"
-msgstr "أظهر الأكثر تحميلاً أولا"
+msgstr "أظهر الأكثر تحميلًا أولا"
 
 #: qtquick/qml/Page.qml:132
 #, kde-format
@@ -1161,7 +1161,7 @@ msgstr "أظهر الأعلى تقيما أولا"
 msgctxt ""
 "List option which will set the sort order to based on number of downloads"
 msgid "Show Most Downloaded First"
-msgstr "أظهر الأكثر تحميلاً أولا"
+msgstr "أظهر الأكثر تحميلًا أولا"
 
 #: qtquick/qml/Page.qml:366
 #, kde-format
@@ -1377,7 +1377,7 @@ msgstr ""
 "لتحميل إدخالات جديدة، أو لإضافة محتوى إلى إدخال موجود، يرجى فتح موقع المزود "
 "واتباع التعليمات هناك. ستحتاج على الأرجح إلى إنشاء مستخدم وتسجيل الدخول إلى "
 "نظام إدارة المنتج، حيث ستحتاج إلى اتباع التعليمات الخاصة بكيفية الإضافة. "
-"بدلاً من ذلك، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى جديد."
+"بدلًا من ذلك، قد يُطلب منك الاتصال بمديري الموقع مباشرةً لإضافة محتوى جديد."
 
 #: qtquick/quickengine.cpp:174
 #, kde-format
@@ -1388,7 +1388,7 @@ msgid ""
 "You are not authorized to Get Hot New Stuff. If you think this is in error, "
 "please contact the person in charge of your permissions."
 msgstr ""
-"لست مخولاً للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ، "
+"لست مخولًا للحصول على الأشياء الجديدة. إذا كنت تعتقد أن هذا عن طريق الخطأ، "
 "فيرجى الاتصال بالمسؤول عن الأذون الخاصة بك."
 
 #: qtquick/searchpresetmodel.cpp:55
