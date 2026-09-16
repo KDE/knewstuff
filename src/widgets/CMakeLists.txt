@@ -104,3 +104,17 @@ if (BUILD_DESIGNERPLUGIN)
 endif()
 
 ecm_generate_qdoc(KF6NewStuffWidgets knewstuffwidgets.qdocconf)
+
+ecm_add_installed_library_check(KF6NewStuffWidgets
+    PACKAGE_NAME "KF6NewStuff"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6NewStuffWidgets
+    HEADERS ${KNewStuffWidgets_CamelCase_HEADERS}
+    PREFIX KNSWidgets
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6NewStuffWidgets
+    PREFIX KNEWSTUFF
+)

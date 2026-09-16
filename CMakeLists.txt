@@ -38,6 +38,7 @@ include(ECMGenerateHeaders)
 include(ECMDeprecationSettings)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(ECMInstalledLibraryCheck)
 include(CMakeDependentOption)
 
 find_package(KF6Attica ${KF_DEP_VERSION} CONFIG REQUIRED)
