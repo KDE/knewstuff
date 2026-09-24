@@ -79,6 +79,36 @@ bool Installation::readConfig(const KConfigGroup &group, QString &errorMessage)
     targetDirectory = group.readEntry("TargetDir");
     xdgTargetDirectory = group.readEntry("XdgTargetDir");
 
+    const QString authorSubdirSetting = group.readEntry("AuthorSubdir", QStringLiteral("none")).toLower();
+    if (authorSubdirSetting == QStringLiteral("none") || authorSubdirSetting.isEmpty()) {
+        authorSubdir = NoAuthorSubdir;
+    } else if (authorSubdirSetting == QStringLiteral("id")) {
+        authorSubdir = IdAuthorSubdir;
+    } else if (authorSubdirSetting == QStringLiteral("name")) {
+        authorSubdir = NameAuthorSubdir;
+    } else if (authorSubdirSetting == QStringLiteral("nameandid")) {
+        authorSubdir = NameIdAuthorSubdir;
+    } else if (authorSubdirSetting == QStringLiteral("email")) {
+        authorSubdir = EmailAuthorSubdir;
+    } else if (authorSubdirSetting == QStringLiteral("nameandemail")) {
+        authorSubdir = NameAndEmailAuthorSubdir;
+    } else {
+        authorSubdir = NoAuthorSubdir;
+    }
+
+    const QString entrySubdirSetting = group.readEntry("EntrySubdir", QStringLiteral("none")).toLower();
+    if (entrySubdirSetting == QStringLiteral("none") || entrySubdirSetting.isEmpty()) {
+        entrySubdir = NoEntrySubdir;
+    } else if (entrySubdirSetting == QStringLiteral("id")) {
+        entrySubdir = IdEntrySubdir;
+    } else if (entrySubdirSetting == QStringLiteral("name")) {
+        entrySubdir = NameEntrySubdir;
+    } else if (entrySubdirSetting == QStringLiteral("nameandid")) {
+        entrySubdir = NameAndIdEntrySubdir;
+    } else {
+        entrySubdir = NoEntrySubdir;
+    }
+
     installPath = group.readEntry("InstallPath");
     absoluteInstallPath = group.readEntry("AbsoluteInstallPath");
 
@@ -290,12 +320,93 @@ QString Installation::targetInstallationPath() const
     return installdir;
 }
 
+QString completeInstalldir(const KNSCore::Entry &entry,
+                           const QString &installdir,
+                           const Installation::AuthorSubdirOptions &authorSubdir,
+                           const Installation::EntrySubdirOptions &entrySubdir)
+{
+    // If either of the string elements contains a slash, those slashes are replaced
+    // with a division slash (which is similarly styled, but file system safe)
+
+    // Respect the author subdir setting
+    QString fullInstallDir{installdir};
+    if (fullInstallDir.endsWith(QStringLiteral("/")) == false) {
+        fullInstallDir.append(QStringLiteral("/"));
+    }
+    const QString authorId{entry.author().id().isEmpty() ? QStringLiteral("unknown")
+                                                         : entry.author().id().replace(QString::fromUtf8("/"), QString::fromUtf8("∕"))};
+    const QString authorName{entry.author().name().replace(QString::fromUtf8("/"), QString::fromUtf8("∕"))};
+    const QString authorEmail{entry.author().email().replace(QString::fromUtf8("/"), QString::fromUtf8("∕"))};
+    switch (authorSubdir) {
+        case Installation::NoAuthorSubdir:
+        // No need to fetch author information here
+        break;
+    case Installation::IdAuthorSubdir:
+        fullInstallDir.append(QString::fromUtf8("%1/").arg(authorId));
+        break;
+    case Installation::NameAuthorSubdir:
+        if (authorName.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("%1/").arg(authorId));
+        } else {
+            fullInstallDir.append(QString::fromUtf8("%1/").arg(authorName));
+        }
+        break;
+    case Installation::NameIdAuthorSubdir:
+        if (authorName.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("unknown.%1/").arg(authorId));
+        } else {
+            fullInstallDir.append(QString::fromUtf8("%1.%2/").arg(authorName).arg(authorId));
+        }
+        break;
+    case Installation::EmailAuthorSubdir:
+        if (authorEmail.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("%1/").arg(authorId));
+        } else {
+            fullInstallDir.append(QString::fromUtf8("%1/").arg(authorEmail));
+        }
+        break;
+    case Installation::NameAndEmailAuthorSubdir:
+        if (authorName.isEmpty() && authorEmail.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("unknown (%1)/").arg(authorId));
+        } else if (authorName.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("unknown (%1)/").arg(authorEmail));
+        } else if (authorEmail.isEmpty()) {
+            fullInstallDir.append(QString::fromUtf8("%1 (%2)/").arg(authorName).arg(authorId));
+        } else {
+            fullInstallDir.append(QString::fromUtf8("%1 (%2)/").arg(authorName).arg(authorEmail));
+        }
+        break;
+    }
+    const QString entryName{entry.name().replace(QString::fromUtf8("/"), QString::fromUtf8("∕"))};
+    const QString entryId{entry.uniqueId().replace(QString::fromUtf8("/"), QString::fromUtf8("∕"))};
+    switch (entrySubdir) {
+    case Installation::NoEntrySubdir:
+        // No need to do anything, no subdir required for the entry
+        break;
+    case Installation::IdEntrySubdir:
+        fullInstallDir.append(QString::fromUtf8("%1/").arg(entry.uniqueId()));
+        break;
+    case Installation::NameEntrySubdir:
+        fullInstallDir.append(QString::fromUtf8("%1/").arg(entryName));
+        break;
+    case Installation::NameAndIdEntrySubdir:
+        fullInstallDir.append(QString::fromUtf8("%1.%2/").arg(entryName).arg(entry.uniqueId()));
+        break;
+    }
+    return fullInstallDir;
+}
+
 QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entry &entry, const QString &payloadfile, const QString installdir)
 {
     // Collect all files that were installed
     QStringList installedFiles;
     bool isarchive = true;
     UncompressionOptions uncompressionOpt = uncompressionSetting();
+
+    // Respect the author and entry subdir settings
+    QString fullInstallDir{completeInstalldir(entry, installdir, authorSubdir, entrySubdir)};
+    // Create the install directory if it doesn't yet exist (common case when installing new things)
+    QDir().mkpath(fullInstallDir);
 
     // respect the uncompress flag in the knsrc
     if (uncompressionOpt == UseKPackageUncompression) {
@@ -411,9 +522,9 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
                     const bool isSubdir =
                         (uncompressionOpt == UncompressIntoSubdir || uncompressionOpt == UncompressIntoSubdirIfArchive) && dir->entries().count() > 1;
                     if (isSubdir) {
-                        installpath = installdir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
+                        installpath = fullInstallDir + QLatin1Char('/') + QFileInfo(archive->fileName()).baseName();
                     } else {
-                        installpath = installdir;
+                        installpath = fullInstallDir;
                     }
 
                     if (dir->copyTo(installpath)) {
@@ -446,7 +557,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             // FIXME: make naming convention configurable through *.knsrc? e.g. for kde-look.org image names
             QUrl source = QUrl(entry.payload());
             qCDebug(KNEWSTUFFCORE) << "installing non-archive from" << source;
-            const QString installpath = QDir(installdir).filePath(source.fileName());
+            const QString installpath = QDir(fullInstallDir).filePath(source.fileName());
 
             qCDebug(KNEWSTUFFCORE) << "Install to file" << installpath;
             // FIXME: copy goes here (including overwrite checking)
@@ -458,7 +569,7 @@ QStringList Installation::installDownloadedFileAndUncompress(const KNSCore::Entr
             bool success = true;
             const bool update = ((entry.status() == KNSCore::Entry::Updateable) || (entry.status() == KNSCore::Entry::Updating));
 
-            if (QFile::exists(installpath) && QDir::tempPath() != installdir) {
+            if (QFile::exists(installpath) && QDir::tempPath() != fullInstallDir) {
                 if (!update) {
                     Question question(Question::ContinueCancelQuestion);
                     question.setEntry(entry);
@@ -661,6 +772,32 @@ void Installation::uninstall(Entry entry)
             }
         } else {
             deleteFilesAndMarkAsUninstalled();
+        }
+    }
+
+    // Respect the author and entry subdir settings, and remove the entry subdir once it's empty, and the author subdir once there are no more entries from that
+    // author installed
+    QString fullInstallDir{completeInstalldir(entry, targetInstallationPath(), authorSubdir, entrySubdir)};
+    if (authorSubdir != NoAuthorSubdir && entrySubdir != NoEntrySubdir) {
+        // Then we've got two directories to care about - first remove the product subdir if empty, and then go up to the parent (the author), and attempt to
+        // remove that if empty
+        QDir theDirectory(fullInstallDir);
+        if (theDirectory.exists() && theDirectory.isEmpty()) {
+            if (QDir().rmdir(fullInstallDir)) {
+                // If we have successfully removed the main install directory, that's the product directory
+                // So, now go up one, to the author directory, and try and remove that (doesn't matter if we can't, author may have more products installed)
+                theDirectory.cdUp();
+                if (theDirectory.exists()) {
+                    QDir().rmdir(theDirectory.absolutePath());
+                }
+            }
+        }
+    } else if (authorSubdir != NoAuthorSubdir || entrySubdir != NoEntrySubdir) {
+        // Then we've got precisely one subdirectory to worry about (doesn't really matter which one, we just try and remove it, and if it fails, there's more
+        // stuff in there, and that's fine)
+        QDir theDirectory(fullInstallDir);
+        if (theDirectory.exists() && theDirectory.isEmpty()) {
+            QDir().rmdir(fullInstallDir);
         }
     }
 }

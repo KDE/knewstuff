@@ -53,6 +53,28 @@ public:
     };
     Q_ENUM(UncompressionOptions)
 
+    enum AuthorSubdirOptions {
+        NoAuthorSubdir, ///@< No author subdirectory will be created
+        IdAuthorSubdir, ///@< Entries will be installed into a subdirectory matching the author's ID
+        NameAuthorSubdir, ///@< Entries will be installed into a subdirectory matching the author's name (falling back to the ID if there is no name set set)
+        NameIdAuthorSubdir, ///@< Entries will be installed into a subdirectory matching the author's name (if the name is not set, the string will be
+                            /// "unknown"), suffixed with their ID (separated from the name by a period)
+        EmailAuthorSubdir, ///@< Entries will be installed into a subdirectory matching the author's email (falling back to the ID if there is no email set)
+        NameAndEmailAuthorSubdir, ///@< Entries will be installed into a subdirectory matching the author's name (if the name is not set, the string will be
+                                  /// "unknown"), suffixed with their email in a parenthesis (falling back to the ID if there is no email set)
+    };
+    Q_ENUM(AuthorSubdirOptions)
+
+    // Set the productSubdir option to install entries into a subdirectory (if authorSubdir is set, the product subdirectory will be underneath that)
+    enum EntrySubdirOptions {
+        NoEntrySubdir, ///@< No product subdirectory will be created
+        IdEntrySubdir, ///@< Entries will be installed into a subdirectory matching the product's ID
+        NameEntrySubdir, ///@< Entries will be installed into a subdirectory matching the product's name
+        NameAndIdEntrySubdir, ///@< Entries will be installed into a subdirectory matching the product's name, suffixed by the product's ID (separated from the
+                              /// name by a period)
+    };
+    Q_ENUM(EntrySubdirOptions)
+
     bool readConfig(const KConfigGroup &group, QString &errorMessage);
 
     QString targetInstallationPath() const;
@@ -153,6 +175,8 @@ private:
 
     QString kpackageStructure;
     UncompressionOptions uncompressSetting = UncompressionOptions::NeverUncompress;
+    AuthorSubdirOptions authorSubdir = AuthorSubdirOptions::NoAuthorSubdir;
+    EntrySubdirOptions entrySubdir = EntrySubdirOptions::NoEntrySubdir;
 
     Q_DISABLE_COPY(Installation)
 };
