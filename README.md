@@ -164,6 +164,28 @@ Uncompress can be one of: `always`, `never`, `archive`, `surdir`, or `kpackage`:
 * `kpackage`: Require that the downloaded file is a kpackage, and use the KPackage framework for handling installation and removal (since 5.70).
   See also the note on [KPackage Support below](#kpackage-support) below.
 
+### AuthorSubdir and EntrySubdir
+
+Setting one or both of these will allow you to decide which subdirectories to install your entries into. By default, no subdirectories will be created, but you can use this to ensure that downloads are in semantically useful locations on the file system. Both these options are case insensitive.
+
+For AuthorSubdir, your options are as follows:
+
+* `None`: No author subdirectory will be created
+* `ID`: Entries will be installed into a subdirectory matching the author's ID
+* `Name`: Entries will be installed into a subdirectory matching the author's name (falling back to the ID if there is no name set set)
+* `NameAndID`: Entries will be installed into a subdirectory matching the author's name (if the name is not set, the string will be "unknown"), suffixed with their ID (separated from the name by a period)
+* `Email`: Entries will be installed into a subdirectory matching the author's email (falling back to the ID if there is no email set)
+* `NameAndEmail`: Entries will be installed into a subdirectory matching the author's name (if the name is not set, the string will be "unknown"), suffixed with their email in a parenthesis (falling back to the ID if there is no email set)
+
+For EntrySubdir, your options are as follows
+
+* `None`: No product subdirectory will be created
+* `ID`: Entries will be installed into a subdirectory matching the product's ID
+* `Name`: Entries will be installed into a subdirectory matching the product's name
+* `NameAndID`: Entries will be installed into a subdirectory matching the product's name, suffixed by the product's ID (separated from the name by a period)
+
+If you do not specify AuthorSubdir, we recommend that EntrySubdir be set to `NameAndID`)
+
 ### ContentWarning
 
 Depending on store categories, downloaded content might be of more intrinsically innocuous nature such as Images or simple text files—or potentially more security-sensitive, for instance containing executable JavaScript code.
