@@ -50,8 +50,8 @@ msgid ""
 "This item costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
-"Стоимость обозначенного составляет %1 %2.\n"
-"Хотите купить?"
+"Стоимость этого материала: %1 %2.\n"
+"Купить?"
 
 #: attica/atticaprovider.cpp:366
 #, kde-format
@@ -152,7 +152,7 @@ msgid ""
 "%2\n"
 "This is a critical error and should be reported to the application author"
 msgstr ""
-"Не удалось инициализировать обработчик установщика для %1\n"
+"Не удалось инициализировать обработчик установщика для %1:\n"
 "%2\n"
 "Это критическая ошибка, и о ней следует сообщить автору приложения"
 
@@ -174,7 +174,7 @@ msgstr "Ошибка инициализации поставщика."
 #: core/installation.cpp:101
 #, kde-format
 msgid "Invalid item."
-msgstr "Неподдерживаемый элемент."
+msgstr "Некорректный элемент."
 
 #: core/installation.cpp:108
 #, kde-format
@@ -192,7 +192,7 @@ msgid ""
 "Cannot install '%1' because it points to a web page. Click <a "
 "href='%2'>here</a> to finish the installation."
 msgstr ""
-"Ошибка установки «%1»: ссылка ведёт на web-страницу. Нажмите <a "
+"Ошибка установки «%1»: ссылка ведёт на веб-страницу. Нажмите <a "
 "href='%2'>здесь</a> для завершения установки."
 
 #: core/installation.cpp:186
@@ -245,7 +245,9 @@ msgid ""
 "%2"
 msgstr ""
 "Ошибка установки при выполнении команды:\n"
-"%1Сообщение об ошибке:\n"
+"%1\n"
+"\n"
+"Вывод команды:\n"
 "%2"
 
 #: core/installation.cpp:521
@@ -258,7 +260,9 @@ msgid ""
 "%3"
 msgstr ""
 "Ошибка установки (код выхода %1) при выполнении команды:\n"
-"%2Сообщение об ошибке:\n"
+"%2\n"
+"\n"
+"Вывод команды:\n"
 "%3"
 
 #: core/installation.cpp:563
@@ -303,7 +307,7 @@ msgid ""
 "downloadable items defined. Please contact the author so they can fix this."
 msgstr ""
 "Не удалось выполнить установку пункта %1, так как в нём отсутствуют "
-"загружаемые элементы. Свяжитесь с автором, чтобы они могли это исправить."
+"загружаемые элементы. Сообщите об этом автору, чтобы он мог это исправить."
 
 #: core/transaction.cpp:341
 #, kde-format
@@ -543,7 +547,7 @@ msgid ""
 "functionality or quality."
 msgstr ""
 "Доступное здесь содержимое было отправлено обычными пользователями и не "
-"проверялось разработчиками KDE или %1 функциональность и стабильность."
+"проверялось разработчиками KDE или %1 на функциональность и качество."
 
 #: qtquick/qml/Page.qml:179
 #, kde-format
@@ -847,8 +851,7 @@ msgstr ""
 "Store материалы, откройте веб-сайт и войдите в свою учётную запись. После "
 "этого появится возможность открыть в меню, которое появляется при нажатии на "
 "значок пользователя, вкладку «My Products». Эта вкладка позволяет перейти в "
-"систему управления материалами, где возможно работать над своими "
-"дополнениями."
+"систему управления материалами, где можно работать над своими дополнениями."
 
 #: qtquick/qml/UploadPage.qml:163
 #, kde-format
@@ -918,7 +921,7 @@ msgstr "Перезапустить"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "New"
-msgstr "Создать"
+msgstr "Новые"
 
 #: qtquick/searchpresetmodel.cpp:56
 #, kde-format
@@ -942,7 +945,7 @@ msgstr "Вверх"
 #, kde-format
 msgctxt "Knewstuff5"
 msgid "Recommended"
-msgstr "Рекомендуется"
+msgstr "Рекомендуемые"
 
 #: qtquick/searchpresetmodel.cpp:64
 #, kde-format
@@ -969,9 +972,9 @@ msgid ""
 "with a dialog which lets you switch between all the config files installed "
 "into the systemwide knsrc file location"
 msgstr ""
-"Выберите нужный файл KNSRC. Если ничего не будет указано, появится диалог, "
-"который позволит переключаться между всеми файлами конфигурации, "
-"установленными в общем расположении файлов knsrc."
+"Файл KNSRC для показа. Если он не указан, появится диалог, который позволит "
+"переключаться между всеми файлами конфигурации, установленными в общем "
+"расположении файлов knsrc."
 
 #: tools/knewstuff-dialog/main.cpp:34
 #, kde-format
@@ -988,8 +991,8 @@ msgid ""
 "file.\n"
 " An example of such a url is kns://sddmtheme.knsrc/api.kde-look.org/2059021"
 msgstr ""
-"URL-адрес kns для отображения информации. Формат URL адреса kns должен быть "
-"следующим kns://knsrcfile/providerid/entryid\n"
+"URL-адрес kns для показа сведений. Формат URL-адреса kns: kns://knsrcfile/"
+"providerid/entryid\n"
 "'knsrcfile'\n"
 "это имя файла knsrc, которое может быть передано через аргумент knsrcfile "
 "этого инструмента\n"
