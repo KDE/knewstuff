@@ -143,6 +143,10 @@ void HTTPWorker::startRequest()
 
 void HTTPWorker::handleReadyRead()
 {
+    // d->reply deletes itself with a deleteLater, so this might still happen
+    if (!d->reply) {
+        return;
+    }
     QMutexLocker locker(&s_httpWorkerNAM->mutex);
     if (d->reply->attribute(QNetworkRequest::RedirectionTargetAttribute).isNull()) {
         do {
@@ -153,6 +157,10 @@ void HTTPWorker::handleReadyRead()
 
 void HTTPWorker::handleFinished()
 {
+    // d->reply deletes itself with a deleteLater, so this might still happen
+    if (!d->reply) {
+        return;
+    }
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
     if (d->reply->error() != QNetworkReply::NoError) {
         qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
@@ -196,6 +204,10 @@ void HTTPWorker::handleFinished()
 
 void HTTPWorker::handleData(const QByteArray &data)
 {
+    // d->reply deletes itself with a deleteLater, so this might still happen
+    if (!d->reply) {
+        return;
+    }
     // It turns out that opening a file and then leaving it hanging without writing to it immediately will, at times
     // leave you with a file that suddenly (seemingly magically) no longer exists. Thanks for that.
     if (!d->dataFile.isOpen()) {
