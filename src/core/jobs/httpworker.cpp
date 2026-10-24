@@ -103,7 +103,7 @@ void HTTPWorker::setUrl(const QUrl &url)
 
 static void addUserAgent(QNetworkRequest &request)
 {
-    QString agentHeader = QStringLiteral("KNewStuff/%1").arg(QLatin1String(KNEWSTUFF_VERSION_STRING));
+    QString agentHeader = QStringLiteral("KNewStuff/" KNEWSTUFF_VERSION_STRING);
     if (QCoreApplication::instance()) {
         agentHeader += QStringLiteral("-%1/%2").arg(QCoreApplication::instance()->applicationName(), QCoreApplication::instance()->applicationVersion());
     }
