@@ -1,5 +1,4 @@
 # Translation of kdelibs4 into Japanese.
-# SPDX-FileCopyrightText: 2023, 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # This file is distributed under the same license as the kdelibs package.
 # Taiki Komoda <kom@kde.gr.jp>, 2002, 2004, 2006, 2010.
 # Noboru Sinohara <shinobo@leo.bekkoame.ne.jp>, 2004.
@@ -10,6 +9,7 @@
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008, 2009, 2010.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2006, 2007, 2008, 2010, 2011, 2019, 2020.
+# SPDX-FileCopyrightText: 2023, 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 #
 msgid ""
@@ -17,9 +17,9 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2026-07-12 15:48+0900\n"
+"PO-Revision-Date: 2026-10-17 21:27+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
-"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -391,9 +391,8 @@ msgid ""
 "options, please contact the author of this item and ask that they clarify "
 "this through the naming of the items."
 msgstr ""
-"以下のダウンロード可能なアイテムのリストからインストールしたいものを選択して"
-"ください。どれを選択すべきか分からない場合、このアイテムの作者に連絡し、アイ"
-"テムを明確にするためにわかりやすい名前付けをするよう尋ねてみてください。"
+"以下からインストールする項目を選択してください。どれをインストールすべきか不"
+"明瞭な場合、項目名をわかりやすくするよう作者に連絡してください。"
 
 #: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
@@ -859,7 +858,7 @@ msgstr ""
 #: qtquick/quickengine.cpp:176
 #, kde-format
 msgid "Loading data"
-msgstr "データをロード中"
+msgstr "データを読み込み中"
 
 #: qtquick/quickengine.cpp:172
 #, kde-format
