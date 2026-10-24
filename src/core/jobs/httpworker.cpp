@@ -94,7 +94,10 @@ HTTPWorker::HTTPWorker(const QUrl &source, const QUrl &destination, KNSCore::HTT
     d->destination = destination;
 }
 
-HTTPWorker::~HTTPWorker() = default;
+HTTPWorker::~HTTPWorker()
+{
+    d->reply.reset();
+}
 
 void HTTPWorker::setUrl(const QUrl &url)
 {
@@ -153,6 +156,9 @@ void HTTPWorker::handleReadyRead()
 
 void HTTPWorker::handleFinished()
 {
+    if (!d->reply) {
+        return;
+    }
     qCDebug(KNEWSTUFFCORE) << Q_FUNC_INFO << d->reply->url();
     if (d->reply->error() != QNetworkReply::NoError) {
         qCWarning(KNEWSTUFFCORE) << d->reply->errorString();
