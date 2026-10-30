@@ -16,7 +16,6 @@
 
 namespace KNSCore
 {
-class XmlLoader;
 
 /**
  * @short KNewStuff Base Provider class.

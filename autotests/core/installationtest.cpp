@@ -14,7 +14,6 @@
 
 #include "entry.h"
 #include "installation_p.h"
-#include "itemsmodel.h"
 #include "question.h"
 #include "questionmanager.h"
 

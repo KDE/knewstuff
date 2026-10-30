@@ -7,9 +7,7 @@
 #include "atticaprovider_p.h"
 
 #include "commentsmodel.h"
-#include "entry_p.h"
 #include "question.h"
-#include "tagsfilterchecker.h"
 
 #include <KFormat>
 #include <KLocalizedString>

@@ -7,7 +7,6 @@
 #include "httpjob.h"
 
 #include "httpworker.h"
-#include "knewstuffcore_debug.h"
 
 #include <QTimer>
 
