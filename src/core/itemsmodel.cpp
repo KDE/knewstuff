@@ -11,7 +11,6 @@
 #include <knewstuffcore_debug.h>
 
 #include "enginebase.h"
-#include "imageloader_p.h"
 
 namespace KNSCore
 {

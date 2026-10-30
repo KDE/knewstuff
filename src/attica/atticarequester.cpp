@@ -15,14 +15,10 @@
 #include <QDomDocument>
 #include <knewstuffcore_debug.h>
 
-#include <attica/accountbalance.h>
 #include <attica/config.h>
 #include <attica/content.h>
-#include <attica/downloaditem.h>
 #include <attica/listjob.h>
-#include <attica/person.h>
 #include <attica/provider.h>
-#include <attica/providermanager.h>
 
 #include "atticaprovider_p.h"
 #include "searchrequest_p.h"
