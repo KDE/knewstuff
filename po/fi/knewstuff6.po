@@ -221,9 +221,7 @@ msgid ""
 msgstr ""
 "Tämä tiedosto on jo levyllä (luultavasti aiemman, epäonnistuneen latauksen "
 "takia). Jatkettaessa se korvataan. Haluatko korvata olemassa olevan "
-"tiedoston?Tämä tiedosto on jo levyllä (luultavasti aiemman, epäonnistuneen "
-"latauksen takia). Jatkettaessa se korvataan. Haluatko korvata olemassa "
-"olevan tiedoston?"
+"tiedoston?"
 
 #: core/installation.cpp:468
 #, kde-format
@@ -403,9 +401,7 @@ msgid ""
 msgstr ""
 "Valitse asennusvalintasi alla olevasta ladattavien kohteiden luettelosta. "
 "Jos valinta on epäselvä, ota yhteyttä tämän kohdan tekijään ja pyydä häntä "
-"selventämään kohteiden nimiä.Valitse asennusvalintasi alla olevasta "
-"ladattavien kohteiden luettelosta. Jos valinta on epäselvä, ota yhteyttä "
-"tämän kohdan tekijään ja pyydä häntä selventämään kohteiden nimiä."
+"selventämään kohteiden nimiä."
 
 #: qtquick/qml/DownloadItemsSheet.qml:91
 #, kde-format
