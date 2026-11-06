@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2025-01-12 19:53+0200\n"
+"PO-Revision-Date: 2025-06-24 13:55+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -340,9 +340,7 @@ msgid ""
 msgstr ""
 "Tämä tiedosto on jo levyllä (luultavasti aiemman, epäonnistuneen latauksen "
 "takia). Jatkettaessa se korvataan. Haluatko korvata olemassa olevan "
-"tiedoston?Tämä tiedosto on jo levyllä (luultavasti aiemman, epäonnistuneen "
-"latauksen takia). Jatkettaessa se korvataan. Haluatko korvata olemassa "
-"olevan tiedoston?"
+"tiedoston?"
 
 #: core/installation.cpp:681
 #, kde-format
@@ -893,9 +891,7 @@ msgid ""
 msgstr ""
 "Valitse asennusvalintasi alla olevasta ladattavien kohteiden luettelosta. "
 "Jos valinta on epäselvä, ota yhteyttä tämän kohdan tekijään ja pyydä häntä "
-"selventämään kohteiden nimiä.Valitse asennusvalintasi alla olevasta "
-"ladattavien kohteiden luettelosta. Jos valinta on epäselvä, ota yhteyttä "
-"tämän kohdan tekijään ja pyydä häntä selventämään kohteiden nimiä."
+"selventämään kohteiden nimiä."
 
 #: qtquick/qml/EntryDetails.qml:49
 #, kde-format
