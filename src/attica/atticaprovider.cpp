@@ -207,14 +207,14 @@ void AtticaProvider::loadPayloadLink(const KNSCore::Entry &entry, int linkId)
         // Ask for balance, then show information...
         ItemJob<AccountBalance> *job = m_provider.requestAccountBalance();
         connect(job, &BaseJob::finished, this, &AtticaProvider::accountBalanceLoaded);
-        mDownloadLinkJobs[job] = qMakePair(entry, linkId);
+        mDownloadLinkJobs[job] = std::make_pair(entry, linkId);
         job->start();
 
         qCDebug(KNEWSTUFFCORE) << "get account balance";
     } else {
         ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(linkId));
         connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
-        mDownloadLinkJobs[job] = qMakePair(entry, linkId);
+        mDownloadLinkJobs[job] = std::make_pair(entry, linkId);
         job->start();
 
         qCDebug(KNEWSTUFFCORE) << " link for " << entry.uniqueId();
@@ -340,7 +340,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
     auto *job = static_cast<ItemJob<AccountBalance> *>(baseJob);
     AccountBalance item = job->result();
 
-    QPair<Entry, int> pair = mDownloadLinkJobs.take(job);
+    const std::pair<Entry, int> pair = mDownloadLinkJobs.take(job);
     Entry entry(pair.first);
     Content content = mCachedContent.value(entry.uniqueId());
     if (content.downloadUrlDescription(pair.second).priceAmount() < item.balance()) {
@@ -355,7 +355,7 @@ void AtticaProvider::accountBalanceLoaded(Attica::BaseJob *baseJob)
         if (question.ask() == Question::YesResponse) {
             ItemJob<DownloadItem> *job = m_provider.downloadLink(entry.uniqueId(), QString::number(pair.second));
             connect(job, &BaseJob::finished, this, &AtticaProvider::downloadItemLoaded);
-            mDownloadLinkJobs[job] = qMakePair(entry, pair.second);
+            mDownloadLinkJobs[job] = std::make_pair(entry, pair.second);
             job->start();
         } else {
             return;

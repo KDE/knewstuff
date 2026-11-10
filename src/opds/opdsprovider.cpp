@@ -128,7 +128,7 @@ public:
             QUrlQuery templateQuery(searchUrl);
             QUrlQuery query;
 
-            for (QPair<QString, QString> key : templateQuery.queryItems()) {
+            for (std::pair<QString, QString> key : templateQuery.queryItems()) {
                 if (key.second.contains(OPENSEARCH_SEARCH_TERMS)) {
                     query.addQueryItem(key.first, request.searchTerm());
                 } else if (key.second.contains(OPENSEARCH_COUNT)) {

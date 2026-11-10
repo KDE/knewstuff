@@ -112,7 +112,7 @@ private:
     // Associate job and entry, this is needed when fetching
     // download links or the account balance in order to continue
     // when the result is there.
-    QHash<Attica::BaseJob *, QPair<Entry, int>> mDownloadLinkJobs;
+    QHash<Attica::BaseJob *, std::pair<Entry, int>> mDownloadLinkJobs;
 
     bool mInitialized;
     QString m_providerId;
