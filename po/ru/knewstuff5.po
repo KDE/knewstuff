@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2023-07-22 14:04+0300\n"
+"PO-Revision-Date: 2026-11-11 22:58+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -1587,7 +1587,7 @@ msgstr "Открыть в браузере"
 #: ui/itemsgridviewdelegate.cpp:86 ui/itemsviewdelegate.cpp:284
 #, kde-format
 msgid "Rating: %1%"
-msgstr "Оценка: %1%"
+msgstr "Оценка: %1 %"
 
 #: ui/itemsgridviewdelegate.cpp:123
 #, kde-format
