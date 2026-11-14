@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2026-11-13 05:52+0000\n"
 "PO-Revision-Date: 2023-12-27 18:14+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -21,12 +21,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: attica/atticaprovider.cpp:167
+#: attica/atticaprovider.cpp:165
 #, kde-format
 msgid "All categories are missing"
 msgstr "Semua kategori telah hilang"
 
-#: attica/atticaprovider.cpp:352
+#: attica/atticaprovider.cpp:350
 #, kde-format
 msgctxt ""
 "the price of a download item, parameter 1 is the currency, 2 is the price"
@@ -37,7 +37,7 @@ msgstr ""
 "Item ini seharga %1 %2.\n"
 "Anda ingin membelinya?"
 
-#: attica/atticaprovider.cpp:366
+#: attica/atticaprovider.cpp:364
 #, kde-format
 msgid ""
 "Your account balance is too low:\n"
@@ -48,18 +48,18 @@ msgstr ""
 "Rekening Anda: %1\n"
 "Harga: %2"
 
-#: attica/atticaprovider.cpp:398
+#: attica/atticaprovider.cpp:396
 #, kde-format
 msgctxt "voting for an item (good/bad)"
 msgid "Your vote was recorded."
 msgstr "Suara Anda telah direkam."
 
-#: attica/atticaprovider.cpp:413
+#: attica/atticaprovider.cpp:411
 #, kde-format
 msgid "You are now a fan."
 msgstr "Anda sekarang seorang penggemar."
 
-#: attica/atticaprovider.cpp:441 core/enginebase.cpp:269
+#: attica/atticaprovider.cpp:439 core/enginebase.cpp:269
 #: opds/opdsprovider.cpp:291
 #, kde-format
 msgid ""
@@ -67,18 +67,18 @@ msgid ""
 "in %1."
 msgstr "Layanan saat ini dipelihara dan diharapkan untuk kembali pada %1."
 
-#: attica/atticaprovider.cpp:446
+#: attica/atticaprovider.cpp:444
 #, kde-format
 msgid "Network error %1: %2"
 msgstr "Kesalahan jaringan %1: %2"
 
-#: attica/atticaprovider.cpp:453
+#: attica/atticaprovider.cpp:451
 #, kde-format
 msgid "Too many requests to server. Please try again in a few minutes."
 msgstr ""
 "Terlalu banyak permintaan ke server. Silakan coba lagi dalam beberapa menit."
 
-#: attica/atticaprovider.cpp:457
+#: attica/atticaprovider.cpp:455
 #, kde-format
 msgid ""
 "The Open Collaboration Services instance %1 does not support the attempted "
@@ -87,7 +87,7 @@ msgstr ""
 "Instansi Open Collaboration Services %1 tidaklah mendukung fungsi yang "
 "diupayakan."
 
-#: attica/atticaprovider.cpp:461
+#: attica/atticaprovider.cpp:459
 #, kde-format
 msgid "Unknown Open Collaboration Service API error. (%1)"
 msgstr "Galat Open Collaboration Service API tak diketahui. (%1)"
