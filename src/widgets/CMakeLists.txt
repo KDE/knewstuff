@@ -43,16 +43,13 @@ target_link_libraries(KF6NewStuffWidgets
     Qt6::Widgets
   PRIVATE
     KF6::I18n
+    KF6::I18nQml
     KF6::ConfigCore
     KF6::WidgetsAddons
     # QtQuickDialogWrapper
     Qt6::Qml
     Qt6::Quick
     Qt6::QuickWidgets
-)
-
-target_link_libraries(KF6NewStuffWidgets PRIVATE
-        KF6::I18nQml
 )
 
 target_include_directories(KF6NewStuffWidgets

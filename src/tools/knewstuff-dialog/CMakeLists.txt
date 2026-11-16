@@ -18,11 +18,8 @@ target_link_libraries(knewstuff-dialog6
     Qt6::Quick
     KF6::ConfigCore
     KF6::I18n
+    KF6::I18nQml
     KF6::NewStuffCore
-)
-
-target_link_libraries(knewstuff-dialog6
-        KF6::I18nQml
 )
 
 install(TARGETS knewstuff-dialog6 ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
