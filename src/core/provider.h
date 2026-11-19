@@ -13,6 +13,7 @@
 
 #include <QDebug>
 #include <QList>
+#include <QObject>
 #include <QString>
 #include <QUrl>
 
